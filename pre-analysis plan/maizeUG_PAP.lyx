@@ -743,7 +743,17 @@ We determine sample size by running various power analyses for different
  In our case, we want to incorporate control variables for the parishes
  and we want to consider power in the context of multiple treatments.
  The algorithm that was used to perform the power calculations can be found
- in the git repository.
+ in the 
+\begin_inset CommandInset href
+LatexCommand href
+name "git repository"
+target "https://github.com/bjvca/maizeUG/blob/master/pre-analysis%20plan/powercalcs.R"
+
+\end_inset
+
+.
+ We run 500 simulations for each candidate sample size and increase sample
+ size by 55 households as this is the size of our blocs.
  
 \end_layout
 
@@ -768,19 +778,140 @@ In addition, the main power calculations will be based on the first research
  interactions and hence many cells.
  We also expect the effects from these two factors and its interactions
  to be relatively small.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename power.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Power curves
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Power-curves"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At one extreme, we could calculate sample size required to identify all
+ possible treatment combinations.
+ For instance, we can compare control to MM, control to FM, control to MF
+ etc.
+ We can already test various hypotheses here, requiring at least one or
+ a few of these to be significant, or a more stringent test where we require
+ all of the treatments to turn up significant.
+ Or we can even go one step further and require also that some or even all
+ the differences between the treatments are significant (eg the different
+ between MM and MF).
+ Testing all interactions in this way would require a sample size well above
+ what is possible.
+ We therefore will base our power calculations on comparing groups of treatments
+ based on the research questions outlined above.
+\end_layout
+
+\begin_layout Standard
+A first and obvious question will be to find out if videos work, irrespective
+ of who they are shown to and who features in the video.
+ We thus calculate sample size by taking all treatment arms and interactions
+ in our factorial design together and we simply test the different between
+ treatment and control.
+ This scenario is shown as the black curve in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Power-curves"
+
+\end_inset
+
+.
+ From the figure, we learn that we would need a sample size of about 1100
+ observations to test this with sufficient power (.8).
+\end_layout
+
+\begin_layout Standard
+A second question is related to the gender composition of the animator,
+ where we expect that when the message is brought by a couple leads to better
+ outcomes then when the message is given by an individual (either a male
+ or a female farmer).
+ We calculate sample size that is needed to determine a significant difference
+ in yields between these two groups and plot this in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Power-curves"
+
+\end_inset
+
+ as the yellow curve.
  
 \end_layout
 
 \begin_layout Standard
-At one extreme, we could require power to identify all possible 
+A third question relates to the recipient.
+ Here we also want to find a significant difference in outcomes between
+ households that were shown the video as a couple and households in which
+ the video was only shown to one individual in the household.
+ The results of these power simulations is shown as the blue line in figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Power-curves"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
-At the other extreme, we calculate sample size needed to test the hypothesis
- that showing a video with relevant information significantly changes behaviour.
- In other words, we take all treatment arms and interactions in our factorial
- design together and we simply test the different between treatment and
- control.
+The fourth question relates to the gender matching effect.
+ Here we compare if households where the gender of the recipient and the
+ gender of the messenger (including the BB cell) differ from the effect
+ obtained by households where there is no matching (FM and MF).
+ This is shown as the green line in the figure.
+\end_layout
+
+\begin_layout Standard
+Finally, we investigate the most stringent option and we combine the above
+ four research question and estimate power needed for finding all these
+ effects together.
+ This is summarized in the red line.
+ Here we see we would need about 4000 observations to get sufficient power.
+ We will settle for something in-between the red line and the blue and green
+ lines and include about 3500 farmers in our study.
+ Taking into account the fact that we will work in blocks of 55 farmers,
+ this means we would sample about 64 parishes.
  
 \end_layout
 
