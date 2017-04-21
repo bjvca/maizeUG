@@ -797,31 +797,80 @@ In terms of impact, it is expected that agricultural extension information
  It is expected that the effectiveness of the typical case of extension
  information messages delivered by a man and received by a man will be lower
  than the cases in which other effects can realize.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Here, we need to inlude a table with treatment combinations and the expected
- effects.
 \end_layout
+
+\begin_layout Standard
+The corresponding expected effect size for each treatment combination is
+ summarized in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Expected-Effect-Sizes"
 
 \end_inset
 
+.
+ They range from a 3.33 percent increase from the control in the treatment
+ combination where the receiver is the woman and the messengers is a male
+ (corresponding to an increase in yields per hectare from 1609 to 1663)
+ to a 30.0 percent increase for the treatment combimation where the video
+ messages is shown to the couple and the message in the video is also delivered
+ by a couple.
+ In this last case, we expecte yields to increase from 1609 kg/ha to 2091
+ kg/ha.
+ 
+\end_layout
 
+\begin_layout Standard
+The expected effect sizes are based on the interplay of the three effects
+ mentioned above: gender matching effect, a knowledge-is-power-effect, and
+ the projection of a household approach.
+ For instance, the effects on the diagonal in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Expected-Effect-Sizes"
+
+\end_inset
+
+ are higher because here the gender matching effect is playing: We expect
+ that men learn more from other man and women learn more from other women,
+ which in turn would lead to higher yields among gender matched subsamples.
+ The expected effects emanating from the gender composition of the receiver
+ is related to information deficiencies.
+ This can be directly when women are also important actors in agriculture.
+ For instance, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "kabunga2012heterogeneous"
+
+\end_inset
+
+ find that female farmers are less likely to adopt the tissue banana culture
+ technology in Kenya, but that they would have an equal chance to adopt
+ innovations, provided that they acquire sufficient knowledge about the
+ innovation.
+ In addition, knowledge may also affect technology adoption and subsequent
+ yields through changes in relative bargaining power of the actors.
+ This is expected to increase yields especially when both male and female
+ are given access to information.
+ We also expect larger effects when the message is brought by a couple,
+ as a cooperative approach to farmering is likely to reduce inefficiencies
+ within the farm household.
+ In some cells, various effects may be applicable: the reason why the largest
+ effect is expected with both husband and spouse receive the message together
+ from a couple is because there all three effects are playing.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Graphics
-	filename power.pdf
+	filename designfig.pdf
 	scale 60
+	BoundingBox 0bp 600bp 0bp 800bp
 
 \end_inset
 
@@ -832,10 +881,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Power curves
+Expected Effect Sizes
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Power-curves"
+name "fig:Expected-Effect-Sizes"
 
 \end_inset
 
@@ -889,6 +938,47 @@ reference "fig:Power-curves"
 .
  From the figure, we learn that we would need a sample size of about 1100
  observations to test this with sufficient power (.8).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename power.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Power curves
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Power-curves"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
