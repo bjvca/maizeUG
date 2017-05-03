@@ -7,8 +7,8 @@ registerDoParallel(cores=4)
 
 alpha <- .05
 N <- 3000
-sims <- 200
-minsamp <- 400
+sims <- 300
+minsamp <- 300
 bystep <- 50
 
 ptm <- proc.time()

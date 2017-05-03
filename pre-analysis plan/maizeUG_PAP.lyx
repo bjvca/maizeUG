@@ -732,6 +732,8 @@ We determine sample size by running various power analyses for different
  one plans to use for inference.
  In our case, we want to incorporate control variables for the parishes
  and we want to consider power in the context of multiple treatments.
+ In addition, it also allows us to determine the optimal number of observations
+ within each treatment combination.
  The algorithm that was used to perform the power calculations can be found
  in the 
 \begin_inset CommandInset href
@@ -742,9 +744,19 @@ target "https://github.com/bjvca/maizeUG/blob/master/pre-analysis%20plan/powerca
 \end_inset
 
 .
- We run 500 simulations for each candidate sample size and increase sample
- size by 55 households as this is the size of our blocs.
  
+\end_layout
+
+\begin_layout Standard
+We start by first finding the optimal distribution of the total sample size
+ over the different treatment groups, given the hypotheses we want to test,
+ keeping sample size fixed.
+ Depending on the hypotheses on wants to test and the effect sizes expected
+ for particular treatment combinations, it may be more efficient to allocate
+ relatively more observations to a particular treatment combination that
+ just dividing all observations equally over all treatment combinations
+ (in our case, if we fix sample size at 1000 observations, we would allocate
+ 100 observations to each treatment combination ).
 \end_layout
 
 \begin_layout Standard
@@ -777,7 +789,7 @@ In terms of impact, it is expected that agricultural extension information
  woman farmer will be most effective because of gender matching effects,
  in combination with the projection of a household approach to farming in
  the message and the higher likelihood that both the woman and man farmer
- participate in decision making about adoption of the learned practice.
+ participate in decision making about adoption with equal information.
  The latter effect is expected to be at work when the man and woman farmer
  receive the message together, regardless of the messenger composition.
  The projection of a household approach is present when the message is delivered
@@ -802,12 +814,94 @@ reference "fig:Expected-Effect-Sizes"
  They range from a 3.33 percent increase from the control in the treatment
  combination where the receiver is the woman and the messengers is a male
  (corresponding to an increase in yields per hectare from 1609 to 1663)
- to a 30.0 percent increase for the treatment combimation where the video
+ to a 30.0 percent increase for the treatment combination where the video
  messages is shown to the couple and the message in the video is also delivered
  by a couple.
  In this last case, we expecte yields to increase from 1609 kg/ha to 2091
  kg/ha.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "RePEc:eee:wdevel:v:78:y:2016:i:c:p:436-449"
+
+\end_inset
+
+ find evidence of gender bias in awareness, knowledge and adoption of pit
+ planting in Mozambique.
+ In particular, they find that among men who received information from a
+ male messenger, the proportion that are aware of pit planting is 10 percentage
+ points higher.
+ This proportion is 6.5 percentage points higher for actual adoption.
+ Female awareness, knowledge and adoption is the same irrespective of the
+ presence of a male extension worker.
+ However, if a female extension worker is added, awareness, knowledge and
+ adoption among female farmers also increases by roughly the same proportions.
+ We use these results to get an idea about the gender matching effect.
+ In particular, we model a 7.5 percent increase in yields when messenger
+ and recipient is male and when messenger and recipient is female.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1093/erae/jbv039"
+
+\end_inset
+
+ investigate the effect of participating in extension training as a couple.
+ In particular, they investigate whether participation of female farmers
+ in an agricultural extension programme in South-Kivu increases adoption
+ of three technologies: improved legume varieties, row planting and mineral
+ fertiliser.
+ Joint male and female programme participation leads to the highest adoption
+ rates.
+ We therefore model an 10 percent increase in yields for farmers that view
+ the video as a couple.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Doss200127"
+
+\end_inset
+
+ find that adoption of agricultural technologies among female farmers is
+ lower than among male farmers.
+ They find that this is due to gender-linked differences in access to complement
+ary inputs, such as access to information.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "RePEc:eee:wdevel:v:78:y:2016:i:c:p:436-449"
+
+\end_inset
+
+ also find that women do not seem to benefit from male extension workers.
+ We therefore assume no effect in our power calculations for the subset
+ of farmers that get to see a video where the messenger is of the opposite
+ gender.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "pan2015agricultural"
+
+\end_inset
+
+ use a regression discontinuity approach to evaluate an inovative extension
+ model that relies heavily on model farms.
+ They find production increases by about 21 percent.
+\end_layout
+
+\begin_layout Standard
+Finally, we expect the highest effect when both spouses are provided the
+ information by a model farmer couple.
 \end_layout
 
 \begin_layout Standard
