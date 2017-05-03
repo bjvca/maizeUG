@@ -305,58 +305,6 @@ ls within the farm household.
 \end_layout
 
 \begin_layout Subsection*
-Framing of Message 
-\end_layout
-
-\begin_layout Standard
-Apart from the conventional factors that affect smallholder farmers (such
- as access to credit, land and labor availability, and risk management and
- coping mechanisms), personal characteristics are also important in determining
- behavioral change.
- Less tangible factors, such as a farmer’s attitude toward farming as a
- business instead of just for subsistence, are often correlated with a range
- of desirable outcomes.
- For instance, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "doi:10.1093/wber/lhv014"
-
-\end_inset
-
- found that showing videos of successful “role model” farmers increases
- aspirations and reduces fatalism (i.e.
- absence of locus of control).
- Ongoing work by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "kibrom"
-
-\end_inset
-
- documents robust correlations between locus of control and agricultural
- technology adoption behaviour.
- 
-\end_layout
-
-\begin_layout Standard
-We will ask if videos featuring successful practices using social and behavioura
-l change communications and social marketing techniques commonly used in
- public health campaigns, such as the SunSmart Slip-Slop-Slap campaign against
- skin cancer in Australia (1988) and CDC’s campaign on breastfeeding, are
- better at changing behavior than alternative ways of framing the same informati
-on, which are more traditional and based on a teacher-student model.
- Social marketing applies commercial marketing strategies to develop activities
- aimed at changing or maintaining people's behavior for the benefit of individua
-ls and society as a whole.
- These techniques and strategies are thought to be especially apt at making
- people feel that something is good or appropriate to them, or that they
- really need it.
- In a way, it aims to increase a farmer’s aspirations and expand the options
- within the mental models that farmers form.
- 
-\end_layout
-
-\begin_layout Subsection*
 Different ICT Channels 
 \end_layout
 
@@ -730,8 +678,8 @@ We determine sample size by running various power analyses for different
  of from a theoretical distribution with an assumed mean and standard deviation.
  It is also straightforward to build in flexibility in terms of specifications
  one plans to use for inference.
- In our case, we want to incorporate control variables for the parishes
- and we want to consider power in the context of multiple treatments.
+ In our case, we want to incorporate control variables for location and
+ we want to consider power in the context of multiple treatments.
  In addition, it also allows us to determine the optimal number of observations
  within each treatment combination.
  The algorithm that was used to perform the power calculations can be found
@@ -750,13 +698,26 @@ target "https://github.com/bjvca/maizeUG/blob/master/pre-analysis%20plan/powerca
 \begin_layout Standard
 We start by first finding the optimal distribution of the total sample size
  over the different treatment groups, given the hypotheses we want to test,
- keeping sample size fixed.
+ keeping total sample size fixed.
  Depending on the hypotheses on wants to test and the effect sizes expected
  for particular treatment combinations, it may be more efficient to allocate
  relatively more observations to a particular treatment combination that
  just dividing all observations equally over all treatment combinations
  (in our case, if we fix sample size at 1000 observations, we would allocate
  100 observations to each treatment combination ).
+ For instance, the treatment combination where both messenger and receivers
+ are the couple features in three of the four hypotheses we will test.
+ In addition, it is expected to have the largest effect size, so additional
+ observations in this treatment group will increase power much more than
+ adding observations in other treatment combination cells.
+\end_layout
+
+\begin_layout Standard
+We developed a simple algorithm to find the optimal allocations to the different
+ cells using a grid search.
+ In particular, we estimate power to detect the four main hypotheses simultaneou
+sly for all possible allocations of observations to the different cells.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1118,6 +1079,18 @@ Finally, we investigate the most stringent option and we combine the above
  Taking into account the fact that we will work in blocks of 55 farmers,
  this means we would sample about 64 parishes.
  
+\end_layout
+
+\begin_layout Standard
+A second outcome variable we will investigate relates more to equity within
+ the household.
+ The gender productivity gap ...
+ Using data from the latest UNPS, we also find a significant gender gap
+ among maize farmers in Uganda.
+ Male farmers obtain yields of about 2.3 tons per hectare.
+ Women managed maize plots only get about 1.6 tons.
+ We thus model a difference of about 666 kg per hectare, with a standard
+ error of about 275 kg per hectare.
 \end_layout
 
 \begin_layout Subsubsection*

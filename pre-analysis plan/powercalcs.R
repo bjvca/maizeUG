@@ -18,6 +18,9 @@ mv productivity.csv?dl=0 productivity.csv
 wget https://www.dropbox.com/s/h04651jb0zrk1os/loc_parish.csv?dl=0
 mv loc_parish.csv?dl=0 loc_parish.csv
 
+wget https://www.dropbox.com/s/ozv4e1cboecql15/maize_yields_pwr.csv?dl=0
+mv maize_yields_pwr.csv?dl=0 maize_yields_pwr.csv
+
 
 #######################3 
 
@@ -28,10 +31,10 @@ library(doParallel)
 registerDoParallel(cores=detectCores(all.tests = FALSE, logical = TRUE))
 
 alpha <- .05
-N <- 1000
-sims <- 500
-minsamp <- 100
-bystep <- 25
+N <- 3000
+sims <- 250
+minsamp <- 300
+bystep <- 100
 res_all <- matrix(NA,1,10)
 ptm <- proc.time()
 
@@ -50,6 +53,12 @@ loc <- read.csv("loc_parish.csv")
 plot_rice <- merge(loc,plot_rice, by="hhid")
 summary(lm(prod~as.factor(parish),data=plot_rice))
 
+plot_maize <- read.csv("maize_yields_pwr.csv")
+plot_maize$yield <- plot_maize$yield*2.47105
+plot_maize <- subset(plot_maize, yield > 250 & yield < 4000) 
+
+
+summary(lm(yield~as.factor(region),data=plot_maize))
 
 possible.n2 <- seq(minsamp,N-5*minsamp, by=bystep)
 
@@ -105,7 +114,7 @@ p.NomatchvsC <- rep(NA, sims)
 
   #### Inner loop to conduct experiments "sims" times over for each N ####
   for (i in 1:sims){
-Y0 <-  plot_rice[sample(1:dim(plot_rice)[1],N, replace=T),]
+Y0 <-  plot_maize[sample(1:dim(plot_maize)[1],N, replace=T),]
  #   Y0 <-   rnorm(n=N, mean=1732, sd=920) ### we should sample (with replacement from real data, eg pasic yield data) 
 Y0$Z.sim <- Z.sim
     
@@ -113,22 +122,22 @@ Y0$Z.sim <- Z.sim
 ### model effects
    tau <- seq(0,.3,length.out=6) ### seven different effects
 
-    Y0$prod[Y0$Z.sim == "YMMFF"] <- Y0$prod[Y0$Z.sim == "YMMFF"] * ( 1 + .075)
-    Y0$prod[Y0$Z.sim == "YMF"] <- Y0$prod[Y0$Z.sim == "YMF"] * ( 1 + 0 )  
-     Y0$prod[Y0$Z.sim == "YBMF"] <- Y0$prod[Y0$Z.sim == "YBMF"] * ( 1 + .1) 
-       Y0$prod[Y0$Z.sim == "YMFB"] <- Y0$prod[Y0$Z.sim == "YMFB"] * ( 1 + .21) 
-       # Y0$prod[Y0$Z.sim == "YFF"] <- Y0$prod[Y0$Z.sim == "YFF"] * ( 1 + tau[6]) 
-       # Y0$prod[Y0$Z.sim == "YFB"] <- Y0$prod[Y0$Z.sim == "YFB"] * ( 1 + tau[9]) 
-       # Y0$prod[Y0$Z.sim == "YBM"] <- Y0$prod[Y0$Z.sim == "YBM"] * ( 1 + tau[8]) 
-       # Y0$prod[Y0$Z.sim == "YBF"] <- Y0$prod[Y0$Z.sim == "YBF"] * ( 1 + tau[7]) 
-      Y0$prod[Y0$Z.sim == "YBB"] <- Y0$prod[Y0$Z.sim == "YBB"] * ( 1 + .25) 
+    Y0$yield[Y0$Z.sim == "YMMFF"] <- Y0$yield[Y0$Z.sim == "YMMFF"] * ( 1 + .075)
+    Y0$yield[Y0$Z.sim == "YMF"] <- Y0$yield[Y0$Z.sim == "YMF"] * ( 1 + 0 )  
+     Y0$yield[Y0$Z.sim == "YBMF"] <- Y0$yield[Y0$Z.sim == "YBMF"] * ( 1 + .1) 
+       Y0$yield[Y0$Z.sim == "YMFB"] <- Y0$yield[Y0$Z.sim == "YMFB"] * ( 1 + .21) 
+       # Y0$yield[Y0$Z.sim == "YFF"] <- Y0$yield[Y0$Z.sim == "YFF"] * ( 1 + tau[6]) 
+       # Y0$yield[Y0$Z.sim == "YFB"] <- Y0$yield[Y0$Z.sim == "YFB"] * ( 1 + tau[9]) 
+       # Y0$yield[Y0$Z.sim == "YBM"] <- Y0$yield[Y0$Z.sim == "YBM"] * ( 1 + tau[8]) 
+       # Y0$yield[Y0$Z.sim == "YBF"] <- Y0$yield[Y0$Z.sim == "YBF"] * ( 1 + tau[7]) 
+      Y0$yield[Y0$Z.sim == "YBB"] <- Y0$yield[Y0$Z.sim == "YBB"] * ( 1 + .25) 
 
 ## tests
-    fit.allvsC.sim <-lm(prod ~ (Z.sim=="Ctrl") + as.factor(parish), data=Y0)
+    fit.allvsC.sim <-lm(yield ~ (Z.sim=="Ctrl") + as.factor(region), data=Y0)
 
-fit.matchvsnomatch.sim <- lm(prod ~ (Z.sim=="YMMFF" ) + as.factor(parish), data=subset(Y0, Z.sim=="YMMFF"  | Z.sim=="YMF" ))
-fit.Rbothvssingel.sim <- lm(prod ~ (Z.sim=="YBMF" | Z.sim == "YBB")+ as.factor(parish), data=subset(Y0,Z.sim!="Ctrl"))
-fit.Mbothvssingel.sim <- lm(prod ~ (Z.sim=="YMFB" | Z.sim == "YBB")+ as.factor(parish), data=subset(Y0,Z.sim!="Ctrl"))
+fit.matchvsnomatch.sim <- lm(yield ~ (Z.sim=="YMMFF" | Z.sim == "YBB" ) + as.factor(region), data=subset(Y0, Z.sim=="YMMFF"  | Z.sim=="YMF" | Z.sim == "YBB"))
+fit.Rbothvssingel.sim <- lm(yield ~ (Z.sim=="YBMF" | Z.sim == "YBB")+ as.factor(region), data=subset(Y0,Z.sim!="Ctrl"))
+fit.Mbothvssingel.sim <- lm(yield ~ (Z.sim=="YMFB" | Z.sim == "YBB")+ as.factor(region), data=subset(Y0,Z.sim!="Ctrl"))
 
 
     ### Need to capture coefficients and pvalues (one-tailed tests, so signs are important)
@@ -178,8 +187,88 @@ proc.time() - ptm
 
 
 
+### yield gap
 
 
 
+library(foreign)
+
+################################################################################ prepare data for UNPS2013/14  ######################################################################
+##get fertilizer use - this is at plot level
+agsec3A2013 <- read.dta("/home/bjvca/data/projects/MAFAP/data/UNPS2013/AGSEC3A.dta")
+agsec3B2013 <- read.dta("/home/bjvca/data/projects/MAFAP/data/UNPS2013/AGSEC3B.dta")
+sum(duplicated(agsec3A2013[c("HHID","plotID")]))
+sum(duplicated(agsec3B2013[c("HHID","plotID")]))
+
+##merge in production - this is at crop level
+agsec5A2013 <- read.dta("/home/bjvca/data/projects/MAFAP/data/UNPS2013/AGSEC5A.dta")
+agsec5B2013 <- read.dta("/home/bjvca/data/projects/MAFAP/data/UNPS2013/AGSEC5B.dta")
+##get quantity at productionID level
+agsec5A2013$prod <- agsec5A2013$a5aq6a*agsec5A2013$a5aq6d
+agsec5B2013$prod <- agsec5B2013$a5bq6a*agsec5B2013$a5bq6d
+##aggregate to product level
+
+prodA2013 <- aggregate(agsec5A2013$prod, list(agsec5A2013$HHID, agsec5A2013$plotID, agsec5A2013$cropID), sum, na.rm=T)
+names(prodA2013) <- c("HHID","plotID","cropID","prod")
+prodB2013 <- aggregate(agsec5B2013$prod, list(agsec5B2013$HHID, agsec5B2013$plotID, agsec5B2013$cropID), sum, na.rm=T)
+names(prodB2013) <- c("HHID","plotID","cropID","prod")
+prodA2013$prod[prodA2013$prod > 200000] <- NA
+prodB2013$prod[prodB2013$prod > 200000] <- NA
+
+##merge in plot area - this is at crop level
+agsec4A2013 <- read.dta("/home/bjvca/data/projects/MAFAP/data/UNPS2013/AGSEC4A.dta")
+agsec4B2013 <- read.dta("/home/bjvca/data/projects/MAFAP/data/UNPS2013/AGSEC4B.dta")
+agsec4A2013$a4aq9[agsec4A2013$a4aq8 == "Pure Stand"] <- 100
+agsec4B2013$a4bq9[agsec4B2013$a4bq8 == "Pure Stand"] <- 100
+
+##how to handle mixed cropping
+areaA2013 <- aggregate(cbind(agsec4A2013$a4aq7,agsec4A2013$a4aq9), list(agsec4A2013$HHID, agsec4A2013$plotID, agsec4A2013$cropID), sum, na.rm=T)
+names(areaA2013) <- c("HHID","plotID","cropID","area", "prop")
+areaB2013 <- aggregate(cbind(agsec4B2013$a4bq7,agsec4B2013$a4bq9), list(agsec4B2013$HHID, agsec4B2013$plotID, agsec4B2013$cropID), sum, na.rm=T)
+names(areaB2013) <- c("HHID","plotID","cropID","area", "prop")
+areaA2013$prop[areaA2013$prop>100] <- NA
+areaB2013$prop[areaB2013$prop>100] <- NA
+
+
+yieldA2013 <- merge(areaA2013, prodA2013, by = c("HHID","plotID","cropID"))
+yieldB2013 <- merge(areaB2013, prodB2013, by = c("HHID","plotID","cropID"))
+
+allA2013 <- merge(yieldA2013, agsec3A2013[c(1,3,6)])
+allB2013 <- merge(yieldB2013, agsec3B2013[c(1,2,6)])
+names(allA2013) <- c("HHID", "plotID", "cropID", "area", "prop", "prod", "pid")
+names(allB2013) <- c("HHID", "plotID", "cropID", "area", "prop", "prod", "pid")
+allA2013$season <- 1
+allB2013$season <- 2
+
+all2013 <- rbind(allA2013, allB2013)
+
+all2013$yield <- all2013$prod / (all2013$area * all2013$prop/100)
+all2013$yield[all2013$yield > 15000] <- NA 
+
+#merge in gender
+gsec2 <- read.dta("/home/bjvca/data/projects/MAFAP/data/UNPS2013/GSEC2.dta")
+substrRight <- function(x, n){
+  substr(x, nchar(x)-n+1, nchar(x))
+}
+
+gsec2$HHID <-  substring(gsub("*-","",gsec2$HHID),2)
+gsec2$pid <-  gsec2$h2q1
+all2013$pid <- as.numeric(as.character(substrRight(all2013$pid,3)))
+
+
+merged <- merge(gsec2[c("HHID","pid","h2q3")], all2013, by = c("HHID","pid"))
+
+men <- subset(merged, h2q3 == "Male" )
+
+fem <- subset(merged, h2q3 == "Female" )
+
+agmen <- aggregate(men$yield, list(men$HHID), mean, na.rm=T)
+names(agmen) <- c("hhid","menprod")
+agfem <- aggregate(fem$yield, list(fem$HHID), mean, na.rm=T)
+names(agfem) <- c("hhid","femprod")
+
+dif <- merge(agfem, agmen)
+dif <- subset(dif, femprod>0 & menprod>0)
+dif$gap <- dif$menprod - dif$femprod
 
 
