@@ -31,11 +31,11 @@ library(doParallel)
 registerDoParallel(cores=detectCores(all.tests = FALSE, logical = TRUE))
 
 alpha <- .05
-N <- 3000
+N <- 1000
 sims <- 250
-minsamp <- 300
-bystep <- 100
-res_all <- matrix(NA,1,10)
+minsamp <- 100
+bystep <- 50
+res_all <- matrix(NA,1,13)
 ptm <- proc.time()
 
 ### prepare yield data (taken from the pasic rice study)
@@ -76,10 +76,6 @@ for (j4 in 1:(length(possible.n2) - (j3 -1) - (j2 -1) - (j1 - 1)) ) {
 res <- foreach(j5 = 1:(length(possible.n2)- (j4 -1) - (j3 -1) - (j2 -1) - (j1 - 1)), .combine=rbind) %dopar% {
 
 #for (j5 in 1:(length(possible.n2) - (j4 -1) - (j3 -1) - (j2 -1) - (j1 - 1)) ) {
-#for (j6 in 1:(length(possible.n2)  - (j5 -1) - (j4 -1) - (j3 -1) - (j2 -1) - (j1 - 1)) ) {
-#for (j7 in 1:(length(possible.n2) - (j6 -1) - (j5 -1) - (j4 -1) - (j3 -1) - (j2 -1) - (j1 - 1)) ) {
-#for (j8 in 1:(length(possible.n2)  - (j7 -1) - (j6 -1) - (j5 -1)- (j4 -1) - (j3 -1) - (j2 -1) - (j1 - 1)) ) {
-#for (j9 in 1:(length(possible.n2)  - (j8 -1) - (j7 -1) - (j6 -1) - (j5 -1)- (j4 -1) - (j3 -1) - (j2 -1) - (j1 - 1)) ) {
 
 
 
@@ -88,13 +84,10 @@ g2 <- possible.n2[j2]
 g3 <- possible.n2[j3]
 g4 <- possible.n2[j4]
 g5 <- possible.n2[j5]
-#g6 <- possible.n2[j6]
-#g7 <- possible.n2[j7]
-#g8 <- possible.n2[j8]
-#g9 <- possible.n2[j9]
 
-#Z.sim <- sample(as.factor(c(rep("Ctrl",floor(N-g1-g2-g3-g4-g5-g6-g7-g8-g9)), rep("YBB", g9), rep("YBF", g8), rep("YBM", g7), rep("YFB", g6), rep("YFF", g5), rep("YFM", g4), rep("YMB", g3), rep("YMF", g2), rep("YMM", g1))))
+
 Z.sim <- sample(as.factor(c(rep("Ctrl",floor(N-g1-g2-g3-g4-g5)), rep("YMFB", g5),rep("YBMF", g4),rep("YMF", g3), rep("YMMFF", g2), rep("YBB", g1))))
+Z1.sim <- sample(as.factor(c(rep("Ctrl",floor(N-g1-g2-g3-g4-g5)), rep("Y1MMMF", g2/2 + g3/2),rep("Y1FMFF", g3/2 + g2/2),rep("Y1BMBF", g4), rep("Y1MBFB", g5), rep("Y1BB", g1))))
 
 
   p.T1vsC <- rep(NA, sims)
@@ -108,29 +101,35 @@ fit.eachvsC.sim <- matrix(NA,10,sims)
 	p.Rbothvssingel <- rep(NA, sims)
 	p.Mbothvssingel <- rep(NA, sims)
 p.NomatchvsC <- rep(NA, sims)
- # p.YBBvsYMM <- rep(NA, sims)
- # p.YMMvsYFF <- rep(NA, sims)
- # p.YBBvsYFF <- rep(NA, sims)
+
+p.gap1 <- rep(NA, sims)
+p.gap2 <- rep(NA, sims)
+p.gap3 <- rep(NA, sims)
 
   #### Inner loop to conduct experiments "sims" times over for each N ####
   for (i in 1:sims){
 Y0 <-  plot_maize[sample(1:dim(plot_maize)[1],N, replace=T),]
+Y1 <- data.frame(rnorm(n=N, mean=42, sd=39.64))
+names(Y1) <- "gap"
  #   Y0 <-   rnorm(n=N, mean=1732, sd=920) ### we should sample (with replacement from real data, eg pasic yield data) 
 Y0$Z.sim <- Z.sim
+Y1$Z.sim <- Z1.sim
     
 
 ### model effects
-   tau <- seq(0,.3,length.out=6) ### seven different effects
 
     Y0$yield[Y0$Z.sim == "YMMFF"] <- Y0$yield[Y0$Z.sim == "YMMFF"] * ( 1 + .075)
     Y0$yield[Y0$Z.sim == "YMF"] <- Y0$yield[Y0$Z.sim == "YMF"] * ( 1 + 0 )  
      Y0$yield[Y0$Z.sim == "YBMF"] <- Y0$yield[Y0$Z.sim == "YBMF"] * ( 1 + .1) 
        Y0$yield[Y0$Z.sim == "YMFB"] <- Y0$yield[Y0$Z.sim == "YMFB"] * ( 1 + .21) 
-       # Y0$yield[Y0$Z.sim == "YFF"] <- Y0$yield[Y0$Z.sim == "YFF"] * ( 1 + tau[6]) 
-       # Y0$yield[Y0$Z.sim == "YFB"] <- Y0$yield[Y0$Z.sim == "YFB"] * ( 1 + tau[9]) 
-       # Y0$yield[Y0$Z.sim == "YBM"] <- Y0$yield[Y0$Z.sim == "YBM"] * ( 1 + tau[8]) 
-       # Y0$yield[Y0$Z.sim == "YBF"] <- Y0$yield[Y0$Z.sim == "YBF"] * ( 1 + tau[7]) 
       Y0$yield[Y0$Z.sim == "YBB"] <- Y0$yield[Y0$Z.sim == "YBB"] * ( 1 + .25) 
+ 
+Y1$gap[Y1$Z.sim == "Y1MMMF"] <- Y1$gap[Y1$Z.sim == "Y1MMMF"]* (1 + .2) 
+Y1$gap[Y1$Z.sim == "Y1FMFF"] <- Y1$gap[Y1$Z.sim == "Y1FMFF"]* (1 - .2) 
+     Y1$gap[Y1$Z.sim == "Y1BMBF"] <- Y1$gap[Y1$Z.sim == "Y1BMBF"] * ( 1 + 0) 
+       Y1$gap[Y1$Z.sim == "Y1MBFB"] <- Y1$gap[Y1$Z.sim == "Y1MBFB"] * ( 1 -.1) 
+Y1$gap[Y1$Z.sim == "Y1BB"] <- Y1$gap[Y1$Z.sim == "Y1BB"]* (1 - .5)
+
 
 ## tests
     fit.allvsC.sim <-lm(yield ~ (Z.sim=="Ctrl") + as.factor(region), data=Y0)
@@ -139,6 +138,11 @@ fit.matchvsnomatch.sim <- lm(yield ~ (Z.sim=="YMMFF" | Z.sim == "YBB" ) + as.fac
 fit.Rbothvssingel.sim <- lm(yield ~ (Z.sim=="YBMF" | Z.sim == "YBB")+ as.factor(region), data=subset(Y0,Z.sim!="Ctrl"))
 fit.Mbothvssingel.sim <- lm(yield ~ (Z.sim=="YMFB" | Z.sim == "YBB")+ as.factor(region), data=subset(Y0,Z.sim!="Ctrl"))
 
+fit1.Gap <-  lm(gap ~ (Z.sim=="Y1MMMF"  ), data=subset(Y1, Z.sim=="Y1MMMF"  | Z.sim=="Y1FMFF" ))
+fit2.Gap <-  lm(gap ~ (Z.sim=="Y1MBFB" | Z.sim=="Y1BB" ), data=subset(Y1, Z.sim!="Ctrl" ))
+fit3.Gap <-  lm(gap ~ (Z.sim=="Y1BB" ), data=Y1 )
+
+
 
     ### Need to capture coefficients and pvalues (one-tailed tests, so signs are important)
 
@@ -146,11 +150,15 @@ fit.Mbothvssingel.sim <- lm(yield ~ (Z.sim=="YMFB" | Z.sim == "YBB")+ as.factor(
     p.matchsvnomatch[i] <- summary(fit.matchvsnomatch.sim)$coefficients[2,4]
 	p.Rbothvssingel[i] <- summary(fit.Rbothvssingel.sim)$coefficients[2,4]
 	p.Mbothvssingel[i] <- summary(fit.Mbothvssingel.sim)$coefficients[2,4]
+
+p.gap1[i] <- summary(fit1.Gap)$coefficients[2,4]
+p.gap2[i] <- summary(fit2.Gap)$coefficients[2,4]
+p.gap3[i] <- summary(fit3.Gap)$coefficients[2,4]
     
 
   }
 #write(c(j1,j2,j3, mean( p.allvsC < alpha )),file="myfile",ncolumns = 4,sep = ";",append=TRUE)
-return(c(j1,j2,j3,j4,j5, mean( p.allvsC < alpha/6),mean(p.matchsvnomatch < alpha/6),mean(p.Rbothvssingel< alpha/6) ,mean(p.Rbothvssingel< alpha/6),  mean( p.allvsC < alpha/6  & p.matchsvnomatch < alpha/6  & p.Rbothvssingel < alpha/6  & p.Mbothvssingel < alpha/6  )))
+return(c(j1,j2,j3,j4,j5, mean( p.allvsC < alpha/6),mean(p.matchsvnomatch < alpha/6),mean(p.Rbothvssingel< alpha/6) ,mean(p.Mbothvssingel< alpha/6), mean(p.gap1< alpha/6), mean(p.gap2< alpha/6), mean(p.gap3< alpha/6),  mean( p.allvsC < alpha/6  & p.matchsvnomatch < alpha/6  & p.Rbothvssingel < alpha/6  & p.Mbothvssingel < alpha/6  & p.gap1 < alpha/6  & p.gap2  < alpha/6  & p.gap3 < alpha/6  )))
 #print(c(j1,j2,j3))
 
 #write(c(j1,j2,j3,j4,j5,j6,j7,j8,j9, mean( p.allvsC < alpha/10 & p.matchsvnomatch < alpha/10  & p.Rbothvssingel < alpha/10  & p.Mbothvssingel < alpha/10 )),file="myfile",ncolumns = 11,sep = ";",append=TRUE)
@@ -258,17 +266,10 @@ all2013$pid <- as.numeric(as.character(substrRight(all2013$pid,3)))
 
 merged <- merge(gsec2[c("HHID","pid","h2q3")], all2013, by = c("HHID","pid"))
 
-men <- subset(merged, h2q3 == "Male" )
-
-fem <- subset(merged, h2q3 == "Female" )
-
-agmen <- aggregate(men$yield, list(men$HHID), mean, na.rm=T)
-names(agmen) <- c("hhid","menprod")
-agfem <- aggregate(fem$yield, list(fem$HHID), mean, na.rm=T)
-names(agfem) <- c("hhid","femprod")
-
-dif <- merge(agfem, agmen)
-dif <- subset(dif, femprod>0 & menprod>0)
-dif$gap <- dif$menprod - dif$femprod
+#merged <- subset(merged, cropID == 130)
+merged <- subset(merged, yield > 100 & yield < 4000/2.5)
+tapply(merged$yield, merged$h2q3 ,mean)
+tapply(merged$yield, merged$h2q3 ,sd)
+table(merged$h2q3)
 
 

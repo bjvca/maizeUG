@@ -721,26 +721,36 @@ sly for all possible allocations of observations to the different cells.
 \end_layout
 
 \begin_layout Standard
-Power calculations are based on yield data taken from a baseline study that
- was done as part of the Pasic project.
- In particular, we interviewed rice growers in the area where we will also
- do the maize study (Bugiri, Butaleja and Tororo).
- From this study, we will use rice yield estimates as a proxy for outcomes
- in the maize study.
+Power calculations are based on yield data taken from the fourthe wave of
+ the Uganda National Panel Survey.
+ In particular, we calculate average yields of maize (defined as quantity
+ harvested per hectare planted) during the second season of 2013 at the
+ household level.
  We will sample from this distribution for the power calculations.
- Mean yields in the sample was about 1.6 tons per hectares with a standard
+ Mean yields in the sample was about 1.3 tons per hectares with a standard
  deviation of about .9.
  We will also use location data from this study to get an idea of the impact
- of using parishes for blocking on statistical power.
+ of stratifying at this level on statistical power.
 \end_layout
 
 \begin_layout Standard
-In addition, the main power calculations will be based on the first research
- question (related to the gender composition of the messenger and the receiver),
- as the hypotheses we formulate here are most complex, requiring different
- interactions and hence many cells.
- We also expect the effects from these two factors and its interactions
- to be relatively small.
+In addition, the main power calculations will be based on the first set
+ of research questions (related to the gender composition of the messenger
+ and the receiver), as the hypotheses we formulate here are most complex
+ and the factorial design allows us to recycle observations for the third
+ factor related to adding IVR to the video content.
+ Not only do the two gender related factors in the first set of research
+ question both have three levels (male, female, and both), we are also intereste
+d in particular interactions between the two factors, which needs to be
+ accounted for when determining sample size.
+ For the third factor, which is the one related to adding IVR to the video
+ treatment, we are only interested in the main effects and there are only
+ two levels (video and video + IVR).
+ Therefore, in this factor, we can allocate half of the households that
+ get to see any kind of video to one level fo the factor and half to the
+ other level.
+ For reasonable effect sizes, these sample sizes are likely to result in
+ sufficient power.
  
 \end_layout
 
@@ -763,8 +773,8 @@ In terms of impact, it is expected that agricultural extension information
 \end_layout
 
 \begin_layout Standard
-The corresponding expected effect size for each treatment combination is
- summarized in Figure 
+The corresponding expected effect size for each treatment combination on
+ average yield at the household level is summarized in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Expected-Effect-Sizes"
@@ -772,13 +782,12 @@ reference "fig:Expected-Effect-Sizes"
 \end_inset
 
 .
- They range from a 3.33 percent increase from the control in the treatment
- combination where the receiver is the woman and the messengers is a male
- (corresponding to an increase in yields per hectare from 1609 to 1663)
- to a 30.0 percent increase for the treatment combination where the video
+ They range from no increase from the control in the treatment combination
+ where the receiver is the woman and the messengers is a male and vice versa
+ to a 25.0 percent increase for the treatment combination where the video
  messages is shown to the couple and the message in the video is also delivered
  by a couple.
- In this last case, we expecte yields to increase from 1609 kg/ha to 2091
+ In this last case, we expecte yields to increase from 1323 kg/ha to 1654
  kg/ha.
  
 \end_layout
@@ -1084,13 +1093,155 @@ Finally, we investigate the most stringent option and we combine the above
 \begin_layout Standard
 A second outcome variable we will investigate relates more to equity within
  the household.
- The gender productivity gap ...
- Using data from the latest UNPS, we also find a significant gender gap
- among maize farmers in Uganda.
- Male farmers obtain yields of about 2.3 tons per hectare.
- Women managed maize plots only get about 1.6 tons.
- We thus model a difference of about 666 kg per hectare, with a standard
- error of about 275 kg per hectare.
+ The gender productivity gap, where women managed plots are farmed less
+ extensively than male managed plots resulting in significanlty lower yields,
+ has been observed throughout subsaharan africa and for a variety of crops
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "udry1996gender"
+
+\end_inset
+
+.
+ In Uganda, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1596/1813-9450-7262"
+
+\end_inset
+
+ find that female managed plots are almost 20 percent less productive than
+ male managed plots.
+ The gap is caused by a general lack of access to production factors compared
+ to men.
+ For instance, women may be forced to farm on inherently lower productivity
+ plots and they may have less access to productivity enhancing tools, technologi
+es and inputs such as fertilizer.
+ Knowledge related to crop intensification is one such factor where access
+ between men and women differs, and so finding out how changing particular
+ attributes to extension videos affect this gap is an important outcome.
+ 
+\end_layout
+
+\begin_layout Standard
+Using data from the latest UNPS, we also find a significant gender gap among
+ maize farmers in Uganda.
+ Male farmers obtain yields of about 1427 kg per hectare.
+ Women managed maize plots only get about 1385 tons.
+ We thus model a difference of about 42 kg per hectare, with a standard
+ error of about 40 kg per hectare.
+ The difference we find seems lower that what others find.
+ For instance, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "larson2015women"
+
+\end_inset
+
+ find the gender gap to be about double of what we find, although they base
+ their analysis on male versus female headed households, while we look at
+ the gender of the person that manages the plot.
+ According to FAO, female managed plots are in general 20-30 percent less
+ productive.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1596/1813-9450-7262"
+
+\end_inset
+
+ estimate the gap to be 23 percent, but they aggregate all crops by weighing
+ by prices and expressing yields in monetary terms.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "peterman2011understanding"
+
+\end_inset
+
+ estimate it as high as 50 percent.
+\end_layout
+
+\begin_layout Standard
+There is no literature we are aware of that looks at the effect of the gender
+ composition of the messenger and the gender composition of the receiver
+ of agricultural extension messages on the agricultural productivity gap.
+ Therefore, we will use our best judgment to determine expected effect sizes.
+ Starting from a baseline situation where maize yields are about 42 kg/ha
+ higher on male managed plot, showing a video to a man only is likely to
+ further increase this gap (+30 percent).
+ Due to the homophily effect, we expect that the increase in male productivity
+ is smaller when the messenger is a woman, and so the gap will increase
+ less (+10 percent).
+ Finally, if the message is brought by a couple and a household approach
+ to farming is projected, the man may be encouraged to share some of the
+ knowledge with his wife.
+ However, we expect the increase in yield on male managed plots to still
+ be higher than any potential increase of yield on the female managed plot.
+ As such, we expect the effect on the yield gap to be marginally positive
+ (10%).
+\end_layout
+
+\begin_layout Standard
+When the information is shown to the woman but not to the man, it is expected
+ that yields on female managed plots will increase, while yields on male
+ managed plots are likely to remain the same.
+ This would mean that the gap reduces.
+ Again due to the homophily effect, we expect women to learn most form women,
+ and so the reduction in the gap will be highest when the messenger is also
+ a women (-30 %).
+ The reduction will be smallest when the information is given by a man (-10
+ %).
+ Finally, if the woman is sensitized on the importance of a household approach
+ to farming, some of the information may be shared with the husband, also
+ reducing the effect on the gap somewhat (-20 %).
+\end_layout
+
+\begin_layout Standard
+When the information is given to the couple, we expect little or no effect
+ on the gap if the message is given by either male or female.
+ We may expect a slight increase in the gap if the information is given
+ to the male (+5%) and a slight decrease if he information is given by a
+ female (-5%), but the effect is likely to be too small to detect, so we
+ put it on zero in the simulations.
+ Finally, if both spouses have all the information and the message is given
+ that the household farm should be managed as a unit, we expect that the
+ gap reduces by half (-50%).
+ 
+\end_layout
+
+\begin_layout Standard
+With respect to intra-household outcomes, we are interested in three hypotheses.
+ First we want to test the importance asymmetric information, and we will
+ test if the gap significantly differs between households where the man
+ was shown the video and households where the woman was shown the video.
+ Second, we want to test if there is a difference depending on whether a
+ household cooperative approach was promoted or the information was borough
+ by an individual.
+ Finally, we also want to separately compare changes in the gender yield
+ gap for households that are both shown the video that also projects a household
+ approach to all the other households
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+To make the grid search manageable, we again took some groups together when
+ dividing observations {(YMM,YMF),(YFM,YFF), (YBM,YBF), (YMB,YFB), (YBB),
+ (Ctrl)}.
+ Within each group, we simply took the average expected effect size.
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+On the basis of the above, we come to the following division of observations
+ across the different treatment cells.
+ 
 \end_layout
 
 \begin_layout Subsubsection*
