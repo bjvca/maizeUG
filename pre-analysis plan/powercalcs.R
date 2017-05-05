@@ -31,7 +31,7 @@ library(doParallel)
 registerDoParallel(cores=detectCores(all.tests = FALSE, logical = TRUE))
 
 alpha <- .05
-N <- 1000
+N <- 2000
 sims <- 250
 minsamp <- 100
 bystep <- 50
@@ -124,8 +124,8 @@ Y1$Z.sim <- Z1.sim
        Y0$yield[Y0$Z.sim == "YMFB"] <- Y0$yield[Y0$Z.sim == "YMFB"] * ( 1 + .21) 
       Y0$yield[Y0$Z.sim == "YBB"] <- Y0$yield[Y0$Z.sim == "YBB"] * ( 1 + .25) 
  
-Y1$gap[Y1$Z.sim == "Y1MMMF"] <- Y1$gap[Y1$Z.sim == "Y1MMMF"]* (1 + .2) 
-Y1$gap[Y1$Z.sim == "Y1FMFF"] <- Y1$gap[Y1$Z.sim == "Y1FMFF"]* (1 - .2) 
+Y1$gap[Y1$Z.sim == "Y1MMMF"] <- Y1$gap[Y1$Z.sim == "Y1MMMF"]* (1 + .1) 
+Y1$gap[Y1$Z.sim == "Y1FMFF"] <- Y1$gap[Y1$Z.sim == "Y1FMFF"]* (1 - .1) 
      Y1$gap[Y1$Z.sim == "Y1BMBF"] <- Y1$gap[Y1$Z.sim == "Y1BMBF"] * ( 1 + 0) 
        Y1$gap[Y1$Z.sim == "Y1MBFB"] <- Y1$gap[Y1$Z.sim == "Y1MBFB"] * ( 1 -.1) 
 Y1$gap[Y1$Z.sim == "Y1BB"] <- Y1$gap[Y1$Z.sim == "Y1BB"]* (1 - .5)

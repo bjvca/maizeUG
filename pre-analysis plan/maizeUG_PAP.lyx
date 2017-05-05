@@ -721,11 +721,26 @@ sly for all possible allocations of observations to the different cells.
 \end_layout
 
 \begin_layout Standard
-Power calculations are based on yield data taken from the fourthe wave of
+Power calculations are based on yield data taken from the fourth wave of
  the Uganda National Panel Survey.
  In particular, we calculate average yields of maize (defined as quantity
  harvested per hectare planted) during the second season of 2013 at the
- household level.
+ household level
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Using this survey may provide an overly pessimistic view.
+ Experience with UNPS data suggests the yield data is very noisy.
+ In addition, the for the first set of power calculations, we relied on
+ rice yield data we collected ourselves in a previous study.
+ When this data was used, we obtained substantially higher power for the
+ same hypotheses.
+\end_layout
+
+\end_inset
+
+.
  We will sample from this distribution for the power calculations.
  Mean yields in the sample was about 1.3 tons per hectares with a standard
  deviation of about .9.
