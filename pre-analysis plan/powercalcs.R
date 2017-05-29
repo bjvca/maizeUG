@@ -33,8 +33,8 @@ registerDoParallel(cores=detectCores(all.tests = FALSE, logical = TRUE))
 alpha <- .05
 N <- 2000
 sims <- 250
-minsamp <- 100
-bystep <- 50
+minsamp <- 20
+bystep <- 200
 res_all <- matrix(NA,1,13)
 ptm <- proc.time()
 
