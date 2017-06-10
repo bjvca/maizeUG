@@ -685,15 +685,16 @@ Statistical Power
 \end_layout
 
 \begin_layout Standard
-We determine sample size by running various power analyses for different
- research questions with different underlying assumptions.
+We determine total sample size and the distribution over the different treatment
+ combinations by running various power analyses for different research questions
+ with different underlying assumptions.
  Instead of determining power analytically, we use simulation techniques.
  Simulation allows us to sample from actual data on outcome variables instead
- of from a theoretical distribution with an assumed mean and standard deviation.
- It is also straightforward to build in flexibility in terms of specifications
- one plans to use for inference.
- In our case, we want to incorporate control variables for location and
- we want to consider power in the context of multiple treatments.
+ of from a theoretical distribution with an assumed mean and standard deviation,
+ which is a much more intuitive way to think about statistical power.
+ It is straightforward to build in flexibility, such as allowing for more
+ than one treatment arm, or account for sampling design effects such as
+ cluster sampling.
  The algorithm that was used to perform the power calculations can be found
  in the 
 \begin_inset CommandInset href
@@ -708,17 +709,57 @@ target "https://github.com/bjvca/maizeUG/blob/master/pre-analysis%20plan/powerca
 \end_layout
 
 \begin_layout Standard
-Power calculations are based on yield data taken from the fourth wave of
- the Uganda National Panel Survey.
- In particular, we calculate average yields of maize (defined as quantity
- harvested per hectare planted) during the second season of 2013 at the
- household level
+The power calculations will be based on the first set of research questions
+ (related to the gender composition of the messenger and the receiver),
+ as the hypotheses we formulate here are most complex and the factorial
+ design allows us to recycle observations for the third factor related to
+ adding IVR to the video content.
+ Not only do the two gender related factors in the first set of research
+ question both have three levels (male, female, and both), we are also intereste
+d in particular interactions between the two factors, which needs to be
+ accounted for when determining sample size.
+ For the third factor, which is the one related to adding IVR to the video
+ treatment, we are only interested in the main effects and there are only
+ two levels (video and video + IVR).
+ Therefore, in this factor, we can allocate half of the households where
+ whoever gets to see any kind of video to one level of the factor and half
+ to the other level.
+ For reasonable effect sizes, these sample sizes are likely to result in
+ sufficient power to estimate the additional effect of IVR.
+ 
+\end_layout
+
+\begin_layout Standard
+A first set of power calculations takes 
+\series bold
+maize yield
+\series default
+ data, taken from the Uganda National Household Survey of 2005/06, as the
+ outcome variable of interest
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-Using this survey may provide an overly pessimistic view.
- Experience with UNPS data suggests the yield data is very noisy.
+While this is a relatively old survey, there are several reasons why we
+ preferred it to more recent similar surveys such as the Uganda National
+ Panel Survey of 2013/14.
+ The most important reason relates to sample size.
+ The UNHS interviewed about 6,000 households, while the UNPS interviewed
+ only about 3,000 households.
+\end_layout
+
+\end_inset
+
+.
+ In particular, we calculate average yields of maize (defined as quantity
+ harvested per acre planted) during the second season of 2005 at the household
+ level
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Using the UNHS may provide an overly pessimistic view.
+ Experience with UNHS data suggests the yield data is very noisy.
  In addition, the first set of power calculations we used in the funding
  proposal for this study, we relied on rice yield data we collected ourselves
  in a previous study.
@@ -730,52 +771,25 @@ Using this survey may provide an overly pessimistic view.
 
 .
  We will sample from this distribution for the power calculations.
- Mean yields in the sample was about 1.3 tons per hectare with a standard
- deviation of about .9.
- This estimate corresponds to about 540 kilograms per acre.
+ Mean yields in the sample was about 618 kg per acre with a standard deviation
+ of about 314 kg per acre.
  This is within the 500-800 kg per acre range that experts estimate for
  maize yields in the area.
  We will also use location data from this study to get an idea of the impact
- of stratifying at this level on statistical power.
-\end_layout
+ of stratifying at this level on statistical power
+\begin_inset Foot
+status collapsed
 
-\begin_layout Standard
-In addition, the main power calculations will be based on the first set
- of research questions (related to the gender composition of the messenger
- and the receiver), as the hypotheses we formulate here are most complex
- and the factorial design allows us to recycle observations for the third
- factor related to adding IVR to the video content.
- Not only do the two gender related factors in the first set of research
- question both have three levels (male, female, and both), we are also intereste
-d in particular interactions between the two factors, which needs to be
- accounted for when determining sample size.
- For the third factor, which is the one related to adding IVR to the video
- treatment, we are only interested in the main effects and there are only
- two levels (video and video + IVR).
- Therefore, in this factor, we can allocate half of the households that
- get to see any kind of video to one level fo the factor and half to the
- other level.
- For reasonable effect sizes, these sample sizes are likely to result in
- sufficient power.
+\begin_layout Plain Layout
+We use UBOS's Enumeration Area (EA) as location indicators, which is the
+ lowest level of location identification that is provided without jeopardizing
+ anonymity.
  
 \end_layout
 
-\begin_layout Standard
-In terms of impact, it is expected that agricultural extension information
- messages delivered by a man and a woman and received by both the man and
- woman farmer will be most effective because of gender matching effects,
- in combination with the projection of a household approach to farming in
- the message and the higher likelihood that both the woman and man farmer
- participate in decision making about adoption with equal information.
- The latter effect is expected to be at work when the man and woman farmer
- receive the message together, regardless of the messenger composition.
- The projection of a household approach is present when the message is delivered
- by a man and a woman, regardless of recipient composition.
- The gender matching effect is only at work when the gender of the messenger
- and recipient is matched.
- It is expected that the effectiveness of the typical case of extension
- information messages delivered by a man and received by a man will be lower
- than the cases in which other effects can realize.
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -788,100 +802,13 @@ reference "fig:Expected-Effect-Sizes"
 \end_inset
 
 .
- They range from no increase from the control in the treatment combination
- where the receiver is the woman and the messengers is a male and vice versa
- to a 25.0 percent increase for the treatment combination where the video
+ They range from a 2.5 percent increase from the control in the treatment
+ combination where the receiver is the woman and the messengers is a male
+ to a 22.5 percent increase for the treatment combination where the video
  messages is shown to the couple and the message in the video is also delivered
  by a couple.
- In this last case, we expect yields to increase from 1323 kg/ha to 1654
- kg/ha.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citet
-key "RePEc:eee:wdevel:v:78:y:2016:i:c:p:436-449"
-
-\end_inset
-
- find evidence of gender bias in awareness, knowledge and adoption of pit
- planting in Mozambique.
- In particular, they find that among men who received information from a
- male messenger, the proportion that are aware of pit planting is 10 percentage
- points higher.
- This proportion is 6.5 percentage points higher for actual adoption.
- Female awareness, knowledge and adoption is the same irrespective of the
- presence of a male extension worker.
- However, if a female extension worker is added, awareness, knowledge and
- adoption among female farmers also increases by roughly the same proportions.
- We use these results to get an idea about the gender matching effect.
- In particular, we model a 7.5 percent increase in yields when messenger
- and recipient is male and when messenger and recipient is female.
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citet
-key "doi:10.1093/erae/jbv039"
-
-\end_inset
-
- investigate the effect of participating in extension training as a couple.
- They investigate whether participation of female farmers in an agricultural
- extension programme in South-Kivu increases adoption of three technologies:
- improved legume varieties, row planting and mineral fertilizer.
- In their study, joint male and female programme participation leads to
- the highest adoption rates.
- We therefore model an 10 percent increase in yields for farmers that view
- the video as a couple.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Doss200127"
-
-\end_inset
-
- find that adoption of agricultural technologies among female farmers is
- lower than among male farmers.
- They find that this is due to gender-linked differences in access to complement
-ary inputs, such as access to information.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "RePEc:eee:wdevel:v:78:y:2016:i:c:p:436-449"
-
-\end_inset
-
- also find that women do not seem to benefit from male extension workers.
- We therefore assume no effect in our power calculations for the subset
- of farmers that get to see a video where the messenger is of the opposite
- gender.
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citet
-key "pan2015agricultural"
-
-\end_inset
-
- use a regression discontinuity approach to evaluate an innovative extension
- model that relies heavily on model farms.
- They find production increases by about 21 percent.
-\end_layout
-
-\begin_layout Standard
-Finally, we expect the highest effect when both spouses are provided the
- information by a model farmer couple.
-\end_layout
-
-\begin_layout Standard
-The expected effect sizes are based on the interplay of the three effects
- mentioned above: gender matching effect, a knowledge-is-power-effect, and
+ The expected effect sizes are based on the interplay of the three effects
+ mentioned above: gender-matching effect, a knowledge-is-power-effect, and
  the projection of a household approach.
  For instance, the effects on the diagonal in Figure 
 \begin_inset CommandInset ref
@@ -890,11 +817,41 @@ reference "fig:Expected-Effect-Sizes"
 
 \end_inset
 
- are higher because here the gender matching effect is playing: We expect
- that men learn more from other man and women learn more from other women,
- which in turn would lead to higher yields among gender matched sub-samples.
- The expected effects emanating from the gender composition of the receiver
- is related to information deficiencies.
+ are higher because here the
+\series bold
+ 
+\series default
+gender-matching effect is playing: We expect that men learn more from other
+ man and women learn more from other women, which in turn would lead to
+ higher yields among gender matched sub-samples.
+ In Mozambique, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "RePEc:eee:wdevel:v:78:y:2016:i:c:p:436-449"
+
+\end_inset
+
+ find evidence of a gender-matching or homophily effect in extension, whereby
+ women seem to learn more from fellow women and men seem to learn more from
+ fellow men.
+ In particular, they find that among men who received information about
+ pit planting from a male messenger, the proportion that are aware of pit
+ planting is 10 percentage points higher.
+ Female awareness, knowledge and adoption is the same irrespective of the
+ presence of a male extension worker.
+ However, if a female extension worker is added, awareness, knowledge and
+ adoption among female farmers also increases by roughly the same proportions.
+ We use these results to get an idea about the gender matching effect.
+ In particular, we model a 10 percent increase in yields when messenger
+ and recipient is male.
+ We model a slightly lower effect when messenger and recipient is female
+ (7.5 percent), as it is assumed women have less bargaining power within
+ the household.
+\end_layout
+
+\begin_layout Standard
+The expected effects emanating from the gender composition of the receiver
+ is related to information deficiencies and thus the knowledge-is-power-effect.
  This can be directly when women are also important actors in agriculture.
  For instance, 
 \begin_inset CommandInset citation
@@ -909,21 +866,64 @@ key "kabunga2012heterogeneous"
  innovation.
  In addition, knowledge may also affect technology adoption and subsequent
  yields through changes in relative bargaining power of the actors.
- This is expected to increase yields especially when both male and female
- are given access to information.
- We also expect larger effects when the message is brought by a couple,
- as a cooperative approach to farming is likely to reduce inefficiencies
- within the farm household.
- In some cells, various effects may be applicable: the reason why the largest
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Doss200127"
+
+\end_inset
+
+ find that adoption of agricultural technologies among female farmers is
+ lower than among male farmers.
+ They find that this is due to gender-linked differences in access to complement
+ary inputs.
+ Access to complementary inputs may increase when both male and female are
+ given access to information.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1093/erae/jbv039"
+
+\end_inset
+
+ investigate the effect of participating in extension training as a couple.
+ They investigate whether participation of female farmers in an agricultural
+ extension programme in South-Kivu increases adoption of three technologies:
+ improved legume varieties, row planting and mineral fertilizer.
+ In their study, joint male and female programme participation leads to
+ the highest adoption rates.
+ Due to the homophily effect and the fact that man are likely to have more
+ power within the household, we model a slightly higher increase in case
+ the messenger is a man (15 percent) versus a woman (12.5 percent).
+ 
+\end_layout
+
+\begin_layout Standard
+We also expect larger effects when the message is brought by a couple, as
+ a cooperative approach to farming is likely to reduce inefficiencies within
+ the farm household.
+ 
+\end_layout
+
+\begin_layout Standard
+In some cells, various effects may be applicable: the reason why the largest
  effect is expected with both husband and spouse receive the message together
  from a couple is because there all three effects are playing.
+\end_layout
+
+\begin_layout Standard
+We therefore assume only a very small effect (1.5 percent) for the subset
+ of women farmers who get to see a video where the messenger is a male farmer.
+ As this effect seems to be partially driven by differences in access to
+ complementary inputs, we assume a higher effect when the recipient is male
+ and the messenger is female (3 percent).
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -940,7 +940,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Expected Effect Sizes
+Expected Effect Sizes for Yields
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Expected-Effect-Sizes"
@@ -1003,12 +1003,12 @@ reference "fig:Power-curves"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename power.pdf
+	filename /home/bjvca/data/projects/digital green/pre-analysis plan/all.pdf
 	scale 60
 
 \end_inset
@@ -1020,7 +1020,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Power curves
+Power Curves for Maize Yield
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Power-curves"
@@ -1096,12 +1096,15 @@ Finally, we investigate the most stringent option and we combine the above
 \end_layout
 
 \begin_layout Standard
-A second outcome variable we will investigate relates more to equity within
- the household.
- The gender productivity gap, where women managed plots are farmed less
- extensively than male managed plots resulting in significantly lower yields,
- has been observed throughout subsaharan africa and for a variety of crops
- 
+A second set of power calculations was done for an outcome variable that
+ captures equity within the household.
+ The 
+\series bold
+gender productivity gap
+\series default
+, where women managed plots are farmed less extensively than male managed
+ plots resulting in significantly lower yields, has been observed throughout
+ subsaharan africa and for a variety of crops 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "udry1996gender"
@@ -1130,12 +1133,23 @@ es and inputs such as fertilizer.
 \end_layout
 
 \begin_layout Standard
-Using data from the latest UNPS, we also find a significant gender gap among
- maize farmers in Uganda.
+Using data from the latest Uganda National Panel Survey (2012-2013), we
+ also find a significant gender gap among maize farmers in Uganda.
  Male farmers obtain yields of about 1427 kg per hectare.
  Women managed maize plots only get about 1385 tons.
  We thus model a difference of about 42 kg per hectare, with a standard
- error of about 40 kg per hectare.
+ error of about 40 kg per hectare
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In this case, the simulations are not based on draws from actual data, but
+ from a normal distribution with mean 42 and standard deviation of 40.
+\end_layout
+
+\end_inset
+
+.
  The difference we find seems lower that what others find.
  For instance, 
 \begin_inset CommandInset citation
@@ -1173,19 +1187,73 @@ There is no literature we are aware of that looks at the effect of the gender
  composition of the messenger and the gender composition of the receiver
  of agricultural extension messages on the agricultural productivity gap.
  Therefore, we will use our best judgment to determine expected effect sizes.
+ Modeled effect sizes are summarized in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Expected-Effect-Gap"
+
+\end_inset
+
+.
  Starting from a baseline situation where maize yields are about 42 kg/ha
  higher on male managed plot, showing a video to a man only is likely to
- further increase this gap (+30 percent).
+ further increase this gap.
+ We therefore simulate a 15 percent higher yield gap in this group.
  Due to the homophily effect, we expect that the increase in male productivity
- is smaller when the messenger is a woman, and so the gap will increase
- less (+10 percent).
+ is smaller when the messenger is a woman (as the message will be less effective
+), and so the gap will increase less (+10 percent).
  Finally, if the message is brought by a couple and a household approach
  to farming is projected, the man may be encouraged to share some of the
  knowledge with his wife.
  However, we expect the increase in yield on male managed plots to still
  be higher than any potential increase of yield on the female managed plot.
  As such, we expect the effect on the yield gap to be marginally positive
- (10%).
+ (+2.5%).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename designfig_yieldgap.pdf
+	scale 60
+	BoundingBox 0bp 600bp 0bp 800bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Expected Effect Sizes for Gender Productivity Gap
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Expected-Effect-Gap"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1195,52 +1263,100 @@ When the information is shown to the woman but not to the man, it is expected
  This would mean that the gap reduces.
  Again due to the homophily effect, we expect women to learn most form women,
  and so the reduction in the gap will be highest when the messenger is also
- a women (-30 %).
+ a women (-20 %).
  The reduction will be smallest when the information is given by a man (-10
  %).
  Finally, if the woman is sensitized on the importance of a household approach
  to farming, some of the information may be shared with the husband, also
- reducing the effect on the gap somewhat (-20 %).
+ reducing the effect on the gap somewhat (-15 %).
 \end_layout
 
 \begin_layout Standard
 When the information is given to the couple, we expect little or no effect
  on the gap if the message is given by either male or female.
  We may expect a slight increase in the gap if the information is given
- to the male (+5%) and a slight decrease if he information is given by a
- female (-5%), but the effect is likely to be too small to detect, so we
- put it on zero in the simulations.
+ to the male (+2.5%) and a slight decrease if he information is given by
+ a female (-2.5%).
  Finally, if both spouses have all the information and the message is given
  that the household farm should be managed as a unit, we expect that the
- gap reduces by half (-50%).
+ gap reduces by a third (-33.3%).
  
 \end_layout
 
 \begin_layout Standard
-With respect to intra-household outcomes, we are interested in three hypotheses.
- First we want to test the importance asymmetric information, and we will
+With respect to intra-household outcomes, we are also interested in four
+ hypotheses.
+ First, instead of comparing the treatment to control, we will compare the
+ status quo (where a man is targeted by a male extension worker) to any
+ other treatment combination.
+ Second, we want to test the importance asymmetric information, and we will
  test if the gap significantly differs between households where the man
  was shown the video and households where the woman was shown the video.
- Second, we want to test if there is a difference depending on whether a
+ Third, we want to test if there is a difference depending on whether a
  household cooperative approach was promoted or the information was brought
  by an individual.
  Finally, we also want to separately compare changes in the gender yield
  gap for households that are both shown the video that also projects a household
- approach to all the other households
-\begin_inset Foot
-status collapsed
+ approach to all the other households.
+ 
+\end_layout
+
+\begin_layout Standard
+We again ran a series of power simulations corresponding to these four hypothese
+s.
+ The results are presented in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Power-Curves-gap"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
-To make the grid search manageable, we again took some groups together when
- dividing observations {(YMM,YMF),(YFM,YFF), (YBM,YBF), (YMB,YFB), (YBB),
- (Ctrl)}.
- Within each group, we simply took the average expected effect size.
+\align center
+\begin_inset Graphics
+	filename all_gap.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Power Curves for Gender Productivity Gap
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Power-Curves-gap"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
-.
- 
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
