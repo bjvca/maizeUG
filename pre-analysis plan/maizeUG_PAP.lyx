@@ -209,7 +209,7 @@ Research suggests the gender and age composition of both messenger and receiver
  were focusing on men’s priorities and crops 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "meinzen2011engendering"
+key "fletschner2011gender"
 
 \end_inset
 
@@ -802,11 +802,10 @@ reference "fig:Expected-Effect-Sizes"
 \end_inset
 
 .
- They range from a 2.5 percent increase from the control in the treatment
- combination where the receiver is the woman and the messengers is a male
- to a 22.5 percent increase for the treatment combination where the video
- messages is shown to the couple and the message in the video is also delivered
- by a couple.
+ They range from a 2.5 percent increase in the treatment combination where
+ the receiver is the woman and the messengers is a male to a 22.5 percent
+ increase for the treatment combination where the video messages is shown
+ to the couple and the message in the video is also delivered by a couple.
  The expected effect sizes are based on the interplay of the three effects
  mentioned above: gender-matching effect, a knowledge-is-power-effect, and
  the projection of a household approach.
@@ -831,9 +830,9 @@ key "RePEc:eee:wdevel:v:78:y:2016:i:c:p:436-449"
 
 \end_inset
 
- find evidence of a gender-matching or homophily effect in extension, whereby
- women seem to learn more from fellow women and men seem to learn more from
- fellow men.
+ find evidence of such a gender-matching or homophily effect in extension,
+ whereby women seem to learn more from fellow women and men seem to learn
+ more from fellow men.
  In particular, they find that among men who received information about
  pit planting from a male messenger, the proportion that are aware of pit
  planting is 10 percentage points higher.
@@ -851,7 +850,7 @@ key "RePEc:eee:wdevel:v:78:y:2016:i:c:p:436-449"
 
 \begin_layout Standard
 The expected effects emanating from the gender composition of the receiver
- is related to information deficiencies and thus the knowledge-is-power-effect.
+ is related to information deficiencies and a knowledge-is-power-effect.
  This can be directly when women are also important actors in agriculture.
  For instance, 
 \begin_inset CommandInset citation
@@ -877,9 +876,14 @@ key "Doss200127"
  lower than among male farmers.
  They find that this is due to gender-linked differences in access to complement
 ary inputs.
- Access to complementary inputs may increase when both male and female are
- given access to information.
- 
+ We assume only a very small effect (+1 percent) for the subset of women
+ farmers who get to see a video where the messenger is a male farmer.
+ As this effect seems to be partially driven by differences in access to
+ complementary inputs, we assume a higher effect when the recipient is male
+ and the messenger is female (+1.5 percent).
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset citation
 LatexCommand citet
 key "doi:10.1093/erae/jbv039"
@@ -892,9 +896,17 @@ key "doi:10.1093/erae/jbv039"
  improved legume varieties, row planting and mineral fertilizer.
  In their study, joint male and female programme participation leads to
  the highest adoption rates.
- Due to the homophily effect and the fact that man are likely to have more
- power within the household, we model a slightly higher increase in case
- the messenger is a man (15 percent) versus a woman (12.5 percent).
+ In particular, they find that joint participation increases fertilizer
+ adoption by 12.4 percentage points and row planting by about 13.4 percentage
+ points.
+ While these are large effects (as both fertilizer use and row planting
+ is very rare in the area, with baseline percentages of 6 percent for fertilizer
+ and 10 percent for row planting), the non-random nature of the intervention
+ may lead to overestimation of the couple effect, and we model much more
+ modest effects.
+ Also, due to the homophily effect and the fact that man are likely to have
+ more power within the household, we model a slightly higher increase in
+ case the messenger is a man (+15 percent) versus a woman (+12.5 percent).
  
 \end_layout
 
@@ -902,28 +914,23 @@ key "doi:10.1093/erae/jbv039"
 We also expect larger effects when the message is brought by a couple, as
  a cooperative approach to farming is likely to reduce inefficiencies within
  the farm household.
- 
-\end_layout
-
-\begin_layout Standard
-In some cells, various effects may be applicable: the reason why the largest
- effect is expected with both husband and spouse receive the message together
- from a couple is because there all three effects are playing.
-\end_layout
-
-\begin_layout Standard
-We therefore assume only a very small effect (1.5 percent) for the subset
- of women farmers who get to see a video where the messenger is a male farmer.
- As this effect seems to be partially driven by differences in access to
- complementary inputs, we assume a higher effect when the recipient is male
- and the messenger is female (3 percent).
+ We are not aware of previous studies that may guide us in the choice of
+ the effect size, but we think it may be similar to the effect of providing
+ training to a couple.
+ We again expect this effect to be highest when the receiver is a male,
+ due to his bargaining position (+15 percent).
+ We expect only a slightly lower effect when the women receives this treatments
+ (+12.5 percent).
+ Finally, when information inefficiencies are addressed by showing the video
+ to both husband and wife and a cooperative approach to farming is projected,
+ we expect the largest effect (+20 percent)
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -966,15 +973,17 @@ name "fig:Expected-Effect-Sizes"
 
 \begin_layout Standard
 At one extreme, we could calculate sample size required to identify all
- possible treatment combinations.
- For instance, we can compare control to MM, control to FM, control to MF
- etc.
- We can already test various hypotheses here, requiring at least one or
- a few of these to be significant, or a more stringent test where we require
- all of the treatments to turn up significant.
- Or we can even go one step further and require also that some or even all
- the differences between the treatments are significant (eg the different
- between MM and MF).
+ possible treatment combinations in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Expected-Effect-Sizes"
+
+\end_inset
+
+.
+ For instance, we could compare control to MM (receiver=male and messenger=male)
+, control to FM (receiver=female, messenger=male), control to MF (receiver=male,
+ messenger=female), etc.
  Testing all interactions in this way would require a sample size well above
  what is possible.
  We therefore will base our power calculations on comparing groups of treatments
@@ -982,12 +991,12 @@ At one extreme, we could calculate sample size required to identify all
 \end_layout
 
 \begin_layout Standard
-A first and obvious question will be to find out if videos work, irrespective
- of who they are shown to and who features in the video.
+A first question will be to find out if videos work, irrespective of who
+ they are shown to and who features in the video.
  We thus calculate sample size by taking all treatment arms and interactions
  in our factorial design together and we simply test the different between
  treatment and control.
- This scenario is shown as the black curve in Figure 
+ This scenario is shown in the first graph in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Power-curves"
@@ -995,8 +1004,11 @@ reference "fig:Power-curves"
 \end_inset
 
 .
- From the figure, we learn that we would need a sample size of about 1100
- observations to test this with sufficient power (.8).
+ We find that we would be able to obtain sufficient power (.8) with a total
+ sample size of about 500 observations.
+ As these observations need to be balanced across the different cells in
+ the experiment, this means we need at least 250 observations in the control
+ and a minimum of 28 observations in each treatment combination.
 \end_layout
 
 \begin_layout Standard
@@ -1041,28 +1053,48 @@ name "fig:Power-curves"
 \end_layout
 
 \begin_layout Standard
-A second question is related to the gender composition of the animator,
- where we expect that when the message is brought by a couple leads to better
- outcomes then when the message is given by an individual (either a male
- or a female farmer).
- We calculate sample size that is needed to determine a significant difference
- in yields between these two groups and plot this in Figure 
+A second question relates to the gender-matching or homophilly effect.
+ This is likely to be the most stringent, as it is based on only 4 cells
+ of the design in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Expected-Effect-Sizes"
+
+\end_inset
+
+.
+ In particular, we will compare cells with matched gender (MM and FF) with
+ those that have opposite sexes matched (MF and FM).
+ The results for these power calculations are shown as the second figure
+ in the first row in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Power-curves"
 
 \end_inset
 
- as the yellow curve.
- 
+.
+ We find that we would need about 1,800 observations in total to get sufficient
+ power.
+ This means that in each of the relevant cells (MM, FF, MF and FM), we would
+ need about 450 observations.
 \end_layout
 
 \begin_layout Standard
-A third question relates to the recipient.
- Here we also want to find a significant difference in outcomes between
- households that were shown the video as a couple and households in which
- the video was only shown to one individual in the household.
- The results of these power simulations is shown as the blue line in figure
+A third question relates to the gender composition of the recipient.
+ Here, we want to compare a situation where there is information asymmetry
+ (where only one of the spouses was shown the video) to a situation where
+ both husband and wife received the same information (both were shown the
+ video), irrespective of who features in the video.
+ In this case, we use all cells in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Expected-Effect-Sizes"
+
+\end_inset
+
+ and compare BB, BF and BB to MM, MF, MB, FM, FF and FB.
+ The results of these power simulations is shown as the third graph in figure
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1071,27 +1103,34 @@ reference "fig:Power-curves"
 \end_inset
 
 .
+ We find that we obtain sufficient power for a total sample size of 2,000
+ observations.
+ Taking into account the fact that we need to balance across all other cells,
+ we need 333 observations in each of BB, BF and BB and 167 observations
+ in each of MM, MF, MB, FM, FF and FB.
+\end_layout
+
+\begin_layout Standard
+A fourth question is related to the gender composition of the animator,
+ where we expect that when the message is brought by a couple, and a household
+ cooperative approach is thus promoted, leads to better outcomes then when
+ the message is given by an individual (either a male or a female farmer).
+ We calculate sample size that is needed to determine a significant difference
+ in yields between these two groups and plot this in last figure in Figure
  
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Power-curves"
 
-\begin_layout Standard
-The fourth question relates to the gender matching effect.
- Here we compare if households where the gender of the recipient and the
- gender of the messenger (including the BB cell) differ from the effect
- obtained by households where there is no matching (FM and MF).
- This is shown as the green line in the figure.
-\end_layout
+\end_inset
 
-\begin_layout Standard
-Finally, we investigate the most stringent option and we combine the above
- four research question and estimate power needed for finding all these
- effects together.
- This is summarized in the red line.
- Here we see we would need about 4000 observations to get sufficient power.
- We will settle for something in-between the red line and the blue and green
- lines and include about 3500 farmers in our study.
- Taking into account the fact that we will work in blocks of 55 farmers,
- this means we would sample about 64 parishes.
+.
+ The fact that we expect relatively large effects from a cooperative approach
+ means we obtain sufficient power with a total sample size of about 2150
+ observations.
+ Again taking into account balance across other cells mean we need at least
+ 359 observations in each of MB, FB and BB and at least 180 observations
+ in each of the other cells.
  
 \end_layout
 
@@ -1104,7 +1143,7 @@ gender productivity gap
 \series default
 , where women managed plots are farmed less extensively than male managed
  plots resulting in significantly lower yields, has been observed throughout
- subsaharan africa and for a variety of crops 
+ Africa South of the Sahara and for a variety of crops 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "udry1996gender"
@@ -1311,7 +1350,27 @@ reference "fig:Power-Curves-gap"
 
 \end_inset
 
+.
+ To be able to answer the first question with sufficient power, we need
+ a total sample size of about 600 observations.
+ Of these, at least 300 observations should be in the MM cell, and about
+ 38 observations in each of the other cells.
+ To answer the second question, we need about 500 observations.
+ These need to be equally divided over the first two rows of the matrix
+ in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Expected-Effect-Gap"
 
+\end_inset
+
+, meaning at least 83 observations in each cell.
+ To answer the third question, we need a total of about 1,100 observations.
+ These observations should be distributed as follows: at least 183 in each
+ of the cells in the last column and at least 92 in each of the other cells.
+ The final question can already be answered with less than 300 observations.
+ Of this, 150 should be in the BB cell, and about 20 in each of the other
+ cells.
 \end_layout
 
 \begin_layout Standard
@@ -1360,9 +1419,19 @@ name "fig:Power-Curves-gap"
 \end_layout
 
 \begin_layout Standard
-On the basis of the above, we come to the following division of observations
- across the different treatment cells.
- 
+On the basis of the above, we come to the following ideal division of observatio
+ns across the different treatment cells : {ctrl=250, MM=450, MF=450, MB=359,
+ FM=450, FF=450, FB=359, BM=333, BF=333, BB=359}, leading to a total number
+ of observations of 3,793.
+ However, due to various constraints, we will relax power for the most stringent
+ research hypothesis, which is the second question relating to the gender-matchi
+ng or homophilly effect.
+ If we only require 60 percent power, we can reduce sample size for MM,
+ MF, FM and FF to 375, leading to a sample size of about 3,500 observations
+ in total.
+ To account for attrition, we add another 100 observations to each group
+ according to their weight in the total, {ctrl=257, MM=385, MF=385, MB=369,
+ FM=385, FF=385, FB=369, BM=342, BF=342, BB=369} or 3,588 observations.
 \end_layout
 
 \begin_layout Subsubsection*
