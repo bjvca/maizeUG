@@ -72,7 +72,8 @@
 \begin_body
 
 \begin_layout Title
-ICT-mediated agricultural knowledge transfer in Uganda: What works?
+The role of gender in ICT-mediated agricultural knowledge transfer: A pre-analys
+is plan
 \end_layout
 
 \begin_layout Author
@@ -81,21 +82,34 @@ Bjorn Van Campenhout, Els Lecoutere and David J.
 \end_layout
 
 \begin_layout Abstract
-In information dissemination campaigns by agricultural extension services,
- seemingly small attributes, the way it is delivered, who delivers the message
- or who it is delivered to, can result in significant differences in outcomes,
- such as knowledge transferred and adoption of recommended practices.
+In information dissemination campaigns though agricultural extension services,
+ seemingly small attributes, such as the way it is delivered, who delivers
+ the message or who it is targeted by the message, can result in significant
+ differences in outcomes, such as knowledge transferred, adoption, agricultural
+ yields, and ultimately well-being within the household.
  In the context of ICT-mediated knowledge transfer, this study investigates
  the role of the gender composition of the person(s) who provide the information
- and the gender/age composition of the person(s) who receive the information
+ and the gender composition of the person(s) who receive the information
  in making the information transfer more effective.
  In addition, video as a way to deliver extension information is augmented
  to more demand-driven ICT solutions, such as Interactive Voice Response
  (IVR).
  Effectiveness is assessed in terms of knowledge gain, increased adoption,
  yield increase, and poverty reduction.
- We propose to do this using field experiments, where farmers are randomly
- assigned to particular interventions.
+ Research questions will be answered using field experiments, where farmers
+ are randomly assigned to particular interventions.
+ This pre-analysis plan outlines hypotheses which will be tested, tools
+ that will be used in the field, power calculations and sample size projection,
+ outcome variables we will use and specifications we plan to estimate.
+ As such, it will provide a useful reference in evaluating the final results
+ of the study 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1093/pan/mps021"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section*
@@ -103,11 +117,12 @@ Motivation
 \end_layout
 
 \begin_layout Standard
-In many instances, a simple piece of information makes a big difference.
- However, not every information campaign is effective, and often, seemingly
- small attributes, such as how the message is framed, the way it is delivered,
- or who it is delivered by and to, can result in significant differences
- in impact 
+In a world characterized by incomplete and asymmetric information, targeted
+ efforts to fill knowledge gaps can make a big difference.
+ However, not every information campaign is equally effective, and often,
+ seemingly small attributes, such as the way the message is framed, how
+ it is delivered, who is targeted by the message and who delivers the message,
+ can result in significant differences in impact 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "jack2013market"
@@ -122,14 +137,16 @@ key "jack2013market"
 \end_layout
 
 \begin_layout Standard
-We propose an evaluation that will address key questions on the effectiveness
- of ICT-enabled extension and advisory service approach in Uganda.
- The questions are related to the gender/age composition of the receiver
- and the messenger of the information message, the way in which the message
- is framed, and the way it is delivered.
+We propose an evaluation that will address key questions related to the
+ effectiveness of ICT-enabled extension and advisory service approach in
+ Uganda.
+ The questions are related to (i) the gender composition of the receiver
+ of the agricultural information message; (ii) the gender composition of
+ the messenger of the information message; and (iii) the way it is delivered.
  The questions will be answered through field experiments, where farmers
- are randomly assigned to a group that receives particular interventions
- 
+ are randomly assigned to a group that receives particular interventions,
+ and outcomes will be compared to outcomes the did not receive the particular
+ intervention 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "de2016field"
@@ -147,26 +164,28 @@ ed extension approach, we opt for a factorial design.
 \end_layout
 
 \begin_layout Standard
-We will work with maize farmers in southeast Uganda.
+We will work with maize farmers in eastern Uganda.
  Short videos that explain simple yet effective ways to increase maize productiv
-ity, such as best practices in row spacing and plant density, will be developed
- and shown to selected members within farm households.
- An alternative technology to deliver the same information, such as Interactive
- Voice Response (IVR), will be developed and implemented by a partner (Human
- Network International).
+ity, such as best practices in row spacing and soil fertility management,
+ will be developed and shown to selected members within farm households.
+ For a subset of farmers, the videos will be augmented with an alternative
+ technology to deliver the same information, such as Interactive Voice Response
+ (IVR).
  Power calculations suggest we would need a sample of about 3,600 farmers,
- which will be drawn from six districts.
- The videos will be shown to farmers at the beginning of the main season,
- which starts in September 2017, and an endline survey will collect information
- on outcomes after harvesting, which ends in February 2018.
+ which will be drawn from five districts.
+ The videos will be shown twice to farmers, once before the beginning of
+ the main season, in July 2017, and once in the beginning of the season,
+ in August 2017.
+ An endline survey will collect information on outcomes after harvesting,
+ which ends in February 2018.
  We expect to collect endline data during March 2018 and to have results
  ready by July 2018.
  
 \end_layout
 
 \begin_layout Standard
-The results of this study is expected to inform agricultural extension system
- reform currently underway in Uganda.
+The results of this study are expected to inform agricultural extension
+ system reform currently underway in Uganda.
  Uganda’s new director of extension services signaled a role for digital
  extension within the future extension strategy.
  While the subject of this research study is maize intensification, we believe
@@ -184,9 +203,7 @@ This research aims to answer which attributes of an agricultural extension
  information campaign are most important for its effectiveness.
  In particular, we will investigate attributes related to the gender composition
  of both messenger and recipient of the messages.
- In addition, we will look at the effect of framing the same information
- in different ways.
- Finally, we will also look at the model of delivery of the information.
+ We will also look at the model of delivery of the information.
 \end_layout
 
 \begin_layout Subsection*
@@ -194,19 +211,19 @@ Gender Composition of Messenger and Receiver
 \end_layout
 
 \begin_layout Standard
-Research suggests the gender and age composition of both messenger and receiver
+Research suggests the gender composition of both messenger and receiver
  are important in making information effective.
  However, agricultural extension information services are generally biased
  toward men.
  Most often, extension officers are male who target the main decision maker
- with respect to agriculture within households, which is also often considered
+ with respect to agriculture within households, which is also often assumed
  to be the male farmer.
- The assumption that extension messages given to one household member will
+ The assumption that extension messages targeting one household member will
  trickle down to the rest of the household, including women and younger
  household members, may be false.
  Men do not necessarily discuss production decisions or transfer extension
  knowledge to women household members, especially if extension messages
- were focusing on men’s priorities and crops 
+ focus on men’s priorities and crops 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "fletschner2011gender"
@@ -214,9 +231,9 @@ key "fletschner2011gender"
 \end_inset
 
 .
- Gender matching effects, where men learn more from other men and women
- learn more from other women, have also been found in the context of agricultura
-l extension services 
+ Gender-matching effects, where men learn more from other men and women
+ learn more from other women, have also been documented in the context of
+ agricultural extension services 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Doss200127"
@@ -252,70 +269,68 @@ key "tanguydiggreen"
 \begin_layout Standard
 We therefore want to investigate the relative importance of (i) the gender
  composition of the messenger, and (ii) the gender composition of the audience
- for effective agricultural extension information messages to encourage
+ for effective agricultural extension information delivery to encourage
  sustainable crop intensification in smallholder household farms and for
  improving gender equity in household farming.
- In particular, we will compare outcomes at the household level between:
- 
+ In particular, our research is designed to answer the following research
+ questions: 
 \end_layout
 
 \begin_layout Itemize
-households that are shown a video with agricultural extension information
- and households that are shown a random video (placebo);
-\end_layout
-
-\begin_layout Itemize
-households that are shown a video with agricultural extension information
- where the animator is an individual “peer” farmer (ie.
- a man or a women) and households that were shown a video providing the
- same information by a couple of peer farmers (ie.
+Does promoting a household approach to farming improve outcomes at the household
+ level? This research question will be answered by comparing outcomes of
+ households that are shown a video with agricultural extension information
+ where the animator is an individual farmer (ie.
+ a man or a women) to outcomes of households that were shown a video providing
+ the same information by a couple of peer farmers (ie.
  man and woman who are shown to participate as equals in the family farm
  and deliver the message as a couple); 
 \end_layout
 
 \begin_layout Itemize
-households in which one adult individual (husband or wife) is shown a video
- with agricultural extension information and households in which the couple
- (husband and wife) is shown a video with the same information; 
+Does reducing agricultural extension information asymmetry within the household
+ improves outcomes at the household level? This research question will be
+ answered by comparing outcomes of households in which one adult individual
+ (husband or wife) is shown a video with agricultural extension information
+ to outcomes of households in which the couple (husband and wife) is shown
+ a video with the same information; 
 \end_layout
 
 \begin_layout Itemize
-households where the gender composition of (the individual) messenger(s)
- and (individual) audience is matched and households where the gender compositio
-n of the messenger and audience differ.
+Is here a gender-matching effect? This research question will be answered
+ by comparing outcomes of households where the gender composition of (the
+ individual) messenger(s) and (individual) audience is matched to outcomes
+ of households where the gender composition of the messenger and audience
+ differ.
 \end_layout
 
 \begin_layout Standard
 To assess the effect the gender composition of messenger and receiver on
- equity within the household, we will compare outcomes within the household
- between:
+ equity within the household, we will look at the following research questions:
 \end_layout
 
 \begin_layout Itemize
-households where the video was shown to a man versus households where the
- video was shown to the husband
+Does reducing information asymmetries related to agricultural extension
+ information within the household increase equity? To answer this question,
+ we will compare the gender productivity gap within households where the
+ video was shown to a man to the gender productivity gap in households where
+ the video was shown to the woman.
 \end_layout
 
 \begin_layout Itemize
-households that were shown the video that promotes a household approach
- featuring a couple versus households that were shown a video where a single
- farmer provides the messenges
+Does projecting a cooperative approach to agriculture increases equity.
+ To answer this question, we will compare the gender productivity gap within
+ households that were shown the video that promotes a household approach
+ featuring a couple versus to the gender productivity gap in households
+ that were shown a video where a single farmer provides the messages.
 \end_layout
 
 \begin_layout Itemize
-households that are both shown the video that also projects a household
- approach to all the other households
-\end_layout
-
-\begin_layout Standard
-For this research question, we will be particularly interested in how these
- interventions reverberate through intra-household decision-making and the
- allocation of time and resources to agriculture between the different individua
-ls within the farm household.
- The outcomes of interest will therefore be disaggregated by gender and
- age, and interpreted in light of the interplay between efficiency at the
- household farm level, equity within the farming household and women’s and
- youth’s empowerment.
+How effective is a the interaction of both projecting a cooperative approach
+ and reducing information asymmetries? To answer this question, we will
+ compare the gender productivity gap within households that are both shown
+ the video that also projects a household approach to the gender productivity
+ gap in all the other households
 \end_layout
 
 \begin_layout Subsection*
@@ -337,12 +352,28 @@ The tools and technologies through which the information is transferred
 on from a service provider.
  Call centers and Interactive Voice Response (IVR) technology are examples
  of this second approach.
- In a third research question, we will compare the effectiveness in terms
- of changing knowledge, practices and outcome such as yields and poverty
- of video messages to more or less demand based options such as IVR.
- In particular, we will compare videos to videos augmented with IVR and
- videos augmented with IVR where the recipient is also provided with reminders
- of the existence of the IVR service.
+ 
+\end_layout
+
+\begin_layout Standard
+We will compare the effectiveness in terms of changing knowledge, practices
+ and outcome such as yields and poverty of video messages to more or less
+ demand based options such as IVR.
+ In particular, we will:
+\end_layout
+
+\begin_layout Itemize
+Establish if video is a cost-effective medium to transfer agricultural extension
+ information at the farm household level.
+ To test this, we will compare outcomes of farmers that were shown any kind
+ of video to outcomes of households that are shown a random video (placebo).
+\end_layout
+
+\begin_layout Itemize
+Is it cost effective to add a demand driven service to extension using video?
+ To test this, we will compare outcomes of farmers that were shown any kind
+ of video to outcomes of households that were shown any kind of video and
+ were also encouraged to use IVR.
 \end_layout
 
 \begin_layout Section*
@@ -354,12 +385,28 @@ The effectiveness of the different interventions will be judged by their
  effect on a range of outcomes at the farm household level.
  Therefore, a first set of outcomes will investigate changes in knowledge
  due to the interventions.
+ We will include changes in knowledge about inputs or practices that were
+ featured in the video (such as proper spacing of maize, application rates
+ of fertilizer, ect).
+ We will also add some practices that are not directly shown in the video,
+ as farmers that were shown the video may be motivated to search for additional
+ information.
  It is further assumed that knowledge translates into increased adoption
  of the technologies.
  We will investigate both adoption as a binary outcome (yes/no), but also
  look at adoption intensity (adopted on share of total cultivated area,
  application rates, etc.).
- This, in turn, is expected to benefit agricultural production (yield).
+ Again here, we will not only include practices shown in the video, but
+ also record adoption of other practices or inputs (such as pesticide use),
+ as our interventions may crowd in other intensification investments 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1257/aer.20150474"
+
+\end_inset
+
+.
+ This, in turn, is expected to benefit agricultural production and yields.
  Finally, we expect this will affect household well-being, through increased
  consumption and income derived from marketing of more, better quality crops.
  We will therefore include consumption expenditure as a proxy for well-being.
@@ -376,9 +423,15 @@ Defining the outcomes will enable us to compare the cost-effectiveness of
  husband may result in substantially different labor allocation effects:
  women may prefer labor saving innovations, while men may focus more on
  yield increasing investments.
- Therefore, in the context of poorly functioning labor markets, we may want
- to include school attendance of adolescent girls.
+ We will also include IFPRI's Women Empowerment in Agriculture Index (WEAI)
  
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ALKIRE201371"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section*
@@ -388,30 +441,16 @@ Research Strategy
 \begin_layout Standard
 The questions will be answered through field experiments, where farmers
  are randomly assigned to a group that receives particular interventions
- (de Janvry et al., 2017).
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "de2016field"
+
+\end_inset
+
+.
  An identification strategy that is based on randomization allows us to
  quantify the causal linkage between an intervention and the outcomes.
- In particular, we establish the causal link between extension videos and
- the knowledge gained, between extension videos and yield changes, and between
- extension videos and poverty (measured by income).
- Note that this is different from looking at the direct causal link between
- for instance yield and poverty.
- In other words, if we find videos affect learning and videos affect poverty,
- we cannot be sure poverty is affected by another attribute related to our
- video (eg motivation).
- In a way, field experiments estimate a reduced form of relationships, and
- looking into the exact causal chain would require a full mediation analysis
- with an adapted design, such as those discussed in Imai et al.
- (2013).
- However, the study would still be useful in learning about the likely impact
- pathways.
- For one, we will include intermediate outcomes related to different pathways
- based on theory and previous research: Finding that videos have an effect
- on poverty and on measures of motivation but not on knowledge may make
- us more confident that the impact works through non-cognitive channels.
- Furthermore, we can explore causal links between intermediate outcomes
- and final outcomes (such as the effect of knowledge on yields) using statistica
-l techniques (such as instrumenting knowledge by treatment assignment).
  
 \end_layout
 
@@ -424,19 +463,26 @@ The research design itself will take the form of a mixed level factorial
  and male+female).
  Similarly, the second factor relates to the recipient of the message and
  also has these three levels (male, female and male+female).
- The second research question will be added to the design as an extra factor,
- but this factor only has 2 levels (information given in an objective way,
- information provided using social marketing techniques).
- The third research question, where video is now augmented with a demand-driven
- technology such as IVR, corresponds to adding an extra factor with two
- levels (no IVR, IVR, IVR + reminders).
- In practice, we therefore add the IVR treatment to one third of the participant
-s who get to see a video and we add the IVR+reminders treatment to one third
- of the sample that gets the treatment.
+ The research question related to the way the information is brought, where
+ video is now augmented with a demand-driven technology such as IVR, corresponds
+ to adding an extra factor with two levels (no IVR, IVR).
+ In practice, we therefore add the IVR treatment to half of the participants
+ who get to see a video.
  Finally, we will add a pure control group to the design, such that we do
  not only investigate relative effectiveness of the different attributes,
- but also relative to someone who did not get to see a video at all.
- 
+ but also relative to households who receive no information at all.
+ As we want to make sure the impact is related to the actual information
+ given in the video, and not merely a result of being shown a video, households
+ in the control group will also be shown a 
+\begin_inset Quotes eld
+\end_inset
+
+placebo
+\begin_inset Quotes erd
+\end_inset
+
+ video.
+ The information in this video will be completely unrelated to maize farming.
 \end_layout
 
 \begin_layout Standard
@@ -462,26 +508,22 @@ Crop and Technology
 The interventions for which we will investigate various attributes will
  be on maize intensification.
  Maize is widely consumed, yet its value to weight ratio is sufficiently
- high to also make it an important commodity.
+ high to also make it an important traded commodity.
  Therefore, increasing maize productivity at the farm household level has
  the potential to lead to improvements in both nutritional outcomes and
  income.
  Maize yields in Uganda are relatively low.
- While on-station trials report potential yields average about 3.8 metric
- tons per hectare (improved varieties, no fertilizer used), according to
- the latest UNPS data, average maize yields are much lower, at about 0.92
- tons per hectare for the main growing season of 2014.
+ While on-station trials report potential yields average about 1.6 metric
+ tons per acre (improved varieties, no fertilizer used), according to Uganda
+ National Household Survey 2005/06 data, average maize yields are much lower,
+ at about 618 kg per acre for the main growing season of 2014.
  There is a lot of variation in yields, with the top 10 percent of best
- farmers getting yields in excess of 2.3 metric tons.
+ farmers getting yields in excess of 1.1 metric tons per acre.
  At the same time, the use of modern inputs such as inorganic fertilizer
  and modern technologies such as row planting is very low in Uganda.
  For example, use of inorganic fertilizer averages only 1 kg of nutrient
  per hectare per year, compared to Kenya (32 kg/ha); Rwanda (29 kg/ha);
  and Tanzania (6 kg/ha).
- Using the latest UNPS data, only 6 percent of maize plots are planted using
- improved seed varieties.
- This suggests substantial scope to increase yields through the use of modern
- inputs and recommended practices.
  
 \end_layout
 
@@ -496,7 +538,7 @@ Sampling Frame
 \begin_layout Standard
 Maize is especially important in the East.
  We will sample from five districts from the East known for their maize
- production: Jinja, Mayuge, Iganga, Luuka and Kamuli.
+ production: Bugiri, Mayuge, Iganga, Namayingo and Namutumba.
  Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -505,8 +547,11 @@ reference "tab:Administrative-structure-of"
 \end_inset
 
  gives an idea of how villages are distributed over parishes, which are
- in turn allocated to sub-counties within each of the 6 districts in our
+ in turn allocated to sub-counties within each of the 5 districts in our
  study.
+ From this, we removed town councils and also two sub-counties that consisted
+ of islands in lake Victoria.
+ In addition, 
 \end_layout
 
 \begin_layout Standard
@@ -552,7 +597,7 @@ hline
 
 \begin_layout Plain Layout
 
-Jinja  & 11 & 69 & 631 
+Bugiri  & 11 & 72 & 399  
 \backslash
 
 \backslash
@@ -561,7 +606,7 @@ Jinja  & 11 & 69 & 631
 
 \begin_layout Plain Layout
 
-Mayuge	&	7	&	56	&	272	
+Mayuge	&	13	&	73	&	462	
 \backslash
 
 \backslash
@@ -570,7 +615,7 @@ Mayuge	&	7	&	56	&	272
 
 \begin_layout Plain Layout
 
-Iganga & 12 & 66 & 382 
+Iganga & 16 & 82 & 360 
 \backslash
 
 \backslash
@@ -579,7 +624,7 @@ Iganga & 12 & 66 & 382
 
 \begin_layout Plain Layout
 
-Luuka  & 7 & 33 & 209 
+Namayingo  & 7 & 43  & 308 
 \backslash
 
 \backslash
@@ -588,7 +633,7 @@ Luuka  & 7 & 33 & 209
 
 \begin_layout Plain Layout
 
-Kamuli  & 13 & 72 &1031 
+Namutumba  & 7 & 37  & 348 
 \backslash
 
 \backslash
@@ -604,7 +649,7 @@ hline
 
 \begin_layout Plain Layout
 
-Total	&	50	&	269	&	3131	
+Total	&	54	&	307	&	1877	
 \backslash
 
 \backslash
@@ -665,19 +710,27 @@ name "tab:Administrative-structure-of"
 Our study population consists of maize farmers within this region.
  Because of cost considerations, however, we will use two-stage cluster
  sampling to obtain a representative sample of this population.
- In particular, we will first randomly select parishes.
- Within each parish, we will then list all the households, from which we
+ In particular, we will first randomly select parishes (proportional to
+ the number of villages within each parish).
+ In the selected parishes, all villages will be included in the study.
+ 
+\end_layout
+
+\begin_layout Standard
+Within each village, we will then list all the households, from which we
  will then sample households to be included in the study.
- At the same time, we suspect that outcomes within parishes will be correlated,
+ At the same time, we suspect that outcomes within villages will be correlated,
  for instance due to local weather conditions, or development programs that
  are implemented in certain areas.
- Therefore, we try to turn our two-stage cluster sampling approach into
- a strength by using the first level of the clustering as blocking variables.
- In other words, in each parish, we will makes sure all possible treatment
- combinations are administered (and only once in each parish).
- From the research strategy above, we learn that we have a total of 55 different
- treatment combinations (3*3*2*3+1).
- 
+ We therefore use the village as a blocking factor.
+ In other words, in each village, we will makes sure all possible treatment
+ combinations related to the first 2 factors (plus control) are administered.
+ From the research strategy above, we learn that the messenger and the recepient
+ factor combine into 9 different treatment combinations.
+ Adding the control leads to 10 different households being selected in each
+ village.
+ Of the 9 farmers that are shown a video (not the placebo), half will also
+ receive the IVR treatment.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1438,6 +1491,14 @@ ng or homophilly effect.
 Assignment to Treatment
 \end_layout
 
+\begin_layout Standard
+In Iganga, there are about 102,897 households
+\end_layout
+
+\begin_layout Standard
+257 villages get all treatment combinations (including control)
+\end_layout
+
 \begin_layout Subsection*
 Fieldwork
 \end_layout
@@ -2011,6 +2072,10 @@ Empirical Analysis
 Variables 
 \end_layout
 
+\begin_layout Standard
+Log yields
+\end_layout
+
 \begin_layout Subsection*
 Balancing Checks
 \end_layout
@@ -2021,6 +2086,11 @@ Treatment Effects
 
 \begin_layout Subsubsection*
 Intent to Treat
+\end_layout
+
+\begin_layout Standard
+We should control for the gender of the enumerator.
+ 
 \end_layout
 
 \begin_layout Subsubsection*
