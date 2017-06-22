@@ -130,6 +130,12 @@ final_sample[final_sample$messenger == "ctrl" & final_sample$recipient != "femal
 
 final_sample[final_sample$messenger == "ctrl" & final_sample$recipient == "ctrl",]$recipient <- "couple"
 
+final_sample$sc <- (sapply(strsplit(final_sample$sc,"-"),'[',2))
+
+final_sample$parish <- (sapply(strsplit(final_sample$parish,"-"),'[',3))
+
+final_sample$village <- (sapply(strsplit(final_sample$village,"-"),'[',4))
+
 write.csv(final_sample, "/home/bjvca/data/projects/digital green/sampling/sampling_list.csv")
 
 

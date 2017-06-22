@@ -84,23 +84,25 @@ Bjorn Van Campenhout, Els Lecoutere and David J.
 \begin_layout Abstract
 In information dissemination campaigns though agricultural extension services,
  seemingly small attributes, such as the way it is delivered, who delivers
- the message or who it is targeted by the message, can result in significant
- differences in outcomes, such as knowledge transferred, adoption, agricultural
- yields, and ultimately well-being within the household.
+ the message or who is targeted by the message, can result in significant
+ differences in outcomes, such as knowledge transferred, practices adopted,
+ agricultural yields, and ultimately well-being within the household.
  In the context of ICT-mediated knowledge transfer, this study investigates
- the role of the gender composition of the person(s) who provide the information
- and the gender composition of the person(s) who receive the information
- in making the information transfer more effective.
+ the role of the gender composition of the person(s) who provide(s) the
+ information and the gender composition of the person(s) who receive(s)
+ the information in making the information transfer more effective.
  In addition, video as a way to deliver extension information is augmented
  to more demand-driven ICT solutions, such as Interactive Voice Response
  (IVR).
  Effectiveness is assessed in terms of knowledge gain, increased adoption,
- yield increase, and poverty reduction.
- Research questions will be answered using field experiments, where farmers
- are randomly assigned to particular interventions.
+ yield increase, and poverty reduction, and outcomes will be disaggregated
+ by gender.
+ The research questions will be answered using field experiments, where
+ farmers are randomly assigned to particular interventions.
  This pre-analysis plan outlines hypotheses which will be tested, tools
  that will be used in the field, power calculations and sample size projection,
- outcome variables we will use and specifications we plan to estimate.
+ outcome variables we will use to assess impact, and specifications we plan
+ to estimate.
  As such, it will provide a useful reference in evaluating the final results
  of the study 
 \begin_inset CommandInset citation
@@ -137,12 +139,12 @@ key "jack2013market"
 \end_layout
 
 \begin_layout Standard
-We propose an evaluation that will address key questions related to the
- effectiveness of ICT-enabled extension and advisory service approach in
- Uganda.
- The questions are related to (i) the gender composition of the receiver
- of the agricultural information message; (ii) the gender composition of
- the messenger of the information message; and (iii) the way it is delivered.
+This research will investigate some elements that are thought to be key
+ in effective agricultural extension information delivery.
+ In particular, we will zoom in the the role of (i) the gender composition
+ of the receiver(s) of the agricultural extension information messages;
+ (ii) the gender composition of the messenger(s) of the information message;
+ and (iii) the way it is delivered.
  The questions will be answered through field experiments, where farmers
  are randomly assigned to a group that receives particular interventions,
  and outcomes will be compared to outcomes the did not receive the particular
@@ -155,8 +157,10 @@ key "de2016field"
 
 .
  Since we want to test more than one research hypothesis and are particularly
- interested in comparing the effectiveness of various attributes of an ICT-enabl
-ed extension approach, we opt for a factorial design.
+ interested in comparing the relative effectiveness of various attributes
+ of an ICT-enabled extension approach (instead of simply finding out if
+ it works and compare treatment to control groups), we opt for a factorial
+ design.
  In such a design, farmers get a particular combination of interventions
  and, in general, a smaller sample size is needed to answer a fixed number
  of research questions.
@@ -165,12 +169,25 @@ ed extension approach, we opt for a factorial design.
 
 \begin_layout Standard
 We will work with maize farmers in eastern Uganda.
- Short videos that explain simple yet effective ways to increase maize productiv
-ity, such as best practices in row spacing and soil fertility management,
- will be developed and shown to selected members within farm households.
- For a subset of farmers, the videos will be augmented with an alternative
- technology to deliver the same information, such as Interactive Voice Response
- (IVR).
+ The interventions will take the form of short videos that explain simple
+ yet effective ways to increase maize productivity, such as best practices
+ in row spacing and soil fertility management.
+ To test hypotheses related to the gender composition of the receivers,
+ we will show the video to either the man, the woman, or man and women as
+ a couple within the household.
+ To test hypotheses related to the gender composition of the messenger(s),
+ we will produce different versions of the video.
+ In one version of the video, the information will be provided by a male
+ farmer.
+ In a second version of the video, the same information will be provided
+ by a woman farmer.
+ Finally, in a third version of the video, the information will be provided
+ by a couple.
+ To test hypotheses related to the way extension information is delivered,
+ the videos will be augmented with an alternative technology to deliver
+ the same information, such as Interactive Voice Response (IVR).
+ This intervention will be implemented using an encouragement design, where
+ part of the sample is encouraged to use IVR.
  Power calculations suggest we would need a sample of about 3,600 farmers,
  which will be drawn from five districts.
  The videos will be shown twice to farmers, once before the beginning of
@@ -199,15 +216,22 @@ Research Questions
 \end_layout
 
 \begin_layout Standard
-This research aims to answer which attributes of an agricultural extension
- information campaign are most important for its effectiveness.
+This research aims to answer which combinations of attributes of an agricultural
+ extension information campaign are most important for its effectiveness.
  In particular, we will investigate attributes related to the gender composition
  of both messenger and recipient of the messages.
  We will also look at the model of delivery of the information.
 \end_layout
 
 \begin_layout Subsection*
-Gender Composition of Messenger and Receiver 
+Gender Composition of Messenger and Receiver
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Gender-Composition-of"
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -267,7 +291,7 @@ key "tanguydiggreen"
 \end_layout
 
 \begin_layout Standard
-We therefore want to investigate the relative importance of (i) the gender
+We therefore will investigate the relative importance of (i) the gender
  composition of the messenger, and (ii) the gender composition of the audience
  for effective agricultural extension information delivery to encourage
  sustainable crop intensification in smallholder household farms and for
@@ -280,33 +304,38 @@ We therefore want to investigate the relative importance of (i) the gender
 Does promoting a household approach to farming improve outcomes at the household
  level? This research question will be answered by comparing outcomes of
  households that are shown a video with agricultural extension information
- where the animator is an individual farmer (ie.
- a man or a women) to outcomes of households that were shown a video providing
- the same information by a couple of peer farmers (ie.
+ where the messenger is an individual farmer (ie.
+ a man or a women) to outcomes of households that are shown a video providing
+ the same information by a couple of farmers (ie.
  man and woman who are shown to participate as equals in the family farm
  and deliver the message as a couple); 
 \end_layout
 
 \begin_layout Itemize
-Does reducing agricultural extension information asymmetry within the household
- improves outcomes at the household level? This research question will be
- answered by comparing outcomes of households in which one adult individual
- (husband or wife) is shown a video with agricultural extension information
- to outcomes of households in which the couple (husband and wife) is shown
- a video with the same information; 
+Does reducing agricultural extension information asymmetries within the
+ household improves outcomes at the household level? This research question
+ will be answered by comparing outcomes of households in which one adult
+ individual (husband or wife) is shown a video with agricultural extension
+ information to outcomes of households in which the couple (husband and
+ wife together) is shown a video with the same information; 
 \end_layout
 
 \begin_layout Itemize
-Is here a gender-matching effect? This research question will be answered
- by comparing outcomes of households where the gender composition of (the
- individual) messenger(s) and (individual) audience is matched to outcomes
- of households where the gender composition of the messenger and audience
- differ.
+Is there evidence of a gender-matching or homophily effect? This research
+ question will be answered by comparing outcomes of households where the
+ gender of the messenger and the recipient of the message is matched (male-male
+ and female-female) to outcomes of households where the gender of the messenger
+ and recipient of the message differs (male-female and female-male).
 \end_layout
 
 \begin_layout Standard
-To assess the effect the gender composition of messenger and receiver on
- equity within the household, we will look at the following research questions:
+We expect gender composition of receiver and messenger will affect aggregate
+ household productivity.
+ However, we also expect that gender composition of receiver and messenger
+ will have an impact at outcomes within the household.
+ To assess the effect the gender composition of messenger and receiver on
+ equity within the household, we will therefor also look at the following
+ research questions:
 \end_layout
 
 \begin_layout Itemize
@@ -330,11 +359,24 @@ How effective is a the interaction of both projecting a cooperative approach
  and reducing information asymmetries? To answer this question, we will
  compare the gender productivity gap within households that are both shown
  the video that also projects a household approach to the gender productivity
- gap in all the other households
+ gap in all the other households.
+\end_layout
+
+\begin_layout Standard
+Finally, in addition to the questions above, we check if the variation in
+ gender or recipient or messenger yields better equity outcomes that the
+ status quo, which is defined as a man getting info from a man.
 \end_layout
 
 \begin_layout Subsection*
-Different ICT Channels 
+Different ICT Channels
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Different-ICT-Channels"
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -348,17 +390,17 @@ The tools and technologies through which the information is transferred
  Showing videos to farmers or pushing information over a mobile phone would
  fall into this category.
  A second approach relies more on a consultative model, where the farmer
- is assumed to know his or her information needs are and requests this informati
-on from a service provider.
+ is assumed to know his or her information needs and requests this information
+ from a service provider.
  Call centers and Interactive Voice Response (IVR) technology are examples
  of this second approach.
  
 \end_layout
 
 \begin_layout Standard
-We will compare the effectiveness in terms of changing knowledge, practices
- and outcome such as yields and poverty of video messages to more or less
- demand based options such as IVR.
+We will assess the effectiveness in terms of changing knowledge, practices
+ and outcome such as yields and poverty of different modes of information
+ delivery.
  In particular, we will:
 \end_layout
 
@@ -385,9 +427,9 @@ The effectiveness of the different interventions will be judged by their
  effect on a range of outcomes at the farm household level.
  Therefore, a first set of outcomes will investigate changes in knowledge
  due to the interventions.
- We will include changes in knowledge about inputs or practices that were
- featured in the video (such as proper spacing of maize, application rates
- of fertilizer, ect).
+ We will include changes in knowledge about the existence and use of inputs
+ or practices that were featured in the video (such as proper spacing of
+ maize, application rates of fertilizer, ect).
  We will also add some practices that are not directly shown in the video,
  as farmers that were shown the video may be motivated to search for additional
  information.
@@ -416,15 +458,19 @@ key "10.1257/aer.20150474"
 \begin_layout Standard
 Defining the outcomes will enable us to compare the cost-effectiveness of
  each intervention (e.g., is showing a video to a woman more cost effective
- than showing it to a couple in terms of its effect on productivity?).
- We will also collect information that is relevant for the particular attributes
- we focus on.
+ than showing it to a couple in terms of its effect on aggregate productivity?).
+ We will also collect information that we think may be affected by focusing
+ on gender aspects in agricultural extension.
  For instance, showing extension information to the wife instead of the
  husband may result in substantially different labor allocation effects:
  women may prefer labor saving innovations, while men may focus more on
  yield increasing investments.
- We will also include IFPRI's Women Empowerment in Agriculture Index (WEAI)
- 
+ Most of the outcomes we will collect information on will also be disaggregated
+ by gender.
+ For instance, we will estimate maize yield for male managed and female
+ managed plots separately.
+ We will also include IFPRI's Abbreviated Women Empowerment in Agriculture
+ Index (A-WEAI) 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "ALKIRE201371"
@@ -457,15 +503,16 @@ key "de2016field"
 \begin_layout Standard
 The research design itself will take the form of a mixed level factorial
  design.
- To answer the first research question, we define two different factors,
- each with three levels.
+ To answer the first set of research question related to gender, we define
+ two different factors, each with three levels.
  The first factor relates to the messenger and has three levels (male, female
- and male+female).
+ and couple).
  Similarly, the second factor relates to the recipient of the message and
- also has these three levels (male, female and male+female).
- The research question related to the way the information is brought, where
- video is now augmented with a demand-driven technology such as IVR, corresponds
- to adding an extra factor with two levels (no IVR, IVR).
+ also has these three levels (male, female and couple).
+ The second set of research questions related to the way the information
+ is brought and where video is now augmented with a demand-driven technology
+ such as IVR, can be answered by adding an extra factor with two levels
+ (no IVR, IVR).
  In practice, we therefore add the IVR treatment to half of the participants
  who get to see a video.
  Finally, we will add a pure control group to the design, such that we do
@@ -486,18 +533,28 @@ placebo
 \end_layout
 
 \begin_layout Standard
-The interventions will be targeted at the individual (household) level as
- opposed to group screenings.
+The video interventions will be targeted at the individual (household) level
+ as opposed to group screenings.
  Videos will be shown in the house or in the field if necessary.
  This option guarantees consistency in the treatment and requires the least
  amount of observations.
- The videos will be developed in house by the research team and produced
- by a professional media production company such as NOTV.
- For IVR, we will partner with Human Network International.
- Human Network International’s 3-2-1develops content for farmers on a variety
+ The videos will be developed in-house by the research team and produced
+ by a professional media production company (NOTV).
+ 
+\end_layout
+
+\begin_layout Standard
+For IVR, we will partner with Human Network International.
+ Human Network International’s 3-2-1 develops content for farmers on a variety
  of crops and agricultural practices, and make the service available to
  farmers for free or at low cost.
- 
+ Since it is not possible to exclude farmers from this service and at the
+ same time, we can not force farmers to use the service, we will use an
+ encouragement design for this factor.
+ In particular, to half of the sample that gets to see a video, we will
+ give an Airtel simcard, which can be used to contact the IVR line.
+ We will also give them a small leaflet with information on how to use the
+ IVR system.
 \end_layout
 
 \begin_layout Section*
@@ -1048,7 +1105,21 @@ A first question will be to find out if videos work, irrespective of who
  they are shown to and who features in the video.
  We thus calculate sample size by taking all treatment arms and interactions
  in our factorial design together and we simply test the different between
- treatment and control.
+ treatment and control
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In the control, the placebo video also needs to be shown to somebody.
+ We also make sure there is balance here between man, woman and couple.
+ As such, in one third of our control, the placebo video is shown to the
+ man, in one third it is shown to the female and in one third it is shown
+ to the couple.
+\end_layout
+
+\end_inset
+
+.
  This scenario is shown in the first graph in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1492,11 +1563,33 @@ Assignment to Treatment
 \end_layout
 
 \begin_layout Standard
-In Iganga, there are about 102,897 households
-\end_layout
+We use cluster sampling to draw our sample.
+ We randomly select parishes (within subcouties within the five districts)
+ proportional to the number of villages within each parish.
+ We include all villages within each parish.
+ We use village as a blocking variable.
+ That is, within each village, we randomly allocate up to 10 households
+ to any of the 10 treatment combinations defined by the messenger gender
+ composition and recipient gender composition factors plus control.
+ Half of them also receives the IVR encouragement.
+ The code that does the sampling and treatment allocation can be found 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "https://github.com/bjvca/maizeUG/blob/master/sampling/sampler.R"
 
-\begin_layout Standard
-257 villages get all treatment combinations (including control)
+\end_inset
+
+.
+ The resulting sample with treatment allocation can be accessed 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "https://github.com/bjvca/maizeUG/blob/master/sampling/sampling_list.csv"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection*
@@ -2089,8 +2182,71 @@ Intent to Treat
 \end_layout
 
 \begin_layout Standard
-We should control for the gender of the enumerator.
- 
+For the questions related to gender, we assume full compliance, and as such
+ assume that the average treatment effect is equal to the treatment on the
+ treated effect.
+ Therefor, we will simply compare means between the different groups in
+ a regression framework.
+ In particular, we identify the treatment effects 
+\begin_inset Formula $\left(\beta\right)$
+\end_inset
+
+ by estimating the average treatment effect of an outcome variable 
+\begin_inset Formula $\left(y\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{h}=\alpha+\beta T_{h}+\varepsilon_{h}\label{eq:ate}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $T$
+\end_inset
+
+ is an indicator function that is one if household 
+\emph on
+h
+\emph default
+ was in the treatment group and zero otherwise.
+ We will control for the gender of the enumerator and also add parish fixed
+ effects.
+\end_layout
+
+\begin_layout Standard
+It is important to realize that treatment and control groups need to be
+ balanced over all other factors.
+ This means that often, we can not use all observations.
+ For example, if we want to simply test if being shown any video was effective
+ in increasing maize yields, we can not simply compare the 257 control household
+s that were shown a video to all households that were shown a video (3,331
+ households).
+ We need to make sure that within the treatment group, there are equal numbers
+ in each cell.
+ As such, we need to take the treatment combination with the least observations,
+ which are according to the power calculations the combinations where the
+ video is shown to the couple and the messenger is either a man or a women
+ (BM and BF).
+ In these cells, we need at least 342 observations.
+ Therefore, to test the effectiveness of videos, we compare 257 control
+ households to 3,078 households, which corresponds to 342 households in
+ each of 9 treatment combination cells.
+ Therefore, in each cell that has excess observations, we will take a random
+ sample.
+ For example, according to the power calculations, we will have 385 households
+ in the treatment combination where the messenger is male and the recipient
+ is male (MM).
+ We will take a random sample of 342 from these 385 households.
 \end_layout
 
 \begin_layout Subsubsection*
