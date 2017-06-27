@@ -2140,7 +2140,8 @@ The videos will be embedded in a small Computer Assisted Personal Interviewing
  The application will start by asking some identifying information about
  the farmer and recording consent.
  It will also be used to collect some basic farmer characteristics, which
- can be used to investigate balance at baseline.
+ can be used to investigate balance at baseline (see the section on balance
+ below).
  The application will also embed the video, which will be cued to make sure
  the correct video is shown to the right farmer.
  Finally, information will be gathered on viewing conditions, and some informati
@@ -2171,6 +2172,55 @@ Log yields
 
 \begin_layout Subsection*
 Balancing Checks
+\end_layout
+
+\begin_layout Standard
+While we are not planning to do a dedicated baseline survey, we will ask
+ some questions before the first intervention to investigate balance.
+ The choice of variables was based on what variables other researchers in
+ similar studies use in their orthogonality tests.
+ In particular, we looked at balance tables in studies that investigate
+ the adoption of yield improving methods and technologies using RCTs.
+ These studies include 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "duflo2011nudging"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1093/qje/qju002"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1111/j.1467-8276.2009.01319.x"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1093/ajae/aau015"
+
+\end_inset
+
+.
+ In addition, we also add some variables that may be useful to investigate
+ heterogeneity in treatment effects.
+ In particular, we collect some household characteristics such as household
+ size, age and education level of both wife and husband.
+ We then ask more specific questions related to maize farming, such as acreage
+ and by whom this is primarily managed, as well as quantities produced in
+ the last season.
+ Furthermore, we ask if the household received agricultural extension, whether
+ improved maize seeds were used, and whether fertilizer was applied.
+ We also collect data on housing conditions (material of wall and number
+ of bedrooms) and access to off-farm income.
 \end_layout
 
 \begin_layout Subsection*

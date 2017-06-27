@@ -137,6 +137,13 @@ final_sample$parish <- (sapply(strsplit(final_sample$parish,"-"),'[',3))
 final_sample$village <- (sapply(strsplit(final_sample$village,"-"),'[',4))
 
 write.csv(final_sample, "/home/bjvca/data/projects/digital green/sampling/sampling_list.csv")
+#iganga <-  subset(final_sample, district == "IGANGA")
+final_sample$ones <- 1
+aggr <- aggregate(as.numeric(final_sample$ones),list(final_sample$district, final_sample$sc,final_sample$parish,final_sample$village),sum)
+names(aggr) <- c("district","sc","parish","village","hh")
+
+aggr[order(aggr$district,aggr$parish,aggr$sc,aggr$parish, aggr$village),]
+
 
 
 
