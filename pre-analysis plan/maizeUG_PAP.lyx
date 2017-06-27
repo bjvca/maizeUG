@@ -82,27 +82,29 @@ Bjorn Van Campenhout, Els Lecoutere and David J.
 \end_layout
 
 \begin_layout Abstract
-In information dissemination campaigns though agricultural extension services,
- seemingly small attributes, such as the way it is delivered, who delivers
- the message or who is targeted by the message, can result in significant
- differences in outcomes, such as knowledge transferred, practices adopted,
- agricultural yields, and ultimately well-being within the household.
- In the context of ICT-mediated knowledge transfer, this study investigates
- the role of the gender composition of the person(s) who provide(s) the
- information and the gender composition of the person(s) who receive(s)
- the information in making the information transfer more effective.
- In addition, video as a way to deliver extension information is augmented
- to more demand-driven ICT solutions, such as Interactive Voice Response
- (IVR).
+In agricultural information dissemination campaigns though agricultural
+ extension services, seemingly small attributes, such as the way the information
+ message is delivered, who delivers the information messages or who is targeted
+ by the information message, can result in significant differences in outcomes,
+ such as knowledge transferred, practices adopted, agricultural yields,
+ and ultimately well-being within the household.
+ In the context of Information & Communication Technology (ICT) mediated
+ knowledge transfer, this study investigates the role of the gender composition
+ of the person(s) who provide(s) the information and the gender composition
+ of the person(s) who receive(s) the information in making the information
+ transfer more effective.
+ Furthermore, we quantify the additional impact of augmenting video as a
+ way to deliver extension information with a more demand-driven approach
+ such as Interactive Voice Response (IVR) technology.
  Effectiveness is assessed in terms of knowledge gain, increased adoption,
  yield increase, and poverty reduction, and outcomes will be disaggregated
- by gender.
+ by gender to study changes in intra-household equity and women empowerment.
  The research questions will be answered using field experiments, where
- farmers are randomly assigned to particular interventions.
+ farmers are randomly assigned to particular combinations of interventions.
  This pre-analysis plan outlines hypotheses which will be tested, tools
- that will be used in the field, power calculations and sample size projection,
- outcome variables we will use to assess impact, and specifications we plan
- to estimate.
+ that will be used in the field, power calculations and sample size projections
+ on which sampling is based, outcome variables that will be used to assess
+ impact, and specifications that will be estimated.
  As such, it will provide a useful reference in evaluating the final results
  of the study 
 \begin_inset CommandInset citation
@@ -122,8 +124,8 @@ Motivation
 In a world characterized by incomplete and asymmetric information, targeted
  efforts to fill knowledge gaps can make a big difference.
  However, not every information campaign is equally effective, and often,
- seemingly small attributes, such as the way the message is framed, how
- it is delivered, who is targeted by the message and who delivers the message,
+ seemingly small attributes, such as the way a message is framed, how it
+ is delivered, who is targeted by the message and who delivers the message,
  can result in significant differences in impact 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -132,14 +134,14 @@ key "jack2013market"
 \end_inset
 
 .
- Understanding the effect of these attributes through rigorous evaluation
- research should therefore be an essential part of any knowledge exchange
- model.
+ Understanding and quantifying the importance of each of these attributes
+ through rigorous evaluation research should therefore be an essential part
+ of any knowledge exchange model.
  
 \end_layout
 
 \begin_layout Standard
-This research will investigate some elements that are thought to be key
+This research will investigate some attributes that are thought to be key
  in effective agricultural extension information delivery.
  In particular, we will zoom in the the role of (i) the gender composition
  of the receiver(s) of the agricultural extension information messages;
@@ -147,8 +149,8 @@ This research will investigate some elements that are thought to be key
  and (iii) the way it is delivered.
  The questions will be answered through field experiments, where farmers
  are randomly assigned to a group that receives particular interventions,
- and outcomes will be compared to outcomes the did not receive the particular
- intervention 
+ and their outcomes will be compared to outcomes of a group of farmers that
+ did not receive these particular interventions 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "de2016field"
@@ -156,10 +158,10 @@ key "de2016field"
 \end_inset
 
 .
- Since we want to test more than one research hypothesis and are particularly
+ As we want to test more than one research hypothesis and are particularly
  interested in comparing the relative effectiveness of various attributes
- of an ICT-enabled extension approach (instead of simply finding out if
- it works and compare treatment to control groups), we opt for a factorial
+ of an ICT-mediated extension approach (instead of simply finding out what
+ works and compare treatment to control groups), we opt for a factorial
  design.
  In such a design, farmers get a particular combination of interventions
  and, in general, a smaller sample size is needed to answer a fixed number
@@ -187,16 +189,24 @@ We will work with maize farmers in eastern Uganda.
  the videos will be augmented with an alternative technology to deliver
  the same information, such as Interactive Voice Response (IVR).
  This intervention will be implemented using an encouragement design, where
- part of the sample is encouraged to use IVR.
+ part of the sample is encouraged to use IVR through an 
+\begin_inset Quotes eld
+\end_inset
+
+IVR starter kit
+\begin_inset Quotes erd
+\end_inset
+
+.
+ In addition, part of the farmers that get an IVR starter kit will also
+ be reminded to use the IVR through SMS messages.
  Power calculations suggest we would need a sample of about 3,600 farmers,
  which will be drawn from five districts.
  The videos will be shown twice to farmers, once before the beginning of
  the main season, in July 2017, and once in the beginning of the season,
  in August 2017.
  An endline survey will collect information on outcomes after harvesting,
- which ends in February 2018.
- We expect to collect endline data during March 2018 and to have results
- ready by July 2018.
+ which ends in January 2018.
  
 \end_layout
 
@@ -235,10 +245,9 @@ name "subsec:Gender-Composition-of"
 \end_layout
 
 \begin_layout Standard
-Research suggests the gender composition of both messenger and receiver
- are important in making information effective.
- However, agricultural extension information services are generally biased
- toward men.
+Even though research suggests that the gender composition of both messenger
+ and receiver are important in making information effective, agricultural
+ extension information services are generally biased toward men.
  Most often, extension officers are male who target the main decision maker
  with respect to agriculture within households, which is also often assumed
  to be the male farmer.
@@ -266,8 +275,8 @@ key "Doss200127"
 
 .
  At the same time, farms are essentially run and managed at the household
- level, and it may therefore be more effective if information is targeted
- at this level.
+ level, and it may therefore be more effective if information is both provided
+ and targeted at this level.
  For instance, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -365,7 +374,8 @@ How effective is a the interaction of both projecting a cooperative approach
 \begin_layout Standard
 Finally, in addition to the questions above, we check if the variation in
  gender or recipient or messenger yields better equity outcomes that the
- status quo, which is defined as a man getting info from a man.
+ status quo, which is defined as a man receiving agricultural extension
+ information from another man.
 \end_layout
 
 \begin_layout Subsection*
@@ -394,7 +404,17 @@ The tools and technologies through which the information is transferred
  from a service provider.
  Call centers and Interactive Voice Response (IVR) technology are examples
  of this second approach.
- 
+ Furthermore, recent research suggests that reminders through SMS is also
+ effective to increase agricultural technology adoption 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "casaburi2014harnessing"
+
+\end_inset
+
+.
+ We will therefore also augment the IVR with SMS messages that remind the
+ farmers of the existence of the IVR service.
 \end_layout
 
 \begin_layout Standard
@@ -407,15 +427,24 @@ We will assess the effectiveness in terms of changing knowledge, practices
 \begin_layout Itemize
 Establish if video is a cost-effective medium to transfer agricultural extension
  information at the farm household level.
- To test this, we will compare outcomes of farmers that were shown any kind
- of video to outcomes of households that are shown a random video (placebo).
+ To test this, we will compare outcomes of farmers that were shown an agricultur
+al extension video to outcomes of households that are shown a random video
+ (placebo).
 \end_layout
 
 \begin_layout Itemize
 Is it cost effective to add a demand driven service to extension using video?
- To test this, we will compare outcomes of farmers that were shown any kind
- of video to outcomes of households that were shown any kind of video and
- were also encouraged to use IVR.
+ To test this, we will compare outcomes of farmers that were shown an agricultur
+al extension video to outcomes of households that were shown an agricultural
+ extension video and were also encouraged to use IVR.
+\end_layout
+
+\begin_layout Itemize
+What is the effect of adding reminders at set time intervals to the video
+ and IVR system? To answer this questions, we will compare farmers that
+ were encouraged to use IVR to farmers that were encouraged to use IVR and
+ also got weekly SMS messages reminding them of the existence of the IVR
+ option.
 \end_layout
 
 \begin_layout Section*
@@ -511,10 +540,11 @@ The research design itself will take the form of a mixed level factorial
  also has these three levels (male, female and couple).
  The second set of research questions related to the way the information
  is brought and where video is now augmented with a demand-driven technology
- such as IVR, can be answered by adding an extra factor with two levels
- (no IVR, IVR).
- In practice, we therefore add the IVR treatment to half of the participants
- who get to see a video.
+ such as IVR, can be answered by adding an extra factor with three levels
+ (no IVR, IVR, IVR + SMS reminders).
+ In practice, we therefore add the IVR treatment to two thirds of the participan
+ts who get to see a video, of which half also gets weekly sms reminders
+ to use the service.
  Finally, we will add a pure control group to the design, such that we do
  not only investigate relative effectiveness of the different attributes,
  but also relative to households who receive no information at all.
@@ -551,10 +581,10 @@ For IVR, we will partner with Human Network International.
  Since it is not possible to exclude farmers from this service and at the
  same time, we can not force farmers to use the service, we will use an
  encouragement design for this factor.
- In particular, to half of the sample that gets to see a video, we will
- give an Airtel simcard, which can be used to contact the IVR line.
- We will also give them a small leaflet with information on how to use the
- IVR system.
+ In particular, to two thirds of the sample that gets to see a video, a
+ small leaflet with information on how to use the IVR system.
+ In addition, we will also send SMS messages to half of this last sub-group
+ to remind them of the existence of the IVR service.
 \end_layout
 
 \begin_layout Section*
@@ -608,7 +638,7 @@ reference "tab:Administrative-structure-of"
  study.
  From this, we removed town councils and also two sub-counties that consisted
  of islands in lake Victoria.
- In addition, 
+ 
 \end_layout
 
 \begin_layout Standard
@@ -616,7 +646,7 @@ reference "tab:Administrative-structure-of"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Preview
@@ -764,17 +794,29 @@ name "tab:Administrative-structure-of"
 \end_layout
 
 \begin_layout Standard
-Our study population consists of maize farmers within this region.
+Our study population consists of maize farmers within this region
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In particular, given the subject of our study, we target monogamous households
+ that are growing maize.
+ However, we will also include some female headed households as they are
+ an important disadvantaged group in Uganda.
+ These households can obviously not get all the treatments.
+ For these households, we will only vary the messenger between male and
+ female.
+\end_layout
+
+\end_inset
+
+.
  Because of cost considerations, however, we will use two-stage cluster
  sampling to obtain a representative sample of this population.
  In particular, we will first randomly select parishes (proportional to
  the number of villages within each parish).
  In the selected parishes, all villages will be included in the study.
- 
-\end_layout
-
-\begin_layout Standard
-Within each village, we will then list all the households, from which we
+ Within each village, we will then list all the households, from which we
  will then sample households to be included in the study.
  At the same time, we suspect that outcomes within villages will be correlated,
  for instance due to local weather conditions, or development programs that
@@ -782,12 +824,13 @@ Within each village, we will then list all the households, from which we
  We therefore use the village as a blocking factor.
  In other words, in each village, we will makes sure all possible treatment
  combinations related to the first 2 factors (plus control) are administered.
- From the research strategy above, we learn that the messenger and the recepient
+ From the research strategy above, we learn that the messenger and the recipient
  factor combine into 9 different treatment combinations.
  Adding the control leads to 10 different households being selected in each
  village.
- Of the 9 farmers that are shown a video (not the placebo), half will also
- receive the IVR treatment.
+ Of the 9 farmers that are shown a video (not the placebo), about six will
+ also receive the IVR treatment, and of these six, three will also get SMS
+ reminders.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -829,13 +872,13 @@ The power calculations will be based on the first set of research questions
 d in particular interactions between the two factors, which needs to be
  accounted for when determining sample size.
  For the third factor, which is the one related to adding IVR to the video
- treatment, we are only interested in the main effects and there are only
- two levels (video and video + IVR).
- Therefore, in this factor, we can allocate half of the households where
- whoever gets to see any kind of video to one level of the factor and half
- to the other level.
+ treatment, we are only interested in the main effects (video, video + IVR,
+ and video + IVR + SMS reminders).
+ Therefore, in this factor, we can allocate two thirds of the households
+ where whoever gets to see any kind of video to the video+IVR factor and
+ half of this subgroup can then be allocated to the video + IVR + SMS treatment.
  For reasonable effect sizes, these sample sizes are likely to result in
- sufficient power to estimate the additional effect of IVR.
+ sufficient power to estimate the additional effect of this form factor.
  
 \end_layout
 
@@ -1571,7 +1614,9 @@ We use cluster sampling to draw our sample.
  That is, within each village, we randomly allocate up to 10 households
  to any of the 10 treatment combinations defined by the messenger gender
  composition and recipient gender composition factors plus control.
- Half of them also receives the IVR encouragement.
+ Two third of them also receives the IVR encouragement and half of those
+ that also get the IVR treatment will also get weekly SMS reminders that
+ promote the IVR service.
  The code that does the sampling and treatment allocation can be found 
 \begin_inset CommandInset href
 LatexCommand href
@@ -2150,6 +2195,27 @@ on will be collected to see if farmers understood the information that was
 \end_layout
 
 \begin_layout Standard
+The IVR system consists of a toll free number that can be called by the
+ farmer.
+ Farmers that are assigned to this treatment will be given the toll free
+ number and leaflet that provides some more information about the system.
+ When calling the IVR system, the caller is greeted in Lusoga and a tutorial
+ is provided within the system.
+ The caller is presented with a menu and can choose to learn more about
+ different aspects of maize farming, such as soil management, seed selection,
+ pests and diseases, post harvest practices,...
+ After selecting the desired option, the farmer hears a conversation between
+ two farmers, where one farmer explains recommended practices to another
+ farmer.
+ While the IVR system has more information that the videos, we made sure
+ that the information that we provide in the videos is the same as what
+ is provided in the IVR system.
+ The SMS messages that will be sent out to half of the farmers that are
+ assigned the IVR treatment will simply be a reminder of the existence of
+ the service and the phone number they can dial to access it.
+\end_layout
+
+\begin_layout Standard
 After harvesting of maize in January of February 2018, an farmer level endline
  survey will collect information on a range out outcomes related to learning,
  adoption behaviour, maize production and farmer well-being more generally.
@@ -2167,9 +2233,263 @@ Variables
 \end_layout
 
 \begin_layout Standard
-Log yields
+We will evaluate effectiveness using the following variables.
+ We will also drop outcomes from our analysis for which 95 percent of observatio
+ns are the same value.
+ This is done to reduce the influence of outcomes with limited variation.
+ For continuous variables, 5 percent trimmed distributions will be used
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+When new variables are derived, trimming is done on the end result, that
+ is trim(kg/acre) instead of trim(kg)/trim(acre)
 \end_layout
 
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+knowledge: this will be assessed using short multiple choice 
+\begin_inset Quotes eld
+\end_inset
+
+quiz
+\begin_inset Quotes erd
+\end_inset
+
+ type questions.
+ The result will be binary variable (correct or not) and proportions will
+ be compared between groups using both Chi-squared tests for difference
+ in proportions and linear probability models.
+\end_layout
+
+\begin_layout Itemize
+adoption of practices, dis-aggregated by gender of main manager and assessed
+ at plot level.
+ Recommendations are those that were shown in the videos:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+organic fertilizer used (yes/no)
+\end_layout
+
+\begin_layout Itemize
+quantity of organic fertilizer used (kg) and application rates (kg/acre)
+\end_layout
+
+\begin_layout Itemize
+fertilizer use Urea (yes/no)
+\end_layout
+
+\begin_layout Itemize
+quantities of fertilizer used Urea (kg) and application rates (kg/acre)
+\end_layout
+
+\begin_layout Itemize
+fertilizer use DAP (yes/no)
+\end_layout
+
+\begin_layout Itemize
+quantities of fertilizer used DAP (kg) and application rates (kg/acre)
+\end_layout
+
+\begin_layout Itemize
+use of improved seed, defined as either hybrid or OPV (yes/no)
+\end_layout
+
+\begin_layout Itemize
+quantity of improved seed used (kg) and application rates (kg/acre)
+\end_layout
+
+\begin_layout Itemize
+recommended spacing of maize used (yes/no)
+\end_layout
+
+\begin_layout Itemize
+planted in time (assessed as the square of the time difference between onset
+ of rains and time of planting)
+\end_layout
+
+\begin_layout Itemize
+practiced gap filling (yes/no)
+\end_layout
+
+\begin_layout Itemize
+practiced weeding according to recommended timing and frequency (yes/no)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+secondary effects:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+hired labour for maize farming (yes/no)
+\end_layout
+
+\begin_layout Itemize
+quantity of hired labour (man-hours)
+\end_layout
+
+\begin_layout Itemize
+use of herbicides/pesticides/fungicides (yes/no)
+\end_layout
+
+\begin_layout Itemize
+quantity of herbicides/pesticides/fungicides (kg) and application rates
+ (kg/acre)
+\end_layout
+
+\begin_layout Itemize
+access to credit during the last 6 months (yes/no) and amount accessed (UGX)
+\end_layout
+
+\begin_layout Itemize
+Agricultural advise sought on maize farming in the last 6 months? (yes/no)
+ 
+\end_layout
+
+\begin_layout Itemize
+use of labour saving technology such as oxen, power tiller,...
+ (type, use)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+production: at household level and also dis-aggregated by gender of main
+ manager and assessed at plot level.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+log of maize yields in kg per acre
+\end_layout
+
+\begin_layout Itemize
+maize yield gap within household (difference in kg/are on women managed
+ plot and male managed plot)
+\end_layout
+
+\begin_layout Itemize
+log of maize production in kg
+\end_layout
+
+\begin_layout Itemize
+area of maize cultivated (acre)
+\end_layout
+
+\begin_layout Itemize
+area of maize cultivated as a share of total area used for cultivation (percenta
+ge)
+\end_layout
+
+\begin_layout Itemize
+labour allocation decision (women/men/children hours worked in maize production)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Welfare outcomes
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+welfare: consumption expenditure per capita, based on a selection of most
+ consumed items.
+\end_layout
+
+\begin_layout Itemize
+poverty: consumption expenditure relative to the official poverty threshold.
+\end_layout
+
+\begin_layout Itemize
+market participation: was maize sold (yes/no), quantity sold, price at which
+ maize was sold (to capture quality differences), and to who the maize was
+ sold.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+women empowerment in agriculture (assessed by a standard index 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ALKIRE201371"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Non-cognitive characteristics: We also want to investigate if viewing successful
+ farmers alters attitudes and aspirations, such as viewing farming as a
+ business and changes in locus of control:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Do you consider maize farming your main business? (yes/no)
+\end_layout
+
+\begin_layout Itemize
+Do/did you want your children to become maize farmers? (yes/no)
+\end_layout
+
+\begin_layout Itemize
+Do you agree that chance determines what happens in your life? (likert scale
+ 1-5)
+\end_layout
+
+\begin_layout Itemize
+Do you agree that other people such as your wife/husband, pastor, other
+ family members, local leader etc determine what happens in your life? (likert
+ scale 1-5)
+\end_layout
+
+\begin_layout Itemize
+When you make plans, do you stick to them? (likert scale 1-5)
+\end_layout
+
+\begin_layout Itemize
+Do you agree that important events (good and bad) that happen in your life
+ were meant to happen? (likert scale 1-5)
+\end_layout
+
+\begin_layout Itemize
+Do you feel you have mostly good qualities? (likert scale 1-5)
+\end_layout
+
+\begin_layout Itemize
+Do you agree that, poor people are poor because they do not work hard enough
+ to improve their lives? (likert scale 1-5)
+\end_layout
+
+\begin_layout Itemize
+In farming do you usually adhere to the goals you have set out? (likert
+ scale 1-5)
+\end_layout
+
+\begin_layout Itemize
+Do you sometimes spend money and later admit or realize it wasn't worth
+ it? (likert scale 1-5)
+\end_layout
+
+\begin_layout Itemize
+When things look bad, do you usually expect the best? (likert scale 1-5)
+\end_layout
+
+\begin_layout Itemize
+Are you a person that likes to try out new things even if you know there
+ is a high chance things go wrong? (likert scale 1-5)
+\end_layout
+
+\end_deeper
 \begin_layout Subsection*
 Balancing Checks
 \end_layout
@@ -2221,6 +2541,15 @@ key "doi:10.1093/ajae/aau015"
  improved maize seeds were used, and whether fertilizer was applied.
  We also collect data on housing conditions (material of wall and number
  of bedrooms) and access to off-farm income.
+ The complete baseline questionnaire can be found on 
+\begin_inset CommandInset href
+LatexCommand href
+name "github"
+target "https://github.com/bjvca/maizeUG/blob/master/baseline/balance_baseline.txt"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection*
@@ -2232,9 +2561,10 @@ Intent to Treat
 \end_layout
 
 \begin_layout Standard
-For the questions related to gender, we assume full compliance, and as such
- assume that the average treatment effect is equal to the treatment on the
- treated effect.
+For the research questions related to gender composition of messenger and
+ recipient, we assume full compliance, and as such assume that the average
+ treatment effect (or Intention tot Treat effect) is equal to the Treatment
+ of the Treated effect.
  Therefor, we will simply compare means between the different groups in
  a regression framework.
  In particular, we identify the treatment effects 
@@ -2271,6 +2601,9 @@ h
  was in the treatment group and zero otherwise.
  We will control for the gender of the enumerator and also add parish fixed
  effects.
+ For the few outome variables that are also collected at baseline such as
+ fertilizer use or use of improved seed (see balancing checks above), difference
+-in-difference models will be estimated.
 \end_layout
 
 \begin_layout Standard
@@ -2303,8 +2636,103 @@ s that were shown a video to all households that were shown a video (3,331
 Treatment on the Treated 
 \end_layout
 
+\begin_layout Standard
+For the research question related to different ways to deliver extension
+ information, we compare videos to IVR.
+ As mentioned above, we have much less control over compliance in the IVR
+ treatment.
+ We therefore estimate the treatment of the treated effect using two stage
+ least squares.
+ In particular, we estimate:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{h}=\alpha+\beta C_{h}+\varepsilon_{h}\label{eq:tot}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $C_{h}$
+\end_inset
+
+ is an indicator that takes the value of one if the household called the
+ IVR system and zero otherwise.
+ This indicator 
+\begin_inset Formula $C_{h}$
+\end_inset
+
+ will be instrumented by an indicator that represents the allocation of
+ the household to the IVR treatment 
+\begin_inset Formula $T_{h}$
+\end_inset
+
+.
+ 
+\end_layout
+
 \begin_layout Subsection*
 Heterogeneous Effects
+\end_layout
+
+\begin_layout Standard
+While we did not consider heterogeneous treatment effects in the power calculati
+ons, there are some groups of people we expect our treatments will be more
+ or less effective for.
+ One key group of farmers we want to focus on is youth.
+ On the one hand, youth appear to be less interested in the rural livelihoods
+ of their parents.
+ In Uganda, the youth often abandon the countryside as soon as they can
+ to work in Kampala.
+ On the other hand, the youth may be more interested in video and conversant
+ with the IVR tools we promote.
+ We also expect that the 
+\begin_inset Quotes eld
+\end_inset
+
+farming as a business
+\begin_inset Quotes erd
+\end_inset
+
+ message we try to convey appeals more to young people.
+ Age categories (i.e.
+ a youth indicator dummy variable) will therefore be constructed on the
+ basis of age data collected before the first intervention and treatment
+ indicators will be interacted with the youth dummy.
+\end_layout
+
+\begin_layout Standard
+We will also run separate analysis depending on whether the household has
+ access to income from sources other than farming.
+ Often, such households differ substantially from households that only rely
+ on farming in terms of access to capital and ability to manage risk.
+ We therefor also collect data on access to income from other sources at
+ baseline and estimate different treatment effects for both types of farmers.
+\end_layout
+
+\begin_layout Standard
+Third, our videos heavily promote the use of modern inputs.
+ Inputs are costly, something we try to address in our videos by advising
+ to start small and grow over time.
+ However, the ability to use the inputs also depends on availability.
+ Therefore, we will also look at heterogeneity in the treatment effect that
+ is related to the distance to the nearest farm supply shop.
+ This is measured at baseline using a continuous variable, which will be
+ interacted in a regression with the treatment variable.
+\end_layout
+
+\begin_layout Standard
+Finally, we will also investigate how education levels of both the men and
+ woman in the farm household interacts with the effectiveness of out various
+ treatment combinations.
+ This is again done by constructing different categories (eg.
+ less versus more educated households) and comparing treatment effects.
 \end_layout
 
 \begin_layout Subsection*
@@ -2312,33 +2740,33 @@ Standard Error Adjustments
 \end_layout
 
 \begin_layout Standard
-While our main outcome variables are ultimately household welfare and potato
+While our main outcome variables are ultimately household welfare and maize
  yields, we will also estimate the impact of our interventions on a range
- of intermediate variables.
+ of intermediate variables as indicated above.
  The fact that we have many such variables may lead to the so-called “look
  elsewhere” effect, where one is bound to find significant effects simply
- due to the sheer number of parameters.
+ due to the sheer number of hypotheses that are tested.
  Therefore, some form of multiple-inference correction is in order.
- In general, there are two ways in which to avoid false positives that result
- of multiple hypothesis testing.
- One can either reduce the number of hypothesis, or one can make the statistical
+ In general, there are two ways in which to reduce the likelihood of false
+ positives that result of multiple hypothesis testing.
+ One can either reduce the number of hypotheses, or one can make the statistical
  test stricter by for instance reducing the significance threshold (such
- as the Bonferroni adjustment).
- We will address false positive arising from multiple hypothesis testing
- using both ways.
+ as the popular Bonferroni adjustment).
+ We will address false positives arising from multiple hypothesis testing
+ using two approaches.
  
 \end_layout
 
 \begin_layout Standard
 First of all, we will use the groupings presented in the section that lists
- the variables to create indices (directly related to yield, sales, welfare,
- crowding in other intensification methods,...).
+ the variables to create indices (knowledge, adoption, secondary effects,
+ production, welfare,...).
  At the most basic level, each of the indices is a weighted mean of the
  several standardized outcomes within each group.
  In particular, for each variable within each group, we make sure positive
  direction always means better, otherwise we switch sign.
- We then demean the outcome and standardize by scaling by the control group
- standard deviation.
+ We then demean the outcome and standardize by scaling by the (pooled) standard
+ deviation.
  We then create weighted averages for the outcomes in each group at the
  household level, using as weights the inverse of the co-variance matrix
  of the transformed outcomes within the group.
@@ -2351,10 +2779,12 @@ First of all, we will use the groupings presented in the section that lists
 \begin_layout Standard
 However, we may be interested in identifying differential effects within
  each of the groups.
- For example, we may want to differentiate between the effect on potato
- sales immediately after the harvest and potato sales during the lean season.
+ For example, we may want to differentiate between the effect of our interventio
+n fertilizer application and the effect of our intervention on improved
+ seed adoption.
  We will therefore also use Family Wise Error Rate Control.
- In particular, we will use the free step-down re-sampling method of 
+ In particular, we will use the free step-down re-sampling method proposed
+ in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "westfall1993resampling"
@@ -2362,9 +2792,6 @@ key "westfall1993resampling"
 \end_inset
 
 .
- Finally, we will also drop outcomes from our analysis for which 95 percent
- of observations are the same value.
- This is done to reduce the influence of outcomes with limited variation.
 \end_layout
 
 \begin_layout Section*
@@ -2372,16 +2799,13 @@ Research Team
 \end_layout
 
 \begin_layout Standard
-The research will be led by Bjorn Van Campenhout (b.vancampenhout@cgiar.org),
+The research will consist of Bjorn Van Campenhout (b.vancampenhout@cgiar.org),
  Els Lecoutere (els.lecoutere@uantwerpen.be) and David Spielman (d.spielman@cgiar.or
 g).
- Research assistance will be provided by Wilberforce Walukano (W.Walukano@cgiar.or
-g) and Marc Charles Wanume (wcharli@gmail.com).
+ Research assistance will be provided by Fiona Nattembo (f.nattembo@cgiar.org),
+ Wilberforce Walukano (W.Walukano@cgiar.org) and Marc Charles Wanume (wcharli@gmai
+l.com).
  
-\end_layout
-
-\begin_layout Section*
-Deliverable and Calendar
 \end_layout
 
 \begin_layout Standard

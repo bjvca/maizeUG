@@ -101,26 +101,51 @@ final_sample <- rbind(first_part, second_part)
 ### now mix in the IVR treatment
 final_sample$IVR <- "no"
 
-final_sample[final_sample$recipient == "male" & final_sample$messenger == "male",]$IVR[sample(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "male",]$IVR), floor(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "male",]$IVR)/2)) ] <- "yes"
+final_sample[final_sample$recipient == "male" & final_sample$messenger == "male",]$IVR[sample(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "male",]$IVR), floor(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "male",]$IVR)*2/3)) ] <- "yes"
 
 
-final_sample[final_sample$recipient == "male" & final_sample$messenger == "female",]$IVR[sample(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "female",]$IVR), floor(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "female",]$IVR)/2)) ] <- "yes"
+final_sample[final_sample$recipient == "male" & final_sample$messenger == "female",]$IVR[sample(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "female",]$IVR), floor(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "female",]$IVR)*2/3)) ] <- "yes"
 
-final_sample[final_sample$recipient == "male" & final_sample$messenger == "couple",]$IVR[sample(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "couple",]$IVR), floor(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "couple",]$IVR)/2)) ] <- "yes"
+final_sample[final_sample$recipient == "male" & final_sample$messenger == "couple",]$IVR[sample(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "couple",]$IVR), floor(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "couple",]$IVR)*2/3)) ] <- "yes"
 
-final_sample[final_sample$recipient == "female" & final_sample$messenger == "male",]$IVR[sample(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "male",]$IVR), floor(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "male",]$IVR)/2)) ] <- "yes"
-
-
-final_sample[final_sample$recipient == "female" & final_sample$messenger == "female",]$IVR[sample(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "female",]$IVR), floor(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "female",]$IVR)/2)) ] <- "yes"
-
-final_sample[final_sample$recipient == "female" & final_sample$messenger == "couple",]$IVR[sample(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "couple",]$IVR), floor(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "couple",]$IVR)/2)) ] <- "yes"
-
-final_sample[final_sample$recipient == "couple" & final_sample$messenger == "male",]$IVR[sample(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "male",]$IVR), floor(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "male",]$IVR)/2)) ] <- "yes"
+final_sample[final_sample$recipient == "female" & final_sample$messenger == "male",]$IVR[sample(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "male",]$IVR), floor(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "male",]$IVR)*2/3)) ] <- "yes"
 
 
-final_sample[final_sample$recipient == "couple" & final_sample$messenger == "female",]$IVR[sample(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "female",]$IVR), floor(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "female",]$IVR)/2)) ] <- "yes"
+final_sample[final_sample$recipient == "female" & final_sample$messenger == "female",]$IVR[sample(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "female",]$IVR), floor(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "female",]$IVR)*2/3)) ] <- "yes"
 
-final_sample[final_sample$recipient == "couple" & final_sample$messenger == "couple",]$IVR[sample(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "couple",]$IVR), floor(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "couple",]$IVR)/2)) ] <- "yes"
+final_sample[final_sample$recipient == "female" & final_sample$messenger == "couple",]$IVR[sample(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "couple",]$IVR), floor(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "couple",]$IVR)*2/3)) ] <- "yes"
+
+final_sample[final_sample$recipient == "couple" & final_sample$messenger == "male",]$IVR[sample(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "male",]$IVR), floor(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "male",]$IVR)*2/3)) ] <- "yes"
+
+
+final_sample[final_sample$recipient == "couple" & final_sample$messenger == "female",]$IVR[sample(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "female",]$IVR), floor(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "female",]$IVR)*2/3)) ] <- "yes"
+
+final_sample[final_sample$recipient == "couple" & final_sample$messenger == "couple",]$IVR[sample(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "couple",]$IVR), floor(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "couple",]$IVR)*2/3)) ] <- "yes"
+
+
+final_sample$sms <- "no"
+
+final_sample[final_sample$recipient == "male" & final_sample$messenger == "male"  & final_sample$IVR == "yes",]$sms[sample(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "male"  & final_sample$IVR == "yes",]$IVR), floor(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "male"  & final_sample$IVR == "yes",]$IVR)/2)) ] <- "yes"
+
+
+final_sample[final_sample$recipient == "male" & final_sample$messenger == "female"  & final_sample$IVR == "yes",]$sms[sample(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "female"  & final_sample$IVR == "yes",]$IVR), floor(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "female"  & final_sample$IVR == "yes",]$IVR)/2)) ] <- "yes"
+
+final_sample[final_sample$recipient == "male" & final_sample$messenger == "couple"  & final_sample$IVR == "yes",]$sms[sample(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "couple"  & final_sample$IVR == "yes",]$IVR), floor(length(final_sample[final_sample$recipient == "male" & final_sample$messenger == "couple"  & final_sample$IVR == "yes",]$IVR)/2)) ] <- "yes"
+
+final_sample[final_sample$recipient == "female" & final_sample$messenger == "male"  & final_sample$IVR == "yes",]$sms[sample(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "male"  & final_sample$IVR == "yes",]$IVR), floor(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "male"  & final_sample$IVR == "yes",]$IVR)/2)) ] <- "yes"
+
+
+final_sample[final_sample$recipient == "female" & final_sample$messenger == "female" & final_sample$IVR == "yes",]$sms[sample(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "female"  & final_sample$IVR == "yes",]$IVR), floor(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "female"  & final_sample$IVR == "yes",]$IVR)/2)) ] <- "yes"
+
+final_sample[final_sample$recipient == "female" & final_sample$messenger == "couple"  & final_sample$IVR == "yes",]$sms[sample(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "couple"  & final_sample$IVR == "yes",]$IVR), floor(length(final_sample[final_sample$recipient == "female" & final_sample$messenger == "couple"  & final_sample$IVR == "yes",]$IVR)/2)) ] <- "yes"
+
+final_sample[final_sample$recipient == "couple" & final_sample$messenger == "male"  & final_sample$IVR == "yes",]$sms[sample(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "male"  & final_sample$IVR == "yes",]$IVR), floor(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "male"  & final_sample$IVR == "yes",]$IVR)/2)) ] <- "yes"
+
+
+final_sample[final_sample$recipient == "couple" & final_sample$messenger == "female"  & final_sample$IVR == "yes",]$sms[sample(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "female"  & final_sample$IVR == "yes",]$IVR), floor(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "female"  & final_sample$IVR == "yes",]$IVR)/2)) ] <- "yes"
+
+final_sample[final_sample$recipient == "couple" & final_sample$messenger == "couple"  & final_sample$IVR == "yes",]$sms[sample(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "couple"  & final_sample$IVR == "yes",]$IVR), floor(length(final_sample[final_sample$recipient == "couple" & final_sample$messenger == "couple"  & final_sample$IVR == "yes",]$IVR)/2)) ] <- "yes"
+
 
 ### for ctrl treatment, also balance over who gets to see the video
 
