@@ -3,73 +3,90 @@
 This is the questionnaire that will be used when the videos are shown for the first time. The idea is to collect a limited number of variables which can be used to assess balance between the various treatment groups. In addition, some variables may be useful to investigate heterogeneity in treatment effects. The survey is implemented in ODK. It will have household identifiers prepopulated, and conditional on what treatment the household should receive, the right questions will appear and the correct video will be cued. The video will be embedded into he survey. 
 
 1. Please determine and indicate the household type you are about to interview:
-a) household type of monogamously married couple or not married but living together as a couple. 
-b) female headed household with male absent (widow, divorced, single,…).
-c) other household type (of polygamously, male headed household with woman absent (widower, divorced, single,)). => abort
+a) household type of monogamously married couple or not married but living together as a couple => 2
+b) female headed household with male absent (widow, divorced, single,…) => 2
+c) other household type (of polygamously, male headed household with woman absent (widower, divorced, single,)) => abort
 
 2. Did your household grow maize during the last season (April – July 2017)? (yes/no => abort)
 
 Enumerator: Please make sure that in this household, you are interviewing <the male head / the spouse / the man and woman together as a couple / the (single) female head>. Note that if you are interviewing the man and woman together as a couple, they are allowed to discuss the questions and answer together. 
 
-3. What is your highest education level (No formal schooling, Some primary, Finished primary, Some secondary, Finished secondary, Anything higher than secondary)
+3. Informed consent:
+Hello, my name is ----. I am working for the International Food Policy Research Institute (IFPRI), an organization that conducts research on agriculture and food security around the world. We would like to ask you for your help in some research we are doing among maize farmers in this area. There are no risks related to participating in this study. There are also no direct benefits, apart from the information you gain by watching the video and a small token of appreciation for being willing to take part in this study.
 
-4. What is the highest education level of your wife/husband (No formal schooling, Some primary, Finished primary, Some secondary, Finished secondary, Anything higher than secondary) (not if  1 ==  b)
+Participation in this study is completely voluntary. You may, at any stage of the research, choose to discontinue. You may also opt to not respond to certain questions that make you feel uncomfortable. You may also ask for additional information or clarifications about the study, at any point in time. If you decide not to participate, or to discontinue participation, this will not result in a penalty or the loss of any other benefits.
 
-5. What is your age (in years – between 16 and 99) 
+The research involves short surveys at three points in time. In these surveys, we will collect only non-sensitive data, such as area of maize planted, use of fertilizer, etc. Any data that enables one to identify you, such as your name and telephone number, will be removed before the data is shared among researchers.
 
-6. What is the age of your wife/husband (in years – between 14 and 99) (not if  1 ==  b)
+For additional information, please contact the Primary Investigator Bjorn Van Campenhout +32488147073 or the local representative Fiona Nattembo 0704301919. You may also contact the IRB Chair at IFPRI with any concerns or complaints (ifpri-irb@cgiar.org)
 
-7. Number of household members (defined as direct relatives, eating here on a regular basis or sleeping under the same roof). (number of members – between 1 and 25)
+Do you agree to participate in this study? (yes => 4 / no => abort) 
 
-8. Distance to nearest agricultural input provider or farm supply shop, where you can normally buy fertilizer (DAP, NPK and Urea) and/or improved maize seed (km – between 0 and 100, if less than one km, write 0)
+4. What is your highest education level (No formal schooling, Some primary, Finished primary, Some secondary, Finished secondary, Anything higher than secondary)
 
-9. What is the total area your household had under maize cultivation during the last cropping season  (April – July 2017) (in acre)? (decimal between 0.1 and 25)
-10. Out of the total area your household cultivates maize, from how many acres are you the primary manager during the last cropping season (April – July 2017) ? (decimal between 0.1 and 25)
+5. What is the highest education level of your wife/husband (No formal schooling, Some primary, Finished primary, Some secondary, Finished secondary, Anything higher than secondary) (not if  1 ==  b)
 
-11. How many bags of maize did you harvest from these gardens that were primarily managed by you? (decimal from 0 to 200)
+6. What is your age (in years – between 16 and 99) 
 
-12. Out of the total area your household cultivates maize, from how many acres is your wife/husband the primary manager? (decimal between 0.1 and 25)
+7. What is the age of your wife/husband (in years – between 14 and 99) (not if  1 ==  b)
 
-13. How many bags of maize did you harvest from these gardens that were primarily managed by your wife/husband? (decimal from 0 to 200)
+8. Number of household members (defined as direct relatives, eating here on a regular basis or sleeping under the same roof). (number of members – between 1 and 25)
 
-14. Did anyone in your household receive any agricultural extension information or training on maize farming during the last year? (yes/no/don’t know)
+9. Distance to nearest agricultural input provider or farm supply shop, where you can normally buy fertilizer (DAP, NPK and Urea) and/or improved maize seed (km – between 0 and 100, if less than one km, write 0)
 
-15. Did you or your wife/husband use fertilizer in your maize gardens during the last cropping season (April – July 2017)?  (yes/no/don’t know)
+10. What is the total area your household had under maize cultivation during the last cropping season  (April – July 2017) (in acre)? (decimal between 0.1 and 25)
+11. Out of the total area your household cultivates maize, from how many acres are you the primary manager during the last cropping season (April – July 2017) ? (decimal between 0.1 and 25)
 
-16. Did you or your wife/husband use improved seed bought from a shop or agro-input dealer in your maize gardens during the last cropping season (April – July 2017)?  (yes/no/don’t know)
+12. How many bags of maize did you harvest from these gardens that were primarily managed by you? (decimal from 0 to 200)
 
-17. What is the major construction material of the external wall? (1=burnt bricks, 2=unburnt bricks , 3=mud and pole, 4= other). If interview is done at home, enumerator should check.
+13. Out of the total area your household cultivates maize, from how many acres is your wife/husband the primary manager? (decimal between 0.1 and 25)
 
-18. How many rooms does your household use for sleeping?
-19. Did anyone in your household earn off-farm income (eg salary, shop, business,... ) in the last six months?
+14. How many bags of maize did you harvest from these gardens that were primarily managed by your wife/husband? (decimal from 0 to 200)
+
+15. Did anyone in your household receive any agricultural extension information or training on maize farming during the last year? (yes/no/don’t know)
+
+16. Did you or your wife/husband use fertilizer in your maize gardens during the last cropping season (April – July 2017)?  (yes/no/don’t know)
+
+17. Did you or your wife/husband use improved seed bought from a shop or agro-input dealer in your maize gardens during the last cropping season (April – July 2017)?  (yes/no/don’t know)
+
+18. What is the major construction material of the external wall? (1=burnt bricks, 2=unburnt bricks , 3=mud and pole, 4= other). If interview is done at home, enumerator should check.
+
+19. How many rooms does your household use for sleeping?
+20. Did anyone in your household earn off-farm income (eg salary, shop, business,... ) in the last six months?
 <show video here>
 
-20. If you want to be a successful farmer like the one shown in the video, what is the optimal spacing and plant rate should you use for your maize:
+21. If you want to be a successful farmer like the one shown in the video, what is the optimal spacing and plant rate should you use for your maize:
 a. one foot between plants and 2 and ½ foot between rows. One seed per hill.
 b. one foot between plants and 2 and ½ foot between rows. Two seeds per hill.
 c. two foot between plants and 2 and ½ foot between rows. Two seeds per hill.
 d. don’t know
 
-21. If you want to be a successful farmer like the one shown in the video, what should you do if you only have 40,000 shillings?
+22. If you want to be a successful farmer like the one shown in the video, what should you do if you only have 40,000 shillings?
 a. use all the money to buy hybrid seed, because without good seed, yields will be low.
 b. use all the money to buy fertilizer, because in poor soils, yields will be low.
 c. use it to buy improved seed and fertilizer and start small, eg on a 15 by 15 sticks area.
 d. don’t know
 
-22. What should you do if, at the time of harvest you want to buy fertilizer for next season and it is not in the shop?
+23. What should you do if, at the time of harvest you want to buy fertilizer for next season and it is not in the shop?
 a. give the money to someone else so you don’t spend it and ask it back when fertilizer becomes available.
 b. put the money aside in a special container and regularly visit the store to see if the inputs are there.
 c. nothing, when time for comes, you will go and buy fertilizer and seed.
 d. don’t know.
 
-23. Do you own a mobile phone? (yes/no) if yes, do you have airtel? If no, do you have access to Airtel phone?
+24. Do you yourself own a mobile phone? (yes => 26 / no => 25) 
 
-24. Do you have access to a mobile phone? (yes/no) If yes, do you have access to an Airtel mobile phone? (not if 23 == yes)
+25. Do you have access to a mobile phone? (yes => 26 /no => 28)
 
-25. Interviewer, did you show the movie inside or outside (open air)? (inside/outside)
+26. Would you mind providing us with the phone number? We will not share this with a third party, it will only be used. (Yes, it is ____  => 27 / no I do not want to give the phone number => 28)
 
-26. Interviewer, have you been disturbed or interrupted during the video screening?
+27. Would you object to us sending short free messages related to maize growing on this number? In particular, we may send you up to 8 messages over the next 4 months? (yes I object/ no, you can send)
 
-27. GPS coordinates
+28. Interviewer: depending on sampling list, please give the person you have interviewed the IVR starter kit. If a couple is interviewed, hand over the starter kit to the woman.
+
+29. Interviewer, did you show the movie inside or outside (open air)? (inside/outside)
+
+30. Interviewer, have you been disturbed or interrupted during the video screening?
+
+31. GPS coordinates
 
 

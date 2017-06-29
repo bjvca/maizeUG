@@ -155,6 +155,7 @@ final_sample[final_sample$messenger == "ctrl" & final_sample$recipient != "femal
 
 final_sample[final_sample$messenger == "ctrl" & final_sample$recipient == "ctrl",]$recipient <- "couple"
 
+sav <- final_sample  
 final_sample$sc <- (sapply(strsplit(final_sample$sc,"-"),'[',2))
 
 final_sample$parish <- (sapply(strsplit(final_sample$parish,"-"),'[',3))
@@ -167,7 +168,32 @@ final_sample$ones <- 1
 aggr <- aggregate(as.numeric(final_sample$ones),list(final_sample$district, final_sample$sc,final_sample$parish,final_sample$village),sum)
 names(aggr) <- c("district","sc","parish","village","hh")
 
-aggr[order(aggr$district,aggr$parish,aggr$sc,aggr$parish, aggr$village),]
+aggr[order(aggr$district,aggr$sc,aggr$parish, aggr$village),]
+
+
+
+
+### this is for listing
+
+final_sample <- sav
+final_sample$ones <- 1
+
+agall <- aggregate(final_sample$ones,list(final_sample$village),sum)
+names(agall) <- c("village","nr_monogamous_hh")
+agall$nr_monogamous_hh <- agall$nr_monogamous_hh + 1
+agall$femhead <- 1
+
+agall$district <- (sapply(strsplit(agall$village,"-"),'[',1))
+agall$sc <- (sapply(strsplit(agall$village,"-"),'[',2))
+
+agall$parish <- (sapply(strsplit(agall$village,"-"),'[',3))
+
+agall$village <- (sapply(strsplit(agall$village,"-"),'[',4))
+
+agall <- agall[c("district","sc","parish", "village","nr_monogamous_hh", "femhead")]
+
+agall <- agall[order(agall$district,agall$sc,agall$parish, agall$village),]
+write.csv(agall, file = "/home/bjvca/data/projects/digital green/sampling/sampling_list_odk.csv")
 
 
 
