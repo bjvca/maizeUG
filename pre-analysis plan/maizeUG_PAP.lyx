@@ -2601,9 +2601,16 @@ h
  was in the treatment group and zero otherwise.
  We will control for the gender of the enumerator and also add parish fixed
  effects.
- For the few outome variables that are also collected at baseline such as
- fertilizer use or use of improved seed (see balancing checks above), difference
--in-difference models will be estimated.
+ In addition, in a factorial design, orthogonal treatments are likely to
+ increase the variance of the outcome variable.
+ As such, we also need to control for the treatment status of the other
+ factors (and add dummies for, for instance IVR and IVR+sms).
+ For the treatments where compliance can not be completely controlled, we
+ also control for ex post outcomes derived from the endline survey (eg.
+ an indicator if the man used IVR, an indicator if the woman used IVR,...).
+ For the few outcome variables that are also collected at baseline such
+ as fertilizer use or use of improved seed (see balancing checks above),
+ difference-in-difference models will be estimated.
 \end_layout
 
 \begin_layout Standard
