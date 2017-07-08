@@ -162,6 +162,43 @@ final_sample$parish <- (sapply(strsplit(final_sample$parish,"-"),'[',3))
 
 final_sample$village <- (sapply(strsplit(final_sample$village,"-"),'[',4))
 
+### correct names of villages to correspond to names of villages in VHT lists
+
+final_sample$village[final_sample$parish =="LUBIRA" & final_sample$village=="MAAWA"] <- "MAWA"
+
+final_sample$village[final_sample$parish =="LUBIRA" & final_sample$village=="BUGALI 'A'"] <- "BUGALI A"
+final_sample$village[final_sample$parish =="LUBIRA" & final_sample$village=="BUGALI 'B'"] <- "BUGALI B"
+final_sample$village[final_sample$parish =="NANSUMA" & final_sample$village=="MAKALO"] <- "MAAKALO"
+
+final_sample$village[final_sample$parish =="LWANGOSIA" & final_sample$village=="BULOHA WEST"] <- "NSANGO A"
+final_sample$village[final_sample$parish =="LWANGOSIA" & final_sample$village=="BULOHA EAST"] <- "BULOHA"
+
+final_sample$village[final_sample$parish =="LUGALA" & final_sample$village=="BUDALA"] <- "BUDALA A"
+final_sample$village[final_sample$parish =="LUGALA" & final_sample$village=="BUHIMA"] <- "BUDALA B"
+final_sample$village[final_sample$parish =="LUGALA" & final_sample$village=="BUYUNDO"] <- "BUYONDO WEST"
+
+final_sample$village[final_sample$parish =="LUGALA" & final_sample$village=="LUGALA BEACH"] <- "LUGALA A"
+final_sample$village[final_sample$parish =="LUGALA" & final_sample$village=="MATALE"] <- "BUYONDO BEACH"
+final_sample$village[final_sample$parish =="LUGALA" & final_sample$village=="SISIRO"] <- "LUGALA B"
+
+final_sample$village[final_sample$parish =="LUTOLO" & final_sample$village=="BUCHUNIA"] <- "BUCHUNIA A"
+final_sample$village[final_sample$parish =="LUTOLO" & final_sample$village=="BWOGOMI"] <- "BUCHUNIA B"
+final_sample$village[final_sample$parish =="LUTOLO" & final_sample$village=="GAMBABWAMI"] <- "BUKOONA"
+final_sample$village[final_sample$parish =="LUTOLO" & final_sample$village=="LUNAYE"] <- "LUTOLO A"
+final_sample$village[final_sample$parish =="LUTOLO" & final_sample$village=="LUTOLO"] <- "LUTOLO B"
+final_sample$village[final_sample$parish =="LUTOLO" & final_sample$village=="NAMABONI"] <- "NANGERA A"
+final_sample$village[final_sample$parish =="LUTOLO" & final_sample$village=="NANGERA"] <- "NANGERA B"
+
+final_sample$village[final_sample$parish =="LWANGOSIA" & final_sample$village=="BULOHA EAST"] <- "BULOHA"
+final_sample$village[final_sample$parish =="LWANGOSIA" & final_sample$village=="BULOHA WEST"] <- "NSANGO A"
+
+final_sample$village[final_sample$parish =="LWANGOSIA" & final_sample$village=="NAMUTAMBA EAST"] <- "NAMUTABA EAST"
+final_sample$village[final_sample$parish =="LWANGOSIA" & final_sample$village=="NAMUTAMBA WEST"] <- "NAMUTABA WEST"
+final_sample$head_name <- NA
+final_sample$tel_contact <- NA
+final_sample$head_name <- as.character(final_sample$head_name)
+final_sample$tel_contact <- as.numeric(final_sample$tel_contact)
+
 write.csv(final_sample, "/home/bjvca/data/projects/digital green/sampling/sampling_list.csv")
 #iganga <-  subset(final_sample, district == "IGANGA")
 final_sample$ones <- 1
@@ -194,6 +231,10 @@ agall <- agall[c("district","sc","parish", "village","nr_monogamous_hh", "femhea
 
 agall <- agall[order(agall$district,agall$sc,agall$parish, agall$village),]
 write.csv(agall, file = "/home/bjvca/data/projects/digital green/sampling/sampling_list_odk.csv")
+
+
+### after listing, run following scripts
+listing_namayingo.R
 
 
 
