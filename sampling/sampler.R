@@ -199,6 +199,61 @@ final_sample$tel_contact <- NA
 final_sample$head_name <- as.character(final_sample$head_name)
 final_sample$tel_contact <- as.numeric(final_sample$tel_contact)
 
+### change names of missing villages to villages that were sampled additionally
+final_sample$district[final_sample$parish =="BUSOWOOBI" & final_sample$village=="NABITOVU"] <- "BUGIRI"
+final_sample$sc[final_sample$parish =="BUSOWOOBI" & final_sample$village=="NABITOVU"] <- "BUDHAYA"
+final_sample$parish[final_sample$parish =="BUSOWOOBI" & final_sample$village=="NABITOVU"] <- "BUWOLYA"
+final_sample$village[final_sample$parish =="BUWOLYA" & final_sample$village=="NABITOVU"] <- "BUDDE"
+#BUGIRI-BUDHAYA-BUWOLYA-BUKAGOLO
+final_sample$district[final_sample$parish =="BUYEMBA" & final_sample$village=="WALUKUBA"] <- "BUGIRI"
+final_sample$sc[final_sample$parish =="BUYEMBA" & final_sample$village=="WALUKUBA"] <- "BUDHAYA"
+final_sample$parish[final_sample$parish =="BUYEMBA" & final_sample$village=="WALUKUBA"] <- "BUWOLYA"
+final_sample$village[final_sample$parish =="BUWOLYA" & final_sample$village=="WALUKUBA"] <- "BUKAGOLO"
+#561  BUGIRI-BUDHAYA-BUWOLYA-BUVUTWA
+final_sample$district[final_sample$parish =="LWANIKA" & final_sample$village=="BUTIMBWA"] <- "BUGIRI"
+final_sample$sc[final_sample$parish =="LWANIKA" & final_sample$village=="BUTIMBWA"] <- "BUDHAYA"
+final_sample$parish[final_sample$parish =="LWANIKA" & final_sample$village=="BUTIMBWA"] <- "BUWOLYA"
+final_sample$village[final_sample$parish =="BUWOLYA" & final_sample$village=="BUTIMBWA"] <- "BUVUTWA"
+##562   BUGIRI-BUDHAYA-BUWOLYA-KIMASA
+final_sample$district[final_sample$parish =="LWANIKA" & final_sample$village=="KASONZI"] <- "BUGIRI"
+final_sample$sc[final_sample$parish =="LWANIKA" & final_sample$village=="KASONZI"] <- "BUDHAYA"
+final_sample$parish[final_sample$parish =="LWANIKA" & final_sample$village=="KASONZI"] <- "BUWOLYA"
+final_sample$village[final_sample$parish =="BUWOLYA" & final_sample$village=="KASONZI"] <- "KIMASA"
+##563   BUGIRI-BUDHAYA-BUWOLYA-MAKOVA
+final_sample$district[final_sample$parish =="MAGADA" & final_sample$village=="WALUGOGO"] <- "BUGIRI"
+final_sample$sc[final_sample$parish =="MAGADA" & final_sample$village=="WALUGOGO"] <- "BUDHAYA"
+final_sample$parish[final_sample$parish =="MAGADA" & final_sample$village=="WALUGOGO"] <- "BUWOLYA"
+final_sample$village[final_sample$parish =="BUWOLYA" & final_sample$village=="WALUGOGO"] <- "MAKOVA"
+##564     BUGIRI-BUDHAYA-BUWOLYA-LUWA
+final_sample$district[final_sample$parish =="LUTOLO" & final_sample$village=="SIROWA"] <- "BUGIRI"
+final_sample$sc[final_sample$parish =="LUTOLO" & final_sample$village=="SIROWA"] <- "BUDHAYA"
+final_sample$parish[final_sample$parish =="LUTOLO" & final_sample$village=="SIROWA"] <- "BUWOLYA"
+final_sample$village[final_sample$parish =="BUWOLYA" & final_sample$village=="SIROWA"] <- "LUWA"
+
+###565  BUGIRI-BUDHAYA-BUWOLYA-BITIBWA
+final_sample$district[final_sample$parish =="MPANDE (KISEWUZI)" & final_sample$village=="NAMWENDA III"] <- "BUGIRI"
+final_sample$sc[final_sample$parish =="MPANDE (KISEWUZI)" & final_sample$village=="NAMWENDA III"] <- "BUDHAYA"
+final_sample$parish[final_sample$parish =="MPANDE (KISEWUZI)" & final_sample$village=="NAMWENDA III"] <- "BUWOLYA"
+final_sample$village[final_sample$parish =="BUWOLYA" & final_sample$village=="NAMWENDA III"] <- "BITIBWA"
+
+### 3 more villages needed to make up for attrition at listing stage, we can take a random parish in Namayingo, sample(names(table(dta$parishes)),1) yielded BULULE.
+
+final_sample$district[final_sample$parish =="BUYEMBA" & final_sample$village=="NAMBULUKUSA"] <- "NAMAYINGO"
+final_sample$sc[final_sample$parish =="BUYEMBA" & final_sample$village=="NAMBULUKUSA"] <- "MUTUMBA"
+final_sample$parish[final_sample$parish =="BUYEMBA" & final_sample$village=="NAMBULUKUSA"] <- "BULULE"
+final_sample$village[final_sample$parish =="BULULE" & final_sample$village=="NAMBULUKUSA"] <- "BUMACHI"
+
+final_sample$district[final_sample$parish =="BUJWANGA" & final_sample$village=="BUBANGI"] <- "NAMAYINGO"
+final_sample$sc[final_sample$parish =="BUJWANGA" & final_sample$village=="BUBANGI"] <- "MUTUMBA"
+final_sample$parish[final_sample$parish =="BUJWANGA" & final_sample$village=="BUBANGI"] <- "BULULE"
+final_sample$village[final_sample$parish =="BULULE" & final_sample$village=="BUBANGI"] <- "NAHAIGA"
+
+final_sample$district[final_sample$parish =="KIWANYI" & final_sample$village=="KALITUMBA"] <- "NAMAYINGO"
+final_sample$sc[final_sample$parish =="KIWANYI" & final_sample$village=="KALITUMBA"] <- "MUTUMBA"
+final_sample$parish[final_sample$parish =="KIWANYI" & final_sample$village=="KALITUMBA"] <- "BULULE"
+final_sample$village[final_sample$parish =="BULULE" & final_sample$village=="KALITUMBA"] <- "NAMAVUNDU"
+
+
 write.csv(final_sample, "/home/bjvca/data/projects/digital green/sampling/sampling_list.csv")
 #iganga <-  subset(final_sample, district == "IGANGA")
 final_sample$ones <- 1
@@ -231,11 +286,5 @@ agall <- agall[c("district","sc","parish", "village","nr_monogamous_hh", "femhea
 
 agall <- agall[order(agall$district,agall$sc,agall$parish, agall$village),]
 write.csv(agall, file = "/home/bjvca/data/projects/digital green/sampling/sampling_list_odk.csv")
-
-
-### after listing, run following scripts
-listing_namayingo.R
-
-
 
 
