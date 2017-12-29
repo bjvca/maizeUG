@@ -45,7 +45,7 @@ pdf("/home/bjvca/data/projects/digital green/midline/videoworks_mid.pdf")
 par(mfrow=c(1,3))
 siglev <-  1.96
 means <- tapply(dta_bal$know_space,dta_bal$messenger!="ctrl", FUN=mean)
-barCenters <- barplot(tapply(dta_bal$know_space,dta_bal$messenger!="ctrl", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Spacing",xlab="Watched Video", names.arg=c("CTRL","TREAT"), ylab="proportion of correct answers")
+barCenters <- barplot(tapply(dta_bal$know_space,dta_bal$messenger!="ctrl", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Spacing",xlab="Watched Video", names.arg=c("CTRL","TREAT"), ylab="proportion of correct answers", cex.lab=1.5, cex.axis=2, cex.main = 2)
 
 segments(barCenters, means  -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCenters,
          means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), lwd = 1.5)
@@ -55,7 +55,7 @@ arrows(barCenters, means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCen
        code = 3, length = 0.05)
 
 means <- tapply(dta_bal$know_small,dta_bal$messenger!="ctrl", FUN=mean)
-barCenters <- barplot(tapply(dta_bal$know_small,dta_bal$messenger!="ctrl", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Combine",xlab="Watched Video", names.arg=c("CTRL","TREAT"), ylab="proportion of correct answers")
+barCenters <- barplot(tapply(dta_bal$know_small,dta_bal$messenger!="ctrl", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Combine",xlab="Watched Video", names.arg=c("CTRL","TREAT"), ylab="", cex.lab=1.5, cex.axis=2, cex.main=2)
 
 segments(barCenters, means  -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCenters,
          means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), lwd = 1.5)
@@ -65,7 +65,7 @@ arrows(barCenters, means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCen
        code = 3, length = 0.05)
 
 means <- tapply(dta_bal$know_weed,dta_bal$messenger!="ctrl", FUN=mean)
-barCenters <- barplot(tapply(dta_bal$know_weed,dta_bal$messenger!="ctrl", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Weeding",xlab="Watched Video", names.arg=c("CTRL","TREAT"), ylab="proportion of correct answers")
+barCenters <- barplot(tapply(dta_bal$know_weed,dta_bal$messenger!="ctrl", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Weeding",xlab="Watched Video", names.arg=c("CTRL","TREAT"), ylab="", cex.lab=1.5, cex.axis=2, cex.main=2)
 
 segments(barCenters, means  -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCenters,
          means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), lwd = 1.5)
@@ -109,7 +109,7 @@ prop.test(t(table(dta_bal$know_weed, dta_bal$recipient=="couple")))
 pdf("/home/bjvca/data/projects/digital green/midline/recipient_mid.pdf")
 par(mfrow=c(1,3))
 means <- tapply(dta_bal$know_space,dta_bal$recipient=="couple", FUN=mean)
-barCenters <- barplot(tapply(dta_bal$know_space,dta_bal$recipient=="couple", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Spacing",xlab="Audience", names.arg=c("INDIV","COUPLE"), ylab="proportion of correct answers")
+barCenters <- barplot(tapply(dta_bal$know_space,dta_bal$recipient=="couple", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Spacing",xlab="Audience", names.arg=c("INDIV","COUPLE"), ylab="proportion of correct answers", cex.lab=1.5, cex.axis=2, cex.main = 2)
 
 segments(barCenters, means  -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCenters,
          means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), lwd = 1.5)
@@ -119,7 +119,7 @@ arrows(barCenters, means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCen
        code = 3, length = 0.05)
 
 means <- tapply(dta_bal$know_small,dta_bal$recipient=="couple", FUN=mean)
-barCenters <- barplot(tapply(dta_bal$know_small,dta_bal$recipient=="couple", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Combine",xlab="Audience", names.arg=c("INDIV","COUPLE"), ylab="proportion of correct answers")
+barCenters <- barplot(tapply(dta_bal$know_small,dta_bal$recipient=="couple", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Combine",xlab="Audience", names.arg=c("INDIV","COUPLE"), ylab="", cex.lab=1.5, cex.axis=2, cex.main = 2)
 
 segments(barCenters, means  -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCenters,
          means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), lwd = 1.5)
@@ -129,7 +129,7 @@ arrows(barCenters, means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCen
        code = 3, length = 0.05)
 ### but this one is sig at 10 percent siglev <-  1.64
 means <- tapply(dta_bal$know_weed,dta_bal$recipient=="couple", FUN=mean)
-barCenters <- barplot(tapply(dta_bal$know_weed,dta_bal$recipient=="couple", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Weeding",xlab="Audience", names.arg=c("INDIV","COUPLE"), ylab="proportion of correct answers")
+barCenters <- barplot(tapply(dta_bal$know_weed,dta_bal$recipient=="couple", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Weeding",xlab="Audience", names.arg=c("INDIV","COUPLE"), ylab="", cex.lab=1.5, cex.axis=2, cex.main = 2)
 
 segments(barCenters, means  -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCenters,
          means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), lwd = 1.5)
@@ -170,10 +170,10 @@ prop.test(t(table(dta$know_weed, dta$messenger=="couple")))
 prop.test(t(table(dta_bal$know_weed, dta_bal$messenger=="couple")))
 
 
-pdf("/home/bjvca/data/projects/digital green/midline/audience_mid.pdf")
+pdf("/home/bjvca/data/projects/digital green/midline/messenger_mid.pdf")
 par(mfrow=c(1,3))
 means <- tapply(dta_bal$know_space,dta_bal$messenger=="couple", FUN=mean)
-barCenters <- barplot(tapply(dta_bal$know_space,dta_bal$messenger=="couple", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Spacing",xlab="Messenger", names.arg=c("INDIV","COUPLE"), ylab="proportion of correct answers")
+barCenters <- barplot(tapply(dta_bal$know_space,dta_bal$messenger=="couple", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Spacing",xlab="Messenger", names.arg=c("INDIV","COUPLE"), ylab="proportion of correct answers", cex.lab=1.5, cex.axis=2, cex.main = 2)
 
 segments(barCenters, means  -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCenters,
          means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), lwd = 1.5)
@@ -183,7 +183,7 @@ arrows(barCenters, means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCen
        code = 3, length = 0.05)
 
 means <- tapply(dta_bal$know_small,dta_bal$messenger=="couple", FUN=mean)
-barCenters <- barplot(tapply(dta_bal$know_small,dta_bal$messenger=="couple", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Combine",xlab="Messenger", names.arg=c("INDIV","COUPLE"), ylab="proportion of correct answers")
+barCenters <- barplot(tapply(dta_bal$know_small,dta_bal$messenger=="couple", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Combine",xlab="Messenger", names.arg=c("INDIV","COUPLE"), ylab="", cex.lab=1.5, cex.axis=2, cex.main = 2)
 
 segments(barCenters, means  -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCenters,
          means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), lwd = 1.5)
@@ -193,7 +193,7 @@ arrows(barCenters, means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCen
        code = 3, length = 0.05)
 ### but this one is sig at 10 percent siglev <-  1.64
 means <- tapply(dta_bal$know_weed,dta_bal$messenger=="couple", FUN=mean)
-barCenters <- barplot(tapply(dta_bal$know_weed,dta_bal$messenger=="couple", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Weeding",xlab="Messenger", names.arg=c("INDIV","COUPLE"), ylab="proportion of correct answers")
+barCenters <- barplot(tapply(dta_bal$know_weed,dta_bal$messenger=="couple", FUN=mean), ylim=c(0,1), xpd = FALSE, main="Weeding",xlab="Messenger", names.arg=c("INDIV","COUPLE"), ylab="", cex.lab=1.5, cex.axis=2, cex.main = 2)
 
 segments(barCenters, means  -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCenters,
          means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), lwd = 1.5)
@@ -239,7 +239,7 @@ prop.test(t(table(dta_bal$know_weed, dta_bal$matched)))
 pdf("/home/bjvca/data/projects/digital green/midline/matched_mid.pdf")
 par(mfrow=c(1,3))
 means <- tapply(dta_bal$know_space,  dta_bal$matched, FUN=mean)
-barCenters <- barplot(tapply(dta_bal$know_space, dta_bal$matched, FUN=mean), ylim=c(0,1), xpd = FALSE, main="Spacing",xlab="gender-matching", names.arg=c("MIXED","MATCHED"), ylab="proportion of correct answers")
+barCenters <- barplot(tapply(dta_bal$know_space, dta_bal$matched, FUN=mean), ylim=c(0,1), xpd = FALSE, main="Spacing",xlab="gender-matching", names.arg=c("MIXED","MATCHED"), ylab="proportion of correct answers", cex.lab=1.5, cex.axis=2, cex.main = 2)
 
 segments(barCenters, means  -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCenters,
          means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), lwd = 1.5)
@@ -249,7 +249,7 @@ arrows(barCenters, means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCen
        code = 3, length = 0.05)
 
 means <- tapply(dta_bal$know_small, dta_bal$matched, FUN=mean)
-barCenters <- barplot(tapply(dta_bal$know_small, dta_bal$matched, FUN=mean), ylim=c(0,1), xpd = FALSE, main="Combine",xlab="gender-matching", names.arg=c("MIXED","MATCHED"), ylab="proportion of correct answers")
+barCenters <- barplot(tapply(dta_bal$know_small, dta_bal$matched, FUN=mean), ylim=c(0,1), xpd = FALSE, main="Combine",xlab="gender-matching", names.arg=c("MIXED","MATCHED"), ylab="", cex.lab=1.5, cex.axis=2, cex.main = 2)
 
 segments(barCenters, means  -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCenters,
          means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), lwd = 1.5)
@@ -259,7 +259,7 @@ arrows(barCenters, means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCen
        code = 3, length = 0.05)
 ### but this one is sig at 10 percent siglev <-  1.64
 means <- tapply(dta_bal$know_weed,dta_bal$matched, FUN=mean)
-barCenters <- barplot(tapply(dta_bal$know_weed,dta_bal$matched, FUN=mean), ylim=c(0,1), xpd = FALSE, main="Weeding",xlab="gender-matching", names.arg=c("MIXED","MATCHED"), ylab="proportion of correct answers")
+barCenters <- barplot(tapply(dta_bal$know_weed,dta_bal$matched, FUN=mean), ylim=c(0,1), xpd = FALSE, main="Weeding",xlab="gender-matching", names.arg=c("MIXED","MATCHED"), ylab="", cex.lab=1.5, cex.axis=2, cex.main = 2)
 
 segments(barCenters, means  -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), barCenters,
          means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1]), lwd = 1.5)
