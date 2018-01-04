@@ -75,6 +75,10 @@
 The Role of Gender in ICT-mediated Agricultural Information Campaigns
 \end_layout
 
+\begin_layout Author
+Bjorn Van Campenhout, Els Lecoutere and David J Spielman
+\end_layout
+
 \begin_layout Abstract
 In agricultural information dissemination campaigns through agricultural
  advisory services, seemingly small design attributes, such as the way the
@@ -106,8 +110,8 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-Often, the poor make sub-optimal decision because they lack critical pieces
- of information, fail to notice 
+Often, the poor appear to make sub-optimal decision because they lack critical
+ pieces of information, fail to notice 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1093/qje/qju015"
@@ -153,30 +157,31 @@ n and Communication Technologies (ICT) has led to several initiatives aimed
 \end_layout
 
 \begin_layout Standard
-This research investigates gender related attributes that are thought to
- be key in effective and inclusive agricultural extension information delivery.
+This paper investigates gender related attributes that are thought to be
+ key in effective and inclusive agricultural extension information delivery.
  In particular, we zoom in the the role of (i) the gender composition of
  the receiver(s) of the agricultural extension information messages and
  (ii) the gender composition of the messenger(s) of the information message.
  Together, particular combinations of these two attributes enable us to
  test three hypotheses.
- The first one is related to information asymmetries within the households,
- and we ask if it is more effective if both spouses within dual households
- have the same information then if only one of them has the information.
+ The first hypothesis is related to information asymmetries within the household
+s, and we ask if it is more effective if both spouses within dual households
+ receive the same information then if only one of them is given the information.
  The second hypothesis asserts that promoting a household cooperative approach
  to farming leads to better outcomes than when farming is framed as an idiosyncr
 atic activity.
  Finally, a third hypothesis tests the existence of gender homophily in
  agricultural advisory services and investigates if information is more
- effective if comes from someone that is of the same gender.
+ effective if comes from someone that is of the same gender than if it is
+ provided by someone of the opposite sex.
  
 \end_layout
 
 \begin_layout Standard
-The research hypotheses are answered through field experiments, where farmers
- are randomly assigned to a group that receives particular interventions,
- and their outcomes are compared to outcomes of a group of farmers that
- did not receive these particular interventions 
+The research hypotheses are tested using a field experiment, where farmers
+ are randomly assigned to a group that receives a particular intervention,
+ and their outcomes are compared to the outcomes of a group of farmers that
+ did not receive this particular intervention 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "de2016field"
@@ -189,29 +194,30 @@ key "de2016field"
  of an ICT-mediated extension approach (instead of simply finding out what
  works and compare treatment to control groups), we opt for a factorial
  design.
- In such a design, farmers get a particular combination of interventions
- and, in general, a smaller sample size is needed to answer a fixed number
- of research questions.
+ Generally, in such a design, a smaller sample size is needed to answer
+ a fixed number of research questions as opposed to parallel designs.
  
 \end_layout
 
 \begin_layout Standard
 We work with maize farmers in eastern Uganda.
- The interventions take the form of short videos that explain simple yet
- effective ways to increase maize productivity, such as best practices in
- row spacing and soil fertility management.
- To test hypotheses related to the gender composition of the receivers,
- we show the video to either the man, the woman, or man and women as a couple
- within dual households.
- To test hypotheses related to the gender composition of the messenger(s),
- we produce different versions of the video.
+ The information interventions take the form of short videos that explain
+ simple yet effective ways to increase maize productivity, such as best
+ practices in row spacing and soil fertility management.
+ To test hypotheses that depend on the gender composition of the person
+ or persons targeted by the information, we show the video to either the
+ man only, the woman only, or man and women together as a couple within
+ dual households.
+ To test hypotheses that depend on the gender composition the person or
+ persons providing the information, we produced different versions of the
+ video.
  In one version of the video, the information is provided by a male farmer.
  In a second version of the video, the same information is provided by a
  woman farmer.
  Finally, in a third version of the video, the information is given by a
  couple.
- Power calculations suggest we need a sample of about 3,600 farmers, which
- was drawn from five districts.
+ Power calculations suggested we needed a sample of about 3,600 farmers,
+ which was drawn from five districts.
  The videos were shown twice to farmers, once before the beginning of the
  main season, in July 2017, and once in the beginning of the season, in
  August 2017.
@@ -227,13 +233,14 @@ The current version of this paper shows some initial results from this ongoing
  to a question.
  We also find that the information is more effective if the couple is targeted.
  An endline survey is planed in January 2018.
- As such, we will be able to assess if the interventions also affect adoption
- of modern technologies and recommended practice, which in turn are expected
- to increase yields and well-being.
+ As such, we will be able to assess outcomes further down the causal chain,
+ such as whether the interventions also affect adoption of modern technologies
+ and recommended practice, which in turn are expected to increase yields
+ and well-being.
 \end_layout
 
 \begin_layout Section*
-Research Questions
+Research Questions and Hypotheses
 \end_layout
 
 \begin_layout Standard
@@ -256,7 +263,7 @@ key "fletschner2011gender"
 
 .
  Gender homophily effects, where men learn more from other men and women
- learn more from other women, have also been documented in the context of
+ learn more from other women, have also been reported in the context of
  agricultural extension services 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -283,14 +290,14 @@ key "tanguydiggreen"
 
 \begin_layout Standard
 In this paper, we investigate the relative importance of (i) the gender
- composition of the messenger, and (ii) the gender composition of the audience
- for effective and inclusive agricultural extension information delivery
- to encourage sustainable crop intensification in smallholder household
+ composition of the messenger(s), and (ii) the gender composition of the
+ audience for effective and inclusive agricultural extension information
+ delivery to encourage sustainable crop intensification in smallholder household
  farms and for improving gender equity in household farming.
  By comparing groups of farmers where the messenger - recipient combinations
  differ, we can test a range of interesting hypotheses.
- In particular, our research is designed to answer the following research
- questions: 
+ In particular, our research is designed to answer three research questions.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -365,8 +372,8 @@ key "RePEc:smu:ecowpa:1705,riley"
 \begin_layout Standard
 In a third hypothesis, we will test if matching the gender of the recipient
  with the gender of the messenger leads to better outcomes.
- Homophily effects often encountered in social sciences presume people learn
- more from people they can relate to 
+ Homophily effects, documented in a variety of social interactions, presume
+ people learn more from people they can relate to 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1146/annurev.soc.27.1.415"
@@ -398,16 +405,19 @@ Experimental Design and Corresponding Sampling Frame
 \end_layout
 
 \begin_layout Standard
-The experiment was implemented as 3 by 2 factorial design to which a control
+The three hypotheses, in addition to the overall effectiveness of the ICT
+ mediated information intervention, will be tested with a field experiment.
+ The experiment was implemented as 3 by 2 factorial design to which a control
  group was added.
  We define two different factors, each with three levels.
  The first factor corresponds to the person(s) who provide the message and
- has three levels (male, female and couple).
+ has three levels (male, female, and couple).
  Similarly, the second factor corresponds to the person who receives the
  information message.
- This factor also has three levels (male, female and couple).
+ This factor also has three levels (male, female, and couple).
  A separate control group receives no information.
- The design is illustrated in Figure 
+ The design, together with the sample size in each cell, is illustrated
+ in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Experimental-Design"
@@ -470,8 +480,8 @@ reference "fig:Experimental-Design"
 
 \end_inset
 
- allows us to test all the hypotheses outlined above, in addition to simply
- testing if our information intervention works.
+ allows us to test the three hypotheses outlined above, in addition to simply
+ testing if the information intervention works.
  To test if the information campaign works, we simply compare the average
  outcome among farmers in the control group to the average outcome of farmers
  that received the information intervention, irrespective of who received
@@ -513,7 +523,7 @@ reference "fig:Hypothesis-tests"
 ).
  Finally, the gender homophily hypothesis can be tested by comparing outcomes
  of farmers where the information was provided by a woman to a woman in
- the household and information was provided by a man to a man to outcome
+ the household and information was provided by a man to a man, to outcome
  of farmers where the messenger was a man and the recipient was a woman
  and farmers where the messenger was a woman and the recipient was a man
  (Panel (D) in Figure 
@@ -575,7 +585,7 @@ name "fig:Hypothesis-tests"
 The sample size and its distribution over different treatment combinations
  was based on an elaborate series of power calculations.
  Instead of determining power analytically, we used simulation techniques.
- Simulation allows us to sample from actual data on outcome variables instead
+ Simulation allows one to sample from actual data on outcome variables instead
  of from a theoretical distribution with an assumed mean and standard deviation,
  which is a much more intuitive way to think about statistical power.
  It is straightforward to build in flexibility, such as allowing for more
@@ -596,8 +606,9 @@ reference "fig:Experimental-Design"
 \end_inset
 
 .
- The power calculations are described in great detail in the pre-analysis
- plan of this study, which is available from the 
+ The power calculations and its underlying assumptions are described in
+ great detail in the pre-analysis plan of this study, which is available
+ from the 
 \begin_inset CommandInset href
 LatexCommand href
 name "The American Economic Association's registry for randomized controlled trials"
@@ -631,41 +642,27 @@ We ran the experiment among maize farmer in Uganda.
  the potential to lead to improvements in both nutritional outcomes and
  income.
  Maize yields in Uganda are relatively low.
- While on-station trials report potential yields average about 1.6 metric
- tons per acre (improved varieties, no fertilizer used), according to Uganda
+ While on-station trials report potential yields of about 1.6 metric tons
+ per acre (improved varieties, no fertilizer used), according to Uganda
  National Household Survey 2005/06 data, average maize yields are much lower,
  at about 618 kg per acre for the main growing season of 2014.
  There is a lot of variation in yields, with the top 10 percent of best
  farmers getting yields in excess of 1.1 metric tons per acre.
  At the same time, the use of modern inputs such as inorganic fertilizer
  and modern technologies such as row planting is very low in Uganda.
- For example, use of inorganic fertilizer averages only 1 kg of nutrient
- per hectare per year, compared to Kenya (32 kg/ha); Rwanda (29 kg/ha);
- and Tanzania (6 kg/ha).
+ For example, use of inorganic fertilizer is on average only 2.4 kg of nutrient
+ per acre per year, compared to Kenya (75 kg/ac); Rwanda (70 kg/ac); and
+ Tanzania (15 kg/ac).
  
 \end_layout
 
 \begin_layout Standard
 Maize is especially important in the East.
- We will sample from five districts from the East known for their maize
- production: Bugiri, Mayuge, Iganga, Namayingo and Namutumba.
- Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Balance"
-
-\end_inset
-
- gives an idea of how villages are distributed over parishes, which are
- in turn allocated to sub-counties within each of the 5 districts in our
- study.
+ We sampled from five districts eastern Uganda known for their maize production:
+ Bugiri, Mayuge, Iganga, Namayingo and Namutumba.
  From this, we removed town councils and also two sub-counties that consisted
  of islands in lake Victoria.
- 
-\end_layout
-
-\begin_layout Standard
-Our study population consists of maize farmers within this region
+ Our study population consists of maize farmers within this region
 \begin_inset Foot
 status collapsed
 
@@ -677,39 +674,31 @@ In particular, given the subject of our study, we target monogamous dual
 \end_inset
 
 .
- Because of cost considerations, however, we will use two-stage cluster
- sampling to obtain a representative sample of this population.
- In particular, we will first randomly select parishes (proportional to
- the number of villages within each parish).
- In the selected parishes, all villages will be included in the study.
- Within each village, we will then list all the households, from which we
- will then sample households to be included in the study.
+ Because of cost considerations, however, we used two-stage cluster sampling
+ to obtain a representative sample of this population.
+ In particular, we first randomly selected parishes (proportional to the
+ number of villages within each parish).
+ In the selected parishes, all villages were included in the study.
+ Within each village, we then listed all the households, from which we then
+ sampled households to be included in the study.
  At the same time, we suspect that outcomes within villages will be correlated,
  for instance due to local weather conditions, or development programs that
  are implemented in certain areas.
- We therefore use the village as a blocking factor.
- In other words, in each village, we will makes sure all possible treatment
- combinations related to the 2 factors (plus control) are administered.
- From the research strategy above, we learn that the messenger and the recipient
- factor combine into 9 different treatment combinations.
+ We therefore used the village as a blocking factor.
+ In other words, in each village, we made sure all possible treatment combinatio
+ns related to the 2 factors (plus control) are administered.
+ The experimental design described above shows that the messenger and the
+ recipient factor combine into 9 different treatment combinations.
  Adding the control leads to 10 different households being selected in each
  village.
  
 \end_layout
 
-\begin_layout Subsection*
-Fieldwork
-\end_layout
-
-\begin_layout Subsubsection*
-Calendar
-\end_layout
-
 \begin_layout Standard
 In the East, there are two maize cropping seasons.
- For our study, we will concentrate on the second maize growing season,
- which runs from about August to January.
- In August, fields are prepared and planting is don in September.
+ For our study, we concentrated on the second maize growing season, which
+ runs from about August to January.
+ In August, fields are prepared and planting is done in September.
  First weeding happens around the end of September or the beginning of October.
  By late October, a second round of weeding takes place as maize starts
  to flower.
@@ -721,11 +710,35 @@ In the East, there are two maize cropping seasons.
  The full cycle from planting to harvesting in lowland areas takes about
  3 to 3.5 months.
  In high altitude areas this can take up to 5 months.
- In our study, we will concentrate on lowland areas.
+ In our study, we concentrate on lowland areas.
 \end_layout
 
-\begin_layout Subsubsection*
-Barriers to maize intensification
+\begin_layout Section*
+Interventions
+\end_layout
+
+\begin_layout Standard
+The information interventions are implemented as videos that were shown
+ using 10 inch Android tablet computers.
+ In accordance with the first factor in our factorial designs (to be able
+ to vary the gender composition of the person(s) who provide the agricultural
+ extension information) three videos were produced: one where the information
+ was provided by a male farmer, one where the information was provided by
+ a female farmers, and one where the information was provided by a couple
+ (man+woman).
+ Apart from varying this attribute of the treatment, the rest was exactly
+ the same in the three videos.
+ These videos were then shown to farmers according the second factor in
+ the factorial design (related to who receives the information).
+ In particular, in part of the sample, the video was shown to only the man
+ within the household.
+ In another part the video was shown to the woman within the household.
+ In a final subgroup of the sample, it was shown to the couple together.
+ The control group receives a placebo treatment.
+ They got to see a music video with a traditional dance that has no information
+ related to farming.
+ Videos were shown twice to each farmer in the sample, once before planing
+ (July 2017) and once immediately after planting (August 2017).
 \end_layout
 
 \begin_layout Standard
@@ -737,8 +750,8 @@ The treatments consist of the provision of information that is assumed to
  equity.
  The topics to be included in the video script were obtained from interviews
  with key stakeholder and experts, such as maize farmers, value chain actors,
- maize breeders, extension workers and other government staff such as the
- district agricultural officer.
+ maize seed breeders, extension workers and other government staff such
+ as the district agricultural officer.
  These interviews took place in May 2017.
 \end_layout
 
@@ -749,86 +762,50 @@ The main factors affecting maize productivity are related to pests, poor
 \series bold
 pests
 \series default
- that affect maize farming are Striga, maize stalk borer, and now also Armyworm.
- Striga (in particular the Striga hermonihica variety), also called whichweed,
- is a parasitic plant that feeds off the roots of maize.
+ that affect maize farming are Striga, maize stalk borer, and now also Fall
+ Armyworm.
+ We choose to focus on striga, as maize stalk borer seemed less problematic
+ and at the time of the research, there was no consistent strategy to address
+ Fall Armyworm.
+ Striga (in particular the 
+\emph on
+Striga hermonihica
+\emph default
+ variety), also called whichweed, is a parasitic plant that feeds off the
+ roots of maize.
  Doing so, it starts to draw nutrients from the host, leading to severe
  stunting of the host crop.
- Since most of the damage is already done by the time the parasite emerges
- from the ground, weeding is not very effective.
- In addition, each Striga plant produces up to 50,000 seeds, which remain
- dormant in the soil until new maize is planted.
+ As maize needs most nutrition at early stages of growth, weeding becomes
+ less effective over time.
+ In addition, each striga plant produces up to 50,000 seeds, which can remain
+ dormant in the soil for a very long time.
  Striga can reduce production from about 30 percent up to total loss of
  the crop.
  No single method is effective to control striga.
- A new hybird seed called Longe 7 HR, boosted with a herbicide, is said
- to be less affected by striga, but it is expensive at 10,000 UGX/kg and
- does poorly under dry conditions and in areas where the rains are short
- such as in the East
+ A new hybrid seed called Longe 7 HR, boosted with a herbicide, is said
+ to be less affected by striga, but it is expensive at 10,000 Ugandan Shillings
+ (UGX) per kg and does poorly under dry conditions and in areas where the
+ rains are short such as in the East
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 In the East, early maturing varieties are preferred, such as Longe 10.
- In the future, it a similar HR strain of Longe 10 is expected to be released.
+ In the future, a similar HR strain of Longe 10 is expected to be released.
 \end_layout
 
 \end_inset
 
 .
- Crop rotation with sweet potato or beans can reduce stiga infestation.
+ Crop rotation with sweet potato or beans can reduce striga infestation.
  Furthermore, (additional) inorganic fertilizer use has also been recommended
- to counter stiga.
- It has been observed that stiga proliferates when soils are poor.
+ to counter striga.
+ It has been observed that striga proliferates when soils are poor.
  In addition, one can make up for the nutrients drained by the parasite
  by boosting the maize plant with DAP or NPK.
- Weeding, especially the first time the stiga comes up before it has had
+ Weeding, especially the first time the striga comes up before it has had
  the chance to dig into the roots of the maize, is recommended, also to
  reduce the spread of seeds.
-\end_layout
-
-\begin_layout Standard
-The stemborer is actually a moth that is active during night, laying eggs
- on maize plants.
- It is the larva of the moths that cause the damage.
- They enter inside maize stem, where they feed and grow for about three
- weeks.
- If larvae enter the maize plant at an early stage, this can kill the plant.
- At a later stage, since larvae make extensive tunnels inside the stem,
- the maize plants weaken.
- The stem may break, or the maize plants may fall over.
- Maize stemborer can reduce production by between 20 and 40 percent.
- 
-\end_layout
-
-\begin_layout Standard
-The fall armyworm is relatively new in Uganda
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Armyworm was discovered in Uganda in the first season of 2017.
- However, experts told us that it was also present in the second season
- of 2016 but was mistaken for stemborer.
-\end_layout
-
-\end_inset
-
-.
- As the stemborer, the damage is done by a larva from a moth.
- Currently, it is present in about 20 districts.
- In some districts, up to 40 percent of maize is affected.
- Yield losses are estimated at 10 to 15 percent nationwide.
- However, experts fear this is only the beginning, and armyworm may overtake
- stemborer as the most destructive pest.
- Armyworm is very difficult to control.
- One expert had some success with a chemical called Dudu Accelamectin, which
- required spraying only once and hence is cheap.
- However, other experts warned that the effectiveness of one single type
- of chemical depends on many factors such as location, type of seed used,
- etc.
- Other chemicals such as Rocket were also mentioned to be somewhat effective.
- 
 \end_layout
 
 \begin_layout Standard
@@ -836,7 +813,7 @@ Armyworm was discovered in Uganda in the first season of 2017.
 \series bold
 Poor soils
 \series default
-, exhausted by continuous cultivation with little rotation, is a second
+, exhausted by continuous cultivation with little rotation, is the second
  main limiting factor.
  Soils lack macro-nutrients such as nitrogen (N), phosphorous (P) and potassium
  (K).
@@ -854,7 +831,7 @@ Poor soils
 \end_layout
 
 \begin_layout Standard
-Within Africa, farmers mainly rely on saved 
+Throughout Sub-Saharan Africa, farmers mainly rely on saved 
 \series bold
 seeds
 \series default
@@ -867,8 +844,8 @@ key "McGuire2016"
 
 .
  However, as maize is cross pollinated, recycling leads to fast degeneration.
- However, hybrid seeds such as Longe 7, Longe 9 are available and have also
- been distributed through Operation Wealth Creation.
+ Hybrid seeds such as Longe 7, Longe 9 are available and have also been
+ distributed through Operation Wealth Creation.
  Hybird seeds potentially triple yields.
  In addition to hybrid seeds, which need to be procured every seasons as
  they can not be recycled, the government also released Open Pollinated
@@ -886,10 +863,19 @@ Most hybrid seeds take long to mature.
  Farmers also complain that hybrids do not withstand drought very well.
  However, new varieties have entered the market that are both high yielding
  and early maturing.
- For example, UH5354, marketed as Bazooka yields about 20 percent more than
- other hybirds and is drought resistant.
- Farmers that use these seeds report up to 40 bags of maize per acre.
- Today, yields are about 7-8 bags per acre.
+ For example, UH5354, marketed as Bazooka, yields about 20 percent more
+ than other hybrids and is drought resistant.
+ Farmers that use these seeds report up to 40 bags of maize per acre
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Today, yields are about 7-8 bags per acre.
+\end_layout
+
+\end_inset
+
+.
  Similarly, there are several OPVs on the market that are also early maturing.
 \end_layout
 
@@ -913,8 +899,8 @@ Timely planting
  For instance, they may not be certain that the rains have really started.
  There may also be bottlenecks in land preparation, where the poor are often
  the last in line for the use of oxen or tractors.
- It is estimated that each day a farmer delays planting, yields reduce by
- 1.5 percent.
+ Experts estimate that for each day a farmer delays planting, yields are
+ reduced by 1.5 percent.
 \end_layout
 
 \begin_layout Itemize
@@ -927,16 +913,15 @@ Plant spacing
  Plants that are to far from each other means space is wasted, also leading
  to lower yields.
  Related is the number of seeds that farmer plant in each hill.
- The recommended practice is to put in two, but farmers want to be sure
- of germination and put in more, sometimes up to 5.
+ Farmers want to be sure of germination and put more than one seed, sometimes
+ up to 5.
  If they all germinate, there is competition for nutrients and sun.
  Usually there is also not enough thinning, or this is done too late when
  competition has already occurred.
  One expert told us that standard spacing is 75cm x 60cm with two plants
  per hill.
- However, they now recommend 75cm x 30cm with 1 plant per hill.
- The expert estimated the latter results in a 35 percent higher yield than
- the former.
+ However, several experts mentioned a new way of plant spacing of 75cm x
+ 30cm with 1 plant per hill which leads to a 35 percent increase in yields.
 \end_layout
 
 \begin_layout Itemize
@@ -946,8 +931,8 @@ Weeding
 \series default
 : The first weeding should be at 18-20 days after planting at the three
  leaf stage, and the second weeding at 2-3 weeks after first weeding.
- From emergence to 8 leaves (knee height), maize plant is a very poor competitor
- and unwanted stress such as weed competition must be prevented.
+ From emergence to 8 leave stage (knee height), the maize plant is a very
+ poor competitor and unwanted stress such as weed competition must be prevented.
  Weeding must therefore be done within that period.
  A third weeding is optional.
  It is only dependent on weed pressure after the second weed.
@@ -959,16 +944,10 @@ Weeding
  Proper weeding can increase yield by about 50 to 70 percent.
 \end_layout
 
-\begin_layout Subsubsection*
-Instruments
-\end_layout
-
 \begin_layout Standard
-We will use video to convey information to farmers with the aim of changing
- adoption behaviour.
- We will focus on providing information on seed selection, soil nutrient
- management (including promoting organic fertilizer application), weeding,
- timely planting and plant spacing
+Given the above, an important part of the video focuses on providing technical
+ information on seed choice, soil nutrient management (including promoting
+ organic fertilizer application), weeding, timely planting and plant spacing
 \begin_inset Foot
 status collapsed
 
@@ -976,7 +955,7 @@ status collapsed
 As mentioned above, pest control also ranks high among technologies that
  increase yields.
  However, we felt uncomfortable promoting chemicals in our videos that are
- potentially hazardous to humans.
+ potentially hazardous to humans, animals and the environment.
  In Uganda, Endosulfan, DDT, Glyphosate, Linden and others—are still being
  used.
  Many of these are on the World Health Organization’s list of banned chemicals
@@ -986,12 +965,35 @@ As mentioned above, pest control also ranks high among technologies that
 \end_inset
 
 .
- From our conversations with experts, we learn that many farmers may already
- be aware of the existence and use of these technologies or practices.
- Therefore, simply providing information about the existence of modern technolog
-ies and recommended practices and on how to uses them may not be sufficient
- to change behavior.
- Often, access and affordability was mentioned as a problem
+ We make sure to include information that is likely to be unknown to the
+ farmer, as it is often assumed that information is most valuable when farmers
+ learn about a new technology or institutional innovation 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg."
+key "Glennerster2015"
+
+\end_inset
+
+.
+ However, it is also thought that for behavioural change to take place,
+ common knowledge can become more salient through repetition.
+ Evidence of such a compounding or re-emphasis effects have been found in
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "duflo2014diffusion"
+
+\end_inset
+
+.
+ Therefore, in the video, we also include information that farmers are assumed
+ to know, but do not seem to act upon.
+ 
+\end_layout
+
+\begin_layout Standard
+Often, access and affordability was mentioned as a problem
 \begin_inset Foot
 status collapsed
 
@@ -1048,17 +1050,17 @@ key "doi:10.1093/qje/qju002"
 \end_inset
 
 .
- In our videos, we will thus also try to alter the belief that seeds and
- fertilizers are 
-\begin_inset Quotes eld
-\end_inset
-
-too expensive
-\begin_inset Quotes erd
-\end_inset
-
- by pointing out the costs and benefits of the different technologies and
- practices we promote
+ While for some households, the combination of particular household specific
+ market failures and heterogeneity in the production function may mean adoption
+ is not profitable, we feel that in many cases the returns to the investment
+ as perceived by the farmer may not correspond well to actual returns.
+ Investments in agricultural inputs or technologies require the farmer to
+ compare costs today to a stream of uncertain future incomes.
+ However, farmers may not have precise information about fixed and variable
+ costs involved, about the level and variability of the stream of future
+ income, or about the time frame.
+ Inter-temporal decision making requires a long run perspective, and concepts
+ such as compounding may be poorly understood by subsistence farmers
 \begin_inset Foot
 status collapsed
 
@@ -1074,63 +1076,44 @@ The fact that farmers do not engage in a cost benefit analysis, where inputs
 \end_inset
 
 .
- In addition, we will encourage farmers to start small, using fertilizer
- and seeds on a small area of their field to experiment and see for themselves,
- and reinvest in subsequent years.
- Inter-temporal decision making, where costs today have to be compared to
- uncertain outcomes in a distant future, is often challenging for poorly
- educated farmers
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Under-investment caused by low perceived returns in the future has also
- been documented in the demand for schooling 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "doi:10.1162/qjec.2010.125.2.515"
-
-\end_inset
-
-.
- A recent experiment investigates if rice farmers in Uganda are aware of
- the returns to different recommended rice growing practices such as early
- transplanting and fertilizer use 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bjvca01"
-
-\end_inset
-
-.
 \end_layout
 
+\begin_layout Standard
+Perceived returns that are lower than actual returns has been found to affect
+ decision making related to schooling in both the Dominican Republic and
+ Madagascar, and in both cases, simply providing information increased demand
+ for schooling 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1162/qjec.2010.125.2.515,nguyen2008information"
+
 \end_inset
 
 .
- Furthermore, 
+ However, a recent study among rice farmers in Uganda does not find that
+ providing objective information about the returns to different inputs and
+ practices increased adoption 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "duflo2011nudging"
+LatexCommand citep
+key "ugandabjorn"
 
 \end_inset
 
- point out farmers may have difficulties committing to fertilizer use in
- Kenya.
- In our video, we attempt to make farmers aware of this, and suggest some
- techniques to overcome this bias.
- We also pay considerable attention to the way the message is delivered.
- For instance, the message if brought by 
-\begin_inset Quotes eld
-\end_inset
-
-peer farmers
-\begin_inset Quotes erd
-\end_inset
-
-, as it is found that farmers find communicators who face agricultural condition
-s and constrains most comparable to themselves to be the most persuasive
+.
+ In our videos, we will also pay considerable attention to pointing out
+ the costs and benefits of the different technologies and practices we promote.
+ In addition, we will encourage farmers to start small, using combinations
+ of fertilizer and seeds (instead of investing all the money in eg.
+ only seed) on a small area of their field to experiment and see for themselves,
+ and reinvest in subsequent years.
  
+\end_layout
+
+\begin_layout Standard
+We also pay considerable attention to how the information is packaged.
+ For instance, it is found that farmers find communicators who face agricultural
+ conditions and constrains most comparable to themselves to be the most
+ persuasive 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "RePEc:nbr:nberwo:20139"
@@ -1138,9 +1121,17 @@ key "RePEc:nbr:nberwo:20139"
 \end_inset
 
 .
- The information is also presented as a success story, which is assumed
- to affect a range of non-cognitive farmer characteristics such as aspirations,
- locus of control and self-esteem 
+ Several studies point out the importance of role models to behaviour change
+ in context of strong norms and believes 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "nguyen2008information,riley,RePEc:smu:ecowpa:1705"
+
+\end_inset
+
+.
+ Videos of successful farmers in Ethiopia has been found to affect future-orient
+ed behavior 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1093/wber/lhv014"
@@ -1148,22 +1139,50 @@ key "doi:10.1093/wber/lhv014"
 \end_inset
 
 .
- 
+ A growing strand of the literature investigates how non-cognitive farmer
+ characteristics such as aspirations, locus of control and self esteem can
+ lead to behavoural change such as technology adoption 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "RePEc:eee:jeborg:v:143:y:2017:i:c:p:98-115"
+
+\end_inset
+
+.
+ Therefore, in our video, the message is brought by 
+\begin_inset Quotes eld
+\end_inset
+
+peer farmers
+\begin_inset Quotes erd
+\end_inset
+
+ and the information is framed as a success story.
 \end_layout
 
 \begin_layout Standard
-The video starts with a farmer (a male farmer, a female farmer, or a couple,
- see below) introducing themselves.
- He talks about how he used to struggle with his maize gardens and how at
- one point in time, he decided things needed to change.
+The video starts with a farmer (a male farmer, a female farmer, or a couple)
+ introducing themselves.
+ The farmers
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+We will proceed here with the description for the version of the male farmer.
+\end_layout
+
+\end_inset
+
+ talks about how he used to struggle with his maize gardens and how at one
+ point in time, he decided things needed to change.
  It is shown how the farmer sells a hen, and obtains a small loan from a
  friend.
  This money is than used to buy small quantities of improved seed and fertilizer
  in a local shop.
  It is then shown that, before planting the improved seed, the farmer prepares
  the garden.
- He is shown collecting manure wherever he can find it, and applies it to
- a small corner of the field of 20m by 20m.
+ He is shown collecting manure and applying it to a small corner of the
+ field of 20m by 20m.
  Next, it is shown in detail how the maize seeds are spaced 75cm x 30cm
  with 1 plant per hill and how the DAP should be applied.
  The viewer is reminded to plant in time.
@@ -1174,9 +1193,9 @@ The video starts with a farmer (a male farmer, a female farmer, or a couple,
  plant density.
  The next shot shows the field at 18 to 20 days after planing, when first
  weeding is done.
- Particular attention is paid to identification of striga in an early stage.
+ Particular attention is paid to identification of striga at an early stage.
  It is also advised to weed again two to three weeks later.
- The next scene zooms in on urea fertilizer application.
+ The next scene zooms in on Urea fertilizer application.
  Here, the field is shown at about 4 weeks after planting when the maize
  is knee high.
  It is shown how Urea topsoil dressing should be applied.
@@ -1185,103 +1204,23 @@ The video starts with a farmer (a male farmer, a female farmer, or a couple,
 \end_layout
 
 \begin_layout Standard
-We then spend some time comparing the costs to the benefits the different
- improved inputs and recommended practices.
- For fertilizer and improved seed, the costs for one acre is calculated
- and compared to the value of what is harvested.
- The profit is then compared to the value of what would have been harvested
- on that acre without improved seed and fertilizer.
- This would be less than half of what the profit would be when improved
- inputs are used.
- For recommended practices, we report what the expected yield increase would
- be if, for instance, recommended spacing was used or weeding is done in
- time.
-\end_layout
-
-\begin_layout Standard
-Next, we try to promote a long run perspective, where the farmer is encouraged
- to start small (one tenth of an acre) and grow bigger over time.
- We also pay some attention to the commitment problem.
- We advise the farmer to, at time of harvest when the farmer sells most
- of his maize, immediately go to the farm supply store and purchase seeds
- and fertilizer, and store this in a safe place.
- If inputs are not available, farmers are encouraged to keep the money needed
- to buy the inputs in a separate, labeled container.
- It is sometimes argued that such mental accounting can be an effective
- commitment mechanism 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "10.1257/aer.103.4.1138"
-
-\end_inset
-
-.
- In a last scene, the farmer recapitulates and once more directly addresses
- the viewer an encourages him or her to try this as well.
-\end_layout
-
-\begin_layout Standard
-A total of three such videos will be produced.
- They will be identical in terms of the information that will be in the
- video, but they will differ according to the gender of the messenger, correspon
-ding to one of the factors in the factorial experimental setup.
- In one version of the video, the actor will be a man.
- In a second version of the video, the actor will be female.
- In a third version, the video will feature a couple as the messenger.
- Here, both male and female will feature in the different scenes, and the
- person talking to the viewer will be altered between the man and the women.
- Finally, we will use a placebo video for the control.
- This will be a neutral video on a non-related topic, such as the tourist
- potential of the region.
- Farmers will be shown any of these four videos according to random treatment
- allocation.
- Videos will be shown twice to each farmer in the sample, once before planing
- (July) and once immediately after planting (August).
-\end_layout
-
-\begin_layout Standard
-The videos will be embedded in a small Computer Assisted Personal Interviewing
- (CAPI) survey application implemented in Open Data Kit (ODK).
- The application will start by asking some identifying information about
- the farmer and recording consent.
- It will also be used to collect some basic farmer characteristics, which
- can be used to investigate balance at baseline (see the section on balance
- below).
- The application will also embed the video, which will be cued to make sure
- the correct video is shown to the right farmer.
- Finally, information will be gathered on viewing conditions, and some informati
-on will be collected to see if farmers understood the information that was
- given in the video.
-\end_layout
-
-\begin_layout Standard
-The IVR system consists of a toll free number that can be called by the
- farmer.
- Farmers that are assigned to this treatment will be given the toll free
- number and leaflet that provides some more information about the system.
- When calling the IVR system, the caller is greeted in Lusoga and a tutorial
- is provided within the system.
- The caller is presented with a menu and can choose to learn more about
- different aspects of maize farming, such as soil management, seed selection,
- pests and diseases, post harvest practices,...
- After selecting the desired option, the farmer hears a conversation between
- two farmers, where one farmer explains recommended practices to another
- farmer.
- While the IVR system has more information that the videos, we made sure
- that the information that we provide in the videos is the same as what
- is provided in the IVR system.
- The SMS messages that will be sent out to half of the farmers that are
- assigned the IVR treatment will simply be a reminder of the existence of
- the service and the phone number they can dial to access it.
-\end_layout
-
-\begin_layout Standard
-After harvesting of maize in January of February 2018, an farmer level endline
- survey will collect information on a range out outcomes related to learning,
- adoption behaviour, maize production and farmer well-being more generally.
- We will also inquire about intra-household issues.
- This endline survey will also be implemented as CAPI, either using ODK,
- SurveyBe or Survey Solutions.
+We then spend some time on the concept of investing now to get more yields
+ over time.
+ We point out that it may indeed be difficult to raise cash, but that the
+ farmer can always start small (eg.
+ on one tenth of an acre) and reinvest returns.
+ It is explained that following recommended practices and using improved
+ inputs led to 2.5 bags of maize on the small plot, which they sold for 125,000
+ shillings, giving them a profit of almost 90,000 shillings.
+ It is reminded that, if they had not used modern inputs or followed recommended
+ practices, they would only have harvested one bag on that same area, and
+ profit would be 40,000.
+ It is further explained that they reinvested the difference between the
+ profit they got and the profit they would have gotten without using inputs
+ to increase the area under intensive maize cultivation year after year.
+ Pretty soon, they are able to cultivate an entire acre using modern inputs.
+ In the final part of the video, the farmer recapitulates and once more
+ directly addresses the viewer to encourages him or her to try this as well.
 \end_layout
 
 \begin_layout Section*
@@ -1348,14 +1287,10 @@ reference "tab:Balance"
 , we provide descriptive statistics, as well as balance tests for the informatio
 n treatment versus control hypothesis (H0) and for the three hypotheses
  outlined above (H1-3).
-\end_layout
-
-\begin_layout Standard
-\align center
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Preview
@@ -1585,15 +1520,15 @@ The table shows that few farmers that were included in our study had access
  to agricultural extension in the previous year.
  We also see that only about 20 percent of farmers reported to have used
  fertilizer in the previous maize growing season (April – July 2017) and
- about 38 percent reported to have use improved seed bought from a shop
+ about 38 percent reported to have used improved seed bought from a shop
  or agro-input dealer during the last cropping season.
- This suggests ample scope to increase intensification investment through
+ This suggests ample scope to increase intensification investments through
  extension.
  We also find that farmers produced on average only 287 kg of maize per
  acre in the first cropping season of 2017.
  This is substantially lower than the average yield of 618 kg per acre we
  find when using the Uganda National Household Survey of 2005/06.
- The low yields illustrate the devastating impact of the fall armyworm that
+ The low yields illustrate the devastating impact of the Fall Armyworm that
  ravaged maize yields in East Africa in 2017 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1606,30 +1541,41 @@ key "Stokstad473"
 
 \begin_layout Standard
 The table also shows some imbalance, particularly with respect to the asymmetric
- information hypothesis, where farmers that were shown the video individually
- are compared to farmers that received the information treatment as a couple.
+ information hypothesis (H1), where farmers that were shown the video individual
+ly are compared to farmers that received the information treatment as a
+ couple.
  In particular, we find that households where the information was shown
- to couple were significantly younger, and this difference is also reflected
+ to a couple were significantly younger, and this difference is also reflected
  in other variables.
  For instance, the fact that they are younger apparently also means they
  have fewer children, are more likely to have used fertilizer in the previous
- growing season and are less likely to have finished primary education.
- This imbalance may be a due to the design of our experiment.
- More precisely, for this particular hypothesis, we need to treat a couple,
- and the likelihood that a couple can be found reduces with age, as one
- of the spouses may die or they may get divorced.
+ growing season.
+ They also seem less likely to have finished primary education.
  
 \end_layout
 
 \begin_layout Subsection*
-Treatment Effects 
+Knowledge effects
+\end_layout
+
+\begin_layout Standard
+In this section, we investigate the effect of showing the video and of changing
+ the messenger and the recipient of the video message on knowledge.
+ This was done through a small quiz immediately after the video was shown.
+ As videos were shown twice, we also did the quiz two times.
+ The quiz consisted of 3 multiple choice question.
+ For each question, three possible answers were read out to the farmer,
+ who was then asked to indicate what answer he or she though was correct.
+ The respondent was also allowed to indicate he or she did not know what
+ the correct answer was.
+ 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1646,15 +1592,18 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Does the intervention work?
-\end_layout
+Does the intervention increase knowledge?
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Does-the-intervention"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
@@ -1664,10 +1613,145 @@ Does the intervention work?
 \end_layout
 
 \begin_layout Standard
+The first question was related to planting.
+ In our video, we recommended a spacing of 75cm x 30cm with 1 plant per
+ hill and this was the correct option among the alternatives.
+ Other options were 75cm x 60cm with two plants per hill, which is standard
+ for many farmers and recommended by most agricultural extension agents.
+ We also added an intermediate alternative answer of of 75cm x 30cm with
+ 2 seeds per hill.
+ As we recommend a technique that deviates from what is assumed to be standard
+ spacing, we assume that the recommended practice is new to most of the
+ farmers.
+ The second question is less related to technical knowledge, but more to
+ viewing farming as a business.
+ In the video, we pay ample attention to promoting an approach where farmers
+ start small and grow over time through reinvesting.
+ We wanted to see if farmers internalize this advice and ask what a successful
+ farmer should you do if you only have 40,000 shillings.
+ The correct option was to use it to buy improved seed and fertilizer and
+ start intensified farming on a small area.
+ Alternative options were to: 
+\begin_inset Quotes eld
+\end_inset
+
+use all the money to buy hybrid seed, because without good seed, yields
+ will be low
+\begin_inset Quotes erd
+\end_inset
+
+; and to 
+\begin_inset Quotes eld
+\end_inset
+
+use all the money to buy fertilizer, because in poor soils, yields will
+ be low
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Finally, we asked when is weeding is most important.
+ Weeding is most important during the first four weeks after planting, as
+ maize is a poor competitor for light and nutrients.
+ Alternative answers were: 
+\begin_inset Quotes eld
+\end_inset
+
+when the maize is knee high
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+when the maize is at tasseling stage
+\begin_inset Quotes erd
+\end_inset
+
+.
+ It is assumed that most farmers would know this.
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Does-the-intervention"
+
+\end_inset
+
+ shows that the information interventions though video significantly increase
+ the proportion of farmers that answer correct on all three questions, and
+ that this is the case after both the first and second screening.
+ Especially for information that can be assumed to be new to the farmers,
+ the video seems to substantially increase knowledge: the first panel in
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Does-the-intervention"
+
+\end_inset
+
+ shows that after the videos were shown the first time, about 15 percent
+ of farmers in the control group was able to identify the correct response
+ to the question on optimal planting.
+ This proportion rises to almost 70 among farmers that did get to see the
+ video.
+ This proportion increases further when these farmers are reminded about
+ the correct spacing during a second screening, to more than 80 percent.
+ 
+\end_layout
+
+\begin_layout Standard
+The second panel in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Does-the-intervention"
+
+\end_inset
+
+ reveals that about 70 percent of farmers in the control group responded
+ that the best way to invest money is combine inputs and start small instead
+ of investing everything in either seed or fertilizer.
+ Among the farmers that received the information treatment, this increases
+ to about 92 percent, and this proportion stays the same after the second
+ screening.
+ In the control group, the proportion increases to about 77 percent, which
+ may indicate some extent of spillover, which is consistent with findings
+ from a similar intervention among rice farmers in Uganda 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ugandabjorn"
+
+\end_inset
+
+.
+ The third panel in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Does-the-intervention"
+
+\end_inset
+
+ shows that after the first screening of the videos, about 88 percent of
+ farmers in the control group were able to indicate the correct answer to
+ the question when weeding is most important.
+ This proportion increases to about 86 percent in the treatment group.
+ Also after the second screening of the video, the treatment groups does
+ significantly better in answering the question than the control group.
+ The reduction in the proportion of farmers that answer correctly in the
+ control group over time may be caused by the fact that, in the absence
+ of information on the correct answer, farmers in this group start to doubt
+ about their initial answer and choose an (incorrect) alternative after
+ the second screening.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1684,7 +1768,127 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Does reducing information asymmety works?
+Does reducing information asymmetry increase knowledge?
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Does-reducing-information"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Does-reducing-information"
+
+\end_inset
+
+ plots results for the hypothesis that reducing information asymmetries
+ within the farm household increases knowledge.
+ It compares the proportion of farm households that answer correctly in
+ households that were shown the video as a couple to the proportion of farm
+ households that answer correctly in households were the video was shown
+ to either the woman or the man (corresponding to panel (B) in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypothesis-tests"
+
+\end_inset
+
+).
+ We see that households where the videos were shown to the couple are significan
+tly more likely to answer the first question related to planting correctly
+ than households where the video was shown to only one of the spouses.
+ The difference is present after both the first and the second screening
+ of the videos.
+ The difference between treatment and control is not significant for the
+ second question in our quiz related to the benefits of combining inputs
+ at a smaller scale.
+ Knowledge on optimal time for weeding also does not seem to be affected
+ by whether the information was given to a couple or to an individual within
+ the household.
+\end_layout
+
+\begin_layout Standard
+One may argue that a significant effect found in the first panel of Figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Does-reducing-information"
+
+\end_inset
+
+ is not necessarily due to a reduction of information asymmetry, but simply
+ the result of providing double the amount of information at the household
+ level.
+ The fact that we showed the videos twice allows us to test this hypothesis.
+ In particular, if a dose-response interpretation is the most appropriate,
+ we would expect that the difference between treatment and control after
+ the first screenings in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Does-reducing-information"
+
+\end_inset
+
+ matches the difference between the first and second screening in the control
+ group.
+ Doubling the dose among households where the video was shown to only one
+ person within the household (the control) increases the proportion of correct
+ answers by almost 18 percent (from about 67.5 % to about 79 %).
+ However, the increase in proportion of correct answers between treatment
+ and control after the first screening is much smaller, from about 67.5 to
+ about 72.5 %, corresponding to about 7 percent.
+ At the same time, the increase in proportion of correct answers in the
+ treatment group between the first and second screening matches the increase
+ in the control group over time.
+ Taken together, this suggests that the information asymmetry effect is
+ different from the effect that emanates from simply showing the information
+ message twice.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename h2_all.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Does projecting a household cooperative approach increase knowledge?
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Does-projecting-a"
+
+\end_inset
+
+ 
 \end_layout
 
 \end_inset
@@ -1701,114 +1905,120 @@ Does reducing information asymmety works?
 
 \end_layout
 
-\begin_layout Subsubsection*
-Intent to Treat
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Does-projecting-a"
+
+\end_inset
+
+ tests the hypothesis that promoting a household cooperative approach to
+ farming leads to increased knowledge on planting, on combining inputs at
+ a small scale, and on weeding.
+ The graph corresponds to panel (C) in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypothesis-tests"
+
+\end_inset
+
+.
+ We do not find that farmers learn more when the video features a couple
+ as opposed to a single individual.
+ Even more, for the question related to weeding, it seems that the proportion
+ of correct answers is lower among households that were provided the information
+ by a couple the second time the video was shown.
+ 
 \end_layout
 
 \begin_layout Standard
-For the research questions related to gender composition of messenger and
- recipient, we assume full compliance, and as such assume that the average
- treatment effect (or Intention tot Treat effect) is equal to the Treatment
- of the Treated effect.
- Therefor, we will simply compare means between the different groups in
- a regression framework.
- In particular, we identify the treatment effects 
-\begin_inset Formula $\left(\beta\right)$
-\end_inset
-
- by estimating the average treatment effect of an outcome variable 
-\begin_inset Formula $\left(y\right)$
-\end_inset
-
-:
+The fact that we do not find significant effects of projecting a household
+ cooperative approach on knowledge transfer does not mean such effects are
+ irrelevant for the effectiveness of agricultural extension.
+ While the source of information may not affect knowledge transfer, it may
+ still affect the likelihood that farmers act upon this information.
+ For instance, we expect that projecting a household cooperative approach
+ to farming will affect the way in which resources are allocated between
+ men and women controlled plots within the household, in turn affecting
+ outcomes such as household productivity and the gender productivity gap.
+ However, this can only be assessed after we have collected endline data.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-y_{h}=\alpha+\beta T_{h}+\varepsilon_{h}\label{eq:ate}
-\end{equation}
+Finally, in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Is-there-gender"
 
 \end_inset
 
+, we test if farmers learn more from farmers that have the same gender than
+ if messenger and recipient of the information are from opposite sex.
+ This corresponds to the experimental setup depicted in panel (D) in Figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypothesis-tests"
 
+\end_inset
+
+.
+ Similar to the hypothesis on projecting a cooperative approach, we do not
+ find significant differences between gender matched and gender mixed farmers
+ on any of the knowledge questions.
+ As for the previous hypothesis on projecting a cooperative approach, the
+ fact that we do not find evidence on gender homophily effects on knowledge
+ does not mean such effects are irrelevant.
+ In fact, we expect that gender homophily effects matter much more for the
+ decision to believe the information and hence act upon it.
+ Again, to test this we need endline information.
+ 
 \end_layout
 
 \begin_layout Standard
-where 
-\begin_inset Formula $T$
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename h3_all.pdf
+	scale 60
+
 \end_inset
 
- is an indicator function that is one if household 
-\emph on
-h
-\emph default
- was in the treatment group and zero otherwise.
- We will control for the gender of the enumerator and also add parish fixed
- effects.
- In addition, in a factorial design, orthogonal treatments are likely to
- increase the variance of the outcome variable.
- As such, we also need to control for the treatment status of the other
- factors (and add dummies for, for instance IVR and IVR+sms).
- For the treatments where compliance can not be completely controlled, we
- also control for ex post outcomes derived from the endline survey (eg.
- an indicator if the man used IVR, an indicator if the woman used IVR,...).
- For the few outcome variables that are also collected at baseline such
- as fertilizer use or use of improved seed (see balancing checks above),
- difference-in-difference models will be estimated.
+
 \end_layout
 
-\begin_layout Standard
-It is important to realize that treatment and control groups need to be
- balanced over all other factors.
- This means that often, we can not use all observations.
- For example, if we want to simply test if being shown any video was effective
- in increasing maize yields, we can not simply compare the 257 control household
-s that were shown a video to all households that were shown a video (3,331
- households).
- We need to make sure that within the treatment group, there are equal numbers
- in each cell.
- As such, we need to take the treatment combination with the least observations,
- which are according to the power calculations the combinations where the
- video is shown to the couple and the messenger is either a man or a women
- (BM and BF).
- In these cells, we need at least 342 observations.
- Therefore, to test the effectiveness of videos, we compare 257 control
- households to 3,078 households, which corresponds to 342 households in
- each of 9 treatment combination cells.
- Therefore, in each cell that has excess observations, we will take a random
- sample.
- For example, according to the power calculations, we will have 385 households
- in the treatment combination where the messenger is male and the recipient
- is male (MM).
- We will take a random sample of 342 from these 385 households.
-\end_layout
+\begin_layout Plain Layout
+\begin_inset Caption Standard
 
-\begin_layout Subsection*
-Variables 
-\end_layout
+\begin_layout Plain Layout
+Is there gender homophily in learning?
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Is-there-gender"
 
-\begin_layout Itemize
-knowledge: this will be assessed using short multiple choice 
-\begin_inset Quotes eld
 \end_inset
 
-quiz
-\begin_inset Quotes erd
-\end_inset
 
- type questions.
- The result will be binary variable (correct or not) and proportions will
- be compared between groups using both Chi-squared tests for difference
- in proportions and linear probability models.
 \end_layout
 
-\begin_layout Standard
-(p-value of 2-sample 
-\begin_inset Formula $\chi^{2}$
 \end_inset
 
-~ test for equality of proportions with continuity correction < 0.001)
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -1835,18 +2045,72 @@ key "banerjee2011poor"
  
 \end_layout
 
-\begin_layout Section*
-Research Team
+\begin_layout Standard
+Motivated by the observation that most agricultural advisory services are
+ biased toward men, this study looked at two gender related attributes of
+ an Information and Communication Technology mediated agricultural extension
+ information campaign.
+ The first attribute consists of the gender composition of the person or
+ persons that provide the information.
+ The second attribute is the gender composition of the person or persons
+ to which the information is targeted.
+ This allows us to test a range of hypotheses.
+ We focus on three important hypothesis related to (1) information asymmetries
+ within the household; (2) a cooperative approach to farming; and (3) gender
+ homophily.
+ In addition, we also test if the information intervention in itself is
+ effective.
 \end_layout
 
 \begin_layout Standard
-The research will consist of Bjorn Van Campenhout (b.vancampenhout@cgiar.org),
- Els Lecoutere (els.lecoutere@uantwerpen.be) and David Spielman (d.spielman@cgiar.or
-g).
- Research assistance will be provided by Fiona Nattembo (f.nattembo@cgiar.org),
- Wilberforce Walukano (W.Walukano@cgiar.org) and Marc Charles Wanume (wcharli@gmai
-l.com).
- 
+The various hypotheses are tested using a field experiment where the messenger
+ of the information and the recipient of the information is randomly altered
+ according to a 3 by 2 factorial design.
+ The study population were maize farmers in Eastern Uganda, from which we
+ sampled about 3,600 farmers.
+ The information treatments were implemented as short videos that were shown
+ to the farmers on tablet computers.
+ The videos showed how inputs and improved farming practices can be used
+ to increase production.
+ It also explains important concepts in inter-temporal decision making.
+ The messages are also packaged in an attractive way, with role model farmers
+ explaining how intensification of maize production improved their lives.
+ The videos were shown twice, once just before the the planting season,
+ and once early in the season.
+\end_layout
+
+\begin_layout Standard
+We find that the information campaign increased knowledge about recommended
+ agricultural practices and about how to invest in farming.
+ Especially if the information is about a new technology and it can be assumed
+ that previous knowledge is limited, we find big and persistent increases
+ in knowledge that can be attributed to the intervention.
+ We find that information about new technologies and practices are more
+ effective in terms of knowledge creation if targeted to the couple, instead
+ of an individual within the household.
+ We do not find that farmers learn more from farmers that are from the same
+ sex.
+ We also do not find that farmers learn more if the information is brought
+ by a couple as opposed to by either a man or a woman.
+\end_layout
+
+\begin_layout Standard
+The fact that farmers appear to absorb the information provided through
+ the video and that this happens more efficiently if the information is
+ given to a couple is encouraging, as knowledge transfer is only the first
+ link in the causal chain between information and outcomes.
+ For instance, increased knowledge about proper spacing may lead farmers
+ to also adopt the practice, resulting in higher yields and welfare more
+ general.
+ Especially if the couple was targeted, spouses may encourage each other
+ to experiment, leading to higher rates of adoption and subsequent outcomes.
+ The fact that we did not find knowledge effects for promoting a cooperative
+ farming approach or for gender matching does not automatically mean there
+ will be no impact on intermediate or final outcomes.
+ For example behavior change may depend on whether you actually believe
+ the information, which may be conditional on gender matching.
+ To find out the impact of the intervention on intermediate and final outcomes,
+ we first have to collect endline data, which is planned for February 2018.
 \end_layout
 
 \begin_layout Standard

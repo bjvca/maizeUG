@@ -157,7 +157,7 @@ levels(weed$group) <- c("Ctrl","Treat")
 p1 <- ggplot(all, aes(x=time, y=mean, group=group, color=group)) + 
   geom_line() +
   geom_point()+
-  geom_pointrange(aes(ymin=up, ymax=down))+ ylab("proportion of correct answers") + ggtitle("spacing", subtitle = NULL)+ theme(plot.title = element_text(hjust = 0.5))
+  geom_pointrange(aes(ymin=up, ymax=down))+ ylab("proportion of correct answers") + ggtitle("planting", subtitle = NULL)+ theme(plot.title = element_text(hjust = 0.5))
 
 
 p2 <- ggplot(small, aes(x=time, y=mean, group=group, color=group)) + 
@@ -339,7 +339,7 @@ levels(weed$group) <- c("Ctrl","Treat")
 p1 <- ggplot(all, aes(x=time, y=mean, group=group, color=group)) + 
   geom_line() +
   geom_point()+
-  geom_pointrange(aes(ymin=up, ymax=down))+ ylab("proportion of correct answers") + ggtitle("spacing", subtitle = NULL)+ theme(plot.title = element_text(hjust = 0.5))
+  geom_pointrange(aes(ymin=up, ymax=down))+ ylab("proportion of correct answers") + ggtitle("planting", subtitle = NULL)+ theme(plot.title = element_text(hjust = 0.5))
 
 
 p2 <- ggplot(small, aes(x=time, y=mean, group=group, color=group)) + 
@@ -513,7 +513,7 @@ levels(weed$group) <- c("Ctrl","Treat")
 p1 <- ggplot(all, aes(x=time, y=mean, group=group, color=group)) + 
   geom_line() +
   geom_point()+
-  geom_pointrange(aes(ymin=up, ymax=down))+ ylab("proportion of correct answers") + ggtitle("spacing", subtitle = NULL)+ theme(plot.title = element_text(hjust = 0.5))
+  geom_pointrange(aes(ymin=up, ymax=down))+ ylab("proportion of correct answers") + ggtitle("planting", subtitle = NULL)+ theme(plot.title = element_text(hjust = 0.5))
 
 
 p2 <- ggplot(small, aes(x=time, y=mean, group=group, color=group)) + 
@@ -702,7 +702,7 @@ levels(weed$group) <- c("Ctrl","Treat")
 p1 <- ggplot(all, aes(x=time, y=mean, group=group, color=group)) + 
   geom_line() +
   geom_point()+
-  geom_pointrange(aes(ymin=up, ymax=down))+ ylab("proportion of correct answers") + ggtitle("spacing", subtitle = NULL)+ theme(plot.title = element_text(hjust = 0.5))
+  geom_pointrange(aes(ymin=up, ymax=down))+ ylab("proportion of correct answers") + ggtitle("planting", subtitle = NULL)+ theme(plot.title = element_text(hjust = 0.5))
 
 
 p2 <- ggplot(small, aes(x=time, y=mean, group=group, color=group)) + 
