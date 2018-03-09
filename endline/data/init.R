@@ -99,11 +99,11 @@ dta$yield_av <- rowMeans(dta[c("yield_av_sp1","yield_av_sp2")], na.rm=T)
 ### average days after rain
 dta[c("grp1days19","grp2days2","grp3days3","grp4days4", "grp5days5")] <- lapply(dta[c("grp1days19","grp2days2","grp3days3","grp4days4", "grp5days5")], function(x) replace(x, x == 999 | x == 98, NA) )
 
-
 dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")] <- lapply(dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")], function(x) replace(x,x == 999  | x == 98,NA) )
 
 dta$days_av_sp1 <- rowMeans(dta[c("grp1days19","grp2days2","grp3days3","grp4days4", "grp5days5")], na.rm=T)
 dta$days_av_sp2 <- rowMeans(dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")], na.rm=T)
+
 dta$days_av <- rowMeans(dta[c("days_av_sp1", "days_av_sp2")])
 
 
@@ -208,22 +208,22 @@ prop.test(t(table(dta_bal$q110==1,dta_bal$messenger == "ctrl")))
 ## planted number of days after rain
 t.test(dta_bal$days_av~dta_bal$messenger == "ctrl")
 
-## used recommended spacing
+## used recommended spacing - this should be changed to include info of all plots 
 t.test(dta_bal$grp1a201==1~dta_bal$messenger == "ctrl")
 #RI("grp1a201==1","messenger == 'ctrl'" , dta_bal)
 
-## used recommended way to fight striga
+## used recommended way to fight striga - this should be changed to include info of all plots 
 t.test(dta_bal$grp1a241==1~dta_bal$messenger == "ctrl")
 #RI("grp1a241==1","messenger == 'ctrl'" , dta_bal)
 
-## weeded on recommended timing?
+## weeded on recommended timing? - this should be changed to include info of all plots 
 t.test(dta_bal$grp1a26==1~dta_bal$messenger == "ctrl")
-## used fertilizer 
+## used fertilizer  - this should be changed to include info of all plots 
 t.test(dta_bal$grp1a29=="Yes"~dta_bal$messenger == "ctrl")
 #RI("grp1a29=='Yes' ","messenger == 'ctrl'" , dta_bal)
-##improved seed
+##improved seed  - this should be changed to include info of all plots 
 t.test(dta_bal$grp1a42=="Yes"~dta_bal$messenger == "ctrl")
-## chemicals
+## chemicals  - this should be changed to include info of all plots 
 t.test(dta_bal$grp1a55a=="Yes"~dta_bal$messenger == "ctrl")
 
 
@@ -281,15 +281,14 @@ t.test(dta_trim$cons~dta_trim$recipient == "couple")
 
 ## better off than others
 t.test(dta_bal$q409==1~dta_bal$recipient == "couple")
-prop.test(t(table(dta_bal$q409==1,dta_bal$messenger == "ctrl")))
 
 ## better off than 6 months ago
 t.test(dta_bal$q110==1~dta_bal$recipient == "couple")
-prop.test(t(table(dta_bal$q110==1,dta_bal$messenger == "ctrl")))
 
 
+############################### practices #############################
+## planted number of days after rain
 
-## average number of days after rain
 t.test(dta_bal$days_av~dta_bal$recipient == "couple")
 
 ## used recommended spacing
@@ -347,11 +346,42 @@ dta_bal <- rbind( dta[dta$messenger=="couple" & dta$recipient == "couple",][samp
  dta[dta$messenger=="couple" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "male",]),s_h0),],
  dta[dta$messenger=="couple" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "female",]),s_h0),])
 
-### more effective if cooperative approach is projected?
-### more effective if targetted to both male and female?
-t.test(dta_bal$grp1a16*dta_bal$grp1a17 ~ dta_bal$messenger == "couple")
-### decided together to plant maize on this plot 
+
+############################### production ###########################
+### production
+t.test(dta_bal$prod_tot~dta_bal$messenger == "couple")
+### area
+t.test(dta_bal$area_tot~dta_bal$messenger == "couple")
+
+###yield
+t.test(dta_bal$yield_av~dta_bal$messenger == "couple")
+
+dta_trim <- subset(dta_bal, dta_bal$yield_av > quantile(dta_bal$yield_av,c(.05,.95), na.rm=T)[1] & dta_bal$yield_av < quantile(dta_bal$yield_av, c(.05,.95),na.rm=T)[2])
+t.test(dta_trim$yield_av~dta_trim$messenger == "couple")
+
+
+### decided together to plant maize on first plot
 t.test((dta_bal$grp1a10==3 & dta_bal$spouse2grp_sp1f10==3) ~dta_bal$messenger == "couple")
+
+################################ welfare #############################
+
+### total household consumption
+t.test(dta_bal$cons~dta_bal$messenger == "couple")
+dta_trim <- subset(dta_bal, dta_bal$cons > quantile(dta_bal$cons,c(.05,.95), na.rm=T)[1] & dta_bal$cons < quantile(dta_bal$cons, c(.05,.95),na.rm=T)[2])
+t.test(dta_trim$cons~dta_trim$messenger == "couple")
+
+## better off than others
+t.test(dta_bal$q409==1~dta_bal$messenger == "couple")
+
+## better off than 6 months ago
+t.test(dta_bal$q110==1~dta_bal$messenger == "couple")
+
+
+############################### practices #############################
+## planted number of days after rain
+
+t.test(dta_bal$days_av~dta_bal$messenger == "couple")
+
 ## used recommended spacing
 t.test(dta_bal$grp1a201==1~dta_bal$messenger == "couple")
 ## used recommended way to fight striga
@@ -375,8 +405,16 @@ t.test((dta$grp1a40==3 & dta$spouse2grp_sp1f40==3) ~dta$messenger == "couple")
 t.test(dta_bal$grp1a42=="Yes"~dta_bal$messenger == "couple")
 
 ## chemicals
-t.test(dta_bal$grp1a55a=="Yes"~dta_bal$messenger == "couple")
+t.test(dta_bal$grp1a55a=="Yes"~dta_bal$messenger  == "couple")
 
+t.test((dta_bal$q100 <3 & dta_bal$spouse2r100< 3)~dta_bal$messenger  == "couple")
+
+### knowledge - 1 if both know correct anwer
+t.test((dta_bal$a1==1 & dta_bal$spouse2f1==1)~dta_bal$messenger  == "couple")
+t.test((dta_bal$a2==3 & dta_bal$spouse2f2==3)~dta_bal$messenger  == "couple")
+t.test((dta_bal$a3==2 & dta_bal$spouse2f3==2)~dta_bal$messenger  == "couple")
+#this was not in the video
+t.test((dta_bal$a4==3 & dta_bal$spouse2f4==3)~dta_bal$messenger  == "couple")
 
 
 ############################################################## gender matching ###############################################################
