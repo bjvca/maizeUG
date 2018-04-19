@@ -1,22 +1,19 @@
-#source("/home/bjvca/data/projects/digital green/endline/data/init.R")
+source("/home/bjvca/data/projects/digital green/endline/data/init.R")
 
-totrep <- 0
+totrep <- 1000
 set.seed(07032018)
 dta <- subset(dta, !is.na(interview_status))
 
 dta$messenger <- as.character(dta$messenger)
 
 ### indexing results arrays
+### indexing results arrays
 res_h0_know <- array(NA, c(5,4,4)) 
 rownames(res_h0_know) <- c("know_space","know_combine","know_weed", "know_armyworm","know_ind")
-res_h0_pract <- array(NA, c(11,4,4))
-rownames(res_h0_pract) <- c("space","striga","weed", "use_fert","log_kg_fert","log_kg_fert_acre","seed","log_kg_seed","log_kg_seed_acre","combiner","days_min")
-res_h0_pract_mgt <- array(NA, c(11,4,4))
-rownames(res_h0_pract_mgt) <- c("space","striga","weed", "use_fert","log_kg_fert","log_kg_fert_acre","seed","log_kg_seed","log_kg_seed_acre","combiner","days_min")
+res_h0_pract <- array(NA, c(10,4,4))
+rownames(res_h0_pract) <- c("space","striga","weed", "use_fert","log_kg_fert","log_kg_fert_acre","seed","log_kg_seed","log_kg_seed_acre","combiner")
 res_h0_fert  <- array(NA, c(9,4,4))
 rownames(res_h0_fert) <- c("use_DAP","use_urea","use_organic","log_kg_DAP","log_kg_urea","log_kg_organic","log_kg_DAP_ac","log_kg_urea_ac","log_kg_organic_ac")
-res_h0_fert_mgt  <- array(NA, c(9,4,4))
-rownames(res_h0_fert_mgt) <- c("use_DAP","use_urea","use_organic","log_kg_DAP","log_kg_urea","log_kg_organic","log_kg_DAP_ac","log_kg_urea_ac","log_kg_organic_ac")
 res_h0_seed  <- array(NA, c(10,4,4))
 rownames(res_h0_seed) <- c("bazooka","longe10h","longe5","longe4","hybrid","kg_hybrid","kg_hybrid_ac","opv","kg_opv","kg_opv_ac")
 res_h0_prod <- array(NA, c(5,4,4))
@@ -24,18 +21,8 @@ rownames(res_h0_prod) <- c("prod","area","yield","yield_better","prod_index")
 res_h0_wel <-  array(NA, c(6,4,4))
 rownames(res_h0_wel) <- c("better_av","better_6m","eatpref","eatenough","log_cons","welfare_index")
 
-# run this analysis for 4 hypotheses:
-# 1: T-C
-# 2: recipient == couple
-# 3: messenger == couple
-# 4: gender matching
-for (h in 1:4) {
-if (h==1) {
-############################################ does the intervention work? (treat vs control) #########################################################
-### remember to balance data over treatment cells, this involves taking random samples from each cell, so set seed
-### remove missings due to attrition first, othewise we will sample missings
 s_h1 <- min(table(dta$messenger[dta$messenger != "ctrl"], dta$recipient[dta$messenger != "ctrl"]))
-dta_bal <- rbind(dta[dta$messenger=="ctrl",],
+dta <- rbind(dta[dta$messenger=="ctrl",],
  dta[dta$messenger=="couple" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "couple",]),s_h1),],
  dta[dta$messenger=="male" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "couple",]),s_h1),],
  dta[dta$messenger=="female" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "couple",]),s_h1),],
@@ -46,66 +33,29 @@ dta_bal <- rbind(dta[dta$messenger=="ctrl",],
  dta[dta$messenger=="couple" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "male",]),s_h1),],
  dta[dta$messenger=="couple" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "female",]),s_h1),])
 
+dta_save <- dta
+totrep <- 0
+
+# run this analysis for 3 hypotheses:
+
+for (h in 1:3) {
+if (h==1) {
+############################################ does the intervention work? (treat vs control) #########################################################
+
 treatment <- "messenger != 'ctrl'" 
 } else if (h==2) {
-############################################# reducing information asymmetries ##############################################
+############################################# is there an additional ivr effect ##############################################
 ## drop the control
 dta <- subset(dta, messenger != "ctrl")
-## sample size for balance H0
-s_h0 <- min(table(dta$messenger, dta$recipient)[,1])
-## sample size for balance H1
-s_h1 <- min(table(dta$messenger, dta$recipient)[,-1])
 
-dta_bal <- rbind( dta[dta$messenger=="couple" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "couple",]),s_h0),],
- dta[dta$messenger=="male" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "couple",]),s_h0),],
- dta[dta$messenger=="female" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "couple",]),s_h0),],
-
- dta[dta$messenger=="female" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "male",]),s_h1),],
- dta[dta$messenger=="female" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "female",]),s_h1),],
- dta[dta$messenger=="male" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "male",]),s_h1),],
- dta[dta$messenger=="male" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "female",]),s_h1),],
- dta[dta$messenger=="couple" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "male",]),s_h1),],
- dta[dta$messenger=="couple" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "female",]),s_h1),])
-
-treatment <- "recipient == 'couple'" 
+treatment <- "ivr == 'yes'" 
 } else if (h==3) {
-################################################## Projecting cooperative approach ###################################################
-## sample size for balance H0 -  basically table(dta$recipient[dta$messenger == "couple"])
-s_h0 <- min(table(dta$messenger, dta$recipient)[1,])
-
-## sample size for balance H1
-s_h1 <- min(table(dta$messenger, dta$recipient)[-1,])
-
-dta_bal <- rbind( dta[dta$messenger=="couple" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "couple",]),s_h0),],
- dta[dta$messenger=="male" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "couple",]),s_h1),],
- dta[dta$messenger=="female" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "couple",]),s_h1),],
-
- dta[dta$messenger=="female" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "male",]),s_h1),],
- dta[dta$messenger=="female" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "female",]),s_h1),],
- dta[dta$messenger=="male" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "male",]),s_h1),],
- dta[dta$messenger=="male" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "female",]),s_h1),],
- dta[dta$messenger=="couple" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "male",]),s_h0),],
- dta[dta$messenger=="couple" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "female",]),s_h0),])
-treatment <- "messenger == 'couple'"
-} else if (h==4) {
-############################################################## gender matching ###############################################################
-dta <- subset(dta, messenger != "ctrl")
-dta$recipient <- as.character(dta$recipient)
-
-dta <- subset(dta, recipient != "couple" & messenger != "couple")
-s_h0 <- min(table(dta$recipient, dta$messenger))
-
-dta_bal <- rbind(
- dta[dta$messenger=="female" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "male",]),s_h0),],
- dta[dta$messenger=="female" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "female",]),s_h0),],
- dta[dta$messenger=="male" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "male",]),s_h0),],
- dta[dta$messenger=="male" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "female",]),s_h0),])
-
-treatment <- "messenger == recipient"
-}
-
-############################### knowledge  ############################
-
+################################################## is there and additional sms effect ###################################################
+dta <- subset(dta, ivr == "yes")
+treatment <- "sms == 'yes'" 
+} 
+############################## knowledge  ############################
+dta_bal <- dta
 #set to zero if you do not want RI based inference - then parametric p-values will be recorded in matrices
 
 ### knowledge at aggreagate level - defined as follows: if one person was interviewed and the person got it right, then known. If both were interviewed
@@ -159,41 +109,27 @@ if (totrep >0) {
 res_h0_pract[1,1,h]  <- summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
 res_h0_pract[1,2,h]  <- summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_h0_pract[1,3,h]  <- ifelse(totrep >0, RI("space",treatment, dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
-res_h0_pract_mgt[1,1,h]  <- summary(lm(as.formula(paste("space_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-res_h0_pract_mgt[1,2,h]  <- summary(lm(as.formula(paste("space_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_h0_pract_mgt[1,3,h]  <- ifelse(totrep >0, RI("space_mgt",treatment, dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("space_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
 ## used recommended way to fight striga - this should be changed to include info of all plots 
 res_h0_pract[2,1,h]  <- summary(lm(as.formula(paste("striga", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
 res_h0_pract[2,2,h]  <- summary(lm(as.formula(paste("striga", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_h0_pract[2,3,h]  <- ifelse(totrep >0, RI("striga",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("striga", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
-res_h0_pract_mgt[2,1,h]  <- summary(lm(as.formula(paste("striga_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-res_h0_pract_mgt[2,2,h]  <- summary(lm(as.formula(paste("striga_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_h0_pract_mgt[2,3,h]  <- ifelse(totrep >0, RI("striga_mgt",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("striga_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
 ## weeded on recommended timing? - this should be changed to include info of all plots 
 res_h0_pract[3,1,h]  <- summary(lm(as.formula(paste("weed", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
 res_h0_pract[3,2,h]  <- summary(lm(as.formula(paste("weed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_h0_pract[3,3,h]  <- ifelse(totrep >0, RI("weed",treatment, dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("weed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
-res_h0_pract_mgt[3,1,h]  <- summary(lm(as.formula(paste("weed_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-res_h0_pract_mgt[3,2,h]  <- summary(lm(as.formula(paste("weed_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_h0_pract_mgt[3,3,h]  <- ifelse(totrep >0, RI("weed_mgt",treatment, dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("weed_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
 ## fertilizer use
 res_h0_pract[4,1,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
 res_h0_pract[4,2,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_h0_pract[4,3,h]  <- ifelse(totrep >0, RI("fert",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
-res_h0_pract_mgt[4,1,h]  <- summary(lm(as.formula(paste("fert_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-res_h0_pract_mgt[4,2,h]  <- summary(lm(as.formula(paste("fert_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_h0_pract_mgt[4,3,h]  <- ifelse(totrep >0, RI("fert_mgt",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ##improved seed  
 res_h0_pract[7,1,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
 res_h0_pract[7,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_h0_pract[7,3,h]  <- ifelse(totrep >0, RI("impseed",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
-res_h0_pract_mgt[7,1,h]  <- summary(lm(as.formula(paste("impseed_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-res_h0_pract_mgt[7,2,h]  <- summary(lm(as.formula(paste("impseed_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_h0_pract_mgt[7,3,h]  <- ifelse(totrep >0, RI("impseed_mgt",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
 
 
 ### zoom in on fertilizers
@@ -222,69 +158,38 @@ res_h0_fert[4,1,h]  <- summary(lm(as.formula(paste("log(kg_dap)", treatment, sep
 res_h0_fert[4,2,h]  <- summary(lm(as.formula(paste("log(kg_dap)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_dap>0,]))$coefficients[2,1]
 res_h0_fert[4,3,h]  <- ifelse(totrep >0, RI("log(kg_dap)",treatment , dta_bal[dta_bal$kg_dap>0,], nr_repl = totrep) , summary(lm(as.formula(paste("log(kg_dap)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_dap>0,]))$coefficients[2,4])
 
-res_h0_fert_mgt[4,1,h]  <- summary(lm(as.formula(paste("log(kg_dap_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_dap_mgt>0,]))$coefficients[1,1]
-res_h0_fert_mgt[4,2,h]  <- summary(lm(as.formula(paste("log(kg_dap_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_dap_mgt>0,]))$coefficients[2,1]
-res_h0_fert_mgt[4,3,h]  <- ifelse(totrep >0, RI("log(kg_dap_mgt)",treatment , dta_bal[dta_bal$kg_dap_mgt>0,], nr_repl = totrep) , summary(lm(as.formula(paste("log(kg_dap_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_dap_mgt>0,]))$coefficients[2,4])
-
 res_h0_fert[7,1,h]  <- summary(lm(as.formula(paste("log(kg_dap/area_tot)", treatment, sep ="~")), data=dta_bal[(dta_bal$kg_dap/dta_bal$area_tot)>0,]))$coefficients[1,1]
 res_h0_fert[7,2,h]  <- summary(lm(as.formula(paste("log(kg_dap/area_tot)", treatment, sep ="~")), data=dta_bal[(dta_bal$kg_dap/dta_bal$area_tot)>0,]))$coefficients[2,1]
 res_h0_fert[7,3,h]  <- ifelse(totrep >0, RI("log(kg_dap/area_tot)",treatment , dta_bal[(dta_bal$kg_dap/dta_bal$area_tot)>0,], nr_repl = totrep) , summary(lm(as.formula(paste("log(kg_dap/area_tot)", treatment, sep ="~")), data=dta_bal[(dta_bal$kg_dap/dta_bal$area_tot)>0,]))$coefficients[2,4])
-
-res_h0_fert_mgt[7,1,h]  <- summary(lm(as.formula(paste("log(kg_dap_ac_mgt)", treatment, sep ="~")), data=dta_bal[(dta_bal$kg_dap/dta_bal$area_tot)>0,]))$coefficients[1,1]
-res_h0_fert_mgt[7,2,h]  <- summary(lm(as.formula(paste("log(kg_dap_ac_mgt)", treatment, sep ="~")), data=dta_bal[(dta_bal$kg_dap/dta_bal$area_tot)>0,]))$coefficients[2,1]
-res_h0_fert_mgt[7,3,h]  <- ifelse(totrep >0, RI("log(kg_dap_ac_mgt)",treatment , dta_bal[(dta_bal$kg_dap/dta_bal$area_tot)>0,], nr_repl = totrep) , summary(lm(as.formula(paste("log(kg_dap_ac_mgt)", treatment, sep ="~")), data=dta_bal[(dta_bal$kg_dap/dta_bal$area_tot)>0,]))$coefficients[2,4])
 
 #### fert = urea
 res_h0_fert[5,1,h]  <- summary(lm(as.formula(paste("log(kg_urea)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_urea>0,]))$coefficients[1,1]
 res_h0_fert[5,2,h]  <- summary(lm(as.formula(paste("log(kg_urea)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_urea>0,]))$coefficients[2,1]
 res_h0_fert[5,3,h]  <- ifelse(totrep >0, RI("log(kg_urea)",treatment , dta_bal[dta_bal$kg_urea>0,], nr_repl = totrep) , summary(lm(as.formula(paste("log(kg_urea)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_urea>0,]))$coefficients[2,4])
 
-res_h0_fert_mgt[5,1,h]  <- summary(lm(as.formula(paste("log(kg_urea_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_urea_mgt>0,]))$coefficients[1,1]
-res_h0_fert_mgt[5,2,h]  <- summary(lm(as.formula(paste("log(kg_urea_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_urea_mgt>0,]))$coefficients[2,1]
-res_h0_fert_mgt[5,3,h]  <- ifelse(totrep >0, RI("log(kg_urea_mgt)",treatment , dta_bal[dta_bal$kg_urea_mgt>0,], nr_repl = totrep) , summary(lm(as.formula(paste("log(kg_urea_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_urea_mgt>0,]))$coefficients[2,4])
-
 res_h0_fert[8,1,h]  <- summary(lm(as.formula(paste("log(kg_urea/area_tot)", treatment, sep ="~")), data=dta_bal[(dta_bal$kg_urea/dta_bal$area_tot)>0,]))$coefficients[1,1]
 res_h0_fert[8,2,h]  <- summary(lm(as.formula(paste("log(kg_urea/area_tot)", treatment, sep ="~")), data=dta_bal[(dta_bal$kg_urea/dta_bal$area_tot)>0,]))$coefficients[2,1]
 res_h0_fert[8,3,h]  <- ifelse(totrep >0, RI("log(kg_urea/area_tot)",treatment , dta_bal[(dta_bal$kg_urea/dta_bal$area_tot)>0,], nr_repl = totrep) , summary(lm(as.formula(paste("log(kg_urea/area_tot)", treatment, sep ="~")), data=dta_bal[(dta_bal$kg_urea/dta_bal$area_tot)>0,]))$coefficients[2,4])
-
-res_h0_fert_mgt[8,1,h]  <- summary(lm(as.formula(paste("log(kg_urea_ac_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_urea_ac_mgt>0,,]))$coefficients[1,1]
-res_h0_fert_mgt[8,2,h]  <- summary(lm(as.formula(paste("log(kg_urea_ac_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_urea_ac_mgt>0,,]))$coefficients[2,1]
-res_h0_fert_mgt[8,3,h]  <- ifelse(totrep >0, RI("log(kg_urea_ac_mgt)",treatment , dta_bal[dta_bal$kg_urea_ac_mgt>0,], nr_repl = totrep) , summary(lm(as.formula(paste("log(kg_urea_ac_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_urea_ac_mgt>0,]))$coefficients[2,4])
 
 #### fert = organic
 res_h0_fert[6,1,h]  <-  summary(lm(as.formula(paste("bags_org", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
 res_h0_fert[6,2,h]  <- summary(lm(as.formula(paste("bags_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_h0_fert[6,3,h]  <- ifelse(totrep >0, RI("bags_org",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bags_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
-res_h0_fert_mgt[6,1,h]  <-  summary(lm(as.formula(paste("bags_org_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-res_h0_fert_mgt[6,2,h]  <- summary(lm(as.formula(paste("bags_org_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_h0_fert_mgt[6,3,h]  <- ifelse(totrep >0, RI("bags_org_mgt",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bags_org_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
-
 res_h0_fert[9,1,h]  <-  summary(lm(as.formula(paste("bags_org/area_tot", treatment, sep ="~")), data=dta_bal[(dta_bal$bags_org/dta_bal$area_tot)>0,]))$coefficients[1,1]
 res_h0_fert[9,2,h]  <- summary(lm(as.formula(paste("bags_org/area_tot", treatment, sep ="~")), data=dta_bal[(dta_bal$bags_org/dta_bal$area_tot)>0,]))$coefficients[2,1]
 res_h0_fert[9,3,h]  <- ifelse(totrep >0, RI("bags_org/area_tot",treatment , dta_bal[(dta_bal$bags_org/dta_bal$area_tot)>0,], nr_repl = totrep), summary(lm(as.formula(paste("bags_org/area_tot", treatment, sep ="~")), data=dta_bal[(dta_bal$bags_org/dta_bal$area_tot)>0,]))$coefficients[2,4]) 
 
-res_h0_fert_mgt[9,1,h]  <-  summary(lm(as.formula(paste("bags_org_ac_mgt", treatment, sep ="~")), data=dta_bal[(dta_bal$bags_org_ac_mgt)>0,]))$coefficients[1,1]
-res_h0_fert_mgt[9,2,h]  <- summary(lm(as.formula(paste("bags_org_ac_mgt", treatment, sep ="~")), data=dta_bal[(dta_bal$bags_org_ac_mgt)>0,]))$coefficients[2,1]
-res_h0_fert_mgt[9,3,h]  <- ifelse(totrep >0, RI("bags_org_ac_mgt",treatment , dta_bal[(dta_bal$bags_org_ac_mgt)>0,], nr_repl = totrep), summary(lm(as.formula(paste("bags_org_ac_mgt", treatment, sep ="~")), data=dta_bal[(dta_bal$bags_org_ac_mgt)>0,]))$coefficients[2,4]) 
-
 ## total inorganic fertilizer (kg)
 res_h0_pract[5,1,h]  <- summary(lm(as.formula(paste("log(kg_inorg)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_inorg>0,]))$coefficients[1,1]
 res_h0_pract[5,2,h]  <- summary(lm(as.formula(paste("log(kg_inorg)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_inorg>0,]))$coefficients[2,1]
-res_h0_pract[5,3,h]  <- ifelse(totrep >0, RI("log(kg_inorg)",treatment , dta_bal[dta_bal$kg_inorg>0,], nr_repl = totrep), summary(lm(as.formula(paste("log(kg_inorg)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_inorg>0,]))$coefficients[2,4]) 
-
-res_h0_pract_mgt[5,1,h]  <- summary(lm(as.formula(paste("log(kg_inorg_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_inorg_mgt>0,]))$coefficients[1,1]
-res_h0_pract_mgt[5,2,h]  <- summary(lm(as.formula(paste("log(kg_inorg_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_inorg_mgt>0,]))$coefficients[2,1]
-res_h0_pract_mgt[5,3,h]  <- ifelse(totrep >0, RI("log(kg_inorg_mgt)",treatment , dta_bal[dta_bal$kg_inorg_mgt>0,], nr_repl = totrep), summary(lm(as.formula(paste("log(kg_inorg_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_inorg_mgt>0,]))$coefficients[2,4]) 
+res_h0_pract[5,3,h]  <- ifelse(totrep >0, RI("log(kg_inorg)",treatment , dta_bal[dta_bal$kg_inorg>0,], nr_repl = totrep), summary(lm(as.formula(paste("kg_inorg", treatment, sep ="~")), data=dta_bal[dta_bal$kg_inorg>0,]))$coefficients[2,4]) 
 
 ## inorganic fertilizer application rate
 res_h0_pract[6,1,h]  <- summary(lm(as.formula(paste("log(kg_ac_inorg)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_ac_inorg>0,]))$coefficients[1,1]
 res_h0_pract[6,2,h]  <- summary(lm(as.formula(paste("log(kg_ac_inorg)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_ac_inorg>0,]))$coefficients[2,1]
 res_h0_pract[6,3,h]  <- ifelse(totrep >0, RI("log(kg_ac_inorg)",treatment , dta_bal[dta_bal$kg_ac_inorg>0,], nr_repl = totrep), summary(lm(as.formula(paste("log(kg_ac_inorg)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_ac_inorg>0,]))$coefficients[2,4]) 
 
-res_h0_pract_mgt[6,1,h]  <- summary(lm(as.formula(paste("log(kg_ac_inorg_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_ac_inorg_mgt>0,]))$coefficients[1,1]
-res_h0_pract_mgt[6,2,h]  <- summary(lm(as.formula(paste("log(kg_ac_inorg_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_ac_inorg_mgt>0,]))$coefficients[2,1]
-res_h0_pract_mgt[6,3,h]  <- ifelse(totrep >0, RI("log(kg_ac_inorg_mgt)",treatment , dta_bal[dta_bal$kg_ac_inorg_mgt>0,], nr_repl = totrep), summary(lm(as.formula(paste("log(kg_ac_inorg_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_ac_inorg_mgt>0,]))$coefficients[2,4]) 
 
 ### zoom in on improved seed
 
@@ -353,24 +258,12 @@ res_h0_pract[9,3,h]  <- ifelse(totrep >0, RI("log(kg_impseed/area_tot)",treatmen
 res_h0_pract[10,1,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
 res_h0_pract[10,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_h0_pract[10,3,h]  <- ifelse(totrep >0, RI("combiner",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
-res_h0_pract_mgt[10,1,h]  <- summary(lm(as.formula(paste("combiner_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-res_h0_pract_mgt[10,2,h]  <- summary(lm(as.formula(paste("combiner_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_h0_pract_mgt[10,3,h]  <- ifelse(totrep >0, RI("combiner_mgt",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("combiner_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
-
-### planted days after rain
-res_h0_pract[11,1,h]  <- summary(lm(as.formula(paste("days_min", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-res_h0_pract[11,2,h]  <- summary(lm(as.formula(paste("days_min", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_h0_pract[11,3,h]  <- ifelse(totrep >0, RI("days_min",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("days_min", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
-
-res_h0_pract_mgt[11,1,h]  <- summary(lm(as.formula(paste("days_min_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-res_h0_pract_mgt[11,2,h]  <- summary(lm(as.formula(paste("days_min_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_h0_pract_mgt[11,3,h]  <- ifelse(totrep >0, RI("days_min_mgt",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("days_min_mgt", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 if (totrep >0) {
-res_h0_pract[1:5,4,h] <- FSR_RI( c("space_mgt","striga_mgt","weed", "fert","impseed") ,treatment ,dta_bal, pvals =  res_h0_pract[,3,h] , nr_repl_pi = 100)
+res_h0_pract[1:5,4,h] <- FSR_RI( c("space","striga","weed", "fert","impseed") ,treatment ,dta_bal, pvals =  res_h0_pract[,3,h] , nr_repl_pi = 100)
 
 
-indexer <-  FW_index(treatment, c("space_mgt", "striga_mgt", "weed","fert","impseed"),dta_bal, nr_repl=totrep)
+indexer <-  FW_index(treatment, c("space", "striga", "weed","fert","impseed"),dta_bal, nr_repl=totrep)
 res_h0_pract[11,1,h] <-  indexer[[1]]$coefficients[1,1]
 res_h0_pract[11,2,h] <-  indexer[[1]]$coefficients[2,1]
 res_h0_pract[11,3,h] <-  indexer[[2]]
@@ -469,7 +362,61 @@ if (totrep >0) {
 	res_h0_wel[6,2,h] <-  indexer[[1]]$coefficients[2,1]
 	res_h0_wel[6,3,h] <-  indexer[[2]]
 	}
+
 }
+
+####  now do this better - eg use only those that actually saw the video before they started planting - use IV to estimate IVR impact - use actual messages sent
+dta <-  dta_save
+
+
+### analysis for callers to ivr
+dta <- subset(dta, messenger != "ctrl")
+ivr_log <- read.csv("/home/bjvca/data/projects/digital green/endline/data/raw/ivr_log.csv")
+callers <- data.frame(names(table(ivr_log$Phone.Number)))
+names(callers) <- "tel"
+tels <- read.csv("/home/bjvca/data/projects/digital green/endline/data/working/tels.csv")[c("HHID","tel")]
+tels$tel <- paste("256",tels$tel, sep="")
+callers <- merge(callers,tels)
+dta <- merge(dta, callers,by.x="hhid", by.y="HHID" ,all.x=T)
+
+
+summary(lm(prod_tot~!is.na(tel),data=dta))
+
+  
+
+### analysis for sms
+dta <- subset(dta, ivr == "yes")
+
+### read in sms log
+sms_log <- read.csv("/home/bjvca/data/projects/digital green/endline/data/raw/sms_log.csv")[c("Subscriber.Phone", "Scheduled.Date", "Status")]
+      
+## only keep the ones that were delivered
+sms_log <- subset(sms_log, Status == "Finished (complete)")
+
+## get IDS of phone numbers for merging log to dataset
+IDs <- read.csv("/home/bjvca/data/projects/digital green/baseline/tel.csv")[c("HHID","tel")]
+IDs$tel <- paste("256",IDs$tel, sep="")
+sms_log <- merge(IDs, sms_log, by.x = "tel", by.y="Subscriber.Phone")
+sms_log <- reshape(sms_log,v.names = "Scheduled.Date", idvar = "HHID",timevar="Scheduled.Date", direction = "wide")
+
+sms_log$rec_weed_third_8 <- !is.na(sms_log$"Scheduled.Date.2017-10-17") | !is.na(sms_log$"Scheduled.Date.2017-10-25")
+sms_log$rec_urea_7 <- !is.na(sms_log$"Scheduled.Date.2017-09-26") 
+sms_log$rec_weed_second_6 <- !is.na(sms_log$"Scheduled.Date.2017-09-19") 
+sms_log$rec_striga_5 <- !is.na(sms_log$"Scheduled.Date.2017-09-14") 
+sms_log$rec_weed_first_4 <- !is.na(sms_log$"Scheduled.Date.2017-09-12")  | !is.na(sms_log$"Scheduled.Date.2017-09-13") ### the sms guys made a big mistake here, about 600 households got sms 3 twice and did not get 4
+sms_log$rec_seed_1 <- !is.na(sms_log$"Scheduled.Date.2017-08-29") | !is.na(sms_log$"Scheduled.Date.2017-08-31") 
+sms_log$rec_spacing_2 <- !is.na(sms_log$"Scheduled.Date.2017-09-05") |  !is.na(sms_log$"Scheduled.Date.2017-09-06")
+sms_log$rec_gapfill_3 <- !is.na(sms_log$"Scheduled.Date.2017-09-07") | !is.na(sms_log$"Scheduled.Date.2017-09-08") | !is.na(sms_log$"Scheduled.Date.2017-09-11")
+
+sms_log <- sms_log[c("HHID","rec_seed_1", "rec_spacing_2" ,"rec_gapfill_3", "rec_weed_first_4", "rec_striga_5", "rec_weed_second_6", "rec_urea_7", "rec_weed_third_8")] 
+sms_log$totsms <- rowSums(sms_log[2:9])
+dta <- merge(dta, sms_log, by.x="hhid", by.y="HHID", all.x=T)
+dta$totsms[is.na(dta$totsms)] <- 0
+
+summary(lm(prod_tot~totsms,data=dta))
+summary(lm(area_tot~totsms,data=dta))
+summary(lm(yield_av~totsms,data=dta))
+  
 
 
 

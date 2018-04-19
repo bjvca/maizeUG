@@ -49,13 +49,13 @@ dta[c("spouse2grp_sp1f14","spouse2grp_sp2g14","spouse2grp_sp3h14","spouse2group_
 dta[c("grp1a16","grp2b16","grp3c16","grp4d16", "grp5e16")] <- lapply(dta[c("grp1a16","grp2b16","grp3c16","grp4d16", "grp5e16")], function(x) replace(x, x == 999, NA) )
 dta[c("grp1a17","grp2b17","grp3c17","grp4d17", "grp5e17")] <- lapply(dta[c("grp1a17","grp2b17","grp3c17","grp4d17", "grp5e17")], function(x) replace(x, x == 999, NA) )
 
-## note: if number of bags was zero, bagsize is missing (set here to zero)
+## note: if number of bags was zero, bagsize is missing so we set here to zero:
 dta$grp1a17[dta$grp1a16 == 0] <- 0
 dta$grp2b17[dta$grp2b16 == 0] <- 0
 dta$grp3c17[dta$grp3c16 == 0] <- 0
 dta$grp4d17[dta$grp4d16 == 0] <- 0
 dta$grp5e17[dta$grp5e16 == 0] <- 0
-
+#prod = bags x kg per bag
 dta$prod_pl1_sp1 <- dta$grp1a16 * dta$grp1a17
 dta$prod_pl2_sp1 <- dta$grp2b16 * dta$grp2b17
 dta$prod_pl3_sp1 <- dta$grp3c16 * dta$grp3c17
@@ -65,6 +65,8 @@ dta$prod_pl5_sp1 <- dta$grp5e16 * dta$grp5e17
 dta$prod_tot_sp1 <- rowSums(dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")], na.rm=T)
 ### so explicitly make missing if nothing was produced
 dta$prod_tot_sp1[is.na(dta$grp1a16) & is.na(dta$grp2b16) &is.na(dta$grp3c16) &is.na(dta$grp4d16) &is.na(dta$grp5e16) ] <- NA
+
+### now for spouse
 
 dta[c("spouse2grp_sp1f16","spouse2grp_sp2g16","spouse2grp_sp3h16","spouse2group_sp4j16", "spouse2grp5_sp5k16")] <- lapply(dta[c("spouse2grp_sp1f16","spouse2grp_sp2g16","spouse2grp_sp3h16","spouse2group_sp4j16", "spouse2grp5_sp5k16")], function(x) replace(x, x == 999, NA) )
 dta[c("spouse2grp_sp1f17","spouse2grp_sp2g17","spouse2grp_sp3h17","spouse2group_sp4j17", "spouse2grp5_sp5k17")] <- lapply(dta[c("spouse2grp_sp1f17","spouse2grp_sp2g17","spouse2grp_sp3h17","spouse2group_sp4j17", "spouse2grp5_sp5k17")], function(x) replace(x, x == 999, NA) )
@@ -84,6 +86,44 @@ dta$prod_pl5_sp2 <- dta$spouse2grp5_sp5k16 * dta$spouse2grp5_sp5k17
 dta$prod_tot_sp2 <- rowSums(dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")], na.rm=T)
 dta$prod_tot_sp2[is.na(dta$spouse2grp_sp1f16) & is.na(dta$spouse2grp_sp2g16) & is.na(dta$spouse2grp_sp3h16) & is.na(dta$spouse2group_sp4j16) & is.na(dta$spouse2grp5_sp5k16)] <- NA
 dta$prod_tot <-  rowMeans(dta[c("prod_tot_sp1","prod_tot_sp2")], na.rm=T)
+## problem with taking mean is that this may increase measurement error of plot is managed by only one person. Let us assume the men know, unless woman is interviewed first and says she makes the decisions and man agrees or man is interviewed first and he states it is women and woman agress
+
+dta$mgt_pl1 <- "man"
+dta$mgt_pl1[dta$grp1a10==1 & dta$spouse2grp_sp1f10==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl1[dta$grp1a10==2 & dta$spouse2grp_sp1f10==1 & dta$person_interviewed=="man"] <- "woman"
+dta$mgt_pl2 <- "man"
+dta$mgt_pl2[dta$grp2b10==1 & dta$spouse2grp_sp2g10==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl2[dta$grp2b10==2 & dta$spouse2grp_sp2g10==1 & dta$person_interviewed=="man"] <- "woman"
+dta$mgt_pl3 <- "man"
+dta$mgt_pl3[dta$grp3c10==1 & dta$spouse2grp_sp3h10==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl3[dta$grp3c10==2 & dta$spouse2grp_sp3h10==1 & dta$person_interviewed=="man"] <- "woman"
+dta$mgt_pl4 <- "man"
+dta$mgt_pl4[dta$grp4d10==1 & dta$spouse2group_sp4j10==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl4[dta$grp4d10==2 & dta$spouse2group_sp4j10==1 & dta$person_interviewed=="man"] <- "woman"
+dta$mgt_pl5 <- "man"
+dta$mgt_pl5[dta$grp5e10==1 & dta$spouse2grp5_sp5k10==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl5[dta$grp5e10==2 & dta$spouse2grp5_sp5k10==1 & dta$person_interviewed=="man"] <- "woman"
+
+
+dta$prod_pl1 <- dta$grp1a16 * dta$grp1a17
+dta$prod_pl1[is.na(dta$prod_pl1) |  dta$mgt_pl1 == "woman"] <- dta$spouse2grp_sp1f16[is.na(dta$prod_pl1) |  dta$mgt_pl1 == "woman"] * dta$spouse2grp_sp1f17[is.na(dta$prod_pl1) |  dta$mgt_pl1 == "woman"]
+
+dta$prod_pl2 <- dta$grp2b16 * dta$grp2b17
+dta$prod_pl2[is.na(dta$prod_pl2) |  dta$mgt_pl2 == "woman"] <- dta$spouse2grp_sp2g16[is.na(dta$prod_pl2) |  dta$mgt_pl2 == "woman"]  * dta$spouse2grp_sp2g17[is.na(dta$prod_pl2) |  dta$mgt_pl2 == "woman"] 
+
+dta$prod_pl3 <- dta$grp3c16 * dta$grp3c17
+dta$prod_pl3[is.na(dta$prod_pl3) |  dta$mgt_pl3 == "woman"] <-  dta$spouse2grp_sp3h16[is.na(dta$prod_pl3) |  dta$mgt_pl3 == "woman"] * dta$spouse2grp_sp3h17[is.na(dta$prod_pl3) |  dta$mgt_pl3 == "woman"]
+
+
+dta$prod_pl4 <- dta$grp4d16 * dta$grp4d17
+dta$prod_pl4[is.na(dta$prod_pl4) |  dta$mgt_pl4 == "woman"] <- dta$spouse2group_sp4j16[is.na(dta$prod_pl4) |  dta$mgt_pl4 == "woman"] * dta$spouse2group_sp4j17[is.na(dta$prod_pl4) |  dta$mgt_pl4 == "woman"]
+
+dta$prod_pl5 <- dta$grp5e16 * dta$grp5e17
+dta$prod_pl5[is.na(dta$prod_pl5) |  dta$mgt_pl5 == "woman"] <- dta$spouse2grp5_sp5k16[is.na(dta$prod_pl5) |  dta$mgt_pl5 == "woman"] * dta$spouse2grp5_sp5k17[is.na(dta$prod_pl5) |  dta$mgt_pl5 == "woman"]
+
+dta$prod_tot_man <- rowSums(dta[c("prod_pl1","prod_pl2","prod_pl3","prod_pl4", "prod_pl5")], na.rm=T)
+dta$prod_tot_man[is.na(dta$prod_pl1) & is.na(dta$prod_pl2) & is.na(dta$prod_pl3) & is.na(dta$prod_pl4) & is.na(dta$prod_pl5)] <- NA
+
 
 ### now scale by area and take intercropping into account 
 dta[c("grp1a11","grp2b11","grp3c11","grp4d11", "grp5e11")] <- lapply(dta[c("grp1a11","grp2b11","grp3c11","grp4d11", "grp5e11")], function(x) replace(x, x == 999, NA) )
@@ -95,19 +135,29 @@ dta$area_pl2_sp1 <-(dta$grp2b11 * ((dta$grp2b14) /100))
 dta$area_pl3_sp1 <-(dta$grp3c11 * ((dta$grp3c14) /100))
 dta$area_pl4_sp1 <-(dta$grp4d11 * ((dta$grp4d14) /100))
 dta$area_pl5_sp1 <-(dta$grp5e11 * ((dta$grp5e14) /100))
-
-
-dta$yield_pl1_sp1 <- dta$prod_pl1_sp1 / (dta$grp1a11 * ((dta$grp1a14) /100))
-dta$yield_pl2_sp1 <- dta$prod_pl2_sp1 / (dta$grp2b11 * ((dta$grp2b14) /100))
-dta$yield_pl3_sp1 <- dta$prod_pl3_sp1 / (dta$grp3c11 * ((dta$grp3c14) /100))
-dta$yield_pl4_sp1 <- dta$prod_pl4_sp1 / (dta$grp4d11 * ((dta$grp4d14) /100))
-dta$yield_pl5_sp1 <- dta$prod_pl5_sp1 / (dta$grp5e11 * ((dta$grp5e14) /100))
-
 ## same deal here, this will be zero of nothing was produced, but this can now safely be replaced by NA
 dta$area_tot_sp1 <- rowSums(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")], na.rm=T)
 dta$area_tot_sp1[dta$area_tot_sp1 == 0] <- NA
-## here dividing by 0 yield NaN anyway
-dta$yield_av_sp1 <- rowMeans(dta[c("yield_pl1_sp1","yield_pl2_sp1","yield_pl3_sp1","yield_pl4_sp1", "yield_pl5_sp1")], na.rm=T)
+dta$yield_av_sp1 <- dta$prod_tot_sp1/dta$area_tot_sp1
+
+###alternative using plot manager
+dta$area_pl1 <-(dta$grp1a11 * ((dta$grp1a14) /100))
+dta$area_pl1[is.na(dta$area_pl1) |  dta$mgt_pl1 == "woman"] <-  (dta$spouse2grp_sp1f11[is.na(dta$area_pl1) |  dta$mgt_pl1 == "woman"] * ((dta$spouse2grp_sp1f14[is.na(dta$area_pl1) |  dta$mgt_pl1 == "woman"]) /100))
+dta$area_pl2 <-(dta$grp2b11 * ((dta$grp2b14) /100))
+dta$area_pl2[is.na(dta$area_pl2) |  dta$mgt_pl2 == "woman"] <-   (dta$spouse2grp_sp2g11[is.na(dta$area_pl2) |  dta$mgt_pl2 == "woman"]  * ((dta$spouse2grp_sp2g14[is.na(dta$area_pl2) |  dta$mgt_pl2 == "woman"] ) /100))
+dta$area_pl3 <-(dta$grp3c11 * ((dta$grp3c14) /100))
+dta$area_pl3[is.na(dta$area_pl3) |  dta$mgt_pl3 == "woman"] <-  (dta$spouse2grp_sp3h11[is.na(dta$area_pl3) |  dta$mgt_pl3 == "woman"] * ((dta$spouse2grp_sp3h14[is.na(dta$area_pl3) |  dta$mgt_pl3 == "woman"]) /100))
+dta$area_pl4 <-(dta$grp4d11 * ((dta$grp4d14) /100))
+dta$area_pl4[is.na(dta$area_pl4) |  dta$mgt_pl4 == "woman"] <-  (dta$spouse2group_sp4j11[is.na(dta$area_pl4) |  dta$mgt_pl4 == "woman"] * ((dta$spouse2group_sp4j14[is.na(dta$area_pl4) |  dta$mgt_pl4 == "woman"]) /100))
+dta$area_pl5 <-(dta$grp5e11 * ((dta$grp5e14) /100))
+dta$area_pl5[is.na(dta$area_pl5) |  dta$mgt_pl5 == "woman"] <-  (dta$spouse2grp5_sp5k11[is.na(dta$area_pl5) |  dta$mgt_pl5 == "woman"] * ((dta$spouse2grp5_sp5k14[is.na(dta$area_pl5) |  dta$mgt_pl5 == "woman"]) /100))
+
+dta$area_tot_man <- rowSums(dta[c("area_pl1","area_pl2","area_pl3","area_pl4", "area_pl5")], na.rm=T)
+dta$area_tot_man[is.na(dta$area_pl1) & is.na(dta$area_pl2) & is.na(dta$area_pl3) & is.na(dta$area_pl4) & is.na(dta$area_pl5)] <- NA
+#########
+
+dta$yield_av_man <- dta$prod_tot_man / dta$area_tot_man
+
 
 dta$area_pl1_sp2 <- (dta$spouse2grp_sp1f11 * ((dta$spouse2grp_sp1f14) /100))
 dta$area_pl2_sp2 <- (dta$spouse2grp_sp2g11 * ((dta$spouse2grp_sp2g14) /100))
@@ -115,185 +165,458 @@ dta$area_pl3_sp2 <- (dta$spouse2grp_sp3h11 * ((dta$spouse2grp_sp3h14) /100))
 dta$area_pl4_sp2 <- (dta$spouse2group_sp4j11 * ((dta$spouse2group_sp4j14) /100))
 dta$area_pl5_sp2 <- (dta$spouse2grp5_sp5k11 * ((dta$spouse2grp5_sp5k14) /100))
 
-dta$yield_pl1_sp2 <- dta$prod_pl1_sp2 / (dta$spouse2grp_sp1f11 * ((dta$spouse2grp_sp1f14) /100))
-dta$yield_pl2_sp2 <- dta$prod_pl2_sp2 / (dta$spouse2grp_sp2g11 * ((dta$spouse2grp_sp2g14) /100))
-dta$yield_pl3_sp2 <- dta$prod_pl3_sp2 / (dta$spouse2grp_sp3h11 * ((dta$spouse2grp_sp3h14) /100))
-dta$yield_pl4_sp2 <- dta$prod_pl4_sp2 / (dta$spouse2group_sp4j11 * ((dta$spouse2group_sp4j14) /100))
-dta$yield_pl5_sp2 <- dta$prod_pl5_sp2 / (dta$spouse2grp5_sp5k11 * ((dta$spouse2grp5_sp5k14) /100))
-
 dta$area_tot_sp2 <- rowSums(dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")], na.rm=T)
 dta$area_tot_sp2[dta$area_tot_sp2 == 0] <- NA
 ## /0 yields Nan
-dta$yield_av_sp2 <- rowMeans(dta[c("yield_pl1_sp2","yield_pl2_sp2","yield_pl3_sp2","yield_pl4_sp2", "yield_pl5_sp2")], na.rm=T)
+dta$yield_av_sp2 <- dta$prod_tot_sp2/dta$area_tot_sp2
 
 dta$area_tot <- rowMeans(dta[c("area_tot_sp1","area_tot_sp2")], na.rm=T)
-dta$yield_av <- rowMeans(dta[c("yield_av_sp1","yield_av_sp2")], na.rm=T)
 
-## yield worse compared to normal year?
-dta[c("grp1a18","grp2b18","grp3c18","grp4d18", "grp5e18")] <- lapply(dta[c("grp1a18","grp2b18","grp3c18","grp4d18", "grp5e18")], function(x) replace(x, is.na(x), 0) )
-dta$yield_worse_sp1 <- FALSE
-dta$yield_worse_sp1 <- (dta$grp1a18 ==4 | dta$grp1a18==5) |  (dta$grp2b18 ==4 | dta$grp2b18==5) | (dta$grp3c18 ==4 | dta$grp3c18==5) | (dta$grp4d18 ==4 | dta$grp4d18==5) | (dta$grp5e18 ==4 | dta$grp5e18==5)
+dta$yield_av <- rowMeans(cbind(dta$yield_av_sp1, dta$yield_av_sp2), na.rm=T)
+dta$yield_av[dta$yield_av==0] <- NA
 
-dta[c("spouse2grp_sp1f18","spouse2grp_sp2g18","spouse2grp_sp3h18","spouse2group_sp4j18", "spouse2grp5_sp5k18")] <- lapply(dta[c("spouse2grp_sp1f18","spouse2grp_sp2g18","spouse2grp_sp3h18","spouse2group_sp4j18", "spouse2grp5_sp5k18")], function(x) replace(x, is.na(x),0) )
-dta$yield_worse_sp2 <- FALSE
-dta$yield_worse_sp2 <- (dta$spouse2grp_sp1f18 ==4 | dta$spouse2grp_sp1f18==5) |  (dta$spouse2grp_sp2g18 ==4 | dta$spouse2grp_sp2g18==5) | (dta$spouse2grp_sp3h18 ==4 | dta$spouse2grp_sp3h18==5) | (dta$spouse2group_sp4j18 ==4 | dta$spouse2group_sp4j18==5) | (dta$spouse2grp5_sp5k18 ==4 | dta$spouse2grp5_sp5k18==5)
+## yield better compared to normal year?
+dta$yield_better_sp1 <- FALSE
+dta$yield_better_sp1 <- rowSums(cbind((dta$grp1a18 ==1 | dta$grp1a18==2) ,  (dta$grp2b18 ==1 | dta$grp2b18==2), (dta$grp3c18 ==1 | dta$grp3c18==2), (dta$grp4d18 ==1 | dta$grp4d18==2), (dta$grp5e18 ==1 | dta$grp5e18==2)), na.rm=T)>0
 
-dta$yield_worse <- FALSE
+dta$yield_better_sp1[is.na(dta$grp1a18 ==1 | dta$grp1a18==2) &  is.na(dta$grp2b18 ==1 | dta$grp2b18==2) & is.na(dta$grp3c18 ==1 | dta$grp3c18==2) &is.na(dta$grp4d18 ==1 | dta$grp4d18==2) & is.na(dta$grp5e18 ==1 | dta$grp5e18==2)] <- NA
+
+dta$yield_better_sp2 <- FALSE
+dta$yield_better_sp2 <- rowSums(cbind((dta$spouse2grp_sp1f18 ==1 | dta$spouse2grp_sp1f18==2),  (dta$spouse2grp_sp2g18 ==1 | dta$spouse2grp_sp2g18==2), (dta$spouse2grp_sp3h18 ==1 | dta$spouse2grp_sp3h18==2), (dta$spouse2group_sp4j18 ==1 | dta$spouse2group_sp4j18==2), (dta$spouse2grp5_sp5k18 ==1 | dta$spouse2grp5_sp5k18==2)), na.rm=T) > 0
+
+dta$yield_better_sp2[is.na(dta$spouse2grp_sp1f18 ==1 | dta$spouse2grp_sp1f18==2) & is.na(dta$spouse2grp_sp2g18 ==1 | dta$spouse2grp_sp2g18==2) & is.na(dta$spouse2grp_sp3h18 ==1 | dta$spouse2grp_sp3h18==2) & is.na(dta$spouse2group_sp4j18 ==1 | dta$spouse2group_sp4j18==2) & is.na(dta$spouse2grp5_sp5k18 ==1 | dta$spouse2grp5_sp5k18==2)] <- NA
+
+dta$yield_better <- FALSE
 # any spouse reports worse yield on any plot
-dta$yield_worse <- dta$yield_worse_sp1 |  dta$yield_worse_sp2
+dta$yield_better <- rowSums(dta[c("yield_better_sp1","yield_better_sp2")], na.rm=T) > 0
+dta$yield_better[is.na(dta$yield_better_sp1) & is.na(dta$yield_better_sp2)] <- NA
 
-### average days after rain
-dta[c("grp1days19","grp2days2","grp3days3","grp4days4", "grp5days5")] <- lapply(dta[c("grp1days19","grp2days2","grp3days3","grp4days4", "grp5days5")], function(x) replace(x, x == 999 | x == 98, NA) )
 
-dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")] <- lapply(dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")], function(x) replace(x,x == 999  | x == 98,NA) )
+dta$yield_better_pl1 <- (dta$grp1a18 ==1 | dta$grp1a18==2)
+dta$yield_better_pl1[is.na(dta$yield_better_pl1) |  dta$mgt_pl1 == "woman"] <- (dta$spouse2grp_sp1f18 ==1 | dta$spouse2grp_sp1f18==2)[is.na(dta$yield_better_pl1) |  dta$mgt_pl1 == "woman"]
 
-dta$days_av_sp1 <- rowMeans(dta[c("grp1days19","grp2days2","grp3days3","grp4days4", "grp5days5")], na.rm=T)
-dta$days_av_sp2 <- rowMeans(dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")], na.rm=T)
+dta$yield_better_pl2 <- (dta$grp2b18 ==1 | dta$grp2b18==2)
+dta$yield_better_pl2[is.na(dta$yield_better_pl2) |  dta$mgt_pl2 == "woman"] <- (dta$spouse2grp_sp2g18 ==1 | dta$spouse2grp_sp2g18==2)[is.na(dta$yield_better_pl2) |  dta$mgt_pl2 == "woman"]
 
-dta$days_av <- rowMeans(dta[c("days_av_sp1", "days_av_sp2")])
 
+dta$yield_better_pl3 <- (dta$grp3c18 ==1 | dta$grp3c18==2)
+dta$yield_better_pl3[is.na(dta$yield_better_pl3) |  dta$mgt_pl3 == "woman"] <- (dta$spouse2grp_sp3h18 ==1 | dta$spouse2grp_sp3h18==2)[is.na(dta$yield_better_pl3) |  dta$mgt_pl3 == "woman"]
+
+dta$yield_better_pl4 <- (dta$grp3c18 ==1 | dta$grp3c18==2)
+dta$yield_better_pl4[is.na(dta$yield_better_pl4) |  dta$mgt_pl4 == "woman"] <- (dta$spouse2group_sp4j18 ==1 | dta$spouse2group_sp4j18==2)[is.na(dta$yield_better_pl4) |  dta$mgt_pl4 == "woman"]
+
+dta$yield_better_pl5 <- (dta$grp3c18 ==1 | dta$grp3c18==2)
+dta$yield_better_pl5[is.na(dta$yield_better_pl5) |  dta$mgt_pl5 == "woman"] <- (dta$spouse2grp5_sp5k18 ==1 | dta$spouse2grp5_sp5k18==2)[is.na(dta$yield_better_pl5) |  dta$mgt_pl5 == "woman"]
+dta$yield_better_man <- rowSums(dta[c("yield_better_pl1","yield_better_pl2","yield_better_pl3","yield_better_pl4","yield_better_pl5")], na.rm=T)>0
+
+
+### planted immediately after the rain
+names(dta)[names(dta) == 'grp1days19'] <- 'grp1days1'
+"grp1days19"
+# replace to high number if before rain or dont know as we will use the minimum (first plot)
+dta[c("grp1days19","grp2days2","grp3days3","grp4days4", "grp5days5")] <- lapply(dta[c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5")], function(x) replace(x, is.na(x), 999) )
+
+dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")] <- lapply(dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")], function(x) replace(x,is.na(x), 999) )
+
+dta$days_min_sp1 <- do.call(pmin,dta[c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5")])
+
+dta$days_min_sp2 <- do.call(pmin,dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")])
+dta$days_min <- do.call(pmin,dta[c("days_min_sp1", "days_min_sp2")])
+dta$days_min[dta$days_min > 30] <- NA
+##depending on who decided on days (decide1)
+dta$mgt_pl1 <- "man"
+dta$mgt_pl1[dta$grp1decide1==1 & dta$spouse2grp_sp1decide_sp1==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl1[dta$grp1decide1==2 & dta$spouse2grp_sp1decide_sp1==1 & dta$person_interviewed=="man"] <- "woman"
+dta$days_pl1 <- dta$grp1days1
+dta$days_pl1[(dta$days_pl1==999) |  (dta$mgt_pl1 == "woman")] <- dta$spouse2grp_sp1days1[(dta$days_pl1==999) |  (dta$mgt_pl1 == "woman")]
+
+dta$mgt_pl2 <- "man"
+dta$mgt_pl2[dta$grp2decide2==1 & dta$spouse2grp_sp2decide_sp2==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl2[dta$grp2decide2==2 & dta$spouse2grp_sp2decide_sp2==1 & dta$person_interviewed=="man"] <- "woman"
+dta$days_pl2 <- dta$grp2days2
+dta$days_pl2[(dta$days_pl2==999) |  (dta$mgt_pl2 == "woman")] <- dta$spouse2grp_sp2days_sp2[(dta$days_pl2==999) |  (dta$mgt_pl2 == "woman")]
+
+dta$mgt_pl3 <- "man"
+dta$mgt_pl3[dta$grp3decide3==1 & dta$spouse2grp_sp3decide_sp3==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl3[dta$grp3decide3==2 & dta$spouse2grp_sp3decide_sp3==1 & dta$person_interviewed=="man"] <- "woman"
+dta$days_pl3 <- dta$grp3days3
+dta$days_pl3[(dta$days_pl3==999) |  (dta$mgt_pl3 == "woman")] <- dta$spouse2grp_sp3days_sp3[(dta$days_pl3==999) |  (dta$mgt_pl3 == "woman")]
+
+dta$mgt_pl4 <- "man"
+dta$mgt_pl4[dta$grp4decide4==1 & dta$spouse2grp_sp4decide_sp4==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl4[dta$grp4decide4==2 & dta$spouse2grp_sp4decide_sp4==1 & dta$person_interviewed=="man"] <- "woman"
+dta$days_pl4 <- dta$grp4days4
+dta$days_pl4[(dta$days_pl4==999) |  (dta$mgt_pl4 == "woman")] <- dta$spouse2group_sp4dayssp4[(dta$days_pl4==999) |  (dta$mgt_pl4 == "woman")]
+
+
+dta$mgt_pl5 <- "man"
+dta$mgt_pl5[dta$grp5decide5==1 & dta$spouse2grp_sp5decide_sp5==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl5[dta$grp5decide5==2 & dta$spouse2grp_sp5decide_sp5==1 & dta$person_interviewed=="man"] <- "woman"
+dta$days_pl5 <- dta$grp5days5
+dta$days_pl5[(dta$days_pl5==999) |  (dta$mgt_pl5 == "woman")] <- dta$spouse2grp5_sp5dayssp5[(dta$days_pl5==999) |  (dta$mgt_pl5 == "woman")]
+
+dta$days_min_mgt <- do.call(pmin,dta[c("days_pl1","days_pl2","days_pl3","days_pl4", "days_pl5")])
+dta$days_min_mgt[dta$days_min_mgt > 30] <- NA
 ### use recommended spacing on *any* plot
-dta[c("grp1a201","grp2b201","grp3c201","grp4d201", "grp5e201")] <- lapply(dta[c("grp1a201","grp2b201","grp3c201","grp4d201", "grp5e201")], function(x) replace(x,is.na(x), 0) )
-dta$space_sp1 <- (dta$grp1a201 + dta$grp2b201+ dta$grp3c201+ dta$grp4d201+ dta$grp5e201) > 0
+dta$space_sp1 <- rowSums(dta[c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201")], na.rm=T) > 0
 
-dta[c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201", "spouse2grp5_sp5k201")] <- lapply(dta[c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201", "spouse2grp5_sp5k201")], function(x) replace(x,is.na(x),0) )
-dta$space_sp2 <-  (dta$spouse2grp_sp1f201 + dta$spouse2grp_sp2g201 + dta$spouse2grp_sp3h201 + dta$spouse2group_sp4j201 + dta$spouse2grp5_sp5k201) >0 
+dta$space_sp2 <- rowSums(dta[c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201")], na.rm=T) >0 
 dta$space <- (dta$space_sp1 + dta$space_sp2) > 0
 
-### use recommended practice to fight striga on *any* plot
-dta[c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241")] <- lapply(dta[c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241")], function(x) replace(x,is.na(x), 0) )
-dta$striga_sp1 <- (dta$grp1a241 + dta$grp2b241+ dta$grp3c241+ dta$grp4d241+ dta$grp5e241) > 0
 
-dta[c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241")] <- lapply(dta[c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241")], function(x) replace(x,is.na(x),0) )
-dta$striga_sp2 <-  (dta$spouse2grp_sp1f241 + dta$spouse2grp_sp2g241 + dta$spouse2grp_sp3h241 + dta$spouse2group_sp4j241 + dta$spouse2grp5_sp5k241) >0 
+## depending on who decided on spacing (A23)
+dta$mgt_pl1 <- "man"
+dta$mgt_pl1[dta$grp1a23==1 & dta$spouse2grp_sp1f23==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl1[dta$grp1a23==2 & dta$spouse2grp_sp1f23==1 & dta$person_interviewed=="man"] <- "woman"
+
+dta$space_pl1 <- dta$grp1a201 
+dta$space_pl1[is.na(dta$space_pl1) |  dta$mgt_pl1 == "woman"] <- dta$spouse2grp_sp1f201[is.na(dta$space_pl1) |  dta$mgt_pl1 == "woman"]
+
+dta$mgt_pl2 <- "man"
+dta$mgt_pl2[dta$grp2b23==1 & dta$spouse2grp_sp2g23==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl2[dta$grp2b23==2 & dta$spouse2grp_sp2g23==1 & dta$person_interviewed=="man"] <- "woman"
+
+dta$space_pl2 <- dta$grp2b201 
+dta$space_pl2[is.na(dta$space_pl2) |  dta$mgt_pl2 == "woman"] <- dta$spouse2grp_sp2g201[is.na(dta$space_pl2) |  dta$mgt_pl2 == "woman"]
+
+dta$mgt_pl3 <- "man"
+dta$mgt_pl3[dta$grp3c23==1 & dta$spouse2grp_sp3h23==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl3[dta$grp3c23==2 & dta$spouse2grp_sp3h23==1 & dta$person_interviewed=="man"] <- "woman"
+
+dta$space_pl3 <- dta$grp3c201 
+dta$space_pl3[is.na(dta$space_pl3) |  dta$mgt_pl3 == "woman"] <- dta$spouse2grp_sp3h201[is.na(dta$space_pl3) |  dta$mgt_pl3 == "woman"]
+
+dta$mgt_pl4 <- "man"
+dta$mgt_pl4[dta$grp4e23==1 & dta$spouse2group_sp4j23==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl4[dta$grp4e23==2 & dta$spouse2group_sp4j23==1 & dta$person_interviewed=="man"] <- "woman"
+
+dta$space_pl4 <- dta$grp4d201 
+dta$space_pl4[is.na(dta$space_pl4) |  dta$mgt_pl4 == "woman"] <- dta$spouse2group_sp4j201[is.na(dta$space_pl4) |  dta$mgt_pl4 == "woman"]
+
+dta$mgt_pl5 <- "man"
+dta$mgt_pl5[dta$grp5f23==1 & dta$spouse2grp5_sp5k23==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl5[dta$grp5f23==2 & dta$spouse2grp5_sp5k23==1 & dta$person_interviewed=="man"] <- "woman"
+
+dta$space_pl5 <- dta$grp5e201 
+dta$space_pl5[is.na(dta$space_pl5) |  dta$mgt_pl5 == "woman"] <- dta$spouse2grp5_sp5k201[is.na(dta$space_pl5) |  dta$mgt_pl5 == "woman"]
+
+dta$space_mgt <- rowSums(dta[c("space_pl1","space_pl2","space_pl3","space_pl4","space_pl5")], na.rm=T)>0
+### use recommended practice to fight striga on *any* plot
+
+dta$striga_sp1 <- rowSums(dta[c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241")], na.rm=T) > 0
+dta$striga_sp2 <-  rowSums(dta[c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241")], na.rm=T) >0 
 dta$striga <- (dta$striga_sp1 + dta$striga_sp2) > 0
 
-### use recommended weeding practice
-dta[c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26")] <- lapply(dta[c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26")] , function(x) replace(x,is.na(x) | x != 1 , 0) )
-dta$weed_sp1 <- (dta$grp1a26 + dta$grp2b26 + dta$grp3c26 + dta$grp4d26+ dta$grp5e26) > 0
+dta$mgt_pl1 <- "man"
+dta$mgt_pl1[dta$grp1a25==1 & dta$spouse2grp_sp1f25==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl1[dta$grp1a25==2 & dta$spouse2grp_sp1f25==1 & dta$person_interviewed=="man"] <- "woman"
+dta$striga_pl1 <- dta$grp1a241
+dta$striga_pl1[is.na(dta$striga_pl1) |  dta$mgt_pl1 == "woman"] <- dta$spouse2grp_sp1f241[is.na(dta$striga_pl1) |  dta$mgt_pl1 == "woman"]
 
-dta[c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26")] <- lapply(dta[c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26")], function(x) replace(x,is.na(x) | x !=1  ,0) )
-dta$weed_sp2 <-  (dta$spouse2grp_sp1f26 + dta$spouse2grp_sp2g26 + dta$spouse2grp_sp3h26 + dta$spouse2group_sp4j26 + dta$spouse2grp5_sp5k26) >0 
+dta$mgt_pl2 <- "man"
+dta$mgt_pl2[dta$grp1a25==1 & dta$spouse2grp_sp1f25==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl2[dta$grp1a25==2 & dta$spouse2grp_sp1f25==1 & dta$person_interviewed=="man"] <- "woman"
+dta$striga_pl2 <- dta$grp2b241
+dta$striga_pl2[is.na(dta$striga_pl2) |  dta$mgt_pl2 == "woman"] <- dta$spouse2grp_sp2g241[is.na(dta$striga_pl2) |  dta$mgt_pl2 == "woman"]
+
+dta$mgt_pl3 <- "man"
+dta$mgt_pl3[dta$grp1a25==1 & dta$spouse2grp_sp1f25==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl3[dta$grp1a25==2 & dta$spouse2grp_sp1f25==1 & dta$person_interviewed=="man"] <- "woman"
+dta$striga_pl3 <- dta$grp3c241
+dta$striga_pl3[is.na(dta$striga_pl3) |  dta$mgt_pl3 == "woman"] <- dta$spouse2grp_sp3h241[is.na(dta$striga_pl3) |  dta$mgt_pl3 == "woman"]
+
+dta$mgt_pl4 <- "man"
+dta$mgt_pl4[dta$grp1a25==1 & dta$spouse2grp_sp1f25==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl4[dta$grp1a25==2 & dta$spouse2grp_sp1f25==1 & dta$person_interviewed=="man"] <- "woman"
+dta$striga_pl4 <- dta$grp4d241
+dta$striga_pl4[is.na(dta$striga_pl4) |  dta$mgt_pl4 == "woman"] <- dta$spouse2group_sp4j241[is.na(dta$striga_pl4) |  dta$mgt_pl4 == "woman"]
+
+dta$mgt_pl5 <- "man"
+dta$mgt_pl5[dta$grp1a25==1 & dta$spouse2grp_sp1f25==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl5[dta$grp1a25==2 & dta$spouse2grp_sp1f25==1 & dta$person_interviewed=="man"] <- "woman"
+dta$striga_pl5 <- dta$grp5e241
+dta$striga_pl5[is.na(dta$striga_pl5) |  dta$mgt_pl5 == "woman"] <- dta$spouse2grp5_sp5k241[is.na(dta$striga_pl5) |  dta$mgt_pl5 == "woman"]
+
+dta$striga_mgt <- rowSums(dta[c("striga_pl1","striga_pl2","striga_pl3","striga_pl4","striga_pl5")], na.rm=T)>0
+### use recommended weeding practice: we recommend first weeding after 18-20 days, which is in the 3rd week - option 3
+dta$weed_sp1 <- rowSums(dta[c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26")] == 3, na.rm=T) > 0
+dta$weed_sp2 <- rowSums(dta[c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26")] == 3  ,na.rm=T) >0 
 dta$weed <- (dta$weed_sp1 + dta$weed_sp2) > 0
 
+dta$mgt_pl1 <- "man"
+dta$mgt_pl1[dta$grp1a27==1 & dta$spouse2grp_sp1f27==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl1[dta$grp1a27==2 & dta$spouse2grp_sp1f27==1 & dta$person_interviewed=="man"] <- "woman"
+dta$weed_pl1 <- dta$grp1a26 == 3
+dta$weed_pl1[is.na(dta$striga_pl1) |  dta$mgt_pl1 == "woman"] <- dta$spouse2grp_sp1f26[is.na(dta$striga_pl1) |  dta$mgt_pl1 == "woman"] ==3
+
+dta$mgt_pl2 <- "man"
+dta$mgt_pl2[dta$grp1a27==1 & dta$spouse2grp_sp1f27==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl2[dta$grp1a27==2 & dta$spouse2grp_sp1f27==1 & dta$person_interviewed=="man"] <- "woman"
+dta$weed_pl2 <- dta$grp2b26 == 3
+dta$weed_pl2[is.na(dta$striga_pl2) |  dta$mgt_pl2 == "woman"] <- dta$spouse2grp_sp2g26[is.na(dta$striga_pl2) |  dta$mgt_pl2 == "woman"] ==3
+
+dta$mgt_pl3 <- "man"
+dta$mgt_pl3[dta$grp1a27==1 & dta$spouse2grp_sp1f27==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl3[dta$grp1a27==2 & dta$spouse2grp_sp1f27==1 & dta$person_interviewed=="man"] <- "woman"
+dta$weed_pl3 <- dta$grp3c26 == 3
+dta$weed_pl3[is.na(dta$striga_pl3) |  dta$mgt_pl3 == "woman"] <- dta$spouse2grp_sp3h26[is.na(dta$striga_pl3) |  dta$mgt_pl3 == "woman"] ==3
+
+dta$mgt_pl4 <- "man"
+dta$mgt_pl4[dta$grp1a27==1 & dta$spouse2grp_sp1f27==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl4[dta$grp1a27==2 & dta$spouse2grp_sp1f27==1 & dta$person_interviewed=="man"] <- "woman"
+dta$weed_pl4 <- dta$grp4d26 == 3
+dta$weed_pl4[is.na(dta$striga_pl4) |  dta$mgt_pl4 == "woman"] <- dta$spouse2group_sp4j26[is.na(dta$striga_pl4) |  dta$mgt_pl4 == "woman"] ==3
+
+dta$mgt_pl5 <- "man"
+dta$mgt_pl5[dta$grp1a27==1 & dta$spouse2grp_sp1f27==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl5[dta$grp1a27==2 & dta$spouse2grp_sp1f27==1 & dta$person_interviewed=="man"] <- "woman"
+dta$weed_pl5 <- dta$grp5e26 == 3
+dta$weed_pl5[is.na(dta$striga_pl5) |  dta$mgt_pl5 == "woman"] <- dta$spouse2grp5_sp5k26[is.na(dta$striga_pl5) |  dta$mgt_pl5 == "woman"] ==3
+
+dta$weed_mgt <- rowSums(dta[c("weed_pl1","weed_pl2","weed_pl3","weed_pl4","weed_pl5")], na.rm=T) > 0
+
 ### fertilizer use on at least one plot
-dta$grp1a29[is.na(dta$grp1a29)] <- "No"
-dta$grp2b29[is.na(dta$grp2b29)] <- "No"
-dta$grp3c29[is.na(dta$grp3c29)] <- "No"
-dta$grp4d29[is.na(dta$grp4d29)] <- "No"
-dta$grp5e29[is.na(dta$grp5e29)] <- "No"
-
-
-dta$fert_sp1 <- ((dta$grp1a29 == "Yes") + (dta$grp2b29  == "Yes") + (dta$grp3c29  == "Yes") + (dta$grp4d29  == "Yes") + (dta$grp5e29  == "Yes")) > 0
-
-dta$spouse2grp_sp1f29[is.na(dta$spouse2grp_sp1f29)] <- "No"
-dta$spouse2grp_sp2g29[is.na(dta$spouse2grp_sp2g29)] <- "No"
-dta$spouse2grp_sp3h29[is.na(dta$spouse2grp_sp3h29)] <- "No"
-dta$spouse2group_sp4j29[is.na(dta$spouse2group_sp4j29)] <- "No"
-dta$spouse2grp5_sp5k29[is.na(dta$spouse2grp5_sp5k29)] <- "No"
-
-dta$fert_sp2 <- ((dta$spouse2grp_sp1f29 == "Yes") + (dta$spouse2grp_sp2g29  == "Yes") + (dta$spouse2grp_sp3h29  == "Yes") + (dta$spouse2group_sp4j29  == "Yes") + (dta$spouse2grp5_sp5k29  == "Yes")) > 0
+dta$fert_sp1 <- rowSums(dta[c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29")] == "Yes", na.rm=T ) > 0
+dta$fert_sp2 <- rowSums(dta[c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29")] == "Yes", na.rm=T) > 0
 
 dta$fert <- (dta$fert_sp1 + dta$fert_sp2) > 0
 
-### should we also look at individual fertilizer categories, or at least differentiate between organic and inorganic fertilizer?
-### should we also look at individual fertilizer categories, or at least differentiate between organic and inorganic fertilizer?
-### dap/npk == 1
-dta$grp1a301[is.na(dta$grp1a301)] <- 0
-dta$grp2b301[is.na(dta$grp2b301)] <- 0
-dta$grp3c301[is.na(dta$grp3c301)] <- 0
-dta$grp4d301[is.na(dta$grp4d301)] <- 0
-dta$grp5e301[is.na(dta$grp5e301)] <- 0
+### use the person who is generally managing the plot to determine if fertilizer was used
 
-dta$fert_dap_sp1 <- ( dta$grp1a301 + dta$grp2b301 + dta$grp3c301 + dta$grp4d301 + dta$grp5e301 ) > 0
+dta$mgt_pl1 <- "man"
+dta$mgt_pl1[dta$grp1a10==1 & dta$spouse2grp_sp1f10==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl1[dta$grp1a10==2 & dta$spouse2grp_sp1f10==1 & dta$person_interviewed=="man"] <- "woman"
+dta$mgt_pl2 <- "man"
+dta$mgt_pl2[dta$grp2b10==1 & dta$spouse2grp_sp2g10==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl2[dta$grp2b10==2 & dta$spouse2grp_sp2g10==1 & dta$person_interviewed=="man"] <- "woman"
+dta$mgt_pl3 <- "man"
+dta$mgt_pl3[dta$grp3c10==1 & dta$spouse2grp_sp3h10==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl3[dta$grp3c10==2 & dta$spouse2grp_sp3h10==1 & dta$person_interviewed=="man"] <- "woman"
+dta$mgt_pl4 <- "man"
+dta$mgt_pl4[dta$grp4d10==1 & dta$spouse2group_sp4j10==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl4[dta$grp4d10==2 & dta$spouse2group_sp4j10==1 & dta$person_interviewed=="man"] <- "woman"
+dta$mgt_pl5 <- "man"
+dta$mgt_pl5[dta$grp5e10==1 & dta$spouse2grp5_sp5k10==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl5[dta$grp5e10==2 & dta$spouse2grp5_sp5k10==1 & dta$person_interviewed=="man"] <- "woman"
 
-dta$spouse2grp_sp1f301[is.na(dta$spouse2grp_sp1f301)] <- 0
-dta$spouse2grp_sp2g301[is.na(dta$spouse2grp_sp2g301)] <- 0
-dta$spouse2grp_sp3h301[is.na(dta$spouse2grp_sp3h301)] <- 0
-dta$spouse2group_sp4j301[is.na(dta$spouse2group_sp4j301)] <- 0
-dta$spouse2grp5_sp5k301[is.na(dta$spouse2grp5_sp5k301)] <- 0
+dta$fert_pl1 <- dta$grp1a29 == "Yes"
+dta$fert_pl1[is.na(dta$fert_pl1) |  dta$mgt_pl1 == "woman"] <- dta$spouse2grp_sp1f29[is.na(dta$fert_pl1) |  dta$mgt_pl1 == "woman"] == "Yes"
+dta$fert_pl2 <- dta$grp2b29 == "Yes"
+dta$fert_pl2[is.na(dta$fert_pl2) |  dta$mgt_pl2 == "woman"] <- dta$spouse2grp_sp2g29[is.na(dta$fert_pl2) |  dta$mgt_pl2 == "woman"] == "Yes"
+dta$fert_pl3 <- dta$grp3c29 == "Yes"
+dta$fert_pl3[is.na(dta$fert_pl3) |  dta$mgt_pl3 == "woman"] <- dta$spouse2grp_sp3h29[is.na(dta$fert_pl3) |  dta$mgt_pl3 == "woman"] == "Yes"
+dta$fert_pl4 <- dta$grp4d29 == "Yes"
+dta$fert_pl4[is.na(dta$fert_pl4) |  dta$mgt_pl4 == "woman"] <- dta$spouse2group_sp4j29[is.na(dta$fert_pl4) |  dta$mgt_pl4 == "woman"] == "Yes"
+dta$fert_pl5 <- dta$grp5e29 == "Yes"
+dta$fert_pl5[is.na(dta$fert_pl5) |  dta$mgt_pl5 == "woman"] <- dta$spouse2grp5_sp5k29[is.na(dta$fert_pl5) |  dta$mgt_pl5 == "woman"] == "Yes"
 
-dta$fert_dap_sp2 <- ( dta$spouse2grp_sp1f301 + dta$spouse2grp_sp2g301 + dta$spouse2grp_sp3h301 + dta$spouse2group_sp4j301 + dta$spouse2grp5_sp5k301  ) > 0
-
-dta$fert_dap <- (dta$fert_dap_sp1 + dta$fert_dap_sp2) > 0
-### should we also look at individual fertilizer categories, or at least differentiate between organic and inorganic fertilizer?
-### urea == 2
-dta$grp1a302[is.na(dta$grp1a302)] <- 0
-dta$grp2b302[is.na(dta$grp2b302)] <- 0
-dta$grp3c302[is.na(dta$grp3c302)] <- 0
-dta$grp4d302[is.na(dta$grp4d302)] <- 0
-dta$grp5e302[is.na(dta$grp5e302)] <- 0
-
-dta$fert_urea_sp1 <- ( dta$grp1a302 + dta$grp2b302 + dta$grp3c302 + dta$grp4d302 + dta$grp5e302 ) > 0
-
-dta$spouse2grp_sp1f302[is.na(dta$spouse2grp_sp1f302)] <- 0
-dta$spouse2grp_sp2g302[is.na(dta$spouse2grp_sp2g302)] <- 0
-dta$spouse2grp_sp3h302[is.na(dta$spouse2grp_sp3h302)] <- 0
-dta$spouse2group_sp4j302[is.na(dta$spouse2group_sp4j302)] <- 0
-dta$spouse2grp5_sp5k302[is.na(dta$spouse2grp5_sp5k302)] <- 0
-
-dta$fert_urea_sp2 <- ( dta$spouse2grp_sp1f302 + dta$spouse2grp_sp2g302 + dta$spouse2grp_sp3h302 + dta$spouse2group_sp4j302 + dta$spouse2grp5_sp5k302  ) > 0
-
-dta$fert_urea <- (dta$fert_urea_sp1 + dta$fert_urea_sp2) > 0
-
-### organic == 3
-dta$grp1a303[is.na(dta$grp1a303)] <- 0
-dta$grp2b303[is.na(dta$grp2b303)] <- 0
-dta$grp3c303[is.na(dta$grp3c303)] <- 0
-dta$grp4d303[is.na(dta$grp4d303)] <- 0
-dta$grp5e303[is.na(dta$grp5e303)] <- 0
-
-dta$fert_org_sp1 <- ( dta$grp1a303 + dta$grp2b303 + dta$grp3c303 + dta$grp4d303 + dta$grp5e303 ) > 0
-
-dta$spouse2grp_sp1f303[is.na(dta$spouse2grp_sp1f303)] <- 0
-dta$spouse2grp_sp2g303[is.na(dta$spouse2grp_sp2g303)] <- 0
-dta$spouse2grp_sp3h303[is.na(dta$spouse2grp_sp3h303)] <- 0
-dta$spouse2group_sp4j303[is.na(dta$spouse2group_sp4j303)] <- 0
-dta$spouse2grp5_sp5k303[is.na(dta$spouse2grp5_sp5k303)] <- 0
-
-dta$fert_org_sp2 <- ( dta$spouse2grp_sp1f303 + dta$spouse2grp_sp2g303 + dta$spouse2grp_sp3h303 + dta$spouse2group_sp4j303 + dta$spouse2grp5_sp5k303  ) > 0
-
-dta$fert_org <- (dta$fert_org_sp1 + dta$fert_org_sp2) > 0
-
+dta$fert_mgt <- rowSums(dta[c("fert_pl1","fert_pl2","fert_pl3","fert_pl4","fert_pl5")], na.rm=T) > 0
 
 ### use of improved seed (OPV or hybrid) on at least one plot
-dta$grp1a42[is.na(dta$grp1a42)] <- "No"
-dta$grp2b42[is.na(dta$grp2b42)] <- "No"
-dta$grp3c42[is.na(dta$grp3c42)] <- "No"
-dta$grp4d42[is.na(dta$grp4d42)] <- "No"
-dta$grp5e42[is.na(dta$grp5e42)] <- "No"
-
-
-dta$impseed_sp1 <- ((dta$grp1a42 == "Yes") + (dta$grp2b42  == "Yes") + (dta$grp3c42  == "Yes") + (dta$grp4d42  == "Yes") + (dta$grp5e42  == "Yes")) > 0
-
-dta$spouse2grp_sp1f42[is.na(dta$spouse2grp_sp1f42)] <- "No"
-dta$spouse2grp_sp2g42[is.na(dta$spouse2grp_sp2g42)] <- "No"
-dta$spouse2grp_sp3h42[is.na(dta$spouse2grp_sp3h42)] <- "No"
-dta$spouse2group_sp4j42[is.na(dta$spouse2group_sp4j42)] <- "No"
-dta$spouse2grp5_sp5k42[is.na(dta$spouse2grp5_sp5k42)] <- "No"
-
-dta$impseed_sp2 <- ((dta$spouse2grp_sp1f42 == "Yes") + (dta$spouse2grp_sp2g42  == "Yes") + (dta$spouse2grp_sp3h42  == "Yes") + (dta$spouse2group_sp4j42  == "Yes") + (dta$spouse2grp5_sp5k42  == "Yes")) > 0
+dta$impseed_sp1 <- rowSums(dta[c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42")] == "Yes", na.rm=T) > 0
+dta$impseed_sp2 <- rowSums(dta[c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42")] == "Yes", na.rm=T) > 0
 
 dta$impseed <- (dta$impseed_sp1 + dta$impseed_sp2) > 0
 
+dta$impseed_pl1 <- dta$grp1a42 == "Yes"
+dta$impseed_pl1[is.na(dta$impseed_pl1) |  dta$mgt_pl1 == "woman"] <- dta$spouse2grp_sp1f42[is.na(dta$impseed_pl1) |  dta$mgt_pl1 == "woman"] == "Yes"
+dta$impseed_pl2 <- dta$grp2b42 == "Yes"
+dta$impseed_pl2[is.na(dta$impseed_pl2) |  dta$mgt_pl2 == "woman"] <- dta$spouse2grp_sp2g42[is.na(dta$impseed_pl2) |  dta$mgt_pl2 == "woman"] == "Yes"
+dta$impseed_pl3 <- dta$grp3c42 == "Yes"
+dta$impseed_pl3[is.na(dta$impseed_pl3) |  dta$mgt_pl3 == "woman"] <- dta$spouse2grp_sp3h42[is.na(dta$impseed_pl3) |  dta$mgt_pl3 == "woman"] == "Yes"
+dta$impseed_pl4 <- dta$grp4d42 == "Yes"
+dta$impseed_pl4[is.na(dta$impseed_pl4) |  dta$mgt_pl4 == "woman"] <- dta$spouse2group_sp4j42[is.na(dta$impseed_pl4) |  dta$mgt_pl4 == "woman"] == "Yes"
+dta$impseed_pl5 <- dta$grp5e42 == "Yes"
+dta$impseed_pl5[is.na(dta$impseed_pl5) |  dta$mgt_pl5 == "woman"] <- dta$spouse2grp5_sp5k42[is.na(dta$impseed_pl5) |  dta$mgt_pl5 == "woman"] == "Yes"
+
+dta$impseed_mgt <- rowSums(dta[c("impseed_pl1","impseed_pl2","impseed_pl3","impseed_pl4","impseed_pl5")], na.rm=T) > 0
+
+
+### should we also look at individual fertilizer categories, or at least differentiate between organic and inorganic fertilizer?
+### dap/npk == 1
+dta$fert_dap_sp1 <- rowSums( dta[c("grp1a301","grp2b301","grp3c301","grp4d301","grp5e301")],na.rm=T  ) > 0
+dta$fert_dap_sp2 <- rowSums( dta[c("spouse2grp_sp1f301","spouse2grp_sp2g301","spouse2grp_sp3h301","spouse2group_sp4j301","spouse2grp5_sp5k301")],na.rm=T) > 0
+
+dta$fert_dap <- (dta$fert_dap_sp1 + dta$fert_dap_sp2) > 0
+
+### amount of dap applied:
+
+dta[c("grp1a37","grp2b37","grp3c37","grp4d37", "grp5e37")] <- lapply(dta[c("grp1a37","grp2b37","grp3c37","grp4d37", "grp5e37")], function(x) replace(x, x== 999, NA) )
+dta$kg_dap_sp1 <- rowSums(dta[c("grp1a37","grp2b37","grp3c37","grp4d37", "grp5e37")], na.rm=T)
+
+dta[c("spouse2grp_sp1f37","spouse2grp_sp2g37","spouse2grp_sp3h37","spouse2group_sp4j37", "spouse2grp5_sp5k37")] <- lapply(dta[c("spouse2grp_sp1f37","spouse2grp_sp2g37","spouse2grp_sp3h37","spouse2group_sp4j37", "spouse2grp5_sp5k37")], function(x) replace(x, x== 999, NA) )
+dta$kg_dap_sp2 <- rowSums(dta[c("spouse2grp_sp1f37","spouse2grp_sp2g37","spouse2grp_sp3h37","spouse2group_sp4j37", "spouse2grp5_sp5k37")], na.rm=T)
+
+dta$kg_dap <- (dta$kg_dap_sp1 + dta$kg_dap_sp2)/2
+### dap management indicator: here use who actually applied the fertilizer (a32)
+dta$mgt_pl1 <- "man"
+dta$mgt_pl1[dta$grp1a32==1 & dta$spouse2grp_sp1f32==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl1[dta$grp1a32==2 & dta$spouse2grp_sp1f32==1 & dta$person_interviewed=="man"] <- "woman"
+dta$kg_dap_pl1 <- dta$grp1a37
+dta$kg_dap_pl1[is.na(dta$kg_dap_pl1) | dta$mgt_pl1 == "woman"]  <- dta$spouse2grp_sp1f37[is.na(dta$kg_dap_pl1) | dta$mgt_pl1 == "woman"] 
+
+dta$mgt_pl2 <- "man"
+dta$mgt_pl2[dta$grp2b32==1 & dta$spouse2grp_sp2g32==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl2[dta$grp2b32==2 & dta$spouse2grp_sp2g32==1 & dta$person_interviewed=="man"] <- "woman"
+dta$kg_dap_pl2 <- dta$grp2b37
+dta$kg_dap_pl2[is.na(dta$kg_dap_pl2)| dta$mgt_pl2 == "woman"]  <- dta$spouse2grp_sp2g37[is.na(dta$kg_dap_pl2) | dta$mgt_pl2 == "woman"] 
+
+dta$mgt_pl3 <- "man"
+dta$mgt_pl3[dta$grp3c32==1 & dta$spouse2grp_sp3h32==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl3[dta$grp3c32==2 & dta$spouse2grp_sp3h32==1 & dta$person_interviewed=="man"] <- "woman"
+dta$kg_dap_pl3 <- dta$grp3c37
+dta$kg_dap_pl3[is.na(dta$kg_dap_pl3)| dta$mgt_pl3 == "woman"]  <- dta$spouse2grp_sp3h37[is.na(dta$kg_dap_pl3) | dta$mgt_pl3 == "woman"] 
+
+dta$mgt_pl4 <- "man"
+dta$mgt_pl4[dta$grp4d32==1 & dta$spouse2group_sp4j32==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl4[dta$grp4d32==2 & dta$spouse2group_sp4j32==1 & dta$person_interviewed=="man"] <- "woman"
+dta$kg_dap_pl4 <- dta$grp4d37
+dta$kg_dap_pl4[is.na(dta$kg_dap_pl4) | dta$mgt_pl4 == "woman"]  <- dta$spouse2group_sp4j37[is.na(dta$kg_dap_pl4) | dta$mgt_pl4 == "woman"] 
+
+dta$mgt_pl5 <- "man"
+dta$mgt_pl5[dta$grp5e32==1 & dta$spouse2grp5_sp5k32==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl5[dta$grp5e32==2 & dta$spouse2grp5_sp5k32==1 & dta$person_interviewed=="man"] <- "woman"
+dta$kg_dap_pl5 <- dta$grp5e37
+dta$kg_dap_pl5[is.na(dta$kg_dap_pl5) | dta$mgt_pl5 == "woman"]  <- dta$spouse2grp5_sp5k37[is.na(dta$kg_dap_pl5) | dta$mgt_pl5 == "woman"] 
+
+dta$kg_dap_mgt <- rowSums(dta[c("kg_dap_pl1","kg_dap_pl2","kg_dap_pl3","kg_dap_pl4","kg_dap_pl5")], na.rm=T)
+dta$kg_dap_ac_mgt <- rowMeans(dta[c("kg_dap_pl1","kg_dap_pl2","kg_dap_pl3","kg_dap_pl4","kg_dap_pl5")]/dta[c("area_pl1","area_pl2","area_pl3","area_pl4","area_pl5")], na.rm=T)
+### should we also look at individual fertilizer categories, or at least differentiate between organic and inorganic fertilizer?
+### urea == 2
+dta$fert_urea_sp1 <- rowSums(dta[c("grp1a302","grp2b302","grp3c302","grp4d302","grp5e302")], na.rm=T) > 0
+dta$fert_urea_sp2 <-rowSums(dta[c("spouse2grp_sp1f302","spouse2grp_sp2g302","spouse2grp_sp3h302","spouse2group_sp4j302","spouse2grp5_sp5k302")], na.rm=T  ) > 0
+
+dta$fert_urea <- rowSums(dta[c("fert_urea_sp1","fert_urea_sp2")], na.rm=T) > 0
+
+dta[c("grp1a36g","grp2b36g","grp3c36g","grp4d36g", "grp5e36g")] <- lapply(dta[c("grp1a36g","grp2b36g","grp3c36g","grp4d36g", "grp5e36g")], function(x) replace(x, x== 999, NA) )
+dta$kg_urea_sp1 <-rowSums(dta[c("grp1a36g","grp2b36g","grp3c36g","grp4d36g", "grp5e36g")], na.rm=T)
+
+dta[c("spouse2grp_sp1f36g","spouse2grp_sp2g36g","spouse2grp_sp3h36g","spouse2group_sp4j36g", "spouse2grp5_sp5k36g")] <- lapply(dta[c("spouse2grp_sp1f36g","spouse2grp_sp2g36g","spouse2grp_sp3h36g","spouse2group_sp4j36g", "spouse2grp5_sp5k36g")], function(x) replace(x, x== 999, NA) )
+dta$kg_urea_sp2 <-rowSums(dta[c("spouse2grp_sp1f36g","spouse2grp_sp2g36g","spouse2grp_sp3h36g","spouse2group_sp4j36g", "spouse2grp5_sp5k36g")], na.rm=T)
+
+dta$kg_urea <- (dta$kg_urea_sp1 + dta$kg_urea_sp2)/2
+### dap management indicator: here use who actually applied the fertilizer (a31b)
+dta$mgt_pl1 <- "man"
+dta$mgt_pl1[dta$grp1a31b==1 & dta$spouse2grp_sp1f31b==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl1[dta$grp1a31b==2 & dta$spouse2grp_sp1f31b==1 & dta$person_interviewed=="man"] <- "woman"
+dta$kg_urea_pl1 <- dta$grp1a36g
+dta$kg_urea_pl1[is.na(dta$kg_urea_pl1) | dta$mgt_pl1 == "woman"]  <- dta$spouse2grp_sp1f36g[is.na(dta$kg_urea_pl1) | dta$mgt_pl1 == "woman"] 
+
+dta$mgt_pl2 <- "man"
+dta$mgt_pl2[dta$grp2b31b==1 & dta$spouse2grp_sp2g31b==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl2[dta$grp2b31b==2 & dta$spouse2grp_sp2g31b==1 & dta$person_interviewed=="man"] <- "woman"
+dta$kg_urea_pl2 <- dta$grp2b36g
+dta$kg_urea_pl2[is.na(dta$kg_urea_pl2) | dta$mgt_pl2 == "woman"]  <- dta$spouse2grp_sp2g36g[is.na(dta$kg_urea_pl2) | dta$mgt_pl2 == "woman"] 
+
+dta$mgt_pl3 <- "man"
+dta$mgt_pl3[dta$grp3c31b==1 & dta$spouse2grp_sp3h31b==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl3[dta$grp3c31b==2 & dta$spouse2grp_sp3h31b==1 & dta$person_interviewed=="man"] <- "woman"
+dta$kg_urea_pl3 <- dta$grp3c36g
+dta$kg_urea_pl3[is.na(dta$kg_urea_pl3) | dta$mgt_pl3 == "woman"]  <- dta$spouse2grp_sp3h36g[is.na(dta$kg_urea_pl3) | dta$mgt_pl3 == "woman"] 
+
+dta$mgt_pl4 <- "man"
+dta$mgt_pl4[dta$grp4d31b==1 & dta$spouse2group_sp4j31b==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl4[dta$grp4d31b==2 & dta$spouse2group_sp4j31b==1 & dta$person_interviewed=="man"] <- "woman"
+dta$kg_urea_pl4 <- dta$grp4d36g
+dta$kg_urea_pl4[is.na(dta$kg_urea_pl4) | dta$mgt_pl4 == "woman"]  <- dta$spouse2group_sp4j36g[is.na(dta$kg_urea_pl4) | dta$mgt_pl4 == "woman"] 
+
+dta$mgt_pl5 <- "man"
+dta$mgt_pl5[dta$grp5e31b==1 & dta$spouse2grp5_sp5k31b==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl5[dta$grp5e31b==2 & dta$spouse2grp5_sp5k31b==1 & dta$person_interviewed=="man"] <- "woman"
+dta$kg_urea_pl5 <- dta$grp5e36g
+dta$kg_urea_pl5[is.na(dta$kg_urea_pl5) | dta$mgt_pl5 == "woman"]  <- dta$spouse2grp5_sp5k36g[is.na(dta$kg_urea_pl5) | dta$mgt_pl5 == "woman"]
+
+dta$kg_urea_mgt <- rowSums(dta[c("kg_urea_pl1","kg_urea_pl2","kg_urea_pl3","kg_urea_pl4","kg_urea_pl5")], na.rm=T) 
+dta$kg_urea_ac_mgt <- rowMeans(dta[c("kg_urea_pl1","kg_urea_pl2","kg_urea_pl3","kg_urea_pl4","kg_urea_pl5")]/dta[c("area_pl1","area_pl2","area_pl3","area_pl4","area_pl5")], na.rm=T)
+
+###totals for mineral fertilizers and application rates
+dta$kg_inorg <- dta$kg_dap + dta$kg_urea
+dta$kg_ac_inorg <- dta$kg_inorg/dta$area_tot
+
+###
+dta[c("kg_urea_pl1","kg_urea_pl2","kg_urea_pl3","kg_urea_pl4","kg_urea_pl5")] <- lapply(dta[c("kg_urea_pl1","kg_urea_pl2","kg_urea_pl3","kg_urea_pl4","kg_urea_pl5")], function(x) replace(x, is.na(x), 0) )
+ dta[c("kg_dap_pl1","kg_dap_pl2","kg_dap_pl3","kg_dap_pl4","kg_dap_pl5")]  <- lapply( dta[c("kg_dap_pl1","kg_dap_pl2","kg_dap_pl3","kg_dap_pl4","kg_dap_pl5")], function(x) replace(x, is.na(x), 0) )
+dta$kg_inorg_mgt <- rowSums(dta[c("kg_urea_pl1","kg_urea_pl2","kg_urea_pl3","kg_urea_pl4","kg_urea_pl5")] + dta[c("kg_dap_pl1","kg_dap_pl2","kg_dap_pl3","kg_dap_pl4","kg_dap_pl5")], na.rm=T)
+dta$kg_ac_inorg_mgt <-  rowMeans((dta[c("kg_urea_pl1","kg_urea_pl2","kg_urea_pl3","kg_urea_pl4","kg_urea_pl5")] + dta[c("kg_dap_pl1","kg_dap_pl2","kg_dap_pl3","kg_dap_pl4","kg_dap_pl5")])/dta[c("area_pl1","area_pl2","area_pl3","area_pl4","area_pl5")], na.rm=T)
+
+### organic == 3
+dta$fert_org_sp1 <- rowSums(dta[c("grp1a303","grp2b303","grp3c303","grp4d303","grp5e303")],na.rm=T) > 0
+dta$fert_org_sp2 <- rowSums(dta[c("spouse2grp_sp1f303","spouse2grp_sp2g303","spouse2grp_sp3h303","spouse2group_sp4j303","spouse2grp5_sp5k303")], na.rm=T) > 0
+dta$fert_org <- (dta$fert_org_sp1 + dta$fert_org_sp2) > 0
+#
+## quantity organic fertilizer measured in bags
+dta[c("grp1a37g","grp2b37g","grp3c37g","grp4d37g", "grp5e37g")] <- lapply(dta[c("grp1a37g","grp2b37g","grp3c37g","grp4d37g", "grp5e37g")], function(x) replace(x,x== 999, NA) )
+dta$bags_org_sp1 <-rowSums(dta[c("grp1a37g","grp2b37g","grp3c37g","grp4d37g", "grp5e37g")], na.rm=T)
+
+dta[c("spouse2grp_sp1f37g","spouse2grp_sp2g37g","spouse2grp_sp3h37g","spouse2group_sp4j37g", "spouse2grp5_sp5k37g")] <- lapply(dta[c("spouse2grp_sp1f37g","spouse2grp_sp2g37g","spouse2grp_sp3h37g","spouse2group_sp4j37g", "spouse2grp5_sp5k37g")], function(x) replace(x, x== 999, NA) )
+dta$bags_org_sp2 <-rowSums(dta[c("spouse2grp_sp1f37g","spouse2grp_sp2g37g","spouse2grp_sp3h37g","spouse2group_sp4j37g", "spouse2grp5_sp5k37g")], na.rm=T)
+dta$bags_org <- (dta$bags_org_sp1 + dta$bags_org_sp2)/2
+
+### organic management indicator: here use who actually applied the fertilizer (a37b)
+dta$mgt_pl1 <- "man"
+dta$mgt_pl1[dta$grp1a37b==1 & dta$spouse2grp_sp1f37b==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl1[dta$grp1a37b==2 & dta$spouse2grp_sp1f37b==1 & dta$person_interviewed=="man"] <- "woman"
+dta$bags_org_pl1 <- dta$grp1a37g
+dta$bags_org_pl1[is.na(dta$bags_org_pl1) | dta$mgt_pl1 == "woman"]  <- dta$spouse2grp_sp1f37g[is.na(dta$bags_org_pl1) | dta$mgt_pl1 == "woman"] 
+
+dta$mgt_pl2 <- "man"
+dta$mgt_pl2[dta$grp2b37b==1 & dta$spouse2grp_sp2g37b==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl2[dta$grp2b37b==2 & dta$spouse2grp_sp2g37b==1 & dta$person_interviewed=="man"] <- "woman"
+dta$bags_org_pl2 <- dta$grp2b37g
+dta$bags_org_pl2[is.na(dta$bags_org_pl2) | dta$mgt_pl2 == "woman"]  <- dta$spouse2grp_sp2g37g[is.na(dta$bags_org_pl2) | dta$mgt_pl2 == "woman"] 
+
+dta$mgt_pl3 <- "man"
+dta$mgt_pl3[dta$grp3c37b==1 & dta$spouse2grp_sp3h37b==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl3[dta$grp3c37b==2 & dta$spouse2grp_sp3h37b==1 & dta$person_interviewed=="man"] <- "woman"
+dta$bags_org_pl3 <- dta$grp3c37g
+dta$bags_org_pl3[is.na(dta$bags_org_pl3) | dta$mgt_pl3 == "woman"]  <- dta$spouse2grp_sp3h37g[is.na(dta$bags_org_pl3) | dta$mgt_pl3 == "woman"] 
+
+dta$mgt_pl4 <- "man"
+dta$mgt_pl4[dta$grp4d37b==1 & dta$spouse2group_sp4j37b==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl4[dta$grp4d37b==2 & dta$spouse2group_sp4j37b==1 & dta$person_interviewed=="man"] <- "woman"
+dta$bags_org_pl4 <- dta$grp4d37g
+dta$bags_org_pl4[is.na(dta$bags_org_pl4) | dta$mgt_pl4 == "woman"]  <- dta$spouse2group_sp4j37g[is.na(dta$bags_org_pl4) | dta$mgt_pl4 == "woman"] 
+
+dta$mgt_pl5 <- "man"
+dta$mgt_pl5[dta$grp5e37b==1 & dta$spouse2grp5_sp5k37b==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl5[dta$grp5e37b==2 & dta$spouse2grp5_sp5k37b==1 & dta$person_interviewed=="man"] <- "woman"
+dta$bags_org_pl5 <- dta$grp5e37g
+dta$bags_org_pl5[is.na(dta$bags_org_pl5) | dta$mgt_pl5 == "woman"]  <- dta$spouse2grp5_sp5k37g[is.na(dta$bags_org_pl5) | dta$mgt_pl5 == "woman"] 
+
+dta$bags_org_mgt <- rowSums(dta[c("bags_org_pl1","bags_org_pl2","bags_org_pl3","bags_org_pl4","bags_org_pl5")], na.rm=T)
+dta$bags_org_ac_mgt <- rowMeans(dta[c("bags_org_pl1","bags_org_pl2","bags_org_pl3","bags_org_pl4","bags_org_pl5")]/dta[c("area_pl1","area_pl2","area_pl3","area_pl4","area_pl5")], na.rm=T)
 
 ### use of hybird
-##use bazooka on any plot?
+##use longue10h on any plot?
 dta[c("grp1a431","grp2b431","grp3c431","grp4d431", "grp5e431")] <- lapply(dta[c("grp1a431","grp2b431","grp3c431","grp4d431", "grp5e431")], function(x) replace(x, is.na(x), 0))
 
 dta[c("spouse2grp_sp1f431","spouse2grp_sp2g431","spouse2grp_sp3h431","spouse2group_sp4j431", "spouse2grp5_sp5k431")] <- lapply(dta[c("spouse2grp_sp1f431","spouse2grp_sp2g431","spouse2grp_sp3h431","spouse2group_sp4j431", "spouse2grp5_sp5k431")], function(x) replace(x,is.na(x)  ,0) )
 
-dta$bazooka_sp1 <- rowSums(dta[c("grp1a431","grp2b431","grp3c431","grp4d431", "grp5e431")]) > 0 
-dta$bazooka_sp2 <- rowSums(dta[c("spouse2grp_sp1f431","spouse2grp_sp2g431","spouse2grp_sp3h431","spouse2group_sp4j431", "spouse2grp5_sp5k431")]) > 0 
-dta$bazooka <- dta$bazooka_sp1 | dta$bazooka_sp2 
+dta$longe10h_sp1 <- rowSums(dta[c("grp1a431","grp2b431","grp3c431","grp4d431", "grp5e431")]) > 0 
+dta$longe10h_sp2 <- rowSums(dta[c("spouse2grp_sp1f431","spouse2grp_sp2g431","spouse2grp_sp3h431","spouse2group_sp4j431", "spouse2grp5_sp5k431")]) > 0 
+dta$longe10h <- dta$longe10h_sp1 | dta$longe10h_sp2 
 
-##use longue10h on any plot?
+dta[c("grp1a43d","grp2b43d","grp3c43d","grp4d43d", "grp5e43d")] <- lapply(dta[c("grp1a43d","grp2b43d","grp3c43d","grp4d43d", "grp5e43d")], function(x) replace(x,is.na(x) | x== 999, 0) )
+dta$kg_longe10h_sp1 <-rowSums(dta[c("grp1a43d","grp2b43d","grp3c43d","grp4d43d", "grp5e43d")], na.rm=T)
+
+dta[c("spouse2grp_sp1f43d","spouse2grp_sp2g43d","spouse2grp_sp3h43d","spouse2group_sp4j43d", "spouse2grp5_sp5k43d")] <- lapply(dta[c("spouse2grp_sp1f43d","spouse2grp_sp2g43d","spouse2grp_sp3h43d","spouse2group_sp4j43d", "spouse2grp5_sp5k43d")], function(x) replace(x,is.na(x) | x== 999, 0) )
+dta$kg_longe10h_sp2 <-rowSums(dta[c("spouse2grp_sp1f43d","spouse2grp_sp2g43d","spouse2grp_sp3h43d","spouse2group_sp4j43d", "spouse2grp5_sp5k43d")], na.rm=T)
+dta$kg_longe10h <- (dta$kg_longe10h_sp1 + dta$kg_longe10h_sp2)/2
+
+##use bazooka on any plot?
 dta[c("grp1a432","grp2b432","grp3c432","grp4d432", "grp5e432")] <- lapply(dta[c("grp1a432","grp2b432","grp3c432","grp4d432", "grp5e432")], function(x) replace(x, is.na(x), 0))
 dta[c("spouse2grp_sp1f432","spouse2grp_sp2g432","spouse2grp_sp3h432","spouse2group_sp4j432", "spouse2grp5_sp5k432")] <- lapply(dta[c("spouse2grp_sp1f432","spouse2grp_sp2g432","spouse2grp_sp3h432","spouse2group_sp4j432", "spouse2grp5_sp5k432")], function(x) replace(x,is.na(x)  ,0) )
 
-dta$longe10h_sp1 <- rowSums(dta[c("grp1a432","grp2b432","grp3c432","grp4d432", "grp5e432")])
-dta$longe10h_sp2 <- rowSums(dta[c("spouse2grp_sp1f432","spouse2grp_sp2g432","spouse2grp_sp3h432","spouse2group_sp4j432", "spouse2grp5_sp5k432")])
-dta$longe10h <-  dta$longe10h_sp1  | dta$longe10h_sp2 
+dta$bazooka_sp1 <- rowSums(dta[c("grp1a432","grp2b432","grp3c432","grp4d432", "grp5e432")])
+dta$bazooka_sp2 <- rowSums(dta[c("spouse2grp_sp1f432","spouse2grp_sp2g432","spouse2grp_sp3h432","spouse2group_sp4j432", "spouse2grp5_sp5k432")])
+dta$bazooka <-  dta$bazooka_sp1  | dta$bazooka_sp2 
+
+dta[c("grp1a43k","grp2b43k","grp3c43k","grp4d43k", "grp5e43k")] <- lapply(dta[c("grp1a43k","grp2b43k","grp3c43k","grp4d43k", "grp5e43k")], function(x) replace(x,is.na(x) | x== 999, 0) )
+dta$kg_bazooka_sp1 <-rowSums(dta[c("grp1a43k","grp2b43k","grp3c43k","grp4d43k", "grp5e43k")], na.rm=T)
+
+dta[c("spouse2grp_sp1f43k","spouse2grp_sp2g43k","spouse2grp_sp3h43k","spouse2group_sp4j43k", "spouse2grp5_sp5k43k")] <- lapply(dta[c("spouse2grp_sp1f43k","spouse2grp_sp2g43k","spouse2grp_sp3h43k","spouse2group_sp4j43k", "spouse2grp5_sp5k43k")], function(x) replace(x,is.na(x) | x== 999, 0) )
+dta$kg_bazooka_sp2 <-rowSums(dta[c("spouse2grp_sp1f43k","spouse2grp_sp2g43k","spouse2grp_sp3h43k","spouse2group_sp4j43k", "spouse2grp5_sp5k43k")], na.rm=T)
+dta$kg_bazooka <- (dta$kg_bazooka_sp1 + dta$kg_bazooka_sp2)/2
 
 ##use other hybrid on any plot
 dta[c("grp1a436","grp2b436","grp3c436","grp4d436", "grp5e436")] <- lapply(dta[c("grp1a436","grp2b436","grp3c436","grp4d436", "grp5e436")], function(x) replace(x, is.na(x), 0))
@@ -303,7 +626,15 @@ dta$other_hybrid_sp1  <- rowSums(dta[c("grp1a436","grp2b436","grp3c436","grp4d43
 dta$other_hybrid_sp2 <- rowSums(dta[c("spouse2grp_sp1f436","spouse2grp_sp2g436","spouse2grp_sp3h436","spouse2group_sp4j436", "spouse2grp5_sp5k436")])
 dta$other_hybrid <- dta$other_hybrid_sp1 | dta$other_hybrid_sp2
 
+dta[c("grp1a53","grp2b53","grp3c53","grp4d53", "grp5e53")] <- lapply(dta[c("grp1a53","grp2b53","grp3c53","grp4d53", "grp5e53")], function(x) replace(x,is.na(x) | x== 999, 0) )
+dta$kg_other_hybrid_sp1 <-rowSums(dta[c("grp1a53","grp2b53","grp3c53","grp4d53", "grp5e53")], na.rm=T)
+
+dta[c("spouse2grp_sp1f53","spouse2grp_sp2g53","spouse2grp_sp3h53","spouse2group_sp4j53", "spouse2grp5_sp5k53")] <- lapply(dta[c("spouse2grp_sp1f53","spouse2grp_sp2g53","spouse2grp_sp3h53","spouse2group_sp4j53", "spouse2grp5_sp5k53")], function(x) replace(x,is.na(x) | x== 999, 0) )
+dta$kg_other_hybrid_sp2 <-rowSums(dta[c("spouse2grp_sp1f53","spouse2grp_sp2g53","spouse2grp_sp3h53","spouse2group_sp4j53", "spouse2grp5_sp5k53")], na.rm=T)
+dta$kg_other_hybrid <- (dta$kg_other_hybrid_sp1 + dta$kg_other_hybrid_sp2)/2
+
 dta$hybrid <-  dta$bazooka | dta$longe10h | dta$other_hybrid
+dta$kg_hybrid <- rowSums(dta[c("kg_longe10h","kg_bazooka","kg_other_hybrid")])
 
 ### use of OPV
 #use longe5 on any plot?
@@ -315,6 +646,13 @@ dta$longe5_sp1 <- rowSums(dta[c("grp1a433","grp2b433","grp3c433","grp4d433", "gr
 dta$longe5_sp2 <- rowSums(dta[c("spouse2grp_sp1f433","spouse2grp_sp2g433","spouse2grp_sp3h433","spouse2group_sp4j433", "spouse2grp5_sp5k433")]) > 0 
 dta$longe5 <- dta$longe5_sp1 | dta$longe5_sp2 
 
+dta[c("grp1a43r","grp2b43r","grp3c43r","grp4d43r", "grp5e43r")] <- lapply(dta[c("grp1a43r","grp2b43r","grp3c43r","grp4d43r", "grp5e43r")], function(x) replace(x,is.na(x) | x== 999, 0) )
+dta$kg_longe5_sp1 <-rowSums(dta[c("grp1a43r","grp2b43r","grp3c43r","grp4d43r", "grp5e43r")], na.rm=T)
+
+dta[c("spouse2grp_sp1f43r","spouse2grp_sp2g43r","spouse2grp_sp3h43r","spouse2group_sp4j43r", "spouse2grp5_sp5k43r")] <- lapply(dta[c("spouse2grp_sp1f43r","spouse2grp_sp2g43r","spouse2grp_sp3h43r","spouse2group_sp4j43r", "spouse2grp5_sp5k43r")], function(x) replace(x,is.na(x) | x== 999, 0) )
+dta$kg_longe5_sp2 <-rowSums(dta[c("spouse2grp_sp1f43r","spouse2grp_sp2g43r","spouse2grp_sp3h43r","spouse2group_sp4j43r", "spouse2grp5_sp5k43r")], na.rm=T)
+dta$kg_longe5 <- (dta$kg_longe5_sp1 + dta$kg_longe5_sp2)/2
+
 #use longe4 on any plot?
 dta[c("grp1a434","grp2b434","grp3c434","grp4d434", "grp5e434")] <- lapply(dta[c("grp1a434","grp2b434","grp3c434","grp4d434", "grp5e434")], function(x) replace(x, is.na(x), 0))
 
@@ -323,6 +661,13 @@ dta[c("spouse2grp_sp1f434","spouse2grp_sp2g434","spouse2grp_sp3h434","spouse2gro
 dta$longe4_sp1 <- rowSums(dta[c("grp1a434","grp2b434","grp3c434","grp4d434", "grp5e434")]) > 0 
 dta$longe4_sp2 <- rowSums(dta[c("spouse2grp_sp1f434","spouse2grp_sp2g434","spouse2grp_sp3h434","spouse2group_sp4j434", "spouse2grp5_sp5k434")]) > 0 
 dta$longe4 <- dta$longe4_sp1 | dta$longe4_sp2 
+
+dta[c("grp1a43y","grp2b43y","grp3c43y","grp4d43y", "grp5e43y")] <- lapply(dta[c("grp1a43y","grp2b43y","grp3c43y","grp4d43y", "grp5e43y")], function(x) replace(x,is.na(x) | x== 999, 0) )
+dta$kg_longe4_sp1 <-rowSums(dta[c("grp1a43y","grp2b43y","grp3c43y","grp4d43y", "grp5e43y")], na.rm=T)
+
+dta[c("spouse2grp_sp1f43y","spouse2grp_sp2g43y","spouse2grp_sp3h43y","spouse2group_sp4j43y", "spouse2grp5_sp5k43y")] <- lapply(dta[c("spouse2grp_sp1f43y","spouse2grp_sp2g43y","spouse2grp_sp3h43y","spouse2group_sp4j43y", "spouse2grp5_sp5k43y")], function(x) replace(x,is.na(x) | x== 999, 0) )
+dta$kg_longe4_sp2 <-rowSums(dta[c("spouse2grp_sp1f43y","spouse2grp_sp2g43y","spouse2grp_sp3h43y","spouse2group_sp4j43y", "spouse2grp5_sp5k43y")], na.rm=T)
+dta$kg_longe4 <- (dta$kg_longe4_sp1 + dta$kg_longe4_sp2)/2
 
 #use other OPV on any plot?
 dta[c("grp1a435","grp2b435","grp3c435","grp4d435", "grp5e435")] <- lapply(dta[c("grp1a435","grp2b435","grp3c435","grp4d435", "grp5e435")], function(x) replace(x, is.na(x), 0))
@@ -333,7 +678,29 @@ dta$other_opv_sp1 <- rowSums(dta[c("grp1a435","grp2b435","grp3c435","grp4d435", 
 dta$other_opv_sp2 <- rowSums(dta[c("spouse2grp_sp1f435","spouse2grp_sp2g435","spouse2grp_sp3h435","spouse2group_sp4j435", "spouse2grp5_sp5k435")]) > 0 
 dta$other_opv <- dta$other_opv_sp1 | dta$other_opv_sp2 
 
+
+dta[c("grp1a47","grp2b47","grp3c47","grp4d47", "grp5e47")] <- lapply(dta[c("grp1a47","grp2b47","grp3c47","grp4d47", "grp5e47")], function(x) replace(x,is.na(x) | x== 999, 0) )
+dta$kg_other_opv_sp1 <-rowSums(dta[c("grp1a47","grp2b47","grp3c47","grp4d47", "grp5e47")], na.rm=T)
+
+dta[c("spouse2grp_sp1f47","spouse2grp_sp2g47","spouse2grp_sp3h47","spouse2group_sp4j47", "spouse2grp5_sp5k47")] <- lapply(dta[c("spouse2grp_sp1f47","spouse2grp_sp2g47","spouse2grp_sp3h47","spouse2group_sp4j47", "spouse2grp5_sp5k47")], function(x) replace(x,is.na(x) | x== 999, 0) )
+dta$kg_other_opv_sp2 <-rowSums(dta[c("spouse2grp_sp1f47","spouse2grp_sp2g47","spouse2grp_sp3h47","spouse2group_sp4j47", "spouse2grp5_sp5k47")], na.rm=T)
+dta$kg_other_opv <- (dta$kg_other_opv_sp1 + dta$kg_other_opv_sp2)/2
+
 dta$opv <-  dta$longe5 | dta$longe4 | dta$other_opv
+dta$kg_opv <- rowSums(dta[c("kg_longe5","kg_longe4","kg_other_opv")])
+
+dta$kg_impseed <- dta$kg_hybrid + dta$kg_opv
+
+### combiner: use improved seed + fertilizer on at least one plot (A29==yes & A42==yes)
+
+dta$combiner_sp1 <- rowSums( cbind((dta$grp1a29=="Yes" & dta$grp1a42 == "Yes"),(dta$grp2b29=="Yes" & dta$grp2b42 == "Yes"),(dta$grp3c29=="Yes" & dta$grp3c42 == "Yes"),(dta$grp4d29=="Yes" & dta$grp4d42 == "Yes"),(dta$grp5e29=="Yes" & dta$grp5e42 == "Yes")), na.rm=T) > 0
+
+dta$combiner_sp2 <- rowSums( cbind((dta$spouse2grp_sp1f29=="Yes" & dta$spouse2grp_sp1f42 == "Yes"),(dta$spouse2grp_sp2g29=="Yes" & dta$spouse2grp_sp2g42 == "Yes"),(dta$spouse2grp_sp3h29=="Yes" & dta$spouse2grp_sp3h42 == "Yes"),(dta$spouse2group_sp4j29=="Yes" & dta$spouse2group_sp4j42 == "Yes"),(dta$spouse2grp5_sp5k29=="Yes" & dta$spouse2grp5_sp5k42 == "Yes")), na.rm=T) > 0
+
+dta$combiner <- dta$combiner_sp1 | dta$combiner_sp2
+
+dta$combiner_mgt <- rowSums(dta[c("fert_pl1","fert_pl2","fert_pl3","fert_pl4","fert_pl5")]*dta[c("impseed_pl1", "impseed_pl2","impseed_pl3","impseed_pl4","impseed_pl5")], na.rm=T ) > 0
+
 
 ### use of chemical on at least one plot
 dta$grp1a55a[is.na(dta$grp1a55a)] <- "No"
@@ -403,14 +770,6 @@ dta$eatpref[is.na(dta$eatpref)] <-  dta$spouse2r111[is.na(dta$eatpref)] == "No"
 dta$eatenough <- NA
 dta$eatenough <- dta$q112=="No"
 dta$eatenough[is.na(dta$eatenough)] <-  dta$spouse2r112[is.na(dta$eatenough)] == "No"
-
-### how to determine if a plot is female managed?
-
-
-
-
-
-
 
 ########################################### function definitions #################################
 ## RI: a function to calculate the single sided RI p-values
