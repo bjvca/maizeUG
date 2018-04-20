@@ -19,8 +19,12 @@ res_h0_fert_mgt  <- array(NA, c(9,4,4))
 rownames(res_h0_fert_mgt) <- c("use_DAP","use_urea","use_organic","log_kg_DAP","log_kg_urea","log_kg_organic","log_kg_DAP_ac","log_kg_urea_ac","log_kg_organic_ac")
 res_h0_seed  <- array(NA, c(10,4,4))
 rownames(res_h0_seed) <- c("bazooka","longe10h","longe5","longe4","hybrid","kg_hybrid","kg_hybrid_ac","opv","kg_opv","kg_opv_ac")
+res_h0_seed_mgt  <- array(NA, c(10,4,4))
+rownames(res_h0_seed_mgt) <- c("bazooka","longe10h","longe5","longe4","hybrid","kg_hybrid","kg_hybrid_ac","opv","kg_opv","kg_opv_ac")
 res_h0_prod <- array(NA, c(5,4,4))
 rownames(res_h0_prod) <- c("prod","area","yield","yield_better","prod_index")
+res_h0_prod_mgt <- array(NA, c(5,4,4))
+rownames(res_h0_prod_mgt) <- c("prod","area","yield","yield_better","prod_index")
 res_h0_wel <-  array(NA, c(6,4,4))
 rownames(res_h0_wel) <- c("better_av","better_6m","eatpref","eatenough","log_cons","welfare_index")
 
@@ -264,6 +268,7 @@ res_h0_fert[9,1,h]  <-  summary(lm(as.formula(paste("bags_org/area_tot", treatme
 res_h0_fert[9,2,h]  <- summary(lm(as.formula(paste("bags_org/area_tot", treatment, sep ="~")), data=dta_bal[(dta_bal$bags_org/dta_bal$area_tot)>0,]))$coefficients[2,1]
 res_h0_fert[9,3,h]  <- ifelse(totrep >0, RI("bags_org/area_tot",treatment , dta_bal[(dta_bal$bags_org/dta_bal$area_tot)>0,], nr_repl = totrep), summary(lm(as.formula(paste("bags_org/area_tot", treatment, sep ="~")), data=dta_bal[(dta_bal$bags_org/dta_bal$area_tot)>0,]))$coefficients[2,4]) 
 
+dta_bal2
 res_h0_fert_mgt[9,1,h]  <-  summary(lm(as.formula(paste("bags_org_ac_mgt", treatment, sep ="~")), data=dta_bal[(dta_bal$bags_org_ac_mgt)>0,]))$coefficients[1,1]
 res_h0_fert_mgt[9,2,h]  <- summary(lm(as.formula(paste("bags_org_ac_mgt", treatment, sep ="~")), data=dta_bal[(dta_bal$bags_org_ac_mgt)>0,]))$coefficients[2,1]
 res_h0_fert_mgt[9,3,h]  <- ifelse(totrep >0, RI("bags_org_ac_mgt",treatment , dta_bal[(dta_bal$bags_org_ac_mgt)>0,], nr_repl = totrep), summary(lm(as.formula(paste("bags_org_ac_mgt", treatment, sep ="~")), data=dta_bal[(dta_bal$bags_org_ac_mgt)>0,]))$coefficients[2,4]) 
@@ -313,10 +318,18 @@ res_h0_seed[6,1,h]  <- summary(lm(as.formula(paste("log(kg_hybrid)", treatment, 
 res_h0_seed[6,2,h]  <- summary(lm(as.formula(paste("log(kg_hybrid)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_hybrid>0,]))$coefficients[2,1]
 res_h0_seed[6,3,h]  <- ifelse(totrep >0, RI("log(kg_hybrid)",treatment , dta_bal[dta_bal$kg_hybrid>0,], nr_repl = totrep), summary(lm(as.formula(paste("kg_hybrid", treatment, sep ="~")), data=dta_bal[dta_bal$kg_hybrid>0,]))$coefficients[2,4]) 
 
+res_h0_seed_mgt[6,1,h]  <- summary(lm(as.formula(paste("log(kg_hybrid_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_hybrid_mgt>0,]))$coefficients[1,1]
+res_h0_seed_mgt[6,2,h]  <- summary(lm(as.formula(paste("log(kg_hybrid_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_hybrid_mgt>0,]))$coefficients[2,1]
+res_h0_seed_mgt[6,3,h]  <- ifelse(totrep >0, RI("log(kg_hybrid_mgt)",treatment , dta_bal[dta_bal$kg_hybrid_mgt>0,], nr_repl = totrep), summary(lm(as.formula(paste("kg_hybrid_mgt", treatment, sep ="~")), data=dta_bal[dta_bal$kg_hybrid_mgt>0,]))$coefficients[2,4]) 
+
 ## inorganic hybrid application rate
 res_h0_seed[7,1,h]  <- summary(lm(as.formula(paste("log(kg_hybrid/area_tot)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_hybrid/dta_bal$area_tot>0,]))$coefficients[1,1]
 res_h0_seed[7,2,h]  <- summary(lm(as.formula(paste("log(kg_hybrid/area_tot)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_hybrid/dta_bal$area_tot>0,]))$coefficients[2,1]
 res_h0_seed[7,3,h]  <- ifelse(totrep >0, RI("log(kg_hybrid/area_tot)",treatment , dta_bal[dta_bal$kg_hybrid/dta_bal$area_tot>0,], nr_repl = totrep), summary(lm(as.formula(paste("log(kg_hybrid/area_tot)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_hybrid/dta_bal$area_tot>0,]))$coefficients[2,4])
+
+res_h0_seed_mgt[7,1,h]  <- summary(lm(as.formula(paste("log(kg_hybrid_ac_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_hybrid_ac_mgt>0,]))$coefficients[1,1]
+res_h0_seed_mgt[7,2,h]  <- summary(lm(as.formula(paste("log(kg_hybrid_ac_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_hybrid_ac_mgt>0,]))$coefficients[2,1]
+res_h0_seed_mgt[7,3,h]  <- ifelse(totrep >0, RI("log(kg_hybrid_ac_mgt)",treatment , dta_bal[dta_bal$kg_hybrid_ac_mgt>0,], nr_repl = totrep), summary(lm(as.formula(paste("log(kg_hybrid_ac_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_hybrid_ac_mgt>0,]))$coefficients[2,4])
 
 
 ## opv
@@ -329,11 +342,20 @@ res_h0_seed[9,1,h]  <- summary(lm(as.formula(paste("log(kg_opv)", treatment, sep
 res_h0_seed[9,2,h]  <- summary(lm(as.formula(paste("log(kg_opv)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_opv>0,]))$coefficients[2,1]
 res_h0_seed[9,3,h]  <- ifelse(totrep >0, RI("log(kg_opv)",treatment , dta_bal[dta_bal$kg_opv>0,], nr_repl = totrep), summary(lm(as.formula(paste("kg_opv", treatment, sep ="~")), data=dta_bal[dta_bal$kg_opv>0,]))$coefficients[2,4]) 
 
+res_h0_seed_mgt[9,1,h]  <- summary(lm(as.formula(paste("log(kg_opv_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_opv_mgt>0,]))$coefficients[1,1]
+res_h0_seed_mgt[9,2,h]  <- summary(lm(as.formula(paste("log(kg_opv_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_opv_mgt>0,]))$coefficients[2,1]
+res_h0_seed_mgt[9,3,h]  <- ifelse(totrep >0, RI("log(kg_opv_mgt)",treatment , dta_bal[dta_bal$kg_opv_mgt>0,], nr_repl = totrep), summary(lm(as.formula(paste("kg_opv", treatment, sep ="~")), data=dta_bal[dta_bal$kg_opv_mgt>0,]))$coefficients[2,4]) 
+
 ## inorganic hybrid application rate
 res_h0_seed[10,1,h]  <- summary(lm(as.formula(paste("log(kg_opv/area_tot)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_opv/dta_bal$area_tot>0,]))$coefficients[1,1]
 res_h0_seed[10,2,h]  <- summary(lm(as.formula(paste("log(kg_opv/area_tot)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_opv/dta_bal$area_tot>0,]))$coefficients[2,1]
 res_h0_seed[10,3,h]  <- ifelse(totrep >0, RI("log(kg_opv/area_tot)",treatment , dta_bal[dta_bal$kg_opv/dta_bal$area_tot>0,], nr_repl = totrep), summary(lm(as.formula(paste("log(kg_opv/area_tot)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_opv/dta_bal$area_tot>0,]))$coefficients[2,4])
 
+res_h0_seed_mgt[10,1,h]  <- summary(lm(as.formula(paste("log(kg_opv_ac_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_opv_ac_mgt>0,]))$coefficients[1,1]
+res_h0_seed_mgt[10,2,h]  <- summary(lm(as.formula(paste("log(kg_opv_ac_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_opv_ac_mgt>0,]))$coefficients[2,1]
+res_h0_seed_mgt[10,3,h]  <- ifelse(totrep >0, RI("log(kg_opv_ac_mgt)",treatment , dta_bal[dta_bal$kg_opv_ac_mgt>0,], nr_repl = totrep), summary(lm(as.formula(paste("log(kg_opv/area_tot)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_opv_ac_mgt>0,]))$coefficients[2,4])
+
+ 
  
 if (totrep >0) {
 res_h0_seed[1:4,4,h]  <- FSR_RI( c("bazooka","longe10h","longe5","longe4") ,treatment ,dta_bal, pvals = res_h0_seed[,3,h] , nr_repl_ri = 100)
@@ -344,10 +366,20 @@ res_h0_pract[8,1,h]  <- summary(lm(as.formula(paste("log(kg_impseed)", treatment
 res_h0_pract[8,2,h]  <- summary(lm(as.formula(paste("log(kg_impseed)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_impseed>0,]))$coefficients[2,1]
 res_h0_pract[8,3,h]  <- ifelse(totrep >0, RI("log(kg_impseed)",treatment , dta_bal[dta_bal$kg_impseed>0,], nr_repl = totrep), summary(lm(as.formula(paste("kg_impseed", treatment, sep ="~")), data=dta_bal[dta_bal$kg_impseed>0,]))$coefficients[2,4]) 
 
+res_h0_pract_mgt[8,1,h]  <- summary(lm(as.formula(paste("log(kg_impseed_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_impseed_mgt>0,]))$coefficients[1,1]
+res_h0_pract_mgt[8,2,h]  <- summary(lm(as.formula(paste("log(kg_impseed_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_impseed_mgt>0,]))$coefficients[2,1]
+res_h0_pract_mgt[8,3,h]  <- ifelse(totrep >0, RI("log(kg_impseed_mgt)",treatment , dta_bal[dta_bal$kg_impseed_mgt>0,], nr_repl = totrep), summary(lm(as.formula(paste("kg_impseed", treatment, sep ="~")), data=dta_bal[dta_bal$kg_impseed>0,]))$coefficients[2,4]) 
+
 ## inorganic impseed application rate
 res_h0_pract[9,1,h]  <- summary(lm(as.formula(paste("log(kg_impseed/area_tot)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_impseed/dta_bal$area_tot>0,]))$coefficients[1,1]
 res_h0_pract[9,2,h]  <- summary(lm(as.formula(paste("log(kg_impseed/area_tot)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_impseed/dta_bal$area_tot>0,]))$coefficients[2,1]
 res_h0_pract[9,3,h]  <- ifelse(totrep >0, RI("log(kg_impseed/area_tot)",treatment , dta_bal[dta_bal$kg_impseed/dta_bal$area_tot>0,], nr_repl = totrep), summary(lm(as.formula(paste("log(kg_impseed/area_tot)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_impseed/dta_bal$area_tot>0,]))$coefficients[2,4]) 
+## inorganic impseed application rate
+res_h0_pract_mgt[9,1,h]  <- summary(lm(as.formula(paste("log(kg_impseed_ac_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_impseed_ac_mgt>0,]))$coefficients[1,1]
+res_h0_pract_mgt[9,2,h]  <- summary(lm(as.formula(paste("log(kg_impseed_ac_mgt)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_impseed_ac_mgt>0,]))$coefficients[2,1]
+res_h0_pract_mgt[9,3,h]  <- ifelse(totrep >0, RI("log(kg_impseed_ac_mgt)",treatment , dta_bal[dta_bal$kg_impseed_ac_mgt>0,], nr_repl = totrep), summary(lm(as.formula(paste("log(kg_impseed/area_tot)", treatment, sep ="~")), data=dta_bal[dta_bal$kg_impseed/dta_bal$area_tot>0,]))$coefficients[2,4]) 
+
+
 
 ## inorganic impseed application rate
 res_h0_pract[10,1,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
@@ -380,8 +412,8 @@ res_h0_pract[11,3,h] <-  indexer[[2]]
 ### does the video increases production related outcomes?
 
 #trimming is done on end result
-dta_bal2 <- subset(dta_bal, prod_tot_man>0)
-dta_bal2$log_prod_tot <- log(dta_bal2$prod_tot_man)
+dta_bal2 <- subset(dta_bal, prod_tot>0)
+dta_bal2$log_prod_tot <- log(dta_bal2$prod_tot)
 dta_trim <- trim("log_prod_tot", dta_bal2, .1)
 
 ### production
@@ -390,9 +422,9 @@ res_h0_prod[1,2,h] <- summary(lm(as.formula(paste("log_prod_tot",treatment,sep =
 res_h0_prod[1,3,h] <- ifelse(totrep >0, RI("log_prod_tot",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
 
 ### area
-summary(lm(dta_bal$area_tot_man~dta_bal$messenger != "ctrl"))
-dta_bal2 <- subset(dta_bal, area_tot_man>0)
-dta_bal2$log_area_tot <- log(dta_bal2$area_tot_man)
+summary(lm(dta_bal$area_tot~dta_bal$messenger != "ctrl"))
+dta_bal2 <- subset(dta_bal, area_tot>0)
+dta_bal2$log_area_tot <- log(dta_bal2$area_tot)
 
 dta_trim <- trim("log_area_tot", dta_bal2, .1)
 
@@ -401,9 +433,9 @@ res_h0_prod[2,2,h] <- summary(lm(as.formula(paste("log_area_tot",treatment,sep =
 res_h0_prod[2,3,h] <- ifelse(totrep >0, RI("log_area_tot",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
 
 ###yield
-summary(lm(dta_bal$yield_av_man~dta_bal$messenger != "ctrl"))
-dta_bal2 <- subset(dta_bal, yield_av_man >0)
-dta_bal2$log_yield_av <- log(dta_bal2$yield_av_man)
+summary(lm(dta_bal$yield_av~dta_bal$messenger != "ctrl"))
+dta_bal2 <- subset(dta_bal, yield_av >0)
+dta_bal2$log_yield_av <- log(dta_bal2$yield_av)
 dta_trim <- trim("log_yield_av", dta_bal2, .1)
 
 res_h0_prod[3,1,h] <- summary(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
@@ -413,9 +445,65 @@ res_h0_prod[3,3,h] <- ifelse(totrep >0, RI("log_yield_av",treatment , dta_trim, 
 ### was yield better compared to normal year?
 summary(lm(yield_better_man~messenger != "ctrl", data=dta_bal))
 
-res_h0_prod[4,1,h] <- summary(lm(as.formula(paste("yield_better_man",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
-res_h0_prod[4,2,h] <- summary(lm(as.formula(paste("yield_better_man",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
-res_h0_prod[4,3,h] <- ifelse(totrep >0, RI("yield_better_man",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("yield_better_man",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+res_h0_prod[4,1,h] <- summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
+res_h0_prod[4,2,h] <- summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+res_h0_prod[4,3,h] <- ifelse(totrep >0, RI("yield_better",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+
+dta_bal2 <- subset(dta_bal, area_tot >0 & prod_tot>0 & yield_av >0)
+dta_bal2$log_prod_tot <- log(dta_bal2$prod_tot)
+dta_bal2$log_area_tot <- log(dta_bal2$area_tot)
+dta_bal2$log_yield_av <- log(dta_bal2$yield_av)
+
+dta_bal2 <- trim("log_prod_tot", dta_bal2, .1)
+dta_bal2 <- trim("log_area_tot", dta_bal2, .1)
+dta_bal2 <- trim("log_yield_av", dta_bal2, .1)
+
+if (totrep >0) {
+	res_h0_prod[1:4,4] <- FSR_RI(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"), treatment ,dta_bal2,pvals = res_h0_prod[,3,h], nr_repl_ri = 100)
+	indexer <- FW_index(treatment, c("log_prod", "log_area", "log_yield","yield_better"),dta_bal2, nr_repl=totrep)
+	res_h0_prod[5,1,h] <-  indexer[[1]]$coefficients[1,1]
+	res_h0_prod[5,2,h] <-  indexer[[1]]$coefficients[2,1]
+	res_h0_prod[5,3,h] <-  indexer[[2]]
+	}
+############################## production ###########################
+### does the video increases production related outcomes?
+
+#trimming is done on end result
+dta_bal2 <- subset(dta_bal, prod_tot_man>0)
+dta_bal2$log_prod_tot <- log(dta_bal2$prod_tot_man)
+dta_trim <- trim("log_prod_tot", dta_bal2, .1)
+
+### production
+res_h0_prod_mgt[1,1,h] <- summary(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
+res_h0_prod_mgt[1,2,h] <- summary(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
+res_h0_prod_mgt[1,3,h] <- ifelse(totrep >0, RI("log_prod_tot",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
+
+### area
+summary(lm(dta_bal$area_tot_man~dta_bal$messenger != "ctrl"))
+dta_bal2 <- subset(dta_bal, area_tot_man>0)
+dta_bal2$log_area_tot <- log(dta_bal2$area_tot_man)
+
+dta_trim <- trim("log_area_tot", dta_bal2, .1)
+
+res_h0_prod_mgt[2,1,h] <- summary(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
+res_h0_prod_mgt[2,2,h] <- summary(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
+res_h0_prod_mgt[2,3,h] <- ifelse(totrep >0, RI("log_area_tot",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
+###yield
+summary(lm(dta_bal$yield_av_man~dta_bal$messenger != "ctrl"))
+dta_bal2 <- subset(dta_bal, yield_av_man >0)
+dta_bal2$log_yield_av <- log(dta_bal2$yield_av_man)
+dta_trim <- trim("log_yield_av", dta_bal2, .1)
+
+res_h0_prod_mgt[3,1,h] <- summary(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
+res_h0_prod_mgt[3,2,h] <- summary(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
+res_h0_prod_mgt[3,3,h] <- ifelse(totrep >0, RI("log_yield_av",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
+
+### was yield better compared to normal year?
+summary(lm(yield_better_man~messenger != "ctrl", data=dta_bal))
+
+res_h0_prod_mgt[4,1,h] <- summary(lm(as.formula(paste("yield_better_man",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
+res_h0_prod_mgt[4,2,h] <- summary(lm(as.formula(paste("yield_better_man",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+res_h0_prod_mgt[4,3,h] <- ifelse(totrep >0, RI("yield_better_man",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("yield_better_man",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
 
 dta_bal2 <- subset(dta_bal, area_tot_man >0 & prod_tot_man>0 & yield_av_man >0)
 dta_bal2$log_prod_tot <- log(dta_bal2$prod_tot_man)
@@ -427,11 +515,11 @@ dta_bal2 <- trim("log_area_tot", dta_bal2, .1)
 dta_bal2 <- trim("log_yield_av", dta_bal2, .1)
 
 if (totrep >0) {
-	res_h0_prod[1:4,4] <- FSR_RI(c("log_prod_tot","log_area_tot","log_yield_av","yield_better_man"), treatment ,dta_bal2,pvals = res_h0_prod[,3,h], nr_repl_ri = 100)
+	res_h0_prod_mgt[1:4,4] <- FSR_RI(c("log_prod_tot","log_area_tot","log_yield_av","yield_better_man"), treatment ,dta_bal2,pvals = res_h0_prod[,3,h], nr_repl_ri = 100)
 	indexer <- FW_index(treatment, c("log_prod", "log_area", "log_yield","yield_better_man"),dta_bal2, nr_repl=totrep)
-	res_h0_prod[5,1,h] <-  indexer[[1]]$coefficients[1,1]
-	res_h0_prod[5,2,h] <-  indexer[[1]]$coefficients[2,1]
-	res_h0_prod[5,3,h] <-  indexer[[2]]
+	res_h0_prod_mgt[5,1,h] <-  indexer[[1]]$coefficients[1,1]
+	res_h0_prod_mgt[5,2,h] <-  indexer[[1]]$coefficients[2,1]
+	res_h0_prod_mgt[5,3,h] <-  indexer[[2]]
 	}
 
 ################################ welfare #############################
