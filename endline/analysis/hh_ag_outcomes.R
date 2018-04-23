@@ -268,7 +268,6 @@ res_h0_fert[9,1,h]  <-  summary(lm(as.formula(paste("bags_org/area_tot", treatme
 res_h0_fert[9,2,h]  <- summary(lm(as.formula(paste("bags_org/area_tot", treatment, sep ="~")), data=dta_bal[(dta_bal$bags_org/dta_bal$area_tot)>0,]))$coefficients[2,1]
 res_h0_fert[9,3,h]  <- ifelse(totrep >0, RI("bags_org/area_tot",treatment , dta_bal[(dta_bal$bags_org/dta_bal$area_tot)>0,], nr_repl = totrep), summary(lm(as.formula(paste("bags_org/area_tot", treatment, sep ="~")), data=dta_bal[(dta_bal$bags_org/dta_bal$area_tot)>0,]))$coefficients[2,4]) 
 
-dta_bal2
 res_h0_fert_mgt[9,1,h]  <-  summary(lm(as.formula(paste("bags_org_ac_mgt", treatment, sep ="~")), data=dta_bal[(dta_bal$bags_org_ac_mgt)>0,]))$coefficients[1,1]
 res_h0_fert_mgt[9,2,h]  <- summary(lm(as.formula(paste("bags_org_ac_mgt", treatment, sep ="~")), data=dta_bal[(dta_bal$bags_org_ac_mgt)>0,]))$coefficients[2,1]
 res_h0_fert_mgt[9,3,h]  <- ifelse(totrep >0, RI("bags_org_ac_mgt",treatment , dta_bal[(dta_bal$bags_org_ac_mgt)>0,], nr_repl = totrep), summary(lm(as.formula(paste("bags_org_ac_mgt", treatment, sep ="~")), data=dta_bal[(dta_bal$bags_org_ac_mgt)>0,]))$coefficients[2,4]) 
