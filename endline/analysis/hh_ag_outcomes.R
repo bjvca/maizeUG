@@ -20,6 +20,8 @@ res_h0_wel <-  array(NA, c(6,4,4))
 rownames(res_h0_wel) <- c("better_av","better_6m","eatpref","eatenough","log_cons","welfare_index")
 res_h0_disp <-  array(NA, c(4,4,4))
 rownames(res_h0_disp) <- c("cons_maize","sold_maize","saved_seed","disp_index")
+res_decision <- array(NA, c(6,4,4))
+rownames(res_decision) <- c("dec_male","decide_female","female_involved","decide_joint", "both_tell","spouses_listen")
 
 # run this analysis for 4 hypotheses:
 # 1: T-C
@@ -328,6 +330,36 @@ res_h0_wel[5,3,h]  <- ifelse(totrep >0, RI("log_cons",treatment , dta_bal2, nr_r
 #	res_h0_wel[6,1,h] <-  indexer[[1]]$coefficients[1,1]
 #	res_h0_wel[6,2,h] <-  indexer[[1]]$coefficients[2,1]
 #	res_h0_wel[6,3,h] <-  indexer[[2]]
+###### decisions
+dta$nr_man_plots <- rowSums(dta[c("mgt_man_pl1","mgt_man_pl2","mgt_man_pl3","mgt_man_pl4","mgt_man_pl5")], na.rm=T)
+dta$nr_woman_plots <- rowSums(dta[c("mgt_woman_pl1","mgt_woman_pl2","mgt_woman_pl3","mgt_woman_pl4","mgt_woman_pl5")], na.rm=T)
+dta$nr_woman_involved_plots <- rowSums(dta[c("mgt_woman_involved_pl1","mgt_woman_involved_pl2","mgt_woman_involved_pl3","mgt_woman_involved_pl4","mgt_woman_involved_pl5")], na.rm=T)
+dta$nr_joint_plots <- rowSums(dta[c("mgt_both_pl1","mgt_both_pl2","mgt_both_pl3","mgt_both_pl4","mgt_both_pl5")], na.rm=T)
+
+
+res_decision[1,1,h]  <- summary(lm(as.formula(paste("(nr_man_plots > 0)",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
+res_decision[1,2,h]  <- summary(lm(as.formula(paste("(nr_man_plots > 0)",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+res_decision[1,3,h]  <- ifelse(totrep >0, RI("(nr_man_plots > 0)",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("(nr_man_plots > 0)",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+## better off than 6mo
+res_decision[2,1,h]  <- summary(lm(as.formula(paste("(nr_woman_plots > 0)",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
+res_decision[2,2,h]  <- summary(lm(as.formula(paste("(nr_woman_plots > 0)",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+res_decision[2,3,h]  <- ifelse(totrep >0, RI("(nr_woman_plots > 0)",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("(nr_woman_plots > 0)",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+
+res_decision[3,1,h]  <-  summary(lm(as.formula(paste("(nr_woman_involved_plots>0)",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
+res_decision[3,2,h]  <-  summary(lm(as.formula(paste("(nr_woman_involved_plots>0)",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+res_decision[3,3,h]  <- ifelse(totrep >0, RI("(nr_woman_involved_plots>0)",treatment , dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("(nr_woman_involved_plots>0)",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+
+res_decision[4,1,h]  <- summary(lm(as.formula(paste("(nr_joint_plots >0)",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
+res_decision[4,2,h]  <- summary(lm(as.formula(paste("(nr_joint_plots >0)",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+res_decision[4,3,h]  <- ifelse(totrep >0, RI("(nr_joint_plots >0)",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("(nr_joint_plots >0)",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+
+res_decision[5,1,h]  <- summary(lm(as.formula(paste("both_tell",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
+res_decision[5,2,h]  <- summary(lm(as.formula(paste("both_tell",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+res_decision[5,3,h]  <- ifelse(totrep >0, RI("both_tell",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("both_tell",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+
+res_decision[6,1,h]  <- summary(lm(as.formula(paste("spouses_listen",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
+res_decision[6,2,h]  <- summary(lm(as.formula(paste("spouses_listen",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+res_decision[6,3,h]  <- ifelse(totrep >0, RI("spouses_listen",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("spouses_listen",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
 
 }
 
