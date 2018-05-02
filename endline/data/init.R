@@ -24,6 +24,7 @@ dta$recipient.y <- NULL
 names(dta)[names(dta) == 'recipient.x'] <- 'recipient'
 dta$messenger.y <- NULL
 names(dta)[names(dta) == 'messenger.x'] <- 'messenger'
+dta <- subset(dta,!is.na(recipient))
 
 ### make a measure for production
 ### calculate plot level production - intercropping percentages
@@ -209,16 +210,108 @@ dta$yield_better_pl5 <- (dta$grp3c18 ==1 | dta$grp3c18==2)
 dta$yield_better_pl5[is.na(dta$yield_better_pl5) |  dta$mgt_pl5 == "woman"] <- (dta$spouse2grp5_sp5k18 ==1 | dta$spouse2grp5_sp5k18==2)[is.na(dta$yield_better_pl5) |  dta$mgt_pl5 == "woman"]
 dta$yield_better_man <- rowSums(dta[c("yield_better_pl1","yield_better_pl2","yield_better_pl3","yield_better_pl4","yield_better_pl5")], na.rm=T)>0
 
+################################################################ KNOWLEDGE ##############################################################
+### knowledge at aggreagate level - defined as follows: weak - if at least one person got the answer correct
+dta$know_space <- rowSums(dta[c("a1","spouse2f1")] == 1, na.rm=T) >0
+dta$know_space[is.na(dta$a1) & is.na(dta$spouse2f1)] <- NA 
+
+dta$know_combine <- rowSums(dta[c("a2", "spouse2f2")] == 3, na.rm=T) >0
+dta$know_combine[is.na(dta$a2)  & is.na(dta$spouse2f2)] <- NA
+
+dta$know_weed <-  rowSums(dta[c("a3","spouse2f3")]== 2, na.rm=T) > 0
+dta$know_weed[is.na(dta$a3)  & is.na(dta$spouse2f3)] <- NA
+
+dta$know_armyworm <- rowSums(dta[c("a4","spouse2f4")] == 3, na.rm=T) > 0 
+dta$know_armyworm[is.na(dta$a4) & is.na(dta$spouse2f4)] <- NA
+### knowledge at aggreagate level - defined as follows: strong - if both spouses one person got the answer correct
+dta$know_space_s <- rowSums(dta[c("a1","spouse2f1")] == 1, na.rm=T) == 2
+dta$know_space_s[is.na(dta$a1) & is.na(dta$spouse2f1)] <- NA 
+
+dta$know_combine_s <- rowSums(dta[c("a2", "spouse2f2")] == 3, na.rm=T) == 2
+dta$know_combine_s[is.na(dta$a2)  & is.na(dta$spouse2f2)] <- NA
+
+dta$know_weed_s <-  rowSums(dta[c("a3","spouse2f3")]== 2, na.rm=T) == 2
+dta$know_weed_s[is.na(dta$a3)  & is.na(dta$spouse2f3)] <- NA
+
+dta$know_armyworm_s <- rowSums(dta[c("a4","spouse2f4")] == 3, na.rm=T) == 0 
+dta$know_armyworm_s[is.na(dta$a4) & is.na(dta$spouse2f4)] <- NA
+
+### knowledge of man:
+
+dta$know_space_m <- NA
+dta$know_space_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$a1[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==1
+dta$know_space_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$spouse2f1[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==1
+
+dta$know_combine_m <- NA
+dta$know_combine_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$a2[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==3
+dta$know_combine_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$spouse2f2[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] == 3
+
+dta$know_weed_m <- NA
+dta$know_weed_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$a3[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==2
+dta$know_weed_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$spouse2f3[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==2
+
+dta$know_armyworm_m <- NA
+dta$know_armyworm_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$a4[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==3
+dta$know_armyworm_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$spouse2f4[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==3
+
+### knowledge of woman:
+
+dta$know_space_w <- NA
+dta$know_space_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$a1[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==1
+dta$know_space_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$spouse2f1[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==1
+
+dta$know_combine_w <- NA
+dta$know_combine_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$a2[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==3
+dta$know_combine_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$spouse2f2[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] == 3
+
+dta$know_weed_w <- NA
+dta$know_weed_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$a3[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==2
+dta$know_weed_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$spouse2f3[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==2
+
+
+dta$know_armyworm_w <- NA
+dta$know_armyworm_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$a4[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==3
+dta$know_armyworm_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$spouse2f4[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==3
+###export knowledge by man and women here for plotting panel data
+write.csv(dta[c("hhid", "messenger", "recipient", "know_space_m", "know_combine_m", "know_weed_m", "know_space_w", "know_combine_w", "know_weed_w")],"/home/bjvca/data/projects/digital green/endline/data/working/knowledge_3.csv")
+
+## knowledge of the person who watched the video 
+dta$know_space_v <- NA
+dta$know_space_v[dta$recipient == "male" & !is.na(dta$recipient)] <- dta$know_space_m[dta$recipient == "male" & !is.na(dta$recipient)] 
+dta$know_space_v[dta$recipient == "female" & !is.na(dta$recipient)] <- dta$know_space_w[dta$recipient == "female" & !is.na(dta$recipient)]  
+dta$know_space_v[dta$recipient == "couple" & !is.na(dta$recipient)] <-  rowSums(cbind(dta$know_space_m[dta$recipient == "couple" & !is.na(dta$recipient)] ,  dta$know_space_w[dta$recipient == "couple" & !is.na(dta$recipient)]),na.rm=T) >0
+#if both NA, set to NA
+dta$know_space_v[dta$recipient == "couple"][is.na(dta$know_space_m[dta$recipient == "couple"] ) & is.na( dta$know_space_w[dta$recipient == "couple"]) ] <- NA
+
+dta$know_combine_v <- NA
+dta$know_combine_v[dta$recipient == "male" & !is.na(dta$recipient)] <- dta$know_combine_m[dta$recipient == "male" & !is.na(dta$recipient)] 
+dta$know_combine_v[dta$recipient == "female" & !is.na(dta$recipient)] <- dta$know_combine_w[dta$recipient == "female" & !is.na(dta$recipient)]  
+dta$know_combine_v[dta$recipient == "couple" & !is.na(dta$recipient)] <-  rowSums(cbind(dta$know_combine_m[dta$recipient == "couple" & !is.na(dta$recipient)] ,  dta$know_combine_w[dta$recipient == "couple" & !is.na(dta$recipient)]),na.rm=T) >0
+#if both NA, set to NA
+dta$know_combine_v[dta$recipient == "couple"][is.na(dta$know_combine_m[dta$recipient == "couple"] ) & is.na( dta$know_combine_w[dta$recipient == "couple"]) ] <- NA
+
+dta$know_weed_v <- NA
+dta$know_weed_v[dta$recipient == "male" & !is.na(dta$recipient)] <- dta$know_weed_m[dta$recipient == "male" & !is.na(dta$recipient)] 
+dta$know_weed_v[dta$recipient == "female" & !is.na(dta$recipient)] <- dta$know_weed_w[dta$recipient == "female" & !is.na(dta$recipient)]  
+dta$know_weed_v[dta$recipient == "couple" & !is.na(dta$recipient)] <-  rowSums(cbind(dta$know_weed_m[dta$recipient == "couple" & !is.na(dta$recipient)] ,  dta$know_weed_w[dta$recipient == "couple" & !is.na(dta$recipient)]),na.rm=T) >0
+#if both NA, set to NA
+dta$know_weed_v[dta$recipient == "couple"][is.na(dta$know_weed_m[dta$recipient == "couple"] ) & is.na( dta$know_weed_w[dta$recipient == "couple"]) ] <- NA
+
+dta$know_armyworm_v <- NA
+dta$know_armyworm_v[dta$recipient == "male" & !is.na(dta$recipient)] <- dta$know_armyworm_m[dta$recipient == "male" & !is.na(dta$recipient)] 
+dta$know_armyworm_v[dta$recipient == "female" & !is.na(dta$recipient)] <- dta$know_armyworm_w[dta$recipient == "female" & !is.na(dta$recipient)]  
+dta$know_armyworm_v[dta$recipient == "couple" & !is.na(dta$recipient)] <-  rowSums(cbind(dta$know_armyworm_m[dta$recipient == "couple" & !is.na(dta$recipient)] ,  dta$know_armyworm_w[dta$recipient == "couple" & !is.na(dta$recipient)]),na.rm=T) >0
+#if both NA, set to NA
+dta$know_armyworm_v[dta$recipient == "couple"][is.na(dta$know_armyworm_m[dta$recipient == "couple"] ) & is.na( dta$know_armyworm_w[dta$recipient == "couple"]) ] <- NA
 
 ################################################################ PRACTICES ##############################################################
 
 ### planted immediately after the rain
 names(dta)[names(dta) == 'grp1days19'] <- 'grp1days1'
 
-# replace to high number if before rain or dont know as we will use the minimum (time between planting and rain on first plot that was planted)
-dta[c("grp1days19","grp2days2","grp3days3","grp4days4", "grp5days5")] <- lapply(dta[c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5")], function(x) replace(x, is.na(x), 999) )
+dta[c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5")] <- lapply(dta[c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5")], function(x) replace(x, is.na(x) | x ==98, 999) )
 
-dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")] <- lapply(dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")], function(x) replace(x,is.na(x), 999) )
+dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")] <- lapply(dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")], function(x) replace(x,is.na(x) | x ==98, 999) )
 
 dta$days_min_sp1 <- do.call(pmin,dta[c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5")])
 dta$days_min_sp2 <- do.call(pmin,dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")])
@@ -229,7 +322,7 @@ dta$mgt_pl1 <- "man"
 dta$mgt_pl1[dta$grp1decide1==1 & dta$spouse2grp_sp1decide_sp1==2 & dta$person_interviewed=="woman"] <- "woman"
 dta$mgt_pl1[dta$grp1decide1==2 & dta$spouse2grp_sp1decide_sp1==1 & dta$person_interviewed=="man"] <- "woman"
 dta$days_pl1 <- dta$grp1days1
-dta$days_pl1[(dta$days_pl1==999) |  (dta$mgt_pl1 == "woman")] <- dta$spouse2grp_sp1days1[(dta$days_pl1==999) |  (dta$mgt_pl1 == "woman")]
+dta$days_pl1[(dta$days_pl1==999) | is.na(dta$days_pl1) |  (dta$mgt_pl1 == "woman")] <- dta$spouse2grp_sp1days1[(dta$days_pl1==999) |  is.na(dta$days_pl1) | (dta$mgt_pl1 == "woman")]
 
 dta$mgt_pl2 <- "man"
 dta$mgt_pl2[dta$grp2decide2==1 & dta$spouse2grp_sp2decide_sp2==2 & dta$person_interviewed=="woman"] <- "woman"
@@ -244,15 +337,15 @@ dta$days_pl3 <- dta$grp3days3
 dta$days_pl3[(dta$days_pl3==999) |  (dta$mgt_pl3 == "woman")] <- dta$spouse2grp_sp3days_sp3[(dta$days_pl3==999) |  (dta$mgt_pl3 == "woman")]
 
 dta$mgt_pl4 <- "man"
-dta$mgt_pl4[dta$grp4decide4==1 & dta$spouse2grp_sp4decide_sp4==2 & dta$person_interviewed=="woman"] <- "woman"
-dta$mgt_pl4[dta$grp4decide4==2 & dta$spouse2grp_sp4decide_sp4==1 & dta$person_interviewed=="man"] <- "woman"
+dta$mgt_pl4[dta$grp4decide4==1 & dta$spouse2group_sp4decidesp4==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl4[dta$grp4decide4==2 & dta$spouse2group_sp4decidesp4==1 & dta$person_interviewed=="man"] <- "woman"
 dta$days_pl4 <- dta$grp4days4
 dta$days_pl4[(dta$days_pl4==999) |  (dta$mgt_pl4 == "woman")] <- dta$spouse2group_sp4dayssp4[(dta$days_pl4==999) |  (dta$mgt_pl4 == "woman")]
 
 
 dta$mgt_pl5 <- "man"
-dta$mgt_pl5[dta$grp5decide5==1 & dta$spouse2grp_sp5decide_sp5==2 & dta$person_interviewed=="woman"] <- "woman"
-dta$mgt_pl5[dta$grp5decide5==2 & dta$spouse2grp_sp5decide_sp5==1 & dta$person_interviewed=="man"] <- "woman"
+dta$mgt_pl5[dta$grp5decide5==1 & dta$spouse2grp5_sp5decidesp5==2 & dta$person_interviewed=="woman"] <- "woman"
+dta$mgt_pl5[dta$grp5decide5==2 & dta$spouse2grp5_sp5decidesp5==1 & dta$person_interviewed=="man"] <- "woman"
 dta$days_pl5 <- dta$grp5days5
 dta$days_pl5[(dta$days_pl5==999) |  (dta$mgt_pl5 == "woman")] <- dta$spouse2grp5_sp5dayssp5[(dta$days_pl5==999) |  (dta$mgt_pl5 == "woman")]
 
@@ -470,6 +563,27 @@ dta[c("spouse2grp_sp1f37","spouse2grp_sp2g37","spouse2grp_sp3h37","spouse2group_
 dta$kg_dap_sp2 <- rowSums(dta[c("spouse2grp_sp1f37","spouse2grp_sp2g37","spouse2grp_sp3h37","spouse2group_sp4j37", "spouse2grp5_sp5k37")], na.rm=T)
 
 dta$kg_dap <- (dta$kg_dap_sp1 + dta$kg_dap_sp2)/2
+### dap correctly applied?
+dta$dap_cor_sp1 <- rowSums(dta[c("grp1a343","grp2b343","grp3c343","grp4d343","grp5e343")], na.rm=T) > 0
+dta$dap_cor_sp1[is.na(dta$grp1a343) & is.na(dta$grp2b343) & is.na(dta$grp3c343) & is.na(dta$grp4d343) & is.na(dta$grp5e343)] <- NA 
+
+dta$dap_cor_sp2 <- rowSums(dta[c("spouse2grp_sp1f343","spouse2grp_sp2g343","spouse2grp_sp3h343","spouse2group_sp4j343", "spouse2grp5_sp5k343")], na.rm=T) > 0
+dta$dap_cor_sp2[is.na(dta$spouse2grp_sp1f343) & is.na(dta$spouse2grp_sp2g343) & is.na(dta$spouse2grp_sp3h343) & is.na(dta$spouse2group_sp4j343) & is.na(dta$spouse2grp5_sp5k343)] <- NA
+
+dta$dap_cor <- rowSums(dta[c("dap_cor_sp1","dap_cor_sp2")], na.rm=T) > 0
+dta$dap_cor[is.na(dta$dap_cor_sp1) & is.na(dta$dap_cor_sp2)] <- NA 
+
+### dap timely applied?
+dta$dap_time_sp1 <- rowSums(dta[c("grp1a333","grp2b333","grp3c333","grp4d333","grp5e333")], na.rm=T) > 0
+dta$dap_time_sp1[is.na(dta$grp1a333) & is.na(dta$grp2b333) & is.na(dta$grp3c333) & is.na(dta$grp4d333) & is.na(dta$grp5e333)] <- NA 
+
+dta$dap_time_sp2 <- rowSums(dta[c("spouse2grp_sp1f333","spouse2grp_sp2g333","spouse2grp_sp3h333","spouse2group_sp4j333", "spouse2grp5_sp5k333")], na.rm=T) > 0
+dta$dap_time_sp2[is.na(dta$spouse2grp_sp1f333) & is.na(dta$spouse2grp_sp2g333) & is.na(dta$spouse2grp_sp3h333) & is.na(dta$spouse2group_sp4j333) & is.na(dta$spouse2grp5_sp5k333)] <- NA
+
+dta$dap_time <- rowSums(dta[c("dap_time_sp1","dap_time_sp2")], na.rm=T) > 0
+dta$dap_time[is.na(dta$dap_time_sp1) & is.na(dta$dap_time_sp2)] <- NA 
+
+
 ### dap management indicator: here use who decided on the fertilizer (a31)
 dta$mgt_pl1 <- "man"
 dta$mgt_pl1[dta$grp1a31==1 & dta$spouse2grp_sp1f31==2 & dta$person_interviewed=="woman"] <- "woman"
@@ -520,7 +634,28 @@ dta[c("spouse2grp_sp1f36g","spouse2grp_sp2g36g","spouse2grp_sp3h36g","spouse2gro
 dta$kg_urea_sp2 <-rowSums(dta[c("spouse2grp_sp1f36g","spouse2grp_sp2g36g","spouse2grp_sp3h36g","spouse2group_sp4j36g", "spouse2grp5_sp5k36g")], na.rm=T)
 
 dta$kg_urea <- (dta$kg_urea_sp1 + dta$kg_urea_sp2)/2
-### dap management indicator: here use who decided on urea fertilizer (a30a)
+
+### urea correctly applied?
+dta$urea_cor_sp1 <- rowSums(dta[c("grp1a33d2","grp2b33d2","grp3c33d2","grp4d33d2","grp5e33d2")], na.rm=T) > 0
+dta$urea_cor_sp1[is.na(dta$grp1a33d2) & is.na(dta$grp2b33d2) & is.na(dta$grp3c33d2) & is.na(dta$grp4d33d2) & is.na(dta$grp5e33d2)] <- NA 
+
+dta$urea_cor_sp2 <- rowSums(dta[c("spouse2grp_sp1f33d2","spouse2grp_sp2g33d2","spouse2grp_sp3h33d2","spouse2group_sp4j33d2", "spouse2grp5_sp5k33d2")], na.rm=T) > 0
+dta$urea_cor_sp2[is.na(dta$spouse2grp_sp1f33d2) & is.na(dta$spouse2grp_sp2g33d2) & is.na(dta$spouse2grp_sp3h33d2) & is.na(dta$spouse2group_sp4j33d2) & is.na(dta$spouse2grp5_sp5k33d2)] <- NA
+
+dta$urea_cor <- rowSums(dta[c("urea_cor_sp1","urea_cor_sp2")], na.rm=T) > 0
+dta$urea_cor[is.na(dta$urea_cor_sp1) & is.na(dta$urea_cor_sp2)] <- NA 
+
+### urea timely applied?
+dta$urea_time_sp1 <- rowSums(dta[c("grp1a32c4","grp2b32c4","grp3c32c4","grp4d32c4","grp5e32c4")], na.rm=T) > 0
+dta$urea_time_sp1[is.na(dta$grp1a32c4) & is.na(dta$grp2b32c4) & is.na(dta$grp3c32c4) & is.na(dta$grp4d32c4) & is.na(dta$grp5e32c4)] <- NA 
+
+dta$urea_time_sp2 <- rowSums(dta[c("spouse2grp_sp1f32c4","spouse2grp_sp2g32c4","spouse2grp_sp3h32c4","spouse2group_sp4j32c4", "spouse2grp5_sp5k32c4")], na.rm=T) > 0
+dta$urea_time_sp2[is.na(dta$spouse2grp_sp1f32c4) & is.na(dta$spouse2grp_sp2g32c4) & is.na(dta$spouse2grp_sp3h32c4) & is.na(dta$spouse2group_sp4j32c4) & is.na(dta$spouse2grp5_sp5k32c4)] <- NA
+
+dta$urea_time <- rowSums(dta[c("urea_time_sp1","urea_time_sp2")], na.rm=T) > 0
+dta$urea_time[is.na(dta$urea_time_sp1) & is.na(dta$urea_time_sp2)] <- NA 
+
+### urea management indicator: here use who decided on urea fertilizer (a30a)
 dta$mgt_pl1 <- "man"
 dta$mgt_pl1[dta$grp1a30a==1 & dta$spouse2grp_sp1f30a==2 & dta$person_interviewed=="woman"] <- "woman"
 dta$mgt_pl1[dta$grp1a30a==2 & dta$spouse2grp_sp1f30a==1 & dta$person_interviewed=="man"] <- "woman"
@@ -558,6 +693,11 @@ dta$kg_urea_ac_mgt <- rowMeans(dta[c("kg_urea_pl1","kg_urea_pl2","kg_urea_pl3","
 dta$kg_inorg <- dta$kg_dap + dta$kg_urea
 dta$kg_ac_inorg <- dta$kg_inorg/dta$area_tot
 
+dta$inorg_cor <- rowSums(dta[c("dap_cor","urea_cor")], na.rm=T) >0
+dta$inorg_cor[is.na(dta$dap_cor) & is.na(dta$urea_cor)] <- NA
+dta$inorg_time <- rowSums(dta[c("dap_time","urea_time")], na.rm=T) >0
+dta$inorg_time[is.na(dta$dap_time) & is.na(dta$urea_time)] <- NA
+
 ###
 dta[c("kg_urea_pl1","kg_urea_pl2","kg_urea_pl3","kg_urea_pl4","kg_urea_pl5")] <- lapply(dta[c("kg_urea_pl1","kg_urea_pl2","kg_urea_pl3","kg_urea_pl4","kg_urea_pl5")], function(x) replace(x, is.na(x), 0) )
  dta[c("kg_dap_pl1","kg_dap_pl2","kg_dap_pl3","kg_dap_pl4","kg_dap_pl5")]  <- lapply( dta[c("kg_dap_pl1","kg_dap_pl2","kg_dap_pl3","kg_dap_pl4","kg_dap_pl5")], function(x) replace(x, is.na(x), 0) )
@@ -579,6 +719,26 @@ dta$bags_org_sp1 <-rowSums(dta[c("grp1a37g","grp2b37g","grp3c37g","grp4d37g", "g
 dta[c("spouse2grp_sp1f37g","spouse2grp_sp2g37g","spouse2grp_sp3h37g","spouse2group_sp4j37g", "spouse2grp5_sp5k37g")] <- lapply(dta[c("spouse2grp_sp1f37g","spouse2grp_sp2g37g","spouse2grp_sp3h37g","spouse2group_sp4j37g", "spouse2grp5_sp5k37g")], function(x) replace(x, x== 999, NA) )
 dta$bags_org_sp2 <-rowSums(dta[c("spouse2grp_sp1f37g","spouse2grp_sp2g37g","spouse2grp_sp3h37g","spouse2group_sp4j37g", "spouse2grp5_sp5k37g")], na.rm=T)
 dta$bags_org <- (dta$bags_org_sp1 + dta$bags_org_sp2)/2
+
+### organic correctly applied?
+dta$org_cor_sp1 <- rowSums(dta[c("grp1a37d1","grp2b37d1","grp3c37d1","grp4d37d1","grp5e37d1")], na.rm=T) > 0
+dta$org_cor_sp1[is.na(dta$grp1a37d1) & is.na(dta$grp2b37d1) & is.na(dta$grp3c37d1) & is.na(dta$grp4d37d1) & is.na(dta$grp5e37d1)] <- NA 
+
+dta$org_cor_sp2 <- rowSums(dta[c("spouse2grp_sp1f37d1","spouse2grp_sp2g37d1","spouse2grp_sp3h37d1","spouse2group_sp4j37d1", "spouse2grp5_sp5k37d1")], na.rm=T) > 0
+dta$org_cor_sp2[is.na(dta$spouse2grp_sp1f37d1) & is.na(dta$spouse2grp_sp2g37d1) & is.na(dta$spouse2grp_sp3h37d1) & is.na(dta$spouse2group_sp4j37d1) & is.na(dta$spouse2grp5_sp5k37d1)] <- NA
+
+dta$org_cor <- rowSums(dta[c("org_cor_sp1","org_cor_sp2")], na.rm=T) > 0
+dta$org_cor[is.na(dta$org_cor_sp1) & is.na(dta$org_cor_sp2)] <- NA 
+
+### org timely applied?
+dta$org_time_sp1 <- rowSums(dta[c("grp1a37c2","grp2b37c2","grp3c37c2","grp4d37c2","grp5e37c2")], na.rm=T) > 0
+dta$org_time_sp1[is.na(dta$grp1a37c2) & is.na(dta$grp2b37c2) & is.na(dta$grp3c37c2) & is.na(dta$grp4d37c2) & is.na(dta$grp5e37c2)] <- NA 
+
+dta$org_time_sp2 <- rowSums(dta[c("spouse2grp_sp1f37c2","spouse2grp_sp2g37c2","spouse2grp_sp3h37c2","spouse2group_sp4j37c2", "spouse2grp5_sp5k37c2")], na.rm=T) > 0
+dta$org_time_sp2[is.na(dta$spouse2grp_sp1f37c2) & is.na(dta$spouse2grp_sp2g37c2) & is.na(dta$spouse2grp_sp3h37c2) & is.na(dta$spouse2group_sp4j37c2) & is.na(dta$spouse2grp5_sp5k37c2)] <- NA
+
+dta$org_time <- rowSums(dta[c("org_time_sp1","org_time_sp2")], na.rm=T) > 0
+dta$org_time[is.na(dta$org_time_sp1) & is.na(dta$org_time_sp2)] <- NA 
 
 ### organic management indicator: here use who decided on organic fertilizer (a37a)
 dta$mgt_pl1 <- "man"
@@ -613,6 +773,11 @@ dta$bags_org_pl5[is.na(dta$bags_org_pl5) | dta$mgt_pl5 == "woman"]  <- dta$spous
 
 dta$bags_org_mgt <- rowSums(dta[c("bags_org_pl1","bags_org_pl2","bags_org_pl3","bags_org_pl4","bags_org_pl5")], na.rm=T)
 dta$bags_org_ac_mgt <- rowMeans(dta[c("bags_org_pl1","bags_org_pl2","bags_org_pl3","bags_org_pl4","bags_org_pl5")]/dta[c("area_pl1","area_pl2","area_pl3","area_pl4","area_pl5")], na.rm=T)
+
+dta$fert_cor <- rowSums(dta[c("inorg_cor","org_cor")], na.rm=T) > 0
+dta$fert_cor[is.na(dta$inorg_cor) & is.na(dta$org_cor)] <- NA
+dta$fert_time <- rowSums(dta[c("inorg_time","org_time")], na.rm=T) > 0
+dta$fert_time[is.na(dta$inorg_time) & is.na(dta$org_time)] <- NA
 
 ### use of hybird
 ##use longue10h on any plot?
@@ -953,6 +1118,14 @@ dta[c("area_pl1","area_pl2","area_pl3","area_pl4","area_pl5")], na.rm=T)
 dta$kg_impseed <- dta$kg_hybrid + dta$kg_opv
 dta$kg_impseed_mgt <- dta$kg_hybrid_mgt + dta$kg_opv_mgt
 
+## was seed purchased?
+dta$bought_seed_sp1 <- rowSums(cbind(dta$grp1seed_purchase1 =="Yes",dta$grp2seed_purchase2 =="Yes",dta$grp3seed_purchase3 =="Yes",dta$grp4seed_purchase4 =="Yes",dta$grp5seed_purchase5 =="Yes"), na.rm=T) > 0
+dta$bought_seed_sp1[is.na(dta$grp1seed_purchase1)& is.na(dta$grp2seed_purchase2) & is.na(dta$grp3seed_purchase3) & is.na(dta$grp4seed_purchase4) & is.na(dta$grp5seed_purchase5)] <- NA
+dta$bought_seed_sp2<-  rowSums(cbind(dta$spouse2grp_sp1seed_purchasesp1=="Yes", dta$spouse2grp_sp2seed_purchase_sp2=="Yes", dta$spouse2grp_sp3seed_purchasesp3=="Yes", dta$spouse2group_sp4seed_purchasesp4=="Yes", dta$spouse2grp5_sp5seed_purchasesp5=="Yes"),na.rm=T) > 0
+dta$bought_seed_sp2[is.na(dta$spouse2grp_sp1seed_purchasesp1) & is.na(dta$spouse2grp_sp2seed_purchase_sp2) & is.na(dta$spouse2grp_sp3seed_purchasesp3) & is.na(dta$spouse2group_sp4seed_purchasesp4) & is.na(dta$spouse2grp5_sp5seed_purchasesp5)] <- NA
+dta$bought_seed <- rowSums(dta[c("bought_seed_sp1", "bought_seed_sp2")], na.rm=T) > 0
+dta$bought_seed[is.na(dta$bought_seed_sp1) & is.na(dta$bought_seed_sp2)] <- NA
+
 ### combiner: use improved seed + fertilizer on at least one plot (A29==yes & A42==yes)
 
 dta$combiner_sp1 <- rowSums( cbind((dta$grp1a29=="Yes" & dta$grp1a42 == "Yes"),(dta$grp2b29=="Yes" & dta$grp2b42 == "Yes"),(dta$grp3c29=="Yes" & dta$grp3c42 == "Yes"),(dta$grp4d29=="Yes" & dta$grp4d42 == "Yes"),(dta$grp5e29=="Yes" & dta$grp5e42 == "Yes")), na.rm=T) > 0
@@ -982,6 +1155,8 @@ dta$labour_sp2 <-  rowSums(cbind((dta$spouse2grp_sp1f151 == "Yes"),(dta$spouse2g
 
 dta$labour <- (dta$labour_sp1 + dta$labour_sp2) > 0
 
+
+
 #### calculated consumption expenditure
 dta[c("maize_value", "sorghum_value", "millet_value", "rice_value", "cassava_value", "sweetpotatoes_value", "beans_value", "gnuts_value", "fruits_value", "veg_value", "sugar_value", "cooking_oil_value", "soap_value", "airtime_value")] <- 
 lapply(dta[c("maize_value", "sorghum_value", "millet_value", "rice_value", "cassava_value", "sweetpotatoes_value", "beans_value", "gnuts_value", "fruits_value", "veg_value", "sugar_value", "cooking_oil_value", "soap_value", "airtime_value")], function(x) replace(x, x == 999, NA) )
@@ -993,25 +1168,88 @@ lapply(dta[c("spouse2maize_value_sp", "spouse2sorghum_value_sp", "spouse2millet_
 
 dta$cons_sp2 <- rowSums(dta[c("spouse2maize_value_sp", "spouse2sorghum_value_sp", "spouse2millet_value_sp", "spouse2rice_value_sp", "spouse2cassava_value_sp", "spouse2sweetpotatoes_value_sp", "spouse2beans_value_sp", "spouse2gnuts_value_sp", "spouse2fruits_value_sp", "spouse2veg_value_sp", "spouse2sugar_value_sp", "spouse2cooking_oil_value_sp", "spouse2soap_value_sp", "spouse2airtime_value_sp")], na.rm=T)
 
-dta$cons <- dta$cons_sp1 + dta$cons_sp2
+dta$cons <- rowMeans(dta[c("cons_sp1","cons_sp2")], na.rm=T)
 dta$cons[dta$cons == 0] <- NA
+
+dta$cons_maize_yes <- rowSums(cbind(dta$maize_cons=="Yes", dta$spouse2maize_sp=="Yes"), na.rm=T)
+dta$cons_maize_yes[is.na(dta$maize_cons) & is.na(dta$spouse2maize_sp) ] <- NA
+
+dta$cons_maize_val <- rowSums(dta[c("maize_value","spouse2maize_value_sp")], na.rm=T)
+dta$cons_maize_val[is.na(dta$maize_cons) & is.na(dta$spouse2maize_sp) ] <- NA
+
+##sold maize?q71
+dta$sold_maize <- rowSums(cbind(dta$q71=="Yes",dta$spouse2r71=="Yes"), na.rm=T) >0
+dta$sold_maize[is.na(dta$q71) & is.na(dta$spouse2r71)] <- NA
+
+##kept maize for seed q70
+dta$spouse2r70[dta$spouse2r70== "999"] <- NA
+dta$q70[dta$q70== 999] <- NA
+dta$spouse2r70 <- as.numeric(as.character(dta$spouse2r70))
+dta$save_seed <- rowSums(dta[c("q70","spouse2r70")], na.rm=T) >0
+dta$save_seed[is.na(dta$q70) & is.na(dta$spouse2r70)] <- NA
 
 ### better off than average?
 dta$better_av <- rowSums(dta[c("q409","spouse2r409")], na.rm=T) ==1
+dta$better_av[is.na(dta$q409) & is.na(dta$spouse2r409)] <- NA
 
 ### better off than 6 mo ago?
 dta$better_6m <- rowSums(dta[c("q110","spouse2r110")], na.rm=T) ==1
-
+dta$better_6m[is.na(dta$q110) & is.na(dta$spouse2r110)] <- NA
 
 ### can eat preferred food
-dta$eatpref <- NA
-dta$eatpref <- dta$q111=="No"
-dta$eatpref[is.na(dta$eatpref)] <-  dta$spouse2r111[is.na(dta$eatpref)] == "No"
+dta$eatpref <- rowSums(cbind( dta$q111=="No", dta$spouse2r111=="No"), na.rm=T) > 0 
+dta$eatpref[is.na(dta$q111) & is.na( dta$spouse2r111)] <- NA
 
 ### has enough food to eat? 
-dta$eatenough <- NA
-dta$eatenough <- dta$q112=="No"
-dta$eatenough[is.na(dta$eatenough)] <-  dta$spouse2r112[is.na(dta$eatenough)] == "No"
+
+dta$eatenough <- rowSums(cbind( dta$q112=="No", dta$spouse2r112=="No"), na.rm=T) > 0 
+dta$eatenough[is.na(dta$q112) & is.na( dta$spouse2r112)] <- NA
+
+
+### communication within household
+dta$both_tell <- (dta$q100 <2) & (dta$spouse2r100 <2)
+dta$spouses_listen  <- (dta$q101 == 2) & (dta$spouse2r101 ==2)
+
+### merge in calls made to ivr system
+
+ivr_log <- read.csv("/home/bjvca/data/projects/digital green/endline/data/raw/ivr_log.csv")
+callers <- data.frame(names(table(ivr_log$Phone.Number)))
+names(callers) <- "tel"
+tels <- read.csv("/home/bjvca/data/projects/digital green/endline/data/working/tels.csv")[c("HHID","tel")]
+tels$tel <- paste("256",tels$tel, sep="")
+callers <- merge(callers,tels)
+callers$called <- TRUE 
+callers$tel <- NULL
+dta <- merge(dta, callers,by.x="hhid", by.y="HHID" ,all.x=T)
+dta$called[is.na(dta$called)] <- FALSE
+
+### read in sms log
+sms_log <- read.csv("/home/bjvca/data/projects/digital green/endline/data/raw/sms_log.csv")[c("Subscriber.Phone", "Scheduled.Date", "Status")]
+      
+## only keep the ones that were delivered
+sms_log <- subset(sms_log, Status == "Finished (complete)")
+
+## get IDS of phone numbers for merging log to dataset
+IDs <- read.csv("/home/bjvca/data/projects/digital green/baseline/tel.csv")[c("HHID","tel")]
+IDs$tel <- paste("256",IDs$tel, sep="")
+sms_log <- merge(IDs, sms_log, by.x = "tel", by.y="Subscriber.Phone")
+sms_log <- reshape(sms_log,v.names = "Scheduled.Date", idvar = "HHID",timevar="Scheduled.Date", direction = "wide")
+
+sms_log$rec_weed_third_8 <- !is.na(sms_log$"Scheduled.Date.2017-10-17") | !is.na(sms_log$"Scheduled.Date.2017-10-25")
+sms_log$rec_urea_7 <- !is.na(sms_log$"Scheduled.Date.2017-09-26") 
+sms_log$rec_weed_second_6 <- !is.na(sms_log$"Scheduled.Date.2017-09-19") 
+sms_log$rec_striga_5 <- !is.na(sms_log$"Scheduled.Date.2017-09-14") 
+sms_log$rec_weed_first_4 <- !is.na(sms_log$"Scheduled.Date.2017-09-12")  | !is.na(sms_log$"Scheduled.Date.2017-09-13") ### the sms guys made a big mistake here, about 600 households got sms 3 twice and did not get 4
+sms_log$rec_seed_1 <- !is.na(sms_log$"Scheduled.Date.2017-08-29") | !is.na(sms_log$"Scheduled.Date.2017-08-31") 
+sms_log$rec_spacing_2 <- !is.na(sms_log$"Scheduled.Date.2017-09-05") |  !is.na(sms_log$"Scheduled.Date.2017-09-06")
+sms_log$rec_gapfill_3 <- !is.na(sms_log$"Scheduled.Date.2017-09-07") | !is.na(sms_log$"Scheduled.Date.2017-09-08") | !is.na(sms_log$"Scheduled.Date.2017-09-11")
+
+sms_log <- sms_log[c("HHID","rec_seed_1", "rec_spacing_2" ,"rec_gapfill_3", "rec_weed_first_4", "rec_striga_5", "rec_weed_second_6", "rec_urea_7", "rec_weed_third_8")] 
+sms_log$totsms <- rowSums(sms_log[2:9])
+dta <- merge(dta, sms_log, by.x="hhid", by.y="HHID", all.x=T)
+dta$totsms[is.na(dta$totsms)] <- 0
+
+write.csv(dta, "/home/bjvca/Dropbox (IFPRI)/admin/AWS.csv")
 
 ########################################### function definitions #################################
 ## RI: a function to calculate the single sided RI p-values
@@ -1021,6 +1259,7 @@ dta$eatenough[is.na(dta$eatenough)] <-  dta$spouse2r112[is.na(dta$eatenough)] ==
 
 ### a function to calculate the single sided RI p-values
 RI <- function(dep, indep, dta , nr_repl = 1000) {
+
 	### determines treatmetn cell
 	dta <- dta %>% 
     		mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
@@ -1041,25 +1280,16 @@ RI <- function(dep, indep, dta , nr_repl = 1000) {
 		dta_sim$recipient[dta_sim$perm == 1  |dta_sim$perm == 2  |dta_sim$perm == 8 |dta_sim$perm == 10  ] <- "male"
 		dta_sim$recipient[dta_sim$perm == 3  |dta_sim$perm == 4  |dta_sim$perm == 9 |dta_sim$perm == 11  ] <- "female"
 		dta_sim$recipient[dta_sim$perm == 5  |dta_sim$perm == 6  |dta_sim$perm == 7 |dta_sim$perm == 12  ] <- "couple"
-		return( if (crit >0) {
-			summary(lm(as.formula(paste(dep,indep,sep="~")), data=dta_sim))$coefficients[2,1] > crit 
-			} else {
-			summary(lm(as.formula(paste(dep,indep,sep="~")), data=dta_sim))$coefficients[2,1] < crit 
-			} )
+		return(abs(summary(lm(as.formula(paste(dep,indep,sep="~")), data=dta_sim))$coefficients[2,1]) > abs(crit) )
 	}
 	return(sum(oper)/nr_repl)
 }
 
-### this can go
-FSR2 <- function(deps, indep, dta ,pvals = NULL, nr_repl = 1000) {
-# use: FSR2( c("know_space","know_combine","know_weed") ,"messenger != 'ctrl'" ,dta_bal, nr_repl = totrep)
-	### determines treatmetn cell
+### 
+FSR_OLS <- function(deps, indep, dta, nr_repl = 1000) {
+# use: FSR_OLS( c("know_space","know_combine","know_weed","know_armyworm") ,"messenger != 'ctrl'" ,dta_bal, nr_repl = totrep)
 
-#deps <- c("space","striga","weed", "fert","impseed")
-#indep <- "messenger != 'ctrl'"
-#dta <- dta_bal
-# pvals <- c(0,0,0.2727,0.0036,0.155)
-#nr_repl <- 100
+	### determines treatmetn cell
 	dta <- dta %>% 
     		mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
 	### allocates unique ID based on treatment cell status and village
@@ -1070,13 +1300,10 @@ FSR2 <- function(deps, indep, dta ,pvals = NULL, nr_repl = 1000) {
 beta <- array(NA,length(deps))
 pval <- array(NA,length(deps))
 
-if (is.null(pvals)) {
 for (i in 1:length(deps)) {
 pval[i] <- summary(lm(as.formula(paste(deps[i],indep,sep="~")), data=dta))$coefficients[2,4]
 }
-} else {
-pval <- pvals
-}	
+	
 	Ord <- order(pval)
 pval <- pval[Ord]
 deps <- deps[Ord]
@@ -1085,9 +1312,8 @@ deps <- deps[Ord]
 	TestStatResamp <- matrix(nrow=nr_repl, ncol=NSnps)
 	TestStatResamp2 <- matrix(nrow=nr_repl, ncol=NSnps)
 
-oper <- foreach (repl = 1:nr_repl,.combine=cbind) %dopar% {
+oper <- foreach (repl = 1:nr_repl,.combine=rbind) %dopar% {
 
-#	for (i in 1:nr_repl) {
  		resample <- function(x, ...) x[sample.int(length(x), ...)]
 		dta_sim$perm <- unlist(sapply(names(table(dta$uniqID)), function(x) resample(dta$treat[dta$uniq==x])))
 		dta_sim$messenger[dta_sim$perm == 1  |dta_sim$perm == 3  |dta_sim$perm == 5  ] <- "male"
@@ -1097,22 +1323,24 @@ oper <- foreach (repl = 1:nr_repl,.combine=cbind) %dopar% {
 		dta_sim$recipient[dta_sim$perm == 1  |dta_sim$perm == 2  |dta_sim$perm == 8 |dta_sim$perm == 10  ] <- "male"
 		dta_sim$recipient[dta_sim$perm == 3  |dta_sim$perm == 4  |dta_sim$perm == 9 |dta_sim$perm == 11  ] <- "female"
 		dta_sim$recipient[dta_sim$perm == 5  |dta_sim$perm == 6  |dta_sim$perm == 7 |dta_sim$perm == 12  ] <- "couple"
+		return(unlist(lapply(deps, function(dvar) summary(lm(as.formula(paste(dvar,indep,sep="~")), data=dta_sim))$coefficients[2,4])))
+	
+		}
+oper <- data.frame((oper))
+for (i in 1:dim(oper)[1]) {
 		for (j in 1:length(deps)) {
-			TestStatResamp[i,j] <- summary(lm(as.formula(paste(deps[j],indep,sep="~")), data=dta_sim))$coefficients[2,4]
+			oper[i,j] <- min(oper[i,j:length(deps)])
 		}
-		for (j in 1:length(deps)) {
-			TestStatResamp2[i,j] <- min(TestStatResamp[i,j:length(deps)])
-		}
-		return(TestStatResamp2)
-		}
+}
+	
 
-Padj <- apply(t(matrix(rep(pval,nr_repl),NSnps)) > TestStatResamp2, 2, mean)
+Padj <- apply(t(matrix(rep(pval,nr_repl),NSnps)) > oper, 2, mean)
 Padj1 <- Padj
 Padj2 <- Padj
 		for (j in 1:length(deps)) {
 			Padj2[j] <- max(Padj1[1:j])
 		}
-return(list(Ord, deps,Padj1, Padj2))
+return(list(Ord, deps,Padj1, Padj2[Ord]))
 }
 
 
@@ -1124,7 +1352,7 @@ FSR_RI <- function(deps, indep, dta ,pvals = NULL, nr_repl_ri = 1000, nr_repl_pi
 #	library(doParallel)
 #	cl <- makeCluster(detectCores(all.tests = FALSE, logical = TRUE))
 #	registerDoParallel(cl)
-### important note: p-value significant digits need to correspond to the number of simulations nr_repl_pi
+### important note: p-value significant digits need to correspond to the number of simulations nr_repl_pi, hence round(pvals,nr_repl_pi/100) in code below
 ### eg: if pval = 0.001, then it is advised to set nr_repl_pi >= 1000
 ## The function assumes p-values are determened using RI on the difference between treatment and control (ie. calculating the proportion of randomizations where the T-C difference exceeds the acutal T-C difference) for each hypothesis seperately. These are the p-values that need to be supplied in pvals.
 ## Next, p-values are determined based in nr_repl_ri randomizations. For each outcome, the difference between treatment and control is compared to the acutal difference and proportions are again determined. Note that here, each time one and the same randomization draw is used to test the different outcomes seperately. Once p-values are determined using these nr_repl_ri draws, monotonicity is enfored with respect to the original ordering of p-values.
@@ -1141,7 +1369,7 @@ pval <- array(NA,length(deps))
 for (i in 1:length(deps)) {
 beta[i]  <- summary(lm(as.formula(paste(deps[i],indep,sep="~")), data=dta))$coefficients[2,1]
 }
-pval <- pvals
+pval <- round(pvals,nr_repl_pi/100)
 Ord <- order(pval)
 pval <- pval[Ord]
 deps <- deps[Ord]
@@ -1193,7 +1421,8 @@ Padj2 <- Padj
 			Padj2[j] <- max(Padj1[1:j])
 		}
 ## return ordering, dependent variables, adjusted p-vals before and after final monotonicity enforcement
-return(list(Ord, deps,Padj1, Padj2))
+
+return(list(Ord, deps,Padj1, Padj2[Ord]))
 }
 
 
@@ -1203,26 +1432,89 @@ trim <- function(var, dataset, trim_perc=.1) {
 return( subset(dataset,dataset[var] > quantile(dataset[var],c(trim_perc/2,1-(trim_perc/2)), na.rm=T)[1] & dataset[var] < quantile(dataset[var], c(trim_perc/2,1-(trim_perc/2)),na.rm=T)[2]) )
 }
 
-FW_index <- function(treat, indexer, data, nr_repl=1000) {
-### function to make family wise index using covariance as weights (following)
-### FW_index("messenger != 'ctrl' ", c("log_prod_tot", "log_area_tot", "log_yield_av"),dta_bal2)
-colSd <- function (x, na.rm=FALSE) apply(X=x, MARGIN=2, FUN=sd, na.rm=na.rm)
+FW_index <- function(treat, indexer, data,revcols = NULL, nr_repl=0) {
+### function to make family wise index using covariance as weights (following http://cyrussamii.com/?p=2656)
+### FW_index("messenger != 'ctrl' ", c("know_space", "know_combine", "know_weed"),dta)
+data <- data[complete.cases(data[indexer]),]
+x <- data[indexer]
 
-data[indexer] <- (data[indexer] - colMeans(data[indexer], na.rm=T))/colSd(data[indexer], na.rm=T)
-
-mat <- var(cbind(data[indexer]), na.rm=T)
-diag(mat) <- 0
-rs <- 1/rowSums(mat )
-data$index <- t( t(as.matrix(rs/sum(rs))) %*% t(cbind(data[indexer])))
-mod <- summary(lm(as.formula(paste("index", treat, sep="~")), data=data ) )
-data$index <- as.vector(data$index)
-sig <- RI("index" ,treat , data, nr_repl = nr_repl)
+				for(j in 1:ncol(x)){
+					x[,j] <- (x[,j] - mean(x[,j]))/sd(x[,j])
+				}
+if(length(revcols)>0){
+						x[,revcols] <-  -1*x[,revcols]
+					}
+					i.vec <- as.matrix(rep(1,ncol(x)))
+					Sx <- cov(x)
+					
+					data$index <- t(solve(t(i.vec)%*%solve(Sx)%*%i.vec)%*%t(i.vec)%*%solve(Sx)%*%t(x))
+mod <- summary(lm(as.formula(paste("index",treat,sep="~")) , data=data))
+					
+if (nr_repl > 0) { 
+	data$index <- as.vector(data$index)
+	sig <- RI("index" ,treat , data, nr_repl = nr_repl)
+} else {
+	sig <- summary(lm(as.formula(paste("index",treat,sep="~")) , data=data))$coefficients[2,4]
+}
 return(list(mod,sig))
 }
 
 
+### inter
+###decsion to plant maize on plot:
+
+dta$decplot1_m <- NA
+dta$decplot2_m <- NA
+dta$decplot3_m <- NA
+dta$decplot4_m <- NA
+dta$decplot5_m <- NA
+
+dta[!is.na(dta$person_interviewed) & dta$person_interviewed == "man",c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m")] <- dta[!is.na(dta$person_interviewed) & dta$person_interviewed == "man",c("grp1decide1","grp2decide2","grp3decide3","grp4decide4","grp5decide5")]
+
+dta[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman",c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m")] <- dta[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman",c("spouse2grp_sp1decide_sp1","spouse2grp_sp2decide_sp2","spouse2grp_sp3decide_sp3","spouse2group_sp4decidesp4","spouse2grp5_sp5decidesp5")]
+
+dta$decplot1_f <- NA
+dta$decplot2_f <- NA
+dta$decplot3_f <- NA
+dta$decplot4_f <- NA
+dta$decplot5_f <- NA
+
+dta[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman",c("decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f")] <- dta[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman",c("grp1decide1","grp2decide2","grp3decide3","grp4decide4","grp5decide5")]
+
+dta[!is.na(dta$person_interviewed) & dta$person_interviewed == "man",c("decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f")] <- dta[!is.na(dta$person_interviewed) & dta$person_interviewed == "man",c("spouse2grp_sp1decide_sp1","spouse2grp_sp2decide_sp2","spouse2grp_sp3decide_sp3","spouse2group_sp4decidesp4","spouse2grp5_sp5decidesp5")]
+
+dta$dectogether <- rowSums( dta[c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m" )] ==  dta[c("decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f" )] & (dta[c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m" )] + dta[c("decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f" )]==6) ,na.rm=T) >0
+dta$dectogether[rowSums(is.na(dta[c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m" )]))==5 &  rowSums(is.na(dta[c("decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f" )]))==5 ]  <- NA
+#strong: decide together to plant maize on all maize plots
+dta$dectogether_all <- rowMeans( dta[c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m" )] ==  dta[c("decplot1_f","decplot2_f","decplot3_f", 
+"decplot4_f", "decplot5_f" )] & (dta[c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m" )] + dta[c("decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f" )]==6) ,na.rm=T) ==1
+dta$dectogether_all[is.na(dta$dectogether_s)] <- FALSE
+dta$dectogether_all[rowSums(is.na(dta[c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m" )]))==5 &  rowSums(is.na(dta[c("decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f" )]))==5 ]  <- NA
+
+dta$decmale <-  rowSums( dta[c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m" )] == 1 &  dta[c("decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f" )]==2 ,na.rm=T) >0
+dta$decmale[rowSums(is.na(dta[c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m" )]))==5 &  rowSums(is.na(dta[c("decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f" )]))==5 ]  <- NA
+
+dta$decmale_all <-  rowMeans( dta[c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m" )] == 1 &  dta[c("decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f" )]==2 ,na.rm=T) ==1
+dta$decmale_all[rowSums(is.na(dta[c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m" )]))==5 &  rowSums(is.na(dta[c("decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f" )]))==5 ]  <- NA
+
+dta$decfemale <-  rowSums( dta[c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m" )] == 2 &  dta[c("decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f" )]==1 ,na.rm=T) >0
+dta$decfemale[rowSums(is.na(dta[c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m" )]))==5 &  rowSums(is.na(dta[c("decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f" )]))==5 ]  <- NA
+
+dta$decfemale_all <-  rowMeans( dta[c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m" )] == 2 &  dta[c("decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f" )]==1 ,na.rm=T) == 1
+dta$decfemale[rowSums(is.na(dta[c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m" )]))==5 &  rowSums(is.na(dta[c("decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f" )]))==5 ]  <- NA
+
+temp_m <- dta[c("hhid","decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m" )]
 
 
+#longdecide_m <- reshape(temp_m, varying = c("decplot1_m","decplot2_m","decplot3_m", "decplot4_m", "decplot5_m" ),v.names="decide", idvar="hhid", direction="long")
+
+#temp_f <- dta[c("hhid","decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f" )]
+
+
+#longdecide_f <- reshape(temp_f, varying = c("decplot1_f","decplot2_f","decplot3_f", "decplot4_f", "decplot5_f" ),v.names="decide", idvar="hhid", direction="long")
+#decidemaize <- cbind(longdecide_m, longdecide_f$decide)
+#names(decidemaize) <- c("hhid","plot","dec_m","dec_f")
+#decidemaize <- subset(decidemaize, !is.na(dec_m) | !is.na(dec_f))
 
 
 

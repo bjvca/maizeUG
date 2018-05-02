@@ -137,9 +137,79 @@ weed2$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
 weed2$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
 weed2$time <- 2
 
-all <- rbind(time1, time2)
-small <- rbind(small1,small2)
-weed <- rbind(weed1,weed2)
+############### now for endline
+dta <- read.csv("/home/bjvca/data/projects/digital green/endline/data/working/knowledge_3.csv")
+dta <- subset(dta, !is.na(recipient))
+## any of the two
+dta$know_space <- NA
+ 
+dta$know_space[!is.na(dta$recipient)] <-  rowSums(cbind(dta$know_space_m[!is.na(dta$recipient)] ,  dta$know_space_w[!is.na(dta$recipient)]),na.rm=T) >0
+#if both NA, set to NA
+dta$know_space[is.na(dta$know_space_m) & is.na( dta$know_space_w) ] <- NA
+
+dta$know_small <- NA
+  
+dta$know_small[!is.na(dta$recipient)] <-  rowSums(cbind(dta$know_combine_m[ !is.na(dta$recipient)] ,  dta$know_combine_w[!is.na(dta$recipient)]),na.rm=T) >0
+#if both NA, set to NA
+dta$know_small[is.na(dta$know_combine_m ) & is.na( dta$know_combine_w) ] <- NA
+
+dta$know_weed <- NA
+]  
+dta$know_weed[!is.na(dta$recipient)] <-  rowSums(cbind(dta$know_weed_m[!is.na(dta$recipient)] ,  dta$know_combine_w[!is.na(dta$recipient)]),na.rm=T) >0
+#if both NA, set to NA
+dta$know_weed[is.na(dta$know_weed_m) & is.na( dta$know_weed_w) ] <- NA
+
+dta$messenger <- as.character(dta$messenger)
+s_h1 <- min(table(dta$messenger[dta$messenger != "ctrl"], dta$recipient[dta$messenger != "ctrl"]))
+
+dta_bal <- rbind(dta[dta$messenger=="ctrl",],
+ dta[dta$messenger=="couple" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "couple",]),s_h1),],
+ dta[dta$messenger=="male" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "couple",]),s_h1),],
+ dta[dta$messenger=="female" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "couple",]),s_h1),],
+ dta[dta$messenger=="female" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "male",]),s_h1),],
+ dta[dta$messenger=="female" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "female",]),s_h1),],
+ dta[dta$messenger=="male" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "male",]),s_h1),],
+ dta[dta$messenger=="male" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "female",]),s_h1),],
+ dta[dta$messenger=="couple" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "male",]),s_h1),],
+ dta[dta$messenger=="couple" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "female",]),s_h1),])
+
+prop.test(t(table(dta_bal$know_space, dta_bal$messenger!="ctrl")))
+prop.test(t(table(dta_bal$know_small, dta_bal$messenger!="ctrl")))
+prop.test(t(table(dta_bal$know_weed, dta_bal$messenger!="ctrl")))
+
+#endline
+
+means <- tapply(dta_bal$know_space,dta_bal$messenger!="ctrl", FUN=mean, na.rm=T)
+
+time3 <- data.frame(tapply(dta_bal$know_space,dta_bal$messenger!="ctrl", FUN=mean, na.rm=T))
+names(time3) <- "mean"
+time3$group <- rownames(time3)
+time3$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+time3$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+time3$time <- 3
+
+means <- tapply(dta_bal$know_small,dta_bal$messenger!="ctrl", FUN=mean, na.rm=T)
+small3 <- data.frame(tapply(dta_bal$know_small,dta_bal$messenger!="ctrl", FUN=mean, na.rm=T))
+names(small3) <- "mean"
+small3$group <- rownames(small3)
+small3$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+small3$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+small3$time <- 3
+
+means <- tapply(dta_bal$know_weed,dta_bal$messenger!="ctrl", FUN=mean, na.rm=T)
+weed3 <- data.frame(tapply(dta_bal$know_weed,dta_bal$messenger!="ctrl", FUN=mean, na.rm=T))
+names(weed3) <- "mean"
+weed3$group <- rownames(weed3)
+weed3$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+weed3$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+weed3$time <- 3
+
+#######################
+
+
+all <- rbind(time1, time2, time3)
+small <- rbind(small1,small2,small3)
+weed <- rbind(weed1,weed2, weed3)
 
 all$time <- as.factor(all$time)
 small$time <- as.factor(all$time)
@@ -172,9 +242,9 @@ p3 <- ggplot(weed, aes(x=time, y=mean, group=group, color=group)) +
   geom_pointrange(aes(ymin=up, ymax=down))+ ylab("proportion of correct answers")+ ggtitle("weeding", subtitle = NULL) + theme(plot.title = element_text(hjust = 0.5))
 
 require(gridExtra)
-pdf("/home/bjvca/data/projects/digital green/papers/ICAE/h0_all.pdf")
+#pdf("/home/bjvca/data/projects/digital green/papers/ICAE/h0_all.pdf")
 grid.arrange(p1, p2, p3, ncol=3)
-dev.off()
+#dev.off()
 ########################### H1 #####################################
 rm(list=ls())
 library(foreign)
@@ -251,7 +321,7 @@ weed1$group <- rownames(small1)
 weed1$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
 weed1$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
 weed1$time <- 1
-
+## midline
 library(foreign)
 dta <- read.dta("/home/bjvca/data/projects/digital green/midline/DLECvisit2v1.dta")
 dta$know_space <- dta$hhvideomaizeoptimal_spacing == "a"
@@ -319,9 +389,90 @@ weed2$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
 weed2$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
 weed2$time <- 2
 
-all <- rbind(time1, time2)
-small <- rbind(small1,small2)
-weed <- rbind(weed1,weed2)
+############### now for endline
+dta <- read.csv("/home/bjvca/data/projects/digital green/endline/data/working/knowledge_3.csv")
+dta <- subset(dta, !is.na(recipient))
+## decide who 
+dta$know_space <- NA
+ 
+dta$know_space[!is.na(dta$recipient)] <-  rowSums(cbind(dta$know_space_m[!is.na(dta$recipient)] ,  dta$know_space_w[ !is.na(dta$recipient)]),na.rm=T) >0
+#if both NA, set to NA
+dta$know_space[is.na(dta$know_space_m ) & is.na( dta$know_space_w) ] <- NA
+
+dta$know_small <- NA
+
+dta$know_small[!is.na(dta$recipient)] <-  rowSums(cbind(dta$know_combine_m[ !is.na(dta$recipient)] ,  dta$know_combine_w[ !is.na(dta$recipient)]),na.rm=T) >0
+#if both NA, set to NA
+dta$know_small[is.na(dta$know_combine_m ) & is.na( dta$know_combine_w) ] <- NA
+
+dta$know_weed <- NA
+
+dta$know_weed[!is.na(dta$recipient)] <-  rowSums(cbind(dta$know_weed_m[!is.na(dta$recipient)] ,  dta$know_combine_w[!is.na(dta$recipient)]),na.rm=T) >0
+#if both NA, set to NA
+dta$know_weed[is.na(dta$know_weed_m ) & is.na( dta$know_weed_w) ] <- NA
+
+dta$messenger <- as.character(dta$messenger)
+
+dta <- subset(dta, messenger != "ctrl")
+
+#### make sure to balance before doing tests, but we should actually also do this for the above treatment control comparison
+## sample size for balance H0
+s_h0 <- min(table(dta$messenger, dta$recipient)[,1])
+## sample size for balance H1
+s_h1 <- min(table(dta$messenger, dta$recipient)[,-1])
+
+dta_bal <- rbind( dta[dta$messenger=="couple" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "couple",]),s_h0),],
+ dta[dta$messenger=="male" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "couple",]),s_h0),],
+ dta[dta$messenger=="female" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "couple",]),s_h0),],
+
+ dta[dta$messenger=="female" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "male",]),s_h1),],
+ dta[dta$messenger=="female" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "female",]),s_h1),],
+ dta[dta$messenger=="male" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "male",]),s_h1),],
+ dta[dta$messenger=="male" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "female",]),s_h1),],
+ dta[dta$messenger=="couple" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "male",]),s_h1),],
+ dta[dta$messenger=="couple" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "female",]),s_h1),])
+
+
+### info assymmetry effect
+
+prop.test(t(table(dta$know_space, dta$recipient=="couple")))
+prop.test(t(table(dta$know_small, dta$recipient=="couple")))
+prop.test(t(table(dta$know_weed, dta$recipient=="couple")))
+
+prop.test(t(table(dta_bal$know_space, dta_bal$recipient=="couple")))
+prop.test(t(table(dta_bal$know_small, dta_bal$recipient=="couple")))
+prop.test(t(table(dta_bal$know_weed, dta_bal$recipient=="couple")))
+
+
+means <- tapply(dta_bal$know_space,dta_bal$recipient=="couple", FUN=mean, na.rm=T)
+
+time3 <- data.frame(tapply(dta_bal$know_space,dta_bal$recipient=="couple", FUN=mean, na.rm=T))
+names(time3) <- "mean"
+time3$group <- rownames(time3)
+time3$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+time3$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+time3$time <- 3
+
+means <- tapply(dta_bal$know_small,dta_bal$recipient=="couple", FUN=mean,na.rm=T)
+small3 <- data.frame(tapply(dta_bal$know_small,dta_bal$recipient=="couple", FUN=mean, na.rm=T))
+names(small3) <- "mean"
+small3$group <- rownames(small2)
+small3$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+small3$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+small3$time <- 3
+
+means <- tapply(dta_bal$know_weed,dta_bal$recipient=="couple", FUN=mean, na.rm=T)
+weed3 <- data.frame(tapply(dta_bal$know_weed,dta_bal$recipient=="couple", FUN=mean, na.rm=T))
+names(weed3) <- "mean"
+weed3$group <- rownames(weed2)
+weed3$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+weed3$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+weed3$time <- 3
+#####
+
+all <- rbind(time1, time2, time3)
+small <- rbind(small1,small2, small3)
+weed <- rbind(weed1,weed2, weed3)
 
 all$time <- as.factor(all$time)
 small$time <- as.factor(all$time)
@@ -354,9 +505,9 @@ p3 <- ggplot(weed, aes(x=time, y=mean, group=group, color=group)) +
   geom_pointrange(aes(ymin=up, ymax=down))+ ylab("proportion of correct answers")+ ggtitle("weeding", subtitle = NULL) + theme(plot.title = element_text(hjust = 0.5))
 
 require(gridExtra)
-pdf("/home/bjvca/data/projects/digital green/papers/ICAE/h1_all.pdf")
+#pdf("/home/bjvca/data/projects/digital green/papers/ICAE/h1_all.pdf")
 grid.arrange(p1, p2, p3, ncol=3)
-dev.off()
+#dev.off()
 
 ########################### H2 #####################################
 
@@ -493,9 +644,81 @@ weed2$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
 weed2$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
 weed2$time <- 2
 
-all <- rbind(time1, time2)
-small <- rbind(small1,small2)
-weed <- rbind(weed1,weed2)
+############### now for endline
+dta <- read.csv("/home/bjvca/data/projects/digital green/endline/data/working/knowledge_3.csv")
+dta <- subset(dta, !is.na(recipient))
+## decide who 
+dta$know_space <- NA
+  
+dta$know_space[ !is.na(dta$recipient)] <-  rowSums(cbind(dta$know_space_m[!is.na(dta$recipient)] ,  dta$know_space_w[!is.na(dta$recipient)]),na.rm=T) >0
+#if both NA, set to NA
+dta$know_space[is.na(dta$know_space_m ) & is.na( dta$know_space_w) ] <- NA
+
+dta$know_small <- NA
+
+dta$know_small[ !is.na(dta$recipient)] <-  rowSums(cbind(dta$know_combine_m[!is.na(dta$recipient)] ,  dta$know_combine_w[!is.na(dta$recipient)]),na.rm=T) >0
+#if both NA, set to NA
+dta$know_small[is.na(dta$know_combine_m ) & is.na( dta$know_combine_w) ] <- NA
+
+dta$know_weed <- NA
+
+dta$know_weed[ !is.na(dta$recipient)] <-  rowSums(cbind(dta$know_weed_m[!is.na(dta$recipient)] ,  dta$know_combine_w[!is.na(dta$recipient)]),na.rm=T) >0
+#if both NA, set to NA
+dta$know_weed[is.na(dta$know_weed_m ) & is.na( dta$know_weed_w) ] <- NA
+
+dta$messenger <- as.character(dta$messenger)
+
+dta <- subset(dta, messenger != "ctrl")
+
+#### make sure to balance before doing tests
+## sample size for balance H0 -  basically table(dta$recipient[dta$messenger == "couple"])
+s_h0 <- min(table(dta$messenger, dta$recipient)[1,])
+
+## sample size for balance H1
+s_h1 <- min(table(dta$messenger, dta$recipient)[-1,])
+
+dta_bal <- rbind( dta[dta$messenger=="couple" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "couple",]),s_h0),],
+ dta[dta$messenger=="male" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "couple",]),s_h1),],
+ dta[dta$messenger=="female" & dta$recipient == "couple",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "couple",]),s_h1),],
+
+ dta[dta$messenger=="female" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "male",]),s_h1),],
+ dta[dta$messenger=="female" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "female",]),s_h1),],
+ dta[dta$messenger=="male" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "male",]),s_h1),],
+ dta[dta$messenger=="male" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "female",]),s_h1),],
+ dta[dta$messenger=="couple" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "male",]),s_h0),],
+ dta[dta$messenger=="couple" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="couple" & dta$recipient == "female",]),s_h0),])
+
+
+means <- tapply(dta_bal$know_space,dta_bal$messenger=="couple", FUN=mean, na.rm=T)
+
+time3 <- data.frame(tapply(dta_bal$know_space,dta_bal$messenger=="couple", FUN=mean, na.rm=T))
+names(time3) <- "mean"
+time3$group <- rownames(time2)
+time3$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+time3$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+time3$time <- 3
+
+means <- tapply(dta_bal$know_small,dta_bal$messenger=="couple", FUN=mean, na.rm=T)
+small3 <- data.frame(tapply(dta_bal$know_small,dta_bal$messenger=="couple", FUN=mean, na.rm=T))
+names(small3) <- "mean"
+small3$group <- rownames(small3)
+small3$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+small3$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+small3$time <- 3
+
+means <- tapply(dta_bal$know_weed,dta_bal$messenger=="couple", FUN=mean, na.rm=T)
+weed3 <- data.frame(tapply(dta_bal$know_weed,dta_bal$messenger=="couple", FUN=mean, na.rm=T))
+names(weed3) <- "mean"
+weed3$group <- rownames(weed2)
+weed3$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+weed3$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+weed3$time <- 3
+
+##############
+
+all <- rbind(time1, time2, time3)
+small <- rbind(small1,small2, small3)
+weed <- rbind(weed1,weed2, weed3)
 
 all$time <- as.factor(all$time)
 small$time <- as.factor(all$time)
@@ -528,9 +751,9 @@ p3 <- ggplot(weed, aes(x=time, y=mean, group=group, color=group)) +
   geom_pointrange(aes(ymin=up, ymax=down))+ ylab("proportion of correct answers")+ ggtitle("weeding", subtitle = NULL) + theme(plot.title = element_text(hjust = 0.5))
 
 require(gridExtra)
-pdf("/home/bjvca/data/projects/digital green/papers/ICAE/h2_all.pdf")
+#pdf("/home/bjvca/data/projects/digital green/papers/ICAE/h2_all.pdf")
 grid.arrange(p1, p2, p3, ncol=3)
-dev.off()
+#dev.off()
 
 ########################### H3 #####################################
 
@@ -682,9 +905,81 @@ weed2$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
 weed2$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
 weed2$time <- 2
 
-all <- rbind(time1, time2)
-small <- rbind(small1,small2)
-weed <- rbind(weed1,weed2)
+############## now for endline
+dta <- read.csv("/home/bjvca/data/projects/digital green/endline/data/working/knowledge_3.csv")
+dta <- subset(dta, !is.na(recipient))
+## decide who 
+dta$know_space <- NA
+  
+dta$know_space[ !is.na(dta$recipient)] <-  rowSums(cbind(dta$know_space_m[!is.na(dta$recipient)] ,  dta$know_space_w[ !is.na(dta$recipient)]),na.rm=T) >0
+#if both NA, set to NA
+dta$know_space[is.na(dta$know_space_m ) & is.na( dta$know_space_w) ] <- NA
+
+dta$know_small <- NA
+
+dta$know_small[!is.na(dta$recipient)] <-  rowSums(cbind(dta$know_combine_m[ !is.na(dta$recipient)] ,  dta$know_combine_w[ !is.na(dta$recipient)]),na.rm=T) >0
+#if both NA, set to NA
+dta$know_small[is.na(dta$know_combine_m ) & is.na( dta$know_combine_w) ] <- NA
+
+dta$know_weed <- NA
+
+dta$know_weed[ !is.na(dta$recipient)] <-  rowSums(cbind(dta$know_weed_m[!is.na(dta$recipient)] ,  dta$know_combine_w[ !is.na(dta$recipient)]),na.rm=T) >0
+#if both NA, set to NA
+dta$know_weed[is.na(dta$know_weed_m ) & is.na( dta$know_weed_w) ] <- NA
+
+dta$messenger <- as.character(dta$messenger)
+dta$recipient <- as.character(dta$recipient)
+
+dta <- subset(dta, messenger != "ctrl")
+
+dta <- subset(dta, recipient != "couple" & messenger != "couple")
+s_h0 <- min(table(dta$recipient, dta$messenger))
+
+dta_bal <- rbind(
+ dta[dta$messenger=="female" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "male",]),s_h0),],
+ dta[dta$messenger=="female" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="female" & dta$recipient == "female",]),s_h0),],
+ dta[dta$messenger=="male" & dta$recipient == "male",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "male",]),s_h0),],
+ dta[dta$messenger=="male" & dta$recipient == "female",][sample( nrow(dta[dta$messenger=="male" & dta$recipient == "female",]),s_h0),])
+
+
+dta$matched <- NA
+dta$matched[dta$recipient == "male" & dta$messenger=="male" | dta$recipient == "female" & dta$messenger=="female"] <- TRUE
+dta$matched[dta$recipient == "male" & dta$messenger=="female" | dta$recipient == "female" & dta$messenger=="male"] <- FALSE
+
+dta_bal$matched <- NA
+dta_bal$matched[dta_bal$recipient == "male" & dta_bal$messenger=="male" | dta_bal$recipient == "female" & dta_bal$messenger=="female"] <- TRUE
+dta_bal$matched[dta_bal$recipient == "male" & dta_bal$messenger=="female" | dta_bal$recipient == "female" & dta_bal$messenger=="male"] <- FALSE
+
+
+means <- tapply(dta_bal$know_space,  dta_bal$matched, FUN=mean,na.rm=T)
+
+
+time3 <- data.frame(tapply(dta_bal$know_space,dta_bal$matched, FUN=mean, na.rm=T))
+names(time3) <- "mean"
+time3$group <- rownames(time3)
+time3$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+time3$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+time3$time <- 3
+
+means <- tapply(dta_bal$know_small,dta_bal$matched, FUN=mean,na.rm=T)
+small3 <- data.frame(tapply(dta_bal$know_small,dta_bal$matched, FUN=mean,na.rm=T))
+names(small3) <- "mean"
+small3$group <- rownames(small3)
+small3$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+small3$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+small3$time <- 3
+
+means <- tapply(dta_bal$know_weed,dta_bal$matched, FUN=mean, ,na.rm=T)
+weed3 <- data.frame(tapply(dta_bal$know_weed,dta_bal$matched, FUN=mean,na.rm=T))
+names(weed3) <- "mean"
+weed3$group <- rownames(weed3)
+weed3$up <- means +  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+weed3$down <- means -  siglev*sqrt(means*(1-means)/dim(dta_bal)[1])
+weed3$time <- 3
+
+all <- rbind(time1, time2, time3)
+small <- rbind(small1,small2, small3)
+weed <- rbind(weed1,weed2, weed3)
 
 all$time <- as.factor(all$time)
 small$time <- as.factor(all$time)
@@ -717,7 +1012,7 @@ p3 <- ggplot(weed, aes(x=time, y=mean, group=group, color=group)) +
   geom_pointrange(aes(ymin=up, ymax=down))+ ylab("proportion of correct answers")+ ggtitle("weeding", subtitle = NULL) + theme(plot.title = element_text(hjust = 0.5))
 
 require(gridExtra)
-pdf("/home/bjvca/data/projects/digital green/papers/ICAE/h3_all.pdf")
+#pdf("/home/bjvca/data/projects/digital green/papers/ICAE/h3_all.pdf")
 grid.arrange(p1, p2, p3, ncol=3)
-dev.off()
+#dev.off()
 

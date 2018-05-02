@@ -4,7 +4,18 @@ rm(list=ls())
 library(readstata13)
 #dta <- read.dta13("/home/bjvca/data/projects/digital green/endline/data/raw/ALLDATA.dta")
 #dta <- read.dta13("/home/bjvca/data/projects/digital green/endline/data/raw/ALLDATA2.dta")
-dta <- read.dta13("/home/bjvca/data/projects/digital green/endline/data/raw/ALLDATA3.dta")
+dta <- read.dta13("/home/bjvca/data/projects/digital green/endline/data/raw/ALLDATA4.dta")
+
+dta_remnants <-  read.dta13("/home/bjvca/data/projects/digital green/endline/data/raw/remnants.dta")
+### "HH65"   "HH1437" "HH666"  "HH1540" "HH2953" "HH3293" these were already interviewed in endline and should be dropped
+dta_remnants <- subset(dta_remnants, !(hhid %in%c("HH65", "HH1437", "HH666", "HH1540", "HH2953", "HH3293")))
+
+dta_remnants$interview_status <- "couple interviewed"
+#dta$interview_status <- as.character(dta$interview_status)
+### for households that were revisited, we need to replace all spouse data with what is in remnants.dta
+
+ids <- dta$hhid %in% dta_remnants$hhid
+dta[ids, intersect(names(dta), names(dta_remnants))] <-  dta_remnants[match(dta$hhid[ids],dta_remnants$hhid), intersect(names(dta), names(dta_remnants))] 
 
 ### prepare for public release - make anonymous
 dta$enumerator <- as.numeric(as.factor(dta$enumerator))
