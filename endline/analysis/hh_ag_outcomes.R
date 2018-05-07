@@ -1,7 +1,7 @@
 rm(list=ls())
 source("/home/bjvca/data/projects/digital green/endline/data/init.R")
 #set totrep to zero if you do not want simulation based inferecne
-totrep <- 0
+totrep <- 10000
 #set this to true if you want to run WYFSR
 wyfs_stat <- FALSE
 
@@ -122,10 +122,10 @@ res_h0_know[4,1,h] <- summary(lm(as.formula(paste("know_armyworm",treatment, sep
 res_h0_know[4,2,h] <- summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,1]
 res_h0_know[4,3,h] <-  ifelse(totrep >0, RI("know_weed",treatment , dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
 
-#indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, nr_repl=totrep)
-#res_h0_know[5,1,h] <-  indexer[[1]]$coefficients[1,1]
-#res_h0_know[5,2,h] <-  indexer[[1]]$coefficients[2,1]
-#res_h0_know[5,3,h] <-  indexer[[2]]
+indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, nr_repl=totrep)
+res_h0_know[5,1,h] <-  indexer[[1]]$coefficients[1,1]
+res_h0_know[5,2,h] <-  indexer[[1]]$coefficients[2,1]
+res_h0_know[5,3,h] <-  indexer[[2]]
 
 #if (wyfs_stat) {
 #	res_h0_know[1:4,4,h] <- FSR_RI( c("know_space","know_combine","know_weed", "know_armyworm") ,treatment ,dta_bal, pvals = res_h0_know[1:4,3,h], nr_repl_ri = 100)[[4]]
