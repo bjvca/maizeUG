@@ -1,7 +1,7 @@
-#rm(list=ls())
-#source("/home/bjvca/data/projects/digital green/endline/data/init.R")
+rm(list=ls())
+source("/home/bjvca/data/projects/digital green/endline/data/init.R")
 #set totrep to zero if you do not want simulation based inferecne
-totrep <- 10000
+totrep <- 0
 #set this to true if you want to run WYFSR
 wyfs_stat <- FALSE
 
@@ -15,8 +15,20 @@ rownames(res_know_m) <- c("know_space","know_combine","know_weed", "know_armywor
 res_know_w <- array(NA, c(5,4,4)) 
 rownames(res_know_w) <- c("know_space","know_combine","know_weed", "know_armyworm","know_ind")
 
-res_h0_pract <- array(NA, c(13,4,4))
-rownames(res_h0_pract) <- c("space","striga","weed", "use_fert","use_DAP","use_urea","use_organic","seed","hybrid","opv","combiner","bought_seed","pract_index")
+res_pract_mm <- array(NA, c(15,4,4))
+rownames(res_pract_mm) <- c("space","striga","weed", "use_fert","use_DAP","use_urea","use_organic","seed","hybrid","opv","combiner","bought_seed","chem","labour","pract_index")
+res_pract_wm <- array(NA, c(15,4,4))
+rownames(res_pract_wm) <- c("space","striga","weed", "use_fert","use_DAP","use_urea","use_organic","seed","hybrid","opv","combiner","bought_seed","chem","labour","pract_index")
+res_pract_wi <- array(NA, c(15,4,4))
+rownames(res_pract_wi) <- c("space","striga","weed", "use_fert","use_DAP","use_urea","use_organic","seed","hybrid","opv","combiner","bought_seed","chem","labour","pract_index")
+res_pract_bm <- array(NA, c(15,4,4))
+rownames(res_pract_bm) <- c("space","striga","weed", "use_fert","use_DAP","use_urea","use_organic","seed","hybrid","opv","combiner","bought_seed","chem","labour","pract_index")
+res_pract_wm_share <- array(NA, c(15,4,4))
+rownames(res_pract_wm_share) <- c("space","striga","weed", "use_fert","use_DAP","use_urea","use_organic","seed","hybrid","opv","combiner","bought_seed","chem","labour","pract_index")
+res_pract_wm_share2 <- array(NA, c(15,4,4))
+rownames(res_pract_wm_share2) <- c("space","striga","weed", "use_fert","use_DAP","use_urea","use_organic","seed","hybrid","opv","combiner","bought_seed","chem","labour","pract_index")
+
+
 
 res_prod_fm <- array(NA, c(5,4,4))
 rownames(res_prod_fm) <- c("prod","area","yield","yield_better","prod_index")
@@ -30,6 +42,7 @@ res_prod_wm_share1 <- array(NA, c(5,4,4))
 rownames(res_prod_wm_share1) <- c("prod","area","yield","yield_better","prod_index")
 res_prod_wm_share2 <- array(NA, c(5,4,4))
 rownames(res_prod_wm_share2) <- c("prod","area","yield","yield_better","prod_index")
+
 
 res_h0_wel <-  array(NA, c(6,4,4))
 rownames(res_h0_wel) <- c("better_av","better_6m","eatpref","eatenough","log_cons","welfare_index")
@@ -182,74 +195,477 @@ res_know_w[4,3,h] <-  ifelse(totrep >0, RI("know_weed_w",treatment , dta_bal, nr
 ############################### practices #############################
 ### used recommended spacing use on at lease one plot as reported by at least one spouse
 
-#res_h0_pract[1,1,h]  <- summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-#res_h0_pract[1,2,h]  <- summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-#res_h0_pract[1,3,h]  <- ifelse(totrep >0, RI("space",treatment, dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+res_pract_mm[1,1,h]  <- summary(lm(as.formula(paste("space_mm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_mm[1,2,h]  <- summary(lm(as.formula(paste("space_mm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_mm[1,3,h]  <- ifelse(totrep >0, RI("space_mm",treatment, dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
-### used recommended way to fight striga - this should be changed to include info of all plots 
-#res_h0_pract[2,1,h]  <- summary(lm(as.formula(paste("striga", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-#res_h0_pract[2,2,h]  <- summary(lm(as.formula(paste("striga", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-#res_h0_pract[2,3,h]  <- ifelse(totrep >0, RI("striga",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("striga", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+## used recommended way to fight striga - this should be changed to include info of all plots 
+res_pract_mm[2,1,h]  <- summary(lm(as.formula(paste("striga", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_mm[2,2,h]  <- summary(lm(as.formula(paste("striga", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_mm[2,3,h]  <- ifelse(totrep >0, RI("striga",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("striga", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
-### weeded on recommended timing? - this should be changed to include info of all plots 
-#res_h0_pract[3,1,h]  <- summary(lm(as.formula(paste("weed", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-#res_h0_pract[3,2,h]  <- summary(lm(as.formula(paste("weed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-#res_h0_pract[3,3,h]  <- ifelse(totrep >0, RI("weed",treatment, dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("weed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+## weeded on recommended timing? - this should be changed to include info of all plots 
+res_pract_mm[3,1,h]  <- summary(lm(as.formula(paste("weed", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_mm[3,2,h]  <- summary(lm(as.formula(paste("weed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_mm[3,3,h]  <- ifelse(totrep >0, RI("weed",treatment, dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("weed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
-### fertilizer use
-#res_h0_pract[4,1,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-#res_h0_pract[4,2,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-#res_h0_pract[4,3,h]  <- ifelse(totrep >0, RI("fert",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
-##### fert = DAP/NPK
-#res_h0_pract[5,1,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-#res_h0_pract[5,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-#res_h0_pract[5,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+## fertilizer use
+res_pract_mm[4,1,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_mm[4,2,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_mm[4,3,h]  <- ifelse(totrep >0, RI("fert",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+#### fert = DAP/NPK
+res_pract_mm[5,1,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_mm[5,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_mm[5,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
-##### fert = urea
-#res_h0_pract[6,1,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-#res_h0_pract[6,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-#res_h0_pract[6,3,h]  <- ifelse(totrep >0, RI("fert_urea",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+#### fert = urea
+res_pract_mm[6,1,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_mm[6,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_mm[6,3,h]  <- ifelse(totrep >0, RI("fert_urea",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
-##### fert = organic
-#res_h0_pract[7,1,h]  <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-#res_h0_pract[7,2,h]  <- summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-#res_h0_pract[7,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+#### fert = organic
+res_pract_mm[7,1,h]  <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_mm[7,2,h]  <- summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_mm[7,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
-###improved seed  
-#res_h0_pract[8,1,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-#res_h0_pract[8,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-#res_h0_pract[8,3,h]  <- ifelse(totrep >0, RI("impseed",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
-### hybrid
-#res_h0_pract[9,1,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-#res_h0_pract[9,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-#res_h0_pract[9,3,h] <- ifelse(totrep >0, RI("hybrid",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+##improved seed  
+res_pract_mm[8,1,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_mm[8,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_mm[8,3,h]  <- ifelse(totrep >0, RI("impseed",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
-### opv
-#res_h0_pract[10,1,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-#res_h0_pract[10,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-#res_h0_pract[10,3,h] <- ifelse(totrep >0, RI("opv",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
-###combiner
-#res_h0_pract[11,1,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-#res_h0_pract[11,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-#res_h0_pract[11,3,h]  <- ifelse(totrep >0, RI("combiner",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+## hybrid
+res_pract_mm[9,1,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_mm[9,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_mm[9,3,h] <- ifelse(totrep >0, RI("hybrid",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
-#### bought seed
-#res_h0_pract[12,1,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
-#res_h0_pract[12,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-#res_h0_pract[12,3,h]  <- ifelse(totrep >0, RI("bought_seed",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+## opv
+res_pract_mm[10,1,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_mm[10,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_mm[10,3,h] <- ifelse(totrep >0, RI("opv",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##combiner
+res_pract_mm[11,1,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_mm[11,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_mm[11,3,h]  <- ifelse(totrep >0, RI("combiner",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+### bought seed
+res_pract_mm[12,1,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_mm[12,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_mm[12,3,h]  <- ifelse(totrep >0, RI("bought_seed",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+#### used chemicals
+res_pract_mm[13,1,h]  <- summary(lm(as.formula(paste("chem_mm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_mm[13,2,h]  <- summary(lm(as.formula(paste("chem_mm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_mm[13,3,h]  <- ifelse(totrep >0, RI("chem_mm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("chem_mm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+###hired labour
+res_pract_mm[14,1,h]  <- summary(lm(as.formula(paste("labour_mm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_mm[14,2,h]  <- summary(lm(as.formula(paste("labour_mm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_mm[14,3,h]  <- ifelse(totrep >0, RI("labour_mm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("labour_mm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ##if (totrep >0) {
 ##res_h0_pract[1:7,4,h] <- FSR_RI( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment ,dta_bal, pvals =  res_h0_pract[,3,h] , nr_repl_pi = 100)
 
 ##res_h0_pract[1:7,4,h] <- FSR_OLS( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment,dta_bal, nr_repl = totrep)[[4]]
 
-##indexer <-  FW_index(treatment,c("space","striga","weed", "fert","impseed", "combiner","bought_seed"),dta_bal, nr_repl=totrep)
-##res_h0_pract[11,1,h] <-  indexer[[1]]$coefficients[1,1]
-##res_h0_pract[11,2,h] <-  indexer[[1]]$coefficients[2,1]
-##res_h0_pract[11,3,h] <-  indexer[[2]]
-##}
+indexer <-  FW_index(treatment,c("space_mm","striga_mm","weed_mm", "fert_mm","impseed_mm", "combiner_mm","bought_seed_mm","chem_mm","labour_mm"),dta_bal, nr_repl=totrep)
+res_pract_mm[15,1,h] <-  indexer[[1]]$coefficients[1,1]
+res_pract_mm[15,2,h] <-  indexer[[1]]$coefficients[2,1]
+res_pract_mm[15,3,h] <-  indexer[[2]]
 
+res_pract_wm[1,1,h]  <- summary(lm(as.formula(paste("space_wm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm[1,2,h]  <- summary(lm(as.formula(paste("space_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm[1,3,h]  <- ifelse(totrep >0, RI("space_wm",treatment, dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+## used recommended way to fight striga - this should be changed to include info of all plots 
+res_pract_wm[2,1,h]  <- summary(lm(as.formula(paste("striga_wm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm[2,2,h]  <- summary(lm(as.formula(paste("striga_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm[2,3,h]  <- ifelse(totrep >0, RI("striga_wm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("striga_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+## weeded on recommended timing? - this should be changed to include info of all plots 
+res_pract_wm[3,1,h]  <- summary(lm(as.formula(paste("weed_wm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm[3,2,h]  <- summary(lm(as.formula(paste("weed_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm[3,3,h]  <- ifelse(totrep >0, RI("weed_wm",treatment, dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("weed_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+## fertilizer use
+res_pract_wm[4,1,h]  <- summary(lm(as.formula(paste("fert_wm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm[4,2,h]  <- summary(lm(as.formula(paste("fert_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm[4,3,h]  <- ifelse(totrep >0, RI("fert_wm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+#### fert = DAP/NPK
+res_pract_wm[5,1,h]  <- summary(lm(as.formula(paste("fert_dap_wm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm[5,2,h]  <- summary(lm(as.formula(paste("fert_dap_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm[5,3,h]  <- ifelse(totrep >0, RI("fert_dap_wm",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_dap_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+#### fert = urea
+res_pract_wm[6,1,h]  <- summary(lm(as.formula(paste("fert_urea_wm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm[6,2,h]  <- summary(lm(as.formula(paste("fert_urea_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm[6,3,h]  <- ifelse(totrep >0, RI("fert_urea_wm",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_urea_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+#### fert = organic
+res_pract_wm[7,1,h]  <-  summary(lm(as.formula(paste("fert_org_wm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm[7,2,h]  <- summary(lm(as.formula(paste("fert_org_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm[7,3,h]  <- ifelse(totrep >0, RI("fert_org_wm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_org_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##improved seed  
+res_pract_wm[8,1,h]  <- summary(lm(as.formula(paste("impseed_wm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm[8,2,h]  <- summary(lm(as.formula(paste("impseed_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm[8,3,h]  <- ifelse(totrep >0, RI("impseed_wm",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+
+## hybrid
+res_pract_wm[9,1,h] <- summary(lm(as.formula(paste("hybrid_wm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm[9,2,h] <- summary(lm(as.formula(paste("hybrid_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm[9,3,h] <- ifelse(totrep >0, RI("hybrid_wm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("hybrid_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+## opv
+res_pract_wm[10,1,h] <- summary(lm(as.formula(paste("opv_wm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm[10,2,h] <- summary(lm(as.formula(paste("opv_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm[10,3,h] <- ifelse(totrep >0, RI("opv_wm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("opv_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##combiner
+res_pract_wm[11,1,h]  <- summary(lm(as.formula(paste("combiner_wm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm[11,2,h]  <- summary(lm(as.formula(paste("combiner_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm[11,3,h]  <- ifelse(totrep >0, RI("combiner_wm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("combiner_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+### bought seed
+res_pract_wm[12,1,h]  <- summary(lm(as.formula(paste("bought_seed_wm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm[12,2,h]  <- summary(lm(as.formula(paste("bought_seed_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm[12,3,h]  <- ifelse(totrep >0, RI("bought_seed_wm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bought_seed_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+#### used chemicals
+res_pract_wm[13,1,h]  <- summary(lm(as.formula(paste("chem_wm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm[13,2,h]  <- summary(lm(as.formula(paste("chem_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm[13,3,h]  <- ifelse(totrep >0, RI("chem_wm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("chem_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+###hired labour
+res_pract_wm[14,1,h]  <- summary(lm(as.formula(paste("labour_wm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm[14,2,h]  <- summary(lm(as.formula(paste("labour_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm[14,3,h]  <- ifelse(totrep >0, RI("labour_wm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("labour_wm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##if (totrep >0) {
+##res_h0_pract[1:7,4,h] <- FSR_RI( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment ,dta_bal, pvals =  res_h0_pract[,3,h] , nr_repl_pi = 100)
+
+##res_h0_pract[1:7,4,h] <- FSR_OLS( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment,dta_bal, nr_repl = totrep)[[4]]
+
+indexer <-  FW_index(treatment,c("space_wm","striga_wm","weed_wm", "fert_wm","impseed_wm", "combiner_wm","bought_seed_wm","chem_wm","labour_wm"),dta_bal, nr_repl=totrep)
+res_pract_wm[15,1,h] <-  indexer[[1]]$coefficients[1,1]
+res_pract_wm[15,2,h] <-  indexer[[1]]$coefficients[2,1]
+res_pract_wm[15,3,h] <-  indexer[[2]]
+res_pract_wi[1,1,h]  <- summary(lm(as.formula(paste("space_wi", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wi[1,2,h]  <- summary(lm(as.formula(paste("space_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wi[1,3,h]  <- ifelse(totrep >0, RI("space_wi",treatment, dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+## used recommended way to fight striga - this should be changed to include info of all plots 
+res_pract_wi[2,1,h]  <- summary(lm(as.formula(paste("striga_wi", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wi[2,2,h]  <- summary(lm(as.formula(paste("striga_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wi[2,3,h]  <- ifelse(totrep >0, RI("striga_wi",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("striga_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+## weeded on recommended timing? - this should be changed to include info of all plots 
+res_pract_wi[3,1,h]  <- summary(lm(as.formula(paste("weed_wi", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wi[3,2,h]  <- summary(lm(as.formula(paste("weed_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wi[3,3,h]  <- ifelse(totrep >0, RI("weed_wi",treatment, dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("weed_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+## fertilizer use
+res_pract_wi[4,1,h]  <- summary(lm(as.formula(paste("fert_wi", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wi[4,2,h]  <- summary(lm(as.formula(paste("fert_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wi[4,3,h]  <- ifelse(totrep >0, RI("fert_wi",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+#### fert = DAP/NPK
+res_pract_wi[5,1,h]  <- summary(lm(as.formula(paste("fert_dap_wi", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wi[5,2,h]  <- summary(lm(as.formula(paste("fert_dap_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wi[5,3,h]  <- ifelse(totrep >0, RI("fert_dap_wi",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_dap_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+#### fert = urea
+res_pract_wi[6,1,h]  <- summary(lm(as.formula(paste("fert_urea_wi", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wi[6,2,h]  <- summary(lm(as.formula(paste("fert_urea_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wi[6,3,h]  <- ifelse(totrep >0, RI("fert_urea_wi",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_urea_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+#### fert = organic
+res_pract_wi[7,1,h]  <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wi[7,2,h]  <- summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wi[7,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##improved seed  
+res_pract_wi[8,1,h]  <- summary(lm(as.formula(paste("impseed_wi", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wi[8,2,h]  <- summary(lm(as.formula(paste("impseed_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wi[8,3,h]  <- ifelse(totrep >0, RI("impseed_wi",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+
+## hybrid
+res_pract_wi[9,1,h] <- summary(lm(as.formula(paste("hybrid_wi", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wi[9,2,h] <- summary(lm(as.formula(paste("hybrid_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wi[9,3,h] <- ifelse(totrep >0, RI("hybrid_wi",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("hybrid_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+## opv
+res_pract_wi[10,1,h] <- summary(lm(as.formula(paste("opv_wi", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wi[10,2,h] <- summary(lm(as.formula(paste("opv_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wi[10,3,h] <- ifelse(totrep >0, RI("opv_wi",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("opv_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##combiner
+res_pract_wi[11,1,h]  <- summary(lm(as.formula(paste("combiner_wi", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wi[11,2,h]  <- summary(lm(as.formula(paste("combiner_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wi[11,3,h]  <- ifelse(totrep >0, RI("combiner_wi",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("combiner_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+### bought seed
+res_pract_wi[12,1,h]  <- summary(lm(as.formula(paste("bought_seed_wi", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wi[12,2,h]  <- summary(lm(as.formula(paste("bought_seed_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wi[12,3,h]  <- ifelse(totrep >0, RI("bought_seed_wi",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bought_seed_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+#### used chemicals
+res_pract_wi[13,1,h]  <- summary(lm(as.formula(paste("chem_wi", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wi[13,2,h]  <- summary(lm(as.formula(paste("chem_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wi[13,3,h]  <- ifelse(totrep >0, RI("chem_wi",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("chem_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+###hired labour
+res_pract_wi[14,1,h]  <- summary(lm(as.formula(paste("labour_wi", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wi[14,2,h]  <- summary(lm(as.formula(paste("labour_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wi[14,3,h]  <- ifelse(totrep >0, RI("labour_wi",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("labour_wi", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##if (totrep >0) {
+##res_h0_pract[1:7,4,h] <- FSR_RI( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment ,dta_bal, pvals =  res_h0_pract[,3,h] , nr_repl_pi = 100)
+
+##res_h0_pract[1:7,4,h] <- FSR_OLS( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment,dta_bal, nr_repl = totrep)[[4]]
+
+indexer <-  FW_index(treatment,c("space_wi","striga_wi","weed_wi", "fert_wi","impseed_wi", "combiner_wi","bought_seed_wi","chem_wi","labour_wi"),dta_bal, nr_repl=totrep)
+res_pract_wi[15,1,h] <-  indexer[[1]]$coefficients[1,1]
+res_pract_wi[15,2,h] <-  indexer[[1]]$coefficients[2,1]
+res_pract_wi[15,3,h] <-  indexer[[2]]
+res_pract_bm[1,1,h]  <- summary(lm(as.formula(paste("space_bm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_bm[1,2,h]  <- summary(lm(as.formula(paste("space_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_bm[1,3,h]  <- ifelse(totrep >0, RI("space_bm",treatment, dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+## used recommended way to fight striga - this should be changed to include info of all plots 
+res_pract_bm[2,1,h]  <- summary(lm(as.formula(paste("striga_bm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_bm[2,2,h]  <- summary(lm(as.formula(paste("striga_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_bm[2,3,h]  <- ifelse(totrep >0, RI("striga_bm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("striga_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+## weeded on recommended timing? - this should be changed to include info of all plots 
+res_pract_bm[3,1,h]  <- summary(lm(as.formula(paste("weed_bm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_bm[3,2,h]  <- summary(lm(as.formula(paste("weed_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_bm[3,3,h]  <- ifelse(totrep >0, RI("weed_bm",treatment, dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("weed_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+## fertilizer use
+res_pract_bm[4,1,h]  <- summary(lm(as.formula(paste("fert_bm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_bm[4,2,h]  <- summary(lm(as.formula(paste("fert_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_bm[4,3,h]  <- ifelse(totrep >0, RI("fert_bm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+#### fert = DAP/NPK
+res_pract_bm[5,1,h]  <- summary(lm(as.formula(paste("fert_dap_bm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_bm[5,2,h]  <- summary(lm(as.formula(paste("fert_dap_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_bm[5,3,h]  <- ifelse(totrep >0, RI("fert_dap_bm",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_dap_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+#### fert = urea
+res_pract_bm[6,1,h]  <- summary(lm(as.formula(paste("fert_urea_bm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_bm[6,2,h]  <- summary(lm(as.formula(paste("fert_urea_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_bm[6,3,h]  <- ifelse(totrep >0, RI("fert_urea_bm",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_urea_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+#### fert = organic
+res_pract_bm[7,1,h]  <-  summary(lm(as.formula(paste("fert_org_bm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_bm[7,2,h]  <- summary(lm(as.formula(paste("fert_org_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_bm[7,3,h]  <- ifelse(totrep >0, RI("fert_org_bm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_org_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##improved seed  
+res_pract_bm[8,1,h]  <- summary(lm(as.formula(paste("impseed_bm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_bm[8,2,h]  <- summary(lm(as.formula(paste("impseed_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_bm[8,3,h]  <- ifelse(totrep >0, RI("impseed_bm",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+
+## hybrid
+res_pract_bm[9,1,h] <- summary(lm(as.formula(paste("hybrid_bm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_bm[9,2,h] <- summary(lm(as.formula(paste("hybrid_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_bm[9,3,h] <- ifelse(totrep >0, RI("hybrid_bm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("hybrid_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+## opv
+res_pract_bm[10,1,h] <- summary(lm(as.formula(paste("opv_bm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_bm[10,2,h] <- summary(lm(as.formula(paste("opv_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_bm[10,3,h] <- ifelse(totrep >0, RI("opv_bm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("opv_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##combiner
+res_pract_bm[11,1,h]  <- summary(lm(as.formula(paste("combiner_bm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_bm[11,2,h]  <- summary(lm(as.formula(paste("combiner_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_bm[11,3,h]  <- ifelse(totrep >0, RI("combiner_bm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("combiner_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+### bought seed
+res_pract_bm[12,1,h]  <- summary(lm(as.formula(paste("bought_seed_bm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_bm[12,2,h]  <- summary(lm(as.formula(paste("bought_seed_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_bm[12,3,h]  <- ifelse(totrep >0, RI("bought_seed_bm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bought_seed_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+#### used chemicals
+res_pract_bm[13,1,h]  <- summary(lm(as.formula(paste("chem_bm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_bm[13,2,h]  <- summary(lm(as.formula(paste("chem_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_bm[13,3,h]  <- ifelse(totrep >0, RI("chem_bm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("chem_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+###hired labour
+res_pract_bm[14,1,h]  <- summary(lm(as.formula(paste("labour_bm", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_bm[14,2,h]  <- summary(lm(as.formula(paste("labour_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_bm[14,3,h]  <- ifelse(totrep >0, RI("labour_bm",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("labour_bm", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##if (totrep >0) {
+##res_h0_pract[1:7,4,h] <- FSR_RI( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment ,dta_bal, pvals =  res_h0_pract[,3,h] , nr_repl_pi = 100)
+
+##res_h0_pract[1:7,4,h] <- FSR_OLS( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment,dta_bal, nr_repl = totrep)[[4]]
+
+indexer <-  FW_index(treatment,c("space_bm","striga_bm","weed_bm", "fert_bm","impseed_bm", "combiner_bm","bought_seed_bm","chem_bm","labour_bm"),dta_bal, nr_repl=totrep)
+res_pract_bm[15,1,h] <-  indexer[[1]]$coefficients[1,1]
+res_pract_bm[15,2,h] <-  indexer[[1]]$coefficients[2,1]
+res_pract_bm[15,3,h] <-  indexer[[2]]
+
+res_pract_wm_share[1,1,h]  <- summary(lm(as.formula(paste("space_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share[1,2,h]  <- summary(lm(as.formula(paste("space_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share[1,3,h]  <- ifelse(totrep >0, RI("space_wm_share",treatment, dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+## used recommended way to fight striga - this should be changed to include info of all plots 
+res_pract_wm_share[2,1,h]  <- summary(lm(as.formula(paste("striga_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share[2,2,h]  <- summary(lm(as.formula(paste("striga_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share[2,3,h]  <- ifelse(totrep >0, RI("striga_wm_share",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("striga_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+## weeded on recommended timing? - this should be changed to include info of all plots 
+res_pract_wm_share[3,1,h]  <- summary(lm(as.formula(paste("weed_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share[3,2,h]  <- summary(lm(as.formula(paste("weed_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share[3,3,h]  <- ifelse(totrep >0, RI("weed_wm_share",treatment, dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("weed_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+## fertilizer use
+res_pract_wm_share[4,1,h]  <- summary(lm(as.formula(paste("fert_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share[4,2,h]  <- summary(lm(as.formula(paste("fert_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share[4,3,h]  <- ifelse(totrep >0, RI("fert_wm_share",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+#### fert = DAP/NPK
+res_pract_wm_share[5,1,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share[5,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share[5,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+#### fert = urea
+res_pract_wm_share[6,1,h]  <- summary(lm(as.formula(paste("fert_urea_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share[6,2,h]  <- summary(lm(as.formula(paste("fert_urea_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share[6,3,h]  <- ifelse(totrep >0, RI("fert_urea_wm_share",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_urea_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+#### fert = organic
+res_pract_wm_share[7,1,h]  <-  summary(lm(as.formula(paste("fert_org_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share[7,2,h]  <- summary(lm(as.formula(paste("fert_org_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share[7,3,h]  <- ifelse(totrep >0, RI("fert_org_wm_share",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_org_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##improved seed  
+res_pract_wm_share[8,1,h]  <- summary(lm(as.formula(paste("impseed_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share[8,2,h]  <- summary(lm(as.formula(paste("impseed_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share[8,3,h]  <- ifelse(totrep >0, RI("impseed_wm_share",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+
+## hybrid
+res_pract_wm_share[9,1,h] <- summary(lm(as.formula(paste("hybrid_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share[9,2,h] <- summary(lm(as.formula(paste("hybrid_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share[9,3,h] <- ifelse(totrep >0, RI("hybrid_wm_share",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("hybrid_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+## opv
+res_pract_wm_share[10,1,h] <- summary(lm(as.formula(paste("opv_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share[10,2,h] <- summary(lm(as.formula(paste("opv_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share[10,3,h] <- ifelse(totrep >0, RI("opv_wm_share",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("opv_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##combiner
+res_pract_wm_share[11,1,h]  <- summary(lm(as.formula(paste("combiner_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share[11,2,h]  <- summary(lm(as.formula(paste("combiner_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share[11,3,h]  <- ifelse(totrep >0, RI("combiner_wm_share",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("combiner_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+### bought seed
+res_pract_wm_share[12,1,h]  <- summary(lm(as.formula(paste("bought_seed_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share[12,2,h]  <- summary(lm(as.formula(paste("bought_seed_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share[12,3,h]  <- ifelse(totrep >0, RI("bought_seed_wm_share",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bought_seed_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+#### used chemicals
+res_pract_wm_share[13,1,h]  <- summary(lm(as.formula(paste("chem_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share[13,2,h]  <- summary(lm(as.formula(paste("chem_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share[13,3,h]  <- ifelse(totrep >0, RI("chem_wm_share",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("chem_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+###hired labour
+res_pract_wm_share[14,1,h]  <- summary(lm(as.formula(paste("labour_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share[14,2,h]  <- summary(lm(as.formula(paste("labour_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share[14,3,h]  <- ifelse(totrep >0, RI("labour_wm_share",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("labour_wm_share", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##if (totrep >0) {
+##res_h0_pract[1:7,4,h] <- FSR_RI( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment ,dta_bal, pvals =  res_h0_pract[,3,h] , nr_repl_pi = 100)
+
+##res_h0_pract[1:7,4,h] <- FSR_OLS( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment,dta_bal, nr_repl = totrep)[[4]]
+
+indexer <-  FW_index(treatment,c("space_wm_share","striga_wm_share","weed_wm_share", "fert_wm_share","impseed_wm_share", "combiner_wm_share","bought_seed_wm_share","chem_wm_share","labour_wm_share"),dta_bal, nr_repl=totrep)
+res_pract_wm_share[15,1,h] <-  indexer[[1]]$coefficients[1,1]
+res_pract_wm_share[15,2,h] <-  indexer[[1]]$coefficients[2,1]
+res_pract_wm_share[15,3,h] <-  indexer[[2]]
+
+res_pract_wm_share2[1,1,h]  <- summary(lm(as.formula(paste("space_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share2[1,2,h]  <- summary(lm(as.formula(paste("space_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share2[1,3,h]  <- ifelse(totrep >0, RI("space_wm_share2",treatment, dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+## used recommended way to fight striga - this should be changed to include info of all plots 
+res_pract_wm_share2[2,1,h]  <- summary(lm(as.formula(paste("striga_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share2[2,2,h]  <- summary(lm(as.formula(paste("striga_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share2[2,3,h]  <- ifelse(totrep >0, RI("striga_wm_share2",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("striga_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+## weeded on recommended timing? - this should be changed to include info of all plots 
+res_pract_wm_share2[3,1,h]  <- summary(lm(as.formula(paste("weed_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share2[3,2,h]  <- summary(lm(as.formula(paste("weed_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share2[3,3,h]  <- ifelse(totrep >0, RI("weed_wm_share2",treatment, dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("weed_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+## fertilizer use
+res_pract_wm_share2[4,1,h]  <- summary(lm(as.formula(paste("fert_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share2[4,2,h]  <- summary(lm(as.formula(paste("fert_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share2[4,3,h]  <- ifelse(totrep >0, RI("fert_wm_share2",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+#### fert = DAP/NPK
+res_pract_wm_share2[5,1,h]  <- summary(lm(as.formula(paste("fert_dap_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share2[5,2,h]  <- summary(lm(as.formula(paste("fert_dap_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share2[5,3,h]  <- ifelse(totrep >0, RI("fert_dap_wm_share2",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_dap_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+#### fert = urea
+res_pract_wm_share2[6,1,h]  <- summary(lm(as.formula(paste("fert_urea_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share2[6,2,h]  <- summary(lm(as.formula(paste("fert_urea_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share2[6,3,h]  <- ifelse(totrep >0, RI("fert_urea_wm_share2",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_urea_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+#### fert = organic
+res_pract_wm_share2[7,1,h]  <-  summary(lm(as.formula(paste("fert_org_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share2[7,2,h]  <- summary(lm(as.formula(paste("fert_org_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share2[7,3,h]  <- ifelse(totrep >0, RI("fert_org_wm_share2",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_org_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##improved seed  
+res_pract_wm_share2[8,1,h]  <- summary(lm(as.formula(paste("impseed_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share2[8,2,h]  <- summary(lm(as.formula(paste("impseed_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share2[8,3,h]  <- ifelse(totrep >0, RI("impseed_wm_share2",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+
+## hybrid
+res_pract_wm_share2[9,1,h] <- summary(lm(as.formula(paste("hybrid_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share2[9,2,h] <- summary(lm(as.formula(paste("hybrid_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share2[9,3,h] <- ifelse(totrep >0, RI("hybrid_wm_share2",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("hybrid_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+## opv
+res_pract_wm_share2[10,1,h] <- summary(lm(as.formula(paste("opv_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share2[10,2,h] <- summary(lm(as.formula(paste("opv_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share2[10,3,h] <- ifelse(totrep >0, RI("opv_wm_share2",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("opv_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##combiner
+res_pract_wm_share2[11,1,h]  <- summary(lm(as.formula(paste("combiner_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share2[11,2,h]  <- summary(lm(as.formula(paste("combiner_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share2[11,3,h]  <- ifelse(totrep >0, RI("combiner_wm_share2",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("combiner_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+### bought seed
+res_pract_wm_share2[12,1,h]  <- summary(lm(as.formula(paste("bought_seed_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share2[12,2,h]  <- summary(lm(as.formula(paste("bought_seed_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share2[12,3,h]  <- ifelse(totrep >0, RI("bought_seed_wm_share2",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bought_seed_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+#### used chemicals
+res_pract_wm_share2[13,1,h]  <- summary(lm(as.formula(paste("chem_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share2[13,2,h]  <- summary(lm(as.formula(paste("chem_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share2[13,3,h]  <- ifelse(totrep >0, RI("chem_wm_share2",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("chem_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+###hired labour
+res_pract_wm_share2[14,1,h]  <- summary(lm(as.formula(paste("labour_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[1,1]
+res_pract_wm_share2[14,2,h]  <- summary(lm(as.formula(paste("labour_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_pract_wm_share2[14,3,h]  <- ifelse(totrep >0, RI("labour_wm_share2",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("labour_wm_share2", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##if (totrep >0) {
+##res_h0_pract[1:7,4,h] <- FSR_RI( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment ,dta_bal, pvals =  res_h0_pract[,3,h] , nr_repl_pi = 100)
+
+##res_h0_pract[1:7,4,h] <- FSR_OLS( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment,dta_bal, nr_repl = totrep)[[4]]
+
+indexer <-  FW_index(treatment,c("space_wm_share2","striga_wm_share2","weed_wm_share2", "fert_wm_share2","impseed_wm_share2", "combiner_wm_share2","bought_seed_wm_share2","chem_wm_share2","labour_wm_share2"),dta_bal, nr_repl=totrep)
+res_pract_wm_share2[15,1,h] <-  indexer[[1]]$coefficients[1,1]
+res_pract_wm_share2[15,2,h] <-  indexer[[1]]$coefficients[2,1]
+res_pract_wm_share2[15,3,h] <-  indexer[[2]]
 ############################### production ###########################
 ### does the video increases production related outcomes?
 
@@ -612,6 +1028,25 @@ dta_bal2 <- trim("log_yield_av_wm_share2", dta_bal2, .1)
 #	res_prod_wm_share2[5,2,h] <-  indexer[[1]]$coefficients[2,1]
 #	res_prod_wm_share2[5,3,h] <-  indexer[[2]]
 #	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ######################### disposal ##########################
 ### maize consumed
