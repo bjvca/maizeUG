@@ -89,20 +89,23 @@ In agricultural information dissemination campaigns through agricultural
  knowledge transfer, this study investigates the importance of the gender
  composition of the person(s) who provide(s) the information and the gender
  composition of the person(s) who receive(s) the information.
- In particular, we set up a field experiment among smallholder maize farmers
+ Our factorial design enables us to 
+\end_layout
+
+\begin_layout Abstract
+In particular, we set up a field experiment among smallholder maize farmers
  in Uganda to assess if reducing asymmetric information within the household
  leads to improved outcomes.
  In addition, we study the effectiveness of promoting a more cooperative
  approach to household farming.
- Finally, we test for gender homophily effects, where female farmers learn
- more from female trainers.
- Effectiveness is assessed in terms of knowledge gained, adoption of modern
- inputs and recommend practices, yield, and poverty reduction.
- Outcomes are dis-aggregated by gender to study changes in intra-household
+ 
+\end_layout
+
+\begin_layout Abstract
+Effectiveness is assessed in terms of knowledge gained, adoption of modern
+ inputs and recommend practices, production and disposal, and well-being,
+ and outcomes are dis-aggregated by gender to study changes in intra-household
  equity and women empowerment.
- While endline of the study is planned for February 2018, we preview encouraging
- effects on knowledge transfer as measured immediately after administering
- the treatments.
 \end_layout
 
 \begin_layout Section*
@@ -1290,7 +1293,7 @@ n treatment versus control hypothesis (H0) and for the three hypotheses
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Preview
@@ -1554,62 +1557,30 @@ ly are compared to farmers that received the information treatment as a
  
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsubsection*
+Impact at the household level
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
 Knowledge effects
 \end_layout
 
 \begin_layout Standard
-In this section, we investigate the effect of showing the video and of changing
- the messenger and the recipient of the video message on knowledge.
- This was done through a small quiz immediately after the video was shown.
- As videos were shown twice, we also did the quiz two times.
- The quiz consisted of 3 multiple choice question.
- For each question, three possible answers were read out to the farmer,
+We first tested the impact of the information intervention and the effect
+ of changing the gender composition of the messenger and the recipient on
+ knowledge.
+ This was done through a short quiz consisting of four questions that was
+ asked during endline to each of the two spouses individually.
+ For each question, three possible answers were read out to the respondent,
  who was then asked to indicate what answer he or she though was correct.
  The respondent was also allowed to indicate he or she did not know what
  the correct answer was.
+ The household was considered knowledgeable on a particular topic if at
+ least one of the spouses indicated the correct answer.
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename h0_all.pdf
-	scale 60
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Does the intervention increase knowledge?
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Does-the-intervention"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1650,7 +1621,7 @@ use all the money to buy fertilizer, because in poor soils, yields will
 \end_inset
 
 .
- Finally, we asked when is weeding is most important.
+ For the third questions, we asked when is weeding is most important.
  Weeding is most important during the first four weeks after planting, as
  maize is a poor competitor for light and nutrients.
  Alternative answers were: 
@@ -1671,96 +1642,1170 @@ when the maize is at tasseling stage
 
 .
  It is assumed that most farmers would know this.
-\end_layout
-
-\begin_layout Standard
-Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Does-the-intervention"
-
+ Finally, we also asked if farmers knew when spraying against the fall armyworm
+ is most effective.
+ There was no information given about fighting fall armyworm in the video,
+ so unless seeing a video encourages farmers to search for additional informatio
+n, we do not expect an impact from seeing a video.
+ For this question, the correct option was: 
+\begin_inset Quotes eld
 \end_inset
 
- shows that the information interventions though video significantly increase
- the proportion of farmers that answer correct on all three questions, and
- that this is the case after both the first and second screening.
- Especially for information that can be assumed to be new to the farmers,
- the video seems to substantially increase knowledge: the first panel in
- Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Does-the-intervention"
-
+During the evening, as fall armyworm eats during night , while the other
+ options were: 
+\begin_inset Quotes eld
 \end_inset
 
- shows that after the videos were shown the first time, about 15 percent
- of farmers in the control group was able to identify the correct response
- to the question on optimal planting.
- This proportion rises to almost 70 among farmers that did get to see the
- video.
- This proportion increases further when these farmers are reminded about
- the correct spacing during a second screening, to more than 80 percent.
+Early in the morning when it is still cool
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+At noon because sunlight increases chemical performance
+\begin_inset Quotes erd
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
-The second panel in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Does-the-intervention"
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on household level knowledge
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:knowh0HH"
 
 \end_inset
 
- reveals that about 70 percent of farmers in the control group responded
- that the best way to invest money is combine inputs and start small instead
- of investing everything in either seed or fertilizer.
- Among the farmers that received the information treatment, this increases
- to about 92 percent, and this proportion stays the same after the second
- screening.
- In the control group, the proportion increases to about 77 percent, which
- may indicate some extent of spillover, which is consistent with findings
- from a similar intervention among rice farmers in Uganda 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "ugandabjorn"
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Control versus Treatment}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}    
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal spacing	&	0.164	&	0.132	&	0.000	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows inputs are best combined	&	0.913	&	0.051	&	0.000	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal timing for first weeding	&	0.946	&	-0.015	&	0.281	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows when best to spray against Armyworm	&	0.325	&	-0.033	&	0.281	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knowledge index	&	-0.074	&	0.085	&	0.001	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Individual versus couple targeted}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal spacing	&	0.280	&	0.020	&	0.470	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows inputs are best combined	&	0.956	&	0.008	&	0.470	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal timing for first weeding	&	0.943	&	-0.013	&	0.470	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows when best to spray against Armyworm	&	0.308	&	-0.017	&	0.470	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knowledge index	&	0.012	&	-0.006	&	0.769	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Individual versus couple pictured}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal spacing	&	0.307	&	-0.007	&	0.972	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows inputs are best combined	&	0.957	&	0.007	&	0.875	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal timing for first weeding	&	0.930	&	0.000	&	0.997	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows when best to spray against Armyworm	&	0.311	&	-0.019	&	0.997	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knowledge index	&	0.013	&	-0.006	&	0.771	
+\backslash
+
+\backslash
+ 		
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: Reported p-values are based on randomization inference, corrected
+ for multiple hypothesis testing using the Westfall and Young free stepdown
+ resampling method.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowh0HH"
+
+\end_inset
+
+ shows results for the three main hypotheses.
+ In the top panel, denoted as 
+\emph on
+Control versus Treatment
+\emph default
+, we compare results on the quiz between households that were allocated
+ to the control group to the results of households that were shown a video,
+ irrespective of who this video was shown to and who provided the information
+ in the video.
+ We find that in 16.4 percent of the households in the control group, at
+ least one of the spouses could indicate the correct alternative among the
+ response options to the question on what best spacing for maize seeds should
+ be.
+ The reason why this is relatively low is because this is a fairly new recommend
+ation.
+ We see that among households that were shown a video, the proportion increases
+ by 13.2 percentage points, to almost 30 percent, and this difference is
+ statistically significant.
+ About 91.2 percent of households that were not shown the treatment video
+ know that is best to combine inputs instead of only using seed or fertilizer.
+ Even though baseline knowledge is already high, the video treatment further
+ increased this knowledge by another 5.1 percentage points.
+ We further see that in about 94.6 percent of households in the control group
+ at least one of the spouses was able to correctly indicate that weeding
+ is most important during the first 4 weeks after planting.
+ Our pre-analysis plan specified that we would drop variables where 95 percent
+ of outcomes are the same value to reduce the influence of outcomes with
+ limited variation.
+ In any case, the intervention does not seem to have a significant effect
+ on this outcome.
+ Finally, as expected, we do not find that households that were shown the
+ video are more likely to know when one should spray against fall armyworm.
+ Overall, and as confirmed by the knowledge index, we conclude that the
+ agricultural extension videos increase knowledge at the household level.
+ 
+\end_layout
+
+\begin_layout Standard
+The second panel in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowh0HH"
+
+\end_inset
+
+, labeled 
+\emph on
+Individual versus couple targeted
+\emph default
+, now focuses only on households that received the video and, within that
+ subgroup, differentiates between households where the video was shown to
+ an individual (either the man or woman) and households where the video
+ was shown to man and wife together.
+ We find that among households where the video was shown to an individual,
+ 28 percent knew the recommended spacing, 95.6 percent knew inputs are best
+ combined, 94.3 percent knew weeding during the first 4 weeks is critical,
+ and 30.8 percent knew when to spay against fall armyworm.
+ We do not find a significant differences between the two groups.
+ The fact that there is no difference in learning from the videos depending
+ on who was targeted is confirmed by the index.
+ The third panel, indicated as Individual versus couple pictured, compares
+ household level quiz scores between households where the person that featured
+ in the video was an individual (man or woman) and households where the
+ information in the video was given by a couple.
+ Also here, we do not find significant differences in the proportions in
+ the two groups.
+ As such, at the household level, while showing a video increases knowledge,
+ it does not seem to matter whether the couple is targeted or the video
+ is shown to just one of the spouses.
+ In addition, it does not seem to matter whether the information is provided
+ by a couple or an individual.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+Impact on adoption
+\end_layout
+
+\begin_layout Standard
+During the endline, we collected information on the use of modern inputs
+ and recommended farming practices on maize plots.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:pract_h1_ag"
+
+\end_inset
+
+ compares adoption rates for a range of technologies and practices between
+ households in the control group and households that were shown a video.
+\end_layout
+
+\begin_layout Standard
+The first recommended practice we look at is early planting, which was emphasize
+d in the video.
+ We find that in about 36.8 percent of households where the placebo video
+ was shown, at least one spouse reports they have started planting maize
+ within one day following the first rains.
+ This seems to be not significantly different from the proportion of households
+ that reported planting immediately after the rains among households that
+ were given information through the video.
+ We also carefully explain a novel way of planting, where spacing between
+ hills in a row is reduced but only one seed is planted per hill instead
+ of the usual two.
+ We see that the percentage of households in which at least one of the spouses
+ reports this new way of planting on at least one plot is only 3.2 percent
+ among the control group.
+ However, this percentage increases to 10 percent and the increase is significan
+tly different from zero when households were shown the video.
+ We find a similar positive impact from showing the video for the removal
+ of striga according to the recommendations: in the control group, 70.4 percent
+ of households report removing striga before it flowers to reduce damage
+ early on and prevent the weed from spreading.
+ Among farm households that were shown the video, this percentage is 5.8
+ percentage points higher.
+ We find that about 41 percent of control households report first weeding
+ first after 18-20 days, which was what we recommended in the video.
+ We do not find that this proportion is significantly higher among treated
+ households.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact of agricultural extension videos on adoption of inputs and practices
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:pract_h1_ag"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{lccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Planted first day after rain	&	0.368	&	-0.003	&	0.889	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Followed recommended spacing	&	0.032	&	0.068	&	0.000	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Removed striga early on	&	0.704	&	0.058	&	0.012	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+weeding during first 4 weeks	&	0.408	&	0.020	&	0.850	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Used fertilizer	&	0.479	&	0.047	&	0.237	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1}{r}{Used DAP/NPK}  	&	0.262	&	-0.054	&	0.012	
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1}{r}{Used Urea}	&	0.054	&	0.041	&	0.012	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1}{r}{Used organic matter}	&	0.190	&	0.075	&	0.000	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used improved seed	&	0.572	&	0.018	&	0.850	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1}{r}{Used hybrid seed}	&	0.295	&	0.009	&	0.656	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1}{r}{Used OPV seed}	&	0.302	&	-0.025	&	0.395	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Combined improved seed with ferilizer	&	0.335	&	0.038	&	0.376	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Bought seed	&	0.501	&	0.018	&	0.850	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used chemical	&	0.432	&	0.048	&	0.237	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+hired in labour	&	0.621	&	-0.022	&	0.850	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+adoption index	&	-0.073	&	0.080	&	0.000	
+\backslash
+
+\backslash
+ 		
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: Reported p-values are based on randomization inference, corrected
+ for multiple hypothesis testing using the Westfall and Young free stepdown
+ resampling method.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We collected detailed information on fertilizer used on the maize plots.
+ Overall, 47.9 percent of households in the control group reported they used
+ fertilizer on at least one plot.
+ While this percentage is almost 10 percent higher among treated farmers,
+ the difference is not significant after correcting for multiple hypothesis
+ testing
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+RI p-value is 0.038 before adjustment for multiple testing
+\end_layout
 
 \end_inset
 
 .
- The third panel in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Does-the-intervention"
-
-\end_inset
-
- shows that after the first screening of the videos, about 88 percent of
- farmers in the control group were able to indicate the correct answer to
- the question when weeding is most important.
- This proportion increases to about 86 percent in the treatment group.
- Also after the second screening of the video, the treatment groups does
- significantly better in answering the question than the control group.
- The reduction in the proportion of farmers that answer correctly in the
- control group over time may be caused by the fact that, in the absence
- of information on the correct answer, farmers in this group start to doubt
- about their initial answer and choose an (incorrect) alternative after
- the second screening.
+ This can be explained by looking at the different types of fertilizer.
+ We see that among the control group, already a substantial proportion of
+ farmers is using DAP or NPK.
+ This proportion is significantly lower among households that were shown
+ the video.
+ At the same time, the use of urea, as well as the use of organic fertilizer,
+ seems to have increase in response to the information intervention.
+ Urea use in particular, which was very low in the control group, almost
+ doubled due to the video.
+ Inorganic fertilizer increased from 19 percent to 26.5 percent.
+ Most likely, this is due to the fact that, in the video, it is emphasized
+ that inputs should be combined to get best results, and as a result some
+ of the treated farmers reduce their use of DAP or NPK and increase adoption
+ of Urea and inorganic fertilizer to engage in more balanced soil nutrient
+ management.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
+We also collected detailed information on the use of improved seed on the
+ maize plots.
+ Improved seed is already relatively high, with 57.2 percent of households
+ reporting to use either hybrid and/or open pollinated varieties on at least
+ one maize plot.
+ However, seed adoption rates remain constant after seeing the video.
+ We also check if the proportion of households that combine improved seed
+ with fertilizer increases after having seen the video.
+ While the percentage of households that report using both technologies
+ increases by more than 10 percent, this difference is not statistically
+ significant.
+ The proportion of households that buy seeds on the market, as opposed to
+ recycling used seed, also is not affected by the information treatment.
+\end_layout
+
+\begin_layout Standard
+We also want to see if our intervention crowds in other technologies or
+ practices.
+ While we do not promote the use of chemicals such as fungicides, pesticides
+ or herbicides in our video, use rates may be indirectly affected.
+ We find that about 43.2 percent of households uses chemicals on at least
+ one plot.
+ We indeed see that this is more than 11 percent higher in households that
+ were shown the video.
+ But also here, the difference is not statistically significant after adjusting
+ for multiple hypothesis testing
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+RI p-value is 0.037 before adjustment for multiple testing
+\end_layout
+
+\end_inset
+
+.
+ Finally, we look if the video increases the likelihood that households
+ hire in labour.
+ While hiring in of labour seems common, the rate is not affected by the
+ intervention.
+ Overall, as in the case of knowledge, the agricultural information intervention
+ seemed to increase adoption of a range of modern agricultural technologies
+ and recommended farming practices, and this conclusion is supported by
+ a significant positive impact of the videos on the agricultural adoption
+ index.
+\end_layout
+
+\begin_layout Standard
+Results for the second main hypothesis, where households where the video
+ was shown to one of the spouses individually are contrasted with households
+ where the video was shown to the couple, are reported in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:pract_recipient"
+
+\end_inset
+
+.
+ The table shows that among households were videos were shown to either
+ the man of the woman seperately, about 36.5 percent of households planted
+ immediately after the first rains and 8.9 percent followed recommended spacing
+ on at least one plot.
+ We also see that about 73.8 percent of these households where the recipient
+ of the information was the individual removed striga before flowering and
+ engaged in weeding in the third week.
+ For none of these practices, a significant difference between the two treatment
+ groups can be detected: it seems to matter whether this information was
+ given to an individual or a couple.
+ 
+\end_layout
+
+\begin_layout Standard
+We do find that targeting matters for fertilizer use.
+ We find that about 47.5 percent of households where the video was shown
+ to only one individual report using fertilizer on at least one plot.
+ This percentage increases to 53 percent if the couple was targeted with
+ the information.
+ From further dis-aggregation of the fertilizer types, we learn that this
+ difference is driven by organic fertilizer.
+ Among households where the video was shown to only one of the spouses,
+ about 22 percent reports to be using organic fertilizer on at least one
+ plot.
+ Among households where the video was shown to the couple, this percentage
+ increases to 31.4 percent
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Can we explain this? Why would this be the case?
+\end_layout
+
+\end_inset
+
+.
+ Furthermore, while we do not find a difference between the two groups in
+ terms of the use of improved maize seed, we do see that households that
+ received the information as a couple are more likely to combine fertilizer
+ use with improved seed.
+ We also see that the proportion of households that bought seed is higher
+ among farmers where the video was shown the both spouses together, but
+ the difference is not significant after adjusting for multiple hypothesis
+ testing
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+RI p-value is 0.020 before adjustment for multiple testing
+\end_layout
+
+\end_inset
+
+.
+ As such, while the information provided thought the video seems more effective
+ if targeted at the couple for some inputs and practices, this finding can
+ not be generalized as is also evident from the fact that the adoption index
+ does not significantly differ between the two groups.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename h1_all.pdf
-	scale 60
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The effect of gender (composition) of person(s) targeted by information
+ on agricultural technology adoption
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:pract_recipient"
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{lccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Planted first day after rain	&	0.365	&	-0.007	&	0.700	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Followed recommended spacing	&	0.089	&	0.013	&	0.635	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Removed striga before flowering	&	0.738	&	0.026	&	0.356	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Weeding during first 4 weeks	&	0.460	&	-0.031	&	0.458	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used fertilizer	&	0.475	&	0.055	&	0.042	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1}{r}{Used DAP/NPK}	&	0.207	&	-0.003	&	0.848	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1}{r}{Used Urea}	&	0.089	&	0.008	&	0.750	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1}{r}{Used organic matter}	&	0.220	&	0.049	&	0.004	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used improved seed	&	0.562	&	0.026	&	0.606	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1}{r}{Used hybrid seed}	&	0.299	&	0.009	&	0.831	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1}{r}{Used OPV seed}	&	0.273	&	-0.001	&	0.962	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Combined improved seed with ferilizer	&	0.321	&	0.055	&	0.019	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Bought seed	&	0.473	&	0.045	&	0.136	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used chemical	&	0.501	&	-0.021	&	0.635	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Hired in labour	&	0.624	&	-0.021	&	0.635	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Adoption index	&	-0.004	&	0.007	&	0.653	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: Reported p-values are based on randomization inference, corrected
+ for multiple hypothesis testing using the Westfall and Young free stepdown
+ resampling method.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, we present results for the third hypothesis in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:pract_h3_ag"
+
+\end_inset
+
+.
+ In particular, we compare if households that saw the video where the informatio
+n was given by a couple are more or less likely to adopt modern technologies
+ and recommended practices that households where the information was provided
+ by an individual.
+ We can be brief about this: we do not find any difference between the two
+ groups in the likelihood of adoption of any of the inputs or practices
+ we inquired about.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -1768,10 +2813,11 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Does reducing information asymmetry increase knowledge?
+The effect of gender (composition) of person(s) providing the information
+ on agricultural technology adoption
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Does-reducing-information"
+name "tab:pract_h3_ag"
 
 \end_inset
 
@@ -1782,98 +2828,41 @@ name "fig:Does-reducing-information"
 
 
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Does-reducing-information"
-
-\end_inset
-
- plots results for the hypothesis that reducing information asymmetries
- within the farm household increases knowledge.
- It compares the proportion of farm households that answer correctly in
- households that were shown the video as a couple to the proportion of farm
- households that answer correctly in households were the video was shown
- to either the woman or the man (corresponding to panel (B) in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Hypothesis-tests"
-
-\end_inset
-
-).
- We see that households where the videos were shown to the couple are significan
-tly more likely to answer the first question related to planting correctly
- than households where the video was shown to only one of the spouses.
- The difference is present after both the first and the second screening
- of the videos.
- The difference between treatment and control is not significant for the
- second question in our quiz related to the benefits of combining inputs
- at a smaller scale.
- Knowledge on optimal time for weeding also does not seem to be affected
- by whether the information was given to a couple or to an individual within
- the household.
-\end_layout
-
-\begin_layout Standard
-One may argue that a significant effect found in the first panel of Figure
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Does-reducing-information"
-
-\end_inset
-
- is not necessarily due to a reduction of information asymmetry, but simply
- the result of providing double the amount of information at the household
- level.
- The fact that we showed the videos twice allows us to test this hypothesis.
- In particular, if a dose-response interpretation is the most appropriate,
- we would expect that the difference between treatment and control after
- the first screenings in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Does-reducing-information"
-
-\end_inset
-
- matches the difference between the first and second screening in the control
- group.
- Doubling the dose among households where the video was shown to only one
- person within the household (the control) increases the proportion of correct
- answers by almost 18 percent (from about 67.5 % to about 79 %).
- However, the increase in proportion of correct answers between treatment
- and control after the first screening is much smaller, from about 67.5 to
- about 72.5 %, corresponding to about 7 percent.
- At the same time, the increase in proportion of correct answers in the
- treatment group between the first and second screening matches the increase
- in the control group over time.
- Taken together, this suggests that the information asymmetry effect is
- different from the effect that emanates from simply showing the information
- message twice.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename h2_all.pdf
-	scale 60
+
+\end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+Impact on production
+\end_layout
+
+\begin_layout Standard
+We next turn to changes in production related outcome as a result of our
+ experiment.
+ We first look at household level maize production.
+ During the endline survey, we asked both spouses separately to estimate
+ how much maize was harvested from each plot.
+ These quantities are then summed over the different plots for each spouse
+ and the average between the two spouses are taken as the final estimate
+ of household level maize production.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -1881,112 +2870,285 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Does projecting a household cooperative approach increase knowledge?
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Does-projecting-a"
+Impact on household level production
+\end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Control versus Treatment}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}    
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
  
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Plain Layout
 
-\end_layout
+log kg produced	&	5.823	&	-0.021	&	0.812	
+\backslash
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Does-projecting-a"
-
-\end_inset
-
- tests the hypothesis that promoting a household cooperative approach to
- farming leads to increased knowledge on planting, on combining inputs at
- a small scale, and on weeding.
- The graph corresponds to panel (C) in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Hypothesis-tests"
-
-\end_inset
-
-.
- We do not find that farmers learn more when the video features a couple
- as opposed to a single individual.
- Even more, for the question related to weeding, it seems that the proportion
- of correct answers is lower among households that were provided the information
- by a couple the second time the video was shown.
+\backslash
  
 \end_layout
 
-\begin_layout Standard
-The fact that we do not find significant effects of projecting a household
- cooperative approach on knowledge transfer does not mean such effects are
- irrelevant for the effectiveness of agricultural extension.
- While the source of information may not affect knowledge transfer, it may
- still affect the likelihood that farmers act upon this information.
- For instance, we expect that projecting a household cooperative approach
- to farming will affect the way in which resources are allocated between
- men and women controlled plots within the household, in turn affecting
- outcomes such as household productivity and the gender productivity gap.
- However, this can only be assessed after we have collected endline data.
-\end_layout
+\begin_layout Plain Layout
 
-\begin_layout Standard
-Finally, in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Is-there-gender"
+log acre cultivated	&	0.054	&	-0.108	&	0.001	
+\backslash
 
-\end_inset
-
-, we test if farmers learn more from farmers that have the same gender than
- if messenger and recipient of the information are from opposite sex.
- This corresponds to the experimental setup depicted in panel (D) in Figure
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Hypothesis-tests"
-
-\end_inset
-
-.
- Similar to the hypothesis on projecting a cooperative approach, we do not
- find significant differences between gender matched and gender mixed farmers
- on any of the knowledge questions.
- As for the previous hypothesis on projecting a cooperative approach, the
- fact that we do not find evidence on gender homophily effects on knowledge
- does not mean such effects are irrelevant.
- In fact, we expect that gender homophily effects matter much more for the
- decision to believe the information and hence act upon it.
- Again, to test this we need endline information.
+\backslash
  
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
+\begin_layout Plain Layout
+
+log yield (kg/acre)	&	5.822	&	0.130	&	0.000	
+\backslash
+
+\backslash
+ 
+\end_layout
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename h3_all.pdf
-	scale 60
+
+yield was better	&	0.402	&	0.012	&	0.812	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+production index	&	-0.103	&	0.091	&	0.000	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Individual versus couple targeted}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+log kg produced	&	5.811	&	-0.008	&	0.806	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+log acre cultivated	&	-0.086	&	0.035	&	0.359	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+log yield (kg/acre)	&	5.983	&	-0.029	&	0.428	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+yield was better	&	0.391	&	0.025	&	0.428	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+production index	&	0.005	&	-0.021	&	0.173	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Individual versus couple pictured}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+log kg produced	&	5.801	&	0.002	&	0.951	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+log acre cultivated	&	-0.024	&	-0.027	&	0.532	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+log yield (kg/acre)	&	5.913	&	0.041	&	0.295	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+yield was better	&	0.435	&	-0.019	&	0.532	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+production index	&	-0.034	&	0.018	&	0.272	
+\backslash
+
+\backslash
+ 		
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: Reported p-values are based on randomization inference, corrected
+ for multiple hypothesis testing using the Westfall and Young free stepdown
+ resampling method.
+\end_layout
 
 \end_inset
 
@@ -1994,16 +3156,6 @@ status collapsed
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Is there gender homophily in learning?
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Is-there-gender"
-
-\end_inset
-
 
 \end_layout
 
@@ -2012,13 +3164,8 @@ name "fig:Is-there-gender"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
+\begin_layout Subsubsection*
+Impact at the individual level
 \end_layout
 
 \begin_layout Section*
@@ -2111,6 +3258,27 @@ The fact that farmers appear to absorb the information provided through
  the information, which may be conditional on gender matching.
  To find out the impact of the intervention on intermediate and final outcomes,
  we first have to collect endline data, which is planned for February 2018.
+\end_layout
+
+\begin_layout Standard
+Key results:
+\end_layout
+
+\begin_layout Itemize
+Farm households reduce use of DAP/NPK and increase use of urea and inorganic
+ fertilizer.
+ Most likely, this is due to the fact that, in the video, it is emphasized
+ that inputs should be combined to get best results, and as a result some
+ of the treated farmers reduce their use of DAP or NPK and increase adoption
+ of Urea and inorganic fertilizer to engage in more balanced soil nutrient
+ management.
+\end_layout
+
+\begin_layout Itemize
+while the information provided thought the video seems more effective if
+ targeted at the couple for some inputs and practices, this finding can
+ not be generalized as is also evident from the fact that the adoption index
+ does not significantly differ between the two groups.
 \end_layout
 
 \begin_layout Standard

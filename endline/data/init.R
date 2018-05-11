@@ -92,6 +92,36 @@ dta$prod_tot_sp2[is.na(dta$spouse2grp_sp1f16) & is.na(dta$spouse2grp_sp2g16) & i
 ## take mean of production reported by both spouses as total production
 dta$prod_tot <-  rowMeans(dta[c("prod_tot_sp1","prod_tot_sp2")], na.rm=T)
 
+### now scale by area and take intercropping into account 
+dta[c("grp1a11","grp2b11","grp3c11","grp4d11", "grp5e11")] <- lapply(dta[c("grp1a11","grp2b11","grp3c11","grp4d11", "grp5e11")], function(x) replace(x, x == 999, NA) )
+
+dta[c("spouse2grp_sp1f11","spouse2grp_sp2g11","spouse2grp_sp3h11","spouse2group_sp4j11", "spouse2grp5_sp5k11")] <- lapply(dta[c("spouse2grp_sp1f11","spouse2grp_sp2g11","spouse2grp_sp3h11","spouse2group_sp4j11", "spouse2grp5_sp5k11")], function(x) replace(x,x == 999,NA) )
+
+dta$area_pl1_sp1 <-(dta$grp1a11 * ((dta$grp1a14) /100))
+dta$area_pl2_sp1 <-(dta$grp2b11 * ((dta$grp2b14) /100))
+dta$area_pl3_sp1 <-(dta$grp3c11 * ((dta$grp3c14) /100))
+dta$area_pl4_sp1 <-(dta$grp4d11 * ((dta$grp4d14) /100))
+dta$area_pl5_sp1 <-(dta$grp5e11 * ((dta$grp5e14) /100))
+## same deal here, this will be zero of nothing was produced, but this can now safely be replaced by NA
+dta$area_tot_sp1 <- rowSums(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")], na.rm=T)
+dta$area_tot_sp1[dta$area_tot_sp1 == 0] <- NA
+dta$yield_av_sp1 <- dta$prod_tot_sp1/dta$area_tot_sp1
+
+dta$area_pl1_sp2 <- (dta$spouse2grp_sp1f11 * ((dta$spouse2grp_sp1f14) /100))
+dta$area_pl2_sp2 <- (dta$spouse2grp_sp2g11 * ((dta$spouse2grp_sp2g14) /100))
+dta$area_pl3_sp2 <- (dta$spouse2grp_sp3h11 * ((dta$spouse2grp_sp3h14) /100))
+dta$area_pl4_sp2 <- (dta$spouse2group_sp4j11 * ((dta$spouse2group_sp4j14) /100))
+dta$area_pl5_sp2 <- (dta$spouse2grp5_sp5k11 * ((dta$spouse2grp5_sp5k14) /100))
+
+dta$area_tot_sp2 <- rowSums(dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")], na.rm=T)
+dta$area_tot_sp2[dta$area_tot_sp2 == 0] <- NA
+## /0 yields Nan
+dta$yield_av_sp2 <- dta$prod_tot_sp2/dta$area_tot_sp2
+
+dta$area_tot <- rowMeans(dta[c("area_tot_sp1","area_tot_sp2")], na.rm=T)
+
+dta$yield_av <- rowMeans(dta[c("yield_av_sp1","yield_av_sp2")], na.rm=T)
+
 ##################################### interlude: calc measures of plot management ##########################
 ###who manages plots?
 dta$mgt_man_pl1 <-  rowSums(cbind((dta$grp1a10==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp1f10==1  & dta$person_interviewed=="woman")), na.rm=T)
@@ -646,35 +676,7 @@ dta$prod_tot_sp2[rowSums(dta[c("wshare2_pl1","wshare2_pl2","wshare2_pl3","wshare
 ## take mean of production reported by both spouses as total production
 dta$prod_tot_wm_share2 <-  rowMeans(dta[c("prod_tot_sp1","prod_tot_sp2")], na.rm=T)
 
-### now scale by area and take intercropping into account 
-dta[c("grp1a11","grp2b11","grp3c11","grp4d11", "grp5e11")] <- lapply(dta[c("grp1a11","grp2b11","grp3c11","grp4d11", "grp5e11")], function(x) replace(x, x == 999, NA) )
 
-dta[c("spouse2grp_sp1f11","spouse2grp_sp2g11","spouse2grp_sp3h11","spouse2group_sp4j11", "spouse2grp5_sp5k11")] <- lapply(dta[c("spouse2grp_sp1f11","spouse2grp_sp2g11","spouse2grp_sp3h11","spouse2group_sp4j11", "spouse2grp5_sp5k11")], function(x) replace(x,x == 999,NA) )
-
-dta$area_pl1_sp1 <-(dta$grp1a11 * ((dta$grp1a14) /100))
-dta$area_pl2_sp1 <-(dta$grp2b11 * ((dta$grp2b14) /100))
-dta$area_pl3_sp1 <-(dta$grp3c11 * ((dta$grp3c14) /100))
-dta$area_pl4_sp1 <-(dta$grp4d11 * ((dta$grp4d14) /100))
-dta$area_pl5_sp1 <-(dta$grp5e11 * ((dta$grp5e14) /100))
-## same deal here, this will be zero of nothing was produced, but this can now safely be replaced by NA
-dta$area_tot_sp1 <- rowSums(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")], na.rm=T)
-dta$area_tot_sp1[dta$area_tot_sp1 == 0] <- NA
-dta$yield_av_sp1 <- dta$prod_tot_sp1/dta$area_tot_sp1
-
-dta$area_pl1_sp2 <- (dta$spouse2grp_sp1f11 * ((dta$spouse2grp_sp1f14) /100))
-dta$area_pl2_sp2 <- (dta$spouse2grp_sp2g11 * ((dta$spouse2grp_sp2g14) /100))
-dta$area_pl3_sp2 <- (dta$spouse2grp_sp3h11 * ((dta$spouse2grp_sp3h14) /100))
-dta$area_pl4_sp2 <- (dta$spouse2group_sp4j11 * ((dta$spouse2group_sp4j14) /100))
-dta$area_pl5_sp2 <- (dta$spouse2grp5_sp5k11 * ((dta$spouse2grp5_sp5k14) /100))
-
-dta$area_tot_sp2 <- rowSums(dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")], na.rm=T)
-dta$area_tot_sp2[dta$area_tot_sp2 == 0] <- NA
-## /0 yields Nan
-dta$yield_av_sp2 <- dta$prod_tot_sp2/dta$area_tot_sp2
-
-dta$area_tot <- rowMeans(dta[c("area_tot_sp1","area_tot_sp2")], na.rm=T)
-
-dta$yield_av <- rowMeans(dta[c("yield_av_sp1","yield_av_sp2")], na.rm=T)
 
 ### female managed area
 dta$area_tot_sp1 <- rowSums(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")]*(dta[c("dec_woman_pl1","dec_woman_pl2","dec_woman_pl3","dec_woman_pl4","dec_woman_pl5")] >0)
@@ -916,17 +918,21 @@ write.csv(dta[c("hhid", "messenger", "recipient", "know_space_m", "know_combine_
 
 ################################################################ PRACTICES ##############################################################
 
-### planted immediately after the rain
+### planted first day days after rain
 names(dta)[names(dta) == 'grp1days19'] <- 'grp1days1'
 
-dta[c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5")] <- lapply(dta[c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5")], function(x) replace(x, is.na(x) | x ==98, 999) )
+dta[c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5")] <- lapply(dta[c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5")], function(x) replace(x, x ==999, NA) )
 
-dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")] <- lapply(dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")], function(x) replace(x,is.na(x) | x ==98, 999) )
+dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")] <- lapply(dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")], function(x) replace(x,x ==999, NA) )
 
-dta$days_min_sp1 <- do.call(pmin,dta[c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5")])
-dta$days_min_sp2 <- do.call(pmin,dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")])
-dta$days_min <- do.call(pmin,dta[c("days_min_sp1", "days_min_sp2")])
-dta$days_min[dta$days_min > 30] <- NA
+dta$day_one_sp1 <- rowSums(dta[c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5")] ==1 , na.rm=T) >0
+dta$day_one_sp1[is.na(dta$grp1days1) & is.na(dta$grp2days2) & is.na(dta$grp3days3) & is.na(dta$grp4days4) & is.na(dta$grp5days5)] <- NA
+
+dta$day_one_sp2 <- rowSums(dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")] ==1 , na.rm=T) >0
+dta$day_one_sp2[is.na(dta$spouse2grp_sp1days1) & is.na(dta$spouse2grp_sp2days_sp2) & is.na(dta$spouse2grp_sp3days_sp3) & is.na(dta$spouse2group_sp4dayssp4) & is.na(dta$spouse2grp5_sp5dayssp5)] <- NA
+
+dta$day_one <- rowSums(dta[c("day_one_sp1","day_one_sp2")], na.rm=T) > 0
+dta$day_one[is.na(dta$day_one_sp1) & is.na(dta$day_one_sp2)] <- NA
 
 ### use recommended spacing on *any* plot
 dta$space_sp1 <- rowSums(dta[c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201")], na.rm=T) > 0
@@ -2655,64 +2661,64 @@ RI <- function(dep, indep, dta , nr_repl = 1000) {
 	return(sum(oper)/nr_repl)
 }
 
-### 
-FSR_OLS <- function(deps, indep, dta, nr_repl = 1000) {
-# use: FSR_OLS( c("know_space","know_combine","know_weed","know_armyworm") ,"messenger != 'ctrl'" ,dta_bal, nr_repl = totrep)
+#### 
+#FSR_OLS <- function(deps, indep, dta, nr_repl = 1000) {
+## use: FSR_OLS( c("know_space","know_combine","know_weed","know_armyworm") ,"messenger != 'ctrl'" ,dta_bal, nr_repl = totrep)
 
 
-	### determines treatmetn cell
-	dta <- dta %>% 
-    		mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
-	### allocates unique ID based on treatment cell status and village
-	dta <- dta %>% 
-    		mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vilID"))) 
-	### the NULL
-### this should be estimated seperately:
-beta <- array(NA,length(deps))
-pval <- array(NA,length(deps))
+#	### determines treatmetn cell
+#	dta <- dta %>% 
+#    		mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
+#	### allocates unique ID based on treatment cell status and village
+#	dta <- dta %>% 
+#    		mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vilID"))) 
+#	### the NULL
+#### this should be estimated seperately:
+#beta <- array(NA,length(deps))
+#pval <- array(NA,length(deps))
 
-for (i in 1:length(deps)) {
-pval[i] <- summary(lm(as.formula(paste(deps[i],indep,sep="~")), data=dta))$coefficients[2,4]
-}
-	
-	Ord <- order(pval)
-pval <- pval[Ord]
-deps <- deps[Ord]
-	dta_sim <- dta
-	NSnps <- length(deps)
-	TestStatResamp <- matrix(nrow=nr_repl, ncol=NSnps)
-	TestStatResamp2 <- matrix(nrow=nr_repl, ncol=NSnps)
+#for (i in 1:length(deps)) {
+#pval[i] <- summary(lm(as.formula(paste(deps[i],indep,sep="~")), data=dta))$coefficients[2,4]
+#}
+#	
+#	Ord <- order(pval)
+#pval <- pval[Ord]
+#deps <- deps[Ord]
+#	dta_sim <- dta
+#	NSnps <- length(deps)
+#	TestStatResamp <- matrix(nrow=nr_repl, ncol=NSnps)
+#	TestStatResamp2 <- matrix(nrow=nr_repl, ncol=NSnps)
 
-oper <- foreach (repl = 1:nr_repl,.combine=rbind) %dopar% {
+#oper <- foreach (repl = 1:nr_repl,.combine=rbind) %dopar% {
 
- 		resample <- function(x, ...) x[sample.int(length(x), ...)]
-		dta_sim$perm <- unlist(sapply(as.character(unique(dta$uniqID)), function(x) resample(dta$treat[dta$uniq==x])))
-		dta_sim$messenger[dta_sim$perm == 1  |dta_sim$perm == 3  |dta_sim$perm == 5  ] <- "male"
-		dta_sim$messenger[dta_sim$perm == 2  |dta_sim$perm == 4  |dta_sim$perm == 6  ] <- "female"
-		dta_sim$messenger[dta_sim$perm == 8  |dta_sim$perm == 9  |dta_sim$perm == 7 ] <- "couple"
-		dta_sim$messenger[dta_sim$perm == 10  |dta_sim$perm == 11  |dta_sim$perm == 12  ] <- "ctrl"
-		dta_sim$recipient[dta_sim$perm == 1  |dta_sim$perm == 2  |dta_sim$perm == 8 |dta_sim$perm == 10  ] <- "male"
-		dta_sim$recipient[dta_sim$perm == 3  |dta_sim$perm == 4  |dta_sim$perm == 9 |dta_sim$perm == 11  ] <- "female"
-		dta_sim$recipient[dta_sim$perm == 5  |dta_sim$perm == 6  |dta_sim$perm == 7 |dta_sim$perm == 12  ] <- "couple"
-		return(unlist(lapply(deps, function(dvar) summary(lm(as.formula(paste(dvar,indep,sep="~")), data=dta_sim))$coefficients[2,4])))
-	
-		}
-oper <- data.frame((oper))
-for (i in 1:dim(oper)[1]) {
-		for (j in 1:length(deps)) {
-			oper[i,j] <- min(oper[i,j:length(deps)])
-		}
-}
-	
+# 		resample <- function(x, ...) x[sample.int(length(x), ...)]
+#		dta_sim$perm <- unlist(sapply(as.character(unique(dta$uniqID)), function(x) resample(dta$treat[dta$uniq==x])))
+#		dta_sim$messenger[dta_sim$perm == 1  |dta_sim$perm == 3  |dta_sim$perm == 5  ] <- "male"
+#		dta_sim$messenger[dta_sim$perm == 2  |dta_sim$perm == 4  |dta_sim$perm == 6  ] <- "female"
+#		dta_sim$messenger[dta_sim$perm == 8  |dta_sim$perm == 9  |dta_sim$perm == 7 ] <- "couple"
+#		dta_sim$messenger[dta_sim$perm == 10  |dta_sim$perm == 11  |dta_sim$perm == 12  ] <- "ctrl"
+#		dta_sim$recipient[dta_sim$perm == 1  |dta_sim$perm == 2  |dta_sim$perm == 8 |dta_sim$perm == 10  ] <- "male"
+#		dta_sim$recipient[dta_sim$perm == 3  |dta_sim$perm == 4  |dta_sim$perm == 9 |dta_sim$perm == 11  ] <- "female"
+#		dta_sim$recipient[dta_sim$perm == 5  |dta_sim$perm == 6  |dta_sim$perm == 7 |dta_sim$perm == 12  ] <- "couple"
+#		return(unlist(lapply(deps, function(dvar) summary(lm(as.formula(paste(dvar,indep,sep="~")), data=dta_sim))$coefficients[2,4])))
+#	
+#		}
+#oper <- data.frame((oper))
+#for (i in 1:dim(oper)[1]) {
+#		for (j in 1:length(deps)) {
+#			oper[i,j] <- min(oper[i,j:length(deps)])
+#		}
+#}
+#	
 
-Padj <- apply(t(matrix(rep(pval,nr_repl),NSnps)) > oper, 2, mean)
-Padj1 <- Padj
-Padj2 <- Padj
-		for (j in 1:length(deps)) {
-			Padj2[j] <- max(Padj1[1:j])
-		}
-return(list(Ord, deps,Padj1, Padj2[Ord]))
-}
+#Padj <- apply(t(matrix(rep(pval,nr_repl),NSnps)) > oper, 2, mean)
+#Padj1 <- Padj
+#Padj2 <- Padj
+#		for (j in 1:length(deps)) {
+#			Padj2[j] <- max(Padj1[1:j])
+#		}
+#return(list(Ord, deps,Padj1, Padj2[Ord]))
+#}
 
 
 FSR_RI <- function(deps, indep, dta ,pvals = NULL, nr_repl_ri = 1000, nr_repl_pi = nr_repl_ri ) {
@@ -2731,12 +2737,12 @@ FSR_RI <- function(deps, indep, dta ,pvals = NULL, nr_repl_ri = 1000, nr_repl_pi
 # finally, monotonicity is enfored uisng successive maximization
 
 #testing
-#deps <- c("know_space_m", "know_combine_m", "know_weed_m","know_armyworm_m")
+#deps <- c("know_space","know_combine","know_weed", "know_armyworm")
 #indep <- "(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)"
 #dta <- dta_bal
-#pvals <- c( 0.000    ,     0.006       ,  0.319       ,  0.334)
-#nr_repl_ri <- 100
-#nr_repl_pi <- 100
+#pvals <- res_h0_know[1:4,3,h]
+#nr_repl_ri <- 1000
+#nr_repl_pi <- 1000
 
 ### determine treatment cell based on cominations in 2 factorial design
 dta <- dta %>% mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
@@ -2748,6 +2754,7 @@ pval <- array(NA,length(deps))
 for (i in 1:length(deps)) {
 beta[i]  <- summary(lm(as.formula(paste(deps[i],indep,sep="~")), data=dta))$coefficients[2,1]
 }
+deps_init <- deps
 pval <- pvals
 Ord <- order(pval)
 pval <- pval[Ord]
@@ -2789,7 +2796,7 @@ oper <- merge(oper,oper2)
 for (i in 1:NSnps) {
 	oper[,i+1] <- abs(oper[,(i+1)]) > abs(oper[,(i+1+NSnps)])
 }
-oper[deps] <- NULL
+
 ## now devide in blocks of nr_repl_ri
 TestStatResamp <- matrix(nrow=nr_repl_pi, ncol=NSnps)
 TestStatResamp2 <- matrix(nrow=nr_repl_pi, ncol=NSnps)
@@ -2812,7 +2819,7 @@ Padj2 <- Padj
 		}
 ## return ordering, dependent variables, adjusted p-vals before and after final monotonicity enforcement
 
-return(list(Ord, deps,Padj1, Padj2[Ord]))
+return(list(Ord, deps,Padj2, Padj2[match(deps_init,deps)]))
 }
 
 
