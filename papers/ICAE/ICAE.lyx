@@ -1360,7 +1360,7 @@ Maize yield (kg/ac)	&	287.5	&	-1.29	&	1.55	&	-0.37	&	-0.78
 
 \begin_layout Plain Layout
 
-Age of HH head (years)	&	39.76	&	0.8	&	-6.39$^*^*$	&	0.27	&	-0.38	
+Age of HH head (years)	&	39.76	&	0.8	&	-6.39**	&	0.27	&	-0.38	
 \backslash
 
 \backslash
@@ -1369,9 +1369,7 @@ Age of HH head (years)	&	39.76	&	0.8	&	-6.39$^*^*$	&	0.27	&	-0.38
 
 \begin_layout Plain Layout
 
-HH head finshed primary school (
-\backslash
-%) 	&	36.75	&	-0.01	&	-5.26$^*^*$	&	-0.63	&	0.02	
+HH head finshed primary school 	&	36.75	&	-0.01	&	-5.26**	&	-0.63	&	0.02	
 \backslash
 
 \backslash
@@ -1380,7 +1378,7 @@ HH head finshed primary school (
 
 \begin_layout Plain Layout
 
-HH size	&	7.62	&	0.46	&	-2.59$^*^*$	&	0.46	&	-1.47	
+HH size	&	7.62	&	0.46	&	-2.59**	&	0.46	&	-1.47	
 \backslash
 
 \backslash
@@ -1389,7 +1387,7 @@ HH size	&	7.62	&	0.46	&	-2.59$^*^*$	&	0.46	&	-1.47
 
 \begin_layout Plain Layout
 
-Number of bedrooms in residence	&	2.24	&	1.09	&	-1.4	&	0.53	&	-1.84$^+$	
+Number of bedrooms in residence	&	2.24	&	1.09	&	-1.4	&	0.53	&	-1.84	
 \backslash
 
 \backslash
@@ -1398,9 +1396,7 @@ Number of bedrooms in residence	&	2.24	&	1.09	&	-1.4	&	0.53	&	-1.84$^+$
 
 \begin_layout Plain Layout
 
-Access to extension last year (
-\backslash
-%)	&	10.96	&	-0.21	&	0.69	&	-0.68	&	1.67$^+$	
+Access to extension last year 	&	10.96	&	-0.21	&	0.69	&	-0.68	&	1.67	
 \backslash
 
 \backslash
@@ -1409,9 +1405,7 @@ Access to extension last year (
 
 \begin_layout Plain Layout
 
-Has used fertilizer last season (
-\backslash
-%)	&	20.59	&	-1.55	&	3.09$^*^*$	&	1.72$^+$	&	1.63	
+Has used fertilizer last season 	&	20.59	&	-1.55	&	3.09**	&	1.72	&	1.63	
 \backslash
 
 \backslash
@@ -1420,9 +1414,7 @@ Has used fertilizer last season (
 
 \begin_layout Plain Layout
 
-Has used improved seed last season (
-\backslash
-%)	&	38.19	&	-1.49	&	0.71	&	0.74	&	2.13$^*$	
+Has used improved seed last season 	&	38.19	&	-1.49	&	0.71	&	0.74	&	2.13*	
 \backslash
 
 \backslash
@@ -1485,13 +1477,12 @@ footnotesize
 
 \begin_layout Plain Layout
 
-note: table entries (H0-H3) are t-statistics; $^*^*$ denotes significant
-  
+note: table entries (H0-H3) are t-statistics; ** denotes significant  
 \end_layout
 
 \begin_layout Plain Layout
 
-at 1 percent, $^*$ at 5 percent and $^+$ at 10 percent.
+at 1 percent, * at 5 percent and + at 10 percent.
 \end_layout
 
 \begin_layout Plain Layout
@@ -2528,7 +2519,7 @@ RI p-value is 0.020 before adjustment for multiple testing
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2796,7 +2787,8 @@ n was given by a couple are more or less likely to adopt modern technologies
  We can be brief about this: we do not find any difference between the two
  groups in the likelihood of adoption of any of the inputs or practices
  we inquired about.
- 
+ Apparently, it does not matter if the information is given by a male, a
+ female, or a couple for the adoption agricultural technologies and practices.
 \end_layout
 
 \begin_layout Standard
@@ -2830,6 +2822,227 @@ name "tab:pract_h3_ag"
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{lccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4} 
+\end_layout
+
+\begin_layout Plain Layout
+
+planted first day after rain	&	0.364	&	-0.006	&	1.000	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+followed recommended spacing	&	0.097	&	0.005	&	1.000	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+removed striga early on	&	0.758	&	0.007	&	1.000	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+weeding during first 4 weeks	&	0.421	&	0.008	&	1.000	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+used fertilizer	&	0.534	&	-0.003	&	1.000	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1}{r}{Used DAP/NPK}	&	0.215	&	-0.011	&	0.728	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1}{r}{Used Urea}	&	0.114	&	-0.016	&	0.428	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1}{r}{Used organic matter}	&	0.266	&	0.002	&	0.892	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used improved seed	&	0.569	&	0.020	&	0.957	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1}{r}{Used hybrid seed}	&	0.295	&	0.015	&	0.651	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{1}{r}{Used OPV seed}	&	0.274	&	-0.002	&	0.930	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Combined improved seed with ferilizer	&	0.373	&	0.004	&	1.000	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Bought seed	&	0.518	&	0.001	&	1.000	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used chemical	&	0.483	&	-0.002	&	1.000	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Hired in labour	&	0.618	&	-0.015	&	0.987	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Adoption index	&	-0.004	&	0.007	&	0.660	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: Reported p-values are based on randomization inference, corrected
+ for multiple hypothesis testing using the Westfall and Young free stepdown
+ resampling method.
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -2854,6 +3067,60 @@ We next turn to changes in production related outcome as a result of our
  These quantities are then summed over the different plots for each spouse
  and the average between the two spouses are taken as the final estimate
  of household level maize production.
+ We find that overall, a typical farm household in our sample produced about
+ 460 kgs of maize.
+ Households produce this on 1.13 acres on average.
+ Taken together, we find that yields, defined as kilograms per acre, amount
+ to on average 470 kilograms per acre.
+ This is much higer than yields recorded at baseline (290 kg/acre) as the
+ rains were better and there was increased attention for strategies to combat
+ fall armyworm.
+ Still, compared to FAOSTAT figures (1000 kg/acre) or figures from household
+ survey data (typically around 600 kg/acre), yields were below normal, as
+ is also confirmed by the fact that in only 40 percent of households at
+ least one spouse reports that yields were better than a typical year on
+ at least one plot.
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:yield_ag_allh"
+
+\end_inset
+
+ reports results for the three hypotheses with respect to outcomes related
+ to production.
+ In the top panel we again compare outcomes of control households to outcomes
+ of households where at least one individual was shown a video.
+ Household level production, expressed in logs and trimmed 5 percent at
+ each end of the distribution, does not differ between the two groups.
+ We do find, however, that households that were exposed to the information
+ seem to cultivate smaller plots: Reported acreage is 11 percent smaller
+ among households that were shown a video.
+ The fact that the same amount is cultivated on a smaller area also results
+ in the fact that in households that were shown a video, yields are almost
+ 14 percent higher than in control households.
+ Overall, we find that the information intervention had a significant and
+ positive effect on production outcomes, as is evident from the positive
+ treatment effect in the production index.
+ We can conclude that at the household level, the videos thus seem to affect
+ the intensification of maize.
+ Again, this can be traced back to the fact that in the video, it is emphasized
+ that it is better to combine inputs and practices, and that as such, it
+ is often better to start small.
+ In addition, the video promotes a more commercial attitude towards farming,
+ where investments are made at a small scale to be scaled up over time.
+ 
+\end_layout
+
+\begin_layout Standard
+Comparing production outcomes between households where the video was shown
+ to only one individual and households where the video was shown to the
+ couple, we find little impact.
+ Similarly, we do not find that it matters for production whether the informatio
+n was given by an individual or by a couple.
 \end_layout
 
 \begin_layout Standard
@@ -2863,14 +3130,17 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Impact on household level production
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:yield_ag_allh"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3155,6 +3425,657 @@ note: Reported p-values are based on randomization inference, corrected
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+Impact on disposal
+\end_layout
+
+\begin_layout Standard
+We also investigate if the different interventions affect disposal of maize
+ after harvest.
+ In particular, we compare the share of households that report positive
+ amounts of consumption, sales, and maize was kept as seed for the next
+ season.
+ Results are summarized in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Impact-on-disposal"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on disposal of maize
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Impact-on-disposal"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Control versus Treatment}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}    
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+maize consumed	&	0.832	&	0.041	&	0.063	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+sold maize	&	0.649	&	0.019	&	0.397	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+saved seed	&	0.842	&	-0.038	&	0.075	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+disposal index	&	-0.072	&	0.079	&	0.004	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Individual versus couple targeted}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+maize consumed	&	0.901	&	-0.023	&	0.283	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+sold maize	&	0.658	&	0.009	&	0.581	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+saved seed	&	0.822	&	-0.017	&	0.409	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+disposal index	&	-0.001	&	0.004	&	0.851	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Individual versus couple pictured}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+maize consumed	&	0.873	&	0.005	&	0.942	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+sold maize	&	0.663	&	0.004	&	0.942	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+saved seed	&	0.811	&	-0.007	&	0.942	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+disposal index	&	-0.011	&	0.015	&	0.493	
+\backslash
+
+\backslash
+ 		
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: Reported p-values are based on randomization inference, corrected
+ for multiple hypothesis testing using the Westfall and Young free stepdown
+ resampling method.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+Impact on household welfare
+\end_layout
+
+\begin_layout Standard
+Finally, look at the impact of the information interventions on measures
+ of well-being at the household level.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on welfare
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Control versus Treatment}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}    
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+better off than average	&	0.428	&	0.043	&	0.305	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+can eat enough food	&	0.414	&	0.029	&	0.521	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+can eat preferred food	&	0.421	&	-0.027	&	0.521	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+can eat enough food	&	0.585	&	-0.040	&	0.305	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+log of consumption	&	10.255	&	-0.034	&	0.521	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+welfare index	&	0.037	&	-0.019	&	0.543	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Individual versus couple targeted}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+better off than average	&	0.429	&	0.043	&	0.092	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+better off than 6 months ago	&	0.419	&	0.020	&	0.707	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+can eat preferred food	&	0.401	&	-0.007	&	0.882	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+can eat enough food	&	0.553	&	-0.006	&	0.882	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+log of consumption	&	10.199	&	0.019	&	0.707	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+welfare index	&	-0.014	&	0.029	&	0.194	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Individual versus couple pictured}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+better off than average	&	0.461	&	0.012	&	0.943	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+better off than 6 months ago	&	0.448	&	-0.009	&	0.950	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+can eat preferred food	&	0.400	&	-0.006	&	0.950	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+can eat enough food	&	0.562	&	-0.014	&	0.922	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+log of consumption	&	10.245	&	-0.027	&	0.950	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+welfare index	&	0.035	&	-0.019	&	0.413	
+\backslash
+
+\backslash
+ 		
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: Reported p-values are based on randomization inference, corrected
+ for multiple hypothesis testing using the Westfall and Young free stepdown
+ resampling method.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Plain Layout
 
 \end_layout
@@ -3165,7 +4086,550 @@ note: Reported p-values are based on randomization inference, corrected
 \end_layout
 
 \begin_layout Subsubsection*
+Impact on decision making
+\end_layout
+
+\begin_layout Standard
+The aim of this study is to investigate if small changes in the design of
+ agricultural extension messages can make The changes in intra-household
+ decision making.
+ In particular, we want to make agricultural advisory services more inclusive.
+ Increase decisionmaking by women in agricultural production 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+(and marketing, but that's another paper)
+\end_layout
+
+\end_inset
+
+.
+ Write here that this is especially the case for hypothesis 2 and 3.
+\end_layout
+
+\begin_layout Standard
+During the endline, we asked each spouse to describe what happens if they
+ disagree about any maize related issue.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Agreement-about-maize"
+
+\end_inset
+
+ reports that about 41 percent of men in households where the video was
+ not shown to the couple together will generally tell their wife they do
+ not agree about any maize related issue.
+ Showing the video to a couple instead of to an individual increases this
+ by about 3.7 percentage points, but the difference is not statistically
+ significant.
+ Among households where only one of the spouses was shown a video, the likelihoo
+d that the women will tell the husband that she disagrees is slightly lower
+ at 38.3 percent.
+ However, if the video is shown to the couple, there is a significant increase
+ in this percentage.
+ Combining these two answers, we construct an indicator that is true if
+ both spouses indicate that they will generally tell the other if they do
+ not agree about any maize related issue.
+ We find that in households where recipients were individuals about 24.3
+ percent of spouses tell each other if they disagree.
+ Among households where the video was shown to the couple, this percentage
+ increases to 28 percent.
+ 
+\end_layout
+
+\begin_layout Standard
+We next compare households that have seen the video where information was
+ given by either a man or a woman to households where information was provided
+ by a couple.
+ We see that in half of the households where the messenger was an individual,
+ the man will tell the wife if he disagrees about any maize related issue.
+ This percentage is significantly lower among households where the messenger
+ was a couple
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Why? Do we have an explanation for this??? Could this maybe be that after
+ seeing a couple in the video, the husband thinks the wife is entitled to
+ her own opinion or her own way of doing things?
+\end_layout
+
+\end_inset
+
+.
+ Changing the messenger attribute does not seem to have an effect on the
+ likelihood that the woman tells the husband that she does not agree.
+ Among 49 percent of households where the version of the video was shown
+ where an individual gives the information, both husband and wife indicate
+ they will generally tell each other if they do not agree.
+ This is 3.8 percentage points higher among households that were shown the
+ version of the video where the information was given by a couple, but this
+ difference is not significant that the 5 percent significance level.
+\end_layout
+
+\begin_layout Standard
+The next question is a follow up question on the previous one and inquires
+ about what happens when one of the spouses tells the other spouse that
+ he or she disagrees.
+ As such, this question was not asked to individuals that stated in the
+ previous question that they did never tell their spouse if they disagree
+ about maize related issues (281 men and 307 woman).
+ As outcome, we compute the proportion of households in which the husband,
+ the wife, or both respond that they talk and come to a conclusion that
+ suits both, as opposed to situations in which the spouse either ignores
+ the other or simply does what the other spouse orders.
+ Results are in the lower panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Agreement-about-maize"
+
+\end_inset
+
+.
+ We find that in 72 percent of households that have been shown the video
+ at the individual level, the man will discuss issues with the wife if he
+ does not agree and they will come to mutually satisfying solution.
+ This percentage increases to 74.7 percent if the video was shown to a couple,
+ but the increase is not significant.
+ In 68 percent of households that have been shown the video at the individual
+ level, the woman will discuss issues with the man if she does not agree
+ and they will come to mutually satisfying solution.
+ This proportion increases by almost 7 percent, to 72.5, if the video was
+ shown to both spouses together.
+ The likelihood that both spouses indicate that they talk and come to a
+ common solution is almost 8 percent higher when the video is shown to a
+ couple, but the difference is not significant.
+ We do not find differences in spouses consulting each other conditional
+ on who provided the information in the video.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Agreement about maize farming
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Agreement-about-maize"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Recipient = Couple}} &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Messenger = Couple}}   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-8}  
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}   
+\backslash
+cline{5-7}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Tell wife	&	0.409	&	0.037	&	0.080	&	0.500	&	-0.054	&	0.009	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Tell man	&	0.383	&	0.052	&	0.010	&	0.453	&	-0.018	&	0.366	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Tell both	&	0.243	&	0.037	&	0.042	&	0.490	&	0.038	&	0.089	
+\backslash
+
+\backslash
+ 												
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+												
+\end_layout
+
+\begin_layout Plain Layout
+
+Consults wife	&	0.720	&	0.027	&	0.165	&	0.742	&	0.004	&	0.828	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Consults man	&	0.680	&	0.045	&	0.017	&	0.731	&	-0.006	&	0.736	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Consult each other	&	0.490	&	0.038	&	0.089	&	0.534	&	-0.005	&	0.824	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: Reported p-values are based on randomization inference.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We also look at decision making on the adoption of different maize growing
+ practices and the use of inputs.
+ For each of the practices and inputs applied at plot level, we asked both
+ spouses who decided to use the input or practice.
+ Options included the man alone, the woman alone, and both spouses decided
+ together.
+\end_layout
+
+\begin_layout Subsubsection*
 Impact at the individual level
+\end_layout
+
+\begin_layout Standard
+The previous section looked at how the interventions affected outcomes at
+ the household level.
+ In this section, we investigate if the intervention has a different impact
+ conditional on who makes the decisions on the plot.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on adoption by plot manager
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Control versus Treatment}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}    
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value 	&	average	&	ATE	&	P-value	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\end_layout
+
+\begin_layout Plain Layout
+
+space	&	0.020	&	0.054	&	0.003	&	0.006	&	0.026	&	0.396	&	0.013	&	0.062	&	0.003	
+\backslash
+
+\backslash
+ striga	&	0.698	&	0.124	&	0.001	&	0.868	&	-0.036	&	0.456	&	0.882	&	-0.034	&	0.266	
+\backslash
+
+\backslash
+ weed	&	0.190	&	0.034	&	0.299	&	0.210	&	0.062	&	0.113	&	0.512	&	-0.053	&	0.184	
+\backslash
+
+\backslash
+ use_fert	&	0.288	&	0.055	&	0.080	&	0.265	&	0.084	&	0.004	&	0.411	&	0.080	&	0.011	
+\backslash
+
+\backslash
+ seed	&	0.443	&	-0.022	&	0.481	&	0.384	&	0.019	&	0.546	&	0.586	&	-0.011	&	0.725	
+\backslash
+
+\backslash
+ combiner	&	0.211	&	0.023	&	0.394	&	0.175	&	0.040	&	0.109	&	0.308	&	0.040	&	0.174	
+\backslash
+
+\backslash
+ bought_seed	&	0.813	&	0.004	&	0.912	&	0.814	&	0.039	&	0.384	&	0.867	&	0.001	&	0.966	
+\backslash
+
+\backslash
+ chem	&	0.283	&	0.050	&	0.049	&	0.318	&	0.033	&	0.301	&	0.427	&	0.063	&	0.051	
+\backslash
+
+\backslash
+ labour	&	0.330	&	-0.050	&	0.067	&	0.382	&	0.014	&	0.684	&	0.481	&	-0.001	&	0.962	
+\backslash
+
+\backslash
+ immediate	&	0.198	&	0.004	&	0.890	&	0.315	&	-0.034	&	0.616	&	0.335	&	0.002	&	0.962	
+\backslash
+
+\backslash
+ 	&		&		&		&		&		&		&		&		&		
+\backslash
+
+\backslash
+ 	&		&		&		&		&		&		&		&		&		
+\backslash
+
+\backslash
+ space	&	0.064	&	0.011	&	0.531	&	0.023	&	0.009	&	0.627	&	0.078	&	-0.002	&	0.896	
+\backslash
+
+\backslash
+ striga	&	0.738	&	0.083	&	0.004	&	0.797	&	0.019	&	0.641	&	0.860	&	-0.012	&	0.585	
+\backslash
+
+\backslash
+ weed	&	0.279	&	-0.053	&	0.138	&	0.184	&	0.105	&	0.000	&	0.434	&	0.019	&	0.544	
+\backslash
+
+\backslash
+ use_fert	&	0.310	&	0.041	&	0.096	&	0.326	&	0.029	&	0.238	&	0.431	&	0.072	&	0.004	
+\backslash
+
+\backslash
+ seed	&	0.434	&	-0.006	&	0.813	&	0.384	&	0.015	&	0.570	&	0.543	&	0.035	&	0.181	
+\backslash
+
+\backslash
+ combiner	&	0.202	&	0.040	&	0.050	&	0.209	&	0.009	&	0.666	&	0.309	&	0.049	&	0.038	
+\backslash
+
+\backslash
+ bought_seed	&	0.794	&	0.038	&	0.241	&	0.803	&	0.044	&	0.241	&	0.842	&	0.033	&	0.237	
+\backslash
+
+\backslash
+ chem	&	0.336	&	-0.001	&	0.967	&	0.334	&	0.020	&	0.442	&	0.472	&	0.019	&	0.445	
+\backslash
+
+\backslash
+ labour	&	0.349	&	-0.064	&	0.007	&	0.353	&	0.047	&	0.071	&	0.496	&	-0.011	&	0.663	
+\backslash
+
+\backslash
+ immediate	&	0.202	&	-0.013	&	0.697	&	0.214	&	0.079	&	0.012	&	0.305	&	0.036	&	0.231	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: Reported p-values are based on randomization inference, corrected
+ for multiple hypothesis testing using the Westfall and Young free stepdown
+ resampling method.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -3279,6 +4743,15 @@ while the information provided thought the video seems more effective if
  targeted at the couple for some inputs and practices, this finding can
  not be generalized as is also evident from the fact that the adoption index
  does not significantly differ between the two groups.
+\end_layout
+
+\begin_layout Itemize
+despite the impact on production, we do not find any impact on welfare,
+ either measured as consumption expenditure or self-assessed.
+\end_layout
+
+\begin_layout Itemize
+We find no evidence of a couple role model effect.
 \end_layout
 
 \begin_layout Standard
