@@ -455,8 +455,8 @@ dta$dec_both_pl5[is.na(dta$mgt_both_pl5) & is.na(dta$dectime_both_pl5) & is.na(d
 ### as dummy
 
 dta[paste("dec_man_d",paste("_pl",1:5, sep=""), sep="")] <- dta[paste("dec_man",paste("_pl",1:5, sep=""), sep="")] > 0
-dta[paste("dec_woman_d",paste("_pl",1:5, sep=""), sep="")] <- dta[paste("dec_man",paste("_pl",1:5, sep=""), sep="")] > 0
-dta[paste("dec_both_d",paste("_pl",1:5, sep=""), sep="")] <- dta[paste("dec_man",paste("_pl",1:5, sep=""), sep="")] > 0
+dta[paste("dec_woman_d",paste("_pl",1:5, sep=""), sep="")] <- dta[paste("dec_woman",paste("_pl",1:5, sep=""), sep="")] > 0
+dta[paste("dec_both_d",paste("_pl",1:5, sep=""), sep="")] <- dta[paste("dec_both",paste("_pl",1:5, sep=""), sep="")] > 0
 
 ### now engagement based on work 
 dta[c("grp1field1a50a", "grp1field1a50b", "grp1field1a50c", "grp1field1a50d", "grp1field1a50e", "grp1field1a50f", "grp1field1a50g")] <- lapply(dta[c("grp1field1a50a", "grp1field1a50b", "grp1field1a50c", "grp1field1a50d", "grp1field1a50e", "grp1field1a50f", "grp1field1a50g")], function(x) replace(x, x == 999, NA) )

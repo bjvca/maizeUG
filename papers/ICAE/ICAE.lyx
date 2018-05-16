@@ -2136,6 +2136,13 @@ status open
 
 
 \backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
 begin{tabular}{lccc} 
 \backslash
 hline 
@@ -2331,7 +2338,9 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2549,6 +2558,13 @@ status open
 
 
 \backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
 begin{tabular}{lccc} 
 \backslash
 hline 
@@ -2744,7 +2760,9 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2824,6 +2842,13 @@ name "tab:pract_h3_ag"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -3024,7 +3049,9 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}  
 \end_layout
 
 \begin_layout Plain Layout
@@ -3151,6 +3178,13 @@ name "tab:yield_ag_allh"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -3403,7 +3437,9 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}  
 \end_layout
 
 \begin_layout Plain Layout
@@ -3454,14 +3490,11 @@ reference "tab:Impact-on-disposal"
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Float table
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3488,6 +3521,17 @@ status open
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{rccc} 
@@ -3495,6 +3539,10 @@ begin{tabular}{rccc}
 hline 
 \backslash
 hline
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -3698,7 +3746,11 @@ disposal index	&	-0.011	&	0.015	&	0.493
 \backslash
 hline  
 \backslash
-hline
+hline 
+\backslash
+
+\backslash
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -3710,7 +3762,9 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3725,6 +3779,23 @@ footnotesize
 note: Reported p-values are based on randomization inference, corrected
  for multiple hypothesis testing using the Westfall and Young free stepdown
  resampling method.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -3747,6 +3818,7 @@ Impact on household welfare
 \begin_layout Standard
 Finally, look at the impact of the information interventions on measures
  of well-being at the household level.
+ We do not find any impact.
  
 \end_layout
 
@@ -3775,6 +3847,13 @@ Impact on welfare
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -4054,7 +4133,9 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
@@ -4206,10 +4287,11 @@ reference "tab:Agreement-about-maize"
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -4233,6 +4315,13 @@ name "tab:Agreement-about-maize"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -4381,7 +4470,9 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}  
 \end_layout
 
 \begin_layout Plain Layout
@@ -4413,6 +4504,54 @@ We also look at decision making on the adoption of different maize growing
  spouses who decided to use the input or practice.
  Options included the man alone, the woman alone, and both spouses decided
  together.
+ Based on these, we construct plot level indicators for the person that
+ makes the decisions on each practice or input at plot level.
+ Results are summarized in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Dec_tech"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Decision making on use of technologies
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Dec_tech"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -4453,6 +4592,13 @@ status open
 
 
 \backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
 begin{tabular}{rccccccccc} 
 \backslash
 hline 
@@ -4462,11 +4608,23 @@ hline
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
  &  
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{Control versus Treatment}}  
+textit{male managed}} &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{female mamaged}} &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{both mamaged}}  
 \backslash
 
 \backslash
@@ -4477,7 +4635,7 @@ textit{Control versus Treatment}}
 
 
 \backslash
-cline{2-4}    
+cline{2-10}    
 \end_layout
 
 \begin_layout Plain Layout
@@ -4508,7 +4666,12 @@ space	&	0.020	&	0.054	&	0.003	&	0.006	&	0.026	&	0.396	&	0.013	&	0.062	&	0.003
 \backslash
 
 \backslash
- use_fert	&	0.288	&	0.055	&	0.080	&	0.265	&	0.084	&	0.004	&	0.411	&	0.080	&	0.011	
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+use fert	&	0.288	&	0.055	&	0.080	&	0.265	&	0.084	&	0.004	&	0.411	&	0.080	&	0.011	
 \backslash
 
 \backslash
@@ -4520,7 +4683,7 @@ space	&	0.020	&	0.054	&	0.003	&	0.006	&	0.026	&	0.396	&	0.013	&	0.062	&	0.003
 \backslash
 
 \backslash
- bought_seed	&	0.813	&	0.004	&	0.912	&	0.814	&	0.039	&	0.384	&	0.867	&	0.001	&	0.966	
+ bought seed	&	0.813	&	0.004	&	0.912	&	0.814	&	0.039	&	0.384	&	0.867	&	0.001	&	0.966	
 \backslash
 
 \backslash
@@ -4536,15 +4699,11 @@ space	&	0.020	&	0.054	&	0.003	&	0.006	&	0.026	&	0.396	&	0.013	&	0.062	&	0.003
 \backslash
 
 \backslash
- 	&		&		&		&		&		&		&		&		&		
+ 		
 \backslash
 
 \backslash
- 	&		&		&		&		&		&		&		&		&		
-\backslash
-
-\backslash
- space	&	0.064	&	0.011	&	0.531	&	0.023	&	0.009	&	0.627	&	0.078	&	-0.002	&	0.896	
+  space	&	0.064	&	0.011	&	0.531	&	0.023	&	0.009	&	0.627	&	0.078	&	-0.002	&	0.896	
 \backslash
 
 \backslash
@@ -4556,7 +4715,12 @@ space	&	0.020	&	0.054	&	0.003	&	0.006	&	0.026	&	0.396	&	0.013	&	0.062	&	0.003
 \backslash
 
 \backslash
- use_fert	&	0.310	&	0.041	&	0.096	&	0.326	&	0.029	&	0.238	&	0.431	&	0.072	&	0.004	
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+use fert	&	0.310	&	0.041	&	0.096	&	0.326	&	0.029	&	0.238	&	0.431	&	0.072	&	0.004	
 \backslash
 
 \backslash
@@ -4568,7 +4732,7 @@ space	&	0.020	&	0.054	&	0.003	&	0.006	&	0.026	&	0.396	&	0.013	&	0.062	&	0.003
 \backslash
 
 \backslash
- bought_seed	&	0.794	&	0.038	&	0.241	&	0.803	&	0.044	&	0.241	&	0.842	&	0.033	&	0.237	
+ bought seed	&	0.794	&	0.038	&	0.241	&	0.803	&	0.044	&	0.241	&	0.842	&	0.033	&	0.237	
 \backslash
 
 \backslash
@@ -4581,6 +4745,65 @@ space	&	0.020	&	0.054	&	0.003	&	0.006	&	0.026	&	0.396	&	0.013	&	0.062	&	0.003
 
 \backslash
  immediate	&	0.202	&	-0.013	&	0.697	&	0.214	&	0.079	&	0.012	&	0.305	&	0.036	&	0.231	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+space	&	0.058	&	0.016	&	0.552	&	0.061	&	-0.027	&	0.174	&	0.067	&	0.009	&	0.686	
+\backslash
+
+\backslash
+ striga	&	0.803	&	0.019	&	0.657	&	0.794	&	0.028	&	0.458	&	0.876	&	-0.027	&	0.261	
+\backslash
+
+\backslash
+ weed	&	0.234	&	-0.007	&	0.819	&	0.323	&	-0.033	&	0.315	&	0.435	&	0.018	&	0.608	
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+use fert	&	0.367	&	-0.015	&	0.539	&	0.362	&	-0.007	&	0.752	&	0.518	&	-0.015	&	0.538	
+\backslash
+
+\backslash
+ seed	&	0.410	&	0.017	&	0.478	&	0.371	&	0.029	&	0.250	&	0.547	&	0.031	&	0.218	
+\backslash
+
+\backslash
+ combiner	&	0.247	&	-0.006	&	0.842	&	0.206	&	0.012	&	0.548	&	0.352	&	0.006	&	0.820	
+\backslash
+
+\backslash
+ bought seed	&	0.844	&	-0.012	&	0.709	&	0.866	&	-0.021	&	0.688	&	0.888	&	-0.013	&	0.639	
+\backslash
+
+\backslash
+ chem	&	0.329	&	0.006	&	0.767	&	0.364	&	-0.011	&	0.648	&	0.495	&	-0.005	&	0.825	
+\backslash
+
+\backslash
+ labour	&	0.299	&	-0.014	&	0.482	&	0.413	&	-0.012	&	0.705	&	0.508	&	-0.023	&	0.354	
+\backslash
+
+\backslash
+ immediate	&	0.183	&	0.008	&	0.836	&	0.305	&	-0.013	&	0.775	&	0.363	&	-0.022	&	0.565	
 \backslash
 
 \backslash
@@ -4605,7 +4828,9 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
@@ -4624,6 +4849,261 @@ note: Reported p-values are based on randomization inference, corrected
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:disag_prod"
+
+\end_inset
+
+ we look at how production is affected by our video intervention at the
+ individual level.
+ To do so, we differentiate between male managed plots, female managed plots
+ and plots that are managed jointly by husband and wife.
+ For each category, we then look at production outcomes and compare between
+ treatment groups.
+ For instance, we see that 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on production by plot manager
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:disag_prod"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{male managed}} &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{female managed}} &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{both managed}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-10}    
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{9}{c}{
+\backslash
+textit{control versus treatment}}
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	average	&	ATE	&	P-value 	&	average	&	ATE	&	P-value	&	average	&	ATE	&	P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+prod	&	5.807	&	-0.053	&	0.323	&	5.590	&	-0.128	&	0.030	&	5.720	&	-0.032	&	0.613	
+\backslash
+
+\backslash
+ area	&	0.022	&	-0.101	&	0.005	&	-0.153	&	-0.173	&	0.000	&	-0.001	&	-0.120	&	0.003	
+\backslash
+
+\backslash
+ yield	&	5.798	&	0.066	&	0.098	&	5.763	&	0.093	&	0.073	&	5.735	&	0.081	&	0.119	
+\backslash
+
+\backslash
+ yield better	&	0.339	&	0.059	&	0.077	&	0.314	&	0.017	&	0.659	&	0.461	&	-0.034	&	0.337	
+\backslash
+
+\backslash
+ prod  index	&	-0.093	&	0.051	&	0.044	&	-0.112	&	0.088	&	0.006	&	-0.080	&	0.049	&	0.102	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+prod	&	5.776	&	0.013	&	0.779	&	5.475	&	-0.007	&	0.888	&	5.755	&	-0.061	&	0.137	
+\backslash
+
+\backslash
+ area	&	-0.158	&	0.065	&	0.045	&	-0.290	&	-0.037	&	0.325	&	-0.105	&	-0.010	&	0.738	
+\backslash
+
+\backslash
+ yield	&	5.907	&	-0.044	&	0.162	&	5.870	&	-0.004	&	0.921	&	5.881	&	-0.058	&	0.183	
+\backslash
+
+\backslash
+ yield better	&	0.369	&	0.037	&	0.163	&	0.369	&	-0.034	&	0.267	&	0.385	&	0.037	&	0.192	
+\backslash
+
+\backslash
+ prod index	&	-0.021	&	-0.027	&	0.168	&	-0.016	&	-0.005	&	0.835	&	-0.015	&	-0.024	&	0.342
+	
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+prod	&	5.748	&	0.039	&	0.310	&	5.479	&	-0.013	&	0.784	&	5.662	&	0.032	&	0.432	
+\backslash
+
+\backslash
+ area	&	-0.068	&	-0.026	&	0.355	&	-0.324	&	-0.003	&	0.941	&	-0.104	&	-0.012	&	0.694	
+\backslash
+
+\backslash
+ yield	&	5.835	&	0.028	&	0.417	&	5.859	&	0.007	&	0.861	&	5.779	&	0.044	&	0.191	
+\backslash
+
+\backslash
+ yield better	&	0.423	&	-0.016	&	0.551	&	0.376	&	-0.042	&	0.164	&	0.433	&	-0.011	&	0.696	
+\backslash
+
+\backslash
+ prod index	&	-0.062	&	0.014	&	0.503	&	-0.018	&	-0.004	&	0.883	&	-0.059	&	0.021	&	0.344	
+\backslash
+
+\backslash
+ 		
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: Reported p-values are based on randomization inference, corrected
+ for multiple hypothesis testing using the Westfall and Young free stepdown
+ resampling method.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
