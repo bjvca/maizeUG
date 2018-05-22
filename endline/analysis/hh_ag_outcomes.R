@@ -1,7 +1,7 @@
 rm(list=ls())
-source("/home/bjvca/data/projects/digital green/endline/data/init.R")
-#source("functions.R")
-#dta <- read.csv("AWS.csv")
+#source("/home/bjvca/data/projects/digital green/endline/data/init.R")
+source("functions.R")
+dta <- read.csv("AWS.csv")
 #set totrep to zero if you do not want simulation based inferecne
 totrep <- 10000
 
@@ -135,7 +135,7 @@ dta_bal <- dta
 #res_h0_know[4,1,h] <- summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[1,1]
 #res_h0_know[4,2,h] <- summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,1]
 #res_h0_know[4,3,h] <-  ifelse(totrep >0, RI("know_weed",treatment , dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
-
+# no need to include armyworm in the index because we do not really expect an effect - but even when we include the effect is sig, so keep it in
 #indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, nr_repl=totrep)
 #res_h0_know[5,1,h] <-  indexer[[1]]$coefficients[1,1]
 #res_h0_know[5,2,h] <-  indexer[[1]]$coefficients[2,1]
@@ -360,70 +360,90 @@ dta_bal <- dta
 #	res_h0_wel[6,2,h] <-  indexer[[1]]$coefficients[2,1]
 #	res_h0_wel[6,3,h] <-  indexer[[2]]
 ####### decisions
-results <- plot_RI_dec(dta_bal,"decspace_man",treatment, totrep)
-res_dec_m[1,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decstriga_man",treatment, totrep)
-res_dec_m[2,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decweed_man",treatment, totrep)
-res_dec_m[3,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decfert_man",treatment, totrep)
-res_dec_m[4,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decseed_man",treatment, totrep)
-res_dec_m[5,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"deccombiner_man",treatment, totrep)
-res_dec_m[6,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decbuyseed_man",treatment, totrep)
-res_dec_m[7,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decchem_man",treatment, totrep)
-res_dec_m[8,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"dectime_man",treatment, totrep)
-res_dec_m[9,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"dec_man_d",treatment, totrep)
-res_dec_m[10,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decspace_man",treatment, totrep)
+#res_dec_m[1,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decstriga_man",treatment, totrep)
+#res_dec_m[2,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decweed_man",treatment, totrep)
+#res_dec_m[3,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decfert_man",treatment, totrep)
+#res_dec_m[4,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decseed_man",treatment, totrep)
+#res_dec_m[5,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"deccombiner_man",treatment, totrep)
+#res_dec_m[6,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decbuyseed_man",treatment, totrep)
+#res_dec_m[7,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decchem_man",treatment, totrep)
+#res_dec_m[8,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"dectime_man",treatment, totrep)
+#res_dec_m[9,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"dec_man_d",treatment, totrep)
+#res_dec_m[10,1:3,h] <- unlist(results[c(1,2,4)])
+## try to do FRS_RI at the plot level...
+#dec_vars <- paste("dectime_man",paste("_pl",1:5, sep=""), sep="")
+
+#space_ind <- reshape(dta[c("messenger","recipient","gender1","ivr","sms","called","totsms","hhid","distID", "subID","vilID", dec_vars)], varying = dec_vars,v.names="dectime_man", idvar="hhid", direction="long")
+
+#dec_vars <- paste("decspace_man",paste("_pl",1:5, sep=""), sep="")
+
+#space_ind2 <- reshape(dta[c("messenger","recipient","gender1","ivr","sms","called","totsms","hhid","distID", "subID","vilID", dec_vars)], varying = dec_vars,v.names="decspace_man", idvar="hhid", direction="long")[c("hhid","time","decspace_man")]
+
+#dec_vars <- paste("decstriga_man",paste("_pl",1:5, sep=""), sep="")
+
+#space_ind3 <- reshape(dta[c("messenger","recipient","gender1","ivr","sms","called","totsms","hhid","distID", "subID","vilID", dec_vars)], varying = dec_vars,v.names="decstriga_man", idvar="hhid", direction="long")[c("hhid","time","decstriga_man")]
+
+#dec_vars <- paste("decweed_man",paste("_pl",1:5, sep=""), sep="")
+
+#space_ind4 <- reshape(dta[c("messenger","recipient","gender1","ivr","sms","called","totsms","hhid","distID", "subID","vilID", dec_vars)], varying = dec_vars,v.names="decweed_man", idvar="hhid", direction="long")[c("hhid","time","decweed_man")]
 
 
-results <- plot_RI_dec(dta_bal,"decspace_woman",treatment, totrep)
-res_dec_w[1,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decstriga_woman",treatment, totrep)
-res_dec_w[2,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decweed_woman",treatment, totrep)
-res_dec_w[3,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decfert_woman",treatment, totrep)
-res_dec_w[4,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decseed_woman",treatment, totrep)
-res_dec_w[5,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"deccombiner_woman",treatment, totrep)
-res_dec_w[6,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decbuyseed_woman",treatment, totrep)
-res_dec_w[7,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decchem_woman",treatment, totrep)
-res_dec_w[8,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"dectime_woman",treatment, totrep)
-res_dec_w[9,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"dec_woman_d",treatment, totrep)
-res_dec_w[10,1:3,h] <- unlist(results[c(1,2,4)])
+#dta_ind <-  merge(merge(merge(space_ind, space_ind2, by=c("hhid","time")),space_ind3, by=c("hhid","time")),space_ind4, by=c("hhid","time"))
+### this works but it is very slow....
+#system.time(reser <- FSR_RI_plot2(c("dectime_man","decspace_man", "decstriga_man", "decweed_man"), treatment, dta_ind, pvals = c(0.0215,0.0492,0.2630,0.0175),100))
+
+#results <- plot_RI_dec(dta_bal,"decspace_woman",treatment, totrep)
+#res_dec_w[1,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decstriga_woman",treatment, totrep)
+#res_dec_w[2,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decweed_woman",treatment, totrep)
+#res_dec_w[3,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decfert_woman",treatment, totrep)
+#res_dec_w[4,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decseed_woman",treatment, totrep)
+#res_dec_w[5,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"deccombiner_woman",treatment, totrep)
+#res_dec_w[6,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decbuyseed_woman",treatment, totrep)
+#res_dec_w[7,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decchem_woman",treatment, totrep)
+#res_dec_w[8,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"dectime_woman",treatment, totrep)
+#res_dec_w[9,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"dec_woman_d",treatment, totrep)
+#res_dec_w[10,1:3,h] <- unlist(results[c(1,2,4)])
 
 
-results <- plot_RI_dec(dta_bal,"decspace_both",treatment, totrep)
-res_dec_b[1,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decstriga_both",treatment, totrep)
-res_dec_b[2,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decweed_both",treatment, totrep)
-res_dec_b[3,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decfert_both",treatment, totrep)
-res_dec_b[4,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decseed_both",treatment, totrep)
-res_dec_b[5,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"deccombiner_both",treatment, totrep)
-res_dec_b[6,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decbuyseed_both",treatment, totrep)
-res_dec_b[7,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"decchem_both",treatment, totrep)
-res_dec_b[8,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"dectime_both",treatment, totrep)
-res_dec_b[9,1:3,h] <- unlist(results[c(1,2,4)])
-results <- plot_RI_dec(dta_bal,"dec_both_d",treatment, totrep)
-res_dec_b[10,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decspace_both",treatment, totrep)
+#res_dec_b[1,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decstriga_both",treatment, totrep)
+#res_dec_b[2,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decweed_both",treatment, totrep)
+#res_dec_b[3,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decfert_both",treatment, totrep)
+#res_dec_b[4,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decseed_both",treatment, totrep)
+#res_dec_b[5,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"deccombiner_both",treatment, totrep)
+#res_dec_b[6,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decbuyseed_both",treatment, totrep)
+#res_dec_b[7,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"decchem_both",treatment, totrep)
+#res_dec_b[8,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"dectime_both",treatment, totrep)
+#res_dec_b[9,1:3,h] <- unlist(results[c(1,2,4)])
+#results <- plot_RI_dec(dta_bal,"dec_both_d",treatment, totrep)
+#res_dec_b[10,1:3,h] <- unlist(results[c(1,2,4)])
 
 
 #res_decision[1,1,h]  <- summary(lm(as.formula(paste("both_tell",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
@@ -449,8 +469,29 @@ res_dec_b[10,1:3,h] <- unlist(results[c(1,2,4)])
 #res_decision_w[2,1,h]  <- summary(lm(as.formula(paste("man_listens",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
 #res_decision_w[2,2,h]  <- summary(lm(as.formula(paste("man_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
 #res_decision_w[2,3,h]  <- ifelse(totrep >0, RI("man_listens",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("spouses_listen",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+#treatment <- "(recipient == 'couple') +ivr+sms+as.factor(messenger) + called + (totsms >0)"
+#FW_index(treatment, c("man_tells_wife", "wife_tells_man", "both_tell"),dta_bal, nr_repl=10000)
+
+#FSR_RI( c("man_tells_wife", "wife_tells_man", "both_tell") ,treatment ,dta_bal, pvals = c(0.08,0.01,0.042), nr_repl_ri = 1000)
+#FW_index(treatment, c("wife_listens", "man_listens", "spouses_listen"),dta_bal, nr_repl=10000)
+
+#FSR_RI( c("wife_listens", "man_listens", "spouses_listen") ,treatment ,dta_bal, pvals = c(0.165,0.017,0.089), nr_repl_ri = 1000)
 
 
+
+#treatment <- treatment <- "(messenger == 'couple')+ivr+sms+as.factor(recipient) + called + (totsms >0)" 
+#FW_index(treatment, c("man_tells_wife", "wife_tells_man", "both_tell"),dta_bal, nr_repl=10000)
+#FSR_RI( c("man_tells_wife", "wife_tells_man", "both_tell") ,treatment ,dta_bal, pvals = c(0.009,0.366,0.089), nr_repl_ri = 1000)
+#FW_index(treatment, c("wife_listens", "man_listens", "spouses_listen"),dta_bal, nr_repl=10000)
+
+#FSR_RI( c("man_tells_wife", "wife_tells_man", "both_tell") ,treatment ,dta_bal, pvals = c(0.828,0.736,0.824), nr_repl_ri = 1000)
+
+#res_h0_know[5,1,h] <-  indexer[[1]]$coefficients[1,1]
+#res_h0_know[5,2,h] <-  indexer[[1]]$coefficients[2,1]
+#res_h0_know[5,3,h] <-  indexer[[2]]
+
+###if (wyfs_stat) {
+###	res_h0_know[1:4,4,h] <- FSR_RI( c("know_space","know_combine","know_weed", "know_armyworm") ,treatment ,dta_bal, pvals = res_h0_know[1:4,3,h], nr_repl_ri = 100)[[4]]
 
 
 

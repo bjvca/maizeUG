@@ -794,6 +794,19 @@ dta$yield_better_sp2 <- rowSums(cbind((dta$spouse2grp_sp1f18 ==1 | dta$spouse2gr
 
 dta$yield_better_sp2[is.na(dta$spouse2grp_sp1f18 ==1 | dta$spouse2grp_sp1f18==2) & is.na(dta$spouse2grp_sp2g18 ==1 | dta$spouse2grp_sp2g18==2) & is.na(dta$spouse2grp_sp3h18 ==1 | dta$spouse2grp_sp3h18==2) & is.na(dta$spouse2group_sp4j18 ==1 | dta$spouse2group_sp4j18==2) & is.na(dta$spouse2grp5_sp5k18 ==1 | dta$spouse2grp5_sp5k18==2)] <- NA
 
+
+dta$yield_better_sp1_pl1 <-  (dta$grp1a18 ==1 | dta$grp1a18==2)
+dta$yield_better_sp1_pl2 <-  (dta$grp2b18 ==1 | dta$grp2b18==2)
+dta$yield_better_sp1_pl3 <- (dta$grp3c18 ==1 | dta$grp3c18==2) 
+dta$yield_better_sp1_pl4 <- (dta$grp4d18 ==1 | dta$grp4d18==2)
+dta$yield_better_sp1_pl5 <- (dta$grp5e18 ==1 | dta$grp5e18==2)
+
+dta$yield_better_sp2_pl1 <- (dta$spouse2grp_sp1f18 ==1 | dta$spouse2grp_sp1f18==2)
+dta$yield_better_sp2_pl2 <-  (dta$spouse2grp_sp2g18 ==1 | dta$spouse2grp_sp2g18==2)
+dta$yield_better_sp2_pl3 <- (dta$spouse2grp_sp3h18 ==1 | dta$spouse2grp_sp3h18==2)
+dta$yield_better_sp2_pl4 <- (dta$spouse2group_sp4j18 ==1 | dta$spouse2group_sp4j18==2)
+dta$yield_better_sp2_pl5 <- (dta$spouse2grp5_sp5k18 ==1 | dta$spouse2grp5_sp5k18==2)
+ 
 # any spouse reports better yield on any plot
 dta$yield_better <- rowSums(dta[c("yield_better_sp1","yield_better_sp2")], na.rm=T) > 0
 dta$yield_better[is.na(dta$yield_better_sp1) & is.na(dta$yield_better_sp2)] <- NA
@@ -888,7 +901,7 @@ dta$decfert_man_pl1[is.na(dta$grp1a31) & is.na(dta$spouse2grp_sp1f31) & is.na(dt
 dta$decfert_woman_pl1 <- rowSums(cbind((dta$grp1a31==1  & dta$person_interviewed=="woman") , (dta$spouse2grp_sp1f31==1  & dta$person_interviewed=="man"), (dta$grp1a30a==1  & dta$person_interviewed=="woman"),(dta$spouse2grp_sp1f30a==1  & dta$person_interviewed=="man"),(dta$grp1a37a==1  & dta$person_interviewed=="woman"),(dta$spouse2grp_sp1f37a==1  & dta$person_interviewed=="man")), na.rm=T) >0
 dta$decfert_woman_pl1[is.na(dta$grp1a31) & is.na(dta$spouse2grp_sp1f31) & is.na(dta$grp1a30a) & is.na(dta$spouse2grp_sp1f30a) & is.na(dta$grp1a37a) & is.na(dta$spouse2grp_sp1f37a)] <- NA
 dta$decfert_both_pl1 <-  rowSums(cbind((dta$grp1a31==3  & dta$spouse2grp_sp1f31==3), (dta$grp1a30a==3  & dta$spouse2grp_sp1f30a==3),(dta$grp1a37a==3 & dta$spouse2grp_sp1f37a==3)), na.rm=T) >0
-dta$decboth_woman_pl1[is.na(dta$grp1a31) & is.na(dta$spouse2grp_sp1f31) & is.na(dta$grp1a30a) & is.na(dta$spouse2grp_sp1f30a) & is.na(dta$grp1a37a) & is.na(dta$spouse2grp_sp1f37a)] <- NA
+dta$decfert_both_pl1[is.na(dta$grp1a31) & is.na(dta$spouse2grp_sp1f31) & is.na(dta$grp1a30a) & is.na(dta$spouse2grp_sp1f30a) & is.na(dta$grp1a37a) & is.na(dta$spouse2grp_sp1f37a)] <- NA
 
 dta$decfert_man_pl2 <-  rowSums(cbind((dta$grp2b31==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp2g31==1  & dta$person_interviewed=="woman"), (dta$grp2b30b==1  & dta$person_interviewed=="man"),(dta$spouse2grp_sp2g30b==1  & dta$person_interviewed=="woman"),(dta$grp2b37a==1  & dta$person_interviewed=="man"),(dta$spouse2grp_sp2g37a==1  & dta$person_interviewed=="woman")), na.rm=T) >0
 dta$decfert_man_pl2[is.na(dta$grp2b31) & is.na(dta$spouse2grp_sp2g31) & is.na(dta$grp2b30b) & is.na(dta$spouse2grp_sp2g30b) & is.na(dta$grp2b37a) & is.na(dta$spouse2grp_sp2g37a)] <- NA
@@ -2795,29 +2808,6 @@ dta$hybrid_wm_share2[is.na(dta$longe10h_wm_share2) & is.na(dta$bazooka_wm_share2
 dta$opv_wm_share2 <- rowSums(dta[c("longe5_wm_share2","longe4_wm_share2","other_opv_wm_share2")], na.rm=T) >0
 dta$opv_wm_share2[is.na(dta$longe5_wm_share2) & is.na(dta$longe4_wm_share2) & is.na(dta$other_opv_wm_share2) ] <- NA
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #### calculated consumption expenditure
 dta[c("maize_value", "sorghum_value", "millet_value", "rice_value", "cassava_value", "sweetpotatoes_value", "beans_value", "gnuts_value", "fruits_value", "veg_value", "sugar_value", "cooking_oil_value", "soap_value", "airtime_value")] <- 
 lapply(dta[c("maize_value", "sorghum_value", "millet_value", "rice_value", "cassava_value", "sweetpotatoes_value", "beans_value", "gnuts_value", "fruits_value", "veg_value", "sugar_value", "cooking_oil_value", "soap_value", "airtime_value")], function(x) replace(x, x == 999, NA) )
@@ -2858,14 +2848,14 @@ dta$better_6m <- rowSums(dta[c("q110","spouse2r110")], na.rm=T) ==1
 dta$better_6m[is.na(dta$q110) & is.na(dta$spouse2r110)] <- NA
 
 ### can eat preferred food
+### question is: In the past 1 month  were you or any household member NOT able to eat the kinds of foods you preferred because of a lack of food or resources?
 dta$eatpref <- rowSums(cbind( dta$q111=="No", dta$spouse2r111=="No"), na.rm=T) > 0 
 dta$eatpref[is.na(dta$q111) & is.na( dta$spouse2r111)] <- NA
 
 ### has enough food to eat? 
-
+###question is: In the past 1 month did you or any household member have to eat fewer meals or smaller meals in a day because  of a lack of food or resources?
 dta$eatenough <- rowSums(cbind( dta$q112=="No", dta$spouse2r112=="No"), na.rm=T) > 0 
 dta$eatenough[is.na(dta$q112) & is.na( dta$spouse2r112)] <- NA
-
 
 ### communication within household
 dta$man_tells_wife <- ifelse(dta$gender1=="man",dta$q100 <2,dta$spouse2r100 <2)
@@ -2875,6 +2865,10 @@ dta$both_tell <- dta$man_tells_wife & dta$wife_tells_man
 dta$wife_listens <- ifelse(dta$gender1=="man", dta$q101 == 2,dta$spouse2r101 ==2)
 dta$man_listens <- ifelse(dta$gender1=="woman", dta$q101 == 2,dta$spouse2r101 ==2)
 dta$spouses_listen  <- dta$wife_listens & dta$man_listens
+
+dta[ paste("yield_sp1",paste("_pl",1:5, sep=""), sep="")] <- dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")]/dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")]
+dta[ paste("yield_sp2",paste("_pl",1:5, sep=""), sep="")] <- dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")]/dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")]
+
 
 ### merge in calls made to ivr system
 
@@ -3143,14 +3137,15 @@ return(list(mod,sig))
 
 
 
-plot_RI <- function(data, man, out_sp1,out_sp2,treatment,nr_repl = 1000) {
+plot_RI <- function(data, man, out_sp1,out_sp2,treatment,nr_repl = 1000, trimlog=FALSE) {
 #data <- dta
-#man <- "dec_woman"
-#out_sp1 <- c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b")
-#out_sp2 <-   c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b")
+#man <- "dec_man_d"
+#out_sp1 <- paste("yield_sp1",paste("_pl",1:5, sep=""), sep="")
+#out_sp2 <-  paste("yield_sp2",paste("_pl",1:5, sep=""), sep="")
 #treatment <- "messenger != 'ctrl'"
 #repl <- 100
 #plot_RI(dta, man = "dec_woman", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment , 100)
+# plot_RI(dta, man = "dec_both_d", out_sp1 =paste("yield_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , 100)
 
 
 ##function to perfrom RI om plot level
@@ -3162,12 +3157,24 @@ space_ind$outcome <- NA
 if (grepl("woman", man)) {
 space_ind$outcome <- ifelse(space_ind$gender1=="woman",space_ind$outcome_sp1, space_ind$outcome_sp2)
 } else if  (grepl("both", man)) {
+#inelegant way to test if variable is not binary
+if (length(table(space_ind$outcome_sp1 ))>3 ) {
+space_ind$outcome <- rowMeans(cbind(space_ind$outcome_sp1, space_ind$outcome_sp2), na.rm=T)
+} else {
 space_ind$outcome <- rowSums(cbind(space_ind$outcome_sp1, space_ind$outcome_sp2), na.rm=T)>0
 space_ind$outcome[is.na(space_ind$outcome_sp1) & is.na(space_ind$outcome_sp2)] <- NA
+}
+
 } else {
 space_ind$outcome <- ifelse(space_ind$gender1=="man",space_ind$outcome_sp1, space_ind$outcome_sp2)
 }
 
+if (trimlog==TRUE) {
+space_ind <- subset(space_ind, outcome>0)
+space_ind$outcome <- log(space_ind$outcome)
+
+space_ind <- trim("outcome", space_ind, .05)
+}
 
 space_ind <- subset(space_ind,decide == 1)
 	crit <- summary(lm(as.formula(paste("outcome",treatment,sep="~")), data=space_ind))$coefficients[2,1]
@@ -3224,6 +3231,112 @@ dta <- dta %>% mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vi
 		return(abs(coef(lm(as.formula(paste("decide",treatment,sep="~")), data=dta_sim))[2]) > abs(crit) )
 	}
 	return(list(summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind))$coefficients[1,1],summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind))$coefficients[2,1], summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind))$coefficients[2,4],sum(oper)/nr_repl))
+}
+
+FSR_RI_plot <- function(deps, indep, dta_ind ,pvals = NULL, nr_repl_ri = 1000, nr_repl_pi = nr_repl_ri ) {
+### this is for plot level - feed this a long dataset
+# Randomization inference (RI) implementation of the Westfall-Young (1993) Free Stepdown Resampling procedure for correcting for multiple inference. This should be used when RI was used to determine p-values for differences between treatment and control (indep) for a family of outcome variables (deps). It uses as inputs the RI p-values of the seperate tests for the outcomes in the family (pvals). We differentiate between the number of replications used to determine the RI p-values (nr_repl_ri), and the number of replications to do the actual adjustment nr_repl_pi
+# example use: FSR_RI( c("space","striga","weed", "fert","impseed"),"messenger != 'ctrl'" ,dta_bal, c(0,0,0.27,0.00,0.16), nr_repl_ri = 100, nr_repl_pi=100)
+# this function uses dplyr and supports parallel computing; add following as preamble:
+#	library(dplyr)
+#	library(doParallel)
+#	cl <- makeCluster(detectCores(all.tests = FALSE, logical = TRUE))
+#	registerDoParallel(cl)
+### important note: p-value significant digits need to correspond to the number of simulations nr_repl_pi, hence round(pvals,nr_repl_pi/100) in code below
+### eg: if pval = 0.001, then it is advised to set nr_repl_pi >= 1000
+## The function assumes p-values are determened using RI on the difference between treatment and control (ie. calculating the proportion of randomizations where the T-C difference exceeds the acutal T-C difference) for each hypothesis seperately. These are the p-values that need to be supplied in pvals.
+## Next, p-values are determined based in nr_repl_ri randomizations. For each outcome, the difference between treatment and control is compared to the acutal difference and proportions are again determined. Note that here, each time one and the same randomization draw is used to test the different outcomes seperately. Once p-values are determined using these nr_repl_ri draws, monotonicity is enfored with respect to the original ordering of p-values.
+## the above is then repeated nr_repl_pi, and the resulting simulated p-values are compared to the acutal p-values from pvals (determining the proportion of simulated p-values that are smaller than the actual p-values)
+# finally, monotonicity is enfored uisng successive maximization
+
+#testing
+#deps <- c("know_space","know_combine","know_weed", "know_armyworm")
+#indep <- "(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)"
+#dta <- dta_bal
+#pvals <- res_h0_know[1:4,3,h]
+#nr_repl_ri <- 1000
+#nr_repl_pi <- 1000
+
+### determine treatment cell based on cominations in 2 factorial design
+
+
+beta <- array(NA,length(deps))
+pval <- array(NA,length(deps))
+for (i in 1:length(deps)) {
+beta[i]  <- summary(lm(as.formula(paste(deps[i],indep,sep="~")), data=dta_ind))$coefficients[2,1]
+}
+deps_init <- deps
+pval <- pvals
+Ord <- order(pval)
+pval <- pval[Ord]
+deps <- deps[Ord]
+beta <- beta[Ord]
+
+dta <- dta_ind[!duplicated(dta_ind$hhid),]
+
+dta <- dta %>% mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
+### allocates unique ID based on treatment cell status and village
+dta <- dta %>% mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vilID"))) 
+
+NSnps <- length(deps)
+	dta <-  data.table(cbind(dta_ind[deps],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms","called","totsms")]))
+ 	
+oper <- foreach (repl = 1:(nr_repl_pi*nr_repl_ri),.combine=cbind,.packages = c("data.table")) %dopar% {
+dta_sim <- data.table(dta)
+		dta_sim <- merge(dta_ind,setDT(dta)[,perm:=sample(treat),by = (uniqID)][,c("hhid","perm")], by="hhid")
+		dta_sim$recipient <- ifelse(dta_sim$perm %in% c(5,6,7,12), "couple", ifelse(dta_sim$perm %in% c(1, 2, 8, 10),"male", "female"))
+		dta_sim$messenger <- ifelse(dta_sim$perm %in% c(1, 3, 5), "male", ifelse(dta_sim$perm %in% c(2, 4, 6),"female",ifelse(dta_sim$perm %in% c(8, 9, 7),"couple", "ctrl")))
+		### this returns n-deps x (nr_repl_ri*nr_repl_pi) of treatment-control differences
+		return(unlist(lapply(deps, function(dvar) coef(lm(as.formula(paste(dvar,indep,sep="~")), data=dta_sim))[2])))
+}
+
+#paste betas to oper
+oper2 <- foreach (repl = 1:(nr_repl_pi),.combine=cbind,.packages = c("data.table")) %dopar% {
+ 	dta_sim <- data.table(dta)
+dta_sim <- merge(dta_ind,setDT(dta)[,perm:=sample(treat),by = (uniqID)][,c("hhid","perm")], by="hhid")
+		dta_sim$recipient <- ifelse(dta_sim$perm %in% c(5,6,7,12), "couple", ifelse(dta_sim$perm %in% c(1, 2, 8, 10),"male", "female"))
+		dta_sim$messenger <- ifelse(dta_sim$perm %in% c(1, 3, 5), "male", ifelse(dta_sim$perm %in% c(2, 4, 6),"female",ifelse(dta_sim$perm %in% c(8, 9, 7),"couple", "ctrl")))
+		### this returns n-deps x (nr_repl_ri*nr_repl_pi) of treatment-control differences
+		return(unlist(lapply(deps, function(dvar) coef(lm(as.formula(paste(dvar,indep,sep="~")), data=dta_sim))[2])))
+}
+
+
+
+
+oper <- data.frame(t(oper))
+oper2 <- data.frame(t(oper2))
+names(oper2) <- deps
+oper2$ri_rep_nr <- 1:nr_repl_pi
+oper$ri_rep_nr <-  rep(1:nr_repl_pi,each=nr_repl_ri)
+oper <- merge(oper,oper2)
+#difference between treatment and control is compared to the "acutal" difference for each ri 
+for (i in 1:NSnps) {
+	oper[,i+1] <- abs(oper[,(i+1)]) > abs(oper[,(i+1+NSnps)])
+}
+
+## now devide in blocks of nr_repl_ri
+TestStatResamp <- matrix(nrow=nr_repl_pi, ncol=NSnps)
+TestStatResamp2 <- matrix(nrow=nr_repl_pi, ncol=NSnps)
+
+## and calcualte p-values 
+for (i in 1:nr_repl_pi) {
+	TestStatResamp[i,] <- colMeans(oper[oper$ri_rep_nr == i, 2:(NSnps+1)])
+	for (j in 1:length(deps)) {
+		## enforce monotonicity wrt original ordering by calculating successive minima
+		TestStatResamp2[i,j] <- min(TestStatResamp[i,j:length(deps)])
+	}
+}
+#resulting simulated p-values are compared to the acutal p-values from pvals (determining the proportion of simulated p-values that are smaller than the actual p-values)
+Padj <- apply(t(matrix(rep(pval,dim(TestStatResamp2)[1] ),NSnps)) > TestStatResamp2, 2, mean)
+Padj1 <- Padj
+Padj2 <- Padj
+		for (j in 1:length(deps)) {
+		#enfore monotonicity one final time using successive maximization
+			Padj2[j] <- max(Padj1[1:j])
+		}
+## return ordering, dependent variables, adjusted p-vals before and after final monotonicity enforcement
+
+return(list(Ord, deps,Padj2, Padj2[match(deps_init,deps)]))
 }
 
 

@@ -92,7 +92,7 @@ dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","s
 # 2: recipient == couple
 # 3: messenger == couple
 # 4: gender matching
-for (h in 1:4) {
+for (h in 1:3) {
 if (h==1) {
 ############################################ does the intervention work? (treat vs control) #########################################################
 ### remember to balance data over treatment cells, this involves taking random samples from each cell, so set seed
@@ -177,254 +177,254 @@ dta_bal <- dta
 ############################### practices #############################
 ### used recommended spacing use on at lease one plot as reported by at least one spouse
 
-results <-  plot_RI(dta, man = "decspace_man", out_sp1 = c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201"),out_sp2 = c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201"),treatment , repl)
+#results <-  plot_RI(dta, man = "decspace_man", out_sp1 = c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201"),out_sp2 = c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201"),treatment , repl)
 
-res_pract_mm[1,1,h]  <- results[[1]]
-res_pract_mm[1,2,h]  <- results[[2]]
-res_pract_mm[1,3,h]  <- results[[3]]
-res_pract_mm[1,4,h]  <- results[[4]]
+#res_pract_mm[1,1,h]  <- results[[1]]
+#res_pract_mm[1,2,h]  <- results[[2]]
+#res_pract_mm[1,3,h]  <- results[[3]]
+#res_pract_mm[1,4,h]  <- results[[4]]
 
 
-results <- plot_RI(dta, man = "decspace_woman", out_sp1 = c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201"),out_sp2 = c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201"),treatment , repl)
+#results <- plot_RI(dta, man = "decspace_woman", out_sp1 = c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201"),out_sp2 = c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201"),treatment , repl)
 
-res_pract_wm[1,1,h]  <- results[[1]]
-res_pract_wm[1,2,h]  <- results[[2]]
-res_pract_wm[1,3,h]  <- results[[3]]
-res_pract_wm[1,4,h]  <- results[[4]]
+#res_pract_wm[1,1,h]  <- results[[1]]
+#res_pract_wm[1,2,h]  <- results[[2]]
+#res_pract_wm[1,3,h]  <- results[[3]]
+#res_pract_wm[1,4,h]  <- results[[4]]
 
-results <-  plot_RI(dta, man = "decspace_both", out_sp1 = c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201"),out_sp2 = c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201"),treatment , repl)
+#results <-  plot_RI(dta, man = "decspace_both", out_sp1 = c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201"),out_sp2 = c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201"),treatment , repl)
 
-res_pract_bm[1,1,h]  <- results[[1]]
-res_pract_bm[1,2,h]  <- results[[2]]
-res_pract_bm[1,3,h]  <- results[[3]]
-res_pract_bm[1,4,h]  <- results[[4]]
+#res_pract_bm[1,1,h]  <- results[[1]]
+#res_pract_bm[1,2,h]  <- results[[2]]
+#res_pract_bm[1,3,h]  <- results[[3]]
+#res_pract_bm[1,4,h]  <- results[[4]]
 
 
-## used recommended way to fight striga - this should be changed to include info of all plots 
+### used recommended way to fight striga - this should be changed to include info of all plots 
 
-results <- plot_RI(dta, man = "decstriga_man", out_sp1 = c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241"),out_sp2 = c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241"),treatment , repl)
+#results <- plot_RI(dta, man = "decstriga_man", out_sp1 = c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241"),out_sp2 = c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241"),treatment , repl)
 
 
-res_pract_mm[2,1,h]  <- results[[1]]
-res_pract_mm[2,2,h]  <- results[[2]]
-res_pract_mm[2,3,h]  <- results[[3]]
-res_pract_mm[2,4,h]  <- results[[4]]
+#res_pract_mm[2,1,h]  <- results[[1]]
+#res_pract_mm[2,2,h]  <- results[[2]]
+#res_pract_mm[2,3,h]  <- results[[3]]
+#res_pract_mm[2,4,h]  <- results[[4]]
 
-results <- plot_RI(dta, man = "decstriga_woman", out_sp1 = c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241"),out_sp2 = c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241"),treatment , repl)
+#results <- plot_RI(dta, man = "decstriga_woman", out_sp1 = c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241"),out_sp2 = c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241"),treatment , repl)
 
 
-res_pract_wm[2,1,h]  <- results[[1]]
-res_pract_wm[2,2,h]  <- results[[2]]
-res_pract_wm[2,3,h]  <- results[[3]]
-res_pract_wm[2,4,h]  <- results[[4]]
+#res_pract_wm[2,1,h]  <- results[[1]]
+#res_pract_wm[2,2,h]  <- results[[2]]
+#res_pract_wm[2,3,h]  <- results[[3]]
+#res_pract_wm[2,4,h]  <- results[[4]]
 
-results <- plot_RI(dta, man = "decstriga_both", out_sp1 = c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241"),out_sp2 = c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241"),treatment , repl)
+#results <- plot_RI(dta, man = "decstriga_both", out_sp1 = c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241"),out_sp2 = c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241"),treatment , repl)
 
-res_pract_bm[2,1,h]  <- results[[1]]
-res_pract_bm[2,2,h]  <- results[[2]]
-res_pract_bm[2,3,h]  <- results[[3]]
-res_pract_bm[2,4,h]  <- results[[4]]
+#res_pract_bm[2,1,h]  <- results[[1]]
+#res_pract_bm[2,2,h]  <- results[[2]]
+#res_pract_bm[2,3,h]  <- results[[3]]
+#res_pract_bm[2,4,h]  <- results[[4]]
 
-## weeded on recommended timing? - this should be changed to include info of all plots 
+### weeded on recommended timing? - this should be changed to include info of all plots 
 
-results <- plot_RI(dta, man = "decweed_man", out_sp1 = c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26"),out_sp2 = c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26"),treatment , repl)
+#results <- plot_RI(dta, man = "decweed_man", out_sp1 = c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26"),out_sp2 = c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26"),treatment , repl)
 
 
-res_pract_mm[3,1,h]  <- results[[1]]
-res_pract_mm[3,2,h]  <- results[[2]]
-res_pract_mm[3,3,h]  <- results[[3]]
-res_pract_mm[3,4,h]  <- results[[4]]
+#res_pract_mm[3,1,h]  <- results[[1]]
+#res_pract_mm[3,2,h]  <- results[[2]]
+#res_pract_mm[3,3,h]  <- results[[3]]
+#res_pract_mm[3,4,h]  <- results[[4]]
 
-results <- plot_RI(dta, man = "decweed_woman", out_sp1 = c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26"),out_sp2 = c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26"),treatment , repl)
+#results <- plot_RI(dta, man = "decweed_woman", out_sp1 = c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26"),out_sp2 = c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26"),treatment , repl)
 
 
-res_pract_wm[3,1,h]  <- results[[1]]
-res_pract_wm[3,2,h]  <- results[[2]]
-res_pract_wm[3,3,h]  <- results[[3]]
-res_pract_wm[3,4,h]  <- results[[4]]
+#res_pract_wm[3,1,h]  <- results[[1]]
+#res_pract_wm[3,2,h]  <- results[[2]]
+#res_pract_wm[3,3,h]  <- results[[3]]
+#res_pract_wm[3,4,h]  <- results[[4]]
 
 
-results <- plot_RI(dta, man = "decweed_both", out_sp1 = c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26"),out_sp2 = c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26"),treatment , repl)
+#results <- plot_RI(dta, man = "decweed_both", out_sp1 = c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26"),out_sp2 = c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26"),treatment , repl)
 
-res_pract_bm[3,1,h]  <- results[[1]]
-res_pract_bm[3,2,h]  <- results[[2]]
-res_pract_bm[3,3,h]  <- results[[3]]
-res_pract_bm[3,4,h]  <- results[[4]]
+#res_pract_bm[3,1,h]  <- results[[1]]
+#res_pract_bm[3,2,h]  <- results[[2]]
+#res_pract_bm[3,3,h]  <- results[[3]]
+#res_pract_bm[3,4,h]  <- results[[4]]
 
-### fertilizer use
-### any fertlizer used on a plot?
-### but how to define who decided/managed?
-results <- plot_RI(dta, man = "dec_man", out_sp1 = c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29") ,out_sp2 = c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29"),treatment , repl)
-res_pract_mm[4,1,h]  <- results[[1]]
-res_pract_mm[4,2,h]  <- results[[2]]
-res_pract_mm[4,3,h]  <- results[[3]]
-res_pract_mm[4,4,h]  <- results[[4]]
+#### fertilizer use
+#### any fertlizer used on a plot?
+#### but how to define who decided/managed?
+#results <- plot_RI(dta, man = "dec_man", out_sp1 = c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29") ,out_sp2 = c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29"),treatment , repl)
+#res_pract_mm[4,1,h]  <- results[[1]]
+#res_pract_mm[4,2,h]  <- results[[2]]
+#res_pract_mm[4,3,h]  <- results[[3]]
+#res_pract_mm[4,4,h]  <- results[[4]]
 
-results <- plot_RI(dta, man = "dec_woman", out_sp1 = c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29"),out_sp2 = c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29"),treatment , repl)
+#results <- plot_RI(dta, man = "dec_woman", out_sp1 = c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29"),out_sp2 = c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29"),treatment , repl)
 
 
-res_pract_wm[4,1,h]  <- results[[1]]
-res_pract_wm[4,2,h]  <- results[[2]]
-res_pract_wm[4,3,h]  <- results[[3]]
-res_pract_wm[4,4,h]  <- results[[4]]
+#res_pract_wm[4,1,h]  <- results[[1]]
+#res_pract_wm[4,2,h]  <- results[[2]]
+#res_pract_wm[4,3,h]  <- results[[3]]
+#res_pract_wm[4,4,h]  <- results[[4]]
 
 
-results <- plot_RI(dta, man = "dec_both", out_sp1 = c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29"),out_sp2 = c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29"),treatment , repl)
+#results <- plot_RI(dta, man = "dec_both", out_sp1 = c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29"),out_sp2 = c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29"),treatment , repl)
 
-res_pract_bm[4,1,h]  <- results[[1]]
-res_pract_bm[4,2,h]  <- results[[2]]
-res_pract_bm[4,3,h]  <- results[[3]]
-res_pract_bm[4,4,h]  <- results[[4]]
+#res_pract_bm[4,1,h]  <- results[[1]]
+#res_pract_bm[4,2,h]  <- results[[2]]
+#res_pract_bm[4,3,h]  <- results[[3]]
+#res_pract_bm[4,4,h]  <- results[[4]]
 
-###improved seed  
+####improved seed  
 
-results <- plot_RI(dta, man = "dec_man", out_sp1 = c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42") ,out_sp2 =c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42"),treatment , repl)
-res_pract_mm[5,1,h]  <- results[[1]]
-res_pract_mm[5,2,h]  <- results[[2]]
-res_pract_mm[5,3,h]  <- results[[3]]
-res_pract_mm[5,4,h]  <- results[[4]]
+#results <- plot_RI(dta, man = "dec_man", out_sp1 = c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42") ,out_sp2 =c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42"),treatment , repl)
+#res_pract_mm[5,1,h]  <- results[[1]]
+#res_pract_mm[5,2,h]  <- results[[2]]
+#res_pract_mm[5,3,h]  <- results[[3]]
+#res_pract_mm[5,4,h]  <- results[[4]]
 
-results <- plot_RI(dta, man = "dec_woman", out_sp1 = c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42"),out_sp2 = c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42"),treatment , repl)
+#results <- plot_RI(dta, man = "dec_woman", out_sp1 = c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42"),out_sp2 = c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42"),treatment , repl)
 
 
-res_pract_wm[5,1,h]  <- results[[1]]
-res_pract_wm[5,2,h]  <- results[[2]]
-res_pract_wm[5,3,h]  <- results[[3]]
-res_pract_wm[5,4,h]  <- results[[4]]
+#res_pract_wm[5,1,h]  <- results[[1]]
+#res_pract_wm[5,2,h]  <- results[[2]]
+#res_pract_wm[5,3,h]  <- results[[3]]
+#res_pract_wm[5,4,h]  <- results[[4]]
 
 
-results <- plot_RI(dta, man = "dec_both", out_sp1 = c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42"),out_sp2 = c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42"),treatment , repl)
+#results <- plot_RI(dta, man = "dec_both", out_sp1 = c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42"),out_sp2 = c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42"),treatment , repl)
 
-res_pract_bm[5,1,h]  <- results[[1]]
-res_pract_bm[5,2,h]  <- results[[2]]
-res_pract_bm[5,3,h]  <- results[[3]]
-res_pract_bm[5,4,h]  <- results[[4]]
+#res_pract_bm[5,1,h]  <- results[[1]]
+#res_pract_bm[5,2,h]  <- results[[2]]
+#res_pract_bm[5,3,h]  <- results[[3]]
+#res_pract_bm[5,4,h]  <- results[[4]]
 
-###combiner
-results <- plot_RI(dta, man = "dec_man", out_sp1 = c("combiner_sp1_pl1","combiner_sp1_pl2","combiner_sp1_pl3","combiner_sp1_pl4","combiner_sp1_pl5") ,out_sp2 =c("combiner_sp2_pl1","combiner_sp2_pl2","combiner_sp2_pl3","combiner_sp2_pl4","combiner_sp2_pl5"),treatment , repl)
-res_pract_mm[6,1,h]  <- results[[1]]
-res_pract_mm[6,2,h]  <- results[[2]]
-res_pract_mm[6,3,h]  <- results[[3]]
-res_pract_mm[6,4,h]  <- results[[4]]
+####combiner
+#results <- plot_RI(dta, man = "dec_man", out_sp1 = c("combiner_sp1_pl1","combiner_sp1_pl2","combiner_sp1_pl3","combiner_sp1_pl4","combiner_sp1_pl5") ,out_sp2 =c("combiner_sp2_pl1","combiner_sp2_pl2","combiner_sp2_pl3","combiner_sp2_pl4","combiner_sp2_pl5"),treatment , repl)
+#res_pract_mm[6,1,h]  <- results[[1]]
+#res_pract_mm[6,2,h]  <- results[[2]]
+#res_pract_mm[6,3,h]  <- results[[3]]
+#res_pract_mm[6,4,h]  <- results[[4]]
 
-results <- plot_RI(dta, man = "dec_woman", out_sp1 =  c("combiner_sp1_pl1","combiner_sp1_pl2","combiner_sp1_pl3","combiner_sp1_pl4","combiner_sp1_pl5"),out_sp2 = c("combiner_sp2_pl1","combiner_sp2_pl2","combiner_sp2_pl3","combiner_sp2_pl4","combiner_sp2_pl5"),treatment , repl)
+#results <- plot_RI(dta, man = "dec_woman", out_sp1 =  c("combiner_sp1_pl1","combiner_sp1_pl2","combiner_sp1_pl3","combiner_sp1_pl4","combiner_sp1_pl5"),out_sp2 = c("combiner_sp2_pl1","combiner_sp2_pl2","combiner_sp2_pl3","combiner_sp2_pl4","combiner_sp2_pl5"),treatment , repl)
 
 
-res_pract_wm[6,1,h]  <- results[[1]]
-res_pract_wm[6,2,h]  <- results[[2]]
-res_pract_wm[6,3,h]  <- results[[3]]
-res_pract_wm[6,4,h]  <- results[[4]]
+#res_pract_wm[6,1,h]  <- results[[1]]
+#res_pract_wm[6,2,h]  <- results[[2]]
+#res_pract_wm[6,3,h]  <- results[[3]]
+#res_pract_wm[6,4,h]  <- results[[4]]
 
 
-results <- plot_RI(dta, man = "dec_both", out_sp1 = c("combiner_sp1_pl1","combiner_sp1_pl2","combiner_sp1_pl3","combiner_sp1_pl4","combiner_sp1_pl5"),out_sp2 = c("combiner_sp2_pl1","combiner_sp2_pl2","combiner_sp2_pl3","combiner_sp2_pl4","combiner_sp2_pl5"),treatment , repl)
+#results <- plot_RI(dta, man = "dec_both", out_sp1 = c("combiner_sp1_pl1","combiner_sp1_pl2","combiner_sp1_pl3","combiner_sp1_pl4","combiner_sp1_pl5"),out_sp2 = c("combiner_sp2_pl1","combiner_sp2_pl2","combiner_sp2_pl3","combiner_sp2_pl4","combiner_sp2_pl5"),treatment , repl)
 
-res_pract_bm[6,1,h]  <- results[[1]]
-res_pract_bm[6,2,h]  <- results[[2]]
-res_pract_bm[6,3,h]  <- results[[3]]
-res_pract_bm[6,4,h]  <- results[[4]]
+#res_pract_bm[6,1,h]  <- results[[1]]
+#res_pract_bm[6,2,h]  <- results[[2]]
+#res_pract_bm[6,3,h]  <- results[[3]]
+#res_pract_bm[6,4,h]  <- results[[4]]
 
 
 
-#### bought seed
+##### bought seed
 
-results <- plot_RI(dta, man = "dec_man", out_sp1 =c("grp1seed_purchase1","grp2seed_purchase2","grp3seed_purchase3","grp4seed_purchase4","grp5seed_purchase5"),out_sp2 =c("spouse2grp_sp1seed_purchasesp1", "spouse2grp_sp2seed_purchase_sp2","spouse2grp_sp3seed_purchasesp3","spouse2group_sp4seed_purchasesp4","spouse2grp5_sp5seed_purchasesp5"),treatment , repl)
-res_pract_mm[7,1,h]  <- results[[1]]
-res_pract_mm[7,2,h]  <- results[[2]]
-res_pract_mm[7,3,h]  <- results[[3]]
-res_pract_mm[7,4,h]  <- results[[4]]
+#results <- plot_RI(dta, man = "dec_man", out_sp1 =c("grp1seed_purchase1","grp2seed_purchase2","grp3seed_purchase3","grp4seed_purchase4","grp5seed_purchase5"),out_sp2 =c("spouse2grp_sp1seed_purchasesp1", "spouse2grp_sp2seed_purchase_sp2","spouse2grp_sp3seed_purchasesp3","spouse2group_sp4seed_purchasesp4","spouse2grp5_sp5seed_purchasesp5"),treatment , repl)
+#res_pract_mm[7,1,h]  <- results[[1]]
+#res_pract_mm[7,2,h]  <- results[[2]]
+#res_pract_mm[7,3,h]  <- results[[3]]
+#res_pract_mm[7,4,h]  <- results[[4]]
 
-results <- plot_RI(dta, man = "dec_woman", out_sp1 =c("grp1seed_purchase1","grp2seed_purchase2","grp3seed_purchase3","grp4seed_purchase4","grp5seed_purchase5"),out_sp2 =c("spouse2grp_sp1seed_purchasesp1", "spouse2grp_sp2seed_purchase_sp2","spouse2grp_sp3seed_purchasesp3","spouse2group_sp4seed_purchasesp4","spouse2grp5_sp5seed_purchasesp5"),treatment , repl)
+#results <- plot_RI(dta, man = "dec_woman", out_sp1 =c("grp1seed_purchase1","grp2seed_purchase2","grp3seed_purchase3","grp4seed_purchase4","grp5seed_purchase5"),out_sp2 =c("spouse2grp_sp1seed_purchasesp1", "spouse2grp_sp2seed_purchase_sp2","spouse2grp_sp3seed_purchasesp3","spouse2group_sp4seed_purchasesp4","spouse2grp5_sp5seed_purchasesp5"),treatment , repl)
 
 
-res_pract_wm[7,1,h]  <- results[[1]]
-res_pract_wm[7,2,h]  <- results[[2]]
-res_pract_wm[7,3,h]  <- results[[3]]
-res_pract_wm[7,4,h]  <- results[[4]]
+#res_pract_wm[7,1,h]  <- results[[1]]
+#res_pract_wm[7,2,h]  <- results[[2]]
+#res_pract_wm[7,3,h]  <- results[[3]]
+#res_pract_wm[7,4,h]  <- results[[4]]
 
 
-results <- plot_RI(dta, man = "dec_both", out_sp1 =c("grp1seed_purchase1","grp2seed_purchase2","grp3seed_purchase3","grp4seed_purchase4","grp5seed_purchase5"),out_sp2 =c("spouse2grp_sp1seed_purchasesp1", "spouse2grp_sp2seed_purchase_sp2","spouse2grp_sp3seed_purchasesp3","spouse2group_sp4seed_purchasesp4","spouse2grp5_sp5seed_purchasesp5"),treatment , repl)
+#results <- plot_RI(dta, man = "dec_both", out_sp1 =c("grp1seed_purchase1","grp2seed_purchase2","grp3seed_purchase3","grp4seed_purchase4","grp5seed_purchase5"),out_sp2 =c("spouse2grp_sp1seed_purchasesp1", "spouse2grp_sp2seed_purchase_sp2","spouse2grp_sp3seed_purchasesp3","spouse2group_sp4seed_purchasesp4","spouse2grp5_sp5seed_purchasesp5"),treatment , repl)
 
-res_pract_bm[7,1,h]  <- results[[1]]
-res_pract_bm[7,2,h]  <- results[[2]]
-res_pract_bm[7,3,h]  <- results[[3]]
-res_pract_bm[7,4,h]  <- results[[4]]
+#res_pract_bm[7,1,h]  <- results[[1]]
+#res_pract_bm[7,2,h]  <- results[[2]]
+#res_pract_bm[7,3,h]  <- results[[3]]
+#res_pract_bm[7,4,h]  <- results[[4]]
 
-##### used chemicals
+###### used chemicals
 
-results <- plot_RI(dta, man = "dec_man", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment , repl)
-res_pract_mm[8,1,h]  <- results[[1]]
-res_pract_mm[8,2,h]  <- results[[2]]
-res_pract_mm[8,3,h]  <- results[[3]]
-res_pract_mm[8,4,h]  <- results[[4]]
+#results <- plot_RI(dta, man = "dec_man", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment , repl)
+#res_pract_mm[8,1,h]  <- results[[1]]
+#res_pract_mm[8,2,h]  <- results[[2]]
+#res_pract_mm[8,3,h]  <- results[[3]]
+#res_pract_mm[8,4,h]  <- results[[4]]
 
-results <- plot_RI(dta, man = "dec_woman", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment , repl)
+#results <- plot_RI(dta, man = "dec_woman", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment , repl)
 
 
-res_pract_wm[8,1,h]  <- results[[1]]
-res_pract_wm[8,2,h]  <- results[[2]]
-res_pract_wm[8,3,h]  <- results[[3]]
-res_pract_wm[8,4,h]  <- results[[4]]
+#res_pract_wm[8,1,h]  <- results[[1]]
+#res_pract_wm[8,2,h]  <- results[[2]]
+#res_pract_wm[8,3,h]  <- results[[3]]
+#res_pract_wm[8,4,h]  <- results[[4]]
 
 
-results <- plot_RI(dta, man = "dec_both", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment , repl)
+#results <- plot_RI(dta, man = "dec_both", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment , repl)
 
-res_pract_bm[8,1,h]  <- results[[1]]
-res_pract_bm[8,2,h]  <- results[[2]]
-res_pract_bm[8,3,h]  <- results[[3]]
-res_pract_bm[8,4,h]  <- results[[4]]
+#res_pract_bm[8,1,h]  <- results[[1]]
+#res_pract_bm[8,2,h]  <- results[[2]]
+#res_pract_bm[8,3,h]  <- results[[3]]
+#res_pract_bm[8,4,h]  <- results[[4]]
 
 
-####hired labour
+#####hired labour
 
-results <- plot_RI(dta, man = "dec_man", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment , repl)
-res_pract_mm[9,1,h]  <- results[[1]]
-res_pract_mm[9,2,h]  <- results[[2]]
-res_pract_mm[9,3,h]  <- results[[3]]
-res_pract_mm[9,4,h]  <- results[[4]]
+#results <- plot_RI(dta, man = "dec_man", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment , repl)
+#res_pract_mm[9,1,h]  <- results[[1]]
+#res_pract_mm[9,2,h]  <- results[[2]]
+#res_pract_mm[9,3,h]  <- results[[3]]
+#res_pract_mm[9,4,h]  <- results[[4]]
 
-results <- plot_RI(dta, man = "dec_woman", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment , repl)
+#results <- plot_RI(dta, man = "dec_woman", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment , repl)
 
 
-res_pract_wm[9,1,h]  <- results[[1]]
-res_pract_wm[9,2,h]  <- results[[2]]
-res_pract_wm[9,3,h]  <- results[[3]]
-res_pract_wm[9,4,h]  <- results[[4]]
+#res_pract_wm[9,1,h]  <- results[[1]]
+#res_pract_wm[9,2,h]  <- results[[2]]
+#res_pract_wm[9,3,h]  <- results[[3]]
+#res_pract_wm[9,4,h]  <- results[[4]]
 
 
-results <- plot_RI(dta, man = "dec_both", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment , repl)
+#results <- plot_RI(dta, man = "dec_both", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment , repl)
 
-res_pract_bm[9,1,h]  <- results[[1]]
-res_pract_bm[9,2,h]  <- results[[2]]
-res_pract_bm[9,3,h]  <- results[[3]]
-res_pract_bm[9,4,h]  <- results[[4]]
+#res_pract_bm[9,1,h]  <- results[[1]]
+#res_pract_bm[9,2,h]  <- results[[2]]
+#res_pract_bm[9,3,h]  <- results[[3]]
+#res_pract_bm[9,4,h]  <- results[[4]]
 
 
-####plant immediately after rain
+#####plant immediately after rain
 
-results <- plot_RI(dta, man = "dectime_man", out_sp1 =c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5"),out_sp2 =c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5"),treatment , repl)
-res_pract_mm[10,1,h]  <- results[[1]]
-res_pract_mm[10,2,h]  <- results[[2]]
-res_pract_mm[10,3,h]  <- results[[3]]
-res_pract_mm[10,4,h]  <- results[[4]]
+#results <- plot_RI(dta, man = "dectime_man", out_sp1 =c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5"),out_sp2 =c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5"),treatment , repl)
+#res_pract_mm[10,1,h]  <- results[[1]]
+#res_pract_mm[10,2,h]  <- results[[2]]
+#res_pract_mm[10,3,h]  <- results[[3]]
+#res_pract_mm[10,4,h]  <- results[[4]]
 
-results <- plot_RI(dta, man = "dectime_woman", out_sp1 =c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5"),out_sp2 =c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5"),treatment , repl)
+#results <- plot_RI(dta, man = "dectime_woman", out_sp1 =c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5"),out_sp2 =c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5"),treatment , repl)
 
 
-res_pract_wm[10,1,h]  <- results[[1]]
-res_pract_wm[10,2,h]  <- results[[2]]
-res_pract_wm[10,3,h]  <- results[[3]]
-res_pract_wm[10,4,h]  <- results[[4]]
+#res_pract_wm[10,1,h]  <- results[[1]]
+#res_pract_wm[10,2,h]  <- results[[2]]
+#res_pract_wm[10,3,h]  <- results[[3]]
+#res_pract_wm[10,4,h]  <- results[[4]]
 
 
-results <- plot_RI(dta, man = "dectime_both", out_sp1 =c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5"),out_sp2 =c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5"),treatment , repl)
+#results <- plot_RI(dta, man = "dectime_both", out_sp1 =c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5"),out_sp2 =c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5"),treatment , repl)
 
-res_pract_bm[10,1,h]  <- results[[1]]
-res_pract_bm[10,2,h]  <- results[[2]]
-res_pract_bm[10,3,h]  <- results[[3]]
-res_pract_bm[10,4,h]  <- results[[4]]
+#res_pract_bm[10,1,h]  <- results[[1]]
+#res_pract_bm[10,2,h]  <- results[[2]]
+#res_pract_bm[10,3,h]  <- results[[3]]
+#res_pract_bm[10,4,h]  <- results[[4]]
 
 
-################################ production ###########################
+################################## production ###########################
 #### does the video increases production related outcomes?
 
 ##trimming is done on end result
@@ -447,14 +447,46 @@ res_pract_bm[10,4,h]  <- results[[4]]
 #res_prod_fm[2,1,h] <- summary(lm(as.formula(paste("log_area_tot_fm",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
 #res_prod_fm[2,2,h] <- summary(lm(as.formula(paste("log_area_tot_fm",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
 #res_prod_fm[2,3,h] <- ifelse(totrep >0, RI("log_area_tot_fm",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_area_tot_fm",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
+
 #alternative - this is at plot level
-results <- plot_RI(dta, man = "dec_man_d", out_sp1 =c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1"),out_sp2 =c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2"),treatment , repl)
+results <- plot_RI(dta_bal, man = "mgt_man", out_sp1 =c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1"),out_sp2 =c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2"),treatment , repl, trimlog = TRUE)
+res_prod_mm[1,1:3,h] <- unlist(results[c(1,2,4)])
 
-results <- plot_RI(dta, man = "dec_man_d", out_sp1 =c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1"),out_sp2 =c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2"),treatment , repl)
+results <- plot_RI(dta_bal, man = "mgt_man", out_sp1 =c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1"),out_sp2 =c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2"),treatment , repl, trimlog = TRUE)
+res_prod_mm[2,1:3,h] <- unlist(results[c(1,2,4)])
+
+results <- plot_RI(dta_bal, man = "mgt_man", out_sp1 =paste("yield_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , repl, trimlog = TRUE)
+res_prod_mm[3,1:3,h] <- unlist(results[c(1,2,4)])
+
+results <- plot_RI(dta_bal, man = "mgt_man", out_sp1 =paste("yield_better_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_better_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , repl, trimlog = FALSE)
+res_prod_mm[4,1:3,h] <- unlist(results[c(1,2,4)])
+
+results <- plot_RI(dta_bal, man = "mgt_woman", out_sp1 =c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1"),out_sp2 =c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2"),treatment , repl, trimlog = TRUE)
+res_prod_fm[1,1:3,h] <- unlist(results[c(1,2,4)])
+
+results <- plot_RI(dta_bal, man = "mgt_woman", out_sp1 =c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1"),out_sp2 =c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2"),treatment , repl, trimlog = TRUE)
+res_prod_fm[2,1:3,h] <- unlist(results[c(1,2,4)])
+
+results <- plot_RI(dta_bal, man = "mgt_woman", out_sp1 =paste("yield_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , repl, trimlog = TRUE)
+res_prod_fm[3,1:3,h] <- unlist(results[c(1,2,4)])
+
+results <- plot_RI(dta_bal, man = "mgt_woman", out_sp1 =paste("yield_better_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_better_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , repl, trimlog = FALSE)
+res_prod_fm[4,1:3,h] <- unlist(results[c(1,2,4)])
+
+results <- plot_RI(dta_bal, man = "mgt_both", out_sp1 =c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1"),out_sp2 =c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2"),treatment , repl, trimlog = TRUE)
+res_prod_bm[1,1:3,h] <- unlist(results[c(1,2,4)])
+
+results <- plot_RI(dta_bal, man = "mgt_both", out_sp1 =c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1"),out_sp2 =c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2"),treatment , repl, trimlog = TRUE)
+res_prod_bm[2,1:3,h] <- unlist(results[c(1,2,4)])
+
+results <- plot_RI(dta_bal, man = "mgt_both", out_sp1 =paste("yield_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , repl, trimlog = TRUE)
+res_prod_bm[3,1:3,h] <- unlist(results[c(1,2,4)])
+
+results <- plot_RI(dta_bal, man = "mgt_both", out_sp1 =paste("yield_better_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_better_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , repl, trimlog = FALSE)
+res_prod_bm[4,1:3,h] <- unlist(results[c(1,2,4)])
 
 
-
-####yield
+#####yield
 
 #dta_bal2 <- subset(dta_bal, yield_av_fm >0)
 #dta_bal2$log_yield_av_fm <- log(dta_bal2$yield_av_fm)
@@ -481,7 +513,7 @@ results <- plot_RI(dta, man = "dec_man_d", out_sp1 =c("prod_pl1_sp1","prod_pl2_s
 #dta_bal2 <- trim("log_yield_av_fm", dta_bal2, .05)
 
 
-##res_prod_fm[1:4,4,h] <- FSR_OLS( c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment,dta_bal, nr_repl = totrep)[[4]]
+#res_prod_fm[1:4,4,h] <- FSR_RI(  c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment ,dta_bal, pvals = res_prod_fm[1:4,3,h], nr_repl_ri = 1000)[[4]]
 
 #dta_bal2$log_area_tot_fm <- -dta_bal2$log_area_tot_fm
 
@@ -491,67 +523,67 @@ results <- plot_RI(dta, man = "dec_man_d", out_sp1 =c("prod_pl1_sp1","prod_pl2_s
 #	res_prod_fm[5,3,h] <-  indexer[[2]]
 
 
-########################### wi#################################
-##trimming is done on end result
-#dta_bal2 <- subset(dta_bal, prod_tot_fi>0)
-#dta_bal2$log_prod_tot_fi <- log(dta_bal2$prod_tot_fi)
-#dta_trim <- trim("log_prod_tot_fi", dta_bal2, .05)
+############################ wi#################################
+###trimming is done on end result
+##dta_bal2 <- subset(dta_bal, prod_tot_fi>0)
+##dta_bal2$log_prod_tot_fi <- log(dta_bal2$prod_tot_fi)
+##dta_trim <- trim("log_prod_tot_fi", dta_bal2, .05)
 
-#### production
-#res_prod_fi[1,1,h] <- summary(lm(as.formula(paste("log_prod_tot_fi",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
-#res_prod_fi[1,2,h] <- summary(lm(as.formula(paste("log_prod_tot_fi",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
-#res_prod_fi[1,3,h] <- ifelse(totrep >0, RI("log_prod_tot_fi",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_prod_tot_fi",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
+##### production
+##res_prod_fi[1,1,h] <- summary(lm(as.formula(paste("log_prod_tot_fi",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
+##res_prod_fi[1,2,h] <- summary(lm(as.formula(paste("log_prod_tot_fi",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
+##res_prod_fi[1,3,h] <- ifelse(totrep >0, RI("log_prod_tot_fi",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_prod_tot_fi",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
 
-#### area
+##### area
 
-#dta_bal2 <- subset(dta_bal, area_tot_fi>0)
-#dta_bal2$log_area_tot_fi <- log(dta_bal2$area_tot_fi)
+##dta_bal2 <- subset(dta_bal, area_tot_fi>0)
+##dta_bal2$log_area_tot_fi <- log(dta_bal2$area_tot_fi)
 
-#dta_trim <- trim("log_area_tot_fi", dta_bal2, .05)
+##dta_trim <- trim("log_area_tot_fi", dta_bal2, .05)
 
-#res_prod_fi[2,1,h] <- summary(lm(as.formula(paste("log_area_tot_fi",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
-#res_prod_fi[2,2,h] <- summary(lm(as.formula(paste("log_area_tot_fi",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
-#res_prod_fi[2,3,h] <- ifelse(totrep >0, RI("log_area_tot_fi",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_area_tot_fi",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
+##res_prod_fi[2,1,h] <- summary(lm(as.formula(paste("log_area_tot_fi",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
+##res_prod_fi[2,2,h] <- summary(lm(as.formula(paste("log_area_tot_fi",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
+##res_prod_fi[2,3,h] <- ifelse(totrep >0, RI("log_area_tot_fi",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_area_tot_fi",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
 
-####yield
+#####yield
 
-#dta_bal2 <- subset(dta_bal, yield_av_fi >0)
-#dta_bal2$log_yield_av_fi <- log(dta_bal2$yield_av_fi)
-#dta_trim <- trim("log_yield_av_fi", dta_bal2, .05)
+##dta_bal2 <- subset(dta_bal, yield_av_fi >0)
+##dta_bal2$log_yield_av_fi <- log(dta_bal2$yield_av_fi)
+##dta_trim <- trim("log_yield_av_fi", dta_bal2, .05)
 
-#res_prod_fi[3,1,h] <- summary(lm(as.formula(paste("log_yield_av_fi",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
-#res_prod_fi[3,2,h] <- summary(lm(as.formula(paste("log_yield_av_fi",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
-#res_prod_fi[3,3,h] <- ifelse(totrep >0, RI("log_yield_av_fi",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_yield_av_fi",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
+##res_prod_fi[3,1,h] <- summary(lm(as.formula(paste("log_yield_av_fi",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
+##res_prod_fi[3,2,h] <- summary(lm(as.formula(paste("log_yield_av_fi",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
+##res_prod_fi[3,3,h] <- ifelse(totrep >0, RI("log_yield_av_fi",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_yield_av_fi",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
 
-#### was yield better compared to normal year?
-#summary(lm(yield_better_fi~messenger != "ctrl", data=dta_bal))
+##### was yield better compared to normal year?
+##summary(lm(yield_better_fi~messenger != "ctrl", data=dta_bal))
 
-#res_prod_fi[4,1,h] <- summary(lm(as.formula(paste("yield_better_fi",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
-#res_prod_fi[4,2,h] <- summary(lm(as.formula(paste("yield_better_fi",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
-#res_prod_fi[4,3,h] <- ifelse(totrep >0, RI("yield_better_fi",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("yield_better_fi",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+##res_prod_fi[4,1,h] <- summary(lm(as.formula(paste("yield_better_fi",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
+##res_prod_fi[4,2,h] <- summary(lm(as.formula(paste("yield_better_fi",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+##res_prod_fi[4,3,h] <- ifelse(totrep >0, RI("yield_better_fi",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("yield_better_fi",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
 
-#dta_bal2 <- subset(dta_bal, area_tot_fi >0 & prod_tot_fi>0 & yield_av_fi >0)
-#dta_bal2$log_prod_tot_fi <- log(dta_bal2$prod_tot_fi)
-#dta_bal2$log_area_tot_fi <- log(dta_bal2$area_tot_fi)
-#dta_bal2$log_yield_av_fi <- log(dta_bal2$yield_av_fi)
+##dta_bal2 <- subset(dta_bal, area_tot_fi >0 & prod_tot_fi>0 & yield_av_fi >0)
+##dta_bal2$log_prod_tot_fi <- log(dta_bal2$prod_tot_fi)
+##dta_bal2$log_area_tot_fi <- log(dta_bal2$area_tot_fi)
+##dta_bal2$log_yield_av_fi <- log(dta_bal2$yield_av_fi)
 
-##dta_bal2 <- trim("log_prod_tot", dta_bal2, .1)
-##dta_bal2 <- trim("log_area_tot", dta_bal2, .1)
-#dta_bal2 <- trim("log_yield_av_fi", dta_bal2, .05)
-
-
-##res_prod_fi[1:4,4,h] <- FSR_OLS( c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment,dta_bal, nr_repl = totrep)[[4]]
-
-#dta_bal2$log_area_tot_fi <- -dta_bal2$log_area_tot_fi
-
-#	indexer <- FW_index(treatment, c("log_prod_tot_fi", "log_area_tot_fi","yield_better_fi"),dta_bal2, nr_repl=totrep)
-#	res_prod_fi[5,1,h] <-  indexer[[1]]$coefficients[1,1]
-#	res_prod_fi[5,2,h] <-  indexer[[1]]$coefficients[2,1]
-#	res_prod_fi[5,3,h] <-  indexer[[2]]
+###dta_bal2 <- trim("log_prod_tot", dta_bal2, .1)
+###dta_bal2 <- trim("log_area_tot", dta_bal2, .1)
+##dta_bal2 <- trim("log_yield_av_fi", dta_bal2, .05)
 
 
-######################### mm#################################
-##trimming is done on end result
+###res_prod_fi[1:4,4,h] <- FSR_OLS( c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment,dta_bal, nr_repl = totrep)[[4]]
+
+##dta_bal2$log_area_tot_fi <- -dta_bal2$log_area_tot_fi
+
+##	indexer <- FW_index(treatment, c("log_prod_tot_fi", "log_area_tot_fi","yield_better_fi"),dta_bal2, nr_repl=totrep)
+##	res_prod_fi[5,1,h] <-  indexer[[1]]$coefficients[1,1]
+##	res_prod_fi[5,2,h] <-  indexer[[1]]$coefficients[2,1]
+##	res_prod_fi[5,3,h] <-  indexer[[2]]
+
+
+########################## mm#################################
+###trimming is done on end result
 #dta_bal2 <- subset(dta_bal, prod_tot_mm>0)
 #dta_bal2$log_prod_tot_mm <- log(dta_bal2$prod_tot_mm)
 #dta_trim <- trim("log_prod_tot_mm", dta_bal2, .05)
@@ -572,7 +604,7 @@ results <- plot_RI(dta, man = "dec_man_d", out_sp1 =c("prod_pl1_sp1","prod_pl2_s
 #res_prod_mm[2,2,h] <- summary(lm(as.formula(paste("log_area_tot_mm",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
 #res_prod_mm[2,3,h] <- ifelse(totrep >0, RI("log_area_tot_mm",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_area_tot_mm",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
 
-####yield
+#####yield
 
 #dta_bal2 <- subset(dta_bal, yield_av_mm >0)
 #dta_bal2$log_yield_av_mm <- log(dta_bal2$yield_av_mm)
@@ -599,7 +631,8 @@ results <- plot_RI(dta, man = "dec_man_d", out_sp1 =c("prod_pl1_sp1","prod_pl2_s
 #dta_bal2 <- trim("log_yield_av_mm", dta_bal2, .05)
 
 
-##res_prod_mm[1:4,4,h] <- FSR_OLS( c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment,dta_bal, nr_repl = totrep)[[4]]
+
+#res_prod_mm[1:4,4,h] <- FSR_RI(  c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment ,dta_bal, pvals = res_prod_mm[1:4,3,h], nr_repl_ri = 1000)[[4]]
 
 #dta_bal2$log_area_tot_mm <- -dta_bal2$log_area_tot_mm
 
@@ -609,7 +642,7 @@ results <- plot_RI(dta, man = "dec_man_d", out_sp1 =c("prod_pl1_sp1","prod_pl2_s
 #	res_prod_mm[5,3,h] <-  indexer[[2]]
 
 
-###################### bm#################################
+####################### bm#################################
 ##trimming is done on end result
 #dta_bal2 <- subset(dta_bal, prod_tot_bm>0)
 #dta_bal2$log_prod_tot_bm <- log(dta_bal2$prod_tot_bm)
@@ -659,6 +692,7 @@ results <- plot_RI(dta, man = "dec_man_d", out_sp1 =c("prod_pl1_sp1","prod_pl2_s
 
 
 ##res_prod_bm[1:4,4,h] <- FSR_OLS( c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment,dta_bal, nr_repl = totrep)[[4]]
+#res_prod_bm[1:4,4,h] <- FSR_RI(  c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment ,dta_bal, pvals = res_prod_bm[1:4,3,h], nr_repl_ri = 1000)[[4]]
 
 #dta_bal2$log_area_tot_bm <- -dta_bal2$log_area_tot_bm
 
@@ -668,125 +702,122 @@ results <- plot_RI(dta, man = "dec_man_d", out_sp1 =c("prod_pl1_sp1","prod_pl2_s
 #	res_prod_bm[5,3,h] <-  indexer[[2]]
 
 
-########################
-################### wmshare1#################################
-##trimming is done on end result
-#dta_bal2 <- subset(dta_bal, prod_tot_wm_share1>0)
-#dta_bal2$log_prod_tot_wm_share1 <- log(dta_bal2$prod_tot_wm_share1)
-#dta_trim <- trim("log_prod_tot_wm_share1", dta_bal2, .05)
+#########################
+#################### wmshare1#################################
+###trimming is done on end result
+##dta_bal2 <- subset(dta_bal, prod_tot_wm_share1>0)
+##dta_bal2$log_prod_tot_wm_share1 <- log(dta_bal2$prod_tot_wm_share1)
+##dta_trim <- trim("log_prod_tot_wm_share1", dta_bal2, .05)
 
-#### production
-#res_prod_wm_share1[1,1,h] <- summary(lm(as.formula(paste("log_prod_tot_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
-#res_prod_wm_share1[1,2,h] <- summary(lm(as.formula(paste("log_prod_tot_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
-#res_prod_wm_share1[1,3,h] <- ifelse(totrep >0, RI("log_prod_tot_wm_share1",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_prod_tot_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
+##### production
+##res_prod_wm_share1[1,1,h] <- summary(lm(as.formula(paste("log_prod_tot_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
+##res_prod_wm_share1[1,2,h] <- summary(lm(as.formula(paste("log_prod_tot_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
+##res_prod_wm_share1[1,3,h] <- ifelse(totrep >0, RI("log_prod_tot_wm_share1",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_prod_tot_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
 
-#### area
+##### area
 
-#dta_bal2 <- subset(dta_bal, area_tot_wm_share1>0)
-#dta_bal2$log_area_tot_wm_share1 <- log(dta_bal2$area_tot_wm_share1)
+##dta_bal2 <- subset(dta_bal, area_tot_wm_share1>0)
+##dta_bal2$log_area_tot_wm_share1 <- log(dta_bal2$area_tot_wm_share1)
 
-#dta_trim <- trim("log_area_tot_wm_share1", dta_bal2, .05)
+##dta_trim <- trim("log_area_tot_wm_share1", dta_bal2, .05)
 
-#res_prod_wm_share1[2,1,h] <- summary(lm(as.formula(paste("log_area_tot_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
-#res_prod_wm_share1[2,2,h] <- summary(lm(as.formula(paste("log_area_tot_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
-#res_prod_wm_share1[2,3,h] <- ifelse(totrep >0, RI("log_area_tot_wm_share1",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_area_tot_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
+##res_prod_wm_share1[2,1,h] <- summary(lm(as.formula(paste("log_area_tot_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
+##res_prod_wm_share1[2,2,h] <- summary(lm(as.formula(paste("log_area_tot_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
+##res_prod_wm_share1[2,3,h] <- ifelse(totrep >0, RI("log_area_tot_wm_share1",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_area_tot_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
 
-####yield
+#####yield
 
-#dta_bal2 <- subset(dta_bal, yield_av_wm_share1 >0)
-#dta_bal2$log_yield_av_wm_share1 <- log(dta_bal2$yield_av_wm_share1)
-#dta_trim <- trim("log_yield_av_wm_share1", dta_bal2, .05)
+##dta_bal2 <- subset(dta_bal, yield_av_wm_share1 >0)
+##dta_bal2$log_yield_av_wm_share1 <- log(dta_bal2$yield_av_wm_share1)
+##dta_trim <- trim("log_yield_av_wm_share1", dta_bal2, .05)
 
-#res_prod_wm_share1[3,1,h] <- summary(lm(as.formula(paste("log_yield_av_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
-#res_prod_wm_share1[3,2,h] <- summary(lm(as.formula(paste("log_yield_av_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
-#res_prod_wm_share1[3,3,h] <- ifelse(totrep >0, RI("log_yield_av_wm_share1",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_yield_av_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
+##res_prod_wm_share1[3,1,h] <- summary(lm(as.formula(paste("log_yield_av_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
+##res_prod_wm_share1[3,2,h] <- summary(lm(as.formula(paste("log_yield_av_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
+##res_prod_wm_share1[3,3,h] <- ifelse(totrep >0, RI("log_yield_av_wm_share1",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_yield_av_wm_share1",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
 
-#### was yield better compared to normal year?
-#summary(lm(yield_better_wm_share1~messenger != "ctrl", data=dta_bal))
+##### was yield better compared to normal year?
+##summary(lm(yield_better_wm_share1~messenger != "ctrl", data=dta_bal))
 
-#res_prod_wm_share1[4,1,h] <- summary(lm(as.formula(paste("yield_better_wm_share1",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
-#res_prod_wm_share1[4,2,h] <- summary(lm(as.formula(paste("yield_better_wm_share1",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
-#res_prod_wm_share1[4,3,h] <- ifelse(totrep >0, RI("yield_better_wm_share1",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("yield_better_wm_share1",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+##res_prod_wm_share1[4,1,h] <- summary(lm(as.formula(paste("yield_better_wm_share1",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
+##res_prod_wm_share1[4,2,h] <- summary(lm(as.formula(paste("yield_better_wm_share1",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+##res_prod_wm_share1[4,3,h] <- ifelse(totrep >0, RI("yield_better_wm_share1",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("yield_better_wm_share1",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
 
-#dta_bal2 <- subset(dta_bal, area_tot_wm_share1 >0 & prod_tot_wm_share1>0 & yield_av_wm_share1 >0)
-#dta_bal2$log_prod_tot_wm_share1 <- log(dta_bal2$prod_tot_wm_share1)
-#dta_bal2$log_area_tot_wm_share1 <- log(dta_bal2$area_tot_wm_share1)
-#dta_bal2$log_yield_av_wm_share1 <- log(dta_bal2$yield_av_wm_share1)
+##dta_bal2 <- subset(dta_bal, area_tot_wm_share1 >0 & prod_tot_wm_share1>0 & yield_av_wm_share1 >0)
+##dta_bal2$log_prod_tot_wm_share1 <- log(dta_bal2$prod_tot_wm_share1)
+##dta_bal2$log_area_tot_wm_share1 <- log(dta_bal2$area_tot_wm_share1)
+##dta_bal2$log_yield_av_wm_share1 <- log(dta_bal2$yield_av_wm_share1)
 
-##dta_bal2 <- trim("log_prod_tot", dta_bal2, .1)
-##dta_bal2 <- trim("log_area_tot", dta_bal2, .1)
-#dta_bal2 <- trim("log_yield_av_wm_share1", dta_bal2, .05)
-
-
-##res_prod_wm_share1[1:4,4,h] <- FSR_OLS( c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment,dta_bal, nr_repl = totrep)[[4]]
-
-#dta_bal2$log_area_tot_wm_share1 <- -dta_bal2$log_area_tot_wm_share1
-
-#	indexer <- FW_index(treatment, c("log_prod_tot_wm_share1", "log_area_tot_wm_share1","yield_better_wm_share1"),dta_bal2, nr_repl=totrep)
-#	res_prod_wm_share1[5,1,h] <-  indexer[[1]]$coefficients[1,1]
-#	res_prod_wm_share1[5,2,h] <-  indexer[[1]]$coefficients[2,1]
-#	res_prod_wm_share1[5,3,h] <-  indexer[[2]]
+###dta_bal2 <- trim("log_prod_tot", dta_bal2, .1)
+###dta_bal2 <- trim("log_area_tot", dta_bal2, .1)
+##dta_bal2 <- trim("log_yield_av_wm_share1", dta_bal2, .05)
 
 
-################ wmshare2#################################
-##trimming is done on end result
-#dta_bal2 <- subset(dta_bal, prod_tot_wm_share2>0)
-#dta_bal2$log_prod_tot_wm_share2 <- log(dta_bal2$prod_tot_wm_share2)
-#dta_trim <- trim("log_prod_tot_wm_share2", dta_bal2, .05)
+###res_prod_wm_share1[1:4,4,h] <- FSR_OLS( c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment,dta_bal, nr_repl = totrep)[[4]]
 
-#### production
-#res_prod_wm_share2[1,1,h] <- summary(lm(as.formula(paste("log_prod_tot_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
-#res_prod_wm_share2[1,2,h] <- summary(lm(as.formula(paste("log_prod_tot_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
-#res_prod_wm_share2[1,3,h] <- ifelse(totrep >0, RI("log_prod_tot_wm_share2",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_prod_tot_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
+##dta_bal2$log_area_tot_wm_share1 <- -dta_bal2$log_area_tot_wm_share1
 
-#### area
-
-#dta_bal2 <- subset(dta_bal, area_tot_wm_share2>0)
-#dta_bal2$log_area_tot_wm_share2 <- log(dta_bal2$area_tot_wm_share2)
-
-#dta_trim <- trim("log_area_tot_wm_share2", dta_bal2, .05)
-
-#res_prod_wm_share2[2,1,h] <- summary(lm(as.formula(paste("log_area_tot_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
-#res_prod_wm_share2[2,2,h] <- summary(lm(as.formula(paste("log_area_tot_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
-#res_prod_wm_share2[2,3,h] <- ifelse(totrep >0, RI("log_area_tot_wm_share2",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_area_tot_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
-
-####yield
-
-#dta_bal2 <- subset(dta_bal, yield_av_wm_share2 >0)
-#dta_bal2$log_yield_av_wm_share2 <- log(dta_bal2$yield_av_wm_share2)
-#dta_trim <- trim("log_yield_av_wm_share2", dta_bal2, .05)
-
-#res_prod_wm_share2[3,1,h] <- summary(lm(as.formula(paste("log_yield_av_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
-#res_prod_wm_share2[3,2,h] <- summary(lm(as.formula(paste("log_yield_av_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
-#res_prod_wm_share2[3,3,h] <- ifelse(totrep >0, RI("log_yield_av_wm_share2",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_yield_av_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
-
-#### was yield better compared to normal year?
-#summary(lm(yield_better_wm_share2~messenger != "ctrl", data=dta_bal))
-
-#res_prod_wm_share2[4,1,h] <- summary(lm(as.formula(paste("yield_better_wm_share2",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
-#res_prod_wm_share2[4,2,h] <- summary(lm(as.formula(paste("yield_better_wm_share2",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
-#res_prod_wm_share2[4,3,h] <- ifelse(totrep >0, RI("yield_better_wm_share2",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("yield_better_wm_share2",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
-
-#dta_bal2 <- subset(dta_bal, area_tot_wm_share2 >0 & prod_tot_wm_share2>0 & yield_av_wm_share2 >0)
-#dta_bal2$log_prod_tot_wm_share2 <- log(dta_bal2$prod_tot_wm_share2)
-#dta_bal2$log_area_tot_wm_share2 <- log(dta_bal2$area_tot_wm_share2)
-#dta_bal2$log_yield_av_wm_share2 <- log(dta_bal2$yield_av_wm_share2)
-
-#dta_bal2 <- trim("log_yield_av_wm_share2", dta_bal2, .05)
+##	indexer <- FW_index(treatment, c("log_prod_tot_wm_share1", "log_area_tot_wm_share1","yield_better_wm_share1"),dta_bal2, nr_repl=totrep)
+##	res_prod_wm_share1[5,1,h] <-  indexer[[1]]$coefficients[1,1]
+##	res_prod_wm_share1[5,2,h] <-  indexer[[1]]$coefficients[2,1]
+##	res_prod_wm_share1[5,3,h] <-  indexer[[2]]
 
 
-##res_prod_wm_share2[1:4,4,h] <- FSR_OLS( c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment,dta_bal, nr_repl = totrep)[[4]]
+################# wmshare2#################################
+###trimming is done on end result
+##dta_bal2 <- subset(dta_bal, prod_tot_wm_share2>0)
+##dta_bal2$log_prod_tot_wm_share2 <- log(dta_bal2$prod_tot_wm_share2)
+##dta_trim <- trim("log_prod_tot_wm_share2", dta_bal2, .05)
+
+##### production
+##res_prod_wm_share2[1,1,h] <- summary(lm(as.formula(paste("log_prod_tot_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
+##res_prod_wm_share2[1,2,h] <- summary(lm(as.formula(paste("log_prod_tot_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
+##res_prod_wm_share2[1,3,h] <- ifelse(totrep >0, RI("log_prod_tot_wm_share2",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_prod_tot_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
+
+##### area
+
+##dta_bal2 <- subset(dta_bal, area_tot_wm_share2>0)
+##dta_bal2$log_area_tot_wm_share2 <- log(dta_bal2$area_tot_wm_share2)
+
+##dta_trim <- trim("log_area_tot_wm_share2", dta_bal2, .05)
+
+##res_prod_wm_share2[2,1,h] <- summary(lm(as.formula(paste("log_area_tot_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
+##res_prod_wm_share2[2,2,h] <- summary(lm(as.formula(paste("log_area_tot_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
+##res_prod_wm_share2[2,3,h] <- ifelse(totrep >0, RI("log_area_tot_wm_share2",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_area_tot_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
+
+#####yield
+
+##dta_bal2 <- subset(dta_bal, yield_av_wm_share2 >0)
+##dta_bal2$log_yield_av_wm_share2 <- log(dta_bal2$yield_av_wm_share2)
+##dta_trim <- trim("log_yield_av_wm_share2", dta_bal2, .05)
+
+##res_prod_wm_share2[3,1,h] <- summary(lm(as.formula(paste("log_yield_av_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[1,1]
+##res_prod_wm_share2[3,2,h] <- summary(lm(as.formula(paste("log_yield_av_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
+##res_prod_wm_share2[3,3,h] <- ifelse(totrep >0, RI("log_yield_av_wm_share2",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_yield_av_wm_share2",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
+
+##### was yield better compared to normal year?
+##summary(lm(yield_better_wm_share2~messenger != "ctrl", data=dta_bal))
+
+##res_prod_wm_share2[4,1,h] <- summary(lm(as.formula(paste("yield_better_wm_share2",treatment,sep = "~")), data=dta_bal))$coefficients[1,1]
+##res_prod_wm_share2[4,2,h] <- summary(lm(as.formula(paste("yield_better_wm_share2",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+##res_prod_wm_share2[4,3,h] <- ifelse(totrep >0, RI("yield_better_wm_share2",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("yield_better_wm_share2",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+
+##dta_bal2 <- subset(dta_bal, area_tot_wm_share2 >0 & prod_tot_wm_share2>0 & yield_av_wm_share2 >0)
+##dta_bal2$log_prod_tot_wm_share2 <- log(dta_bal2$prod_tot_wm_share2)
+##dta_bal2$log_area_tot_wm_share2 <- log(dta_bal2$area_tot_wm_share2)
+##dta_bal2$log_yield_av_wm_share2 <- log(dta_bal2$yield_av_wm_share2)
+
+##dta_bal2 <- trim("log_yield_av_wm_share2", dta_bal2, .05)
 
 
-#dta_bal2$log_area_tot_wm_share2 <- -dta_bal2$log_area_tot_wm_share2
-
-#	indexer <- FW_index(treatment, c("log_prod_tot_wm_share2", "log_area_tot_wm_share2","yield_better_wm_share2"),dta_bal2, nr_repl=totrep)
-#	res_prod_wm_share2[5,1,h] <-  indexer[[1]]$coefficients[1,1]
-#	res_prod_wm_share2[5,2,h] <-  indexer[[1]]$coefficients[2,1]
-#	res_prod_wm_share2[5,3,h] <-  indexer[[2]]
+###res_prod_wm_share2[1:4,4,h] <- FSR_OLS( c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment,dta_bal, nr_repl = totrep)[[4]]
 
 
+##dta_bal2$log_area_tot_wm_share2 <- -dta_bal2$log_area_tot_wm_share2
 
+##	indexer <- FW_index(treatment, c("log_prod_tot_wm_share2", "log_area_tot_wm_share2","yield_better_wm_share2"),dta_bal2, nr_repl=totrep)
+##	res_prod_wm_share2[5,1,h] <-  indexer[[1]]$coefficients[1,1]
+##	res_prod_wm_share2[5,2,h] <-  indexer[[1]]$coefficients[2,1]
+##	res_prod_wm_share2[5,3,h] <-  indexer[[2]]
 
 }
 
