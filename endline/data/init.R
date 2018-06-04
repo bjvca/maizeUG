@@ -1,6 +1,6 @@
 ###This file does most of the preparations - it also loads functions that are used in subsequent analyses
 ### first run anonymize.R on raw data to remove identifiers
-rm(list=ls())
+
 dta <- read.csv("/home/bjvca/data/projects/digital green/endline/data/endline.csv")
 ###drop all female headed households 
 dta <- subset(dta, femalehead == 0)
@@ -2918,9 +2918,15 @@ write.csv(dta, "/home/bjvca/Dropbox (IFPRI)/admin/AWS.csv")
 ## FW_index:
 
 ### a function to calculate the single sided RI p-values
+### this only works for all observations!!!
 RI <- function(dep, indep, dta , nr_repl = 1000) {
+#	indep <-  "(messenger != 'ctrl')+ivr+sms+as.factor(recipient) + as.factor(messenger)"
 
-	### determines treatmetn cell
+dep <- "know_space"
+dta <- dta_bal
+nr_repl <- 1000
+
+### determines treatmetn cell
 	dta <- dta %>% 
     		mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
 	### allocates unique ID based on treatment cell status and village
@@ -2933,9 +2939,83 @@ RI <- function(dep, indep, dta , nr_repl = 1000) {
 	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table")) %dopar% {
 		dta_sim <- data.table(dta)
  		setDT(dta_sim)[,perm:=sample(treat),by = (uniqID)]
-		dta_sim$recipient <- ifelse(dta_sim$perm %in% c(5,6,7,12), "couple", ifelse(dta_sim$perm %in% c(1, 2, 8, 10),"male", "female"))
-		dta_sim$messenger <- ifelse(dta_sim$perm %in% c(1, 3, 5), "male", ifelse(dta_sim$perm %in% c(2, 4, 6),"female",ifelse(dta_sim$perm %in% c(8, 9, 7),"couple", "ctrl")))
+
+		dta_sim$recipient <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["male",]>0]),"male", "female"))
+		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["female",]>0]),"female",ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["couple",]>0]),"couple", "ctrl")))
 		return(abs(coef(lm(as.formula(paste(dep,indep,sep="~")), data=dta_sim))[2]) > abs(crit) )
+	}
+	return(sum(oper)/nr_repl)
+}
+
+
+### a function to calculate the single sided RI p-values
+RI_ivr <- function(dep, ctrl_vars = NULL, dta , nr_repl = 1000) {
+	### allocates unique ID based on treatment cell status and village
+	dta <- dta %>% 
+    		mutate(uniqID = group_indices_(dta, .dots=c("recipient", "messenger"))) 
+	### the NULL
+	crit <- summary(lm(as.formula(paste(paste(dep,"(ivr=='yes')",sep="~"),ctrl_vars,sep="+")), data=dta))$coefficients[2,1]
+	dta <-  data.table(cbind(dta[dep],dta[c("messenger","recipient","uniqID","hhid","ivr","sms","called","totsms")]))
+
+	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table")) %dopar% {
+		dta_sim <- data.table(dta)
+ 		setDT(dta_sim)[,perm:=sample(ivr),by = (uniqID)]
+	
+		return(abs(coef(lm(as.formula(paste(paste(dep,"(perm=='yes')",sep="~"),ctrl_vars,sep="+")), data=dta_sim))[2]) > abs(crit) )
+	}
+	return(sum(oper)/nr_repl)
+}
+
+
+RI_ivreg_ivr <- function(dep, ctrl_vars = NULL, dta , nr_repl = 1000) {
+	### allocates unique ID based on treatment cell status and village
+
+	dta <- dta %>% 
+    		mutate(uniqID = group_indices_(dta, .dots=c("recipient", "messenger"))) 
+	### the NULL
+	crit <-  coefficients(ivreg(as.formula(paste(paste(paste(paste(dep,"called", sep="~"),ctrl_vars, sep="+"),instrument, sep="|"),ctrl_vars, sep="+")), data=dta))[2]
+	dta <-  data.table(cbind(dta[dep],dta[c("messenger","recipient","uniqID","hhid","ivr","sms","called","totsms")]))
+
+	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table","AER")) %dopar% {
+		dta_sim <- data.table(dta)
+ 		setDT(dta_sim)[,instrument:=sample(ivr),by = (uniqID)]
+		return(abs( coefficients(ivreg(as.formula(paste(paste(paste(paste(dep,"called", sep="~"),ctrl_vars, sep="+"),"instrument", sep="|"),ctrl_vars, sep="+")), data=dta_sim))[2]) > abs(crit) )
+	}
+	return(sum(oper)/nr_repl)
+}
+
+
+
+RI_sms <- function(dep, ctrl_vars=NULL, dta , nr_repl = 1000) {
+	### allocates unique ID based on treatment cell status and village
+	dta <- dta %>% 
+    		mutate(uniqID = group_indices_(dta, .dots=c("recipient", "messenger"))) 
+	### the NULL
+	crit <- summary(lm(as.formula(paste(paste(dep,"(sms=='yes')",sep="~"),ctrl_vars,sep="+")), data=dta))$coefficients[2,1]
+	dta <-  data.table(cbind(dta[dep],dta[c("messenger","recipient","uniqID","hhid","ivr","sms","called","totsms")]))
+
+	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table")) %dopar% {
+		dta_sim <- data.table(dta)
+ 		setDT(dta_sim)[,perm:=sample(sms),by = (uniqID)]
+	
+		return(abs(coef(lm(as.formula(paste(paste(dep,"(perm=='yes')",sep="~"),ctrl_vars,sep="+")), data=dta_sim))[2]) > abs(crit) )
+	}
+	return(sum(oper)/nr_repl)
+}
+
+RI_ivreg_sms <- function(dep, ctrl_vars = NULL, dta , nr_repl = 1000) {
+	### allocates unique ID based on treatment cell status and village
+
+	dta <- dta %>% 
+    		mutate(uniqID = group_indices_(dta, .dots=c("recipient", "messenger"))) 
+	### the NULL
+	crit <-  coefficients(ivreg(as.formula(paste(paste(paste(paste(dep,"(totsms > 0)", sep="~"),ctrl_vars, sep="+"),instrument, sep="|"),ctrl_vars, sep="+")), data=dta))[2]
+	dta <-  data.table(cbind(dta[dep],dta[c("messenger","recipient","uniqID","hhid","ivr","sms","called","totsms")]))
+
+	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table","AER")) %dopar% {
+		dta_sim <- data.table(dta)
+ 		setDT(dta_sim)[,instrument:=sample(sms),by = (uniqID)]
+		return(abs( coefficients(ivreg(as.formula(paste(paste(paste(paste(dep,"(totsms > 0)", sep="~"),ctrl_vars, sep="+"),"instrument", sep="|"),ctrl_vars, sep="+")), data=dta_sim))[2]) > abs(crit) )
 	}
 	return(sum(oper)/nr_repl)
 }
@@ -3124,7 +3204,8 @@ if(length(revcols)>0){
 					Sx <- cov(x)
 					
 					data$index <- t(solve(t(i.vec)%*%solve(Sx)%*%i.vec)%*%t(i.vec)%*%solve(Sx)%*%t(x))
-mod <- summary(lm(as.formula(paste("index",treat,sep="~")) , data=data))
+mod <- lm(as.formula(paste("index",treat,sep="~")) , data=data)
+
 					
 if (nr_repl > 0) { 
 	data$index <- as.vector(data$index)
@@ -3132,7 +3213,7 @@ if (nr_repl > 0) {
 } else {
 	sig <- summary(lm(as.formula(paste("index",treat,sep="~")) , data=data))$coefficients[2,4]
 }
-return(list(mod,sig))
+return(list(mod,sig, data))
 }
 
 
@@ -3199,11 +3280,11 @@ dta <- dta %>% mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vi
 	return(list(summary(lm(as.formula(paste("outcome",treatment,sep="~")), data=space_ind))$coefficients[1,1],summary(lm(as.formula(paste("outcome",treatment,sep="~")), data=space_ind))$coefficients[2,1], summary(lm(as.formula(paste("outcome",treatment,sep="~")), data=space_ind))$coefficients[2,4],sum(oper)/nr_repl))
 }
 
-plot_RI_dec <- function(data, man,treatment,nr_repl = 1000) {
-#data <- dta
-#man <- "dec_man"
-#treatment <- "messenger != 'ctrl'"
-#nr_repl <- 100
+plot_RI_dec <- function(data, man,treatment,h = h,nr_repl = 1000) {
+data <- dta_bal
+man <- "dectime_man"
+#treatment <-  "(messenger == 'female') +ivr+sms+as.factor(recipient)+ as.factor(messenger)"
+nr_repl <- 0
 #plot_RI(dta, man = "dec_woman", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment , 100)
 
 
@@ -3213,9 +3294,11 @@ dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
 space_ind <- reshape(data[c("messenger","recipient","gender1","ivr","sms","called","totsms","hhid","distID", "subID","vilID", dec_vars)], varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
 	crit <- summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind))$coefficients[2,1]
 print( summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind)))
+mean_male <- ifelse(h <=2,mean(space_ind$decide[space_ind$messenger == "male"], na.rm=T),mean(space_ind$decide[space_ind$recipient == "male"], na.rm=T))
+sd_male <- ifelse(h <=2,sd(space_ind$decide[space_ind$messenger == "male"], na.rm=T),sd(space_ind$decide[space_ind$recipient == "male"], na.rm=T))
+
+
 dta <- space_ind[!duplicated(space_ind$hhid),]
-
-
 dta <- dta %>% mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
 ### allocates unique ID based on treatment cell status and village
 dta <- dta %>% mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vilID"))) 
@@ -3226,11 +3309,11 @@ dta <- dta %>% mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vi
 	dta<- data.table(dta)
 	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table")) %dopar% {
  		dta_sim <- merge(space_ind,setDT(dta)[,perm:=sample(treat),by = (uniqID)][,c("hhid","perm")], by="hhid")
-		dta_sim$recipient <- ifelse(dta_sim$perm %in% c(5,6,7,12), "couple", ifelse(dta_sim$perm %in% c(1, 2, 8, 10),"male", "female"))
-		dta_sim$messenger <- ifelse(dta_sim$perm %in% c(1, 3, 5), "male", ifelse(dta_sim$perm %in% c(2, 4, 6),"female",ifelse(dta_sim$perm %in% c(8, 9, 7),"couple", "ctrl")))
+		dta_sim$recipient <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["male",]>0]),"male", "female"))
+		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["female",]>0]),"female",ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["couple",]>0]),"couple", "ctrl")))
 		return(abs(coef(lm(as.formula(paste("decide",treatment,sep="~")), data=dta_sim))[2]) > abs(crit) )
 	}
-	return(list(summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind))$coefficients[1,1],summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind))$coefficients[2,1], summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind))$coefficients[2,4],sum(oper)/nr_repl))
+	return(list(summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind))$coefficients[2,1],summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind))$coefficients[2,2], summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind))$coefficients[2,4],sum(oper)/nr_repl,mean_male,sd_male))
 }
 
 FSR_RI_plot <- function(deps, indep, dta_ind ,pvals = NULL, nr_repl_ri = 1000, nr_repl_pi = nr_repl_ri ) {
