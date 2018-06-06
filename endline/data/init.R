@@ -2822,7 +2822,7 @@ dta$cons_sp2 <- rowSums(dta[c("spouse2maize_value_sp", "spouse2sorghum_value_sp"
 dta$cons <- rowMeans(dta[c("cons_sp1","cons_sp2")], na.rm=T)
 dta$cons[dta$cons == 0] <- NA
 
-dta$cons_maize_yes <- rowSums(cbind(dta$maize_cons=="Yes", dta$spouse2maize_sp=="Yes"), na.rm=T)
+dta$cons_maize_yes <- rowSums(cbind(dta$maize_cons=="Yes", dta$spouse2maize_sp=="Yes"), na.rm=T) >0
 dta$cons_maize_yes[is.na(dta$maize_cons) & is.na(dta$spouse2maize_sp) ] <- NA
 
 dta$cons_maize_val <- rowSums(dta[c("maize_value","spouse2maize_value_sp")], na.rm=T)

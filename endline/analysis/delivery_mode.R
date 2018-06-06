@@ -5,7 +5,9 @@ source("/home/bjvca/data/projects/digital green/endline/data/init.R")
 #set totrep to zero if you do not want simulation based inferecne
 totrep <- 10000
 library(ggplot2)
-
+library(doParallel)
+library(data.table)
+library(dplyr)
 
 set.seed(07032018)
 dta <- subset(dta, !is.na(interview_status))
@@ -14,8 +16,12 @@ dta$messenger <- as.character(dta$messenger)
 ### indexing results arrays
 res_itt_know <- array(NA, c(10,4,3)) 
 rownames(res_itt_know) <- c("know_space","","know_combine","","know_weed","", "know_armyworm","","know_ind","")
-res_itt_pract <- array(NA, c(32,4,3))
-rownames(res_itt_pract) <- c("first_day","","space","","striga","","weed","", "use_fert","","use_DAP","","use_urea","","use_organic","","seed","","hybrid","","opv","","combiner","","bought_seed","","chem","","labour","","pract_index","")
+res_itt_pract <- array(NA, c(22,4,3))
+rownames(res_itt_pract) <- c("first_day","","space","","striga","","weed","", "use_fert","","seed","","combiner","","bought_seed","","chem","","labour","","pract_index","")
+res_itt_fert <- array(NA, c(6,4,3))
+rownames(res_itt_fert) <- c("use_DAP","","use_urea","","use_organic","")
+res_itt_seed <- array(NA, c(4,4,3))
+rownames(res_itt_seed) <- c("hybrid","","opv","")
 res_itt_prod <- array(NA, c(10,4,3))
 rownames(res_itt_prod) <- c("prod","","area","","yield","","yield_better","","prod_index","")
 prod_plot <- data.frame(matrix(NA, 4,4))
@@ -24,12 +30,6 @@ res_itt_wel <-  array(NA, c(12,4,3))
 rownames(res_itt_wel) <- c("better_av","","better_6m","","eatpref","","eatenough","","log_cons","","welfare_index","")
 res_itt_disp <-  array(NA, c(8,4,3))
 rownames(res_itt_disp) <- c("cons_maize","","sold_maize","","saved_seed","","disp_index","")
-
-# run this analysis for 4 hypotheses:
-# 1: T-C
-# 2: recipient == couple
-# 3: messenger == couple
-# 4: gender matching
 
 cl <- makeCluster(detectCores(all.tests = FALSE, logical = TRUE))
 registerDoParallel(cl)
@@ -79,7 +79,55 @@ credplot.gg <- function(d){
     geom_errorbar(aes(ymin=ylo, ymax=yhi),width=0,cex=1.5)
  return(p)
 }
+###@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
+## the westfall and young correction is not practical because of the double randomization, we therefore go for: http://blogs.worldbank.org/impactevaluations/tools-of-the-trade-a-quick-adjustment-for-multiple-hypothesis-testing
+
+
+Bcorr <- function(vars, data, res_array, h=h) {
+i <- 1
+#loop over vars
+for (var in vars) {
+ test <- cor(data[setdiff(vars,var)], use="pairwise.complete.obs")
+diag(test) <- NA
+res_array[i,4,h] <- 1-(1 - res_array[i,3,h])^length(vars)^(1-mean(test, na.rm=T))
+i <- i+2
+}
+return(res_array)
+}
+
+trim <- function(var, dataset, trim_perc=.1) {
+### function for triming a dataset *dataset* on a variable *var*
+return( subset(dataset,dataset[var] > quantile(dataset[var],c(trim_perc/2,1-(trim_perc/2)), na.rm=T)[1] & dataset[var] < quantile(dataset[var], c(trim_perc/2,1-(trim_perc/2)),na.rm=T)[2]) )
+}
+
+FW_index <- function(treat, indexer, data,revcols = NULL, nr_repl=0) {
+### function to make family wise index using covariance as weights (following http://cyrussamii.com/?p=2656)
+### FW_index("messenger != 'ctrl' ", c("know_space", "know_combine", "know_weed"),dta)
+data <- data[complete.cases(data[indexer]),]
+x <- data[indexer]
+
+				for(j in 1:ncol(x)){
+					x[,j] <- (x[,j] - mean(x[,j]))/sd(x[,j])
+				}
+if(length(revcols)>0){
+						x[,revcols] <-  -1*x[,revcols]
+					}
+					i.vec <- as.matrix(rep(1,ncol(x)))
+					Sx <- cov(x)
+					
+					data$index <- t(solve(t(i.vec)%*%solve(Sx)%*%i.vec)%*%t(i.vec)%*%solve(Sx)%*%t(x))
+mod <- lm(as.formula(paste("index",treat,sep="~")) , data=data)
+
+					
+if (nr_repl > 0) { 
+	data$index <- as.vector(data$index)
+	sig <- RI("index" ,treat , data, nr_repl = nr_repl)
+} else {
+	sig <- summary(lm(as.formula(paste("index",treat,sep="~")) , data=data))$coefficients[2,4]
+}
+return(list(mod,sig, data))
+}
 
 
 h <- 1
@@ -128,6 +176,10 @@ res_itt_know[9,3,h] <-  indexer[[2]]
 ###}
 ###}
 
+
+res_itt_know <- Bcorr(c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, res_itt_know ,h)
+
+
 ################################# practices #############################
 ###timely planting
 res_itt_pract[1,1,h]  <- mean(dta_bal$day_one[dta_bal$messenger == "ctrl"], na.rm=T)
@@ -165,87 +217,90 @@ res_itt_pract[10,2,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~
 res_itt_pract[9,3,h]  <- ifelse(totrep >0, RI("fert",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 #### fert = DAP/NPK
-res_itt_pract[11,1,h]  <-  mean(dta_bal$fert_dap[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[12,1,h]  <-  sd(dta_bal$fert_dap[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[11,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[12,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[11,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+res_itt_fert[1,1,h]  <-  mean(dta_bal$fert_dap[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_fert[2,1,h]  <-  sd(dta_bal$fert_dap[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_fert[1,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_fert[2,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_fert[1,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
 #### fert = urea
-res_itt_pract[13,1,h]  <-  mean(dta_bal$fert_urea[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[14,1,h]  <-  sd(dta_bal$fert_urea[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[13,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[14,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[13,3,h]  <- ifelse(totrep >0, RI("fert_urea",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+res_itt_fert[3,1,h]  <-  mean(dta_bal$fert_urea[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_fert[4,1,h]  <-  sd(dta_bal$fert_urea[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_fert[3,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_fert[4,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_fert[3,3,h]  <- ifelse(totrep >0, RI("fert_urea",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
 #### fert = organic
-res_itt_pract[15,1,h]  <-  mean(dta_bal$fert_org[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[16,1,h]  <-  sd(dta_bal$fert_org[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[15,2,h]  <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[16,2,h]  <- summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[15,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_fert[5,1,h]  <-  mean(dta_bal$fert_org[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_fert[6,1,h]  <-  sd(dta_bal$fert_org[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_fert[5,2,h]  <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_fert[6,2,h]  <- summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_fert[5,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ##improved seed  
-res_itt_pract[17,1,h]  <-  mean(dta_bal$impseed[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[18,1,h]  <-  sd(dta_bal$impseed[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[17,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[18,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[17,3,h]  <- ifelse(totrep >0, RI("impseed",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_pract[11,1,h]  <-  mean(dta_bal$impseed[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_pract[12,1,h]  <-  sd(dta_bal$impseed[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_pract[11,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_pract[12,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_pract[11,3,h]  <- ifelse(totrep >0, RI("impseed",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ## hybrid
-res_itt_pract[19,1,h]  <-  mean(dta_bal$hybrid[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[20,1,h]  <-  sd(dta_bal$hybrid[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[19,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[20,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[19,3,h] <- ifelse(totrep >0, RI("hybrid",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_seed[1,1,h]  <-  mean(dta_bal$hybrid[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_seed[2,1,h]  <-  sd(dta_bal$hybrid[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_seed[1,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_seed[2,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_seed[1,3,h] <- ifelse(totrep >0, RI("hybrid",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ## opv
-res_itt_pract[21,1,h]  <-  mean(dta_bal$opv[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[22,1,h]  <-  sd(dta_bal$opv[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[21,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[22,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[21,3,h] <- ifelse(totrep >0, RI("opv",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_seed[3,1,h]  <-  mean(dta_bal$opv[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_seed[4,1,h]  <-  sd(dta_bal$opv[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_seed[3,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_seed[4,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_seed[3,3,h] <- ifelse(totrep >0, RI("opv",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ##combiner
-res_itt_pract[23,1,h]  <-  mean(dta_bal$combiner[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[24,1,h]  <-  sd(dta_bal$combiner[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[23,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[24,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[23,3,h]  <- ifelse(totrep >0, RI("combiner",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_pract[13,1,h]  <-  mean(dta_bal$combiner[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_pract[14,1,h]  <-  sd(dta_bal$combiner[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_pract[13,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_pract[14,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_pract[13,3,h]  <- ifelse(totrep >0, RI("combiner",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ### bought seed
-res_itt_pract[25,1,h]  <-  mean(dta_bal$bought_seed[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[26,1,h]  <-  sd(dta_bal$bought_seed[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[25,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[26,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[25,3,h]  <- ifelse(totrep >0, RI("bought_seed",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_pract[15,1,h]  <-  mean(dta_bal$bought_seed[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_pract[16,1,h]  <-  sd(dta_bal$bought_seed[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_pract[15,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_pract[16,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_pract[15,3,h]  <- ifelse(totrep >0, RI("bought_seed",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 #### used chemicals
-res_itt_pract[27,1,h]  <-  mean(dta_bal$chem[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[28,1,h]  <-  sd(dta_bal$chem[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[27,2,h]  <- summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[28,2,h]  <- summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[27,3,h]  <- ifelse(totrep >0, RI("chem",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_pract[17,1,h]  <-  mean(dta_bal$chem[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_pract[18,1,h]  <-  sd(dta_bal$chem[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_pract[17,2,h]  <- summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_pract[18,2,h]  <- summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_pract[17,3,h]  <- ifelse(totrep >0, RI("chem",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ###hired labour
-res_itt_pract[29,1,h]  <-  mean(dta_bal$labour[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[30,1,h]  <-  sd(dta_bal$labour[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[29,2,h]  <- summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[30,2,h]  <- summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[29,3,h]  <- ifelse(totrep >0, RI("labour",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_pract[19,1,h]  <-  mean(dta_bal$labour[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_pract[20,1,h]  <-  sd(dta_bal$labour[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_pract[19,2,h]  <- summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_pract[20,2,h]  <- summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_pract[19,3,h]  <- ifelse(totrep >0, RI("labour",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 #if (totrep >0) {
 #res_h0_pract[1:7,4,h] <- FSR_RI( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment ,dta_bal, pvals =  res_h0_pract[,3,h] , nr_repl_pi = 100)
 
 #res_h0_pract[1:7,4,h] <- FSR_OLS( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment,dta_bal, nr_repl = totrep)[[4]]
 
-indexer <-  FW_index(treatment,c("space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour","day_one"),dta_bal, nr_repl=totrep)
-res_itt_pract[31,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
-res_itt_pract[32,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
-res_itt_pract[31,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
-res_itt_pract[32,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
-res_itt_pract[31,3,h] <-  indexer[[2]]
+indexer <-  FW_index(treatment,c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),dta_bal, nr_repl=totrep)
+res_itt_pract[21,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
+res_itt_pract[22,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
+res_itt_pract[21,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
+res_itt_pract[22,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
+res_itt_pract[21,3,h] <-  indexer[[2]]
 
+res_itt_pract <- Bcorr( c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),dta_bal, res_itt_pract ,h)
+res_itt_fert <- Bcorr(c("fert_dap","fert_urea","fert_org"),dta_bal, res_itt_fert ,h)
+res_itt_seed <- Bcorr(c("hybrid","opv"),dta_bal, res_itt_seed ,h)
 
 ################################# production ###########################
 ##### does the video increases production related outcomes?
@@ -317,7 +372,7 @@ dta_bal2$log_yield_av <- log(dta_bal2$yield_av)
 dta_bal2 <- trim("log_yield_av", dta_bal2, .05)
 
 
-#res_h0_prod[1:4,4,h] <- FSR_OLS( c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment,dta_bal, nr_repl = totrep)[[4]]
+res_itt_prod <- Bcorr(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),dta_bal2, res_itt_prod ,h)
 
 dta_bal2$log_area_tot <- -dta_bal2$log_area_tot
 
@@ -347,17 +402,20 @@ res_itt_disp[1,3,h] <- ifelse(totrep >0, RI("cons_maize_yes",treatment , dta_bal
 
 ### sold maize?
 
-res_itt_disp[3,1,h] <- mean(dta_bal$cons_maize_yes[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_disp[4,1,h] <- sd(dta_bal$cons_maize_yes[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_disp[3,1,h] <- mean(dta_bal$sold_maize[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_disp[4,1,h] <- sd(dta_bal$sold_maize[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_disp[3,2,h] <- summary(lm(as.formula(paste("sold_maize",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
 res_itt_disp[4,2,h] <- summary(lm(as.formula(paste("sold_maize",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
 res_itt_disp[3,3,h] <- ifelse(totrep >0, RI("sold_maize",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("sold_maize",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
 ### kept maize for seed?
-res_itt_disp[5,1,h] <- mean(dta_bal$cons_maize_yes[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_disp[6,1,h] <- sd(dta_bal$cons_maize_yes[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_disp[5,1,h] <- mean(dta_bal$save_seed[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_disp[6,1,h] <- sd(dta_bal$save_seed[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_disp[5,2,h] <- summary(lm(as.formula(paste("save_seed",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
 res_itt_disp[6,2,h] <- summary(lm(as.formula(paste("save_seed",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
 res_itt_disp[5,3,h] <- ifelse(totrep >0, RI("save_seed",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("save_seed",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+
+res_itt_disp <- Bcorr(c("cons_maize_yes","sold_maize","save_seed"),dta_bal, res_itt_disp ,h)
+
 
 #res_h0_disp[1:3,4,h] <- FSR_OLS(c("cons_maize_yes", "sold_maize", "save_seed"),treatment,dta_bal, nr_repl = totrep)[[4]]
 dta_bal2 <- dta_bal
@@ -410,6 +468,8 @@ res_itt_wel[10,1,h] <- sd(dta_trim$log_cons[dta_trim$messenger == "ctrl"], na.rm
 res_itt_wel[9,2,h]  <- summary(lm(as.formula(paste("log_cons",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
 res_itt_wel[10,2,h]  <- summary(lm(as.formula(paste("log_cons",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
 res_itt_wel[9,3,h]  <- ifelse(totrep >0, RI("log_cons",treatment , dta_bal2, nr_repl = totrep), summary(lm(as.formula(paste("log_cons",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
+
+res_itt_wel <- Bcorr(c("better_av","better_6m","eatpref","eatenough","log_cons"),dta_trim, res_itt_wel ,h)
 
 
 	#res_h0_wel[1:5,4,h]   <- FSR_OLS(c("better_av", "better_6m", "eatpref","eatenough","log_cons"),treatment,dta_bal, nr_repl = totrep)[[4]]
@@ -478,6 +538,8 @@ res_itt_know[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
 res_itt_know[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_itt_know[9,3,h] <-  indexer[[2]]
 
+res_itt_know <- Bcorr(c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, res_itt_know ,h)
+
 ###if (wyfs_stat) {
 ###	res_h0_know[1:4,4,h] <- FSR_RI( c("know_space","know_combine","know_weed", "know_armyworm") ,treatment ,dta_bal, pvals = res_h0_know[1:4,3,h], nr_repl_ri = 100)[[4]]
 ###	} else { 
@@ -493,6 +555,7 @@ res_itt_pract[2,1,h]  <- sd(dta_bal$day_one[dta_bal$ivr != "yes"], na.rm=T)
 res_itt_pract[1,2,h]  <- summary(lm(as.formula(paste("day_one", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_pract[2,2,h]  <- summary(lm(as.formula(paste("day_one", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_pract[1,3,h]  <- ifelse(totrep >0, RI("day_one",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("day_one", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
 
 #### used recommended spacing use on at lease one plot as reported by at least one spouse
 res_itt_pract[3,1,h]  <- mean(dta_bal$space[dta_bal$ivr != "yes"], na.rm=T)
@@ -523,74 +586,74 @@ res_itt_pract[10,2,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~
 res_itt_pract[9,3,h]  <- ifelse(totrep >0, RI("fert",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 #### fert = DAP/NPK
-res_itt_pract[11,1,h]  <-  mean(dta_bal$fert_dap[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[12,1,h]  <-  sd(dta_bal$fert_dap[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[11,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[12,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[11,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+res_itt_fert[1,1,h]  <-  mean(dta_bal$fert_dap[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_fert[2,1,h]  <-  sd(dta_bal$fert_dap[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_fert[1,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_fert[2,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_fert[1,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
 #### fert = urea
-res_itt_pract[13,1,h]  <-  mean(dta_bal$fert_urea[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[14,1,h]  <-  sd(dta_bal$fert_urea[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[13,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[14,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[13,3,h]  <- ifelse(totrep >0, RI("fert_urea",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+res_itt_fert[3,1,h]  <-  mean(dta_bal$fert_urea[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_fert[4,1,h]  <-  sd(dta_bal$fert_urea[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_fert[3,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_fert[4,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_fert[3,3,h]  <- ifelse(totrep >0, RI("fert_urea",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
 #### fert = organic
-res_itt_pract[15,1,h]  <-  mean(dta_bal$fert_org[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[16,1,h]  <-  sd(dta_bal$fert_org[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[15,2,h]  <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[16,2,h]  <- summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[15,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_fert[5,1,h]  <-  mean(dta_bal$fert_org[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_fert[6,1,h]  <-  sd(dta_bal$fert_org[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_fert[5,2,h]  <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_fert[6,2,h]  <- summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_fert[5,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ##improved seed  
-res_itt_pract[17,1,h]  <-  mean(dta_bal$impseed[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[18,1,h]  <-  sd(dta_bal$impseed[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[17,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[18,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[17,3,h]  <- ifelse(totrep >0, RI("impseed",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_pract[11,1,h]  <-  mean(dta_bal$impseed[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_pract[12,1,h]  <-  sd(dta_bal$impseed[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_pract[11,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_pract[12,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_pract[11,3,h]  <- ifelse(totrep >0, RI("impseed",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ## hybrid
-res_itt_pract[19,1,h]  <-  mean(dta_bal$hybrid[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[20,1,h]  <-  sd(dta_bal$hybrid[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[19,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[20,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[19,3,h] <- ifelse(totrep >0, RI("hybrid",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_seed[1,1,h]  <-  mean(dta_bal$hybrid[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_seed[2,1,h]  <-  sd(dta_bal$hybrid[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_seed[1,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_seed[2,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_seed[1,3,h] <- ifelse(totrep >0, RI("hybrid",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ## opv
-res_itt_pract[21,1,h]  <-  mean(dta_bal$opv[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[22,1,h]  <-  sd(dta_bal$opv[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[21,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[22,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[21,3,h] <- ifelse(totrep >0, RI("opv",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_seed[3,1,h]  <-  mean(dta_bal$opv[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_seed[4,1,h]  <-  sd(dta_bal$opv[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_seed[3,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_seed[4,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_seed[3,3,h] <- ifelse(totrep >0, RI("opv",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ##combiner
-res_itt_pract[23,1,h]  <-  mean(dta_bal$combiner[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[24,1,h]  <-  sd(dta_bal$combiner[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[23,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[24,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[23,3,h]  <- ifelse(totrep >0, RI("combiner",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_pract[13,1,h]  <-  mean(dta_bal$combiner[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_pract[14,1,h]  <-  sd(dta_bal$combiner[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_pract[13,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_pract[14,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_pract[13,3,h]  <- ifelse(totrep >0, RI("combiner",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ### bought seed
-res_itt_pract[25,1,h]  <-  mean(dta_bal$bought_seed[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[26,1,h]  <-  sd(dta_bal$bought_seed[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[25,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[26,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[25,3,h]  <- ifelse(totrep >0, RI("bought_seed",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_pract[15,1,h]  <-  mean(dta_bal$bought_seed[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_pract[16,1,h]  <-  sd(dta_bal$bought_seed[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_pract[15,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_pract[16,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_pract[15,3,h]  <- ifelse(totrep >0, RI("bought_seed",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 #### used chemicals
-res_itt_pract[27,1,h]  <-  mean(dta_bal$chem[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[28,1,h]  <-  sd(dta_bal$chem[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[27,2,h]  <- summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[28,2,h]  <- summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[27,3,h]  <- ifelse(totrep >0, RI("chem",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_pract[17,1,h]  <-  mean(dta_bal$chem[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_pract[18,1,h]  <-  sd(dta_bal$chem[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_pract[17,2,h]  <- summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_pract[18,2,h]  <- summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_pract[17,3,h]  <- ifelse(totrep >0, RI("chem",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ###hired labour
-res_itt_pract[29,1,h]  <-  mean(dta_bal$labour[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[30,1,h]  <-  sd(dta_bal$labour[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_pract[29,2,h]  <- summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[30,2,h]  <- summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[29,3,h]  <- ifelse(totrep >0, RI("labour",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_pract[19,1,h]  <-  mean(dta_bal$labour[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_pract[20,1,h]  <-  sd(dta_bal$labour[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_pract[19,2,h]  <- summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_pract[20,2,h]  <- summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_pract[19,3,h]  <- ifelse(totrep >0, RI("labour",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 #if (totrep >0) {
 #res_h0_pract[1:7,4,h] <- FSR_RI( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment ,dta_bal, pvals =  res_h0_pract[,3,h] , nr_repl_pi = 100)
@@ -598,12 +661,15 @@ res_itt_pract[29,3,h]  <- ifelse(totrep >0, RI("labour",treatment , dta_bal, nr_
 #res_h0_pract[1:7,4,h] <- FSR_OLS( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment,dta_bal, nr_repl = totrep)[[4]]
 
 indexer <-  FW_index(treatment,c("space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour","day_one"),dta_bal, nr_repl=totrep)
-res_itt_pract[31,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
-res_itt_pract[32,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
-res_itt_pract[31,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
-res_itt_pract[32,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
-res_itt_pract[31,3,h] <-  indexer[[2]]
+res_itt_pract[21,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
+res_itt_pract[22,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
+res_itt_pract[21,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
+res_itt_pract[22,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
+res_itt_pract[21,3,h] <-  indexer[[2]]
 
+res_itt_pract <- Bcorr( c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),dta_bal, res_itt_pract ,h)
+res_itt_fert <- Bcorr(c("fert_dap","fert_urea","fert_org"),dta_bal, res_itt_fert ,h)
+res_itt_seed <- Bcorr(c("hybrid","opv"),dta_bal, res_itt_seed ,h)
 
 ################################# production ###########################
 ##### does the video increases production related outcomes?
@@ -673,6 +739,7 @@ dta_bal2$log_area_tot <- log(dta_bal2$area_tot)
 dta_bal2$log_yield_av <- log(dta_bal2$yield_av)
 
 dta_bal2 <- trim("log_yield_av", dta_bal2, .05)
+res_itt_prod <- Bcorr(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),dta_bal2, res_itt_prod ,h)
 
 
 #res_h0_prod[1:4,4,h] <- FSR_OLS( c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment,dta_bal, nr_repl = totrep)[[4]]
@@ -705,17 +772,19 @@ res_itt_disp[1,3,h] <- ifelse(totrep >0, RI("cons_maize_yes",treatment , dta_bal
 
 ### sold maize?
 
-res_itt_disp[3,1,h] <- mean(dta_bal$cons_maize_yes[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_disp[4,1,h] <- sd(dta_bal$cons_maize_yes[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_disp[3,1,h] <- mean(dta_bal$sold_maize[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_disp[4,1,h] <- sd(dta_bal$sold_maize[dta_bal$ivr != "yes"], na.rm=T)
 res_itt_disp[3,2,h] <- summary(lm(as.formula(paste("sold_maize",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
 res_itt_disp[4,2,h] <- summary(lm(as.formula(paste("sold_maize",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
 res_itt_disp[3,3,h] <- ifelse(totrep >0, RI("sold_maize",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("sold_maize",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
 ### kept maize for seed?
-res_itt_disp[5,1,h] <- mean(dta_bal$cons_maize_yes[dta_bal$ivr != "yes"], na.rm=T)
-res_itt_disp[6,1,h] <- sd(dta_bal$cons_maize_yes[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_disp[5,1,h] <- mean(dta_bal$save_seed[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_disp[6,1,h] <- sd(dta_bal$save_seed[dta_bal$ivr != "yes"], na.rm=T)
 res_itt_disp[5,2,h] <- summary(lm(as.formula(paste("save_seed",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
 res_itt_disp[6,2,h] <- summary(lm(as.formula(paste("save_seed",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
 res_itt_disp[5,3,h] <- ifelse(totrep >0, RI("save_seed",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("save_seed",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+
+res_itt_disp <- Bcorr(c("cons_maize_yes","sold_maize","save_seed"),dta_bal, res_itt_disp ,h)
 
 #res_h0_disp[1:3,4,h] <- FSR_OLS(c("cons_maize_yes", "sold_maize", "save_seed"),treatment,dta_bal, nr_repl = totrep)[[4]]
 dta_bal2 <- dta_bal
@@ -769,9 +838,9 @@ res_itt_wel[9,2,h]  <- summary(lm(as.formula(paste("log_cons",treatment,sep = "~
 res_itt_wel[10,2,h]  <- summary(lm(as.formula(paste("log_cons",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
 res_itt_wel[9,3,h]  <- ifelse(totrep >0, RI("log_cons",treatment , dta_bal2, nr_repl = totrep), summary(lm(as.formula(paste("log_cons",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
 
+res_itt_wel <- Bcorr(c("better_av","better_6m","eatpref","eatenough","log_cons"),dta_trim, res_itt_wel ,h)
 
-	#res_h0_wel[1:5,4,h]   <- FSR_OLS(c("better_av", "better_6m", "eatpref","eatenough","log_cons"),treatment,dta_bal, nr_repl = totrep)[[4]]
-	indexer <- FW_index(treatment, c("better_av", "better_6m", "eatpref","eatenough","log_cons"),dta_trim, nr_repl=totrep)
+indexer <- FW_index(treatment, c("better_av", "better_6m", "eatpref","eatenough","log_cons"),dta_trim, nr_repl=totrep)
 res_itt_wel[11,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
 res_itt_wel[12,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
 res_itt_wel[11,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
@@ -836,6 +905,9 @@ res_itt_know[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
 res_itt_know[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_itt_know[9,3,h] <-  indexer[[2]]
 
+res_itt_know <- Bcorr(c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, res_itt_know ,h)
+
+
 ###if (wyfs_stat) {
 ###	res_h0_know[1:4,4,h] <- FSR_RI( c("know_space","know_combine","know_weed", "know_armyworm") ,treatment ,dta_bal, pvals = res_h0_know[1:4,3,h], nr_repl_ri = 100)[[4]]
 ###	} else { 
@@ -881,74 +953,74 @@ res_itt_pract[10,2,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~
 res_itt_pract[9,3,h]  <- ifelse(totrep >0, RI("fert",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 #### fert = DAP/NPK
-res_itt_pract[11,1,h]  <-  mean(dta_bal$fert_dap[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[12,1,h]  <-  sd(dta_bal$fert_dap[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[11,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[12,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[11,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+res_itt_fert[1,1,h]  <-  mean(dta_bal$fert_dap[dta_bal$sms != "yes"], na.rm=T)
+res_itt_fert[2,1,h]  <-  sd(dta_bal$fert_dap[dta_bal$sms != "yes"], na.rm=T)
+res_itt_fert[1,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_fert[2,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_fert[1,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
 #### fert = urea
-res_itt_pract[13,1,h]  <-  mean(dta_bal$fert_urea[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[14,1,h]  <-  sd(dta_bal$fert_urea[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[13,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[14,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[13,3,h]  <- ifelse(totrep >0, RI("fert_urea",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+res_itt_fert[3,1,h]  <-  mean(dta_bal$fert_urea[dta_bal$sms != "yes"], na.rm=T)
+res_itt_fert[4,1,h]  <-  sd(dta_bal$fert_urea[dta_bal$sms != "yes"], na.rm=T)
+res_itt_fert[3,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_fert[4,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_fert[3,3,h]  <- ifelse(totrep >0, RI("fert_urea",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
 #### fert = organic
-res_itt_pract[15,1,h]  <-  mean(dta_bal$fert_org[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[16,1,h]  <-  sd(dta_bal$fert_org[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[15,2,h]  <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[16,2,h]  <- summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[15,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_fert[5,1,h]  <-  mean(dta_bal$fert_org[dta_bal$sms != "yes"], na.rm=T)
+res_itt_fert[6,1,h]  <-  sd(dta_bal$fert_org[dta_bal$sms != "yes"], na.rm=T)
+res_itt_fert[5,2,h]  <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_fert[6,2,h]  <- summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_fert[5,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ##improved seed  
-res_itt_pract[17,1,h]  <-  mean(dta_bal$impseed[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[18,1,h]  <-  sd(dta_bal$impseed[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[17,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[18,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[17,3,h]  <- ifelse(totrep >0, RI("impseed",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_pract[11,1,h]  <-  mean(dta_bal$impseed[dta_bal$sms != "yes"], na.rm=T)
+res_itt_pract[12,1,h]  <-  sd(dta_bal$impseed[dta_bal$sms != "yes"], na.rm=T)
+res_itt_pract[11,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_pract[12,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_pract[11,3,h]  <- ifelse(totrep >0, RI("impseed",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ## hybrid
-res_itt_pract[19,1,h]  <-  mean(dta_bal$hybrid[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[20,1,h]  <-  sd(dta_bal$hybrid[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[19,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[20,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[19,3,h] <- ifelse(totrep >0, RI("hybrid",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_seed[1,1,h]  <-  mean(dta_bal$hybrid[dta_bal$sms != "yes"], na.rm=T)
+res_itt_seed[2,1,h]  <-  sd(dta_bal$hybrid[dta_bal$sms != "yes"], na.rm=T)
+res_itt_seed[1,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_seed[2,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_seed[1,3,h] <- ifelse(totrep >0, RI("hybrid",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ## opv
-res_itt_pract[21,1,h]  <-  mean(dta_bal$opv[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[22,1,h]  <-  sd(dta_bal$opv[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[21,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[22,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[21,3,h] <- ifelse(totrep >0, RI("opv",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_seed[3,1,h]  <-  mean(dta_bal$opv[dta_bal$sms != "yes"], na.rm=T)
+res_itt_seed[4,1,h]  <-  sd(dta_bal$opv[dta_bal$sms != "yes"], na.rm=T)
+res_itt_seed[3,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_seed[4,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_seed[3,3,h] <- ifelse(totrep >0, RI("opv",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ##combiner
-res_itt_pract[23,1,h]  <-  mean(dta_bal$combiner[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[24,1,h]  <-  sd(dta_bal$combiner[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[23,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[24,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[23,3,h]  <- ifelse(totrep >0, RI("combiner",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_pract[13,1,h]  <-  mean(dta_bal$combiner[dta_bal$sms != "yes"], na.rm=T)
+res_itt_pract[14,1,h]  <-  sd(dta_bal$combiner[dta_bal$sms != "yes"], na.rm=T)
+res_itt_pract[13,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_pract[14,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_pract[13,3,h]  <- ifelse(totrep >0, RI("combiner",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ### bought seed
-res_itt_pract[25,1,h]  <-  mean(dta_bal$bought_seed[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[26,1,h]  <-  sd(dta_bal$bought_seed[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[25,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[26,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[25,3,h]  <- ifelse(totrep >0, RI("bought_seed",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_pract[15,1,h]  <-  mean(dta_bal$bought_seed[dta_bal$sms != "yes"], na.rm=T)
+res_itt_pract[16,1,h]  <-  sd(dta_bal$bought_seed[dta_bal$sms != "yes"], na.rm=T)
+res_itt_pract[15,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_pract[16,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_pract[15,3,h]  <- ifelse(totrep >0, RI("bought_seed",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 #### used chemicals
-res_itt_pract[27,1,h]  <-  mean(dta_bal$chem[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[28,1,h]  <-  sd(dta_bal$chem[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[27,2,h]  <- summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[28,2,h]  <- summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[27,3,h]  <- ifelse(totrep >0, RI("chem",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_pract[17,1,h]  <-  mean(dta_bal$chem[dta_bal$sms != "yes"], na.rm=T)
+res_itt_pract[18,1,h]  <-  sd(dta_bal$chem[dta_bal$sms != "yes"], na.rm=T)
+res_itt_pract[17,2,h]  <- summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_pract[18,2,h]  <- summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_pract[17,3,h]  <- ifelse(totrep >0, RI("chem",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 ###hired labour
-res_itt_pract[29,1,h]  <-  mean(dta_bal$labour[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[30,1,h]  <-  sd(dta_bal$labour[dta_bal$sms != "yes"], na.rm=T)
-res_itt_pract[29,2,h]  <- summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
-res_itt_pract[30,2,h]  <- summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[29,3,h]  <- ifelse(totrep >0, RI("labour",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_pract[19,1,h]  <-  mean(dta_bal$labour[dta_bal$sms != "yes"], na.rm=T)
+res_itt_pract[20,1,h]  <-  sd(dta_bal$labour[dta_bal$sms != "yes"], na.rm=T)
+res_itt_pract[19,2,h]  <- summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+res_itt_pract[20,2,h]  <- summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+res_itt_pract[19,3,h]  <- ifelse(totrep >0, RI("labour",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
 #if (totrep >0) {
 #res_h0_pract[1:7,4,h] <- FSR_RI( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment ,dta_bal, pvals =  res_h0_pract[,3,h] , nr_repl_pi = 100)
@@ -956,11 +1028,15 @@ res_itt_pract[29,3,h]  <- ifelse(totrep >0, RI("labour",treatment , dta_bal, nr_
 #res_h0_pract[1:7,4,h] <- FSR_OLS( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment,dta_bal, nr_repl = totrep)[[4]]
 
 indexer <-  FW_index(treatment,c("space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour","day_one"),dta_bal, nr_repl=totrep)
-res_itt_pract[31,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$sms != "yes"])
-res_itt_pract[32,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$sms != "yes"])
-res_itt_pract[31,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
-res_itt_pract[32,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
-res_itt_pract[31,3,h] <-  indexer[[2]]
+res_itt_pract[21,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$sms != "yes"])
+res_itt_pract[22,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$sms != "yes"])
+res_itt_pract[21,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
+res_itt_pract[22,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
+res_itt_pract[21,3,h] <-  indexer[[2]]
+
+res_itt_pract <- Bcorr( c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),dta_bal, res_itt_pract ,h)
+res_itt_fert <- Bcorr(c("fert_dap","fert_urea","fert_org"),dta_bal, res_itt_fert ,h)
+res_itt_seed <- Bcorr(c("hybrid","opv"),dta_bal, res_itt_seed ,h)
 
 
 ################################# production ###########################
@@ -1032,6 +1108,7 @@ dta_bal2$log_yield_av <- log(dta_bal2$yield_av)
 
 dta_bal2 <- trim("log_yield_av", dta_bal2, .05)
 
+res_itt_prod <- Bcorr(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),dta_bal2, res_itt_prod ,h)
 
 #res_h0_prod[1:4,4,h] <- FSR_OLS( c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment,dta_bal, nr_repl = totrep)[[4]]
 
@@ -1063,19 +1140,20 @@ res_itt_disp[1,3,h] <- ifelse(totrep >0, RI("cons_maize_yes",treatment , dta_bal
 
 ### sold maize?
 
-res_itt_disp[3,1,h] <- mean(dta_bal$cons_maize_yes[dta_bal$sms != "yes"], na.rm=T)
-res_itt_disp[4,1,h] <- sd(dta_bal$cons_maize_yes[dta_bal$sms != "yes"], na.rm=T)
+res_itt_disp[3,1,h] <- mean(dta_bal$sold_maize[dta_bal$sms != "yes"], na.rm=T)
+res_itt_disp[4,1,h] <- sd(dta_bal$sold_maize[dta_bal$sms != "yes"], na.rm=T)
 res_itt_disp[3,2,h] <- summary(lm(as.formula(paste("sold_maize",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
 res_itt_disp[4,2,h] <- summary(lm(as.formula(paste("sold_maize",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
 res_itt_disp[3,3,h] <- ifelse(totrep >0, RI("sold_maize",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("sold_maize",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
 ### kept maize for seed?
-res_itt_disp[5,1,h] <- mean(dta_bal$cons_maize_yes[dta_bal$sms != "yes"], na.rm=T)
-res_itt_disp[6,1,h] <- sd(dta_bal$cons_maize_yes[dta_bal$sms != "yes"], na.rm=T)
+res_itt_disp[5,1,h] <- mean(dta_bal$save_seed[dta_bal$sms != "yes"], na.rm=T)
+res_itt_disp[6,1,h] <- sd(dta_bal$save_seed[dta_bal$sms != "yes"], na.rm=T)
 res_itt_disp[5,2,h] <- summary(lm(as.formula(paste("save_seed",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
 res_itt_disp[6,2,h] <- summary(lm(as.formula(paste("save_seed",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
 res_itt_disp[5,3,h] <- ifelse(totrep >0, RI("save_seed",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("save_seed",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
 
-#res_h0_disp[1:3,4,h] <- FSR_OLS(c("cons_maize_yes", "sold_maize", "save_seed"),treatment,dta_bal, nr_repl = totrep)[[4]]
+res_itt_disp <- Bcorr(c("cons_maize_yes","sold_maize","save_seed"),dta_bal, res_itt_disp ,h)
+
 dta_bal2 <- dta_bal
 dta_bal2$save_seed <- !dta_bal2$save_seed
 
@@ -1127,8 +1205,8 @@ res_itt_wel[9,2,h]  <- summary(lm(as.formula(paste("log_cons",treatment,sep = "~
 res_itt_wel[10,2,h]  <- summary(lm(as.formula(paste("log_cons",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
 res_itt_wel[9,3,h]  <- ifelse(totrep >0, RI("log_cons",treatment , dta_bal2, nr_repl = totrep), summary(lm(as.formula(paste("log_cons",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
 
+res_itt_wel <- Bcorr(c("better_av","better_6m","eatpref","eatenough","log_cons"),dta_trim, res_itt_wel ,h)
 
-	#res_h0_wel[1:5,4,h]   <- FSR_OLS(c("better_av", "better_6m", "eatpref","eatenough","log_cons"),treatment,dta_bal, nr_repl = totrep)[[4]]
 	indexer <- FW_index(treatment, c("better_av", "better_6m", "eatpref","eatenough","log_cons"),dta_trim, nr_repl=totrep)
 res_itt_wel[11,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$sms != "yes"])
 res_itt_wel[12,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$sms != "yes"])
