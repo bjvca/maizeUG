@@ -123,7 +123,14 @@ Introduction
 \begin_layout Standard
 Often, the poor appear to make sub-optimal decisions because they lack critical
  pieces of information, are unable to benefit from learning externalities
- [Insert citation], fail to notice vital information 
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1086/601447"
+
+\end_inset
+
+, fail to notice vital information 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1093/qje/qju015"
@@ -153,40 +160,20 @@ key "banerjee2011poor"
  use, and profitability of modern inputs, improved technologies, and recommended
  management practices are a major constraint to sustainable crop intensification
 , productivity growth, and food security 
-\change_inserted 973716962 1527267531
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 973716962 1527267552
-Feder, Just, and Zilberman (1985) doi:10.1086/451461
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \begin_inset CommandInset citation
 LatexCommand citep
-key "jack2013market"
+key "doi:10.1086/451461,jack2013market"
 
 \end_inset
 
 .
  
-\change_inserted 973716962 1527267615
-
 \end_layout
 
 \begin_layout Standard
 With new possibilities offered by information and communications technology
  (ICT), an abundance of pilot projects and commercial products have entered
- the market with a fcous on revitalizing agricultural extension and advisory
+ the market with a focus on revitalizing agricultural extension and advisory
  services in developing countries.
  However, a growing body of evidence suggests that not all ICT-mediated
  extension approaches are equally effective in achieving outcomes such as
@@ -199,138 +186,53 @@ With new possibilities offered by information and communications technology
 \end_layout
 
 \begin_layout Standard
-This paper investigates the effectiveness
-\change_inserted 973716962 1527267666
- of
-\change_unchanged
- information 
-\change_inserted 973716962 1527267681
-about improved maize cultivation 
-\change_unchanged
-delivered 
-\change_inserted 973716962 1527267693
-to smallholder farmers 
-\change_unchanged
-in the form of short audiovisual messages
-\change_inserted 973716962 1528299629
- viewed 
-\change_deleted 973716962 1528299630
- 
-\change_unchanged
-on tablet computers 
-\change_inserted 973716962 1527267703
-in Uganda.
- 
-\change_deleted 973716962 1528299640
-on agricultural outcomes.
- In addition, it
-\change_inserted 973716962 1528299642
-The paper
-\change_unchanged
- investigates 
-\change_inserted 973716962 1528299739
-the direct impact of the video-mediated approach on farmers' understanding
- of new technologies and practices, their adoption decisions, and farm productio
-n.
- The paper further explores 
-\change_unchanged
-the 
-\change_inserted 973716962 1527267745
-role and 
-\change_unchanged
-importance of gender
-\change_inserted 973716962 1527267723
--
-\change_deleted 973716962 1527267725
- 
-\change_unchanged
-related attributes 
-\change_inserted 973716962 1528299782
-in the design of the video-mediated approach 
-\change_unchanged
-that 
-\change_inserted 973716962 1527267835
-influence 
-\change_deleted 973716962 1527267762
-are thought to be key in
-\change_inserted 973716962 1527267762
-the
-\change_unchanged
- effective
-\change_inserted 973716962 1527267765
-ness
-\change_unchanged
- and inclusiv
-\change_inserted 973716962 1527267768
-ity
-\change_deleted 973716962 1527267768
-e
-\change_unchanged
- 
-\change_inserted 973716962 1527267769
-of 
-\change_deleted 973716962 1527267772
-agricultural
-\change_unchanged
- extension information delivery.
- In particular, we 
-\change_inserted 973716962 1527267797
-focus on 
-\change_deleted 973716962 1527267795
-zoom in the
-\change_unchanged
- the role of (i) the gender composition of the receiver(s) of 
-\change_deleted 973716962 1527267857
-the agricultural 
-\change_unchanged
-extension
-\change_deleted 973716962 1527267847
- information
-\change_unchanged
- messages and (ii) the gender composition of the messenger(s) of the information
- message, allowing us to test two hypotheses.
- The first hypothesis is related to information asymmetries within the household
-s, and we ask if it is more effective if both spouses within dual households
- receive the same information then if only one of them is given the information.
- The second hypothesis 
-\change_inserted 973716962 1527267871
-explores whether 
-\change_deleted 973716962 1527267875
-asserts that 
-\change_unchanged
-promoting a household cooperative approach to farming leads to better outcomes
- than when farming is framed as an idiosyncratic activity.
- 
+This paper investigates the effectiveness of information about improved
+ maize cultivation delivered to smallholder farmers in Uganda.
+ In a first part, we consider the technology through which the information
+ is delivered to the farmer, and differentiate between (i) short audiovisual
+ messages viewed on tablet computers; (ii) Interactive Voice Response (IVR)
+ systems that can be called upon if the need arises; and (iii) short message
+ service (sms) nudges that remind farmers at particular points in time about
+ key farming practices.
+ The outcomes used to judge the relative effectiveness of the the difference
+ technologies are generally aggregated to the household level and include
+ knowledge gained, practices and and modern inputs adopted, farm production
+ and disposal, and household well-being.
+ In a second part, the paper further explores the role and importance of
+ gender-related attributes in the design of the video-mediated approach
+ that influence the inclusivity of extension information delivery.
+ In particular, we focus on (i) the gender composition of the receiver(s)
+ of extension messages and (ii) the gender composition of the messenger(s)
+ of the information message.
+ Experimental variations in these attributes allows us to test hypotheses
+ related to information asymmetries within (dual) households.
+ In addition, it allows us to test hypotheses related to the efficacy of
+ videos containing illustrative and expositional content to change certain
+ customs, beliefs or gender stereotypes related to maize farming 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+A dual household is defined as a household containing both one male and
+ one female member who take decisions as head of household either jointly
+ or singly in their respective spheres of responsibility.
+ It thus excludes single headed households or polygamous households.
+\end_layout
+
+\end_inset
+
+.
+ The role of these gender related attributes is judged by looking at knowledge
+ at the individual level, decision making within the households, as well
+ as adoption and production outcomes conditional on who is the primary plot
+ manager.
 \end_layout
 
 \begin_layout Standard
-The
-\change_inserted 973716962 1527267884
-se
-\change_unchanged
- 
-\change_deleted 973716962 1527267886
-research 
-\change_unchanged
-hypotheses are tested using a field experiment
-\change_inserted 973716962 1528299791
- in which 
-\change_deleted 973716962 1528299793
-, where 
-\change_unchanged
-farmers are randomly assigned to a group that receives a particular information
- intervention, and their outcomes are compared to the outcomes of a group
- of farmers that did not receive 
-\change_inserted 973716962 1527267896
-the 
-\change_deleted 973716962 1527267900
-this particular
-\change_unchanged
- information intervention
-\change_inserted 973716962 1527267905
-, following
-\change_unchanged
- 
+These hypotheses are tested using a field experiment in which farmers are
+ randomly assigned to a group that receives a particular information interventio
+n, and their outcomes are compared to the outcomes of a group of farmers
+ that did not receive the information intervention 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "de2016field"
@@ -341,303 +243,105 @@ key "de2016field"
  As we want to test more than one research hypothesis and are particularly
  interested in comparing the relative effectiveness of various attributes
  of an ICT-mediated extension approach, we opt for a factorial design.
- Generally, in 
-\change_deleted 973716962 1528299825
-such a
-\change_inserted 973716962 1528299826
-factorial
-\change_unchanged
- design, a smaller sample size is needed to answer a fixed number of research
- questions as opposed to parallel designs.
+ Generally, in factorial designs, a smaller sample size is needed to answer
+ a fixed number of research questions as opposed to parallel designs.
  
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted 973716962 1527268033
-We work with maize farmers in eastern Uganda.
- The information interventions take the form of short videos that explain
- simple yet effective ways to increase maize productivity, such as best
- practices in row spacing, the importance of quality seed, and optimal soil
- fertility management.
- To test overall effectiveness of the information provided through the video,
- we compare outcomes of farmers that were exposed to a placebo video to
- outcomes of farmers that were shown the video.
- To test the hypothesis on the importance of the gender composition of the
- person or persons targeted by the information, we compare outcomes of farm
- households where the video was shown to only one individual to outcomes
- of households where the video was shown to the man and women together as
- a couple.
- To test the hypothesis on the importance of the gender composition the
- person or persons providing the information, we produced different versions
- of the video.
- In one version of the video, all the information is provided by an individual
- farmer (either a man or a woman).
- Finally, in a second version of the video, the exact same information is
- given by a couple.
-\change_inserted 973716962 1528300164
 We work with 3,600 participants sampled from the population of dual households
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 973716962 1528300123
-Should we define this term, eg., a household containing both male and female
- members who take decisions as head of household either jointly or singly
- in their respective spheres of responsibility? That might confuse people
- into thinking that the hh is a dual income hh, which isn't necessarily
- the case.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
  cultivating maize across five districts of eastern Uganda.
- The information interventions take the form of short videos that explain
+ The core information interventions take the form of short videos that explain
  simple yet effective ways to increase maize productivity and profitability,
  such as best practices in row spacing, the importance of quality seed,
  optimal soil fertility management, and farm budget management.
  To test overall effectiveness of the information provided through the video,
  we compare outcomes of farmers that were exposed to a placebo video to
  outcomes of farmers that were shown the video.
- To test the hypothesis on the importance of the gender composition of the
- Person(s) targeted by the information, we compare outcomes of farm households
- where the video was shown to only one individual to outcomes of households
- where the video was shown to the man and women together as a couple.
- To test the hypothesis on the importance of the gender composition the
- person or persons providing the information, we produced different versions
- of the video.
- In one version of the video, all the information is provided by an individual
- farmer (either a man or a woman).
- Finally, in a second version of the video, the exact same information is
- given by a couple.
-
-\change_unchanged
- 
-\change_deleted 973716962 1527268049
-Power calculations suggested we needed a sample of about 3,600 farmers,
- which was drawn from five districts.
-\change_inserted 973716962 1527268058
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted 973716962 1527268081
-We can discuss the power calcs later, not up front.
- Readers will assume we did our sampling and power calcs correctly – and
- anyways, we go into it in detail in the appropriate section of the paper.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_deleted 973716962 1527268101
- The videos were shown twice to farmers, once before the beginning of the
- main maize growing season, in July 2017, and again one month later during
- the onset of the rainy season when maize needs to be planted.
-
-\change_unchanged
+ To about two third of the sample of farm households that were shown the
+ agricultural information video, we also gave to toll free phone number
+ and explained they could call this number any time if they needed more
+ information on maize farming.
+ Finally, to half of the sample of households that got the IVR number (and
+ thus were also shown the video) we sent 10 sms messages at strategic points
+ in time reminding them to about the importance of a particular technology
+ or practice that was explained in the video and repeating that they can
+ always call the IVR system if they want more information.
  
 \end_layout
 
 \begin_layout Standard
+To test how information asymmetry within the household affects decision
+ making and outcomes, we compare farm households where the video was shown
+ only to the man in the household (the status quo) to households where the
+ video was shown to the woman in the household, and to households where
+ the video was shown to man and women together as a couple.
+ To test the hypothesis on the importance of the gender (composition) of
+ the person(s) providing the information, we produced different versions
+ of the video.
+ In each version of the video, the information was exactly the same, only
+ the person (or persons) that featured in the video and explained everything
+ was changed.
+ In one version of the video, all the information is provided by an individual
+ male farmer, while in a second version of the video, the information is
+ given by a female farmer.
+ In a third version of the video, the exact same information is given by
+ a couple, each spouse taking turns in explaining things.
+ 
+\end_layout
 
-\change_deleted 973716962 1527268120
-At the farm household level, we find that providing information to farmers
- trough short video messages increases knowledge.
- farmers that are shown a video are significantly more likely to select
- the correct answer from a set of alternative answers to a question.
- In addition, farmers who were shown the video are also more likely to adopt
- a range of improved technologies and follow recommended agronomic practices.
- We also find clear effects on production with maize yields almost 14 percent
- higher than in control households.
-\change_inserted 973716962 1527268851
+\begin_layout Standard
 At the farm household level, we find that providing information to farmers
  through short video messages increases their knowledge about modern inputs,
  improved technologies, and recommended practices.
  In addition, farmers who were shown the video are also more likely to adopt
  a range of inputs, technologies, and practices that were presented in the
  videos.
- We also find clear effects on production with maize yields almost 14 percent
- higher than in control households.
- 
-\change_deleted 973716962 1527268441
- However, the positive impact does not extend to household level welfare.
- 
-\change_inserted 973716962 1527268785
- Within the household, we find greater nuance to these initial findings.
- First, the observed yield gains are observed on male- and jointly-managed
- plots: although we observe that providing information through the video
- messages 
-\change_deleted 973716962 1527268249
-We also find that showing the video to both spouses together has some additional
- positive effects.
- For instance, it 
-\change_unchanged
-increases 
-\change_deleted 973716962 1527268252
-the 
-\change_unchanged
-women
-\change_inserted 973716962 1527268254
-'s
-\change_unchanged
- involvement in decision making.
- However, the increase in participation in decision making does not
-\change_deleted 973716962 1527268547
- 
-\change_inserted 973716962 1527268548
- 
-\change_unchanged
-translated into 
-\change_inserted 973716962 1527268777
-higher yields 
-\change_deleted 973716962 1527268780
-better outcomes
-\change_unchanged
- on women
-\change_inserted 973716962 1527268263
--
-\change_deleted 973716962 1527268263
- 
-\change_unchanged
-managed plots.
- 
-\change_inserted 973716962 1528300288
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 973716962 1527268802
-So this is where it gets tricky if we want to think modularly about two
- papers.
- The results for yield gains on male- vs.
- joint- vs.
- female-managed plots could also be reported when discussing hh effects.
+ We also find clear effects on production with maize yields 14 percent higher
+ than in control households.
+ However, these results do not translate into higher well-being.
+ The IVR has no additional knowledge impact.
+ The additional effect on technology adoption of IVR is also less significant:
+ we only find a positive effect on the uptake of hybrid seed.
+ Still, we do find that households that were allocated to the IVR treatment
+ report yields that are 8 percent higher.
+ The sms campaign has no additional impact.
 \end_layout
 
-\end_inset
-
- Finally, we find that the observed positive effects on knowledge, adoption,
- and yields do not necessarily translate into improvements in household-level
- welfare or changes in intra-household welfare.
+\begin_layout Standard
+Within the household, we find greater nuance to these initial findings.
+ First, the observed yield gains are observed on male- and jointly-managed
+ plots: although we observe that providing information through the video
+ messages increases women's involvement in decision making.
+ However, the increase in participation in decision making does not translated
+ into higher yields on women-managed plots.
  
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
 The remainder of the paper is organized as follows.
  The next section lays out the main research questions and corresponding
  hypotheses.
- 
-\change_deleted 973716962 1527268961
-In s
-\change_inserted 973716962 1528300299
-S
-\change_unchanged
-ection 3
-\change_inserted 973716962 1527268967
- 
-\change_deleted 973716962 1527268968
-, we 
-\change_unchanged
-explain
-\change_inserted 973716962 1527268975
-s
-\change_unchanged
- the factorial design and corresponding sampling frame.
- 
-\change_deleted 973716962 1527268980
-The next two sections
-\change_inserted 973716962 1527268982
-Section 4
-\change_unchanged
- 
-\change_inserted 973716962 1527268995
-describes 
-\change_deleted 973716962 1527268996
-present 
-\change_unchanged
-the 
-\change_inserted 973716962 1527268991
-study site and 
-\change_unchanged
-context
-\change_inserted 973716962 1527269016
-, while Section 5 
-\change_deleted 973716962 1527269019
- and 
-\change_unchanged
-describes the video
-\change_inserted 973716962 1527269022
--based
-\change_unchanged
- intervention used as 
-\change_inserted 973716962 1527269026
-the 
-\change_unchanged
-treatment in 
-\change_inserted 973716962 1527269028
-this 
-\change_deleted 973716962 1527269030
-the
-\change_unchanged
- experiment.
- We then turn to the results
-\change_inserted 973716962 1527269111
- in Section 6 with a discussion of baseline characteristics and sample balance
- followed by analysis of the household and intra-household outcomes.
- 
-\change_deleted 973716962 1527269108
-, first presenting some baseline characteristics to investigate balance
- in the sample.
- We then compare outcomes at household level.
- In particular, we look at differences in knowledge, adoption of recommended
- practices and modern inputs, production and disposal and welfare.
- We also investigate if changes in the attributes of the video intervention
- affects decision making with respect to maize farming within households.
- We then turn to the individual level and investigate the impact of the
- intervention on adoption and production for male managed, female managed,
- and jointly managed plots separately.
-
-\change_unchanged
- 
+ Section 3 explains the factorial design and corresponding sampling frame.
+ Section 4 describes the study site and context, while Section 5 describes
+ the interventions used as the treatment in this experiment.
+ We then turn to the results in Section 6 with a discussion of baseline
+ characteristics and sample balance followed by analysis of the household
+ and intra-household outcomes.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-We then have a section that runs a range of specifica
-\change_deleted 973716962 1528133047
-n
-\change_unchanged
-tions to check robustness of our findings and discuss at alternative explanation
-s for the findings.
+We then have a section that runs a range of specifications to check robustness
+ of our findings and discuss at alternative explanations for the findings.
  
 \end_layout
 
 \end_inset
 
- A final section 
-\change_inserted 973716962 1527269117
-provides 
-\change_unchanged
-conclud
-\change_inserted 973716962 1527269163
-ing remarks and recommendations for future program and research investments
- in ICT-enabled agricultural extension and advisory services
-\change_deleted 973716962 1527269121
-es
-\change_unchanged
-.
+ A final section provides concluding remarks and recommendations for future
+ program and research investments in ICT-enabled agricultural extension
+ and advisory services.
 \end_layout
 
 \begin_layout Section*
@@ -9103,6 +8807,17 @@ Finally, we look at the impact of the interventions on adoption and production
  plots they manage.
  We find no evidence of a couple role model effect among Ugandan smallholder
  maize farmers.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "../../pre-analysis plan/maizeUG_PAP"
+options "../../../PASIC/determinants/paper/presentation_research_day/IFPRI_Style"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
