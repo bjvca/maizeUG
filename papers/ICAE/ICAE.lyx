@@ -62,7 +62,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes true
 \html_math_output 0
 \html_css_as_file 0
@@ -82,60 +82,23 @@ Bjorn Van Campenhout, Els Lecoutere, and David J Spielman
 
 \begin_layout Abstract
 In programs to disseminate information through agricultural extension and
- advisory services, seemingly small design attributes
-\change_inserted 973716962 1528299578
-—
-\change_deleted 973716962 1528299580
-, such as 
-\change_unchanged
-the way the information is delivered, who delivers the information, or who
- is targeted by the message
-\change_deleted 973716962 1528299585
-, 
-\change_inserted 973716962 1528299586
-—
-\change_unchanged
-can result in significant differences in effectiveness and inclusiveness
+ advisory services, seemingly small design attributes—the way the information
+ is delivered, who delivers the information, or who is targeted by the message—c
+an result in significant differences in effectiveness and inclusiveness
  of the intervention.
- Information and communication
-\change_inserted 973716962 1528298998
-s
-\change_unchanged
- technology (ICT) can reduce the costs associated with adapting design attribute
-s to particular problems and contexts.
- This study investigates the 
-\change_inserted 973716962 1528299052
-impact of a video-mediated extension approach and the 
-\change_unchanged
-importance of the gender composition of the person(s) who provide(s) the
- information and the gender composition of the person(s) who receive(s)
- the information
-\change_deleted 973716962 1528299046
- via a video-mediated extension approach
-\change_unchanged
-.
+ Information and communications technology (ICT) can reduce the costs associated
+ with adapting design attributes to particular problems and contexts.
+ This study investigates the impact of a video-mediated extension approach
+ and the importance of the gender composition of the person(s) who provide(s)
+ the information and the gender composition of the person(s) who receive(s)
+ the information.
  We conduct a field experiment among smallholder maize farmers in Uganda
  to determine whether and how reductions in information asymmetries among
- and within households lead to a range of 
-\change_deleted 973716962 1528299080
-improved 
-\change_inserted 973716962 1528299190
-productivity- and welfare-improving 
-\change_unchanged
-outcomes.
- 
-\change_inserted 973716962 1528299139
-Specifically, w
-\change_deleted 973716962 1528299139
-W
-\change_unchanged
-e assess 
-\change_inserted 973716962 1528299143
-the 
-\change_unchanged
-effectiveness of the approach by measuring knowledge gained, adoption of
- modern inputs and recommend practices, maize production and disposal, and
- well-being.
+ and within households lead to a range of productivity- and welfare-improving
+ outcomes.
+ Specifically, we assess the effectiveness of the approach by measuring
+ knowledge gained, adoption of modern inputs and recommend practices, maize
+ production and disposal, and well-being.
  We assess the approach’s inclusivity by exploring gender-disaggregated
  effects on in intra-household decision-making, cooperative approaches to
  household farming, and other equity indicators.
@@ -147,24 +110,6 @@ n is targeted to both husband and wife as a couple.
  Most of these household level effects, however, work through male-managed
  and jointly-managed plots, and women seem less able to use the new information
  on plots they manage directly and independently.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Is 
-\begin_inset Quotes eld
-\end_inset
-
-directly and independently
-\begin_inset Quotes erd
-\end_inset
-
- a more complete and accurate way of describing female-managed plots (and,
- implicitly, male-managed plots)?
-\end_layout
-
-\end_inset
-
  Furthermore, we find no evidence of homophily or role model effects resulting
  from short videos featuring farmer-actors who are similar to the farmers
  participating in the experiment.
@@ -178,16 +123,7 @@ Introduction
 \begin_layout Standard
 Often, the poor appear to make sub-optimal decisions because they lack critical
  pieces of information, are unable to benefit from learning externalities
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Foster & Rosenzeweig (10995) doi: 10.1086/601447
-\end_layout
-
-\end_inset
-
-, fail to notice vital information 
+ [Insert citation], fail to notice vital information 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1093/qje/qju015"
@@ -203,25 +139,8 @@ key "doi:10.1162/qjec.2010.125.2.515,10.1257/app.3.1.1"
 
 .
  In many instances, information campaigns, extension programs, or advisory
- services designed to address these information inefficiencies can 
-\change_inserted 973716962 1528299270
-lead 
-\change_deleted 973716962 1528299273
-make a
-\change_inserted 973716962 1528299273
-to
-\change_unchanged
- 
-\change_inserted 973716962 1528299275
-significant 
-\change_deleted 973716962 1528299268
-big
-\change_unchanged
- difference
-\change_inserted 973716962 1528299297
-s in an individual's decision-making
-\change_unchanged
- 
+ services designed to address these information inefficiencies can lead
+ to significant differences in an individual's decision-making 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "banerjee2011poor"
@@ -229,20 +148,11 @@ key "banerjee2011poor"
 \end_inset
 
 .
- 
-\change_deleted 973716962 1527267525
-Also in the context of smallholder agriculture, it has been argued that
- a lack of information about the existence, use, and profitability of modern
- inputs and recommended practices is a major constraint to sustainable crop
- intensification
-\change_inserted 973716962 1528299390
-In the context of smallholder agriculture, these inefficiencies have been
+ In the context of smallholder agriculture, these inefficiencies have been
  well documented, especially where the lack of information about the existence,
  use, and profitability of modern inputs, improved technologies, and recommended
  management practices are a major constraint to sustainable crop intensification
-, productivity growth, and food security
-\change_unchanged
- 
+, productivity growth, and food security 
 \change_inserted 973716962 1527267531
 
 \begin_inset Note Note
@@ -274,17 +184,6 @@ key "jack2013market"
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted 973716962 1527267653
-This, together with new possibilities offered through innovations in Information
- and Communication Technologies (ICT) has led to several initiatives aimed
- at revitalizing agricultural advisory services in developing countries.
- However, it has also been found that not all information campaigns are
- equally effective and that seemingly small design attributes such as the
- way the information is delivered, who delivers the information and who
- was targeted can make a big difference.
- 
-\change_inserted 973716962 1528299571
 With new possibilities offered by information and communications technology
  (ICT), an abundance of pilot projects and commercial products have entered
  the market with a fcous on revitalizing agricultural extension and advisory
@@ -297,8 +196,6 @@ With new possibilities offered by information and communications technology
  delivers the information, and who was targeted—can significantly influence
  these outcomes.
  
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -481,7 +378,7 @@ We work with maize farmers in eastern Uganda.
 \change_inserted 973716962 1528300164
 We work with 3,600 participants sampled from the population of dual households
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -525,7 +422,7 @@ Power calculations suggested we needed a sample of about 3,600 farmers,
 \change_inserted 973716962 1527268058
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1720,7 +1617,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../../../../../../Desktop/sampling_design.PNG
+	filename /Desktop/sampling_design.PNG
 	scale 35
 
 \end_inset
