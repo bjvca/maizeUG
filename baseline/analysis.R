@@ -305,6 +305,27 @@ siglev <-  1.96
 set.seed(54321)
 ### drop the femheaded
 dta <- subset(dta, recipient != "n/a")
+dta$messenger <- dta$maizevideo_shown
+
+## merge in treatments
+treats <- read.csv("/home/bjvca/data/projects/digital green/sampling/sampling_list_ID.csv")[c("HHID","IVR","sms")]
+names(treats) <- c("hhid","ivr","sms")
+dta <- merge(treats, dta, by="hhid", all=F)
+
+summary(dta$maizebags_harv*100/dta$maizearea_cultivation)
+summary(dta$maizeage)
+summary(as.numeric(dta$maizeeduc>2))
+summary(dta$maizehh_no)
+summary(dta$maizeprrooms) 
+summary(as.numeric(dta$maizeprinfo_receiv=="Yes"))
+#this is actually fertilizer use
+summary(as.numeric(dta$maizeprinfo_receiv_spouse=="Yes"))
+#this is seed use
+summary(as.numeric(dta$maizeprinput_use=="Yes"))
+summary(dta$maizedist_shop)
+dta$yield <- dta$maizebags_harv*100/dta$maizearea_cultivation
+dta_all <- dta
+dta <- subset(dta_all, messenger!='ctrl')
 
 summary(dta$maizebags_harv*100/dta$maizearea_cultivation)
 summary(dta$maizeage)
@@ -318,140 +339,103 @@ summary(as.numeric(dta$maizeprinfo_receiv_spouse=="Yes"))
 summary(as.numeric(dta$maizeprinput_use=="Yes"))
 summary(dta$maizedist_shop)
 
+dta <- dta_all
 
+balance <- array(NA,c(18, 7))
+jointF <-  array(NA,c(3, 7))
 
-## sample size for balance H1
-s_h1 <- min(table(dta$maizevideo_shown[dta$maizevideo_shown != "ctrl"], dta$recipient[dta$maizevideo_shown != "ctrl"]))
-
-dta_bal <- rbind(dta[dta$maizevideo_shown=="ctrl",],
- dta[dta$maizevideo_shown=="couple" & dta$recipient == "couple",][sample( nrow(dta[dta$maizevideo_shown=="couple" & dta$recipient == "couple",]),s_h1),],
- dta[dta$maizevideo_shown=="male" & dta$recipient == "couple",][sample( nrow(dta[dta$maizevideo_shown=="male" & dta$recipient == "couple",]),s_h1),],
- dta[dta$maizevideo_shown=="female" & dta$recipient == "couple",][sample( nrow(dta[dta$maizevideo_shown=="female" & dta$recipient == "couple",]),s_h1),],
- dta[dta$maizevideo_shown=="female" & dta$recipient == "male",][sample( nrow(dta[dta$maizevideo_shown=="female" & dta$recipient == "male",]),s_h1),],
- dta[dta$maizevideo_shown=="female" & dta$recipient == "female",][sample( nrow(dta[dta$maizevideo_shown=="female" & dta$recipient == "female",]),s_h1),],
- dta[dta$maizevideo_shown=="male" & dta$recipient == "male",][sample( nrow(dta[dta$maizevideo_shown=="male" & dta$recipient == "male",]),s_h1),],
- dta[dta$maizevideo_shown=="male" & dta$recipient == "female",][sample( nrow(dta[dta$maizevideo_shown=="male" & dta$recipient == "female",]),s_h1),],
- dta[dta$maizevideo_shown=="couple" & dta$recipient == "male",][sample( nrow(dta[dta$maizevideo_shown=="couple" & dta$recipient == "male",]),s_h1),],
- dta[dta$maizevideo_shown=="couple" & dta$recipient == "female",][sample( nrow(dta[dta$maizevideo_shown=="couple" & dta$recipient == "female",]),s_h1),])
-
-
-summary(lm((dta_bal$maizebags_harv*100/dta_bal$maizearea_cultivation~dta_bal$maizevideo_shown!="ctrl")))
-summary(lm(dta_bal$maizeage~dta_bal$maizevideo_shown!="ctrl"))
-summary(lm(as.numeric(dta_bal$maizeeduc>2)~dta_bal$maizevideo_shown!="ctrl"))
-summary(lm(dta_bal$maizehh_no~dta_bal$maizevideo_shown!="ctrl"))
-summary(lm(dta_bal$maizeprrooms~dta_bal$maizevideo_shown!="ctrl"))
-summary(lm(as.numeric(dta_bal$maizeprinfo_receiv=="Yes")~dta_bal$maizevideo_shown!="ctrl"))
-## labeling mistake here: maizeprinfo_receiv_spouse should be fertilizer_use 
-summary(lm(as.numeric(dta_bal$maizeprinfo_receiv_spouse=="Yes")~dta_bal$maizevideo_shown!="ctrl"))
-## labeling mistake here: maizeprinfo_receiv_spouse should be improvedseed_use
-summary(lm(as.numeric(dta_bal$maizeprinput_use=="Yes")~dta_bal$maizevideo_shown!="ctrl"))
-summary(lm(dta_bal$maizedist_shop~dta_bal$maizevideo_shown!="ctrl"))
-dta_bal$yield <- dta_bal$maizebags_harv*100/dta_bal$maizearea_cultivation
+for (h in 1:7) {
+if (h==1) {
+treat <- "(messenger != 'ctrl')+maizeivr+sms+as.factor(recipient) + as.factor(messenger)" 
+} else if (h==2) {
+treat <- "(maizeivr=='yes')+sms+as.factor(recipient) + as.factor(messenger)" 
+dta <- subset(dta_all, messenger!='ctrl')
+} else if (h==3) {
+treat <- "(sms=='yes')+as.factor(recipient) + as.factor(messenger)" 
+dta <- subset(dta_all, ivr=='yes' )
+} else if (h==4) {
+treat <- "(messenger=='female')+maizeivr+sms+as.factor(recipient) + as.factor(messenger)" 
+dta <- subset(dta_all, (messenger!='ctrl' & messenger!='couple') )
+} else if (h==5) {
+treat <- "(messenger=='couple')+maizeivr+sms+as.factor(recipient) + as.factor(messenger)" 
+dta <- subset(dta_all, (messenger!='ctrl' & messenger!='female') )
+} else if (h==6) {
+treat <- "(recipient=='female')+maizeivr+sms+as.factor(recipient) + as.factor(messenger)" 
+dta <- subset(dta_all, (messenger!='ctrl' & recipient!='couple') )
+} else if (h==7) {
+treat <- "(recipient=='couple')+maizeivr+sms+as.factor(recipient) + as.factor(messenger)" 
+dta <- subset(dta_all, (messenger!='ctrl' & recipient!='female') )
+}
+balance[1,h] <-  summary(lm(as.formula(paste("yield",treat, sep="~")), data= dta))$coefficients[2,1]
+balance[2,h] <-  summary(lm(as.formula(paste("yield",treat, sep="~")), data= dta))$coefficients[2,4]
+balance[3,h] <- summary(lm(as.formula(paste("maizeage",treat, sep="~")), data= dta))$coefficients[2,1]
+balance[4,h] <- summary(lm(as.formula(paste("maizeage",treat, sep="~")), data= dta))$coefficients[2,4]
+balance[5,h] <- summary(lm(as.formula(paste("(maizeeduc > 2)",treat, sep="~")), data= dta))$coefficients[2,1]
+balance[6,h] <- summary(lm(as.formula(paste("(maizeeduc >2)",treat, sep="~")), data= dta))$coefficients[2,4]
+balance[7,h] <- summary(lm(as.formula(paste("maizehh_no",treat, sep="~")), data= dta))$coefficients[2,1]
+balance[8,h] <- summary(lm(as.formula(paste("maizehh_no",treat, sep="~")), data= dta))$coefficients[2,4]
+balance[9,h] <-summary(lm(as.formula(paste("maizeprrooms",treat, sep="~")), data= dta))$coefficients[2,1]
+balance[10,h] <-summary(lm(as.formula(paste("maizeprrooms",treat, sep="~")), data= dta))$coefficients[2,4]
+balance[11,h] <-summary(lm(as.formula(paste("(maizeprinfo_receiv=='Yes')",treat, sep="~")), data= dta))$coefficients[2,1]
+balance[12,h] <-summary(lm(as.formula(paste("(maizeprinfo_receiv=='Yes')",treat, sep="~")), data= dta))$coefficients[2,4]
+### labeling mistake here: maizeprinfo_receiv_spouse should be fertilizer_use 
+balance[13,h] <-summary(lm(as.formula(paste("maizeprinfo_receiv_spouse=='Yes'",treat, sep="~")), data= dta))$coefficients[2,1]
+balance[14,h] <-summary(lm(as.formula(paste("maizeprinfo_receiv_spouse=='Yes'",treat, sep="~")), data= dta))$coefficients[2,4]
+### labeling mistake here: maizeprinfo_receiv_spouse should be improvedseed_use
+balance[15,h] <-summary(lm(as.formula(paste("maizeprinput_use=='Yes'",treat, sep="~")), data= dta))$coefficients[2,1]
+balance[16,h] <-summary(lm(as.formula(paste("maizeprinput_use=='Yes'",treat, sep="~")), data= dta))$coefficients[2,4]
+balance[17,h] <-summary(lm(as.formula(paste("maizedist_shop",treat, sep="~")), data= dta))$coefficients[2,1]
+balance[18,h] <-summary(lm(as.formula(paste("maizedist_shop",treat, sep="~")), data= dta))$coefficients[2,4]
 
 #also do some joint tests
-summary(lm((maizevideo_shown!="ctrl")~yield + maizeage + as.numeric(maizeeduc>2) + maizehh_no + maizeprrooms + as.numeric(maizeprinfo_receiv=="Yes") + as.numeric(maizeprinfo_receiv_spouse=="Yes") + as.numeric(maizeprinput_use=="Yes") + maizedist_shop, data=dta_bal))
+#summary(lm((maizevideo_shown!="ctrl")~yield + maizeage + as.numeric(maizeeduc>2) + maizehh_no + maizeprrooms + as.numeric(maizeprinfo_receiv=="Yes") + as.numeric(maizeprinfo_receiv_spouse=="Yes") + as.numeric(maizeprinput_use=="Yes") + maizedist_shop, data=dta_bal))
+}
 
-dta <- subset(dta, maizevideo_shown != "ctrl")
+dta <- dta_all
+## joint tests and Nobs
+covars <- c("yield + maizeage + (maizeeduc > 2) + maizehh_no+ maizeprrooms + (maizeprinfo_receiv=='Yes') + (maizeprinfo_receiv_spouse=='Yes') + (maizeprinput_use=='Yes') + maizedist_shop")
+x <- summary(lm(as.formula(paste("(messenger != 'ctrl')",covars, sep="~")), data= dta))
+jointF[1,1] <- x$fstatistic[1]
+jointF[2,1] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
+jointF[3,1] <- x$df[1] + x$df[2]
 
-#### make sure to balance before doing tests
-## sample size for balance H0
-s_h0 <- min(table(dta$maizevideo_shown, dta$recipient)[,1])
-## sample size for balance H1
-s_h1 <- min(table(dta$maizevideo_shown, dta$recipient)[,-1])
+dta <- subset(dta_all, messenger!='ctrl')
+x <- summary(lm(as.formula(paste("(maizeivr=='yes')",covars, sep="~")), data= dta))
+jointF[1,2] <- x$fstatistic[1]
+jointF[2,2] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
+jointF[3,2] <- x$df[1] + x$df[2]
 
-dta_bal <- rbind( dta[dta$maizevideo_shown=="couple" & dta$recipient == "couple",][sample( nrow(dta[dta$maizevideo_shown=="couple" & dta$recipient == "couple",]),s_h0),],
- dta[dta$maizevideo_shown=="male" & dta$recipient == "couple",][sample( nrow(dta[dta$maizevideo_shown=="male" & dta$recipient == "couple",]),s_h0),],
- dta[dta$maizevideo_shown=="female" & dta$recipient == "couple",][sample( nrow(dta[dta$maizevideo_shown=="female" & dta$recipient == "couple",]),s_h0),],
+dta <- subset(dta_all, maizeivr=='yes' )
+x <- summary(lm(as.formula(paste("(sms=='yes')",covars, sep="~")), data= dta))
+jointF[1,3] <- x$fstatistic[1]
+jointF[2,3] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
+jointF[3,3] <- x$df[1] + x$df[2]
 
- dta[dta$maizevideo_shown=="female" & dta$recipient == "male",][sample( nrow(dta[dta$maizevideo_shown=="female" & dta$recipient == "male",]),s_h1),],
- dta[dta$maizevideo_shown=="female" & dta$recipient == "female",][sample( nrow(dta[dta$maizevideo_shown=="female" & dta$recipient == "female",]),s_h1),],
- dta[dta$maizevideo_shown=="male" & dta$recipient == "male",][sample( nrow(dta[dta$maizevideo_shown=="male" & dta$recipient == "male",]),s_h1),],
- dta[dta$maizevideo_shown=="male" & dta$recipient == "female",][sample( nrow(dta[dta$maizevideo_shown=="male" & dta$recipient == "female",]),s_h1),],
- dta[dta$maizevideo_shown=="couple" & dta$recipient == "male",][sample( nrow(dta[dta$maizevideo_shown=="couple" & dta$recipient == "male",]),s_h1),],
- dta[dta$maizevideo_shown=="couple" & dta$recipient == "female",][sample( nrow(dta[dta$maizevideo_shown=="couple" & dta$recipient == "female",]),s_h1),])
-
-
-
-
-summary(lm(dta_bal$maizebags_harv*100/dta_bal$maizearea_cultivation~dta_bal$recipient=="couple"))
-summary(lm(dta_bal$maizeage~dta_bal$recipient=="couple"))
-summary(lm(as.numeric(dta_bal$maizeeduc>2)~dta_bal$recipient=="couple"))
-summary(lm(dta_bal$maizehh_no~dta_bal$recipient=="couple"))
-summary(lm(dta_bal$maizeprrooms~dta_bal$recipient=="couple"))
-summary(lm(as.numeric(dta_bal$maizeprinfo_receiv=="Yes")~dta_bal$recipient=="couple"))
-summary(lm(as.numeric(dta_bal$maizeprinfo_receiv_spouse=="Yes")~dta_bal$recipient=="couple"))
-summary(lm(as.numeric(dta_bal$maizeprinput_use=="Yes")~dta_bal$recipient=="couple"))
-summary(lm(dta_bal$maizedist_shop~dta_bal$recipient=="couple"))
-
-dta_bal$yield <- dta_bal$maizebags_harv*100/dta_bal$maizearea_cultivation
-summary(lm((dta_bal$recipient=="couple")~yield + maizeage + as.numeric(maizeeduc>2) + maizehh_no + maizeprrooms + as.numeric(maizeprinfo_receiv=="Yes") + as.numeric(maizeprinfo_receiv_spouse=="Yes") + as.numeric(maizeprinput_use=="Yes") + maizedist_shop, data=dta_bal))
+dta <- subset(dta_all, (messenger!='ctrl' & messenger!='couple') )
+x <- summary(lm(as.formula(paste("(messenger=='female')",covars, sep="~")), data= dta))
+jointF[1,4] <- x$fstatistic[1]
+jointF[2,4] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
+jointF[3,4] <- x$df[1] + x$df[2]
 
 
-#### make sure to balance before doing tests
-## sample size for balance H0 -  basically table(dta$recipient[dta$maizevideo_shown == "couple"])
-s_h0 <- min(table(dta$maizevideo_shown, dta$recipient)[1,])
+dta <- subset(dta_all, (messenger!='ctrl' & messenger!='male') )
+x <- summary(lm(as.formula(paste("(messenger=='couple')",covars, sep="~")), data= dta))
+jointF[1,5] <- x$fstatistic[1]
+jointF[2,5] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
+jointF[3,5] <- x$df[1] + x$df[2]
+
+dta <- subset(dta_all, (messenger!='ctrl' & recipient!='couple') )
+x <- summary(lm(as.formula(paste("(recipient=='female')",covars, sep="~")), data= dta))
+jointF[1,6] <- x$fstatistic[1]
+jointF[2,6] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
+jointF[3,6] <- x$df[1] + x$df[2]
+
+dta <- subset(dta_all, (messenger!='ctrl' & recipient!='male') )
+x <- summary(lm(as.formula(paste("(recipient=='couple')",covars, sep="~")), data= dta))
+jointF[1,7] <- x$fstatistic[1]
+jointF[2,7] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
+jointF[3,7] <- x$df[1] + x$df[2]
 
 
-s_h1 <- min(table(dta$maizevideo_shown, dta$recipient)[-1,])
-
-dta_bal <- rbind( dta[dta$maizevideo_shown=="couple" & dta$recipient == "couple",][sample( nrow(dta[dta$maizevideo_shown=="couple" & dta$recipient == "couple",]),s_h0),],
- dta[dta$maizevideo_shown=="male" & dta$recipient == "couple",][sample( nrow(dta[dta$maizevideo_shown=="male" & dta$recipient == "couple",]),s_h1),],
- dta[dta$maizevideo_shown=="female" & dta$recipient == "couple",][sample( nrow(dta[dta$maizevideo_shown=="female" & dta$recipient == "couple",]),s_h1),],
-
- dta[dta$maizevideo_shown=="female" & dta$recipient == "male",][sample( nrow(dta[dta$maizevideo_shown=="female" & dta$recipient == "male",]),s_h1),],
- dta[dta$maizevideo_shown=="female" & dta$recipient == "female",][sample( nrow(dta[dta$maizevideo_shown=="female" & dta$recipient == "female",]),s_h1),],
- dta[dta$maizevideo_shown=="male" & dta$recipient == "male",][sample( nrow(dta[dta$maizevideo_shown=="male" & dta$recipient == "male",]),s_h1),],
- dta[dta$maizevideo_shown=="male" & dta$recipient == "female",][sample( nrow(dta[dta$maizevideo_shown=="male" & dta$recipient == "female",]),s_h1),],
- dta[dta$maizevideo_shown=="couple" & dta$recipient == "male",][sample( nrow(dta[dta$maizevideo_shown=="couple" & dta$recipient == "male",]),s_h0),],
- dta[dta$maizevideo_shown=="couple" & dta$recipient == "female",][sample( nrow(dta[dta$maizevideo_shown=="couple" & dta$recipient == "female",]),s_h0),])
-
-
-
-
-
-
-summary(lm(dta_bal$maizebags_harv*100/dta_bal$maizearea_cultivation~dta_bal$maizevideo_shown=="couple"))
-summary(lm(dta_bal$maizeage~dta_bal$maizevideo_shown=="couple"))
-summary(lm(as.numeric(dta_bal$maizeeduc>2)~dta_bal$maizevideo_shown=="couple"))
-summary(lm(dta_bal$maizehh_no~dta_bal$maizevideo_shown=="couple"))
-summary(lm(dta_bal$maizeprrooms~dta_bal$maizevideo_shown=="couple"))
-summary(lm(as.numeric(dta_bal$maizeprinfo_receiv=="Yes")~dta_bal$maizevideo_shown=="couple"))
-summary(lm(as.numeric(dta_bal$maizeprinfo_receiv_spouse=="Yes")~dta_bal$maizevideo_shown=="couple"))
-summary(lm(as.numeric(dta_bal$maizeprinput_use=="Yes")~dta_bal$maizevideo_shown=="couple"))
-summary(lm(dta_bal$maizedist_shop~dta_bal$maizevideo_shown=="couple"))
-
-dta_bal$yield <- dta_bal$maizebags_harv*100/dta_bal$maizearea_cultivation
-summary(lm((maizevideo_shown=="couple")~yield + maizeage + as.numeric(maizeeduc>2) + maizehh_no + maizeprrooms + as.numeric(maizeprinfo_receiv=="Yes") + as.numeric(maizeprinfo_receiv_spouse=="Yes") + as.numeric(maizeprinput_use=="Yes") + maizedist_shop, data=dta_bal))
-
-
-### balance for gender matching hypothesis (H4)
-
-dta <- subset(dta, recipient != "couple" & maizevideo_shown != "couple")
-s_h0 <- min(table(dta$recipient, dta$maizevideo_shown))
-
-dta_bal <- rbind(
- dta[dta$maizevideo_shown=="female" & dta$recipient == "male",][sample( nrow(dta[dta$maizevideo_shown=="female" & dta$recipient == "male",]),s_h0),],
- dta[dta$maizevideo_shown=="female" & dta$recipient == "female",][sample( nrow(dta[dta$maizevideo_shown=="female" & dta$recipient == "female",]),s_h0),],
- dta[dta$maizevideo_shown=="male" & dta$recipient == "male",][sample( nrow(dta[dta$maizevideo_shown=="male" & dta$recipient == "male",]),s_h0),],
- dta[dta$maizevideo_shown=="male" & dta$recipient == "female",][sample( nrow(dta[dta$maizevideo_shown=="male" & dta$recipient == "female",]),s_h0),])
-
-
-dta_bal$matched <- NA
-dta_bal$matched[dta_bal$recipient == "male" & dta_bal$maizevideo_shown=="male" | dta_bal$recipient == "female" & dta_bal$maizevideo_shown=="female"] <- TRUE
-dta_bal$matched[dta_bal$recipient == "male" & dta_bal$maizevideo_shown=="female" | dta_bal$recipient == "female" & dta_bal$maizevideo_shown=="male"] <- FALSE
-
-
-summary(lm(dta_bal$maizebags_harv*100/dta_bal$maizearea_cultivation~dta_bal$matched))
-summary(lm(dta_bal$maizeage~dta_bal$matched))
-summary(lm(as.numeric(dta_bal$maizeeduc>2)~dta_bal$matched))
-summary(lm(dta_bal$maizehh_no~dta_bal$matched))
-summary(lm(dta_bal$maizeprrooms~dta_bal$matched))
-summary(lm(as.numeric(dta_bal$maizeprinfo_receiv=="Yes")~dta_bal$matched))
-summary(lm(as.numeric(dta_bal$maizeprinfo_receiv_spouse=="Yes")~dta_bal$matched))
-summary(lm(as.numeric(dta_bal$maizeprinput_use=="Yes")~dta_bal$matched))
-summary(lm(dta_bal$maizedist_shop~dta_bal$matched))
-
-dta_bal$yield <- dta_bal$maizebags_harv*100/dta_bal$maizearea_cultivation
-summary(lm(matched~yield + maizeage + as.numeric(maizeeduc>2) + maizehh_no + maizeprrooms + as.numeric(maizeprinfo_receiv=="Yes") + as.numeric(maizeprinfo_receiv_spouse=="Yes") + as.numeric(maizeprinput_use=="Yes") + maizedist_shop, data=dta_bal))
 
 
