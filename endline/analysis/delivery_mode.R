@@ -59,6 +59,42 @@ RI <- function(dep, indep, dta , nr_repl = 1000) {
 	}
 	return(sum(oper)/nr_repl)
 }
+
+### and also a function to adjst standard errors
+RI_FWER <- function(deps, indep, dta ,p_vals , nr_repl = 1000) {
+#deps <-c("log_prod_tot","log_area_tot","log_yield_av","yield_better")
+#indep <- "(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)"
+#dta <- dta_bal2
+#pvals <- c(0.7791,0.0264,0.0154	,0.5528)
+#nr_repl <- 1000
+#RI_FWER(c("know_space","know_combine","know_weed", "know_armyworm"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)",dta, c(0.0001,0.0056,0.3215,0.2116))
+#RI_FWER(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)",dta_bal2, c(0.7791	,0.0264	,0.0154	,0.5528))
+#RI_FWER(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)",dta_bal2, c(0.7791	,0.0264	,0.0154	,0.5528))
+
+
+threshold_finder<- function(threshold){
+  mean(apply(oper, 2, x <- function(x) sum(x <= threshold) > 0 ))
+}
+### determines treatmetn cell
+	dta <- dta %>% 
+    		mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
+	### allocates unique ID based on treatment cell status and village
+	dta <- dta %>% 
+    		mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vilID"))) 
+	dta <-  data.table(cbind(dta[deps],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms","called","totsms")]))
+	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table")) %dopar% {
+		dta_sim <- data.table(dta)
+ 		setDT(dta_sim)[,perm:=sample(treat),by = (uniqID)]
+		dta_sim$recipient <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["male",]>0]),"male", "female"))
+		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["female",]>0]),"female",ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["couple",]>0]),"couple", "ctrl")))
+return(unlist(lapply(deps, function(dvar) summary(lm(as.formula(paste(dvar,indep,sep="~")), data=dta_sim))$coefficients[2,4])))
+				}
+
+thresholds <- seq(0, 0.1, length.out = 10000)
+type_I_rate <- sapply(thresholds, threshold_finder)
+return( list=c(thresholds[max(which(type_I_rate <= 0.05))],thresholds[max(which(type_I_rate <= 0.01))], thresholds[max(which(type_I_rate <= 0.001))]))
+}
+
 ##@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 
@@ -81,7 +117,7 @@ credplot.gg <- function(d){
 }
 ###@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-## the westfall and young correction is not practical because of the double randomization, we therefore go for: http://blogs.worldbank.org/impactevaluations/tools-of-the-trade-a-quick-adjustment-for-multiple-hypothesis-testing
+## alternative way to correct for multiple hypotheses, inspried on: http://blogs.worldbank.org/impactevaluations/tools-of-the-trade-a-quick-adjustment-for-multiple-hypothesis-testing
 
 
 Bcorr <- function(vars, data, res_array, h=h) {
@@ -160,8 +196,8 @@ res_itt_know[8,1,h] <- sd(dta_bal$know_armyworm[dta_bal$messenger == "ctrl"])
 res_itt_know[7,2,h] <- summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,1]
 res_itt_know[8,2,h] <- summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,2]
 res_itt_know[7,3,h] <-  ifelse(totrep >0, RI("know_armyworm",treatment , dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
-## no need to include armyworm in the index because we do not really expect an effect - but even when we include the effect is sig, so keep it in
-indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, nr_repl=totrep)
+## no need to include armyworm in the index because we do not really expect an effect
+indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed"),dta_bal, nr_repl=totrep)
 res_itt_know[9,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 res_itt_know[10,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 res_itt_know[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
@@ -178,7 +214,7 @@ res_itt_know[9,3,h] <-  indexer[[2]]
 
 
 res_itt_know <- Bcorr(c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, res_itt_know ,h)
-
+RI_FWER(c("know_space","know_combine","know_weed", "know_armyworm"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)",dta, c(0.0001,0.0056,0.3215,0.2116), 10000)
 
 ################################# practices #############################
 ###timely planting
@@ -302,6 +338,10 @@ res_itt_pract <- Bcorr( c("day_one","space","striga","weed", "fert","impseed", "
 res_itt_fert <- Bcorr(c("fert_dap","fert_urea","fert_org"),dta_bal, res_itt_fert ,h)
 res_itt_seed <- Bcorr(c("hybrid","opv"),dta_bal, res_itt_seed ,h)
 
+RI_FWER(c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)",dta_bal, c(0.4287,0.0008,0.0132,0.7909,0.0091,0.3616,0.0767,0.3091,0.1425,0.7879), 10000)
+RI_FWER(c("fert_dap","fert_urea","fert_org"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)",dta_bal, c(0.3355,0.0167,0.0135),10000)
+RI_FWER(c("hybrid","opv"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)",dta_bal, c(0.353,0.561))
+
 ################################# production ###########################
 ##### does the video increases production related outcomes?
 
@@ -352,8 +392,8 @@ prod_plot[3,3:4] <- confint(lm(as.formula(paste("log_yield_av",treatment,sep = "
 prod_plot[3,2] <- res_itt_prod[5,2,h] / res_itt_prod[6,1,h]
 
 ### was yield better compared to normal year?
-res_itt_prod[7,1,h] <- mean(dta_trim$log_yield_av[dta_trim$messenger == "ctrl"], na.rm=T)
-res_itt_prod[8,1,h] <- sd(dta_trim$log_yield_av[dta_trim$messenger == "ctrl"], na.rm=T)
+res_itt_prod[7,1,h] <- mean(dta_bal$yield_better[dta_bal$messenger == "ctrl"], na.rm=T)
+res_itt_prod[8,1,h] <- sd(dta_bal$yield_better[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_prod[7,2,h] <- summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
 res_itt_prod[8,2,h] <- summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
 res_itt_prod[7,3,h] <- ifelse(totrep >0, RI("yield_better",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
@@ -373,6 +413,7 @@ dta_bal2 <- trim("log_yield_av", dta_bal2, .05)
 
 
 res_itt_prod <- Bcorr(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),dta_bal2, res_itt_prod ,h)
+RI_FWER(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)",dta_bal2, c(0.7791	,0.0264	,0.0154	,0.5528))
 
 dta_bal2$log_area_tot <- -dta_bal2$log_area_tot
 
@@ -507,6 +548,38 @@ RI <- function(dep, indep, dta , nr_repl = 1000) {
 	return(sum(oper)/nr_repl)
 }
 
+### and also a function to adjst standard errors
+RI_FWER <- function(deps, indep, dta ,p_vals , nr_repl = 1000) {
+#deps <- c("fert_dap","fert_urea","fert_org")
+#indep <- treatment
+#dta <- dta_bal
+#pvals <- c(0.0366,0.3528,0.0024)
+#nr_repl <- 1000
+#RI_FWER(c("fert_dap","fert_urea","fert_org"),treatment,dta_bal, c(0.0366,0.3528,0.0024))
+
+
+threshold_finder<- function(threshold){
+  mean(apply(oper, 2, x <- function(x) sum(x <= threshold) > 0 ))
+}
+### determines treatmetn cell
+	dta <- dta %>% 
+    		mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
+	### allocates unique ID based on treatment cell status and village
+	dta <- dta %>% 
+    		mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vilID"))) 
+	dta <-  data.table(cbind(dta[deps],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms","called","totsms")]))
+	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table")) %dopar% {
+		dta_sim <- data.table(dta)
+		setDT(dta_sim)[,ivr:=sample(ivr),by = (treat)]
+		return(unlist(lapply(deps, function(dvar) summary(lm(as.formula(paste(dvar,indep,sep="~")), data=dta_sim))$coefficients[2,4])))
+		}
+
+thresholds <- seq(0, 0.1, length.out = 10000)
+type_I_rate <- sapply(thresholds, threshold_finder)
+return( list=c(thresholds[max(which(type_I_rate <= 0.05))],thresholds[max(which(type_I_rate <= 0.01))], thresholds[max(which(type_I_rate <= 0.001))]))
+}
+
+
 res_itt_know[1,1,h] <- mean(dta_bal$know_space[dta_bal$ivr != "yes"])
 res_itt_know[2,1,h] <- sd(dta_bal$know_space[dta_bal$ivr != "yes"])
 res_itt_know[1,2,h] <- summary(lm(as.formula(paste("know_space",treatment, sep="~")) ,data=dta_bal))$coefficients[2,1]
@@ -531,7 +604,7 @@ res_itt_know[7,2,h] <- summary(lm(as.formula(paste("know_armyworm",treatment, se
 res_itt_know[8,2,h] <- summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,2]
 res_itt_know[7,3,h] <-  ifelse(totrep >0, RI("know_armyworm",treatment , dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
 ## no need to include armyworm in the index because we do not really expect an effect - but even when we include the effect is sig, so keep it in
-indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, nr_repl=totrep)
+indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed"),dta_bal, nr_repl=totrep)
 res_itt_know[9,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
 res_itt_know[10,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
 res_itt_know[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
@@ -671,6 +744,11 @@ res_itt_pract <- Bcorr( c("day_one","space","striga","weed", "fert","impseed", "
 res_itt_fert <- Bcorr(c("fert_dap","fert_urea","fert_org"),dta_bal, res_itt_fert ,h)
 res_itt_seed <- Bcorr(c("hybrid","opv"),dta_bal, res_itt_seed ,h)
 
+RI_FWER(c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),treatment,dta_bal, c())
+RI_FWER(c("fert_dap","fert_urea","fert_org"),treatment,dta_bal, c(0.0366,0.3528,0.0024),10000)
+
+RI_FWER(c("hybrid","opv"),treatment,dta_bal, c(0.0092,0.9699),10000)
+
 ################################# production ###########################
 ##### does the video increases production related outcomes?
 
@@ -721,8 +799,8 @@ prod_plot[3,3:4] <- confint(lm(as.formula(paste("log_yield_av",treatment,sep = "
 prod_plot[3,2] <- res_itt_prod[5,2,h] / res_itt_prod[6,1,h]
 
 ### was yield better compared to normal year?
-res_itt_prod[7,1,h] <- mean(dta_trim$log_yield_av[dta_trim$ivr != "yes"], na.rm=T)
-res_itt_prod[8,1,h] <- sd(dta_trim$log_yield_av[dta_trim$ivr != "yes"], na.rm=T)
+res_itt_prod[7,1,h] <- mean(dta_bal$yield_better[dta_bal$ivr != "yes"], na.rm=T)
+res_itt_prod[8,1,h] <- sd(dta_bal$yield_better[dta_bal$ivr != "yes"], na.rm=T)
 res_itt_prod[7,2,h] <- summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
 res_itt_prod[8,2,h] <- summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
 res_itt_prod[7,3,h] <- ifelse(totrep >0, RI("yield_better",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
@@ -740,7 +818,7 @@ dta_bal2$log_yield_av <- log(dta_bal2$yield_av)
 
 dta_bal2 <- trim("log_yield_av", dta_bal2, .05)
 res_itt_prod <- Bcorr(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),dta_bal2, res_itt_prod ,h)
-
+RI_FWER(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),treatment,dta_bal2, c(0.121,0.4377,0.0148,0.411))
 
 #res_h0_prod[1:4,4,h] <- FSR_OLS( c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment,dta_bal, nr_repl = totrep)[[4]]
 
@@ -874,6 +952,38 @@ RI <- function(dep, indep, dta , nr_repl = 1000) {
 	return(sum(oper)/nr_repl)
 }
 
+### and also a function to adjst standard errors
+RI_FWER <- function(deps, indep, dta ,p_vals , nr_repl = 1000) {
+#deps <- c("fert_dap","fert_urea","fert_org")
+#indep <- treatment
+#dta <- dta_bal
+#pvals <- c(0.0366,0.3528,0.0024)
+#nr_repl <- 1000
+#RI_FWER(c("fert_dap","fert_urea","fert_org"),treatment,dta_bal, c(0.0366,0.3528,0.0024))
+
+
+threshold_finder<- function(threshold){
+  mean(apply(oper, 2, x <- function(x) sum(x <= threshold) > 0 ))
+}
+### determines treatmetn cell
+	dta <- dta %>% 
+    		mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
+	### allocates unique ID based on treatment cell status and village
+	dta <- dta %>% 
+    		mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vilID"))) 
+	dta <-  data.table(cbind(dta[deps],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms","called","totsms")]))
+	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table")) %dopar% {
+		dta_sim <- data.table(dta)
+		setDT(dta_sim)[,sms:=sample(sms),by = (treat)]
+		return(unlist(lapply(deps, function(dvar) summary(lm(as.formula(paste(dvar,indep,sep="~")), data=dta_sim))$coefficients[2,4])))
+		}
+
+thresholds <- seq(0, 0.1, length.out = 10000)
+type_I_rate <- sapply(thresholds, threshold_finder)
+return( list=c(thresholds[max(which(type_I_rate <= 0.05))],thresholds[max(which(type_I_rate <= 0.01))], thresholds[max(which(type_I_rate <= 0.001))]))
+}
+
+
 res_itt_know[1,1,h] <- mean(dta_bal$know_space[dta_bal$sms != "yes"])
 res_itt_know[2,1,h] <- sd(dta_bal$know_space[dta_bal$sms != "yes"])
 res_itt_know[1,2,h] <- summary(lm(as.formula(paste("know_space",treatment, sep="~")) ,data=dta_bal))$coefficients[2,1]
@@ -898,7 +1008,7 @@ res_itt_know[7,2,h] <- summary(lm(as.formula(paste("know_armyworm",treatment, se
 res_itt_know[8,2,h] <- summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,2]
 res_itt_know[7,3,h] <-  ifelse(totrep >0, RI("know_armyworm",treatment , dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
 ## no need to include armyworm in the index because we do not really expect an effect - but even when we include the effect is sig, so keep it in
-indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, nr_repl=totrep)
+indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed"),dta_bal, nr_repl=totrep)
 res_itt_know[9,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$sms != "yes"])
 res_itt_know[10,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$sms != "yes"])
 res_itt_know[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
@@ -1037,7 +1147,7 @@ res_itt_pract[21,3,h] <-  indexer[[2]]
 res_itt_pract <- Bcorr( c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),dta_bal, res_itt_pract ,h)
 res_itt_fert <- Bcorr(c("fert_dap","fert_urea","fert_org"),dta_bal, res_itt_fert ,h)
 res_itt_seed <- Bcorr(c("hybrid","opv"),dta_bal, res_itt_seed ,h)
-
+RI_FWER(c("hybrid","opv"),treatment,dta_bal, c(0.0389,0.14),10000)
 
 ################################# production ###########################
 ##### does the video increases production related outcomes?
@@ -1089,8 +1199,8 @@ prod_plot[3,3:4] <- confint(lm(as.formula(paste("log_yield_av",treatment,sep = "
 prod_plot[3,2] <- res_itt_prod[5,2,h] / res_itt_prod[6,1,h]
 
 ### was yield better compared to normal year?
-res_itt_prod[7,1,h] <- mean(dta_trim$log_yield_av[dta_trim$sms != "yes"], na.rm=T)
-res_itt_prod[8,1,h] <- sd(dta_trim$log_yield_av[dta_trim$sms != "yes"], na.rm=T)
+res_itt_prod[7,1,h] <- mean(dta_bal$yield_better[dta_bal$sms != "yes"], na.rm=T)
+res_itt_prod[8,1,h] <- sd(dta_bal$yield_better[dta_bal$sms != "yes"], na.rm=T)
 res_itt_prod[7,2,h] <- summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
 res_itt_prod[8,2,h] <- summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
 res_itt_prod[7,3,h] <- ifelse(totrep >0, RI("yield_better",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])

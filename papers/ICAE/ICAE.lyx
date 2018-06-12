@@ -1547,7 +1547,7 @@ hline
 
 \begin_layout Plain Layout
 
-&	mean	&	video	&	+ivr	&	+sms	
+&	mean	&	video	&	+IVR	&	+sms	
 \backslash
 
 \backslash
@@ -1779,7 +1779,7 @@ Joint F test	&		&	0.865	&	1.412	&	1.040
 
 \begin_layout Plain Layout
 
-Number of obs	3557		&	3,557	&	3,303	&	2,210	
+Number of obs &	3557		&	3,557	&	3,303	&	2,210	
 \backslash
 
 \backslash
@@ -2355,7 +2355,7 @@ note: table entries are differences; p-values are in parenthesis.
 \end_layout
 
 \begin_layout Subsection*
-Impact at the household level
+The impact of the dissemination technology
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2363,62 +2363,17 @@ Knowledge effects
 \end_layout
 
 \begin_layout Standard
-We first tested the impact of the information intervention (H1) and the
- effect of changing the gender composition of the recipient (H2) and the
- messenger (H3) on knowledge.
- This was done through a short quiz
-\change_inserted 973716962 1527270093
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted 973716962 1527270096
-Feder, G., Murgai, R., & Quizon, J.
- B.
- (2004a).
- The acquisition and diffusion of knowledge: The case of pest management
- training in farmer field schools, Indonesia.
- Journal of Agricultural Economics, 55(2), 221–243.
- doi:10.1111/j.1477-9552.2004.tb00094.x
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted 973716962 1527270096
-Feder, G., Murgai, R., & Quizon, J.
- B.
- (2004b).
- Sending farmers back to school: The impact of farmer field schools in Indonesia.
- Review of Agricultural Economics, 26(1), 45–62.
- doi:10.1111/j.1467-9353.2003.00161.x
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted 973716962 1527270096
-Edoardo Masset & Lawrence Haddad (2014): Does beneficiary farmer feedback
- improve project performance? An impact study of a participatory monitoring
- intervention in Mindanao, Philippines, Journal of Development Studies,
- 51(3): 287-304.
- doi: 10.1080/00220388.2014.959933 
-\change_unchanged
-
-\end_layout
+We first tested the impact of the three different information interventions
+ on knowledge.
+ This was done through a short quiz 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "feder2004acquisition,feder2004sending,masset2015does"
 
 \end_inset
 
-
-\change_unchanged
  consisting of four questions that were asked during the endline survey
- to each of the two spouses 
-\change_deleted 973716962 1528300937
-seperately
-\change_inserted 973716962 1528300937
-separately
-\change_unchanged
-.
+ to each of the two spouses separately.
  For each question, three possible answers were read out to the respondent,
  who was then asked to indicate what answer he or she though was correct.
  The respondent was also allowed to indicate he or she did not know what
@@ -2443,15 +2398,7 @@ The first question was related to planting.
  viewing farming as a business.
  In the video, we pay ample attention to promoting an approach where farmers
  start small and grow over time through reinvesting and emphasize the benefits
- of combining inputs rather than investing only in e
-\change_inserted 973716962 1528300942
-.
-\change_unchanged
-g.
-\change_inserted 973716962 1528300944
-,
-\change_unchanged
- improved seed.
+ of combining inputs rather than investing only in e.g., improved seed.
  We wanted to see if farmers internalize this advice and ask what a successful
  farmer would do if he or she only has 40,000 shillings.
  The correct option was to use it to buy improved seed and fertilizer and
@@ -2526,21 +2473,7 @@ At noon because sunlight increases chemical performance
  Outcomes of the four knowledge questions are also combined into an index,
  constructed as the weighted mean of the individual standardized outcomes,
  using as weights the inverse of the co-variance matrix of the transformed
- outcomes.
- This, in addition the 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "westfall1993resampling"
-
-\end_inset
-
- adjustment to the p-values, guards against 
-\change_deleted 973716962 1528300956
-overrejection
-\change_inserted 973716962 1528300956
-over-rejection
-\change_unchanged
- of the null hypothesis due to multiple inference 
+ outcomes 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "anderson2008multiple"
@@ -2548,6 +2481,15 @@ key "anderson2008multiple"
 \end_inset
 
 .
+ This, in addition to adjustments to the significance levels to account
+ for Family Wise Error Rates (FWER), guards against over-rejection of the
+ null hypothesis due to multiple inference.
+ We use re-randomization to construct the joint null distribution for the
+ family of outcomes we are testing.
+ From this family-wise sharp null, we can obtain the corresponding FWER
+ consistent significance thresholds by determining which cuttoffs yield
+ eg.
+ 5%, 1% and 0.1% significant hypothesis tests across all tests and simulations.
 \end_layout
 
 \begin_layout Standard
@@ -2596,7 +2538,7 @@ hline
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{H1: Control versus Treatment}}  
+textit{Video}}  
 \backslash
 
 \backslash
@@ -2612,7 +2554,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-	&	average	&	ATE	&	P-value	
+	&	mean	&	ATE	&		P-value	
 \backslash
 
 \backslash
@@ -2621,7 +2563,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-Knows optimal spacing	&	0.164	&	0.132	&	0.000	
+Knows optimal spacing	&	0.155	&	0.150	&	0.000***	
 \backslash
 
 \backslash
@@ -2630,7 +2572,7 @@ Knows optimal spacing	&	0.164	&	0.132	&	0.000
 
 \begin_layout Plain Layout
 
-Knows inputs are best combined	&	0.913	&	0.051	&	0.000	
+	&	(0.363)	&	(0.042)	&	
 \backslash
 
 \backslash
@@ -2639,7 +2581,7 @@ Knows inputs are best combined	&	0.913	&	0.051	&	0.000
 
 \begin_layout Plain Layout
 
-Knows optimal timing for first weeding	&	0.946	&	-0.015	&	0.281	
+Knows inputs are best combined	&	0.908	&	0.051	&	0.006*	
 \backslash
 
 \backslash
@@ -2648,7 +2590,7 @@ Knows optimal timing for first weeding	&	0.946	&	-0.015	&	0.281
 
 \begin_layout Plain Layout
 
-Knows when best to spray against Armyworm	&	0.325	&	-0.033	&	0.281	
+	&	(0.290)	&	(0.021)	&		
 \backslash
 
 \backslash
@@ -2657,7 +2599,52 @@ Knows when best to spray against Armyworm	&	0.325	&	-0.033	&	0.281
 
 \begin_layout Plain Layout
 
-Knowledge index	&	-0.074	&	0.085	&	0.001	
+Knows optimal timing for first weeding 	&	0.954	&	-0.020	&	0.322	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.210)	&	(0.022)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows when best to spray against Armyworm 	&	0.336	&	-0.048	&	0.212	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.473)	&	(0.044)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knowledge index	&	-0.121	&	0.151	&	0.004**	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.606)	&	(0.056)	&		
 \backslash
 
 \backslash
@@ -2670,7 +2657,7 @@ Knowledge index	&	-0.074	&	0.085	&	0.001
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{H2: Individual versus couple targeted}}  
+textit{+IVR}}  
 \backslash
 
 \backslash
@@ -2686,7 +2673,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-	&	average	&	ATE	&	P-value	
+	&	mean	&	ATE	&		P-value	
 \backslash
 
 \backslash
@@ -2695,7 +2682,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-Knows optimal spacing	&	0.280	&	0.020	&	0.470	
+Knows optimal spacing	&	0.313	&	-0.030	&	0.168	
 \backslash
 
 \backslash
@@ -2704,7 +2691,7 @@ Knows optimal spacing	&	0.280	&	0.020	&	0.470
 
 \begin_layout Plain Layout
 
-Knows inputs are best combined	&	0.956	&	0.008	&	0.470	
+	&	(0.464)	&	(0.025)	&		
 \backslash
 
 \backslash
@@ -2713,7 +2700,7 @@ Knows inputs are best combined	&	0.956	&	0.008	&	0.470
 
 \begin_layout Plain Layout
 
-Knows optimal timing for first weeding	&	0.943	&	-0.013	&	0.470	
+Knows inputs are best combined	&	0.958	&	-0.018	&	0.084	
 \backslash
 
 \backslash
@@ -2722,7 +2709,7 @@ Knows optimal timing for first weeding	&	0.943	&	-0.013	&	0.470
 
 \begin_layout Plain Layout
 
-Knows when best to spray against Armyworm	&	0.308	&	-0.017	&	0.470	
+	&	(0.201)	&	(0.012)	&		
 \backslash
 
 \backslash
@@ -2731,7 +2718,52 @@ Knows when best to spray against Armyworm	&	0.308	&	-0.017	&	0.470
 
 \begin_layout Plain Layout
 
-Knowledge index	&	0.012	&	-0.006	&	0.769	
+Knows optimal timing for first weeding 	&	0.942	&	0.003	&	0.835	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.235)	&	(0.013)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows when best to spray against Armyworm 	&	0.310	&	0.017	&	0.440	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.463)	&	(0.026)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knowledge index	&	0.032	&	-0.045	&	0.115	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.579)	&	(0.033)	&		
 \backslash
 
 \backslash
@@ -2744,7 +2776,7 @@ Knowledge index	&	0.012	&	-0.006	&	0.769
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{H3: Individual versus couple pictured}}  
+textit{+sms}}  
 \backslash
 
 \backslash
@@ -2760,16 +2792,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-	&	average	&	ATE	&	P-value	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Knows optimal spacing	&	0.307	&	-0.007	&	0.972	
+	&	mean	&	ATE	&		P-value	
 \backslash
 
 \backslash
@@ -2778,7 +2801,7 @@ Knows optimal spacing	&	0.307	&	-0.007	&	0.972
 
 \begin_layout Plain Layout
 
-Knows inputs are best combined	&	0.957	&	0.007	&	0.875	
+Knows optimal spacing	&	0.284	&	0.000	&	0.995	
 \backslash
 
 \backslash
@@ -2787,7 +2810,7 @@ Knows inputs are best combined	&	0.957	&	0.007	&	0.875
 
 \begin_layout Plain Layout
 
-Knows optimal timing for first weeding	&	0.930	&	0.000	&	0.997	
+	&	(0.451)	&	(0.025)	&		
 \backslash
 
 \backslash
@@ -2796,7 +2819,7 @@ Knows optimal timing for first weeding	&	0.930	&	0.000	&	0.997
 
 \begin_layout Plain Layout
 
-Knows when best to spray against Armyworm	&	0.311	&	-0.019	&	0.997	
+Knows inputs are best combined	&	0.940	&	0.011	&	0.357	
 \backslash
 
 \backslash
@@ -2805,11 +2828,65 @@ Knows when best to spray against Armyworm	&	0.311	&	-0.019	&	0.997
 
 \begin_layout Plain Layout
 
-Knowledge index	&	0.013	&	-0.006	&	0.771	
+	&	(0.238)	&	(0.012)	&		
 \backslash
 
 \backslash
- 		
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal timing for first weeding 	&	0.944	&	-0.015	&	0.257	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.230)	&	(0.013)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows when best to spray against Armyworm 	&	0.327	&	-0.004	&	0.868	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.470)	&	(0.026)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knowledge index	&	0.003	&	-0.006	&	0.865	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.612)	&	(0.033)	&		
+\backslash
+
+\backslash
+ 	
 \end_layout
 
 \begin_layout Plain Layout
@@ -2842,14 +2919,16 @@ footnotesize
 
 \begin_layout Plain Layout
 
-note: Reported p-values are based on randomization inference (10,000 permutation
-s), corrected for multiple hypothesis testing using the 
-\backslash
-citet{westfall1993resampling} free stepdown resampling method.
- Average is the paramater estimate for the constant and ATE is the parameter
- estimate for the treatment indicator of an OLS regression of the outcome
- against the treatment indicator and controls for the orthogonal factor
- in the factorial design.
+note: In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ In the second column, differences (and standard errors of the differences)
+ between each treatment group and the comparison  group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level after correcting for multiple hypothesis testing using a family-wise
+ sharp null (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
 \end_layout
 
 \end_inset
@@ -2873,25 +2952,46 @@ reference "tab:knowh0HH"
  shows results for the three main hypotheses.
  In the top panel, denoted as 
 \emph on
-H1: Control versus Treatment
+Video
 \emph default
 , we compare results on the quiz between households that were allocated
  to the control group to the results of households that were shown a video,
  irrespective of who this video was shown to and who provided the information
- in the video (corresponding to hypothesis H1).
- We find that in 16.4 percent of the households in the control group, at
+ in the video
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+For the comparison between different ways of delivering information to a
+ household, we only keep households where the video was also shown to the
+ man (as generally he will be the main decision maker).
+ In other words, we removed households where the video was only shown the
+ female co-head.
+\end_layout
+
+\end_inset
+
+.
+ The first column reports the proportion of households in which at least
+ one of the spouses was able to indicate the correct answer to the multiple
+ choice question under consideration (and standard deviations are reported
+ below between parenthesis).
+ In the second column, we report difference (and standard errors of the
+ differences between parenthesis) between the control group and the households
+ that were shown a video.
+ We find that in 15.5 percent of the households in the control group, at
  least one of the spouses could indicate the correct alternative among the
  response options to the question on optimal maize seed spacing.
  This relatively low rate of correct responses is due to the fact that this
  is a fairly new and potentially controversial recommendation.
  We see that among households that were shown a video, the proportion increases
- by 13.2 percentage points, to almost 30 percent, and this difference is
- statistically significant.
- About 91.2 percent of households that were not shown the treatment video
+ by 15 percentage points, to over 30 percent, and this difference is statistical
+ly significant.
+ About 91 percent of households that were not shown the treatment video
  know that is best to combine inputs instead of only using seed or fertilizer.
  Even though baseline knowledge is already high, the video treatment further
  increased this knowledge by another 5.1 percentage points.
- We further see that in about 94.6 percent of households in the control group
+ We further see that in about 95.4 percent of households in the control group
  at least one of the spouses was able to correctly indicate that weeding
  is most important during the first 4 weeks after planting and the intervention
  does not seem to have a significant effect on this outcome
@@ -2911,7 +3011,7 @@ In addition, our pre-analysis plan specified that we would drop from the
  video are more likely to know when one should spray against fall armyworm.
  Overall, and as confirmed by the knowledge index, we conclude that the
  agricultural extension videos increase knowledge at the household level.
- 
+ This seems to be especially the case for new information.
 \end_layout
 
 \begin_layout Standard
@@ -2924,9 +3024,46 @@ reference "tab:knowh0HH"
 
 , labeled 
 \emph on
-H2: Individual versus couple targeted
++IVR
 \emph default
-, now focuses only on households that received the video and, within that
+, now compares knowledge of households that were shown the video to knowledge
+ of households that were shown the video and in addition received the IVR
+ treatment (the pure control group that received the placebo intervention
+ is discarded from the analysis).
+ We do not find any significant impact of augmenting the video intervention
+ with an IVR service.
+ However, since we now only focus on households that already learned from
+ the video intervention, we find that knowledge in the comparison group
+ is already high: for both knowledge the benefits of combining inputs and
+ the timing of first weeding, about 95 percent of households in the comparison
+ group know the correct answer and so results may suffer from limited variation
+ in the outcome.
+ The third panel in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowh0HH"
+
+\end_inset
+
+, labeled 
+\emph on
++sms
+\emph default
+, compares knowledge of households that received both the video and IVR
+ intervention to households that received the video, the IVR intervention
+ and also received sms reminders to implement important practices and remind
+ them of the existence of the IVR system.
+ Also here, we do not find that the sms campaign further increased the often
+ already high levels of knowledge.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+now focuses only on households that received the video and, within that
  subgroup, differentiates between households where the video was shown to
  an individual (either the man or woman) and households where the video
  was shown to man and wife together (corresponding to hypothesis H2).
@@ -2955,6 +3092,11 @@ H3: Individual versus couple pictured
  
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection*
 
 \series bold
@@ -2972,14 +3114,14 @@ reference "tab:pract_h1_ag"
 \end_inset
 
  compares adoption rates for a range of technologies and practices between
- households in the control group and households that were shown a video
- (corresponding to hypothesis H1).
+ households in the control group that were shown the placebo video and household
+s that were shown a video.
 \end_layout
 
 \begin_layout Standard
 The first recommended practice we look at is early planting, which was emphasize
 d in the video.
- We find that in about 36.8 percent of households where the placebo video
+ We find that in about 36.6 percent of households where the placebo video
  was shown, at least one spouse reports they have started planting maize
  within one day following the first rains.
  This seems to be not significantly different from the proportion of households
@@ -2989,17 +3131,19 @@ d in the video.
  hills in a row is reduced but only one seed is planted per hill instead
  of the usual two.
  We see that the percentage of households in which at least one of the spouses
- reports this new way of planting on at least one plot is only 3.2 percent
+ reports this new way of planting on at least one plot is only 2.6 percent
  among the control group.
- However, this percentage increases to 10 percent and the increase is significan
-tly different from zero when households were shown the video.
+ However, this percentage increases to 10.5 percent and the increase is significa
+ntly different from zero when households were shown the video.
  We find a similar positive impact from showing the video for the removal
- of striga according to the recommendations: in the control group, 70.4 percent
- of households report removing striga before it flowers to reduce damage
- early on and prevent the weed from spreading.
- Among farm households that were shown the video, this percentage is 5.8
- percentage points higher.
- We find that about 41 percent of control households report first weeding
+ of striga according to the recommendations: in the control group, almost
+ 69 percent of households report removing striga before it flowers to reduce
+ damage early on and prevent the weed from spreading.
+ Among farm households that were shown the video, this percentage increases
+ by 12 percent.
+ However, the difference is not significant at the 5 percent level after
+ correcting for multiple inference.
+ We find that about 43 percent of control households report first weeding
  first after 18-20 days, which was what we recommended in the video.
  We do not find that this proportion is significantly higher among treated
  households.
@@ -3016,7 +3160,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-H1: Impact of agricultural extension videos on adoption of inputs and practices
+Impact of agricultural extension videos on adoption of inputs and practices
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:pract_h1_ag"
@@ -3071,7 +3215,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-Planted first day after rain	&	0.368	&	-0.003	&	0.889	
+Planted first day after rain	&	0.366	&	-0.034	&	0.429	
 \backslash
 
 \backslash
@@ -3080,7 +3224,7 @@ Planted first day after rain	&	0.368	&	-0.003	&	0.889
 
 \begin_layout Plain Layout
 
-Followed recommended spacing	&	0.032	&	0.068	&	0.000	
+	&	(0.483)	&	(0.045)	&		
 \backslash
 
 \backslash
@@ -3089,7 +3233,7 @@ Followed recommended spacing	&	0.032	&	0.068	&	0.000
 
 \begin_layout Plain Layout
 
-Removed striga early on	&	0.704	&	0.058	&	0.012	
+Followed recommended spacing	&	0.026	&	0.079	&	0.001**	
 \backslash
 
 \backslash
@@ -3098,38 +3242,7 @@ Removed striga early on	&	0.704	&	0.058	&	0.012
 
 \begin_layout Plain Layout
 
-weeding during first 4 weeks	&	0.408	&	0.020	&	0.850	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Used fertilizer	&	0.479	&	0.047	&	0.237	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1}{r}{Used DAP/NPK}  	&	0.262	&	-0.054	&	0.012	
-\backslash
-
-\backslash
-   
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1}{r}{Used Urea}	&	0.054	&	0.041	&	0.012	
+	&	(0.158)	&	(0.027)	&		
 \backslash
 
 \backslash
@@ -3138,9 +3251,7 @@ multicolumn{1}{r}{Used Urea}	&	0.054	&	0.041	&	0.012
 
 \begin_layout Plain Layout
 
-
-\backslash
-multicolumn{1}{r}{Used organic matter}	&	0.190	&	0.075	&	0.000	
+Removed striga early on	&	0.689	&	0.083	&	0.013	
 \backslash
 
 \backslash
@@ -3149,7 +3260,7 @@ multicolumn{1}{r}{Used organic matter}	&	0.190	&	0.075	&	0.000
 
 \begin_layout Plain Layout
 
-Used improved seed	&	0.572	&	0.018	&	0.850	
+	&	(0.464)	&	(0.041)	&		
 \backslash
 
 \backslash
@@ -3158,20 +3269,7 @@ Used improved seed	&	0.572	&	0.018	&	0.850
 
 \begin_layout Plain Layout
 
-
-\backslash
-multicolumn{1}{r}{Used hybrid seed}	&	0.295	&	0.009	&	0.656	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-multicolumn{1}{r}{Used OPV seed}	&	0.302	&	-0.025	&	0.395	
+First weeding at 4 weeks	&	0.430	&	-0.015	&	0.791	
 \backslash
 
 \backslash
@@ -3180,7 +3278,7 @@ multicolumn{1}{r}{Used OPV seed}	&	0.302	&	-0.025	&	0.395
 
 \begin_layout Plain Layout
 
-Combined improved seed with ferilizer	&	0.335	&	0.038	&	0.376	
+	&	(0.496)	&	(0.047)	&		
 \backslash
 
 \backslash
@@ -3189,7 +3287,7 @@ Combined improved seed with ferilizer	&	0.335	&	0.038	&	0.376
 
 \begin_layout Plain Layout
 
-Bought seed	&	0.501	&	0.018	&	0.850	
+Used fertilizer	&	0.447	&	0.111	&	0.009	
 \backslash
 
 \backslash
@@ -3198,7 +3296,7 @@ Bought seed	&	0.501	&	0.018	&	0.850
 
 \begin_layout Plain Layout
 
-Used chemical	&	0.432	&	0.048	&	0.237	
+	&	(0.498)	&	(0.047)	&		
 \backslash
 
 \backslash
@@ -3207,7 +3305,7 @@ Used chemical	&	0.432	&	0.048	&	0.237
 
 \begin_layout Plain Layout
 
-hired in labour	&	0.621	&	-0.022	&	0.850	
+Used improved seed	&	0.553	&	0.038	&	0.362	
 \backslash
 
 \backslash
@@ -3216,7 +3314,97 @@ hired in labour	&	0.621	&	-0.022	&	0.850
 
 \begin_layout Plain Layout
 
-adoption index	&	-0.073	&	0.080	&	0.000	
+	&	(0.498)	&	(0.046)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Combined improved seed with fertilizer	&	0.302	&	0.072	&	0.077	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.460)	&	(0.045)	&		
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Bought seed	&	0.471	&	0.046	&	0.309	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.500)	&	(0.047)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used chemicals	&	0.447	&	0.063	&	0.143	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.498)	&	(0.047)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Hired in labour	&	0.638	&	0.011	&	0.788	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.482)	&	(0.046)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Adoption index	&	-0.077	&	0.095	&	0.024*	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.411)	&	(0.041)	&		
 \backslash
 
 \backslash
@@ -3281,102 +3469,92 @@ citet{westfall1993resampling} free stepdown resampling method.
 
 \begin_layout Standard
 We also collected detailed information on fertilizer use on maize plots.
- Overall, 47.9 percent of households in the control group reported they used
+ Overall, 44.7 percent of households in the control group reported they used
  fertilizer on at least one plot.
- While this percentage is almost 10 percent higher among treated farmers,
- the difference is not significant after correcting for multiple hypothesis
- testing
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-RI p-value is 0.038 before adjustment for multiple testing
-\end_layout
-
-\end_inset
-
-.
- This can be explained by looking at the different types of fertilizer.
- We see that among the control group, already a substantial proportion of
- farmers is using DAP or NPK.
- This proportion is significantly lower among households that were shown
- the video.
- At the same time, the use of urea, as well as the use of organic fertilizer,
- seems to have increase in response to the information intervention.
- Urea use in particular, which was very low in the control group, almost
- doubled as a result of showing the video.
- Inorganic fertilizer use also increased substantially, from 19 percent
- to 26.5 percent.
- Most likely, this is due to the fact that, in the video, it is emphasized
- that inputs should be combined to get best results, and as a result some
- of the treated farmers reduce their use of DAP or NPK and increase adoption
- of Urea and inorganic fertilizer to engage in more balanced soil nutrient
- management.
-\end_layout
-
-\begin_layout Standard
-We further collected information on the use of improved seed on the maize
+ While this percentage is almost 25 percent higher among treated farmers,
+ the difference is not significant at the 5 percent level after controlling
+ for FWER.
+ We further collected information on the use of improved seed on the maize
  plots.
- Improved seed is already relatively high, with 57.2 percent of households
- reporting to use either hybrid and/or open pollinated varieties on at least
- one maize plot.
- However, seed adoption rates remain constant after seeing the video.
+ Improved seed is already relatively high, with 55.3 percent of control household
+s reporting to use either hybrid and/or open pollinated varieties on at
+ least one maize plot.
+ Seed adoption rates do not increase significantly after seeing the video.
  We also check if the proportion of households that combine improved seed
- with fertilizer increased after having been shown the video.
+ with fertilizer increased after having been shown the video, as this is
+ emphasized in the information treatment.
  While the percentage of households that report using both technologies
- increases by more than 10 percent, this difference is not statistically
- significant.
+ increases by almost 25 percent, this difference is not statistically significan
+t.
  The proportion of households that buy seeds on the market, as opposed to
  recycling used seed, also was not affected by the information treatment.
 \end_layout
 
 \begin_layout Standard
 We also want to see if our intervention crowds in other technologies or
- practices.
- While we do not promote the use of chemicals such as fungicides, pesticides
- or herbicides in our video, use rates may be indirectly affected.
- We find that about 43.2 percent of households used chemicals on at least
- one plot.
- We indeed see that this was more than 11 percent higher in households that
- were shown the video.
- But also here, the difference is not statistically significant after adjusting
- for multiple hypothesis testing
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-RI p-value is 0.037 before adjustment for multiple testing
-\end_layout
+ practices 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1257/aer.20150474"
 
 \end_inset
 
 .
+ While we do not promote the use of chemicals such as fungicides, pesticides
+ or herbicides in our video, use rates may be indirectly affected.
+ We find that about 44.7 percent of households used chemicals on at least
+ one plot.
+ We indeed see that this was about 14 percent higher in households that
+ were shown the video.
+ But also here, the difference is not statistically significant.
  Finally, we look if the video increased the likelihood that households
  hire in labour.
  While hiring in of labour seems common, the rate is not affected by the
  intervention.
- Overall, as in the case of knowledge, the agricultural information intervention
- seemed to increase adoption of a range of modern agricultural technologies
- and recommended farming practices, and this conclusion is supported by
- a significant positive impact of the videos on the agricultural adoption
- index.
+ 
 \end_layout
 
 \begin_layout Standard
-Results for the second main hypothesis, where households in which the video
- was shown to one of the spouses individually are contrasted with households
- where the video was shown to the couple, are reported in Table 
+Results for the incremental impact of adding IVR services to the video intervent
+ion are reported in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:pract_recipient"
+reference "tab:pract_ivr"
 
 \end_inset
 
 .
- The table shows that among households were videos were shown to either
- the man or the woman separately, about 36.5 percent of households planted
- immediately after the first rains and 8.9 percent followed recommended spacing
- on at least one plot.
+ As for knowledge, the addition of an IVR service does not seem to further
+ increase adoption.
+ While we do find that the adoption of improved maize seed is almost 8 percent
+ higher when IVR is added to the video campaign (and this effect is also
+ somewhat reflected in an increase in the proportion of households that
+ reports to buy seed from the market), the difference is not statistically
+ significant.
+ Similarly, we find little impact of an additional effect from augmenting
+ video + IVR with the sms campaign (Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:pract_sms"
+
+\end_inset
+
+).
+ Even though fertilizer use is almost 10 percent higher among farmers that
+ were targeted by the sms campaign, the increase is not statistically significan
+t.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The table shows that among households were videos were shown to either the
+ man or the woman separately, about 36.5 percent of households planted immediatel
+y after the first rains and 8.9 percent followed recommended spacing on at
+ least one plot.
  We also see that about 73.8 percent of these households where the recipient
  of the information was the individual removed striga before flowering and
  engaged in weeding in the third week.
@@ -3386,16 +3564,16 @@ reference "tab:pract_recipient"
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 We did find that targeting matters for fertilizer use.
  We found that about 47.5 percent of households where the video was shown
  to only one individual reported using fertilizer on at least one plot.
  This percentage increased to 53 percent if the couple was targeted with
  the information.
- From further dis-aggregation of the fertilizer types, we learned that this
- difference was driven by organic fertilizer: Among households where the
- video was shown to only one of the spouses, about 22 percent reported to
- be using organic fertilizer on at least one plot.
+ From further dis-aggregation of the fertilizer types (Table ), we learned
+ that this difference was driven by organic fertilizer: Among households
+ where the video was shown to only one of the spouses, about 22 percent
+ reported to be using organic fertilizer on at least one plot.
  Among households where the video was shown to the couple, this percentage
  increased to 31.4 percent
 \begin_inset Note Note
@@ -3432,6 +3610,11 @@ RI p-value is 0.020 before adjustment for multiple testing
  does not significantly differ between the two groups.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float table
 wide false
@@ -3442,11 +3625,10 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-H2: The effect of gender (composition) of person(s) targeted by information
- on agricultural technology adoption
+Additional effect of IVR on agricultural technology adoption
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:pract_recipient"
+name "tab:pract_ivr"
 
 \end_inset
 
@@ -3498,7 +3680,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-Planted first day after rain	&	0.365	&	-0.007	&	0.700	
+Planted first day after rain	&	0.369	&	-0.016	&	0.489	
 \backslash
 
 \backslash
@@ -3507,7 +3689,7 @@ Planted first day after rain	&	0.365	&	-0.007	&	0.700
 
 \begin_layout Plain Layout
 
-Followed recommended spacing	&	0.089	&	0.013	&	0.635	
+	&	(0.483)	&	(0.027)	&		
 \backslash
 
 \backslash
@@ -3516,7 +3698,7 @@ Followed recommended spacing	&	0.089	&	0.013	&	0.635
 
 \begin_layout Plain Layout
 
-Removed striga before flowering	&	0.738	&	0.026	&	0.356	
+Followed recommended spacing	&	0.106	&	-0.014	&	0.324	
 \backslash
 
 \backslash
@@ -3525,7 +3707,7 @@ Removed striga before flowering	&	0.738	&	0.026	&	0.356
 
 \begin_layout Plain Layout
 
-Weeding during first 4 weeks	&	0.460	&	-0.031	&	0.458	
+	&	(0.308)	&	(0.016)	&		
 \backslash
 
 \backslash
@@ -3534,7 +3716,7 @@ Weeding during first 4 weeks	&	0.460	&	-0.031	&	0.458
 
 \begin_layout Plain Layout
 
-Used fertilizer	&	0.475	&	0.055	&	0.042	
+Removed striga early on	&	0.750	&	-0.010	&	0.641	
 \backslash
 
 \backslash
@@ -3543,9 +3725,7 @@ Used fertilizer	&	0.475	&	0.055	&	0.042
 
 \begin_layout Plain Layout
 
-
-\backslash
-multicolumn{1}{r}{Used DAP/NPK}	&	0.207	&	-0.003	&	0.848	
+	&	(0.433)	&	(0.024)	&		
 \backslash
 
 \backslash
@@ -3554,9 +3734,7 @@ multicolumn{1}{r}{Used DAP/NPK}	&	0.207	&	-0.003	&	0.848
 
 \begin_layout Plain Layout
 
-
-\backslash
-multicolumn{1}{r}{Used Urea}	&	0.089	&	0.008	&	0.750	
+First weeding at 4 weeks	&	0.437	&	0.017	&	0.476	
 \backslash
 
 \backslash
@@ -3565,9 +3743,16 @@ multicolumn{1}{r}{Used Urea}	&	0.089	&	0.008	&	0.750
 
 \begin_layout Plain Layout
 
+	&	(0.496)	&	(0.027)	&		
+\backslash
 
 \backslash
-multicolumn{1}{r}{Used organic matter}	&	0.220	&	0.049	&	0.004	
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Used fertilizer	&	0.523	&	-0.028	&	0.242	
 \backslash
 
 \backslash
@@ -3576,7 +3761,7 @@ multicolumn{1}{r}{Used organic matter}	&	0.220	&	0.049	&	0.004
 
 \begin_layout Plain Layout
 
-Used improved seed	&	0.562	&	0.026	&	0.606	
+	&	(0.500)	&	(0.028)	&		
 \backslash
 
 \backslash
@@ -3585,9 +3770,7 @@ Used improved seed	&	0.562	&	0.026	&	0.606
 
 \begin_layout Plain Layout
 
-
-\backslash
-multicolumn{1}{r}{Used hybrid seed}	&	0.299	&	0.009	&	0.831	
+Used improved seed	&	0.561	&	0.044	&	0.062	
 \backslash
 
 \backslash
@@ -3596,9 +3779,7 @@ multicolumn{1}{r}{Used hybrid seed}	&	0.299	&	0.009	&	0.831
 
 \begin_layout Plain Layout
 
-
-\backslash
-multicolumn{1}{r}{Used OPV seed}	&	0.273	&	-0.001	&	0.962	
+	&	(0.497)	&	(0.027)	&		
 \backslash
 
 \backslash
@@ -3607,16 +3788,7 @@ multicolumn{1}{r}{Used OPV seed}	&	0.273	&	-0.001	&	0.962
 
 \begin_layout Plain Layout
 
-Combined improved seed with ferilizer	&	0.321	&	0.055	&	0.019	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Bought seed	&	0.473	&	0.045	&	0.136	
+Combined improved seed with fertilizer	&	0.349	&	0.003	&	0.886	
 \backslash
 
 \backslash
@@ -3625,7 +3797,7 @@ Bought seed	&	0.473	&	0.045	&	0.136
 
 \begin_layout Plain Layout
 
-Used chemical	&	0.501	&	-0.021	&	0.635	
+	&	(0.477)	&	(0.027)	&		
 \backslash
 
 \backslash
@@ -3634,16 +3806,70 @@ Used chemical	&	0.501	&	-0.021	&	0.635
 
 \begin_layout Plain Layout
 
-Hired in labour	&	0.624	&	-0.021	&	0.635	
+Bought seed	&	0.492	&	0.026	&	0.276	
 \backslash
 
 \backslash
-
+ 
 \end_layout
 
 \begin_layout Plain Layout
 
-Adoption index	&	-0.004	&	0.007	&	0.653	
+	&	(0.500)	&	(0.027)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used chemicals	&	0.496	&	-0.004	&	0.867	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.500)	&	(0.028)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Hired in labour	&	0.613	&	0.009	&	0.719	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.488)	&	(0.027)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Adoption index	&	-0.001	&	-0.007	&	0.759	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.449)	&	(0.025)	&		
 \backslash
 
 \backslash
@@ -3703,10 +3929,14 @@ citet{westfall1993resampling} free stepdown resampling method.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Finally, we present results for the third hypothesis in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:pract_h3_ag"
+reference "tab:pract_sms"
 
 \end_inset
 
@@ -3722,6 +3952,11 @@ reference "tab:pract_h3_ag"
  or a couple for the adoption agricultural technologies and practices.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float table
 wide false
@@ -3729,18 +3964,13 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-H3: The effect of gender (composition) of person(s) providing the information
- on agricultural technology adoption
+Additional effect of sms campaign on agricultural technology adoption
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:pract_h3_ag"
+name "tab:pract_sms"
 
 \end_inset
 
@@ -3792,7 +4022,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-planted first day after rain	&	0.364	&	-0.006	&	1.000	
+Planted first day after rain	&	0.353	&	0.011	&	0.689	
 \backslash
 
 \backslash
@@ -3801,7 +4031,7 @@ planted first day after rain	&	0.364	&	-0.006	&	1.000
 
 \begin_layout Plain Layout
 
-followed recommended spacing	&	0.097	&	0.005	&	1.000	
+	&	(0.478)	&	(0.027)	&		
 \backslash
 
 \backslash
@@ -3810,7 +4040,7 @@ followed recommended spacing	&	0.097	&	0.005	&	1.000
 
 \begin_layout Plain Layout
 
-removed striga early on	&	0.758	&	0.007	&	1.000	
+Followed recommended spacing	&	0.092	&	0.005	&	0.768	
 \backslash
 
 \backslash
@@ -3819,7 +4049,7 @@ removed striga early on	&	0.758	&	0.007	&	1.000
 
 \begin_layout Plain Layout
 
-weeding during first 4 weeks	&	0.421	&	0.008	&	1.000	
+	&	(0.289)	&	(0.016)	&		
 \backslash
 
 \backslash
@@ -3828,7 +4058,7 @@ weeding during first 4 weeks	&	0.421	&	0.008	&	1.000
 
 \begin_layout Plain Layout
 
-used fertilizer	&	0.534	&	-0.003	&	1.000	
+Removed striga early on	&	0.741	&	0.024	&	0.316	
 \backslash
 
 \backslash
@@ -3837,9 +4067,7 @@ used fertilizer	&	0.534	&	-0.003	&	1.000
 
 \begin_layout Plain Layout
 
-
-\backslash
-multicolumn{1}{r}{Used DAP/NPK}	&	0.215	&	-0.011	&	0.728	
+	&	(0.439)	&	(0.024)	&		
 \backslash
 
 \backslash
@@ -3848,9 +4076,16 @@ multicolumn{1}{r}{Used DAP/NPK}	&	0.215	&	-0.011	&	0.728
 
 \begin_layout Plain Layout
 
+First weeding at 4 weeks	&	0.454	&	-0.008	&	0.771	
+\backslash
 
 \backslash
-multicolumn{1}{r}{Used Urea}	&	0.114	&	-0.016	&	0.428	
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.498)	&	(0.027)	&		
 \backslash
 
 \backslash
@@ -3859,9 +4094,7 @@ multicolumn{1}{r}{Used Urea}	&	0.114	&	-0.016	&	0.428
 
 \begin_layout Plain Layout
 
-
-\backslash
-multicolumn{1}{r}{Used organic matter}	&	0.266	&	0.002	&	0.892	
+Used fertilizer	&	0.495	&	0.047	&	0.086	
 \backslash
 
 \backslash
@@ -3870,7 +4103,7 @@ multicolumn{1}{r}{Used organic matter}	&	0.266	&	0.002	&	0.892
 
 \begin_layout Plain Layout
 
-Used improved seed	&	0.569	&	0.020	&	0.957	
+	&	(0.500)	&	(0.028)	&		
 \backslash
 
 \backslash
@@ -3879,9 +4112,7 @@ Used improved seed	&	0.569	&	0.020	&	0.957
 
 \begin_layout Plain Layout
 
-
-\backslash
-multicolumn{1}{r}{Used hybrid seed}	&	0.295	&	0.015	&	0.651	
+Used improved seed	&	0.606	&	-0.015	&	0.590	
 \backslash
 
 \backslash
@@ -3890,9 +4121,7 @@ multicolumn{1}{r}{Used hybrid seed}	&	0.295	&	0.015	&	0.651
 
 \begin_layout Plain Layout
 
-
-\backslash
-multicolumn{1}{r}{Used OPV seed}	&	0.274	&	-0.002	&	0.930	
+	&	(0.489)	&	(0.027)	&		
 \backslash
 
 \backslash
@@ -3901,7 +4130,16 @@ multicolumn{1}{r}{Used OPV seed}	&	0.274	&	-0.002	&	0.930
 
 \begin_layout Plain Layout
 
-Combined improved seed with ferilizer	&	0.373	&	0.004	&	1.000	
+Combined improved seed with fertilizer	&	0.353	&	0.037	&	0.170	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+&	(0.478)	&	(0.027)	&		
 \backslash
 
 \backslash
@@ -3910,7 +4148,7 @@ Combined improved seed with ferilizer	&	0.373	&	0.004	&	1.000
 
 \begin_layout Plain Layout
 
-Bought seed	&	0.518	&	0.001	&	1.000	
+Bought seed	&	0.517	&	-0.006	&	0.794	
 \backslash
 
 \backslash
@@ -3919,7 +4157,7 @@ Bought seed	&	0.518	&	0.001	&	1.000
 
 \begin_layout Plain Layout
 
-Used chemical	&	0.483	&	-0.002	&	1.000	
+	&	(0.500)	&	(0.027)	&		
 \backslash
 
 \backslash
@@ -3928,7 +4166,7 @@ Used chemical	&	0.483	&	-0.002	&	1.000
 
 \begin_layout Plain Layout
 
-Hired in labour	&	0.618	&	-0.015	&	0.987	
+Used chemicals	&	0.492	&	0.015	&	0.593	
 \backslash
 
 \backslash
@@ -3937,7 +4175,43 @@ Hired in labour	&	0.618	&	-0.015	&	0.987
 
 \begin_layout Plain Layout
 
-Adoption index	&	-0.004	&	0.007	&	0.660	
+	&	(0.500)	&	(0.028)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Hired in labour	&	0.621	&	-0.015	&	0.578	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.485)	&	(0.027)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Adoption index	&	-0.008	&	0.015	&	0.528	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.440)	&	(0.024)	&		
 \backslash
 
 \backslash
@@ -3996,6 +4270,727 @@ citet{westfall1993resampling} free stepdown resampling method.
 
 \end_layout
 
+\begin_layout Standard
+We can further dis-aggregate by type of fertilizer used for the subset of
+ farmers that reported using any fertilizer.
+ Results are reported in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Impact-of-technology_fert"
+
+\end_inset
+
+, were we again have 3 panels, one for each additional technology, similar
+ to Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowh0HH"
+
+\end_inset
+
+.
+ When estimating the impact of the video intervention, we see that among
+ the control group, already a substantial proportion of farmers is using
+ DAP or NPK (26 percent).
+ This proportion is lower among households that were shown the video, but
+ the difference is not significant.
+ At the same time, the use of urea, as well as the use of organic fertilizer,
+ seems to have increase in response to the information intervention.
+ Urea use in particular, which was very low in the control group, more than
+ doubled as a result of showing the video.
+ Inorganic fertilizer use also increased substantially, from 16.2 percent
+ to 24.2 percent.
+ Most likely, this is due to the fact that, in the video, it is emphasized
+ that inputs should be combined to get best results, and as a result some
+ of the treated farmers reduce their use of DAP or NPK and increase adoption
+ of Urea (and to a lesser extent inorganic fertilizer) to engage in more
+ balanced soil nutrient management.
+\end_layout
+
+\begin_layout Standard
+In the second panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Impact-of-technology_fert"
+
+\end_inset
+
+, we see that the addition of IVR seems to discourage the use of inorganic
+ fertilizer and increase the use of DAP/NPK (although the latter is not
+ statistically significant after controlling for multiple comparisons).
+ This may be because application of DAP or NPK is more complicated than
+ Urea or organic fertilizer, and so a demand driven information service
+ such as IVR may be more effective than showing a video.
+ Finally, the third panel shows not additional effect of the sms intervention
+ on the use of particular fertilizers.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact of technology on fertilizer use
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Impact-of-technology_fert"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Video}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}    
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used DAP/NPK 	&	0.260	&	-0.034	&	0.336	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.439)	&	(0.040)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used Urea	&	0.051	&	0.061	&	0.017*	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.221)	&	(0.028)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used organic matter	&	0.162	&	0.080	&	0.014*	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.369)	&	(0.039)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{+IVR}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used DAP/NPK 	&	0.218	&	0.043	&	0.037	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.413)	&	(0.023)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used Urea	&	0.109	&	0.014	&	0.353	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.312)	&	(0.017)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used organic matter	&	0.256	&	-0.062	&	0.002**	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.437)	&	(0.023)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{+sms}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used DAP/NPK 	&	0.261	&	-0.026	&	0.275	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.439)	&	(0.024)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used Urea	&	0.123	&	-0.025	&	0.156	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.328)	&	(0.017)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used organic matter	&	0.193	&	0.044	&	0.054	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.395)	&	(0.023)	&		
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ In the second column, differences (and standard errors of the differences)
+ between each treatment group and the comparison  group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ** and * denote difference is signficant at the 1 and 5 percent level after
+ correcting for multiple hypothesis testing.
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similar to fertilizer, we dis-aggregate by type of improved seed used for
+ households where at least one spouse reported to be using improved seed
+ on at least one maize plot.
+ Results are reported in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Impact-of-technology_seed-1"
+
+\end_inset
+
+.
+ We find that showing the video did not influence the type of seed used
+ among farmers that used improved seed.
+ However, providing access to the IVR service increases the likelihood that
+ hybrid seed is used from 30 percent to 35.7 percent.
+ This is consistent with the interpretation that for more advanced technologies,
+ a demand drive extension approach may be more effective.
+ We do not find an additional impact from the sms campaign.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact of technology on improved use
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Impact-of-technology_seed-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{Video}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}    
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used hybrid	&	0.294	&	0.038	&	0.353	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.456)	&	(0.044)	&		
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Used OPV	&	0.298	&	-0.022	&	0.561	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.458)	&	(0.042)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{+IVR}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used hybrid	&	0.300	&	0.057	&	0.009*	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.458)	&	(0.026)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used OPV	&	0.271	&	0.001	&	0.970	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.445)	&	(0.025)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{+sms}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used hybrid	&	0.357	&	-0.054	&	0.039	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.480)	&	(0.026)	&		
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Used OPV	&	0.271	&	0.037	&	0.140	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.445)	&	(0.025)	&		
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ In the second column, differences (and standard errors of the differences)
+ between each treatment group and the comparison  group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ** and * denote difference is signficant at the 1 and 5 percent level after
+ correcting for multiple hypothesis testing.
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection*
 
 \series bold
@@ -4012,20 +5007,10 @@ We next turn to changes in production related outcome as a result of our
  and the average between the two spouses was taken as the final estimate
  of household level maize production.
  We find that overall, a typical farm household in our sample produced about
- 460 kg
-\change_deleted 973716962 1528300962
-s
-\change_unchanged
- of maize.
+ 460 kg of maize.
  Households produced this on 1.13 acres on average.
  Taken together, we find that yields, defined as kilograms per acre, amounted
- to on average 470 k
-\change_inserted 973716962 1528300964
-g
-\change_deleted 973716962 1528300967
-ilograms
-\change_unchanged
- per acre.
+ to on average 470 kg per acre.
  This is much higher than yields recorded at baseline (290 kg/acre) as the
  rains were better and there was increased attention for strategies to combat
  fall armyworm.
@@ -4044,20 +5029,32 @@ reference "tab:yield_ag_allh"
 
 \end_inset
 
- reports results for the three hypotheses with respect to outcomes related
- to production.
+ reports results for the impact of the different technologies with respect
+ to outcomes related to production.
  In the top panel we again compare outcomes of control households to outcomes
- of households where at least one individual was shown a video (corresponding
- to hypothesis H1).
+ of households that were shown the video.
  Household level production, expressed in logs and trimmed 5 percent at
  each end of the distribution, does not differ between the two groups.
  We do find, however, that households that were exposed to the agricultural
  extension video seemed to cultivate smaller plots: Reported acreage is
  11 percent smaller among households that were shown a video.
+ However, the difference is not significant at the 5 percent level after
+ controlling for FWER.
  The fact that the same amount is cultivated on a smaller area also resulted
- in the fact that in households that were shown a video, yields were almost
- 14 percent higher than in control households.
- Overall, we find that the information intervention had a significant and
+ in the fact that in households that were shown a video, yields were 14
+ percent higher than in control households.
+ As mean productivity in control households was 428 kg/acre, this means
+ mean productivity among households where the video was shown is about 488
+ kg/acre.
+ Further, in about 38.7 percent of households in the control group, at least
+ one spouse indicates that yields were better than in a normal year on at
+ least one plot.
+ This is 2.7 percentage points higher among households that saw a video,
+ but the difference is not significant.
+\end_layout
+
+\begin_layout Standard
+Overall, we find that the information intervention had a significant and
  positive effect on production outcomes, as is evident from the positive
  treatment effect in the production index.
  We can conclude that, at the household level, the videos thus seemed to
@@ -4067,11 +5064,6 @@ reference "tab:yield_ag_allh"
  is often better to start small.
  In addition, the video promotes a more commercial attitude towards farming,
  where investments are made at a small scale to be scaled up over time.
- Comparing production outcomes between households where the video was shown
- to only one individual and households where the video was shown to the
- couple, we find no impact.
- Similarly, we do not find that it matters for production whether the informatio
-n was given by an individual or by a couple.
 \end_layout
 
 \begin_layout Standard
@@ -4107,13 +5099,6 @@ status open
 
 
 \backslash
-begin{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
 begin{tabular}{rccc} 
 \backslash
 hline 
@@ -4127,7 +5112,7 @@ hline
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{Control versus Treatment}}  
+textit{Video}}  
 \backslash
 
 \backslash
@@ -4143,7 +5128,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-	&	average	&	ATE	&	P-value	
+	&	mean	&	ATE	&		P-value	
 \backslash
 
 \backslash
@@ -4152,7 +5137,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-log kg produced	&	5.823	&	-0.021	&	0.812	
+log kg produced	&	5.860	&	0.020	&	0.779	
 \backslash
 
 \backslash
@@ -4161,7 +5146,7 @@ log kg produced	&	5.823	&	-0.021	&	0.812
 
 \begin_layout Plain Layout
 
-log acre cultivated	&	0.054	&	-0.108	&	0.001	
+	&	(0.714)	&	(0.073)	&		
 \backslash
 
 \backslash
@@ -4170,7 +5155,7 @@ log acre cultivated	&	0.054	&	-0.108	&	0.001
 
 \begin_layout Plain Layout
 
-log yield (kg/acre)	&	5.822	&	0.130	&	0.000	
+log acres planted	&	0.034	&	-0.113	&	0.026	
 \backslash
 
 \backslash
@@ -4179,7 +5164,7 @@ log yield (kg/acre)	&	5.822	&	0.130	&	0.000
 
 \begin_layout Plain Layout
 
-yield was better	&	0.402	&	0.012	&	0.812	
+	&	(0.561)	&	(0.057)	&		
 \backslash
 
 \backslash
@@ -4188,7 +5173,52 @@ yield was better	&	0.402	&	0.012	&	0.812
 
 \begin_layout Plain Layout
 
-production index	&	-0.103	&	0.091	&	0.000	
+log yield (kg/ac)	&	5.853	&	0.140	&	0.015*	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.651)	&	(0.062)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+yield was better	&	0.387	&	0.027	&	0.553	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.488)	&	(0.046)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+production index	&	-0.082	&	0.092	&	0.010**	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.421)	&	(0.040)	&		
 \backslash
 
 \backslash
@@ -4201,7 +5231,7 @@ production index	&	-0.103	&	0.091	&	0.000
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{Individual versus couple targeted}}  
+textit{+IVR}}  
 \backslash
 
 \backslash
@@ -4217,7 +5247,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-	&	average	&	ATE	&	P-value	
+	&	mean	&	ATE	&		P-value	
 \backslash
 
 \backslash
@@ -4226,7 +5256,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-log kg produced	&	5.811	&	-0.008	&	0.806	
+log kg produced	&	5.815	&	0.060	&	0.121	
 \backslash
 
 \backslash
@@ -4235,7 +5265,7 @@ log kg produced	&	5.811	&	-0.008	&	0.806
 
 \begin_layout Plain Layout
 
-log acre cultivated	&	-0.086	&	0.035	&	0.359	
+	&	(0.809)	&	(0.045)	&		
 \backslash
 
 \backslash
@@ -4244,7 +5274,7 @@ log acre cultivated	&	-0.086	&	0.035	&	0.359
 
 \begin_layout Plain Layout
 
-log yield (kg/acre)	&	5.983	&	-0.029	&	0.428	
+log acres planted	&	-0.057	&	-0.023	&	0.438	
 \backslash
 
 \backslash
@@ -4253,7 +5283,7 @@ log yield (kg/acre)	&	5.983	&	-0.029	&	0.428
 
 \begin_layout Plain Layout
 
-yield was better	&	0.391	&	0.025	&	0.428	
+	&	(0.604)	&	(0.034)	&		
 \backslash
 
 \backslash
@@ -4262,7 +5292,52 @@ yield was better	&	0.391	&	0.025	&	0.428
 
 \begin_layout Plain Layout
 
-production index	&	0.005	&	-0.021	&	0.173	
+log yield (kg/ac)	&	5.932	&	0.079	&	0.015*	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.664)	&	(0.038)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+yield was better	&	0.421	&	0.020	&	0.411	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	0.494	&	0.027	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+production index	&	-0.023	&	0.049	&	0.017*	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.420)	&	(0.024)	&		
 \backslash
 
 \backslash
@@ -4275,7 +5350,7 @@ production index	&	0.005	&	-0.021	&	0.173
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{Individual versus couple pictured}}  
+textit{+sms}}  
 \backslash
 
 \backslash
@@ -4291,16 +5366,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-	&	average	&	ATE	&	P-value	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-log kg produced	&	5.801	&	0.002	&	0.951	
+	&	mean	&	ATE	&		P-value	
 \backslash
 
 \backslash
@@ -4309,7 +5375,7 @@ log kg produced	&	5.801	&	0.002	&	0.951
 
 \begin_layout Plain Layout
 
-log acre cultivated	&	-0.024	&	-0.027	&	0.532	
+log kg produced	&	5.902	&	0.001	&	0.985	
 \backslash
 
 \backslash
@@ -4318,7 +5384,7 @@ log acre cultivated	&	-0.024	&	-0.027	&	0.532
 
 \begin_layout Plain Layout
 
-log yield (kg/acre)	&	5.913	&	0.041	&	0.295	
+	&	(0.754)	&	(0.043)	&		
 \backslash
 
 \backslash
@@ -4327,7 +5393,16 @@ log yield (kg/acre)	&	5.913	&	0.041	&	0.295
 
 \begin_layout Plain Layout
 
-yield was better	&	0.435	&	-0.019	&	0.532	
+log acres planted	&	-0.080	&	0.055	&	0.102	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.592)	&	(0.034)	&		
 \backslash
 
 \backslash
@@ -4336,11 +5411,56 @@ yield was better	&	0.435	&	-0.019	&	0.532
 
 \begin_layout Plain Layout
 
-production index	&	-0.034	&	0.018	&	0.272	
+log yield (kg/ac)	&	6.002	&	-0.030	&	0.426	
 \backslash
 
 \backslash
- 		
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.651)	&	(0.038)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+yield was better	&	0.440	&	0.023	&	0.399	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	0.497	&	0.027	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+production index	&	0.010	&	-0.020	&	0.401	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.422)	&	(0.025)	&		
+\backslash
+
+\backslash
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4361,9 +5481,7 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-
-\backslash
-end{center}  
+  
 \end_layout
 
 \begin_layout Plain Layout
@@ -4375,9 +5493,16 @@ footnotesize
 
 \begin_layout Plain Layout
 
-note: Reported p-values are based on randomization inference, corrected
- for multiple hypothesis testing using the Westfall and Young free stepdown
- resampling method.
+note: In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ In the second column, differences (and standard errors of the differences)
+ between each treatment group and the comparison  group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level after correcting for multiple hypothesis testing using a family-wise
+ sharp null (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
 \end_layout
 
 \end_inset
@@ -4388,394 +5513,32 @@ note: Reported p-values are based on randomization inference, corrected
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsubsection*
-
-\series bold
-Impact on disposal
 \end_layout
 
 \begin_layout Standard
-We also investigate if the different interventions affect disposal of maize
- after harvest.
- In particular, we compare the share of households that report positive
- amounts of consumption, sales, and maize kept as seed for the next season,
- respectively.
- Results are summarized in Table 
+In the second panel of Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Impact-on-disposal"
+reference "tab:yield_ag_allh"
 
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Impact on disposal of maize
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Impact-on-disposal"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tabular}{rccc} 
-\backslash
-hline 
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
- &  
-\backslash
-multicolumn{3}{c}{
-\backslash
-textit{H1: Control versus Treatment}}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-4}    
-\end_layout
-
-\begin_layout Plain Layout
-
-	&	average	&	ATE	&	P-value	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-maize consumed	&	0.832	&	0.041	&	0.063	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-sold maize	&	0.649	&	0.019	&	0.397	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-saved seed	&	0.842	&	-0.038	&	0.075	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-disposal index	&	-0.072	&	0.079	&	0.004	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- &  
-\backslash
-multicolumn{3}{c}{
-\backslash
-textit{H2: Individual versus couple targeted}}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-4}  
-\end_layout
-
-\begin_layout Plain Layout
-
-	&	average	&	ATE	&	P-value	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-maize consumed	&	0.901	&	-0.023	&	0.283	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-sold maize	&	0.658	&	0.009	&	0.581	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-saved seed	&	0.822	&	-0.017	&	0.409	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-disposal index	&	-0.001	&	0.004	&	0.851	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- &  
-\backslash
-multicolumn{3}{c}{
-\backslash
-textit{H3: Individual versus couple pictured}}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-4}  
-\end_layout
-
-\begin_layout Plain Layout
-
-	&	average	&	ATE	&	P-value	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-maize consumed	&	0.873	&	0.005	&	0.942	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-sold maize	&	0.663	&	0.004	&	0.942	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-saved seed	&	0.811	&	-0.007	&	0.942	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-disposal index	&	-0.011	&	0.015	&	0.493	
-\backslash
-
-\backslash
- 		
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline  
-\backslash
-hline 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{tabular}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-footnotesize   
-\end_layout
-
-\begin_layout Plain Layout
-
-note: Reported p-values are based on randomization inference (10,000 permutation
-s), corrected for multiple hypothesis testing using the 
-\backslash
-citet{westfall1993resampling} free stepdown resampling method.
- Average is the paramater estimate for the constant and ATE is the parameter
- estimate for the treatment indicator of an OLS regression of the outcome
- against the treatment indicator and controls for the orthogonal factor
- in the factorial design.
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-We find some evidence that the video intervention also affected disposal.
- We find that among the control households, 83.2 percent of households reported
- that they consumed part of their harvest.
- The relatively high share illustrates the importance of maize as a food
- crop in the region.
- We find that this proportion increased by 4.1 percentage points in the sub-sampl
-e of households that were shown the video, but the effect is not significant
- after correcting for multiple comparisons
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-It was significant at 0.021.
-\end_layout
-
-\end_inset
-
-.
- We do not find that households that were exposed to the video intervention
- were more or less likely to sell part of their harvest.
- A large share of farmers seem to have saved seed for the next season, consisten
-t with the widespread practice of seed recycling among smallholder farmers
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "McGuire2016"
-
-\end_inset
-
-.
- The video promotes two types of improved seeds, and while one of them can
- in principle be recycled, best results are obtained by buying new seed
- every season.
- As such, the negative impact on the likelihood that seed was saved after
- having been exposed to the video would be expected.
- However, the effect is again not significant after the Westfall-Young correctio
-n
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-It was 0.036 before correction
-\end_layout
-
-\end_inset
-
-.
- Judged by the disposal index, we do find that disposal was affected by
- the treatment compared to control.
- We do not find any significant impact of changing the targeting attribute
- of the information campaign (H2: Individual versus couple targeted), nor
- do we find any impact of changing the messenger attribute (H3: Individual
- versus couple pictured).
+, we report additional production effects of adding IVR to the video interventio
+n.
+ Also here, we find a significant effect on productivity: the IVR intervention
+ adds another 7.9 percent, increasing maize yields up to 526 kg/acre.
+ However, in contrast to the effect from the video, the increase now seems
+ to be driven by an increase in production while area planted reduces much
+ less.
+ This may be explained by the fact that the IVR system is more focused on
+ technical information on how to implement certain practices or apply certain
+ technologies, instead of the more holistic message we bring in the video.
+ In particular, the video also pays attention to farming as a business and
+ promotes a longer run perspective where farmers start small and grow over
+ time.
+ Finally, in the third panel, we report the impact of adding sms reminders
+ to the video and IVR intervention on production outcomes.
+ We do not find any additional effects.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -4794,7 +5557,7 @@ Finally, we look at the impact of the information interventions on measures
  First, we asked if they feel their household is better off (as opposed
  to equally well off or worse off) in terms of income and consumption than
  the average households in their community.
- We find that among the control group, about 43 percent of households felt
+ We find that among the control group, about 40.1 percent of households felt
  they were better off than average (top panel in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4803,17 +5566,14 @@ reference "tab:Impact_welfare"
 \end_inset
 
 ).
- This percentage was 47.1 among households that received the video intervention,
- but the difference was not statistically significant.
+ This percentage was slightly higher among households that received the
+ video intervention, but the difference was not statistically significant.
  Similarly, we asked the female in the household to indicate if they thought
  they were better off than six months ago.
  We find that among the households that did not get the agricultural extension
- video, 41.4 percent of households indicated they did better than half a
- year earlier, and this percentage wa
-\change_inserted 973716962 1528300981
-s
-\change_unchanged
- 44.3 among the households that did get to see the video.
+ video, 39.7 percent of households indicated they did better than half a
+ year earlier, and this percentage was the same among the households that
+ did get to see the video.
  Also here, the difference is not significant.
  We also include standard self assessed food security questions
 \begin_inset Note Note
@@ -4827,10 +5587,11 @@ Where are these taken from
 
 .
  We asked if households were generally able to eat their preferred food,
- but did not find any difference between treatment and control.
- We also asked if households were generally able to eat enough food.
- We find that in the group that was exposed to the video, less households
- reported that they had sufficient food, but the difference is not significant.
+ and 42.6 percent of households responded affirmatively.
+ We also asked if households were generally able to eat enough food and
+ found this to be the case in almost 60 percent of baseline households.
+ We found that, judged by these questions, the video intervention seemed
+ to worsen food security, but the difference was not statistically significant.
 \end_layout
 
 \begin_layout Standard
@@ -4863,20 +5624,29 @@ Even though these consumption categories were carefully chosen on the basis
  the distribution.
  Results indicate that there was no difference in consumption between treated
  and control households.
- 
+ We ran similar comparisons for the IVR intervention and the sms intervention,
+ but also failed to find any effect from these additional treatments.
+ Results for this can be found in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:welfare_appendinx"
+
+\end_inset
+
+ in the Appendix.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Impact on household welfare
+Impact of video on household welfare
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Impact_welfare"
@@ -4899,13 +5669,6 @@ status open
 
 
 \backslash
-begin{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
 begin{tabular}{rccc} 
 \backslash
 hline 
@@ -4919,7 +5682,7 @@ hline
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{Control versus Treatment}}  
+textit{Video}}  
 \backslash
 
 \backslash
@@ -4935,7 +5698,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-	&	average	&	ATE	&	P-value	
+	&	mean	&	ATE	&		P-value	
 \backslash
 
 \backslash
@@ -4944,7 +5707,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-better off than average	&	0.428	&	0.043	&	0.305	
+better off than average	&	0.401	&	0.024	&	0.552	
 \backslash
 
 \backslash
@@ -4953,7 +5716,7 @@ better off than average	&	0.428	&	0.043	&	0.305
 
 \begin_layout Plain Layout
 
-better off than 6 months ago	&	0.414	&	0.029	&	0.521	
+	&	(0.491)	&	(0.046)	&		
 \backslash
 
 \backslash
@@ -4962,7 +5725,7 @@ better off than 6 months ago	&	0.414	&	0.029	&	0.521
 
 \begin_layout Plain Layout
 
-can eat preferred food	&	0.421	&	-0.027	&	0.521	
+better off than 6 mo ago	&	0.397	&	0.000	&	0.995	
 \backslash
 
 \backslash
@@ -4971,7 +5734,7 @@ can eat preferred food	&	0.421	&	-0.027	&	0.521
 
 \begin_layout Plain Layout
 
-can eat enough food	&	0.585	&	-0.040	&	0.305	
+	&	(0.490)	&	(0.046)	&		
 \backslash
 
 \backslash
@@ -4980,7 +5743,7 @@ can eat enough food	&	0.585	&	-0.040	&	0.305
 
 \begin_layout Plain Layout
 
-log of consumption	&	10.255	&	-0.034	&	0.521	
+can eat preferred food	&	0.426	&	-0.040	&	0.327	
 \backslash
 
 \backslash
@@ -4989,7 +5752,7 @@ log of consumption	&	10.255	&	-0.034	&	0.521
 
 \begin_layout Plain Layout
 
-welfare index	&	0.037	&	-0.019	&	0.543	
+	&	(0.496)	&	(0.046)	&		
 \backslash
 
 \backslash
@@ -4998,27 +5761,7 @@ welfare index	&	0.037	&	-0.019	&	0.543
 
 \begin_layout Plain Layout
 
-&  
-\backslash
-multicolumn{3}{c}{
-\backslash
-textit{Individual versus couple targeted}}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-4}  
-\end_layout
-
-\begin_layout Plain Layout
-
-	&	average	&	ATE	&	P-value	
+can eat enough food	&	0.591	&	-0.032	&	0.436	
 \backslash
 
 \backslash
@@ -5027,7 +5770,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-better off than average	&	0.429	&	0.043	&	0.092	
+	&	(0.493)	&	(0.046)	&		
 \backslash
 
 \backslash
@@ -5036,7 +5779,7 @@ better off than average	&	0.429	&	0.043	&	0.092
 
 \begin_layout Plain Layout
 
-better off than 6 months ago	&	0.419	&	0.020	&	0.707	
+log of consumption	&	10.245	&	-0.047	&	0.972	
 \backslash
 
 \backslash
@@ -5045,7 +5788,7 @@ better off than 6 months ago	&	0.419	&	0.020	&	0.707
 
 \begin_layout Plain Layout
 
-can eat preferred food	&	0.401	&	-0.007	&	0.882	
+	&	(0.567)	&	(0.052)	&		
 \backslash
 
 \backslash
@@ -5054,7 +5797,7 @@ can eat preferred food	&	0.401	&	-0.007	&	0.882
 
 \begin_layout Plain Layout
 
-can eat enough food	&	0.553	&	-0.006	&	0.882	
+wellbeing index	&	0.002	&	-0.046	&	0.361	
 \backslash
 
 \backslash
@@ -5063,103 +5806,11 @@ can eat enough food	&	0.553	&	-0.006	&	0.882
 
 \begin_layout Plain Layout
 
-log of consumption	&	10.199	&	0.019	&	0.707	
+	&	(0.581)	&	(0.056)	&		
 \backslash
 
 \backslash
  
-\end_layout
-
-\begin_layout Plain Layout
-
-welfare index	&	-0.014	&	0.029	&	0.194	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  
-\backslash
-multicolumn{3}{c}{
-\backslash
-textit{Individual versus couple pictured}}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-4}  
-\end_layout
-
-\begin_layout Plain Layout
-
-	&	average	&	ATE	&	P-value	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-better off than average	&	0.461	&	0.012	&	0.943	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-better off than 6 months ago	&	0.448	&	-0.009	&	0.950	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-can eat preferred food	&	0.400	&	-0.006	&	0.950	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-can eat enough food	&	0.562	&	-0.014	&	0.922	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-log of consumption	&	10.245	&	-0.027	&	0.950	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-welfare index	&	0.035	&	-0.019	&	0.413	
-\backslash
-
-\backslash
- 		
 \end_layout
 
 \begin_layout Plain Layout
@@ -5182,14 +5833,7 @@ end{tabular}
 
 
 \backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-footnotesize   
+footnotesize 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5210,6 +5854,10 @@ note: Reported p-values are based on randomization inference, corrected
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 We further test the hypothesis that households that were shown the video
  as a couple were better off at endline then households where only one of
  the spouses was shown the video.
@@ -5234,6 +5882,11 @@ Was 0.02 before correction.
  information was given by a couple to households that were screened the
  video featuring only one spouse, we find no significant difference on welfare
  whichever measure we use.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -5651,7 +6304,7 @@ reference "tab:pract_h1_ag"
  to 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:pract_h3_ag"
+reference "tab:pract_sms"
 
 \end_inset
 
@@ -7151,6 +7804,367 @@ Finally, we look at the impact of the interventions on adoption and production
 LatexCommand bibtex
 bibfiles "../../pre-analysis plan/maizeUG_PAP"
 options "../../../PASIC/determinants/paper/presentation_research_day/IFPRI_Style"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Appendix
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact of IVR and sms on welfare
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:welfare_appendinx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{+IVR}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+better off than average	&	0.441	&	-0.014	&	0.543	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.497)	&	(0.027)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+better off than 6 mo ago	&	0.426	&	-0.011	&	0.632	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.495)	&	(0.027)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+can eat preferred food	&	0.410	&	-0.003	&	0.914	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.492)	&	(0.027)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+can eat enough food	&	0.562	&	-0.003	&	0.883	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.497)	&	(0.027)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+log of consumption	&	10.239	&	0.001	&	0.509	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.545)	&	(0.031)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+wellbeing index	&	-0.001	&	-0.013	&	0.640	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+&	(0.597)	&	(0.033)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{+sms}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+better off than average	&	0.427	&	-0.002	&	0.948	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.495)	&	(0.027)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+better off than 6 mo ago	&	0.415	&	0.016	&	0.573	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.493)	&	(0.027)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+can eat preferred food	&	0.407	&	0.028	&	0.290	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.492)	&	(0.027)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+can eat enough food	&	0.558	&	0.032	&	0.228	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.497)	&	(0.027)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+log of consumption	&	10.238	&	-0.009	&	0.950	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.548)	&	(0.031)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+wellbeing index	&	-0.013	&	0.026	&	0.437	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.591)	&	(0.033)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ In the second column, differences (and standard errors of the differences)
+ between each treatment group and the comparison  group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level after correcting for multiple hypothesis testing using a family-wise
+ sharp null (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
