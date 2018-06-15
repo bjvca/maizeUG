@@ -4,13 +4,15 @@ source("/home/bjvca/data/projects/digital green/endline/data/init.R")
 #dta <- read.csv("AWS.csv")
 
 #set totrep to zero if you do not want simulation based inferecne
-totrep <- 10000
+totrep <- 0
 
 set.seed(07032018)
 dta <- subset(dta, !is.na(interview_status))
 dta$messenger <- as.character(dta$messenger)
 
 ######################################################################### indexing results arrays ##################################################################
+res_know <- array(NA, c(10,4,4)) 
+rownames(res_know) <- c("know_space","","know_combine","","know_weed","", "know_armyworm","","know_ind","")
 res_know_m <- array(NA, c(10,4,4)) 
 rownames(res_know_m) <- c("know_space","","know_combine","","know_weed","", "know_armyworm","","know_ind","")
 res_know_w <- array(NA, c(10,4,4)) 
@@ -32,6 +34,12 @@ rownames(res_dec_w) <- c("first_day","","space","","striga","","weed","", "use_f
 res_dec_b <- array(NA, c(20,4,4))
 rownames(res_dec_b) <- c("first_day","","space","","striga","","weed","", "use_fert","","seed","","combiner","","bought_seed","","chem","","index","")
 
+res_hh_pract <- array(NA, c(22,4,4))
+rownames(res_hh_pract) <- c("first_day","","space","","striga","","weed","", "use_fert","","seed","","combiner","","bought_seed","","chem","","labour","","pract_index","")
+res_hh_fert <- array(NA, c(6,4,4))
+rownames(res_hh_fert) <- c("use_DAP","","use_urea","","use_organic","")
+res_hh_seed <- array(NA, c(4,4,4))
+rownames(res_hh_seed) <- c("hybrid","","opv","")
 res_pract_m <- array(NA, c(20,4,4))
 rownames(res_pract_m) <- c("first_day","","space","","striga","","weed","", "use_fert","","seed","","combiner","","bought_seed","","chem","","index","")
 res_pract_w <- array(NA, c(20,4,4))
@@ -203,6 +211,136 @@ dta <- dta %>% mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vi
 	return(list(summary(lm(as.formula(paste("outcome",treatment,sep="~")), data=space_ind))$coefficients[2,1],summary(lm(as.formula(paste("outcome",treatment,sep="~")), data=space_ind))$coefficients[2,2], summary(lm(as.formula(paste("outcome",treatment,sep="~")), data=space_ind))$coefficients[2,4],sum(oper)/nr_repl,mean_male,sd_male))
 }
 
+
+trim <- function(var, dataset, trim_perc=.1) {
+### function for triming a dataset *dataset* on a variable *var*
+return( subset(dataset,dataset[var] > quantile(dataset[var],c(trim_perc/2,1-(trim_perc/2)), na.rm=T)[1] & dataset[var] < quantile(dataset[var], c(trim_perc/2,1-(trim_perc/2)),na.rm=T)[2]) )
+}
+
+FW_index <- function(treat, indexer, data,revcols = NULL, nr_repl=0, h_ind= h) {
+### function to make family wise index using covariance as weights (following http://cyrussamii.com/?p=2656)
+data <- data[complete.cases(data[indexer]),]
+x <- data[indexer]
+
+				for(j in 1:ncol(x)){
+					x[,j] <- (x[,j] - mean(x[,j]))/sd(x[,j])
+				}
+if(length(revcols)>0){
+						x[,revcols] <-  -1*x[,revcols]
+					}
+					i.vec <- as.matrix(rep(1,ncol(x)))
+					Sx <- cov(x)
+					
+					data$index <- t(solve(t(i.vec)%*%solve(Sx)%*%i.vec)%*%t(i.vec)%*%solve(Sx)%*%t(x))
+mod <- lm(as.formula(paste("index",treat,sep="~")) , data=data)
+
+					
+if (nr_repl > 0) { 
+	data$index <- as.vector(data$index)
+	sig <- RI("index" ,treat , data, nr_repl = nr_repl,h_ind)
+} else {
+	sig <- summary(lm(as.formula(paste("index",treat,sep="~")) , data=data))$coefficients[2,4]
+}
+return(list(mod,sig, data))
+}
+
+
+RI_FWER <- function(deps, indep, dta ,p_vals , nr_repl = 1000, h_ind = h) {
+### function to control for FWER using simulation (familywise sharp null)
+### inspired on https://egap.org/methods-guides/10-things-you-need-know-about-multiple-comparisons
+
+threshold_finder<- function(threshold){
+  mean(apply(oper, 2, x <- function(x) sum(x <= threshold) > 0 ))
+}
+### determines treatmetn cell
+	dta <- dta %>% 
+    		mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
+	### allocates unique ID based on treatment cell status and village
+	dta <- dta %>% 
+    		mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vilID"))) 
+	dta <-  data.table(cbind(dta[deps],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms","called","totsms")]))
+	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table")) %dopar% {
+		dta_sim <- data.table(dta)
+ 		setDT(dta_sim)[,perm:=sample(treat),by = (uniqID)]
+if (h_ind==1) {
+		dta_sim$recipient <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["male",]>0]),"male", "female"))
+		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male","female")
+} else if (h_ind==2) {
+		dta_sim$recipient <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["male",]>0]),"male", "female"))
+		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male","couple")
+} else if (h_ind==3) {
+		dta_sim$recipient <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["male",]>0]),"male", "female")
+		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["female",]>0]),"female","couple"))
+
+} else if (h_ind==4) {
+		dta_sim$recipient <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["couple",]>0]), "couple", "male")
+		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["female",]>0]),"female","couple"))
+
+}
+return(unlist(lapply(deps, function(dvar) summary(lm(as.formula(paste(dvar,indep,sep="~")), data=dta_sim))$coefficients[2,4])))
+				}
+
+thresholds <- seq(0, 0.1, length.out = 10000)
+type_I_rate <- sapply(thresholds, threshold_finder)
+return( list=c(thresholds[max(which(type_I_rate <= 0.05))],thresholds[max(which(type_I_rate <= 0.01))], thresholds[max(which(type_I_rate <= 0.001))]))
+}
+
+
+plot_RI_dec_FWER <- function(man, treatment, data,p_vals, nr_repl = 1000, h=h) {
+#plot_RI_dec_FWER(man= c("dectime_man","decspace_man","decstriga_man", "decweed_man", "decfert_man", "decseed_man","deccombiner_man","decbuyseed_man","decchem_man"), treatment, data=dta_bal,p_vals=c(0.00000,0.00000,0.00000,0.00000,0.00000,0.00400,0.00000,0.04990,	0.00260), nr_repl = 100, h=3)
+
+##function to perfrom RI_FWER om plot level
+threshold_finder<- function(threshold){
+  mean(apply(oper, 2, x <- function(x) sum(x <= threshold) > 0 ))
+}
+dec_vars <- paste(man[1],paste("_pl",1:5, sep=""), sep="")
+
+space_ind <- reshape(data[c("messenger","recipient","gender1","ivr","sms","called","totsms","hhid","distID", "subID","vilID", dec_vars)], varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+names(space_ind)[dim(space_ind)[2]] <- man[1]
+
+for (dep_ind in man[2:length(man)]) {
+dec_vars <- paste(dep_ind,paste("_pl",1:5, sep=""), sep="")
+## merge long to space_ind
+dec_vars <- paste(dep_ind,paste("_pl",1:5, sep=""), sep="")
+space_ind <- merge(space_ind,reshape(data[c("hhid", dec_vars)], varying = dec_vars,v.names="decide", idvar="hhid", direction="long"), by =c("hhid","time") )
+names(space_ind)[dim(space_ind)[2]] <- dep_ind
+}
+
+dta <- space_ind[!duplicated(space_ind$hhid),]
+dta <- dta %>% mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
+### allocates unique ID based on treatment cell status and village
+dta <- dta %>% mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vilID"))) 
+
+	### the NULL
+
+	dta$time <- NULL
+	dta<- data.table(dta)
+	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table")) %dopar% {
+ 		dta_sim <- merge(space_ind,data.frame(setDT(dta)[,perm:=sample(treat),by = (uniqID)][,c("hhid","perm")]), by="hhid")
+if (h==1) {
+		dta_sim$recipient <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["male",]>0]),"male", "female"))
+		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male","female")
+} else if (h==2) {
+		dta_sim$recipient <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["male",]>0]),"male", "female"))
+		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male","couple")
+} else if (h==3) {
+		dta_sim$recipient <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["male",]>0]),"male", "female")
+		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["female",]>0]),"female","couple"))
+
+} else if (h==4) {
+		dta_sim$recipient <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["couple",]>0]), "couple", "male")
+		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["female",]>0]),"female","couple"))
+
+}
+return(unlist(lapply(man, function(dvar) summary(lm(as.formula(paste(dvar,treatment,sep="~")), data=dta_sim))$coefficients[2,4])))
+			}		
+
+thresholds <- seq(0, 0.1, length.out = 10000)
+type_I_rate <- sapply(thresholds, threshold_finder)
+return( list=c(thresholds[max(which(type_I_rate <= 0.05))],thresholds[max(which(type_I_rate <= 0.01))], thresholds[max(which(type_I_rate <= 0.001))]))
+}
+
+
 ######################################## some data transformations for plot level analysis ############################################
 
 dta[c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26")] <- dta[c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26")]==3
@@ -276,7 +414,41 @@ treatment <- "(recipient == 'couple') +ivr+sms+as.factor(recipient)+ as.factor(m
 }
 
 ############################### knowledge  ############################
+#res_know[1,1,h] <- ifelse(h <=2, mean(dta_bal$know_space[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$know_space[dta_bal$recipient == "male"], na.rm=T))
+#res_know[2,1,h] <-  ifelse(h <=2, sd(dta_bal$know_space[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$know_space[dta_bal$recipient == "male"], na.rm=T))
+#res_know[1,2,h] <- summary(lm(as.formula(paste("know_space",treatment, sep="~")) ,data=dta_bal))$coefficients[2,1]
+#res_know[2,2,h] <- summary(lm(as.formula(paste("know_space",treatment, sep="~")) ,data=dta_bal))$coefficients[2,2]
+#res_know[1,3,h] <- ifelse(totrep >0, RI("know_space",treatment , dta_bal, nr_repl = totrep, h),summary(lm(as.formula(paste("know_space",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
 
+#res_know[3,1,h] <- ifelse(h <=2, mean(dta_bal$know_combine[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$know_combine[dta_bal$recipient == "male"], na.rm=T))
+#res_know[4,1,h] <-  ifelse(h <=2, sd(dta_bal$know_combine[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$know_combine[dta_bal$recipient == "male"], na.rm=T))
+#res_know[3,2,h] <- summary(lm(as.formula(paste("know_combine",treatment, sep="~")) ,data=dta_bal))$coefficients[2,1]
+#res_know[4,2,h] <- summary(lm(as.formula(paste("know_combine",treatment, sep="~")) ,data=dta_bal))$coefficients[2,2]
+#res_know[3,3,h] <-  ifelse(totrep >0, RI("know_combine",treatment , dta_bal, nr_repl = totrep, h),summary(lm(as.formula(paste("know_combine",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
+
+#res_know[5,1,h] <- ifelse(h <=2, mean(dta_bal$know_weed[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$know_weed[dta_bal$recipient == "male"], na.rm=T))
+#res_know[6,1,h] <-  ifelse(h <=2, sd(dta_bal$know_weed[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$know_weed[dta_bal$recipient == "male"], na.rm=T))
+#res_know[5,2,h] <- summary(lm(as.formula(paste("know_weed",treatment, sep="~")) ,data=dta_bal))$coefficients[2,1]
+#res_know[6,2,h] <- summary(lm(as.formula(paste("know_weed",treatment, sep="~")) ,data=dta_bal))$coefficients[2,2]
+#res_know[5,3,h] <-  ifelse(totrep >0, RI("know_weed",treatment , dta_bal, nr_repl = totrep, h),summary(lm(as.formula(paste("know_weed",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
+
+#res_know[7,1,h] <- ifelse(h <=2, mean(dta_bal$know_armyworm[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$know_armyworm[dta_bal$recipient == "male"], na.rm=T))
+#res_know[8,1,h] <-  ifelse(h <=2, sd(dta_bal$know_armyworm[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$know_armyworm[dta_bal$recipient == "male"], na.rm=T))
+#res_know[7,2,h] <- summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,1]
+#res_know[8,2,h] <- summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,2]
+#res_know[7,3,h] <-  ifelse(totrep >0, RI("know_weed",treatment , dta_bal, nr_repl = totrep, h),summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
+
+
+#indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, nr_repl=totrep,h)
+#res_know[9,1,h] <- ifelse(h <=2, mean(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), mean(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
+#res_know[10,1,h] <- ifelse(h <=2, sd(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
+#res_know[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
+#res_know[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
+#res_know[9,3,h] <-  indexer[[2]]
+
+#RI_FWER(c("know_space","know_combine","know_weed", "know_armyworm"),treatment,dta_bal, c(0.0061	,0.126,0.381,0.3876), h)
+
+###individual
 #res_know_m[1,1,h] <- ifelse(h <=2, mean(dta_bal$know_space_m[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$know_space_m[dta_bal$recipient == "male"], na.rm=T))
 #res_know_m[2,1,h] <-  ifelse(h <=2, sd(dta_bal$know_space_m[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$know_space_m[dta_bal$recipient == "male"], na.rm=T))
 #res_know_m[1,2,h] <- summary(lm(as.formula(paste("know_space_m",treatment, sep="~")) ,data=dta_bal))$coefficients[2,1]
@@ -302,13 +474,15 @@ treatment <- "(recipient == 'couple') +ivr+sms+as.factor(recipient)+ as.factor(m
 #res_know_m[7,3,h] <-  ifelse(totrep >0, RI("know_weed_m",treatment , dta_bal, nr_repl = totrep, h),summary(lm(as.formula(paste("know_armyworm_m",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
 
 
-##indexer <- FW_index(treatment, c("know_space_m", "know_combine_m", "know_weed_m","know_armyworm_m"),dta_bal, nr_repl=totrep)
-##res_know_m[9,1,h] <- ifelse(h <=2, mean(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), mean(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
-##res_know_m[10,1,h] <- ifelse(h <=2, sd(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
-##res_know_m[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
-##res_know_m[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
-##res_know_m[9,3,h] <-  indexer[[2]]
+#indexer <- FW_index(treatment, c("know_space_m", "know_combine_m", "know_weed_m","know_armyworm_m"),dta_bal, nr_repl=totrep,h)
+#res_know_m[9,1,h] <- ifelse(h <=2, mean(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), mean(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
+#res_know_m[10,1,h] <- ifelse(h <=2, sd(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
+#res_know_m[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
+#res_know_m[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
+#res_know_m[9,3,h] <-  indexer[[2]]
 
+# h=1: RI_FWER(c("know_space_m","know_combine_m","know_weed_m", "know_armyworm_m"),treatment,dta_bal, c(0.0228,0.0412,0.6773,0.6726), 10000, h)
+# h=4: RI_FWER(c("know_space_m","know_combine_m","know_weed_m", "know_armyworm_m"),treatment,dta_bal, c(0.0361,0.6153,0.122,0.1206), 10000, h)
 
 #res_know_w[1,1,h] <- ifelse(h <=2, mean(dta_bal$know_space_w[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$know_space_w[dta_bal$recipient == "male"], na.rm=T))
 #res_know_w[2,1,h] <-  ifelse(h <=2, sd(dta_bal$know_space_w[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$know_space_w[dta_bal$recipient == "male"], na.rm=T))
@@ -335,12 +509,136 @@ treatment <- "(recipient == 'couple') +ivr+sms+as.factor(recipient)+ as.factor(m
 #res_know_w[7,3,h] <-  ifelse(totrep >0, RI("know_weed_w",treatment , dta_bal, nr_repl = totrep, h),summary(lm(as.formula(paste("know_armyworm_w",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
 
 
-##indexer <- FW_index(treatment, c("know_space_w", "know_combine_w", "know_weed_w","know_armyworm_w"),dta_bal, nr_repl=totrep)
-##res_know_w[9,1,h] <- ifelse(h <=2, mean(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), mean(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
-##res_know_w[10,1,h] <- ifelse(h <=2, sd(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
-##res_know_w[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
-##res_know_w[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
-##res_know_w[9,3,h] <-  indexer[[2]]
+#indexer <- FW_index(treatment, c("know_space_w", "know_combine_w", "know_weed_w","know_armyworm_w"),dta_bal, nr_repl=totrep,h)
+#res_know_w[9,1,h] <- ifelse(h <=2, mean(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), mean(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
+#res_know_w[10,1,h] <- ifelse(h <=2, sd(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
+#res_know_w[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
+#res_know_w[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
+#res_know_w[9,3,h] <-  indexer[[2]]
+
+#h3:  RI_FWER(c("know_space_w","know_combine_w","know_weed_w", "know_armyworm_w"),treatment,dta_bal, c(0,0.0029,0.1761,0.1644), 10000, h)
+#h4:  RI_FWER(c("know_space_w","know_combine_w","know_weed_w", "know_armyworm_w"),treatment,dta_bal, c(0,0.0063,0.9036,0.8981), 10000, h)
+
+#### adoption at household level (copy paste from delivery)
+################################ practices #############################
+###timely planting
+
+#res_hh_pract[1,1,h]  <- ifelse(h <=2, mean(dta_bal$day_one[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$day_one[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[2,1,h]  <- ifelse(h <=2, sd(dta_bal$day_one[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$day_one[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[1,2,h]  <- summary(lm(as.formula(paste("day_one", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+#res_hh_pract[2,2,h]  <- summary(lm(as.formula(paste("day_one", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+#res_hh_pract[1,3,h]  <- ifelse(totrep >0, RI("day_one",treatment , dta_bal, nr_repl = totrep,h), summary(lm(as.formula(paste("day_one", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##### used recommended spacing use on at lease one plot as reported by at least one spouse
+#res_hh_pract[3,1,h]  <- ifelse(h <=2, mean(dta_bal$space[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$space[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[4,1,h]  <- ifelse(h <=2, sd(dta_bal$space[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$space[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[3,2,h]  <- summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+#res_hh_pract[4,2,h]  <- summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+#res_hh_pract[3,3,h]  <- ifelse(totrep >0, RI("space",treatment, dta_bal, nr_repl = totrep , h),  summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+### used recommended way to fight striga - this should be changed to include info of all plots 
+#res_hh_pract[5,1,h]  <- ifelse(h <=2, mean(dta_bal$striga[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$striga[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[6,1,h]  <- ifelse(h <=2, sd(dta_bal$striga[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$striga[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[5,2,h]  <- summary(lm(as.formula(paste("striga", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+#res_hh_pract[6,2,h]  <- summary(lm(as.formula(paste("striga", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+#res_hh_pract[5,3,h]  <- ifelse(totrep >0, RI("striga",treatment , dta_bal, nr_repl = totrep , h), summary(lm(as.formula(paste("striga", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+### weeded on recommended timing? - this should be changed to include info of all plots 
+#res_hh_pract[7,1,h]  <- ifelse(h <=2, mean(dta_bal$weed[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$weed[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[8,1,h]  <- ifelse(h <=2, sd(dta_bal$weed[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$weed[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[7,2,h]  <- summary(lm(as.formula(paste("weed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+#res_hh_pract[8,2,h]  <- summary(lm(as.formula(paste("weed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+#res_hh_pract[7,3,h]  <- ifelse(totrep >0, RI("weed",treatment, dta_bal, nr_repl = totrep , h),summary(lm(as.formula(paste("weed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+### fertilizer use
+#res_hh_pract[9,1,h]  <- ifelse(h <=2, mean(dta_bal$fert[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$fert[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[10,1,h]  <- ifelse(h <=2, sd(dta_bal$fert[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$fert[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[9,2,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+#res_hh_pract[10,2,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+#res_hh_pract[9,3,h]  <- ifelse(totrep >0, RI("fert",treatment , dta_bal, nr_repl = totrep , h), summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##### fert = DAP/NPK
+#res_hh_fert[1,1,h]  <- ifelse(h <=2, mean(dta_bal$fert_dap[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$fert_dap[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_fert[2,1,h]  <- ifelse(h <=2, sd(dta_bal$fert_dap[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$fert_dap[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_fert[1,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+#res_hh_fert[2,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+#res_hh_fert[1,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , dta_bal, nr_repl = totrep , h) , summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+##### fert = urea
+#res_hh_fert[3,1,h]  <- ifelse(h <=2, mean(dta_bal$fert_urea[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$fert_urea[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_fert[4,1,h]  <- ifelse(h <=2, sd(dta_bal$fert_urea[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$fert_urea[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_fert[3,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+#res_hh_fert[4,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+#res_hh_fert[3,3,h]  <- ifelse(totrep >0, RI("fert_urea",treatment , dta_bal, nr_repl = totrep , h) , summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+##### fert = organic
+#res_hh_fert[5,1,h]  <- ifelse(h <=2, mean(dta_bal$fert_org[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$fert_org[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_fert[6,1,h]  <- ifelse(h <=2, sd(dta_bal$fert_org[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$fert_org[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_fert[5,2,h]  <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+#res_hh_fert[6,2,h]  <- summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+#res_hh_fert[5,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , dta_bal, nr_repl = totrep , h), summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+###improved seed  
+#res_hh_pract[11,1,h]  <- ifelse(h <=2, mean(dta_bal$impseed[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$impseed[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[12,1,h]  <- ifelse(h <=2, sd(dta_bal$impseed[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$impseed[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[11,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+#res_hh_pract[12,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+#res_hh_pract[11,3,h]  <- ifelse(totrep >0, RI("impseed",treatment , dta_bal, nr_repl = totrep , h),  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+### hybrid
+#res_hh_seed[1,1,h]  <- ifelse(h <=2, mean(dta_bal$hybrid[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$hybrid[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_seed[2,1,h]  <- ifelse(h <=2, sd(dta_bal$hybrid[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$hybrid[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_seed[1,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+#res_hh_seed[2,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+#res_hh_seed[1,3,h] <- ifelse(totrep >0, RI("hybrid",treatment , dta_bal, nr_repl = totrep , h), summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+### opv
+#res_hh_seed[3,1,h]  <- ifelse(h <=2, mean(dta_bal$opv[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$opv[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_seed[4,1,h]  <- ifelse(h <=2, sd(dta_bal$opv[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$opv[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_seed[3,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+#res_hh_seed[4,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+#res_hh_seed[3,3,h] <- ifelse(totrep >0, RI("opv",treatment , dta_bal, nr_repl = totrep , h), summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+###combiner
+#res_hh_pract[13,1,h]  <- ifelse(h <=2, mean(dta_bal$combiner[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$combiner[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[14,1,h]  <- ifelse(h <=2, sd(dta_bal$combiner[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$combiner[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[13,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+#res_hh_pract[14,2,h]  <- summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+#res_hh_pract[13,3,h]  <- ifelse(totrep >0, RI("combiner",treatment , dta_bal, nr_repl = totrep , h), summary(lm(as.formula(paste("combiner", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+#### bought seed
+#res_hh_pract[15,1,h]  <- ifelse(h <=2, mean(dta_bal$bought_seed[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$bought_seed[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[16,1,h]  <- ifelse(h <=2, sd(dta_bal$bought_seed[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$bought_seed[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[15,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+#res_hh_pract[16,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+#res_hh_pract[15,3,h]  <- ifelse(totrep >0, RI("bought_seed",treatment , dta_bal, nr_repl = totrep , h), summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##### used chemicals
+#res_hh_pract[17,1,h]  <- ifelse(h <=2, mean(dta_bal$chem[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$chem[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[18,1,h]  <- ifelse(h <=2, sd(dta_bal$chem[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$chem[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[17,2,h]  <- summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+#res_hh_pract[18,2,h]  <- summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+#res_hh_pract[17,3,h]  <- ifelse(totrep >0, RI("chem",treatment , dta_bal, nr_repl = totrep , h), summary(lm(as.formula(paste("chem", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+####hired labour
+#res_hh_pract[19,1,h]  <- ifelse(h <=2, mean(dta_bal$labour[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$labour[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[20,1,h]  <- ifelse(h <=2, sd(dta_bal$labour[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$labour[dta_bal$recipient == "male"], na.rm=T))
+#res_hh_pract[19,2,h]  <- summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
+#res_hh_pract[20,2,h]  <- summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
+#res_hh_pract[19,3,h]  <- ifelse(totrep >0, RI("labour",treatment , dta_bal, nr_repl = totrep , h), summary(lm(as.formula(paste("labour", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+##if (totrep >0) {
+##res_h0_pract[1:7,4,h] <- FSR_RI( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment ,dta_bal, pvals =  res_h0_pract[,3,h] , nr_repl_pi = 100)
+
+##res_h0_pract[1:7,4,h] <- FSR_OLS( c("space","striga","weed", "fert","impseed", "combiner","bought_seed") ,treatment,dta_bal, nr_repl = totrep)[[4]]
+
+#indexer <-  FW_index(treatment,c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),dta_bal, nr_repl=totrep, h)
+
+#res_hh_pract[21,1,h] <- ifelse(h <=2, mean(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), mean(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
+#res_hh_pract[22,1,h] <- ifelse(h <=2, sd(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
+#res_hh_pract[21,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
+#res_hh_pract[22,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
+#res_hh_pract[21,3,h] <-  indexer[[2]]
 
 #### agreement
 #res_decision_b[1,1,h]  <- ifelse(h <=2, mean(dta_bal$both_tell[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$both_tell[dta_bal$recipient == "male"], na.rm=T))
@@ -463,6 +761,20 @@ treatment <- "(recipient == 'couple') +ivr+sms+as.factor(recipient)+ as.factor(m
 #}
 #res_dec_m[20,1:2,h] <- unlist(results[c(6,2)])
 
+
+h <- 3
+dta_bal <- subset(dta, recipient == "male" | recipient == "female")
+treatment <- "(recipient == 'female') +ivr+sms+as.factor(recipient)+ as.factor(messenger)" 
+
+plot_RI_dec_FWER(man= c("dectime_man","decspace_man","decstriga_man", "decweed_man", "decfert_man", "decseed_man","deccombiner_man","decbuyseed_man","decchem_man"), treatment, data=dta_bal,p_vals=c(0.00000,0.00000,0.00000,0.00000,0.00000,0.00400,0.00000,0.04990,	0.00260), nr_repl = 10000, h=3)
+plot_RI_dec_FWER(man= c("dectime_man","decspace_woman","decstriga_woman", "decweed_woman", "decfert_woman", "decseed_woman","deccombiner_woman","decbuyseed_woman","decchem_woman"), treatment, data=dta_bal,p_vals=c(0,0,0,0,0,0,0,0,0.0104), nr_repl = 10000, h=3)
+
+h <- 4
+dta_bal <- subset(dta, recipient == "male" | recipient == "couple")
+treatment <- "(recipient == 'couple') +ivr+sms+as.factor(recipient)+ as.factor(messenger)"
+plot_RI_dec_FWER(man= c("dectime_man","decspace_man","decstriga_man", "decweed_man", "decfert_man", "decseed_man","deccombiner_man","decbuyseed_man","decchem_man"), treatment, data=dta_bal,p_vals=c(0,0,0.0001,0,0,0.0095,0.0012,0.0002,0.0147,0), nr_repl = 10000, h=4)
+plot_RI_dec_FWER(man= c("dectime_man","decspace_woman","decstriga_woman", "decweed_woman", "decfert_woman", "decseed_woman","deccombiner_woman","decbuyseed_woman","decchem_woman"), treatment, data=dta_bal,p_vals=c(0.0648,0.223,0.0127,0.1041,0.0093,0.6691,0.273,0.4974,	0.6122,	0.0496), nr_repl = 10000, h=4)
+plot_RI_dec_FWER(man= c("dectime_both","decspace_both","decstriga_both", "decweed_both", "decfert_both", "decseed_both","deccombiner_both","decbuyseed_both","decchem_both"), treatment, data=dta_bal,p_vals=c(0.612,0.1766,0.0054,0.0592,0.0846,0.3051,0.1783,0.0682,0.2052,0.5847), nr_repl = 10000, h=4)
 
 ##space_ind <- reshape(dta[c("messenger","recipient","gender1","ivr","sms","called","totsms","hhid","distID", "subID","vilID", dec_vars)], varying = dec_vars,v.names="dectime_man", idvar="hhid", direction="long")
 
@@ -649,274 +961,274 @@ treatment <- "(recipient == 'couple') +ivr+sms+as.factor(recipient)+ as.factor(m
 ############################### practices #############################
 #####plant immediately after rain on plot managed by - man - woman - both
 
-results <- plot_RI(dta, man = "dectime_man", out_sp1 =c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5"),out_sp2 =c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5"),treatment, totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_m[1,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_m[1,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_m[2,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "dectime_man", out_sp1 =c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5"),out_sp2 =c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5"),treatment, totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_m[1,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_m[1,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_m[2,1:2,h] <- unlist(results[c(6,2)])
 
-results <- plot_RI(dta, man = "dectime_woman", out_sp1 =c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5"),out_sp2 =c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5"),treatment , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_w[1,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_w[1,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_w[2,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "dectime_woman", out_sp1 =c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5"),out_sp2 =c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5"),treatment , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_w[1,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_w[1,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_w[2,1:2,h] <- unlist(results[c(6,2)])
 
-results <- plot_RI(dta, man = "dectime_both", out_sp1 =c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5"),out_sp2 =c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5"),treatment , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_b[1,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_b[1,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_b[2,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "dectime_both", out_sp1 =c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5"),out_sp2 =c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5"),treatment , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_b[1,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_b[1,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_b[2,1:2,h] <- unlist(results[c(6,2)])
 
-### used recommended spacing on plot managed by - man - woman - both
+#### used recommended spacing on plot managed by - man - woman - both
 
-results <-  plot_RI(dta, man = "decspace_man", out_sp1 = c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201"),out_sp2 = c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201"),treatment , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_m[3,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_m[3,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_m[4,1:2,h] <- unlist(results[c(6,2)])
-
-
-results <- plot_RI(dta, man = "decspace_woman", out_sp1 = c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201"),out_sp2 = c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201"),treatment, totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_w[3,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_w[3,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_w[4,1:2,h] <- unlist(results[c(6,2)])
+#results <-  plot_RI(dta, man = "decspace_man", out_sp1 = c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201"),out_sp2 = c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201"),treatment , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_m[3,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_m[3,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_m[4,1:2,h] <- unlist(results[c(6,2)])
 
 
-results <-  plot_RI(dta, man = "decspace_both", out_sp1 = c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201"),out_sp2 = c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201"),treatment , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_b[3,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_b[3,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_b[4,1:2,h] <- unlist(results[c(6,2)])
-
-### used recommended way to fight striga - this should be changed to include info of all plots 
-
-results <- plot_RI(dta, man = "decstriga_man", out_sp1 = c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241"),out_sp2 = c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241"),treatment , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_m[5,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_m[5,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_m[6,1:2,h] <- unlist(results[c(6,2)])
-
-results <- plot_RI(dta, man = "decstriga_woman", out_sp1 = c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241"),out_sp2 = c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241"),treatment , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_w[5,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_w[5,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_w[6,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "decspace_woman", out_sp1 = c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201"),out_sp2 = c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201"),treatment, totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_w[3,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_w[3,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_w[4,1:2,h] <- unlist(results[c(6,2)])
 
 
-results <- plot_RI(dta, man = "decstriga_both", out_sp1 = c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241"),out_sp2 = c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241"),treatment , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_b[5,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_b[5,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_b[6,1:2,h] <- unlist(results[c(6,2)])
+#results <-  plot_RI(dta, man = "decspace_both", out_sp1 = c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201"),out_sp2 = c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201"),treatment , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_b[3,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_b[3,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_b[4,1:2,h] <- unlist(results[c(6,2)])
 
-### weeded on recommended timing? - this should be changed to include info of all plots 
+#### used recommended way to fight striga - this should be changed to include info of all plots 
 
-results <- plot_RI(dta, man = "decweed_man", out_sp1 = c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26"),out_sp2 = c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26"),treatment  , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_m[7,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_m[7,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_m[8,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "decstriga_man", out_sp1 = c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241"),out_sp2 = c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241"),treatment , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_m[5,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_m[5,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_m[6,1:2,h] <- unlist(results[c(6,2)])
 
-results <- plot_RI(dta, man = "decweed_woman", out_sp1 = c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26"),out_sp2 = c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26"),treatment  , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_w[7,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_w[7,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_w[8,1:2,h] <- unlist(results[c(6,2)])
-
-results <- plot_RI(dta, man = "decweed_both", out_sp1 = c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26"),out_sp2 = c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26"),treatment  , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_b[7,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_b[7,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_b[8,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "decstriga_woman", out_sp1 = c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241"),out_sp2 = c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241"),treatment , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_w[5,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_w[5,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_w[6,1:2,h] <- unlist(results[c(6,2)])
 
 
-#### fertilizer use
-#### any fertlizer used on a plot?
-#### but how to define who decided/managed?
-results <- plot_RI(dta, man = "dec_man_d", out_sp1 = c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29") ,out_sp2 = c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29"),treatment   , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_m[9,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_m[9,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_m[10,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "decstriga_both", out_sp1 = c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241"),out_sp2 = c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241"),treatment , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_b[5,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_b[5,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_b[6,1:2,h] <- unlist(results[c(6,2)])
 
-results <- plot_RI(dta, man = "dec_woman_d", out_sp1 = c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29"),out_sp2 = c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29"),treatment   , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_w[9,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_w[9,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_w[10,1:2,h] <- unlist(results[c(6,2)])
+#### weeded on recommended timing? - this should be changed to include info of all plots 
 
-results <- plot_RI(dta, man = "dec_both_d", out_sp1 = c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29"),out_sp2 = c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29"),treatment   , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_b[9,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_b[9,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_b[10,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "decweed_man", out_sp1 = c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26"),out_sp2 = c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26"),treatment  , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_m[7,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_m[7,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_m[8,1:2,h] <- unlist(results[c(6,2)])
 
+#results <- plot_RI(dta, man = "decweed_woman", out_sp1 = c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26"),out_sp2 = c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26"),treatment  , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_w[7,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_w[7,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_w[8,1:2,h] <- unlist(results[c(6,2)])
 
-####improved seed  
-
-results <- plot_RI(dta, man = "dec_man_d", out_sp1 = c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42") ,out_sp2 =c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42"),treatment , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_m[11,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_m[11,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_m[12,1:2,h] <- unlist(results[c(6,2)])
-
-results <- plot_RI(dta, man = "dec_woman_d", out_sp1 = c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42"),out_sp2 = c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42"),treatment  , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_w[11,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_w[11,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_w[12,1:2,h] <- unlist(results[c(6,2)])
-
-results <- plot_RI(dta, man = "dec_both_d", out_sp1 = c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42"),out_sp2 = c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42"),treatment , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_b[11,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_b[11,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_b[12,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "decweed_both", out_sp1 = c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26"),out_sp2 = c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26"),treatment  , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_b[7,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_b[7,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_b[8,1:2,h] <- unlist(results[c(6,2)])
 
 
-####combiner
-results <- plot_RI(dta, man = "dec_man_d", out_sp1 = c("combiner_sp1_pl1","combiner_sp1_pl2","combiner_sp1_pl3","combiner_sp1_pl4","combiner_sp1_pl5") ,out_sp2 =c("combiner_sp2_pl1","combiner_sp2_pl2","combiner_sp2_pl3","combiner_sp2_pl4","combiner_sp2_pl5"),treatment, totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_m[13,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_m[13,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_m[14,1:2,h] <- unlist(results[c(6,2)])
+##### fertilizer use
+##### any fertlizer used on a plot?
+##### but how to define who decided/managed?
+#results <- plot_RI(dta, man = "dec_man_d", out_sp1 = c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29") ,out_sp2 = c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29"),treatment   , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_m[9,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_m[9,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_m[10,1:2,h] <- unlist(results[c(6,2)])
+
+#results <- plot_RI(dta, man = "dec_woman_d", out_sp1 = c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29"),out_sp2 = c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29"),treatment   , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_w[9,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_w[9,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_w[10,1:2,h] <- unlist(results[c(6,2)])
+
+#results <- plot_RI(dta, man = "dec_both_d", out_sp1 = c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29"),out_sp2 = c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29"),treatment   , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_b[9,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_b[9,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_b[10,1:2,h] <- unlist(results[c(6,2)])
 
 
-results <- plot_RI(dta, man = "dec_woman_d", out_sp1 =  c("combiner_sp1_pl1","combiner_sp1_pl2","combiner_sp1_pl3","combiner_sp1_pl4","combiner_sp1_pl5"),out_sp2 = c("combiner_sp2_pl1","combiner_sp2_pl2","combiner_sp2_pl3","combiner_sp2_pl4","combiner_sp2_pl5"),treatment, totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_w[13,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_w[13,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_w[14,1:2,h] <- unlist(results[c(6,2)])
+#####improved seed  
+
+#results <- plot_RI(dta, man = "dec_man_d", out_sp1 = c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42") ,out_sp2 =c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42"),treatment , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_m[11,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_m[11,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_m[12,1:2,h] <- unlist(results[c(6,2)])
+
+#results <- plot_RI(dta, man = "dec_woman_d", out_sp1 = c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42"),out_sp2 = c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42"),treatment  , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_w[11,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_w[11,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_w[12,1:2,h] <- unlist(results[c(6,2)])
+
+#results <- plot_RI(dta, man = "dec_both_d", out_sp1 = c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42"),out_sp2 = c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42"),treatment , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_b[11,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_b[11,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_b[12,1:2,h] <- unlist(results[c(6,2)])
+
+
+#####combiner
+#results <- plot_RI(dta, man = "dec_man_d", out_sp1 = c("combiner_sp1_pl1","combiner_sp1_pl2","combiner_sp1_pl3","combiner_sp1_pl4","combiner_sp1_pl5") ,out_sp2 =c("combiner_sp2_pl1","combiner_sp2_pl2","combiner_sp2_pl3","combiner_sp2_pl4","combiner_sp2_pl5"),treatment, totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_m[13,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_m[13,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_m[14,1:2,h] <- unlist(results[c(6,2)])
+
+
+#results <- plot_RI(dta, man = "dec_woman_d", out_sp1 =  c("combiner_sp1_pl1","combiner_sp1_pl2","combiner_sp1_pl3","combiner_sp1_pl4","combiner_sp1_pl5"),out_sp2 = c("combiner_sp2_pl1","combiner_sp2_pl2","combiner_sp2_pl3","combiner_sp2_pl4","combiner_sp2_pl5"),treatment, totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_w[13,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_w[13,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_w[14,1:2,h] <- unlist(results[c(6,2)])
 
 
 
-results <- plot_RI(dta, man = "dec_both_d", out_sp1 = c("combiner_sp1_pl1","combiner_sp1_pl2","combiner_sp1_pl3","combiner_sp1_pl4","combiner_sp1_pl5"),out_sp2 = c("combiner_sp2_pl1","combiner_sp2_pl2","combiner_sp2_pl3","combiner_sp2_pl4","combiner_sp2_pl5"),treatment, totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_b[13,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_b[13,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_b[14,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "dec_both_d", out_sp1 = c("combiner_sp1_pl1","combiner_sp1_pl2","combiner_sp1_pl3","combiner_sp1_pl4","combiner_sp1_pl5"),out_sp2 = c("combiner_sp2_pl1","combiner_sp2_pl2","combiner_sp2_pl3","combiner_sp2_pl4","combiner_sp2_pl5"),treatment, totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_b[13,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_b[13,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_b[14,1:2,h] <- unlist(results[c(6,2)])
 
-##### bought seed
+###### bought seed
 
-results <- plot_RI(dta, man = "dec_man_d", out_sp1 =c("grp1seed_purchase1","grp2seed_purchase2","grp3seed_purchase3","grp4seed_purchase4","grp5seed_purchase5"),out_sp2 =c("spouse2grp_sp1seed_purchasesp1", "spouse2grp_sp2seed_purchase_sp2","spouse2grp_sp3seed_purchasesp3","spouse2group_sp4seed_purchasesp4","spouse2grp5_sp5seed_purchasesp5"),treatment, totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_m[15,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_m[15,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_m[16,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "dec_man_d", out_sp1 =c("grp1seed_purchase1","grp2seed_purchase2","grp3seed_purchase3","grp4seed_purchase4","grp5seed_purchase5"),out_sp2 =c("spouse2grp_sp1seed_purchasesp1", "spouse2grp_sp2seed_purchase_sp2","spouse2grp_sp3seed_purchasesp3","spouse2group_sp4seed_purchasesp4","spouse2grp5_sp5seed_purchasesp5"),treatment, totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_m[15,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_m[15,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_m[16,1:2,h] <- unlist(results[c(6,2)])
 
-results <- plot_RI(dta, man = "dec_woman_d", out_sp1 =c("grp1seed_purchase1","grp2seed_purchase2","grp3seed_purchase3","grp4seed_purchase4","grp5seed_purchase5"),out_sp2 =c("spouse2grp_sp1seed_purchasesp1", "spouse2grp_sp2seed_purchase_sp2","spouse2grp_sp3seed_purchasesp3","spouse2group_sp4seed_purchasesp4","spouse2grp5_sp5seed_purchasesp5"),treatment , totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_w[15,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_w[15,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_w[16,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "dec_woman_d", out_sp1 =c("grp1seed_purchase1","grp2seed_purchase2","grp3seed_purchase3","grp4seed_purchase4","grp5seed_purchase5"),out_sp2 =c("spouse2grp_sp1seed_purchasesp1", "spouse2grp_sp2seed_purchase_sp2","spouse2grp_sp3seed_purchasesp3","spouse2group_sp4seed_purchasesp4","spouse2grp5_sp5seed_purchasesp5"),treatment , totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_w[15,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_w[15,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_w[16,1:2,h] <- unlist(results[c(6,2)])
 
-results <- plot_RI(dta, man = "dec_both_d", out_sp1 =c("grp1seed_purchase1","grp2seed_purchase2","grp3seed_purchase3","grp4seed_purchase4","grp5seed_purchase5"),out_sp2 =c("spouse2grp_sp1seed_purchasesp1", "spouse2grp_sp2seed_purchase_sp2","spouse2grp_sp3seed_purchasesp3","spouse2group_sp4seed_purchasesp4","spouse2grp5_sp5seed_purchasesp5"),treatment ,totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_b[15,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_b[15,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_b[16,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "dec_both_d", out_sp1 =c("grp1seed_purchase1","grp2seed_purchase2","grp3seed_purchase3","grp4seed_purchase4","grp5seed_purchase5"),out_sp2 =c("spouse2grp_sp1seed_purchasesp1", "spouse2grp_sp2seed_purchase_sp2","spouse2grp_sp3seed_purchasesp3","spouse2group_sp4seed_purchasesp4","spouse2grp5_sp5seed_purchasesp5"),treatment ,totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_b[15,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_b[15,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_b[16,1:2,h] <- unlist(results[c(6,2)])
 
-###### used chemicals
+####### used chemicals
 
-results <- plot_RI(dta, man = "dec_man_d", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment ,totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_m[17,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_m[17,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_m[18,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "dec_man_d", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment ,totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_m[17,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_m[17,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_m[18,1:2,h] <- unlist(results[c(6,2)])
 
-results <- plot_RI(dta, man = "dec_woman_d", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment ,totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_w[17,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_w[17,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_w[18,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "dec_woman_d", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment ,totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_w[17,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_w[17,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_w[18,1:2,h] <- unlist(results[c(6,2)])
 
-results <- plot_RI(dta, man = "dec_both_d", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment ,totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_b[17,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_b[17,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_b[18,1:2,h] <- unlist(results[c(6,2)])
-
-
-#####hired labour
-
-results <- plot_RI(dta, man = "dec_man_d", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment ,totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_m[19,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_m[19,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_m[20,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "dec_both_d", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment ,totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_b[17,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_b[17,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_b[18,1:2,h] <- unlist(results[c(6,2)])
 
 
-results <- plot_RI(dta, man = "dec_woman_d", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment ,totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_w[19,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_w[19,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_w[20,1:2,h] <- unlist(results[c(6,2)])
+######hired labour
 
-results <- plot_RI(dta, man = "dec_both_d", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment ,totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_b[19,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_b[19,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_b[20,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta, man = "dec_man_d", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment ,totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_m[19,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_m[19,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_m[20,1:2,h] <- unlist(results[c(6,2)])
+
+
+#results <- plot_RI(dta, man = "dec_woman_d", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment ,totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_w[19,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_w[19,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_w[20,1:2,h] <- unlist(results[c(6,2)])
+
+#results <- plot_RI(dta, man = "dec_both_d", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment ,totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_b[19,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_b[19,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_b[20,1:2,h] <- unlist(results[c(6,2)])
 
 
 
@@ -982,15 +1294,6 @@ res_pract_b[20,1:2,h] <- unlist(results[c(6,2)])
 
 #results <- plot_RI(dta_bal, man = "mgt_both", out_sp1 =paste("yield_better_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_better_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , repl, trimlog = FALSE)
 #res_prod_bm[4,1:3,h] <- unlist(results[c(1,2,4)])
-
-
-
-
-
-
-
-
-
 
 
 }

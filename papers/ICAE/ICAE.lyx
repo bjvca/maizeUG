@@ -1625,7 +1625,7 @@ HH head finshed primary school 	&	36.74
 
 \begin_layout Plain Layout
 
-HH size 	&	7.63	&	-0.345	&	0.419	&	-0.206	
+HH size 	&	7.63	&	-0.345	&	0.419**	&	-0.206	
 \backslash
 
 \backslash
@@ -1643,7 +1643,7 @@ HH size 	&	7.63	&	-0.345	&	0.419	&	-0.206
 
 \begin_layout Plain Layout
 
-Number of bedrooms	&	2.24	&	-0.142	&	0.108	&	-0.090	
+Number of bedrooms	&	2.24	&	-0.142	&	0.108*	&	-0.090	
 \backslash
 
 \backslash
@@ -1779,7 +1779,7 @@ Joint F test	&		&	0.865	&	1.412	&	1.040
 
 \begin_layout Plain Layout
 
-Number of obs &	3557		&	3,557	&	3,303	&	2,210	
+Number of obs &	3,557		&	3,557	&	3,303	&	2,210	
 \backslash
 
 \backslash
@@ -1816,6 +1816,8 @@ footnotesize
 \begin_layout Plain Layout
 
 note: table entries (H1-H3) are t-statistics; p-values are in parenthesis.
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level.
 \end_layout
 
 \begin_layout Plain Layout
@@ -2079,7 +2081,7 @@ Maize yield (kg/ac) 			&	-10.050	&	-19.814	&	-1.817	&	3.330
 
 \begin_layout Plain Layout
 
-			&	0.376	&	0.065	&	0.861	&	0.773	
+			&	(0.376)	&	(0.065)	&	(0.861)	&	(0.773)	
 \backslash
 
 \backslash
@@ -2088,7 +2090,7 @@ Maize yield (kg/ac) 			&	-10.050	&	-19.814	&	-1.817	&	3.330
 
 \begin_layout Plain Layout
 
-Age of HH head (years) 			&	-8.417	&	-0.885	&	0.397	&	-0.020	
+Age of HH head (years) 			&	-8.417***	&	-0.885	&	0.397	&	-0.020	
 \backslash
 
 \backslash
@@ -2097,7 +2099,7 @@ Age of HH head (years) 			&	-8.417	&	-0.885	&	0.397	&	-0.020
 
 \begin_layout Plain Layout
 
-			&	0.000	&	0.147	&	0.483	&	0.972	
+			&	(0.000)	&	(0.147)	&	(0.483)	&	(0.972)	
 \backslash
 
 \backslash
@@ -2108,7 +2110,7 @@ Age of HH head (years) 			&	-8.417	&	-0.885	&	0.397	&	-0.020
 
 HH head finshed primary school 			&	-16.12
 \backslash
-%	&	1.41
+%***	&	1.41
 \backslash
 %	&	1.16
 \backslash
@@ -2123,7 +2125,7 @@ HH head finshed primary school 			&	-16.12
 
 \begin_layout Plain Layout
 
-		&	0.000	&	0.505	&	0.566	&	0.461	
+		&	(0.000)	&	(0.505)	&	(0.566)	&	(0.461)	
 \backslash
 
 \backslash
@@ -2132,7 +2134,7 @@ HH head finshed primary school 			&	-16.12
 
 \begin_layout Plain Layout
 
-HH size 			&	0.053	&	0.353	&	0.041	&	-0.041	
+HH size 			&	0.053	&	0.353*	&	0.041	&	-0.041	
 \backslash
 
 \backslash
@@ -2141,7 +2143,7 @@ HH size 			&	0.053	&	0.353	&	0.041	&	-0.041
 
 \begin_layout Plain Layout
 
-			&	0.696	&	0.014	&	0.772	&	0.773	
+			&	(0.696)	&	(0.014)	&	(0.772)	&	(0.773)	
 \backslash
 
 \backslash
@@ -2159,7 +2161,7 @@ Number of bedrooms			&	-0.079	&	0.022	&	0.027	&	-0.009
 
 \begin_layout Plain Layout
 
-	&	0.093	&	0.666	&	0.580	&	0.858	
+	&	(0.093)	&	(0.666)	&	(0.580)	&	(0.858)	
 \backslash
 
 \backslash
@@ -2185,7 +2187,7 @@ Access to extension last year			&	0.31
 
 \begin_layout Plain Layout
 
-		&	0.815	&	0.600	&	0.399	&	0.314	
+		&	(0.815)	&	(0.600)	&	(0.399)	&	(0.314)	
 \backslash
 
 \backslash
@@ -2196,9 +2198,9 @@ Access to extension last year			&	0.31
 
 Has used fertilizer last season 			&	-3.50
 \backslash
-%	&	-6.19
+%*	&	-6.19
 \backslash
-%	&	0.52
+%***	&	0.52
 \backslash
 %	&	-2.07
 \backslash
@@ -2211,7 +2213,7 @@ Has used fertilizer last season 			&	-3.50
 
 \begin_layout Plain Layout
 
-			&	0.044	&	0.000	&	0.767	&	0.222	
+			&	(0.044)	&	(0.000)	&	(0.767)	&	(0.222)	
 \backslash
 
 \backslash
@@ -2222,9 +2224,9 @@ Has used fertilizer last season 			&	-3.50
 
 Has used improved seed last season 			&	-8.01
 \backslash
-%	&	-5.33
+%***	&	-5.33
 \backslash
-%	&	3.87
+%*	&	3.87
 \backslash
 %	&	0.65
 \backslash
@@ -2237,7 +2239,7 @@ Has used improved seed last season 			&	-8.01
 
 \begin_layout Plain Layout
 
-			&	0.000	&	0.011	&	0.061	&	0.750	
+			&	(0.000)	&	(0.011)	&	(0.061)	&	(0.750)	
 \backslash
 
 \backslash
@@ -2255,7 +2257,7 @@ Distance nearest agro input shop (km) 			&	-0.154	&	0.048	&	-0.093	&	-0.158
 
 \begin_layout Plain Layout
 
-			&	0.511	&	0.842	&	0.697	&	0.486	
+			&	(0.511)	&	(0.842)	&	(0.697)	&	(0.486)	
 \backslash
 
 \backslash
@@ -2273,7 +2275,7 @@ Distance nearest agro input shop (km) 			&	-0.154	&	0.048	&	-0.093	&	-0.158
 
 \begin_layout Plain Layout
 
-Joint F test			&	43.331	&	34.660	&	0.536	&	0.680	
+Joint F test			&	43.331***	&	34.660***	&	0.536	&	0.680	
 \backslash
 
 \backslash
@@ -2282,7 +2284,7 @@ Joint F test			&	43.331	&	34.660	&	0.536	&	0.680
 
 \begin_layout Plain Layout
 
-			&	0.000	&	0.000	&	0.849	&	0.727	
+			&	(0.000)	&	(0.000)	&	(0.849)	&	(0.727)	
 \backslash
 
 \backslash
@@ -2328,6 +2330,8 @@ footnotesize
 \begin_layout Plain Layout
 
 note: table entries are differences; p-values are in parenthesis.
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level.
 \end_layout
 
 \begin_layout Plain Layout
@@ -2538,7 +2542,7 @@ hline
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{Video}}  
+textit{Video (n=2,241)}}  
 \backslash
 
 \backslash
@@ -2657,7 +2661,7 @@ Knowledge index	&	-0.121	&	0.151	&	0.004**
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{+IVR}}  
+textit{+IVR (n=2,002)}}  
 \backslash
 
 \backslash
@@ -2776,7 +2780,7 @@ Knowledge index	&	0.032	&	-0.045	&	0.115
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{+sms}}  
+textit{+sms (n=1,335)}}  
 \backslash
 
 \backslash
@@ -3443,14 +3447,17 @@ footnotesize
 
 \begin_layout Plain Layout
 
-note: Reported p-values are based on randomization inference (10,000 permutation
-s), corrected for multiple hypothesis testing using the 
-\backslash
-citet{westfall1993resampling} free stepdown resampling method.
- Average is the paramater estimate for the constant and ATE is the parameter
- estimate for the treatment indicator of an OLS regression of the outcome
- against the treatment indicator and controls for the orthogonal factor
- in the factorial design.
+note: Number of observations is 2,185.
+ In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ In the second column, differences (and standard errors of the differences)
+ between each treatment group and the comparison  group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level after correcting for multiple hypothesis testing using a family-wise
+ sharp null (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
 \end_layout
 
 \end_inset
@@ -3908,14 +3915,17 @@ footnotesize
 
 \begin_layout Plain Layout
 
-note: Reported p-values are based on randomization inference (10,000 permutation
-s), corrected for multiple hypothesis testing using the 
-\backslash
-citet{westfall1993resampling} free stepdown resampling method.
- Average is the paramater estimate for the constant and ATE is the parameter
- estimate for the treatment indicator of an OLS regression of the outcome
- against the treatment indicator and controls for the orthogonal factor
- in the factorial design.
+note: Number of observations is 1,949.
+ In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ In the second column, differences (and standard errors of the differences)
+ between each treatment group and the comparison  group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level after correcting for multiple hypothesis testing using a family-wise
+ sharp null (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
 \end_layout
 
 \end_inset
@@ -4250,14 +4260,17 @@ footnotesize
 
 \begin_layout Plain Layout
 
-note: Reported p-values are based on randomization inference (10,000 permutation
-s), corrected for multiple hypothesis testing using the 
-\backslash
-citet{westfall1993resampling} free stepdown resampling method.
- Average is the paramater estimate for the constant and ATE is the parameter
- estimate for the treatment indicator of an OLS regression of the outcome
- against the treatment indicator and controls for the orthogonal factor
- in the factorial design.
+note: Number of observations is 1,296.
+ In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ In the second column, differences (and standard errors of the differences)
+ between each treatment group and the comparison  group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level after correcting for multiple hypothesis testing using a family-wise
+ sharp null (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
 \end_layout
 
 \end_inset
@@ -4271,8 +4284,7 @@ citet{westfall1993resampling} free stepdown resampling method.
 \end_layout
 
 \begin_layout Standard
-We can further dis-aggregate by type of fertilizer used for the subset of
- farmers that reported using any fertilizer.
+We can further dis-aggregate by type of fertilizer used.
  Results are reported in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4379,7 +4391,7 @@ hline
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{Video}}  
+textit{Video (n=2,185)}}  
 \backslash
 
 \backslash
@@ -4462,7 +4474,7 @@ Used organic matter	&	0.162	&	0.080	&	0.014*
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{+IVR}}  
+textit{+IVR (n=1,949)}}  
 \backslash
 
 \backslash
@@ -4545,7 +4557,7 @@ Used organic matter	&	0.256	&	-0.062	&	0.002**
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{+sms}}  
+textit{+sms (n=1,296)}}  
 \backslash
 
 \backslash
@@ -4660,7 +4672,8 @@ note: In the first column, means (and standard deviations) in the comparison
  between each treatment group and the comparison  group.
  Reported p-values are based on randomization inference (10,000 permutations);
  ** and * denote difference is signficant at the 1 and 5 percent level after
- correcting for multiple hypothesis testing.
+ correcting for multiple hypothesis testing using a family-wise sharp null
+ (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -4749,7 +4762,7 @@ hline
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{Video}}  
+textit{Video (n=2,185)}}  
 \backslash
 
 \backslash
@@ -4814,7 +4827,7 @@ Used OPV	&	0.298	&	-0.022	&	0.561
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{+IVR}}  
+textit{+IVR (n=1,949)}}  
 \backslash
 
 \backslash
@@ -4879,7 +4892,7 @@ Used OPV	&	0.271	&	0.001	&	0.970
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{+sms}}  
+textit{+sms (n=1,296)}}  
 \backslash
 
 \backslash
@@ -4975,8 +4988,9 @@ note: In the first column, means (and standard deviations) in the comparison
  In the second column, differences (and standard errors of the differences)
  between each treatment group and the comparison  group.
  Reported p-values are based on randomization inference (10,000 permutations);
- ** and * denote difference is signficant at the 1 and 5 percent level after
- correcting for multiple hypothesis testing.
+ * denotes difference is signficant at the 5 percent level after correcting
+ for multiple hypothesis testing using a family-wise sharp null (10,000
+ permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -5070,7 +5084,7 @@ Overall, we find that the information intervention had a significant and
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5112,7 +5126,7 @@ hline
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{Video}}  
+textit{Video (n=2,047)}}  
 \backslash
 
 \backslash
@@ -5231,7 +5245,7 @@ production index	&	-0.082	&	0.092	&	0.010**
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{+IVR}}  
+textit{+IVR (n=1,931)}}  
 \backslash
 
 \backslash
@@ -5350,7 +5364,7 @@ production index	&	-0.023	&	0.049	&	0.017*
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{+sms}}  
+textit{+sms (n=1,215)}}  
 \backslash
 
 \backslash
@@ -5682,7 +5696,7 @@ hline
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{Video}}  
+textit{Video (n=2,210)}}  
 \backslash
 
 \backslash
@@ -5831,6 +5845,10 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
 
 \backslash
 footnotesize 
@@ -5838,9 +5856,13 @@ footnotesize
 
 \begin_layout Plain Layout
 
-note: Reported p-values are based on randomization inference, corrected
- for multiple hypothesis testing using the Westfall and Young free stepdown
- resampling method.
+note: In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ In the second column, differences (and standard errors of the differences)
+ between each treatment group and the comparison  group.
+ Reported p-values are based on randomization inference (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
 \end_layout
 
 \end_inset
@@ -5856,6 +5878,21 @@ note: Reported p-values are based on randomization inference, corrected
 \begin_layout Standard
 \begin_inset Note Note
 status open
+
+\begin_layout Plain Layout
+All the above is ITT analysis.
+ For the paper, we will also have to add LATE estimates, despite the fact
+ that IVR compliance was very low.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Plain Layout
 We further test the hypothesis that households that were shown the video
@@ -5890,31 +5927,1642 @@ Was 0.02 before correction.
 \end_layout
 
 \begin_layout Subsection*
-Impact on decision making
+Changing gender attributes of the video intervention
 \end_layout
 
 \begin_layout Standard
-One of the objectives of this study is to investigate if small changes in
- the design of agricultural extension messages affect intra-household decision
+In this part of the paper we present results of changing 2 gender attributes
+ of the video intervention.
+ The first attribute relates to the gender of the targetted audience: while
+ existing extension services generally target men within households, we
+ investigate the consequences of targeting (additionally) the female co-head
+ within the household.
+ In particular, we report results for 2 comparisons: R1, which compares
+ outcomes for households where the video was shown to a man to outcomes
+ for households where the video was shown to the female within the households;
+ and R2, which compares outcomes for households where the video was shown
+ to a man to outcomes for households where the video was shown to both spouses
+ together.
+ The second attribute is related to the gender of the person that provides
+ the information: existing extension services generally use male extension
+ agents, and we investigate the consequences of changing this into a female
+ messenger, or at least adding a female messenger to the male messenger.
+ Also here, we report results for two comparisons: M1, which compares outcomes
+ for households where the version of the video was shown where a man provides
+ the information to outcomes for households where the version of the video
+ was shown where a woman provides the information; and M2, which compares
+ outcomes for households where the version of the video was shown where
+ a man provides the information to outcomes for households where the version
+ of the video was shown where a couple provides the information.
+ We look at outcomes both at the household level as well as on the individual
+ level and pay particular attention to the impact on intra-household decision
  making.
- In particular, we want to make agricultural advisory services more inclusive
- and increase decision making by women in agricultural production
-\begin_inset Note Note
-status collapsed
+ We start by checking if changing gender attributes affect household level
+ outcome and then look at individual outcomes
+\end_layout
+
+\begin_layout Subsubsection*
+Household level consequences of changing gender attributes
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:R_hh_know"
+
+\end_inset
+
+ shows the effect of changing who the information is given to on the likelihood
+ that at least on of the spouses knows the correct answer to the respective
+ question.
+ The top panel compares
+\series bold
+ household level knowledge
+\series default
+.
+ For example, we see that in couples where the video was shown to the male
+ co-head only, the male or female co-head knew about optimal maize spacing
+ in 29.5 percent of households.
+ Interestingly, this likelihood is 5 percentage points lower in households
+ where only the female co-head was shown a video.
+ Even though we find no significant difference between the two groups of
+ the other questions, the index does confirm that household level knowledge
+ is lower in households where the video was shown to the woman than in household
+s where the video was shown to the man.
+ The second panel in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:R_hh_know"
+
+\end_inset
+
+ compares household level knowledge between the same control group (man
+ is recipient) and households where a video was shown to male and female
+ co-head together.
+ We do not find any significant difference between these two groups.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
-(and marketing, but that's another paper)
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact of recipient on household level knowledge
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:R_hh_know"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
-.
- In this section, we report differences in how spouses deal with disagreement
- related to maize production as a consequence of varying the recipient (H2)
- and the messenger (H3).
- We also report differences in who makes the decisions with respect to technolog
-y adoption at the plot level.
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{rec=female (n=2,075)}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal spacing	&	0.295	&	-0.050	&	0.006*	
+\backslash
+
+\backslash
  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.456)	&	(0.019)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows inputs are best combined	&	0.949	&	-0.016	&	0.126	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.220)	&	(0.010)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal timing for first weeding 	&	0.942	&	0.009	&	0.381	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+&	(0.233)	&	(0.010)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows when best to spray against Armyworm 	&	0.339	&	-0.039	&	0.388	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.474)	&	(0.020)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knowledge index	&	0.036	&	-0.072	&	0.001**	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.538)	&	(0.023)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{rec=couple (n=2,002)}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal spacing	&	0.295	&	-0.004	&	0.821	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.456)	&	(0.020)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows inputs are best combined	&	0.949	&	0.001	&	0.927	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.220)	&	(0.010)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal timing for first weeding 	&	0.942	&	-0.009	&	0.423	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.233)	&	(0.011)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows when best to spray against Armyworm 	&	0.339	&	-0.037	&	0.421	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.474)	&	(0.021)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knowledge index	&	-0.007	&	0.014	&	0.515	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.493)	&	(0.022)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: The comparison group consists of households where the video was shown
+ to the male co-head only.
+ In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ The second column reports differences (and standard errors of the differences)
+ between the comparison group and each treatment group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ * denotes difference is signficant at the 5 percent level after correcting
+ for multiple hypothesis testing using a family-wise sharp null (10,000
+ permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:M_hh_know-1"
+
+\end_inset
+
+ shows the effect of changing the messenger from male to female (top panel)
+ and from male to couple (bottom panel) on household level knowledge.
+ The likelihood that at least one of the spouses knows the correct spacing
+ of maize is about 25.9 percent if the information was provided by a man.
+ This is about four percentage points higher when the woman provides the
+ information, but the difference is not statistically significant.
+ More generally, we do not find that the changing the messenger from male
+ to female or couple affects household level knowledge.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact of messenger on household level knowledge
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:M_hh_know-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{mes=female (n=2,022)}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal spacing	&	0.259	&	0.040	&	0.057	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.438)	&	(0.020)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows inputs are best combined	&	0.933	&	0.017	&	0.128	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.250)	&	(0.010)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal timing for first weeding 	&	0.942	&	0.001	&	0.866	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.234)	&	(0.010)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows when best to spray against Armyworm 	&	0.313	&	0.014	&	0.882	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.464)	&	(0.021)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knowledge index	&	0.001	&	-0.002	&	0.936	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.456)	&	(0.021)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  
+\backslash
+multicolumn{3}{c}{
+\backslash
+textit{mes=couple (n=2,019)}}  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal spacing	&	0.259	&	0.012	&	0.494	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.438)	&	(0.020)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows inputs are best combined	&	0.933	&	0.015	&	0.148	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.250)	&	(0.010)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal timing for first weeding 	&	0.942	&	0.000	&	0.969	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.234)	&	(0.010)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows when best to spray against Armyworm 	&	0.313	&	-0.013	&	0.973	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.464)	&	(0.021)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knowledge index	&	0.010	&	-0.019	&	0.383	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.518)	&	(0.022)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: The comparison group consists of households where the information
+ in the video was given by a male actor.
+ In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ The second column reports differences (and standard errors of the differences)
+ between the comparison group and each treatment group.
+ Reported p-values are based on randomization inference (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Changing recipient and messenger of video information campaigns may also
+ affect the 
+\series bold
+adoption of practices
+\series default
+ as the household level.
+ Therefore, for each of the practices, we compare adoption between the different
+ groups (recipient is male, recipient is female, recipient is couple; and
+ messenger is male, messenger is female, messenger is couple).
+ At this level, we define adoption to happen when at least one of the spouses
+ indicates a particular practice or technology used on at least one plot.
+\end_layout
+
+\begin_layout Standard
+Results are reported in Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:R_hh_pract"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:M_hh_pract"
+
+\end_inset
+
+.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:R_hh_pract"
+
+\end_inset
+
+ shows that about 10 percent of households where the man alone was shown
+ the video are implementing improved spacing practices that are explained
+ in the video.
+ This is 2.4 percentage points less in households where the video was only
+ shown to the female.
+ About half of the households in the comparison group report that they use
+ fertilizer on at least one plot.
+ This is about 10 percent higher if the couple was targeted with the information.
+ The proportion of households that reports combining seed and fertilizer
+ is also slightly higher among households where the video was shown to both
+ spouses together.
+ However, none of the differences remains significant after correcting for
+ multiple comparisons.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact of recipient on household level adoption
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:R_hh_pract"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{1}{c}{
+\backslash
+textit{rec = male}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{rec = female}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{rec = couple}}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	&	ATE	&		P-value	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+first_day	&	0.361	&	0.022	&	0.294	&	0.003	&	0.883	
+\backslash
+
+\backslash
+ 	&	(0.480)	&	(0.022)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+ space	&	0.098	&	-0.024	&	0.046	&	0.001	&	0.944	
+\backslash
+
+\backslash
+ 	&	(0.297)	&	(0.012)	&		&	(0.013)	&		
+\backslash
+
+\backslash
+ striga	&	0.737	&	0.006	&	0.710	&	0.030	&	0.088	
+\backslash
+
+\backslash
+ 	&	(0.440)	&	(0.019)	&		&	(0.019)	&		
+\backslash
+
+\backslash
+ weed	&	0.460	&	-0.001	&	0.956	&	-0.030	&	0.182	
+\backslash
+
+\backslash
+ 	&	(0.499)	&	(0.022)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+ use_fert	&	0.499	&	-0.032	&	0.121	&	0.045	&	0.038	
+\backslash
+
+\backslash
+ 	&	(0.500)	&	(0.022)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+ seed	&	0.579	&	-0.033	&	0.132	&	0.014	&	0.533	
+\backslash
+
+\backslash
+ 	&	(0.494)	&	(0.022)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+ combiner	&	0.342	&	-0.029	&	0.179	&	0.046	&	0.026	
+\backslash
+
+\backslash
+ 	&	(0.475)	&	(0.021)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+ bought_seed	&	0.489	&	-0.023	&	0.284	&	0.037	&	0.086	
+\backslash
+
+\backslash
+ 	&	(0.500)	&	(0.022)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+ chem	&	0.514	&	-0.030	&	0.156	&	-0.031	&	0.140	
+\backslash
+
+\backslash
+ 	&	(0.500)	&	(0.022)	&		&	(0.023)	&		
+\backslash
+
+\backslash
+ labour	&	0.617	&	0.016	&	0.448	&	-0.007	&	0.737	
+\backslash
+
+\backslash
+ 	&	(0.486)	&	(0.021)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+ pract_index	&	0.007	&	-0.015	&	0.402	&	0.022	&	0.207	
+\backslash
+
+\backslash
+ 	&	(0.412)	&	(0.018)	&		&	(0.019)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: The comparison group consists of households where the video was shown
+ to the male co-head only.
+ In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ The second column reports differences (and standard errors of the differences)
+ between the comparison group and each treatment group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level after correcting for multiple hypothesis testing using a family-wise
+ sharp null (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:M_hh_pract"
+
+\end_inset
+
+, we see that about 32.4 percent of households where the information was
+ provided by a man reports that they are combining improved seed with fertilizer.
+ This percentage seems to be slightly higher if the information was provided
+ by a woman.
+ However, after controlling for FWER, the difference becomes insignificant.
+ We conclude that there is no impact on household level adoption from hanging
+ the messenger attribute in video messages.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact of messenger on household level adoption
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:M_hh_pract"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{1}{c}{
+\backslash
+textit{mes = male}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{mes = female}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{mes = couple}}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	&	ATE	&		P-value	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+first_day	&	0.387	&	-0.031	&	0.160	&	-0.022	&	0.317	
+\backslash
+
+\backslash
+ 	&	(0.487)	&	(0.022)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+ space	&	0.078	&	0.021	&	0.114	&	0.015	&	0.231	
+\backslash
+
+\backslash
+ 	&	(0.268)	&	(0.013)	&		&	(0.013)	&		
+\backslash
+
+\backslash
+ striga	&	0.744	&	0.004	&	0.835	&	0.009	&	0.568	
+\backslash
+
+\backslash
+ 	&	(0.436)	&	(0.019)	&		&	(0.019)	&		
+\backslash
+
+\backslash
+ weed	&	0.465	&	-0.034	&	0.124	&	-0.009	&	0.678	
+\backslash
+
+\backslash
+ 	&	(0.499)	&	(0.022)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+ use_fert	&	0.494	&	0.017	&	0.423	&	0.006	&	0.776	
+\backslash
+
+\backslash
+ 	&	(0.500)	&	(0.022)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+ seed	&	0.545	&	0.039	&	0.069	&	0.040	&	0.065	
+\backslash
+
+\backslash
+ 	&	(0.498)	&	(0.022)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+ combiner	&	0.324	&	0.040	&	0.047	&	0.025	&	0.226	
+\backslash
+
+\backslash
+ 	&	(0.468)	&	(0.021)	&		&	(0.021)	&		
+\backslash
+
+\backslash
+ bought_seed	&	0.475	&	0.034	&	0.128	&	0.019	&	0.378	
+\backslash
+
+\backslash
+ 	&	(0.500)	&	(0.022)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+ chem	&	0.485	&	0.019	&	0.364	&	0.007	&	0.731	
+\backslash
+
+\backslash
+ 	&	(0.500)	&	(0.022)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+ labour	&	0.629	&	-0.008	&	0.703	&	-0.018	&	0.426	
+\backslash
+
+\backslash
+ 	&	(0.483)	&	(0.022)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+ pract_index	&	-0.011	&	0.022	&	0.204	&	-0.010	&	0.572	
+\backslash
+
+\backslash
+ 	&	(0.398)	&	(0.018)	&		&	(0.018)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: The comparison group consists of households where the video was shown
+ to the male co-head only.
+ In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ The second column reports differences (and standard errors of the differences)
+ between the comparison group and each treatment group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level after correcting for multiple hypothesis testing using a family-wise
+ sharp null (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Individual effects of changing gender attributes
+\end_layout
+
+\begin_layout Standard
+We start again by looking at 
+\series bold
+knowledge
+\series default
+, but now separately for the man and the woman in the household.
+ Results pertaining to the factor related to who is targeted by the information
+ (recipient) are presented in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:R_ind_know"
+
+\end_inset
+
+.
+ The top panel presents responses to the multiple choice questions for the
+ male co-head, the bottom panel for female co-head.
+ We find that within households where the video was shown to the male co-head
+ only, 26.2 percent of men know recommended maize spacing.
+ As expected, if the video was only shown to the female co-head, significantly
+ less men are able to answer correctly: the percentage of correct responses
+ decreases by 14.3 percentage points.
+ In other words, if men did not get the information, only about 12 percent
+ of men knew the answer.
+ This is virtually the same as the proportion of female co-heads that answered
+ the question correctly without having seen the video (12.6) percent.
+ Also according to expectations, showing the video to the female co-head
+ increases her chance of answering correct.
+ However, the effect is only half of the corresponding effect for men.
+ 
+\end_layout
+
+\begin_layout Standard
+Comparing the comparison group of male recipients to knowledge of the men
+ in households where the video was shown to the couple, we find no significant
+ difference.
+ In other words, men do not learn more or less if the video was shown to
+ the individual or to the couple.
+ Similarly, the knowledge gain for the female co-head from watching the
+ video by herself exactly matches the knowledge gain from watching the video
+ together with the spouse.
+ 
+\end_layout
+
+\begin_layout Standard
+We find a similar pattern for awareness that modern inputs are best combined.
+ When man see the video, they know the correct answer in about 90 percent
+ of cases.
+ However, if men were not treated, the proportion is only 81 percent.
+ Women who did not see the video know that combining inputs is better in
+ about 82 percent of cases.
+ Showing them the video increases this significantly, but the increase is
+ only about 5 percentage points, 3 percentage points lower than the correspondin
+g effect for men.
+ Also here, in terms of knowledge gained for the individual, it does not
+ seem to matter whether the information was obtained individually or together
+ with the spouse.
+ We find no effects for weeding.
+ As expected, there is also no impact on knowledge on how to fight fall
+ armyworm at the individual level, as the videos did not contain information
+ on this.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact of recipient on individual level knowledge
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:R_ind_know"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{1}{c}{
+\backslash
+textit{rec = male}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{rec = female}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{rec = couple}}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	&	ATE	&		P-value	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Man knows optimal spacing	&	0.262	&	-0.143	&	0.000***	&	-0.044	&	0.036	
+\backslash
+
+\backslash
+ 	&	(0.440)	&	(0.018)	&		&	(0.020)	&		
+\backslash
+
+\backslash
+ Man knows inputs are best combined	&	0.892	&	-0.082	&	0.000***	&	-0.008	&	0.615	
+\backslash
+
+\backslash
+ 	&	(0.311)	&	(0.016)	&		&	(0.015)	&		
+\backslash
+
+\backslash
+ Man knows optimal timing for first weeding 	&	0.883	&	0.014	&	0.358	&	-0.026	&	0.122
+	
+\backslash
+
+\backslash
+ 	&	(0.322)	&	(0.015)	&		&	(0.016)	&		
+\backslash
+
+\backslash
+ Man knows when best to spray against Armyworm 	&	0.236	&	-0.001	&	0.366	&	-0.010	&	
+0.121	
+\backslash
+
+\backslash
+ 	&	(0.425)	&	(0.020)	&		&	(0.020)	&		
+\backslash
+
+\backslash
+ Knowledge index man	&	0.070	&	-0.149	&	0.000***	&	-0.043	&	0.124	
+\backslash
+
+\backslash
+ 	&	0.521	&	0.024	&		&	0.024	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{1}{c}{
+\backslash
+textit{rec = male}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{rec = female}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{rec = couple}}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	&	ATE	&		P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Woman knows optimal spacing	&	0.126	&	0.070	&	0.00***	&	0.070	&	0.000***	
+\backslash
+
+\backslash
+ 	&	(0.332)	&	(0.017)	&		&	(0.017)	&		
+\backslash
+
+\backslash
+ Woman knows inputs are best combined	&	0.818	&	0.051	&	0.003**	&	0.048	&	0.006*	
+\backslash
+
+\backslash
+ 	&	(0.386)	&	(0.017)	&		&	(0.017)	&		
+\backslash
+
+\backslash
+ Wonan knows optimal timing for first weeding 	&	0.880	&	0.020	&	0.176	&	-0.002	&	0.9
+04	
+\backslash
+
+\backslash
+ 	&	(0.326)	&	(0.015)	&		&	(0.016)	&		
+\backslash
+
+\backslash
+ Woman knows when best to spray against Armyworm 	&	0.209	&	-0.032	&	0.164	&	-0.012	
+&	0.898	
+\backslash
+
+\backslash
+ 	&	(0.407)	&	(0.018)	&		&	(0.019)	&		
+\backslash
+
+\backslash
+ Knowledge index woman	&	-0.021	&	0.038	&	0.104	&	0.085	&	0.000***	
+\backslash
+
+\backslash
+ 	&	(0.539)	&	(0.024)	&		&	(0.023)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: The comparison group consists of households where the video was shown
+ to the male co-head only.
+ In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ The second column reports differences (and standard errors of the differences)
+ between the comparison group and each treatment group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level after correcting for multiple hypothesis testing using a family-wise
+ sharp null (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We ran a similar analysis for the factor related to who provides the information
+ to see how the messenger affects knowledge at the individual level.
+ We find that knowledge levels as judged by the four multiple choice questions
+ are fairly similar between men and women, and that the messenger attribute
+ does not seem to made a difference.
+ To conserve space, we report full results in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:M_ind_know"
+
+\end_inset
+
+ in the Appendix.
 \end_layout
 
 \begin_layout Standard
@@ -5927,44 +7575,80 @@ reference "tab:Agreement-about-maize"
 
 \end_inset
 
- reports that about 41 percent of men in households where the video was
- not shown to the couple together will generally tell their wife they do
- not agree about any maize related issue.
- Showing the video to a couple instead of to an individual increased this
- by about 3.7 percentage points, but the difference is not statistically
- significant.
- Among households where only one of the spouses was shown a video, the likelihoo
-d that the women will tell the husband that she disagrees was slightly lower
- at 38.3 percent.
- However, if the video was shown to the couple, there was a significant
- increase in this percentage.
- Combining these two answers, we constructed an indicator that is true if
- both spouses indicate that they would generally tell the other if they
- do not agree about any maize related issue.
- We find that in households where recipients were individuals about 24.3
- percent of spouses told each other if they disagree.
- Among households where the video was shown to the couple, this percentage
- increased to 28 percent, but the difference is not significant at the 5
- percent significance level after adjusting for multiple comparisons
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-significant at .042 before correction.
-\end_layout
-
-\end_inset
-
-.
+ reports in the top panel that about 45.1 percent of men in households where
+ the video was shown to only the man will generally tell their wife they
+ do not 
+\series bold
+agree
+\series default
+ about any maize related issue.
+ Showing the video to the wife only instead of to the man significantly
+ reduces the likelihood that the man tells his wife if he disagrees.
+ If the video was shown to the couple, the likelihood that the man tell
+ the wife if he disagrees is the same as the likelihood when the video was
+ shown to the man only.
  
 \end_layout
 
 \begin_layout Standard
-We next compare households that have seen the video where information was
- given by either a man or a woman to households where information was provided
- by a couple.
- We see that in half of the households where the messenger was an individual,
- the man will tell the wife if he disagreed about any maize related issue.
+The next question is a follow-up question on the previous one and inquires
+ about what happens when the man tells the wife that he disagreed about
+ a maize related issue.
+ As such, this question was not asked to the 281 men that stated in the
+ previous question that they did never tell their spouse if they disagreed
+ about maize related issues.
+ We see that in the comparison group where men were shown the video, about
+ 70 percent indicate that they then discuss the issue and 
+\series bold
+come to a conclusion that is mutually acceptable
+\series default
+ (as opposed to situations in which the man either ignored the woman or
+ the man simply did what the other woman commanded).
+ We further see that in households where the video was shown to both spouses
+ together, the likelihood that they come to a conclusion after the man tells
+ the wife he does not agree increases by 4.4 percentage points.
+ 
+\end_layout
+
+\begin_layout Standard
+The likelihood that the women will tell the husband that she disagrees is
+ about 5 percentage points lower than the likelihood that the man tells
+ the wife.
+ The fact that the woman is empowered with information seems insufficient
+ to change this.
+ However, if the video was shown to the couple, the likelihood that the
+ woman speaks up increases by more than 12 percent.
+ The follow up question on what happens (and was not asked to 307 women
+ who said they never tell the husband if they disagree) also indicates that
+ the likelihood that they come to an agreement is higher if the video was
+ shown to both spouses.
+\end_layout
+
+\begin_layout Standard
+In the lower panel Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Agreement-about-maize"
+
+\end_inset
+
+, we compare households that have seen the video where information was given
+ by a man alone 
+\emph on
+(mes = man)
+\emph default
+ to households where information was provided by a woman alone 
+\emph on
+(mes = woman)
+\emph default
+ and a couple 
+\emph on
+(mes = couple)
+\emph default
+.
+ We see that in 46.1 percent of the households where the messenger was a
+ man, the man will tell the wife if he disagreed about any maize related
+ issue.
  This percentage was significantly lower among households where the messenger
  was a couple
 \begin_inset Note Note
@@ -5981,67 +7665,277 @@ Why? Do we have an explanation for this??? Could this maybe be that after
 .
  Changing the messenger attribute did not seem to have an effect on the
  likelihood that the woman told the husband that she does not agree.
- Among 49 percent of households where the version of the video was shown
- where an individual gave the information, both husband and wife indicated
- they will generally tell each other if they do not agree.
- This was 3.8 percentage points higher among households that were shown the
- version of the video where the information was given by a couple, but this
- difference is not significant at the 5 percent significance level.
-\end_layout
-
-\begin_layout Standard
-The next question was a follow-up question on the previous one and inquires
- about what happens when one of the spouses told the other spouse that he
- or she disagreed about a maize related issue.
- As such, this question was not asked to individuals that stated in the
- previous question that they did never tell their spouse if they disagreed
- about maize related issues (281 men and 307 woman).
- As outcome, we computed the proportion of households in which the husband,
- the wife, or both responded that they talk and come to a conclusion that
- suits both, as opposed to situations in which the spouse either ignored
- the other or simply did what the other spouse commanded.
- Results are in the lower panel of Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Agreement-about-maize"
-
-\end_inset
-
-.
- We found that in 72 percent of households that have been shown the video
- at the individual level, the man stated that if he disagrees with his wife,
- they will discuss the issue and come to a mutually satisfying solution.
- This percentage increased to 74.7 percent if the video was shown to a couple,
- but the increase is not significant.
- In 68 percent of households that have been shown the video at the individual
- level, the woman will discuss issues with the man if she did not agree
- and she said they will come to a mutually satisfying solution.
- This proportion increased by almost 7 percent, to 72.5, if the video was
- shown to both spouses together, and the adjusted p-value is just below
- the significance threshold
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-is 0.017 before adjustment
-\end_layout
-
-\end_inset
-
-.
- The likelihood that both spouses indicated that if they disagree they talk
- and come to a common solution is almost 8 percent higher when the video
- was shown to a couple, but again, the difference is not significant.
- Overall, the index supports the conclusion that showing a video to a couple
- increases the likelihood that spouses will try to find a mutually satisfying
- solution when there is disagreement compared to when a video is only shown
- to one of the spouses.
- We did not find differences in spouses consulting each other conditional
- on who provided the information in the video.
+ Both men and women state that after disagreement is expressed, an agreement
+ is reached in about 72 percent of the households.
+ Also here, we find no impact of the messenger attribute.
 \end_layout
 
 \begin_layout Standard
 \align center
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Consulting among spouses about maize farming
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Agreement-about-maize"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{1}{c}{
+\backslash
+textit{rec = male}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{rec = female}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{rec = couple}}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	&	ATE	&		P-value	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+man tells wife	&	0.451	&	-0.047	&	0.046*	&	0.015	&	0.517	
+\backslash
+
+\backslash
+ 	&	(0.498)	&	(0.023)	&		&	(0.024)	&		
+\backslash
+
+\backslash
+ agreement reached	&	0.705	&	0.035	&	0.112	&	0.044	&	0.044*	
+\backslash
+
+\backslash
+ 	&	(0.456)	&	(0.022)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+  wife tells man	&	0.395	&	-0.006	&	0.791	&	0.047	&	0.050*	
+\backslash
+
+\backslash
+ 	&	(0.489)	&	(0.023)	&		&	(0.023)	&		
+\backslash
+
+\backslash
+ agreement reached	&	0.709	&	-0.007	&	0.768	&	0.042	&	0.046*	
+\backslash
+
+\backslash
+ 	&	(0.455)	&	(0.022)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{1}{c}{
+\backslash
+textit{mes = male}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{mes = female}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{mes = couple}}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	&	ATE	&		P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+man tells wife	&	0.461	&	-0.005	&	0.838	&	-0.057	&	0.018*	
+\backslash
+
+\backslash
+ 	&	(0.499)	&	(0.024)	&		&	(0.023)	&		
+\backslash
+
+\backslash
+ agreement reached	&	0.724	&	0.008	&	0.717	&	0.009	&	0.676	
+\backslash
+
+\backslash
+ 	&	(0.447)	&	(0.022)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+  wife tells man	&	0.412	&	0.002	&	0.927	&	-0.017	&	0.456	
+\backslash
+
+\backslash
+ 	&	(0.493)	&	(0.023)	&		&	(0.023)	&		
+\backslash
+
+\backslash
+ agreement reached	&	0.723	&	-0.003	&	0.907	&	-0.008	&	0.724	
+\backslash
+
+\backslash
+ 	&	(0.448)	&	(0.022)	&		&	(0.022)	&		
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: The comparison group consists of households where the video was shown
+ to the male co-head only.
+ In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ The second column reports differences (and standard errors of the differences)
+ between the comparison group and each treatment group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ * denotes difference is signficant at the 5 percent level.
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We also looked at 
+\series bold
+decision making
+\series default
+ on the adoption of different maize growing practices and the use of inputs.
+ For each of the practices and inputs applied at plot level, we asked both
+ spouses who decided to use the input or practice.
+ Options included that (i) the husband made the decision to use a particular
+ technology alone, (ii) that the wife took the decision to use a particular
+ technology alone, or (iii) that both husband and wife jointly decided to
+ use a particular technology.
+ Based on this, we constructed plot level indicators for these three categories
+ of decision making and compared differences between treatment groups.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -6051,10 +7945,10 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Agreement about maize farming
+Impact on male decision making
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:Agreement-about-maize"
+name "tab:dectechman"
 
 \end_inset
 
@@ -6081,7 +7975,7 @@ begin{center}
 
 
 \backslash
-begin{tabular}{rcccccc} 
+begin{tabular}{rccccc} 
 \backslash
 hline 
 \backslash
@@ -6090,138 +7984,128 @@ hline
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
  &  
 \backslash
-multicolumn{3}{c}{
+multicolumn{1}{c}{
 \backslash
-textit{Recipient = Couple}} &  
+textit{rec=male}} &  
 \backslash
-multicolumn{3}{c}{
+multicolumn{2}{c}{
 \backslash
-textit{Messenger = Couple}}   
+textit{rec=female}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{rec=couple}} 
+\backslash
+
+\backslash
+
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-cline{2-8}  
+cline{2-6}    
 \end_layout
 
 \begin_layout Plain Layout
 
+	&	mean	&	ATE	&		P-value	&	ATE	&		P-value	
+\backslash
+
+\backslash
+
 \end_layout
 
 \begin_layout Plain Layout
 
-	&	average	&	ATE	&	P-value	&	average	&	ATE	&	P-value	
+first_day	&	0.366	&	-0.109	&	0.000***	&	-0.082	&	0.000***	
+\backslash
+
+\backslash
+ 	&	0.482	&	0.017	&		&	0.018	&		
+\backslash
+
+\backslash
+ space	&	0.391	&	-0.114	&	0.000***	&	-0.093	&	0.000***	
+\backslash
+
+\backslash
+ 	&	0.488	&	0.017	&		&	0.018	&		
+\backslash
+
+\backslash
+ striga	&	0.305	&	-0.112	&	0.000***	&	-0.076	&	0.000**	
+\backslash
+
+\backslash
+ 	&	0.461	&	0.016	&		&	0.017	&		
+\backslash
+
+\backslash
+ weed	&	0.364	&	-0.112	&	0.000***	&	-0.097	&	0.000***	
+\backslash
+
+\backslash
+ 	&	0.481	&	0.017	&		&	0.017	&		
+\backslash
+
+\backslash
+ use_fert	&	0.398	&	-0.179	&	0.000***	&	-0.137	&	0.000***	
+\backslash
+
+\backslash
+ 	&	0.490	&	0.027	&		&	0.027	&		
+\backslash
+
+\backslash
+ seed	&	0.395	&	-0.083	&	0.004	&	-0.072	&	0.010	
+\backslash
+
+\backslash
+ 	&	0.489	&	0.025	&		&	0.026	&		
+\backslash
+
+\backslash
+ combiner	&	0.323	&	-0.161	&	0.000***	&	-0.105	&	0.001*	
+\backslash
+
+\backslash
+ 	&	0.468	&	0.031	&		&	0.031	&		
+\backslash
+
+\backslash
+ bought_seed	&	0.353	&	-0.056	&	0.050	&	-0.098	&	0.000**	
+\backslash
+
+\backslash
+ 	&	0.478	&	0.026	&		&	0.025	&		
+\backslash
+
+\backslash
+ chem	&	0.450	&	-0.095	&	0.003	&	-0.083	&	0.015	
+\backslash
+
+\backslash
+ 	&	0.498	&	0.026	&		&	0.027	&		
+\backslash
+
+\backslash
+ index	&	0.533	&	-0.124	&	0.000***	&	-0.106	&	0.000***	
+\backslash
+
+\backslash
+ 	&	0.499	&	0.018	&		&	0.019	&		
 \backslash
 
 \backslash
  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-4}   
-\backslash
-cline{5-7}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Tell wife	&	0.409	&	0.037	&	0.090	&	0.500	&	-0.054	&	0.025	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Tell man	&	0.383	&	0.052	&	0.022	&	0.453	&	-0.018	&	0.369	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Tell both	&	0.243	&	0.037	&	0.060	&	0.490	&	0.038	&	0.127	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Tell other index & -0.063 &	0.062 & 0.113 &	0.092 & -0.092 & 0.014 
-\backslash
-
-\backslash
-										
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-												
-\end_layout
-
-\begin_layout Plain Layout
-
-man says agreement is reached	&	0.720	&	0.027	&	0.156	&	0.742	&	0.004	&	0.964	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-wife says agreement is reached	&	0.680	&	0.045	&	0.051	&	0.731	&	-0.006	&	0.964	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-both say agreement is reached	&	0.490	&	0.038	&	0.148	&	0.534	&	-0.005	&	0.964	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Consult each other index & -0.034 & 0.069 & 0.048 & 0.011 & 0.023 & 0.497 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -6244,7 +8128,7 @@ end{tabular}
 
 
 \backslash
-end{center}  
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6256,9 +8140,18 @@ footnotesize
 
 \begin_layout Plain Layout
 
-note: Reported p-values are based on randomization inference, corrected
- for multiple hypothesis testing using the Westfall and Young free stepdown
- resampling method.
+note: The comparison group consists of households where the video was shown
+ to the male co-head only.
+ In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ The second column reports differences (and standard errors of the differences)
+ between the comparison group and each treatment group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level after correcting for multiple hypothesis testing using a family-wise
+ sharp null (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
 \end_layout
 
 \end_inset
@@ -6269,27 +8162,6 @@ note: Reported p-values are based on randomization inference, corrected
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-We also looked at decision making on the adoption of different maize growing
- practices and the use of inputs.
- For each of the practices and inputs applied at plot level, we asked both
- spouses who decided to use the input or practice.
- Options included that (i) the husband made the decision to use a particular
- technology alone, (ii) that the wife took the decision to use a particular
- technology alone, or (iii) that both husband and wife jointly decided to
- use a particular technology.
- Based on this, we constructed plot level indicators for these three categories
- of decision making and compared differences between treatment groups.
- Results are summarized in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Dec_tech"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -6315,7 +8187,7 @@ reference "tab:pract_sms"
 time plant
 \emph default
 ).
- We also asked how made the decision to adopt the particular spacing that
+ We also asked who made the decision to adopt the particular spacing that
  was used on each maize plot (
 \emph on
 space
@@ -6366,92 +8238,58 @@ chem
 \end_layout
 
 \begin_layout Standard
-Similar to Table 
+Results pertaining to the recipient factor are reported in Tables 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Agreement-about-maize"
+reference "tab:dectechman"
 
 \end_inset
 
-, we only compare households where the recipient was an individual to households
- where the recipient was the couple (corresponding to H2, first three columns
- in the table) and compare households where the messenger was an individual
- to households where the messenger was a couple (corresponding to H3, columns
- four to six in the table).
- For example, the first column in the top panel in Table 
+ to 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Dec_tech"
+reference "tab:dectechboth"
 
 \end_inset
 
- shows that among households where the video was shown to a single spouse,
- on about 32 percent of the plots, the husband made the decision on what
- spacing to use (first column).
- This was about 3.5 percentage points lower in households where the video
- was shown to the couple (second column), and the difference is significant
- (RI based p-values are in the third column).
- Similarly, with respect to the timing of the first weeding, the likelihood
- that this was decided unilaterally by the man in the household reduced
- after the video was shown to the couple.
- If fertilizer was used on the plot, this was decided by the man on 26.7
- percent of the plots in the sample of households where the video was shown
- to only one of the spouses.
- Among households where the video was shown to the couple, the man only
- decided on fertilizer use on 21.7 percent of the maize plots.
- The likelihood that the husband alone decided to buy seed was also lower
- in households where the spouses were jointly screened the video.
- In general, and confirmed by the decision index, showing a video to a couple
- significantly reduces the propensity that the husbands makes adoption decision
- by himself as compared to cases where the video was shown to only one individua
-l.
- For the comparisons in decision making between households where the messenger
- was an individual to households where the messenger was a couple, we can
- again be very brief: we did not find any significant difference.
-\end_layout
+.
+ The first column in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:dectechman"
 
-\begin_layout Standard
-The second panel below shows results for female decision making related
- to the technologies.
- Not surprisingly, women are generally less likely to make decisions themselves
- on plots, and thus the percentages were much lower.
- For instance, while on about 24.1 percent of the plots the husband reportedly
- made the decision on what to do against striga, the wife decided on how
- to fight striga on only 12.7 percent of the plots.
- Also here, we find that showing a video to a couple reduced the likelihood
- that the woman takes decisions alone as compared to households where the
- video was shown to an individual.
- For instance, while women solely took the decision on spacing on about
- 17 percent of the plots in households where the video was shown to an individua
-l, this reduced to 14.2 percent in households where both households were
- shown the video together.
- Women alone decided on less then 10 percent of plots which improved seed
- to use in households where the information was given to only one individual.
- This reduce to a mere 5.6 percent among households that received the treatment
- together.
- We also see significant reductions in the likelihood that a woman alone
- decided on combining seed and fertilizer and on decisions related to the
- purchase of seed when the household is exposed jointly to the agricultural
- information video.
- As in the previous case, we also do not find any significant effect of
- changing the messenger in the video on the likelihood that decisions are
- taken by the woman alone.
+\end_inset
+
+ shows that among households where the video was shown to the man only,
+ on about 36.6 percent of the plots, the man also made the decision on when
+ to start planting on that particular plot.
+ Furthermore, we learn that on 45 percent of the plots among the subgroup
+ where only the man received the video treatment, the man decided to use
+ chemical without consulting his wife.
+ Interestingly, we see that for almost all practices, the likelihood that
+ the man decides alone decreases substantially if the video is shown to
+ the woman alone or to the couple instead.
+ Particularly for the decision to use fertilizer, the effect is large: while
+ man decide on about 40 percent of plots on which fertilizer to use, this
+ proportion reduces to about 22 percent in the subgroup of households where
+ the video was shown to the woman and about 26 percent in the subgroup of
+ households where the video was shown to both spouses together.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Decision making on use of technologies
+Impact on female decision making
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:Dec_tech"
+name "tab:dectechfem"
 
 \end_inset
 
@@ -6478,7 +8316,7 @@ begin{center}
 
 
 \backslash
-begin{tabular}{rcccccc} 
+begin{tabular}{rccccc} 
 \backslash
 hline 
 \backslash
@@ -6487,340 +8325,133 @@ hline
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
  &  
 \backslash
-multicolumn{3}{c}{
+multicolumn{1}{c}{
 \backslash
-textit{Recipient = Couple}} &  
+textit{rec=male}} &  
 \backslash
-multicolumn{3}{c}{
+multicolumn{2}{c}{
 \backslash
-textit{Messenger = Couple}}   
+textit{rec=female}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{rec=couple}} 
+\backslash
+
+\backslash
+
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-cline{2-8}  
+cline{2-6}    
 \end_layout
 
 \begin_layout Plain Layout
 
+	&	mean	&	ATE	&		P-value	&	ATE	&		P-value	
+\backslash
+
+\backslash
+
 \end_layout
 
 \begin_layout Plain Layout
 
-	&	average	&	ATE	&	P-value	&	average	&	ATE	&	P-value	
+										
+\end_layout
+
+\begin_layout Plain Layout
+
+first_day	&	0.141	&	0.093	&	0.000***	&	0.027	&	0.065	
+\backslash
+
+\backslash
+ 	&	0.348	&	0.014	&		&	0.014	&		
+\backslash
+
+\backslash
+ space	&	0.132	&	0.091	&	0.000***	&	0.017	&	0.223	
+\backslash
+
+\backslash
+ 	&	0.339	&	0.014	&		&	0.013	&		
+\backslash
+
+\backslash
+ striga	&	0.097	&	0.086	&	0.000***	&	0.033	&	0.013	
+\backslash
+
+\backslash
+ 	&	0.296	&	0.013	&		&	0.012	&		
+\backslash
+
+\backslash
+ weed	&	0.157	&	0.092	&	0.000***	&	0.024	&	0.104	
+\backslash
+
+\backslash
+ 	&	0.364	&	0.015	&		&	0.014	&		
+\backslash
+
+\backslash
+ use_fert	&	0.062	&	0.126	&	0.000***	&	0.046	&	0.009	
+\backslash
+
+\backslash
+ 	&	0.241	&	0.019	&		&	0.016	&		
+\backslash
+
+\backslash
+ seed	&	0.061	&	0.092	&	0.000***	&	0.006	&	0.669	
+\backslash
+
+\backslash
+ 	&	0.239	&	0.016	&		&	0.013	&		
+\backslash
+
+\backslash
+ combiner	&	0.022	&	0.118	&	0.000***	&	0.014	&	0.273	
+\backslash
+
+\backslash
+ 	&	0.147	&	0.019	&		&	0.012	&		
+\backslash
+
+\backslash
+ bought_seed	&	0.065	&	0.075	&	0.000***	&	0.011	&	0.497	
+\backslash
+
+\backslash
+ 	&	0.246	&	0.017	&		&	0.014	&		
+\backslash
+
+\backslash
+ chem	&	0.063	&	0.043	&	0.010	&	0.008	&	0.612	
+\backslash
+
+\backslash
+ 	&	0.244	&	0.015	&		&	0.014	&		
+\backslash
+
+\backslash
+ index	&	0.268	&	0.112	&	0.000***	&	0.036	&	0.050*	
+\backslash
+
+\backslash
+ 	&	0.443	&	0.017	&		&	0.017	&		
 \backslash
 
 \backslash
  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-4}   
-\backslash
-cline{5-7}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-&  
-\backslash
-multicolumn{6}{c}{
-\backslash
-textit{decision was made by husband}} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-time plant	&	0.306	&	-0.027	&	0.123	&	0.277	&	0.003	&	0.881	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-space	&	0.320	&	-0.035	&	0.049	&	0.296	&	-0.011	&	0.544	
-\backslash
-
-\backslash
- striga	&	0.241	&	-0.018	&	0.263	&	0.226	&	-0.003	&	0.835	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-time weed	&	0.300	&	-0.040	&	0.018	&	0.264	&	-0.004	&	0.817	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-use fert	&	0.267	&	-0.050	&	0.044	&	0.263	&	-0.047	&	0.062	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-seed	&	0.358	&	-0.029	&	0.246	&	0.320	&	0.009	&	0.717	
-\backslash
-
-\backslash
- combiner	&	0.252	&	-0.028	&	0.327	&	0.218	&	0.007	&	0.809	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-bought seed	&	0.328	&	-0.068	&	0.006	&	0.234	&	0.026	&	0.297	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-chem	&	0.401	&	-0.036	&	0.193	&	0.359	&	0.008	&	0.773	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-decision index	&	0.452	&	-0.043	&	0.022	&	0.425	&	-0.015	&	0.415	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-&  
-\backslash
-multicolumn{6}{c}{
-\backslash
-textit{decision was made by wife}} 
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-time plant	&	0.184	&	-0.020	&	0.143	&	0.166	&	-0.002	&	0.886	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-space	&	0.170	&	-0.028	&	0.045	&	0.131	&	0.011	&	0.411	
-\backslash
-
-\backslash
- striga	&	0.127	&	-0.009	&	0.469	&	0.120	&	-0.002	&	0.862	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-time weed	&	0.195	&	-0.021	&	0.140	&	0.174	&	0.000	&	0.988	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-use fert	&	0.138	&	-0.016	&	0.376	&	0.115	&	0.008	&	0.664	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-seed	&	0.096	&	-0.040	&	0.008	&	0.059	&	-0.002	&	0.901	
-\backslash
-
-\backslash
- combiner	&	0.065	&	-0.042	&	0.009	&	0.026	&	-0.003	&	0.839	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-bought seed	&	0.115	&	-0.026	&	0.088	&	0.085	&	0.004	&	0.787	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-chem	&	0.102	&	-0.013	&	0.386	&	0.079	&	0.010	&	0.500	
-\backslash
-
-\backslash
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-decision index	&	0.320	&	-0.020	&	0.229	&	0.301	&	-0.002	&	0.921	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-&  
-\backslash
-multicolumn{6}{c}{
-\backslash
-textit{decision was made jointly}} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-time plant	&	0.238	&	0.007	&	0.660	&	0.243	&	0.002	&	0.919	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-space	&	0.245	&	0.022	&	0.174	&	0.268	&	0.000	&	0.980	
-\backslash
-
-\backslash
- striga	&	0.203	&	0.030	&	0.041	&	0.233	&	0.000	&	0.986	
-\backslash
-
-\backslash
- weed	&	0.268	&	0.023	&	0.166	&	0.291	&	0.000	&	0.992	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-use fert	&	0.067	&	0.022	&	0.110	&	0.085	&	0.004	&	0.769	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-seed	&	0.042	&	-0.005	&	0.613	&	0.033	&	0.004	&	0.728	
-\backslash
-
-\backslash
- combiner	&	0.010	&	-0.012	&	0.145	&	0.004	&	-0.006	&	0.497	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-bought seed	&	0.175	&	0.034	&	0.004	&	0.230	&	-0.021	&	0.084	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-chem	&	0.049	&	0.025	&	0.069	&	0.076	&	-0.002	&	0.903	
-\backslash
-
-\backslash
-  index	&	0.409	&	0.011	&	0.583	&	0.421	&	-0.002	&	0.930	
-\backslash
-
-\backslash
-  
 \end_layout
 
 \begin_layout Plain Layout
@@ -6843,7 +8474,7 @@ end{tabular}
 
 
 \backslash
-end{center}  
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6855,15 +8486,22 @@ footnotesize
 
 \begin_layout Plain Layout
 
-note: Reported p-values are based on randomization inference.
+note: The comparison group consists of households where the video was shown
+ to the male co-head only.
+ In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ The second column reports differences (and standard errors of the differences)
+ between the comparison group and each treatment group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level after correcting for multiple hypothesis testing using a family-wise
+ sharp null (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -6873,30 +8511,309 @@ note: Reported p-values are based on randomization inference.
 \end_layout
 
 \begin_layout Standard
-The third panel reports the proportions of plots where decisions related
- to particular technologies were taken by the husband and the wife jointly.
- We see that joint decision making was generally more likely when the video
- was shown to the couple, but the difference is significant for only two
- variables.
- First, while husband and wife jointly decided on how to fight striga on
- 20.3 percent of plots in households where the video was shown to only one
- of the spouses separately, this percentage increased by 3 percentage points
- in the sample of households that were shown the video together.
- We also find that, among households that reported using fertilizers, the
- proportion of plots on which it was jointly decided which fertilizers to
- use was significantly higher among the subgroup that saw the video 
-\change_deleted 973716962 1528300989
-joinlty
-\change_inserted 973716962 1528300989
-jointly
-\change_unchanged
-.
- Second, while 17.5 percent of households in the group where the video was
- shown to only one individual report that they both decided to buy seed,
- this was 3.4 percentage points higher among the households where the video
- was shown to the couple.
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:dectechfem"
+
+\end_inset
+
+ shows corresponding results for women decision making.
+ The reduction in male decision making about crop management as a result
+ of more inclusive extension is mirrored in an increase in decision making
+ by women within the household.
+ However, even after the increase in decision making of women when they
+ are shown a video, women are still less likely than men to decided about
+ adoption of practices on an average plot.
+ For instance, when the male co-head is shown the video individually, women
+ report they make adoption decisions on only 6.2 percent of plots.
+ This percentage increases to 18.8 percent if the video was shown to the
+ female co-head alone.
+ This is still significantly lower than the 40 percent of plots the men
+ make decisions on if they get to see the video.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on adoption decision - jointly managed plots
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:dectechboth"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{1}{c}{
+\backslash
+textit{rec=male}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{rec=female}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{rec=couple}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	&	ATE	&		P-value	
+\backslash
+
+\backslash
+										
+\end_layout
+
+\begin_layout Plain Layout
+
+first_day	&	0.238	&	0.001	&	0.931	&	0.009	&	0.612	
+\backslash
+
+\backslash
+ 	&	0.426	&	0.016	&		&	0.016	&		
+\backslash
+
+\backslash
+ space	&	0.242	&	0.001	&	0.944	&	0.025	&	0.177	
+\backslash
+
+\backslash
+ 	&	0.429	&	0.016	&		&	0.016	&		
+\backslash
+
+\backslash
+ striga	&	0.181	&	0.032	&	0.051	&	0.048	&	0.005	
+\backslash
+
+\backslash
+ 	&	0.385	&	0.015	&		&	0.015	&		
+\backslash
+
+\backslash
+ weed	&	0.253	&	0.022	&	0.240	&	0.035	&	0.059	
+\backslash
+
+\backslash
+ 	&	0.435	&	0.016	&		&	0.017	&		
+\backslash
+
+\backslash
+ use_fert	&	0.062	&	0.008	&	0.606	&	0.026	&	0.085	
+\backslash
+
+\backslash
+ 	&	0.241	&	0.015	&		&	0.015	&		
+\backslash
+
+\backslash
+ seed	&	0.055	&	-0.020	&	0.101	&	-0.013	&	0.305	
+\backslash
+
+\backslash
+ 	&	0.229	&	0.011	&		&	0.012	&		
+\backslash
+
+\backslash
+ combiner	&	0.022	&	-0.002	&	0.849	&	-0.013	&	0.178	
+\backslash
+
+\backslash
+ 	&	0.147	&	0.010	&		&	0.009	&		
+\backslash
+
+\backslash
+ bought_seed	&	0.196	&	-0.019	&	0.159	&	0.026	&	0.068	
+\backslash
+
+\backslash
+ 	&	0.397	&	0.013	&		&	0.014	&		
+\backslash
+
+\backslash
+ chem	&	0.062	&	-0.008	&	0.573	&	0.021	&	0.205	
+\backslash
+
+\backslash
+ 	&	0.241	&	0.013	&		&	0.014	&		
+\backslash
+
+\backslash
+ index	&	0.406	&	-0.001	&	0.955	&	0.012	&	0.585	
+\backslash
+
+\backslash
+ 	&	0.491	&	0.018	&		&	0.018	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: The comparison group consists of households where the video was shown
+ to the male co-head only.
+ In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ The second column reports differences (and standard errors of the differences)
+ between the comparison group and each treatment group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level after correcting for multiple hypothesis testing using a family-wise
+ sharp null (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:dectechboth"
+
+\end_inset
+
+ reports the proportions of plots where decisions related to particular
+ technologies were taken by the husband and the wife jointly.
+ We find that showing the video to the woman co-head alone does not change
+ the likelihood that decisions are taken jointly by both co-heads relative
+ to cases where the video was shown only to the male co-head.
+ Showing the video to both spouses jointly does seem to increase the likelihood
+ of joint decision making for some practices, but none is significant after
+ correcting for multiple comparisons.
  We did not find any significant effect of changing the messenger in the
  video on the likelihood that decisions are taken by the both spouses together.
+ The results for the analysis of the messenger factor are reported in the
+ annex (Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mdectechman-1"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mdectechfem-1"
+
+\end_inset
+
+, and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mdectechboth-1"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Subsection*
@@ -7818,7 +9735,7 @@ Appendix
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7860,7 +9777,7 @@ hline
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{+IVR}}  
+textit{+IVR (n=1,894)}}  
 \backslash
 
 \backslash
@@ -7988,7 +9905,7 @@ wellbeing index	&	-0.001	&	-0.013	&	0.640
 \backslash
 multicolumn{3}{c}{
 \backslash
-textit{+sms}}  
+textit{+sms (n=1,263)}}  
 \backslash
 
 \backslash
@@ -8153,6 +10070,1060 @@ note: In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
  In the second column, differences (and standard errors of the differences)
  between each treatment group and the comparison  group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level after correcting for multiple hypothesis testing using a family-wise
+ sharp null (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact of messenger on individual level knowledge
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:M_ind_know"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{1}{c}{
+\backslash
+textit{mes = male}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{mes = female}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{mes = couple}}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6}  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	&	ATE	&		P-value	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Man knows optimal spacing	&	0.187	&	0.044	&	0.023	&	0.001	&	0.959	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	0.390	&	0.019	&		&	0.018	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Man knows inputs are best combined	&	0.849	&	0.033	&	0.0412 &	0.008	&	0.635	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	0.358	&	0.016	&		&	0.017	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Man knows optimal timing for first weeding 	&	0.888	&	-0.006	&	0.677 &	-0.019	&	0.217
+	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	0.316	&	0.015	&		&	0.016	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Man knows when best to spray against Armyworm 	&	0.229	&	0.013	&	0.673	&	-0.003	&	0.2
+14	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	0.421	&	0.020	&		&	0.020	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knowledge index man	&	0.002	&	-0.004	&	0.873	&	-0.022	&	0.34	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	0.472	&	0.023	&		&	0.024	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6}   
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{1}{c}{
+\backslash
+textit{mes = male}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{mes = female}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{mes = couple}}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	&	ATE	&		P-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Woman knows optimal spacing	&	0.169	&	0.003	&	0.875	&	0.011	&	0.525	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	0.375	&	0.018	&		&	0.018	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Woman knows inputs are best combined	&	0.848	&	0.020	&	0.217	&	-0.010	&	0.544	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	0.359	&	0.016	&		&	0.017	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Wonan knows optimal timing for first weeding 	&	0.888	&	0.005	&	0.736	&	-0.011	&	0.47
+3	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	0.316	&	0.015	&		&	0.015	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Woman knows when best to spray against Armyworm 	&	0.203	&	-0.004	&	0.727	&	-0.024	&
+	0.485	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	0.403	&	0.019	&		&	0.018	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knowledge index woman	&	-0.006	&	0.013	&	0.554	&	-0.007	&	0.777	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	0.469	&	0.022	&		&	0.024	&		
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: The comparison group consists of households where the information
+ in the video was given by a male actor.
+ In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ The second column reports differences (and standard errors of the differences)
+ between the comparison group and each treatment group.
+ Reported p-values are based on randomization inference (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact of messenger on male decision making
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Mdectechman-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{1}{c}{
+\backslash
+textit{mes=male}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{mes=female}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{mes=couple}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6}    
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	&	ATE	&		P-value	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+first_day	&	0.308	&	-0.014	&	0.507	&	-0.005	&	0.799	
+\backslash
+
+\backslash
+ 	&	0.462	&	0.017	&		&	0.017	&		
+\backslash
+
+\backslash
+ space	&	0.324	&	0.004	&	0.847	&	-0.009	&	0.640	
+\backslash
+
+\backslash
+ 	&	0.468	&	0.017	&		&	0.017	&		
+\backslash
+
+\backslash
+ striga	&	0.249	&	-0.012	&	0.524	&	-0.010	&	0.591	
+\backslash
+
+\backslash
+ 	&	0.433	&	0.016	&		&	0.016	&		
+\backslash
+
+\backslash
+ weed	&	0.302	&	-0.013	&	0.512	&	-0.011	&	0.565	
+\backslash
+
+\backslash
+ 	&	0.459	&	0.017	&		&	0.017	&		
+\backslash
+
+\backslash
+ use_fert	&	0.330	&	-0.043	&	0.155	&	-0.068	&	0.017	
+\backslash
+
+\backslash
+ 	&	0.471	&	0.026	&		&	0.027	&		
+\backslash
+
+\backslash
+ seed	&	0.356	&	-0.030	&	0.337	&	-0.006	&	0.848	
+\backslash
+
+\backslash
+ 	&	0.479	&	0.025	&		&	0.026	&		
+\backslash
+
+\backslash
+ combiner	&	0.237	&	-0.003	&	0.922	&	0.008	&	0.821	
+\backslash
+
+\backslash
+ 	&	0.426	&	0.029	&		&	0.031	&		
+\backslash
+
+\backslash
+ bought_seed	&	0.292	&	-0.003	&	0.931	&	0.025	&	0.375	
+\backslash
+
+\backslash
+ 	&	0.455	&	0.025	&		&	0.026	&		
+\backslash
+
+\backslash
+ chem	&	0.422	&	-0.061	&	0.050	&	-0.024	&	0.442	
+\backslash
+
+\backslash
+ 	&	0.494	&	0.026	&		&	0.027	&		
+\backslash
+
+\backslash
+ index	&	0.471	&	-0.019	&	0.378	&	-0.026	&	0.223	
+\backslash
+
+\backslash
+ 	&	0.499	&	0.018	&		&	0.018	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: The comparison group consists of households where the video was shown
+ to the male co-head only.
+ In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ The second column reports differences (and standard errors of the differences)
+ between the comparison group and each treatment group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level after correcting for multiple hypothesis testing using a family-wise
+ sharp null (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact of messenger on female decision making
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Mdectechfem-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{1}{c}{
+\backslash
+textit{mes=male}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{mes=female}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{mes=couple}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6}    
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	&	ATE	&		P-value	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+first_day	&	0.183	&	-0.001	&	0.939	&	-0.002	&	0.896	
+\backslash
+
+\backslash
+ 	&	0.387	&	0.014	&		&	0.014	&		
+\backslash
+
+\backslash
+ space	&	0.169	&	-0.008	&	0.601	&	0.008	&	0.644	
+\backslash
+
+\backslash
+ 	&	0.375	&	0.014	&		&	0.014	&		
+\backslash
+
+\backslash
+ striga	&	0.136	&	0.005	&	0.758	&	0.000	&	0.977	
+\backslash
+
+\backslash
+ 	&	0.342	&	0.013	&		&	0.013	&		
+\backslash
+
+\backslash
+ weed	&	0.205	&	-0.018	&	0.283	&	-0.008	&	0.675	
+\backslash
+
+\backslash
+ 	&	0.404	&	0.015	&		&	0.015	&		
+\backslash
+
+\backslash
+ use_fert	&	0.102	&	0.028	&	0.153	&	0.022	&	0.262	
+\backslash
+
+\backslash
+ 	&	0.303	&	0.018	&		&	0.019	&		
+\backslash
+
+\backslash
+ seed	&	0.083	&	0.020	&	0.251	&	0.009	&	0.622	
+\backslash
+
+\backslash
+ 	&	0.276	&	0.016	&		&	0.015	&		
+\backslash
+
+\backslash
+ combiner	&	0.057	&	0.014	&	0.461	&	0.003	&	0.859	
+\backslash
+
+\backslash
+ 	&	0.231	&	0.017	&		&	0.017	&		
+\backslash
+
+\backslash
+ bought_seed	&	0.077	&	0.030	&	0.091	&	0.020	&	0.260	
+\backslash
+
+\backslash
+ 	&	0.266	&	0.016	&		&	0.016	&		
+\backslash
+
+\backslash
+ chem	&	0.079	&	-0.003	&	0.845	&	0.009	&	0.651	
+\backslash
+
+\backslash
+ 	&	0.269	&	0.014	&		&	0.015	&		
+\backslash
+
+\backslash
+ index	&	0.314	&	0.010	&	0.577	&	0.004	&	0.841	
+\backslash
+
+\backslash
+ 	&	0.464	&	0.017	&		&	0.017	&		
+\backslash
+
+\backslash
+ 										
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: The comparison group consists of households where the video was shown
+ to the male co-head only.
+ In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ The second column reports differences (and standard errors of the differences)
+ between the comparison group and each treatment group.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
+ level after correcting for multiple hypothesis testing using a family-wise
+ sharp null (10,000 permutations).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact of messenger on adoption decision - jointly managed plots
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Mdectechboth-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  
+\backslash
+multicolumn{1}{c}{
+\backslash
+textit{mes=male}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{mes=female}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{mes=couple}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	mean	&	ATE	&		P-value	&	ATE	&		P-value	
+\backslash
+
+\backslash
+										
+\end_layout
+
+\begin_layout Plain Layout
+
+first_day	&	0.243	&	-0.004	&	0.833	&	-0.001	&	0.965	
+\backslash
+
+\backslash
+ 	&	0.429	&	0.016	&		&	0.016	&		
+\backslash
+
+\backslash
+ space	&	0.255	&	-0.008	&	0.655	&	-0.005	&	0.784	
+\backslash
+
+\backslash
+ 	&	0.436	&	0.016	&		&	0.016	&		
+\backslash
+
+\backslash
+ striga	&	0.208	&	-0.002	&	0.905	&	-0.001	&	0.950	
+\backslash
+
+\backslash
+ 	&	0.406	&	0.015	&		&	0.015	&		
+\backslash
+
+\backslash
+ weed	&	0.269	&	0.006	&	0.747	&	0.002	&	0.904	
+\backslash
+
+\backslash
+ 	&	0.444	&	0.016	&		&	0.016	&		
+\backslash
+
+\backslash
+ use_fert	&	0.064	&	0.014	&	0.378	&	0.011	&	0.479	
+\backslash
+
+\backslash
+ 	&	0.245	&	0.015	&		&	0.015	&		
+\backslash
+
+\backslash
+ seed	&	0.038	&	0.012	&	0.323	&	0.009	&	0.424	
+\backslash
+
+\backslash
+ 	&	0.191	&	0.011	&		&	0.011	&		
+\backslash
+
+\backslash
+ combiner	&	0.019	&	0.000	&	0.982	&	-0.007	&	0.483	
+\backslash
+
+\backslash
+ 	&	0.136	&	0.010	&		&	0.009	&		
+\backslash
+
+\backslash
+ bought_seed	&	0.196	&	0.018	&	0.227	&	-0.012	&	0.376	
+\backslash
+
+\backslash
+ 	&	0.397	&	0.014	&		&	0.014	&		
+\backslash
+
+\backslash
+ chem	&	0.062	&	0.007	&	0.675	&	0.002	&	0.888	
+\backslash
+
+\backslash
+ 	&	0.242	&	0.013	&		&	0.013	&		
+\backslash
+
+\backslash
+ index	&	0.412	&	-0.004	&	0.852	&	-0.004	&	0.839	
+\backslash
+
+\backslash
+ 	&	0.492	&	0.018	&		&	0.018	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize   
+\end_layout
+
+\begin_layout Plain Layout
+
+note: The comparison group consists of households where the video was shown
+ to the male co-head only.
+ In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ The second column reports differences (and standard errors of the differences)
+ between the comparison group and each treatment group.
  Reported p-values are based on randomization inference (10,000 permutations);
  ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
  level after correcting for multiple hypothesis testing using a family-wise

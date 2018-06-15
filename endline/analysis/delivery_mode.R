@@ -60,18 +60,10 @@ RI <- function(dep, indep, dta , nr_repl = 1000) {
 	return(sum(oper)/nr_repl)
 }
 
-### and also a function to adjst standard errors
+
 RI_FWER <- function(deps, indep, dta ,p_vals , nr_repl = 1000) {
-#deps <-c("log_prod_tot","log_area_tot","log_yield_av","yield_better")
-#indep <- "(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)"
-#dta <- dta_bal2
-#pvals <- c(0.7791,0.0264,0.0154	,0.5528)
-#nr_repl <- 1000
-#RI_FWER(c("know_space","know_combine","know_weed", "know_armyworm"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)",dta, c(0.0001,0.0056,0.3215,0.2116))
-#RI_FWER(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)",dta_bal2, c(0.7791	,0.0264	,0.0154	,0.5528))
-#RI_FWER(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)",dta_bal2, c(0.7791	,0.0264	,0.0154	,0.5528))
-
-
+### function to control for FWER using simulation (familywise sharp null)
+### inspired on https://egap.org/methods-guides/10-things-you-need-know-about-multiple-comparisons
 threshold_finder<- function(threshold){
   mean(apply(oper, 2, x <- function(x) sum(x <= threshold) > 0 ))
 }
@@ -214,7 +206,7 @@ res_itt_know[9,3,h] <-  indexer[[2]]
 
 
 res_itt_know <- Bcorr(c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, res_itt_know ,h)
-RI_FWER(c("know_space","know_combine","know_weed", "know_armyworm"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)",dta, c(0.0001,0.0056,0.3215,0.2116), 10000)
+RI_FWER(c("know_space","know_combine","know_weed", "know_armyworm"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient)",dta, c(0.0001,0.0056,0.3215,0.2116), 10000)
 
 ################################# practices #############################
 ###timely planting
@@ -338,9 +330,9 @@ res_itt_pract <- Bcorr( c("day_one","space","striga","weed", "fert","impseed", "
 res_itt_fert <- Bcorr(c("fert_dap","fert_urea","fert_org"),dta_bal, res_itt_fert ,h)
 res_itt_seed <- Bcorr(c("hybrid","opv"),dta_bal, res_itt_seed ,h)
 
-RI_FWER(c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)",dta_bal, c(0.4287,0.0008,0.0132,0.7909,0.0091,0.3616,0.0767,0.3091,0.1425,0.7879), 10000)
-RI_FWER(c("fert_dap","fert_urea","fert_org"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)",dta_bal, c(0.3355,0.0167,0.0135),10000)
-RI_FWER(c("hybrid","opv"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)",dta_bal, c(0.353,0.561))
+RI_FWER(c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient)",dta_bal, c(0.4287,0.0008,0.0132,0.7909,0.0091,0.3616,0.0767,0.3091,0.1425,0.7879), 10000)
+RI_FWER(c("fert_dap","fert_urea","fert_org"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) ",dta_bal, c(0.3355,0.0167,0.0135),10000)
+RI_FWER(c("hybrid","opv"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient)",dta_bal, c(0.353,0.561))
 
 ################################# production ###########################
 ##### does the video increases production related outcomes?
@@ -413,7 +405,7 @@ dta_bal2 <- trim("log_yield_av", dta_bal2, .05)
 
 
 res_itt_prod <- Bcorr(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),dta_bal2, res_itt_prod ,h)
-RI_FWER(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) + called + (totsms >0)",dta_bal2, c(0.7791	,0.0264	,0.0154	,0.5528))
+RI_FWER(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient)",dta_bal2, c(0.7791	,0.0264	,0.0154	,0.5528))
 
 dta_bal2$log_area_tot <- -dta_bal2$log_area_tot
 
