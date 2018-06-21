@@ -1,4 +1,3 @@
-###This file does most of the preparations - it also loads functions that are used in subsequent analyses
 ### first run anonymize.R on raw data to remove identifiers
 
 dta <- read.csv("/home/bjvca/data/projects/digital green/endline/data/endline.csv")
@@ -2861,10 +2860,16 @@ dta$eatenough[is.na(dta$q112) & is.na( dta$spouse2r112)] <- NA
 dta$man_tells_wife <- ifelse(dta$gender1=="man",dta$q100 <2,dta$spouse2r100 <2)
 dta$wife_tells_man <-  ifelse(dta$gender1=="woman",dta$q100 <2,dta$spouse2r100 <2)
 dta$both_tell <- dta$man_tells_wife & dta$wife_tells_man
+dta$both_tell[is.na(dta$man_tells_wife) | is.na( dta$wife_tells_man)] <- NA
 
 dta$wife_listens <- ifelse(dta$gender1=="man", dta$q101 == 2,dta$spouse2r101 ==2)
+dta$wife_listens[is.na(dta$wife_listens) & !is.na(dta$man_tells_wife)] <- FALSE
 dta$man_listens <- ifelse(dta$gender1=="woman", dta$q101 == 2,dta$spouse2r101 ==2)
+dta$man_listens[is.na(dta$man_listens) & !is.na(dta$wife_tells_man)] <- FALSE
 dta$spouses_listen  <- dta$wife_listens & dta$man_listens
+dta$spouses_listen[is.na(dta$wife_listens) | is.na( dta$man_listens)] <- NA
+dta$spouses_listen[is.na(dta$spouses_listen) & !is.na(dta$both_tell)] <- FALSE
+
 
 dta[ paste("yield_sp1",paste("_pl",1:5, sep=""), sep="")] <- dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")]/dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")]
 dta[ paste("yield_sp2",paste("_pl",1:5, sep=""), sep="")] <- dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")]/dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")]

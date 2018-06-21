@@ -3,7 +3,7 @@ source("/home/bjvca/data/projects/digital green/endline/data/init.R")
 #source("functions.R")
 #dta <- read.csv("AWS.csv")
 #set totrep to zero if you do not want simulation based inferecne
-totrep <- 10000
+totrep <- 0
 library(ggplot2)
 library(doParallel)
 library(data.table)
@@ -26,6 +26,11 @@ res_itt_prod <- array(NA, c(10,4,3))
 rownames(res_itt_prod) <- c("prod","","area","","yield","","yield_better","","prod_index","")
 prod_plot <- data.frame(matrix(NA, 4,4))
 names(prod_plot) <- c("x","y","ylo","yhi")
+fert_plot <- data.frame(matrix(NA, 4,4))
+names(fert_plot) <- c("x","y","ylo","yhi")
+seed_plot <- data.frame(matrix(NA, 4,4))
+names(seed_plot) <- c("x","y","ylo","yhi")
+
 res_itt_wel <-  array(NA, c(12,4,3))
 rownames(res_itt_wel) <- c("better_av","","better_6m","","eatpref","","eatenough","","log_cons","","welfare_index","")
 res_itt_disp <-  array(NA, c(8,4,3))
@@ -91,22 +96,23 @@ return( list=c(thresholds[max(which(type_I_rate <= 0.05))],thresholds[max(which(
 
 
 ### wrapper function to make a graph to be used for presentations
-credplot.gg <- function(d){
+credplot.gg <- function(d,units){
  # d is a data frame with 4 columns
  # d$x gives variable names
  # d$y gives center point
  # d$ylo gives lower limits
  # d$yhi gives upper limits
  require(ggplot2)
- p <- ggplot(d, aes(x=x, y=y, ymin=ylo, ymax=yhi))+
- geom_pointrange()+
+ p <- ggplot(d, aes(x=x, y=y, ymin=ylo, ymax=yhi, colour=as.factor(grp)))+
+ geom_pointrange(position=position_dodge(-.4))+
  geom_hline(yintercept = 0, linetype=2)+
  coord_flip()+
- xlab('') + ylab('SDs')+ theme(axis.text=element_text(size=18),
-        axis.title=element_text(size=14,face="bold"))+
-    geom_errorbar(aes(ymin=ylo, ymax=yhi),width=0,cex=1.5)
+ xlab('') + ylab(units)+ theme(axis.text=element_text(size=18),
+        axis.title=element_text(size=14,face="bold"),legend.text=element_text(size=18), legend.title=element_blank())+
+    geom_errorbar(aes(ymin=ylo, ymax=yhi),position=position_dodge(-.4),width=0,cex=1.5) 
  return(p)
 }
+
 ###@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 ## alternative way to correct for multiple hypotheses, inspried on: http://blogs.worldbank.org/impactevaluations/tools-of-the-trade-a-quick-adjustment-for-multiple-hypothesis-testing
@@ -204,9 +210,13 @@ res_itt_know[9,3,h] <-  indexer[[2]]
 ###}
 ###}
 
+prod_plot[1,1] <- "knowledge"
+prod_plot[1,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
+prod_plot[1,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 
-res_itt_know <- Bcorr(c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, res_itt_know ,h)
-RI_FWER(c("know_space","know_combine","know_weed", "know_armyworm"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient)",dta, c(0.0001,0.0056,0.3215,0.2116), 10000)
+
+#res_itt_know <- Bcorr(c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, res_itt_know ,h)
+#RI_FWER(c("know_space","know_combine","know_weed", "know_armyworm"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient)",dta, c(0.0001,0.0056,0.3215,0.2116), 10000)
 
 ################################# practices #############################
 ###timely planting
@@ -244,12 +254,20 @@ res_itt_pract[9,2,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~"
 res_itt_pract[10,2,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_pract[9,3,h]  <- ifelse(totrep >0, RI("fert",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
+fert_plot[1,1] <- "all fertilizer"
+fert_plot[1,3:4] <- confint(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /  mean(dta_bal$fert[dta_bal$messenger == "ctrl"], na.rm=T)
+fert_plot[1,2] <-  summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] /  mean(dta_bal$fert[dta_bal$messenger == "ctrl"], na.rm=T)
+
 #### fert = DAP/NPK
 res_itt_fert[1,1,h]  <-  mean(dta_bal$fert_dap[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_fert[2,1,h]  <-  sd(dta_bal$fert_dap[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_fert[1,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_fert[2,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_fert[1,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+fert_plot[2,1] <- "DAP/NPK"
+fert_plot[2,3:4] <- confint(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /  mean(dta_bal$fert_dap[dta_bal$messenger == "ctrl"], na.rm=T)
+fert_plot[2,2] <-  summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] /  mean(dta_bal$fert_dap[dta_bal$messenger == "ctrl"], na.rm=T)
 
 #### fert = urea
 res_itt_fert[3,1,h]  <-  mean(dta_bal$fert_urea[dta_bal$messenger == "ctrl"], na.rm=T)
@@ -258,12 +276,20 @@ res_itt_fert[3,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep 
 res_itt_fert[4,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_fert[3,3,h]  <- ifelse(totrep >0, RI("fert_urea",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
+fert_plot[3,1] <- "urea"
+fert_plot[3,3:4] <- confint(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /  mean(dta_bal$fert_urea[dta_bal$messenger == "ctrl"], na.rm=T)
+fert_plot[3,2] <-  summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] /  mean(dta_bal$fert_urea[dta_bal$messenger == "ctrl"], na.rm=T)
+
 #### fert = organic
 res_itt_fert[5,1,h]  <-  mean(dta_bal$fert_org[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_fert[6,1,h]  <-  sd(dta_bal$fert_org[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_fert[5,2,h]  <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_fert[6,2,h]  <- summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_fert[5,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+fert_plot[4,1] <- "organic"
+fert_plot[4,3:4] <- confint(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /  mean(dta_bal$fert_org[dta_bal$messenger == "ctrl"], na.rm=T)
+fert_plot[4,2] <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] /  mean(dta_bal$fert_org[dta_bal$messenger == "ctrl"], na.rm=T)
 
 ##improved seed  
 res_itt_pract[11,1,h]  <-  mean(dta_bal$impseed[dta_bal$messenger == "ctrl"], na.rm=T)
@@ -272,12 +298,21 @@ res_itt_pract[11,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep 
 res_itt_pract[12,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_pract[11,3,h]  <- ifelse(totrep >0, RI("impseed",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
+seed_plot[1,1] <- "all seed"
+seed_plot[1,3:4] <- confint(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /  mean(dta_bal$impseed[dta_bal$messenger == "ctrl"], na.rm=T)
+seed_plot[1,2] <-  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] /  mean(dta_bal$impseed[dta_bal$messenger == "ctrl"], na.rm=T)
+
+
+
 ## hybrid
 res_itt_seed[1,1,h]  <-  mean(dta_bal$hybrid[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_seed[2,1,h]  <-  sd(dta_bal$hybrid[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_seed[1,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_seed[2,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_seed[1,3,h] <- ifelse(totrep >0, RI("hybrid",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+seed_plot[2,1] <- "hybrid"
+seed_plot[2,3:4] <- confint(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /  mean(dta_bal$hybrid[dta_bal$messenger == "ctrl"], na.rm=T)
+seed_plot[2,2] <-  summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] /  mean(dta_bal$hybrid[dta_bal$messenger == "ctrl"], na.rm=T)
 
 ## opv
 res_itt_seed[3,1,h]  <-  mean(dta_bal$opv[dta_bal$messenger == "ctrl"], na.rm=T)
@@ -285,6 +320,10 @@ res_itt_seed[4,1,h]  <-  sd(dta_bal$opv[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_seed[3,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_seed[4,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_seed[3,3,h] <- ifelse(totrep >0, RI("opv",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+seed_plot[3,1] <- "open pollinated"
+seed_plot[3,3:4] <- confint(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /  mean(dta_bal$opv[dta_bal$messenger == "ctrl"], na.rm=T)
+seed_plot[3,2] <-  summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] /  mean(dta_bal$opv[dta_bal$messenger == "ctrl"], na.rm=T)
 
 ##combiner
 res_itt_pract[13,1,h]  <-  mean(dta_bal$combiner[dta_bal$messenger == "ctrl"], na.rm=T)
@@ -299,6 +338,10 @@ res_itt_pract[16,1,h]  <-  sd(dta_bal$bought_seed[dta_bal$messenger == "ctrl"], 
 res_itt_pract[15,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_pract[16,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_pract[15,3,h]  <- ifelse(totrep >0, RI("bought_seed",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+seed_plot[4,1] <- "bought seed"
+seed_plot[4,3:4] <- confint(lm(as.formula(paste("bought_seed", treatment, sep ="~"), level=.9), data=dta_bal))[2,] /  mean(dta_bal$bought_seed[dta_bal$messenger == "ctrl"], na.rm=T)
+seed_plot[4,2] <-  summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] /  mean(dta_bal$bought_seed[dta_bal$messenger == "ctrl"], na.rm=T)
+
 
 #### used chemicals
 res_itt_pract[17,1,h]  <-  mean(dta_bal$chem[dta_bal$messenger == "ctrl"], na.rm=T)
@@ -326,13 +369,18 @@ res_itt_pract[21,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
 res_itt_pract[22,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_itt_pract[21,3,h] <-  indexer[[2]]
 
-res_itt_pract <- Bcorr( c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),dta_bal, res_itt_pract ,h)
-res_itt_fert <- Bcorr(c("fert_dap","fert_urea","fert_org"),dta_bal, res_itt_fert ,h)
-res_itt_seed <- Bcorr(c("hybrid","opv"),dta_bal, res_itt_seed ,h)
+prod_plot[2,1] <- "adoption"
+prod_plot[2,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
+prod_plot[2,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 
-RI_FWER(c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient)",dta_bal, c(0.4287,0.0008,0.0132,0.7909,0.0091,0.3616,0.0767,0.3091,0.1425,0.7879), 10000)
-RI_FWER(c("fert_dap","fert_urea","fert_org"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) ",dta_bal, c(0.3355,0.0167,0.0135),10000)
-RI_FWER(c("hybrid","opv"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient)",dta_bal, c(0.353,0.561))
+
+#res_itt_pract <- Bcorr( c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),dta_bal, res_itt_pract ,h)
+#res_itt_fert <- Bcorr(c("fert_dap","fert_urea","fert_org"),dta_bal, res_itt_fert ,h)
+#res_itt_seed <- Bcorr(c("hybrid","opv"),dta_bal, res_itt_seed ,h)
+
+#RI_FWER(c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient)",dta_bal, c(0.4287,0.0008,0.0132,0.7909,0.0091,0.3616,0.0767,0.3091,0.1425,0.7879), 10000)
+#RI_FWER(c("fert_dap","fert_urea","fert_org"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient) ",dta_bal, c(0.3355,0.0167,0.0135),10000)
+#RI_FWER(c("hybrid","opv"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient)",dta_bal, c(0.353,0.561))
 
 ################################# production ###########################
 ##### does the video increases production related outcomes?
@@ -348,9 +396,6 @@ res_itt_prod[2,1,h] <- sd(dta_trim$log_prod_tot[dta_trim$messenger == "ctrl"], n
 res_itt_prod[1,2,h] <- summary(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
 res_itt_prod[2,2,h] <- summary(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
 res_itt_prod[1,3,h] <- ifelse(totrep >0, RI("log_prod_tot",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
-prod_plot[1,1] <- "production"
-prod_plot[1,3:4] <- confint(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))[2,]/  res_itt_prod[2,1,h]
-prod_plot[1,2] <- res_itt_prod[1,2,h] / res_itt_prod[2,1,h]
 
 ### area
 dta_bal2 <- subset(dta_bal, area_tot>0)
@@ -362,10 +407,6 @@ res_itt_prod[4,1,h] <- sd(dta_trim$log_area_tot[dta_trim$messenger == "ctrl"], n
 res_itt_prod[3,2,h] <- summary(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
 res_itt_prod[4,2,h] <- summary(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
 res_itt_prod[3,3,h] <- ifelse(totrep >0, RI("log_area_tot",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
-
-prod_plot[2,1] <- "area"
-prod_plot[2,3:4] <- confint(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))[2,]/  res_itt_prod[4,1,h]
-prod_plot[2,2] <- res_itt_prod[3,2,h] / res_itt_prod[4,1,h]
 
 ###yield
 
@@ -379,20 +420,12 @@ res_itt_prod[5,2,h] <- summary(lm(as.formula(paste("log_yield_av",treatment,sep 
 res_itt_prod[6,2,h] <- summary(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
 res_itt_prod[5,3,h] <- ifelse(totrep >0, RI("log_yield_av",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
 
-prod_plot[3,1] <- "yield"
-prod_plot[3,3:4] <- confint(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))[2,]/  res_itt_prod[6,1,h]
-prod_plot[3,2] <- res_itt_prod[5,2,h] / res_itt_prod[6,1,h]
-
 ### was yield better compared to normal year?
 res_itt_prod[7,1,h] <- mean(dta_bal$yield_better[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_prod[8,1,h] <- sd(dta_bal$yield_better[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_prod[7,2,h] <- summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
 res_itt_prod[8,2,h] <- summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
 res_itt_prod[7,3,h] <- ifelse(totrep >0, RI("yield_better",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
-
-prod_plot[4,1] <- "yield better?"
-prod_plot[4,3:4] <- confint(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_trim))[2,]/  res_itt_prod[8,1,h]
-prod_plot[4,2] <- res_itt_prod[7,2,h] / res_itt_prod[8,1,h]
 
 
 ###index
@@ -404,8 +437,8 @@ dta_bal2$log_yield_av <- log(dta_bal2$yield_av)
 dta_bal2 <- trim("log_yield_av", dta_bal2, .05)
 
 
-res_itt_prod <- Bcorr(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),dta_bal2, res_itt_prod ,h)
-RI_FWER(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient)",dta_bal2, c(0.7791	,0.0264	,0.0154	,0.5528))
+#res_itt_prod <- Bcorr(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),dta_bal2, res_itt_prod ,h)
+#RI_FWER(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),"(messenger != 'ctrl') +ivr+sms+as.factor(recipient)",dta_bal2, c(0.7791	,0.0264	,0.0154	,0.5528))
 
 dta_bal2$log_area_tot <- -dta_bal2$log_area_tot
 
@@ -416,13 +449,10 @@ res_itt_prod[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
 res_itt_prod[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_itt_prod[9,3,h] <-  indexer[[2]]
 
-prod_plot[5,1] <- "intensification index"
-prod_plot[5,3:4] <- confint(indexer[[1]])[2,]/ res_itt_prod[10,1,h]
-prod_plot[5,2] <- res_itt_prod[9,2,h] / res_itt_prod[10,1,h]
+prod_plot[3,1] <- "production"
+prod_plot[3,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
+prod_plot[3,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 
-prod_plot$x <- factor(prod_plot$x, levels=rev(prod_plot$x))
-
-credplot.gg(prod_plot)
 ################################## disposal ##########################
 #### maize consumed
 
@@ -512,6 +542,14 @@ res_itt_wel[12,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 res_itt_wel[11,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
 res_itt_wel[12,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_itt_wel[11,3,h] <-  indexer[[2]]
+
+prod_plot[4,1] <- "welfare"
+prod_plot[4,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
+prod_plot[4,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
+
+prod_plot$x <- factor(prod_plot$x, levels=rev(prod_plot$x))
+prod_plot$grp <- "video"
+
 
 
 h <- 2
@@ -603,6 +641,11 @@ res_itt_know[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
 res_itt_know[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_itt_know[9,3,h] <-  indexer[[2]]
 
+prod_plot[5,1] <- "knowledge"
+prod_plot[5,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
+prod_plot[5,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
+
+
 res_itt_know <- Bcorr(c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, res_itt_know ,h)
 
 ###if (wyfs_stat) {
@@ -648,7 +691,11 @@ res_itt_pract[9,1,h]  <-  mean(dta_bal$fert[dta_bal$ivr != "yes"], na.rm=T)
 res_itt_pract[10,1,h]  <-  sd(dta_bal$fert[dta_bal$ivr != "yes"], na.rm=T)
 res_itt_pract[9,2,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_pract[10,2,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
-res_itt_pract[9,3,h]  <- ifelse(totrep >0, RI("fert",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+res_itt_pract[9,3,h]  <- ifelse(totrep >0, RI("fert",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+ 
+fert_plot[5,1] <- "all fertilizer"
+fert_plot[5,3:4] <- confint(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /  mean(dta_bal$fert[dta_bal$ivr != "yes"], na.rm=T)
+fert_plot[5,2] <-  summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] / mean(dta_bal$fert[dta_bal$ivr != "yes"], na.rm=T)
 
 #### fert = DAP/NPK
 res_itt_fert[1,1,h]  <-  mean(dta_bal$fert_dap[dta_bal$ivr != "yes"], na.rm=T)
@@ -657,12 +704,19 @@ res_itt_fert[1,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep =
 res_itt_fert[2,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_fert[1,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
+fert_plot[6,1] <- "DAP/NPK"
+fert_plot[6,3:4] <- confint(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /  mean(dta_bal$fert_dap[dta_bal$ivr != "yes"], na.rm=T)
+fert_plot[6,2] <-  summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] / mean(dta_bal$fert_dap[dta_bal$ivr != "yes"], na.rm=T)
+
 #### fert = urea
 res_itt_fert[3,1,h]  <-  mean(dta_bal$fert_urea[dta_bal$ivr != "yes"], na.rm=T)
 res_itt_fert[4,1,h]  <-  sd(dta_bal$fert_urea[dta_bal$ivr != "yes"], na.rm=T)
 res_itt_fert[3,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_fert[4,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_fert[3,3,h]  <- ifelse(totrep >0, RI("fert_urea",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+fert_plot[7,1] <- "urea"
+fert_plot[7,3:4] <- confint(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /  mean(dta_bal$fert_urea[dta_bal$ivr != "yes"], na.rm=T)
+fert_plot[7,2] <-  summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] / mean(dta_bal$fert_urea[dta_bal$ivr != "yes"], na.rm=T)
 
 #### fert = organic
 res_itt_fert[5,1,h]  <-  mean(dta_bal$fert_org[dta_bal$ivr != "yes"], na.rm=T)
@@ -670,6 +724,9 @@ res_itt_fert[6,1,h]  <-  sd(dta_bal$fert_org[dta_bal$ivr != "yes"], na.rm=T)
 res_itt_fert[5,2,h]  <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_fert[6,2,h]  <- summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_fert[5,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+fert_plot[8,1] <- "organic"
+fert_plot[8,3:4] <- confint(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /  mean(dta_bal$fert_org[dta_bal$ivr != "yes"], na.rm=T)
+fert_plot[8,2] <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] / mean(dta_bal$fert_org[dta_bal$ivr != "yes"], na.rm=T)
 
 ##improved seed  
 res_itt_pract[11,1,h]  <-  mean(dta_bal$impseed[dta_bal$ivr != "yes"], na.rm=T)
@@ -677,6 +734,9 @@ res_itt_pract[12,1,h]  <-  sd(dta_bal$impseed[dta_bal$ivr != "yes"], na.rm=T)
 res_itt_pract[11,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_pract[12,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_pract[11,3,h]  <- ifelse(totrep >0, RI("impseed",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+seed_plot[5,1] <- "all seed"
+seed_plot[5,3:4] <- confint(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /  mean(dta_bal$impseed[dta_bal$ivr != "yes"], na.rm=T)
+seed_plot[5,2] <-  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] /   mean(dta_bal$impseed[dta_bal$ivr != "yes"], na.rm=T)
 
 ## hybrid
 res_itt_seed[1,1,h]  <-  mean(dta_bal$hybrid[dta_bal$ivr != "yes"], na.rm=T)
@@ -684,6 +744,9 @@ res_itt_seed[2,1,h]  <-  sd(dta_bal$hybrid[dta_bal$ivr != "yes"], na.rm=T)
 res_itt_seed[1,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_seed[2,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_seed[1,3,h] <- ifelse(totrep >0, RI("hybrid",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+seed_plot[6,1] <- "hybrid"
+seed_plot[6,3:4] <- confint(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /  mean(dta_bal$hybrid[dta_bal$ivr != "yes"], na.rm=T)
+seed_plot[6,2] <-  summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] /   mean(dta_bal$hybrid[dta_bal$ivr != "yes"], na.rm=T)
 
 ## opv
 res_itt_seed[3,1,h]  <-  mean(dta_bal$opv[dta_bal$ivr != "yes"], na.rm=T)
@@ -691,6 +754,11 @@ res_itt_seed[4,1,h]  <-  sd(dta_bal$opv[dta_bal$ivr != "yes"], na.rm=T)
 res_itt_seed[3,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_seed[4,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_seed[3,3,h] <- ifelse(totrep >0, RI("opv",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+seed_plot[7,1] <- "open pollinated"
+seed_plot[7,3:4] <- confint(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /  mean(dta_bal$opv[dta_bal$ivr != "yes"], na.rm=T)
+seed_plot[7,2] <-  summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] /   mean(dta_bal$opv[dta_bal$ivr != "yes"], na.rm=T)
+
 
 ##combiner
 res_itt_pract[13,1,h]  <-  mean(dta_bal$combiner[dta_bal$ivr != "yes"], na.rm=T)
@@ -705,6 +773,11 @@ res_itt_pract[16,1,h]  <-  sd(dta_bal$bought_seed[dta_bal$ivr != "yes"], na.rm=T
 res_itt_pract[15,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_pract[16,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_pract[15,3,h]  <- ifelse(totrep >0, RI("bought_seed",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+seed_plot[8,1] <- "bought seed"
+seed_plot[8,3:4] <- confint(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /  mean(dta_bal$bought_seed[dta_bal$ivr != "yes"], na.rm=T)
+seed_plot[8,2] <-  summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] /   mean(dta_bal$bought_seed[dta_bal$ivr != "yes"], na.rm=T)
+
 
 #### used chemicals
 res_itt_pract[17,1,h]  <-  mean(dta_bal$chem[dta_bal$ivr != "yes"], na.rm=T)
@@ -732,14 +805,19 @@ res_itt_pract[21,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
 res_itt_pract[22,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_itt_pract[21,3,h] <-  indexer[[2]]
 
-res_itt_pract <- Bcorr( c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),dta_bal, res_itt_pract ,h)
-res_itt_fert <- Bcorr(c("fert_dap","fert_urea","fert_org"),dta_bal, res_itt_fert ,h)
-res_itt_seed <- Bcorr(c("hybrid","opv"),dta_bal, res_itt_seed ,h)
 
-RI_FWER(c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),treatment,dta_bal, c())
-RI_FWER(c("fert_dap","fert_urea","fert_org"),treatment,dta_bal, c(0.0366,0.3528,0.0024),10000)
+prod_plot[6,1] <- "adoption"
+prod_plot[6,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
+prod_plot[6,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
 
-RI_FWER(c("hybrid","opv"),treatment,dta_bal, c(0.0092,0.9699),10000)
+#res_itt_pract <- Bcorr( c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),dta_bal, res_itt_pract ,h)
+#res_itt_fert <- Bcorr(c("fert_dap","fert_urea","fert_org"),dta_bal, res_itt_fert ,h)
+#res_itt_seed <- Bcorr(c("hybrid","opv"),dta_bal, res_itt_seed ,h)
+
+#RI_FWER(c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),treatment,dta_bal, c())
+#RI_FWER(c("fert_dap","fert_urea","fert_org"),treatment,dta_bal, c(0.0366,0.3528,0.0024),10000)
+
+#RI_FWER(c("hybrid","opv"),treatment,dta_bal, c(0.0092,0.9699),10000)
 
 ################################# production ###########################
 ##### does the video increases production related outcomes?
@@ -755,9 +833,7 @@ res_itt_prod[2,1,h] <- sd(dta_trim$log_prod_tot[dta_trim$ivr != "yes"], na.rm=T)
 res_itt_prod[1,2,h] <- summary(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
 res_itt_prod[2,2,h] <- summary(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
 res_itt_prod[1,3,h] <- ifelse(totrep >0, RI("log_prod_tot",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
-prod_plot[1,1] <- "production"
-prod_plot[1,3:4] <- confint(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))[2,]/  res_itt_prod[2,1,h]
-prod_plot[1,2] <- res_itt_prod[1,2,h] / res_itt_prod[2,1,h]
+
 
 ### area
 dta_bal2 <- subset(dta_bal, area_tot>0)
@@ -769,10 +845,6 @@ res_itt_prod[4,1,h] <- sd(dta_trim$log_area_tot[dta_trim$ivr != "yes"], na.rm=T)
 res_itt_prod[3,2,h] <- summary(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
 res_itt_prod[4,2,h] <- summary(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
 res_itt_prod[3,3,h] <- ifelse(totrep >0, RI("log_area_tot",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
-
-prod_plot[2,1] <- "area"
-prod_plot[2,3:4] <- confint(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))[2,]/  res_itt_prod[4,1,h]
-prod_plot[2,2] <- res_itt_prod[3,2,h] / res_itt_prod[4,1,h]
 
 ###yield
 
@@ -786,21 +858,12 @@ res_itt_prod[5,2,h] <- summary(lm(as.formula(paste("log_yield_av",treatment,sep 
 res_itt_prod[6,2,h] <- summary(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
 res_itt_prod[5,3,h] <- ifelse(totrep >0, RI("log_yield_av",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
 
-prod_plot[3,1] <- "yield"
-prod_plot[3,3:4] <- confint(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))[2,]/  res_itt_prod[6,1,h]
-prod_plot[3,2] <- res_itt_prod[5,2,h] / res_itt_prod[6,1,h]
-
 ### was yield better compared to normal year?
 res_itt_prod[7,1,h] <- mean(dta_bal$yield_better[dta_bal$ivr != "yes"], na.rm=T)
 res_itt_prod[8,1,h] <- sd(dta_bal$yield_better[dta_bal$ivr != "yes"], na.rm=T)
 res_itt_prod[7,2,h] <- summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
 res_itt_prod[8,2,h] <- summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
 res_itt_prod[7,3,h] <- ifelse(totrep >0, RI("yield_better",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
-
-prod_plot[4,1] <- "yield better?"
-prod_plot[4,3:4] <- confint(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_trim))[2,]/  res_itt_prod[8,1,h]
-prod_plot[4,2] <- res_itt_prod[7,2,h] / res_itt_prod[8,1,h]
-
 
 ###index
 dta_bal2 <- subset(dta_bal, area_tot >0 & prod_tot>0 & yield_av >0)
@@ -809,8 +872,8 @@ dta_bal2$log_area_tot <- log(dta_bal2$area_tot)
 dta_bal2$log_yield_av <- log(dta_bal2$yield_av)
 
 dta_bal2 <- trim("log_yield_av", dta_bal2, .05)
-res_itt_prod <- Bcorr(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),dta_bal2, res_itt_prod ,h)
-RI_FWER(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),treatment,dta_bal2, c(0.121,0.4377,0.0148,0.411))
+#res_itt_prod <- Bcorr(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),dta_bal2, res_itt_prod ,h)
+#RI_FWER(c("log_prod_tot","log_area_tot","log_yield_av","yield_better"),treatment,dta_bal2, c(0.121,0.4377,0.0148,0.411))
 
 #res_h0_prod[1:4,4,h] <- FSR_OLS( c("log_prod_tot", "log_area_tot", "log_yield_av","yield_better") ,treatment,dta_bal, nr_repl = totrep)[[4]]
 
@@ -823,13 +886,11 @@ res_itt_prod[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
 res_itt_prod[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_itt_prod[9,3,h] <-  indexer[[2]]
 
-prod_plot[5,1] <- "intensification index"
-prod_plot[5,3:4] <- confint(indexer[[1]])[2,]/ res_itt_prod[10,1,h]
-prod_plot[5,2] <- res_itt_prod[9,2,h] / res_itt_prod[10,1,h]
 
-prod_plot$x <- factor(prod_plot$x, levels=rev(prod_plot$x))
+prod_plot[7,1] <- "production"
+prod_plot[7,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
+prod_plot[7,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
 
-credplot.gg(prod_plot)
 ################################## disposal ##########################
 #### maize consumed
 
@@ -916,6 +977,14 @@ res_itt_wel[12,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
 res_itt_wel[11,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
 res_itt_wel[12,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_itt_wel[11,3,h] <-  indexer[[2]]
+
+
+prod_plot[8,1] <- "welfare"
+prod_plot[8,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
+prod_plot[8,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$ivr != "yes"])
+
+prod_plot$grp[5:8] <- "ivr"
+
 
 
 ################################################## is there and additional sms effect ###################################################
@@ -1010,6 +1079,11 @@ res_itt_know[9,3,h] <-  indexer[[2]]
 res_itt_know <- Bcorr(c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, res_itt_know ,h)
 
 
+prod_plot[9,1] <- "knowledge"
+prod_plot[9,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$sms != "yes"])
+prod_plot[9,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$sms != "yes"])
+
+
 ###if (wyfs_stat) {
 ###	res_h0_know[1:4,4,h] <- FSR_RI( c("know_space","know_combine","know_weed", "know_armyworm") ,treatment ,dta_bal, pvals = res_h0_know[1:4,3,h], nr_repl_ri = 100)[[4]]
 ###	} else { 
@@ -1054,12 +1128,21 @@ res_itt_pract[9,2,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~"
 res_itt_pract[10,2,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_pract[9,3,h]  <- ifelse(totrep >0, RI("fert",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
+fert_plot[9,1] <- "all fertilizer"
+fert_plot[9,3:4] <- confint(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /   mean(dta_bal$fert[dta_bal$sms != "yes"], na.rm=T)
+fert_plot[9,2] <-  summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] / mean(dta_bal$fert[dta_bal$sms != "yes"], na.rm=T)
+
+
 #### fert = DAP/NPK
 res_itt_fert[1,1,h]  <-  mean(dta_bal$fert_dap[dta_bal$sms != "yes"], na.rm=T)
 res_itt_fert[2,1,h]  <-  sd(dta_bal$fert_dap[dta_bal$sms != "yes"], na.rm=T)
 res_itt_fert[1,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_fert[2,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_fert[1,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
+
+fert_plot[10,1] <- "DAP/NPK"
+fert_plot[10,3:4] <- confint(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /   mean(dta_bal$fert_dap[dta_bal$sms != "yes"], na.rm=T)
+fert_plot[10,2] <-  summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] / mean(dta_bal$fert_dap[dta_bal$sms != "yes"], na.rm=T)
 
 #### fert = urea
 res_itt_fert[3,1,h]  <-  mean(dta_bal$fert_urea[dta_bal$sms != "yes"], na.rm=T)
@@ -1068,12 +1151,18 @@ res_itt_fert[3,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep 
 res_itt_fert[4,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_fert[3,3,h]  <- ifelse(totrep >0, RI("fert_urea",treatment , dta_bal, nr_repl = totrep) , summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,4])
 
+fert_plot[11,1] <- "urea"
+fert_plot[11,3:4] <- confint(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /   mean(dta_bal$fert_urea[dta_bal$sms != "yes"], na.rm=T)
+fert_plot[11,2] <-  summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] / mean(dta_bal$fert_urea[dta_bal$sms != "yes"], na.rm=T)
 #### fert = organic
 res_itt_fert[5,1,h]  <-  mean(dta_bal$fert_org[dta_bal$sms != "yes"], na.rm=T)
 res_itt_fert[6,1,h]  <-  sd(dta_bal$fert_org[dta_bal$sms != "yes"], na.rm=T)
 res_itt_fert[5,2,h]  <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_fert[6,2,h]  <- summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_fert[5,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+fert_plot[12,1] <- "organic"
+fert_plot[12,3:4] <- confint(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal), level=.9)[2,] /   mean(dta_bal$fert_org[dta_bal$sms != "yes"], na.rm=T)
+fert_plot[12,2] <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal))$coefficients[2,1] / mean(dta_bal$fert_org[dta_bal$sms != "yes"], na.rm=T)
 
 ##improved seed  
 res_itt_pract[11,1,h]  <-  mean(dta_bal$impseed[dta_bal$sms != "yes"], na.rm=T)
@@ -1081,6 +1170,8 @@ res_itt_pract[12,1,h]  <-  sd(dta_bal$impseed[dta_bal$sms != "yes"], na.rm=T)
 res_itt_pract[11,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_pract[12,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_pract[11,3,h]  <- ifelse(totrep >0, RI("impseed",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
+
 
 ## hybrid
 res_itt_seed[1,1,h]  <-  mean(dta_bal$hybrid[dta_bal$sms != "yes"], na.rm=T)
@@ -1096,6 +1187,7 @@ res_itt_seed[3,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")),
 res_itt_seed[4,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_seed[3,3,h] <- ifelse(totrep >0, RI("opv",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
 
+
 ##combiner
 res_itt_pract[13,1,h]  <-  mean(dta_bal$combiner[dta_bal$sms != "yes"], na.rm=T)
 res_itt_pract[14,1,h]  <-  sd(dta_bal$combiner[dta_bal$sms != "yes"], na.rm=T)
@@ -1109,6 +1201,7 @@ res_itt_pract[16,1,h]  <-  sd(dta_bal$bought_seed[dta_bal$sms != "yes"], na.rm=T
 res_itt_pract[15,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,1]
 res_itt_pract[16,2,h]  <- summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,2]
 res_itt_pract[15,3,h]  <- ifelse(totrep >0, RI("bought_seed",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("bought_seed", treatment, sep ="~")), data=dta_bal))$coefficients[2,4]) 
+
 
 #### used chemicals
 res_itt_pract[17,1,h]  <-  mean(dta_bal$chem[dta_bal$sms != "yes"], na.rm=T)
@@ -1136,10 +1229,14 @@ res_itt_pract[21,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
 res_itt_pract[22,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_itt_pract[21,3,h] <-  indexer[[2]]
 
+prod_plot[10,1] <- "adoption"
+prod_plot[10,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$sms != "yes"])
+prod_plot[10,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$sms != "yes"])
+
 res_itt_pract <- Bcorr( c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),dta_bal, res_itt_pract ,h)
 res_itt_fert <- Bcorr(c("fert_dap","fert_urea","fert_org"),dta_bal, res_itt_fert ,h)
 res_itt_seed <- Bcorr(c("hybrid","opv"),dta_bal, res_itt_seed ,h)
-RI_FWER(c("hybrid","opv"),treatment,dta_bal, c(0.0389,0.14),10000)
+#RI_FWER(c("hybrid","opv"),treatment,dta_bal, c(0.0389,0.14),10000)
 
 ################################# production ###########################
 ##### does the video increases production related outcomes?
@@ -1155,9 +1252,6 @@ res_itt_prod[2,1,h] <- sd(dta_trim$log_prod_tot[dta_trim$sms != "yes"], na.rm=T)
 res_itt_prod[1,2,h] <- summary(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
 res_itt_prod[2,2,h] <- summary(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
 res_itt_prod[1,3,h] <- ifelse(totrep >0, RI("log_prod_tot",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
-prod_plot[1,1] <- "production"
-prod_plot[1,3:4] <- confint(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))[2,]/  res_itt_prod[2,1,h]
-prod_plot[1,2] <- res_itt_prod[1,2,h] / res_itt_prod[2,1,h]
 
 ### area
 dta_bal2 <- subset(dta_bal, area_tot>0)
@@ -1170,9 +1264,6 @@ res_itt_prod[3,2,h] <- summary(lm(as.formula(paste("log_area_tot",treatment,sep 
 res_itt_prod[4,2,h] <- summary(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
 res_itt_prod[3,3,h] <- ifelse(totrep >0, RI("log_area_tot",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
 
-prod_plot[2,1] <- "area"
-prod_plot[2,3:4] <- confint(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))[2,]/  res_itt_prod[4,1,h]
-prod_plot[2,2] <- res_itt_prod[3,2,h] / res_itt_prod[4,1,h]
 
 ###yield
 
@@ -1186,21 +1277,12 @@ res_itt_prod[5,2,h] <- summary(lm(as.formula(paste("log_yield_av",treatment,sep 
 res_itt_prod[6,2,h] <- summary(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
 res_itt_prod[5,3,h] <- ifelse(totrep >0, RI("log_yield_av",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
 
-prod_plot[3,1] <- "yield"
-prod_plot[3,3:4] <- confint(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))[2,]/  res_itt_prod[6,1,h]
-prod_plot[3,2] <- res_itt_prod[5,2,h] / res_itt_prod[6,1,h]
-
 ### was yield better compared to normal year?
 res_itt_prod[7,1,h] <- mean(dta_bal$yield_better[dta_bal$sms != "yes"], na.rm=T)
 res_itt_prod[8,1,h] <- sd(dta_bal$yield_better[dta_bal$sms != "yes"], na.rm=T)
 res_itt_prod[7,2,h] <- summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
 res_itt_prod[8,2,h] <- summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
 res_itt_prod[7,3,h] <- ifelse(totrep >0, RI("yield_better",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
-
-prod_plot[4,1] <- "yield better?"
-prod_plot[4,3:4] <- confint(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_trim))[2,]/  res_itt_prod[8,1,h]
-prod_plot[4,2] <- res_itt_prod[7,2,h] / res_itt_prod[8,1,h]
-
 
 ###index
 dta_bal2 <- subset(dta_bal, area_tot >0 & prod_tot>0 & yield_av >0)
@@ -1223,13 +1305,10 @@ res_itt_prod[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
 res_itt_prod[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_itt_prod[9,3,h] <-  indexer[[2]]
 
-prod_plot[5,1] <- "intensification index"
-prod_plot[5,3:4] <- confint(indexer[[1]])[2,]/ res_itt_prod[10,1,h]
-prod_plot[5,2] <- res_itt_prod[9,2,h] / res_itt_prod[10,1,h]
+prod_plot[11,1] <- "production"
+prod_plot[11,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$sms != "yes"])
+prod_plot[11,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$sms != "yes"])
 
-prod_plot$x <- factor(prod_plot$x, levels=rev(prod_plot$x))
-
-credplot.gg(prod_plot)
 ################################## disposal ##########################
 #### maize consumed
 
@@ -1316,9 +1395,44 @@ res_itt_wel[11,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
 res_itt_wel[12,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_itt_wel[11,3,h] <-  indexer[[2]]
 
+prod_plot[12,1] <- "welfare"
+prod_plot[12,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$sms != "yes"])
+prod_plot[12,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$sms != "yes"])
 
+prod_plot$grp[9:12] <- "sms"
 
+prod_plot$x <- factor(prod_plot$x, levels=rev(prod_plot$x))
+prod_plot$grp <- factor(prod_plot$grp, levels = c("video","ivr", "sms"))
 
+pdf("/home/bjvca/data/projects/digital green/endline/results/summaryplot_mode.pdf")
+credplot.gg(prod_plot)
+dev.off()
+fert_plot$grp <- NA
+fert_plot$grp[9:12] <- "sms"
+fert_plot$grp[1:4] <- "video"
+fert_plot$grp[5:8] <- "ivr"
+seed_plot$grp <- NA
+seed_plot$grp[9:12] <- "sms"
+seed_plot$grp[1:4] <- "video"
+seed_plot$grp[5:8] <- "ivr"
+
+fert_plot$x <- factor(fert_plot$x, levels=rev(fert_plot$x))
+fert_plot$grp <- factor(fert_plot$grp, levels = c("video","ivr", "sms"))
+
+seed_plot$x <- factor(seed_plot$x, levels=rev(seed_plot$x))
+seed_plot$grp <- factor(seed_plot$grp, levels = c("video","ivr", "sms"))
+
+pdf("/home/bjvca/data/projects/digital green/endline/results/summaryplot_mode.pdf")
+credplot.gg(prod_plot,'SDs')
+dev.off()
+
+pdf("/home/bjvca/data/projects/digital green/endline/results/fertplot_mode.pdf")
+credplot.gg(fert_plot,'%-change')
+dev.off()
+
+pdf("/home/bjvca/data/projects/digital green/endline/results/seedplot_mode.pdf")
+credplot.gg(seed_plot,'%-change')
+dev.off()
 
 
 
