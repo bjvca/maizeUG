@@ -4,7 +4,7 @@ source("/home/bjvca/data/projects/digital green/endline/data/init.R")
 #dta <- read.csv("AWS.csv")
 
 #set totrep to zero if you do not want simulation based inferecne
-totrep <- 0
+totrep <- 10000
 
 set.seed(07032018)
 dta <- subset(dta, !is.na(interview_status))
@@ -151,7 +151,7 @@ space_ind <- reshape(data[c("messenger","recipient","gender1","ivr","sms","calle
 print( summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind)))
 mean_male <- ifelse(h <=2,mean(space_ind$decide[space_ind$messenger == "male"], na.rm=T),mean(space_ind$decide[space_ind$recipient == "male"], na.rm=T))
 sd_male <- ifelse(h <=2,sd(space_ind$decide[space_ind$messenger == "male"], na.rm=T),sd(space_ind$decide[space_ind$recipient == "male"], na.rm=T))
-
+n_obs <- ifelse(h <=2,sum(table(space_ind$decide[space_ind$messenger == "male"])),sum(table(space_ind$decide[space_ind$recipient == "male"])))
 
 dta <- space_ind[!duplicated(space_ind$hhid),]
 dta <- dta %>% mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
@@ -181,7 +181,7 @@ if (h==1) {
 }
 		return(abs(coef(lm(as.formula(paste("decide",treatment,sep="~")), data=dta_sim))[2]) > abs(crit) )
 	}
-	return(list(summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind))$coefficients[2,1],summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind))$coefficients[2,2], summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind))$coefficients[2,4],sum(oper)/nr_repl,mean_male,sd_male))
+	return(list(summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind))$coefficients[2,1],summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind))$coefficients[2,2], summary(lm(as.formula(paste("decide",treatment,sep="~")), data=space_ind))$coefficients[2,4],sum(oper)/nr_repl,mean_male,sd_male, n_obs))
 }
 
 plot_RI <- function(data, man, out_sp1,out_sp2,treatment,nr_repl = 1000, trimlog=FALSE, h_ind=h) {
@@ -216,8 +216,8 @@ space_ind$outcome <- ifelse(space_ind$gender1=="man",space_ind$outcome_sp1, spac
 }
 
 if (trimlog==TRUE) {
-space_ind <- subset(space_ind, outcome>0)
-space_ind$outcome <- log(space_ind$outcome)
+#space_ind <- subset(space_ind, outcome>0)
+#space_ind$outcome <- log(space_ind$outcome)
 
 space_ind <- trim("outcome", space_ind, .05)
 }
@@ -229,7 +229,7 @@ space_ind$outcome <- space_ind$outcome*space_ind$decide
 mod <- lm(as.formula(paste("outcome",treatment,sep="~")), data=space_ind)
 mean_male <- ifelse(h_ind <=2,mean(space_ind$outcome[space_ind$messenger == "male"], na.rm=T),mean(space_ind$outcome[space_ind$recipient == "male"], na.rm=T))
 sd_male <- ifelse(h_ind <=2,sd(space_ind$outcome[space_ind$messenger == "male"], na.rm=T),sd(space_ind$outcome[space_ind$recipient == "male"], na.rm=T))
-
+n_obs <- ifelse(h_ind <=2,sum(table(space_ind$outcome[space_ind$messenger == "male"])),sum(table(space_ind$outcome[space_ind$recipient == "male"])))
 dta <- space_ind[!duplicated(space_ind$hhid),]
 
 
@@ -607,21 +607,21 @@ treatment <- "(recipient == 'couple') +ivr+sms+as.factor(recipient)+ as.factor(m
 #res_know[7,3,h] <-  ifelse(totrep >0, RI("know_weed",treatment , dta_bal, nr_repl = totrep, h),summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
 
 
-indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, nr_repl=totrep,h)
-res_know[9,1,h] <- ifelse(h <=2, mean(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), mean(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
-res_know[10,1,h] <- ifelse(h <=2, sd(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
-res_know[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
-res_know[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
-res_know[9,3,h] <-  indexer[[2]]
-if (h==3) {
-knowledge_plot[1,1] <- "hh level knowledge"
-knowledge_plot[1,3:4] <- confint(indexer[[1]], level=.9)[2,]/sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
-knowledge_plot[1,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
-} else if (h==4) {
-knowledge_plot[4,1] <- "hh level knowledge"
-knowledge_plot[4,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
-knowledge_plot[4,2] <- summary(indexer[[1]])$coefficients[2,1] /sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
-}
+#indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed","know_armyworm"),dta_bal, nr_repl=totrep,h)
+#res_know[9,1,h] <- ifelse(h <=2, mean(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), mean(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
+#res_know[10,1,h] <- ifelse(h <=2, sd(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
+#res_know[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
+#res_know[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
+#res_know[9,3,h] <-  indexer[[2]]
+#if (h==3) {
+#knowledge_plot[1,1] <- "hh level knowledge"
+#knowledge_plot[1,3:4] <- confint(indexer[[1]], level=.9)[2,]/sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
+#knowledge_plot[1,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
+#} else if (h==4) {
+#knowledge_plot[4,1] <- "hh level knowledge"
+#knowledge_plot[4,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
+#knowledge_plot[4,2] <- summary(indexer[[1]])$coefficients[2,1] /sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
+#}
 #RI_FWER(c("know_space","know_combine","know_weed", "know_armyworm"),treatment,dta_bal, c(0.0061	,0.126,0.381,0.3876), h)
 
 ###individual
@@ -650,22 +650,22 @@ knowledge_plot[4,2] <- summary(indexer[[1]])$coefficients[2,1] /sd(indexer[[3]]$
 #res_know_m[7,3,h] <-  ifelse(totrep >0, RI("know_weed_m",treatment , dta_bal, nr_repl = totrep, h),summary(lm(as.formula(paste("know_armyworm_m",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
 
 
-indexer <- FW_index(treatment, c("know_space_m", "know_combine_m", "know_weed_m","know_armyworm_m"),dta_bal, nr_repl=totrep,h)
-res_know_m[9,1,h] <- ifelse(h <=2, mean(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), mean(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
-res_know_m[10,1,h] <- ifelse(h <=2, sd(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
-res_know_m[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
-res_know_m[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
-res_know_m[9,3,h] <-  indexer[[2]]
+#indexer <- FW_index(treatment, c("know_space_m", "know_combine_m", "know_weed_m","know_armyworm_m"),dta_bal, nr_repl=totrep,h)
+#res_know_m[9,1,h] <- ifelse(h <=2, mean(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), mean(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
+#res_know_m[10,1,h] <- ifelse(h <=2, sd(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
+#res_know_m[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
+#res_know_m[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
+#res_know_m[9,3,h] <-  indexer[[2]]
 
-if (h==3) {
-knowledge_plot[2,1] <- "knowledge husband"
-knowledge_plot[2,3:4] <- confint(indexer[[1]], level=.9)[2,]/sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
-knowledge_plot[2,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
-} else if (h==4) {
-knowledge_plot[5,1] <- "knowledge husband"
-knowledge_plot[5,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
-knowledge_plot[5,2] <- summary(indexer[[1]])$coefficients[2,1] /sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
-}
+#if (h==3) {
+#knowledge_plot[2,1] <- "knowledge husband"
+#knowledge_plot[2,3:4] <- confint(indexer[[1]], level=.9)[2,]/sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
+#knowledge_plot[2,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
+#} else if (h==4) {
+#knowledge_plot[5,1] <- "knowledge husband"
+#knowledge_plot[5,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
+#knowledge_plot[5,2] <- summary(indexer[[1]])$coefficients[2,1] /sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
+#}
 
 # h=1: RI_FWER(c("know_space_m","know_combine_m","know_weed_m", "know_armyworm_m"),treatment,dta_bal, c(0.0228,0.0412,0.6773,0.6726), 10000, h)
 # h=4: RI_FWER(c("know_space_m","know_combine_m","know_weed_m", "know_armyworm_m"),treatment,dta_bal, c(0.0361,0.6153,0.122,0.1206), 10000, h)
@@ -695,22 +695,22 @@ knowledge_plot[5,2] <- summary(indexer[[1]])$coefficients[2,1] /sd(indexer[[3]]$
 #res_know_w[7,3,h] <-  ifelse(totrep >0, RI("know_weed_w",treatment , dta_bal, nr_repl = totrep, h),summary(lm(as.formula(paste("know_armyworm_w",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
 
 
-indexer <- FW_index(treatment, c("know_space_w", "know_combine_w", "know_weed_w","know_armyworm_w"),dta_bal, nr_repl=totrep,h)
-res_know_w[9,1,h] <- ifelse(h <=2, mean(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), mean(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
-res_know_w[10,1,h] <- ifelse(h <=2, sd(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
-res_know_w[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
-res_know_w[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
-res_know_w[9,3,h] <-  indexer[[2]]
+#indexer <- FW_index(treatment, c("know_space_w", "know_combine_w", "know_weed_w","know_armyworm_w"),dta_bal, nr_repl=totrep,h)
+#res_know_w[9,1,h] <- ifelse(h <=2, mean(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), mean(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
+#res_know_w[10,1,h] <- ifelse(h <=2, sd(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
+#res_know_w[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
+#res_know_w[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
+#res_know_w[9,3,h] <-  indexer[[2]]
 
-if (h==3) {
-knowledge_plot[3,1] <- "knowledge wife"
-knowledge_plot[3,3:4] <- confint(indexer[[1]], level=.9)[2,]/sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
-knowledge_plot[3,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
-} else if (h==4) {
-knowledge_plot[6,1] <- "knowledge wife"
-knowledge_plot[6,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
-knowledge_plot[6,2] <- summary(indexer[[1]])$coefficients[2,1] /sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
-}
+#if (h==3) {
+#knowledge_plot[3,1] <- "knowledge wife"
+#knowledge_plot[3,3:4] <- confint(indexer[[1]], level=.9)[2,]/sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
+#knowledge_plot[3,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
+#} else if (h==4) {
+#knowledge_plot[6,1] <- "knowledge wife"
+#knowledge_plot[6,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
+#knowledge_plot[6,2] <- summary(indexer[[1]])$coefficients[2,1] /sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
+#}
 
 
 #h3:  RI_FWER(c("know_space_w","know_combine_w","know_weed_w", "know_armyworm_w"),treatment,dta_bal, c(0,0.0029,0.1761,0.1644), 10000, h)
@@ -837,85 +837,85 @@ knowledge_plot[6,2] <- summary(indexer[[1]])$coefficients[2,1] /sd(indexer[[3]]$
 #res_hh_pract[22,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 #res_hh_pract[21,3,h] <-  indexer[[2]]
 
-#### agreement
-res_decision_b[1,1,h]  <- ifelse(h <=2, mean(dta_bal$both_tell[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$both_tell[dta_bal$recipient == "male"], na.rm=T))
-res_decision_b[2,1,h]  <- ifelse(h <=2, sd(dta_bal$both_tell[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$both_tell[dta_bal$recipient == "male"], na.rm=T))
-res_decision_b[1,2,h]  <- summary(lm(as.formula(paste("both_tell",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
-res_decision_b[2,2,h]  <- summary(lm(as.formula(paste("both_tell",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
-res_decision_b[1,3,h]  <- ifelse(totrep >0, RI("both_tell",treatment , dta_bal, nr_repl = totrep, h), summary(lm(as.formula(paste("both_tell",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+##### agreement
+#res_decision_b[1,1,h]  <- ifelse(h <=2, mean(dta_bal$both_tell[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$both_tell[dta_bal$recipient == "male"], na.rm=T))
+#res_decision_b[2,1,h]  <- ifelse(h <=2, sd(dta_bal$both_tell[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$both_tell[dta_bal$recipient == "male"], na.rm=T))
+#res_decision_b[1,2,h]  <- summary(lm(as.formula(paste("both_tell",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+#res_decision_b[2,2,h]  <- summary(lm(as.formula(paste("both_tell",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
+#res_decision_b[1,3,h]  <- ifelse(totrep >0, RI("both_tell",treatment , dta_bal, nr_repl = totrep, h), summary(lm(as.formula(paste("both_tell",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
 
 
-res_decision_b[3,1,h]  <- ifelse(h <=2, mean(dta_bal$spouses_listen[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$spouses_listen[dta_bal$recipient == "male"], na.rm=T))
-res_decision_b[4,1,h]  <- ifelse(h <=2, sd(dta_bal$spouses_listen[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$spouses_listen[dta_bal$recipient == "male"], na.rm=T))
-res_decision_b[3,2,h]  <- summary(lm(as.formula(paste("spouses_listen",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
-res_decision_b[4,2,h]  <- summary(lm(as.formula(paste("spouses_listen",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
-res_decision_b[3,3,h]  <- ifelse(totrep >0, RI("spouses_listen",treatment , dta_bal, nr_repl = totrep, h), summary(lm(as.formula(paste("spouses_listen",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+#res_decision_b[3,1,h]  <- ifelse(h <=2, mean(dta_bal$spouses_listen[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$spouses_listen[dta_bal$recipient == "male"], na.rm=T))
+#res_decision_b[4,1,h]  <- ifelse(h <=2, sd(dta_bal$spouses_listen[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$spouses_listen[dta_bal$recipient == "male"], na.rm=T))
+#res_decision_b[3,2,h]  <- summary(lm(as.formula(paste("spouses_listen",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+#res_decision_b[4,2,h]  <- summary(lm(as.formula(paste("spouses_listen",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
+#res_decision_b[3,3,h]  <- ifelse(totrep >0, RI("spouses_listen",treatment , dta_bal, nr_repl = totrep, h), summary(lm(as.formula(paste("spouses_listen",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
 
 
-res_decision_m[1,1,h]  <- ifelse(h <=2, mean(dta_bal$man_tells_wife[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$man_tells_wife[dta_bal$recipient == "male"], na.rm=T))
-res_decision_m[2,1,h]  <- ifelse(h <=2, sd(dta_bal$man_tells_wife[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$man_tells_wife[dta_bal$recipient == "male"], na.rm=T))
-res_decision_m[1,2,h]  <- summary(lm(as.formula(paste("man_tells_wife",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
-res_decision_m[2,2,h]  <- summary(lm(as.formula(paste("man_tells_wife",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
-res_decision_m[1,3,h]  <- ifelse(totrep >0, RI("man_tells_wife",treatment , dta_bal, nr_repl = totrep, h), summary(lm(as.formula(paste("man_tells_wife",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+#res_decision_m[1,1,h]  <- ifelse(h <=2, mean(dta_bal$man_tells_wife[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$man_tells_wife[dta_bal$recipient == "male"], na.rm=T))
+#res_decision_m[2,1,h]  <- ifelse(h <=2, sd(dta_bal$man_tells_wife[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$man_tells_wife[dta_bal$recipient == "male"], na.rm=T))
+#res_decision_m[1,2,h]  <- summary(lm(as.formula(paste("man_tells_wife",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+#res_decision_m[2,2,h]  <- summary(lm(as.formula(paste("man_tells_wife",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
+#res_decision_m[1,3,h]  <- ifelse(totrep >0, RI("man_tells_wife",treatment , dta_bal, nr_repl = totrep, h), summary(lm(as.formula(paste("man_tells_wife",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
 
-if (h==3) {
-agreement_plot[1,1] <- "man tells wife"
-agreement_plot[1,3:4] <- confint(lm(as.formula(paste("man_tells_wife",treatment,sep = "~")), data=dta_bal), level=.9)[2,]/mean(dta_bal$man_tells_wife[dta_bal$recipient == "male"], na.rm=T)
-agreement_plot[1,2] <- summary(lm(as.formula(paste("man_tells_wife",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]/ mean(dta_bal$man_tells_wife[dta_bal$recipient == "male"], na.rm=T)
-} else if (h==4) {
-agreement_plot[5,1] <- "man tells wife"
-agreement_plot[5,3:4] <- confint(lm(as.formula(paste("man_tells_wife",treatment,sep = "~")), data=dta_bal), level=.9)[2,]/ mean(dta_bal$man_tells_wife[dta_bal$recipient == "male"], na.rm=T)
-agreement_plot[5,2] <- summary(lm(as.formula(paste("man_tells_wife",treatment,sep = "~")), data=dta_bal))$coefficients[2,1] /mean(dta_bal$man_tells_wife[dta_bal$recipient == "male"], na.rm=T)
-}
+#if (h==3) {
+#agreement_plot[1,1] <- "man tells wife"
+#agreement_plot[1,3:4] <- confint(lm(as.formula(paste("man_tells_wife",treatment,sep = "~")), data=dta_bal), level=.9)[2,]/mean(dta_bal$man_tells_wife[dta_bal$recipient == "male"], na.rm=T)
+#agreement_plot[1,2] <- summary(lm(as.formula(paste("man_tells_wife",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]/ mean(dta_bal$man_tells_wife[dta_bal$recipient == "male"], na.rm=T)
+#} else if (h==4) {
+#agreement_plot[5,1] <- "man tells wife"
+#agreement_plot[5,3:4] <- confint(lm(as.formula(paste("man_tells_wife",treatment,sep = "~")), data=dta_bal), level=.9)[2,]/ mean(dta_bal$man_tells_wife[dta_bal$recipient == "male"], na.rm=T)
+#agreement_plot[5,2] <- summary(lm(as.formula(paste("man_tells_wife",treatment,sep = "~")), data=dta_bal))$coefficients[2,1] /mean(dta_bal$man_tells_wife[dta_bal$recipient == "male"], na.rm=T)
+#}
 
-res_decision_m[3,1,h]  <- ifelse(h <=2, mean(dta_bal$wife_listens[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$wife_listens[dta_bal$recipient == "male"], na.rm=T))
-res_decision_m[4,1,h]  <- ifelse(h <=2, sd(dta_bal$wife_listens[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$wife_listens[dta_bal$recipient == "male"], na.rm=T))
-res_decision_m[3,2,h]  <- summary(lm(as.formula(paste("wife_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
-res_decision_m[4,2,h]  <- summary(lm(as.formula(paste("wife_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
-res_decision_m[3,3,h]  <- ifelse(totrep >0, RI("wife_listens",treatment , dta_bal, nr_repl = totrep, h), summary(lm(as.formula(paste("wife_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+#res_decision_m[3,1,h]  <- ifelse(h <=2, mean(dta_bal$wife_listens[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$wife_listens[dta_bal$recipient == "male"], na.rm=T))
+#res_decision_m[4,1,h]  <- ifelse(h <=2, sd(dta_bal$wife_listens[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$wife_listens[dta_bal$recipient == "male"], na.rm=T))
+#res_decision_m[3,2,h]  <- summary(lm(as.formula(paste("wife_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+#res_decision_m[4,2,h]  <- summary(lm(as.formula(paste("wife_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
+#res_decision_m[3,3,h]  <- ifelse(totrep >0, RI("wife_listens",treatment , dta_bal, nr_repl = totrep, h), summary(lm(as.formula(paste("wife_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
 
-if (h==3) {
-agreement_plot[2,1] <- "wife agrees"
-agreement_plot[2,3:4] <- confint(lm(as.formula(paste("wife_listens",treatment,sep = "~")), data=dta_bal), level=.9)[2,]/mean(dta_bal$wife_listens[dta_bal$recipient == "male"], na.rm=T)
-agreement_plot[2,2] <- summary(lm(as.formula(paste("wife_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]/ mean(dta_bal$wife_listens[dta_bal$recipient == "male"], na.rm=T)
-} else if (h==4) {
-agreement_plot[6,1] <- "wife agrees"
-agreement_plot[6,3:4] <- confint(lm(as.formula(paste("wife_listens",treatment,sep = "~")), data=dta_bal), level=.9)[2,]/ mean(dta_bal$wife_listens[dta_bal$recipient == "male"], na.rm=T)
-agreement_plot[6,2] <- summary(lm(as.formula(paste("wife_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,1] /mean(dta_bal$wife_listens[dta_bal$recipient == "male"], na.rm=T)
-}
-
-
-res_decision_w[1,1,h]  <- ifelse(h <=2, mean(dta_bal$wife_tells_man[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$wife_tells_man[dta_bal$recipient == "male"], na.rm=T))
-res_decision_w[2,1,h]  <- ifelse(h <=2, sd(dta_bal$wife_tells_man[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$wife_tells_man[dta_bal$recipient == "male"], na.rm=T))
-res_decision_w[1,2,h]  <- summary(lm(as.formula(paste("wife_tells_man",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
-res_decision_w[2,2,h]  <- summary(lm(as.formula(paste("wife_tells_man",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
-res_decision_w[1,3,h]  <- ifelse(totrep >0, RI("wife_tells_man",treatment , dta_bal, nr_repl = totrep, h), summary(lm(as.formula(paste("wife_tells_man",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+#if (h==3) {
+#agreement_plot[2,1] <- "wife agrees"
+#agreement_plot[2,3:4] <- confint(lm(as.formula(paste("wife_listens",treatment,sep = "~")), data=dta_bal), level=.9)[2,]/mean(dta_bal$wife_listens[dta_bal$recipient == "male"], na.rm=T)
+#agreement_plot[2,2] <- summary(lm(as.formula(paste("wife_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]/ mean(dta_bal$wife_listens[dta_bal$recipient == "male"], na.rm=T)
+#} else if (h==4) {
+#agreement_plot[6,1] <- "wife agrees"
+#agreement_plot[6,3:4] <- confint(lm(as.formula(paste("wife_listens",treatment,sep = "~")), data=dta_bal), level=.9)[2,]/ mean(dta_bal$wife_listens[dta_bal$recipient == "male"], na.rm=T)
+#agreement_plot[6,2] <- summary(lm(as.formula(paste("wife_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,1] /mean(dta_bal$wife_listens[dta_bal$recipient == "male"], na.rm=T)
+#}
 
 
-if (h==3) {
-agreement_plot[3,1] <- "wife tells man"
-agreement_plot[3,3:4] <- confint(lm(as.formula(paste("wife_tells_man",treatment,sep = "~")), data=dta_bal), level=.9)[2,]/mean(dta_bal$wife_tells_man[dta_bal$recipient == "male"], na.rm=T)
-agreement_plot[3,2] <- summary(lm(as.formula(paste("wife_tells_man",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]/ mean(dta_bal$wife_tells_man[dta_bal$recipient == "male"], na.rm=T)
-} else if (h==4) {
-agreement_plot[7,1] <- "wife tells man"
-agreement_plot[7,3:4] <- confint(lm(as.formula(paste("wife_tells_man",treatment,sep = "~")), data=dta_bal), level=.9)[2,]/ mean(dta_bal$wife_tells_man[dta_bal$recipient == "male"], na.rm=T)
-agreement_plot[7,2] <- summary(lm(as.formula(paste("wife_tells_man",treatment,sep = "~")), data=dta_bal))$coefficients[2,1] /mean(dta_bal$wife_tells_man[dta_bal$recipient == "male"], na.rm=T)
-}
+#res_decision_w[1,1,h]  <- ifelse(h <=2, mean(dta_bal$wife_tells_man[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$wife_tells_man[dta_bal$recipient == "male"], na.rm=T))
+#res_decision_w[2,1,h]  <- ifelse(h <=2, sd(dta_bal$wife_tells_man[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$wife_tells_man[dta_bal$recipient == "male"], na.rm=T))
+#res_decision_w[1,2,h]  <- summary(lm(as.formula(paste("wife_tells_man",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+#res_decision_w[2,2,h]  <- summary(lm(as.formula(paste("wife_tells_man",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
+#res_decision_w[1,3,h]  <- ifelse(totrep >0, RI("wife_tells_man",treatment , dta_bal, nr_repl = totrep, h), summary(lm(as.formula(paste("wife_tells_man",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
 
-res_decision_w[3,1,h]  <- ifelse(h <=2, mean(dta_bal$man_listens[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$man_listens[dta_bal$recipient == "male"], na.rm=T))
-res_decision_w[4,1,h]  <- ifelse(h <=2, sd(dta_bal$man_listens[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$man_listens[dta_bal$recipient == "male"], na.rm=T))
-res_decision_w[3,2,h]  <- summary(lm(as.formula(paste("man_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
-res_decision_w[4,2,h]  <- summary(lm(as.formula(paste("man_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
-res_decision_w[3,3,h]  <- ifelse(totrep >0, RI("man_listens",treatment , dta_bal, nr_repl = totrep, h), summary(lm(as.formula(paste("man_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
-if (h==3) {
-agreement_plot[4,1] <- "man agrees"
-agreement_plot[4,3:4] <- confint(lm(as.formula(paste("man_listens",treatment,sep = "~")), data=dta_bal), level=.9)[2,]/mean(dta_bal$man_listens[dta_bal$recipient == "male"], na.rm=T)
-agreement_plot[4,2] <- summary(lm(as.formula(paste("man_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]/ mean(dta_bal$man_listens[dta_bal$recipient == "male"], na.rm=T)
-} else if (h==4) {
-agreement_plot[8,1] <- "man agrees"
-agreement_plot[8,3:4] <- confint(lm(as.formula(paste("man_listens",treatment,sep = "~")), data=dta_bal), level=.9)[2,]/ mean(dta_bal$man_listens[dta_bal$recipient == "male"], na.rm=T)
-agreement_plot[8,2] <- summary(lm(as.formula(paste("man_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,1] /mean(dta_bal$man_listens[dta_bal$recipient == "male"], na.rm=T)
-}
+
+#if (h==3) {
+#agreement_plot[3,1] <- "wife tells man"
+#agreement_plot[3,3:4] <- confint(lm(as.formula(paste("wife_tells_man",treatment,sep = "~")), data=dta_bal), level=.9)[2,]/mean(dta_bal$wife_tells_man[dta_bal$recipient == "male"], na.rm=T)
+#agreement_plot[3,2] <- summary(lm(as.formula(paste("wife_tells_man",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]/ mean(dta_bal$wife_tells_man[dta_bal$recipient == "male"], na.rm=T)
+#} else if (h==4) {
+#agreement_plot[7,1] <- "wife tells man"
+#agreement_plot[7,3:4] <- confint(lm(as.formula(paste("wife_tells_man",treatment,sep = "~")), data=dta_bal), level=.9)[2,]/ mean(dta_bal$wife_tells_man[dta_bal$recipient == "male"], na.rm=T)
+#agreement_plot[7,2] <- summary(lm(as.formula(paste("wife_tells_man",treatment,sep = "~")), data=dta_bal))$coefficients[2,1] /mean(dta_bal$wife_tells_man[dta_bal$recipient == "male"], na.rm=T)
+#}
+
+#res_decision_w[3,1,h]  <- ifelse(h <=2, mean(dta_bal$man_listens[dta_bal$messenger == "male"], na.rm=T),mean(dta_bal$man_listens[dta_bal$recipient == "male"], na.rm=T))
+#res_decision_w[4,1,h]  <- ifelse(h <=2, sd(dta_bal$man_listens[dta_bal$messenger == "male"], na.rm=T),sd(dta_bal$man_listens[dta_bal$recipient == "male"], na.rm=T))
+#res_decision_w[3,2,h]  <- summary(lm(as.formula(paste("man_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]
+#res_decision_w[4,2,h]  <- summary(lm(as.formula(paste("man_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,2]
+#res_decision_w[3,3,h]  <- ifelse(totrep >0, RI("man_listens",treatment , dta_bal, nr_repl = totrep, h), summary(lm(as.formula(paste("man_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,4])
+#if (h==3) {
+#agreement_plot[4,1] <- "man agrees"
+#agreement_plot[4,3:4] <- confint(lm(as.formula(paste("man_listens",treatment,sep = "~")), data=dta_bal), level=.9)[2,]/mean(dta_bal$man_listens[dta_bal$recipient == "male"], na.rm=T)
+#agreement_plot[4,2] <- summary(lm(as.formula(paste("man_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,1]/ mean(dta_bal$man_listens[dta_bal$recipient == "male"], na.rm=T)
+#} else if (h==4) {
+#agreement_plot[8,1] <- "man agrees"
+#agreement_plot[8,3:4] <- confint(lm(as.formula(paste("man_listens",treatment,sep = "~")), data=dta_bal), level=.9)[2,]/ mean(dta_bal$man_listens[dta_bal$recipient == "male"], na.rm=T)
+#agreement_plot[8,2] <- summary(lm(as.formula(paste("man_listens",treatment,sep = "~")), data=dta_bal))$coefficients[2,1] /mean(dta_bal$man_listens[dta_bal$recipient == "male"], na.rm=T)
+#}
 
 ######## decisions
 ### this is at the plot level now
@@ -1443,58 +1443,58 @@ agreement_plot[8,2] <- summary(lm(as.formula(paste("man_listens",treatment,sep =
 
 ######hired labour
 
-results <- plot_RI(dta_bal, man = "dec_man_d", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment ,totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_m[19,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_m[19,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_m[20,1:2,h] <- unlist(results[c(6,2)])
-if (h==3) {
-adopt_prod_plot[1,1] <- "male adoption"
-adopt_prod_plot[1,3:4] <- confint(results[[7]], level=.9)[2,]/unlist(results[6])
-adopt_prod_plot[1,2] <- unlist(results[1]) / unlist(results[6])
-} else if (h==4) {
-adopt_prod_plot[7,1] <- "male adoption"
-adopt_prod_plot[7,3:4] <-  confint(results[[7]], level=.9)[2,]/unlist(results[6])
-adopt_prod_plot[7,2] <-unlist(results[1]) / unlist(results[6])
-}
+#results <- plot_RI(dta_bal, man = "dec_man_d", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment ,totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_m[19,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_m[19,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_m[20,1:2,h] <- unlist(results[c(6,2)])
+#if (h==3) {
+#adopt_prod_plot[1,1] <- "male adoption"
+#adopt_prod_plot[1,3:4] <- confint(results[[7]], level=.9)[2,]/unlist(results[6])
+#adopt_prod_plot[1,2] <- unlist(results[1]) / unlist(results[6])
+#} else if (h==4) {
+#adopt_prod_plot[7,1] <- "male adoption"
+#adopt_prod_plot[7,3:4] <-  confint(results[[7]], level=.9)[2,]/unlist(results[6])
+#adopt_prod_plot[7,2] <-unlist(results[1]) / unlist(results[6])
+#}
 
 
-results <- plot_RI(dta_bal, man = "dec_woman_d", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment ,totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_w[19,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_w[19,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_w[20,1:2,h] <- unlist(results[c(6,2)])
-if (h==3) {
-adopt_prod_plot[3,1] <- "female adoption"
-adopt_prod_plot[3,3:4] <- confint(results[[7]], level=.9)[2,]/unlist(results[6])
-adopt_prod_plot[3,2] <- unlist(results[1]) / unlist(results[6])
-} else if (h==4) {
-adopt_prod_plot[9,1] <- "female adoption"
-adopt_prod_plot[9,3:4] <-  confint(results[[7]], level=.9)[2,]/unlist(results[6])
-adopt_prod_plot[9,2] <-unlist(results[1]) / unlist(results[6])
-}
+#results <- plot_RI(dta_bal, man = "dec_woman_d", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment ,totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_w[19,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_w[19,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_w[20,1:2,h] <- unlist(results[c(6,2)])
+#if (h==3) {
+#adopt_prod_plot[3,1] <- "female adoption"
+#adopt_prod_plot[3,3:4] <- confint(results[[7]], level=.9)[2,]/unlist(results[6])
+#adopt_prod_plot[3,2] <- unlist(results[1]) / unlist(results[6])
+#} else if (h==4) {
+#adopt_prod_plot[9,1] <- "female adoption"
+#adopt_prod_plot[9,3:4] <-  confint(results[[7]], level=.9)[2,]/unlist(results[6])
+#adopt_prod_plot[9,2] <-unlist(results[1]) / unlist(results[6])
+#}
 
-results <- plot_RI(dta_bal, man = "dec_both_d", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment ,totrep,trimlog=F,h)
-if (totrep>0) {
-res_pract_b[19,1:3,h] <- unlist(results[c(5,1,4)])
-} else {
-res_pract_b[19,1:3,h] <- unlist(results[c(5,1,3)])
-}
-res_pract_b[20,1:2,h] <- unlist(results[c(6,2)])
+#results <- plot_RI(dta_bal, man = "dec_both_d", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment ,totrep,trimlog=F,h)
+#if (totrep>0) {
+#res_pract_b[19,1:3,h] <- unlist(results[c(5,1,4)])
+#} else {
+#res_pract_b[19,1:3,h] <- unlist(results[c(5,1,3)])
+#}
+#res_pract_b[20,1:2,h] <- unlist(results[c(6,2)])
 
-if (h==3) {
-adopt_prod_plot[5,1] <- "joint adoption"
-adopt_prod_plot[5,3:4] <- confint(results[[7]], level=.9)[2,]/unlist(results[6])
-adopt_prod_plot[5,2] <- unlist(results[1]) / unlist(results[6])
-} else if (h==4) {
-adopt_prod_plot[11,1] <- "joint adoption"
-adopt_prod_plot[11,3:4] <-  confint(results[[7]], level=.9)[2,]/unlist(results[6])
-adopt_prod_plot[11,2] <-unlist(results[1]) / unlist(results[6])
-}
+#if (h==3) {
+#adopt_prod_plot[5,1] <- "joint adoption"
+#adopt_prod_plot[5,3:4] <- confint(results[[7]], level=.9)[2,]/unlist(results[6])
+#adopt_prod_plot[5,2] <- unlist(results[1]) / unlist(results[6])
+#} else if (h==4) {
+#adopt_prod_plot[11,1] <- "joint adoption"
+#adopt_prod_plot[11,3:4] <-  confint(results[[7]], level=.9)[2,]/unlist(results[6])
+#adopt_prod_plot[11,2] <-unlist(results[1]) / unlist(results[6])
+#}
 
 
 
@@ -1565,39 +1565,39 @@ adopt_prod_plot[11,2] <-unlist(results[1]) / unlist(results[6])
 #res_prod[9,3,h] <-  indexer[[2]]
 
 #alternative - this is at plot level
-#results <- plot_RI(dta_bal, man = "mgt_man", out_sp1 =c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1"),out_sp2 =c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2"),treatment , totrep, trimlog = TRUE,h)
+results <- plot_RI(dta_bal, man = "mgt_man", out_sp1 =c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1"),out_sp2 =c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2"),treatment , totrep, trimlog = TRUE,h)
 
-#if (totrep>0) {
-#res_prod_mm[1,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_prod_mm[1,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_prod_mm[2,1:2,h] <- unlist(results[c(6,2)])
+if (totrep>0) {
+res_prod_mm[1,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_prod_mm[1,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_prod_mm[2,1:2,h] <- unlist(results[c(6,2)])
 
 
-#results <- plot_RI(dta_bal, man = "mgt_man", out_sp1 =c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1"),out_sp2 =c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2"),treatment , totrep, trimlog = TRUE,h)
-#if (totrep>0) {
-#res_prod_mm[3,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_prod_mm[3,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_prod_mm[4,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "mgt_man", out_sp1 =c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1"),out_sp2 =c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2"),treatment , totrep, trimlog = TRUE,h)
+if (totrep>0) {
+res_prod_mm[3,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_prod_mm[3,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_prod_mm[4,1:2,h] <- unlist(results[c(6,2)])
 
-#results <- plot_RI(dta_bal, man = "mgt_man", out_sp1 =paste("yield_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , totrep, trimlog = TRUE,h)
-#if (totrep>0) {
-#res_prod_mm[5,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_prod_mm[5,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_prod_mm[6,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "mgt_man", out_sp1 =paste("yield_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , totrep, trimlog = TRUE,h)
+if (totrep>0) {
+res_prod_mm[5,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_prod_mm[5,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_prod_mm[6,1:2,h] <- unlist(results[c(6,2)])
 
-#results <- plot_RI(dta_bal, man = "mgt_man", out_sp1 =paste("yield_better_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_better_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , totrep, trimlog = FALSE,h)
-#if (totrep>0) {
-#res_prod_mm[7,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_prod_mm[7,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_prod_mm[8,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "mgt_man", out_sp1 =paste("yield_better_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_better_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , totrep, trimlog = FALSE,h)
+if (totrep>0) {
+res_prod_mm[7,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_prod_mm[7,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_prod_mm[8,1:2,h] <- unlist(results[c(6,2)])
 
 indexer <- plot_prod_FW_index(treatment,man="mgt_man",dta_bal, nr_repl=totrep,h_ind=h)
 
@@ -1618,37 +1618,37 @@ adopt_prod_plot[8,3:4] <- confint(indexer[[1]], level=.9)[2,]/sd(indexer[[3]]$in
 adopt_prod_plot[8,2] <- summary(indexer[[1]])$coefficients[2,1] /sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
 }
 
-#results <- plot_RI(dta_bal, man = "mgt_woman", out_sp1 =c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1"),out_sp2 =c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2"),treatment , totrep, trimlog = TRUE)
-#if (totrep>0) {
-#res_prod_fm[1,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_prod_fm[1,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_prod_fm[2,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "mgt_woman", out_sp1 =c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1"),out_sp2 =c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2"),treatment , totrep, trimlog = TRUE)
+if (totrep>0) {
+res_prod_fm[1,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_prod_fm[1,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_prod_fm[2,1:2,h] <- unlist(results[c(6,2)])
 
-#results <- plot_RI(dta_bal, man = "mgt_woman", out_sp1 =c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1"),out_sp2 =c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2"),treatment , totrep, trimlog = TRUE)
-#if (totrep>0) {
-#res_prod_fm[3,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_prod_fm[3,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_prod_fm[4,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "mgt_woman", out_sp1 =c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1"),out_sp2 =c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2"),treatment , totrep, trimlog = TRUE)
+if (totrep>0) {
+res_prod_fm[3,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_prod_fm[3,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_prod_fm[4,1:2,h] <- unlist(results[c(6,2)])
 
-#results <- plot_RI(dta_bal, man = "mgt_woman", out_sp1 =paste("yield_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , totrep, trimlog = TRUE)
-#if (totrep>0) {
-#res_prod_fm[5,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_prod_fm[5,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_prod_fm[6,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "mgt_woman", out_sp1 =paste("yield_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , totrep, trimlog = TRUE)
+if (totrep>0) {
+res_prod_fm[5,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_prod_fm[5,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_prod_fm[6,1:2,h] <- unlist(results[c(6,2)])
 
-#results <- plot_RI(dta_bal, man = "mgt_woman", out_sp1 =paste("yield_better_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_better_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , totrep, trimlog = FALSE)
-#if (totrep>0) {
-#res_prod_fm[7,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_prod_fm[7,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_prod_fm[8,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "mgt_woman", out_sp1 =paste("yield_better_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_better_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , totrep, trimlog = FALSE)
+if (totrep>0) {
+res_prod_fm[7,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_prod_fm[7,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_prod_fm[8,1:2,h] <- unlist(results[c(6,2)])
 
 indexer <- plot_prod_FW_index(treatment,man="mgt_woman",dta_bal, nr_repl=totrep,h_ind=h)
 
@@ -1669,37 +1669,37 @@ adopt_prod_plot[10,3:4] <- confint(indexer[[1]], level=.9)[2,]/sd(indexer[[3]]$i
 adopt_prod_plot[10,2] <- summary(indexer[[1]])$coefficients[2,1] /sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T)
 }
 
-#results <- plot_RI(dta_bal, man = "mgt_both", out_sp1 =c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1"),out_sp2 =c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2"),treatment , totrep, trimlog = TRUE)
-#if (totrep>0) {
-#res_prod_bm[1,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_prod_bm[1,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_prod_bm[2,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "mgt_both", out_sp1 =c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1"),out_sp2 =c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2"),treatment , totrep, trimlog = TRUE)
+if (totrep>0) {
+res_prod_bm[1,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_prod_bm[1,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_prod_bm[2,1:2,h] <- unlist(results[c(6,2)])
 
-#results <- plot_RI(dta_bal, man = "mgt_both", out_sp1 =c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1"),out_sp2 =c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2"),treatment , totrep, trimlog = TRUE)
-#if (totrep>0) {
-#res_prod_bm[3,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_prod_bm[3,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_prod_bm[4,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "mgt_both", out_sp1 =c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1"),out_sp2 =c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2"),treatment , totrep, trimlog = TRUE)
+if (totrep>0) {
+res_prod_bm[3,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_prod_bm[3,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_prod_bm[4,1:2,h] <- unlist(results[c(6,2)])
 
-#results <- plot_RI(dta_bal, man = "mgt_both", out_sp1 =paste("yield_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , totrep, trimlog = TRUE)
-#if (totrep>0) {
-#res_prod_bm[5,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_prod_bm[5,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_prod_bm[6,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "mgt_both", out_sp1 =paste("yield_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , totrep, trimlog = TRUE)
+if (totrep>0) {
+res_prod_bm[5,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_prod_bm[5,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_prod_bm[6,1:2,h] <- unlist(results[c(6,2)])
 
-#results <- plot_RI(dta_bal, man = "mgt_both", out_sp1 =paste("yield_better_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_better_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , totrep, trimlog = FALSE)
-#if (totrep>0) {
-#res_prod_bm[7,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_prod_bm[7,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_prod_bm[8,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "mgt_both", out_sp1 =paste("yield_better_sp1",paste("_pl",1:5, sep=""), sep=""),out_sp2 =paste("yield_better_sp2",paste("_pl",1:5, sep=""), sep=""),treatment , totrep, trimlog = FALSE)
+if (totrep>0) {
+res_prod_bm[7,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_prod_bm[7,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_prod_bm[8,1:2,h] <- unlist(results[c(6,2)])
 
 indexer <- plot_prod_FW_index(treatment,man="mgt_both",dta_bal, nr_repl=totrep,h_ind=h)
 

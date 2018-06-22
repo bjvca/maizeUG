@@ -5102,7 +5102,7 @@ name "tab:yield_ag_allh"
 
 \begin_layout Plain Layout
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -9111,7 +9111,7 @@ time plant	&	0.238	&	0.001	&	0.931	&	0.009	&	0.612
 \backslash
 
 \backslash
-  bought_seed	&	0.196	&	-0.019	&	0.159	&	0.026	&	0.068	
+  Buy seed	&	0.196	&	-0.019	&	0.159	&	0.026	&	0.068	
 \backslash
 
 \backslash
@@ -9258,16 +9258,18 @@ Adoption
 \end_layout
 
 \begin_layout Standard
-In the previous section, we have investigated the impact of the video interventi
-ons on who decides about agricultural technology adoption.
+In the previous section, we have looked at the impact of the video interventions
+ on who decides about agricultural technology adoption.
  Here, we go one step further and also consider actual implementation of
  each of the practices and technologies on which a decision was made.
  In particular, we compare the proportion of plots between two treatments
- on which (i) the husband solely made the decision to implement a particular
- technology and also implements it; (ii) the wife solely made the decision
- to implement a particular technology and also implements it; and (iii)
- husband and wife indicate they jointly made the decision to implement a
- particular technology and also implemented it
+ on which (i) the husband solely made the decision on a particular management
+ practice and decided to implement the practice that is recommended in the
+ video; (ii) the wife solely made the decision on a particular management
+ practice and decided to implement the practice that is recommended in the
+ video; and (iii) husband and wife indicate they jointly made made the decision
+ on a particular management practice and decided to implement the practice
+ that is recommended in the video
 \begin_inset Foot
 status collapsed
 
@@ -9307,122 +9309,68 @@ reference "tab:R_adopt_ind_bm-1-1-1"
 \end_layout
 
 \begin_layout Standard
-Table 
+The first column in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:M_adopt_ind_mm-1"
 
 \end_inset
 
- shows plot level adoption by the male co-head.
- In the first column we again report averages for the households where the
- video was only shown to the male co-head.
+ again reports averages for the households where the video was only shown
+ to the male co-head.
+ We see that, for example, on about 8.7 percent of plots the male co-head
+ solely decided to start planting immediately after the first rains, as
+ recommended in the video.
+ Our video also stressed the importance of soil management and we find that
+ on about 22 percent of maize plots the male co-head solely decided to apply
+ fertilizer.
+ In the second column, we see that this averages are lower among households
+ where the video was not shown to the man, but only to the female co-head.
+ For example, in this group, we find that on only about 13 percent of plots
+ the male head solely decided to use fertilizer.
  
 \end_layout
 
 \begin_layout Standard
-In the top panel of the table, we compare treatment and control households
- (corresponding to H1).
- In the first three columns, we report results on plots where the husband
- indicated he made the particular decision alone.
- For instance, we find that in the control group on 19.8 percent of plots
- where the man indicates he made the decision on when to start planting,
- planting was started immediately after the first rain as recommended in
- the video.
- This percentage does not differ significantly from male managed plots in
- the group that did see the video.
- Similarly, we find that the spacing that is recommended in the video was
- used on only 2 percent of plots where men made the decision with respect
- to spacing among control households.
- We find that this percentage increases by 5.4 percentage points in the sub-sampl
-e that did get to see a video.
- On 69.8 percent of the plots where men decide on how to manage striga, recommend
-ations were followed in the control group.
- This proportion increased to 82.2 percent among households that were shown
- the video.
- There is no difference between treatment and control groups in terms of
- optimal timing of first weeding on plots where men make the decisions.
- Furthermore, among the sample of households that did not get the agricultural
- extension information video, fertilizer was used on 28.8 percent of male
- managed, and this percentage is similar on male managed plots in households
- that did get the information treatment.
- We also find no difference between treatment and control for in adoption
- on male managed plots of seed use, on the likelihood that seed and fertilizers
- are combined or on seed recycling.
- We do find that our videos appear to crowd in the use of chemicals on male
- managed plots.
- 
-\end_layout
-
-\begin_layout Standard
-The generally positive treatment effects of the video on practices on male
- managed plots do not seem to extend to women managed plots (reported in
- columns 4-6).
- We find no significant differences for the use of recommended spacing or
- the use of the recommended way to fight striga on female managed plots,
- nor are households that have seen the video more likely to use chemicals
- on their female managed maize plots.
- One interesting difference relates to fertilizer.
- Here, we do see that showing a video substantially increases the likelihood
- that fertilizer is used on women managed plots.
- The effect is also present on plots that are managed by husband and wife
- together (columns 7-9).
- On plots that are jointly managed, the likelihood that optimal spacing
- is adopted also increases by 6.2 percentage points after being shown a video.
-\end_layout
-
-\begin_layout Standard
-In the second panel of Table 
+Not surprisingly, Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:adopt_manager"
+reference "tab:M_adopt_ind_fm-1-1"
 
 \end_inset
 
-, we compare plot level adoption outcomes between households in which the
- video was shown to one of the spouses and households where the video was
- shown to the couple, differentiating by who manages the plot (corresponding
- to H2).
- Since in this treatment we aim to reduce inequality between spouses, we
- would expect adoption rates on male and female managed plots to move in
- opposite directions.
- At the same time, we would expect an increase in the adoption of practices
- on plots that are jointly managed.
- There are indications that the former mechanism is at work for striga managemen
-t.
- Among households where the video was shown to an individual spouse, on
- almost 80 percent of female managed plots striga was removed before flowering,
- while this was only the case on about 74 percent of male managed plots.
- After information asymmetries were removed by showing the video to both
- spouses, the proportion of male managed plots on which the recommended
- way to fight striga is followed increase by 8.3 percentage points.
- When the video was shown to an individual instead of a couple, male managed
- plots seem to get priority for weeding: on about 28 percent of male managed
- plots, first weeding was done according to recommendation provided in the
- video, while this is the case for only about 18 percent of female managed
- plots.
- However, in households where the video was shown to the couple, the percentage
- of women managed plots where proper weeding practices were followed increases
- by more than 10 percentage points.
- For fertilizer, we see a particularly strong effect of showing the video
- to couples on adoption on jointly managed plot, increasing an already high
- percentage by another 16.7 percent.
- 
+ shows that adoption of recommended practices on female managed plots is
+ very low.
+ Showing the video to female co-heads significantly increases the likelihood
+ of adoption of recommended practices as decided by the female, but also
+ here, rates of adoption remain well below those of their informed male
+ counterparts.
+ For instance, women decide and use fertilizer on only 12.7 percent of plots
+ if the woman was shown the video individually, as opposed to 22 percent
+ of male adoption if he is shown the video.
 \end_layout
 
 \begin_layout Standard
-The bottom panel of Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:adopt_manager"
+We do find that actual adoption also depends on who gets the information.
+ Impact is again strongest on male managed adoption.
+ In particular, if the information is given to the female only instead of
+ the man only, adoption by men reduces substantially.
+ For instance, we see an amost 10 percentage points reduction in fertilizer
+ use under male management.
+ While the impact of showing the video to the couple also generally reduces
+ male maneged adoption, the results are less convincing then when we consider
+ only decision making.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Interpretation?
+\end_layout
 
 \end_inset
 
- compares adoption outcomes between households that were shown the video
- where the information was provided by an individual farmer and households
- where the formation was given by a couple, separately for plot management
- status (corresponding to H3).
- We find no differences related to these treatments.
+
 \end_layout
 
 \begin_layout Standard
@@ -9668,6 +9616,29 @@ note: The comparison group consists of households where the video was shown
 \end_layout
 
 \begin_layout Standard
+We also see that showing a video to the woman co-head instead of the male
+ co-head increases adoption under female management.
+ However, the increase is only significant after controlling for FWER for
+ the strategy to reduce striga and for the use of commercial seed as opposed
+ to recycled seed
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The indicator for the adoption of the improved seed spacing suffers from
+ limited variance and should be dropped from the analysis.
+\end_layout
+
+\end_inset
+
+.
+ There are indications that if the video was shown to the couple, female
+ adoption of practices also increases, but mostly for practices that do
+ not require money.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -9907,6 +9878,44 @@ note: The comparison group consists of households where the video was shown
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Finally, Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:R_adopt_ind_bm-1-1"
+
+\end_inset
+
+ shows changes in adoption under joint management.
+ There are some indications that joint adoption reduces when the video is
+ shown to the woman alone as compared to when it is shown to the man alone.
+ The fact that this effect was not present in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:dectechboth"
+
+\end_inset
+
+ suggests that there is still a big gap between decision making and adoption
+ if the man is not informed.
+ At the same time, we see that showing the video to a couple increases joint
+ adoption.
+ This effect, even though generally not significant after correcting for
+ multiple hypothesis testing, is also less present in the corresponding
+ table that only looks at decision making
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Interpretation
+\end_layout
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -10165,32 +10174,49 @@ reference "tab:R_hh_prod-1"
 
  we look at how production outcomes are affected by our video intervention,
  also separately for male, female and jointly managed plots.
- Here, plot management is defined by the person who decided that maize should
- be cultivated on the particular plot.
- We find that the intervention increased production, reduced area planted
- and increased maize yields most convincingly on male managed plots.
- On female managed plots, the intervention only results in a smaller cultivation
- area.
- On plots that are jointly managed, results are closer to those on male
- managed plots, but only the yield increase is significant.
- Looking at these results together with findings in Table 
+ The top panel in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:R_hh_prod-1-1"
+reference "tab:R_hh_prod-1"
 
 \end_inset
 
-, it may be that in the context of the fall armyworm crisis, the use of
- chemicals was key to convert increased fertilizer use into higher yields.
+ shows that a maize plot on average produces 137 kg under male management
+ in households where the video was only shown to the male co-head.
+ The average household where the male co-head was shown the video only produces
+ 42 kg under the management of the female co-head (second panel), and the
+ corresponding figure is about 90 kg under joint management.
+ 
 \end_layout
 
 \begin_layout Standard
-Comparing households where the video was shown to an individual with households
- where the video was shown to the couple, we only find a statistically significa
-nt difference for production on male managed plots.
- We again did not find any difference between groups where the information
- was provided by an individual and groups where the information was provided
- by a couple on production outcomes disaggregated by plot manager.
+We find that, on average, production under male management reduces by about
+ 26 kilos if the video was shown to the female co-head only.
+ However, production under management of the female co-head increases dramatical
+ly (36 percent).
+ Plots under joint management produce the same amount regardless of who
+ was shown the video.
+ 
+\end_layout
+
+\begin_layout Standard
+On average, the area planted under male management is about 0.3 acres.
+ Area planted under female management is three time lower.
+ A further 0.22 acres is under joint management.
+ We again see a reduction in area under male management if the women alone
+ was shown the video and a corresponding increase in the area under female
+ management, which was to be expected as we already saw that women increase
+ decision making after receiving information.
+ 
+\end_layout
+
+\begin_layout Standard
+Similarly, we see that on an average one acre plot, about 200 kg is produced
+ under male management, 70 kg under female management, and about 125 kg
+ under joint management.
+ If the video was shown to a female only, the amount produce per acre under
+ male management reduces by 34 kg and the amount under female management
+ increases by about 26 kg on the average one acre plot.
 \end_layout
 
 \begin_layout Standard
@@ -10289,31 +10315,31 @@ textit{male managed}}
 
 \begin_layout Plain Layout
 
-log kg produced	&	2.144	&	-0.370	&	0.002	&	-0.218	&	0.088	
+kg produced	&	137.221	&	-25.982	&	0.013	&	-6.507	&	0.564	
 \backslash
 
 \backslash
- 	&	2.773	&	0.111	&		&	0.116	&		
+ 	&	248.760	&	9.649	&		&	10.212	&		
 \backslash
 
 \backslash
- log acres planted	&	-0.148	&	0.026	&	0.151	&	0.038	&	0.025	
+ acres planted	&	0.303	&	-0.044	&	0.032	&	-0.031	&	0.142	
 \backslash
 
 \backslash
- 	&	0.408	&	0.017	&		&	0.016	&		
+ 	&	0.474	&	0.019	&		&	0.020	&		
 \backslash
 
 \backslash
- log yield (kg/ac) 	&	2.326	&	-0.373	&	0.004	&	-0.280	&	0.040	
+ log yield (kg/ac) 	&	201.332	&	-33.773	&	0.026	&	-27.077	&	0.088	
 \backslash
 
 \backslash
- 	&	2.974	&	0.121	&		&	0.124	&		
+ 	&	334.200	&	13.499	&		&	13.640	&		
 \backslash
 
 \backslash
- yield was better 	&	0.123	&	-0.055	&	0.000	&	-0.027	&	0.062	
+ yield was better 	&	0.123	&	-0.055	&	0.000	&	-0.027	&	0.057	
 \backslash
 
 \backslash
@@ -10321,11 +10347,11 @@ log kg produced	&	2.144	&	-0.370	&	0.002	&	-0.218	&	0.088
 \backslash
 
 \backslash
- production index	&	0.027	&	-0.055	&	0.021	&	-0.019	&	0.360	
+ production index	&	0.054	&	-0.111	&	0.001	&	-0.070	&	0.051	
 \backslash
 
 \backslash
- 	&	0.568	&	0.022	&		&	0.023	&		
+ 	&	0.840	&	0.032	&		&	0.033	&		
 \backslash
 
 \backslash
@@ -10347,27 +10373,27 @@ textit{female managed}}
 
 \begin_layout Plain Layout
 
-log kg produced	&	0.877	&	0.349	&	0.000	&	0.066	&	0.470	
+kg produced	&	42.011	&	15.219	&	0.013	&	-0.777	&	0.886	
 \backslash
 
 \backslash
- 	&	1.990	&	0.089	&		&	0.086	&		
+ 	&	128.829	&	5.689	&		&	5.690	&		
 \backslash
 
 \backslash
- log acres planted	&	-0.098	&	-0.038	&	0.031	&	0.004	&	0.812	
+ log acres planted	&	0.109	&	0.052	&	0.000	&	0.017	&	0.254	
 \backslash
 
 \backslash
- 	&	0.349	&	0.016	&		&	0.015	&		
+ 	&	0.303	&	0.014	&		&	0.014	&		
 \backslash
 
 \backslash
- log yield (kg/ac) 	&	0.932	&	0.441	&	0.000	&	0.120	&	0.244	
+ log yield (kg/ac) 	&	69.717	&	25.703	&	0.009	&	9.902	&	0.327	
 \backslash
 
 \backslash
- 	&	2.154	&	0.100	&		&	0.099	&		
+ 	&	205.934	&	9.184	&		&	9.428	&		
 \backslash
 
 \backslash
@@ -10379,11 +10405,11 @@ log kg produced	&	0.877	&	0.349	&	0.000	&	0.066	&	0.470
 \backslash
 
 \backslash
- production index	&	-0.025	&	0.048	&	0.030	&	0.013	&	0.526	
+ production index	&	-0.073	&	0.136	&	0.000	&	0.060	&	0.065	
 \backslash
 
 \backslash
- 	&	0.531	&	0.021	&		&	0.021	&		
+ 	&	0.710	&	0.034	&		&	0.035	&		
 \backslash
 
 \backslash
@@ -10405,31 +10431,31 @@ textit{both managed}}
 
 \begin_layout Plain Layout
 
-log kg produced	&	1.466	&	-0.080	&	0.448	&	0.108	&	0.325	
+kg produced	&	89.290	&	-5.096	&	0.520	&	7.929	&	0.336	
 \backslash
 
 \backslash
- 	&	2.484	&	0.093	&		&	0.097	&		
+ 	&	196.823	&	7.314	&		&	7.780	&		
 \backslash
 
 \backslash
- log acres planted	&	-0.091	&	-0.006	&	0.693	&	-0.001	&	0.924	
+ log acres planted	&	0.224	&	-0.022	&	0.242	&	0.013	&	0.492	
 \backslash
 
 \backslash
- 	&	0.339	&	0.013	&		&	0.013	&		
+ 	&	0.442	&	0.016	&		&	0.017	&		
 \backslash
 
 \backslash
- log yield (kg/ac) 	&	1.607	&	-0.097	&	0.388	&	0.104	&	0.388	
+ log yield (kg/ac) 	&	124.729	&	-3.987	&	0.707	&	9.735	&	0.389	
 \backslash
 
 \backslash
- 	&	2.663	&	0.101	&		&	0.105	&		
+ 	&	256.797	&	9.746	&		&	10.517	&		
 \backslash
 
 \backslash
- yield was better 	&	0.118	&	-0.031	&	0.009	&	0.009	&	0.484	
+ yield was better 	&	0.118	&	-0.031	&	0.010	&	0.009	&	0.497	
 \backslash
 
 \backslash
@@ -10437,11 +10463,11 @@ log kg produced	&	1.466	&	-0.080	&	0.448	&	0.108	&	0.325
 \backslash
 
 \backslash
- production index	&	0.018	&	-0.036	&	0.072	&	0.018	&	0.384	
+ production index	&	0.030	&	-0.061	&	0.036	&	0.032	&	0.280	
 \backslash
 
 \backslash
- 	&	0.599	&	0.021	&		&	0.022	&		
+ 	&	0.839	&	0.030	&		&	0.032	&		
 \backslash
 
 \backslash
@@ -11487,7 +11513,7 @@ cline{2-6}
 
 \begin_layout Plain Layout
 
-first_day	&	0.308	&	-0.014	&	0.507	&	-0.005	&	0.799	
+time plant	&	0.308	&	-0.014	&	0.507	&	-0.005	&	0.799	
 \backslash
 
 \backslash
@@ -11495,7 +11521,7 @@ first_day	&	0.308	&	-0.014	&	0.507	&	-0.005	&	0.799
 \backslash
 
 \backslash
- space	&	0.324	&	0.004	&	0.847	&	-0.009	&	0.640	
+ spacing	&	0.324	&	0.004	&	0.847	&	-0.009	&	0.640	
 \backslash
 
 \backslash
@@ -11535,7 +11561,7 @@ first_day	&	0.308	&	-0.014	&	0.507	&	-0.005	&	0.799
 \backslash
 
 \backslash
-  bought_seed	&	0.292	&	-0.003	&	0.931	&	0.025	&	0.375	
+  Buy seed	&	0.292	&	-0.003	&	0.931	&	0.025	&	0.375	
 \backslash
 
 \backslash
@@ -11543,7 +11569,7 @@ first_day	&	0.308	&	-0.014	&	0.507	&	-0.005	&	0.799
 \backslash
 
 \backslash
- chem	&	0.422	&	-0.061	&	0.050	&	-0.024	&	0.442	
+ Use chemicals	&	0.422	&	-0.061	&	0.050	&	-0.024	&	0.442	
 \backslash
 
 \backslash
@@ -12822,7 +12848,7 @@ note: The comparison group consists of households where the video was shown
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -12914,31 +12940,31 @@ textit{male managed}}
 
 \begin_layout Plain Layout
 
-log kg produced	&	2.119	&	-0.222	&	0.107	&	-0.300	&	0.012	
+log kg produced	&	134.587	&	-13.165	&	0.276	&	-13.590	&	0.203	
 \backslash
 
 \backslash
- 	&	2.765	&	0.114	&		&	0.114	&		
+ 	&	239.613	&	9.811	&		&	9.883	&		
 \backslash
 
 \backslash
- log acres planted	&	-0.139	&	0.022	&	0.213	&	0.012	&	0.482	
+ log acres planted	&	0.291	&	-0.012	&	0.612	&	-0.028	&	0.173	
 \backslash
 
 \backslash
- 	&	0.403	&	0.017	&		&	0.017	&		
+ 	&	0.476	&	0.020	&		&	0.019	&		
 \backslash
 
 \backslash
- log yield (kg/ac) 	&	2.245	&	-0.199	&	0.165	&	-0.210	&	0.113	
+ log yield (kg/ac) 	&	190.345	&	-19.018	&	0.208	&	-10.704	&	0.477	
 \backslash
 
 \backslash
- 	&	2.941	&	0.122	&		&	0.122	&		
+ 	&	326.843	&	13.290	&		&	13.739	&		
 \backslash
 
 \backslash
- yield was better 	&	0.113	&	-0.022	&	0.125	&	-0.029	&	0.030	
+ yield was better 	&	0.113	&	-0.022	&	0.129	&	-0.029	&	0.029	
 \backslash
 
 \backslash
@@ -12946,11 +12972,11 @@ log kg produced	&	2.119	&	-0.222	&	0.107	&	-0.300	&	0.012
 \backslash
 
 \backslash
- production index	&	0.008	&	-0.015	&	0.515	&	-0.028	&	0.198	
+ production index	&	0.027	&	-0.053	&	0.076	&	-0.060	&	0.049	
 \backslash
 
 \backslash
- 	&	0.571	&	0.023	&		&	0.023	&		
+ 	&	0.832	&	0.033	&		&	0.032	&		
 \backslash
 
 \backslash
@@ -12972,31 +12998,31 @@ textit{female managed}}
 
 \begin_layout Plain Layout
 
-log kg produced	&	1.036	&	-0.019	&	0.865	&	-0.001	&	0.994	
+log kg produced	&	51.577	&	-2.098	&	0.740	&	-2.860	&	0.635	
 \backslash
 
 \backslash
- 	&	2.116	&	0.088	&		&	0.088	&		
+ 	&	148.198	&	5.958	&		&	5.670	&		
 \backslash
 
 \backslash
- log acres planted	&	-0.112	&	0.014	&	0.451	&	-0.010	&	0.602	
+ log acres planted	&	0.128	&	0.007	&	0.620	&	0.015	&	0.311	
 \backslash
 
 \backslash
- 	&	0.371	&	0.015	&		&	0.016	&		
+ 	&	0.328	&	0.014	&		&	0.015	&		
 \backslash
 
 \backslash
- log yield (kg/ac) 	&	1.106	&	0.020	&	0.875	&	0.075	&	0.489	
+ log yield (kg/ac) 	&	79.850	&	8.397	&	0.439	&	7.408	&	0.445	
 \backslash
 
 \backslash
- 	&	2.293	&	0.099	&		&	0.100	&		
+ 	&	216.569	&	9.735	&		&	9.152	&		
 \backslash
 
 \backslash
- yield was better 	&	0.046	&	0.007	&	0.444	&	-0.002	&	0.789	
+ yield was better 	&	0.046	&	0.007	&	0.443	&	-0.002	&	0.794	
 \backslash
 
 \backslash
@@ -13004,11 +13030,11 @@ log kg produced	&	1.036	&	-0.019	&	0.865	&	-0.001	&	0.994
 \backslash
 
 \backslash
- production index	&	-0.018	&	0.032	&	0.106	&	0.025	&	0.229	
+ production index	&	-0.014	&	0.026	&	0.405	&	-0.001	&	0.982	
 \backslash
 
 \backslash
- 	&	0.450	&	0.021	&		&	0.022	&		
+ 	&	0.792	&	0.034	&		&	0.034	&		
 \backslash
 
 \backslash
@@ -13030,31 +13056,31 @@ textit{both managed}}
 
 \begin_layout Plain Layout
 
-log kg produced	&	1.398	&	0.069	&	0.528	&	0.182	&	0.090	
+log kg produced	&	83.760	&	8.183	&	0.320	&	13.107	&	0.090	
 \backslash
 
 \backslash
- 	&	2.441	&	0.094	&		&	0.096	&		
+ 	&	191.012	&	7.617	&		&	7.294	&		
 \backslash
 
 \backslash
- log acres planted	&	-0.081	&	-0.018	&	0.211	&	-0.015	&	0.252	
+ log acres planted	&	0.218	&	-0.004	&	0.809	&	0.015	&	0.435	
 \backslash
 
 \backslash
- 	&	0.322	&	0.013	&		&	0.013	&		
+ 	&	0.438	&	0.017	&		&	0.017	&		
 \backslash
 
 \backslash
- log yield (kg/ac) 	&	1.551	&	0.016	&	0.890	&	0.157	&	0.183	
+ log yield (kg/ac) 	&	124.346	&	-0.241	&	0.983	&	13.992	&	0.224	
 \backslash
 
 \backslash
- 	&	2.636	&	0.102	&		&	0.104	&		
+ 	&	267.742	&	10.221	&		&	10.230	&		
 \backslash
 
 \backslash
- yield was better 	&	0.094	&	0.026	&	0.044	&	0.023	&	0.071	
+ yield was better 	&	0.094	&	0.026	&	0.041	&	0.023	&	0.066	
 \backslash
 
 \backslash
@@ -13062,11 +13088,11 @@ log kg produced	&	1.398	&	0.069	&	0.528	&	0.182	&	0.090
 \backslash
 
 \backslash
- production index	&	-0.002	&	0.005	&	0.825	&	0.026	&	0.193	
+ production index	&	-0.026	&	0.050	&	0.088	&	0.061	&	0.044	
 \backslash
 
 \backslash
- 	&	0.556	&	0.022	&		&	0.021	&		
+ 	&	0.761	&	0.031	&		&	0.032	&		
 \backslash
 
 \backslash
