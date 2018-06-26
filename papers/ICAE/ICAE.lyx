@@ -72,7 +72,8 @@
 \begin_body
 
 \begin_layout Title
-The Role of Gender in ICT-mediated Agricultural Information Campaigns
+Designing Effective and Inclusive ICT-mediated Agricultural Information
+ Campaigns
 \end_layout
 
 \begin_layout Author
@@ -87,28 +88,32 @@ an result in significant differences in effectiveness and inclusiveness
  of the intervention.
  Information and communications technology (ICT) can reduce the costs associated
  with adapting design attributes to particular problems and contexts.
- This study investigates the impact of a video-mediated extension approach
- and the importance of the gender composition of the person(s) who provide(s)
- the information and the gender composition of the person(s) who receive(s)
- the information.
- We conduct a field experiment among smallholder maize farmers in Uganda
- to determine whether and how reductions in information asymmetries among
- and within households lead to a range of productivity- and welfare-improving
- outcomes.
- Specifically, we assess the effectiveness of the approach by measuring
- knowledge gained, adoption of modern inputs and recommend practices, maize
- production and disposal, and well-being.
- We assess the approach’s inclusivity by exploring gender-disaggregated
- effects on intra-household decision-making, cooperative approaches to household
- farming, and other equity indicators.
+ This study compares the effectiveness of different ICT enabled technologies
+ to provide agricultural extension information to smallholder farmers.
+ In addition, it assesses the role of the gender composition of the person(s)
+ who provide(s) the information and the gender composition of the person(s)
+ who receive(s) the information in making video-mediated extension campaigns
+ more inclusive.
+ Through field experiments among smallholder maize farmers in Uganda, the
+ effectiveness of changing these design attributes—technology, messenger,
+ and recipient— is assessed by measuring knowledge gained, adoption of modern
+ inputs and recommend practices, maize production and disposal, and well-being.
+ we further investigate how the interventions affect gender disaggregated
+ outcomes, such as adoption and production on male, female and jointly managed
+ plots, as well as intra-household decision making.
  We find that short extension video messages increase knowledge, technology
  adoption, and production at the household level.
- We find some evidence that targeting the information to husband and wife
- jointly leads to increased consulting and agreement on farming.
- Targeting the woman instead of the man reduces the decision making on adoption
- by the man and increases decision making by the female co-head in turn
- leading to higher adoption and production.
- 
+ We find that a technology that is more demand driven further increases
+ productivity, as farmers use it to obtain additional information on more
+ complex technologies such as hybrid seed.
+ Showing extension videos also to women instead of only to men increases
+ women knowledge, boosting their confidence and leading to more consultation
+ among spouses.
+ If women receive information, they make decisions (and adopt recommended
+ technologies) on more plots, significantly increasing their role in maize
+ production.
+ However, this effect disappears if men also receive this information.
+ Changing the messenger attribute does not have any effect.
 \end_layout
 
 \begin_layout Section*
@@ -140,9 +145,9 @@ key "doi:10.1162/qjec.2010.125.2.515,10.1257/app.3.1.1"
 \end_inset
 
 .
- In many instances, information campaigns, extension programs, or advisory
- services designed to address these information inefficiencies can lead
- to significant differences in an individual's decision-making 
+ In many instances, information campaigns designed to address these information
+ inefficiencies can lead to significant differences in an individual's decision-
+making 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "banerjee2011poor"
@@ -150,11 +155,12 @@ key "banerjee2011poor"
 \end_inset
 
 .
- In the context of smallholder agriculture, these inefficiencies have been
- well documented, especially where the lack of information about the existence,
- use, and profitability of modern inputs, improved technologies, and recommended
- management practices are a major constraint to sustainable crop intensification
-, productivity growth, and food security 
+ In the context of agricultural technology adoption among smallholder farmers,
+ information inefficiencies are particularly important, as a lack of information
+ about the existence, use, and profitability of modern inputs, improved
+ technologies, and recommended management practices have been documented
+ to be a major constraint to sustainable crop intensification and food security
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1086/451461,jack2013market"
@@ -162,7 +168,16 @@ key "doi:10.1086/451461,jack2013market"
 \end_inset
 
 .
- 
+ As such, agricultural extension programs and advisory services, often provided
+ as a public service, are thought to be key in stimulating adoption and
+ increasing productivity, yet outcomes are mixed 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "davis2008extension"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -174,7 +189,8 @@ With new possibilities offered by information and communications technology
  extension approaches are equally effective in achieving outcomes such as
  increased rates of technology adoption, higher crop yields, or improvements
  in household welfare and intra-household equity.
- Seemingly small design attributes—the way information is delivered, who
+ This may be because, as has been found in information campaigns more generally,
+ seemingly small design attributes—the way information is delivered, who
  delivers the information, and who was targeted—can significantly influence
  these outcomes.
  
@@ -186,16 +202,21 @@ This paper investigates the effectiveness of information about improved
  In a first part, we consider the technology through which the information
  is delivered to the farmer, and differentiate between (i) short audiovisual
  messages viewed on tablet computers; (ii) Interactive Voice Response (IVR)
- systems that can be called upon if the need arises; and (iii) short message
- service (sms) nudges that remind farmers at particular points in time about
- key farming practices.
+ systems that can be called upon by farmers if the need arises; and (iii)
+ short message service (sms) nudges that remind farmers at particular points
+ in time about key farming practices.
  The outcomes used to judge the relative effectiveness of the the difference
- technologies are generally aggregated to the household level and include
- knowledge gained, practices and and modern inputs adopted, farm production
- and disposal, and household well-being.
- In a second part, the paper further explores the role and importance of
+ technologies include knowledge gained, practices and and modern inputs
+ adopted, farm production and disposal, and well-being, all measured at
+ the household level.
+ 
+\end_layout
+
+\begin_layout Standard
+In a second part, the paper further explores the role and importance of
  gender-related attributes in the design of the video-mediated approach
- that influence the inclusivity of extension information delivery.
+ that is expected to influence the inclusivity of extension information
+ delivery.
  In particular, we focus on (i) the gender composition of the receiver(s)
  of extension messages and (ii) the gender composition of the messenger(s)
  of the information message.
@@ -218,16 +239,16 @@ A dual household is defined as a household containing both one male and
 
 .
  The role of these gender related attributes is judged by looking at knowledge
- at the individual level, decision making within the households, as well
- as adoption and production outcomes conditional on who is the primary plot
- manager.
+ at the individual level, decision processes within the households, as well
+ as decisions on adoption, technologies and practices adopted, and production
+ outcomes at the plot level under male, female or joint management respectively.
 \end_layout
 
 \begin_layout Standard
-These hypotheses are tested using a field experiment in which farmers are
+These hypotheses are tested using a field experiments in which farmers are
  randomly assigned to a group that receives a particular information interventio
 n, and their outcomes are compared to the outcomes of a group of farmers
- that did not receive the information intervention 
+ that did not receive that particular information intervention 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "de2016field"
@@ -244,8 +265,8 @@ key "de2016field"
 \end_layout
 
 \begin_layout Standard
-We work with 3,600 participants sampled from the population of dual households
- cultivating maize across five districts of eastern Uganda.
+We work with 3,600 farm households sampled from the population of dual household
+s cultivating maize across five districts of eastern Uganda.
  The core information interventions take the form of short videos that explain
  simple yet effective ways to increase maize productivity and profitability,
  such as best practices in row spacing, the importance of quality seed,
@@ -254,11 +275,12 @@ We work with 3,600 participants sampled from the population of dual households
  we compare outcomes of farmers that were exposed to a placebo video to
  outcomes of farmers that were shown the video.
  To about two third of the sample of farm households that were shown the
- agricultural information video, we also gave to toll free phone number
- and explained they could call this number any time if they needed more
- information on maize farming.
+ agricultural information video, we also provided access to an IVR system,
+ consisting of a toll free phone number and a leaflet explaining that they
+ could call this number any time if they needed more information on maize
+ farming.
  Finally, to half of the sample of households that got the IVR number (and
- thus were also shown the video) we sent 10 sms messages at strategic points
+ thus were also shown the video) we sent 8 sms messages at strategic points
  in time reminding them to about the importance of a particular technology
  or practice that was explained in the video and repeating that they can
  always call the IVR system if they want more information.
@@ -269,14 +291,13 @@ We work with 3,600 participants sampled from the population of dual households
 To test how information asymmetry within the household affects decision
  making and outcomes, we compare farm households where the video was shown
  only to the man in the household (the status quo) to households where the
- video was shown to the woman in the household, and to households where
- the video was shown to man and women together as a couple.
+ video was shown to the woman alone in the household, and to households
+ where the video was shown to man and women together as a couple.
  To test the hypothesis on the importance of the gender (composition) of
  the person(s) providing the information, we produced different versions
  of the video.
- In each version of the video, the information was exactly the same, only
- the person (or persons) that featured in the video and explained everything
- was changed.
+ In each version of the video, the information content was exactly the same,
+ only the person (or persons) that featured in the video was changed.
  In one version of the video, all the information is provided by an individual
  male farmer, while in a second version of the video, the information is
  given by a female farmer.
@@ -304,13 +325,28 @@ At the farm household level, we find that providing information to farmers
 \end_layout
 
 \begin_layout Standard
-Within the household, we find greater nuance to these initial findings.
- First, the observed yield gains are observed on male- and jointly-managed
- plots: although we observe that providing information through the video
- messages increases women's involvement in decision making.
- However, the increase in participation in decision making does not translated
- into higher yields on women-managed plots.
- 
+With respect to the recipient of the information, there are few household
+ level effects.
+ However, household level effects may mask opposite effects at the individual
+ level.
+ We find that if the video is shown to the couple or the woman (as opposed
+ to only the man), knowledge of the woman increases significantly, suggesting
+ information does not flow efficiently from the man to the woman within
+ the household.
+ When the video was shown to couple (as opposed to only the man), women
+ are more likely to speak up if they do not agree, and it is more likely
+ that an agreement is reached.
+ If women also receive information, men are less likely to make adoption
+ decisions by themselves.
+ Women, on the other hand, will make significantly more decisions on the
+ use of improved agronomic practices and inputs, but only if this information
+ is not also available to the husband.
+ If only women receive information, they adopt more than if only men receive
+ the information.
+ As a result, we find that including women in extension increases the role
+ of women in maize production.
+ We do not find that it matters if the information in the video was provided
+ by a man, a woman, or a man and woman together.
 \end_layout
 
 \begin_layout Standard
@@ -321,8 +357,13 @@ The remainder of the paper is organized as follows.
  Section 4 describes the study site and context, while Section 5 describes
  the interventions used as the treatment in this experiment.
  We then turn to the results in Section 6 with a discussion of baseline
- characteristics and sample balance followed by analysis of the household
- and intra-household outcomes.
+ characteristics and sample balance.
+ This is followed by analysis of the household level impact of the technology
+ used, with subsections for impact on knowledge, practices adopted, production,
+ and welfare.
+ Then we present the analysis of the gender attributes, first briefly looking
+ at household level outcome and then focusing more on individual outcomes
+ and intra-household effects.
 \begin_inset Note Note
 status collapsed
 
@@ -344,12 +385,13 @@ Research Questions and Hypotheses
 \end_layout
 
 \begin_layout Standard
-In this paper, we investigate the effectiveness of delivering agricultural
- extension information to Ugandan smallholder farmers.
- We examine the relative importance of (i) the way the information is delivered,
- (ii) the gender composition of the messenger(s), and (iii) the gender compositi
-on of the viewer(s) in encouraging the uptake and adoption of modern input
- use and improved crop management practices.
+The primary focus of this study is the design of effective and inclusive
+ agricultural extension information campaigns.
+ We examine the relative importance of three design features, in particular
+ (i) the way the information is delivered, (ii) the gender composition of
+ the messenger(s), and (iii) the gender composition of the viewer(s) in
+ encouraging the uptake and adoption of modern input use and improved crop
+ management practices.
  Specific emphasis is placed on exploring both the effectiveness and inclusivity
  of this ICT-enabled approach to extension information delivery for several
  reasons.
@@ -378,7 +420,7 @@ key "doi:10.1111/agec.12314"
  success 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Feder2010,doi:10.1080/13892240903309595,doi:10.1596/1813-9450-2129,doi:10.1080/13892249985300061"
+key "Feder2010,doi:10.1080/13892240903309595,doi:10.1080/13892249985300061,davis2008extension"
 
 \end_inset
 
@@ -407,8 +449,8 @@ key "RePEc:hbs:wpaper:13-047"
 
  found that short message services (SMSs) pushed to farmers in Gujarat,
  India generated positive effects on crop choice and pesticide use decision
- and that the introduction of an interactive voice respose system signficantly
- increased cummin and cotton yields.
+ and that the introduction of an interactive voice response system significantly
+ increased cumin and cotton yields.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -419,12 +461,19 @@ key "doi:10.1080/00220388.2016.1146700"
  found that a multi-media mobile phone-based product linked to expert advisory
  services increased farmers' awareness and knowledge about specific solutions
  to their production constraints in Madhya Pradesh, India.
- Maredia et al., on the other hand, found that while mobile phone-based animated
- videos shown to farmers in Burkina Faso induced learning and understanding,
- it was no more effective in encouraging adoption.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "maredia2017can"
+
+\end_inset
+
+, on the other hand, found that while mobile phone-based animated videos
+ shown to farmers in Burkina Faso induced learning and understanding, it
+ was no more effective in encouraging adoption.
  Similarly, Grameen Foundation had some success using smartphones in Uganda
- to provide agriculture-related information to farmers through community
- knowledge workers 
+ to provide agriculture-related information to farmers through ICT empowered
+ community knowledge workers 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1080/1369118X.2016.1200644"
@@ -432,7 +481,7 @@ key "doi:10.1080/1369118X.2016.1200644"
 \end_inset
 
 .
- Also in Uganda, showning short videos to potato farmers increases their
+ Also in Uganda, showing short videos to potato farmers increased their
  knowledge on seed selection, storage and handling 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -441,7 +490,7 @@ key "10.1371/journal.pone.0169557"
 \end_inset
 
 .
- For recent reviews of this literature, see 
+ For a recent review of this literature, see 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "doi:10.1146/annurev-resource-100913-012714"
@@ -449,7 +498,7 @@ key "doi:10.1146/annurev-resource-100913-012714"
 \end_inset
 
 .
- However, it remains to be seen how far these effects and be generalized,
+ However, it remains to be seen how far these effects can be generalized,
  and questions about cost-effectiveness, scalability, and accountability
  often remain unaddressed.
 \end_layout
@@ -467,7 +516,7 @@ key "Doss200127,FLETSCHNER20111422,peterman2011understanding,QUISUMBING2010581"
 .
  Often, extension agents are male, and their default strategy for disseminating
  information on crop management is to target the main (or most accessible)
- decision-maker in a household, who is assumed to be male.
+ decision-maker in a household, which is generally the man.
  The assumption that extension messages targeting one household member will
  spread to other household members—including women and youth who often play
  a substantial role in agriculture—may be false 
@@ -489,8 +538,8 @@ key "fletschner2011gender"
 
 .
  Rather, evidence suggests that in certain contexts, gender homophily effects
- in whichmen learn more from other men and women learn more from other women,
- may dominate other intra-household information-sharing effects 
+ in which men learn more from other men and women learn more from other
+ women, may dominate other intra-household information-sharing effects 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Doss200127"
@@ -515,9 +564,8 @@ key "ALKIRE201371,MAHMUD2012610"
 \end_inset
 
 .
- We further examine if women's involvement in and benefits from maize farming
- can be increased by questioning cultural norms and influencing aspirations
- 
+ We further examine if women's involvement in maize farming can be increased
+ by questioning cultural norms and influencing aspirations 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "RePEc:smu:ecowpa:1705,riley"
@@ -577,9 +625,9 @@ Our experimental design (described in detail below) allows us to explore
  on improved maize management practices in different configurations.
  In addition to the video, a random group of farmers will also receive a
  phone number and instructions to call into the IVR system.
- A final ramdom subset of these farmers will also be targetted by 10 sms
- messages reminding them at specific times about important practices and
- the fact that they can always call the IRV.
+ A final random subset of these farmers will also be targeted by 8 sms messages
+ reminding them at specific times about important practices and the fact
+ that they can always call the IRV.
  The experiment allows us to test the following three hypotheses.
 \end_layout
 
@@ -662,7 +710,7 @@ key "doi:10.1093/erae/jbv039"
  farmers in South Kivu, DR Congo, and find that joint male and female participat
 ion leads to the highest adoption rates for several key technologies and
  practices.
- Mechanisms that explain these effects focus largely on changes in n relative
+ Mechanisms that explain these effects focus largely on changes in relative
  bargaining power of the actors, gender-linked differences in access to
  complementary inputs, and overall intensity of exposure to information
  and training (see, e.g., 
@@ -685,7 +733,7 @@ H3: The effectiveness of information depends on who brings the information:
 \end_layout
 
 \begin_layout Standard
-In this hypothesis we will test is whether bringing the messages as a couple
+In this hypothesis we will test whether bringing the messages as a couple
  or as a female leads to better outcomes than when the information is given
  by a man as would be the default case.
  This hypothesis is based on the assumption that social norms prevent women
@@ -697,8 +745,9 @@ In this hypothesis we will test is whether bringing the messages as a couple
  Research on how information campaigns can be used to change beliefs, norms
  and perceptions has been ongoing in public health and has only recently
  started to trickle through to other disciplines.
- Encouraging results emerge with respect to the importance of role models
- 
+ Encouraging results emerge with respect to the importance of female role
+ models to increase female participation in traditionally male dominated
+ sectors and activities 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "RePEc:smu:ecowpa:1705,riley"
@@ -726,11 +775,12 @@ The three hypotheses are tested with a field experiment.
  In the first part of the study, where we look at the efficacy of different
  technologies to deliver information, we only concentrate on a single factor
  that has three levels, plus the control.
- The three levels are incremental and consist of (i) being shown a video
- (video); (ii) being shown a video and having received the IVR number and
- instructions on how to use it (video+IVR); and (iii) being shown a video
- and having received the IVR number and instructions on how to use it and
- being included in the SMS reminder campaign (video+IVR+SMS).
+ The three levels are incremental and consist of (in addition to the pure
+ control): (i) being shown a video (video); (ii) being shown a video and
+ having received the IVR number and instructions on how to use it (video+IVR);
+ and (iii) being shown a video and having received the IVR number and instructio
+ns on how to use it and being included in the sms reminder campaign (video+IVR+S
+MS).
  This, together with the sample size in each treatment category, is illustrated
  in the top panel of Figure 
 \begin_inset CommandInset ref
@@ -742,11 +792,11 @@ reference "fig:Experimental-Design"
 .
  For the second part of the study, we use two different factors that are
  placed orthogonal to each other, each with three levels.
- The first factor corresponds to the person(s) who provide the message and
- has three levels (male, female, and couple).
+ The first factor corresponds to the person(s) who provide the message (Messenge
+r) and has three levels (male, female, and couple).
  Similarly, the second factor corresponds to the person who receives the
- information message, also with three levels (male, female, and couple).
- A separate control group receives no information.
+ information message (Recipient), also with three levels (male, female,
+ and couple).
  The design for the second part, together with the sample size in each cell,
  is illustrated in the bottom part of Figure 
 \begin_inset CommandInset ref
@@ -757,7 +807,7 @@ reference "fig:Experimental-Design"
 
 
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 It should be stressed that these are not two separate experiments on two
@@ -782,8 +832,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename design_layout.png
-	scale 50
+	filename design_layout.pdf
+	scale 70
+	BoundingBox 0bp 200bp 612bp 570bp
 
 \end_inset
 
@@ -825,37 +876,38 @@ reference "fig:Experimental-Design"
  the average outcome of farmers that were shown a video, irrespective of
  who the video was shown to and who provided the information in the video.
  This gives us the average treatment effect for the video intervention.
- To get the additional effect of the IVT treatment, we compare average outcomes
+ To get the additional effect of the IVR treatment, we compare average outcomes
  of households that were shown a video (irrespective of who the video was
  shown to and who provided the information in the video) to households that
- were shown a video (irrespective of who the video was shown to and who
- provided the information in the video).
- Finally, the additional effect of the SMS campaign can be estimated by
+ were shown a video and received the IVR intervention as well (irrespective
+ of who the video was shown to and who provided the information in the video).
+ Finally, the additional effect of the sms campaign can be estimated by
  comparing outcomes of households that are shown a video and received the
  information about the IVR system to outcomes of household that were shown
- a video, received IVR information and also received the SMS reminders.
+ a video, received IVR information and also received the 8 sms reminders.
 \end_layout
 
 \begin_layout Standard
 To test if information leads to more equitable outcomes when targeted to
  the female co-head or couple instead of the male co-head in the household
- (H2), we compare households where the female co-head received the information
- (irrespective of who provided the information) to households where the
- information was given to the male co-head (again, irrespective of who provided
- the information) and we compare households where the information was targeted
- to the couple (irrespective of who provided the information) to households
- where the information was given to the male co-head (again, irrespective
- of who provided the information).
+ (H2), we compare households where the female co-head only received the
+ information (irrespective of who provided the information) to households
+ where the information was given to the male co-head only (again, irrespective
+ of who provided the information) and we compare households where the informatio
+n was targeted to the couple (irrespective of who provided the information)
+ to households where the information was given to the male co-head only
+ (again, irrespective of who provided the information).
  
 \end_layout
 
 \begin_layout Standard
 To test if information leads to different outcomes depending on who provides
  the information (H3), we compare outcomes of farmers where the information
- was provided by a female actor and outcomes of farmers where the information
- was provided by a farmer-couple (i.e., a male actor and a female actor performing
- together in the video) to outcomes of farmers where the information was
- provided by a single male or female farmer performing in the video.
+ was provided by a female actor only and outcomes of farmers where the informati
+on was provided by a farmer-couple (i.e., a male actor and a female actor
+ performing together in the video) to outcomes of farmers where the information
+ was provided by a single male farmer performing in the video (the comparison
+ group).
 \end_layout
 
 \begin_layout Standard
@@ -864,17 +916,15 @@ The sample size and its distribution over different treatment combinations
  Instead of determining power analytically, we used simulation techniques.
  Simulation allows one to sample from actual data of outcome variables instead
  of relying on a theoretical distribution with an assumed mean and standard
- deviation, which is a much more intuitive way to think about statistical
- power.
- With this approach, it is straightforward to build in flexibility, such
- as allowing for more than one treatment arm, or account for sampling design
- effects such as clustered sampling.
+ deviation.
+ With this approach, it is also straightforward to build in flexibility,
+ such as allowing for more than one treatment arm, or account for sampling
+ design effects such as clustered sampling.
  Power calculations were based on two outcome variables, one that reflects
  efficiency at the household level (maize yield) and one that reflects inclusive
 ness (the gender productivity gap, where women-managed plots are farmed
  less extensively than male-managed plots resulting in significantly lower
  yields).
- The sample size was determined for each of the three hypotheses above.
  The power calculations and its underlying assumptions are described in
  great detail in the pre-analysis plan of this study.
  
@@ -915,18 +965,6 @@ Maize is especially important in eastern Uganda.
  production: Bugiri, Mayuge, Iganga, Namayingo, and Namutumba.
  From this, we removed town councils and also two sub-counties that consisted
  of islands in lake Victoria.
- Our study population consists of maize farmers within this region
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-In particular, given the subject of our study, we target monogamous dual
- households that are growing maize.
-\end_layout
-
-\end_inset
-
-.
  We used two-stage cluster sampling to obtain a representative sample of
  this population.
  In particular, we first selected parishes randomly and in proportion to
@@ -939,7 +977,8 @@ In particular, given the subject of our study, we target monogamous dual
  are implemented in certain areas.
  We therefore used the village as a blocking factor.
  In other words, in each village, we made sure all possible treatment combinatio
-ns related to the 2 factors (plus control) were administered.
+ns related to the 2 factors related to the messenger and recipient attributes
+ (plus control) were administered.
  The experimental design described above shows that the messenger and the
  recipient factor combine into 9 different treatment combinations.
  Adding the control leads to 10 different households being selected in each
@@ -956,9 +995,6 @@ In eastern Uganda, there are two maize cropping seasons.
  requires 3 to 3.5 months, and farmers tend to cultivate early-maturing but
  lower yielding maize varieties as a result.
  Fields are prepared in August, planted in September.
- The fields are weeded for the first time during the end of September or
- the beginning of October following germination, and again during late October
- as the maize starts to flower.
  Harvesting begins in mid to late December and, at higher elevations, can
  continue until mid January.
  
@@ -970,8 +1006,7 @@ Intervention
 
 \begin_layout Standard
 The main intervention used in the study were the videos that were screened
- with study participants using 10-inch Android tablet computers to individual
- farmers.
+ using 10-inch Android tablet computers.
  Videos were screened by a trained field enumerator who sat with an individual
  farmer or a farmer-couple, depending on the household's random assignment
  to a treatment group.
@@ -982,17 +1017,10 @@ The main intervention used in the study were the videos that were screened
  one where the information was provided by a couple (man+woman).
  Apart from varying this attribute of the treatment, the form and content
  of the three videos remained the same.
- 
-\end_layout
-
-\begin_layout Standard
-These videos were then shown to farmers according to the second factor in
- the factorial design (varying who receives the information: male, female,
- or couple).The control group received a placebo treatment, which was a music
- video of traditional dancing that contained no information related to farming
- .
- Videos were screened twice to each farmer in the sample, once before planing
- (July 2017) and once around planting time (August 2017).
+ The control group received a placebo treatment, which was a music video
+ of traditional dancing that contained no information related to farming.
+ Videos were screened twice to each farmer (or couple) in the sample, once
+ before planing (July 2017) and once around planting time (August 2017).
 \end_layout
 
 \begin_layout Standard
@@ -1029,14 +1057,15 @@ Spodoptera frugiperda
 ).
  We focus on striga management in the videos because it was deemed more
  immediately problematic to our population of interest than maize stalk
- borer, and because,at the time this field experiment was conducted, there
+ borer, and because, at the time this field experiment was conducted, there
  was no consistent strategy being promoted to address fall armyworm.
  Striga, also called whichweed, is a parasitic plant that feeds off the
  roots of maize, leading to severe stunting of the maize plant.
  Because the nutritional needs of maize are greatest at the early stages
  of growth, weeding of striga becomes less effective in curbing losses as
- the season progresses.Striga can reduce production from about 30 percent
- up to total loss of the crop.
+ the season progresses.
+ Striga can reduce production from about 30 percent up to total loss of
+ the crop.
  
 \end_layout
 
@@ -1074,10 +1103,11 @@ In the near future, it is expected that the same herbicide-resistance trait
 
  Crop rotation with sweet potato or beans can also reduce striga infestation,
  as can applications of phosphatic fertilizer to make up for the nutrients
- drained by the parasitic weed.Weeding is also a strategy to control striga,
- and is most effective in the weed's earliest growth stages, before it establish
-es itself on the maize plant's root system and before it has a chance to
- spread via seed dispersal.
+ drained by the parasitic weed.
+ Weeding is also a strategy to control striga, and is most effective in
+ the weed's earliest growth stages, before it establishes itself on the
+ maize plant's root system and before it has a chance to spread via seed
+ dispersal.
 \end_layout
 
 \begin_layout Standard
@@ -1091,8 +1121,8 @@ Poor soils
  and potassium (K), and farmers in our study area rarely use organic or
  inorganic fertilizers in sufficient quantities to ameliorate these deficiencies
 , either at the planting stage (when diammonium phosphate (DAP) or NPK applicati
-ons are recommended), or at the vegetative growth and tasseling stages (when
- top dressings of nitrogenous fertilizers such as urea are recommended).
+ons are recommended), or at the vegetative growth stage (when top dressings
+ of nitrogenous fertilizers such as urea are recommended).
 \end_layout
 
 \begin_layout Standard
@@ -1151,7 +1181,7 @@ Optimal plant spacing
  in turn, reduces yields.
  Plants that are too far from each other means space is wasted, also leading
  to lower yields.
- Related is the number of seeds that farmer plant in each hill.
+ Related is the number of seeds that farmers plant in each hill.
  Farmers want to be sure of germination and put more than one seed, sometimes
  up to 5.
  If they all germinate, there is competition for nutrients and sun, resulting
@@ -1161,7 +1191,8 @@ Optimal plant spacing
  One expert told us that standard spacing is 75cm x 60cm with two plants
  per hill.
  However, several experts mentioned a new way of plant spacing of 75cm x
- 30cm with 1 plant per hill which leads to a 35 percent increase in yields.
+ 30cm with a reduced seed rate of 1 seed per hill which leads to a 35 percent
+ increase in yields.
 \end_layout
 
 \begin_layout Itemize
@@ -1169,16 +1200,8 @@ Optimal plant spacing
 \series bold
 Timely weeding
 \series default
- implies that the first weeding should be done at 18-20 days after planting
- at the 
-\begin_inset Quotes eld
-\end_inset
-
-three-leaf
-\begin_inset Quotes erd
-\end_inset
-
- stage, with the second weeding at 2-3 weeks after first weeding.
+ implies that the first weeding should be done at 18-20 days after planting,
+ with a second weeding at 2-3 weeks after first weeding.
  From emergence to the 
 \begin_inset Quotes eld
 \end_inset
@@ -1230,9 +1253,9 @@ key "Glennerster2015"
 .
  However, other studies also provide evidence of behavioural change occurring
  through the compounding or re-emphasis of common knowledge that, through
- repetition, becomes more salient to the individual
+ repetition, becomes more salient to the individual 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "duflo2014diffusion"
 
 \end_inset
@@ -1321,11 +1344,8 @@ key "ugandabjorn"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-Thus, a significant portion of the videos also focuses on the costs and
- benefits of the different technologies and practices being promote.
+ Thus, a significant portion of the videos also focuses on the costs and
+ benefits of the different technologies and practices being promoted.
  In addition, the videos encourage long-term thinking, advising farmers
  to (a) start small and grow their farm enterprise over time, and (b) combine
  technologies and practices together rather than investing all of their
@@ -1337,9 +1357,9 @@ Thus, a significant portion of the videos also focuses on the costs and
 \end_layout
 
 \begin_layout Standard
-We also pay considerable attention to how the information is packaged.
+We also pay attention to how the information is packaged.
  For instance, it is found that farmers find communicators who face agricultural
- conditions and constraints most comparable to their own to be the most
+ conditions and constraints most comparable to their own to be the more
  persuasive than other communicators 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1399,12 +1419,12 @@ The video starts with the farmer-actor or -actors introducing themselves
  from a local retailer.
  The video then shows how the farmer prepares the garden by collecting and
  applying manure.
- Next, the video details how maize seed are spaced at 75cm x 30cm intervals
- with 1 plant per hill, how the DAP is applied correctly, and what the correct
- timing of these activities should be.
+ Next, the video details how the DAP is applied correctly, how maize seed
+ are spaced at 75cm x 30cm intervals with 1 plant per hill, and what the
+ correct timing of these activities should be.
  The video progresses to a field about 10 to 12 days after sowing when the
  maize has emerged from the soil, and she recommends that the farmer engage
- in gap filling to replace seeds that did not germinate , thereby preserving
+ in gap filling to replace seeds that did not germinate, thereby preserving
  optimal plant density.
  The video proceeds to the field at 18 to 20 days after sowing, and she
  recommends how weeding should be conducted with particular attention to
@@ -1425,7 +1445,7 @@ The video then turns to a discussion about investing to get higher yields
  inputs led her to produce 2.5 bags of maize on a small plot, which she sold
  for UGX 125,000 with a profit of almost UGX 90,000—as compared to harvested
  one bag from the same area at a profit of only UGX 40,000.
- She then explains that she reinvested the difference (UGX 50,000)to increase
+ She then explains that she reinvested the difference (UGX 50,000) to increase
  the area under intensive maize cultivation year after year such that, over
  time, she was able to cultivate an entire acre using modern inputs.
  In the final part of the video, she reiterates her experience and again
@@ -1436,6 +1456,62 @@ LatexCommand href
 name "here"
 target "https://www.youtube.com/watch?v=1albuXRm9a8&index=3&list=PLeqdWbb3KnJ8VdzDX-ikrnOnizHRB09Ob"
 
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The video is the only treatment used to test the hypotheses related to the
+ messenger and the recipient effect.
+ To investigate the relative effectiveness of the the technology, two other
+ treatments were incrementally added to the video treatment.
+ For these two treatments, the IVR system and the sms messaging, we collaborated
+ with viamo, a social enterprise that aims to connect individuals and organizati
+ons using digital technology to make better decisions.
+ We set up an IVR system that provided the same information as what we recommend
+ in the video (eg.
+ the new way of spacing, the same types of hybrid and OPV seed,...).
+ Farmers that were allocated the the IVR treatment could call a toll free
+ number, after which they heard a person explaining the system in their
+ own language.
+ Farmers are then invited to type a number corresponding to the topic on
+ which they want more information (eg 1 for seed selection, 2 for spacing
+ and seed rate, 3 for soil nutrient management, 4 for advice on weeding,
+ 5 for pest management).
+ Depending on what number was selected, the IVR then played an audio message
+ of a conversation between two farmers where one farmer is telling the other
+ farmer the recommended practice.
+\end_layout
+
+\begin_layout Standard
+For the sms campaign, we recorded telephone numbers for each household on
+ which the household could be reached.
+ Households that were allocated to the sms treatment were sent 8 sms messages
+ over the course of the 2 months following the first screening of the video.
+ The messages all followed a similar structure, where farmers were first
+ reminded about the important technology or practice that was relevant at
+ the particular time that the message was sent, followed by a reminder about
+ the existence of the IVR service.
+ For example, the first message, that was sent out around planting time,
+ read 
+\begin_inset Quotes eld
+\end_inset
+
+You will get much more maize if you use hybrid seed instead of recycled
+ seed – Call the maize hotline on 0200522420 free for more advice!
+\begin_inset Quotes erd
+\end_inset
+
+.
+ About one month into the growing season, the following message was sent:
+ 
+\begin_inset Quotes eld
+\end_inset
+
+When your maize is knee high, apply 1 water bottle cap of urea around each
+ plant – Call the maize hotline on 0200522420 free for more advise!
+\begin_inset Quotes erd
 \end_inset
 
 .
@@ -1487,10 +1563,10 @@ key "doi:10.1093/ajae/aau015"
 .
  We collected some household characteristics such as household size, age
  and education level of household head.
- We then ask more specific questions related to maize farming, such as acreage
- and quantities produced in the last season.
- Furthermore, we ask if the household received agricultural extension, whether
- improved maize seeds were used, and whether fertilizer was applied.
+ We then asked more specific questions related to maize farming, such as
+ acreage and quantities produced in the last season.
+ Furthermore, we asked if the household received agricultural extension,
+ whether improved maize seeds were used, and whether fertilizer was applied.
  We also collect data on housing conditions (number of bedrooms) and distance
  to the nearest agro-input shop.
  
@@ -1528,6 +1604,20 @@ name "tab:Balance"
 \begin_layout Standard
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -1798,19 +1888,23 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-   
+
+\backslash
+end{center}   
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
 
-note: table entries (H1-H3) are t-statistics; p-values are in parenthesis.
+note: First column reports overall means; Column 2 reports differences between
+ placebo and video treatment, column 3 between video only and video+ivr,
+ column 4 between video+ivr and video+ivr+sms; p-values are in parenthesis;
  ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
  level.
 \end_layout
@@ -1850,9 +1944,9 @@ reference "tab:Balance"
 , we provide descriptive statistics, as well as balance tests for the three
  hypotheses related to the ICT technology used to deliver the information.
  Averages for the entire sample are reported in the first column.
- We see that few farmers that were included in our study had access to agricultu
-ral extension in the previous year (about 11 percent).
- We also see that only about 20 percent of farmers reported to have used
+ We see that few farm households that were included in our study had access
+ to agricultural extension in the previous year (about 11 percent).
+ We also see that only about 20 percent of households reported to have used
  any fertilizer in the previous season and that about 38 percent reported
  to have used improved seed bought from a shop or agro-input dealer during
  the last cropping season.
@@ -1863,7 +1957,8 @@ ral extension in the previous year (about 11 percent).
  This is substantially lower than the average yield of 618 kg per acre we
  find when using the Uganda National Household Survey of 2005/06.
  The low yields illustrate the devastating impact of the Fall Armyworm that
- ravaged maize yields in East Africa in 2017 
+ ravaged maize yields in East Africa in 2017, but is also the result of
+ adverse weather conditions 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Stokstad473"
@@ -1892,12 +1987,12 @@ reference "tab:Balance"
  was not shown the video.
  However, as can be inferred from the p-value, this difference is not significan
 tly different from zero.
- In fact, for the control versus treatment comparison, none of the difference
+ In fact, for the control versus treatment comparison, none of the differences
  between baseline characteristics is significant at the 5 percent significance
  level, and also the F-statistic can not be rejected.
  In the third column, differences in baseline characteristics between households
  that received the video and households that received IVR on top of the
- video are shown.
+ video are shown (indicates as +IVR).
  Here, we see that households in the latter group are significantly larger
  than households that only saw the video.
  They also have significantly more bedrooms.
@@ -1956,7 +2051,8 @@ reference "tab:Balance"
  sample where the recipient is the female co-head: while over 42 percent
  of head had finished primary education at baseline in the group where the
  male co-head was assigned to receive the video treatment, this in only
- 26 percent among household where the was assigned to view the video.
+ 26 percent among household where the female co-head was assigned to view
+ the video.
  We also find less use of fertilizer and seed at baseline in the subgroup
  where women were shown the video then in households where men were shown
  the video.
@@ -1992,7 +2088,7 @@ reference "tab:Balance_gender"
 \end_inset
 
 , the comparison group now consists of the households where the version
- of the video was shown where the man gives all the information.
+ of the video was shown in which the man gives all the information.
  In column three, baseline averages of the comparison group are compared
  to baseline outcomes for households where the messenger was a woman.
  We do not find any systematic difference in baseline outcomes between these
@@ -2037,6 +2133,20 @@ name "tab:Balance_gender"
 \begin_layout Standard
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -2103,7 +2213,7 @@ Age of HH head (years) 			&	-8.417***	&	-0.885	&	0.397	&	-0.020
 
 \begin_layout Plain Layout
 
-HH head finshed primary school 			&	-16.12
+HH head finshed 			&	-16.12
 \backslash
 %***	&	1.41
 \backslash
@@ -2120,7 +2230,7 @@ HH head finshed primary school 			&	-16.12
 
 \begin_layout Plain Layout
 
-		&	(0.000)	&	(0.505)	&	(0.566)	&	(0.461)	
+	primary school 	&	(0.000)	&	(0.505)	&	(0.566)	&	(0.461)	
 \backslash
 
 \backslash
@@ -2165,7 +2275,7 @@ Number of bedrooms			&	-0.079	&	0.022	&	0.027	&	-0.009
 
 \begin_layout Plain Layout
 
-Access to extension last year			&	0.31
+Access to extension 			&	0.31
 \backslash
 %	&	-0.70
 \backslash
@@ -2182,7 +2292,7 @@ Access to extension last year			&	0.31
 
 \begin_layout Plain Layout
 
-		&	(0.815)	&	(0.600)	&	(0.399)	&	(0.314)	
+	last year	&	(0.815)	&	(0.600)	&	(0.399)	&	(0.314)	
 \backslash
 
 \backslash
@@ -2191,7 +2301,7 @@ Access to extension last year			&	0.31
 
 \begin_layout Plain Layout
 
-Has used fertilizer last season 			&	-3.50
+Has used fertilizer 			&	-3.50
 \backslash
 %*	&	-6.19
 \backslash
@@ -2208,7 +2318,7 @@ Has used fertilizer last season 			&	-3.50
 
 \begin_layout Plain Layout
 
-			&	(0.044)	&	(0.000)	&	(0.767)	&	(0.222)	
+	last season 		&	(0.044)	&	(0.000)	&	(0.767)	&	(0.222)	
 \backslash
 
 \backslash
@@ -2217,7 +2327,7 @@ Has used fertilizer last season 			&	-3.50
 
 \begin_layout Plain Layout
 
-Has used improved seed last season 			&	-8.01
+Has used improved seed 			&	-8.01
 \backslash
 %***	&	-5.33
 \backslash
@@ -2234,7 +2344,7 @@ Has used improved seed last season 			&	-8.01
 
 \begin_layout Plain Layout
 
-			&	(0.000)	&	(0.011)	&	(0.061)	&	(0.750)	
+		last season 	&	(0.000)	&	(0.011)	&	(0.061)	&	(0.750)	
 \backslash
 
 \backslash
@@ -2243,7 +2353,7 @@ Has used improved seed last season 			&	-8.01
 
 \begin_layout Plain Layout
 
-Distance nearest agro input shop (km) 			&	-0.154	&	0.048	&	-0.093	&	-0.158	
+Distance nearest agro			&	-0.154	&	0.048	&	-0.093	&	-0.158	
 \backslash
 
 \backslash
@@ -2252,7 +2362,7 @@ Distance nearest agro input shop (km) 			&	-0.154	&	0.048	&	-0.093	&	-0.158
 
 \begin_layout Plain Layout
 
-			&	(0.511)	&	(0.842)	&	(0.697)	&	(0.486)	
+ input shop (km) 			&	(0.511)	&	(0.842)	&	(0.697)	&	(0.486)	
 \backslash
 
 \backslash
@@ -2312,6 +2422,13 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
    
 \end_layout
 
@@ -2319,14 +2436,20 @@ end{tabular}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
 
-note: table entries are differences; p-values are in parenthesis.
- ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
- level.
+note: Column 1 reports differences between households where the video was
+ shown to the male co-head and households where the video was shown to the
+ female co-head, column 2 between households where the video was shown to
+ the male co-head and households where the video was shown to the couple,
+ column 3 between households where the video featuring a man and households
+ where the video featuring a woman was shown, and column 4 between households
+ where the video featuring a man and households where the video featuring
+ a couple was shown; p-values are in parenthesis; ***, ** and * denote differenc
+e is signficant at the 0.1, 1 and 5 percent level.
 \end_layout
 
 \begin_layout Plain Layout
@@ -2386,7 +2509,7 @@ key "feder2004acquisition,feder2004sending,masset2015does"
 The first question was related to planting.
  In our video, we recommended a spacing of 75cm x 30cm with 1 plant per
  hill and this was the correct option among the alternatives.
- Other options were 75cm x 60cm with two plants per hill, which is standard
+ Another option was 75cm x 60cm with two plants per hill, which is standard
  for many farmers and recommended by many agricultural extension agents.
  We also added an intermediate alternative answer of 75cm x 30cm with 2
  seeds per hill.
@@ -2444,9 +2567,9 @@ when the maize is at tasseling stage
  It is assumed that most farmers would know this.
  Finally, we also asked if farmers knew when spraying against the fall armyworm
  is most effective.
- There was no information given about fighting fall armyworm in the video,
- so unless seeing a video encourages farmers to search for additional informatio
-n, we do not expect an impact from seeing a video.
+ There was no information given about fighting fall armyworm in any intervention
+, so unless one of our interventions encourages farmers to search for additional
+ information, we do not expect an impact.
  For this question, the correct option was: 
 \begin_inset Quotes eld
 \end_inset
@@ -2522,6 +2645,24 @@ status open
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{rccc} 
@@ -2529,6 +2670,10 @@ begin{tabular}{rccc}
 hline 
 \backslash
 hline
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -2906,14 +3051,16 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+ 
+\backslash
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-footnotesize   
+scriptsize
 \end_layout
 
 \begin_layout Plain Layout
@@ -2928,6 +3075,10 @@ note: In the first column, means (and standard deviations) in the comparison
  sharp null (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -2966,6 +3117,15 @@ For the comparison between different ways of delivering information to a
  man (as generally he will be the main decision maker).
  In other words, we removed households where the video was only shown the
  female co-head.
+ Hence, the number of observations is smaller than what is reported in Figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Experimental-Design"
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -2983,9 +3143,9 @@ For the comparison between different ways of delivering information to a
  response options to the question on optimal maize seed spacing.
  This relatively low rate of correct responses is due to the fact that this
  is a fairly new and potentially controversial recommendation.
- We see that among households that were shown a video, the proportion increases
- by 15 percentage points, to over 30 percent, and this difference is statistical
-ly significant.
+ We see that among households that were a video was shown, the proportion
+ increases by 15 percentage points, to over 30 percent, and this difference
+ is statistically significant.
  About 91 percent of households that were not shown the treatment video
  know that is best to combine inputs instead of only using seed or fertilizer.
  Even though baseline knowledge is already high, the video treatment further
@@ -3006,11 +3166,15 @@ In addition, our pre-analysis plan specified that we would drop from the
 \end_inset
 
 .
- Finally, as expected, we do not find that households that were shown the
- video are more likely to know when one should spray against fall armyworm.
+ Finally, the videos do not seem to encourage farmers to actively search
+ information on important challenges that were not explicitly covered in
+ the video, as we do not find that households that were shown the video
+ are more likely to know when one should spray against fall armyworm, something
+ that was not mentioned in the video.
  Overall, and as confirmed by the knowledge index, we conclude that the
- agricultural extension videos increase knowledge at the household level.
+ agricultural extension videos increased knowledge at the household level.
  This seems to be especially the case for new information.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3029,14 +3193,14 @@ reference "tab:knowh0HH"
  of households that were shown the video and in addition received the IVR
  treatment (the pure control group that received the placebo intervention
  is discarded from the analysis).
- We do not find any significant impact of augmenting the video intervention
- with an IVR service.
+ We do not find any significant supplemental impact of augmenting the video
+ intervention with an IVR service.
  However, since we now only focus on households that already learned from
  the video intervention, we find that knowledge in the comparison group
- is already high: for both knowledge the benefits of combining inputs and
- the timing of first weeding, about 95 percent of households in the comparison
- group know the correct answer and so results may suffer from limited variation
- in the outcome.
+ is already high: for both knowledge of the benefits of combining inputs
+ and the timing of first weeding, about 95 percent of households in the
+ comparison group know the correct answer and so results may suffer from
+ limited variation in the outcome.
  The third panel in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3055,45 +3219,6 @@ reference "tab:knowh0HH"
  Also here, we do not find that the sms campaign further increased the often
  already high levels of knowledge.
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-now focuses only on households that received the video and, within that
- subgroup, differentiates between households where the video was shown to
- an individual (either the man or woman) and households where the video
- was shown to man and wife together (corresponding to hypothesis H2).
- We find that among households where the video was shown to an individual,
- 28 percent knew the recommended spacing, 95.6 percent knew inputs are best
- combined, 94.3 percent knew weeding during the first 4 weeks is critical,
- and 30.8 percent knew when to spay against fall armyworm.
- We do not find a significant differences between the two groups.
- The fact that there is no difference in learning from the videos depending
- on who was targeted is confirmed by the index.
- The third panel, indicated as 
-\emph on
-H3: Individual versus couple pictured
-\emph default
-, compares household level quiz scores between households where the person
- that featured in the video was an individual (man or woman) and households
- where the information in the video was given by a couple (corresponding
- to hypothesis H3).
- Also here, we do not find significant differences in the proportions in
- the two groups.
- As such, at the household level, while showing a video increases knowledge,
- it does not seem to matter whether the couple is targeted or the video
- is shown to just one of the spouses.
- In addition, it does not seem to matter whether the information is provided
- by a couple or an individual.
- 
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection*
@@ -3119,10 +3244,10 @@ s that were shown a video.
 
 \begin_layout Standard
 The first recommended practice we look at is early planting, which was emphasize
-d in the video.
+d in the video as an important determinant of maize yields.
  We find that in about 36.6 percent of households where the placebo video
  was shown, at least one spouse reports they have started planting maize
- within one day following the first rains.
+ within one day following the first rains on at least one plot.
  This seems to be not significantly different from the proportion of households
  that reported planting immediately after the rains among households that
  were given information through the video.
@@ -3141,7 +3266,7 @@ ntly different from zero when households were shown the video.
  Among farm households that were shown the video, this percentage increases
  by 12 percent.
  However, the difference is not significant at the 5 percent level after
- correcting for multiple inference.
+ correcting for multiple comparisons.
  We find that about 43 percent of control households report first weeding
  first after 18-20 days, which was what we recommended in the video.
  We do not find that this proportion is significantly higher among treated
@@ -3177,6 +3302,13 @@ name "tab:pract_h1_ag"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -3437,7 +3569,7 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -3445,12 +3577,12 @@ footnotesize
 note: Number of observations is 2,185.
  In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
- In the second column, differences (and standard errors of the differences)
- between each treatment group and the comparison  group.
- Reported p-values are based on randomization inference (10,000 permutations);
- ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
- level after correcting for multiple hypothesis testing using a family-wise
- sharp null (10,000 permutations).
+ The other columns report differences (and standard errors of the differences)
+ between the comparison group and each treatment group, and corresponding
+ p-values based on randomization inference (10,000 permutations); ***, **
+ and * denote difference is signficant at the 0.1, 1 and 5 percent level
+ after correcting for multiple hypothesis testing using a family-wise sharp
+ null (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -3471,8 +3603,8 @@ note: Number of observations is 2,185.
 
 \begin_layout Standard
 We also collected detailed information on fertilizer use on maize plots.
- Overall, 44.7 percent of households in the control group reported they used
- fertilizer on at least one plot.
+ Overall, in 44.7 percent of households in the control group at least one
+ of the spouses reported they used fertilizer on at least one plot.
  While this percentage is almost 25 percent higher among treated farmers,
  the difference is not significant at the 5 percent level after controlling
  for FWER.
@@ -3526,8 +3658,8 @@ reference "tab:pract_ivr"
 \end_inset
 
 .
- As for knowledge, the addition of an IVR service does not seem to further
- increase adoption.
+ As for the case of knowledge, the addition of an IVR service does not seem
+ to further increase adoption.
  While we do find that the adoption of improved maize seed is almost 8 percent
  higher when IVR is added to the video campaign (and this effect is also
  somewhat reflected in an increase in the proportion of households that
@@ -3546,75 +3678,6 @@ reference "tab:pract_sms"
  were targeted by the sms campaign, the increase is not statistically significan
 t.
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-The table shows that among households were videos were shown to either the
- man or the woman separately, about 36.5 percent of households planted immediatel
-y after the first rains and 8.9 percent followed recommended spacing on at
- least one plot.
- We also see that about 73.8 percent of these households where the recipient
- of the information was the individual removed striga before flowering and
- engaged in weeding in the third week.
- For none of these practices, a significant difference between the two treatment
- groups can be detected: it did not seem to matter whether this information
- was given to an individual or a couple.
- 
-\end_layout
-
-\begin_layout Plain Layout
-We did find that targeting matters for fertilizer use.
- We found that about 47.5 percent of households where the video was shown
- to only one individual reported using fertilizer on at least one plot.
- This percentage increased to 53 percent if the couple was targeted with
- the information.
- From further dis-aggregation of the fertilizer types (Table ), we learned
- that this difference was driven by organic fertilizer: Among households
- where the video was shown to only one of the spouses, about 22 percent
- reported to be using organic fertilizer on at least one plot.
- Among households where the video was shown to the couple, this percentage
- increased to 31.4 percent
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Can we explain this? Why would this be the case?
-\end_layout
-
-\end_inset
-
-.
- Furthermore, while we did not find a difference between the two groups
- in terms of the use of improved maize seed, we do see that households that
- received the information as a couple were more likely to combine fertilizer
- use with improved seed.
- We also see that the proportion of households that bought seed was higher
- among farmers where the video was shown the both spouses together, but
- the difference is not significant after adjusting for multiple hypothesis
- testing
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-RI p-value is 0.020 before adjustment for multiple testing
-\end_layout
-
-\end_inset
-
-.
- As such, while the information provided thought the video seems more effective
- if targeted at the couple for some inputs and practices, this finding can
- not be generalized as is also evident from the fact that the adoption index
- does not significantly differ between the two groups.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3645,6 +3708,13 @@ name "tab:pract_ivr"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -3905,7 +3975,7 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -3913,12 +3983,12 @@ footnotesize
 note: Number of observations is 1,949.
  In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
- In the second column, differences (and standard errors of the differences)
- between each treatment group and the comparison  group.
- Reported p-values are based on randomization inference (10,000 permutations);
- ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
- level after correcting for multiple hypothesis testing using a family-wise
- sharp null (10,000 permutations).
+ The other columns report differences (and standard errors of the differences)
+ between the comparison group and each treatment group, and corresponding
+ p-values based on randomization inference (10,000 permutations); ***, **
+ and * denote difference is signficant at the 0.1, 1 and 5 percent level
+ after correcting for multiple hypothesis testing using a family-wise sharp
+ null (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -3926,35 +3996,6 @@ note: Number of observations is 1,949.
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Finally, we present results for the third hypothesis in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:pract_sms"
-
-\end_inset
-
-.
- In particular, we compare if households that saw the version of the video
- where the information was given by a couple are more or less likely to
- adopt modern technologies and recommended practices that households where
- the information was provided by an individual.
- We can be brief about this: we did not find any difference between the
- two groups in the likelihood of adoption of any of the inputs or practices
- we inquired about.
- Apparently, it does not matter if the information was given by an individual
- or a couple for the adoption agricultural technologies and practices.
 \end_layout
 
 \end_inset
@@ -3990,6 +4031,13 @@ name "tab:pract_sms"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -4250,7 +4298,7 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -4258,12 +4306,12 @@ footnotesize
 note: Number of observations is 1,296.
  In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
- In the second column, differences (and standard errors of the differences)
- between each treatment group and the comparison  group.
- Reported p-values are based on randomization inference (10,000 permutations);
- ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
- level after correcting for multiple hypothesis testing using a family-wise
- sharp null (10,000 permutations).
+ The other columns report differences (and standard errors of the differences)
+ between the comparison group and each treatment group, and corresponding
+ p-values based on randomization inference (10,000 permutations); ***, **
+ and * denote difference is signficant at the 0.1, 1 and 5 percent level
+ after correcting for multiple hypothesis testing using a family-wise sharp
+ null (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -4279,7 +4327,7 @@ note: Number of observations is 1,296.
 \end_layout
 
 \begin_layout Standard
-We can further dis-aggregate by type of fertilizer used.
+We can further disaggregate by type of fertilizer used.
  Results are reported in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4298,7 +4346,7 @@ reference "tab:knowh0HH"
 .
  When estimating the impact of the video intervention, we see that among
  the control group, already a substantial proportion of farmers is using
- DAP or NPK (26 percent).
+ DAP or NPK on at least one plot (26 percent).
  This proportion is lower among households that were shown the video, but
  the difference is not significant.
  At the same time, the use of urea, as well as the use of organic fertilizer,
@@ -4309,8 +4357,8 @@ reference "tab:knowh0HH"
  to 24.2 percent.
  Most likely, this is due to the fact that, in the video, it is emphasized
  that inputs should be combined to get best results, and as a result some
- of the treated farmers reduce their use of DAP or NPK and increase adoption
- of Urea (and to a lesser extent inorganic fertilizer) to engage in more
+ of the treated farmers reduced their use of DAP or NPK and increased adoption
+ of urea (and to a lesser extent inorganic fertilizer) to engage in more
  balanced soil nutrient management.
 \end_layout
 
@@ -4328,7 +4376,7 @@ reference "tab:Impact-of-technology_fert"
  This may be because application of DAP or NPK is more complicated than
  Urea or organic fertilizer, and so a demand driven information service
  such as IVR may be more effective than showing a video.
- Finally, the third panel shows not additional effect of the sms intervention
+ Finally, the third panel shows no additional effect of the sms intervention
  on the use of particular fertilizers.
  
 \end_layout
@@ -4361,6 +4409,13 @@ name "tab:Impact-of-technology_fert"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -4656,19 +4711,19 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
 
 note: In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
- In the second column, differences (and standard errors of the differences)
- between each treatment group and the comparison  group.
- Reported p-values are based on randomization inference (10,000 permutations);
- ** and * denote difference is signficant at the 1 and 5 percent level after
- correcting for multiple hypothesis testing using a family-wise sharp null
- (10,000 permutations).
+ The other columns report differences (and standard errors of the differences)
+ between the comparison group and each treatment group, and corresponding
+ p-values based on randomization inference (10,000 permutations); ** and
+ * denote difference is signficant at the 1 and 5 percent level after correcting
+ for multiple hypothesis testing using a family-wise sharp null (10,000
+ permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -4684,7 +4739,7 @@ note: In the first column, means (and standard deviations) in the comparison
 \end_layout
 
 \begin_layout Standard
-Similar to fertilizer, we dis-aggregate by type of improved seed used for
+Similar to fertilizer, we disaggregate by type of improved seed used for
  households where at least one spouse reported to be using improved seed
  on at least one maize plot.
  Results are reported in Table 
@@ -4695,13 +4750,19 @@ reference "tab:Impact-of-technology_seed-1"
 \end_inset
 
 .
- We find that showing the video did not influence the type of seed used
- among farmers that used improved seed.
+ We find that showing the video did not influence the type of improved seed
+ used.
  However, providing access to the IVR service increases the likelihood that
  hybrid seed is used from 30 percent to 35.7 percent.
  This is consistent with the interpretation that for more advanced technologies,
  a demand drive extension approach may be more effective.
- We do not find an additional impact from the sms campaign.
+ We find that hybrid seed use is lower among farmers that were allocated
+ the also receive sms messages.
+ This is surprising: the first message actually states that yields are much
+ higher if hybrid seeds are used instead of recycled seeds.
+ However, it may be that farmers already started planting by the time they
+ received the first sms message.
+ Also, the effect is not significant after controlling for FWER.
 \end_layout
 
 \begin_layout Standard
@@ -4732,6 +4793,13 @@ name "tab:Impact-of-technology_seed-1"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -4973,19 +5041,18 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
 
 note: In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
- In the second column, differences (and standard errors of the differences)
- between each treatment group and the comparison  group.
- Reported p-values are based on randomization inference (10,000 permutations);
- * denotes difference is signficant at the 5 percent level after correcting
- for multiple hypothesis testing using a family-wise sharp null (10,000
- permutations).
+ The other columns report differences (and standard errors of the differences)
+ between the comparison group and each treatment group, and corresponding
+ p-values based on randomization inference (10,000 permutations); * denotes
+ difference is signficant at the 5 percent level after correcting for multiple
+ hypothesis testing using a family-wise sharp null (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -5012,11 +5079,18 @@ We next turn to changes in production related outcome as a result of our
  We first look at household level maize production.
  During the endline survey, we asked both spouses separately to estimate
  how much maize was harvested from each plot.
- These quantities were then summed over the different plots for each spouse
- and the average between the two spouses was taken as the final estimate
+ These quantities were then summed over the different maize plots for each
+ spouse and the average between the two spouses was taken as the final estimate
  of household level maize production.
  We find that overall, a typical farm household in our sample produced about
- 460 kg of maize.
+ 460 kg of maize (first column in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:yield_ag_allh"
+
+\end_inset
+
+).
  Households produced this on 1.13 acres on average.
  Taken together, we find that yields, defined as kilograms per acre, amounted
  to on average 470 kg per acre.
@@ -5031,19 +5105,19 @@ We next turn to changes in production related outcome as a result of our
 \end_layout
 
 \begin_layout Standard
-Table 
+Columns 2 and 3 in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:yield_ag_allh"
 
 \end_inset
 
- reports results for the impact of the different technologies with respect
+ report results for the impact of the different technologies with respect
  to outcomes related to production.
  In the top panel we again compare outcomes of control households to outcomes
  of households that were shown the video.
- Household level production, expressed in logs and trimmed 5 percent at
- each end of the distribution, does not differ between the two groups.
+ Household level production, expressed in logs and trimmed 5 percent, does
+ not differ between the two groups.
  We do find, however, that households that were exposed to the agricultural
  extension video seemed to cultivate smaller plots: Reported acreage is
  11 percent smaller among households that were shown a video.
@@ -5053,8 +5127,8 @@ reference "tab:yield_ag_allh"
  in the fact that in households that were shown a video, yields were 14
  percent higher than in control households.
  As mean productivity in control households was 428 kg/acre, this means
- mean productivity among households where the video was shown is about 488
- kg/acre.
+ mean productivity among households where the video was shown was about
+ 488 kg/acre.
  Further, in about 38.7 percent of households in the control group, at least
  one spouse indicates that yields were better than in a normal year on at
  least one plot.
@@ -5063,9 +5137,9 @@ reference "tab:yield_ag_allh"
 \end_layout
 
 \begin_layout Standard
-Overall, we find that the information intervention had a significant and
- positive effect on production outcomes, as is evident from the positive
- treatment effect in the production index.
+Overall, we find that the video information intervention had a significant
+ and positive effect on production outcomes, as is evident from the positive
+ treatment effect of the production index.
  We can conclude that, at the household level, the videos thus seemed to
  positively affect the intensification of maize.
  Again, this can be traced back to the fact that in the video, it is emphasized
@@ -5103,6 +5177,20 @@ name "tab:yield_ag_allh"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -5490,26 +5578,28 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}  
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
 
 note: In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
- In the second column, differences (and standard errors of the differences)
- between each treatment group and the comparison  group.
- Reported p-values are based on randomization inference (10,000 permutations);
- ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
- level after correcting for multiple hypothesis testing using a family-wise
- sharp null (10,000 permutations).
+ The other columns report differences (and standard errors of the differences)
+ between the comparison group and each treatment group, and corresponding
+ p-values based on randomization inference (10,000 permutations); ***, **
+ and * denote difference is signficant at the 0.1, 1 and 5 percent level
+ after correcting for multiple hypothesis testing using a family-wise sharp
+ null (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -5542,9 +5632,10 @@ n.
  This may be explained by the fact that the IVR system is more focused on
  technical information on how to implement certain practices or apply certain
  technologies, instead of the more holistic message we bring in the video.
- In particular, the video also pays attention to farming as a business and
- promotes a longer run perspective where farmers start small and grow over
- time.
+ For instance, while video lends itself well to promoting a certain approach
+ to farming (ie.
+ more commercially oriented, investing now to increase yields in the future),
+ these types of messages are much more difficult to convey using IVR.
  Finally, in the third panel, we report the impact of adding sms reminders
  to the video and IVR intervention on production outcomes.
  We do not find any additional effects.
@@ -5583,7 +5674,6 @@ reference "tab:Impact_welfare"
  video, 39.7 percent of households indicated they did better than half a
  year earlier, and this percentage was the same among the households that
  did get to see the video.
- Also here, the difference is not significant.
  We also include standard self assessed food security questions
 \begin_inset Note Note
 status collapsed
@@ -5629,8 +5719,7 @@ Even though these consumption categories were carefully chosen on the basis
 \end_inset
 
 .
- From this we then took the logarithm and trim 5 percent at each end of
- the distribution.
+ From this we then took the logarithm and trim 5 percent.
  Results indicate that there was no difference in consumption between treated
  and control households.
  We ran similar comparisons for the IVR intervention and the sms intervention,
@@ -5673,6 +5762,20 @@ name "tab:Impact_welfare"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -5840,22 +5943,25 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
+\backslash
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-footnotesize 
+scriptsize 
 \end_layout
 
 \begin_layout Plain Layout
 
 note: In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
- In the second column, differences (and standard errors of the differences)
- between each treatment group and the comparison  group.
- Reported p-values are based on randomization inference (10,000 permutations).
+ The other columns report differences (and standard errors of the differences)
+ between the comparison group and each treatment group, and corresponding
+ p-values based on randomization inference (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -5885,75 +5991,58 @@ All the above is ITT analysis.
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-We further test the hypothesis that households that were shown the video
- as a couple were better off at endline then households where only one of
- the spouses was shown the video.
- We find that about 42.9 percent of households in the group where only one
- of the spouses was exposed to the video felt they were better off than
- the average household in their community.
- This percentage increased to 47.2 percent if the video was shown to couples
- instead, but the difference was not significant after correcting for multiple
- comparisons
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Was 0.02 before correction.
-\end_layout
-
-\end_inset
-
-.
- We do not find any impact for the other measures of welfare.
- Finally, when comparing households where the video was shown in which the
- information was given by a couple to households that were screened the
- video featuring only one spouse, we find no significant difference on welfare
- whichever measure we use.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection*
 Changing gender attributes of the video intervention
 \end_layout
 
 \begin_layout Standard
-In this part of the paper we present results of changing 2 gender attributes
- of the video intervention.
- The first attribute relates to the gender of the targetted audience: while
+In this part of the paper we present results of changing two gender related
+ attributes of the video intervention.
+ The first attribute relates to the gender of the targeted audience: while
  existing extension services generally target men within households, we
  investigate the consequences of targeting (additionally) the female co-head
  within the household.
  In particular, we report results for 2 comparisons: R1, which compares
- outcomes for households where the video was shown to a man to outcomes
- for households where the video was shown to the female within the households;
- and R2, which compares outcomes for households where the video was shown
- to a man to outcomes for households where the video was shown to both spouses
- together.
+ outcomes for households where the video was shown to the male co-head only
+ to outcomes for households where the video was shown to the female co-head
+ only; and R2, which compares outcomes for households where the video was
+ shown to the male co-head only to outcomes for households where the video
+ was shown to both spouses together.
  The second attribute is related to the gender of the person that provides
  the information: existing extension services generally use male extension
  agents, and we investigate the consequences of changing this into a female
  messenger, or at least adding a female messenger to the male messenger.
  Also here, we report results for two comparisons: M1, which compares outcomes
- for households where the version of the video was shown where a man provides
- the information to outcomes for households where the version of the video
- was shown where a woman provides the information; and M2, which compares
- outcomes for households where the version of the video was shown where
- a man provides the information to outcomes for households where the version
- of the video was shown where a couple provides the information.
+ for households where the version of the video was shown where a man only
+ provides the information to outcomes for households where the version of
+ the video was shown where a woman only provides the information; and M2,
+ which compares outcomes for households where the version of the video was
+ shown where a man only provides the information to outcomes for households
+ where the version of the video was shown where a couple provides the informatio
+n.
  We look at outcomes both at the household level as well as on the individual
  level and pay particular attention to the impact on intra-household decision
  making.
  We start by checking if changing gender attributes affect household level
- outcome and then look at individual outcomes
+ outcome and then look at individual outcomes.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+I am already starting to doubt again on the comparison groups/hypotheses
+ tested.
+ The individual versus jointly comparison does not come out of these separate
+ comparisons.
+ We also do not compare eg.
+ male only to female only + couple (female involved).
+ Finally, maybe we should bring in the gender homophily hypothesis again,
+ because our design allows for testing this, and no result is also a result...
+ 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -5969,7 +6058,7 @@ reference "tab:R_hh_know"
 \end_inset
 
  shows the effect of changing who the information is given to on the likelihood
- that at least on of the spouses knows the correct answer to the respective
+ that at least one of the spouses knows the correct answer to the respective
  question, thus assessing the effect of changing the recipient of the video
  on 
 \series bold
@@ -5977,19 +6066,31 @@ household level knowledge
 \series default
 .
  Averages for the status quo, i.e.
- where information was targetted to the male only within the household,
- is given in the first column.
- We see for example that in hosueholds where the video was shown to the
+ where information was targeted to the male only within the household, is
+ given in the first column.
+ We see for example that in households where the video was shown to the
  male co-head only, the male or female co-head knew about optimal maize
  spacing in 29.5 percent of households.
  Interestingly, this likelihood is 5 percentage points lower in households
  where only the female co-head was shown a video (difference with recipient
  is male only group reported in column 2 and associated p-value in column
  3).
- Even though we find no significant difference between the two groups of
- the other questions, the index does confirm that household level knowledge
- is lower in households where the video was shown to the woman than in household
-s where the video was shown to the man.
+ Even though we find no significant difference between the two groups on
+ any of the other questions, the index does confirm that household level
+ knowledge is lower in households where the video was shown to the woman
+ only than in households where the video was shown to the man only
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+How can this be explained? Is this because women have lower learning capacity
+ (which we could investigate by including women education at baseline in
+ the regression)? 
+\end_layout
+
+\end_inset
+
+.
  Column 4 in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -6000,7 +6101,8 @@ reference "tab:R_hh_know"
  compares household level knowledge between the same control group (man
  is recipient) and households where a video was shown to male and female
  co-head together (associated p-values are in column 5).
- We do not find any significant difference between these two groups.
+ We do not find any significant difference in household level knowledge
+ between these two groups.
 \end_layout
 
 \begin_layout Standard
@@ -6031,6 +6133,20 @@ name "tab:R_hh_know"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -6207,14 +6323,16 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center} 
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -6253,14 +6371,15 @@ reference "tab:M_hh_know-1"
 
  shows the effect of changing the messenger from male to female (difference
  in column 2 and p-value in column 3) and from male to couple (difference
- in column 4 and p-value in column 5) on household level knowledge.
+ in column 4, p-value in column 5) on household level knowledge.
  The likelihood that at least one of the spouses knows the correct spacing
  of maize is about 25.9 percent if the information was provided by a man.
  This is about four percentage points higher when the woman provides the
  information, but the difference is not statistically significant at the
  5 percent level.
  More generally, we do not find that the changing the messenger from male
- to female or couple affects household level knowledge.
+ only to female only or from male only to couple affects household level
+ knowledge.
  
 \end_layout
 
@@ -6292,6 +6411,20 @@ name "tab:M_hh_know-1"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -6467,14 +6600,16 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}  
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -6485,10 +6620,7 @@ note: The comparison group consists of households where the video in which
  group are presented for each variable.
  The second column reports differences (and standard errors of the differences)
  between the comparison group and each treatment group.
- Reported p-values are based on randomization inference (10,000 permutations);
- ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
- level after correcting for multiple hypothesis testing using a family-wise
- sharp null (10,000 permutations).
+ Reported p-values are based on randomization inference (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -6511,10 +6643,12 @@ adoption of practices
 \series default
  as the household level.
  Therefore, for each of the practices, we compare adoption between the different
- groups (recipient is male, recipient is female, recipient is couple; and
- messenger is male, messenger is female, messenger is couple).
+ groups (recipient is male co-head only, recipient is female co-head only,
+ recipient is couple; and messenger is male only, messenger is female only,
+ messenger is couple).
  At this level, we define adoption to happen when at least one of the spouses
- indicates a particular practice or technology used on at least one plot.
+ indicates a particular practice or technology was used on at least one
+ maize plot.
 \end_layout
 
 \begin_layout Standard
@@ -6548,7 +6682,7 @@ reference "tab:R_hh_pract"
  About half of the households in the comparison group report that they use
  fertilizer on at least one plot.
  This is about 10 percent higher if the couple was targeted with the information.
- The proportion of households that reports combining seed and fertilizer
+ The proportion of households that report combining seed and fertilizer
  is also slightly higher among households where the video was shown to both
  spouses together.
  However, none of the differences remains significant after correcting for
@@ -6583,6 +6717,20 @@ name "tab:R_hh_pract"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -6761,14 +6909,16 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -6779,10 +6929,7 @@ note: The comparison group consists of households where the video was shown
  group are presented for each variable.
  The second column reports differences (and standard errors of the differences)
  between the comparison group and each treatment group.
- Reported p-values are based on randomization inference (10,000 permutations);
- ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
- level after correcting for multiple hypothesis testing using a family-wise
- sharp null (10,000 permutations).
+ Reported p-values are based on randomization inference (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -6810,8 +6957,8 @@ reference "tab:M_hh_pract"
  This percentage seems to be slightly higher if the information was provided
  by a woman.
  However, after controlling for FWER, the difference becomes insignificant.
- We conclude that there is no impact on household level adoption from hanging
- the messenger attribute in video messages.
+ We conclude that there is no impact on household level adoption from changing
+ the messenger attribute of the video messages.
 \end_layout
 
 \begin_layout Standard
@@ -6842,6 +6989,20 @@ name "tab:M_hh_pract"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -7002,14 +7163,16 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -7020,10 +7183,7 @@ note: The comparison group consists of households where the video in which
  group are presented for each variable.
  The second column reports differences (and standard errors of the differences)
  between the comparison group and each treatment group.
- Reported p-values are based on randomization inference (10,000 permutations);
- ***, ** and * denote difference is signficant at the 0.1, 1 and 5 percent
- level after correcting for multiple hypothesis testing using a family-wise
- sharp null (10,000 permutations).
+ Reported p-values are based on randomization inference (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -7040,7 +7200,11 @@ note: The comparison group consists of households where the video in which
 
 \begin_layout Standard
 Finally, we also look at the impact of changing the gender attributes on
- household level production outcomes.
+ household level 
+\series bold
+production
+\series default
+ outcomes.
  In particular, we first look at the total amount of maize produced within
  the household.
  This is calculated by summing amounts from each plot and taking the average
@@ -7049,8 +7213,8 @@ Finally, we also look at the impact of changing the gender attributes on
  fashion.
  We sum area of the different maize plots as reported by each of both spouses
  and than take the average of these two totals.
- Household level production is then divided by acreage to obtain average
- yield per household.
+ Household level production is then divided by the household level area
+ allocated to maize to obtain average maize yield at the household level.
  Finally, we also look at a subjective measure of production and ask if
  yield on a plot was better than on an average year.
  To aggregate this at the household level, we construct a binary indicator
@@ -7076,7 +7240,8 @@ reference "tab:R_hh_prod"
  from male to female.
  Similarly, comparing male recipient households to households where the
  video was shown to the couple results in no differences in production related
- outcomes measured at the household level.
+ outcomes measured at the household level, as reported in columns four and
+ five.
 \end_layout
 
 \begin_layout Standard
@@ -7107,6 +7272,20 @@ name "tab:R_hh_prod"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -7273,14 +7452,16 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}  
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -7357,6 +7538,20 @@ name "tab:M_hh_prod"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -7523,14 +7718,16 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}  
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -7566,7 +7763,7 @@ Impact at the individual level
 \begin_layout Standard
 Household level outcomes may mask intra-household dynamics related to the
  treatment.
- for instance, woman may have an increased likelihood of using fertilizer
+ For instance, woman may have an increased likelihood of using fertilizer
  on some plots, while men may reduce fertilizer use on other plots, leading
  to no effect at the household level.
  We thus dig deeper into individual level outcomes.
@@ -7591,9 +7788,9 @@ reference "tab:R_ind_know"
  The top panel presents responses to the multiple choice questions for the
  male co-head, the bottom panel for female co-head.
  We find that within households where the video was shown to the male co-head
- only, 26.2 percent of men know recommended maize spacing.
+ only, 26.2 percent of men knew recommended maize spacing.
  As expected, if the video was only shown to the female co-head, significantly
- less men are able to answer correctly: the percentage of correct responses
+ less men were able to answer correctly: the percentage of correct responses
  decreases by 14.3 percentage points.
  In other words, if men did not get the information, only about 12 percent
  of men knew the answer.
@@ -7606,14 +7803,16 @@ reference "tab:R_ind_know"
 \end_layout
 
 \begin_layout Standard
-Comparing the comparison group of male recipients to knowledge of the men
- in households where the video was shown to the couple, we find no significant
- difference.
- In other words, men do not learn more or less if the video was shown to
- the individual or to the couple.
+Comparing the group of male only recipients to knowledge of the men in household
+s where the video was shown to the couple, we find no significant difference.
+ In other words, the man does not learn more or less if the video was shown
+ to him individually or to him together with his wife.
  Similarly, the knowledge gain for the female co-head from watching the
  video by herself exactly matches the knowledge gain from watching the video
  together with the spouse.
+ This suggest a largely idiosyncratic learning process, in which few couples
+ seemed to have discussed the content of the video to make sure everything
+ was understood correctly.
  
 \end_layout
 
@@ -7631,9 +7830,10 @@ g effect for men.
  seem to matter whether the information was obtained individually or together
  with the spouse.
  We find no effects for weeding.
- As expected, there is also no impact on knowledge on how to fight fall
- armyworm at the individual level, as the videos did not contain information
- on this.
+ There is also no impact on knowledge on how to fight fall armyworm.
+ Also at the individual level, being shown a video does not affect the likelihoo
+d that the individual searches additional information.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -7664,6 +7864,20 @@ name "tab:R_ind_know"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -7887,14 +8101,16 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}  
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -7926,9 +8142,8 @@ note: The comparison group consists of households where the video was shown
 \begin_layout Standard
 We ran a similar analysis for the factor related to who provides the information
  to see how the messenger affects knowledge at the individual level.
- We find that knowledge levels as judged by the four multiple choice questions
- are fairly similar between men and women, and that the messenger attribute
- does not seem to made a difference.
+ We find that the messenger attribute does not seem to make a difference
+ on either male or female learning.
  To conserve space, we report full results in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -7945,7 +8160,7 @@ Agreement and cooperation
 
 \begin_layout Standard
 During the endline, we asked each spouse to describe what happens if they
- disagree about any maize related issue.
+ disagree about any issue related to maize cultivation.
  Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -7954,10 +8169,11 @@ reference "tab:Agreement-about-maize"
 \end_inset
 
  reports in the top panel that about 45.1 percent of men in households where
- the video was shown to only the man will generally tell their wife they
- do not agree about any maize related issue.
+ the video was shown to only the man will generally tell their wife if the
+ do not agree with a particular practice (first column).
  Showing the video to the wife only instead of to the man significantly
- reduces the likelihood that the man tells his wife if he disagrees.
+ reduces the likelihood that the man tells his wife if he disagrees (second
+ column).
  If the video was shown to the couple, the likelihood that the man tell
  the wife if he disagrees is the same as the likelihood when the video was
  shown to the man only.
@@ -8002,6 +8218,9 @@ The likelihood that the women will tell the husband that she disagrees is
  resolved also indicates that the likelihood that they come to an agreement
  is higher if the video was shown to both spouses, although also here, the
  difference is not significant at the 5 percent level.
+ The fact that the woman does not tell the man she disagrees if she has
+ more information than him may indicate that she thinks the man will not
+ believe here anyway.
 \end_layout
 
 \begin_layout Standard
@@ -8079,6 +8298,20 @@ name "tab:Agreement-about-maize"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -8282,14 +8515,16 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}  
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -8322,10 +8557,10 @@ Decision making about adoption
 \end_layout
 
 \begin_layout Standard
-We also inquired about decision making on the adoption of different maize
- growing practices and the use of inputs.
- For each of the practices and inputs applied at plot level, we asked both
- spouses who decided to use the input or practice.
+We also inquired about the decision making processes related to the adoption
+ of different maize growing practices and the use of inputs.
+ For range of practices and inputs, we asked both spouses who decided to
+ use the particular practice or input that was applied on each plot.
  Options included that (i) the husband made the decision to use a particular
  technology alone, (ii) the wife took the decision to use a particular technolog
 y alone, or (iii) both husband and wife jointly decided to use a particular
@@ -8336,14 +8571,14 @@ y alone, or (iii) both husband and wife jointly decided to use a particular
 status collapsed
 
 \begin_layout Plain Layout
-We asked both men and women who decided about each technology on each plot.
- We decided to categorize a practice was decided on by the male co-head
- if the man states he decided alone (irrespective of what the wife indicated).
- Similarly, we decided to categorize a practice was decided on by the female
- co-head only if the woman states she decided alone (irrespective of what
- the husband indicated).
- We further assume that a decision on a practices was taken together if
- both co-heads indicate that the decision was taken jointly.
+We decided to categorize a practice on a particular plot was decided on
+ by the male co-head only if he stated that he decided alone (irrespective
+ of what the wife indicated).
+ Similarly, we decided to categorize a practice on a particular plot was
+ decided on by the female co-head only if the woman indicated that she decided
+ alone (irrespective of what the husband indicated).
+ We further assume that a decision on a particular practice on a plot was
+ taken together if both co-heads indicate that the decision was taken jointly.
 \end_layout
 
 \end_inset
@@ -8380,6 +8615,13 @@ name "tab:dectechman"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -8553,7 +8795,7 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -8583,8 +8825,8 @@ note: The comparison group consists of households where the video was shown
 \end_layout
 
 \begin_layout Standard
-We looked at decision making related to nine practices, corresponding to
- the adoption practices that were indicated as key to better maize farming
+We looked at decision making related to nine practices, roughly corresponding
+ to the adoption practices that were indicated as key to better maize farming
  in the video.
  In particular, we asked who made the decision to start planting at a particular
  point in time on each plot (
@@ -8598,14 +8840,14 @@ time plant
 spacing
 \emph default
 ).
- After we asked what was done to fight striga on the plot, we also asked
- who made the decision on how to do this (
+ Furthermore, we asked who made the decision on how to fight striga on each
+ maize plot (
 \emph on
 striga control
 \emph default
 ).
- Similarly, after asking when first weeding was done, we asked who took
- the decision to do first weeding at that particular time (
+ Similarly, we asked who took the decision on when to start first weeding
+ (
 \emph on
 timing first weeding
 \emph default
@@ -8624,7 +8866,7 @@ Seed use
 Chemical use
 \emph default
 ).
- Finally, we ask who made the decision whether or not to buy seed (
+ Finally, we asked who made the decision whether or not to buy seed (
 \emph on
 Buy seed
 \emph default
@@ -8663,35 +8905,22 @@ reference "tab:dectechman"
 \end_inset
 
  shows that among households where the video was shown to the man only,
- on about 36.6 percent of the plots, the man also made the decision on when
+ on about 36.6 percent of the plots, the man unilaterally decided on when
  to start planting on that particular plot.
  Furthermore, we learn that on 45 percent of the plots among the subgroup
  where only the man received the video treatment, the man decided to use
- chemical without consulting his wife.
+ pesticides, fungicides or herbicides without consulting his wife.
  Interestingly, we see that for almost all practices, the likelihood that
  the man decides alone decreases substantially if the video is shown to
- the woman alone or to the couple instead.
+ the woman alone or to the woman in addition to the man.
  For the decision to use fertilizer especially, the effect is large: while
- man decide on about 40 percent of plots on which fertilizer to use, this
+ man decide alone on about 40 percent of plots about fertilizer use, this
  proportion reduces to about 22 percent in the subgroup of households where
  the video was shown to the woman and about 26 percent in the subgroup of
  households where the video was shown to both spouses together.
- As such, if the information is given to the female co-head instead of the
- the male co-head, the male co-head is less likely to make decision related
- to the adoption of modern technologies and practices all by himself.
-\end_layout
-
-\begin_layout Standard
-Interestingly, there is a similar reduction in the proportion of plots on
- which adoption decisions are taken by only the man if the video was shown
- to the couple instead of only to the man.
- Also here, the effect on the decision related to fertilizer use on the
- maize plot is particularly important; if the video is shown to the couple,
- the likelihood that the husband decides alone in the household drops to
- 26 percent.
- Therefore, we can conclude that if women also receive the information,
- men are less likely to make adoption decisions by themselves.
- 
+ As such, if the information is also given to the female co-head instead
+ of the the male co-head, the male co-head is less likely to make decisions
+ related to the adoption of modern technologies and practices all by himself.
 \end_layout
 
 \begin_layout Standard
@@ -8722,6 +8951,13 @@ name "tab:dectechfem"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -8905,7 +9141,7 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -8942,7 +9178,8 @@ reference "tab:dectechfem"
 
 \end_inset
 
- shows corresponding results for women decision making.
+ shows corresponding results for unilateral decision making on practices
+ by the female co-head.
  To some extent, the reduction in male decision making about crop management
  as a result of more inclusive extension is mirrored in an increase in decision
  making by women within the household.
@@ -8955,12 +9192,9 @@ reference "tab:dectechfem"
  This percentage increases to 38 percent if the video was shown to the female
  co-head alone.
  However, this is still significantly lower than the 53.3 percent of plots
- the men make decisions on if they get to see the video.
-\end_layout
-
-\begin_layout Standard
-Female decision making also generally increases if the video was shown to
- a couple instead of only to the men, but the differences are generally
+ man unilaterally decide on when they are provided information.
+ Female decision making also generally increases if the video was shown
+ to a couple instead of only to the men, but the differences are generally
  not significant.
  We can thus conclude that if women also receive information, they will
  make significantly more decisions on the use of improved agronomic practices
@@ -8996,6 +9230,13 @@ name "tab:dectechboth"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -9174,7 +9415,7 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -9225,7 +9466,18 @@ reference "tab:dectechboth"
  indicate that they do not increase decision making.
  Possibly, this reflects differing views on what constitutes joint decision
  making, with men exaggerating the number of instances where decision were
- made jointly.
+ made jointly
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This is also something that we can investigate further by rerunning the
+ analysis and only looking at eg female responses on who makes the decisions
+\end_layout
+
+\end_inset
+
+.
  We did not find any significant effect of changing the messenger in the
  video on the likelihood that decisions are taken by the both spouses together.
  The results for the analysis of the messenger factor are reported in the
@@ -9260,25 +9512,22 @@ Adoption
 \begin_layout Standard
 In the previous section, we have looked at the impact of the video interventions
  on who decides about agricultural technology adoption.
- Here, we go one step further and also consider actual implementation of
- each of the practices and technologies on which a decision was made.
+ Here, we go one step further and look at actual adoption of the practices
+ and technologies recommended in the video at the individual level.
  In particular, we compare the proportion of plots between two treatments
- on which (i) the husband solely made the decision on a particular management
- practice and decided to implement the practice that is recommended in the
- video; (ii) the wife solely made the decision on a particular management
- practice and decided to implement the practice that is recommended in the
- video; and (iii) husband and wife indicate they jointly made made the decision
- on a particular management practice and decided to implement the practice
- that is recommended in the video
+ on which (i) the husband solely made the decision to implement the practice
+ that is recommended in the video; (ii) the wife solely made the decision
+ to implement the practice that is recommended in the video; and (iii) husband
+ and wife indicate they jointly made the decision to implement a particular
+ practice or input as recommended in the video
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
 Note that this is different from simply comparing adoption conditional on
  who made the decision.
- Our approach is motivated by the fact that the decision making process
- itself may be affected by the intervention.
- 
+ Such an analysis would suffer from selection bias, as the interventions
+ also affect the decision making process.
 \end_layout
 
 \end_inset
@@ -9322,12 +9571,12 @@ reference "tab:M_adopt_ind_mm-1"
  solely decided to start planting immediately after the first rains, as
  recommended in the video.
  Our video also stressed the importance of soil management and we find that
- on about 22 percent of maize plots the male co-head solely decided to apply
- fertilizer.
- In the second column, we see that this averages are lower among households
+ on about 22 percent of maize plots the male co-head unilaterally decided
+ to apply fertilizer.
+ In the second column, we see that these averages are lower among households
  where the video was not shown to the man, but only to the female co-head.
  For example, in this group, we find that on only about 13 percent of plots
- the male head solely decided to use fertilizer.
+ the male co-head solely decided to use fertilizer.
  
 \end_layout
 
@@ -9347,7 +9596,7 @@ reference "tab:M_adopt_ind_fm-1-1"
  counterparts.
  For instance, women decide and use fertilizer on only 12.7 percent of plots
  if the woman was shown the video individually, as opposed to 22 percent
- of male adoption if he is shown the video.
+ of male adoption if the man is shown the video.
 \end_layout
 
 \begin_layout Standard
@@ -9355,11 +9604,11 @@ We do find that actual adoption also depends on who gets the information.
  Impact is again strongest on male managed adoption.
  In particular, if the information is given to the female only instead of
  the man only, adoption by men reduces substantially.
- For instance, we see an amost 10 percentage points reduction in fertilizer
+ For instance, we see an almost 10 percentage points reduction in fertilizer
  use under male management.
- While the impact of showing the video to the couple also generally reduces
- male maneged adoption, the results are less convincing then when we consider
- only decision making.
+ While showing the video to the couple also generally reduces male managed
+ adoption rates, the results are less convincing than when we consider only
+ decision making.
  
 \begin_inset Note Note
 status open
@@ -9377,7 +9626,7 @@ Interpretation?
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9401,6 +9650,13 @@ name "tab:R_adopt_ind_mm"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -9586,7 +9842,7 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -9642,7 +9898,7 @@ The indicator for the adoption of the improved seed spacing suffers from
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9666,6 +9922,13 @@ name "tab:R_adopt_ind_fm-1"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -9851,7 +10114,7 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -9909,7 +10172,7 @@ reference "tab:dectechboth"
 status open
 
 \begin_layout Plain Layout
-Interpretation
+Interpretation?
 \end_layout
 
 \end_inset
@@ -9922,7 +10185,7 @@ Interpretation
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9946,6 +10209,13 @@ name "tab:R_adopt_ind_bm-1-1"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -10131,7 +10401,7 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -10183,9 +10453,10 @@ reference "tab:R_hh_prod-1"
 
  shows that a maize plot on average produces 137 kg under male management
  in households where the video was only shown to the male co-head.
- The average household where the male co-head was shown the video only produces
- 42 kg under the management of the female co-head (second panel), and the
- corresponding figure is about 90 kg under joint management.
+ The average maize plot in a household where the male co-head was shown
+ the video only produces 42 kg under the management of the female co-head
+ (second panel), and the corresponding figure is about 90 kg under joint
+ management.
  
 \end_layout
 
@@ -10214,9 +10485,30 @@ On average, the area planted under male management is about 0.3 acres.
 Similarly, we see that on an average one acre plot, about 200 kg is produced
  under male management, 70 kg under female management, and about 125 kg
  under joint management.
- If the video was shown to a female only, the amount produce per acre under
+ If the video was shown to a female only, the amount produced per acre under
  male management reduces by 34 kg and the amount under female management
- increases by about 26 kg on the average one acre plot.
+ increases by about 26 kg on the average one acre plot
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+I don't understand how for female production increases, land increases even
+ more and also yield increases...
+ 
+\end_layout
+
+\end_inset
+
+.
+ We again do not find any effect of the gender composition of the messenger
+ on production outcomes (Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:R_hh_prod-1-1"
+
+\end_inset
+
+ in appendix).
 \end_layout
 
 \begin_layout Standard
@@ -10229,7 +10521,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Impact of recipient on individual level
+Impact of recipient on individual level production outcomes
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:R_hh_prod-1"
@@ -10247,6 +10539,20 @@ name "tab:R_hh_prod-1"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -10315,11 +10621,11 @@ textit{male managed}}
 
 \begin_layout Plain Layout
 
-kg produced	&	137.221	&	-25.982	&	0.013	&	-6.507	&	0.564	
+kg produced	&	137.221	&	-25.982	&	0.013*	&	-6.507	&	0.564	
 \backslash
 
 \backslash
- 	&	248.760	&	9.649	&		&	10.212	&		
+ 	&	(248.760)	&	(9.649)	&		&	(10.212)	&		
 \backslash
 
 \backslash
@@ -10327,7 +10633,7 @@ kg produced	&	137.221	&	-25.982	&	0.013	&	-6.507	&	0.564
 \backslash
 
 \backslash
- 	&	0.474	&	0.019	&		&	0.020	&		
+ 	&	(0.474)	&	(0.019)	&		&	(0.020)	&		
 \backslash
 
 \backslash
@@ -10335,23 +10641,23 @@ kg produced	&	137.221	&	-25.982	&	0.013	&	-6.507	&	0.564
 \backslash
 
 \backslash
- 	&	334.200	&	13.499	&		&	13.640	&		
+ 	&	(334.200)	&	(13.499)	&		&	(13.640)	&		
 \backslash
 
 \backslash
- yield was better 	&	0.123	&	-0.055	&	0.000	&	-0.027	&	0.057	
+ yield was better 	&	0.123	&	-0.055	&	0.000***	&	-0.027	&	0.057	
 \backslash
 
 \backslash
- 	&	0.329	&	0.011	&		&	0.012	&		
+ 	&	(0.329)	&	(0.011)	&		&	(0.012)	&		
 \backslash
 
 \backslash
- production index	&	0.054	&	-0.111	&	0.001	&	-0.070	&	0.051	
+ production index	&	0.054	&	-0.111	&	0.001***	&	-0.070	&	0.051	
 \backslash
 
 \backslash
- 	&	0.840	&	0.032	&		&	0.033	&		
+ 	&	(0.840)	&	(0.032)	&		&	(0.033)	&		
 \backslash
 
 \backslash
@@ -10373,43 +10679,43 @@ textit{female managed}}
 
 \begin_layout Plain Layout
 
-kg produced	&	42.011	&	15.219	&	0.013	&	-0.777	&	0.886	
+kg produced	&	42.011	&	15.219	&	0.013*	&	-0.777	&	0.886	
 \backslash
 
 \backslash
- 	&	128.829	&	5.689	&		&	5.690	&		
+ 	&	(128.829)	&	(5.689)	&		&	(5.690)	&		
 \backslash
 
 \backslash
- log acres planted	&	0.109	&	0.052	&	0.000	&	0.017	&	0.254	
+ log acres planted	&	0.109	&	0.052	&	0.000***	&	0.017	&	0.254	
 \backslash
 
 \backslash
- 	&	0.303	&	0.014	&		&	0.014	&		
+ 	&	(0.303)	&	(0.014)	&		&	(0.014)	&		
 \backslash
 
 \backslash
- log yield (kg/ac) 	&	69.717	&	25.703	&	0.009	&	9.902	&	0.327	
+ log yield (kg/ac) 	&	69.717	&	25.703	&	0.009*	&	9.902	&	0.327	
 \backslash
 
 \backslash
- 	&	205.934	&	9.184	&		&	9.428	&		
+ 	&	(205.934)	&	(9.184)	&		&	(9.428)	&		
 \backslash
 
 \backslash
- yield was better 	&	0.034	&	0.030	&	0.001	&	0.011	&	0.159	
+ yield was better 	&	0.034	&	0.030	&	0.001**	&	0.011	&	0.159	
 \backslash
 
 \backslash
- 	&	0.180	&	0.008	&		&	0.008	&		
+ 	&	(0.180)	&	(0.008)	&		&	(0.008)	&		
 \backslash
 
 \backslash
- production index	&	-0.073	&	0.136	&	0.000	&	0.060	&	0.065	
+ production index	&	-0.073	&	0.136	&	0.000***	&	0.060	&	0.065	
 \backslash
 
 \backslash
- 	&	0.710	&	0.034	&		&	0.035	&		
+ 	&	(0.710)	&	(0.034)	&		&	(0.035)	&		
 \backslash
 
 \backslash
@@ -10435,7 +10741,7 @@ kg produced	&	89.290	&	-5.096	&	0.520	&	7.929	&	0.336
 \backslash
 
 \backslash
- 	&	196.823	&	7.314	&		&	7.780	&		
+ 	&	(196.823)	&	(7.314)	&		&	(7.780)	&		
 \backslash
 
 \backslash
@@ -10443,7 +10749,7 @@ kg produced	&	89.290	&	-5.096	&	0.520	&	7.929	&	0.336
 \backslash
 
 \backslash
- 	&	0.442	&	0.016	&		&	0.017	&		
+ 	&	(0.442)	&	(0.016)	&		&	(0.017)	&		
 \backslash
 
 \backslash
@@ -10451,7 +10757,7 @@ kg produced	&	89.290	&	-5.096	&	0.520	&	7.929	&	0.336
 \backslash
 
 \backslash
- 	&	256.797	&	9.746	&		&	10.517	&		
+ 	&	(256.797)	&	(9.746)	&		&	(10.517)	&		
 \backslash
 
 \backslash
@@ -10459,15 +10765,15 @@ kg produced	&	89.290	&	-5.096	&	0.520	&	7.929	&	0.336
 \backslash
 
 \backslash
- 	&	0.322	&	0.011	&		&	0.012	&		
+ 	&	(0.322)	&	(0.011)	&		&	(0.012)	&		
 \backslash
 
 \backslash
- production index	&	0.030	&	-0.061	&	0.036	&	0.032	&	0.280	
+ production index	&	0.030	&	-0.061	&	0.036*	&	0.032	&	0.280	
 \backslash
 
 \backslash
- 	&	0.839	&	0.030	&		&	0.032	&		
+ 	&	(0.839)	&	(0.030)	&		&	(0.032)	&		
 \backslash
 
 \backslash
@@ -10492,14 +10798,16 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -10543,9 +10851,9 @@ key "banerjee2011poor"
 
 .
  However, not every information campaign is equally effective, and often,
- seemingly small attributes, such as the way a message is framed, how it
- is delivered, who is targeted by the message and who delivers the message,
- can result in significant differences in impact.
+ seemingly small attributes, such as the way it is delivered, who is targeted
+ by the message and who delivers the message, can result in significant
+ differences in impact.
  Understanding and quantifying the importance of each of these design attributes
  through rigorous evaluation research should therefore be an essential part
  of any knowledge exchange model.
@@ -10553,11 +10861,11 @@ key "banerjee2011poor"
 \end_layout
 
 \begin_layout Standard
-In thus study, we evaluate the effectiveness of Information and Communication
- Technology (ICT) mediated short video messages to disseminate agricultural
- extension information, an intervention that can be brought to scale relatively
- easily and at significantly lower cost than alternative modes of agricultural
- extension information provision.
+In thus study, we evaluate the effectiveness of three complementary Information
+ and Communication Technology (ICT) enabled agricultural information exchange
+ approaches (short video messages, Interactive Voice Response and sms campaings)
+ that can be brought to scale relatively easily and at significantly lower
+ cost than alternative modes of agricultural extension information provision.
  In addition, and motivated by the observation that most agricultural advisory
  services are biased toward men, this study looked at two gender related
  attributes of a stylized ICT mediated agricultural extension information
@@ -10575,9 +10883,9 @@ s of the information intervention (2) the role of information asymmetries
 \begin_layout Standard
 The various hypotheses are tested using a field experiment where the messenger
  of the information and the recipient of the information is randomly altered
- according to a 3 by 2 factorial design.
- The study population were maize farmers in Eastern Uganda, from which we
- sampled about 3,600 farmers.
+ according to a 3 by 3 factorial design.
+ The study population were maize farm households in Eastern Uganda, from
+ which we sampled about 3,600 couples.
  These farmers were then shown a video according to the treatment group
  they were randomly assigned to.
  The videos showed how inputs and improved farming practices can be used
@@ -10590,91 +10898,76 @@ The various hypotheses are tested using a field experiment where the messenger
 \end_layout
 
 \begin_layout Standard
-We find that the information campaign increased knowledge about recommended
- agricultural practices and about how to invest in farming.
- Especially if the information is about a new technology and it can be assumed
- that previous knowledge is limited, we find substantial knowledge effects
- that can be attributed to the intervention.
- We do not find a difference in household level knowledge depending on whether
- the information was targeted to the couple or to an individual within the
- household.
- We also do not find that farmers learn more if the information is brought
- by a couple as opposed to by either a man or a woman.
+We find that as a result of being shown the video, farmers have increased
+ knowledge.
+ We do not find incremental effects for the addition of IVR and sms reminders.
+ As a result of being shown the video, farmers also adopted a range of recommend
+ed practices.
+ We also find that farmers reduce their use of DAP or NPK and increase adoption
+ of Urea (and to a lesser extent inorganic fertilizer) to engage in more
+ balanced soil nutrient management.
+ Effects are less strong for adding IVR to the video treatment.
+ However, there is some evidence that a demand driven information service
+ such as IVR may be more effective to increase the adoption of more complex
+ technologies (eg.
+ basal application of DAP and hybrid maize seed).
+ As a result of having been shown a video, households reduce the area under
+ maize cultivation while producing the same amount, leading to a significant
+ increase in maize yields, from 428 kg/acre to 488 kg/acre.
+ Adding IVR further increases this to 526 kg/acre, but this is driven by
+ an increase in production on the same area under cultivation.
+ We find no effect from any intervention on self assessed well-being, nor
+ on consumption expenditure.
 \end_layout
 
 \begin_layout Standard
-We also find that the video messages lead to the adoption of many of the
- practices and technologies that were promoted in the video.
- Households that were exposed to the video are more likely to fight striga
- according to recommendations and to use a new way of spacing that was illustrat
-ed in the video.
- Also, we find that farm households reduce use of DAP/NPK and increase use
- of urea and inorganic fertilizer.
- Most likely, this is due to the fact that, in the video, it is emphasized
- that inputs should be combined to get best results, and as a result some
- of the treated farmers reduce their use of DAP or NPK and increase adoption
- of Urea and inorganic fertilizer to engage in more balanced soil nutrient
- management.
- We also find that for some inputs and practices, adoption is more likely
- if information is delivered to husband and wife jointly, but care should
- be taken when trying to generalize this finding to other practices.
+There is some evidence that showing video only to the female co-head reduces
+ household level knowledge as opposed to when the info is given to the man
+ only.
+ There is also some evidence that targeting the couple instead of only the
+ man leads to an increased likelihood of the use of fertilizer and that
+ this fertilizer is also combined with improved seed.
+ Comparing male recipient households to households where the video was shown
+ to the couple results in no differences in production related outcomes
+ measured at the household level.
+ Changing the messenger attribute does not have any effect on household
+ level outcomes.
 \end_layout
 
 \begin_layout Standard
-Further down the potential impact pathway, we also find evidence that showing
- a video led to an increase in maize yields of almost 14 percent.
- Most of this is driven by a reduction in area cultivated, which is again
- consistent with the message in the video to 
-\begin_inset Quotes eld
+When the video is shown to the couple or the woman (as opposed to only the
+ man), knowledge of the woman increases significantly, suggesting information
+ does not flow from the man to the woman within the household.
+ When the video was shown to couple (as opposed to only the man), women
+ are more likely to speak up if they do not agree, and it is more likely
+ that an agreement is reached.
+ If women also receive the information, men are less likely to make adoption
+ decisions unilaterally.
+ If women also receive information, they will make significantly more decisions
+ on the use of improved agronomic practices and inputs, but only if this
+ information is not also available to the husband.
+ Showing the video to both spouses jointly does seem to increase the likelihood
+ of joint decision making for some practices, but none is significant after
+ correcting for multiple comparisons.
+ Finally, on an average plot of one acre, if the video was shown to a female
+ only, the amount produced per acre under male management reduces by 34
+ kg and the amount under female management increases by about 26 kg.
+ We do not find that it matters if the information in the video was provided
+ by a man, a woman, or a man and woman together.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+misperceived social norms?
+\end_layout
+
 \end_inset
 
-start small
-\begin_inset Quotes erd
-\end_inset
 
-.
- We also find significant effects on disposal, with households that were
- exposed to the video more likely to consume maize and keep less maize as
- seed for the next season.
- In general, we did not find significant differences between households
- where the video was shown to an individual and households where the video
- was shown to the couple.
- Furthermore, despite the impact on production, we did not find any impact
- on welfare, either measured as consumption expenditure or self-assessed.
-\end_layout
-
-\begin_layout Standard
-We do see interesting differences from targeting either the individual or
- the couple in the household if we start looking at decision making processes
- within the household.
- For instance, we find that showing a video to a couple increases the likelihood
- that spouses will try to find a mutually satisfying solution when there
- is disagreement compared to when a video is only shown to one of the spouses.
- Showing a video to a couple also significantly reduces the propensity that
- spouses makes adoption decision by him/herself as compared to cases where
- the video was shown to only one individual.
- It also increases the proportion of plots on which decisions are made jointly,
- at least for some practices and technologies.
-\end_layout
-
-\begin_layout Standard
-Finally, we look at the impact of the interventions on adoption and production
- for male managed, women managed and jointly managed plots separately.
- We find that showing a video does not increase fertilizer use on male managed
- plots, but does so on female managed plots and plots that are managed by
- husband and wife together.
- Reducing information asymmetries within the household by targeting husband
- and wife jointly reduces differences in adoption rates between male and
- female managed plots for some practices and increases adoption on jointly
- managed plots for others.
- However, we only find effects on productivity on male managed plots and
- on jointly managed plots.
- It may be that, in the context of the fall armyworm crisis, the use of
- chemicals may have been key to convert increased fertilizer use into higher
- yields, and women appear to have less access to chemicals for use on the
- plots they manage.
- We find no evidence of a couple role model effect among Ugandan smallholder
- maize farmers.
 \end_layout
 
 \begin_layout Standard
@@ -10720,6 +11013,20 @@ name "tab:welfare_appendinx"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -11015,21 +11322,23 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
 
 note: In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
- The other column reports differences (and standard errors of the differences)
+ The other columns report differences (and standard errors of the differences)
  between the comparison group and each treatment group, and corresponding
  p-values based on randomization inference (10,000 permutations); ***, **
  and * denote difference is signficant at the 0.1, 1 and 5 percent level
@@ -11077,6 +11386,20 @@ name "tab:M_ind_know"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -11383,14 +11706,16 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}  
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -11451,6 +11776,13 @@ name "tab:Mdectechman-1"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -11525,7 +11857,7 @@ time plant	&	0.308	&	-0.014	&	0.507	&	-0.005	&	0.799
 \backslash
 
 \backslash
- 	&	(0.468)	&	(0.017)	&		&	0.017	&		
+ 	&	(0.468)	&	(0.017)	&		&	(0.017)	&		
 \backslash
 
 \backslash
@@ -11533,7 +11865,7 @@ time plant	&	0.308	&	-0.014	&	0.507	&	-0.005	&	0.799
 \backslash
 
 \backslash
- 	&	0.433	&	0.016	&		&	0.016	&		
+ 	&	(0.433)	&	(0.016)	&		&	(0.016)	&		
 \backslash
 
 \backslash
@@ -11541,7 +11873,7 @@ time plant	&	0.308	&	-0.014	&	0.507	&	-0.005	&	0.799
 \backslash
 
 \backslash
- 	&	0.459	&	0.017	&		&	0.017	&		
+ 	&	(0.459)	&	(0.017)	&		&	(0.017)	&		
 \backslash
 
 \backslash
@@ -11549,7 +11881,7 @@ time plant	&	0.308	&	-0.014	&	0.507	&	-0.005	&	0.799
 \backslash
 
 \backslash
- 	&	0.471	&	0.026	&		&	0.027	&		
+ 	&	(0.471)	&	(0.026)	&		&	(0.027)	&		
 \backslash
 
 \backslash
@@ -11557,7 +11889,7 @@ time plant	&	0.308	&	-0.014	&	0.507	&	-0.005	&	0.799
 \backslash
 
 \backslash
- 	&	0.479	&	0.025	&		&	0.026	&		
+ 	&	(0.479)	&	(0.025)	&		&	(0.026)	&		
 \backslash
 
 \backslash
@@ -11565,7 +11897,7 @@ time plant	&	0.308	&	-0.014	&	0.507	&	-0.005	&	0.799
 \backslash
 
 \backslash
- 	&	0.455	&	0.025	&		&	0.026	&		
+ 	&	(0.455)	&	(0.025)	&		&	(0.026)	&		
 \backslash
 
 \backslash
@@ -11573,7 +11905,7 @@ time plant	&	0.308	&	-0.014	&	0.507	&	-0.005	&	0.799
 \backslash
 
 \backslash
- 	&	0.494	&	0.026	&		&	0.027	&		
+ 	&	(0.494)	&	(0.026)	&		&	(0.027)	&		
 \backslash
 
 \backslash
@@ -11581,7 +11913,7 @@ time plant	&	0.308	&	-0.014	&	0.507	&	-0.005	&	0.799
 \backslash
 
 \backslash
- 	&	0.499	&	0.018	&		&	0.018	&		
+ 	&	(0.499)	&	(0.018)	&		&	(0.018)	&		
 \backslash
 
 \backslash
@@ -11624,7 +11956,7 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -11681,6 +12013,13 @@ name "tab:Mdectechfem-1"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -11854,7 +12193,7 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -11911,6 +12250,13 @@ name "tab:Mdectechboth-1"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -12089,7 +12435,7 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -12122,7 +12468,7 @@ note: The comparison group consists of households where the video was shown
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -12146,6 +12492,13 @@ name "tab:M_adopt_ind_mm-1"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -12331,7 +12684,7 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -12364,7 +12717,7 @@ note: The comparison group consists of households where the video was shown
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -12388,6 +12741,13 @@ name "tab:M_adopt_ind_fm-1-1"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -12573,7 +12933,7 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -12606,7 +12966,7 @@ note: The comparison group consists of households where the video was shown
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -12630,6 +12990,13 @@ name "tab:R_adopt_ind_bm-1-1-1"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -12815,7 +13182,7 @@ end{center}
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
@@ -12872,6 +13239,24 @@ name "tab:R_hh_prod-1-1"
 \begin_layout Plain Layout
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
 
 \begin_layout Plain Layout
 
@@ -13117,14 +13502,16 @@ end{tabular}
 
 \begin_layout Plain Layout
 
-  
+
+\backslash
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-footnotesize   
+scriptsize   
 \end_layout
 
 \begin_layout Plain Layout
