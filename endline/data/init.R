@@ -453,9 +453,9 @@ dta$dec_both_pl5[is.na(dta$mgt_both_pl5) & is.na(dta$dectime_both_pl5) & is.na(d
 
 ### as dummy
 
-dta[paste("dec_man_d",paste("_pl",1:5, sep=""), sep="")] <- dta[paste("dec_man",paste("_pl",1:5, sep=""), sep="")] > 0
-dta[paste("dec_woman_d",paste("_pl",1:5, sep=""), sep="")] <- dta[paste("dec_woman",paste("_pl",1:5, sep=""), sep="")] > 0
-dta[paste("dec_both_d",paste("_pl",1:5, sep=""), sep="")] <- dta[paste("dec_both",paste("_pl",1:5, sep=""), sep="")] > 0
+dta[paste("dec_man_d",paste("_pl",1:5, sep=""), sep="")] <- dta[paste("dec_man",paste("_pl",1:5, sep=""), sep="")] == 1
+dta[paste("dec_woman_d",paste("_pl",1:5, sep=""), sep="")] <- dta[paste("dec_woman",paste("_pl",1:5, sep=""), sep="")] == 1
+dta[paste("dec_both_d",paste("_pl",1:5, sep=""), sep="")] <- dta[paste("dec_both",paste("_pl",1:5, sep=""), sep="")] == 1
 
 ### now engagement based on work 
 dta[c("grp1field1a50a", "grp1field1a50b", "grp1field1a50c", "grp1field1a50d", "grp1field1a50e", "grp1field1a50f", "grp1field1a50g")] <- lapply(dta[c("grp1field1a50a", "grp1field1a50b", "grp1field1a50c", "grp1field1a50d", "grp1field1a50e", "grp1field1a50f", "grp1field1a50g")], function(x) replace(x, x == 999, NA) )
@@ -1170,6 +1170,19 @@ dta$know_weed[is.na(dta$a3)  & is.na(dta$spouse2f3)] <- NA
 
 dta$know_armyworm <- rowSums(dta[c("a4","spouse2f4")] == 3, na.rm=T) > 0 
 dta$know_armyworm[is.na(dta$a4) & is.na(dta$spouse2f4)] <- NA
+
+### knowledge at aggreagate level - defined as follows: strong - if at least one person got the answer correct
+dta$know_space_j <- rowSums(dta[c("a1","spouse2f1")] == 1, na.rm=T) == 2
+dta$know_space_j[is.na(dta$a1) & is.na(dta$spouse2f1)] <- NA 
+
+dta$know_combine_j <- rowSums(dta[c("a2", "spouse2f2")] == 3, na.rm=T)  == 2
+dta$know_combine_j[is.na(dta$a2)  & is.na(dta$spouse2f2)] <- NA
+
+dta$know_weed_j <-  rowSums(dta[c("a3","spouse2f3")]== 2, na.rm=T)  == 2
+dta$know_weed_j[is.na(dta$a3)  & is.na(dta$spouse2f3)] <- NA
+
+dta$know_armyworm_j <- rowSums(dta[c("a4","spouse2f4")] == 3, na.rm=T)  == 2
+dta$know_armyworm_j[is.na(dta$a4) & is.na(dta$spouse2f4)] <- NA
 
 ### knowledge of man:
 
