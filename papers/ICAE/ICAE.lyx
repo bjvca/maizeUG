@@ -67,6 +67,7 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -461408743 "Bjorn Van Campenhout"
 \author -408277422 "ELecoutere"
 \end_header
 
@@ -408,11 +409,7 @@ The primary focus of this study is the design of effective and inclusive
  (i) the way the information is delivered, (ii) the gender composition of
  the messenger(s), and (iii) the gender composition of the viewer(s) in
  encouraging the uptake and adoption of modern input use and improved crop
- management practices
-\change_inserted -408277422 1530552533
-, and ultimately in improving production and welfare
-\change_unchanged
-.
+ management practices, and ultimately in improving production and welfare.
  Specific emphasis is placed on exploring both the effectiveness and inclusivity
  of this ICT-enabled approach to extension information delivery for several
  reasons.
@@ -451,36 +448,24 @@ key "Feder2010,doi:10.1080/13892240903309595,doi:10.1080/13892249985300061,davis
  socioeconomic context in which it is being promoted; and other confounding
  factors that may be poorly understood or too costly to address in program
  design and implementation.
-\change_deleted -408277422 1530552611
-.
-
-\change_unchanged
  As a result, ICT applications to extension such as sms reminders, purpose-built
  smartphone apps, portable tablets and projectors, and other hardware and
  software solutions have received considerable attention in recent years
  as a means of addressing some—if not all—of these issues
-\change_inserted -408277422 1530552643
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530552819
 i miss a link.
  how will ict solutions address issues with specificity of technology, context,
  ...
  that are too costly to address in implementation? i think you mean the
  ict solutions ensure that content can be more easily adapted, that campaigns
  can be better targeted etc.
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 .
  
 \end_layout
@@ -497,11 +482,8 @@ key "RePEc:hbs:wpaper:13-047"
 
  found that short message services (SMSs) pushed to farmers in Gujarat,
  India generated positive effects on crop choice and pesticide use decision
- and that the introduction of an interactive voice response 
-\change_inserted -408277422 1530552856
-IVR 
-\change_unchanged
-system significantly increased cumin and cotton yields.
+ and that the introduction of an IVR system significantly increased cumin
+ and cotton yields.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -521,20 +503,10 @@ key "maredia2017can"
 
 , on the other hand, found that while mobile phone-based animated videos
  shown to farmers in Burkina Faso induced learning and understanding, it
- was no
-\change_inserted -408277422 1530554518
-t 
-\change_deleted -408277422 1530554521
- more
-\change_unchanged
- effective in encouraging adoption.
- Similarly,
-\change_inserted -408277422 1530554526
- the
-\change_unchanged
- Grameen Foundation had some success using smartphones in Uganda to provide
- agriculture-related information to farmers through ICT empowered community
- knowledge workers 
+ was not effective in encouraging adoption.
+ Similarly, the Grameen Foundation had some success using smartphones in
+ Uganda to provide agriculture-related information to farmers through ICT
+ empowered community knowledge workers 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1080/1369118X.2016.1200644"
@@ -576,27 +548,14 @@ key "Doss200127,FLETSCHNER20111422,peterman2011understanding,QUISUMBING2010581"
 
 .
  Often, extension agents are male, and their default strategy for disseminating
- information on crop management is to target 
-\change_deleted -408277422 1530554598
-the main
-\change_inserted -408277422 1530554599
-one
-\change_unchanged
+ information on crop management is to target one
+\change_deleted -461408743 1530709476
  
-\change_deleted -408277422 1530554625
-(or most accessible)
 \change_unchanged
- decision-maker in a household, which is generally the man
-\change_inserted -408277422 1530554644
- in dual households
-\change_unchanged
-.
+ decision-maker in a household, which is generally the man in dual households.
  The assumption that extension messages targeting one household member will
- spread to other household members—including women and youth 
-\change_deleted -408277422 1530554679
-who often play a substantial role in agriculture
-\change_unchanged
-—may be false 
+ spread to other household members—including women and youth —may be false
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "RePEc:fpr:ifprid:1411"
@@ -605,14 +564,8 @@ key "RePEc:fpr:ifprid:1411"
 
 .
  Men do not necessarily discuss production decisions or share information
- 
-\change_deleted -408277422 1530554688
-to
-\change_inserted -408277422 1530554689
-with
-\change_unchanged
- women household members, especially if extension messages focus on men's
- priorities and crops 
+ with women household members, especially if extension messages focus on
+ men's priorities and crops 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "fletschner2011gender"
@@ -620,27 +573,10 @@ key "fletschner2011gender"
 \end_inset
 
 .
+ Moreover, evidence suggests that in certain contexts, gender homophily
+ effects in which men learn more from other men and women learn more from
+ other women, may dominate other intra-household information-sharing effects
  
-\change_inserted -408277422 1530554910
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\change_deleted -408277422 1530554885
-Rather
-\change_inserted -408277422 1530554891
-Moreover
-\change_unchanged
-, evidence suggests that in certain contexts, gender homophily effects in
- which men learn more from other men and women learn more from other women,
- may dominate other intra-household information-sharing effects 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Doss200127"
@@ -654,11 +590,8 @@ key "Doss200127"
 \begin_layout Standard
 Third, we explore this issue further by investigating the extent to which
  farms are managed at the household level in a cooperative manner, e.g., through
- joint decision-making between and among male and female co-heads of 
-\change_inserted -408277422 1530556366
-the 
-\change_unchanged
-household.
+ joint decision-making between and among male and female co-heads of the
+ household.
  This expands on recent advances in the measurement of gendered dimensions
  of empowerment, including decison-making power, intra-household distribution
  of decision-making power and control over income and resources 
@@ -684,26 +617,11 @@ key "RePEc:smu:ecowpa:1705,riley"
 \begin_layout Standard
 Finally and more broadly, we contribute to long-standing research efforts
  to document and measure the adoption and impact of improved agricultural
- technologies and practices among smallholder farm
-\change_inserted -408277422 1530556439
-ing households
-\change_deleted -408277422 1530556436
-ers
-\change_unchanged
-.
+ technologies and practices among smallholder farm households.
  There are many reasons for the observed low rates of adoption of improved
- technologies and practices among smallholder 
-\change_deleted -408277422 1530556447
-farmers
-\change_inserted -408277422 1530556449
-farming households
-\change_unchanged
-, including lack of access to credit and insurance, poorly developed labour
- markets, and asymmetries of information
-\change_inserted -408277422 1530556491
- within markets
-\change_unchanged
- 
+ technologies and practices among smallholder farm households, including
+ lack of access to credit and insurance, poorly developed labour markets,
+ and asymmetries of information within markets 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1086/451461,jack2013market"
@@ -713,12 +631,8 @@ key "doi:10.1086/451461,jack2013market"
 .
  Our contribution is methodological in nature in recognition of two important
  points.
- First, 
-\change_deleted -408277422 1530556519
-too
-\change_unchanged
- few studies apply sufficiently rigorous methods to address concerns about
- sample selection bias and causal identification in the study of technical
+ First, few studies apply sufficiently rigorous methods to address concerns
+ about sample selection bias and causal identification in the study of technical
  change in developing-country agriculture 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -727,14 +641,10 @@ key "de2010recent"
 \end_inset
 
 .
- Second, 
-\change_deleted -408277422 1530556522
-too
-\change_unchanged
- few studies on ICT-enabled extension are replicated in differing contexts
- and populations to increase both generalizable findings and nuanced insights
- on the impact pathways through which ICT operates on farmers' decision-making
- about technology adoption.
+ Second, few studies on ICT-enabled extension are replicated in differing
+ contexts and populations to increase both generalizable findings and nuanced
+ insights on the impact pathways through which ICT operates on farmers'
+ decision-making about technology adoption.
  Our study adds to this growing body of literature and adapts a somewhat
  similar design under investigation in Ethiopia 
 \begin_inset CommandInset citation
@@ -749,168 +659,49 @@ key "tanguydiggreen"
 \begin_layout Standard
 Our experimental design (described in detail below) allows us to explore
  these research questions by comparing outcomes between groups of randomly
- assigned 
-\change_deleted -408277422 1530556637
-farmers
-\change_inserted -408277422 1530556639
-farming households
-\change_unchanged
- that are given the opportunity to view versions of a video on improved
- maize management practices in different configurations.
- In addition to the video, a random group of 
-\change_deleted -408277422 1530556671
-farmers
-\change_inserted -408277422 1530556671
-farming households
-\change_unchanged
- 
-\change_deleted -408277422 1530556676
-will
-\change_unchanged
- also receive
-\change_inserted -408277422 1530556678
-d
-\change_unchanged
+ assigned farm households that are given the opportunity to view versions
+ of a video on improved maize management practices in different configurations.
+ In addition to the video, a random group of farm households also received
  a phone number and instructions to call into the IVR system.
- A final random subset of these 
-\change_deleted -408277422 1530556683
-farmers
-\change_inserted -408277422 1530556683
-farming households
-\change_unchanged
- 
-\change_deleted -408277422 1530556686
-will
-\change_inserted -408277422 1530556687
-was
-\change_unchanged
- also 
-\change_deleted -408277422 1530556690
-be
-\change_unchanged
- targeted by 
-\change_deleted -408277422 1530556692
-8
-\change_inserted -408277422 1530556694
-eight
-\change_unchanged
+ A final random subset of these farm households was also targeted by eight
  sms messages reminding them at specific times about important practices
  and the fact that they can always call the IRV.
-\change_inserted -408277422 1530556716
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530556743
-the previous 2 sentences are a repetition
-\change_unchanged
-
+the previous 2 sentences are a repetition.
+ huh???
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
  The experiment allows us to test the following three hypotheses.
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-H1: 
-\change_deleted -408277422 1530556937
-Improving the
-\change_inserted -408277422 1530556944
-ICT mediated 
-\change_deleted -408277422 1530556968
- 
-\change_unchanged
-provision of 
-\change_inserted -408277422 1530556972
-extension 
-\change_unchanged
-information to smallholder 
-\change_deleted -408277422 1530556789
-farmers
-\change_inserted -408277422 1530556791
-farming households
-\change_unchanged
- results in increase
-\change_inserted -408277422 1530556821
-d
-\change_deleted -408277422 1530556820
-s
-\change_unchanged
- 
-\change_deleted -408277422 1530556825
-in awareness and 
-\change_unchanged
-knowledge about improved technologies and practices, increase
-\change_inserted -408277422 1530556840
-d
-\change_deleted -408277422 1530556840
-s
-\change_unchanged
- 
-\change_deleted -408277422 1530556842
-in
-\change_unchanged
- the adoption of these technologies and practices, improve
-\change_inserted -408277422 1530556848
-d
-\change_deleted -408277422 1530556848
-ments in
-\change_unchanged
- on-farm productivity gains, and 
-\change_deleted -408277422 1530556853
-improvements
-\change_unchanged
- 
-\change_inserted -408277422 1530556859
-greater
-\change_deleted -408277422 1530556856
-in 
-\change_unchanged
-household welfare.
+H1: ICT mediated provision of extension information to smallholder farm
+ households results in increased knowledge about improved technologies and
+ practices, increased the adoption of these technologies and practices,
+ improved on-farm productivity gains, and greater household welfare.
  
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -408277422 1530557018
-while t
-\change_deleted -408277422 1530557019
-T
-\change_unchanged
-here are many reasons for the observed low rates of adoption of improved
- technologies and practices among smallholder farmers
-\change_inserted -408277422 1530557032
- (supra 
-\change_deleted -408277422 1530557037
-.
- These include a lack of access to credit, missing risk markets, and poorly
- developed labour markets
-\change_unchanged
- 
+While there are many reasons for the observed low rates of adoption of improved
+ technologies and practices among smallholder farmers (eg.
+ a lack of access to credit, missing risk markets, and poorly developed
+ labour markets 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1086/451461,jack2013market"
 
 \end_inset
 
-
-\change_inserted -408277422 1530557040
-, 
-\change_deleted -408277422 1530557044
-.
- W
-\change_inserted -408277422 1530557044
-w
-\change_unchanged
-e focus on the role of information inefficiencies and test low-cost intervention
-s designed to address various types of information gaps.
+), we focus on the role of information inefficiencies and test low-cost
+ interventions designed to address various types of information gaps.
  Similar information interventions using ICT have been promising and include
  the Grameen Foundation's use of smart phones in Uganda to provide extension
  information through community knowledge workers 
@@ -934,46 +725,18 @@ key "RePEc:hbs:wpaper:13-047"
 \begin_layout Standard
 
 \emph on
-H2: The effectiveness of 
-\change_inserted -408277422 1530557131
-the extension 
-\change_unchanged
-information 
-\change_inserted -408277422 1530557178
-for individuals within farming households and for the household as a whole
- 
-\change_unchanged
-depends on who is targeted: 
-\change_deleted -408277422 1530557207
-jointly to
-\change_unchanged
- male and female co-heads in a household 
-\change_inserted -408277422 1530557346
-are jointly targeted, 
-\change_deleted -408277422 1530557391
-or 
-\change_inserted -408277422 1530557395
-or 
-\change_deleted -408277422 1530557396
-only
-\change_unchanged
- the female co-head in the household
-\change_inserted -408277422 1530557423
-, either alone or also as part of the couple, 
-\change_deleted -408277422 1530557231
- 
-\change_unchanged
-as opposed to only to the male co-head.
+H2: The effectiveness of the extension information for individuals within
+ farming households and for the household as a whole depends on who is targeted:
+ male and female co-heads in a household are jointly targeted, or only the
+ female co-head in the household is targeted, as opposed to only to the
+ male co-head.
 \end_layout
 
 \begin_layout Standard
 This hypothesis addresses the intra-household asymmetries of information
- that can lead to constrained
-\change_inserted -408277422 1530557444
- knowledge and
-\change_unchanged
- decision-making on the adoption of new technologies and practices, and
- sub-optimal intra-household allocations of productive resources.
+ that can lead to constrained knowledge and decision-making on the adoption
+ of new technologies and practices, and sub-optimal intra-household allocations
+ of productive resources.
  For instance, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1012,34 +775,16 @@ key "Doss200127"
 \begin_layout Standard
 
 \emph on
-H3: The effectiveness of 
-\change_deleted -408277422 1530557568
-information
-\change_unchanged
- 
-\change_inserted -408277422 1530557572
-the extension information for individuals within farming households and
- for the household as a whole 
-\change_unchanged
-depends on who brings the information: jointly by male and female co-heads
- in a household or only the female co-head in the household as opposed to
- only the 
-\change_deleted -408277422 1530557584
-the
-\change_unchanged
- male co-head.
+H3: The effectiveness of the extension information for individuals within
+ farming households and for the household as a whole depends on who brings
+ the information: jointly by male and female co-heads in a household or
+ only the female co-head in the household as opposed to only the male co-head.
 \end_layout
 
 \begin_layout Standard
 In this hypothesis we will test whether bringing the messages as a couple
- or as a 
-\change_deleted -408277422 1530557593
-female
-\change_inserted -408277422 1530557593
-woman
-\change_unchanged
- leads to better outcomes than when the information is given by a man as
- would be the default case.
+ or as a woman leads to better outcomes than when the information is given
+ by a man as would be the default case.
  This hypothesis is based on the assumption that social norms prevent women
  from playing a more prominent role in household agriculture.
  Gender stereotyping, where women are expected to tend to small gardens
@@ -1076,28 +821,9 @@ name "sec:Experimental-Design-and"
 The three hypotheses are tested with a field experiment.
  The experiment was implemented as a 3 by 3 factorial design to which a
  separate control group was added.
- In the first part of the study, where we look at the 
-\change_deleted -408277422 1530558237
-efficacy
-\change_inserted -408277422 1530558244
-effectiveness
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530558265
-efficacy is in controlled environment - effectiveness in real life
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- of different technologies to deliver information, we only concentrate on
- a single factor that has three levels, plus the control.
+ In the first part of the study, where we look at the effectiveness of different
+ technologies to deliver information, we only concentrate on a single factor
+ that has three levels, plus the control.
  The three levels are incremental and consist of (in addition to the pure
  control): (i) being shown a video (video); (ii) being shown a video and
  having received the IVR number and instructions on how to use it (video+IVR);
@@ -1116,33 +842,10 @@ reference "fig:Experimental-Design"
  For the second part of the study, we use two different factors that are
  placed orthogonal to each other, each with three levels.
  The first factor corresponds to the person(s) who provide the message (Messenge
-r) and has three levels (
-\change_deleted -408277422 1530558327
-male
-\change_inserted -408277422 1530558327
-man
-\change_unchanged
-, 
-\change_deleted -408277422 1530558329
-female
-\change_inserted -408277422 1530558330
-woman
-\change_unchanged
-, and couple).
+r) and has three levels (man, woman, and couple).
  Similarly, the second factor corresponds to the person who receives the
- information message (Recipient), also with three levels (
-\change_deleted -408277422 1530558334
-male
-\change_inserted -408277422 1530558334
-man
-\change_unchanged
-, 
-\change_deleted -408277422 1530558336
-female
-\change_inserted -408277422 1530558337
-woman
-\change_unchanged
-, and couple).
+ information message (Recipient), also with three levels (man, woman, and
+ couple).
  The design for the second part, together with the sample size in each cell,
  is illustrated in the bottom part of Figure 
 \begin_inset CommandInset ref
@@ -1217,230 +920,63 @@ reference "fig:Experimental-Design"
 \end_inset
 
  allows us to test the three hypotheses outlined above.
- To 
-\change_deleted -408277422 1530558365
-compare
-\change_inserted -408277422 1530558371
-evaluate the effectiveness of
-\change_unchanged
- the different modes of information provision (H1), we start by comparing
- 
-\change_deleted -408277422 1530558408
-the
-\change_unchanged
- average 
-\change_inserted -408277422 1530558428
-household level 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530558431
-correct?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-outcome
-\change_inserted -408277422 1530558410
-s
-\change_unchanged
- among 
-\change_deleted -408277422 1530558412
-farmers
-\change_inserted -408277422 1530558417
-farming hosueholds
-\change_unchanged
- in the control group to 
-\change_deleted -408277422 1530558436
-the
-\change_unchanged
- average outcome
-\change_inserted -408277422 1530558439
-s
-\change_unchanged
- of 
-\change_deleted -408277422 1530558393
-farmers
-\change_inserted -408277422 1530558399
-farming households
-\change_unchanged
+ To evaluate the effectiveness of the different modes of information provision
+ (H1), we start by comparing average household level outcomes among farm
+ households in the control group to average outcomes of farming households
  that were shown a video, irrespective of who the video was shown to and
  who provided the information in the video.
  This gives us the average treatment effect for the video intervention.
  To get the additional effect of the IVR treatment, we compare average outcomes
  of households that were shown a video (irrespective of who the video was
  shown to and who provided the information in the video) to households that
- were shown a video and received the IVR intervention as well 
-\change_deleted -408277422 1530558471
-(irrespective of who the video was shown to and who provided the information
- in the video
-\change_unchanged
-).
+ were shown a video and received the IVR intervention as well ).
  Finally, the additional effect of the sms campaign can be estimated by
  comparing outcomes of households that are shown a video and received the
- information about the IVR system to outcomes of household
-\change_inserted -408277422 1530558492
-s
-\change_unchanged
- that were shown a video, received IVR information and also received the
- 
-\change_inserted -408277422 1530558485
-eight
-\change_deleted -408277422 1530558482
-8
-\change_unchanged
- sms reminders.
+ information about the IVR system to outcomes of households that were shown
+ a video, received IVR information and also received the eight sms reminders.
 \end_layout
 
 \begin_layout Standard
-To test if information leads to more 
-\change_inserted -408277422 1530558538
-efficient and gender 
-\change_unchanged
-equitable outcomes when targeted to the female co-head or couple instead
- of the male co-head in the household (H2), we compare
-\change_inserted -408277422 1530558747
- household and individual level outcomes in
-\change_unchanged
- households where the female co-head only received the information (irrespective
- of who provided the information) 
-\change_deleted -408277422 1530558647
-to
-\change_inserted -408277422 1530558651
-with
-\change_unchanged
- households where the information was given to the male co-head only (again,
- irrespective of who provided the information) 
-\change_inserted -408277422 1530558589
-
+To test if information leads to more efficient and gender equitable outcomes
+ when targeted to the female co-head or couple instead of the male co-head
+ in the household (H2), we compare household and individual level outcomes
+ in households where the female co-head only received the information (irrespect
+ive of who provided the information) with households where the information
+ was given to the male co-head only (again, irrespective of who provided
+ the information) 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530558683
 we also compare households where the female co-head was involved in receiving
  the information (either alone or as part of the couple) with households
- where the information was given to the male co-head 
-\change_unchanged
-
+ where the information was given to the male co-head.
+ No, we do not in this version of the paper!
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 and we compare households where the information was targeted to the couple
- (irrespective of who provided the information) 
-\change_deleted -408277422 1530558657
-to
-\change_inserted -408277422 1530558657
-with
-\change_unchanged
- households where the information was given to the male co-head only (again,
- irrespective of who provided the information).
+ (irrespective of who provided the information) with households where the
+ information was given to the male co-head only (again, irrespective of
+ who provided the information).
  
 \end_layout
 
 \begin_layout Standard
-To test if information leads to 
-\change_deleted -408277422 1530558783
-different
-\change_inserted -408277422 1530558783
-more efficient and gender equitable
-\change_unchanged
- outcomes depending on who provides the information (H3), we compare 
-\change_inserted -408277422 1530558808
-household and individual level 
-\change_unchanged
-outcomes of 
-\change_deleted -408277422 1530558814
-farmers
-\change_inserted -408277422 1530558816
-farming households
-\change_unchanged
- where the information was provided by a 
-\change_deleted -408277422 1530558861
-female
-\change_inserted -408277422 1530558862
-woman
-\change_unchanged
- actor 
-\change_inserted -408277422 1530558829
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530558854
-do you mean actress?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_deleted -408277422 1530558875
-only
-\change_inserted -408277422 1530558876
-alone
-\change_unchanged
- and outcomes of 
-\change_deleted -408277422 1530558880
-farmers
-\change_inserted -408277422 1530558888
-farming households
-\change_unchanged
- where the information was provided by a farmer-couple (i.e., a 
-\change_deleted -408277422 1530558920
-male
-\change_inserted -408277422 1530558921
-man
-\change_unchanged
- actor and a 
-\change_deleted -408277422 1530558922
-female
-\change_inserted -408277422 1530558925
-woman actress
-\change_deleted -408277422 1530558927
- actor
-\change_unchanged
- performing together in the video) to outcomes of 
-\change_deleted -408277422 1530558930
-farmers
-\change_inserted -408277422 1530558960
-farming households
-\change_unchanged
- where the information was provided by a single 
-\change_deleted -408277422 1530558938
-male
-\change_inserted -408277422 1530558944
-man actor 
-\change_deleted -408277422 1530558950
- farmer
-\change_unchanged
- performing in the video (the comparison group).
+To test if information leads to more efficient and gender equitable outcomes
+ depending on who provides the information (H3), we compare household and
+ individual level outcomes of farm households where the information was
+ provided by a woman actress alone and outcomes of farm households where
+ the information was provided by a farmer-couple (i.e., a male actor and a
+ female actress performing together in the video) to outcomes of farm households
+ where the information was provided by a single male actor performing in
+ the video (the comparison group).
 \end_layout
 
 \begin_layout Standard
 The sample size and its distribution over different treatment combinations
- was based on a
-\change_deleted -408277422 1530558996
-n
-\change_unchanged
- 
-\change_deleted -408277422 1530558994
-elaborate
-\change_unchanged
- series of power calculations.
+ was based on a series of power calculations.
  Instead of determining power analytically, we used simulation techniques.
  Simulation allows one to sample from actual data of outcome variables instead
  of relying on a theoretical distribution with an assumed mean and standard
@@ -1451,53 +987,20 @@ elaborate
  Power calculations were based on two outcome variables, one that reflects
  efficiency at the household level (maize yield) and one that reflects inclusive
 ness (the gender productivity gap, where women-managed plots are farmed
- less extensively
-\change_inserted -408277422 1530559040
-
+ less intensively than male-managed plots resulting in significantly lower
+ yields).
+ The power calculations and their underlying assumptions are described in
+ detail in the pre-analysis plan of this study 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530559046
-intensively?
-\change_unchanged
-
+include reference.
+ Yes, to do after merging
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
- than male-managed plots resulting in significantly lower yields).
- The power calculations and 
-\change_deleted -408277422 1530559053
-its
-\change_inserted -408277422 1530559055
-their
-\change_unchanged
- underlying assumptions are described in 
-\change_deleted -408277422 1530559058
-great
-\change_unchanged
- detail in the pre-analysis plan of this study
-\change_inserted -408277422 1530559064
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530559067
-include reference
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 .
  
 \end_layout
@@ -1518,60 +1021,26 @@ We conducted the field experiment among maize farmer in Uganda.
  While research station trials conducted in Uganda report potential yields
  of about 1.6 metric tons per acre (using only improved varieties without
  fertilizer application)
-\change_inserted -408277422 1530559139
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530559145
 include reference
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 , data from the Uganda National Household Survey 2005/06 indicate that average
  maize yields are much lower at about 618 kg per acre for the main growing
- season of 2014
-\change_inserted -408277422 1530691922
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530691968
-there is an inconsistency here: you say Uganda national household survey
- of 2005/2006 but report figures on maize yields of 2014...
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-.
+ season.
  Moreover, there is considerable variation in productivity across farmers,
  with the top 10 percent of farmers achieving yields in excess of 1.1 metric
  tons per acre.
  At the same time, the use of modern inputs such as inorganic fertilizer
  and management practices such as row planting is very low in Uganda.
- For example, 
-\change_inserted -408277422 1530559210
-the 
-\change_unchanged
-use of inorganic fertilizer 
-\change_inserted -408277422 1530559218
-is on 
-\change_unchanged
-average just 2.4 kg of nutrient per acre per year, compared to Kenya (75
- kg/ac), Rwanda (70 kg/ac), and Tanzania (15 kg/ac).
+ For example, the use of inorganic fertilizer is on average just 2.4 kg of
+ nutrient per acre per year, compared to Kenya (75 kg/ac), Rwanda (70 kg/ac),
+ and Tanzania (15 kg/ac).
  
 \end_layout
 
@@ -1586,32 +1055,17 @@ Maize is especially important in eastern Uganda.
  In particular, we first selected parishes randomly and in proportion to
  the number of villages within each parish.
  In the selected parishes, all villages were included in the study.
- Within each village, we then listed all the households, from which we 
-\change_deleted -408277422 1530559315
-then
-\change_unchanged
- sampled households to be included in the study.
+ Within each village, we then listed all the households, from which we sampled
+ households to be included in the study.
  At the same time, we suspect that outcomes within villages will be correlated,
  for instance due to local weather conditions, or development programs that
  are implemented in certain areas.
  We therefore used the village as a blocking factor.
  In other words, in each village, we made sure all possible treatment combinatio
-ns related to the 
-\change_inserted -408277422 1530559346
-two
-\change_deleted -408277422 1530559344
-2
-\change_unchanged
- factors related to the messenger and recipient attributes (plus control)
- were administered.
+ns related to the two factors related to the messenger and recipient attributes
+ (plus control) were administered.
  The experimental design described above shows that the messenger and the
- recipient factor combine into 
-\change_deleted -408277422 1530559341
-9
-\change_inserted -408277422 1530559342
-nine
-\change_unchanged
- different treatment combinations.
+ recipient factor combine into nine different treatment combinations.
  Adding the control leads to 10 different households being selected in each
  village.
  
@@ -1619,25 +1073,10 @@ nine
 
 \begin_layout Standard
 In eastern Uganda, there are two maize cropping seasons.
- For our study, we concentrated on the second maize-growing season
-\change_inserted -408277422 1530559432
- of the year 2017
-\change_unchanged
-, which runs from approximately August 
-\change_inserted -408277422 1530559438
-2017 
-\change_unchanged
-to January 
-\change_inserted -408277422 1530559442
-2018 
-\change_unchanged
-and is characterized by a shorter period of rain
-\change_inserted -408277422 1530559452
-fall
-\change_deleted -408277422 1530559451
-s
-\change_unchanged
- than the first maize-growing season.
+ For our study, we concentrated on the second maize-growing season of the
+ year 2017, which runs from approximately August 2017 to January 2018 and
+ is characterized by a shorter period of rainfall than the first maize-growing
+ season.
  During this second season, the complete cycle from planting to harvest
  requires 3 to 3.5 months, and farmers tend to cultivate early-maturing but
  lower yielding maize varieties as a result.
@@ -1645,14 +1084,10 @@ s
  Harvesting begins in mid to late December and, at higher elevations, can
  continue until mid January.
  
-\change_inserted -408277422 1530559504
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530600089
 we need to add something on gender roles with regard to maize: based on
  uganda data: are women also farming maize (on women's managed plots) and
  how important is that as compared to maize on man managed plots.
@@ -1660,21 +1095,15 @@ we need to add something on gender roles with regard to maize: based on
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530600090
 add something on the way the farm is organised: that in uganda it is commonly
  a household farm system but this includes man and woman managed plots.
  how important is maize for these households (it provides on average x%
  of staple food; what x % of maize is marketed; average seasonal income
  from maize per hh) 
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1683,13 +1112,8 @@ Intervention
 \end_layout
 
 \begin_layout Standard
-The main intervention used in the study 
-\change_deleted -408277422 1530598584
-were
-\change_inserted -408277422 1530598589
-consists of
-\change_unchanged
- the videos that were screened using 10-inch Android tablet computers.
+The main intervention used in the study consists of the videos that were
+ screened using 10-inch Android tablet computers.
  Videos were screened by a trained field enumerator who sat with an individual
  farmer or a farmer-couple, depending on the household's random assignment
  to a treatment group.
@@ -1702,25 +1126,9 @@ consists of
  of the three videos remained the same.
  The control group received a placebo treatment, which was a music video
  of traditional dancing that contained no information related to farming.
- Videos were screened twice to each 
-\change_deleted -408277422 1530598682
-farmer
-\change_inserted -408277422 1530598683
-person
-\change_unchanged
- (or couple) in the sample, once before 
-\change_inserted -408277422 1530598711
-the time for 
-\change_unchanged
-plan
-\change_inserted -408277422 1530598689
-t
-\change_unchanged
-ing 
-\change_inserted -408277422 1530598715
-maize 
-\change_unchanged
-(July 2017) and once around planting time (August 2017).
+ Videos were screened twice to each person (or couple) in the sample, once
+ before the time for planting maize (July 2017) and once around planting
+ time (August 2017).
 \end_layout
 
 \begin_layout Standard
@@ -1759,14 +1167,8 @@ Spodoptera frugiperda
  immediately problematic to our population of interest than maize stalk
  borer, and because, at the time this field experiment was conducted, there
  was no consistent strategy being promoted to address fall armyworm.
- Striga, also called 
-\change_deleted -408277422 1530598886
-whichweed
-\change_inserted -408277422 1530598886
-witchweed
-\change_unchanged
-, is a parasitic plant that feeds off the roots of maize, leading to severe
- stunting of the maize plant.
+ Striga, also called witchweed, is a parasitic plant that feeds off the
+ roots of maize, leading to severe stunting of the maize plant.
  Because the nutritional needs of maize are greatest at the early stages
  of growth, weeding of striga becomes less effective in curbing losses as
  the season progresses.
@@ -1777,27 +1179,11 @@ witchweed
 
 \begin_layout Standard
 No single method is effective in controlling striga.
- Progress has been made in developing varieties
-\change_inserted -408277422 1530599064
- that are
-\change_unchanged
- resistant to the herbicide imazapyr and 
-\change_inserted -408277422 1530599074
-can be 
-\change_unchanged
-supplied with a imazapyr seed coating to contain striga before it can damage
- the host plant.
- However, the 
-\change_inserted -408277422 1530599154
-seeds of this 
-\change_unchanged
-variety on offer in Uganda 
-\change_deleted -408277422 1530599160
-is
-\change_inserted -408277422 1530599161
-are
-\change_unchanged
- expensive at 10,000 Ugandan Shillings (UGX) per kg
+ Progress has been made in developing varieties that are resistant to the
+ herbicide imazapyr and can be supplied with a imazapyr seed coating to
+ contain striga before it can damage the host plant.
+ However, the seeds of this variety on offer in Uganda are expensive at
+ 10,000 Ugandan Shillings (UGX) per kg
 \change_inserted -408277422 1530599207
 , while seeds of other common/popular varieties cost xxx UGX/kg, 
 \change_unchanged
@@ -1846,22 +1232,10 @@ Poor soils
  Soils often lack macro-nutrients such as nitrogen (N), phosphorous (P)
  and potassium (K), and farmers in our study area rarely use organic or
  inorganic fertilizers in sufficient quantities to ameliorate these deficiencies
-, either at the planting stage (when diammonium phosphate (DAP) or 
-\change_inserted -408277422 1530599293
-nitrogen-phosphorous-potassium (
-\change_unchanged
-NPK
-\change_inserted -408277422 1530599298
-)
-\change_unchanged
- applications are recommended), or at the vegetative growth stage (when
- top dressings of nitrogenous fertilizers such as 
-\change_inserted -408277422 1530599313
-U
-\change_deleted -408277422 1530599312
-u
-\change_unchanged
-rea are recommended).
+, either at the planting stage (when diammonium phosphate (DAP) or nitrogen-phos
+phorous-potassium (NPK) applications are recommended), or at the vegetative
+ growth stage (when top dressings of nitrogenous fertilizers such as Urea
+ are recommended).
 \end_layout
 
 \begin_layout Standard
@@ -1872,33 +1246,12 @@ seed saved from harvest
 , which represents the third limiting factor identifying by key informants.
  The reliance on saved (recycled) seeds tends to negate the significant
  yield advantages conferred by high-yielding maize hybrids, which require
- that new F1 
-\change_inserted -408277422 1530599347
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530599358
-what is new F1 seed? 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-seed be purchased at the start of each season to realize the gains conferred
- by heterosis or hybrid vigor.
+ that new F1 seed be purchased at the start of each season to realize the
+ gains conferred by heterosis or hybrid vigor.
  And even where farmers rely on recycled seed from improved open-pollinated
  varieties (OPVs) that do not require seasonal replacement, the gains from
- improvement tend to depreciate over three to four season
-\change_inserted -408277422 1530599382
-s
-\change_unchanged
-, again requiring farmers to purchase new seed at regular intervals.
+ improvement tend to depreciate over three to four seasons, again requiring
+ farmers to purchase new seed at regular intervals.
  Gains from the improved genetic qualities of both maize hybrids and OPVs
  can increase yields between 30 and 200 percent, depending on climatic condition
 s and the complementary use of modern inputs and intensive management practices.
@@ -1914,24 +1267,16 @@ Finally, there are also
  The most important are timely planting, optimal plant spacing, and timely
  weeding.
  
-\change_inserted -408277422 1530599409
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530599434
 i do not like the bullet points that follow.
  can't it be full text instead?
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1943,25 +1288,9 @@ Timely planting
  in eastern Uganda implies that maize should be planted at the onset of
  the rains.
  However, many farmers delay planting for several reasons.
- For instance, they may not be certain that the rain
-\change_inserted -408277422 1530599452
-y season
-\change_deleted -408277422 1530599450
-s
-\change_unchanged
- ha
-\change_inserted -408277422 1530599501
-s
-\change_deleted -408277422 1530599498
-ve
-\change_unchanged
- really started.
- There may also be bottlenecks in land preparation, where 
-\change_inserted -408277422 1530599525
-poorer farmers
-\change_deleted -408277422 1530599517
-the poor
-\change_unchanged
+ For instance, they may not be certain that the rainy season has really
+ started.
+ There may also be bottlenecks in land preparation, where poorer farmers
  are often the last in line for the use of oxen or tractors.
  Experts estimate that for each day a farmer delays planting, yields are
  reduced by 1.5 percent.
@@ -1972,12 +1301,9 @@ the poor
 \series bold
 Optimal plant spacing
 \series default
- implies that sowing should be structured so that plants are 
-\change_deleted -408277422 1530599561
-are
-\change_unchanged
- not too close to each other such that they compete for light and nutrients
- which, in turn, reduces yields.
+ implies that sowing should be structured so that plants are not too close
+ to each other such that they compete for light and nutrients which, in
+ turn, reduces yields.
  Plants that are too far from each other means space is wasted, also leading
  to lower yields.
  Related is the number of seeds that farmers plant in each hill.
@@ -1987,14 +1313,8 @@ are
  in stunted growth.
  Usually there is also not enough thinning, or this is done too late when
  competition has already occurred.
- 
-\change_deleted -408277422 1530599676
-One
-\change_inserted -408277422 1530599693
-One
-\change_unchanged
- expert told us that standard spacing is 75cm x 60cm with two plants per
- hill.
+ One expert told us that standard spacing is 75cm x 60cm with two plants
+ per hill.
  However, several experts mentioned a new way of plant spacing of 75cm x
  30cm with a reduced seed rate of 1 seed per hill which leads to a 35 percent
  increase in yields.
@@ -2005,23 +1325,8 @@ One
 \series bold
 Timely weeding
 \series default
- implies that the first weeding should be done at 18
-\change_deleted -408277422 1530600256
--
-\change_inserted -408277422 1530600258
- to 
-\change_unchanged
-20 days after planting, with a second weeding at 
-\change_deleted -408277422 1530600244
-2-3
-\change_inserted -408277422 1530600244
-two to three weeks
-\change_unchanged
- 
-\change_deleted -408277422 1530600247
-weeks
-\change_unchanged
- after first weeding.
+ implies that the first weeding should be done at 18 to 20 days after planting,
+ with a second weeding at two to three weeks after first weeding.
  From emergence to the 
 \begin_inset Quotes eld
 \end_inset
@@ -2088,14 +1393,8 @@ key "duflo2014diffusion"
 
 \begin_layout Standard
 However, not all constraints to maize productivity improvement are information
- 
-\change_deleted -408277422 1530599852
-asymmetries
-\change_inserted -408277422 1530599861
-deficiencies
-\change_unchanged
- directly related to the use of inputs, technologies, and crop management
- practices.
+ deficiencies directly related to the use of inputs, technologies, and crop
+ management practices.
  Often, missing information problems manifest indirectly, as uncertainty
  about the distribution of the farm-household's profit function.
  This includes uncertainty about the correlations between expected and actual
@@ -2212,13 +1511,8 @@ key "doi:10.1093/wber/lhv014"
 
 .
  A growing strand of the literature investigates how non-cognitive farmer
- characteristics such as aspirations, locus of control and self
-\change_inserted -408277422 1530599964
--
-\change_deleted -408277422 1530599964
- 
-\change_unchanged
-esteem can lead to behavioural change such as technology adoption 
+ characteristics such as aspirations, locus of control and self-esteem can
+ lead to behavioural change such as technology adoption 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "RePEc:eee:jeborg:v:143:y:2017:i:c:p:98-115"
@@ -2243,104 +1537,40 @@ The video starts with the farmer-actor or -actors introducing themselves
  (recall that three versions of this video were produced: one where the
  farmer-actor is male; one where the farmer-actor is female; and one where
  a pair of actors, one male and one female, act together).
- The farmer
-\change_inserted -408277422 1530600010
--actor
-\change_unchanged
- talks about how she used to struggle with her maize 
-\change_deleted -408277422 1530600158
-gardens
-\change_inserted -408277422 1530600160
-production
-\change_unchanged
+ The farmer-actor talks about how she used to struggle with her maize production
  and how at one point in time, she decided things needed to change.
  It is shown how the farmer sells a hen, obtains a small loan from a friend,
  and uses these proceeds to buy small quantities of improved seed and fertilizer
  from a local retailer.
- The video then shows how the farmer prepares the 
-\change_deleted -408277422 1530600167
-garden
-\change_inserted -408277422 1530600167
-field
-\change_unchanged
- by collecting and applying manure.
+ The video then shows how the farmer prepares the field by collecting and
+ applying manure.
  Next, the video details how the DAP is applied correctly, how maize seed
  are spaced at 75cm x 30cm intervals with 1 plant per hill, and what the
  correct timing of these activities should be.
  The video progresses to a field about 10 to 12 days after sowing when the
- maize has emerged from the soil, and 
-\change_deleted -408277422 1530600215
-she
-\change_inserted -408277422 1530600215
-the farmer-actor
-\change_unchanged
- recommends 
-\change_deleted -408277422 1530600215
-that the farmer
-\change_inserted -408277422 1530600204
-to
-\change_unchanged
- engage in gap filling to replace seeds that did not germinate, thereby
- preserving optimal plant density.
- The video proceeds to the field at 18 to 20 days after sowing, and 
-\change_deleted -408277422 1530600215
-she
-\change_inserted -408277422 1530600196
-the farmer-actor
-\change_unchanged
- recommends how weeding should be conducted with particular attention to
- the identification of striga and the importance of follow-up weeding two
- to three weeks later.
- The video then advances to four weeks after planting, where 
-\change_deleted -408277422 1530600288
-she
-\change_inserted -408277422 1530600288
-the farmer-actor
-\change_unchanged
- demonstrates how 
-\change_inserted -408277422 1530600270
-U
-\change_deleted -408277422 1530600288
-u
-\change_unchanged
-rea top dressing is done and recommends one more round of weeding at the
- tasseling stage.
+ maize has emerged from the soil, and the farmer-actor recommends to engage
+ in gap filling to replace seeds that did not germinate, thereby preserving
+ optimal plant density.
+ The video proceeds to the field at 18 to 20 days after sowing, and the
+ farmer-actor recommends how weeding should be conducted with particular
+ attention to the identification of striga and the importance of follow-up
+ weeding two to three weeks later.
+ The video then advances to four weeks after planting, where the farmer-actor
+ demonstrates how Urea top dressing is done and recommends one more round
+ of weeding at the tasseling stage.
  .
 \end_layout
 
 \begin_layout Standard
 The video then turns to a discussion about investing to get higher yields
  over time.
- 
-\change_deleted -408277422 1530600297
-She
-\change_inserted -408277422 1530600297
-the farmer-actor
-\change_unchanged
- points out that while it may be difficult to raise cash, 
-\change_deleted -408277422 1530600306
-viewers
-\change_inserted -408277422 1530600307
-one
-\change_unchanged
- can always start small (e.g., on one tenth of an acre) and reinvest the returns.
+ The farmer-actor points out that while it may be difficult to raise cash,
+ one can always start small (e.g., on one tenth of an acre) and reinvest the
+ returns.
  She then explains that following recommended practices and using improved
  inputs led her to produce 2.5 bags of maize on a small plot, which she sold
- for UGX 125,000 with a profit of almost UGX 90,000—as compared to
-\change_inserted -408277422 1530600387
- previously
-\change_unchanged
- harvest
-\change_inserted -408277422 1530600333
-ing
-\change_deleted -408277422 1530600331
-ed
-\change_unchanged
- 
-\change_inserted -408277422 1530600347
-merely 
-\change_unchanged
-one bag from the same area at a profit of only UGX 40,000.
+ for UGX 125,000 with a profit of almost UGX 90,000—as compared to previously
+ harvesting merely one bag from the same area at a profit of only UGX 40,000.
  She then explains that she reinvested the difference (UGX 50,000) to increase
  the area under intensive maize cultivation year after year such that, over
  time, she was able to cultivate an entire acre using modern inputs.
@@ -2359,95 +1589,19 @@ target "https://www.youtube.com/watch?v=1albuXRm9a8&index=3&list=PLeqdWbb3KnJ8Vd
 
 \begin_layout Standard
 The video is the only treatment used to test the hypotheses related to the
- messenger and the recipient effect
-\change_inserted -408277422 1530600430
-s
-\change_unchanged
-.
- To investigate the relative effectiveness of the 
-\change_deleted -408277422 1530600436
-the
-\change_unchanged
- technology, two other treatments were incrementally added to the video
- treatment.
+ messenger and the recipient effects.
+ To investigate the relative effectiveness of the technology, two other
+ treatments were incrementally added to the video treatment.
  For these two treatments, the IVR system and the sms messaging, we collaborated
- with 
-\change_inserted -408277422 1530600443
-V
-\change_deleted -408277422 1530600442
-v
-\change_unchanged
-iamo, a social enterprise that aims to connect individuals and organizations
- using digital technology to make better decisions.
+ with Viamo, a social enterprise that aims to connect individuals and organizati
+ons using digital technology to make better decisions.
  We set up an IVR system that provided the same information as what we recommend
  in the video (eg.
  the new way of spacing, the same types of hybrid and OPV seed,...).
- 
-\change_deleted -408277422 1530600478
-Farmers
-\change_inserted -408277422 1530600483
-Farming households
-\change_unchanged
- that were allocated the the IVR treatment could call a toll free number
-\change_inserted -408277422 1530600519
- 
-\change_deleted -408277422 1530600542
-, after which they heard
-\change_inserted -408277422 1530600598
-which 
-\change_deleted -408277422 1530600644
- a person 
-\change_unchanged
-explain
-\change_inserted -408277422 1530600653
-ed the IVR system
-\change_deleted -408277422 1530600613
-ing
-\change_unchanged
- 
-\change_deleted -408277422 1530600618
-the system
-\change_unchanged
- in their own language.
- 
-\change_deleted -408277422 1530600504
-Farmers
-\change_inserted -408277422 1530600667
-the caller
-\change_unchanged
- 
-\change_deleted -408277422 1530600669
-are
-\change_inserted -408277422 1530600673
-is
-\change_unchanged
- then invited to 
-\change_deleted -408277422 1530600688
-type
-\change_inserted -408277422 1530600692
-select the
-\change_deleted -408277422 1530600693
- a
-\change_unchanged
- number corresponding to the topic on which 
-\change_deleted -408277422 1530600697
-they
-\change_inserted -408277422 1530600701
-s/he
-\change_unchanged
- want
-\change_inserted -408277422 1530600703
-s
-\change_unchanged
- more information (e
-\change_inserted -408277422 1530600706
-.
-\change_unchanged
-g
-\change_inserted -408277422 1530600708
-.
-
-\change_unchanged
+ Farm households that were allocated the the IVR treatment could call a
+ toll free number which explained the IVR system in their own language.
+ the caller is then invited to select the number corresponding to the topic
+ on which s/he wants more information (e.g.
  1 for seed selection, 2 for spacing and seed rate, 3 for soil nutrient
  management, 4 for advice on weeding, 5 for pest management).
  Depending on what number was selected, the IVR then played an audio message
@@ -2456,24 +1610,11 @@ g
 \end_layout
 
 \begin_layout Standard
-For the sms campaign, we recorded telephone numbers for each 
-\change_inserted -408277422 1530600735
-sampled farming 
-\change_unchanged
-household on which the household could be reached.
- Households that were allocated to the sms treatment were sent 
-\change_deleted -408277422 1530600740
-8
-\change_inserted -408277422 1530600740
-eight
-\change_unchanged
- sms messages over the course of the 
-\change_deleted -408277422 1530600745
-2
-\change_inserted -408277422 1530600745
-two
-\change_unchanged
- months following the first screening of the video.
+For the sms campaign, we recorded telephone numbers for each sampled farming
+ household on which the household could be reached.
+ Households that were allocated to the sms treatment were sent eight sms
+ messages over the course of the two months following the first screening
+ of the video.
  The messages all followed a similar structure, where farmers were first
  reminded about the important technology or practice that was relevant at
  the particular time that the message was sent, followed by a reminder about
@@ -2495,13 +1636,7 @@ You will get much more maize if you use hybrid seed instead of recycled
 \end_inset
 
 When your maize is knee high, apply 1 water bottle cap of urea around each
- plant – Call the maize hotline on 0200522420 free for more advi
-\change_inserted -408277422 1530600774
-c
-\change_deleted -408277422 1530600774
-s
-\change_unchanged
-e!
+ plant – Call the maize hotline on 0200522420 free for more advice!
 \begin_inset Quotes erd
 \end_inset
 
@@ -2519,23 +1654,17 @@ Balancing Checks
 \begin_layout Standard
 While we did not do a dedicated baseline survey, we did ask some questions
  before the first intervention to investigate balance
-\change_inserted -408277422 1530603772
-
-\begin_inset Note Note
-status open
+\begin_inset Foot
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530603798
-who was interviewed? the final respondent or the male co-head?
-\change_unchanged
-
+These questions were asked to the person who was assigned to view the video.
+ If the couple was assigned, spouses needed to agree on the response.
+ 
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 .
  The choice of variables was based on what variables other researchers in
  similar studies use in their orthogonality tests.
@@ -2570,22 +1699,14 @@ key "doi:10.1093/ajae/aau015"
 \end_inset
 
 .
- We collected 
-\change_inserted -408277422 1530603634
-information about 
-\change_unchanged
-some household characteristics such as household size, age and education
- level of household head.
+ We collected information about some household characteristics such as household
+ size, age and education level of household head.
  We then asked more specific questions related to maize farming, such as
  acreage and quantities produced in the last season.
  Furthermore, we asked if the household received agricultural extension,
  whether improved maize seeds were used, and whether fertilizer was applied.
- We also collect
-\change_inserted -408277422 1530603657
-ed
-\change_unchanged
- data on housing conditions (number of bedrooms) and distance to the nearest
- agro-input shop.
+ We also collected data on housing conditions (number of bedrooms) and distance
+ to the nearest agro-input shop.
  
 \end_layout
 
@@ -2958,11 +2079,8 @@ reference "tab:Balance"
 
 \end_inset
 
-, we provide descriptive statistics, as well as balance tests for the 
-\change_deleted -408277422 1530603718
-three
-\change_unchanged
- hypotheses related to the ICT technology used to deliver the information.
+, we provide descriptive statistics, as well as balance tests for the hypotheses
+ related to the ICT technology used to deliver the information.
  Averages for the entire sample are reported in the first column.
  We see that few farm households that were included in our study had access
  to agricultural extension in the previous year (about 11 percent).
@@ -2976,13 +2094,9 @@ three
  acre in the first cropping season of 2017.
  This is substantially lower than the average yield of 618 kg per acre we
  find when using the Uganda National Household Survey of 2005/06.
- The low yields 
-\change_inserted -408277422 1530603867
-most likely 
-\change_unchanged
-illustrate the devastating impact of the Fall Armyworm that ravaged maize
- yields in East Africa in 2017, but is also the result of adverse weather
- conditions 
+ The low yields most likely illustrate the devastating impact of the Fall
+ Armyworm that ravaged maize yields in East Africa in 2017, but is also
+ the result of adverse weather conditions 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Stokstad473"
@@ -2993,18 +2107,9 @@ key "Stokstad473"
 \end_layout
 
 \begin_layout Standard
-Balance is demonstrated as differences between treatment groups for each
- characteristic 
-\change_inserted -408277422 1530603949
-are insignificant, and 
-\change_deleted -408277422 1530603951
-as well as
-\change_unchanged
- a joint significance test (F-test) for each of the three technologies
-\change_inserted -408277422 1530603968
- also proofs insignificant
-\change_unchanged
-.
+Balance is tested through calculating differences between treatment groups
+ for each characteristic, as well as through a joint significance test (F-test)
+ for each of the three technologies.
  The second column in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3016,47 +2121,16 @@ reference "tab:Balance"
  were shown the placebo video and household that were shown an intervention
  video.
  For example, we see that yields prior to the intervention are about 21
- kg/ac
-\change_inserted -408277422 1530604017
-re
-\change_unchanged
- higher in the group that was shown the 
-\change_inserted -408277422 1530604044
-intervention 
-\change_unchanged
-video than in the group that was 
-\change_deleted -408277422 1530604031
-not
-\change_unchanged
- shown the 
-\change_inserted -408277422 1530604035
-placebo 
-\change_unchanged
-video.
+ kg/acre higher in the group that was shown the intervention video than
+ in the group that was shown the placebo video.
  However, as can be inferred from the p-value, this difference is not significan
 tly different from zero.
- In fact, for the 
-\change_deleted -408277422 1530604076
-control
-\change_inserted -408277422 1530604079
-placebo video
-\change_unchanged
- versus 
-\change_deleted -408277422 1530604082
-treatment
-\change_inserted -408277422 1530604086
-intervention video
-\change_unchanged
- comparison, none of the differences between baseline characteristics is
- significant at the 5 percent significance level, and also the F-statistic
- can not be rejected.
+ In fact, for the placebo video versus intervention video comparison, none
+ of the differences between baseline characteristics is significant at the
+ 5 percent significance level, and also the F-statistic can not be rejected.
  In the third column, differences in baseline characteristics between households
- that received the 
-\change_inserted -408277422 1530604112
-intervention 
-\change_unchanged
-video and households that received IVR on top of the video are shown (indicates
- as +IVR).
+ that received the intervention video and households that received IVR on
+ top of the video are shown (indicates as +IVR).
  Here, we see that households in the latter group are significantly larger
  than households that only saw the video.
  They also have significantly more bedrooms.
@@ -3065,15 +2139,8 @@ s are unrelated to the treatment group for this comparison.
  For the final hypothesis related to the technology tested (comparing farmers
  that received video and IVR to those that additionally received sms messages;
  reported in column four and denoted +sms), we again find no significant
- differences in baseline characteristics, both for 
-\change_deleted -408277422 1530604200
-individual and 
-\change_unchanged
-joint comparisons
-\change_inserted -408277422 1530604196
- and comparisons per characteristic
-\change_unchanged
-.
+ differences in baseline characteristics, both for joint comparisons and
+ comparisons per characteristic.
  Overall, we conclude there may be some concern about balance when comparing
  the video only group to the video+IVR group, something we will further
  investigate when we look at the robustness of some of the results.
@@ -3087,13 +2154,8 @@ reference "tab:Balance_gender"
 
 \end_inset
 
-, we investigate balance for the 
-\change_deleted -408277422 1530604226
-4
-\change_inserted -408277422 1530604226
-four
-\change_unchanged
- comparisons related to the gender attribute of the videos
+, we investigate balance for the four comparisons related to the gender
+ attribute of the videos
 \begin_inset Foot
 status collapsed
 
@@ -3125,42 +2187,34 @@ reference "tab:Balance"
  given the video treatment.
  We also find that household heads are significantly lower educated in the
  sample where the recipient is the female co-head: while over 42 percent
- of
-\change_deleted -408277422 1530604290
- 
-\change_inserted -408277422 1530604291
-household 
-\change_unchanged
-head
-\change_inserted -408277422 1530604292
-s
-\change_unchanged
- had finished primary education at baseline in the group where the male
- co-head was assigned to receive the video treatment, this in only 26 percent
- among household where the female co-head was assigned to view the video.
+ of household heads had finished primary education at baseline in the group
+ where the male co-head was assigned to receive the video treatment, this
+ in only 26 percent among household where the female co-head was assigned
+ to view the video.
  We also find less use of fertilizer and seed at baseline in the subgroup
  where women were shown the video then in households where men were shown
  the video.
  The fact that four out of nine comparisons turn out significant point to
  serious concerns
-\change_inserted -408277422 1530604528
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530604554
 what is the implication for results? do we address this imbalance in one
- way or another (matching?)?
-\change_unchanged
-
+ way or another (matching?)? This is something that we need to take up in
+ the next version of the paper.
+ I suggest just controlling for these baseline characteristics for hypotheses
+ where this is problematic.
+ But I am not worried: the imbalance goes in the conservative direction:
+ if we find that women eg adopt more after seeing the video, accounting
+ for the fact that they are less educated to begin with will only make the
+ effect stronger.
+ I checked this already with a quick and dirty merge and my suspicion is
+ confirmed.
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
  about balance for the comparison between the group where men were shown
  the video within the household and the group where women were shown the
  video, something that is also reflected in the significant F-test.
@@ -3191,41 +2245,15 @@ reference "tab:Balance_gender"
 \end_inset
 
 , the comparison group now consists of the households where the version
- of the video was shown in which 
-\change_deleted -408277422 1530604404
-the
-\change_inserted -408277422 1530604404
-a
-\change_unchanged
- 
-\change_deleted -408277422 1530604406
-man
-\change_inserted -408277422 1530604409
-male farmer-actor
-\change_unchanged
- gives all the information.
+ of the video was shown in which a male farmer-actor gives all the information.
  In column three, baseline averages of the comparison group are compared
- to baseline outcomes for households 
-\change_deleted -408277422 1530604424
-where the messenger was a woman
-\change_inserted -408277422 1530604446
-that were shown the version of the video with a female farmer-actress
-\change_unchanged
-.
+ to baseline outcomes for households that were shown the version of the
+ video with a female farmer-actress.
  We do not find any systematic difference in baseline outcomes between these
  two groups, and the F-statistic is also insignificant.
  In column four, baseline averages of the comparison group are compared
- to baseline outcomes for households 
-\change_deleted -408277422 1530604459
-where the information was provided by a 
-\change_inserted -408277422 1530604470
-that were shown the version of the video with a 
-\change_unchanged
-couple
-\change_inserted -408277422 1530604487
- (man and woman) providing the information
-\change_unchanged
-.
+ to baseline outcomes for households that were shown the version of the
+ video with a couple (man and woman) providing the information.
  Also here, we do not find any meaningful difference in baseline outcomes
  between these two groups.
  
@@ -3607,19 +2635,7 @@ e is signficant at the 0.1, 1 and 5 percent level.
 \end_layout
 
 \begin_layout Subsection*
-The 
-\change_deleted -408277422 1530604965
-impact
-\change_inserted -408277422 1530604968
-effectiveness
-\change_unchanged
- of the dissemination technolog
-\change_inserted -408277422 1530604971
-ies
-\change_deleted -408277422 1530604970
-y
-\change_unchanged
-
+The effectiveness of the dissemination technologies
 \end_layout
 
 \begin_layout Subsubsection*
@@ -3637,15 +2653,8 @@ key "feder2004acquisition,feder2004sending,masset2015does"
 \end_inset
 
  consisting of four questions that were asked during the endline survey
- to each of the two spouses 
-\change_inserted -408277422 1530604996
-in the farming household 
-\change_unchanged
-separately
-\change_inserted -408277422 1530605018
- - regardless of who was shown the video
-\change_unchanged
-.
+ to each of the two spouses in the farm household separately - regardless
+ of who was shown the video.
  For each question, three possible answers were read out to the respondent,
  who was then asked to indicate what answer he or she though
 \change_inserted -408277422 1530605050
@@ -3674,37 +2683,18 @@ The first question was related to planting.
  viewing farming as a business.
  In the video, we pay ample attention to promoting an approach where farmers
  start small and grow over time through reinvesting and emphasize the benefits
- of combining inputs rather than investing only in 
-\change_deleted -408277422 1530605102
-e.g.
-\change_inserted -408277422 1530605104
-for instance
-\change_unchanged
-, improved seed
-\change_inserted -408277422 1530605107
-s
-\change_unchanged
-.
+ of combining inputs rather than investing only in for instance, improved
+ seeds.
  We wanted to see if farmers internalize this advice and ask what a successful
  farmer would do if he or she only has 40,000 shillings.
- The correct option was to use it to buy improved seed
-\change_inserted -408277422 1530605118
-s
-\change_unchanged
- and fertilizer and start intensified farming on a small area.
+ The correct option was to use it to buy improved seeds and fertilizer and
+ start intensified farming on a small area.
  Alternative options were to: 
 \begin_inset Quotes eld
 \end_inset
 
-use all the money to buy hybrid seed
-\change_inserted -408277422 1530605124
-s
-\change_unchanged
-, because without good seed
-\change_inserted -408277422 1530605126
-s
-\change_unchanged
-, yields will be low
+use all the money to buy hybrid seeds, because without good seeds, yields
+ will be low
 \begin_inset Quotes erd
 \end_inset
 
@@ -3719,20 +2709,10 @@ use all the money to buy fertilizer, because with poor soils, yields will
 
 .
  For the third questions, we asked if they knew when weeding is most important.
- 
-\change_inserted -408277422 1530605162
-The video showed that w
-\change_deleted -408277422 1530605149
-W
-\change_unchanged
-eeding is most important during the first four weeks after planting, as
- maize is a poor competitor for light and nutrients.
- 
-\change_inserted -408277422 1530605198
-It is assumed that most farmers would know this.
- 
-\change_unchanged
-Alternative answers were: 
+ The video showed that weeding is most important during the first four weeks
+ after planting, as maize is a poor competitor for light and nutrients.
+ It is assumed that most farmers would know this.
+ Alternative answers were: 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3749,12 +2729,7 @@ when the maize is at tasseling stage
 \end_inset
 
 .
- 
-\change_deleted -408277422 1530605195
-It is assumed that most farmers would know this.
- 
-\change_unchanged
-Finally, we also asked if farmers knew when spraying against the fall armyworm
+ Finally, we also asked if farmers knew when spraying against the fall armyworm
  is most effective.
  There was no information given about fighting fall armyworm in any intervention
 , so unless one of our interventions encourages farmers to search for additional
@@ -3794,23 +2769,18 @@ key "anderson2008multiple"
 .
  This, in addition to adjustments to the significance levels to account
  for Family Wise Error Rates (FWER)
-\change_inserted -408277422 1530605258
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530605264
-include reference to fwer
-\change_unchanged
-
+include reference to fwer.
+ Not sure what to use here.
+ I follow https://egap.org/methods-guides/10-things-you-need-know-about-multiple-
+comparisons, who does not provide references.
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 , guards against over-rejection of the null hypothesis due to multiple inference.
  We use re-randomization to construct the joint null distribution for the
  family of outcomes we are testing.
@@ -3830,17 +2800,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530690827
-Differential i
-\change_deleted -408277422 1530690828
-I
-\change_unchanged
-mpact 
-\change_inserted -408277422 1530690832
-of dissemination technologies 
-\change_unchanged
-on household level knowledge
+Differential impact of dissemination technologies on household level knowledge
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:knowh0HH"
@@ -4315,33 +3275,17 @@ reference "tab:knowh0HH"
 
 \end_inset
 
- shows results for the 
-\change_deleted -408277422 1530605364
-three
-\change_unchanged
- main hypotheses
-\change_inserted -408277422 1530690888
- with regard to the three incremental levels of ICT-mediated information
- delivery using different dissemniation technologies (H1)
-\change_unchanged
-.
+ shows results for the main hypotheses with regard to the three incremental
+ levels of ICT-mediated information delivery using different dissemination
+ technologies (H1).
  In the top panel, denoted as 
 \emph on
 Video
 \emph default
 , we compare results on the quiz between households that were allocated
- to the control group
-\change_inserted -408277422 1530605452
- viewing the placebo video
-\change_unchanged
- to the results of households that were shown 
-\change_inserted -408277422 1530605458
-the intervention
-\change_deleted -408277422 1530605455
-a 
-\change_unchanged
-video, irrespective of who this video was shown to and who provided the
- information in the video
+ to the control group viewing the placebo video to the results of households
+ that were shown the intervention video, irrespective of who this video
+ was shown to and who provided the information in the video
 \begin_inset Foot
 status collapsed
 
@@ -4371,52 +3315,23 @@ reference "fig:Experimental-Design"
  below between parenthesis).
  In the second column, we report difference (and standard errors of the
  differences between parenthesis) between the control group and the households
- that were shown 
-\change_inserted -408277422 1530605481
-the intervention
-\change_deleted -408277422 1530605478
-a
-\change_unchanged
- video.
+ that were shown the intervention video.
  We find that in 15.5 percent of the households in the control group, at
  least one of the spouses could indicate the correct alternative among the
  response options to the question on optimal maize seed spacing.
  This relatively low rate of correct responses is due to the fact that this
  is a fairly new and potentially controversial recommendation.
- We see that among households that were 
-\change_inserted -408277422 1530605507
-shown the intervention
-\change_deleted -408277422 1530605507
-a
-\change_unchanged
- video
-\change_deleted -408277422 1530605514
- was shown
-\change_unchanged
-, the proportion increases by 15 percentage points, to over 30 percent,
- and this difference is statistically significant.
- About 91 percent of households that were not shown the 
-\change_deleted -408277422 1530605534
-treatment
-\change_inserted -408277422 1530605537
-intervention
-\change_unchanged
- video know that is best to combine inputs instead of only using seed or
- fertilizer.
- Even though baseline knowledge is already high, the 
-\change_inserted -408277422 1530605550
-intervention 
-\change_unchanged
-video treatment further increased this knowledge by another 5.1 percentage
- points.
+ We see that among households that were shown the intervention video, the
+ proportion increases by 15 percentage points, to over 30 percent, and this
+ difference is statistically significant.
+ About 91 percent of households that were not shown the intervention video
+ know that is best to combine inputs instead of only using seed or fertilizer.
+ Even though baseline knowledge is already high, the intervention video
+ treatment further increased this knowledge by another 5.1 percentage points.
  We further see that in about 95.4 percent of households in the control group
  at least one of the spouses was able to correctly indicate that weeding
  is most important during the first 4 weeks after planting and the intervention
- 
-\change_inserted -408277422 1530605565
-video 
-\change_unchanged
-does not seem to have a significant effect on this outcome
+ video does not seem to have a significant effect on this outcome
 \begin_inset Foot
 status collapsed
 
@@ -4429,39 +3344,14 @@ In addition, our pre-analysis plan specified that we would drop from the
 \end_inset
 
 .
- Finally, the 
-\change_inserted -408277422 1530605572
-intervention 
-\change_unchanged
-video
-\change_deleted -408277422 1530605575
-s
-\change_unchanged
- do
-\change_inserted -408277422 1530605580
-es
-\change_unchanged
- not seem to encourage farmers to actively search information on important
- challenges that were not explicitly covered in the video, as we do not
- find that households that were shown the video are more likely to know
- when one should spray against fall armyworm, something that was not mentioned
- in the video.
+ Finally, the intervention video does not seem to encourage farmers to actively
+ search information on important challenges that were not explicitly covered
+ in the video, as we do not find that households that were shown the video
+ are more likely to know when one should spray against fall armyworm, something
+ that was not mentioned in the video.
  Overall, and as confirmed by the knowledge index, we conclude that the
- 
-\change_deleted -408277422 1530605613
-agricultural extension 
-\change_inserted -408277422 1530605627
-intervention 
-\change_unchanged
-video
-\change_deleted -408277422 1530605629
-s
-\change_unchanged
- 
-\change_inserted -408277422 1530605622
-with agricultural extension information 
-\change_unchanged
-increased knowledge at the household level.
+ intervention video with agricultural extension information increased knowledge
+ at the household level.
  This seems to be especially the case for new information.
  
 \end_layout
@@ -4478,33 +3368,12 @@ reference "tab:knowh0HH"
 \emph on
 +IVR
 \emph default
-, now compares knowledge of households that were shown the 
-\change_inserted -408277422 1530605645
-intervention 
-\change_unchanged
-video to knowledge of households that were shown the
-\change_deleted -408277422 1530605648
- 
-\change_inserted -408277422 1530605650
- intervetnion 
-\change_unchanged
-video and in addition received the IVR treatment (the pure control group
- that received the placebo 
-\change_deleted -408277422 1530605661
-intervention
-\change_inserted -408277422 1530605662
-video
-\change_unchanged
- is discarded from the analysis).
- We do not find any significant supplemental impact of augmenting the 
-\change_inserted -408277422 1530605676
-intervention 
-\change_unchanged
-video 
-\change_deleted -408277422 1530605674
-intervention
-\change_unchanged
- with an IVR service.
+, now compares knowledge of households that were shown the intervention
+ video to knowledge of households that were shown the intervention video
+ and in addition received the IVR treatment (the pure control group that
+ received the placebo video is discarded from the analysis).
+ We do not find any significant supplemental impact of augmenting the interventi
+on video with an IVR service.
  However, since we now only focus on households that already learned from
  the video intervention, we find that knowledge in the comparison group
  is already high: for both knowledge of the benefits of combining inputs
@@ -4522,70 +3391,20 @@ reference "tab:knowh0HH"
 \emph on
 +sms
 \emph default
-, compares knowledge of households that received both the 
-\change_inserted -408277422 1530605699
-intervention 
-\change_unchanged
-video and IVR 
-\change_deleted -408277422 1530605704
-intervention
-\change_inserted -408277422 1530605706
-service
-\change_unchanged
- to households that received the
-\change_inserted -408277422 1530605732
- combination of the
-\change_unchanged
- 
-\change_inserted -408277422 1530605724
-intervention 
-\change_unchanged
-video, the IVR 
-\change_deleted -408277422 1530605734
-intervention
-\change_inserted -408277422 1530605735
-service
-\change_unchanged
- and 
-\change_deleted -408277422 1530605741
-also received
-\change_unchanged
- sms reminders 
-\change_deleted -408277422 1530605751
-to implement
-\change_inserted -408277422 1530605758
-about implementing
-\change_unchanged
- important practices and 
-\change_deleted -408277422 1530605770
-remind them of the 
-\change_inserted -408277422 1530605771
-about the 
-\change_unchanged
-existence of the IVR system.
+, compares knowledge of households that received both the intervention video
+ and IVR service to households that received the combination of the intervention
+ video, the IVR service and sms reminders about implementing important practices
+ and about the existence of the IVR system.
  Also here, we do not find that the sms campaign further increased the often
- already high levels of knowledge
-\change_inserted -408277422 1530605804
- as a result of the intervention video combined with the IVR service
-\change_unchanged
-.
+ already high levels of knowledge as a result of the intervention video
+ combined with the IVR service.
  
 \end_layout
 
 \begin_layout Subsubsection*
 
-\change_inserted -408277422 1530689755
-
 \series bold
-The i
-\change_deleted -408277422 1530689752
-I
-\change_unchanged
-mpact 
-\change_inserted -408277422 1530689793
-of ICT-mediated agronomic extension information 
-\change_unchanged
-on adoption
+The impact of ICT-mediated agronomic extension information on adoption
 \end_layout
 
 \begin_layout Standard
@@ -4600,100 +3419,50 @@ reference "tab:pract_h1_ag"
 
  compares adoption rates for a range of technologies and practices between
  households in the control group that were shown the placebo video and household
-s that were shown 
-\change_inserted -408277422 1530689803
-an intervention
-\change_deleted -408277422 1530689800
-a
-\change_unchanged
- video.
-\change_inserted -408277422 1530689809
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530690505
-so, here we make abstraction of whether there was ivr on top, or ivr+sms
- on top? or is it just video alone? please clarify
-\change_unchanged
-
-\end_layout
+s that were shown an intervention video (below, similar tables, Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:pract_ivr"
 
 \end_inset
 
+ and Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:pract_sms"
 
-\change_unchanged
+\end_inset
 
+, report the additional impact of adding the IVR service and the sms campaign).
 \end_layout
 
 \begin_layout Standard
-The first recommended practice we look at is 
-\change_deleted -408277422 1530689847
-early
-\change_inserted -408277422 1530689848
-timely
-\change_unchanged
- planting, which was emphasized in the video as an important determinant
- of maize yields.
+The first recommended practice we look at is timely planting, which was
+ emphasized in the video as an important determinant of maize yields.
  We find that in about 36.6 percent of households where the placebo video
  was shown, at least one spouse reports they have started planting maize
  within one day following the first rains on at least one plot.
  This seems to be not significantly different from the proportion of households
- that reported planting 
-\change_deleted -408277422 1530689901
-immediately
-\change_inserted -408277422 1530689903
-within one day
-\change_unchanged
- after the rains among households that were given information through the
- 
-\change_inserted -408277422 1530689913
-intervention 
-\change_unchanged
-video.
+ that reported planting within one day after the rains among households
+ that were given information through the intervention video.
  We also carefully explain a novel way of planting, where spacing between
- hills in a row is reduced 
-\change_inserted -408277422 1530689976
-as compared to common practice and 
-\change_deleted -408277422 1530689977
-but
-\change_unchanged
- only one seed is planted per hill instead of the usual two.
+ hills in a row is reduced as compared to common practice and only one seed
+ is planted per hill instead of the usual two.
  We see that the percentage of households in which at least one of the spouses
  reports this new way of planting on at least one plot is only 2.6 percent
  among the control group.
  However, this percentage increases to 10.5 percent and the increase is significa
-ntly different from zero when households were shown the 
-\change_inserted -408277422 1530690003
-intervention 
-\change_unchanged
-video.
- We find a similar positive impact from showing the
-\change_inserted -408277422 1530690010
- intervention
-\change_unchanged
- video for the removal of striga according to the recommendations: in the
- control group, almost 69 percent of households report removing striga before
- it flowers to reduce damage early on and prevent the weed from spreading.
- Among farm households that were shown the 
-\change_inserted -408277422 1530690028
-intervention 
-\change_unchanged
-video, this percentage increases by 12 percent.
+ntly different from zero when households were shown the intervention video.
+ We find a similar positive impact from showing the intervention video for
+ the removal of striga according to the recommendations: in the control
+ group, almost 69 percent of households report removing striga before it
+ flowers to reduce damage early on and prevent the weed from spreading.
+ Among farm households that were shown the intervention video, this percentage
+ increases by 12 percent.
  However, the difference is not significant at the 5 percent level after
- correcting for multiple comparisons
-\change_inserted -408277422 1530690104
- (FWER)
-\change_unchanged
-.
+ correcting for multiple comparisons (FWER).
  We find that about 43 percent of control households report first weeding
- first after 18-20 days, which was 
-\change_deleted -408277422 1530690052
-what we 
-\change_unchanged
-recommended in the video.
+ first after 18-20 days, which was recommended in the video.
  We do not find that this proportion is significantly higher among treated
  households.
  
@@ -5027,110 +3796,30 @@ note: Number of observations is 2,185.
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -408277422 1530690070
-We also collected detailed information on 
-\change_inserted -408277422 1530690076
-With regard to 
-\change_unchanged
-fertilizer use on maize plots
-\change_inserted -408277422 1530690083
-:
-\change_deleted -408277422 1530690084
-.
- O
-\change_inserted -408277422 1530690084
-o
-\change_unchanged
-verall, in 44.7 percent of households in the control group at least one of
- the spouses reported they used fertilizer on at least one plot.
+With regard to fertilizer use on maize plots:overall, in 44.7 percent of
+ households in the control group at least one of the spouses reported they
+ used fertilizer on at least one plot.
  While this percentage is almost 25 percent higher among treated farmers,
  the difference is not significant at the 5 percent level after controlling
  for FWER.
- 
-\change_deleted -408277422 1530690135
-We further collected information on t
-\change_inserted -408277422 1530690136
-T
-\change_unchanged
-he use of improved seed
-\change_inserted -408277422 1530690143
-s
-\change_unchanged
- on 
-\change_deleted -408277422 1530690146
-the
-\change_unchanged
- maize plots
-\change_inserted -408277422 1530690149
- 
-\change_deleted -408277422 1530690152
-.
- Improved seed
-\change_unchanged
- is already relatively high, with 55.3 percent of control households reporting
- to use either hybrid and/or open pollinated varieties on at least one maize
- plot.
- 
-\change_inserted -408277422 1530690167
-Improved s
-\change_deleted -408277422 1530690167
-S
-\change_unchanged
-eed adoption rates do not increase significantly after seeing the video.
- We also check 
-\change_deleted -408277422 1530690187
-if
-\change_unchanged
- the proportion of households that combine improved seed
-\change_inserted -408277422 1530690180
-s
-\change_unchanged
+ The use of improved seeds on maize plots is already relatively high, with
+ 55.3 percent of control households reporting to use either hybrid and/or
+ open pollinated varieties on at least one maize plot.
+ Improved seed adoption rates do not increase significantly after seeing
+ the video.
+ We also check the proportion of households that combine improved seeds
  with fertilizer increased after having been shown the video, as this is
- emphasized in the 
-\change_deleted -408277422 1530690197
-information treatment
-\change_inserted -408277422 1530690201
-intervention video
-\change_unchanged
-.
- While the percentage of households
-\change_inserted -408277422 1530690232
- in the treatment group
-\change_unchanged
- that report using both technologies 
-\change_deleted -408277422 1530690211
-increases
-\change_inserted -408277422 1530690211
-is
-\change_deleted -408277422 1530690213
- by
-\change_unchanged
- almost 25 percent
-\change_inserted -408277422 1530690220
- than in the control group
-\change_unchanged
-, this difference is not statistically significant.
+ emphasized in the intervention video.
+ While the percentage of households in the treatment group that report using
+ both technologies is almost 25 percent higher than in the control group,
+ this difference is not statistically significant.
  The proportion of households that buy seeds on the market, as opposed to
- recycling 
-\change_deleted -408277422 1530690252
-used
-\change_unchanged
- seed
-\change_inserted -408277422 1530690245
-s
-\change_unchanged
-, also was not affected by the information treatment.
+ recycling seeds, also was not affected by the information treatment.
 \end_layout
 
 \begin_layout Standard
-We also want to see if our intervention crowds 
-\change_deleted -408277422 1530690336
-in
-\change_inserted -408277422 1530690336
-out
-\change_unchanged
- other technologies or practices 
+We also want to see if our intervention crowds in other technologies or
+ practices 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1257/aer.20150474"
@@ -5140,42 +3829,13 @@ key "10.1257/aer.20150474"
 .
  While we do not promote the use of chemicals such as fungicides, pesticides
  or herbicides in our video, use rates may be indirectly affected.
- We find that about 44.7 percent of 
-\change_inserted -408277422 1530690387
-control 
-\change_unchanged
-households used chemicals on at least one plot.
- 
-\change_deleted -408277422 1530690404
-We indeed see that
-\change_unchanged
- 
-\change_deleted -408277422 1530690406
-t
-\change_inserted -408277422 1530690406
-T
-\change_unchanged
-his 
-\change_deleted -408277422 1530690398
-was
-\change_inserted -408277422 1530690398
-is
-\change_unchanged
- 
-\change_inserted -408277422 1530690410
-indeed 
-\change_unchanged
-about 14 percent higher in households that were shown the 
-\change_inserted -408277422 1530690415
-inervention 
-\change_unchanged
-video.
+ We find that about 44.7 percent of control households used chemicals on
+ at least one plot.
+ This is indeed about 14 percent higher in households that were shown the
+ intervention video.
  But also here, the difference is not statistically significant.
- Finally, we look if the 
-\change_inserted -408277422 1530690424
-intervention 
-\change_unchanged
-video increased the likelihood that households hire in labour.
+ Finally, we look if the intervention video increased the likelihood that
+ households hire in labour.
  While hiring in of labour seems common, the rate is not affected by the
  intervention.
  
@@ -5190,35 +3850,16 @@ reference "tab:pract_ivr"
 
 \end_inset
 
-.
- 
-\change_inserted -408277422 1530690547
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530690585
-clarify what we compare here: video vs video+ivr? 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-As for the case of knowledge, the addition of an IVR service does not seem
+, where we compare household level adoption outcomes of farm households
+ that were shown the intervention video to farm households that were given
+ access to the IVR system in addition to being shown the intervention video.
+ As for the case of knowledge, the addition of an IVR service does not seem
  to further increase adoption.
- While we do find that the adoption of improved maize seed
-\change_inserted -408277422 1530690524
-s
-\change_unchanged
- is almost 8 percent higher when IVR is added to the video campaign (and
- this effect is also somewhat reflected in an increase in the proportion
- of households that reports to buy seed from the market), the difference
- is not statistically significant.
+ While we do find that the adoption of improved maize seeds is almost 8
+ percent higher when IVR is added to the video campaign (and this effect
+ is also somewhat reflected in an increase in the proportion of households
+ that reports to buy seed from the market), the difference is not statistically
+ significant.
  Similarly, we find little impact of an additional effect from augmenting
  video + IVR with the sms campaign (Table 
 \begin_inset CommandInset ref
@@ -5881,11 +4522,8 @@ note: Number of observations is 1,296.
 \end_layout
 
 \begin_layout Standard
-We can further disaggregate by type of fertilizer used
-\change_inserted -408277422 1530690961
- as a result of the three different dissemination technologies
-\change_unchanged
-.
+We can further disaggregate by type of fertilizer used as a result of the
+ three different dissemination technologies.
  Results are reported in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -5902,66 +4540,22 @@ reference "tab:knowh0HH"
 \end_inset
 
 .
- When estimating the impact of the 
-\change_inserted -408277422 1530691013
-intervention 
-\change_unchanged
-video 
-\change_deleted -408277422 1530691010
-intervention
-\change_unchanged
-, we see that among the control group
-\change_inserted -408277422 1530690990
- who have seen a placebo video
-\change_unchanged
-, already a substantial proportion of farmers is using DAP or NPK on at
- least one plot (26 percent).
- This proportion is lower among households that were shown the 
-\change_inserted -408277422 1530691000
-intervention 
-\change_unchanged
-video, but the difference is not significant.
- At the same time, the use of 
-\change_inserted -408277422 1530691021
-U
-\change_deleted -408277422 1530691020
-u
-\change_unchanged
-rea, as well as the use of organic fertilizer, seems to have increase
-\change_inserted -408277422 1530691034
-d
-\change_unchanged
- in response to the 
-\change_deleted -408277422 1530691040
-information
-\change_unchanged
- intervention
-\change_inserted -408277422 1530691043
- video
-\change_unchanged
-.
+ We see that among the control group who have seen a placebo video, already
+ a substantial proportion of farmers is using DAP or NPK on at least one
+ plot (26 percent).
+ This proportion is lower among households that were shown the intervention
+ video, but the difference is not significant.
+ At the same time, the use of Urea, as well as the use of organic fertilizer,
+ seems to have increased in response to the intervention video.
  Urea use in particular, which was very low in the control group, more than
- doubled as a result of showing the 
-\change_inserted -408277422 1530691055
-intervention 
-\change_unchanged
-video.
+ doubled as a result of showing the intervention video.
  Inorganic fertilizer use also increased substantially, from 16.2 percent
  to 24.2 percent.
- Most likely, this is due to the fact that, in the 
-\change_inserted -408277422 1530691066
-intervention 
-\change_unchanged
-video, it is emphasized that inputs should be combined to get best results,
- and as a result some of the treated farmers reduced their use of DAP or
- NPK and increased adoption of 
-\change_inserted -408277422 1530691078
-U
-\change_deleted -408277422 1530691077
-u
-\change_unchanged
-rea (and to a lesser extent inorganic fertilizer) to engage in more balanced
- soil nutrient management.
+ Most likely, this is due to the fact that, in the intervention video, it
+ is emphasized that inputs should be combined to get best results, and as
+ a result some of the treated farmers reduced their use of DAP or NPK and
+ increased adoption of Urea (and to a lesser extent inorganic fertilizer)
+ to engage in more balanced soil nutrient management.
 \end_layout
 
 \begin_layout Standard
@@ -5972,35 +4566,15 @@ reference "tab:Impact-of-technology_fert"
 
 \end_inset
 
-, we see that the addition of IVR 
-\change_inserted -408277422 1530691170
-as compared to only the intervention video 
-\change_unchanged
-seems to discourage the use of inorganic fertilizer and increase the use
- of 
-\change_inserted -408277422 1530691108
-a combination of 
-\change_unchanged
-DAP
-\change_inserted -408277422 1530691112
- and 
-\change_deleted -408277422 1530691110
-/
-\change_unchanged
-NPK (although the latter is not statistically significant after controlling
- for multiple comparisons
-\change_inserted -408277422 1530691118
- FWER
-\change_unchanged
-).
+, we see that the addition of IVR as compared to only the intervention video
+ seems to discourage the use of inorganic fertilizer and increase the use
+ of a combination of DAP and NPK (although the latter is not statistically
+ significant after controlling for multiple comparisons).
  This may be because application of DAP or NPK is more complicated than
  Urea or organic fertilizer, and so a demand driven information service
  such as IVR may be more effective than showing a video.
  Finally, the third panel shows no additional effect of the sms intervention
-\change_inserted -408277422 1530691156
- as compared to the video with IVR service
-\change_unchanged
- on the use of particular fertilizers.
+ as compared to the video with IVR service on the use of particular fertilizers.
  
 \end_layout
 
@@ -6014,19 +4588,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530690901
-Differential i
-\change_deleted -408277422 1530690902
-I
-\change_unchanged
-mpact of 
-\change_deleted -408277422 1530690906
-technology
-\change_inserted -408277422 1530690906
-dissemination technologies
-\change_unchanged
- on fertilizer use
+Differential impact of dissemination technologies on fertilizer use
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Impact-of-technology_fert"
@@ -6374,15 +4936,8 @@ note: In the first column, means (and standard deviations) in the comparison
 \end_layout
 
 \begin_layout Standard
-Similar to fertilizer, we disaggregate by type of improved seed
-\change_inserted -408277422 1530691203
-s
-\change_unchanged
- used for households where at least one spouse reported to be using improved
- seed
-\change_inserted -408277422 1530691207
-s
-\change_unchanged
+Similar to fertilizer, we disaggregate by type of improved seeds used for
+ households where at least one spouse reported to be using improved seeds
  on at least one maize plot.
  Results are reported in Table 
 \begin_inset CommandInset ref
@@ -6392,62 +4947,31 @@ reference "tab:Impact-of-technology_seed-1"
 \end_inset
 
 .
- We find that showing the 
-\change_inserted -408277422 1530691218
-intervention 
-\change_unchanged
-video did not influence the type of improved seed
-\change_inserted -408277422 1530691221
-s
-\change_unchanged
- used
-\change_inserted -408277422 1530691237
- as compared to a placebo video
-\change_unchanged
-.
+ We find that showing the intervention video did not influence the type
+ of improved seeds used as compared to a placebo video.
  However, providing access to the IVR service increases the likelihood that
- hybrid seed
-\change_inserted -408277422 1530691242
-s
-\change_unchanged
- 
-\change_deleted -408277422 1530691244
-is
-\change_inserted -408277422 1530691244
-are
-\change_unchanged
- used from 30 percent to 35.7 percent
-\change_inserted -408277422 1530691267
- as compared to a treatment with only the intervention video
-\change_unchanged
-.
+ hybrid seeds are used from 30 percent to 35.7 percent as compared to a treatment
+ with only the intervention video.
  This is consistent with the interpretation that for more advanced technologies,
  a demand drive extension approach may be more effective.
- We find that hybrid seed
-\change_inserted -408277422 1530691273
-s
-\change_unchanged
- use is lower among 
-\change_deleted -408277422 1530691287
-farmers
-\change_inserted -408277422 1530691288
-farming households
-\change_unchanged
- that were allocated 
-\change_deleted -408277422 1530691280
-the
-\change_inserted -408277422 1530691280
-to
-\change_unchanged
- also receive sms messages
-\change_inserted -408277422 1530691323
- as compared to those receiving the video plus IVR treatment
-\change_unchanged
-.
+ We find that hybrid seeds use is lower among farming households that were
+ allocated to also receive sms messages as compared to those receiving the
+ video plus IVR treatment.
  This is surprising: the first message actually states that yields are much
  higher if hybrid seeds are used instead of recycled seeds.
  However, it may be that farmers already started planting by the time they
- received the first sms message.
+ received the first sms message
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+But even then, we would not expect to see a lower use of hybrid seeds in
+ one group
+\end_layout
+
+\end_inset
+
+.
  Also, the effect is not significant after controlling for FWER.
 \end_layout
 
@@ -6461,21 +4985,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_deleted -408277422 1530691190
-Impact
-\change_inserted -408277422 1530691190
-Differential impact of dissemination technologies
-\change_unchanged
- 
-\change_deleted -408277422 1530691194
-of technology 
-\change_unchanged
-on improved 
-\change_inserted -408277422 1530691199
-seeds 
-\change_unchanged
-use
+Differential impact of dissemination technologies on improved seeds use
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Impact-of-technology_seed-1"
@@ -6769,55 +5279,23 @@ note: In the first column, means (and standard deviations) in the comparison
 
 \begin_layout Subsubsection*
 
-\change_deleted -408277422 1530691381
-
 \series bold
-Impact
-\change_inserted -408277422 1530691381
-The impact of ICT-mediated agronomic extension information
-\change_unchanged
- on production
+The impact of ICT-mediated agronomic extension information on production
 \end_layout
 
 \begin_layout Standard
 We next turn to changes in production related outcome as a result of our
- experiment
-\change_inserted -408277422 1530691489
- providing ICT-mediated agronomic extension information using different
- dissemination technologies
-\change_unchanged
-.
- We first look 
-\change_deleted -408277422 1530691498
-at household level
-\change_unchanged
- maize production
-\change_inserted -408277422 1530691509
- aggregated at the household level
-\change_unchanged
-.
+ experiment providing ICT-mediated agronomic extension information using
+ different dissemination technologies.
+ We first look at maize production aggregated at the household level.
  During the endline survey, we asked both spouses separately to estimate
- how much maize was harvested from each plot
-\change_inserted -408277422 1530691535
- owned by their household
-\change_unchanged
-.
- These quantities were then summed over the different 
-\change_inserted -408277422 1530691559
-household 
-\change_unchanged
-maize plots for each spouse and the average between the two spouses was
- taken as the final estimate of household level maize production.
- We find that
-\change_inserted -408277422 1530691577
-,
-\change_unchanged
- overall, a typical farm household in our sample produced about 460 kg of
- maize
-\change_inserted -408277422 1530691629
- in the second season of 2017
-\change_unchanged
- (first column in Table 
+ how much maize was harvested from each plot owned by their household.
+ These quantities were then summed over the different household maize plots
+ for each spouse and the average between the two spouses was taken as the
+ final estimate of household level maize production.
+ We find that, overall, a typical farm household in our sample produced
+ about 460 kg of maize in the second season of 2017 (first column in Table
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:yield_ag_allh"
@@ -6828,68 +5306,15 @@ reference "tab:yield_ag_allh"
  Households produced this on 1.13 acres on average.
  Taken together, we find that yields, defined as kilograms per acre, amounted
  to on average 470 kg per acre.
- This is much higher than yields recorded at baseline
-\change_deleted -408277422 1530691651
- 
-\change_unchanged
-(290 kg/acre)
-\change_inserted -408277422 1530691687
-, which was the second season of 2016 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530691685
-correct?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-,
-\change_unchanged
- as 
-\change_inserted -408277422 1530691756
-this season 
-\change_unchanged
-the
-\change_inserted -408277422 1530691718
-re
-\change_unchanged
- 
-\change_inserted -408277422 1530691734
-was more and more regular rainfall 
-\change_deleted -408277422 1530691737
-rains were better
-\change_unchanged
- and there was increased attention for strategies to combat fall armyworm.
- Still, compared to FAOSTAT figures (1000 kg/acre) or figures from 
-\change_inserted -408277422 1530691812
-the Uganda 
-\change_unchanged
-household survey data
-\change_inserted -408277422 1530692008
- of 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530692010
-year
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- (typically around 600 kg/acre), yields were below normal, as is also confirmed
- by the fact that in only 40 percent of households at least one spouse reported
- that yields were better than a typical year on at least one plot
+ This is much higher than yields recorded at baseline (290 kg/acre) for
+ the first season of 2017 , as this season there was more and more regular
+ rainfall and there was increased attention for strategies to combat fall
+ armyworm.
+ Still, compared to FAOSTAT figures (1000 kg/acre) or figures from the Uganda
+ household survey data (typically around 600 kg/acre), yields were below
+ normal, as is also confirmed by the fact that in only 40 percent of households
+ at least one spouse reported that yields were better than a typical year
+ on at least one plot
 \change_inserted -408277422 1530691783
 
 \begin_inset Note Note
