@@ -7,8 +7,8 @@ eststo clear
 **Generate outcome variables for hh level data set
 
 
-gl dir  "C:\Users\u0107600\" 
-*gl dir  C:\Users\Liz\
+*gl dir  "C:\Users\u0107600\" 
+gl dir  C:\Users\Liz\
 
 *Load Data
 		use "$dir\Dropbox\Uganda-ICT\maizeUG-master\endline\analysis\endline_indiv_destring_kgmaize.dta", clear
@@ -47,11 +47,19 @@ cd "$dir\Dropbox\Uganda-ICT\maizeUG-master\endline\analysis\tables"
 		replace `v'=. if `v'==999
 		}
 
-
+		**Change missing amounts to 0 for analysis for ALL
+		foreach v of varlist amt_sold_solo amt_sold_else amt_sold_spouse amt_sold_joint {
+		replace `v'=0 if `v'==. 
+		*replace `v'=0 if `v'==. & q71[_n-1]=="Yes" &hhid==hhid[_n-1]
+		*replace `v'=0 if `v'==. & q71[_n+1]=="Yes" &hhid==hhid[_n+1]
+		}
+*	
 
 
 		
 		*Need to calc KGs per bag
+				*  Q16 : How many bags		Q17 Kgs in a bag
+
 		foreach v of varlist grp1a17 grp2b17 grp3c17 grp4d17 grp5e17 	grp1f17 grp2g17 grp3h17 group_sp4j17 grp5_sp5k17 grp1a16 grp2b16 grp3c16 grp4d16 grp5e16 grp1f16 grp2g16 grp3h16 group_sp4j16 grp5_sp5k16{
 		replace `v'=0 if `v'==.
 		}
@@ -104,13 +112,7 @@ replace female=0 if gender1==1
 
 
 sort hhid female
-		**Change missing amounts to 0 for analysis for ALL
-		foreach v of varlist amt_sold_solo amt_sold_else amt_sold_spouse amt_sold_joint amt_sold_solo_kg amt_sold_else_kg amt_sold_spouse_kg amt_sold_joint_kg{
-		replace `v'=0 if `v'==. 
-		*replace `v'=0 if `v'==. & q71[_n-1]=="Yes" &hhid==hhid[_n-1]
-		*replace `v'=0 if `v'==. & q71[_n+1]=="Yes" &hhid==hhid[_n+1]
-		}
-*	
+
 	
 			generate totalmaizesold=.
 		replace totalmaizesold= amt_sold_solo+ amt_sold_spouse+amt_sold_joint+amt_sold_else
@@ -323,7 +325,12 @@ label variable sms2 "SMS"
 	xtset vilid_final
 
 	eststo clear
+	
+set seed 4562
+	**equalize sample sizes within the woman_informed variable
+preserve
 
+sample 2118 if recipient==2, c
 
 		foreach v of varlist  maize_total_harv_kg  totalmaizesoldkg prop_maizesold amt_sold_joint_kg_prop maizesale_partici_woman   price*    {
 		xtreg `v' i.woman_informed i.messenger ivr2 sms2 if female==1, vce(cluster vilid_final)  fe
@@ -338,6 +345,7 @@ label variable sms2 "SMS"
 
 
 esttab using woman_informed_step1_female,  replace  tex fragment  obslast nonotes nomtitles compress nogaps  label star( * 0.10  ** 0.05 *** 0.01) se  r2 noomitted   nobaselevels eqlabels(none)  b(%6.3f)
+
 
 
 	
@@ -358,6 +366,11 @@ esttab using woman_informed_step1_female,  replace  tex fragment  obslast nonote
 esttab using woman_informed_step1_male,  replace  tex fragment  obslast nonotes nomtitles compress nogaps  label star( * 0.10  ** 0.05 *** 0.01) se  r2 noomitted   nobaselevels eqlabels(none)  b(%6.3f)
 	
 	eststo clear
+restore
+exit
+preserve
+
+sample 2284 if recipient==2, c
 	
 	
 	
@@ -396,12 +409,13 @@ esttab using couple_informed_step1_female,  replace  tex fragment  obslast nonot
 
 esttab using couple_informed_step1_male,  replace  tex fragment  obslast nonotes nomtitles compress nogaps  label star( * 0.10  ** 0.05 *** 0.01) se  r2 noomitted   nobaselevels eqlabels(none)  b(%6.3f)
 
+restore
 
-	
-	
-	
-	
-	
+preserve
+
+
+sample 2034 if messenger==2, c
+		
 	eststo clear
 
 
@@ -432,12 +446,12 @@ esttab using woman_messeng_step1_female,  replace  tex fragment  obslast nonotes
 
 esttab using woman_messeng_step1_male,  replace  tex fragment  obslast nonotes nomtitles compress nogaps  label star( * 0.10  ** 0.05 *** 0.01) se  r2 noomitted   nobaselevels eqlabels(none)  b(%6.3f)
 	
-	eststo clear
+restore	
 	
 	
+preserve	
 	
-	
-	
+sample 2006 if messenger==2, c
 	
 		eststo clear
 
@@ -467,6 +481,9 @@ esttab using couple_messeng_step1_female,  replace  tex fragment  obslast nonote
 
 esttab using couple_messeng_step1_male,  replace  tex fragment  obslast nonotes nomtitles compress nogaps  label star( * 0.10  ** 0.05 *** 0.01) se  r2 noomitted   nobaselevels eqlabels(none)  b(%6.3f)
 	
+	
+restore	
+	
 	eststo clear
 	
 	
@@ -479,15 +496,31 @@ esttab using couple_messeng_step1_male,  replace  tex fragment  obslast nonotes 
 
 	
 			foreach v of varlist  pref_aginput pref_publicgood pref_invest  {
+			preserve
+			sample 2118 if recipient==2, c
+
 		xtlogit `v' ivr2 sms2 i.messenger woman_informed  if female==1,  fe
 		eststo
+		restore
+		preserve
+		sample 2284 if recipient==2, c
+
 		xtlogit `v' couple_informed i.messenger ivr2 sms2 if female==1,  fe
 		eststo
+		restore
+		preserve
+		sample 2034 if messenger==2, c
+
 		xtlogit `v' i.recipient woman_messeng  ivr2 sms2 if female==1,   fe
 		eststo
+		
+		restore
+		preserve
+		sample 2006 if messenger==2, c
+
 		xtlogit `v' couple_messeng i.recipient ivr2 sms2 if female==1,   fe
 		eststo		
-			
+		restore	
 		
 }		
 	esttab using pref_publicgood_female,  replace  tex fragment  order(woman_informed couple_informed woman_messeng couple_messeng)   obslast nonotes nomtitles compress nogaps  label star( * 0.10  ** 0.05 *** 0.01) se  r2 noomitted   nobaselevels eqlabels(none)  b(%6.3f)
@@ -496,15 +529,29 @@ esttab using couple_messeng_step1_male,  replace  tex fragment  obslast nonotes 
 	
 	eststo clear
 			foreach v of varlist  pref_aginput pref_publicgood pref_invest  {
+				preserve
+			sample 2118 if recipient==2, c
+		
 		xtlogit `v' ivr2 sms2 i.messenger woman_informed  if female==0,  fe
 		eststo
+		restore
+		preserve
+		sample 2284 if recipient==2, c
+		
 		xtlogit `v' couple_informed i.messenger ivr2 sms2 if female==0,  fe
 		eststo
+		restore
+		preserve
+		sample 2034 if messenger==2, c
+		
 		xtlogit `v'  i.recipient ivr2 sms2 woman_messeng if female==0,   fe
 		eststo
+		restore
+		preserve
+		sample 2006 if messenger==2, c
 		xtlogit `v' couple_messeng i.recipient ivr2 sms2 if female==0,   fe
 		eststo		
-			
+			restore
 		
 }		
 	esttab using pref_publicgood_male,  replace  tex fragment  obslast nonotes order(woman_informed couple_informed woman_messeng couple_messeng) nomtitles compress nogaps  label star( * 0.10  ** 0.05 *** 0.01) se  r2 noomitted   nobaselevels eqlabels(none)  b(%6.3f)
@@ -699,7 +746,12 @@ replace female=0 if gender1==1
 		replace price_diff_joint=abs(price_sold_joint-price_sold_spouse_spouse)
 		label variable price_diff_joint "Price Diff Selling Joint"
 			
-	
+			gen price_diff_solo=.
+		replace price_diff_solo=abs(price_sold_solo-price_sold_solo_spouse)
+		label variable price_diff_solo "Price Diff Selling Alone"
+			
+
+			
 	
 	
 	**Total Maize Inc Ab diff
@@ -898,6 +950,9 @@ label variable sms2 "SMS"
 	xtset vilid_final
 	eststo clear
 
+	preserve
+	sample 672 if recipient==3, c
+	
 
 		foreach v of varlist maizeinc_diff trans_gap_joint sold_joint_gap  maize_husband_diffamt maize_wife_diffamt {
 		xtreg `v' i.woman_informed i.messenger ivr2 sms2 , vce(cluster vilid_final)  fe
@@ -910,6 +965,7 @@ label variable sms2 "SMS"
 }
 esttab using woman_informedhh,  replace  tex fragment  obslast nonotes nomtitles compress nogaps  label star( * 0.10  ** 0.05 *** 0.01) se  r2 noomitted   nobaselevels eqlabels(none)  b(%6.3f)
 
+restore
 /*
 	eststo clear
 
@@ -940,7 +996,9 @@ eststo
 		label variable couple_informed "Couple Reci"	
 
 	eststo clear
-
+	preserve
+	sample 672 if recipient==1, c
+	
 
 		foreach v of varlist maizeinc_diff trans_gap_joint sold_joint_gap  maize_husband_diffamt maize_wife_diffamt {
 		xtreg `v' i.couple_informed i.messenger ivr2 sms2 , vce(cluster vilid_final)  fe
@@ -954,6 +1012,7 @@ eststo
 
 esttab using couple_informedhh,  replace  tex fragment  obslast nonotes nomtitles compress nogaps  label star( * 0.10  ** 0.05 *** 0.01) se  r2 noomitted   nobaselevels eqlabels(none)  b(%6.3f)
 
+restore
 
 
 		*Q: .Does portraying a woman being involved in maize farming/intensification (either a 
@@ -966,7 +1025,6 @@ esttab using couple_informedhh,  replace  tex fragment  obslast nonotes nomtitle
 
 	xtset vilid_final
 	eststo clear
-	
 	
 			foreach v of varlist maizeinc_diff trans_gap_joint  sold_joint_gap  maize_husband_diffamt maize_wife_diffamt {
 		xtreg `v' i.woman_messeng i.recipient ivr2 sms2 , vce(cluster vilid_final)  fe
@@ -1023,11 +1081,19 @@ esttab using couple_messenghh,  replace  tex fragment  obslast nonotes nomtitles
 	eststo clear
 
 	
-			foreach v of varlist  pref_publicgood_agree pref_aginput_agree {
+			foreach v of varlist  pref_publicgood_agree pref_aginput_agree  {
+			preserve
+	sample 672 if recipient==3, c
+
 		xtlogit `v' woman_informed i.messenger ivr2 sms2 ,  fe
 		eststo
+		restore
+		preserve
+	sample 672 if recipient==1, c
+	
 		xtlogit `v' couple_informed i.messenger ivr2 sms2 ,  fe
 		eststo
+		restore
 		xtlogit `v' woman_messeng i.recipient ivr2 sms2 ,   fe
 		eststo
 		xtlogit `v' couple_messeng i.recipient ivr2 sms2 ,   fe
@@ -1051,12 +1117,19 @@ esttab using couple_messenghh,  replace  tex fragment  obslast nonotes nomtitles
 		eststo
 }
 */
-			foreach v of varlist   pref_agreeone {
+			foreach v of varlist   pref_agreeone  {
+	preserve
+	sample 672 if recipient==3, c
 
 		xtlogit `v' woman_informed i.recipient ivr2 sms2 ,   fe
 		eststo
+		restore
+			preserve
+	sample 672 if recipient==1, c
+
 		xtlogit `v' couple_informed i.recipient ivr2 sms2 ,   fe
 		eststo
+		restore
 		xtlogit `v' woman_messeng i.recipient ivr2 sms2 ,   fe
 		eststo
 		xtlogit `v' couple_messeng i.recipient ivr2 sms2 ,  fe
