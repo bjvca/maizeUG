@@ -67,8 +67,6 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -461408743 "Bjorn Van Campenhout"
-\author -408277422 "ELecoutere"
 \end_header
 
 \begin_body
@@ -548,11 +546,8 @@ key "Doss200127,FLETSCHNER20111422,peterman2011understanding,QUISUMBING2010581"
 
 .
  Often, extension agents are male, and their default strategy for disseminating
- information on crop management is to target one
-\change_deleted -461408743 1530709476
- 
-\change_unchanged
- decision-maker in a household, which is generally the man in dual households.
+ information on crop management is to target one decision-maker in a household,
+ which is generally the man in dual households.
  The assumption that extension messages targeting one household member will
  spread to other household members—including women and youth —may be false
  
@@ -1183,11 +1178,8 @@ No single method is effective in controlling striga.
  herbicide imazapyr and can be supplied with a imazapyr seed coating to
  contain striga before it can damage the host plant.
  However, the seeds of this variety on offer in Uganda are expensive at
- 10,000 Ugandan Shillings (UGX) per kg
-\change_inserted -408277422 1530599207
-, while seeds of other common/popular varieties cost xxx UGX/kg, 
-\change_unchanged
-
+ 10,000 Ugandan Shillings (UGX) per kg, while seeds of other common/popular
+ varieties cost between 6,000 and 8,000 UGX/kg, 
 \begin_inset Foot
 status collapsed
 
@@ -2656,11 +2648,7 @@ key "feder2004acquisition,feder2004sending,masset2015does"
  to each of the two spouses in the farm household separately - regardless
  of who was shown the video.
  For each question, three possible answers were read out to the respondent,
- who was then asked to indicate what answer he or she though
-\change_inserted -408277422 1530605050
-t
-\change_unchanged
- was correct.
+ who was then asked to indicate what answer he or she thought was correct.
  The respondent was also allowed to indicate he or she did not know what
  the correct answer was.
  The household was considered knowledgeable on a particular topic if at
@@ -3838,7 +3826,17 @@ key "10.1257/aer.20150474"
  households hire in labour.
  While hiring in of labour seems common, the rate is not affected by the
  intervention.
- 
+ Similar to knowledge related outcomes, we combined adoption outcomes into
+ an index following 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "anderson2008multiple"
+
+\end_inset
+
+.
+ The index suggests an overall impact of the video intervention on adoption
+ at the household level.
 \end_layout
 
 \begin_layout Standard
@@ -5314,25 +5312,7 @@ reference "tab:yield_ag_allh"
  household survey data (typically around 600 kg/acre), yields were below
  normal, as is also confirmed by the fact that in only 40 percent of households
  at least one spouse reported that yields were better than a typical year
- on at least one plot
-\change_inserted -408277422 1530691783
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530691791
-include reference to faostat
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-.
+ on at least one plot.
 \end_layout
 
 \begin_layout Standard
@@ -5343,56 +5323,22 @@ reference "tab:yield_ag_allh"
 
 \end_inset
 
- report results for the impact of the different
-\change_inserted -408277422 1530692055
- dissemination
-\change_unchanged
- technologies with respect to outcomes related to production.
- In the top panel we again compare outcomes of control households
-\change_inserted -408277422 1530692092
- having seen the placebo video
-\change_unchanged
- to outcomes of households that were shown the 
-\change_inserted -408277422 1530692097
-intervention 
-\change_unchanged
-video.
+ report results for the impact of the different dissemination technologies
+ with respect to outcomes related to production.
+ In the top panel we again compare outcomes of control households having
+ seen the placebo video to outcomes of households that were shown the interventi
+on video.
  Household level production, expressed in logs and trimmed 5 percent, does
  not differ between the two groups.
  We do find, however, that households that were exposed to the agricultural
- extension video seemed to cultivate smaller plots
-\change_inserted -408277422 1530692130
-.
-\change_deleted -408277422 1530692131
-:
-\change_unchanged
- 
-\change_inserted -408277422 1530692145
-Their r
-\change_deleted -408277422 1530692137
-R
-\change_unchanged
-eported acreage is 11 percent smaller 
-\change_inserted -408277422 1530692166
-than 
-\change_unchanged
-among 
-\change_inserted -408277422 1530692169
-control 
-\change_unchanged
-households 
-\change_deleted -408277422 1530692173
-that were shown a video
-\change_unchanged
-.
+ extension video seemed to cultivate smaller plots.
+ Their reported acreage is 11 percent smaller than among control households
+ .
  However, the difference is not significant at the 5 percent level after
  controlling for FWER.
  The fact that the same amount is cultivated on a smaller area also resulted
- in the fact that in households that were shown a
-\change_inserted -408277422 1530692189
-n intervention
-\change_unchanged
- video, yields were 14 percent higher than in control households.
+ in the fact that in households that were shown an intervention video, yields
+ were 14 percent higher than in control households.
  As mean productivity in control households was 428 kg/acre, this means
  mean productivity among households where the video was shown was about
  488 kg/acre.
@@ -5404,35 +5350,20 @@ n intervention
 \end_layout
 
 \begin_layout Standard
-Overall, we find that the video information intervention 
-\change_inserted -408277422 1530692292
-versus a placebo video 
-\change_unchanged
-had a significant and positive effect on production outcomes, as is evident
- from the positive treatment effect of the production index
-\change_inserted -408277422 1530692263
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530692270
-how is the production index defined?
-\change_unchanged
-
-\end_layout
+Overall, we find that the video information intervention versus a placebo
+ video had a significant and positive effect on production outcomes, as
+ is evident from the positive treatment effect of the production index,
+ which combines individual production related outcomes in an index following
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "anderson2008multiple"
 
 \end_inset
 
-
-\change_unchanged
 .
- We can conclude that, at the household level, the 
-\change_inserted -408277422 1530692302
-intervention 
-\change_unchanged
-videos thus seemed to positively affect the intensification of maize.
+ We can conclude that, at the household level, the intervention videos thus
+ seemed to positively affect the intensification of maize.
  Again, this can be traced back to the fact that in the video, it is emphasized
  that it is better to combine inputs and practices, and that as such, it
  is often better to start small.
@@ -5450,13 +5381,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_deleted -408277422 1530692065
-Impact
-\change_inserted -408277422 1530692066
-Differential impact of dissemination technologies
-\change_unchanged
- on household level production
+Differential impact of dissemination technologies on household level production
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:yield_ag_allh"
@@ -5922,28 +5847,15 @@ reference "tab:yield_ag_allh"
 , we report additional production effects of adding IVR to the video interventio
 n.
  Also here, we find a significant effect on productivity: the IVR intervention
- adds another 7.9 percent
-\change_inserted -408277422 1530692353
- as compared to intervention video only
-\change_unchanged
-, increasing maize yields up to 526 kg/acre.
- However, in contrast to the effect from the 
-\change_inserted -408277422 1530692361
-intervention 
-\change_unchanged
-video, the increase 
-\change_inserted -408277422 1530692470
-on productivity 
-\change_unchanged
-now seems to be driven by an increase in production while area planted reduces
- much less.
+ adds another 7.9 percent as compared to intervention video only, increasing
+ maize yields up to 526 kg/acre.
+ However, in contrast to the effect from the intervention video, the increase
+ on productivity now seems to be driven by an increase in production while
+ area planted reduces much less.
  This may be explained by the fact that the IVR system is more focused on
  technical information on how to implement certain practices or apply certain
- technologies, instead of the more holistic message we bring in the 
-\change_inserted -408277422 1530692408
-intervention 
-\change_unchanged
-video.
+ technologies, instead of the more holistic message we bring in the intervention
+ video.
  For instance, while video lends itself well to promoting a certain approach
  to farming (ie.
  more commercially oriented, investing now to increase yields in the future),
@@ -5955,41 +5867,23 @@ video.
 
 \begin_layout Subsubsection*
 
-\change_deleted -408277422 1530692486
-
 \series bold
-Impact
-\change_inserted -408277422 1530692486
-The impact of ICT-mediated agronomic extension information
-\change_unchanged
- on household welfare
+The impact of ICT-mediated agronomic extension information on household
+ welfare
 \end_layout
 
 \begin_layout Standard
-Finally, we look at the impact of the 
-\change_inserted -408277422 1530693027
-different 
-\change_unchanged
-information interventions on measures of well-being at the household level.
- Welfare is captured though self-assessment, as well as th
-\change_inserted -408277422 1530693034
-r
-\change_unchanged
-ough consumption.
+Finally, we look at the impact of the different information interventions
+ on measures of well-being at the household level.
+ Welfare is captured though self-assessment, as well as through consumption.
  We have asked these questions only to the woman within the household, as
- we assume she has a better idea of consumption expenditure
-\change_inserted -408277422 1530693056
-s
-\change_unchanged
- within the household and the general level of well-being.
+ we assume she has a better idea of consumption expenditures within the
+ household and the general level of well-being.
  First, we asked if they feel their household is better off (as opposed
  to equally well off or worse off) in terms of income and consumption than
  the average households in their community.
- We find that among the control group
-\change_inserted -408277422 1530693159
- who was shown the placebo video
-\change_unchanged
-, about 40.1 percent of households felt they were better off than average
+ We find that among the control group that was shown the placebo video,
+ about 40.1 percent of households felt they were better off than average
  (top panel in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -5999,71 +5893,21 @@ reference "tab:Impact_welfare"
 
 ).
  This percentage was slightly higher among households that received the
- 
-\change_inserted -408277422 1530693168
-intervention 
-\change_unchanged
-video 
-\change_deleted -408277422 1530693165
-intervention
-\change_unchanged
-, but the difference was not statistically significant.
- Similarly, we asked the 
-\change_deleted -408277422 1530693172
-female
-\change_inserted -408277422 1530693173
-woman
-\change_unchanged
- in the household to indicate if 
-\change_deleted -408277422 1530693183
-they
-\change_inserted -408277422 1530693184
-she
-\change_unchanged
- thought they were better off than six months ago.
+ intervention video , but the difference was not statistically significant.
+ Similarly, we asked the woman in the household to indicate if she thought
+ they were better off than six months ago.
  We find that among the households that did not get the agricultural extension
  video, 39.7 percent of households indicated they did better than half a
  year earlier, and this percentage was the same among the households that
- did get to see the 
-\change_inserted -408277422 1530693200
-intervention 
-\change_unchanged
-video.
- We also include standard self assessed food security questions
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_deleted -408277422 1530693370
-Where are these taken from
-\change_inserted -408277422 1530693408
-e.g.
- USAID.
- Household Food Insecurity Access Scale (HFIAS) for Measurement of Food
- Access: Indicator Guide (2007) http://www.fao.org/fileadmin/user_upload/eufao-fsi
-4dm/doc-training/hfias.pdf
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-.
+ did get to see the intervention video.
+ We also include two standard self assessed food security questions taken
+ from the Household Food Insecurity Access Scale (HFIAS).
  We asked if households were generally able to eat their preferred food,
  and 42.6 percent of households responded affirmatively.
  We also asked if households were generally able to eat enough food and
  found this to be the case in almost 60 percent of baseline households.
- We found that, judged by these questions, the 
-\change_inserted -408277422 1530693434
-intervention 
-\change_unchanged
-video 
-\change_deleted -408277422 1530693437
-intervention
-\change_unchanged
- seemed to worsen food security, but the difference was not statistically
- significant.
+ We found that, judged by these questions, the intervention video seemed
+ to worsen food security, but the difference was not statistically significant.
 \end_layout
 
 \begin_layout Standard
@@ -6095,19 +5939,9 @@ Even though these consumption categories were carefully chosen on the basis
  From this we then took the logarithm and trim 5 percent.
  Results indicate that there was no difference in consumption between treated
  and control households.
- We ran si
-\change_deleted -408277422 1530693498
-milar
-\change_unchanged
- comparisons for the IVR intervention 
-\change_inserted -408277422 1530693520
-versus intervention video alone 
-\change_unchanged
-and the sms intervention
-\change_inserted -408277422 1530693533
- versus video combined with IVR
-\change_unchanged
-, but also failed to find any effect from these additional treatments.
+ We ran similar comparisons for the IVR intervention versus intervention
+ video alone and the sms intervention versus video combined with IVR, but
+ also failed to find any effect from these additional treatments.
  Results for this can be found in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -6128,13 +5962,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_deleted -408277422 1530693552
-Impact of video on
-\change_inserted -408277422 1530693557
-Differential impact of dissemination technologies on
-\change_unchanged
- household welfare
+Differential impact of dissemination technologies on household welfare
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Impact_welfare"
@@ -6368,7 +6196,7 @@ note: In the first column, means (and standard deviations) in the comparison
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 All the above is ITT analysis.
@@ -6386,129 +6214,60 @@ Changing gender attributes of the video intervention
 \end_layout
 
 \begin_layout Standard
-In this 
-\change_inserted -408277422 1530693568
-second 
-\change_unchanged
-part of the paper we present results of changing two gender related attributes
- of the video intervention
-\change_inserted -408277422 1530694345
-
+In this second part of the paper we present results of changing two gender
+ related attributes of the video intervention
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530694383
 do i correctly assume here we make abstraction of whether the intervention
- video received ivr or ivr+sms on top?
-\change_unchanged
-
+ video received ivr or ivr+sms on top? Yes
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 .
  The first attribute relates to the gender of the targeted audience: while
  existing extension services generally target men within households, we
  investigate the consequences of targeting (additionally) the female co-head
  within the household.
- In particular, we report results for 
-\change_deleted -408277422 1530693615
-2
-\change_inserted -408277422 1530693619
-two
-\change_unchanged
- comparisons: R1, which compares outcomes for households where the 
-\change_inserted -408277422 1530693630
-intervention 
-\change_unchanged
-video was shown to the male co-head only to outcomes for households where
- the 
-\change_inserted -408277422 1530693641
-intervention 
-\change_unchanged
-video was shown to the female co-head only; and R2, which compares outcomes
- for households where the video was shown to the male co-head only to outcomes
- for households where the video was shown to both spouses together.
+ In particular, we report results for two comparisons: R1, which compares
+ outcomes for households where the intervention video was shown to the male
+ co-head only to outcomes for households where the intervention video was
+ shown to the female co-head only; and R2, which compares outcomes for household
+s where the video was shown to the male co-head only to outcomes for households
+ where the video was shown to both spouses together.
  The second attribute is related to the gender of the person that provides
  the information: existing extension services generally use male extension
  agents, and we investigate the consequences of changing this into a female
  messenger, or at least adding a female messenger to the male messenger.
  Also here, we report results for two comparisons: M1, which compares outcomes
- for households where the version of the 
-\change_inserted -408277422 1530693715
-intervention 
-\change_unchanged
-video was shown where a man only provides the information to outcomes for
- households where the version of the video was shown where a woman only
- provides the information; and M2, which compares outcomes for households
- where the version of the video was shown where a man only provides the
- information to outcomes for households where the version of the video was
- shown where a 
-\change_deleted -408277422 1530693750
-couple 
-\change_inserted -408277422 1530693757
-a man and a woman - a couple - 
-\change_unchanged
-provides the information.
+ for households where the version of the intervention video was shown where
+ a male actor only provides the information to outcomes for households where
+ the version of the video was shown where a female actress only provides
+ the information; and M2, which compares outcomes for households where the
+ version of the video was shown where a male actor only provides the information
+ to outcomes for households where the version of the video was shown where
+ a male actor and a female actress - a couple - provides the information.
  We look at outcomes both at the household level as well as on the individual
  level and pay particular attention to the impact on intra-household decision
  making.
  We start by checking if changing gender attributes affect household level
  outcome and then look at individual outcomes.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-I am already starting to doubt again on the comparison groups/hypotheses
- tested.
- The individual versus jointly comparison does not come out of these separate
- comparisons.
- We also do not compare eg.
- male only to female only + couple (female involved).
- Finally, maybe we should bring in the gender homophily hypothesis again,
- because our design allows for testing this, and no result is also a result...
- 
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection*
-Household level consequences of changing gender attributes
-\change_inserted -408277422 1530696775
- of the information intervention
-\change_unchanged
-
+Household level consequences of changing gender attributes of the information
+ intervention
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted -408277422 1530693871
-Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:R_hh_know"
-
-\end_inset
-
- shows
-\change_inserted -408277422 1530693849
- First, we assess
-\change_unchanged
- the effect of changing who the information is given to on the likelihood
- that at least one of the spouses knows the correct answer to the respective
- question, thus assessing the effect of changing the recipient of the video
- on 
+First, we assess the effect of changing who the information is given to
+ on the likelihood that at least one of the spouses knows the correct answer
+ to the respective question, thus assessing the effect of changing the recipient
+ of the video on 
 \series bold
 household level knowledge
-\change_inserted -408277422 1530693906
-
 \series default
 .
  Results are shown in Table 
@@ -6518,63 +6277,40 @@ reference "tab:R_hh_know"
 
 \end_inset
 
- 
-\change_unchanged
-.
+ .
  Averages for the status quo, i.e.
- where information was targeted to the 
-\change_deleted -408277422 1530693913
-male
-\change_inserted -408277422 1530693913
-man
-\change_unchanged
- only within the household, is given in the first column.
+ where information was targeted to the man only within the household, is
+ given in the first column.
  We see for example that in households where the video was shown to the
- male co-head only, 
-\change_inserted -408277422 1530693927
-both 
-\change_unchanged
-the male or female co-head knew about optimal maize spacing in 29.5 percent
- of households.
+ male co-head only, the male or female co-head knew about optimal maize
+ spacing in 29.5 percent of households.
  Interestingly, this likelihood is 5 percentage points lower in households
- where only the female co-head was shown a video (difference with 
-\change_inserted -408277422 1530693966
-man only 
-\change_unchanged
-recipient is 
-\change_deleted -408277422 1530693977
-male only group
-\change_unchanged
- reported in column 2 and associated p-value in column 3).
+ where only the female co-head was shown a video (difference with man only
+ recipient is reported in column 2 and associated p-value in column 3).
  Even though we find no significant difference between the two groups on
  any of the other questions, the index does confirm that household level
  knowledge is lower in households where the video was shown to the woman
  only than in households where the video was shown to the man only
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-How can this be explained? Is this because women have lower learning capacity
- (which we could investigate by including women education at baseline in
- the regression)?
-\change_inserted -408277422 1530694040
- or, one explanation could be that the man does
-\change_unchanged
- 
-\change_inserted -408277422 1530694238
-listen/believe his wife - so he did not learn from his wife - hence household
- level knowledge did not increase; alternatively, we believe video also
- reinvigorates previous knowledge, but if women are generally less well
- informed about agronomic practices (as they are generally not targeted
- by extension), then women would learn less (and can transfer less to husband
- as well): hence lower household level knowledge
-\change_unchanged
-
+How can this be explained? or, one explanation could be that the man does
+ listen/believe his wife - so he did not learn from his wife - hence household
+ level knowledge did not increase (no, this is the version where not both
+ need to know it, but only one of the spouses knowing is enough to consider
+ the household is knowledgeable)
 \end_layout
 
 \end_inset
 
 .
+ This may be because women are generally less educated than men, which may
+ affect their ability to learn from the video.
+ In addition, we expect that our video reinvigorates previous knowledge,
+ but if women are generally less well informed about agronomic practices
+ (as they are generally not targeted by extension), then women would learn
+ less.
  Column 4 in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -6599,19 +6335,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Impact of 
-\change_inserted -408277422 1530694539
-the gender composition of 
-\change_unchanged
-recipient
-\change_inserted -408277422 1530694331
-s
-\change_unchanged
- 
-\change_inserted -408277422 1530694495
-of the information intervention 
-\change_unchanged
-on household level knowledge
+Impact of the gender composition of recipients of the information intervention
+ on household level knowledge
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:R_hh_know"
@@ -6767,7 +6492,7 @@ Knows when best to spray against Armyworm 		&	0.339	&	-0.039	&	0.388	&	-0.037	&	
 
 \begin_layout Plain Layout
 
-Knowledge index		&	0.036	&	-0.072	&	0.001	&	0.014	&	0.515	
+Knowledge index		&	0.036	&	-0.072	&	0.001***	&	0.014	&	0.515	
 \backslash
 
 \backslash
@@ -6865,52 +6590,16 @@ reference "tab:M_hh_know-1"
 
 \end_inset
 
- shows the effect of changing the messenger from 
-\change_deleted -408277422 1530694267
-male
-\change_inserted -408277422 1530694267
-man
-\change_unchanged
- to 
-\change_deleted -408277422 1530694270
-female
-\change_inserted -408277422 1530694270
-woman
-\change_unchanged
- (difference in column 2 and p-value in column 3) and from 
-\change_deleted -408277422 1530694275
-male
-\change_inserted -408277422 1530694275
-man
-\change_unchanged
- to couple (difference in column 4, p-value in column 5) on household level
- knowledge.
+ shows the effect of changing the messenger from man to woman (difference
+ in column 2 and p-value in column 3) and from man to couple (difference
+ in column 4, p-value in column 5) on household level knowledge.
  The likelihood that at least one of the spouses knows the correct spacing
  of maize is about 25.9 percent if the information was provided by a man.
  This is about four percentage points higher when the woman provides the
  information, but the difference is not statistically significant at the
  5 percent level.
- More generally, we do not find that the changing the messenger from 
-\change_deleted -408277422 1530694294
-male
-\change_inserted -408277422 1530694294
-man
-\change_unchanged
- only to 
-\change_deleted -408277422 1530694296
-female
-\change_inserted -408277422 1530694297
-woman
-\change_unchanged
- only or from 
-\change_deleted -408277422 1530694300
-m
-\change_inserted -408277422 1530694300
-man
-\change_deleted -408277422 1530694301
-ale
-\change_unchanged
- only to couple affects household level knowledge.
+ More generally, we do not find that the changing the messenger from man
+ only to woman only or from man only to couple affects household level knowledge.
  
 \end_layout
 
@@ -6924,15 +6613,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Impact of 
-\change_inserted -408277422 1530694518
-the gender composition of the 
-\change_unchanged
-messenger 
-\change_inserted -408277422 1530694479
-in the information intervention 
-\change_unchanged
-on household level knowledge
+Impact of the gender composition of the messenger in the information interventio
+n on household level knowledge
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:M_hh_know-1"
@@ -7180,28 +6862,11 @@ Changing recipient and messenger of video information campaigns may also
 \series bold
 adoption of practices
 \series default
- a
-\change_deleted -408277422 1530694410
-s
-\change_inserted -408277422 1530694411
-t
-\change_unchanged
- the household level.
+ at the household level.
  Therefore, for each of the practices, we compare adoption between the different
  groups (recipient is male co-head only, recipient is female co-head only,
- recipient is couple; and messenger is 
-\change_deleted -408277422 1530694425
-male
-\change_inserted -408277422 1530694425
-man
-\change_unchanged
- only, messenger is 
-\change_deleted -408277422 1530694427
-female
-\change_inserted -408277422 1530694428
-woman
-\change_unchanged
- only, messenger is couple).
+ recipient is couple; and messenger is man only, messenger is woman only,
+ messenger is couple).
  At this level, we define adoption to happen when at least one of the spouses
  indicates a particular practice or technology was used on at least one
  maize plot.
@@ -7234,26 +6899,13 @@ reference "tab:R_hh_pract"
  the video are implementing improved spacing practices that are explained
  in the video.
  This is 2.4 percentage points less in households where the video was only
- shown to the 
-\change_deleted -408277422 1530694556
-female
-\change_inserted -408277422 1530694557
-woman
-\change_unchanged
-.
+ shown to the woman.
  About half of the households in the comparison group report that they use
  fertilizer on at least one plot.
  This is about 10 percent higher if the couple was targeted with the information.
- The proportion of households that report combining 
-\change_inserted -408277422 1530694573
-improved 
-\change_unchanged
-seed
-\change_inserted -408277422 1530694574
-s
-\change_unchanged
- and fertilizer is also slightly higher among households where the video
- was shown to both spouses together.
+ The proportion of households that report combining improved seeds and fertilize
+r is also slightly higher among households where the video was shown to
+ both spouses together.
  However, none of the differences remains significant after correcting for
  multiple comparisons.
 \end_layout
@@ -7268,14 +6920,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530694617
 Impact of the gender composition of the recipients of the information interventi
-on 
-\change_deleted -408277422 1530694620
-Impact of recipient
-\change_unchanged
- on household level adoption
+on on household level adoption
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:R_hh_pract"
@@ -7533,27 +7179,11 @@ reference "tab:M_hh_pract"
  This percentage seems to be slightly higher if the information was provided
  by a woman.
  However, after controlling for FWER, the difference becomes insignificant.
+ The fourth and fifth columns also reveal no difference between adoption
+ at the household level depending on whether the messenger is a man only
+ or a couple.
  We conclude that there is no impact on household level adoption from changing
  the messenger attribute of the video messages.
-
-\change_inserted -408277422 1530694647
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530694659
-what about couple messenger vs man messenger?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -7566,16 +7196,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_deleted -408277422 1530694601
-Impact of messeng
-\change_inserted -408277422 1530694598
 Impact of the gender composition of the messenger in the information interventio
-n
-\change_deleted -408277422 1530694597
-er
-\change_unchanged
- on household level adoption
+n on household level adoption
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:M_hh_pract"
@@ -7803,11 +7425,8 @@ note: The comparison group consists of households where the video in which
 \end_layout
 
 \begin_layout Standard
-Finally, we also look at the impact of changing the gender attributes
-\change_inserted -408277422 1530694673
- of the information intervention
-\change_unchanged
- on household level 
+Finally, we also look at the impact of changing the gender attributes of
+ the information intervention on household level 
 \series bold
 production
 \series default
@@ -7815,19 +7434,7 @@ production
  In particular, we first look at the total amount of maize produced within
  the household.
  This is calculated by summing amounts from each plot and taking the average
- of amounts reported by the 
-\change_deleted -408277422 1530694683
-man
-\change_inserted -408277422 1530694686
-male co-head
-\change_unchanged
- and the 
-\change_deleted -408277422 1530694688
-woman
-\change_inserted -408277422 1530694691
-female co-head
-\change_unchanged
-.
+ of amounts reported by the male co-head and the female co-head.
  The area allocated to maize in each household was determined in a similar
  fashion.
  We sum area of the different maize plots as reported by each of both spouses
@@ -7853,28 +7460,10 @@ reference "tab:R_hh_prod"
  Average outcomes for the subgroup where the video was shown to the man
  only are again reported in the first column.
  Differences in outcomes between this group and outcomes in households where
- the video was shown to the 
-\change_deleted -408277422 1530694724
-female
-\change_inserted -408277422 1530694724
-woman
-\change_unchanged
- alone are in the second table.
+ the video was shown to the woman alone are in the second table.
  P-values, reported in the third column, indicate that except maybe for
  the subjective indicator, production does not respond to changing the recipient
- from 
-\change_deleted -408277422 1530694732
-male
-\change_inserted -408277422 1530694732
-man
-\change_unchanged
- to 
-\change_deleted -408277422 1530694734
-female
-\change_inserted -408277422 1530694735
-woman
-\change_unchanged
-.
+ from man to woman.
  Similarly, comparing male recipient households to households where the
  video was shown to the couple results in no differences in production related
  outcomes measured at the household level, as reported in columns four and
@@ -7891,14 +7480,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_deleted -408277422 1530694762
-Impact of recipient 
-\change_inserted -408277422 1530694764
 Impact of the gender composition of the recipients of the information interventi
-on 
-\change_unchanged
-on household level production
+on on household level production
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:R_hh_prod"
@@ -8147,13 +7730,8 @@ s related to the person(s) delivering the information.
  Again, the first columns shows household level outcomes for the households
  where the video that features a male actor was shown.
  The second column shows the difference with households where the video
- with the female 
-\change_deleted -408277422 1530694796
-actor
-\change_inserted -408277422 1530694797
-actress
-\change_unchanged
- was shown, and the third column shows corresponding p-values.
+ with the female actress was shown, and the third column shows corresponding
+ p-values.
  There are no significant difference between the two groups.
  Also when comparing to households where the video featuring a couple was
  shown, no differences can be detected (columns 4 and 5).
@@ -8169,14 +7747,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530694779
 Impact of the gender composition of the messenger in the information interventio
-n
-\change_deleted -408277422 1530694778
-Impact of messenger 
-\change_unchanged
-on household level production
+non household level production
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:M_hh_prod"
@@ -8413,28 +7985,18 @@ note: The comparison group consists of households where the video in which
 \end_layout
 
 \begin_layout Subsection*
-Impact at the individual level
-\change_inserted -408277422 1530696788
- of changing gender attributes of the information intervention
-\change_unchanged
-
+Impact at the individual level of changing gender attributes of the information
+ intervention
 \end_layout
 
 \begin_layout Standard
 Household level outcomes may mask intra-household dynamics related to the
- treatment
-\change_inserted -408277422 1530694990
-s
-\change_unchanged
-.
+ treatments.
  For instance, woman may have an increased likelihood of using fertilizer
  on some plots, while men may reduce fertilizer use on other plots, leading
  to no effect at the household level.
- We thus dig deeper into individual level outcomes
-\change_inserted -408277422 1530695035
- as a result of changing the gender attributes of the information intervention
-\change_unchanged
-.
+ We thus dig deeper into individual level outcomes as a result of changing
+ the gender attributes of the information intervention.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -8456,13 +8018,7 @@ reference "tab:R_ind_know"
  The top panel presents responses to the multiple choice questions for the
  male co-head, the bottom panel for female co-head.
  We find that within households where the video was shown to the male co-head
- only, 26.2 percent of men 
-\change_deleted -408277422 1530695351
-knew
-\change_inserted -408277422 1530695355
-were right about the
-\change_unchanged
- recommended maize spacing.
+ only, 26.2 percent of men were right about the recommended maize spacing.
  As expected, if the video was only shown to the female co-head, significantly
  less men were able to answer correctly: the percentage of correct responses
  decreases by 14.3 percentage points.
@@ -8472,26 +8028,8 @@ were right about the
  the question correctly without having seen the video (12.6) percent.
  Also according to expectations, showing the video to the female co-head
  increases her chance of answering correct.
- However, the effect is only half of the corresponding effect for men
-\change_inserted -408277422 1530695383
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530695415
-see my comment above about reinvigorating previous knowledge (which may
- have been less among women)
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-.
+ However, the effect is only half of the corresponding effect for men.
+ This is consistent with the household level findings reported above.
  
 \end_layout
 
@@ -8511,13 +8049,8 @@ s where the video was shown to the couple, we find no significant difference.
 
 \begin_layout Standard
 We find a similar pattern for awareness that modern inputs are best combined.
- When m
-\change_deleted -408277422 1530695475
-a
-\change_inserted -408277422 1530695475
-e
-\change_unchanged
-n see the video, they know the correct answer in about 90 percent of cases.
+ When men see the video, they know the correct answer in about 90 percent
+ of cases.
  However, if men were not treated, the proportion is only 81 percent.
  Women who did not see the video know that combining inputs is better in
  about 82 percent of cases.
@@ -8544,14 +8077,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_deleted -408277422 1530695204
-Impact of recipient 
-\change_inserted -408277422 1530695204
 Impact of the gender composition of the recipients of the information interventi
-on 
-\change_unchanged
-on individual level knowledge
+on on individual level knowledge
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:R_ind_know"
@@ -8876,27 +8403,12 @@ reference "tab:Agreement-about-maize"
  reports in the top panel that about 45.1 percent of men in households where
  the video was shown to only the man will generally tell their wife if the
  do not agree with a particular practice (first column).
- Showing the video to the 
-\change_deleted -408277422 1530695549
-wife
-\change_inserted -408277422 1530695550
-woman
-\change_unchanged
- only instead of to the man 
-\change_inserted -408277422 1530695554
-only 
-\change_unchanged
-significantly reduces the likelihood that the man tells his wife if he disagrees
- (second column).
+ Showing the video to the woman only instead of to the man only significantly
+ reduces the likelihood that the man tells his wife if he disagrees (second
+ column).
  If the video was shown to the couple, the likelihood that the man tell
- 
-\change_inserted -408277422 1530695567
-his
-\change_deleted -408277422 1530695566
-the
-\change_unchanged
- wife if he disagrees is the same as the likelihood when the video was shown
- to the man only.
+ his wife if he disagrees is the same as the likelihood when the video was
+ shown to the man only.
  
 \end_layout
 
@@ -8907,35 +8419,13 @@ The next question tries to capture how disagreement is resolved.
  We see that in the comparison group where men were shown the video, about
  64 percent indicate that they then discuss the issue and come to a conclusion
  that is mutually acceptable (as opposed to situations in which the man
- either ignored 
-\change_inserted -408277422 1530695610
-his wife
-\change_deleted -408277422 1530695609
-the woman 
-\change_unchanged
-or the man simply did what 
-\change_deleted -408277422 1530695619
-the
-\change_unchanged
- 
-\change_deleted -408277422 1530695614
-other woman
-\change_inserted -408277422 1530695615
-his wife
-\change_unchanged
- 
-\change_deleted -408277422 1530695624
-commanded
-\change_inserted -408277422 1530695627
-suggested
-\change_unchanged
-)
+ either ignored his wife or the man simply did what his wife suggested)
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Spouses that indicate they do not tell the other spouse if they disagree
- are considered as cases where no agreement is reached.
+ were considered as cases where no agreement is reached.
 \end_layout
 
 \end_inset
@@ -8943,95 +8433,31 @@ Spouses that indicate they do not tell the other spouse if they disagree
 .
  We further see that in households where the video was shown to both spouses
  together, the likelihood that they come to a mutually satisfying solution
- after the man tells 
-\change_deleted -408277422 1530695652
-the
-\change_inserted -408277422 1530695652
-his
-\change_unchanged
- wife he does not agree increases by 3.9 percentage points, but the difference
- is not significant at the 5 percent level.
+ after the man tells his wife he does not agree increases by 3.9 percentage
+ points, but the difference is not significant at the 5 percent level.
  
 \end_layout
 
 \begin_layout Standard
-The likelihood that the women will tell 
-\change_deleted -408277422 1530695661
-the
-\change_inserted -408277422 1530695662
-her
-\change_unchanged
- husband that she disagrees is almost 6 percentage points lower than the
- likelihood that the man tells 
-\change_deleted -408277422 1530695668
-the
-\change_inserted -408277422 1530695668
-his
-\change_unchanged
- wife.
- The fact that the woman is empowered with information 
-\change_inserted -408277422 1530695676
-through the video 
-\change_unchanged
-seems insufficient to change this.
+The likelihood that the women will tell her husband that she disagrees is
+ almost 6 percentage points lower than the likelihood that the man tells
+ his wife.
+ The fact that the woman is empowered with information through the video
+ seems insufficient to change this.
  However, if the video was shown to the couple, the likelihood that the
  woman speaks up increases by almost 12 percent.
- The follow up question on the woman's perspective
-\change_inserted -408277422 1530695770
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530695808
-is this the same question 
-\begin_inset Quotes eld
-\end_inset
-
-how the wife generally responds when the male co-head disagrees
-\begin_inset Quotes erd
-\end_inset
-
- ; or is it 
-\begin_inset Quotes eld
-\end_inset
-
-how the husband generally responds when the female co-head disagrees
-\begin_inset Quotes erd
-\end_inset
-
-? 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- on how disagreement is resolved also indicates that the likelihood that
- they come to an agreement is higher if the video was shown to both spouses,
- although also here, the difference is not significant at the 5 percent
- level.
+ There is a similar follow up question on the woman's perspective on how
+ disagreement is resolved.
+ In particular, we ask the female co-head how her husband generally responds
+ if she disagrees.
+ We find that women indicate that that the likelihood that they come to
+ an agreement is higher if the video was shown to both spouses, although
+ also here, the difference is not significant at the 5 percent level.
  The fact that the woman does not tell the man she disagrees if she has
- more information than him may indicate that she thinks 
-\change_inserted -408277422 1530695950
-that sharing information is not appropriate or useful for instance because
- norms prevent her from opposing her husband's opinion or because she thinks
- her husband 
-\change_deleted -408277422 1530695894
-the man
-\change_unchanged
- will not believe her
-\change_deleted -408277422 1530695826
-e
-\change_unchanged
- 
-\change_deleted -408277422 1530695943
-anyway
-\change_unchanged
-.
+ more information than him may indicate that she thinks that sharing information
+ is not appropriate or useful for instance because norms prevent her from
+ opposing her husband's opinion or because she thinks her husband will not
+ believe her.
 \end_layout
 
 \begin_layout Standard
@@ -9091,12 +8517,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Consulting among spouses about maize farming
-\change_inserted -408277422 1530696030
- by gender composition of information treatment recipients and messenger
- 
-\change_unchanged
-
+Consulting among spouses about maize farming by gender composition of informatio
+n treatment recipients and messenger 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Agreement-about-maize"
@@ -9373,46 +8795,14 @@ Decision making about adoption
 \end_layout
 
 \begin_layout Standard
-We also 
-\change_deleted -408277422 1530696068
-inquired about
-\change_inserted -408277422 1530696070
-looked into
-\change_unchanged
- the decision making processes related to the adoption of different maize
- growing practices and the use of inputs
-\change_inserted -408277422 1530696365
- as a result of changing the gender composition of the information intervention
- recipients and messengers
-\change_unchanged
-.
-
-\change_inserted -408277422 1530696441
+We also looked into the decision making processes related to the adoption
+ of different maize growing practices and the use of inputs as a result
+ of changing the gender composition of the information intervention recipients
+ and messengers.
  We focus on the former, as effects related to the messengers are largely
- absent (results are presented in the annex).
-
-\change_unchanged
- For 
-\change_inserted -408277422 1530696079
-a 
-\change_unchanged
-range of practices and inputs, we asked both spouses who decided 
-\change_deleted -408277422 1530696101
-to
-\change_inserted -408277422 1530696103
-about the
-\change_unchanged
- use 
-\change_deleted -408277422 1530696107
-the
-\change_inserted -408277422 1530696108
-of a
-\change_unchanged
- particular practice or input 
-\change_deleted -408277422 1530696121
-that was 
-\change_unchanged
-applied on each plot.
+ absent (for completeness, results are presented in the annex).
+ For a range of practices and inputs, we asked both spouses who decided
+ about the use of a particular practice or input applied on each plot.
  Options included that (i) the husband made the decision to use a particular
  technology alone, (ii) the wife took the decision to use a particular technolog
 y alone, or (iii) both husband and wife jointly decided to use a particular
@@ -9449,14 +8839,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_deleted -408277422 1530696476
-Impact
-\change_inserted -408277422 1530696476
 Impact of the gender composition of the recipients of the information interventi
-on
-\change_unchanged
- on male decision making
+on on male decision making
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:dectechman"
@@ -9716,11 +9100,7 @@ timing first weeding
 \emph on
 Fertilizer use
 \emph default
-), improved seed
-\change_inserted -408277422 1530696525
-s
-\change_unchanged
- (
+), improved seeds (
 \emph on
 Seed use
 \emph default
@@ -9729,15 +9109,8 @@ Seed use
 Chemical use
 \emph default
 ).
- Finally, we asked who made the decision whether or not to buy 
-\change_inserted -408277422 1530696534
-improved 
-\change_unchanged
-seed
-\change_inserted -408277422 1530696530
-s
-\change_unchanged
- (
+ Finally, we asked who made the decision whether or not to buy improved
+ seeds (
 \emph on
 Buy seed
 \emph default
@@ -9783,11 +9156,7 @@ reference "tab:dectechman"
  pesticides, fungicides or herbicides without consulting his wife.
  Interestingly, we see that for almost all practices, the likelihood that
  the man decides alone decreases substantially if the video is shown to
- the woman alone or to the woman in addition to the man
-\change_inserted -408277422 1530696595
- (couple)
-\change_unchanged
-.
+ the woman alone or to the woman in addition to the man (couple).
  For the decision to use fertilizer especially, the effect is large: while
  man decide alone on about 40 percent of plots about fertilizer use, this
  proportion reduces to about 22 percent in the subgroup of households where
@@ -9808,14 +9177,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_deleted -408277422 1530696480
-Impact 
-\change_inserted -408277422 1530696482
 Impact of the gender composition of the recipients of the information interventi
-on 
-\change_unchanged
-on female decision making
+on on female decision making
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:dectechfem"
@@ -10066,11 +9429,8 @@ reference "tab:dectechfem"
  as a result of more inclusive extension is mirrored in an increase in decision
  making by women within the household.
  However, even after the increase in decision making of women when they
- are shown a video, women are still far less likely than men to decide
-\change_deleted -408277422 1530696639
-d
-\change_unchanged
- about adoption of practices on an average plot.
+ are shown a video, women are still far less likely than men to decide about
+ adoption of practices on an average plot.
  For instance, judged by the female decision index, when the male co-head
  is shown the video individually, women report they make adoption decisions
  on only 26.8 percent of plots.
@@ -10079,13 +9439,8 @@ d
  However, this is still significantly lower than the 53.3 percent of plots
  man unilaterally decide on when they are provided information.
  Female decision making also generally increases if the video was shown
- to a couple instead of only to the m
-\change_inserted -408277422 1530696660
-a
-\change_deleted -408277422 1530696660
-e
-\change_unchanged
-n, but the differences are generally not significant.
+ to a couple instead of only to the man, but the differences are generally
+ not significant.
  We can thus conclude that if women also receive information, they will
  make significantly more decisions on the use of improved agronomic practices
  and inputs, but only if this information is not also available to the husband.
@@ -10102,14 +9457,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_deleted -408277422 1530696485
-Impact
-\change_inserted -408277422 1530696485
 Impact of the gender composition of the recipients of the information interventi
-on
-\change_unchanged
- on joint decision making
+on on joint decision making
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:dectechboth"
@@ -10365,7 +9714,7 @@ reference "tab:dectechboth"
  making, with men exaggerating the number of instances where decision were
  made jointly
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 This is also something that we can investigate further by rerunning the
@@ -10376,31 +9725,12 @@ This is also something that we can investigate further by rerunning the
 
 .
  
-\change_inserted -408277422 1530696278
-
 \end_layout
 
 \begin_layout Standard
 We did not find any significant effect of changing the messenger in the
- video on the likelihood that decisions are taken by the both spouses together
-\change_inserted -408277422 1530696290
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530696302
-and on male decision making and female decision making?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-.
+ video on the likelihood that decisions are taken by the both spouses together,
+ nor on male or femal decision making.
  The results for the analysis of the messenger factor are reported in the
  annex (Tables 
 \begin_inset CommandInset ref
@@ -10427,11 +9757,7 @@ reference "tab:Mdectechboth-1"
 \end_layout
 
 \begin_layout Subsubsection*
-Adoption
-\change_inserted -408277422 1530697772
- by plot manager
-\change_unchanged
-
+Adoption by plot manager
 \end_layout
 
 \begin_layout Standard
@@ -10439,92 +9765,12 @@ In the previous section, we have looked at the impact of the video interventions
  on who decides about agricultural technology adoption.
  Here, we go one step further and look at actual adoption of the practices
  and technologies recommended in the video at the individual level.
- In particular, we compare 
-\change_inserted -408277422 1530697835
-adoption by plot manager between  treatments.
- More particularly, we compare between treatments 
-\change_unchanged
-the proportion of plots 
-\change_deleted -408277422 1530697157
-between two treatments
-\change_unchanged
- on which (i) 
-\change_inserted -408277422 1530697817
-the practice that is recommended in the video is implemented as a result
- of 
-\change_unchanged
-the husband solely ma
-\change_inserted -408277422 1530697817
-king
-\change_deleted -408277422 1530697033
-de
-\change_unchanged
- the decision to implement the practice 
-\change_deleted -408277422 1530697050
-that is recommended in the video
-\change_unchanged
-; (ii) 
-\change_inserted -408277422 1530697817
-the practice is implemented as a result of 
-\change_unchanged
-the wife solely ma
-\change_inserted -408277422 1530697817
-king
-\change_deleted -408277422 1530697094
-de t
-\change_inserted -408277422 1530697817
-t
-\change_unchanged
-he decision 
-\change_deleted -408277422 1530697097
-to
-\change_inserted -408277422 1530697817
-on its
-\change_unchanged
- implement
-\change_inserted -408277422 1530697817
-ation
-\change_unchanged
- 
-\change_deleted -408277422 1530697108
-the practice that is recommended in the video
-\change_unchanged
-; and (iii) 
-\change_inserted -408277422 1530697817
-the practice is implemented as a result of the 
-\change_unchanged
-husband and wife 
-\change_deleted -408277422 1530697192
-indicate they
-\change_unchanged
- jointly ma
-\change_deleted -408277422 1530697195
-de
-\change_inserted -408277422 1530697817
-king
-\change_unchanged
- the decision to implement 
-\change_deleted -408277422 1530697202
-a particular practice or input as recommended in the video
-\change_inserted -408277422 1530697817
-it 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530697139
-the previous sentence was not clear to me.
- please check if my corrections correctly reflect the measurement 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
+ In particular, we compare the proportion of plots between two treatments
+ on which (i) the husband solely made the decision to implement the practice
+ that is recommended in the video; (ii) the wife solely made the decision
+ to implement the practice that is recommended in the video; and (iii) husband
+ and wife indicate they jointly made the decision to implement a particular
+ practice or input as recommended in the video 
 \begin_inset Foot
 status collapsed
 
@@ -10545,30 +9791,14 @@ reference "tab:M_adopt_ind_mm-1"
 
 \end_inset
 
- for adoption 
-\change_inserted -408277422 1530697817
-individually 
-\change_unchanged
-by the male co-head 
-\change_deleted -408277422 1530697220
-individually
-\change_unchanged
-, Table 
+ for adoption individually by the male co-head , Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:M_adopt_ind_fm-1-1"
 
 \end_inset
 
- for adoption 
-\change_inserted -408277422 1530697817
-individually 
-\change_unchanged
-by the female co-head 
-\change_deleted -408277422 1530697233
-individually
-\change_unchanged
- and Table 
+ for adoption individually by the female co-head and Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:R_adopt_ind_bm-1-1-1"
@@ -10612,72 +9842,12 @@ reference "tab:M_adopt_ind_fm-1-1"
  shows that adoption of recommended practices on female managed plots is
  very low.
  Showing the video to female co-heads significantly increases the likelihood
- of adoption of recommended practices as decided by the 
-\change_deleted -408277422 1530697338
-female
-\change_inserted -408277422 1530697342
-woman individually
-\change_unchanged
-, but also here, rates of adoption remain well below those of their informed
+ of adoption of recommended practices as decided by the woman individually,
+ but also here, rates of adoption remain well below those of their informed
  male counterparts.
- For instance, women
-\change_inserted -408277422 1530697395
- individually decide and
-\change_unchanged
- 
-\change_inserted -408277422 1530697369
-use fertilizer 
-\change_deleted -408277422 1530697398
-decide and use fertilizer
-\change_unchanged
- on only 12.7 percent of plots if the woman was shown the video individually,
- as opposed to 22 percent of male adoption if the man is shown the video.
-\end_layout
-
-\begin_layout Standard
-We do find that actual adoption also depends on who gets the information.
- Impact is again strongest on male managed adoption.
- In particular, if the information is given to the 
-\change_deleted -408277422 1530697422
-female
-\change_inserted -408277422 1530697423
-woman
-\change_unchanged
- only instead of the man only, adoption by men reduces substantially.
- For instance, we see an almost 10 percentage points reduction in fertilizer
- use under male management.
- While showing the video to the couple also generally reduces male managed
- adoption rates, the results are less convincing than when we consider only
- decision making
-\change_inserted -408277422 1530697466
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530697480
-?? i do not understand the previous sentence
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Interpretation?
-\end_layout
-
-\end_inset
-
-
+ For instance, women individually decide and use fertilizer on only 12.7
+ percent of plots if the woman was shown the video individually, as opposed
+ to 22 percent of male adoption if the man is shown the video.
 \end_layout
 
 \begin_layout Standard
@@ -10690,14 +9860,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_deleted -408277422 1530695232
-Impact of recipient
-\change_inserted -408277422 1530695232
 Impact of the gender composition of the recipients of the information interventi
-on
-\change_unchanged
- on male managed adoption 
+on on male managed adoption 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:R_adopt_ind_mm"
@@ -10937,58 +10101,6 @@ note: The comparison group consists of households where the video was shown
 \end_layout
 
 \begin_layout Standard
-We also see that showing a video to the woman co-head instead of the male
- co-head increases adoption under female management
-\change_inserted -408277422 1530697520
- (i.e.
- adopted as a result of a woman's individual decision)
-\change_unchanged
-.
- However, the increase is only significant after controlling for FWER for
- the strategy to reduce striga and for the use of 
-\change_deleted -408277422 1530697529
-commercial
-\change_inserted -408277422 1530697531
-improved
-\change_unchanged
- seed
-\change_inserted -408277422 1530697532
-s
-\change_unchanged
- as opposed to recycled seed
-\change_inserted -408277422 1530697535
-s
-\change_unchanged
-
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-The indicator for the adoption of the improved seed spacing suffers from
- limited variance and should be dropped from the analysis.
-\end_layout
-
-\end_inset
-
-.
- There are indications that if the video was shown to the couple, 
-\change_deleted -408277422 1530697550
-fem
-\change_inserted -408277422 1530697556
-woman decided 
-\change_deleted -408277422 1530697558
-ale 
-\change_unchanged
-adoption of practices also increases, but mostly for practices that do not
- require money
-\change_inserted -408277422 1530697582
-, but mostly labour
-\change_unchanged
-.
- 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -10998,14 +10110,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530695243
 Impact of the gender composition of the recipients of the information interventi
-on 
-\change_deleted -408277422 1530695242
-Impact of recipient
-\change_unchanged
- on female managed adoption 
+on on female managed adoption 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:R_adopt_ind_fm-1"
@@ -11252,12 +10358,8 @@ reference "tab:R_adopt_ind_bm-1-1"
 
 \end_inset
 
- shows changes in adoption under joint management
-\change_inserted -408277422 1530697622
- (i.e.
- implemented as result of joint decision making by spouses)
-\change_unchanged
-.
+ shows changes in adoption under joint management (i.e.
+ implemented as result of joint decision making by spouses).
  There are some indications that joint adoption reduces when the video is
  shown to the woman alone as compared to when it is shown to the man alone.
  The fact that this effect was not present in table 
@@ -11268,55 +10370,38 @@ reference "tab:dectechboth"
 \end_inset
 
  suggests that there is still a big gap between decision making and adoption
- if the man is not informed
-\change_inserted -408277422 1530697665
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530697674
-add a little more explanation
-\change_unchanged
-
-\end_layout
+ if the man is not informed as presented in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:dectechfem"
 
 \end_inset
 
 
-\change_unchanged
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+add a little more explanation
+\end_layout
+
+\end_inset
+
 .
- At the same time, we see that showing the video to a couple increases 
-\change_deleted -408277422 1530697697
-joint adoption
-\change_inserted -408277422 1530697697
-adoption under joint management
-\change_unchanged
-.
+ At the same time, we see that showing the video to a couple increases adoption
+ under joint management.
  This effect, even though generally not significant after correcting for
  multiple hypothesis testing, is also less present in the corresponding
- table that only looks at decision making
-\change_inserted -408277422 1530697714
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530697717
-ref to table
-\change_unchanged
-
-\end_layout
+ table that only looks at decision making (Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:dectechboth"
 
 \end_inset
 
-
-\change_unchanged
-
+)
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Interpretation?
@@ -11338,14 +10423,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_deleted -408277422 1530695249
-Impact of recipient 
-\change_inserted -408277422 1530695249
 Impact of the gender composition of the recipients of the information interventi
-on 
-\change_unchanged
-on jointly managed adoption 
+on on jointly managed adoption 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:R_adopt_ind_bm-1-1"
@@ -11616,42 +10695,12 @@ reference "tab:R_hh_prod-1"
 
 \begin_layout Standard
 We find that, on average, production under male management reduces by about
- 26 kilos if the video was shown to the female co-head only
-\change_inserted -408277422 1530697957
-, but
-\change_deleted -408277422 1530697953
-.
- However
-\change_unchanged
-, production under management of the 
-\change_inserted -408277422 1530697936
-female
-\change_deleted -408277422 1530697938
-female
-\change_unchanged
- co-head increases dramatically (36 percent).
- Plots under joint management produce the same amount regardless of 
-\change_deleted -408277422 1530697967
-who
-\change_inserted -408277422 1530697985
-whether the male or female co-head 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530697989
-also couple?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- was shown the video.
- 
+ 26 kilos if the video was shown to the female co-head only, but, production
+ under management of the female co-head increases dramatically (36 percent).
+ Plots under joint management produce the same amount regardless of whether
+ the male or female co-head was shown the video.
+ Showing the video to the couple instead of to the man only does not affect
+ production regardless of who manages.
 \end_layout
 
 \begin_layout Standard
@@ -11662,68 +10711,24 @@ On average, the area planted under male management is about 0.3 acres.
  was shown the video and a corresponding increase in the area under female
  management, which was to be expected as we already saw that women increase
  decision making after receiving information
-\change_inserted -408277422 1530698059
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1530698108
 which means the area over which she makes decisions increases - not necessarily
  the area farmed
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 .
  
 \end_layout
 
 \begin_layout Standard
-Similarly, we see that 
-\change_deleted -408277422 1530698136
-on an average one acre plot, about
-\change_inserted -408277422 1530698155
-average yield is
-\change_unchanged
- 200 kg
-\change_inserted -408277422 1530698143
-/acre
-\change_deleted -408277422 1530698151
- is produced
-\change_unchanged
- under male management, 70 kg
-\change_inserted -408277422 1530698160
-/acre
-\change_unchanged
- under female management, and about 125 kg
-\change_inserted -408277422 1530698165
-/acre
-\change_unchanged
- under joint management
-\change_inserted -408277422 1530698254
- when the man is shown the video
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530698257
-correct?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-.
+Similarly, we see that average yield is 200 kg/acre under male management,
+ 70 kg/acre under female management, and about 125 kg/acre under joint managemen
+t when the man is shown the video.
  If the video was shown to a female only, the amount produced per acre under
  male management reduces by 34 kg and the amount under female management
  increases by about 26 kg on the average one acre plot
@@ -11739,32 +10744,10 @@ I don't understand how for female production increases, land increases even
 \end_inset
 
 .
- 
-\change_inserted -408277422 1530698278
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530698289
-what about effect of couple being shown video?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-We again do not find any effect of the gender composition of the messenger
- on production outcomes 
-\change_inserted -408277422 1530698226
-by plot manager 
-\change_unchanged
-(Table 
+ Yield on plots under male management also reduces somewhat, but the effect
+ is not statistically significant.
+ We again do not find any effect of the gender composition of the messenger
+ on production outcomes by plot manager (Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:R_hh_prod-1-1"
@@ -11784,14 +10767,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_deleted -408277422 1530695254
-Impact of recipient 
-\change_inserted -408277422 1530695254
 Impact of the gender composition of the recipients of the information interventi
-on 
-\change_unchanged
-on individual level production outcomes
+on on individual level production outcomes
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:R_hh_prod-1"
@@ -12111,33 +11088,21 @@ Conclusion
 \end_layout
 
 \begin_layout Standard
-In a world characterized by incomplete and asymmetric information, 
-\change_inserted -408277422 1530698394
-and intra-household gender related constraints to efficiency, 
-\change_unchanged
-targeted efforts to fill knowledge gaps can make a big difference 
+In a world characterized by incomplete and asymmetric information, and intra-hou
+sehold gender related constraints to efficiency, targeted efforts to fill
+ knowledge gaps can make a big difference 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "banerjee2011poor"
+key "banerjee2011poor,udry1996gender"
 
 \end_inset
 
-
-\change_inserted -408277422 1530698407
-Udry 1996
-\change_unchanged
 .
- However, not every information campaign is equally effective
-\change_inserted -408277422 1530698422
- nor inclusive
-\change_unchanged
-, and often, seemingly small attributes, such as the way it is delivered,
+ However, not every information campaign is equally effective nor inclusive,
+ and often, seemingly small attributes, such as the way it is delivered,
  who is targeted by the message and who delivers the message, can result
- in significant differences in impact
-\change_inserted -408277422 1530698452
- at the household and intra-household level
-\change_unchanged
-.
+ in significant differences in impact at the household and intra-household
+ level.
  Understanding and quantifying the importance of each of these design attributes
  through rigorous evaluation research should therefore be an essential part
  of any knowledge exchange model.
@@ -12147,134 +11112,37 @@ Udry 1996
 \begin_layout Standard
 In thus study, we evaluate the effectiveness of three complementary Information
  and Communication Technology (ICT) enabled agricultural information exchange
- approaches (short video messages, Interactive Voice Response 
-\change_inserted -408277422 1530698482
-(IVR) 
-\change_unchanged
-and sms 
-\change_deleted -408277422 1530698486
-campaings
-\change_inserted -408277422 1530698486
-campaigns
-\change_unchanged
-) that can be brought to scale relatively easily and at significantly lower
- cost than alternative modes of agricultural extension information provision.
+ approaches (short video messages, Interactive Voice Response (IVR) and
+ sms campaigns) that can be brought to scale relatively easily and at significan
+tly lower cost than alternative modes of agricultural extension information
+ provision.
  In addition, and motivated by the observation that most agricultural advisory
  services are biased toward men, this study looked at two gender related
  attributes of a stylized ICT mediated agricultural extension information
  campaign.
- 
-\change_deleted -408277422 1530698521
-The first attribute consists of the gender composition of the person or
+ The first attribute is the gender composition of the person or persons
+ to which the information is targeted.
+ The second attribute consists of the gender composition of the person or
  persons that provide the information.
- 
-\change_unchanged
-The 
-\change_deleted -408277422 1530698526
-second
-\change_inserted -408277422 1530698526
-first
-\change_unchanged
- attribute is the gender composition of the person or persons to which the
- information is targeted.
- 
-\change_inserted -408277422 1530698533
-The second attribute consists of the gender composition of the person or
- persons that provide the information.
- 
-\change_unchanged
-This allows us to test three hypotheses related to (1) the 
-\change_deleted -408277422 1530698623
-overall
-\change_unchanged
- effectiveness of the information intervention
-\change_inserted -408277422 1530698680
- and the comparative effectiveness 
-\change_deleted -408277422 1530698643
- 
-\change_inserted -408277422 1530698770
-of different dissemination technologies (H1) 
-\change_unchanged
-(2) the role of information asymmetries within 
-\change_deleted -408277422 1530698551
-the
-\change_unchanged
- 
-\change_inserted -408277422 1530698544
-farming 
-\change_unchanged
-household
-\change_inserted -408277422 1530698774
-s (H2)
-\change_unchanged
-; and (3) the 
-\change_deleted -408277422 1530698718
-effectiveness cooperative approach
-\change_inserted -408277422 1530698753
-importance of role models and projecting a cooperative approach
-\change_unchanged
- to farming
-\change_inserted -408277422 1530698779
- (H3)
-\change_unchanged
-.
-
-\change_inserted -408277422 1530698759
+ This allows us to test three hypotheses related to (1) the effectiveness
+ of the information intervention and the comparative effectiveness of different
+ dissemination technologies (H1) (2) the role of information asymmetries
+ within farming households (H2); and (3) the importance of role models and
+ projecting a cooperative approach to farming (H3).
 
 \emph on
  
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
-The various hypotheses are tested using a field experiment where the 
-\change_deleted -408277422 1530698799
-messenger
-\change_inserted -408277422 1530698800
-recipient
-\change_unchanged
- of the information and the 
-\change_deleted -408277422 1530698795
-recipient
-\change_inserted -408277422 1530698797
-messenger
-\change_unchanged
- of the information 
-\change_deleted -408277422 1530698804
-is
-\change_inserted -408277422 1530698805
-are
-\change_unchanged
- randomly altered according to a 3 by 3 factorial design
-\change_inserted -408277422 1530698865
-, in addition to a pure control group that was shown a placebo video
-\change_unchanged
-.
- The study population 
-\change_deleted -408277422 1530698811
-were
-\change_inserted -408277422 1530698812
-are
-\change_unchanged
- maize farm households in 
-\change_inserted -408277422 1530698816
-e
-\change_deleted -408277422 1530698816
-E
-\change_unchanged
-astern Uganda, from which we sampled about 3,600 couples.
- These 
-\change_deleted -408277422 1530698823
-farmers
-\change_inserted -408277422 1530698825
-farming households
-\change_unchanged
- were then shown a video 
-\change_inserted -408277422 1530698892
-with agronomic extension information 
-\change_unchanged
-according to the treatment group they were randomly assigned to.
+The various hypotheses are tested using a field experiment where the recipient
+ of the information and the messenger of the information are randomly altered
+ according to a 3 by 3 factorial design, in addition to a pure control group
+ that was shown a placebo video.
+ The study population are maize farm households in eastern Uganda, from
+ which we sampled about 3,600 couples.
+ These farm households were then shown a video with extension information
+ according to the treatment group they were randomly assigned to.
  The videos showed how inputs and improved farming practices can be used
  to increase production.
  It also explains important concepts in inter-temporal decision making.
@@ -12285,21 +11153,11 @@ according to the treatment group they were randomly assigned to.
 \end_layout
 
 \begin_layout Standard
-We find that as a result of being shown the 
-\change_inserted -408277422 1530698923
-information 
-\change_unchanged
-video
-\change_inserted -408277422 1530698932
- as compared to a placebo video
-\change_unchanged
-, farmers have increased knowledge.
+We find that as a result of being shown the information video as compared
+ to a placebo video, farmers have increased knowledge.
  We do not find incremental effects for the addition of IVR and sms reminders.
- As a result of being shown the 
-\change_inserted -408277422 1530698942
-intervention 
-\change_unchanged
-video, farmers also adopted a range of recommended practices.
+ As a result of being shown the intervention video, farmers also adopted
+ a range of recommended practices.
  We also find that farmers reduce their use of DAP or NPK and increase adoption
  of Urea (and to a lesser extent inorganic fertilizer) to engage in more
  balanced soil nutrient management.
@@ -12314,27 +11172,16 @@ video, farmers also adopted a range of recommended practices.
  Adding IVR further increases this to 526 kg/acre, but this is driven by
  an increase in production on the same area under cultivation.
  We find no effect from any intervention on self assessed well-being, nor
- on consumption expenditure
-\change_inserted -408277422 1530698972
-s
-\change_unchanged
-.
+ on consumption expenditures.
 \end_layout
 
 \begin_layout Standard
 There is some evidence that showing video only to the female co-head reduces
  household level knowledge as opposed to when the info is given to the man
  only.
- There is also some evidence that targeting the couple 
-\change_inserted -408277422 1530699000
-to view the intervention video 
-\change_unchanged
-instead of only the man leads to an increased likelihood of the use of fertilize
-r and that this fertilizer is also combined with improved seed
-\change_inserted -408277422 1530699007
-s
-\change_unchanged
-.
+ There is also some evidence that targeting the couple to view the intervention
+ video instead of only the man leads to an increased likelihood of the use
+ of fertilizer and that this fertilizer is also combined with improved seeds.
  Comparing male recipient households to households where the video was shown
  to the couple results in no differences in production related outcomes
  measured at the household level.
@@ -12343,50 +11190,22 @@ s
 \end_layout
 
 \begin_layout Standard
-When the video is shown to the couple or the woman 
-\change_inserted -408277422 1530699034
-in the household 
-\change_unchanged
-(as opposed to 
-\change_inserted -408277422 1530699058
-showing it to 
-\change_unchanged
-only the man), knowledge of the woman increases significantly, suggesting
- information does not flow from the man to the woman within the household.
+When the video is shown to the couple or the woman in the household (as
+ opposed to showing it to only the man), knowledge of the woman increases
+ significantly, suggesting information does not flow from the man to the
+ woman within the household.
  When the video was shown to couple (as opposed to only the man), women
  are more likely to speak up if they do not agree, and it is more likely
  that an agreement is reached.
- If women also receive the information
-\change_inserted -408277422 1530699090
- (alone or as part of the couple
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1530699093
-correct?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-)
-\change_unchanged
-, men are less likely to make adoption decisions unilaterally.
+ If women also receive the information (alone or as part of the couple),
+ men are less likely to make adoption decisions unilaterally.
  If women also receive information, they will make significantly more decisions
  on the use of improved agronomic practices and inputs, but only if this
  information is not also available to the husband.
  Showing the video to both spouses jointly does seem to increase the likelihood
  of joint decision making for some practices, but none is significant after
  correcting for multiple comparisons.
- Finally, on an average plot of one acre, if the video was shown to a 
-\change_deleted -408277422 1530699115
-female
-\change_inserted -408277422 1530699115
-woman
-\change_unchanged
+ Finally, on an average plot of one acre, if the video was shown to a woman
  only, the amount produced per acre under male management reduces by 34
  kg and the amount under female management increases by about 26 kg.
  We do not find that it matters if the information in the video was provided
