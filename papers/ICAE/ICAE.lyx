@@ -67,7 +67,6 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author 973716962 "DSPIELMAN"
 \end_header
 
 \begin_body
@@ -180,24 +179,6 @@ key "davis2008extension"
 
 \end_inset
 
-
-\change_inserted 973716962 1530645287
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\change_inserted 973716962 1530645288
-[ADD IN THIS CITATION: doi:10.1080/21665095.2014.924841]
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 .
  
 \end_layout
@@ -5099,72 +5080,30 @@ We now turn to the intervention's effects on production-related outcomes.
  spouse and the average between the two spouses was taken as the final estimate
  of household-level maize production.
  We find that overall, a typical household in our sample produced about
- 460 kg of maize (first column in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:yield_ag_allh"
-
-\end_inset
-
-) on an average of 1.13 acres, implying yields of 407 kg per acre.
- 
-\change_deleted 973716962 1530639654
-Taken together, we find that yields, defined as kilograms per acre, amounted
- to on average
-\change_unchanged
- 
+ 460 kg of maize on an average of 1.13 acres.
+ We further find that yields, defined as kilograms per acre, amounted to
+ on average 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-shouldn't this be 407 kg/acre?
+shouldn't this be 407 kg/acre?No.
+ In general mean(a)/mean(b) is not equal to mean(a/b).
+ The fact that 460/1.13 is 407 is a coincidence.
+ See also below that mean yield in the control group is 428, which should
+ have been lower than the overall average yield.
+ 
 \end_layout
 
 \end_inset
 
-
-\change_deleted 973716962 1530639661
 470 kg per acre.
-
-\change_unchanged
- This is much higher than yields recorded at baseline (290 kg/acre)
-\change_inserted 973716962 1530639688
- for the previous season, possibly because 
-\change_deleted 973716962 1530639689
- as 
-\change_unchanged
-the rains were better 
-\change_inserted 973716962 1530639700
-during our intervention 
-\change_unchanged
-and 
-\change_inserted 973716962 1530639707
-farmers may have given 
-\change_deleted 973716962 1530639709
-there was increased 
-\change_inserted 973716962 1530639711
-greater 
-\change_unchanged
-attention 
-\change_inserted 973716962 1530639722
-to combatting Fall Armyworm.
- 
-\change_deleted 973716962 1530639725
-for strategies to combat fall armyworm.
- 
-\change_unchanged
-Still, compared to 
-\change_inserted 973716962 1530639748
-figures recorded in 
-\change_unchanged
-FAOSTAT 
-\change_deleted 973716962 1530639737
-figures 
-\change_unchanged
-(1000 kg/acre) or figures from household survey data (typically around 600
- kg/acre), yields were below 
-\change_inserted 973716962 1530639770
-what might be considered 
+ This is much higher than yields recorded at baseline (290 kg/acre) for
+ the previous season, possibly becausethe rains were better during our intervent
+ion and farmers may have given greater attention to combatting Fall Armyworm.
+ Still, compared to figures recorded in FAOSTAT (1000 kg/acre) or figures
+ from household survey data (typically around 600 kg/acre), yields were
+ below what might be considered 
 \begin_inset Quotes eld
 \end_inset
 
@@ -5173,13 +5112,9 @@ normal
 \end_inset
 
  in Uganda.
- This 
-\change_deleted 973716962 1530639772
-normal, as 
-\change_unchanged
-is also confirmed by the fact that in only 40 percent of households at least
- one spouse reported that yields were better than a typical year on at least
- one plot.
+ This is also confirmed by the fact that in only 40 percent of households
+ at least one spouse reported that yields were better than a typical year
+ on at least one plot.
 \end_layout
 
 \begin_layout Standard
@@ -5190,186 +5125,52 @@ reference "tab:yield_ag_allh"
 
 \end_inset
 
- report results for the impact of the different
-\change_deleted 973716962 1530639800
- technologies
-\change_inserted 973716962 1530639801
-ICTs
-\change_unchanged
- with respect to 
-\change_inserted 973716962 1530639809
-production-related 
-\change_unchanged
-outcomes
-\change_deleted 973716962 1530639813
- related to production
-\change_unchanged
-.
- In the top panel we again compare outcomes of control households to 
-\change_deleted 973716962 1530639825
-outcomes of
-\change_unchanged
- households that were shown the video.
- Household
-\change_inserted 973716962 1530639829
--
-\change_deleted 973716962 1530639829
- 
-\change_unchanged
-level production, expressed in logs and trimmed 
-\change_inserted 973716962 1530639837
-at 
-\change_unchanged
-5 percent, does not differ between the two groups.
- We do find, however, that households that were 
-\change_inserted 973716962 1530639854
-shown the video 
-\change_deleted 973716962 1530639857
-exposed to the agricultural extension video 
-\change_unchanged
-seemed to cultivate smaller plots: 
-\change_deleted 973716962 1530639859
-R
-\change_inserted 973716962 1530639859
-r
-\change_unchanged
-eported acreage is 11 percent smaller among households that were shown a
- video.
+ report results for the impact of the differentICTs with respect to production-r
+elated outcomes.
+ In the top panel we again compare outcomes of control households to households
+ that were shown the video.
+ Household-level production, expressed in logs and trimmed at 5 percent,
+ does not differ between the two groups.
+ We do find, however, that households that were shown the video seemed to
+ cultivate smaller plots: reported acreage is 11 percent smaller among household
+s that were shown a video.
  However, the difference is not significant at the 5 percent level after
  controlling for FWER.
- The fact that the same 
-\change_inserted 973716962 1530639915
-quantity of output was reported on 
-\change_deleted 973716962 1530639919
-amount is cultivated on 
-\change_unchanged
-a smaller area 
-\change_inserted 973716962 1530639937
-of land means that 
-\change_deleted 973716962 1530639939
-also resulted in the fact that in 
-\change_unchanged
-households that were shown a video
-\change_inserted 973716962 1530639947
- generated
-\change_deleted 973716962 1530639948
-,
-\change_unchanged
- yields 
-\change_inserted 973716962 1530639950
-that 
-\change_unchanged
-were 14 percent higher than in control households.
- 
-\change_deleted 973716962 1530639957
-As
-\change_inserted 973716962 1530639958
-With
-\change_unchanged
- mean 
-\change_inserted 973716962 1530639964
-yields 
-\change_deleted 973716962 1530639966
-productivity 
-\change_unchanged
-in control households 
-\change_deleted 973716962 1530639968
-was
-\change_inserted 973716962 1530639968
-at
-\change_unchanged
- 428 kg/acre, this 
-\change_inserted 973716962 1530640004
-puts 
-\change_deleted 973716962 1530639979
-means
-\change_unchanged
- mean 
-\change_inserted 973716962 1530639995
-yields 
-\change_deleted 973716962 1530639999
-productivity
-\change_unchanged
- among households where the video was shown 
-\change_inserted 973716962 1530640018
-at 
-\change_deleted 973716962 1530640020
-was 
-\change_unchanged
-about 488 kg/acre.
- Further, in about 
-\change_inserted 973716962 1530640024
-39
-\change_deleted 973716962 1530640025
-38.7
-\change_unchanged
- percent of households in the control group, at least one spouse indicates
- that yields were better than in a normal year on at least one plot.
+ The fact that the same quantity of output was reported on a smaller area
+ of land means that households that were shown a video generated yields
+ that were 14 percent higher than in control households.
+ With mean yields in control households at 428 kg/acre, this puts mean yields
+ among households where the video was shown at about 488 kg/acre.
+ Further, in about 39 percent of households in the control group, at least
+ one spouse indicates that yields were better than in a normal year on at
+ least one plot.
  This is 2.7 percentage points higher among households that saw a video,
  but the difference is not significant.
-
-\change_inserted 973716962 1530640129
  A statistically significant difference between treatment and control households
  is also evident when measured with the production index.
+ Overall, this implies that the video-enabled intervention had a significant
+ and positive effect on production-related outcomes and the intensification
+ of maize production.
  
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-Overall, 
-\change_inserted 973716962 1530640140
-this implies that 
-\change_deleted 973716962 1530640144
-we find that 
-\change_unchanged
-the video
-\change_inserted 973716962 1530640153
--enabled
-\change_unchanged
- 
-\change_deleted 973716962 1530640149
-information 
-\change_unchanged
-intervention had a significant and positive effect on production
-\change_inserted 973716962 1530640051
--related
-\change_unchanged
- outcomes
-\change_inserted 973716962 1530640178
- and the intensification of maize production.
- 
-\change_deleted 973716962 1530640185
-, as is evident from the positive treatment effect of the production index.
- We can conclude that, at the household level, the videos thus seemed to
- positively affect the intensification of maize.
- 
-\change_inserted 973716962 1530640202
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted 973716962 1530640281
-Not sure if we really want to say this; if anything, we should be thinking
- about whether we can disentangle the effects of these two impact pathways,
- e.g., conditional on a hh's correct knowledge scores on the business-related
- question, do we see higher production-related outcomes associated with
- the video treatment?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 Again, this can be traced back to the fact that in the video, it is emphasized
  that it is better to combine inputs and practices, and that as such, it
  is often better to start small.
  In addition, the video promotes a more commercial attitude towards farming,
  where investments are made at a small scale to be scaled up over time.
+ Not sure if we really want to say this; if anything, we should be thinking
+ about whether we can disentangle the effects of these two impact pathways,
+ e.g., conditional on a hh's correct knowledge scores on the business-related
+ question, do we see higher production-related outcomes associated with
+ the video treatment?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5448,19 +5249,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-	&	
-\change_deleted 973716962 1530640544
-m
-\change_inserted 973716962 1530640544
-M
-\change_unchanged
-ean	&	ATE	&		
-\change_inserted 973716962 1530640547
-p
-\change_deleted 973716962 1530640547
-P
-\change_unchanged
--value	
+	&	Mean	&	ATE	&		p-value	
 \backslash
 
 \backslash
@@ -5579,19 +5368,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-	&	
-\change_inserted 973716962 1530640538
-M
-\change_deleted 973716962 1530640538
-m
-\change_unchanged
-ean	&	ATE	&		
-\change_inserted 973716962 1530640540
-p
-\change_deleted 973716962 1530640540
-P
-\change_unchanged
--value	
+	&	Mean	&	ATE	&		p-value	
 \backslash
 
 \backslash
@@ -5710,19 +5487,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-	&	
-\change_inserted 973716962 1530640531
-M
-\change_deleted 973716962 1530640530
-m
-\change_unchanged
-ean	&	ATE	&		
-\change_deleted 973716962 1530640535
-P
-\change_inserted 973716962 1530640535
-p
-\change_unchanged
--value	
+	&	Mean	&	ATE	&		p-value	
 \backslash
 
 \backslash
@@ -5851,27 +5616,14 @@ scriptsize
 
 \begin_layout Plain Layout
 
-\change_inserted 973716962 1530640515
-
-N
-\change_deleted 973716962 1530640515
-n
-\change_unchanged
-ote: In the first column, means (and standard deviations) in the comparison
+Note: In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
  The other columns report differences (and standard errors of the differences)
  between the comparison group and each treatment group, and corresponding
  p-values based on randomization inference (10,000 permutations); ***, **
- and * denote 
-\change_inserted 973716962 1530640527
-that the 
-\change_unchanged
-difference is signficant at the 0.1, 1 and 5 percent level
-\change_inserted 973716962 1530640521
-, respectively,
-\change_unchanged
- after correcting for multiple hypothesis testing using a family-wise sharp
- null (10,000 permutations).
+ and * denote that the difference is signficant at the 0.1, 1 and 5 percent
+ level, respectively, after correcting for multiple hypothesis testing using
+ a family-wise sharp null (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -5894,97 +5646,22 @@ reference "tab:yield_ag_allh"
 
 \end_inset
 
-, we report 
-\change_inserted 973716962 1530640289
-the 
-\change_unchanged
-additional production effects of adding IVR 
-\change_inserted 973716962 1530640450
-and SMS 
-\change_unchanged
-to the video intervention.
-
-\change_deleted 973716962 1530640301
- Also here, w
-\change_inserted 973716962 1530640301
-W
-\change_unchanged
-e find a significant effect on productivity: the IVR intervention adds another
- 7.9 percent, 
-\change_inserted 973716962 1530640338
-leading to an increase 
-\change_deleted 973716962 1530640342
-increasing
-\change_inserted 973716962 1530640342
-in
-\change_unchanged
- maize yields up to 526 kg/acre
-\change_inserted 973716962 1530640461
-, while the addition SMS reminders generates no effects
-\change_unchanged
-.
- 
-\change_deleted 973716962 1530640466
-However, i
-\change_inserted 973716962 1530640466
-I
-\change_unchanged
-n contrast to the 
-\change_inserted 973716962 1530640471
-production-related 
-\change_unchanged
-effect from the video
-\change_inserted 973716962 1530640476
- described above
-\change_unchanged
-, the increase 
-\change_deleted 973716962 1530640479
-now
-\change_inserted 973716962 1530640483
-reported here
-\change_unchanged
- seems to be driven by an increase in production 
-\change_inserted 973716962 1530640398
-and not by a reduction in area under maize cultivation.
- 
-\change_deleted 973716962 1530640395
-while area planted reduces much less.
- 
-\change_unchanged
-This may be explained by the fact that the IVR system is more focused on
+, we report the additional production effects of adding IVR and SMS to the
+ video intervention.We find a significant effect on productivity: the IVR
+ intervention adds another 7.9 percent, leading to an increase in maize yields
+ up to 526 kg/acre, while the addition SMS reminders generates no effects.
+ In contrast to the production-related effect from the video described above,
+ the increase reported here seems to be driven by an increase in production
+ and not by a reduction in area under maize cultivation.
+ This may be explained by the fact that the IVR system is more focused on
  technical information on how to implement certain practices or apply certain
- technologies, instead of the more holistic message 
-\change_deleted 973716962 1530640368
-we bring
-\change_inserted 973716962 1530640370
-conveyed
-\change_unchanged
- in the video.
- 
-\change_deleted 973716962 1530640406
-For instance, w
-\change_inserted 973716962 1530640406
-W
-\change_unchanged
-hile video lends itself well to promoting a certain approach to farming
+ technologies, instead of the more holistic message conveyed in the video.
+ While video lends itself well to promoting a certain approach to farming
  (ie.
- more commercially oriented
-\change_inserted 973716962 1530640413
- farming
-\change_unchanged
-, 
-\change_inserted 973716962 1530640415
-or 
-\change_unchanged
-investing now to increase yields in the future), these types of messages
- are much more difficult to convey using IVR.
+ more commercially oriented farming, or investing now to increase yields
+ in the future), these types of messages are much more difficult to convey
+ using IVR.
  
-\change_deleted 973716962 1530640487
-Finally, in the third panel, we report the impact of adding SMS reminders
- to the video and IVR intervention on production outcomes.
- We do not find any additional effects.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Subsubsection*
@@ -5997,13 +5674,9 @@ Impact on household welfare
 Finally, we look at the impact of the information interventions on measures
  of well-being at the household level.
  Welfare is captured though self-assessment, as well as though consumption.
- We 
-\change_deleted 973716962 1530640572
-have 
-\change_unchanged
-asked these questions only to the woman within the household, as we assume
- she has a better idea of consumption expenditure within the household and
- the general level of well-being.
+ We asked these questions only to the woman within the household, as we
+ assume she has a better idea of consumption expenditure within the household
+ and the general level of well-being.
  First, we asked if they feel their household is better off (as opposed
  to equally well off or worse off) in terms of income and consumption than
  the average households in their community.
@@ -6020,60 +5693,10 @@ reference "tab:Impact_welfare"
  video intervention, but the difference was not statistically significant.
  Similarly, we asked the female in the household to indicate if they thought
  they were better off than six months ago.
- We find that among the
-\change_inserted 973716962 1530640617
- control
-\change_unchanged
- households 
-\change_deleted 973716962 1530640622
-that did not get the agricultural extension video
-\change_unchanged
-, 
-\change_deleted 973716962 1530640625
-39.7
-\change_inserted 973716962 1530640625
-40
-\change_unchanged
- percent 
-\change_deleted 973716962 1530640630
-of households 
-\change_unchanged
-indicated they 
-\change_deleted 973716962 1530640634
-did 
-\change_inserted 973716962 1530640635
-were 
-\change_unchanged
-better 
-\change_inserted 973716962 1530640638
-off 
-\change_unchanged
-than 
-\change_inserted 973716962 1530640643
-six months ago
-\change_deleted 973716962 1530640646
-half a year earlier
-\change_unchanged
-, and this percentage was the same among the households that 
-\change_inserted 973716962 1530640652
-were shown 
-\change_deleted 973716962 1530640654
-did get to see 
-\change_unchanged
-the video.
- We also 
-\change_inserted 973716962 1530640662
-asked 
-\change_deleted 973716962 1530640663
-include 
-\change_unchanged
-standard self
-\change_inserted 973716962 1530640658
--
-\change_deleted 973716962 1530640657
- 
-\change_unchanged
-assessed food security questions
+ We find that among the control households , 40 percent indicated they were
+ better off than six months ago, and this percentage was the same among
+ the households that were shown the video.
+ We also asked standard self-assessed food security questions
 \begin_inset Note Note
 status collapsed
 
@@ -6083,76 +5706,21 @@ Where are these taken from
 
 \end_inset
 
-
-\change_inserted 973716962 1530640675
-, specifically, whether the 
-\change_deleted 973716962 1530640676
-.
- We asked if 
-\change_unchanged
-household
-\change_deleted 973716962 1530640678
-s
-\change_unchanged
- 
-\change_inserted 973716962 1530640679
-was 
-\change_deleted 973716962 1530640680
-were 
-\change_unchanged
-generally able to eat 
-\change_deleted 973716962 1530640688
-their
-\change_inserted 973716962 1530640688
-its
-\change_unchanged
- preferred food
-\change_inserted 973716962 1530640697
-.
- Approximately 
-\change_deleted 973716962 1530640700
-, and 
-\change_inserted 973716962 1530640704
-43
-\change_deleted 973716962 1530640705
-42.6
-\change_unchanged
- percent of households responded affirmatively.
+, specifically, whether the household was generally able to eat its preferred
+ food.
+ Approximately 43 percent of households responded affirmatively.
  We also asked if households were generally able to eat enough food and
  found this to be the case in almost 60 percent of baseline households.
  We found that, judged by these questions, the video intervention seemed
- to 
-\change_inserted 973716962 1530640738
-have no effect on 
-\change_deleted 973716962 1530640740
-worsen 
-\change_unchanged
-food security
-\change_inserted 973716962 1530640745
-: any differences 
-\change_deleted 973716962 1530640748
-, but the difference was not
-\change_inserted 973716962 1530640760
-between treatnment and control were
-\change_unchanged
- statistically significant.
+ to have no effect on food security: any differences between treatnment
+ and control were statistically significant.
 \end_layout
 
 \begin_layout Standard
 As a less subjective way to asses changes in well-being, we collected data
  on consumption.
  In particular, we asked the woman in the household about the value of the
- most consumed items, including 
-\change_inserted 973716962 1530640778
-own
-\change_deleted 973716962 1530640779
-auto
-\change_unchanged
--consumption
-\change_inserted 973716962 1530640784
- from farm production
-\change_unchanged
-.
+ most consumed items, including own-consumption from farm production.
  These included consumption of maize, cassava, sorghum, millet, rice, sweet
  potatoes, beans, fruits, groundnuts, vegetables, salt/sugar, cooking oil/ghee,
  soap, and airtime
@@ -6174,15 +5742,7 @@ Even though these consumption categories were carefully chosen on the basis
 \end_inset
 
 .
- From this we then took the logarithm and trim
-\change_inserted 973716962 1530640793
-med
-\change_unchanged
- 
-\change_inserted 973716962 1530640794
-at 
-\change_unchanged
-5 percent.
+ From this we then took the logarithm and trimmed at 5 percent.
  Results indicate that there was no difference in consumption between treated
  and control households.
  We ran similar comparisons for the IVR intervention and the SMS intervention,
@@ -6273,19 +5833,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-	&	
-\change_deleted 973716962 1530640493
-m
-\change_inserted 973716962 1530640493
-M
-\change_unchanged
-ean	&	ATE	&		
-\change_inserted 973716962 1530640500
-p
-\change_deleted 973716962 1530640499
-P
-\change_unchanged
--value	
+	&	Mean	&	ATE	&		p-value	
 \backslash
 
 \backslash
@@ -6467,208 +6015,35 @@ All the above is ITT analysis.
 \end_layout
 
 \begin_layout Subsection*
-
-\change_inserted 973716962 1530640906
-Impact of the gender attributes
-\change_deleted 973716962 1530640912
-Changing gender attributes of
-\change_inserted 973716962 1530640913
- in 
-\change_deleted 973716962 1530640913
- 
-\change_unchanged
-the video intervention
+Impact of the gender attributes in the video intervention
 \end_layout
 
 \begin_layout Standard
-In this part of the paper we present results of 
-\change_deleted 973716962 1530644226
-changing
-\change_inserted 973716962 1530644226
-the
-\change_unchanged
- two gender
-\change_deleted 973716962 1530644221
- 
-\change_inserted 973716962 1530644222
--
-\change_unchanged
-related attributes of the video intervention.
- The first attribute relates to the gender of the targeted audience: 
-\change_inserted 973716962 1530644303
-because 
-\change_deleted 973716962 1530644304
-while existing 
-\change_unchanged
-extension services 
-\change_inserted 973716962 1530644297
-typically 
-\change_deleted 973716962 1530644299
-generally 
-\change_unchanged
-target men within households, we investigate the consequences of 
-\change_inserted 973716962 1530644240
-(additionally) 
-\change_unchanged
-targeting 
-\change_deleted 973716962 1530644244
-(additionally) 
-\change_unchanged
-the female co-head 
-\change_inserted 973716962 1530644249
-of 
-\change_deleted 973716962 1530644251
-within the 
-\change_unchanged
-household.
- In particular, we report results for 
-\change_inserted 973716962 1530644256
-two
-\change_deleted 973716962 1530644257
-2
-\change_unchanged
- comparisons: R1, which compares outcomes for households where the video
- was shown to the male co-head only to outcomes for households where the
- video was shown to the female co-head only; and R2, which compares outcomes
- for households where the video was shown to the male co-head only to 
-\change_deleted 973716962 1530644398
-outcomes for 
-\change_unchanged
-households where the video was shown to both spouses together.
+In this part of the paper we present results of the two gender-related attribute
+s of the video intervention.
+ The first attribute relates to the gender of the targeted audience: because
+ extension services typically target men within households, we investigate
+ the consequences of (additionally) targeting the female co-head of household.
+ In particular, we report results for two comparisons: R1, which compares
+ outcomes for households where the video was shown to the male co-head only
+ to outcomes for households where the video was shown to the female co-head
+ only; and R2, which compares outcomes for households where the video was
+ shown to the male co-head only to households where the video was shown
+ to both spouses together.
  The second attribute is related to the gender of the person that provides
- the information: 
-\change_inserted 973716962 1530644312
-because 
-\change_deleted 973716962 1530644310
-existing 
-\change_unchanged
-extension services 
-\change_inserted 973716962 1530644316
-typically employ 
-\change_deleted 973716962 1530644319
-generally use 
-\change_unchanged
-male extension agents, 
-\change_deleted 973716962 1530644324
-and 
-\change_unchanged
-we investigate the consequences of changing 
-\change_deleted 973716962 1530644333
-this into a
-\change_inserted 973716962 1530644341
-the messenger in the video to 
-\change_deleted 973716962 1530644341
+ the information: because extension services typically employ male extension
+ agents, we investigate the consequences of changing the messenger in the
+ video to female, or at least adding a female messenger alongside the male
+ messenger.
+ We report results for two comparisons: M1, which compares outcomes for
+ households where the version of the video shown features only a man providing
+ the information to households where the version of the video shown features
+ a woman only; and M2, which compares outcomes for households where the
+ version of the video shown features a man only to households where the
+ version of the video features a couple.
+ We look at outcomes both at the household and individual levels, and pay
+ particular attention to the impact on intra-household decision-making.
  
-\change_unchanged
-female
-\change_deleted 973716962 1530644345
- messenger
-\change_unchanged
-, or at least adding a female messenger 
-\change_inserted 973716962 1530644354
-alongside
-\change_deleted 973716962 1530644354
-to
-\change_unchanged
- the male messenger.
- 
-\change_deleted 973716962 1530644363
-Also here, w
-\change_inserted 973716962 1530644363
-W
-\change_unchanged
-e report results for two comparisons: M1, which compares outcomes for households
- where the version of the video 
-\change_deleted 973716962 1530644379
-was 
-\change_unchanged
-shown 
-\change_inserted 973716962 1530644382
-features 
-\change_deleted 973716962 1530644384
-where a man 
-\change_unchanged
-only 
-\change_inserted 973716962 1530644386
-a man 
-\change_unchanged
-provid
-\change_inserted 973716962 1530644388
-ing
-\change_deleted 973716962 1530644389
-es
-\change_unchanged
- the information to 
-\change_deleted 973716962 1530644405
-outcomes for 
-\change_unchanged
-households where the version of the video 
-\change_inserted 973716962 1530644419
-shown features 
-\change_deleted 973716962 1530644423
-was shown where 
-\change_unchanged
-a woman only
-\change_deleted 973716962 1530644427
- provides the information
-\change_unchanged
-; and M2, which compares outcomes for households where the version of the
- video 
-\change_deleted 973716962 1530644431
-was 
-\change_unchanged
-shown 
-\change_inserted 973716962 1530644434
-features 
-\change_deleted 973716962 1530644438
-where 
-\change_unchanged
-a man only 
-\change_deleted 973716962 1530644454
-provides the information 
-\change_unchanged
-to 
-\change_deleted 973716962 1530644457
-outcomes for 
-\change_unchanged
-households where the version of the video 
-\change_inserted 973716962 1530644472
-features a 
-\change_deleted 973716962 1530644469
-was shown where a 
-\change_unchanged
-couple
-\change_deleted 973716962 1530644483
- provides the information
-\change_unchanged
-.
- We look at outcomes both at the household
-\change_inserted 973716962 1530644497
- and individual 
-\change_deleted 973716962 1530644497
- 
-\change_unchanged
-level
-\change_inserted 973716962 1530644499
-s
-\change_deleted 973716962 1530644503
- as well as on the individual level
-\change_inserted 973716962 1530644503
-,
-\change_unchanged
- and pay particular attention to the impact on intra-household decision
-\change_deleted 973716962 1530644507
- 
-\change_inserted 973716962 1530644508
--
-\change_unchanged
-making.
- 
-\change_deleted 973716962 1530644527
-We start by checking if changing gender attributes affect household level
- outcome and then look at individual outcomes.
-\change_unchanged
-
 \begin_inset Note Note
 status collapsed
 
@@ -6706,101 +6081,22 @@ reference "tab:R_hh_know"
  question, thus assessing the effect of changing the recipient of the video
  on 
 \series bold
-household
-\change_deleted 973716962 1530644557
- 
-\change_inserted 973716962 1530644557
--
-\change_unchanged
-level knowledge
+household-level knowledge
 \series default
 .
- Averages for the status quo, i.e.
-\change_inserted 973716962 1530644587
-,
-\change_unchanged
- where information was targeted 
-\change_inserted 973716962 1530644593
-only 
-\change_unchanged
-to the male 
-\change_deleted 973716962 1530644598
-only with
-\change_unchanged
-in the household, 
-\change_deleted 973716962 1530644606
-is
-\change_inserted 973716962 1530644607
-are
-\change_unchanged
- given in the first column.
- We see
-\change_inserted 973716962 1530644611
-,
-\change_unchanged
- for example
-\change_inserted 973716962 1530644613
-,
-\change_unchanged
- that in households where the video was shown to the male co-head only,
- the male or female co-head knew about optimal maize spacing in 
-\change_deleted 973716962 1530644623
-29.5
-\change_inserted 973716962 1530644623
-30
-\change_unchanged
- percent of households.
+ Averages for the status quo, i.e., where information was targeted only to
+ the male in the household, are given in the first column.
+ We see, for example, that in households where the video was shown to the
+ male co-head only, the male or female co-head knew about optimal maize
+ spacing in 30 percent of households.
  Interestingly, this likelihood is 5 percentage points lower in households
- where only the female co-head was shown a video (
-\change_inserted 973716962 1530644641
-the 
-\change_unchanged
-difference with
-\change_inserted 973716962 1530644653
- the
-\change_unchanged
- recipient 
-\change_deleted 973716962 1530644655
-is
-\change_inserted 973716962 1530644661
-being in the
-\change_deleted 973716962 1530644657
- 
-\change_inserted 973716962 1530644662
- 
-\change_unchanged
-male
-\change_deleted 973716962 1530644636
- 
-\change_inserted 973716962 1530644637
--
-\change_unchanged
-only group 
-\change_inserted 973716962 1530644664
-is 
-\change_unchanged
-reported in column 2
-\change_inserted 973716962 1530644668
-, with the 
-\change_deleted 973716962 1530644670
- and 
-\change_unchanged
-associated p-value in column 3).
+ where only the female co-head was shown a video (the difference with the
+ recipient being in the male-only group is reported in column 2, with the
+ associated p-value in column 3).
  Even though we find no significant difference between the two groups on
- any of the other questions, the index does confirm that household
-\change_deleted 973716962 1530644681
- 
-\change_inserted 973716962 1530644681
--
-\change_unchanged
-level knowledge is lower in households where the video was shown to the
- woman only 
-\change_inserted 973716962 1530644694
-when compared to 
-\change_deleted 973716962 1530644696
-than in 
-\change_unchanged
-households where the video was shown to the man only
+ any of the other questions, the index does confirm that household-level
+ knowledge is lower in households where the video was shown to the woman
+ only when compared to households where the video was shown to the man only
 \begin_inset Note Note
 status collapsed
 
@@ -6820,39 +6116,11 @@ reference "tab:R_hh_know"
 
 \end_inset
 
- compares household
-\change_deleted 973716962 1530644701
- 
-\change_inserted 973716962 1530644701
--
-\change_unchanged
-level knowledge between the same control group (
-\change_inserted 973716962 1530644705
-where the 
-\change_unchanged
-man is recipient) and households where a video was shown to male and female
- co-head
-\change_inserted 973716962 1530644715
-s
-\change_unchanged
- together (
-\change_inserted 973716962 1530644721
-with 
-\change_unchanged
-associated p-values 
-\change_inserted 973716962 1530644724
-reported 
-\change_deleted 973716962 1530644725
-are 
-\change_unchanged
-in column 5).
- We do not find any significant difference in household
-\change_inserted 973716962 1530644729
--
-\change_deleted 973716962 1530644729
- 
-\change_unchanged
-level knowledge between these two groups.
+ compares household-level knowledge between the same control group (where
+ the man is recipient) and households where a video was shown to male and
+ female co-heads together (with associated p-values reported in column 5).
+ We do not find any significant difference in household-level knowledge
+ between these two groups.
 \end_layout
 
 \begin_layout Standard
@@ -6939,25 +6207,7 @@ cline{2-6}
 
 \begin_layout Plain Layout
 
-	&	
-\change_inserted 973716962 1530644732
-M
-\change_deleted 973716962 1530644732
-m
-\change_unchanged
-ean	&	ATE	&		
-\change_deleted 973716962 1530644735
-P
-\change_inserted 973716962 1530644736
-p
-\change_unchanged
--value	&	ATE	&		
-\change_deleted 973716962 1530644740
-P
-\change_inserted 973716962 1530644740
-p
-\change_unchanged
--value	
+	&	Mean	&	ATE	&		p-value	&	ATE	&		p-value	
 \backslash
 
 \backslash
@@ -7105,29 +6355,16 @@ scriptsize
 
 \begin_layout Plain Layout
 
-\change_inserted 973716962 1530644744
-
-N
-\change_deleted 973716962 1530644744
-n
-\change_unchanged
-ote: The comparison group consists of households where the video was shown
+Note: The comparison group consists of households where the video was shown
  to the male co-head only.
  In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
  The second column reports differences (and standard errors of the differences)
  between the comparison group and each treatment group.
  Reported p-values are based on randomization inference (10,000 permutations);
- ***, ** and * denote 
-\change_inserted 973716962 1530644760
-that the 
-\change_unchanged
-difference is signficant at the 0.1, 1 and 5 percent level
-\change_inserted 973716962 1530644749
-, respectively,
-\change_unchanged
- after correcting for multiple hypothesis testing using a family-wise sharp
- null (10,000 permutations).
+ ***, ** and * denote that the difference is signficant at the 0.1, 1 and
+ 5 percent level, respectively, after correcting for multiple hypothesis
+ testing using a family-wise sharp null (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -7150,65 +6387,18 @@ reference "tab:M_hh_know-1"
 
 \end_inset
 
- shows the effect of changing the messenger from male to female (
-\change_inserted 973716962 1530644798
-with the 
-\change_unchanged
-difference 
-\change_inserted 973716962 1530644801
-reported 
-\change_unchanged
-in column 2 and 
-\change_inserted 973716962 1530644820
-the 
-\change_unchanged
-p-value in column 3) and from male to couple (
-\change_inserted 973716962 1530644805
-with the 
-\change_unchanged
-difference
-\change_inserted 973716962 1530644808
- reported
-\change_unchanged
- in column 4
-\change_inserted 973716962 1530644816
- and 
-\change_deleted 973716962 1530644817
-, 
-\change_inserted 973716962 1530644818
-the 
-\change_unchanged
-p-value in column 5) on household
-\change_inserted 973716962 1530644824
--
-\change_deleted 973716962 1530644824
- 
-\change_unchanged
-level knowledge.
+ shows the effect of changing the messenger from male to female (with the
+ difference reported in column 2 and the p-value in column 3) and from male
+ to couple (with the difference reported in column 4 and the p-value in
+ column 5) on household-level knowledge.
  The likelihood that at least one of the spouses knows the correct spacing
- of maize is about 
-\change_inserted 973716962 1530644832
-26
-\change_deleted 973716962 1530644833
-25.9
-\change_unchanged
- percent if the information was provided by a man.
- This is about 
-\change_inserted 973716962 1530644841
-4
-\change_deleted 973716962 1530644842
-four
-\change_unchanged
- percentage points higher when the woman provides the information, but the
- difference is not statistically significant at the 5 percent level.
+ of maize is about 26 percent if the information was provided by a man.
+ This is about 4 percentage points higher when the woman provides the informatio
+n, but the difference is not statistically significant at the 5 percent
+ level.
  More generally, we do not find that the changing the messenger from male
- only to female only or from male only to couple affects household
-\change_inserted 973716962 1530644867
--
-\change_deleted 973716962 1530644867
- 
-\change_unchanged
-level knowledge.
+ only to female only or from male only to couple affects household-level
+ knowledge.
  
 \end_layout
 
@@ -7296,25 +6486,7 @@ cline{2-6}
 
 \begin_layout Plain Layout
 
-	&	
-\change_deleted 973716962 1530644769
-m
-\change_inserted 973716962 1530644770
-M
-\change_unchanged
-ean	&	ATE	&		
-\change_deleted 973716962 1530644772
-P
-\change_inserted 973716962 1530644772
-p
-\change_unchanged
--value	&	ATE	&		
-\change_deleted 973716962 1530644775
-P
-\change_inserted 973716962 1530644775
-p
-\change_unchanged
--value	
+	&	Mean	&	ATE	&		p-value	&	ATE	&		p-value	
 \backslash
 
 \backslash
@@ -7461,13 +6633,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-\change_inserted 973716962 1530645036
-
-N
-\change_deleted 973716962 1530645036
-n
-\change_unchanged
-ote: The comparison group consists of households where the video in which
+Note: The comparison group consists of households where the video in which
  all information was provided by a man only was shown.
  In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
@@ -7489,23 +6655,8 @@ ote: The comparison group consists of households where the video in which
 \end_layout
 
 \begin_layout Standard
-Changing 
-\change_inserted 973716962 1530644892
-the 
-\change_unchanged
-recipient 
-\change_inserted 973716962 1530644895
-or 
-\change_deleted 973716962 1530644895
-and 
-\change_unchanged
-messenger 
-\change_inserted 973716962 1530644904
-in the video-enabled intervention 
-\change_deleted 973716962 1530644906
-of video information campaigns 
-\change_unchanged
-may also affect the 
+Changing the recipient or messenger in the video-enabled intervention may
+ also affect the 
 \series bold
 adoption of practices
 \series default
@@ -7514,31 +6665,9 @@ adoption of practices
  groups (recipient is male co-head only, recipient is female co-head only,
  recipient is couple; and messenger is male only, messenger is female only,
  messenger is couple).
- At this level, we define adoption 
-\change_deleted 973716962 1530644931
-to happen 
-\change_inserted 973716962 1530644935
-as the incidence of 
-\change_deleted 973716962 1530644938
-when 
-\change_unchanged
-at least one of the spouses indicat
-\change_inserted 973716962 1530644941
-ing 
-\change_deleted 973716962 1530644942
-es
-\change_inserted 973716962 1530644944
-that
-\change_unchanged
- a particular
-\change_inserted 973716962 1530644949
- technology or
-\change_unchanged
- practice
-\change_deleted 973716962 1530644953
- or technology
-\change_unchanged
- was used on at least one maize plot.
+ At this level, we define adoption as the incidence of at least one of the
+ spouses indicating that a particular technology or practice was used on
+ at least one maize plot.
 \end_layout
 
 \begin_layout Standard
@@ -7565,46 +6694,12 @@ reference "tab:R_hh_pract"
 \end_inset
 
  shows that about 10 percent of households where the man alone was shown
- the video 
-\change_deleted 973716962 1530644965
-are
-\change_unchanged
- implement
-\change_inserted 973716962 1530644967
-ed
-\change_deleted 973716962 1530644967
-ing
-\change_unchanged
- 
-\change_inserted 973716962 1530644973
-the 
-\change_unchanged
-improved spacing practices that 
-\change_inserted 973716962 1530644977
-were
-\change_deleted 973716962 1530644978
-are
-\change_unchanged
- 
-\change_inserted 973716962 1530644979
-featured 
-\change_deleted 973716962 1530644981
-explained 
-\change_unchanged
-in the video.
+ the video implemented the improved spacing practices that were featured
+ in the video.
  This is 2.4 percentage points less in households where the video was only
  shown to the female.
- 
-\change_inserted 973716962 1530645007
-The same table shows that a
-\change_deleted 973716962 1530645007
-A
-\change_unchanged
-bout half of the households in the comparison group report that they use
-\change_inserted 973716962 1530644997
-d
-\change_unchanged
- fertilizer on at least one plot.
+ The same table shows that about half of the households in the comparison
+ group report that they used fertilizer on at least one plot.
  This is about 10 percent higher if the couple was targeted with the information.
  The proportion of households that report combining seed and fertilizer
  is also slightly higher among households where the video was shown to both
@@ -7697,25 +6792,7 @@ cline{2-6}
 
 \begin_layout Plain Layout
 
-	&	
-\change_deleted 973716962 1530645023
-m
-\change_inserted 973716962 1530645024
-M
-\change_unchanged
-ean	&	ATE	&		
-\change_deleted 973716962 1530645026
-P
-\change_inserted 973716962 1530645026
-p
-\change_unchanged
--value	&	ATE	&		
-\change_deleted 973716962 1530645028
-P
-\change_inserted 973716962 1530645028
-p
-\change_unchanged
--value	
+	&	Mean	&	ATE	&		p-value	&	ATE	&		p-value	
 \backslash
 
 \backslash
@@ -7865,13 +6942,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-\change_deleted 973716962 1530645033
-
-n
-\change_inserted 973716962 1530645033
-N
-\change_unchanged
-ote: The comparison group consists of households where the video was shown
+Note: The comparison group consists of households where the video was shown
  to the male co-head only.
  In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
@@ -7900,38 +6971,13 @@ reference "tab:M_hh_pract"
 
 \end_inset
 
-, we see that about 32
-\change_deleted 973716962 1530645045
-.4
-\change_unchanged
- percent of households where the information was provided by a man reports
- that they are combining improved seed with fertilizer.
+, we see that about 32 percent of households where the information was provided
+ by a man reports that they are combining improved seed with fertilizer.
  This percentage seems to be slightly higher if the information was provided
  by a woman.
- However, after controlling for FWER, the difference 
-\change_inserted 973716962 1530645060
-is 
-\change_deleted 973716962 1530645062
-becomes 
-\change_unchanged
-insignificant.
- We conclude that there is no impact on household
-\change_deleted 973716962 1530645065
- 
-\change_inserted 973716962 1530645065
--
-\change_unchanged
-level adoption from changing the messenger attribute 
-\change_deleted 973716962 1530645077
-of
-\change_inserted 973716962 1530645077
-in
-\change_unchanged
- the video
-\change_deleted 973716962 1530645082
- messages
-\change_unchanged
-.
+ However, after controlling for FWER, the difference is insignificant.
+ We conclude that there is no impact on household-level adoption from changing
+ the messenger attribute in the video.
 \end_layout
 
 \begin_layout Standard
@@ -8018,25 +7064,7 @@ cline{2-6}
 
 \begin_layout Plain Layout
 
-	&	
-\change_deleted 973716962 1530645092
-m
-\change_inserted 973716962 1530645092
-M
-\change_unchanged
-ean	&	ATE	&		
-\change_deleted 973716962 1530645094
-P
-\change_inserted 973716962 1530645095
-p
-\change_unchanged
--value	&	ATE	&		
-\change_deleted 973716962 1530645097
-P
-\change_inserted 973716962 1530645097
-p
-\change_unchanged
--value	
+	&	Mean	&	ATE	&		p-value	&	ATE	&		p-value	
 \backslash
 
 \backslash
@@ -8168,13 +7196,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-\change_inserted 973716962 1530645088
-
-N
-\change_deleted 973716962 1530645088
-n
-\change_unchanged
-ote: The comparison group consists of households where the video in which
+Note: The comparison group consists of households where the video in which
  all information was provided by a man only was shown.
  In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
@@ -8197,115 +7219,19 @@ ote: The comparison group consists of households where the video in which
 
 \begin_layout Standard
 Finally, we also look at the impact of changing the gender attributes on
- household
-\change_inserted 973716962 1530651326
--
-\change_deleted 973716962 1530651326
- 
-\change_unchanged
-level 
+ household-level 
 \series bold
 production
 \series default
  outcomes.
- 
-\change_inserted 973716962 1530651267
-We 
-\change_deleted 973716962 1530651269
-In particular, we 
-\change_unchanged
-first 
-\change_inserted 973716962 1530651272
-examine 
-\change_deleted 973716962 1530651274
-look at 
-\change_unchanged
-the total 
-\change_inserted 973716962 1530651279
-quantity 
-\change_deleted 973716962 1530651282
-amount 
-\change_unchanged
-of maize produced 
-\change_deleted 973716962 1530651286
-within
-\change_inserted 973716962 1530651287
-by
-\change_unchanged
- the household.
- This is calculated by summing 
-\change_inserted 973716962 1530651300
-quantities 
-\change_deleted 973716962 1530651302
-amounts 
-\change_unchanged
-from each plot and taking the average of 
-\change_inserted 973716962 1530651309
-quantities 
-\change_deleted 973716962 1530651310
-amounts 
-\change_unchanged
-reported by the man and the woman
-\change_inserted 973716962 1530651351
-, with a similar calculation made for total area 
-\change_deleted 973716962 1530651341
-.
- The area 
-\change_unchanged
-allocated to maize
-\change_inserted 973716962 1530651369
-.
- 
-\change_deleted 973716962 1530651362
- in each household was determined in a similar fashion.
- We sum area of the different maize plots as reported by each of both spouses
- and than take the average of these two totals.
- 
-\change_unchanged
-Household
-\change_deleted 973716962 1530651373
- 
-\change_inserted 973716962 1530651374
--
-\change_unchanged
-level production is then divided by the household
-\change_deleted 973716962 1530651378
- 
-\change_unchanged
-level area allocated to maize to obtain 
-\change_inserted 973716962 1530651382
-the 
-\change_unchanged
-average maize yield at the household level.
- 
-\change_deleted 973716962 1530651395
-Finally, w
-\change_inserted 973716962 1530651395
-W
-\change_unchanged
-e also 
-\change_inserted 973716962 1530651399
-examine 
-\change_deleted 973716962 1530651401
-look at 
-\change_unchanged
-a subjective measure of production 
-\change_inserted 973716962 1530651406
-by 
-\change_deleted 973716962 1530651406
-and 
-\change_unchanged
-ask
-\change_inserted 973716962 1530651408
-ing
-\change_unchanged
- if yield on a plot was better than 
-\change_deleted 973716962 1530651415
-on
-\change_inserted 973716962 1530651416
-in
-\change_unchanged
- an average year.
+ We first examine the total quantity of maize produced by the household.
+ This is calculated by summing quantities from each plot and taking the
+ average of quantities reported by the man and the woman, with a similar
+ calculation made for total area allocated to maize.
+ Household-level production is then divided by the householdlevel area allocated
+ to maize to obtain the average maize yield at the household level.
+ We also examine a subjective measure of production by asking if yield on
+ a plot was better than in an average year.
  To aggregate this at the household level, we construct a binary indicator
  that takes the value of one if at least one spouse indicates yields were
  better on at least one plot, and zero otherwise.
@@ -8323,61 +7249,14 @@ reference "tab:R_hh_prod"
  Average outcomes for the subgroup where the video was shown to the man
  only are again reported in the first column.
  Differences in outcomes between this group and outcomes in households where
- the video was shown to the female alone are in the second 
-\change_inserted 973716962 1530651472
-column
-\change_deleted 973716962 1530651474
-table
-\change_unchanged
-.
- P-values, reported in the third column, indicate that 
-\change_inserted 973716962 1530651483
-apart from the 
-\change_deleted 973716962 1530651485
-except maybe for the 
-\change_unchanged
-subjective 
-\change_inserted 973716962 1530651506
-measure described above, 
-\change_deleted 973716962 1530651509
-indicator
-\change_unchanged
-, production 
-\change_inserted 973716962 1530651513
-is unaffected 
-\change_deleted 973716962 1530651515
-does not respond to 
-\change_inserted 973716962 1530651516
-by 
-\change_unchanged
-changing the recipient from male to female.
- Similarly, 
-\change_inserted 973716962 1530651538
-a comparison of 
-\change_deleted 973716962 1530651540
-comparing 
-\change_unchanged
-male
-\change_deleted 973716962 1530651525
- 
-\change_inserted 973716962 1530651526
--
-\change_unchanged
-recipient households to households where the video was shown to the couple
- 
-\change_inserted 973716962 1530651548
-indicates 
-\change_deleted 973716962 1530651550
-results in 
-\change_unchanged
-no differences in production
-\change_deleted 973716962 1530651553
- 
-\change_inserted 973716962 1530651553
--
-\change_unchanged
-related outcomes measured at the household level, as reported in columns
- four and five.
+ the video was shown to the female alone are in the second column.
+ P-values, reported in the third column, indicate that apart from the subjective
+ measure described above, , production is unaffected by changing the recipient
+ from male to female.
+ Similarly, a comparison of male-recipient households to households where
+ the video was shown to the couple indicates no differences in production-relate
+d outcomes measured at the household level, as reported in columns four
+ and five.
 \end_layout
 
 \begin_layout Standard
@@ -8464,25 +7343,7 @@ cline{2-6}
 
 \begin_layout Plain Layout
 
-	&	
-\change_deleted 973716962 1530651579
-m
-\change_inserted 973716962 1530651579
-M
-\change_unchanged
-ean	&	ATE	&		
-\change_deleted 973716962 1530651583
-P
-\change_inserted 973716962 1530651583
-p
-\change_unchanged
--value	&	ATE	&		
-\change_deleted 973716962 1530651585
-P
-\change_inserted 973716962 1530651585
-p
-\change_unchanged
--value	
+	&	Mean	&	ATE	&		p-value	&	ATE	&		p-value	
 \backslash
 
 \backslash
@@ -8620,29 +7481,16 @@ scriptsize
 
 \begin_layout Plain Layout
 
-\change_inserted 973716962 1530651561
-
-N
-\change_deleted 973716962 1530651560
-n
-\change_unchanged
-ote: The comparison group consists of households where the video was shown
+Note: The comparison group consists of households where the video was shown
  to the male co-head only.
  In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
  The second column reports differences (and standard errors of the differences)
  between the comparison group and each treatment group.
  Reported p-values are based on randomization inference (10,000 permutations);
- ***, ** and * denote 
-\change_inserted 973716962 1530651567
-that the 
-\change_unchanged
-difference is signficant at the 0.1, 1 and 5 percent level
-\change_inserted 973716962 1530651571
-, respectively,
-\change_unchanged
- after correcting for multiple hypothesis testing using a family-wise sharp
- null (10,000 permutations).
+ ***, ** and * denote that the difference is signficant at the 0.1, 1 and
+ 5 percent level, respectively, after correcting for multiple hypothesis
+ testing using a family-wise sharp null (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -8658,10 +7506,6 @@ difference is signficant at the 0.1, 1 and 5 percent level
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted 973716962 1530651622
-A similar table, 
-\change_unchanged
 Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -8669,67 +7513,15 @@ reference "tab:M_hh_prod"
 
 \end_inset
 
-
-\change_deleted 973716962 1530651626
-,
-\change_unchanged
- reports household
-\change_deleted 973716962 1530651628
- 
-\change_inserted 973716962 1530651628
--
-\change_unchanged
-level impact on production
-\change_inserted 973716962 1530651632
--
-\change_deleted 973716962 1530651630
- 
-\change_unchanged
-related outcome
-\change_inserted 973716962 1530651636
-s
-\change_unchanged
- 
-\change_inserted 973716962 1530651643
-where 
-\change_deleted 973716962 1530651647
-for the hypotheses related to 
-\change_unchanged
-the person(s) delivering the information
-\change_inserted 973716962 1530651660
- is varied
-\change_unchanged
-.
- Again, the first columns shows household
-\change_deleted 973716962 1530651663
- 
-\change_inserted 973716962 1530651663
--
-\change_unchanged
-level outcomes for the households where the video that features a male actor
- was shown.
- The second column shows the difference 
-\change_deleted 973716962 1530651682
-with 
-\change_inserted 973716962 1530651682
-for 
-\change_unchanged
-households where the video 
-\change_inserted 973716962 1530651703
-featuring 
-\change_deleted 973716962 1530651705
-with the
-\change_inserted 973716962 1530651705
-a
-\change_unchanged
- female actor was shown, and the third column shows corresponding p-values.
+ reports household-level impact on production-related outcomes where the
+ person(s) delivering the information is varied.
+ Again, the first columns shows household-level outcomes for the households
+ where the video that features a male actor was shown.
+ The second column shows the difference for households where the video featuring
+ a female actor was shown, and the third column shows corresponding p-values.
  There are no significant difference between the two groups.
- Also
-\change_inserted 973716962 1530651695
-,
-\change_unchanged
- when comparing to households where the video featuring a couple was shown,
- no differences can be detected (columns 4 and 5).
+ Also, when comparing to households where the video featuring a couple was
+ shown, no differences can be detected (columns 4 and 5).
 \end_layout
 
 \begin_layout Standard
@@ -8816,23 +7608,7 @@ cline{2-6}
 
 \begin_layout Plain Layout
 
-	&	
-\change_deleted 973716962 1530651592
-m
-\change_inserted 973716962 1530651592
-M
-\change_unchanged
-ean	&	ATE	&		
-\change_deleted 973716962 1530651595
-P
-\change_inserted 973716962 1530651595
-p
-\change_unchanged
--value	&	ATE	&		
-\change_inserted 973716962 1530651598
-p
-\change_unchanged
-P-value	
+	&	Mean	&	ATE	&		p-value	&	ATE	&		pP-value	
 \backslash
 
 \backslash
@@ -8970,23 +7746,16 @@ scriptsize
 
 \begin_layout Plain Layout
 
-note: The comparison group consists of households where the video in which
+Note: The comparison group consists of households where the video in which
  all information was provided by a man only was shown.
  In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
  The second column reports differences (and standard errors of the differences)
  between the comparison group and each treatment group.
  Reported p-values are based on randomization inference (10,000 permutations);
- ***, ** and * denote 
-\change_inserted 973716962 1530651609
-that the 
-\change_unchanged
-difference is signficant at the 0.1, 1 and 5 percent level
-\change_inserted 973716962 1530651605
-, respectively,
-\change_unchanged
- after correcting for multiple hypothesis testing using a family-wise sharp
- null (10,000 permutations).
+ ***, ** and * denote that the difference is signficant at the 0.1, 1 and
+ 5 percent level, respectively, after correcting for multiple hypothesis
+ testing using a family-wise sharp null (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -9006,47 +7775,12 @@ Impact at the individual level
 \end_layout
 
 \begin_layout Standard
-Household
-\change_deleted 973716962 1530651719
- 
-\change_inserted 973716962 1530651720
--
-\change_unchanged
-level outcomes may
-\change_inserted 973716962 1530651735
-, however,
-\change_unchanged
- mask intra-household dynamics related to the treatment.
- For instance, 
-\change_inserted 973716962 1530651740
-a 
-\change_unchanged
-woman may have an increased likelihood of using fertilizer on some plots,
- while men may reduce fertilizer use on other plots, leading to no effect
- at the household level.
- 
-\change_inserted 973716962 1530651754
-For this reason, we
-\change_deleted 973716962 1530651752
-We thus
-\change_unchanged
- 
-\change_inserted 973716962 1530651757
-explore 
-\change_deleted 973716962 1530651760
-dig deeper into 
-\change_unchanged
-individual
-\change_deleted 973716962 1530651761
- 
-\change_inserted 973716962 1530651762
--
-\change_unchanged
-level outcomes
-\change_inserted 973716962 1530651766
- in greater detail
-\change_unchanged
-.
+Household-level outcomes may, however, mask intra-household dynamics related
+ to the treatment.
+ For instance, a woman may have an increased likelihood of using fertilizer
+ on some plots, while men may reduce fertilizer use on other plots, leading
+ to no effect at the household level.
+ For this reason, we explore individual-level outcomes in greater detail.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -9054,33 +7788,8 @@ Knowledge outcomes
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 973716962 1530651774
-Again, 
-\change_deleted 973716962 1530651772
-W
-\change_inserted 973716962 1530651772
-w
-\change_unchanged
-e start 
-\change_deleted 973716962 1530651778
-again 
-\change_unchanged
-by 
-\change_inserted 973716962 1530651781
-examining 
-\change_deleted 973716962 1530651783
-looking at 
-\change_unchanged
-knowledge
-\change_inserted 973716962 1530651787
- outcomes
-\change_unchanged
-, but now 
-\change_inserted 973716962 1530651796
-do so 
-\change_unchanged
-separately for the man and the woman in the household.
+Again, we start by examining knowledge outcomes, but now do so separately
+ for the man and the woman in the household.
  Results pertaining to the factor related to who is targeted by the information
  (recipient) are presented in Table 
 \begin_inset CommandInset ref
@@ -9091,200 +7800,54 @@ reference "tab:R_ind_know"
 
 .
  The top panel presents responses to the multiple choice questions for the
- male co-head, 
-\change_inserted 973716962 1530651817
-and 
-\change_unchanged
-the bottom panel for female co-head.
+ male co-head, and the bottom panel for female co-head.
  We find that within households where the video was shown to the male co-head
- only, 26
-\change_deleted 973716962 1530651823
-.2
-\change_unchanged
- percent of men knew recommended maize spacing.
+ only, 26 percent of men knew recommended maize spacing.
  As expected, if the video was only shown to the female co-head, significantly
- 
-\change_inserted 973716962 1530651844
-fewer 
-\change_deleted 973716962 1530651846
-less 
-\change_unchanged
-men were able to answer correctly: the percentage of correct responses decreases
- by 14
-\change_deleted 973716962 1530651852
-.3
-\change_unchanged
- percentage points.
+ fewer men were able to answer correctly: the percentage of correct responses
+ decreases by 14 percentage points.
  In other words, if men did not get the information, only about 12 percent
  of men knew the answer.
  This is virtually the same as the proportion of female co-heads that answered
- the question correctly without having seen the video (
-\change_inserted 973716962 1530651864
-13
-\change_deleted 973716962 1530651866
-12.6
-\change_unchanged
-) percent.
- 
-\change_inserted 973716962 1530651876
-As expected, we find that 
-\change_deleted 973716962 1530651879
-Also according to expectations, 
-\change_unchanged
-showing the video to the female co-head increases her chance of answering
- correct
-\change_inserted 973716962 1530651883
-ly
-\change_unchanged
-.
- However, the effect is only half 
-\change_inserted 973716962 1530651891
-that 
-\change_unchanged
-of the corresponding effect for men.
+ the question correctly without having seen the video (13) percent.
+ As expected, we find that showing the video to the female co-head increases
+ her chance of answering correctly.
+ However, the effect is only half that of the corresponding effect for men.
  
 \end_layout
 
 \begin_layout Standard
-Comparing the group of male
-\change_deleted 973716962 1530651894
- 
-\change_inserted 973716962 1530651895
--
-\change_unchanged
-only recipients to knowledge 
-\change_inserted 973716962 1530651905
-outcomes for 
-\change_deleted 973716962 1530651906
-of the
-\change_unchanged
- men in households where the video was shown to the couple, we find no significa
-nt difference.
- In other words, 
-\change_inserted 973716962 1530651928
-our findings suggeest that men do 
-\change_deleted 973716962 1530651924
-the man does 
-\change_unchanged
-not learn more or less if the video was shown to him individually or to
- him together with his wife.
- Similarly, the knowledge gain
-\change_inserted 973716962 1530651937
-s
-\change_unchanged
- for the female co-head from watching the video by herself exactly matches
- the knowledge gain from watching the video together with the spouse.
+Comparing the group of male-only recipients to knowledge outcomes for men
+ in households where the video was shown to the couple, we find no significant
+ difference.
+ In other words, our findings suggeest that men do not learn more or less
+ if the video was shown to him individually or to him together with his
+ wife.
+ Similarly, the knowledge gains for the female co-head from watching the
+ video by herself exactly matches the knowledge gain from watching the video
+ together with the spouse.
  This suggest a largely idiosyncratic learning process, in which few couples
- 
-\change_inserted 973716962 1530651956
-may be 
-\change_deleted 973716962 1530651958
-seemed to have 
-\change_unchanged
-discuss
-\change_inserted 973716962 1530651960
-ing
-\change_deleted 973716962 1530651961
-ed 
-\change_inserted 973716962 1530651962
- 
-\change_unchanged
-the content of the video to 
-\change_inserted 973716962 1530651985
-verify or validate each other's understanding.
- 
-\change_deleted 973716962 1530651985
-make sure everything was understood correctly.
-
-\change_unchanged
+ may be discussing the content of the video to verify or validate each other's
+ understanding.
  
 \end_layout
 
 \begin_layout Standard
-We find a similar pattern for awareness that modern inputs are best
-\change_inserted 973716962 1530652002
- when applied in a
-\change_unchanged
- combined
-\change_inserted 973716962 1530652006
- manner
-\change_unchanged
-.
- When 
-\change_inserted 973716962 1530652007
-a 
-\change_unchanged
-man see
-\change_inserted 973716962 1530652011
-s
-\change_unchanged
- the video, they 
-\change_inserted 973716962 1530652055
-answer correctly 
-\change_deleted 973716962 1530652053
-know the correct answer 
-\change_unchanged
-in about 90 percent of cases.
+We find a similar pattern for awareness that modern inputs are best when
+ applied in a combined manner.
+ When a man sees the video, they answer correctly in about 90 percent of
+ cases.
  However, if men were not treated, the proportion is only 81 percent.
- Women who 
-\change_inserted 973716962 1530652026
-do 
-\change_deleted 973716962 1530652028
-did 
-\change_unchanged
-not see the video 
-\change_inserted 973716962 1530652063
-answer correctly 
-\change_deleted 973716962 1530652067
-know that combining inputs is better 
-\change_unchanged
-in about 82 percent of cases.
- Showing them the video increases 
-\change_deleted 973716962 1530652094
-this significantly, but the increase is only
-\change_inserted 973716962 1530652094
-by
-\change_unchanged
- about 5 percentage points, 
-\change_inserted 973716962 1530652098
-which is 
-\change_unchanged
-3 percentage points lower than the corresponding effect for men.
- 
-\change_inserted 973716962 1530652223
-AGain, we also find that individual knowledge outcomes are not influenced
- by whether the 
-\change_deleted 973716962 1530652230
-Also here, in terms of knowledge gained for the individual, it does not
- seem to matter whether the 
-\change_unchanged
-information was obtained individually or together with the spouse.
- 
-\change_inserted 973716962 1530652237
-Further, 
-\change_deleted 973716962 1530652238
-W
-\change_inserted 973716962 1530652238
-w
-\change_unchanged
-e find no effects 
-\change_inserted 973716962 1530652259
-on knowledge outcomes related to the 
-\change_deleted 973716962 1530652247
-for 
-\change_unchanged
-weeding
-\change_inserted 973716962 1530652342
- recommendations contained in the video; on Fall Armyworm management practices,
- which were not contained in the video; or on individual searches for additional
- information.
-\change_deleted 973716962 1530652345
-.
- There is also no impact on knowledge on how to fight fall armyworm.
- Also at the individual level, being shown a video does not affect the likelihoo
-d that the individual searches additional information.
-
-\change_unchanged
+ Women who do not see the video answer correctly in about 82 percent of
+ cases.
+ Showing them the video increases by about 5 percentage points, which is
+ 3 percentage points lower than the corresponding effect for men.
+ Again, we also find that individual knowledge outcomes are not influenced
+ by whether the information was obtained individually or together with the
+ spouse.
+ Further, we find no effects on knowledge outcomes related to the weeding
+ recommendations contained in the video; or on Fall Armyworm management
+ practices, which were not contained in the video.
  
 \end_layout
 
@@ -9372,25 +7935,7 @@ cline{2-6}
 
 \begin_layout Plain Layout
 
-	&	
-\change_deleted 973716962 1530652377
-m
-\change_inserted 973716962 1530652377
-M
-\change_unchanged
-ean	&	ATE	&		
-\change_deleted 973716962 1530652381
-P
-\change_inserted 973716962 1530652381
-p
-\change_unchanged
--value	&	ATE	&		
-\change_deleted 973716962 1530652384
-P
-\change_inserted 973716962 1530652384
-p
-\change_unchanged
--value	
+	&	Mean	&	ATE	&		p-value	&	ATE	&		p-value	
 \backslash
 
 \backslash
@@ -9490,25 +8035,7 @@ cline{2-6}
 
 \begin_layout Plain Layout
 
-	&	
-\change_deleted 973716962 1530652359
-m
-\change_inserted 973716962 1530652360
-M
-\change_unchanged
-ean	&	ATE	&		
-\change_deleted 973716962 1530652362
-P
-\change_inserted 973716962 1530652362
-p
-\change_unchanged
--value	&	ATE	&		
-\change_deleted 973716962 1530652365
-P
-\change_inserted 973716962 1530652366
-p
-\change_unchanged
--value	
+	&	Mean	&	ATE	&		p-value	&	ATE	&		p-value	
 \backslash
 
 \backslash
@@ -9603,29 +8130,16 @@ scriptsize
 
 \begin_layout Plain Layout
 
-\change_inserted 973716962 1530652349
-
-N
-\change_deleted 973716962 1530652349
-n
-\change_unchanged
-ote: The comparison group consists of households where the video was shown
+Note: The comparison group consists of households where the video was shown
  to the male co-head only.
  In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
  The other column reports differences (and standard errors of the differences)
  between the comparison group and each treatment group, and corresponding
  p-values based on randomization inference (10,000 permutations); ***, **
- and * denote 
-\change_inserted 973716962 1530652372
-that the 
-\change_unchanged
-difference is signficant at the 0.1, 1 and 5 percent level
-\change_inserted 973716962 1530652355
-, respectively,
-\change_unchanged
- after correcting for multiple hypothesis testing using a family-wise sharp
- null (10,000 permutations).
+ and * denote that the difference is signficant at the 0.1, 1 and 5 percent
+ level, respectively, after correcting for multiple hypothesis testing using
+ a family-wise sharp null (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -9641,25 +8155,11 @@ difference is signficant at the 0.1, 1 and 5 percent level
 \end_layout
 
 \begin_layout Standard
-We 
-\change_deleted 973716962 1530652392
-ran
-\change_inserted 973716962 1530652393
-run 
-\change_deleted 973716962 1530652394
- 
-\change_unchanged
-a similar analysis for the factor related to who provides the information
+We run a similar analysis for the factor related to who provides the information
  to see how the messenger affects knowledge at the individual level.
  We find that the messenger attribute does not seem to make a difference
  on either male or female learning.
- 
-\change_deleted 973716962 1530652408
-To conserve space, w
-\change_inserted 973716962 1530652408
-W
-\change_unchanged
-e report full results in Table 
+ We report full results in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:M_ind_know"
@@ -9683,19 +8183,9 @@ reference "tab:Agreement-about-maize"
 
 \end_inset
 
- reports in the top panel that about 45
-\change_deleted 973716962 1530652420
-.1
-\change_unchanged
- percent of men in households where the video was shown to only the man
- 
-\change_inserted 973716962 1530652439
-reported that they 
-\change_deleted 973716962 1530652440
-will 
-\change_unchanged
-generally tell their wife if the do not agree with a particular practice
- (first column).
+ reports in the top panel that about 45 percent of men in households where
+ the video was shown to only the man reported that they generally tell their
+ wife if the do not agree with a particular practice (first column).
  Showing the video to the wife only instead of to the man significantly
  reduces the likelihood that the man tells his wife if he disagrees (second
  column).
@@ -9706,45 +8196,15 @@ generally tell their wife if the do not agree with a particular practice
 \end_layout
 
 \begin_layout Standard
-The next question tries to capture how disagreement
-\change_inserted 973716962 1530652470
-s on maize cultivation
-\change_unchanged
- 
-\change_deleted 973716962 1530652461
-is
-\change_inserted 973716962 1530652461
-are
-\change_unchanged
- resolved
-\change_inserted 973716962 1530652474
- within the household
-\change_unchanged
-.
+The next question tries to capture how disagreements on maize cultivation
+ are resolved within the household.
  In particular, we asked the male co-head how the wife generally responds
  when the male co-head disagrees.
  We see that in the comparison group where men were shown the video, about
- 64 percent indicate that 
-\change_inserted 973716962 1530652494
-in the event of a disagreement, 
-\change_unchanged
-they 
-\change_deleted 973716962 1530652486
-then 
-\change_unchanged
-discuss the issue and come to a conclusion that is mutually acceptable (as
- opposed to situations in which the man either ignored the woman or the
- man simply did what the 
-\change_deleted 973716962 1530652504
-other 
-\change_unchanged
-woman 
-\change_inserted 973716962 1530652510
-instructed
-\change_deleted 973716962 1530652511
-commanded
-\change_unchanged
-)
+ 64 percent indicate that in the event of a disagreement, they discuss the
+ issue and come to a conclusion that is mutually acceptable (as opposed
+ to situations in which the man either ignored the woman or the man simply
+ did what the woman instructed)
 \begin_inset Foot
 status collapsed
 
@@ -9756,81 +8216,29 @@ Spouses that indicate they do not tell the other spouse if they disagree
 \end_inset
 
 .
- 
-\change_deleted 973716962 1530652517
-We f
-\change_inserted 973716962 1530652517
-F
-\change_unchanged
-urther
-\change_inserted 973716962 1530652521
-, we observe
-\change_deleted 973716962 1530652521
- see
-\change_unchanged
- that in households where the video was shown to both spouses together,
- the likelihood that they come to a mutually satisfying solution after the
- man tells the wife he does not agree increases by 
-\change_deleted 973716962 1530652542
-3.9
-\change_inserted 973716962 1530652542
-4
-\change_unchanged
- percentage points, 
-\change_deleted 973716962 1530652555
-but
-\change_inserted 973716962 1530652555
-although
-\change_unchanged
- the difference is not significant at the 5 percent level.
+ Further, we observe that in households where the video was shown to both
+ spouses together, the likelihood that they come to a mutually satisfying
+ solution after the man tells the wife he does not agree increases by 4
+ percentage points, although the difference is not significant at the 5
+ percent level.
  
 \end_layout
 
 \begin_layout Standard
-The likelihood that the wom
-\change_deleted 973716962 1530652560
-e
-\change_inserted 973716962 1530652560
-a
-\change_unchanged
-n will tell the husband that she disagrees is almost 6 percentage points
- lower than the likelihood that the man tells the wife.
+The likelihood that the woman will tell the husband that she disagrees is
+ almost 6 percentage points lower than the likelihood that the man tells
+ the wife.
  The fact that the woman is empowered with information seems insufficient
  to change this.
- However, if the video was shown to 
-\change_deleted 973716962 1530652600
-the
-\change_inserted 973716962 1530652600
-a
-\change_unchanged
- couple, the likelihood that the woman speaks up increases by almost 12
- percent.
- The follow
-\change_deleted 973716962 1530652613
- 
-\change_inserted 973716962 1530652614
--
-\change_unchanged
-up question on the woman's perspective on how disagreement
-\change_inserted 973716962 1530652618
-s
-\change_unchanged
- 
-\change_deleted 973716962 1530652619
-is
-\change_inserted 973716962 1530652619
-are
-\change_unchanged
- resolved also indicates that the likelihood that they come to an agreement
+ However, if the video was shown to a couple, the likelihood that the woman
+ speaks up increases by almost 12 percent.
+ The follow-up question on the woman's perspective on how disagreements
+ are resolved also indicates that the likelihood that they come to an agreement
  is higher if the video was shown to both spouses, although also here, the
  difference is not significant at the 5 percent level.
  The fact that the woman does not tell the man she disagrees if she has
  more information than him may indicate that she thinks the man will not
- believe her
-\change_deleted 973716962 1530652641
-e
-\change_unchanged
- anyway.
+ believe her anyway.
 \end_layout
 
 \begin_layout Standard
@@ -9855,40 +8263,11 @@ reference "tab:Agreement-about-maize"
 (mes = couple)
 \emph default
 .
- We see that in 46
-\change_deleted 973716962 1530652653
-.1
-\change_unchanged
- percent of the households where the messenger was a man, the man will tell
- the wife if he disagreed about any 
-\change_inserted 973716962 1530652667
-issue related to 
-\change_unchanged
-maize 
-\change_inserted 973716962 1530652670
-cultivation.
- 
-\change_deleted 973716962 1530652672
-related issue.
- 
-\change_unchanged
-This percentage 
-\change_inserted 973716962 1530652678
-is
-\change_deleted 973716962 1530652679
-was
-\change_unchanged
- significantly lower among households where the messenger
-\change_inserted 973716962 1530652698
-s featured in the video
-\change_unchanged
- 
-\change_inserted 973716962 1530652700
-are 
-\change_deleted 973716962 1530652685
-was 
-\change_unchanged
-a couple
+ We see that in 46 percent of the households where the messenger was a man,
+ the man will tell the wife if he disagreed about any issue related to maize
+ cultivation.
+ This percentage is significantly lower among households where the messengers
+ featured in the video are a couple
 \begin_inset Note Note
 status collapsed
 
@@ -9902,22 +8281,10 @@ Why? Do we have an explanation for this??? Could this maybe be that after
 
 .
  Changing the messenger attribute did not seem to have an effect on the
- likelihood that the woman 
-\change_inserted 973716962 1530652714
-tells
-\change_deleted 973716962 1530652715
-told
-\change_unchanged
- the husband that she does not agree.
+ likelihood that the woman tells the husband that she does not agree.
  Both men and women state that after disagreement is expressed, an agreement
  is reached in about 64 percent of the households.
- Also here, we find no impact 
-\change_inserted 973716962 1530652729
-related to the 
-\change_deleted 973716962 1530652730
-of the
-\change_unchanged
- messenger attribute.
+ Also here, we find no impact related to the messenger attribute.
 \end_layout
 
 \begin_layout Standard
@@ -10005,25 +8372,7 @@ cline{2-6}
 
 \begin_layout Plain Layout
 
-	&	
-\change_deleted 973716962 1530652755
-m
-\change_inserted 973716962 1530652755
-M
-\change_unchanged
-ean	&	ATE	&		
-\change_deleted 973716962 1530652758
-P
-\change_inserted 973716962 1530652758
-p
-\change_unchanged
--value	&	ATE	&		
-\change_deleted 973716962 1530652760
-P
-\change_inserted 973716962 1530652760
-p
-\change_unchanged
--value	
+	&	Mean	&	ATE	&		p-value	&	ATE	&		p-value	
 \backslash
 
 \backslash
@@ -10113,25 +8462,7 @@ cline{2-6}
 
 \begin_layout Plain Layout
 
-	&	
-\change_inserted 973716962 1530652746
-M
-\change_deleted 973716962 1530652745
-m
-\change_unchanged
-ean	&	ATE	&		
-\change_deleted 973716962 1530652749
-P
-\change_inserted 973716962 1530652749
-p
-\change_unchanged
--value	&	ATE	&		
-\change_deleted 973716962 1530652751
-P
-\change_inserted 973716962 1530652751
-p
-\change_unchanged
--value	
+	&	Mean	&	ATE	&		p-value	&	ATE	&		p-value	
 \backslash
 
 \backslash
@@ -10216,22 +8547,13 @@ scriptsize
 
 \begin_layout Plain Layout
 
-\change_inserted 973716962 1530652741
-
-N
-\change_deleted 973716962 1530652741
-n
-\change_unchanged
-ote: In the first column, means (and standard deviations) in the comparison
+Note: In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
  The second and fourth columns report differences (and standard errors of
  the differences) between the comparison group and each treatment group.
  Reported p-values in columns three and five are based on randomization
- inference (10,000 permutations); * denotes 
-\change_inserted 973716962 1530652739
-that the 
-\change_unchanged
-difference is signficant at the 5 percent level.
+ inference (10,000 permutations); * denotes that the difference is signficant
+ at the 5 percent level.
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -10253,94 +8575,16 @@ Decision making about adoption
 \end_layout
 
 \begin_layout Standard
-We also inquired about the 
-\change_inserted 973716962 1530652773
-household's 
-\change_unchanged
-decision
-\change_deleted 973716962 1530652767
- 
-\change_inserted 973716962 1530652768
--
-\change_unchanged
-making processes related to the adoption of different maize 
-\change_inserted 973716962 1530652807
-technologies, practices, and inputs.
- 
-\change_deleted 973716962 1530652809
-growing practices and the use of inputs.
- 
-\change_unchanged
-For range of 
-\change_inserted 973716962 1530652815
-technologies, 
-\change_unchanged
-practices and inputs, we asked both spouses who decided to use 
-\change_inserted 973716962 1530652857
-it on a plot-by-plot basis.
- 
-\change_deleted 973716962 1530652860
-the particular practice or input that was applied on each plot.
-
-\change_unchanged
- 
-\change_inserted 973716962 1530652863
-Response o
-\change_deleted 973716962 1530652864
-O
-\change_unchanged
-ptions 
-\change_inserted 973716962 1530652873
-allowed for 
-\change_deleted 973716962 1530652876
-included that
-\change_inserted 973716962 1530652880
-respondents to indicate that
-\change_unchanged
- (i) the husband 
-\change_deleted 973716962 1530652890
-mad
-\change_inserted 973716962 1530652891
-took
-\change_deleted 973716962 1530652891
-e
-\change_unchanged
- the decision
-\change_deleted 973716962 1530652837
- to use a particular technology
-\change_unchanged
- alone, (ii) the wife took the decision 
-\change_deleted 973716962 1530652898
-to use a particular technology 
-\change_unchanged
-alone, or (iii) both husband and wife 
-\change_inserted 973716962 1530652911
-took the decision 
-\change_unchanged
-jointly
-\change_deleted 973716962 1530652915
- decided to use a particular technology
-\change_unchanged
-.
- 
-\change_deleted 973716962 1530652925
-Based on this, 
-\change_inserted 973716962 1530652928
-With these responses, 
-\change_unchanged
-we constructed plot
-\change_deleted 973716962 1530652919
- 
-\change_inserted 973716962 1530652919
--
-\change_unchanged
-level indicators for these three categories of decision
-\change_deleted 973716962 1530652932
- 
-\change_inserted 973716962 1530652933
--
-\change_unchanged
-making and compared differences between treatment groups
+We also inquired about the household's decision-making processes related
+ to the adoption of different maize technologies, practices, and inputs.
+ For range of technologies, practices and inputs, we asked both spouses
+ who decided to use it on a plot-by-plot basis.
+ Response options allowed for respondents to indicate that (i) the husband
+ took the decision alone, (ii) the wife took the decision alone, or (iii)
+ both husband and wife took the decision jointly.
+ With these responses, we constructed plot-level indicators for these three
+ categories of decision-making and compared differences between treatment
+ groups
 \begin_inset Foot
 status collapsed
 
@@ -10449,25 +8693,7 @@ cline{2-6}
 
 \begin_layout Plain Layout
 
-	&	
-\change_deleted 973716962 1530652937
-m
-\change_inserted 973716962 1530652937
-M
-\change_unchanged
-ean	&	ATE	&		
-\change_deleted 973716962 1530652940
-P
-\change_inserted 973716962 1530652940
-p
-\change_unchanged
--value	&	ATE	&		
-\change_deleted 973716962 1530652942
-P
-\change_inserted 973716962 1530652942
-p
-\change_unchanged
--value	
+	&	Mean	&	ATE	&		p-value	&	ATE	&		p-value	
 \backslash
 
 \backslash
@@ -10592,29 +8818,16 @@ scriptsize
 
 \begin_layout Plain Layout
 
-\change_inserted 973716962 1530652963
-
-N
-\change_deleted 973716962 1530652962
-n
-\change_unchanged
-ote: The comparison group consists of households where the video was shown
+Note: The comparison group consists of households where the video was shown
  to the male co-head only.
  In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
  The second column reports differences (and standard errors of the differences)
  between the comparison group and each treatment group.
  Reported p-values are based on randomization inference (10,000 permutations);
- ***, ** and * denote 
-\change_inserted 973716962 1530652948
-that the 
-\change_unchanged
-difference is signficant at the 0.1, 1 and 5 percent level
-\change_inserted 973716962 1530652956
-, respectively,
-\change_unchanged
- after correcting for multiple hypothesis testing using a family-wise sharp
- null (10,000 permutations).
+ ***, ** and * denote that the difference is signficant at the 0.1, 1 and
+ 5 percent level, respectively, after correcting for multiple hypothesis
+ testing using a family-wise sharp null (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -10630,196 +8843,65 @@ difference is signficant at the 0.1, 1 and 5 percent level
 \end_layout
 
 \begin_layout Standard
-We 
-\change_inserted 973716962 1530652977
-took this approach to analyzing 
-\change_deleted 973716962 1530652979
-looked at 
-\change_unchanged
-decision
-\change_inserted 973716962 1530652970
--
-\change_deleted 973716962 1530652969
- 
-\change_unchanged
-making 
-\change_inserted 973716962 1530652981
-for 
-\change_deleted 973716962 1530652983
-related to
-\change_unchanged
- nine 
-\change_inserted 973716962 1530652991
-distinct 
-\change_unchanged
-practices, roughly corresponding to the adoption practices that were indicated
- as key to better maize farming in the video.
- In particular, we asked who made the decision
-\change_inserted 973716962 1530653039
-s on:
-\change_unchanged
- 
-\change_inserted 973716962 1530653041
-when 
-\change_unchanged
-to start planting at a particular point in time on each plot (
+We took this approach to analyzing decision-making for nine distinct practices,
+ roughly corresponding to the adoption practices that were indicated as
+ key to better maize farming in the video.
+ In particular, we asked who made the decisions on: when to start planting
+ at a particular point in time on each plot (
 \emph on
 time plant
 \emph default
-)
-\change_inserted 973716962 1530653004
-; 
-\change_deleted 973716962 1530653008
-.
- We also asked who made the decision 
-\change_inserted 973716962 1530653050
-whether 
-\change_unchanged
-to adopt the particular spacing 
-\change_deleted 973716962 1530653056
-that was used 
-\change_unchanged
-on each maize plot (
+); whether to adopt the particular spacing on each maize plot (
 \emph on
 spacing
 \emph default
-)
-\change_inserted 973716962 1530653062
-; how to 
-\change_deleted 973716962 1530653017
-.
- Furthermore, we asked who made the decision on how to 
-\change_unchanged
-fight striga on each maize plot (
+); how to fight striga on each maize plot (
 \emph on
 striga control
 \emph default
-)
-\change_inserted 973716962 1530653021
-; 
-\change_deleted 973716962 1530653067
-.
- Similarly, we asked who took the decision on 
-\change_unchanged
-when to start first weeding (
+); when to start first weeding (
 \emph on
 timing first weeding
 \emph default
-)
-\change_inserted 973716962 1530653077
-; which 
-\change_deleted 973716962 1530653081
-.
- We also asked who was the primary decision maker on a range of 
-\change_unchanged
-inputs 
-\change_inserted 973716962 1530653085
-to use 
-\change_unchanged
-on a particular plot, 
-\change_inserted 973716962 1530653094
-disaggregated into 
-\change_deleted 973716962 1530653096
-such as 
-\change_unchanged
-organic and inorganic fertilizer (
-\change_deleted 973716962 1530653098
-
+); which inputs to use on a particular plot, disaggregated into organic
+ and inorganic fertilizer (
 \emph on
-F
-\change_inserted 973716962 1530653098
-f
-\change_unchanged
-ertilizer use
+fertilizer use
 \emph default
 ), improved seed (
-\change_deleted 973716962 1530653101
-
 \emph on
-S
-\change_inserted 973716962 1530653101
-s
-\change_unchanged
-eed use
+seed use
 \emph default
-)
-\change_inserted 973716962 1530653102
-,
-\change_unchanged
- and the use of chemicals (
-\change_deleted 973716962 1530653105
-
+), and the use of chemicals (
 \emph on
-C
-\change_inserted 973716962 1530653105
-c
-\change_unchanged
-hemical use
+chemical use
 \emph default
-)
-\change_inserted 973716962 1530653120
-; and
-\change_deleted 973716962 1530653123
-.
- Finally, we asked who made the decision 
-\change_unchanged
-whether or not to buy seed (
+); andwhether or not to buy seed (
 \emph on
 Buy seed
 \emph default
 ).
- We also construct indices for overall decision
-\change_inserted 973716962 1530653132
--
-\change_deleted 973716962 1530653132
- 
-\change_unchanged
-making based on decision making on the individual 
-\change_inserted 973716962 1530653139
-technologies, 
-\change_unchanged
-practices
-\change_inserted 973716962 1530653142
-,
-\change_unchanged
- and inputs.
+ We also construct indices for overall decision-making based on decision
+ making on the individual technologies, practices, and inputs.
  These indices (
 \emph on
 male decision index, female decision index, 
-\change_inserted 973716962 1530653147
-
 \emph default
 and 
-\change_unchanged
-
 \emph on
 joint decision index
 \emph default
-) are based on plot
-\change_deleted 973716962 1530653154
- 
-\change_inserted 973716962 1530653154
--
-\change_unchanged
-level indicators that take the value of one if at least one decision was
- made by respectively the man alone, woman alone, or jointly.
-\change_inserted 973716962 1530653181
-
+) are based on plot-level indicators that take the value of one if at least
+ one decision was made by respectively the man alone, woman alone, or jointly.
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted 973716962 1530653214
 If this is a dummy, shouldn't there be a base case where index=0?
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -10847,56 +8929,29 @@ reference "tab:dectechman"
 \end_inset
 
  shows that among households where the video was shown to the man only,
- on about 
-\change_inserted 973716962 1530653237
-37 
-\change_deleted 973716962 1530653238
-36.6 
-\change_unchanged
-percent of the plots, the man unilaterally decided on when to start planting
- on that particular plot.
- Furthermore, we 
-\change_inserted 973716962 1530653249
-observe 
-\change_deleted 973716962 1530653251
-learn 
-\change_unchanged
-that on 45 percent of the plots among the subgroup where only the man received
- the video treatment, the man decided to use pesticides
-\change_deleted 973716962 1530653263
-, fungicides or herbicides
-\change_inserted 973716962 1530653265
-
+ on about 37 percent of the plots, the man unilaterally decided on when
+ to start planting on that particular plot.
+ Furthermore, we observe that on 45 percent of the plots among the subgroup
+ where only the man received the video treatment, the man decided to use
+ pesticides
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted 973716962 1530653278
 fungicides and herbicides are technically pesticides
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
  without consulting his wife.
  Interestingly, we see that for almost all practices, the likelihood that
  the man decides alone decreases substantially if the video is shown to
  the woman alone or to the woman in addition to the man.
  For the decision to use fertilizer especially, the effect is large: while
- m
-\change_deleted 973716962 1530653301
-a
-\change_inserted 973716962 1530653302
-e
-\change_unchanged
-n decide alone on about 40 percent of plots about fertilizer use, this proportio
-n reduces to about 22 percent in the subgroup of households where the video
- was shown to the woman and about 26 percent in the subgroup of households
- where the video was shown to both spouses together.
+ men decide alone on about 40 percent of plots about fertilizer use, this
+ proportion reduces to about 22 percent in the subgroup of households where
+ the video was shown to the woman and about 26 percent in the subgroup of
+ households where the video was shown to both spouses together.
  As such, if the information is also given to the female co-head instead
  of the the male co-head, the male co-head is less likely to make decisions
  related to the adoption of modern technologies and practices all by himself.
@@ -10990,25 +9045,7 @@ cline{2-6}
 
 \begin_layout Plain Layout
 
-	&	
-\change_deleted 973716962 1530653321
-m
-\change_inserted 973716962 1530653322
-M
-\change_unchanged
-ean	&	ATE	&		
-\change_deleted 973716962 1530653325
-P
-\change_inserted 973716962 1530653325
-p
-\change_unchanged
--value	&	ATE	&		
-\change_deleted 973716962 1530653327
-P
-\change_inserted 973716962 1530653327
-p
-\change_unchanged
--value	
+	&	Mean	&	ATE	&		p-value	&	ATE	&		p-value	
 \backslash
 
 \backslash
@@ -11143,29 +9180,16 @@ scriptsize
 
 \begin_layout Plain Layout
 
-\change_deleted 973716962 1530653335
-
-n
-\change_inserted 973716962 1530653336
-N
-\change_unchanged
-ote: The comparison group consists of households where the video was shown
+Note: The comparison group consists of households where the video was shown
  to the male co-head only.
  In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
  The second column reports differences (and standard errors of the differences)
  between the comparison group and each treatment group.
  Reported p-values are based on randomization inference (10,000 permutations);
- ***, ** and * denote 
-\change_inserted 973716962 1530653339
-that the 
-\change_unchanged
-difference is signficant at the 0.1, 1 and 5 percent level
-\change_inserted 973716962 1530653333
-, respectively
-\change_unchanged
- after correcting for multiple hypothesis testing using a family-wise sharp
- null (10,000 permutations).
+ ***, ** and * denote that the difference is signficant at the 0.1, 1 and
+ 5 percent level, respectively after correcting for multiple hypothesis
+ testing using a family-wise sharp null (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -11188,118 +9212,28 @@ reference "tab:dectechfem"
 
 \end_inset
 
- shows corresponding results for unilateral decision
-\change_deleted 973716962 1530653342
- 
-\change_inserted 973716962 1530653343
--
-\change_unchanged
-making on practices by the female co-head.
- To some extent, the reduction in male decision
-\change_deleted 973716962 1530653348
- 
-\change_inserted 973716962 1530653348
--
-\change_unchanged
-making about 
-\change_inserted 973716962 1530653351
-maize 
-\change_deleted 973716962 1530653353
-crop
-\change_unchanged
- management as a result of 
-\change_inserted 973716962 1530653363
-the 
-\change_unchanged
-more inclusive extension 
-\change_inserted 973716962 1530653360
-approach 
-\change_unchanged
-is mirrored in an increase in decision
-\change_deleted 973716962 1530653367
- 
-\change_inserted 973716962 1530653368
--
-\change_unchanged
-making by women within the household.
- However, even after the increase in 
-\change_inserted 973716962 1530653384
-women's 
-\change_unchanged
-decision
-\change_inserted 973716962 1530653374
--
-\change_deleted 973716962 1530653373
- 
-\change_unchanged
-making
-\change_deleted 973716962 1530653389
- of women
-\change_unchanged
- when they are shown a video, women are still far less likely than men to
- decided about adoption of 
-\change_inserted 973716962 1530653400
-technologies, 
-\change_unchanged
-practices
-\change_inserted 973716962 1530653403
-, and inputs
-\change_unchanged
- on an average plot.
- For instance, 
-\change_inserted 973716962 1530653411
-based on 
-\change_deleted 973716962 1530653412
-judged by
-\change_unchanged
- the female decision index, when the male co-head is shown the video individuall
-y, women report they make adoption decisions on only 
-\change_inserted 973716962 1530653420
-27
-\change_deleted 973716962 1530653422
-26.8
-\change_unchanged
- percent of plots.
- This percentage increases to 38 percent if the video 
-\change_inserted 973716962 1530653429
-is
-\change_deleted 973716962 1530653430
-was
-\change_unchanged
- shown to the female co-head alone.
- However, this is still significantly lower than the 53
-\change_deleted 973716962 1530653436
-.3
-\change_unchanged
- percent of plots man unilaterally decide on when they are provided information.
- Female decision
-\change_deleted 973716962 1530653440
- 
-\change_inserted 973716962 1530653441
--
-\change_unchanged
-making also generally increases if the video 
-\change_deleted 973716962 1530653446
-was
-\change_inserted 973716962 1530653447
-is
-\change_unchanged
- shown to a couple instead of only to the men, but the differences are generally
+ shows corresponding results for unilateral decision-making on practices
+ by the female co-head.
+ To some extent, the reduction in male decision-making about maize management
+ as a result of the more inclusive extension approach is mirrored in an
+ increase in decision-making by women within the household.
+ However, even after the increase in women's decision-making when they are
+ shown a video, women are still far less likely than men to decided about
+ adoption of technologies, practices, and inputs on an average plot.
+ For instance, based on the female decision index, when the male co-head
+ is shown the video individually, women report they make adoption decisions
+ on only 27 percent of plots.
+ This percentage increases to 38 percent if the video is shown to the female
+ co-head alone.
+ However, this is still significantly lower than the 53 percent of plots
+ man unilaterally decide on when they are provided information.
+ Female decision-making also generally increases if the video is shown to
+ a couple instead of only to the men, but the differences are generally
  not significant.
  We can thus conclude that if women also receive information, they will
- make significantly more decisions on the use of improved 
-\change_deleted 973716962 1530653464
-agronomic
-\change_inserted 973716962 1530653471
-maize technologies, 
-\change_deleted 973716962 1530653472
- 
-\change_unchanged
-practices
-\change_inserted 973716962 1530653474
-,
-\change_unchanged
- and inputs, but only if this information is not also available to the husband.
+ make significantly more decisions on the use of improved maize technologies,
+ practices, and inputs, but only if this information is not also available
+ to the husband.
  
 \end_layout
 
@@ -11396,25 +9330,7 @@ cline{2-6}
 
 \begin_layout Plain Layout
 
-	&	
-\change_deleted 973716962 1530653478
-m
-\change_inserted 973716962 1530653478
-M
-\change_unchanged
-ean	&	ATE	&		
-\change_deleted 973716962 1530653481
-P
-\change_inserted 973716962 1530653481
-p
-\change_unchanged
--value	&	ATE	&		
-\change_deleted 973716962 1530653484
-P
-\change_inserted 973716962 1530653485
-p
-\change_unchanged
--value	
+	&	Mean	&	ATE	&		p-value	&	ATE	&		p-value	
 \backslash
 
 \backslash
@@ -11539,29 +9455,16 @@ scriptsize
 
 \begin_layout Plain Layout
 
-\change_inserted 973716962 1530653489
-
-N
-\change_deleted 973716962 1530653488
-n
-\change_unchanged
-ote: The comparison group consists of households where the video was shown
+Note: The comparison group consists of households where the video was shown
  to the male co-head only.
  In the first column, means (and standard deviations) in the comparison
  group are presented for each variable.
  The second column reports differences (and standard errors of the differences)
  between the comparison group and each treatment group.
  Reported p-values are based on randomization inference (10,000 permutations);
- ***, ** and * denote
-\change_inserted 973716962 1530653494
- that the
-\change_unchanged
- difference is signficant at the 0.1, 1 and 5 percent level
-\change_inserted 973716962 1530653499
-, respectively,
-\change_unchanged
- after correcting for multiple hypothesis testing using a family-wise sharp
- null (10,000 permutations).
+ ***, ** and * denote that the difference is signficant at the 0.1, 1 and
+ 5 percent level, respectively, after correcting for multiple hypothesis
+ testing using a family-wise sharp null (10,000 permutations).
  All specifications controls for the other orthogonal factors in the factorial
  design.
 \end_layout
@@ -11589,28 +9492,13 @@ reference "tab:dectechboth"
  We find that showing the video to the woman co-head alone does not change
  the likelihood that decisions are taken jointly by both co-heads relative
  to cases where the video was shown only to the male co-head.
- Showing the video to 
-\change_deleted 973716962 1530653531
-both
-\change_unchanged
- spouses jointly does seem to increase the likelihood of joint decision
-\change_deleted 973716962 1530653535
- 
-\change_inserted 973716962 1530653536
--
-\change_unchanged
-making for some practices, but none is significant after correcting for
- multiple comparisons.
- The lack of an impact on joint decision
-\change_inserted 973716962 1530653542
--
-\change_deleted 973716962 1530653543
- 
-\change_unchanged
-making of providing information to the couple is surprising, especially
- since in this subgroup, men report a reduction in decision making by themselves
- and women in this subgroup indicate that they do not increase decision
- making.
+ Showing the video to spouses jointly does seem to increase the likelihood
+ of joint decision-making for some practices, but none is significant after
+ correcting for multiple comparisons.
+ The lack of an impact on joint decision-making of providing information
+ to the couple is surprising, especially since in this subgroup, men report
+ a reduction in decision making by themselves and women in this subgroup
+ indicate that they do not increase decision making.
  Possibly, this reflects differing views on what constitutes joint decision
  making, with men exaggerating the number of instances where decision were
  made jointly
@@ -13008,233 +10896,55 @@ key "banerjee2011poor"
 \end_layout
 
 \begin_layout Standard
-In this study, we evaluate the effectiveness of three complementary 
-\change_deleted 973716962 1530653587
-Information and Communication Technology (ICT) 
-\change_inserted 973716962 1530653588
-ICT-
-\change_unchanged
-enabled agricultural 
-\change_inserted 973716962 1530653597
-extension 
-\change_deleted 973716962 1530653600
-information exchange
-\change_unchanged
- approaches (short video messages, IVR, and SMS) that can be brought to
- scale relatively easily and at significantly lower cost than alternative
- modes of agricultural extension
-\change_deleted 973716962 1530653612
- information provision
-\change_unchanged
-.
- In addition, and motivated by the observation that most agricultural 
-\change_inserted 973716962 1530653628
-extension 
-\change_unchanged
-advisory services are biased toward men, 
-\change_inserted 973716962 1530653643
-we assess the impact of 
-\change_deleted 973716962 1530653645
-this study looked at 
-\change_unchanged
-two gender
-\change_deleted 973716962 1530653647
- 
-\change_inserted 973716962 1530653648
--
-\change_unchanged
-related attributes of 
-\change_inserted 973716962 1530653670
-our ICT-enabled extension approach
-\change_deleted 973716962 1530653666
-a stylized ICT mediated agricultural extension information campaign
-\change_unchanged
-.
- The first attribute c
-\change_deleted 973716962 1530653684
-onsists 
-\change_inserted 973716962 1530653685
-varies 
-\change_deleted 973716962 1530653686
-of 
-\change_unchanged
-the gender composition of the person or persons that provide the information.
- The second attribute 
-\change_deleted 973716962 1530653692
-is
-\change_inserted 973716962 1530653694
-varies
-\change_unchanged
- the gender composition of the person or persons to 
-\change_inserted 973716962 1530653699
-whom 
-\change_deleted 973716962 1530653702
-which 
-\change_unchanged
-the information is targeted.
+In this study, we evaluate the effectiveness of three complementary ICT-enabled
+ agricultural extension approaches (short video messages, IVR, and SMS)
+ that can be brought to scale relatively easily and at significantly lower
+ cost than alternative modes of agricultural extension.
+ In addition, and motivated by the observation that most agricultural extension
+ advisory services are biased toward men, we assess the impact of two gender-rel
+ated attributes of our ICT-enabled extension approach.
+ The first attribute cvaries the gender composition of the person or persons
+ that provide the information.
+ The second attribute varies the gender composition of the person or persons
+ to whom the information is targeted.
  This allows us to test three hypotheses related to (1) the overall effectivenes
 s of the information intervention (2) the role of information asymmetries
- within the household; and (3) the effectiveness 
-\change_inserted 973716962 1530653708
-of 
-\change_unchanged
-cooperative approach to farming.
+ within the household; and (3) the effectiveness of cooperative approach
+ to farming.
 \end_layout
 
 \begin_layout Standard
 The various hypotheses are tested using a field experiment where the messenger
  of the information and the recipient of the information is randomly altered
  according to a 3 by 3 factorial design.
- The study population 
-\change_inserted 973716962 1530653723
-was 
-\change_deleted 973716962 1530653724
-were
-\change_unchanged
- maize farm households in Eastern Uganda, from which we sampled about 3,600
- couples.
- These farmers were 
-\change_deleted 973716962 1530653733
-then
-\change_unchanged
- shown a video according to the treatment group they were randomly assigned
- to.
- The videos showed how 
-\change_inserted 973716962 1530653758
-improved technologies and practices 
-\change_deleted 973716962 1530653762
-inputs and improved farming practices 
-\change_unchanged
-can be used to increase production
-\change_inserted 973716962 1530653771
- and introduced
-\change_unchanged
-.
-
-\change_deleted 973716962 1530653779
- It also explains important concepts in
-\change_inserted 973716962 1530653780
-the concept of
-\change_unchanged
- inter-temporal decision
-\change_deleted 973716962 1530653783
- 
-\change_inserted 973716962 1530653784
--
-\change_unchanged
-making
-\change_inserted 973716962 1530653790
- in farm enterprise management
-\change_unchanged
-.
- The messages 
-\change_deleted 973716962 1530653793
-are also
-\change_inserted 973716962 1530653793
-were
-\change_unchanged
- packaged in an attractive 
-\change_inserted 973716962 1530653807
-and accessible manner
-\change_deleted 973716962 1530653809
-way
-\change_unchanged
-, 
-\change_inserted 973716962 1530653816
-and featured 
-\change_deleted 973716962 1530653817
-with 
-\change_unchanged
-role
-\change_deleted 973716962 1530653820
- 
-\change_inserted 973716962 1530653821
--
-\change_unchanged
-model farmers explaining how intensification of maize production improved
- their lives.
+ The study population was maize farm households in Eastern Uganda, from
+ which we sampled about 3,600 couples.
+ These farmers were shown a video according to the treatment group they
+ were randomly assigned to.
+ The videos showed how improved technologies and practices can be used to
+ increase production and introduced.the concept of inter-temporal decision-making
+ in farm enterprise management.
+ The messages were packaged in an attractive and accessible manner, and
+ featured role-model farmers explaining how intensification of maize production
+ improved their lives.
  The videos were shown twice, once just before the the planting season,
  and once during planting stage.
 \end_layout
 
 \begin_layout Standard
-We find that as a result of being shown the video, farmers have 
-\change_inserted 973716962 1530653854
-experienced improvements in several key 
-\change_deleted 973716962 1530653849
-increased 
-\change_unchanged
-knowledge
-\change_inserted 973716962 1530653851
- outcomes
-\change_unchanged
-.
- We do not find incremental effects for the addition of IVR
-\change_deleted 973716962 1530653855
- 
-\change_inserted 973716962 1530653865
- 
-\change_unchanged
-and SMS reminders.
+We find that as a result of being shown the video, farmers have experienced
+ improvements in several key knowledge outcomes.
+ We do not find incremental effects for the addition of IVR and SMS reminders.
  As a result of being shown the video, farmers also adopted a range of recommend
-ed practices
-\change_inserted 973716962 1530653879
-: in particular, we
-\change_deleted 973716962 1530653881
-.
- We also 
-\change_unchanged
-find that farmers reduce
-\change_inserted 973716962 1530653889
-d
-\change_unchanged
- their use of DAP or NPK and increase
-\change_inserted 973716962 1530653894
-d
-\change_unchanged
+ed practices: in particular, wefind that farmers reduced their use of DAP
+ or NPK and increased their use of urea (and to a lesser extent inorganic
+ fertilizer), thereby managing their soils in a more balanced manner.
+ Effects are less strong when IVR was added to the video treatment.
+ However, there is some evidence that a demand-driven information service
+ such as IVR may be more effective to increase the adoption of more complex
+ technologies (eg.
+ basal application of DAP and the use of hybrid maize seed).
  
-\change_inserted 973716962 1530653896
-their use of 
-\change_deleted 973716962 1530653899
-adoption of U
-\change_inserted 973716962 1530653899
-u
-\change_unchanged
-rea (and to a lesser extent inorganic fertilizer)
-\change_inserted 973716962 1530653912
-, thereby managing their soils in a more balanced manner.
- 
-\change_deleted 973716962 1530653916
- to engage in more balanced soil nutrient management.
-
-\change_unchanged
- Effects are less strong 
-\change_inserted 973716962 1530653920
-when 
-\change_deleted 973716962 1530653922
-for adding 
-\change_unchanged
-IVR 
-\change_inserted 973716962 1530653925
-was added 
-\change_unchanged
-to the video treatment.
- However, there is some evidence that a demand
-\change_deleted 973716962 1530653929
- 
-\change_inserted 973716962 1530653930
--
-\change_unchanged
-driven information service such as IVR may be more effective to increase
- the adoption of more complex technologies (eg.
- basal application of DAP and 
-\change_inserted 973716962 1530653940
-the use of 
-\change_unchanged
-hybrid maize seed).
- 
-\change_inserted 973716962 1530653954
-
 \end_layout
 
 \begin_layout Standard
@@ -13248,93 +10958,17 @@ As a result of having been shown a video, households reduce the area under
 \end_layout
 
 \begin_layout Standard
-There is some evidence 
-\change_inserted 973716962 1530653967
-to suggest 
-\change_unchanged
-that showing video only to the female co-head
-\change_deleted 973716962 1530654008
- reduces
-\change_inserted 973716962 1530654010
-improved
-\change_unchanged
- 
-\change_inserted 973716962 1530654012
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 973716962 1530654020
-\begin_inset Quotes eld
-\end_inset
-
-improves
-\begin_inset Quotes erd
-\end_inset
-
- – correct?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-household
-\change_deleted 973716962 1530653971
- 
-\change_inserted 973716962 1530653971
--
-\change_unchanged
-level knowledge 
-\change_inserted 973716962 1530653974
-outcomes 
-\change_unchanged
-as opposed to when the info
-\change_inserted 973716962 1530654002
-rmation
-\change_unchanged
- is given to the man only.
+There is some evidence to suggest that showing video only to the female
+ co-head reduces household-level knowledge outcomes as opposed to when the
+ information is given to the man only.
  There is also some evidence that targeting the couple instead of only the
- man leads to an increase
-\change_deleted 973716962 1530653983
-d
-\change_inserted 973716962 1530653984
- in the
-\change_unchanged
- likelihood of 
-\change_inserted 973716962 1530653997
-using 
-\change_deleted 973716962 1530653992
-the use of
-\change_inserted 973716962 1530653994
-inorganic
-\change_unchanged
- fertilizer and that this fertilizer is also combined with improved seed.
- Comparing male
-\change_inserted 973716962 1530654026
--
-\change_deleted 973716962 1530654025
- 
-\change_unchanged
-recipient households to households where the video was shown to the couple
- results in no differences in production
-\change_deleted 973716962 1530654032
- 
-\change_inserted 973716962 1530654032
--
-\change_unchanged
-related outcomes measured at the household level.
- Changing the messenger attribute does not have any effect on household
-\change_deleted 973716962 1530654038
- 
-\change_inserted 973716962 1530654038
--
-\change_unchanged
-level outcomes.
+ man leads to an increase in the likelihood of using inorganic fertilizer
+ and that this fertilizer is also combined with improved seed.
+ Comparing male-recipient households to households where the video was shown
+ to the couple results in no differences in production-related outcomes
+ measured at the household level.
+ Changing the messenger attribute does not have any effect on household-level
+ outcomes.
 \end_layout
 
 \begin_layout Standard
