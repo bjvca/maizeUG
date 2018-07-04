@@ -40,11 +40,11 @@ res_hh_fert <- array(NA, c(6,4,4))
 rownames(res_hh_fert) <- c("use_DAP","","use_urea","","use_organic","")
 res_hh_seed <- array(NA, c(4,4,4))
 rownames(res_hh_seed) <- c("hybrid","","opv","")
-res_pract_m <- array(NA, c(20,4,4))
+res_pract_m <- array(NA, c(20,4,7))
 rownames(res_pract_m) <- c("first_day","","space","","striga","","weed","", "use_fert","","seed","","combiner","","bought_seed","","chem","","index","")
-res_pract_w <- array(NA, c(20,4,4))
+res_pract_w <- array(NA, c(20,4,7))
 rownames(res_pract_w) <- c("first_day","","space","","striga","","weed","", "use_fert","","seed","","combiner","","bought_seed","","chem","","index","")
-res_pract_b <- array(NA, c(20,4,4))
+res_pract_b <- array(NA, c(20,4,7))
 rownames(res_pract_b) <- c("first_day","","space","","striga","","weed","", "use_fert","","seed","","combiner","","bought_seed","","chem","","index","")
 
 res_prod <- array(NA, c(10,4,4))
@@ -83,13 +83,12 @@ credplot.gg <- function(d,units, hypo){
  p <- ggplot(d, aes(x=x, y=y, ymin=ylo, ymax=yhi, colour=as.factor(grp)))+
  geom_pointrange(position=position_dodge(-.4))+
  geom_hline(yintercept = 0, linetype=2)+
- coord_flip()+
- xlab('') + ylab(units)+  ggtitle(hypo)+ theme(axis.text=element_text(size=18),
+ coord_flip(ylim = c(-.25,.25))+
+ xlab('') + ylab(units)+ labs(title=hypo)  + theme(axis.text=element_text(size=18),
         axis.title=element_text(size=14,face="bold"),legend.text=element_text(size=18), plot.title = element_text(size=22,hjust = 0.5), legend.title=element_blank())+
     geom_errorbar(aes(ymin=ylo, ymax=yhi),position=position_dodge(-.4),width=0,cex=1.5) 
  return(p)
 }
-
 
 ############################################################### function definitions (RI) #################################################################
 ### a function to calculate the single sided RI p-values
@@ -1182,7 +1181,7 @@ plot_res[3,5,h] <- "female"
 
 ######## decisions
 ### this is at the plot level now
-dta_bal <- balancr( h_ind = h, dta_in = dta, bal_var="dectime_man_pl1")
+dta_bal <- balancr( h_ind = h, dta_in = dta, bal_var="mgt_man_pl1")
 
 #results <- plot_RI_dec(dta_bal,"dectime_man",treatment, nr_repl = totrep, h=h)
 #if (totrep>0) {
@@ -1256,7 +1255,7 @@ dta_bal <- balancr( h_ind = h, dta_in = dta, bal_var="dectime_man_pl1")
 #}
 #res_dec_m[18,1:2,h] <- unlist(results[c(6,2)])
 
-results <- plot_RI_dec(dta_bal,"dec_man_d",treatment, nr_repl = totrep, h=h)
+results <- plot_RI_dec(dta_bal,"mgt_man",treatment, nr_repl = totrep, h=h)
 #if (totrep>0) {
 #res_dec_m[19,1:3,h] <- unlist(results[c(5,1,4)])
 #} else {
@@ -1303,7 +1302,7 @@ plot_res[4,5,h] <- "male"
 ##system.time(reser <- FSR_RI_plot2(c("dectime_man","decspace_man", "decstriga_man", "decweed_man"), treatment, dta_ind, pvals = c(0.0215,0.0492,0.2630,0.0175),100))
 
 ######## decisions woman
-dta_bal <- balancr( h_ind = h, dta_in = dta, bal_var="dectime_woman_pl1")
+dta_bal <- balancr( h_ind = h, dta_in = dta, bal_var="mgt_woman_pl1")
 #results <- plot_RI_dec(dta_bal,"dectime_woman",treatment, nr_repl = totrep, h=h)
 #if (totrep>0) {
 #res_dec_w[1,1:3,h] <- unlist(results[c(5,1,4)])
@@ -1376,7 +1375,7 @@ dta_bal <- balancr( h_ind = h, dta_in = dta, bal_var="dectime_woman_pl1")
 #}
 #res_dec_w[18,1:2,h] <- unlist(results[c(6,2)])
 
-results <- plot_RI_dec(dta_bal,"dec_woman_d",treatment,  nr_repl = totrep, h=h)
+results <- plot_RI_dec(dta_bal,"mgt_woman",treatment,  nr_repl = totrep, h=h)
 #if (totrep>0) {
 #res_dec_w[19,1:3,h] <- unlist(results[c(5,1,4)])
 #} else {
@@ -1390,7 +1389,7 @@ plot_res[5,3:4,h] <- confint(results[[8]], level=.9)[2,]/sd(results[[9]], na.rm=
 plot_res[5,5,h] <- "female"
 
 ######## decisions both
-dta_bal <- balancr( h_ind = h, dta_in = dta, bal_var="dectime_both_pl1")
+dta_bal <- balancr( h_ind = h, dta_in = dta, bal_var="mgt_both_pl1")
 #results <- plot_RI_dec(dta_bal,"dectime_both",treatment, nr_repl = totrep, h=h)
 #if (totrep>0) {
 #res_dec_b[1,1:3,h] <- unlist(results[c(5,1,4)])
@@ -1463,7 +1462,7 @@ dta_bal <- balancr( h_ind = h, dta_in = dta, bal_var="dectime_both_pl1")
 #}
 #res_dec_b[18,1:2,h] <- unlist(results[c(6,2)])
 
-results <- plot_RI_dec(dta_bal,"dec_both_d",treatment, nr_repl = totrep, h=h)
+results <- plot_RI_dec(dta_bal,"mgt_both",treatment, nr_repl = totrep, h=h)
 #if (totrep>0) {
 #res_dec_b[19,1:3,h] <- unlist(results[c(5,1,4)])
 #} else {
@@ -1486,14 +1485,14 @@ plot_res[6,5,h] <- "joint"
 #res_pract_m[1,1:3,h] <- unlist(results[c(5,1,3)])
 #}
 #res_pract_m[2,1:2,h] <- unlist(results[c(6,2)])
-
-#results <- plot_RI(dta_bal, man = "dectime_woman", out_sp1 =c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5"),out_sp2 =c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5"),treatment , totrep,trimlog=F,h)
-#if (totrep>0) {
-#res_pract_w[1,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_pract_w[1,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_pract_w[2,1:2,h] <- unlist(results[c(6,2)])
+dta_bal <- balancr( h_ind = h, dta_in = dta, bal_var="mgt_woman_pl1")
+results <- plot_RI(dta_bal, man = "dectime_woman", out_sp1 =c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5"),out_sp2 =c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5"),treatment , totrep,trimlog=F,h)
+if (totrep>0) {
+res_pract_w[1,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_pract_w[1,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_pract_w[2,1:2,h] <- unlist(results[c(6,2)])
 
 #results <- plot_RI(dta_bal, man = "dectime_both", out_sp1 =c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5"),out_sp2 =c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5"),treatment , totrep,trimlog=F,h)
 #if (totrep>0) {
@@ -1514,13 +1513,13 @@ plot_res[6,5,h] <- "joint"
 #res_pract_m[4,1:2,h] <- unlist(results[c(6,2)])
 
 
-#results <- plot_RI(dta_bal, man = "decspace_woman", out_sp1 = c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201"),out_sp2 = c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201"),treatment, totrep,trimlog=F,h)
-#if (totrep>0) {
-#res_pract_w[3,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_pract_w[3,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_pract_w[4,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "decspace_woman", out_sp1 = c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201"),out_sp2 = c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201"),treatment, totrep,trimlog=F,h)
+if (totrep>0) {
+res_pract_w[3,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_pract_w[3,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_pract_w[4,1:2,h] <- unlist(results[c(6,2)])
 
 
 #results <-  plot_RI(dta_bal, man = "decspace_both", out_sp1 = c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201"),out_sp2 = c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201"),treatment , totrep,trimlog=F,h)
@@ -1541,13 +1540,13 @@ plot_res[6,5,h] <- "joint"
 #}
 #res_pract_m[6,1:2,h] <- unlist(results[c(6,2)])
 
-#results <- plot_RI(dta_bal, man = "decstriga_woman", out_sp1 = c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241"),out_sp2 = c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241"),treatment , totrep,trimlog=F,h)
-#if (totrep>0) {
-#res_pract_w[5,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_pract_w[5,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_pract_w[6,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "decstriga_woman", out_sp1 = c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241"),out_sp2 = c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241"),treatment , totrep,trimlog=F,h)
+if (totrep>0) {
+res_pract_w[5,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_pract_w[5,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_pract_w[6,1:2,h] <- unlist(results[c(6,2)])
 
 
 #results <- plot_RI(dta_bal, man = "decstriga_both", out_sp1 = c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241"),out_sp2 = c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241"),treatment , totrep,trimlog=F,h)
@@ -1568,13 +1567,13 @@ plot_res[6,5,h] <- "joint"
 #}
 #res_pract_m[8,1:2,h] <- unlist(results[c(6,2)])
 
-#results <- plot_RI(dta_bal, man = "decweed_woman", out_sp1 = c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26"),out_sp2 = c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26"),treatment  , totrep,trimlog=F,h)
-#if (totrep>0) {
-#res_pract_w[7,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_pract_w[7,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_pract_w[8,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "decweed_woman", out_sp1 = c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26"),out_sp2 = c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26"),treatment  , totrep,trimlog=F,h)
+if (totrep>0) {
+res_pract_w[7,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_pract_w[7,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_pract_w[8,1:2,h] <- unlist(results[c(6,2)])
 
 #results <- plot_RI(dta_bal, man = "decweed_both", out_sp1 = c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26"),out_sp2 = c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26"),treatment  , totrep,trimlog=F,h)
 #if (totrep>0) {
@@ -1596,13 +1595,13 @@ plot_res[6,5,h] <- "joint"
 #}
 #res_pract_m[10,1:2,h] <- unlist(results[c(6,2)])
 
-#results <- plot_RI(dta_bal, man = "dec_woman_d", out_sp1 = c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29"),out_sp2 = c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29"),treatment   , totrep,trimlog=F,h)
-#if (totrep>0) {
-#res_pract_w[9,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_pract_w[9,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_pract_w[10,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "dec_woman_d", out_sp1 = c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29"),out_sp2 = c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29"),treatment   , totrep,trimlog=F,h)
+if (totrep>0) {
+res_pract_w[9,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_pract_w[9,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_pract_w[10,1:2,h] <- unlist(results[c(6,2)])
 
 #results <- plot_RI(dta_bal, man = "dec_both_d", out_sp1 = c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29"),out_sp2 = c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29"),treatment   , totrep,trimlog=F,h)
 #if (totrep>0) {
@@ -1623,13 +1622,13 @@ plot_res[6,5,h] <- "joint"
 #}
 #res_pract_m[12,1:2,h] <- unlist(results[c(6,2)])
 
-#results <- plot_RI(dta_bal, man = "dec_woman_d", out_sp1 = c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42"),out_sp2 = c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42"),treatment  , totrep,trimlog=F,h)
-#if (totrep>0) {
-#res_pract_w[11,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_pract_w[11,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_pract_w[12,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "dec_woman_d", out_sp1 = c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42"),out_sp2 = c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42"),treatment  , totrep,trimlog=F,h)
+if (totrep>0) {
+res_pract_w[11,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_pract_w[11,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_pract_w[12,1:2,h] <- unlist(results[c(6,2)])
 
 #results <- plot_RI(dta_bal, man = "dec_both_d", out_sp1 = c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42"),out_sp2 = c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42"),treatment , totrep,trimlog=F,h)
 #if (totrep>0) {
@@ -1650,13 +1649,13 @@ plot_res[6,5,h] <- "joint"
 #res_pract_m[14,1:2,h] <- unlist(results[c(6,2)])
 
 
-#results <- plot_RI(dta_bal, man = "dec_woman_d", out_sp1 =  c("combiner_sp1_pl1","combiner_sp1_pl2","combiner_sp1_pl3","combiner_sp1_pl4","combiner_sp1_pl5"),out_sp2 = c("combiner_sp2_pl1","combiner_sp2_pl2","combiner_sp2_pl3","combiner_sp2_pl4","combiner_sp2_pl5"),treatment, totrep,trimlog=F,h)
-#if (totrep>0) {
-#res_pract_w[13,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_pract_w[13,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_pract_w[14,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "dec_woman_d", out_sp1 =  c("combiner_sp1_pl1","combiner_sp1_pl2","combiner_sp1_pl3","combiner_sp1_pl4","combiner_sp1_pl5"),out_sp2 = c("combiner_sp2_pl1","combiner_sp2_pl2","combiner_sp2_pl3","combiner_sp2_pl4","combiner_sp2_pl5"),treatment, totrep,trimlog=F,h)
+if (totrep>0) {
+res_pract_w[13,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_pract_w[13,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_pract_w[14,1:2,h] <- unlist(results[c(6,2)])
 
 
 
@@ -1678,13 +1677,13 @@ plot_res[6,5,h] <- "joint"
 #}
 #res_pract_m[16,1:2,h] <- unlist(results[c(6,2)])
 
-#results <- plot_RI(dta_bal, man = "dec_woman_d", out_sp1 =c("grp1seed_purchase1","grp2seed_purchase2","grp3seed_purchase3","grp4seed_purchase4","grp5seed_purchase5"),out_sp2 =c("spouse2grp_sp1seed_purchasesp1", "spouse2grp_sp2seed_purchase_sp2","spouse2grp_sp3seed_purchasesp3","spouse2group_sp4seed_purchasesp4","spouse2grp5_sp5seed_purchasesp5"),treatment , totrep,trimlog=F,h)
-#if (totrep>0) {
-#res_pract_w[15,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_pract_w[15,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_pract_w[16,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "dec_woman_d", out_sp1 =c("grp1seed_purchase1","grp2seed_purchase2","grp3seed_purchase3","grp4seed_purchase4","grp5seed_purchase5"),out_sp2 =c("spouse2grp_sp1seed_purchasesp1", "spouse2grp_sp2seed_purchase_sp2","spouse2grp_sp3seed_purchasesp3","spouse2group_sp4seed_purchasesp4","spouse2grp5_sp5seed_purchasesp5"),treatment , totrep,trimlog=F,h)
+if (totrep>0) {
+res_pract_w[15,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_pract_w[15,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_pract_w[16,1:2,h] <- unlist(results[c(6,2)])
 
 #results <- plot_RI(dta_bal, man = "dec_both_d", out_sp1 =c("grp1seed_purchase1","grp2seed_purchase2","grp3seed_purchase3","grp4seed_purchase4","grp5seed_purchase5"),out_sp2 =c("spouse2grp_sp1seed_purchasesp1", "spouse2grp_sp2seed_purchase_sp2","spouse2grp_sp3seed_purchasesp3","spouse2group_sp4seed_purchasesp4","spouse2grp5_sp5seed_purchasesp5"),treatment ,totrep,trimlog=F,h)
 #if (totrep>0) {
@@ -1704,13 +1703,13 @@ plot_res[6,5,h] <- "joint"
 #}
 #res_pract_m[18,1:2,h] <- unlist(results[c(6,2)])
 
-#results <- plot_RI(dta_bal, man = "dec_woman_d", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment ,totrep,trimlog=F,h)
-#if (totrep>0) {
-#res_pract_w[17,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_pract_w[17,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_pract_w[18,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "dec_woman_d", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment ,totrep,trimlog=F,h)
+if (totrep>0) {
+res_pract_w[17,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_pract_w[17,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_pract_w[18,1:2,h] <- unlist(results[c(6,2)])
 
 #results <- plot_RI(dta_bal, man = "dec_both_d", out_sp1 =c("grp1a55a" ,"grp2b55b", "grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f55a","spouse2grp_sp2g55b","spouse2grp_sp3h55b","spouse2group_sp4j55b","spouse2grp5_sp5k55b"),treatment ,totrep,trimlog=F,h)
 #if (totrep>0) {
@@ -1741,13 +1740,13 @@ plot_res[6,5,h] <- "joint"
 #}
 
 
-#results <- plot_RI(dta_bal, man = "dec_woman_d", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment ,totrep,trimlog=F,h)
-#if (totrep>0) {
-#res_pract_w[19,1:3,h] <- unlist(results[c(5,1,4)])
-#} else {
-#res_pract_w[19,1:3,h] <- unlist(results[c(5,1,3)])
-#}
-#res_pract_w[20,1:2,h] <- unlist(results[c(6,2)])
+results <- plot_RI(dta_bal, man = "dec_woman_d", out_sp1 =c("grp1a151","grp2b55b","grp3c55b","grp4d55b","grp5e55b"),out_sp2 =c("spouse2grp_sp1f151","spouse2grp_sp2g151","spouse2grp_sp3h151","spouse2group_sp4j151","spouse2grp5_sp5k151"),treatment ,totrep,trimlog=F,h)
+if (totrep>0) {
+res_pract_w[19,1:3,h] <- unlist(results[c(5,1,4)])
+} else {
+res_pract_w[19,1:3,h] <- unlist(results[c(5,1,3)])
+}
+res_pract_w[20,1:2,h] <- unlist(results[c(6,2)])
 #if (h==3) {
 #adopt_prod_plot[3,1] <- "female adoption"
 #adopt_prod_plot[3,3:4] <- confint(results[[7]], level=.9)[2,]/unlist(results[6])
@@ -1775,17 +1774,19 @@ plot_res[6,5,h] <- "joint"
 #adopt_prod_plot[11,3:4] <-  confint(results[[7]], level=.9)[2,]/unlist(results[6])
 #adopt_prod_plot[11,2] <-unlist(results[1]) / unlist(results[6])
 #}
-
+dta_bal <- balancr( h_ind = h, dta_in = dta, bal_var="mgt_man_pl1")
 indexer <- plot_adopt_FW_index(treatment,man="mgt_man",dta_bal, nr_repl=totrep,h_ind=h)
 plot_res[7,1,h] <- "adoption"
 plot_res[7,2,h] <- summary(indexer[[1]])$coefficients[2,1] /sd(indexer[[3]]$index, na.rm=T)
 plot_res[7,3:4,h] <- confint(indexer[[1]], level=.9)[2,]/sd(indexer[[3]]$index, na.rm=T)
 plot_res[7,5,h] <- "male" 
+dta_bal <- balancr( h_ind = h, dta_in = dta, bal_var="mgt_woman_pl1")
 indexer <- plot_adopt_FW_index(treatment,man="mgt_woman",dta_bal, nr_repl=totrep,h_ind=h)
 plot_res[8,1,h] <- "adoption"
 plot_res[8,2,h] <- summary(indexer[[1]])$coefficients[2,1] /sd(indexer[[3]]$index, na.rm=T)
 plot_res[8,3:4,h] <- confint(indexer[[1]], level=.9)[2,]/sd(indexer[[3]]$index, na.rm=T)
 plot_res[8,5,h] <- "female"
+dta_bal <- balancr( h_ind = h, dta_in = dta, bal_var="mgt_both_pl1")
 indexer <- plot_adopt_FW_index(treatment,man="mgt_both",dta_bal, nr_repl=totrep,h_ind=h)
 plot_res[9,1,h] <- "adoption"
 plot_res[9,2,h] <- summary(indexer[[1]])$coefficients[2,1] /sd(indexer[[3]]$index, na.rm=T)
@@ -2078,7 +2079,7 @@ plotter$yhi <- as.numeric(as.character(plotter$yhi))
 plotter$x <- factor(plotter$x, levels=c("production","adoption","decision","knowledge"))
 plotter$grp <- factor(plotter$grp, levels=c("male","female","joint"))
 pdf(paste(paste("/home/bjvca/data/projects/digital green/endline/results/presplot",h,sep="_"),".pdf", sep=""))
-credplot.gg(plotter,'SDs','H1: individual recipient vs couple') 
+credplot.gg(plotter,'SDs','') 
 dev.off()
 
 h <- 2
@@ -2091,7 +2092,7 @@ plotter$yhi <- as.numeric(as.character(plotter$yhi))
 plotter$x <- factor(plotter$x, levels=c("production","adoption","decision","knowledge"))
 plotter$grp <- factor(plotter$grp, levels=c("male","female","joint"))
 pdf(paste(paste("/home/bjvca/data/projects/digital green/endline/results/presplot",h,sep="_"),".pdf", sep=""))
-credplot.gg(plotter,'SDs', "H2: women involved as recipient")
+credplot.gg(plotter,'SDs', '')
 dev.off()
 
 h <- 3
@@ -2104,7 +2105,7 @@ plotter$yhi <- as.numeric(as.character(plotter$yhi))
 plotter$x <- factor(plotter$x, levels=c("production","adoption","decision","knowledge"))
 plotter$grp <- factor(plotter$grp, levels=c("male","female","joint"))
 pdf(paste(paste("/home/bjvca/data/projects/digital green/endline/results/presplot",h,sep="_"),".pdf", sep=""))
-credplot.gg(plotter,'SDs', "H2a: male vs female")
+credplot.gg(plotter,'SDs', "")
 dev.off()
 
 
@@ -2118,7 +2119,7 @@ plotter$yhi <- as.numeric(as.character(plotter$yhi))
 plotter$x <- factor(plotter$x, levels=c("production","adoption","decision","knowledge"))
 plotter$grp <- factor(plotter$grp, levels=c("male","female","joint"))
 pdf(paste(paste("/home/bjvca/data/projects/digital green/endline/results/presplot",h,sep="_"),".pdf", sep=""))
-credplot.gg(plotter,'SDs', "H2b: male vs couple")
+credplot.gg(plotter,'SDs', "")
 dev.off()
 
 
@@ -2132,7 +2133,7 @@ plotter$yhi <- as.numeric(as.character(plotter$yhi))
 plotter$x <- factor(plotter$x, levels=c("production","adoption","decision","knowledge"))
 plotter$grp <- factor(plotter$grp, levels=c("male","female","joint"))
 pdf(paste(paste("/home/bjvca/data/projects/digital green/endline/results/presplot",h,sep="_"),".pdf", sep=""))
-credplot.gg(plotter,'SDs', "H3: projecting cooperative approach")
+credplot.gg(plotter,'SDs', "")
 dev.off()
 
 
@@ -2146,7 +2147,7 @@ plotter$yhi <- as.numeric(as.character(plotter$yhi))
 plotter$x <- factor(plotter$x, levels=c("production","adoption","decision","knowledge"))
 plotter$grp <- factor(plotter$grp, levels=c("male","female","joint"))
 pdf(paste(paste("/home/bjvca/data/projects/digital green/endline/results/presplot",h,sep="_"),".pdf", sep=""))
-credplot.gg(plotter,'SDs', "H4: challenging gender stereotypes")
+credplot.gg(plotter,'SDs', "")
 dev.off()
 
 
@@ -2160,7 +2161,7 @@ plotter$yhi <- as.numeric(as.character(plotter$yhi))
 plotter$x <- factor(plotter$x, levels=c("production","adoption","decision","knowledge"))
 plotter$grp <- factor(plotter$grp, levels=c("male","female","joint"))
 pdf(paste(paste("/home/bjvca/data/projects/digital green/endline/results/presplot",h,sep="_"),".pdf", sep=""))
-credplot.gg(plotter,'SDs', "H5: testing gender homophily effect")
+credplot.gg(plotter,'SDs', "")
 
 dev.off()
 
