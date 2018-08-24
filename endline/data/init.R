@@ -1171,7 +1171,7 @@ dta$know_weed[is.na(dta$a3)  & is.na(dta$spouse2f3)] <- NA
 dta$know_armyworm <- rowSums(dta[c("a4","spouse2f4")] == 3, na.rm=T) > 0 
 dta$know_armyworm[is.na(dta$a4) & is.na(dta$spouse2f4)] <- NA
 
-### knowledge at aggreagate level - defined as follows: strong - if at least one person got the answer correct
+### knowledge at aggreagate level - defined as follows: strong - both spouses got the answer correct
 dta$know_space_j <- rowSums(dta[c("a1","spouse2f1")] == 1, na.rm=T) == 2
 dta$know_space_j[is.na(dta$a1) & is.na(dta$spouse2f1)] <- NA 
 
