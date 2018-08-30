@@ -297,6 +297,46 @@ dev.off()
 
 library(foreign)
 dta <- read.dta("/home/bjvca/data/projects/digital green/baseline/DLEC.dta")
+
+
+###################  function for balancing over treatment cells
+balancr <- function(h_ind = h, dta_in = dta_bal, bal_var="know_space") {
+#bal_var <- "dectime_man_pl1"
+#h <- 1
+#dta_in <- dta
+
+if (h_ind==1) {
+s_h1 <- min(table(factor(dta$recipient[dta$recipient!="couple"  & !is.na(dta_in[bal_var])])))
+dta_out <- rbind(dta_in[dta_in$recipient=="couple",]
+, dta_in[dta_in$recipient=="female"  & !is.na(dta_in[bal_var]),][sample( nrow(dta_in[dta_in$recipient=="female"  & !is.na(dta_in[bal_var]),]),s_h1),], dta_in[dta_in$recipient=="male"   & !is.na(dta_in[bal_var]),][sample( nrow(dta_in[dta_in$recipient=="male" & !is.na(dta_in[bal_var]),]),s_h1),])
+} else if (h_ind==2) {
+s_h1 <- min(table(factor(dta$recipient[dta$recipient!="male"  & !is.na(dta_in[bal_var])])))
+dta_out <- rbind(dta_in[dta_in$recipient=="male",]
+, dta_in[dta_in$recipient=="female"  & !is.na(dta_in[bal_var]),][sample( nrow(dta_in[dta_in$recipient=="female"  & !is.na(dta_in[bal_var]),]),s_h1),], dta_in[dta_in$recipient=="couple"   & !is.na(dta_in[bal_var]),][sample( nrow(dta_in[dta_in$recipient=="couple" & !is.na(dta_in[bal_var]),]),s_h1),])
+} else if (h_ind==5) {
+s_h1 <- min(table(factor(dta$messenger[dta$messenger!="couple"  & !is.na(dta_in[bal_var])])))
+dta_out <- rbind(dta_in[dta_in$messenger=="couple",]
+, dta_in[dta_in$messenger=="female"  & !is.na(dta_in[bal_var]),][sample( nrow(dta_in[dta_in$messenger=="female"  & !is.na(dta_in[bal_var]),]),s_h1),], dta_in[dta_in$messenger=="male"   & !is.na(dta_in[bal_var]),][sample( nrow(dta_in[dta_in$messenger=="male" & !is.na(dta_in[bal_var]),]),s_h1),])
+}  else if (h_ind==6) {
+s_h1 <- min(table(factor(dta$messenger[dta$messenger!="male"  & !is.na(dta_in[bal_var])])))
+dta_out <- rbind(dta_in[dta_in$messenger=="male",]
+, dta_in[dta_in$messenger=="female"  & !is.na(dta_in[bal_var]),][sample( nrow(dta_in[dta_in$messenger=="female"  & !is.na(dta_in[bal_var]),]),s_h1),], dta_in[dta_in$messenger=="couple"   & !is.na(dta_in[bal_var]),][sample( nrow(dta_in[dta_in$messenger=="couple" & !is.na(dta_in[bal_var]),]),s_h1),])
+}  else if (h_ind==7) {
+s_h_match <- min(diag(table(factor(dta_in$messenger[ !is.na(dta_in[bal_var])]),factor(dta_in$recipient[!is.na(dta_in[bal_var])])) ))
+s_h_nonmatch <- min(table(factor(dta_in$messenger[ !is.na(dta_in[bal_var])]),factor(dta_in$recipient[!is.na(dta_in[bal_var])]))[1,2],table(factor(dta_in$messenger[ !is.na(dta_in[bal_var])]),factor(dta_in$recipient[!is.na(dta_in[bal_var])]))[2,1] )
+dta_out <- rbind(dta_in[dta_in$messenger=="female"  & dta_in$recipient=="female" &  !is.na(dta_in[bal_var]),][sample( nrow(dta_in[dta_in$messenger=="female"  & dta_in$recipient=="female" & !is.na(dta_in[bal_var]),]),s_h_match),],
+dta_in[dta_in$messenger=="male"  & dta_in$recipient=="male" &  !is.na(dta_in[bal_var]),][sample( nrow(dta_in[dta_in$messenger=="male"  & dta_in$recipient=="male" & !is.na(dta_in[bal_var]),]),s_h_match),],
+dta_in[dta_in$messenger=="female"  & dta_in$recipient=="male" &  !is.na(dta_in[bal_var]),][sample( nrow(dta_in[dta_in$messenger=="female"  & dta_in$recipient=="male" & !is.na(dta_in[bal_var]),]),s_h_nonmatch),],
+dta_in[dta_in$messenger=="male"  & dta_in$recipient=="female" &  !is.na(dta_in[bal_var]),][sample( nrow(dta_in[dta_in$messenger=="male"  & dta_in$recipient=="female" & !is.na(dta_in[bal_var]),]),s_h_nonmatch),])
+} else {
+dta_out <- dta_in
+}
+ 
+return(dta_out)
+}
+
+###################
+
 dta$know_space <- dta$maizeoptimal_spacing == "a"
 dta$know_small <- dta$maizeq22 == "c"
 dta$know_weed <- dta$maizeq23 == "b"
@@ -339,56 +379,84 @@ summary(as.numeric(dta$maizeprinfo_receiv_spouse=="Yes"))
 summary(as.numeric(dta$maizeprinput_use=="Yes"))
 summary(dta$maizedist_shop)
 
-dta <- dta_all
+dta_copy <- dta_all
 
 balance <- array(NA,c(18, 7))
-jointF <-  array(NA,c(3, 7))
+jointF <-  array(NA,c(3, 8))
 
 for (h in 1:7) {
 if (h==1) {
-treat <- "(messenger != 'ctrl')+maizeivr+sms+as.factor(recipient) + as.factor(messenger)" 
-} else if (h==2) {
-treat <- "(maizeivr=='yes')+sms+as.factor(recipient) + as.factor(messenger)" 
-dta <- subset(dta_all, messenger!='ctrl')
-} else if (h==3) {
-treat <- "(sms=='yes')+as.factor(recipient) + as.factor(messenger)" 
-dta <- subset(dta_all, ivr=='yes' )
-} else if (h==4) {
-treat <- "(messenger=='female')+maizeivr+sms+as.factor(recipient) + as.factor(messenger)" 
-dta <- subset(dta_all, (messenger!='ctrl' & messenger!='couple') )
-} else if (h==5) {
-treat <- "(messenger=='couple')+maizeivr+sms+as.factor(recipient) + as.factor(messenger)" 
-dta <- subset(dta_all, (messenger!='ctrl' & messenger!='female') )
-} else if (h==6) {
-treat <- "(recipient=='female')+maizeivr+sms+as.factor(recipient) + as.factor(messenger)" 
-dta <- subset(dta_all, (messenger!='ctrl' & recipient!='couple') )
-} else if (h==7) {
-treat <- "(recipient=='couple')+maizeivr+sms+as.factor(recipient) + as.factor(messenger)" 
-dta <- subset(dta_all, (messenger!='ctrl' & recipient!='female') )
-}
-balance[1,h] <-  summary(lm(as.formula(paste("yield",treat, sep="~")), data= dta))$coefficients[2,1]
-balance[2,h] <-  summary(lm(as.formula(paste("yield",treat, sep="~")), data= dta))$coefficients[2,4]
-balance[3,h] <- summary(lm(as.formula(paste("maizeage",treat, sep="~")), data= dta))$coefficients[2,1]
-balance[4,h] <- summary(lm(as.formula(paste("maizeage",treat, sep="~")), data= dta))$coefficients[2,4]
-balance[5,h] <- summary(lm(as.formula(paste("(maizeeduc > 2)",treat, sep="~")), data= dta))$coefficients[2,1]
-balance[6,h] <- summary(lm(as.formula(paste("(maizeeduc >2)",treat, sep="~")), data= dta))$coefficients[2,4]
-balance[7,h] <- summary(lm(as.formula(paste("maizehh_no",treat, sep="~")), data= dta))$coefficients[2,1]
-balance[8,h] <- summary(lm(as.formula(paste("maizehh_no",treat, sep="~")), data= dta))$coefficients[2,4]
-balance[9,h] <-summary(lm(as.formula(paste("maizeprrooms",treat, sep="~")), data= dta))$coefficients[2,1]
-balance[10,h] <-summary(lm(as.formula(paste("maizeprrooms",treat, sep="~")), data= dta))$coefficients[2,4]
-balance[11,h] <-summary(lm(as.formula(paste("(maizeprinfo_receiv=='Yes')",treat, sep="~")), data= dta))$coefficients[2,1]
-balance[12,h] <-summary(lm(as.formula(paste("(maizeprinfo_receiv=='Yes')",treat, sep="~")), data= dta))$coefficients[2,4]
-### labeling mistake here: maizeprinfo_receiv_spouse should be fertilizer_use 
-balance[13,h] <-summary(lm(as.formula(paste("maizeprinfo_receiv_spouse=='Yes'",treat, sep="~")), data= dta))$coefficients[2,1]
-balance[14,h] <-summary(lm(as.formula(paste("maizeprinfo_receiv_spouse=='Yes'",treat, sep="~")), data= dta))$coefficients[2,4]
-### labeling mistake here: maizeprinfo_receiv_spouse should be improvedseed_use
-balance[15,h] <-summary(lm(as.formula(paste("maizeprinput_use=='Yes'",treat, sep="~")), data= dta))$coefficients[2,1]
-balance[16,h] <-summary(lm(as.formula(paste("maizeprinput_use=='Yes'",treat, sep="~")), data= dta))$coefficients[2,4]
-balance[17,h] <-summary(lm(as.formula(paste("maizedist_shop",treat, sep="~")), data= dta))$coefficients[2,1]
-balance[18,h] <-summary(lm(as.formula(paste("maizedist_shop",treat, sep="~")), data= dta))$coefficients[2,4]
+############################################ H1: info asymmetry: rec=individual vs rec=couple #########################################################
+dta <- dta_copy
 
-#also do some joint tests
-#summary(lm((maizevideo_shown!="ctrl")~yield + maizeage + as.numeric(maizeeduc>2) + maizehh_no + maizeprrooms + as.numeric(maizeprinfo_receiv=="Yes") + as.numeric(maizeprinfo_receiv_spouse=="Yes") + as.numeric(maizeprinput_use=="Yes") + maizedist_shop, data=dta_bal))
+treat <- "(recipient == 'couple') +ivr+sms+as.factor(messenger)" 
+} else if (h==2) {
+############################################ H2: empower: rec=male vs rec=couple or woman #########################################################
+dta <- dta_copy
+treat <- "(recipient != 'male') +ivr+sms+ as.factor(messenger)" 
+} else if (h==3) {
+############################################ H3: empower a1: rec=male vs rec=female ###################################################
+dta <- subset(dta_copy, recipient == "male" | recipient == "female")
+treat <- "(recipient == 'female') +ivr+sms+as.factor(messenger)" 
+} else if (h==4) {
+############################################ H4: empower a2: rec=male vs rec=couple ###################################################
+dta <- subset(dta_copy, recipient == "male" | recipient == "couple")
+treat <- "(recipient == 'couple') +ivr+sms+ as.factor(messenger)"
+
+##is this equal to just comparing female to couple???
+
+} else if (h==5) {
+############################################ H5: promote collective approach ###################################################
+dta <- dta_copy
+treat <- "(messenger == 'couple') +ivr+sms+as.factor(recipient)"
+} else if (h==6) {
+############################################ H6: challenge gender stereotype ###################################################
+dta <- dta_copy
+treat <- "(messenger != 'male') +ivr+sms+as.factor(recipient)"
+} else if (h==7) {
+############################################ H7: homophily ###################################################
+dta <- subset(dta_copy, recipient != "couple" & messenger != "couple")
+treat <- "(messenger == recipient) +ivr+sms"
+}
+print(h)
+
+
+dta2 <- balancr( h_ind = h, dta_in = dta, bal_var="yield")
+balance[1,h] <-  summary(lm(as.formula(paste("yield",treat, sep="~")), data= dta2))$coefficients[2,1]
+balance[2,h] <-  summary(lm(as.formula(paste("yield",treat, sep="~")), data= dta2))$coefficients[2,4]
+
+dta2 <- balancr( h_ind = h, dta_in = dta, bal_var="maizeage")
+balance[3,h] <- summary(lm(as.formula(paste("maizeage",treat, sep="~")), data= dta2))$coefficients[2,1]
+balance[4,h] <- summary(lm(as.formula(paste("maizeage",treat, sep="~")), data= dta2))$coefficients[2,4]
+
+dta2 <- balancr( h_ind = h, dta_in = dta, bal_var="maizeeduc")
+balance[5,h] <- summary(lm(as.formula(paste("(maizeeduc > 2)",treat, sep="~")), data= dta2))$coefficients[2,1]
+balance[6,h] <- summary(lm(as.formula(paste("(maizeeduc >2)",treat, sep="~")), data= dta2))$coefficients[2,4]
+
+dta2 <- balancr( h_ind = h, dta_in = dta, bal_var="maizehh_no")
+balance[7,h] <- summary(lm(as.formula(paste("maizehh_no",treat, sep="~")), data= dta2))$coefficients[2,1]
+balance[8,h] <- summary(lm(as.formula(paste("maizehh_no",treat, sep="~")), data= dta2))$coefficients[2,4]
+
+dta2 <- balancr( h_ind = h, dta_in = dta, bal_var="maizeprrooms")
+balance[9,h] <-summary(lm(as.formula(paste("maizeprrooms",treat, sep="~")), data= dta2))$coefficients[2,1]
+balance[10,h] <-summary(lm(as.formula(paste("maizeprrooms",treat, sep="~")), data= dta2))$coefficients[2,4]
+
+dta2 <- balancr( h_ind = h, dta_in = dta, bal_var="maizeprinfo_receiv")
+balance[11,h] <-summary(lm(as.formula(paste("(maizeprinfo_receiv=='Yes')",treat, sep="~")), data= dta2))$coefficients[2,1]
+balance[12,h] <-summary(lm(as.formula(paste("(maizeprinfo_receiv=='Yes')",treat, sep="~")), data= dta2))$coefficients[2,4]
+### labeling mistake here: maizeprinfo_receiv_spouse should be fertilizer_use 
+
+dta2 <- balancr( h_ind = h, dta_in = dta, bal_var="maizeprinfo_receiv_spouse")
+balance[13,h] <-summary(lm(as.formula(paste("maizeprinfo_receiv_spouse=='Yes'",treat, sep="~")), data= dta2))$coefficients[2,1]
+balance[14,h] <-summary(lm(as.formula(paste("maizeprinfo_receiv_spouse=='Yes'",treat, sep="~")), data= dta2))$coefficients[2,4]
+### labeling mistake here: maizeprinfo_receiv_spouse should be improvedseed_use
+dta2 <- balancr( h_ind = h, dta_in = dta, bal_var="maizeprinput_use")
+balance[15,h] <-summary(lm(as.formula(paste("maizeprinput_use=='Yes'",treat, sep="~")), data= dta2))$coefficients[2,1]
+balance[16,h] <-summary(lm(as.formula(paste("maizeprinput_use=='Yes'",treat, sep="~")), data= dta2))$coefficients[2,4]
+dta2 <- balancr( h_ind = h, dta_in = dta, bal_var="maizedist_shop")
+balance[17,h] <-summary(lm(as.formula(paste("maizedist_shop",treat, sep="~")), data= dta2))$coefficients[2,1]
+balance[18,h] <-summary(lm(as.formula(paste("maizedist_shop",treat, sep="~")), data= dta2))$coefficients[2,4]
+
 }
 
 dta <- dta_all
@@ -411,31 +479,43 @@ jointF[1,3] <- x$fstatistic[1]
 jointF[2,3] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
 jointF[3,3] <- x$df[1] + x$df[2]
 
-dta <- subset(dta_all, (messenger!='ctrl' & messenger!='couple') )
-x <- summary(lm(as.formula(paste("(messenger=='female')",covars, sep="~")), data= dta))
+#H1:
+
+dta <- subset(dta_all, messenger!='ctrl')
+h <- 1
+x <- summary(lm(as.formula(paste("(recipient=='couple')",covars, sep="~")), data= balancr( h_ind = h, dta_in = dta, bal_var="yield")))
 jointF[1,4] <- x$fstatistic[1]
 jointF[2,4] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
 jointF[3,4] <- x$df[1] + x$df[2]
 
 
-dta <- subset(dta_all, (messenger!='ctrl' & messenger!='male') )
-x <- summary(lm(as.formula(paste("(messenger=='couple')",covars, sep="~")), data= dta))
+#H2
+h <- 2
+x <- summary(lm(as.formula(paste("(recipient=='male')",covars, sep="~")), data= balancr( h_ind = h, dta_in = dta, bal_var="yield")))
 jointF[1,5] <- x$fstatistic[1]
 jointF[2,5] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
 jointF[3,5] <- x$df[1] + x$df[2]
 
-dta <- subset(dta_all, (messenger!='ctrl' & recipient!='couple') )
-x <- summary(lm(as.formula(paste("(recipient=='female')",covars, sep="~")), data= dta))
+
+#H3
+h <- 5
+x <- summary(lm(as.formula(paste("(messenger=='couple')",covars, sep="~")), data= balancr( h_ind = h, dta_in = dta, bal_var="yield")))
 jointF[1,6] <- x$fstatistic[1]
 jointF[2,6] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
 jointF[3,6] <- x$df[1] + x$df[2]
 
-dta <- subset(dta_all, (messenger!='ctrl' & recipient!='male') )
-x <- summary(lm(as.formula(paste("(recipient=='couple')",covars, sep="~")), data= dta))
+#H4
+h <- 6
+x <- summary(lm(as.formula(paste("(messenger=='male')",covars, sep="~")), data= balancr( h_ind = h, dta_in = dta, bal_var="yield")))
 jointF[1,7] <- x$fstatistic[1]
 jointF[2,7] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
 jointF[3,7] <- x$df[1] + x$df[2]
 
-
+h <- 7
+dta <- subset(dta, (messenger!='couple' & recipient!='couple') )
+x <- summary(lm(as.formula(paste("(recipient==messenger)",covars, sep="~")), data= balancr( h_ind = h, dta_in = dta, bal_var="yield")))
+jointF[1,8] <- x$fstatistic[1]
+jointF[2,8] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
+jointF[3,8] <- x$df[1] + x$df[2]
 
 

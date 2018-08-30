@@ -1404,8 +1404,8 @@ prod_plot$grp[9:12] <- "sms"
 prod_plot$x <- factor(prod_plot$x, levels=rev(prod_plot$x))
 prod_plot$grp <- factor(prod_plot$grp, levels = c("video","ivr", "sms"))
 
-pdf("/home/bjvca/data/projects/digital green/endline/results/summaryplot_mode.pdf")
-credplot.gg(prod_plot)
+pdf("/home/bjvca/data/projects/digital green/endline/results/summaryplot_video.pdf")
+credplot.gg(prod_plot,'SDs')
 dev.off()
 fert_plot$grp <- NA
 fert_plot$grp[9:12] <- "sms"
