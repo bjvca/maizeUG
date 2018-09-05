@@ -44,7 +44,14 @@ registerDoParallel(cl)
 dta <- subset(dta, (recipient !="female" | messenger == "ctrl"))
 ### and so delivery mode needs its own RI function
 
-RI <- function(dep, indep, dta , nr_repl = 1000) {
+
+RI <- function(dep, indep, dta , nr_repl = 1000, h_int=h) {
+#indep <- "(messenger != 'ctrl')+ivr+sms+as.factor(recipient) + as.factor(messenger)" 
+#h_int <- 1
+#dep <- "know_space"
+#dta <- dta_bal
+#nr_repl <- 1000
+
 ### determines treatmetn cell
 	dta <- dta %>% 
     		mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
@@ -58,12 +65,16 @@ RI <- function(dep, indep, dta , nr_repl = 1000) {
 	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table")) %dopar% {
 		dta_sim <- data.table(dta)
  		setDT(dta_sim)[,perm:=sample(treat),by = (uniqID)]
+if (h_int==1) {
 		dta_sim$recipient <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["male",]>0]),"male", "female"))
-		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["female",]>0]),"female",ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["couple",]>0]),"couple", "ctrl")))
-			return(abs(coef(lm(as.formula(paste(dep,indep,sep="~")), data=dta_sim))[2]) > abs(crit) )
+		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["ctrl",]>0]), "ctrl", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male","female")))
+} 
+
+		return(abs(coef(lm(as.formula(paste(dep,indep,sep="~")), data=dta_sim))[2]) > abs(crit) )
 	}
 	return(sum(oper)/nr_repl)
 }
+
 
 
 RI_FWER <- function(deps, indep, dta ,p_vals , nr_repl = 1000) {
@@ -135,7 +146,7 @@ trim <- function(var, dataset, trim_perc=.1) {
 return( subset(dataset,dataset[var] > quantile(dataset[var],c(trim_perc/2,1-(trim_perc/2)), na.rm=T)[1] & dataset[var] < quantile(dataset[var], c(trim_perc/2,1-(trim_perc/2)),na.rm=T)[2]) )
 }
 
-FW_index <- function(treat, indexer, data,revcols = NULL, nr_repl=0) {
+FW_index <- function(treat, indexer, data,revcols = NULL, nr_repl=0,h_ind=h) {
 ### function to make family wise index using covariance as weights (following http://cyrussamii.com/?p=2656)
 ### FW_index("messenger != 'ctrl' ", c("know_space", "know_combine", "know_weed"),dta)
 data <- data[complete.cases(data[indexer]),]
@@ -156,46 +167,48 @@ mod <- lm(as.formula(paste("index",treat,sep="~")) , data=data)
 					
 if (nr_repl > 0) { 
 	data$index <- as.vector(data$index)
-	sig <- RI("index" ,treat , data, nr_repl = nr_repl)
+	sig <- RI("index" ,treat , data, nr_repl = nr_repl,h_ind)
 } else {
 	sig <- summary(lm(as.formula(paste("index",treat,sep="~")) , data=data))$coefficients[2,4]
 }
 return(list(mod,sig, data))
 }
 
-
+totrep <- 0
 h <- 1
 ############################################ does the intervention work? (treat vs control) #########################################################
 
 treatment <- "(messenger != 'ctrl')+ivr+sms+as.factor(recipient) + as.factor(messenger)" 
 ############################### knowledge  ############################
+##no need to balance data here because we control for both messenger and recipient factor levels
 dta_bal <- dta
 
 res_itt_know[1,1,h] <- mean(dta_bal$know_space[dta_bal$messenger == "ctrl"])
 res_itt_know[2,1,h] <- sd(dta_bal$know_space[dta_bal$messenger == "ctrl"])
 res_itt_know[1,2,h] <- summary(lm(as.formula(paste("know_space",treatment, sep="~")) ,data=dta_bal))$coefficients[2,1]
 res_itt_know[2,2,h] <- summary(lm(as.formula(paste("know_space",treatment, sep="~")) ,data=dta_bal))$coefficients[2,2]
-res_itt_know[1,3,h] <- ifelse(totrep >0, RI("know_space",treatment , dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("know_space",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
+res_itt_know[1,3,h] <- ifelse(totrep >0, RI("know_space", treatment , dta_bal,  totrep,h),summary(lm(as.formula(paste("know_space",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
 
 res_itt_know[3,1,h] <-  mean(dta_bal$know_combine[dta_bal$messenger == "ctrl"])
 res_itt_know[4,1,h] <-  sd(dta_bal$know_combine[dta_bal$messenger == "ctrl"])
 res_itt_know[3,2,h] <- summary(lm(as.formula(paste("know_combine",treatment, sep="~")) ,data=dta_bal))$coefficients[2,1]
 res_itt_know[4,2,h] <- summary(lm(as.formula(paste("know_combine",treatment, sep="~")) ,data=dta_bal))$coefficients[2,2]
-res_itt_know[3,3,h] <-  ifelse(totrep >0, RI("know_combine",treatment , dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("know_combine",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
+res_itt_know[3,3,h] <-  ifelse(totrep >0, RI("know_combine",treatment , dta_bal, nr_repl = totrep,h),summary(lm(as.formula(paste("know_combine",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
 
 res_itt_know[5,1,h] <-  mean(dta_bal$know_weed[dta_bal$messenger == "ctrl"])
 res_itt_know[6,1,h] <-  sd(dta_bal$know_weed[dta_bal$messenger == "ctrl"])
 res_itt_know[5,2,h] <- summary(lm(as.formula(paste("know_weed",treatment, sep="~")) ,data=dta_bal))$coefficients[2,1]
 res_itt_know[6,2,h] <- summary(lm(as.formula(paste("know_weed",treatment, sep="~")) ,data=dta_bal))$coefficients[2,2]
-res_itt_know[5,3,h] <-  ifelse(totrep >0, RI("know_weed",treatment , dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("know_weed",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
+res_itt_know[5,3,h] <-  ifelse(totrep >0, RI("know_weed",treatment , dta_bal, nr_repl = totrep,h),summary(lm(as.formula(paste("know_weed",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
 
 res_itt_know[7,1,h] <- mean(dta_bal$know_armyworm[dta_bal$messenger == "ctrl"])
 res_itt_know[8,1,h] <- sd(dta_bal$know_armyworm[dta_bal$messenger == "ctrl"])
 res_itt_know[7,2,h] <- summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,1]
 res_itt_know[8,2,h] <- summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,2]
-res_itt_know[7,3,h] <-  ifelse(totrep >0, RI("know_armyworm",treatment , dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
+res_itt_know[7,3,h] <-  ifelse(totrep >0, RI("know_armyworm",treatment , dta_bal, nr_repl = totrep,h),summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal))$coefficients[2,4])
+
 ## no need to include armyworm in the index because we do not really expect an effect
-indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed"),dta_bal, nr_repl=totrep)
+indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed"),dta_bal, nr_repl=totrep,h)
 res_itt_know[9,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 res_itt_know[10,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 res_itt_know[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
