@@ -569,7 +569,14 @@ key "RePEc:smu:ecowpa:1705,riley"
  differentiated, with men playing a larger role in marketing or in the cultivati
 on of crops that have a higher monetary value (such as coffee and maize),
  and women responsible for reproductive agricultural activities and roots
- and tubers for home consumption.
+ and tubers for home consumption 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "njuki2011linking"
+
+\end_inset
+
+.
  Such gender stereotypes may be challenged by showing women role models
  successfully engaging in activities that are traditionally considered male
  activities (H4).
@@ -1559,7 +1566,7 @@ key "doi:10.1093/ajae/aau015"
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Preview
@@ -2008,7 +2015,7 @@ reference "tab:Balance"
  The concerns related to balance for this hypothesis are confirmed by the
  significance of the joint F-test
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 what is the implication for results? do we address this imbalance in one
@@ -2577,6 +2584,199 @@ At noon because sunlight increases chemical performance.
 \end_layout
 
 \begin_layout Standard
+Results for outcomes on the four different knowledge questions are presented
+ in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:hhknowledgeTC"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact of agricultural extension video on household knowledge
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:hhknowledgeTC"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}    
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Mean	&	ATE	&		p-value	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows correct spacing and seeding rate	&	0.155	&	0.131	&	0.000**	
+\backslash
+
+\backslash
+ 	&	(0.363)	&	(0.034)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows inputs need to be combined for best results	&	0.908	&	0.051	&	0.002**	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.290)	&	(0.018)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal time for first weeding	&	0.954	&	-0.016	&	0.343	
+\backslash
+
+\backslash
+ 	&	(0.210)	&	(0.018)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows best time to spary against FAW	&	0.336	&	-0.034	&	0.307	
+\backslash
+
+\backslash
+ 	&	(0.473)	&	(0.036)	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize   
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ The second column, differences (and standard errors of the differences)
+ between the treatment group and comparison group are reported and the third
+ column reports p-values based on randomization inference; **,* and + denotes
+ that the difference is signficant at the 1, 5 and 10 percent level after
+ controling for FWER (0.028, 0.014, 0.002).
+ All specifications controls for the other orthogonal factors in the factorial
+ design.
+ Number of observations used is 3,270.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Outcomes of the different knowledge questions were combined into an index,
  an overall score constructed as the weighted mean of the individual standardize
 d outcomes, using as weights the inverse of the co-variance matrix of the
@@ -3093,6 +3293,10 @@ reference "fig:Impact-of-video"
 
 \begin_layout Subsection*
 Reducing Information Inequalities
+\end_layout
+
+\begin_layout Subsubsection*
+Household level effects
 \end_layout
 
 \begin_layout Standard

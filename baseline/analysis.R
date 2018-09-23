@@ -383,6 +383,7 @@ dta_copy <- dta_all
 
 balance <- array(NA,c(18, 7))
 jointF <-  array(NA,c(3, 8))
+write.csv(dta_all,"/home/bjvca/data/projects/digital green/baseline/base_merge.cvs")
 
 for (h in 1:7) {
 if (h==1) {
@@ -518,4 +519,96 @@ jointF[1,8] <- x$fstatistic[1]
 jointF[2,8] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
 jointF[3,8] <- x$df[1] + x$df[2]
 
+
+library(foreign)
+dta <- read.dta("/home/bjvca/data/projects/digital green/baseline/DLEC.dta")
+
+dta$know_space <- dta$maizeoptimal_spacing == "a"
+dta$know_small <- dta$maizeq22 == "c"
+dta$know_weed <- dta$maizeq23 == "b"
+dta$maizeage[dta$maizeage == 999] <- NA
+siglev <-  1.96
+set.seed(54321)
+
+### here we do not drop the femheaded, in femheaded HH, the video was shown to the female
+dta$recipient[dta$recipient == "n/a"] <- "female"
+dta$messenger <- dta$maizevideo_shown
+dta$video <- TRUE
+dta$video[dta$messenger=="ctrl"] <- FALSE
+
+## merge in treatments
+treats <- read.csv("/home/bjvca/data/projects/digital green/sampling/sampling_list_ID.csv")[c("HHID","IVR","sms")]
+names(treats) <- c("hhid","ivr","sms")
+treats$femhead <- FALSE
+###merge in treatments for FHs - did they receive sms messages?
+treats_FH <- read.csv("/home/bjvca/data/projects/digital green/sampling/femhead_list_ID.csv")[c("HHID","IVR")]
+names(treats_FH) <- c("hhid","ivr")
+treats_FH$sms <- "no"
+treats_FH$femhead <- TRUE
+
+treats <- rbind(treats_FH, treats)
+treats$sms <- as.factor(treats$sms)
+dta <- merge(treats, dta, by="hhid", all=F)
+
+dta$yield <- dta$maizebags_harv*100/dta$maizearea_cultivation
+dta$eduhead <- as.numeric(dta$maizeeduc>2)
+dta$maizeprinfo_receiv <- as.numeric(dta$maizeprinfo_receiv=="Yes")
+dta$fert <- as.numeric(dta$maizeprinfo_receiv_spouse=="Yes")
+dta$seed <- as.numeric(dta$maizeprinput_use=="Yes")#### redo balance tests for DP_ICT paper
+
+
+outmat <- array(NA,c(18, 7))
+
+outcome <- c("yield","","maizeage","","eduhead","","maizehh_no","","maizeprrooms","","maizeprinfo_receiv","", "fert","","seed","","maizedist_shop")
+for (i in seq(1,18,2)) {
+print(i)
+outmat[i,1] <-  mean(unlist(dta[ dta$video==FALSE,][outcome[i]]), na.rm=T)
+outmat[i+1,1] <-  sd(unlist(dta[ dta$video==FALSE,][outcome[i]]), na.rm=T)
+outmat[i,2] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[2,1]
+outmat[i+1,2] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[2,2]
+outmat[i,3]  <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[2,4]
+outmat[i,4] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[3,1]
+outmat[i+1,4] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[3,2]
+outmat[i,5]  <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[3,4]
+outmat[i,6] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[4,1]
+outmat[i+1,6] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[4,2]
+outmat[i,7] <-  summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[4,4]
+}
+
+## F-tests - these are partial F-test as we also control for design effects (messenger, recipient and femhead)
+
+dta_cpy <- dta
+
+### an extremely inelegant way to get rid of missings...
+fm <- lm(video ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop + (messenger == "male") + (messenger == "female") + recipient +femhead+ivr+sms, data=dta,na.action = na.exclude)
+dta$resid <- resid(fm)
+dta <- subset(dta, !is.na(resid))
+
+reduced <- lm(video ~ (messenger == "male") + (messenger == "female")+recipient +femhead+ivr+sms, data=dta)
+full <- lm(video ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop+ (messenger == "male") + (messenger == "female") + recipient +femhead+ivr+sms, data=dta)
+anova(reduced,full)
+
+dta <- dta_cpy
+dta$num_ivr[dta$ivr == "yes"] <- 1
+dta$num_ivr[dta$ivr == "no"] <- 0
+### an extremely inelegant way to get rid of missings...
+fm <- lm(as.numeric(num_ivr) ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop + messenger+recipient +femhead+video+sms, data=dta,na.action = na.exclude)
+dta$resid <- resid(fm)
+dta <- subset(dta, !is.na(resid))
+
+reduced <- lm(num_ivr ~ messenger+recipient +femhead+video+sms, data=dta)
+full <- lm(num_ivr ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop + messenger+recipient +femhead+video+sms, data=dta)
+anova(reduced,full)
+
+dta <- dta_cpy
+dta$num_sms[dta$sms == "yes"] <- 1
+dta$num_sms[dta$sms == "no"] <- 0
+### an extremely inelegant way to get rid of missings...
+fm <- lm(as.numeric(num_sms) ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop + messenger+recipient +femhead+ video+ivr, data=dta,na.action = na.exclude)
+dta$resid <- resid(fm)
+dta <- subset(dta, !is.na(resid))
+
+reduced <- lm(as.numeric(num_sms) ~ messenger+recipient +femhead+video+ivr, data=dta)
+full <- lm(as.numeric(num_sms) ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop + messenger+recipient +femhead+video+ivr, data=dta)
+anova(reduced,full)
 

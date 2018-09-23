@@ -2,11 +2,23 @@
 
 dta <- read.csv("/home/bjvca/data/projects/digital green/endline/data/endline.csv")
 ###drop all female headed households 
-dta <- subset(dta, femalehead == 0)
+#dta <- subset(dta, femalehead == 0)
  
 
-# the variable video_shown does not have info so let's just merge in from the sampling list
-treats <- read.csv("/home/bjvca/data/projects/digital green/midline/list_sec.csv")
+# the variable video_shown does not have info so let's just merge in from the sampling list - no, better from endline?
+#treats <- read.csv("/home/bjvca/data/projects/digital green/midline/list_sec.csv")
+#dta <- merge(treats, dta, by="hhid", all=T)
+## merge in treatments
+treats <- read.csv("/home/bjvca/data/projects/digital green/sampling/sampling_list_ID.csv")[c("HHID","IVR","sms")]
+names(treats) <- c("hhid","ivr","sms")
+treats$femhead <- FALSE
+###merge in treatments for FHs - did they receive sms messages?
+treats_FH <- read.csv("/home/bjvca/data/projects/digital green/sampling/femhead_list_ID.csv")[c("HHID","IVR")]
+names(treats_FH) <- c("hhid","ivr")
+treats_FH$sms <- "no"
+treats_FH$femhead <- TRUE
+treats <- rbind(treats_FH, treats)
+treats$sms <- as.factor(treats$sms)
 dta <- merge(treats, dta, by="hhid", all=T)
 
 
@@ -24,6 +36,7 @@ dta$recipient.y <- NULL
 names(dta)[names(dta) == 'recipient.x'] <- 'recipient'
 dta$messenger.y <- NULL
 names(dta)[names(dta) == 'messenger.x'] <- 'messenger'
+dta$recipient[dta$femhead == TRUE] <- "female"
 dta <- subset(dta,!is.na(recipient))
 
 ### make a measure for production

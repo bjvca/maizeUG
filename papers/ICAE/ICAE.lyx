@@ -62,12 +62,11 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes true
-\output_changes true
+\tracking_changes false
+\output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -461408743 "Bjorn Van Campenhout"
 \end_header
 
 \begin_body
@@ -171,7 +170,7 @@ key "banerjee2011poor"
  as a lack of information about the existence, use, and profitability of
  modern inputs, improved technologies, and recommended management practices
  have been documented to be a major constraint to productivity growth, sustainab
-le intensification, and food security
+le intensification, and food security 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1086/451461,jack2013market"
@@ -188,7 +187,7 @@ key "doi:10.1086/451461,jack2013market"
  as a public service—are viewed as necessary to improving agricultural outcomes,
  especially in developing countries.
  Yet outcomes of many extension efforts are mixed at best, and gender differenti
-ated
+ated 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "davis2008extension"
@@ -420,15 +419,10 @@ The primary focus of this study is to test alternative designs for improving
 \end_layout
 
 \begin_layout Standard
-First, we aim to contribute to the literature on how ICTs can 
-\change_deleted -461408743 1535367278
-incresae
-\change_inserted -461408743 1535367278
-increase
-\change_unchanged
- the uptake of improved management practices among smallholder farmers—a
- topic that has received considerable attention in recent years but has
- lacked sufficient evidence on which approaches work and for whom 
+First, we aim to contribute to the literature on how ICTs can increase the
+ uptake of improved management practices among smallholder farmers—a topic
+ that has received considerable attention in recent years but has lacked
+ sufficient evidence on which approaches work and for whom 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1111/agec.12314"
@@ -460,7 +454,7 @@ key "Feder2010,doi:10.1080/13892240903309595,doi:10.1080/13892249985300061,davis
  As a result, ICT applications to extension such as sms reminders, purpose-built
  smartphone apps, portable tablets and projectors, and other hardware and
  software solutions have received considerable attention in recent years
- as a means of addressing  many of these issues
+ as a means of addressing many of these issues
 \begin_inset Note Note
 status collapsed
 
@@ -11145,7 +11139,7 @@ We find that as a result of being shown the video, farmers have experienced
  improvements in several key knowledge outcomes.
  We do not find incremental effects for the addition of IVR and SMS reminders.
  As a result of being shown the video, farmers also adopted a range of recommend
-ed practices: in particular, wefind that farmers reduced their use of DAP
+ed practices: in particular, we find that farmers reduced their use of DAP
  or NPK and increased their use of urea (and to a lesser extent inorganic
  fertilizer), thereby managing their soils in a more balanced manner.
  Effects are less strong when IVR was added to the video treatment.
