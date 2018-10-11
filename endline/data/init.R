@@ -3023,17 +3023,10 @@ dta[ paste("yield_sp2",paste("_pl",1:5, sep=""), sep="")] <- dta[c("prod_pl1_sp2
 
 
 ### merge in calls made to ivr system
-
-ivr_log <- read.csv("/home/bjvca/data/projects/digital green/endline/data/raw/ivr_log.csv")
-callers <- data.frame(names(table(ivr_log$Phone.Number)))
-names(callers) <- "tel"
-tels <- read.csv("/home/bjvca/data/projects/digital green/endline/data/working/tels.csv")[c("HHID","tel")]
-tels$tel <- paste("256",tels$tel, sep="")
-callers <- merge(callers,tels)
-callers$called <- TRUE 
-callers$tel <- NULL
-dta <- merge(dta, callers,by.x="hhid", by.y="HHID" ,all.x=T)
-dta$called[is.na(dta$called)] <- FALSE
+library(foreign)
+dta <- merge(dta,read.dta("/home/bjvca/data/projects/digital green/endline/data/raw/call_log_merge.dta"), by="hhid", all.x=T)
+dta$called <- NA
+dta$called <- !is.na(dta$phonenumber)
 
 ### read in sms log
 sms_log <- read.csv("/home/bjvca/data/projects/digital green/endline/data/raw/sms_log.csv")[c("Subscriber.Phone", "Scheduled.Date", "Status")]

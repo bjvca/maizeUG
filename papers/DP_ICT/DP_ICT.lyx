@@ -456,7 +456,7 @@ reference "fig:Experimental-Design"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1641,6 +1641,20 @@ We find that about 84 percent of households have access to a mobile phone.
  investigate when we look at the robustness of some of the results.
 \end_layout
 
+\begin_layout Standard
+Attrition was low.
+ Only 8.63 percent of the sample could not be tracked or persuaded to complete
+ the endline survey.
+ In addition, there were no indications that attrition rates were different
+ between the different treatment groups.
+ Attrition was 7.03 in the control group; 8.74 percent in the group that was
+ shown a video; 8.90 percent in the group that was shown a video and received
+ the IVR encouragement; and 7.45 percent in the group that also received
+ an SMS in addition to the IVR encouragement and the video.
+ Only in among the households that received the SMS reminders, attrition
+ is slightly lower than among households that did not receive the SMS treatment.
+\end_layout
+
 \begin_layout Subsection*
 Intent to Treat Analysis
 \end_layout
@@ -1825,7 +1839,7 @@ nt significance thresholds by determining which cuttoffs yield e.g., 5 percent,
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3690,68 +3704,6 @@ reference "tab:Impact_welfare"
 \end_layout
 
 \begin_layout Standard
-As a less subjective way to asses changes in well-being, we collected data
- on consumption.
- In particular, we asked the woman in the household about the value of the
- most consumed items, including own-consumption from farm production over
- the period of one week.
- These included consumption of maize, cassava, sorghum, millet, rice, sweet
- potatoes, beans, fruits, groundnuts, vegetables, salt/sugar, cooking oil/ghee,
- soap, and airtime
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Even though these consumption categories were carefully chosen on the basis
- of consumption expenditure data from representative surveys in the area,
- we agree they may not capture everything and the estimates are likely to
- be too low.
- In addition, it may be that the intervention affected the composition of
- consumption, and farmers that had seen the video may have started consuming
- more of a food category that we did not measure, suggesting their consumption
- did not change.
- Care should thus be taken when interpreting this variable.
-\end_layout
-
-\end_inset
-
-.
- From this we then took the logarithm and trimmed at 5 percent.
- We find that log consumption expenditure is about 10.92 in the control group,
- which corresponds to about UGX 65,000 or just under USD 20 per household
- per week.
-\end_layout
-
-\begin_layout Standard
-As in the tables on the impact of other outcome categories, the second and
- third table in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Impact_welfare"
-
-\end_inset
-
- reports average treatment effects for the video intervention.
- We find no evidence of impact on any of the welfare indicators.
- In the next two columns, we report intent to treat effects for the IVR
- intervention.
- Also here, we only find null effects.
- Finally, in columns 6 and 7 we report intent to treat effects for the addition
- of the SMS campaign.
- There is also no effect of the SMS reminders on outcomes.
- We also report conditional effects for subsets of farmers depending on
- mobile phone access/ownership, but also find no effects of the IVR and
- SMS interventions (Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Impact_welfare_cate"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways true
@@ -3954,29 +3906,189 @@ Note: In the first column, means (and standard deviations) in the comparison
 
 \end_layout
 
+\begin_layout Standard
+As a less subjective way to asses changes in well-being, we collected data
+ on consumption.
+ In particular, we asked the woman in the household about the value of the
+ most consumed items, including own-consumption from farm production over
+ the period of one week.
+ These included consumption of maize, cassava, sorghum, millet, rice, sweet
+ potatoes, beans, fruits, groundnuts, vegetables, salt/sugar, cooking oil/ghee,
+ soap, and airtime
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Even though these consumption categories were carefully chosen on the basis
+ of consumption expenditure data from representative surveys in the area,
+ we agree they may not capture everything and the estimates are likely to
+ be too low.
+ In addition, it may be that the intervention affected the composition of
+ consumption, and farmers that had seen the video may have started consuming
+ more of a food category that we did not measure, suggesting their consumption
+ did not change.
+ Care should thus be taken when interpreting this variable.
+\end_layout
+
+\end_inset
+
+.
+ From this we then took the logarithm and trimmed at 5 percent.
+ We find that log consumption expenditure is about 10.92 in the control group,
+ which corresponds to about UGX 65,000 or just under USD 20 per household
+ per week.
+\end_layout
+
+\begin_layout Standard
+As in the tables on the impact of other outcome categories, the second and
+ third table in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Impact_welfare"
+
+\end_inset
+
+ reports average treatment effects for the video intervention.
+ We find no evidence of impact on any of the welfare indicators.
+ In the next two columns, we report intent to treat effects for the IVR
+ intervention.
+ Also here, we only find null effects.
+ Finally, in columns 6 and 7 we report intent to treat effects for the addition
+ of the SMS campaign.
+ There is also no effect of the SMS reminders on outcomes.
+ We also report conditional effects for subsets of farmers depending on
+ mobile phone access/ownership, but also find no effects of the IVR and
+ SMS interventions (Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Impact_welfare_cate"
+
+\end_inset
+
+).
+\end_layout
+
 \begin_layout Subsection*
 Compliance and Treatment on the Treated Analysis
 \end_layout
 
 \begin_layout Standard
 For the IVR and SMS interventions, non-compliance may be a problem.
- For the IVR treatment, we find that only a small number of households that
- were encouraged to use the IVR system also actually called in.
+ For the IVR treatment, compliance was determined by comparing the phone
+ numbers extracted from the IVR call log with the phone numbers that were
+ given to us by the farmers at baseline.
+ We find that only a small number of households that were encouraged to
+ use the IVR system also actually called in (8.9 percent or 214 households).
+ In addition, we also found that 22 households that did not receive the
+ treatment called the IVR system.
+ For the SMS reminders, the system reported which households received the
+ message.
+ Of the 1,113 households that were supposed to receive the reminders, only
+ 860 or 77.3 percent did.
  
 \end_layout
 
 \begin_layout Standard
-Average effect of Treatment on the Treated: average over the subpopulation
- of treated people of the treatment effect.
+In this section, we therefore also present Local Average Treatment Effects
+ (LATE), where the IVR encouragement is used as an instrument for having
+ called into the IVR system.
+ Similarly, we report two stage least squares results where allocation to
+ the SMS treatment is used as an instrument for having received the SMS
+ message.
+ Note that for the former, due to the potential of two-way non-compliance,
+ we need both excludability and monotinicity, while for the latter there
+ is only the one-way non-compliance, we only the exclusion restriction is
+ needed.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Impact on knowledge
 \end_layout
 
 \begin_layout Standard
-LATE: difference between outcomes of households that called into the IVR
- but would not have done so if they would not have received the IVR package
- and outcomes of households that did not call into the IVR but would have
- done so if they had received the IVR package.
- This is thus the treatment effect for potential callers, which may be very
- different from the effect of IVR in the entire population
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Differential impact of dissemination technologies on household level knowledge
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:knowLATE"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*

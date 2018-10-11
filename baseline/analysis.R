@@ -581,6 +581,7 @@ outmat[i,8] <-  nobs(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+rec
 ## F-tests - these are partial F-test as we also control for design effects (messenger, recipient and femhead)
 
 dta_cpy <- dta
+write.csv(dta,"/home/bjvca/data/projects/digital green/endline/data/raw/baseline.csv")
 
 ### an extremely inelegant way to get rid of missings...
 fm <- lm(video ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop + maizemobile + maizemobile_access + (messenger == "male") + (messenger == "female") + recipient +femhead+ivr+sms, data=dta,na.action = na.exclude)
@@ -614,4 +615,5 @@ dta <- subset(dta, !is.na(resid))
 reduced <- lm(as.numeric(num_sms) ~ messenger+recipient +femhead+video+ivr, data=dta)
 full <- lm(as.numeric(num_sms) ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop  + maizemobile + maizemobile_access + messenger+recipient +femhead+video+ivr, data=dta)
 anova(reduced,full)
+
 
