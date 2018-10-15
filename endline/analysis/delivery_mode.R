@@ -1,15 +1,15 @@
 rm(list=ls())
 library(foreign)
-#source("/home/bjvca/data/projects/digital green/endline/data/init.R")
-#mobile <- read.dta("/home/bjvca/data/projects/digital green/baseline/DLEC.dta")[c("hhid","maizemobile","maizemobile_access")]
+source("/home/bjvca/data/projects/digital green/endline/data/init.R")
+mobile <- read.dta("/home/bjvca/data/projects/digital green/baseline/DLEC.dta")[c("hhid","maizemobile","maizemobile_access")]
 #source("functions.R")
 
 #wget https://www.dropbox.com/s/p6kuazj263x9ilr/DLEC.dta?dl=0
 #wget https://www.dropbox.com/s/n7hn2x0y492ofgi/AWS.csv?dl=0
 #install.packages(c("ggplot2","doParallel","data.table","dplyr"))
 
-dta <- read.csv("AWS.csv")
-mobile <- read.dta("DLEC.dta")[c("hhid","maizemobile","maizemobile_access")]
+#dta <- read.csv("AWS.csv")
+#mobile <- read.dta("DLEC.dta")[c("hhid","maizemobile","maizemobile_access")]
 
 
 #set totrep to zero if you do not want simulation based inferecne
@@ -100,8 +100,9 @@ dta_sim$perm_sms[is.na(dta_sim$perm_sms)] <- "no"
 
 
 RI_IV <- function(dep, indep, dta , nr_repl = 1000, h_int=h) {
-#indep <- "(messenger != 'ctrl')+ivr+sms+as.factor(recipient) + as.factor(messenger)" 
-#h_int <- 1
+# this does not work... not sure how to do RI in 2SLS
+#indep <- "called + (messenger != 'ctrl') +sms+as.factor(recipient) + as.factor(messenger) + femhead| ivr+ (messenger != 'ctrl') +sms+as.factor(recipient) + as.factor(messenger) + femhead"
+#h_int <- 2
 #dep <- "know_combine"
 #dta <- dta_bal
 #nr_repl <- 1000
@@ -863,7 +864,7 @@ registerDoParallel(cl)
 library(AER)
 
 
-totrep <- 10000
+totrep <- 0
 ### better to loop over h: 
 for (h in seq(2,3,1)) {
 if (h == 1) {
@@ -1165,6 +1166,15 @@ res_tot_wel[12,1,h] <- summary(indexer[[1]])$coefficients[2,2]
 res_tot_wel[11,2,h] <- indexer[[2]]
 res_tot_wel[11,3,h]  <- nobs(indexer[[1]])
 }
+
+
+dta <- subset(dta, ivr=="yes")
+summary(lm(called~sms+as.factor(recipient) + as.factor(messenger) + femhead,data=dta))
+summary(ivreg( called~ (totsms>0) +as.factor(recipient) + as.factor(messenger) + femhead | sms+as.factor(recipient) + as.factor(messenger) + femhead, data=dta))
+mean(dta$called[dta$sms=="no"])
+sd(dta$called[dta$sms=="no"])
+
+
 
 
 
