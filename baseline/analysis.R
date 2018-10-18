@@ -561,21 +561,25 @@ dta$maizemobile_access[dta$maizemobile == TRUE] <- TRUE
 
 outmat <- array(NA,c(22, 8))
 
+dta$weight <- 1
+dta$weight[dta$messenger == "female"] <- 1/(1287*1/1115)
+dta$weight[dta$messenger == "male"] <- 1/(1301*1/1115)
+
 outcome <- c("yield","","maizeage","","eduhead","","maizehh_no","","maizeprrooms","","maizeprinfo_receiv","", "fert","","seed","","maizedist_shop","","maizemobile","","maizemobile_access","")
 for (i in seq(1,22,2)) {
 print(i)
 outmat[i,1] <-  mean(unlist(dta[ dta$video==FALSE,][outcome[i]]), na.rm=T)
 outmat[i+1,1] <-  sd(unlist(dta[ dta$video==FALSE,][outcome[i]]), na.rm=T)
-outmat[i,2] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[2,1]
-outmat[i+1,2] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[2,2]
-outmat[i,3]  <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[2,4]
-outmat[i,4] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[3,1]
-outmat[i+1,4] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[3,2]
-outmat[i,5]  <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[3,4]
-outmat[i,6] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[4,1]
-outmat[i+1,6] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[4,2]
-outmat[i,7] <-  summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))$coef[4,4]
-outmat[i,8] <-  nobs(lm(as.formula(paste(outcome[i],"video+ivr+sms+messenger+recipient+femhead",sep="~")) ,data=dta))
+outmat[i,2] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+recipient+femhead",sep="~")) ,data=dta, weights=weight))$coef[2,1]
+outmat[i+1,2] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+recipient+femhead",sep="~")) ,data=dta, weights=weight))$coef[2,2]
+outmat[i,3]  <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+recipient+femhead",sep="~")) ,data=dta, weights=weight))$coef[2,4]
+outmat[i,4] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+recipient+femhead",sep="~")) ,data=dta, weights=weight))$coef[3,1]
+outmat[i+1,4] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+recipient+femhead",sep="~")) ,data=dta, weights=weight))$coef[3,2]
+outmat[i,5]  <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+recipient+femhead",sep="~")) ,data=dta, weights=weight))$coef[3,4]
+outmat[i,6] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+recipient+femhead",sep="~")) ,data=dta, weights=weight))$coef[4,1]
+outmat[i+1,6] <- summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+recipient+femhead",sep="~")) ,data=dta, weights=weight))$coef[4,2]
+outmat[i,7] <-  summary(lm(as.formula(paste(outcome[i],"video+ivr+sms+recipient+femhead",sep="~")) ,data=dta, weights=weight))$coef[4,4]
+outmat[i,8] <-  nobs(lm(as.formula(paste(outcome[i],"video+ivr+sms+recipient+femhead",sep="~")) ,data=dta, weights=weight))
 }
 
 ## F-tests - these are partial F-test as we also control for design effects (messenger, recipient and femhead)
@@ -584,36 +588,36 @@ dta_cpy <- dta
 write.csv(dta,"/home/bjvca/data/projects/digital green/endline/data/raw/baseline.csv")
 
 ### an extremely inelegant way to get rid of missings...
-fm <- lm(video ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop + maizemobile + maizemobile_access + (messenger == "male") + (messenger == "female") + recipient +femhead+ivr+sms, data=dta,na.action = na.exclude)
+fm <- lm(video ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop + maizemobile + maizemobile_access + recipient +femhead+ivr+sms, data=dta, weights=weight,na.action = na.exclude)
 dta$resid <- resid(fm)
 dta <- subset(dta, !is.na(resid))
 
-reduced <- lm(video ~ (messenger == "male") + (messenger == "female")+recipient +femhead+ivr+sms, data=dta)
-full <- lm(video ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop + maizemobile + maizemobile_access + (messenger == "male") + (messenger == "female") + recipient +femhead+ivr+sms, data=dta)
+reduced <- lm(video ~ recipient +femhead+ivr+sms, data=dta, weights=weight)
+full <- lm(video ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop + maizemobile + maizemobile_access  + recipient +femhead+ivr+sms, data=dta, weights=weight)
 anova(reduced,full)
 
 dta <- dta_cpy
 dta$num_ivr[dta$ivr == "yes"] <- 1
 dta$num_ivr[dta$ivr == "no"] <- 0
 ### an extremely inelegant way to get rid of missings...
-fm <- lm(as.numeric(num_ivr) ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop + maizemobile + maizemobile_access  + messenger+recipient +femhead+video+sms, data=dta,na.action = na.exclude)
+fm <- lm(as.numeric(num_ivr) ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop + maizemobile + maizemobile_access  + recipient +femhead+video+sms, data=dta, weights=weight,na.action = na.exclude)
 dta$resid <- resid(fm)
 dta <- subset(dta, !is.na(resid))
 
-reduced <- lm(num_ivr ~ messenger+recipient +femhead+video+sms, data=dta)
-full <- lm(num_ivr ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop + maizemobile + maizemobile_access  + messenger+recipient +femhead+video+sms, data=dta)
+reduced <- lm(num_ivr ~ recipient +femhead+video+sms, data=dta, weights=weight)
+full <- lm(num_ivr ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop + maizemobile + maizemobile_access  + recipient +femhead+video+sms, data=dta, weights=weight)
 anova(reduced,full)
 
 dta <- dta_cpy
 dta$num_sms[dta$sms == "yes"] <- 1
 dta$num_sms[dta$sms == "no"] <- 0
 ### an extremely inelegant way to get rid of missings...
-fm <- lm(as.numeric(num_sms) ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop  + maizemobile + maizemobile_access + messenger+recipient +femhead+ video+ivr, data=dta,na.action = na.exclude)
+fm <- lm(as.numeric(num_sms) ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop  + maizemobile + maizemobile_access + recipient +femhead+ video+ivr, data=dta, weights=weight,na.action = na.exclude)
 dta$resid <- resid(fm)
 dta <- subset(dta, !is.na(resid))
 
-reduced <- lm(as.numeric(num_sms) ~ messenger+recipient +femhead+video+ivr, data=dta)
-full <- lm(as.numeric(num_sms) ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop  + maizemobile + maizemobile_access + messenger+recipient +femhead+video+ivr, data=dta)
+reduced <- lm(as.numeric(num_sms) ~ recipient +femhead+video+ivr, data=dta, weights=weight)
+full <- lm(as.numeric(num_sms) ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop  + maizemobile + maizemobile_access + recipient +femhead+video+ivr, data=dta, weights=weight)
 anova(reduced,full)
 
 
