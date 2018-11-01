@@ -62,12 +62,11 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -408277422 "ELecoutere"
 \end_header
 
 \begin_body
@@ -120,11 +119,12 @@ ly or in groups.
  Information and communication technologies (ICT) have been advanced as
  a promising way to overcome many of the problems that plague the traditional
  extension model.
- We test the effectiveness of three ICT-mediated approaches to deliver agricultu
-ral extension information among maize farmers in eastern Uganda.
- First, we investigate the effectiveness of video as a means to transfer
- knowledge, increase technology adoption, increase productivity and improve
- well-being.
+ We test the effectiveness of an ICT-mediated approach to deliver agricultural
+ extension information among maize farmers in eastern Uganda.
+ The approach consists of three information dissemination technologies,
+ which are tested incrementally using a field experiment: First, we investigate
+ the effectiveness of video as a means to transfer knowledge, increase technolog
+y adoption, increase productivity and improve well-being.
  Second, we quantify the additional impact of augmenting video with interactive
  voice response (IVR) technology—a more demand-driven approach to information
  provision.
@@ -138,6 +138,19 @@ ral extension information among maize farmers in eastern Uganda.
  households that did not see this video.
  They also reported maize yields that were about 10 percent higher.
  Additional effects from IVR and SMS technologies are limited.
+\end_layout
+
+\begin_layout Abstract
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+to do: source for fertilizers in Context.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -165,13 +178,13 @@ This paper investigates the effectiveness of an ICT-enabled extension approach
  designed to provide information about improved maize cultivation practices
  to smallholder farmers in Uganda.
  We consider the specific technology through which the information is delivered
- to the farmer, and differentiate between (i) short audiovisual messages
- viewed on tablet computers that provide detailed information on better
- ways to cultivate maize; (ii) interactive voice response (IVR) systems
- that farmers call into if the need arises; and (iii) short message service
- (SMS) that nudge farmers at particular points in time about key farming
- practices they should apply and encourages them to seek more information
- through the IVR.
+ to the farmer, and assess the incremental effectiveness of (i) short audiovisua
+l messages viewed on tablet computers that provide detailed information
+ on better ways to cultivate maize; (ii) interactive voice response (IVR)
+ systems that farmers call into if the need arises; and (iii) short message
+ service (SMS) that nudge farmers at particular points in time about key
+ farming practices they should apply and encourages them to seek more informatio
+n through the IVR.
  The outcomes used to assess the relative effectiveness of these different
  ICTs include increases in knowledge about improved maize cultivation and
  changes in household-level indicators such as the use of 
@@ -179,12 +192,9 @@ This paper investigates the effectiveness of an ICT-enabled extension approach
 improved
 \color inherit
  inputs, technologies, and practices.
- We also look at the effect of the three different extension models on farm
- production outcomes, maize 
-\color cyan
-disposal
-\color inherit
-, and household level welfare.
+ We also look at the incremental effects of the three different extension
+ models on farm production outcomes, maize marketing, and household level
+ welfare.
  
 \end_layout
 
@@ -200,14 +210,8 @@ key "de2016field"
 \end_inset
 
 .
- We work with 
-\change_deleted -408277422 1540194428
-almost
-\change_inserted -408277422 1540194430
-approximately
-\change_unchanged
- 4,000 farm households sampled from the population of households cultivating
- maize across five districts of eastern Uganda.
+ We work with approximately 4,000 farm households sampled from the population
+ of households cultivating maize across five districts of eastern Uganda.
  The first intervention takes the form of a short video that explains simple
  yet effective ways to increase maize productivity and profitability, such
  as recommended practices on row spacing and seed rate, the importance of
@@ -215,7 +219,7 @@ approximately
  To test the overall effectiveness of the information provided through the
  video medium, we compare outcomes of farmers who were shown the informational
  video to outcomes of farmers who were exposed to a placebo video.
- In addition, we provide supplementary access to an IVR system to about
+ In addition, we provide complementary access to an IVR system to about
  two-thirds of the sampled households who were shown the informational video
  and, within that group, we send about half of the sampled households a
  series of eight follow-up SMS messages at strategic points in time.
@@ -232,19 +236,9 @@ ies, and recommended practices.
  We also find clear effects on production, with maize yields 10 percent
  higher than in control households.
  However, these results do not translate into greater well-being.
- We 
-\change_deleted -408277422 1540194562
-also
-\change_unchanged
- find that the IVR generated no additional impact on knowledge, nor did
- it have a strong influence on technology adoption
-\change_inserted -408277422 1540194584
-.
- W
-\change_deleted -408277422 1540194585
-: w
-\change_unchanged
-e only find a positive effect of IVR on the uptake of hybrid seed.
+ We find that the IVR generated no additional impact on knowledge, nor did
+ it have a strong influence on technology adoption.
+ We only find a positive effect of IVR on the uptake of hybrid seed.
  While the SMS reminders did increase the likelihood that farmers used the
  IVR service, there were no additional effects on other outcomes.
 \end_layout
@@ -255,12 +249,12 @@ The remainder of the paper is organized as follows.
  the study fits into the broader literature.
  Section 3 explains the experimental design and corresponding sampling frame.
  Section 4 describes the study site and context, while Section 5 describes
- the interventions used as the treatments in the experiment.
+ the interventions used as the treatments in the field experiment.
  We then turn to the results in Section 6 with a discussion of baseline
  characteristics and sample balance.
- This is followed by analysis of the impact of the three technologies tested,
- with subsections for impact on knowledge, practices adopted and inputs
- used, production, disposal, and welfare.
+ This is followed by the analysis of the incremental impact of the three
+ technologies tested, with subsections for knowledge, practices adopted
+ and inputs used, production, marketing, and welfare.
  A final section provides concluding remarks and recommendations for future
  program and research investments in ICT-enabled agricultural extension
  and advisory services.
@@ -271,8 +265,8 @@ Research Aim
 \end_layout
 
 \begin_layout Standard
-The primary focus of this study is to test alternative ways in which information
- is provided to farmers through ICT channels for improving the effectiveness
+The primary focus of this study is to test ways in which information is
+ provided to farmers through ICT channels for improving the effectiveness
  of agricultural extension services.
  Doing so, we aim to contribute to the literature on how ICTs can increase
  the adoption of modern inputs and improved crop management practices among
@@ -290,30 +284,11 @@ key "doi:10.1111/agec.12314"
  compared to improving access to market and price information—is a particularly
  challenging topic.
  Information of this kind is often non-excludable and non-rival in nature,
- 
-\change_inserted -408277422 1540194801
-therefore often under-supplied by the private sector and 
-\change_unchanged
-requiring 
-\change_deleted -408277422 1540194853
-government
-\change_inserted -408277422 1540194855
-public sector
-\change_unchanged
- intervention 
-\change_deleted -408277422 1540194805
-when it is under-supplied by the private sector
-\change_unchanged
-.
- 
-\change_deleted -408277422 1540194860
-Government
-\change_inserted -408277422 1540194863
-Public sector
-\change_unchanged
- intervention in this area typically takes the form of information campaigns,
- extension programs, and advisory services, many of which have been met
- with mixed success 
+ therefore often under-supplied by the private sector and requiring public
+ sector intervention .
+ Public sector intervention in this area typically takes the form of information
+ campaigns, extension programs, and advisory services, many of which have
+ been met with mixed success 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Feder2010,doi:10.1080/13892240903309595,doi:10.1080/13892249985300061,davis2008extension"
@@ -353,6 +328,16 @@ key "RePEc:hbs:wpaper:13-047"
  
 \begin_inset CommandInset citation
 LatexCommand citet
+key "casaburi2014harnessing"
+
+\end_inset
+
+ found that in Kenya, sending SMS messages with agricultural advice to smallhold
+er sugarcane farmers increased yields by 11.5% relative to a control group
+ with no messages.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
 key "doi:10.1080/00220388.2016.1146700"
 
 \end_inset
@@ -385,49 +370,36 @@ key "doi:10.1080/1369118X.2016.1200644"
 \end_layout
 
 \begin_layout Standard
-Our study compares three technologies, each with their own characteristics.
+Our study involves three technologies, each with their own characteristics.
  Video is a supply-driven intervention through which information is made
- available at only a limited number of occasion
-\change_inserted -408277422 1540196965
-s
-\change_unchanged
- (we showed the video only twice) and at moments that are decided upon by
- the supplier of the information (we showed the video before the maize planting
- season and early during planting).
+ available at only a limited number of occasions (we showed the video only
+ twice) and at moments that are decided upon by the supplier of the information
+ (we showed the video before the maize planting season and early during
+ planting).
  The strength of video is that it can combine audio and visual information
  in an attractive way that is recognizable to the farmer.
  For instance, we use local farmers as it has been found that information
  may be more effective if it is brought by someone one can identify with.
- We presume that such a supply
-\change_inserted -408277422 1540196997
--
-\change_deleted -408277422 1540196996
- 
-\change_unchanged
-driven approach may be particularly effective in the dissemination of new
- technologies and practices
-\change_inserted -408277422 1540197041
- and revive salient knowlegde??
-\change_unchanged
-.
+ We presume that such a supply-driven approach may be particularly effective
+ in the dissemination of new technologies and practices.
 \end_layout
 
 \begin_layout Standard
-Demand-driven extension approaches such as hotlines or IVRs assume that
+However, while farmers may recall the importance of certain agronomic inputs
+ and practices from the video, it may be more challenging to remember particular
+ details, such as quantities of fertilizer recommended or the particular
+ types of improved seeds suggested.
+ Demand-driven extension approaches such as hotlines or IVRs assume that
  farmers can identify their information needs and are capable of actively
- search
-\change_inserted -408277422 1540197056
-ing
-\change_unchanged
- for additional information
+ searching for additional information
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
 A hotline is a phone number that can be called by a farmer and questions
  can be asked to an expert.
- In an IVR, a farmer calls a number and navigates through a menu to select
- a topic.
+ In an IVR system, a farmer calls a number and navigates through a menu
+ to select a topic.
  The farmer then gets to listen to a pre-recorded message.
 \end_layout
 
@@ -476,79 +448,11 @@ key "RePEc:hbs:wpaper:13-047"
 \begin_layout Standard
 Finally, SMS reminders are also supply-driven, but instead of offering all
  the information at only one point in time, they are designed to remind
- farmers on a 
-\change_inserted -408277422 1540197173
-well-timed 
-\change_unchanged
-recurrent basis about important aspects of maize farming.
+ farmers at critical points in time about important aspects of maize farming.
  However, SMS messages are short and can not be used to provide new and
  complex information; in the present study, they are only used to make the
  information that was provided in the video more salient and to encourage
  farmers to use the IVR.
- 
-\end_layout
-
-\begin_layout Standard
-More broadly, we contribute to long-standing research efforts that document
- and measure the adoption and impact of improved agricultural technologies
- and management practices among smallholder farmers.
- There are many reasons for the observed low rates of adoption of improved
- technologies and practices among smallholder farm households, including
- lack of access to credit and insurance, poorly developed labour markets,
- and asymmetries of information within markets 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "doi:10.1086/451461,jack2013market"
-
-\end_inset
-
-.
- Our contribution is methodological in nature in recognition of two important
- points.
- First, few studies apply sufficiently rigorous methods to address concerns
- about sample selection bias and causal identification in the study of technical
- change in developing-country agriculture 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "de2010recent"
-
-\end_inset
-
-.
- 
-\change_inserted -408277422 1540197315
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1540197325
-we do not really address the second one...
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-Second, few studies on ICT-enabled extension 
-\change_deleted -408277422 1540215369
-are replicated in differing contexts and populations to increase both generaliza
-ble findings and 
-\change_inserted -408277422 1540215396
-offer 
-\change_unchanged
-nuanced insights on the impact pathways through which ICT operates on farmers
-\change_deleted -408277422 1540215417
-' decision-making about
-\change_unchanged
- technology adoption
-\change_inserted -408277422 1540215470
-, productivity enhancement, and welfare
-\change_unchanged
-.
  
 \end_layout
 
@@ -578,8 +482,8 @@ This study is part of a larger study that also looked at the role of gender
  factorial design (plus a separate pure control group), where one factor
  corresponds to the technology used and the other two factors varied the
  gender of the person to whom the video was shown within the household and
- the gender of the person who provides the information.
- In this study, we restrict attention the first factor.
+ the gender of the person who provides the information in the video.
+ In this study, we restrict attention to the first factor.
  More information on the overall study can be found in the pre-analysis
  plan, which is pre-registered and publicly available from the American
  Economic Association's registry for randomized controlled trials (AEARCTR-00021
@@ -589,17 +493,17 @@ This study is part of a larger study that also looked at the role of gender
 \end_inset
 
 .
- The experiment has four treatment arms and IVR and SMS treatments are increment
-al.
+ The experiment has four treatment arms, and IVR and SMS treatments are
+ incremental.
  The experimental unit is the household.
  We have a control group of 256 households that was shown a placebo video.
  Furthermore, 3,703 households were shown a video.
  From those 3,703 households that were shown a video, 2,414 also received
  the IVR number and instructions on how to use it.
  From those 2,414 households that were shown a video and received the IVR
- encouragement 1,113 households were also allocated to the SMS treatment.
+ encouragement, 1,113 households were also allocated to the SMS treatment.
  This design, together with the sample size in each treatment category,
- is illustrated in the top panel of Figure 
+ is illustrated in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Experimental-Design"
@@ -619,9 +523,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename E:/home/bjvca/data/projects/digital green/papers/DP_ICT/design_layout.pdf
+	filename design_layout.pdf
 	scale 70
-	BoundingBox 70bp 520bp 1012bp 650bp
+	BoundingBox 30bp 520bp 1012bp 650bp
 
 \end_inset
 
@@ -650,10 +554,10 @@ name "fig:Experimental-Design"
 \end_layout
 
 \begin_layout Standard
-To evaluate the effectiveness of the different modes of information provision,
- we start by comparing average household level outcomes among farm households
- in the control group to average outcomes of farming households that were
- shown a video.
+To evaluate the effectiveness of the different combinations of information
+ dissemination technologies, we start by comparing average household level
+ outcomes among farm households in the control group to average outcomes
+ of farming households that were shown a video.
  Ex-ante, we expected largest effects between the video group and the control
  group and power calculations indicated that we only needed about 250 observatio
 ns in each group
@@ -672,8 +576,8 @@ Power calculations were bases on an elaborate set of comparisons using different
  Survey of 2005/06) instead of from a theoretical distribution with an assumed
  mean and standard deviation.
  Apart from the sample size in the control group, sample size in other treatment
- arms are the result of minimal sample size needed to test differences in
- two other factors of the design.
+ arms are the result of binding constraints for minimal sample size needed
+ to test differences in two other factors of the design.
  Detailed information on the power calculations can be found in the pre-analysis.
 \end_layout
 
@@ -681,18 +585,13 @@ Power calculations were bases on an elaborate set of comparisons using different
 
 .
  This gives us the average treatment effect for the video intervention.
- To get the additional effect of the IVR treatment, we compare average outcomes
- of households that were shown a video and received the IVR intervention
- as well to households that were shown only a video
-\change_deleted -408277422 1540197411
- 
-\change_unchanged
-.
+ To get the additional effect of adding IVR to the video intervention, we
+ compare average outcomes of households that were shown a video and received
+ the IVR intervention as well to households that were shown only a video.
  Finally, the additional effect of the SMS campaign can be estimated by
  comparing outcomes of household that were shown a video, received IVR informati
 on and also received the eight SMS reminders to outcomes of households that
- are shown a video and received the information about the IVR system, but
- did not get the SMS reminders.
+ are shown a video and received the information about the IVR system.
 \end_layout
 
 \begin_layout Section*
@@ -700,27 +599,18 @@ Context
 \end_layout
 
 \begin_layout Standard
-We conducted the field experiment among 
-\change_inserted -408277422 1540197434
-smallholder 
-\change_unchanged
-maize farmer
-\change_inserted -408277422 1540197431
-s
-\change_unchanged
- in Uganda.
+We conducted the field experiment among smallholder maize farmers in Uganda.
  Maize is widely consumed throughout much of Uganda, yet its value-to-weight
  ratio is sufficiently high to also make it an important traded commodity.
  Therefore, efforts to increase maize productivity at the farm-household
  level are an important dimension of Uganda's strategy to increase food
  security and reduce poverty through both consumption and income channels.
- Yet maize yields in Uganda are low when compared to neighbouring countries
- and global averages.
- While research station trials conducted in Uganda report potential yields
- of about 1.6 metric tons per acre (using only improved varieties without
- fertilizer application), data from the Uganda National Household Survey
- 2005/06 indicate that average maize yields are much lower at about 618
- kg per acre for the main growing season 
+ Yet, maize yields in Uganda are low when compared to neighbouring countries
+ and global averages: While research station trials conducted in Uganda
+ report potential yields of about 1.6 metric tons per acre (using only improved
+ varieties without fertilizer application), data from the Uganda National
+ Household Survey (UNHS) 2005/06 indicate that average maize yields are
+ much lower at about 618 kg per acre for the main growing season 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "fermont2011estimating"
@@ -728,11 +618,12 @@ key "fermont2011estimating"
 \end_inset
 
 .
- Moreover, there is considerable variation in productivity across farmers,
- with the top 10 percent of farmers achieving yields in excess of 1.1 metric
- tons per acre.
+ Moreover, the UNHS data shows considerable variation in productivity across
+ farmers, with the top 10 percent of farmers achieving yields in excess
+ of 1.1 metric tons per acre.
  At the same time, the use of modern inputs such as inorganic fertilizer
- and management practices such as row planting is very low in Uganda.
+ and adoption of modern management practices such as row planting is very
+ low in Uganda.
  For example, the use of inorganic fertilizer is on average just 2.4 kg of
  nutrient per acre per year, compared to Kenya (75 kg/ac), Rwanda (70 kg/ac),
  and Tanzania (15 kg/ac).
@@ -777,21 +668,8 @@ Interventions
 \begin_layout Standard
 The first intervention used in the study was a video that was shown on 10-inch
  Android tablet computers.
- Videos were screened by a trained field enumerator 
-\change_inserted -408277422 1540197644
-during a one-to-one meeting with
-\change_deleted -408277422 1540197636
-who sat with individual
-\change_inserted -408277422 1540197662
- a
-\change_unchanged
- farmer
-\change_deleted -408277422 1540197664
-s
-\change_inserted -408277422 1540197668
- household
-\change_unchanged
-.
+ Videos were screened by a trained field enumerator during a one-to-one
+ meeting with a farmer.
  The control group received a placebo treatment, which was a music video
  of traditional dancing that contained no information related to farming.
  Videos (treatment or placebo) were screened twice to the households in
@@ -805,20 +683,18 @@ The information contained in the treatment groups' video is expected to
  improved technologies and practices which, in turn, are expected to positively
  affect farm-household income.
  The topics included in the video script were obtained from qualitative
- interviews with key informants that were conducted in May 2017, and included
- maize farmers, value chain actors, maize breeders, extension workers, district
- agricultural officers, and other government staff and experts.
+ interviews with key informants that were conducted in May 2017.
+ The key informants included maize farmers, traders, maize breeders, extension
+ workers, district agricultural officers, and other government staff and
+ experts.
  
 \end_layout
 
 \begin_layout Standard
 The main factors affecting maize productivity that were identified by these
  key informants were related to pests, poor soils, and poor seed quality.
- The three most important 
-\series bold
-pests
-\series default
- that affect maize farming are striga (in particular the 
+ The three most important pests that affect maize farming are striga (in
+ particular the 
 \emph on
 Striga hermonihica
 \emph default
@@ -840,8 +716,8 @@ Spodoptera frugiperda
  Because the nutritional needs of maize are greatest at the early stages
  of growth, weeding of striga becomes less effective in curbing losses as
  the season progresses.
- Striga can reduce production from about 30 percent up to total loss of
- the crop.
+ During the qualitative interviews, experts estimated that striga can reduce
+ production from about 30 percent up to total loss of the crop.
  
 \end_layout
 
@@ -888,12 +764,8 @@ In the near future, it is expected that the same herbicide-resistance trait
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-Poor soils
-\series default
-, exhausted by continuous cultivation with little rotation, is the second
- main limiting factor.
+Poor soils, exhausted by continuous cultivation with little rotation, is
+ the second main limiting factor.
  Soils often lack macro-nutrients such as nitrogen (N), phosphorous (P)
  and potassium (K), and farmers in our study area rarely use organic or
  inorganic fertilizers in sufficient quantities to ameliorate these deficiencies
@@ -904,49 +776,31 @@ phorous-potassium (NPK) applications are recommended), or at the vegetative
 \end_layout
 
 \begin_layout Standard
-Throughout eastern Uganda, maize farmers mainly rely on 
-\series bold
-seed saved from harvest
-\series default
-, which represents the third limiting factor identifying by key informants.
+Throughout eastern Uganda, maize farmers mainly rely on seed saved from
+ harvest, which was considered the third limiting factor identified by key
+ informants.
  The reliance on saved (recycled) seeds tends to negate the significant
  yield advantages conferred by high-yielding maize hybrids, which require
- that new F1 seed 
-\change_inserted -408277422 1540197884
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1540197891
-explain F1 seed 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-be purchased at the start of each season to realize the gains conferred
- by heterosis or hybrid vigor.
+ that new F1 seed be purchased at the start of each season to realize the
+ gains conferred by heterosis or hybrid vigor.
  And even where farmers rely on recycled seed from improved open-pollinated
  varieties (OPVs) that do not require seasonal replacement, the gains from
  improvement tend to depreciate over three to four seasons, again requiring
  farmers to purchase new seed at regular intervals.
- Gains from the improved genetic qualities of both maize hybrids and OPVs
- can increase yields between 30 and 200 percent, depending on climatic condition
-s and the complementary use of modern inputs and intensive management practices.
+ Experts during the qualitative interviews differed in opinions with respect
+ to the potential gains from the improved genetic qualities of both maize
+ hybrids and OPVs: Yield effects were estimated between 30 and 200 percent,
+ depending on climatic conditions and the complementary use of modern inputs
+ and intensive management practices.
 \end_layout
 
 \begin_layout Standard
 Finally, there are also
 \series bold
- crop management practices
+ 
 \series default
- that affect yields, but the effects are generally smaller than those related
- to improved seeds and inorganic fertilizer use.
+crop management practices that affect yields, but the effects are generally
+ smaller than those related to improved seeds and inorganic fertilizer use.
  The most important are timely planting, optimal plant spacing, and timely
  weeding.
 
@@ -955,12 +809,8 @@ Finally, there are also
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-Timely planting
-\series default
- in eastern Uganda implies that maize should be planted at the onset of
- the rains.
+Timely planting in eastern Uganda implies that maize should be planted at
+ the onset of the rains.
  However, many farmers delay planting for several reasons.
  For instance, they may not be certain that the rainy season has really
  started.
@@ -974,13 +824,9 @@ Timely planting
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-Optimal plant spacing
-\series default
- implies that sowing should be structured so that plants are not too close
- to each other such that they compete for light and nutrients which, in
- turn, reduces yields.
+Optimal plant spacing implies that sowing should be structured so that plants
+ are not too close to each other such that they compete for light and nutrients
+ which, in turn, reduces yields.
  Plants that are too far from each other means space is wasted, also leading
  to lower yields.
  Related is the number of seeds that farmers plant in each hill.
@@ -1001,12 +847,9 @@ Optimal plant spacing
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-Timely weeding
-\series default
- implies that the first weeding should be done at 18 to 20 days after planting,
- with a second weeding at two to three weeks after first weeding.
+Timely weeding implies that the first weeding should be done at 18 to 20
+ days after planting, with a second weeding at two to three weeks after
+ first weeding.
  From emergence to the 
 \begin_inset Quotes eld
 \end_inset
@@ -1015,8 +858,8 @@ eight-leaf
 \begin_inset Quotes erd
 \end_inset
 
- stage (when the maize is at about knee height), the maize plant is a very
- poor competitor and unwanted stress such as weed competition must be prevented.
+ stage, the maize plant is a very poor competitor and stress such from weed
+ competition must be prevented.
  A third weeding at the tasseling stage is optional, and depends on observed
  weed pressure after the second weeding.
 \end_layout
@@ -1138,54 +981,7 @@ peer farmers
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -408277422 1540198767
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1540198788
-explain that videos, ivr and sms were in the local language 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-The video starts with the farmer-actor introducing himself
-\change_inserted -408277422 1540198308
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1540198497
-not sure we should talk about the 'male version' of the video.
- isn't it safer to talk about the 'couple version' of the video to avoid
- criticism that a man farmer may not be recognised as 'peer farmer' by women
- farmers.
- maybe adjust to: 
-\begin_inset Quotes eld
-\end_inset
-
 The video starts with the farmer-actors introducing themselves
-\begin_inset Quotes erd
-\end_inset
-
- and so on 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \begin_inset Foot
 status collapsed
 
@@ -1205,15 +1001,8 @@ As mentioned above, this study focuses on the analysis of only one of three
  these videos was shown to the household.
  As in a factorial design, factors are orthogonal to each other, the likelihood
  that a household gets to see a particular video is the same across the
- three videos, and so we measure the average impact of the three videos
-\end_layout
-
-\end_inset
-
-.
-
-\change_inserted -408277422 1540198693
- (The videos can be found 
+ three videos, and so we measure the average impact of the three videos.
+ The videos can be found 
 \begin_inset CommandInset href
 LatexCommand href
 name "here"
@@ -1221,25 +1010,29 @@ target "https://www.youtube.com/watch?v=1albuXRm9a8&index=3&list=PLeqdWbb3KnJ8Vd
 
 \end_inset
 
-).
+.
+\end_layout
 
-\change_unchanged
- The farmer-actor talks about how he used to struggle with his maize production
- and how at one point in time, he decided things needed to change.
- It is shown how the farmer sells a hen, obtains a small loan from a friend,
- and uses these proceeds to buy small quantities of improved seed and fertilizer
+\end_inset
+
+.
+ The farmer-actors talks about how they used to struggle with their maize
+ production and how at one point in time, they decided things needed to
+ change.
+ It is shown how the farmers sell a hen, obtain a small loan from a friend,
+ and use these proceeds to buy small quantities of improved seed and fertilizer
  from a local retailer.
- The video then shows how the farmer prepares the field by collecting and
+ The video then shows how the farmers prepare the field by collecting and
  applying manure.
- Next, the video details how the DAP is applied correctly, how maize seed
- are spaced at 75cm x 30cm intervals with 1 plant per hill, and what the
- correct timing of these activities should be.
+ Next, the video details how DAP is applied correctly, how maize seed are
+ spaced at 75cm x 30cm intervals with 1 plant per hill, and what the correct
+ timing of these activities should be.
  The video progresses to a field about 10 to 12 days after sowing when the
- maize has emerged from the soil, and the farmer-actor recommends to engage
+ maize has emerged from the soil, and the farmer-actors recommend to engage
  in gap filling to replace seeds that did not germinate, thereby preserving
  optimal plant density.
  The video proceeds to the field at 18 to 20 days after sowing, and the
- farmer-actor recommends how weeding should be conducted with particular
+ farmer-actors recommend how weeding should be conducted with particular
  attention to the identification of striga and the importance of follow-up
  weeding two to three weeks later.
  The video then advances to four weeks after planting, where the farmer-actor
@@ -1251,35 +1044,19 @@ target "https://www.youtube.com/watch?v=1albuXRm9a8&index=3&list=PLeqdWbb3KnJ8Vd
 \begin_layout Standard
 The video then turns to a discussion about investing to get higher yields
  over time.
- The farmer-actor points out that while it may be difficult to raise cash,
+ The farmer-actors point out that while it may be difficult to raise cash,
  one can always start small (e.g., on one tenth of an acre) and reinvest the
  returns.
- He 
-\change_deleted -408277422 1540198604
-then
-\change_unchanged
- explains that following recommended practices and using improved inputs
- led hem to produce 2.5 bags of maize on a small plot, which he sold for
+ They explain that following recommended practices and using improved inputs
+ led them to produce 2.5 bags of maize on a small plot, which they sold for
  UGX 125,000 with a profit of almost UGX 90,000—as compared to previously
  harvesting merely one bag from the same area at a profit of only UGX 40,000.
- He then explains that he reinvested the difference (UGX 50,000) to increase
+ They then explain that they reinvested the difference (UGX 50,000) to increase
  the area under intensive maize cultivation year after year such that, over
- time, he was able to cultivate an entire acre using modern inputs.
- In the final part of the video, he reiterates his experience and again
- encourages the viewer to try a similar approach.
+ time, they were able to cultivate an entire acre using modern inputs.
+ In the final part of the video, they reiterate their experience and again
+ encourage the viewer to try a similar approach.
  
-\change_deleted -408277422 1540198687
-The videos can be found 
-\begin_inset CommandInset href
-LatexCommand href
-name "here"
-target "https://www.youtube.com/watch?v=1albuXRm9a8&index=3&list=PLeqdWbb3KnJ8VdzDX-ikrnOnizHRB09Ob"
-
-\end_inset
-
-.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -1333,6 +1110,8 @@ When your maize is knee high, apply 1 water bottle cap of urea around each
 \end_inset
 
 .
+ The other messages were similar in structure.
+ All content was produced in the local language (Busoga).
 \end_layout
 
 \begin_layout Section*
@@ -1384,11 +1163,7 @@ key "doi:10.1093/ajae/aau015"
  We then asked more specific questions related to maize farming, such as
  acreage and quantities produced in the last season.
  Furthermore, we asked if the household received agricultural extension
- service
-\change_inserted -408277422 1540198888
-s
-\change_unchanged
-, whether it used improved seed, and whether fertilizer was applied.
+ services, whether it used improved seed, and whether fertilizer was applied.
  We also collected data on housing conditions (number of bedrooms) and distance
  to the nearest agro-input shop.
  As mobile phone ownership is relevant to the IVR and SMS interventions,
@@ -1686,37 +1461,19 @@ Note: First column reports control group means (and standard deviations
 
 \begin_layout Plain Layout
 
-placebo
-\change_inserted -408277422 1540199007
- (control)
-\change_unchanged
- and video treatment (and standard error below), column 3 between video
- only and video+ivr, column 4 between 
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
 \end_layout
 
 \begin_layout Plain Layout
 
-video+ivr and video+ivr+SMS; ***, ** and * denote that the difference is
- signficantly different from zero at 
+video+ivr and video+ivr+SMS; the last column is sample size; ***, ** and
+ * denote that the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
 the 1, 5 and 10 percent level, respectively.
-\end_layout
-
-\begin_layout Plain Layout
-
-  
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-   
 \end_layout
 
 \begin_layout Plain Layout
@@ -1747,12 +1504,12 @@ reference "tab:Balance"
 \end_inset
 
 , we provide descriptive statistics and balance tests for the comparisons
- between the three information delivery technologies.
+ between the three information delivery packages.
  Averages for the control group are reported in the first column.
  We observe that few households that were included in our study had access
  to agricultural extension in the previous year (about 11 percent).
  We also observe that only about 17 percent of households reported to have
- used any fertilizer in the previous season and only about 34 percent reported
+ used any fertilizer in the previous season, and only about 34 percent reported
  to have used improved seed bought from a shop or agro-input dealer during
  the last cropping season.
  This suggests ample scope to increase intensification investments through
@@ -1775,30 +1532,19 @@ key "Stokstad473"
 \begin_layout Standard
 Balance is tested through calculating differences between treatment groups
  for each characteristic, as well as through a joint significance test (F-test)
- for each of the three ICTs.
- The second column in Table 
+ for each of the three ICT combinations: The second column in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Balance"
 
 \end_inset
 
-, denoted video, compares baseline characteristics between households that
- were shown the placebo video
-\change_inserted -408277422 1540199095
- (control group)
-\change_unchanged
- and household
-\change_inserted -408277422 1540199090
-s
-\change_unchanged
- that were shown an intervention video.
+, labeled video, compares baseline characteristics between households that
+ were shown the placebo video (control group) and households that were shown
+ an intervention video.
  For example, we see that yields prior to the intervention are about 17
- kg per acre higher in the group that was shown the 
-\change_inserted -408277422 1540199115
-intervention 
-\change_unchanged
-video than in the group that was shown the placebo video.
+ kg per acre higher in the group that was shown the intervention video than
+ in the group that was shown the placebo video.
  However, this difference is not significantly different from zero.
  In fact, for the placebo video versus intervention video comparison, none
  of the differences between baseline characteristics is significant at the
@@ -1828,8 +1574,8 @@ We find that about 84 percent of households have access to a mobile phone.
  treatment groups.
  The incidence of phone ownership is also high, with about three quarters
  of households reporting they own a mobile.
- Again, this is important as the success of the SMS intervention depends
- on being able to receive the messages.
+ Again, this is important, as the SMS intervention assumes that farmers
+ are able to receive the messages.
  
 \end_layout
 
@@ -1863,19 +1609,20 @@ Impact on knowledge
 \begin_layout Standard
 We start with an elaborate analysis of the Intent to Treat effects of the
  three technologies.
- For the first technology, video, we had virtually no household that refused
- to watch, and so the Intent to Treat effect is equivalent to the average
- treatment effect of the technology.
- This is not necessarily the case for the two other additional technologies.
- For instance, the IVR treatment consists of an encouragement to use the
- IVR system.
+ For the first treatment, video only, we had virtually no household that
+ refused to watch, and so the Intent to Treat effect is equivalent to the
+ average treatment effect of the technology.
+ This is not necessarily the case for the two other treatments.
+ For instance, the video+IVR treatment includes an encouragement to use
+ the IVR system.
  We can not simply ignore the fact that a large proportion of farmers that
- were encouraged to use the IVR ended up not calling the system, as they
- are likely to be a non-random subset of the households that were assigned
- to the IVR treatment, leading to a biased estimate of the impact of the
- IVR technology.
- Also for the third treatment, the SMS reminders, being allocated the treatment
- does not necessarily mean that the household also receives the SMS message.
+ were encouraged to use the IVR ended up not calling the system.
+ As they are likely to be a non-random subset of the households that were
+ assigned to the IVR treatment this may lead to a biased estimate of the
+ impact of the video+IVR approach.
+ Also for the third treatment that adds SMS reminders, being allocated the
+ treatment does not necessarily mean that the household also receives the
+ SMS message.
  Also here, the probability that a particular household does not receive
  the intended treatment is likely non-random.
  For instance, households that live further away from a mobile phone tower
@@ -1889,13 +1636,8 @@ We start with an elaborate analysis of the Intent to Treat effects of the
 \end_layout
 
 \begin_layout Standard
-We first test the 
-\change_deleted -408277422 1540199307
-impact
-\change_inserted -408277422 1540199307
-Intent to Treat effects
-\change_unchanged
- of the three different ICT interventions on knowledge.
+We first test the Intent to Treat effects of the three ICT interventions
+ on knowledge.
  This was done through a short quiz 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1906,11 +1648,7 @@ key "feder2004acquisition,feder2004sending,masset2015does"
  consisting of four questions that were asked during the endline survey
  to each of the two spouses in the farm household separately.
  For each question, three possible answers were read out to the respondent,
- who was then asked to indicate which answer he or she though
-\change_inserted -408277422 1540199586
-t
-\change_unchanged
- was correct.
+ who was then asked to indicate which answer he or she thought was correct.
  The respondent was also allowed to indicate if he or she did not know the
  correct answer.
  The household was considered knowledgeable on a particular topic if at
@@ -1936,17 +1674,16 @@ al extension agents, and an intermediate alternative of 75cm x 30cm with
  of combining inputs rather than investing only in e.g., improved seed.
  We want to see if farmers internalize this advice and ask what a successful
  farmer would do if he or she only has 40,000 shillings.
- The correct answer is to use this 
-\change_deleted -408277422 1540199641
-sum
-\change_inserted -408277422 1540199642
-amount
-\change_unchanged
- to purchase
-\change_deleted -408277422 1540199647
-d
-\change_unchanged
- improved seed and fertilizer and start intensified farming on a small area.
+ The 
+\begin_inset Quotes eld
+\end_inset
+
+correct
+\begin_inset Quotes erd
+\end_inset
+
+ answer is to use this amount to purchase improved seed and fertilizer and
+ start intensified farming on a small area.
  Alternative options were to: 
 \begin_inset Quotes eld
 \end_inset
@@ -1970,7 +1707,7 @@ use all the money to buy fertilizer, because with poor soils, yields will
  important.
  The video showed that weeding is most important during the first four weeks
  after planting, as maize is a poor competitor for light and nutrients.
- It is assumed that most farmers would know this.
+ It was assumed that most farmers would know this.
  Alternative answers were: 
 \begin_inset Quotes eld
 \end_inset
@@ -1983,10 +1720,11 @@ when the maize is knee high
 \begin_inset Quotes eld
 \end_inset
 
-when the maize is at tasseling stage,
+when the maize is at tasseling stage
 \begin_inset Quotes erd
 \end_inset
 
+.
  Finally, we asked if farmers knew when spraying against fall armyworm is
  most effective.
  There was no information given about fighting fall armyworm in the intervention
@@ -2034,7 +1772,7 @@ key "anderson2008multiple"
 .
  However, we also think it is interesting to look at the impact on the questions
  individually, as they attempt to measure different aspects of the information
- intervention.
+ interventions.
  To control the Family Wise Error Rate (FWER) when we look at scores for
  each question individually, we use re-randomization to construct the joint
  null distribution for the family of outcomes we are testing.
@@ -2229,12 +1967,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the 
-\change_deleted -408277422 1540199783
-comparison
-\change_inserted -408277422 1540199784
-control
-\change_unchanged
+Note: In the first column, means (and standard deviations) in the control
  group are presented for each variable.
  Column 2 reports differences between placebo and video treatment (and standard
  error) with its corresponding p-value in column 3; column 4 reports differences
@@ -2273,16 +2006,9 @@ reference "tab:knowh0HH"
 \end_inset
 
  shows results for the three incremental levels of ICT-mediated information
- delivery using different dissemination technologies.
- The first column reports mean 
-\change_deleted -408277422 1540199819
-(and standard deviation reported below in parentheses)
-\change_unchanged
- scores in the control group
-\change_inserted -408277422 1540199822
- (and standard deviation reported below in parentheses)
-\change_unchanged
-.
+ delivery.
+ The first column reports mean scores in the control group (and standard
+ deviation reported below in parentheses).
  For the four individual questions, this is simply the proportion of households
  that answered correctly on the particular question.
  For instance, we find that in 16 percent of the households in the control
@@ -2329,7 +2055,7 @@ In fact, our pre-analysis plan specifies that we would drop from the analysis
 
 \end_inset
 
- Finally, on the Fall Armyworm question, we find that households that were
+ Finally, on the fall armyworm question, we find that households that were
  shown the video are no more likely than control households to know when
  one should spray to control the pest.
  This suggests that the videos did not encourage farmers to actively search
@@ -2337,52 +2063,37 @@ In fact, our pre-analysis plan specifies that we would drop from the analysis
  the video.
  Overall, and as confirmed by the knowledge index, we conclude that the
  agricultural extension videos increased knowledge at the household level,
- and that this increase seems especially poignant for 
-\emph on
-new
-\emph default
- information provided in the videos.
+ and that this increase seems especially poignant for novel information
+ provided in the videos.
  
 \end_layout
 
 \begin_layout Standard
-The fourth column (+IVR) shows the additional (ITT) effect of IVR (with
- standard error of the estimated coefficient reported below in parentheses;
- corresponding randomization inference based p-value are in the fifth column),
- 
-\change_deleted -408277422 1540200722
-over and above 
-\change_inserted -408277422 1540200725
-on top of 
-\change_unchanged
-the video effect reported in the second column.
- We see that being provided with an IVR encouragement does not 
-\change_inserted -408277422 1540200738
-additionally 
-\change_unchanged
-affect knowledge about the new recommended spacing.
+The fourth column (+IVR) shows the additional (ITT) effect of adding IVR
+ (with standard error of the estimated coefficient reported below in parentheses
+; corresponding randomization inference based p-value are in the fifth column),
+ on top of the video effect reported in the second column.
+ We see that being provided with an IVR encouragement does not additionally
+ affect knowledge about the new recommended spacing.
  There is some indication that the IVR treatment reduces the likelihood
  that at least one spouse responded correctly on the question about how
  inputs should be combined, but the reduction is not significantly different
  from zero after taking multiple inference into account.
- Similarly, there is no 
-\change_inserted -408277422 1540200786
-additional 
-\change_unchanged
-effect on knowledge related to the optimal time for weeding and also no
- effect on knowledge about the best way to fight fall armyworm.
- The fact that there is no supplementary effect of the IVR encouragement
+ Similarly, there is no additional effect on knowledge related to the optimal
+ time for weeding and also no additional effect on knowledge about the best
+ way to fight fall armyworm.
+ The fact that there is no complementary effect of the IVR encouragement
  on knowledge is confirmed by the non-significant difference in the knowledge
  index.
  
 \end_layout
 
 \begin_layout Standard
-The sixth column (+SMS) reports the additional effect of the sms reminders
+The sixth column (+SMS) reports the additional effect of the SMS reminders
  on the various questions and the index (randomization inference based p-value
  are in the seventh column).
- Similar to the impact of IVR, we do not find an additional effect of the
- SMS campaign on any of the questions.
+ Similar to the additional impact of IVR, we do not find an additional effect
+ of the SMS campaign on any of the questions.
  We also do not find an effect of the SMS campaign as judged by the knowledge
  index.
 \end_layout
@@ -2396,35 +2107,17 @@ It may be that the null results for both IVR and SMS campaign are due to
  dilute the effect, making it more difficult to detect a significant difference
  with the control group.
  Therefore, we take a closer look at conditional treatment effects.
- In particular, for the IVR campaign, we re-estimate the impact on knowledge
- again, but only for the 3,002 households that reported to have access to
- a mobile phone (either because someone within the household owns a mobile
- phone or because they can use the phone of a neighbor or relative if necessary).
+ In particular, for the video+IVR treatment, we re-estimate the impact on
+ knowledge again, but only for the 3,002 households that reported to have
+ access to a mobile phone (either because someone within the household owns
+ a mobile phone or because they can use the phone of a neighbor or relative
+ if necessary).
  For the SMS campaign, access to a mobile phone is likely not sufficient.
  To get the most benefit from the SMS reminders, households need to own
  a mobile phone.
- We therefor reran the analysis for the subset of 2,736 farm households
- that reported to own a mobile phone.
- 
-\change_inserted -408277422 1540215113
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1540215165
-explain that access/ownership is balanced in control and treatment groups,
- so no selection bias 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-However, results, reported in Table 
+ We therefor redid the comparison between video+IVR ad video+IVR+SMS for
+ the subset of 2,736 farm households that reported to own a mobile phone.
+ However, results, reported in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:knowh0HH-1"
@@ -2432,7 +2125,7 @@ reference "tab:knowh0HH-1"
 \end_inset
 
 , are very similar to the results obtained from the analysis on the entire
- data set, with no additional effects from neither IVR nor SMS reminders
+ data set, with no additional effects from either IVR nor SMS reminders
  on knowledge.
 \end_layout
 
@@ -2442,15 +2135,9 @@ Furthermore, especially for the IVR encouragement, the analysis above estimates
  and production outcomes.
  It does not provide an estimate of the efficacy of the IVR treatment itself.
  To get to the effect of the IVR system itself, we need to consider compliance:
- did farmers also use the IVR system
-\change_deleted -408277422 1540200888
-.
-\change_inserted -408277422 1540200888
-?
-\change_unchanged
- For the IVR treatment, compliance was measured by comparing the phone numbers
- extracted from the IVR call log with the phone numbers that were given
- to us by the farmers at baseline.
+ did farmers also use the IVR system? For the IVR treatment, compliance
+ was measured by comparing the phone numbers extracted from the IVR call
+ log with the phone numbers that were given to us by the farmers at baseline.
  We find that only a small number of households that were encouraged to
  use the IVR system also actually called in (8.9 percent or 214 households)
 \begin_inset Foot
@@ -2470,9 +2157,9 @@ key "RePEc:hbs:wpaper:13-047"
  as 88 percent.
  Among possible explanations for this difference are: the time frame (the
  88 percent was measured after 2 years of intensive exposure to the system,
- compliance rates were much lower at midline, while our IVR system was only
- 3 months operational); differences in treatment intensity (we only sent
- 8 reminders while 
+ compliance rates were much lower at midline; our IVR system was only 3
+ months operational); differences in treatment intensity (we only sent 8
+ reminders while 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "RePEc:hbs:wpaper:13-047"
@@ -2502,8 +2189,8 @@ key "RePEc:hbs:wpaper:13-047"
 \end_inset
 
 .
- In addition, we also found that 22 households that did not receive the
- encouragement called the IVR system.
+ In addition, we also found that 22 households from the control group called
+ the IVR system.
  Compliance may also not be perfect for the SMS treatment.
  For the SMS reminders, the system reported which households received the
  message.
@@ -2512,14 +2199,10 @@ key "RePEc:hbs:wpaper:13-047"
  We therefore also estimate Local Average Treatment Effects (LATE), where
  the IVR encouragement is used as an instrument for having called into the
  IVR system
-\change_inserted -408277422 1540213279
-
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1540215179
 i would report LATE in the tables in the text, not in the annex.
  why would you expect any effect from offering ivr if the farmers don't
  use it (ITT).
@@ -2544,31 +2227,20 @@ what happens if farmers use the ivr service that is offered?
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1540215226
 in the text: after ITT discuss LATE and then mention the treatment effects
  conditional on mobile phone access/ownership 
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 .
  Similarly, we report two stage least squares results where allocation to
  the SMS treatment is used as an instrument for having received the SMS
  message.
  Note that for the former, due to the potential of two-way non-compliance,
- we need both excludability and monot
-\change_deleted -408277422 1540200949
-i
-\change_inserted -408277422 1540200949
-o
-\change_unchanged
-nicity, while for the latter, there is only one-way non-compliance, hence
- only the exclusion restriction is needed.
+ we need both excludability and monotonicity, while for the latter, there
+ is only one-way non-compliance, hence only the exclusion restriction is
+ needed.
  
 \end_layout
 
@@ -2586,62 +2258,29 @@ reference "tab:knowLATE"
  takes the value of one if the household called the IVR, is instrumented
  by the IVR treatment allocation.
  We conclude that, as judged by the LATE estimates, calling the IVR system
- 
-\change_inserted -408277422 1540201112
-on top of having seen the intervention video 
-\change_unchanged
-did not affect knowledge.
+ on top of having seen the intervention video did not affect knowledge.
  In the fourth and fifth columns, we report LATE estimates for the SMS reminders.
  Results of a 2SLS regression where the endogenous variable, an indicator
  that takes the value of one if the household received at least one SMS
  message, is instrumented by the SMS treatment allocation.
- As for the ITT effect, we also find no
-\change_inserted -408277422 1540201240
- additional effect of receiving SMS on top of the intervention video and
- invitation to the IVR
-\change_unchanged
- 
-\change_deleted -408277422 1540201195
-TOT
-\change_inserted -408277422 1540201163
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1540201179
-TOT? treatment effect on the treated?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- 
-\change_deleted -408277422 1540201252
-effect
-\change_unchanged
- as evaluated through LATE.
+ As for the ITT effect, we also find no additional effect of receiving SMS
+ on top of the intervention video and invitation to the IVR as evaluated
+ through LATE.
 \end_layout
 
 \begin_layout Standard
-There may be different reasons why we do not find additional knowledge effects
- of the IVR encouragement and the SMS reminders.
- First, the lack of additional effects may be due to the way the experiment
- was designed.
- As we wanted to rule out that the effects were driven by differences in
- the content, we made sure that no new information was given in the IVR
- system and in the SMS campaign.
- In fact, we were interested in testing if IVR is effective in mitigating
+The fact that we do not find additional knowledge effects of the addition
+ of an IVR encouragement and the addition of SMS reminders may not be all
+ that surprising, as no new information is given through the IVR, nor in
+ the SMS messages.
+ Indeed, we were interested in testing if IVR is effective in mitigating
  the fact that video is a one-off intervention and farmers may forget the
  details related to new and complex agronomic practices.
  Also for the SMS campaign, the messages are too concise to transfer new
  knowledge.
- The aim here was to simply remind farmers about what they learned in the
- video and encourage them to call the hotline.
+ The aim here was to simply remind farmers that the moment was there to
+ implement what they learned in the video, and encourage them to call the
+ hotline.
  In light of this, it may be less surprising that we do not find additional
  knowledge effects from the two interventions.
  The null result for the IVR treatment on knowledge is also consistent with
@@ -2673,6 +2312,15 @@ We did test knowledge related to the fall armyworm pest.
 \end_inset
 
 .
+ The results are also consistent with results from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "casaburi2014harnessing"
+
+\end_inset
+
+, who find only an impact from their SMS messages if it is more likely that
+ the farmers do not already know the information that is contained in them.
 \end_layout
 
 \begin_layout Subsection*
@@ -2698,7 +2346,7 @@ reference "tab:pract_h1_ag"
  We find that 37 percent of households in the control group reported that
  they started planting one day after the start of the rains on at least
  on plot.
- Below, we show that only 2.6 percent of households in the control group
+ We further find that only 2.6 percent of households in the control group
  used the recommended way of plant spacing of 75cm x 30cm with a reduced
  seed rate of 1 seed per hill.
  This low rate in the control group is not surprising given that this was
@@ -2890,12 +2538,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the 
-\change_deleted -408277422 1540201374
-comparison
-\change_inserted -408277422 1540201375
-control
-\change_unchanged
+Note: In the first column, means (and standard deviations) in the control
  group are presented for each variable.
  Column 2 reports differences between placebo and video treatment (and standard
  error) with its corresponding p-value in column 3; column 4 reports differences
@@ -2930,13 +2573,9 @@ reference "tab:pract_h1_ag"
 \end_inset
 
  again reports the difference in the adoption of practices between households
- that were shown the 
-\change_inserted -408277422 1540201394
-intervention 
-\change_unchanged
-video and households that were give the placebo treatment (with standard
- error of the estimate in parenthesis below; corresponding randomization
- inference based p-values are in column 3).
+ that were shown the intervention video and households that were give the
+ placebo treatment (with standard error of the estimate in parenthesis below;
+ corresponding randomization inference based p-values are in column 3).
  We find that for the first recommended practice, early planting, there
  is no impact from the agricultural extension information video.
  The likelihood that households adopt the recommended 75cm x 30cm spacing
@@ -2968,26 +2607,26 @@ reference "tab:pract_h1_ag"
 
 \end_inset
 
- report results for the additional effect of the IVR encouragement (Intent
+ report results for the additional effect of the IVR encouragement (intent
  to treat estimate in column 4, corresponding randomization p-values in
  column 5).
- We do not find any significant additional effect of the IVR treatment on
- any of the recommended practices.
+ We do not find any significant additional effect of IVR on any of the recommend
+ed practices.
  The sixth and seventh column report results for the additional effect of
- the SMS campaign (Intent to treat estimate in column 6, corresponding randomiza
+ the SMS campaign (intent to treat estimate in column 6, corresponding randomiza
 tion p-values in column 7).
  While we do find that the proportion of households that reports to be removing
  striga before it flowers is 2.4 percentage points higher in the treatment
  group and we also find a small positive effect on seed spacing and seed
  rate, the differences are not significant.
- The fact that the both the IVR encouragement and the SMS campaign has no
- impact on adoption of practices is also reflected in the index.
+ The fact that the both the IVR encouragement and the SMS campaign have
+ no impact on adoption of practices is also reflected in the index.
 \end_layout
 
 \begin_layout Standard
 Similar to the analysis for knowledge outcomes, we repeated the analysis
  to assess the sensitivity of the results to potential treatment heterogeneity
- related to mobile phone access.
+ related to mobile phone access and ownership.
  In particular, we redid the analysis for the additional effect of IVR encourage
 ment, but only for the households that reported to have access to a mobile
  phone.
@@ -3017,8 +2656,8 @@ reference "tab:pract_h1_ag"
 
 \end_inset
 
- and so we conclude that our lack of results is not driven by treatment
- heterogeneity with respect to mobile phone ownership or access.
+ and so we conclude that the null results are not driven by treatment heterogene
+ity with respect to mobile phone ownership or access.
  In Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3038,8 +2677,8 @@ reference "tab:knowLATE"
 , we use 2SLS and instrument callers with the IVR encouragement and recipients
  of at least one SMS message with treatment allocation to the SMS reminder
  campaign.
- For the efficacy of both treatments on agronomic practices, there is no
- impact.
+ In both cases, we do not find additional impacts for the actual treated
+ farmers on adoption of recommended practices.
 \end_layout
 
 \begin_layout Standard
@@ -3069,8 +2708,8 @@ reference "tab:Impact-of-technology_fert"
  on at least one of their maize plots.
  The use of urea is less widespread: only 5.1 percent of households in the
  control group report that they used Urea on at least one plot.
- Among control households, 15.7 percent reports using organic fertilizer
- on at least one plot.
+ Among control households, 15.7 percent report using organic fertilizer on
+ at least one plot.
  
 \end_layout
 
@@ -3352,12 +2991,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the 
-\change_deleted -408277422 1540201541
-comparison
-\change_inserted -408277422 1540201542
-control
-\change_unchanged
+Note: In the first column, means (and standard deviations) in the control
  group are presented for each variable.
  Column 2 reports differences between placebo and video treatment (and standard
  error) with its corresponding p-value in column 3; column 4 reports differences
@@ -3385,7 +3019,7 @@ control
 
 \begin_layout Standard
 The impact of showing agricultural extension videos on fertilizer use is
- reported in column 2 and 3 of Table 
+ reported in columns 2 and 3 of Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Impact-of-technology_fert"
@@ -3393,7 +3027,7 @@ reference "tab:Impact-of-technology_fert"
 \end_inset
 
 .
- We see that showing a video reduced the use of DAP or NPK by 4.7 percentage
+ We see that showing a video reduced the use of DAP and/or NPK by 4.7 percentage
  points.
  This difference has an associated randomization inference based p-value
  of 0.088.
@@ -3417,9 +3051,8 @@ The opposing effects of the video on different types of fertilizer, the
 g the use of fertilizer types that are less commonly used.
  In the light of this reasoning, the fertilizer index may need to be specified
  differently, as more is not necessarily better for each type of fertilizer.
- More in particular, in the light of the imbalance in the control group,
- one may argue that DAP/NPK use is higher than optimal and Urea use is lower
- than optimal.
+ More in particular, given the imbalance in the control group, one may argue
+ that DAP/NPK use is higher than optimal and Urea use is lower than optimal.
  As such, a case can be made to include DAP/NPK use in the index with a
  negative sign.
  Doing so, we conclude that the video intervention has a significant effect
@@ -3440,25 +3073,7 @@ reference "tab:Impact-of-technology_fert"
  While the difference between treatment and control is positive for both
  types of inorganic fertilizer, the effects are not significant.
  We do, however, find that the IVR encouragement reduced the proportion
- of households that reports using organic fertilizer by about 25 percent
-\change_inserted -408277422 1540201624
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1540201629
-percentage points?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-.
+ of households that reports using organic fertilizer by about 25 percent.
  This negative impact may again be explained by a change in the mix of fertilize
 r.
  In the context of a more demand driven technology, farmers that use organic
@@ -3504,22 +3119,19 @@ reference "tab:Impact-of-technology_fert"
  likelihood that they also adopt it.
  The impact of the IVR treatment on improved seed use is confirmed by the
  seed index.
- The addition of SMS reminder, on the other hand, does seem to reduce the
+ The addition of SMS reminders, on the other hand, does seem to reduce the
  likelihood that hybrid maize seed is used (columns 6 and 7).
  However, the effect ceases to be significantly different from zero after
  controlling FWER.
- The 
-\change_inserted -408277422 1540201780
-additional 
-\change_unchanged
-effect of the SMS campaign on the seed index is also insignificant.
+ The additional effect of the SMS campaign on the seed index is also insignifica
+nt.
  
 \end_layout
 
 \begin_layout Standard
 We again investigate robustness of the results for the IVR and SMS interventions
  by rerunning the analysis conditional on mobile phone ownership.
- The results from this analysis is presented in Appendix Table 
+ The results from this analysis are presented in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Impact-of-technology_CATE"
@@ -3536,50 +3148,28 @@ reference "tab:Impact-of-technology_CATE"
  The addition of SMS reminders reduces Urea use more in the subgroup of
  phone owners (randomization inference p-value=0.050), but the estimate is
  not significantly different from zero after controlling FWER.
- We also find that organic fertlizer use is slightly higher among households
+ We also find that organic fertilizer use is slightly higher among households
  that were allocated to the SMS treatment.
  Judged by the fertilizer index, there is also no additional effect of SMS
  on fertilizer use.
- The
-\change_inserted -408277422 1540201682
- additional
-\change_unchanged
- effect of the IVR treatment on seed use becomes insignificant if we restrict
- ourselves to the subset of farmers that have access to a mobile phone,
- while the negative effect of the SMS campaign on hybrid seed use now becomes
- significant at the 10 percent FWER controlled significance level.
+ The additional effect of the IVR treatment on seed use becomes insignificant
+ if we restrict ourselves to the subset of farmers that have access to a
+ mobile phone, while the negative effect of the SMS campaign on hybrid seed
+ use now becomes significant at the 10 percent FWER controlled significance
+ level.
 \end_layout
 
 \begin_layout Standard
-Results for the TOT effects
-\change_inserted -408277422 1540201810
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1540201821
-by TOT you mean the late estimates?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- on inputs are somewhat more interesting than TOT effects on agronomic practices
- (see Appendix Table 
+Results for the compliers on inputs are somewhat more interesting than those
+ for agronomic practices (see Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Impact-of-technology_LATE"
 
 \end_inset
 
-).
- Interestingly, we find a substantial reduction in the use of organic fertilizer
- if farmers make use of the IVR system.
+): We find a substantial reduction in the use of organic fertilizer if farmers
+ make use of the IVR system.
  We also find a significant effect of having received at least one SMS message.
  The effect of the SMS reminder reverses the IVR effect somewhat, but the
  effect size is very low.
@@ -3599,58 +3189,27 @@ We now turn to the intervention's effects on production-related outcomes.
  We first look at household-level maize production.
  During the endline survey, we asked both spouses separately to estimate
  how much maize was harvested from each plot.
- These quantities were then summed over the different maize plots for each
- spouse and the average between the two spouses was taken as the final estimate
- of household-level maize production.
- We find that overall, a typical household in our sample produced about
- 500 kg of maize on an average of 1.16 acres.
- We further find that yields, defined as kilograms per acre, amounted to
- on average 530 kg per acre.
- 
-\end_layout
-
-\begin_layout Standard
-The first column in Table 
+ These quantities were then summed over the different maize plots and the
+ average between the two spouses was taken as the final estimate of household-le
+vel maize production.
+ The first column in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:yield_ag_allh"
 
 \end_inset
 
- shows mean values for the production indicators
-\change_inserted -408277422 1540211443
- for the control group
-\change_unchanged
-.
- It shows that on average in the control group, households produce (log(kg))
- 5.814 or about 440 kg of maize.
+ shows mean values for the production indicators in the control group.
+ It shows that control households produce on average (log(kg)) 5.814 or about
+ 440 kg of maize.
  This was cultivated on (log(acre)) 0.018 or about 1.19 acres on average.
  It also shows that for the average household in the control, maize yields
  (log(kg/acre)) equal 5.850 or about 430 kg/acre.This is much higher than
  yields recorded at baseline (290 kg/acre) for the previous season, possibly
- because 
-\change_deleted -408277422 1540211477
-the rains
-\change_inserted -408277422 1540211480
-rainfall patterns
-\change_unchanged
- were better during our intervention and farmers may have given greater
- attention to combating 
-\change_inserted -408277422 1540211493
-f
-\change_deleted -408277422 1540211492
-F
-\change_unchanged
-all 
-\change_inserted -408277422 1540211494
-a
-\change_deleted -408277422 1540211494
-A
-\change_unchanged
-rmyworm.
- Still, compared to figures recorded in FAOSTAT (1000 kg/acre) or figures
- from household survey data (typically around 600 kg/acre), yields were
- below what might be considered 
+ because rainfall was better during our intervention and farmers may have
+ given greater attention to combating fall armyworm.
+ Still, compared to figures from the UNHS reported earlier, yields appear
+ to be below what might be considered 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3885,12 +3444,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the 
-\change_deleted -408277422 1540211526
-comparison
-\change_inserted -408277422 1540211527
-control
-\change_unchanged
+Note: In the first column, means (and standard deviations) in the control
  group are presented for each variable.
  Column 2 reports differences between placebo and video treatment (and standard
  error) with its corresponding p-value in column 3; column 4 reports differences
@@ -3928,30 +3482,13 @@ reference "tab:yield_ag_allh"
  corresponding randomization inference based p-values in column 3) for the
  various production related outcomes.
  We see that there is no impact on (log) maize production.
- However, we do see that households that were shown the video produce this
+ However, we do see that households that were shown the video produced this
  same amount of maize on an area that is about 9.6 percent smaller than the
  area used for maize production by households in the control group.
  As a result, we also find that among households that were shown a video,
- yields are about 10.3 percent 
-\change_inserted -408277422 1540211559
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1540211564
-percentage points? 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-higher than among the control group that saw a placebo video, and this differenc
-e is significant at 10 percent after controlling FWER.
+ yields are about 10.3 percent higher than among the control group that saw
+ a placebo video, and this difference is significant at 10 percent after
+ controlling FWER.
  We do not find that households that were shown a video are more inclined
  to feel that yields are better than normal than households in the control
  group.
@@ -3963,55 +3500,33 @@ e is significant at 10 percent after controlling FWER.
 Results are again consistent with the message that is provided in the video.
  In particular, it is advised that farmers experiment on a small part of
  the field with modern inputs, following recommended practices.
- It is also advised against planting the entire field with e
-\change_inserted -408277422 1540211666
-.
-\change_unchanged
-g.
- improved seed if this 
-\change_inserted -408277422 1540211680
-does not 
-\change_unchanged
-leave
-\change_inserted -408277422 1540211685
- sufficient
-\change_deleted -408277422 1540211683
-s
-\change_unchanged
- 
-\change_deleted -408277422 1540211689
-no more
-\change_unchanged
- money for complementary inputs such as fertilizer.
+ It is also advised against planting the entire field with e.g.
+ improved seed if this does not leave sufficient money for complementary
+ inputs such as fertilizer.
  Rather, it is suggested that the farmer should combine inputs on a small
  area than to put all eggs in one basket.
  Finally, the video also promotes a more commercial mindset, and pays ample
- attention 
-\change_deleted -408277422 1540211706
-the
-\change_inserted -408277422 1540211706
-to
-\change_unchanged
- the idea of starting small and growing over time through re-investing.
+ attention to the idea of starting small and growing over time through re-invest
+ing.
  The fact that the video intervention has a clear effect on production related
  outcomes is also reflected in the significant different in the production
  index between treatment and control.
 \end_layout
 
 \begin_layout Standard
-Columns 4 and 5 report the additive effect of the invitation to use the
+Columns 4 and 5 report the auxiliary effect of the invitation to use the
  IVR system on production related outcomes.
  As with previous outcomes, there seems to be little impact from this treatment.
  The only exception is maybe labour productivity, which is about 6.4 percent
- higher among households that received the IVR start kit.
+ higher among households that received the IVR starter kit.
  However, while this difference has an associated p-value of 0.070, it is
  not significant after considering multiple comparisons.
  Similarly, we do not find additional effects on production related outcomes
  of the SMS campaign.
  Also for production related outcomes, we investigate if results are different
  if we restrict to households that have access to a mobile phone (for the
- IVR treatment) and if we restrict to households that own a mobile phone
- (for the SMS treatment).
+ IVR encouragement) and if we restrict to households that own a mobile phone
+ (for the SMS campaign).
  Results can be found in Appendix table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4020,7 +3535,8 @@ reference "tab:prod_cate"
 \end_inset
 
 .
- Also in the appendix, we report TOT estimates (Table 
+ Also in the appendix, we report local average treatment effects for compilers
+ (Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:prod_LATE"
@@ -4029,61 +3545,21 @@ reference "tab:prod_LATE"
 
 ).
  In both cases, we do not find additional effects of IVR nor SMS on production
- related outcomes, except maybe on labour productivity
-\change_inserted -408277422 1540211796
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1540211880
-why maybe? not significant after considering multiple comparison?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-.
+ related outcomes, except maybe on labour productivity.
 \end_layout
 
 \begin_layout Subsection*
 
 \series bold
-The impact on disposal
-\change_inserted -408277422 1540211905
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1540212093
-
-\series bold
-to me 'disposal' sounds like 'doing away with it' like 'dispose of garbage'
- (https://www.merriam-webster.com/dictionary/dispose)...
- would the 'utilization of maize' work better
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
+The impact on use of harvest
 \end_layout
 
 \begin_layout Standard
 We next investigate if the interventions also have an impact on how households
- dispose of the maize they produce.
- We look at 3 different ways of disposal: maize consumption by the household
- itself, maize sold on the market, and maize saved as seed for the next
- season.
+ use of the maize they produce.
+ We look at 3 different ways in which maize was used: maize consumption
+ by the household itself, maize sold on the market, and maize saved as seed
+ for the next season.
  Results are presented in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4093,11 +3569,8 @@ reference "tab:disposal"
 
 .
  The first column in the table shows that, not surprisingly, a large share
- of the households
-\change_inserted -408277422 1540212124
- in the control group
-\change_unchanged
- report positive amounts of maize consumed (83.5 percent).
+ of the households in the control group report positive amounts of maize
+ consumed (83.5 percent).
  We also find that a large share of household report that they sell part
  of their maize (about 64.3 percent of households).
  This is about twice the market participation rates commonly found in the
@@ -4123,23 +3596,6 @@ key "McGuire2016"
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -408277422 1540212677
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1540212720
-not sig= we cannot conclude effect differs from 0
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 The second column in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4149,82 +3605,18 @@ reference "tab:disposal"
 
  reports the impact of the agricultural extension video (with corresponding
  randomization inference based p-values in the third column).
- 
-\change_deleted -408277422 1540212380
-We find that the proportion of
-\change_inserted -408277422 1540212447
-the effect on the proportion of
-\change_unchanged
- households 
-\change_deleted -408277422 1540212403
-that reports
-\change_inserted -408277422 1540212407
-reporting to
-\change_unchanged
- consum
-\change_deleted -408277422 1540212410
-ing
-\change_inserted -408277422 1540212439
-e maize
-\change_unchanged
- 
-\change_deleted -408277422 1540212414
-maize is almost 3 percentage points higher among households that was shown
- a video, but the difference
-\change_unchanged
- is not significantly different from zero
-\change_inserted -408277422 1540212473
-; neither is the effect on the proportion of households reporting to sell
- maize
-\change_unchanged
-.
- 
-\change_deleted -408277422 1540212577
-We also find 1.8 percentage points more households report selling maize in
- the sub-sample that was shown the video, but also here, the effect is not
- significant.
- Furthermore, we find 
-\change_inserted -408277422 1540212650
-While the difference is not statistically significant, the results suggest
- 
-\change_unchanged
-that the share of households that reported they saved maize to be used as
- seed in the next season
-\change_deleted -408277422 1540212601
- is 
-\change_inserted -408277422 1540212636
-to be
-\change_deleted -408277422 1540212601
-3.3 percentage points
-\change_unchanged
- lower among households that received the video treatment
-\change_inserted -408277422 1540212666
-, 
-\change_deleted -408277422 1540212668
-.
- This is 
-\change_unchanged
-probably because the video underscores the importance of using high quality
- seed, and advises against recycling seed.
- 
-\change_deleted -408277422 1540212731
-Also here, the difference is not statistically significant.
- 
-\change_unchanged
-However, if we combine the three types of 
-\change_deleted -408277422 1540212526
-disposal
-\change_inserted -408277422 1540212636
-utilization
-\change_unchanged
- in an index, with maize saved as seed entered negatively, we do find that
- 
-\change_deleted -408277422 1540212550
-disposal
-\change_inserted -408277422 1540212636
-utilization
-\change_unchanged
- is affected by the video treatment (albeit only at a 10 percent significance
+ The effect on the proportion of households reporting to consume maize is
+ not significantly different from zero.
+ Neither is the effect on the proportion of households reporting to sell
+ maize.
+ While the difference is not statistically significant, the results suggest
+ that the share of households that reported they saved maize to be used
+ as seed in the next season to be lower among households that received the
+ video treatment, probably because the video underscores the importance
+ of using high quality seed, and advises against recycling seed.
+ However, if we combine the three types of utilization in an index, with
+ maize saved as seed entered negatively, we do find that utilization is
+ affected by the video treatment (albeit only at a 10 percent significance
  level).
  The fact that the index is significant but the individual outcomes are
  not is due to the increased efficiency by ensuring that outcomes that are
@@ -4250,7 +3642,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Impact of dissemination technologies on maize disposal
+Impact of dissemination technologies on maize use
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:disposal"
@@ -4362,7 +3754,8 @@ Saved maize for seed (yes=1) 	&	0.854	&	-0.033	&	0.211	&	-0.024	&	0.113	&	0.017	
 
 \begin_layout Plain Layout
 
-Disposal index	&	-0.059	&	0.065^{*}	&	0.100	&	0.025	&	0.241	&	-0.017	&	0.524	&	3,531	
+Utilization index	&	-0.059	&	0.065^{*}	&	0.100	&	0.025	&	0.241	&	-0.017	&	0.524	&	3,531
+	
 \backslash
 
 \backslash
@@ -4413,12 +3806,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the 
-\change_deleted -408277422 1540212738
-comparison
-\change_inserted -408277422 1540212740
-control
-\change_unchanged
+Note: In the first column, means (and standard deviations) in the control
  group are presented for each variable.
  Column 2 reports differences between placebo and video treatment (and standard
  error) with its corresponding p-value in column 3; column 4 reports differences
@@ -4449,29 +3837,16 @@ In the fourth and fifth column, we report the additional effect of the IVR
  encouragement.
  There are no additional effects of the IVR on home consumption, nor on
  the likelihood that households sell part of the maize.
- We do find among households that also received the 
-\change_inserted -408277422 1540212773
-invitation for the 
-\change_unchanged
-IVR treatment, the proportion of households that saved maize as seed for
- the next season reduced by an additional 2.4 percentage points.
+ We do find among households that also received the invitation for the IVR
+ treatment, the proportion of households that saved maize as seed for the
+ next season reduced by an additional 2.4 percentage points.
  However, with a randomization inference based p-value of 0.113, this difference
  is not significant.
  The index also confirms that we can not reject the null of no additional
  effect from the IVR treatment.
  In the sixth and seventh column, results are presented for the additional
- 
-\change_deleted -408277422 1540212815
-impact
-\change_inserted -408277422 1540212822
-intent to treat effect
-\change_unchanged
- of the SMS reminders.
- We do not find any additional effect 
-\change_deleted -408277422 1540212831
-of this treatment
-\change_unchanged
- on maize disposal outcomes.
+ intent to treat effect of the SMS reminders.
+ We do not find any additional effect on maize disposal outcomes.
  In Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4480,11 +3855,7 @@ reference "tab:disposal_cate"
 \end_inset
 
 , we again estimate conditional treatment effects, but results for the IVR
- and SMS treatments are 
-\change_deleted -408277422 1540212848
-again
-\change_unchanged
- not sensitive to phone access and ownership.
+ and SMS treatments are not sensitive to phone access and ownership.
  Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4492,14 +3863,11 @@ reference "tab:disposal_LATE"
 
 \end_inset
 
- reports TOT estimates for the effect of calling the IVR help line and receiving
- SMS reminders on disposal.
+ reports instrumental variables estimates for the effect of calling the
+ IVR help line and receiving SMS reminders on disposal.
  Also here, we do not find an effect on maize consumption, the probability
- that maize is sold or the likelihood that maize is saved for seed
-\change_inserted -408277422 1540212896
-; nor on the index
-\change_unchanged
-.
+ that maize is sold or the likelihood that maize is saved for seed, nor
+ on the index.
 \end_layout
 
 \begin_layout Subsection*
@@ -4511,27 +3879,11 @@ The impact on household welfare
 \begin_layout Standard
 Finally, we look at the impact of the information interventions on measures
  of well-being at the household level.
- Welfare is captured though self-assessment, as well as th
-\change_inserted -408277422 1540212911
-r
-\change_unchanged
-ough consumption expenditure.
- We asked welfare related questions to the 
-\change_inserted -408277422 1540212927
-adult 
-\change_unchanged
-woman 
-\change_inserted -408277422 1540212934
-decision-maker 
-\change_unchanged
-within the household, as we assume she has a 
-\change_deleted -408277422 1540212949
-better
-\change_inserted -408277422 1540212952
-good
-\change_unchanged
- idea of consumption expenditure within the household and the general level
- of well-being.
+ Welfare is captured though self-assessment, as well as through consumption
+ expenditure.
+ We asked welfare related questions to the adult woman decision-maker within
+ the household, as we assume she has a good idea of consumption expenditure
+ within the household and the general level of well-being.
  First, we asked if they feel their household is better off (as opposed
  to equally well off or worse off) in terms of income and consumption than
  the average households in their community.
@@ -4557,7 +3909,7 @@ key "coates2007household"
 
 .
  We asked if households were generally able to eat their preferred food.
-  Approximately 41.8 percent of households responded affirmatively.
+ Approximately 41.8 percent of households responded affirmatively.
  We also asked if households were generally able to eat enough food and
  found this to be the case in almost 60 percent of baseline households.
  
@@ -4760,12 +4112,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the 
-\change_deleted -408277422 1540213010
-comparison
-\change_inserted -408277422 1540213011
-control
-\change_unchanged
+Note: In the first column, means (and standard deviations) in the control
  group are presented for each variable.
  Column 2 reports differences between placebo and video treatment (and standard
  error) with its corresponding p-value in column 3; column 4 reports differences
@@ -4794,16 +4141,9 @@ control
 \begin_layout Standard
 As a less subjective way to asses changes in well-being, we collected data
  on consumption.
- In particular, we asked the 
-\change_deleted -408277422 1540213027
-woman
-\change_inserted -408277422 1540213027
-adult woman decision-maker 
-\change_deleted -408277422 1540213031
- 
-\change_unchanged
-in the household about the value of the most consumed items, including own-consu
-mption from farm production over the period of one week.
+ In particular, we asked the adult woman decision-maker in the household
+ about the value of the most consumed items, including own-consumption from
+ farm production over the period of one week.
  These included consumption of maize, cassava, sorghum, millet, rice, sweet
  potatoes, beans, fruits, groundnuts, vegetables, salt/sugar, cooking oil/ghee,
  soap, and airtime
@@ -4833,7 +4173,7 @@ Even though these consumption categories were carefully chosen on the basis
 
 \begin_layout Standard
 As in the tables on the impact of other outcome categories, the second and
- third table in Table 
+ third cloumns in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Impact_welfare"
@@ -4848,8 +4188,8 @@ reference "tab:Impact_welfare"
  Finally, in columns 6 and 7 we report intent to treat effects for the addition
  of the SMS campaign.
  There is also no effect of the SMS reminders on outcomes.
- We also report conditional effects for subsets of farmers depending on
- mobile phone access/ownership (Appendix Table 
+ We also test if our (lack of) results is driven by mobile phone access
+ and ownership (Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Impact_welfare_cate"
@@ -4857,8 +4197,8 @@ reference "tab:Impact_welfare_cate"
 \end_inset
 
 ).
- TOT effects for the IVR and SMS interventions are reported in Appendix
- Table 
+ Local Average Treatment Effects for the IVR and SMS interventions are reported
+ in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Impact_welfare_late"
@@ -4885,6 +4225,15 @@ key "Sunstein2014"
 \end_inset
 
 .
+ Furthermore, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "casaburi2014harnessing"
+
+\end_inset
+
+ do find that simple SMS messages did affect outcomes among Kenyan sugarcane
+ farmers.
  At the same time, an SMS message of 160 characters may not provide sufficient
  space to transfer knowledge on complex agronomic practices or promote new
  technologies that really matter for productivity.
@@ -5033,12 +4382,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the 
-\change_deleted -408277422 1540213138
-comparison
-\change_inserted -408277422 1540213139
-control
-\change_unchanged
+Note: In the first column, means (and standard deviations) in the control
  group.
  *** denotes significant at 1 percent level.
  All specifications control for the other orthogonal factors in the factorial
@@ -5065,19 +4409,17 @@ reference "tab:call"
 
  shows that the SMS messages did seem to serve the purpose of additionally
  encouraging people to use the IVR.
- We restrict attention to households that received the IVR encouragement.
- We see that among households that received the IVR encouragement but were
- not allocated to the SMS treatment, only 6.5 percent actually called the
- IVR line (column 1).
+ We restrict attention to households that received the IVR encouragement
+ in addition to the video.
+ We see that among households that received the IVR encouragement in addition
+ to the video but were not allocated to the SMS treatment, only 6.5 percent
+ actually called the IVR line (column 1).
  This percentage was 6.1 percentage points higher among households that received
- the IVR encouragement and were also allocated to the SMS treatment (column
- 2 and 3).
+ the IVR encouragement in addition to the video and were also allocated
+ to the SMS treatment (column 2 and 3).
  If we use SMS allocation to the treatment as an instrument for actually
- receiving the SMS messages (co
-\change_inserted -408277422 1540213168
-l
-\change_unchanged
-umns 4 and 5), the effect increases to 8.1 percentage points.
+ receiving the SMS messages (columns 4 and 5), the effect increases to 8.1
+ percentage points.
 \end_layout
 
 \begin_layout Section*
@@ -5085,20 +4427,17 @@ Conclusion
 \end_layout
 
 \begin_layout Standard
-In this study, we evaluated the effectiveness of three complementary ICT-enabled
- agricultural extension approaches that can be brought to scale relatively
- easily and at significantly lower cost than traditional modes of agricultural
- extension.
- The first approach, the use of short, appealing video messages
-\change_inserted -408277422 1540213507
- by farmer-actors farmers can relate to
-\change_unchanged
-, is probably closest to the traditional extension approach which involves
- in-person visits to farmers and demonstration.
+In this study, we evaluated the effectiveness of ICT-enabled agricultural
+ extension approaches that can be brought to scale relatively easily and
+ at significantly lower cost than traditional modes of agricultural extension.
+ The first approach, the use of short, appealing video messages by farmer-actors
+ farmers can relate to, is probably closest to the traditional extension
+ approach which involves in-person visits to farmers and demonstration.
  While appealing because of its ability to combine both audio and visual
  information, the approach is also somewhat top-down, with only a passive
- role of the farmer in the knowledge exchange process.
- 
+ role of the farmer in the knowledge exchange process, and the one-shot
+ nature of the intervention may mean effects do not go beyond first order
+ knowledge effects
 \begin_inset Foot
 status collapsed
 
@@ -5117,12 +4456,16 @@ key "gandhi2009digital"
 
 \end_inset
 
- The second approach, Interactive Voice Response (IVR) assumes a more active
- role for the farmer.
+.
+ The second approach adds Interactive Voice Response (IVR) to the video.
+ IVR assumes a more active role for the farmer.
  Here, the farmer calls into a system that lets him or her choose a topic
  from a menu, after which the farmer gets the hear a pre-recorded message.
+ A major advantage of IVR systems is that the are available whenever the
+ need arises.
  Finally, the third approach consists of a series of SMS messages that reminds
- the farmer of particular key inputs or practices.
+ the farmer of particular key inputs or practices that is added to the video
+ and the IVR encouragement.
  Reminders such as this have been found key nudges in a variety of other
  contexts 
 \begin_inset CommandInset citation
@@ -5145,33 +4488,17 @@ We tested the relative effectiveness and efficacy of these three ICT-enabled
  video to a random subset of farmers that was shown a placebo video.
  Furthermore, two third of the farmers that was shown a video were randomly
  sampled and encouraged to use the IVR, and among those that were allocated
- to the IVR encouragement, half was randomly selected to also receive 8
+ to the IVR encouragement, half was randomly selected to also receive eight
  reminder SMS messages.
- As such, we could estimate the additional effect of 
-\change_inserted -408277422 1540213670
-offering 
-\change_unchanged
-the IVR and SMS treatments.
+ As such, we could estimate the additional effect of offering the IVR and
+ SMS treatments.
  Effectiveness was measured in terms of knowledge gained, practices and
- technologies adopted, production increased, disposal affected and welfare
- improved.
- 
-\change_inserted -408277422 1540214148
-By taking into account non-compliance to being offered the services, we
+ technologies adopted, production increased, use of produced maize affected
+ and welfare improved.
+ By taking into account non-compliance to being offered the services, we
  could estimate the additional treatment on the treated effects.
- 
-\change_unchanged
-We also considered 
-\change_deleted -408277422 1540214139
-conditional
-\change_unchanged
- treatment effects 
-\change_inserted -408277422 1540214136
-conditional on access to a mobile phone.
-\change_deleted -408277422 1540214118
-and non-compliance
-\change_unchanged
-.
+ We also considered treatment effects conditional on access to a mobile
+ phone.
 \end_layout
 
 \begin_layout Standard
@@ -5186,111 +4513,27 @@ In our study, we found that video-enabled agricultural extension information
  the use of others (DAP, NPK).
  This led to more balanced soil fertility management.
  As a result, farmers that were shown agricultural extension videos also
- increased maize yields by 10 percent
-\change_inserted -408277422 1540214191
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1540214195
-percentage points?
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-.
+ increased maize yields by 10 percent.
  This was mainly because these farmers farm more intensively (producing
  the same amount but on smaller plots).
- There is some evidence that farmers 
-\change_deleted -408277422 1540214210
-that
-\change_inserted -408277422 1540214210
-whom
-\change_unchanged
- were shown the video saved less seed for planting (and thus planned to
- buy (improved) seed from the market for the next season
-\change_inserted -408277422 1540214366
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1540214387
-but this was not sig if considering multiple hypotheses testing
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-.
- We did not find an impact on 
-\change_inserted -408277422 1540214400
-measures of household 
-\change_unchanged
-well-being.
+ There is some evidence that farmers whom were shown the video saved less
+ seed for planting (and thus planned to buy (improved) seed from the market
+ for the next season.
+ We did not find an impact on measures of household well-being.
  
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted -408277422 1540214463
-Being offered 
-\change_unchanged
-Interactive Voice Response (IVR)
-\change_deleted -408277422 1540214428
- 
-\change_inserted -408277422 1540214445
-on top of having seen the intervention video 
-\change_unchanged
-did not seem to 
-\change_inserted -408277422 1540214414
-additionally increase 
-\change_deleted -408277422 1540214415
-affect
-\change_unchanged
- knowledge.
- We also found no 
-\change_inserted -408277422 1540214425
-additional 
-\change_unchanged
-impact on agronomic practices.
- We did find some evidence that farmers 
-\change_deleted -408277422 1540214473
-that
-\change_inserted -408277422 1540214473
-whom
-\change_unchanged
- were encouraged to use the IVR were more likely to use hybrid seed.
- We found no 
-\change_inserted -408277422 1540214489
-additional 
-\change_unchanged
-effect of
-\change_inserted -408277422 1540214495
- being offered
-\change_unchanged
- IVR on production, disposal, nor well-being.
- 
-\change_inserted -408277422 1540214583
-Offering 
-\change_unchanged
-Short Message Service (SMS) messages, sent at strategic times to remind
- farmers about important practices and to further encourage them to use
- the IVR system
-\change_inserted -408277422 1540214507
-,
-\change_unchanged
- did not have any additional effect.
+Being offered Interactive Voice Response (IVR) on top of having seen the
+ intervention video did not seem to additionally increase knowledge.
+ We also found no additional impact on agronomic practices.
+ We did find some evidence that farmers whom were encouraged to use the
+ IVR were more likely to use hybrid seed.
+ We found no additional effect of being offered IVR on production, disposal,
+ nor well-being.
+ Offering Short Message Service (SMS) messages, sent at strategic times
+ to remind farmers about important practices and to further encourage them
+ to use the IVR system, did not have any additional effect.
  The results (or lack thereof) for the IVR and SMS treatments are robust
  to incorporating non-compliance and persist if effects are estimated conditiona
 l on mobile phone ownership.
@@ -5299,11 +4542,7 @@ l on mobile phone ownership.
 \begin_layout Standard
 One area that needs further attention is related to spillovers.
  It is well known that experimental studies of information treatments are
- especially prone to non-
-\change_deleted -408277422 1540214602
- 
-\change_unchanged
-interference violations 
+ especially prone to non-interference violations 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "coppock2014information"
@@ -5313,13 +4552,7 @@ key "coppock2014information"
 .
  As such, our estimates are likely to underestimate the true effects of
  ICT-mediated extension approaches.
- 
-\change_deleted -408277422 1540214616
-At
-\change_inserted -408277422 1540214617
-On
-\change_unchanged
- the other hand, there is considerable evidence that much of the learning
+ On the other hand, there is considerable evidence that much of the learning
  among smallholders happens through peer learning 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -5682,10 +4915,24 @@ scriptsize
 \begin_layout Plain Layout
 
 Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between placebo and video treatment
- (and standard error below), column 3 between video only and video+ivr,
- column 4 between video+ivr and video+ivr+SMS.
- N is sample size.
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; ***, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
 \end_layout
 
 \begin_layout Plain Layout
@@ -5901,7 +5148,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the comparison
+Note: In the first column, means (and standard deviations) in the control
  group are presented for each variable.
  Column 2 reports differences between video only and video+ivr (and standard
  error) with its corresponding p-value in column 3 and number of observations
@@ -6345,7 +5592,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the comparison
+Note: In the first column, means (and standard deviations) in the control
  group are presented for each variable.
  Column 2 reports differences between video only and video+ivr (and standard
  error) with its corresponding p-value in column 3 and number of observations
@@ -6848,7 +6095,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the comparison
+Note: In the first column, means (and standard deviations) in the control
  group are presented for each variable.
  Column 2 reports differences between video only and video+ivr (and standard
  error) with its corresponding p-value in column 3 and number of observations
@@ -7147,7 +6394,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the comparison
+Note: In the first column, means (and standard deviations) in the control
  group are presented for each variable.
  Column 2 reports differences between video only and video+ivr (and standard
  error) with its corresponding p-value in column 3 and number of observations
@@ -7402,7 +6649,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the comparison
+Note: In the first column, means (and standard deviations) in the control
  group are presented for each variable.
  Column 2 reports differences between video only and video+ivr (and standard
  error) with its corresponding p-value in column 3 and number of observations
@@ -7428,7 +6675,7 @@ Note: In the first column, means (and standard deviations) in the comparison
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7635,7 +6882,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the comparison
+Note: In the first column, means (and standard deviations) in the control
  group are presented for each variable.
  Column 2 reports differences between video only and video+ivr (and standard
  error) with its corresponding p-value in column 3; column 4 reports differences
@@ -7659,7 +6906,7 @@ Note: In the first column, means (and standard deviations) in the comparison
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7837,7 +7084,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the comparison
+Note: In the first column, means (and standard deviations) in the control
  group are presented for each variable.
  Column 2 reports differences between video only and video+ivr (and standard
  error) with its corresponding p-value in column 3 and number of observations
@@ -7863,7 +7110,7 @@ Note: In the first column, means (and standard deviations) in the comparison
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8026,7 +7273,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the comparison
+Note: In the first column, means (and standard deviations) in the control
  group are presented for each variable.
  Column 2 reports differences between video only and video+ivr (and standard
  error) with its corresponding p-value in column 3; column 4 reports differences
@@ -8050,7 +7297,7 @@ Note: In the first column, means (and standard deviations) in the comparison
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8261,7 +7508,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the comparison
+Note: In the first column, means (and standard deviations) in the control
  group are presented for each variable.
  Column 2 reports differences between video only and video+ivr (and standard
  error) with its corresponding p-value in column 3 and number of observations
@@ -8287,7 +7534,7 @@ Note: In the first column, means (and standard deviations) in the comparison
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8483,7 +7730,7 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the comparison
+Note: In the first column, means (and standard deviations) in the control
  group are presented for each variable.
  Column 2 reports differences between video only and video+ivr (and standard
  error) with its corresponding p-value in column 3; column 4 reports differences
