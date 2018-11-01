@@ -4639,7 +4639,7 @@ arabic{table}}
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Preview
@@ -4962,7 +4962,7 @@ the 1, 5 and 10 percent level, respectively.
 \begin_layout Standard
 \begin_inset Float table
 wide false
-sideways false
+sideways true
 status open
 
 \begin_layout Plain Layout
@@ -5178,7 +5178,7 @@ Note: In the first column, means (and standard deviations) in the control
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5825,7 +5825,7 @@ Note: In the first column, means (and standard deviations) in the comparison
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6124,7 +6124,7 @@ Note: In the first column, means (and standard deviations) in the control
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6422,7 +6422,7 @@ Note: In the first column, means (and standard deviations) in the control
 \begin_layout Standard
 \begin_inset Float table
 wide false
-sideways false
+sideways true
 status open
 
 \begin_layout Plain Layout
@@ -6514,24 +6514,11 @@ cline{2-8}
 
 \begin_layout Plain Layout
 
-Maize production (log(kg)) 	5.921	&	0.057	&	0.146	&	2,742	&	-0.001	&	0.894	&	2,511	
+Maize production (log(kg)) &	5.921	&	0.057	&	0.146	&	2,742	&	-0.001	&	0.894	&	2,511	
 \backslash
 
 \backslash
- 	(0.706)	&	(0.036)	&		&		&	(0.039)	&		&		
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Maize area (log(acre)) 	0.054	&	-0.018	&	0.492	&	2,782	&	0.004	&	0.997	&	2,545	
-\backslash
-
-\backslash
- 	(0.554)	&	(0.029)	&		&		&	(0.031)	&		&		
+ &	(0.706)	&	(0.036)	&		&		&	(0.039)	&		&		
 \backslash
 
 \backslash
@@ -6540,25 +6527,11 @@ Maize area (log(acre)) 	0.054	&	-0.018	&	0.492	&	2,782	&	0.004	&	0.997	&	2,545
 
 \begin_layout Plain Layout
 
-Maize yield (log(kg/acre)) 	5.879	&	0.042	&	0.203	&	2,756	&	0.011	&	0.737	&	2,518	
+Maize area (log(acre)) &	0.054	&	-0.018	&	0.492	&	2,782	&	0.004	&	0.997	&	2,545	
 \backslash
 
 \backslash
- 	(0.654)	&	(0.031)	&		&		&	(0.034)	&		&		
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Yield better than normal (yes=1) 	0.405	&	-0.005	&	0.812	&	2,962	&	0.036	&	0.166	&	2,
-707	
-\backslash
-
-\backslash
- 	(0.492)	&	(0.023)	&		&		&	(0.024)	&		&		
+ &	(0.554)	&	(0.029)	&		&		&	(0.031)	&		&		
 \backslash
 
 \backslash
@@ -6567,25 +6540,11 @@ Yield better than normal (yes=1) 	0.405	&	-0.005	&	0.812	&	2,962	&	0.036	&	0.166
 
 \begin_layout Plain Layout
 
-Labour(log(mandays)) 	4.157	&	-0.009	&	0.729	&	2,802	&	0.021	&	0.515	&	2,549	
+Maize yield (log(kg/acre)) &	5.879	&	0.042	&	0.203	&	2,756	&	0.011	&	0.737	&	2,518	
 \backslash
 
 \backslash
- 	(0.571)	&	(0.027)	&		&		&	(0.028)	&		&		
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Labour productivity (log(kg/mandays)) 	1.673	&	0.060	&	0.082	&	2,780	&	-0.012	&	0.672
-	&	2,543	
-\backslash
-
-\backslash
- 	(0.708)	&	(0.036)	&		&		&	(0.039)	&		&		
+ &	(0.654)	&	(0.031)	&		&		&	(0.034)	&		&		
 \backslash
 
 \backslash
@@ -6594,11 +6553,52 @@ Labour productivity (log(kg/mandays)) 	1.673	&	0.060	&	0.082	&	2,780	&	-0.012	&	
 
 \begin_layout Plain Layout
 
-Production index	-0.052	&	0.016	&	0.306	&	2,756	&	0.009	&	0.572	&	2,518	
+Yield better than normal (yes=1) &	0.405	&	-0.005	&	0.812	&	2,962	&	0.036	&	0.166	&	2
+,707	
 \backslash
 
 \backslash
- 	(0.378)	&	(0.017)	&		&		&	(0.018)	&		&		
+ &	(0.492)	&	(0.023)	&		&		&	(0.024)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Labour(log(mandays)) &	4.157	&	-0.009	&	0.729	&	2,802	&	0.021	&	0.515	&	2,549	
+\backslash
+
+\backslash
+ &	(0.571)	&	(0.027)	&		&		&	(0.028)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Labour productivity (log(kg/mandays)) &	1.673	&	0.060	&	0.082	&	2,780	&	-0.012	&	0.67
+2	&	2,543	
+\backslash
+
+\backslash
+ &	(0.708)	&	(0.036)	&		&		&	(0.039)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Production index	& -0.052	&	0.016	&	0.306	&	2,756	&	0.009	&	0.572	&	2,518	
+\backslash
+
+\backslash
+ &	(0.378)	&	(0.017)	&		&		&	(0.018)	&		&		
 \backslash
 
 \backslash
@@ -6906,7 +6906,7 @@ Note: In the first column, means (and standard deviations) in the control
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
