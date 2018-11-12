@@ -1,57 +1,86 @@
+rm(list=ls())
 ### first run anonymize.R on raw data to remove identifiers
-
 dta <- read.csv("/home/bjvca/data/projects/digital green/endline/data/endline.csv")
-###drop all female headed households 
-#
+
+### drop female headed households
+dta <- subset(dta, femalehead == 0)
+dta$femhead <- NULL
+
+########################################################## First order knowledge effects  ########################################################
+### knowledge at aggreagate level - defined as follows: weak - if at least one person got the answer correct
+dta$know_space <- rowSums(dta[c("a1","spouse2f1")] == 1, na.rm=T) >0
+dta$know_space[is.na(dta$a1) & is.na(dta$spouse2f1)] <- NA 
+
+dta$know_combine <- rowSums(dta[c("a2", "spouse2f2")] == 3, na.rm=T) >0
+dta$know_combine[is.na(dta$a2)  & is.na(dta$spouse2f2)] <- NA
+
+dta$know_weed <-  rowSums(dta[c("a3","spouse2f3")]== 2, na.rm=T) > 0
+dta$know_weed[is.na(dta$a3)  & is.na(dta$spouse2f3)] <- NA
+
+dta$know_armyworm <- rowSums(dta[c("a4","spouse2f4")] == 3, na.rm=T) > 0 
+dta$know_armyworm[is.na(dta$a4) & is.na(dta$spouse2f4)] <- NA
+
+### knowledge at aggreagate level - defined as follows: strong - both spouses got the answer correct
+dta$know_space_j <- rowSums(dta[c("a1","spouse2f1")] == 1, na.rm=T) == 2
+dta$know_space_j[is.na(dta$a1) & is.na(dta$spouse2f1)] <- NA 
+
+dta$know_combine_j <- rowSums(dta[c("a2", "spouse2f2")] == 3, na.rm=T)  == 2
+dta$know_combine_j[is.na(dta$a2)  & is.na(dta$spouse2f2)] <- NA
+
+dta$know_weed_j <-  rowSums(dta[c("a3","spouse2f3")]== 2, na.rm=T)  == 2
+dta$know_weed_j[is.na(dta$a3)  & is.na(dta$spouse2f3)] <- NA
+
+dta$know_armyworm_j <- rowSums(dta[c("a4","spouse2f4")] == 3, na.rm=T)  == 2
+dta$know_armyworm_j[is.na(dta$a4) & is.na(dta$spouse2f4)] <- NA
+
+### knowledge of man:
+
+dta$know_space_m <- NA
+dta$know_space_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$a1[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==1
+dta$know_space_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$spouse2f1[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==1
+
+dta$know_combine_m <- NA
+dta$know_combine_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$a2[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==3
+dta$know_combine_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$spouse2f2[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] == 3
+
+dta$know_weed_m <- NA
+dta$know_weed_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$a3[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==2
+dta$know_weed_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$spouse2f3[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==2
+
+dta$know_armyworm_m <- NA
+dta$know_armyworm_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$a4[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==3
+dta$know_armyworm_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$spouse2f4[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==3
+
+### knowledge of woman:
+
+dta$know_space_w <- NA
+dta$know_space_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$a1[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==1
+dta$know_space_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$spouse2f1[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==1
+
+dta$know_combine_w <- NA
+dta$know_combine_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$a2[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==3
+dta$know_combine_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$spouse2f2[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] == 3
+
+dta$know_weed_w <- NA
+dta$know_weed_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$a3[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==2
+dta$know_weed_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$spouse2f3[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==2
 
 
-# the variable video_shown does not have info so let's just merge in from the sampling list - no, better from endline?
-#treats <- read.csv("/home/bjvca/data/projects/digital green/midline/list_sec.csv")
-#dta <- merge(treats, dta, by="hhid", all=T)
-## merge in treatments
-treats <- read.csv("/home/bjvca/data/projects/digital green/sampling/sampling_list_ID.csv")[c("HHID","IVR","sms")]
-names(treats) <- c("hhid","ivr","sms")
-treats$femhead <- FALSE
-###merge in treatments for FHs - did they receive sms messages?
-treats_FH <- read.csv("/home/bjvca/data/projects/digital green/sampling/femhead_list_ID.csv")[c("HHID","IVR")]
-names(treats_FH) <- c("hhid","ivr")
-treats_FH$sms <- "no"
-treats_FH$femhead <- TRUE
-treats <- rbind(treats_FH, treats)
-treats$sms <- as.factor(treats$sms)
-dta <- merge(treats, dta, by="hhid", all=T)
-### in female headed households, only one individual was interviewed, obviously
-dta$interview_status[dta$femhead == TRUE] <- "one individual interviewed"
-dta$person_interviewed[dta$femhead == TRUE] <- "woman"
+dta$know_armyworm_w <- NA
+dta$know_armyworm_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$a4[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==3
+dta$know_armyworm_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$spouse2f4[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==3
 
-#write.csv(dta, "/home/bjvca/data/projects/digital green/endline/data/working/AWS.csv")
-## Amazon Elastic Cloud: uncomment next line and run from here
-#dta <- read.csv("AWS.csv")
-	library(dplyr)
-	library(doParallel)
-	library(data.table)
-	cl <- makeCluster(detectCores(all.tests = FALSE, logical = TRUE))
-	registerDoParallel(cl)
-
-### who recieved the video?
-dta$recipient.y <- NULL
-names(dta)[names(dta) == 'recipient.x'] <- 'recipient'
-dta$messenger.y <- NULL
-names(dta)[names(dta) == 'messenger.x'] <- 'messenger'
-dta$recipient[dta$femhead == TRUE] <- "female"
-dta <- subset(dta,!is.na(recipient))
-
-### make a measure for production
-### calculate plot level production - intercropping percentages
-### if intercropped you get a percentage
-### if pure stand we set intercropped percentage to 100
-### for spouse 1
+############################################################ make a measure for production  #######################################################
+### calculate plot level production - hh have max 5 plots
+### if intercropped we have recoreded  a percentage (grpxx14)
+### if pure stand (grpxx12 == "No") we set intercropped percentage to 100
+### for spouse 1 
 dta$grp1a14[dta$grp1a12 == "No"] <- 100
 dta$grp2b14[dta$grp2b12 == "No"] <- 100
 dta$grp3c14[dta$grp3c12 == "No"] <- 100
 dta$grp4d14[dta$grp4d12 == "No"] <- 100
 dta$grp5e14[dta$grp5e12 == "No"] <- 100
-### missing code was 999 -> set to missing
+### missing code/DK code was 999 -> set to missing
 dta[c("grp1a14","grp2b14","grp3c14","grp4d14", "grp5e14")] <- lapply(dta[c("grp1a14","grp2b14","grp3c14","grp4d14", "grp5e14")], function(x) replace(x, x == 999, NA) )
 ### for spouse 2
 dta$spouse2grp_sp1f14[dta$spouse2grp_sp1f12 == "No"] <- 100
@@ -62,8 +91,8 @@ dta$spouse2grp5_sp5k14[dta$spouse2grp5_sp5k12 == "No"] <- 100
 ### missing code was 999 -> set to missing
 dta[c("spouse2grp_sp1f14","spouse2grp_sp2g14","spouse2grp_sp3h14","spouse2group_sp4j14", "spouse2grp5_sp5k14")] <- lapply(dta[c("spouse2grp_sp1f14","spouse2grp_sp2g14","spouse2grp_sp3h14","spouse2group_sp4j14", "spouse2grp5_sp5k14")], function(x) replace(x,x == 999,NA) )
 
-#production - bags x kg per bag - spouse 1
-### missing code was 999 -> set to missing
+#production - bags (grpxx16) x kg per bag (grpxx17) - spouse 1
+### missing/DK code was 999 -> set to missing
 dta[c("grp1a16","grp2b16","grp3c16","grp4d16", "grp5e16")] <- lapply(dta[c("grp1a16","grp2b16","grp3c16","grp4d16", "grp5e16")], function(x) replace(x, x == 999, NA) )
 dta[c("grp1a17","grp2b17","grp3c17","grp4d17", "grp5e17")] <- lapply(dta[c("grp1a17","grp2b17","grp3c17","grp4d17", "grp5e17")], function(x) replace(x, x == 999, NA) )
 
@@ -79,10 +108,10 @@ dta$prod_pl2_sp1 <- dta$grp2b16 * dta$grp2b17
 dta$prod_pl3_sp1 <- dta$grp3c16 * dta$grp3c17
 dta$prod_pl4_sp1 <- dta$grp4d16 * dta$grp4d17
 dta$prod_pl5_sp1 <- dta$grp5e16 * dta$grp5e17
-### how do we handle missings? The below will also produce missings if nothing has been produced
+### how do we handle missings? The below will also be 0 if nothing has been produced
 dta$prod_tot_sp1 <- rowSums(dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")], na.rm=T)
-### so explicitly make missing if nothing was produced
-dta$prod_tot_sp1[is.na(dta$grp1a16) & is.na(dta$grp2b16) &is.na(dta$grp3c16) &is.na(dta$grp4d16) &is.na(dta$grp5e16) ] <- NA
+### so explicitly make missing if missing on each plot
+dta$prod_tot_sp1[is.na(dta$prod_pl1_sp1) & is.na(dta$prod_pl2_sp1) &is.na(dta$prod_pl3_sp1) &is.na(dta$prod_pl4_sp1) &is.na(dta$prod_pl5_sp1) ] <- NA
 
 ### now for spouse
 
@@ -102,11 +131,19 @@ dta$prod_pl4_sp2 <- dta$spouse2group_sp4j16 * dta$spouse2group_sp4j17
 dta$prod_pl5_sp2 <- dta$spouse2grp5_sp5k16 * dta$spouse2grp5_sp5k17
 
 dta$prod_tot_sp2 <- rowSums(dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")], na.rm=T)
-dta$prod_tot_sp2[is.na(dta$spouse2grp_sp1f16) & is.na(dta$spouse2grp_sp2g16) & is.na(dta$spouse2grp_sp3h16) & is.na(dta$spouse2group_sp4j16) & is.na(dta$spouse2grp5_sp5k16)] <- NA
-## take mean of production reported by both spouses as total production
-dta$prod_tot <-  rowMeans(dta[c("prod_tot_sp1","prod_tot_sp2")], na.rm=T)
+dta$prod_tot_sp2[is.na(dta$prod_pl1_sp2) & is.na(dta$prod_pl2_sp2) & is.na(dta$prod_pl3_sp2) & is.na(dta$prod_pl4_sp2) & is.na(dta$prod_pl5_sp2)] <- NA
 
-### now scale by area and take intercropping into account 
+## take mean of production reported by both spouses as total production
+dta$prod_hh_mean <-  rowMeans(dta[c("prod_tot_sp1","prod_tot_sp2")], na.rm=T)
+dta$prod_hh_mean[is.na(dta$prod_tot_sp1) & is.na(dta$prod_tot_sp2)] <- NA
+dta$prod_hh_man <- NA
+dta$prod_hh_man[dta$person_interviewed == "man"] <- dta$prod_tot_sp1[dta$person_interviewed == "man"]
+dta$prod_hh_man[dta$person_interviewed == "woman"] <- dta$prod_tot_sp2[dta$person_interviewed == "woman"]
+dta$prod_hh_woman <- NA
+dta$prod_hh_woman[dta$person_interviewed == "woman"] <- dta$prod_tot_sp1[dta$person_interviewed == "woman"]
+dta$prod_hh_woman[dta$person_interviewed == "man"] <- dta$prod_tot_sp2[dta$person_interviewed == "man"]
+
+################################################################  AREA #####################################################################
 dta[c("grp1a11","grp2b11","grp3c11","grp4d11", "grp5e11")] <- lapply(dta[c("grp1a11","grp2b11","grp3c11","grp4d11", "grp5e11")], function(x) replace(x, x == 999, NA) )
 
 dta[c("spouse2grp_sp1f11","spouse2grp_sp2g11","spouse2grp_sp3h11","spouse2group_sp4j11", "spouse2grp5_sp5k11")] <- lapply(dta[c("spouse2grp_sp1f11","spouse2grp_sp2g11","spouse2grp_sp3h11","spouse2group_sp4j11", "spouse2grp5_sp5k11")], function(x) replace(x,x == 999,NA) )
@@ -116,10 +153,9 @@ dta$area_pl2_sp1 <-(dta$grp2b11 * ((dta$grp2b14) /100))
 dta$area_pl3_sp1 <-(dta$grp3c11 * ((dta$grp3c14) /100))
 dta$area_pl4_sp1 <-(dta$grp4d11 * ((dta$grp4d14) /100))
 dta$area_pl5_sp1 <-(dta$grp5e11 * ((dta$grp5e14) /100))
-## same deal here, this will be zero of nothing was produced, but this can now safely be replaced by NA
+## same deal here, this will be zero of nothing was produced
 dta$area_tot_sp1 <- rowSums(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")], na.rm=T)
-dta$area_tot_sp1[dta$area_tot_sp1 == 0] <- NA
-dta$yield_av_sp1 <- dta$prod_tot_sp1/dta$area_tot_sp1
+dta$area_tot_sp1[is.na(dta$area_pl1_sp1) & is.na(dta$area_pl2_sp1) & is.na(dta$area_pl3_sp1) & is.na(dta$area_pl4_sp1) & is.na(dta$area_pl5_sp1)] <- NA
 
 dta$area_pl1_sp2 <- (dta$spouse2grp_sp1f11 * ((dta$spouse2grp_sp1f14) /100))
 dta$area_pl2_sp2 <- (dta$spouse2grp_sp2g11 * ((dta$spouse2grp_sp2g14) /100))
@@ -128,16 +164,27 @@ dta$area_pl4_sp2 <- (dta$spouse2group_sp4j11 * ((dta$spouse2group_sp4j14) /100))
 dta$area_pl5_sp2 <- (dta$spouse2grp5_sp5k11 * ((dta$spouse2grp5_sp5k14) /100))
 
 dta$area_tot_sp2 <- rowSums(dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")], na.rm=T)
-dta$area_tot_sp2[dta$area_tot_sp2 == 0] <- NA
-## /0 yields Nan
-dta$yield_av_sp2 <- dta$prod_tot_sp2/dta$area_tot_sp2
+dta$area_tot_sp2[is.na(dta$area_pl1_sp2) & is.na(dta$area_pl2_sp2) & is.na(dta$area_pl3_sp2) & is.na(dta$area_pl4_sp2) & is.na(dta$area_pl5_sp2)] <- NA
 
-dta$area_tot <- rowMeans(dta[c("area_tot_sp1","area_tot_sp2")], na.rm=T)
+dta$area_hh_mean <- rowMeans(dta[c("area_tot_sp1","area_tot_sp2")], na.rm=T)
+dta$area_hh_mean[is.na(dta$area_tot_sp1) & is.na(dta$area_tot_sp2)] <- NA
+dta$area_hh_man <- NA
+dta$area_hh_man[dta$person_interviewed == "man"] <- dta$area_tot_sp1[dta$person_interviewed == "man"]
+dta$area_hh_man[dta$person_interviewed == "woman"] <- dta$area_tot_sp2[dta$person_interviewed == "woman"]
+dta$area_hh_woman <- NA
+dta$area_hh_woman[dta$person_interviewed == "woman"] <- dta$area_tot_sp1[dta$person_interviewed == "woman"]
+dta$area_hh_woman[dta$person_interviewed == "man"] <- dta$area_tot_sp2[dta$person_interviewed == "man"]
 
-dta$yield_av <- rowMeans(dta[c("yield_av_sp1","yield_av_sp2")], na.rm=T)
+####################################################################  YIELD ############################################################################
+dta$yield_hh_man <- dta$prod_hh_man/dta$area_hh_man
+dta$yield_hh_man[dta$area_hh_man==0] <- NA
+dta$yield_hh_woman <- dta$prod_hh_woman/dta$area_hh_woman
+dta$yield_hh_woman[dta$area_hh_woman==0] <- NA
 
-### time use reported by person interviewed
-### self reported 
+dta$yield_hh_mean <- rowMeans(dta[c("yield_hh_man","yield_hh_woman")], na.rm=T)
+
+################################################### time use reported by person interviewed
+### self reported time use for sp1 and sp2 (basically renaming)
 #prep
 
 names(dta)[names(dta) %in% c("grp1field1a50a", "grp2field3b50a", "grp3field7c50a", "grp4field9d50a", "grp5field11e50a")] <-  c("time_prep_pl1_sp1_self","time_prep_pl2_sp1_self","time_prep_pl3_sp1_self","time_prep_pl4_sp1_self","time_prep_pl5_sp1_self")
@@ -167,7 +214,6 @@ names(dta)[names(dta) %in%  c("spouse2grp_sp1field_sp1f50f", "spouse2grp_sp2fiel
 names(dta)[names(dta) %in%  c("grp1field1a50g", "grp2field3b50g", "grp3field7c50g", "grp4field9d50g", "grp5field11e50g")] <-  c("time_harv_pl1_sp1_self","time_harv_pl2_sp1_self","time_harv_pl3_sp1_self","time_harv_pl4_sp1_self","time_harv_pl5_sp1_self")
 
 names(dta)[names(dta) %in%  c("spouse2grp_sp1field_sp1f50g", "spouse2grp_sp2field_sp3g50g", "spouse2grp_sp3field_sp5h50g", "spouse2group_sp4field_sp9j50g", "spouse2grp5_sp5field_sp11k50g")] <-  c("time_harv_pl1_sp2_self","time_harv_pl2_sp2_self","time_harv_pl3_sp2_self","time_harv_pl4_sp2_self","time_harv_pl5_sp2_self")
-
 
 ### report for spouse
 #prep
@@ -200,6 +246,8 @@ names(dta)[names(dta) %in%  c("spouse2grp_sp1field_sp2f50m", "spouse2grp_sp2fiel
 names(dta)[names(dta) %in% c("grp1field2a50n", "grp2field4b50n", "grp3field8c50n", "grp4field10d50n", "grp5field12e50n")] <-  c("time_harv_pl1_sp1_other","time_harv_pl2_sp1_other","time_harv_pl3_sp1_other","time_harv_pl4_sp1_other","time_harv_pl5_sp1_other")
 
 names(dta)[names(dta) %in% c("spouse2grp_sp1field_sp2f50n", "spouse2grp_sp2field_sp4g50n", "spouse2grp_sp3field_sp6h50n", "spouse2group_sp4field_sp10j50n", "spouse2grp5_sp5field_sp12k50n")] <-  c("time_harv_pl1_sp2_other","time_harv_pl2_sp2_other","time_harv_pl3_sp2_other","time_harv_pl4_sp2_other","time_harv_pl5_sp2_other")
+
+
 ### replace 999 by NA's
 for (plot in 1:5) {
 for (act in c("prep","plant","weed1","weed2","weed3","spray","harv")) {
@@ -215,708 +263,138 @@ dta[paste(paste(paste("time",act, sep="_"),plot,sep="_pl"),"sp2_other",sep="_")]
 
 
 ### aggregate - how do we get a hh level measure of time spent?
-### if both men and women are interviewed, we use self reported
-for (act in c("prep","plant","weed1","weed2","weed3","spray","harv")) {
-dta[paste(paste("time",act,sep="_"),"woman",sep="_")] <- NA
-dta[paste(paste("time",act,sep="_"),"man",sep="_")] <- NA
+###to be consistent with the other production outcomes, we calculate 3 measures of hh level time use:
+### total hh level time use as reported by man
+### total hh level time use as reported by woman
+### averages over these two
 
-dta[paste(paste("time",act,sep="_"),"woman",sep="_")] <- ifelse(dta$person_interviewed=="man", ifelse(dta$interview_status=="couple interviewed",
-rowSums(dta[c(paste(paste("time", act,sep="_"),"pl1_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp2_self", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp2_self", sep="_")) ], na.rm=T)*
-ifelse(rowSums(is.na(dta[c(paste(paste("time", act,sep="_"),"pl1_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp2_self", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp2_self", sep="_")) ])) == ncol(dta[c(paste(paste("time", act,sep="_"),"pl1_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp2_self", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp2_self", sep="_")) ]), NA, 1)
-,
-rowSums(dta[c(paste(paste("time", act,sep="_"),"pl1_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp2_other", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp2_other", sep="_")) ], na.rm=T)*
-ifelse(rowSums(is.na(dta[c(paste(paste("time", act,sep="_"),"pl1_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp2_other", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp2_other", sep="_")) ])) == ncol(dta[c(paste(paste("time", act,sep="_"),"pl1_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp2_other", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp2_other", sep="_")) ]), NA, 1))
-, 
-rowSums(dta[c(paste(paste("time", act,sep="_"),"pl1_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp1_self", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp1_self", sep="_")) ], na.rm=T)*
-ifelse(rowSums(is.na(dta[c(paste(paste("time", act,sep="_"),"pl1_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp1_self", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp1_self", sep="_")) ])) == ncol(dta[c(paste(paste("time", act,sep="_"),"pl1_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp1_self", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp1_self", sep="_")) ]), NA, 1))
+### hh level time spent on preparing 
 
-dta[paste(paste("time",act,sep="_"),"man",sep="_")] <- ifelse(dta$person_interviewed=="woman", ifelse(dta$interview_status=="couple interviewed",
-rowSums(dta[c(paste(paste("time", act,sep="_"),"pl1_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp2_self", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp2_self", sep="_")) ], na.rm=T)*
-ifelse(rowSums(is.na(dta[c(paste(paste("time", act,sep="_"),"pl1_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp2_self", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp2_self", sep="_")) ])) == ncol(dta[c(paste(paste("time", act,sep="_"),"pl1_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp2_self", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp2_self", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp2_self", sep="_")) ]), NA, 1)
-,
-rowSums(dta[c(paste(paste("time", act,sep="_"),"pl1_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp2_other", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp2_other", sep="_")) ], na.rm=T)*
-ifelse(rowSums(is.na(dta[c(paste(paste("time", act,sep="_"),"pl1_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp2_other", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp2_other", sep="_")) ])) == ncol(dta[c(paste(paste("time", act,sep="_"),"pl1_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp2_other", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp2_other", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp2_other", sep="_")) ]), NA, 1))
-, 
-rowSums(dta[c(paste(paste("time", act,sep="_"),"pl1_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp1_self", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp1_self", sep="_")) ], na.rm=T)*
-ifelse(rowSums(is.na(dta[c(paste(paste("time", act,sep="_"),"pl1_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp1_self", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp1_self", sep="_")) ])) == ncol(dta[c(paste(paste("time", act,sep="_"),"pl1_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl2_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl3_sp1_self", sep="_"),paste(paste("time", act,sep="_"),"pl4_sp1_self", sep="_"), paste(paste("time", act,sep="_"),"pl5_sp1_self", sep="_")) ]), NA, 1))
-}
+### as reported by man
+dta$time_prep_hh_man <- NA
+dta$time_prep_hh_man[dta$person_interviewed=="man"] <- rowSums(dta[c("time_prep_pl1_sp1_self","time_prep_pl2_sp1_self","time_prep_pl3_sp1_self","time_prep_pl4_sp1_self","time_prep_pl5_sp1_self")], na.rm=T)[dta$person_interviewed=="man"] + rowSums(dta[c("time_prep_pl1_sp1_other","time_prep_pl2_sp1_other","time_prep_pl3_sp1_other","time_prep_pl4_sp1_other","time_prep_pl5_sp1_other")], na.rm=T)[dta$person_interviewed=="man"]
 
-dta$tot_time_man <-  rowSums(dta[c("time_prep_man","time_plant_man","time_weed1_man","time_weed2_man","time_weed3_man","time_spray_man","time_harv_man")], na.rm=T)* ifelse(rowSums(is.na(dta[c("time_prep_man","time_plant_man","time_weed1_man","time_weed2_man","time_weed3_man","time_spray_man","time_harv_man")])) == ncol(dta[c("time_prep_man","time_plant_man","time_weed1_man","time_weed2_man","time_weed3_man","time_spray_man","time_harv_man")]), NA, 1)
-dta$tot_time_woman <-  rowSums(dta[c("time_prep_woman","time_plant_woman","time_weed1_woman","time_weed2_woman","time_weed3_woman","time_spray_woman","time_harv_woman")], na.rm=T)* ifelse(rowSums(is.na(dta[c("time_prep_woman","time_plant_woman","time_weed1_woman","time_weed2_woman","time_weed3_woman","time_spray_woman","time_harv_woman")])) == ncol(dta[c("time_prep_woman","time_plant_woman","time_weed1_woman","time_weed2_woman","time_weed3_woman","time_spray_woman","time_harv_woman")]), NA, 1)
-dta$tot_own_time_hh <- rowSums(dta[c("tot_time_man", "tot_time_woman")], na.rm=T)* ifelse(rowSums(is.na(dta[c("tot_time_man", "tot_time_woman")])) == ncol(dta[c("tot_time_man", "tot_time_woman")]), NA, 1)
+dta$time_prep_hh_man[dta$person_interviewed=="woman"] <- rowSums(dta[c("time_prep_pl1_sp2_self","time_prep_pl2_sp2_self","time_prep_pl3_sp2_self","time_prep_pl4_sp2_self","time_prep_pl5_sp2_self")], na.rm=T)[dta$person_interviewed=="woman"] + rowSums(dta[c("time_prep_pl1_sp2_other","time_prep_pl2_sp2_other","time_prep_pl3_sp2_other","time_prep_pl4_sp2_other","time_prep_pl5_sp2_other")], na.rm=T)[dta$person_interviewed=="woman"]
+
+dta$time_prep_hh_man[(dta$person_interviewed=="man" & rowSums(is.na(dta[c("time_prep_pl1_sp1_self","time_prep_pl2_sp1_self","time_prep_pl3_sp1_self","time_prep_pl4_sp1_self","time_prep_pl5_sp1_self","time_prep_pl1_sp1_other","time_prep_pl2_sp1_other","time_prep_pl3_sp1_other","time_prep_pl4_sp1_other","time_prep_pl5_sp1_other")]))==10)
+| (dta$person_interviewed=="woman" & rowSums(is.na(dta[c("time_prep_pl1_sp2_self","time_prep_pl2_sp2_self","time_prep_pl3_sp2_self","time_prep_pl4_sp2_self","time_prep_pl5_sp2_self","time_prep_pl1_sp2_other","time_prep_pl2_sp2_other","time_prep_pl3_sp2_other","time_prep_pl4_sp2_other","time_prep_pl5_sp2_other")]))==10)] <- NA
+
+dta$time_plant_hh_man <- NA
+dta$time_plant_hh_man[dta$person_interviewed=="man"] <- rowSums(dta[c("time_plant_pl1_sp1_self","time_plant_pl2_sp1_self","time_plant_pl3_sp1_self","time_plant_pl4_sp1_self","time_plant_pl5_sp1_self")], na.rm=T)[dta$person_interviewed=="man"] + rowSums(dta[c("time_plant_pl1_sp1_other","time_plant_pl2_sp1_other","time_plant_pl3_sp1_other","time_plant_pl4_sp1_other","time_plant_pl5_sp1_other")], na.rm=T)[dta$person_interviewed=="man"]
+
+dta$time_plant_hh_man[dta$person_interviewed=="woman"] <- rowSums(dta[c("time_plant_pl1_sp2_self","time_plant_pl2_sp2_self","time_plant_pl3_sp2_self","time_plant_pl4_sp2_self","time_plant_pl5_sp2_self")], na.rm=T)[dta$person_interviewed=="woman"] + rowSums(dta[c("time_plant_pl1_sp2_other","time_plant_pl2_sp2_other","time_plant_pl3_sp2_other","time_plant_pl4_sp2_other","time_plant_pl5_sp2_other")], na.rm=T)[dta$person_interviewed=="woman"]
+
+dta$time_plant_hh_man[(dta$person_interviewed=="man" & rowSums(is.na(dta[c("time_plant_pl1_sp1_self","time_plant_pl2_sp1_self","time_plant_pl3_sp1_self","time_plant_pl4_sp1_self","time_plant_pl5_sp1_self","time_plant_pl1_sp1_other","time_plant_pl2_sp1_other","time_plant_pl3_sp1_other","time_plant_pl4_sp1_other","time_plant_pl5_sp1_other")]))==10)
+| (dta$person_interviewed=="woman" & rowSums(is.na(dta[c("time_plant_pl1_sp2_self","time_plant_pl2_sp2_self","time_plant_pl3_sp2_self","time_plant_pl4_sp2_self","time_plant_pl5_sp2_self","time_plant_pl1_sp2_other","time_plant_pl2_sp2_other","time_plant_pl3_sp2_other","time_plant_pl4_sp2_other","time_plant_pl5_sp2_other")]))==10)] <- NA
+
+dta$time_weed_hh_man <- NA
+dta$time_weed_hh_man[dta$person_interviewed=="man"] <- rowSums(dta[c("time_weed1_pl1_sp1_self","time_weed1_pl2_sp1_self","time_weed1_pl3_sp1_self","time_weed1_pl4_sp1_self","time_weed1_pl5_sp1_self","time_weed2_pl1_sp1_self","time_weed2_pl2_sp1_self","time_weed2_pl3_sp1_self","time_weed2_pl4_sp1_self","time_weed2_pl5_sp1_self","time_weed3_pl1_sp1_self","time_weed3_pl2_sp1_self","time_weed3_pl3_sp1_self","time_weed3_pl4_sp1_self","time_weed3_pl5_sp1_self"
+)], na.rm=T)[dta$person_interviewed=="man"] + rowSums(dta[c("time_weed1_pl1_sp1_other","time_weed1_pl2_sp1_other","time_weed1_pl3_sp1_other","time_weed1_pl4_sp1_other","time_weed1_pl5_sp1_other","time_weed2_pl1_sp1_other","time_weed2_pl2_sp1_other","time_weed2_pl3_sp1_other","time_weed2_pl4_sp1_other","time_weed2_pl5_sp1_other","time_weed3_pl1_sp1_other","time_weed3_pl2_sp1_other","time_weed3_pl3_sp1_other","time_weed3_pl4_sp1_other","time_weed3_pl5_sp1_other"
+)], na.rm=T)[dta$person_interviewed=="man"]
+
+dta$time_weed_hh_man[dta$person_interviewed=="woman"] <- rowSums(dta[c("time_weed1_pl1_sp2_self","time_weed1_pl2_sp2_self","time_weed1_pl3_sp2_self","time_weed1_pl4_sp2_self","time_weed1_pl5_sp2_self","time_weed2_pl1_sp2_self","time_weed2_pl2_sp2_self","time_weed2_pl3_sp2_self","time_weed2_pl4_sp2_self","time_weed2_pl5_sp2_self","time_weed3_pl1_sp2_self","time_weed3_pl2_sp2_self","time_weed3_pl3_sp2_self","time_weed3_pl4_sp2_self","time_weed3_pl5_sp2_self"
+)], na.rm=T)[dta$person_interviewed=="woman"] + rowSums(dta[c("time_weed1_pl1_sp2_other","time_weed1_pl2_sp2_other","time_weed1_pl3_sp2_other","time_weed1_pl4_sp2_other","time_weed1_pl5_sp2_other","time_weed2_pl1_sp2_other","time_weed2_pl2_sp2_other","time_weed2_pl3_sp2_other","time_weed2_pl4_sp2_other","time_weed2_pl5_sp2_other","time_weed3_pl1_sp2_other","time_weed3_pl2_sp2_other","time_weed3_pl3_sp2_other","time_weed3_pl4_sp2_other","time_weed3_pl5_sp2_other"
+)], na.rm=T)[dta$person_interviewed=="woman"]
+
+dta$time_weed_hh_man[(dta$person_interviewed=="man" & rowSums(is.na(dta[c("time_weed1_pl1_sp1_self","time_weed1_pl2_sp1_self","time_weed1_pl3_sp1_self","time_weed1_pl4_sp1_self","time_weed1_pl5_sp1_self","time_weed2_pl1_sp1_self","time_weed2_pl2_sp1_self","time_weed2_pl3_sp1_self","time_weed2_pl4_sp1_self","time_weed2_pl5_sp1_self","time_weed3_pl1_sp1_self","time_weed3_pl2_sp1_self","time_weed3_pl3_sp1_self","time_weed3_pl4_sp1_self","time_weed3_pl5_sp1_self","time_weed1_pl1_sp1_other","time_weed1_pl2_sp1_other","time_weed1_pl3_sp1_other","time_weed1_pl4_sp1_other","time_weed1_pl5_sp1_other","time_weed2_pl1_sp1_other","time_weed2_pl2_sp1_other","time_weed2_pl3_sp1_other","time_weed2_pl4_sp1_other","time_weed2_pl5_sp1_other","time_weed3_pl1_sp1_other","time_weed3_pl2_sp1_other","time_weed3_pl3_sp1_other","time_weed3_pl4_sp1_other","time_weed3_pl5_sp1_other"
+)]))==30)
+| (dta$person_interviewed=="woman" & rowSums(is.na(dta[c("time_weed1_pl1_sp2_self","time_weed1_pl2_sp2_self","time_weed1_pl3_sp2_self","time_weed1_pl4_sp2_self","time_weed1_pl5_sp2_self","time_weed2_pl1_sp2_self","time_weed2_pl2_sp2_self","time_weed2_pl3_sp2_self","time_weed2_pl4_sp2_self","time_weed2_pl5_sp2_self","time_weed3_pl1_sp2_self","time_weed3_pl2_sp2_self","time_weed3_pl3_sp2_self","time_weed3_pl4_sp2_self","time_weed3_pl5_sp2_self","time_weed1_pl1_sp2_other","time_weed1_pl2_sp2_other","time_weed1_pl3_sp2_other","time_weed1_pl4_sp2_other","time_weed1_pl5_sp2_other","time_weed2_pl1_sp2_other","time_weed2_pl2_sp2_other","time_weed2_pl3_sp2_other","time_weed2_pl4_sp2_other","time_weed2_pl5_sp2_other","time_weed3_pl1_sp2_other","time_weed3_pl2_sp2_other","time_weed3_pl3_sp2_other","time_weed3_pl4_sp2_other","time_weed3_pl5_sp2_other"
+)]))==30)] <- NA
+
+
+dta$time_spray_hh_man <- NA
+dta$time_spray_hh_man[dta$person_interviewed=="man"] <- rowSums(dta[c("time_spray_pl1_sp1_self","time_spray_pl2_sp1_self","time_spray_pl3_sp1_self","time_spray_pl4_sp1_self","time_spray_pl5_sp1_self")], na.rm=T)[dta$person_interviewed=="man"] + rowSums(dta[c("time_spray_pl1_sp1_other","time_spray_pl2_sp1_other","time_spray_pl3_sp1_other","time_spray_pl4_sp1_other","time_spray_pl5_sp1_other")], na.rm=T)[dta$person_interviewed=="man"]
+dta$time_spray_hh_man[dta$person_interviewed=="woman"] <- rowSums(dta[c("time_spray_pl1_sp2_self","time_spray_pl2_sp2_self","time_spray_pl3_sp2_self","time_spray_pl4_sp2_self","time_spray_pl5_sp2_self")], na.rm=T)[dta$person_interviewed=="woman"] + rowSums(dta[c("time_spray_pl1_sp2_other","time_spray_pl2_sp2_other","time_spray_pl3_sp2_other","time_spray_pl4_sp2_other","time_spray_pl5_sp2_other")], na.rm=T)[dta$person_interviewed=="woman"]
+
+dta$time_spray_hh_man[(dta$person_interviewed=="man" & rowSums(is.na(dta[c("time_spray_pl1_sp1_self","time_spray_pl2_sp1_self","time_spray_pl3_sp1_self","time_spray_pl4_sp1_self","time_spray_pl5_sp1_self","time_spray_pl1_sp1_other","time_spray_pl2_sp1_other","time_spray_pl3_sp1_other","time_spray_pl4_sp1_other","time_spray_pl5_sp1_other")]))==10)
+| (dta$person_interviewed=="woman" & rowSums(is.na(dta[c("time_spray_pl1_sp2_self","time_spray_pl2_sp2_self","time_spray_pl3_sp2_self","time_spray_pl4_sp2_self","time_spray_pl5_sp2_self","time_spray_pl1_sp2_other","time_spray_pl2_sp2_other","time_spray_pl3_sp2_other","time_spray_pl4_sp2_other","time_spray_pl5_sp2_other")]))==10)] <- NA
+
+dta$time_harv_hh_man <- NA
+dta$time_harv_hh_man[dta$person_interviewed=="man"] <- rowSums(dta[c("time_harv_pl1_sp1_self","time_harv_pl2_sp1_self","time_harv_pl3_sp1_self","time_harv_pl4_sp1_self","time_harv_pl5_sp1_self")], na.rm=T)[dta$person_interviewed=="man"] + rowSums(dta[c("time_harv_pl1_sp1_other","time_harv_pl2_sp1_other","time_harv_pl3_sp1_other","time_harv_pl4_sp1_other","time_harv_pl5_sp1_other")], na.rm=T)[dta$person_interviewed=="man"]
+dta$time_harv_hh_man[dta$person_interviewed=="woman"] <- rowSums(dta[c("time_harv_pl1_sp2_self","time_harv_pl2_sp2_self","time_harv_pl3_sp2_self","time_harv_pl4_sp2_self","time_harv_pl5_sp2_self")], na.rm=T)[dta$person_interviewed=="woman"] + rowSums(dta[c("time_harv_pl1_sp2_other","time_harv_pl2_sp2_other","time_harv_pl3_sp2_other","time_harv_pl4_sp2_other","time_harv_pl5_sp2_other")], na.rm=T)[dta$person_interviewed=="woman"]
+
+dta$time_harv_hh_man[(dta$person_interviewed=="man" & rowSums(is.na(dta[c("time_harv_pl1_sp1_self","time_harv_pl2_sp1_self","time_harv_pl3_sp1_self","time_harv_pl4_sp1_self","time_harv_pl5_sp1_self","time_harv_pl1_sp1_other","time_harv_pl2_sp1_other","time_harv_pl3_sp1_other","time_harv_pl4_sp1_other","time_harv_pl5_sp1_other")]))==10)
+| (dta$person_interviewed=="woman" & rowSums(is.na(dta[c("time_harv_pl1_sp2_self","time_harv_pl2_sp2_self","time_harv_pl3_sp2_self","time_harv_pl4_sp2_self","time_harv_pl5_sp2_self","time_harv_pl1_sp2_other","time_harv_pl2_sp2_other","time_harv_pl3_sp2_other","time_harv_pl4_sp2_other","time_harv_pl5_sp2_other")]))==10)] <- NA
+
+############################## now for woman
+
+
+dta$time_prep_hh_woman <- NA
+dta$time_prep_hh_woman[dta$person_interviewed=="woman"] <- rowSums(dta[c("time_prep_pl1_sp1_self","time_prep_pl2_sp1_self","time_prep_pl3_sp1_self","time_prep_pl4_sp1_self","time_prep_pl5_sp1_self")], na.rm=T)[dta$person_interviewed=="woman"] + rowSums(dta[c("time_prep_pl1_sp1_other","time_prep_pl2_sp1_other","time_prep_pl3_sp1_other","time_prep_pl4_sp1_other","time_prep_pl5_sp1_other")], na.rm=T)[dta$person_interviewed=="woman"]
+dta$time_prep_hh_woman[dta$person_interviewed=="man"] <- rowSums(dta[c("time_prep_pl1_sp2_self","time_prep_pl2_sp2_self","time_prep_pl3_sp2_self","time_prep_pl4_sp2_self","time_prep_pl5_sp2_self")], na.rm=T)[dta$person_interviewed=="man"] + rowSums(dta[c("time_prep_pl1_sp2_other","time_prep_pl2_sp2_other","time_prep_pl3_sp2_other","time_prep_pl4_sp2_other","time_prep_pl5_sp2_other")], na.rm=T)[dta$person_interviewed=="man"]
+
+dta$time_prep_hh_woman[(dta$person_interviewed=="woman" & rowSums(is.na(dta[c("time_prep_pl1_sp1_self","time_prep_pl2_sp1_self","time_prep_pl3_sp1_self","time_prep_pl4_sp1_self","time_prep_pl5_sp1_self","time_prep_pl1_sp1_other","time_prep_pl2_sp1_other","time_prep_pl3_sp1_other","time_prep_pl4_sp1_other","time_prep_pl5_sp1_other")]))==10)
+| (dta$person_interviewed=="man" & rowSums(is.na(dta[c("time_prep_pl1_sp2_self","time_prep_pl2_sp2_self","time_prep_pl3_sp2_self","time_prep_pl4_sp2_self","time_prep_pl5_sp2_self","time_prep_pl1_sp2_other","time_prep_pl2_sp2_other","time_prep_pl3_sp2_other","time_prep_pl4_sp2_other","time_prep_pl5_sp2_other")]))==10)] <- NA
+
+
+dta$time_plant_hh_woman <- NA
+dta$time_plant_hh_woman[dta$person_interviewed=="woman"] <- rowSums(dta[c("time_plant_pl1_sp1_self","time_plant_pl2_sp1_self","time_plant_pl3_sp1_self","time_plant_pl4_sp1_self","time_plant_pl5_sp1_self")], na.rm=T)[dta$person_interviewed=="woman"] + rowSums(dta[c("time_plant_pl1_sp1_other","time_plant_pl2_sp1_other","time_plant_pl3_sp1_other","time_plant_pl4_sp1_other","time_plant_pl5_sp1_other")], na.rm=T)[dta$person_interviewed=="woman"]
+dta$time_plant_hh_woman[dta$person_interviewed=="man"] <- rowSums(dta[c("time_plant_pl1_sp2_self","time_plant_pl2_sp2_self","time_plant_pl3_sp2_self","time_plant_pl4_sp2_self","time_plant_pl5_sp2_self")], na.rm=T)[dta$person_interviewed=="man"] + rowSums(dta[c("time_plant_pl1_sp2_other","time_plant_pl2_sp2_other","time_plant_pl3_sp2_other","time_plant_pl4_sp2_other","time_plant_pl5_sp2_other")], na.rm=T)[dta$person_interviewed=="man"]
+
+dta$time_plant_hh_woman[(dta$person_interviewed=="woman" & rowSums(is.na(dta[c("time_plant_pl1_sp1_self","time_plant_pl2_sp1_self","time_plant_pl3_sp1_self","time_plant_pl4_sp1_self","time_plant_pl5_sp1_self","time_plant_pl1_sp1_other","time_plant_pl2_sp1_other","time_plant_pl3_sp1_other","time_plant_pl4_sp1_other","time_plant_pl5_sp1_other")]))==10)
+| (dta$person_interviewed=="man" & rowSums(is.na(dta[c("time_plant_pl1_sp2_self","time_plant_pl2_sp2_self","time_plant_pl3_sp2_self","time_plant_pl4_sp2_self","time_plant_pl5_sp2_self","time_plant_pl1_sp2_other","time_plant_pl2_sp2_other","time_plant_pl3_sp2_other","time_plant_pl4_sp2_other","time_plant_pl5_sp2_other")]))==10)] <- NA
+
+dta$time_weed_hh_woman <- NA
+dta$time_weed_hh_woman[dta$person_interviewed=="woman"] <- rowSums(dta[c("time_weed1_pl1_sp1_self","time_weed1_pl2_sp1_self","time_weed1_pl3_sp1_self","time_weed1_pl4_sp1_self","time_weed1_pl5_sp1_self","time_weed2_pl1_sp1_self","time_weed2_pl2_sp1_self","time_weed2_pl3_sp1_self","time_weed2_pl4_sp1_self","time_weed2_pl5_sp1_self","time_weed3_pl1_sp1_self","time_weed3_pl2_sp1_self","time_weed3_pl3_sp1_self","time_weed3_pl4_sp1_self","time_weed3_pl5_sp1_self"
+)], na.rm=T)[dta$person_interviewed=="woman"] + rowSums(dta[c("time_weed1_pl1_sp1_other","time_weed1_pl2_sp1_other","time_weed1_pl3_sp1_other","time_weed1_pl4_sp1_other","time_weed1_pl5_sp1_other","time_weed2_pl1_sp1_other","time_weed2_pl2_sp1_other","time_weed2_pl3_sp1_other","time_weed2_pl4_sp1_other","time_weed2_pl5_sp1_other","time_weed3_pl1_sp1_other","time_weed3_pl2_sp1_other","time_weed3_pl3_sp1_other","time_weed3_pl4_sp1_other","time_weed3_pl5_sp1_other"
+)], na.rm=T)[dta$person_interviewed=="woman"]
+dta$time_weed_hh_woman[dta$person_interviewed=="man"] <- rowSums(dta[c("time_weed1_pl1_sp2_self","time_weed1_pl2_sp2_self","time_weed1_pl3_sp2_self","time_weed1_pl4_sp2_self","time_weed1_pl5_sp2_self","time_weed2_pl1_sp2_self","time_weed2_pl2_sp2_self","time_weed2_pl3_sp2_self","time_weed2_pl4_sp2_self","time_weed2_pl5_sp2_self","time_weed3_pl1_sp2_self","time_weed3_pl2_sp2_self","time_weed3_pl3_sp2_self","time_weed3_pl4_sp2_self","time_weed3_pl5_sp2_self"
+)], na.rm=T)[dta$person_interviewed=="man"] + rowSums(dta[c("time_weed1_pl1_sp2_other","time_weed1_pl2_sp2_other","time_weed1_pl3_sp2_other","time_weed1_pl4_sp2_other","time_weed1_pl5_sp2_other","time_weed2_pl1_sp2_other","time_weed2_pl2_sp2_other","time_weed2_pl3_sp2_other","time_weed2_pl4_sp2_other","time_weed2_pl5_sp2_other","time_weed3_pl1_sp2_other","time_weed3_pl2_sp2_other","time_weed3_pl3_sp2_other","time_weed3_pl4_sp2_other","time_weed3_pl5_sp2_other"
+)], na.rm=T)[dta$person_interviewed=="man"]
+
+dta$time_weed_hh_woman[(dta$person_interviewed=="woman" & rowSums(is.na(dta[c("time_weed1_pl1_sp1_self","time_weed1_pl2_sp1_self","time_weed1_pl3_sp1_self","time_weed1_pl4_sp1_self","time_weed1_pl5_sp1_self","time_weed2_pl1_sp1_self","time_weed2_pl2_sp1_self","time_weed2_pl3_sp1_self","time_weed2_pl4_sp1_self","time_weed2_pl5_sp1_self","time_weed3_pl1_sp1_self","time_weed3_pl2_sp1_self","time_weed3_pl3_sp1_self","time_weed3_pl4_sp1_self","time_weed3_pl5_sp1_self","time_weed1_pl1_sp1_other","time_weed1_pl2_sp1_other","time_weed1_pl3_sp1_other","time_weed1_pl4_sp1_other","time_weed1_pl5_sp1_other","time_weed2_pl1_sp1_other","time_weed2_pl2_sp1_other","time_weed2_pl3_sp1_other","time_weed2_pl4_sp1_other","time_weed2_pl5_sp1_other","time_weed3_pl1_sp1_other","time_weed3_pl2_sp1_other","time_weed3_pl3_sp1_other","time_weed3_pl4_sp1_other","time_weed3_pl5_sp1_other"
+)]))==30)
+| (dta$person_interviewed=="man" & rowSums(is.na(dta[c("time_weed1_pl1_sp2_self","time_weed1_pl2_sp2_self","time_weed1_pl3_sp2_self","time_weed1_pl4_sp2_self","time_weed1_pl5_sp2_self","time_weed2_pl1_sp2_self","time_weed2_pl2_sp2_self","time_weed2_pl3_sp2_self","time_weed2_pl4_sp2_self","time_weed2_pl5_sp2_self","time_weed3_pl1_sp2_self","time_weed3_pl2_sp2_self","time_weed3_pl3_sp2_self","time_weed3_pl4_sp2_self","time_weed3_pl5_sp2_self","time_weed1_pl1_sp2_other","time_weed1_pl2_sp2_other","time_weed1_pl3_sp2_other","time_weed1_pl4_sp2_other","time_weed1_pl5_sp2_other","time_weed2_pl1_sp2_other","time_weed2_pl2_sp2_other","time_weed2_pl3_sp2_other","time_weed2_pl4_sp2_other","time_weed2_pl5_sp2_other","time_weed3_pl1_sp2_other","time_weed3_pl2_sp2_other","time_weed3_pl3_sp2_other","time_weed3_pl4_sp2_other","time_weed3_pl5_sp2_other"
+)]))==30)] <- NA
+
+
+dta$time_spray_hh_woman <- NA
+dta$time_spray_hh_woman[dta$person_interviewed=="woman"] <- rowSums(dta[c("time_spray_pl1_sp1_self","time_spray_pl2_sp1_self","time_spray_pl3_sp1_self","time_spray_pl4_sp1_self","time_spray_pl5_sp1_self")], na.rm=T)[dta$person_interviewed=="woman"] + rowSums(dta[c("time_spray_pl1_sp1_other","time_spray_pl2_sp1_other","time_spray_pl3_sp1_other","time_spray_pl4_sp1_other","time_spray_pl5_sp1_other")], na.rm=T)[dta$person_interviewed=="woman"]
+dta$time_spray_hh_woman[dta$person_interviewed=="man"] <- rowSums(dta[c("time_spray_pl1_sp2_self","time_spray_pl2_sp2_self","time_spray_pl3_sp2_self","time_spray_pl4_sp2_self","time_spray_pl5_sp2_self")], na.rm=T)[dta$person_interviewed=="man"] + rowSums(dta[c("time_spray_pl1_sp2_other","time_spray_pl2_sp2_other","time_spray_pl3_sp2_other","time_spray_pl4_sp2_other","time_spray_pl5_sp2_other")], na.rm=T)[dta$person_interviewed=="man"]
+
+dta$time_spray_hh_woman[(dta$person_interviewed=="woman" & rowSums(is.na(dta[c("time_spray_pl1_sp1_self","time_spray_pl2_sp1_self","time_spray_pl3_sp1_self","time_spray_pl4_sp1_self","time_spray_pl5_sp1_self","time_spray_pl1_sp1_other","time_spray_pl2_sp1_other","time_spray_pl3_sp1_other","time_spray_pl4_sp1_other","time_spray_pl5_sp1_other")]))==10)
+| (dta$person_interviewed=="man" & rowSums(is.na(dta[c("time_spray_pl1_sp2_self","time_spray_pl2_sp2_self","time_spray_pl3_sp2_self","time_spray_pl4_sp2_self","time_spray_pl5_sp2_self","time_spray_pl1_sp2_other","time_spray_pl2_sp2_other","time_spray_pl3_sp2_other","time_spray_pl4_sp2_other","time_spray_pl5_sp2_other")]))==10)] <- NA
+
+dta$time_harv_hh_woman <- NA
+dta$time_harv_hh_woman[dta$person_interviewed=="woman"] <- rowSums(dta[c("time_harv_pl1_sp1_self","time_harv_pl2_sp1_self","time_harv_pl3_sp1_self","time_harv_pl4_sp1_self","time_harv_pl5_sp1_self")], na.rm=T)[dta$person_interviewed=="woman"] + rowSums(dta[c("time_harv_pl1_sp1_other","time_harv_pl2_sp1_other","time_harv_pl3_sp1_other","time_harv_pl4_sp1_other","time_harv_pl5_sp1_other")], na.rm=T)[dta$person_interviewed=="woman"]
+dta$time_harv_hh_woman[dta$person_interviewed=="man"] <- rowSums(dta[c("time_harv_pl1_sp2_self","time_harv_pl2_sp2_self","time_harv_pl3_sp2_self","time_harv_pl4_sp2_self","time_harv_pl5_sp2_self")], na.rm=T)[dta$person_interviewed=="man"] + rowSums(dta[c("time_harv_pl1_sp2_other","time_harv_pl2_sp2_other","time_harv_pl3_sp2_other","time_harv_pl4_sp2_other","time_harv_pl5_sp2_other")], na.rm=T)[dta$person_interviewed=="man"]
+
+dta$time_harv_hh_woman[(dta$person_interviewed=="woman" & rowSums(is.na(dta[c("time_harv_pl1_sp1_self","time_harv_pl2_sp1_self","time_harv_pl3_sp1_self","time_harv_pl4_sp1_self","time_harv_pl5_sp1_self","time_harv_pl1_sp1_other","time_harv_pl2_sp1_other","time_harv_pl3_sp1_other","time_harv_pl4_sp1_other","time_harv_pl5_sp1_other")]))==10)
+| (dta$person_interviewed=="man" & rowSums(is.na(dta[c("time_harv_pl1_sp2_self","time_harv_pl2_sp2_self","time_harv_pl3_sp2_self","time_harv_pl4_sp2_self","time_harv_pl5_sp2_self","time_harv_pl1_sp2_other","time_harv_pl2_sp2_other","time_harv_pl3_sp2_other","time_harv_pl4_sp2_other","time_harv_pl5_sp2_other")]))==10)] <- NA
+
+### take mean
+dta$time_prep_hh_mean <- rowMeans(dta[c("time_prep_hh_man","time_prep_hh_woman")], na.rm=T)
+dta$time_plant_hh_mean <- rowMeans(dta[c("time_plant_hh_man","time_plant_hh_woman")], na.rm=T)
+dta$time_weed_hh_mean <- rowMeans(dta[c("time_weed_hh_man","time_weed_hh_woman")], na.rm=T)
+dta$time_spray_hh_mean <- rowMeans(dta[c("time_spray_hh_man","time_spray_hh_woman")], na.rm=T)
+dta$time_harv_hh_mean <- rowMeans(dta[c("time_harv_hh_man","time_harv_hh_woman")], na.rm=T)
+
 
 ## hired in labour
 dta[c("grp1a152", "grp2b152", "grp3c152", "grp4d152", "grp5e152")] <- lapply(dta[c("grp1a152", "grp2b152", "grp3c152", "grp4d152", "grp5e152")], function(x) replace(x, x == 999, NA) )
 dta[c("spouse2grp_sp1f152", "spouse2grp_sp2g152", "spouse2grp_sp3h152", "spouse2group_sp4j152", "spouse2grp5_sp5k152")] <- lapply(dta[c("spouse2grp_sp1f152", "spouse2grp_sp2g152", "spouse2grp_sp3h152", "spouse2group_sp4j152", "spouse2grp5_sp5k152")], function(x) replace(x, x == 999, NA) )
 
 dta$time_hired_sp1 <- rowSums(dta[c("grp1a152", "grp2b152", "grp3c152", "grp4d152", "grp5e152")],na.rm=T)
+dta$time_hired_sp1[is.na(dta$grp1a152) & is.na(dta$grp2b152) & is.na(dta$grp3c152) & is.na(dta$grp4d152) & is.na(dta$grp5e152)] <- NA
 dta$time_hired_sp2 <- rowSums(dta[c("spouse2grp_sp1f152", "spouse2grp_sp2g152", "spouse2grp_sp3h152", "spouse2group_sp4j152", "spouse2grp5_sp5k152")], na.rm=T)
+dta$time_hired_sp2[is.na(dta$spouse2grp_sp1f152) & is.na(dta$spouse2grp_sp2g152) & is.na(dta$spouse2grp_sp3h152) & is.na(dta$spouse2group_sp4j152) & is.na(dta$spouse2grp5_sp5k152)] <- NA
+
+dta$time_hired_hh_mean <- rowMeans(dta[c("time_hired_sp1","time_hired_sp2")], na.rm=T)
+dta$time_hired_hh_mean[is.na(dta$time_hired_sp1) & is.na(dta$time_hired_sp2)] <- NA
+dta$time_hired_hh_man <- NA
+dta$time_hired_hh_man[dta$person_interviewed == "man"] <- dta$time_hired_sp1[dta$person_interviewed == "man"]
+dta$time_hired_hh_man[dta$person_interviewed == "woman"] <- dta$time_hired_sp2[dta$person_interviewed == "woman"]
+dta$time_hired_hh_woman <- NA
+dta$time_hired_hh_woman[dta$person_interviewed == "woman"] <- dta$time_hired_sp1[dta$person_interviewed == "woman"]
+dta$time_hired_hh_woman[dta$person_interviewed == "man"] <- dta$time_hired_sp2[dta$person_interviewed == "man"]
+
+dta$tot_time_hh_man <- rowSums(dta[c("time_prep_hh_man","time_plant_hh_man","time_weed_hh_man","time_spray_hh_man","time_harv_hh_man","time_hired_hh_man")], na.rm=T)
+dta$tot_time_hh_man[rowSums(is.na(dta[c("time_prep_hh_man","time_plant_hh_man","time_weed_hh_man","time_spray_hh_man","time_harv_hh_man","time_hired_hh_man")]))==5] <- NA
+dta$tot_time_hh_woman <- rowSums(dta[c("time_prep_hh_woman","time_plant_hh_woman","time_weed_hh_woman","time_spray_hh_woman","time_harv_hh_woman","time_hired_hh_woman")], na.rm=T)
+dta$tot_time_hh_woman[rowSums(is.na(dta[c("time_prep_hh_woman","time_plant_hh_woman","time_weed_hh_woman","time_spray_hh_woman","time_harv_hh_woman","time_hired_hh_woman")]))==5] <- NA
+dta$tot_time_hh_mean <- rowSums(dta[c("time_prep_hh_mean","time_plant_hh_mean","time_weed_hh_mean","time_spray_hh_mean","time_harv_hh_mean","time_hired_hh_mean")], na.rm=T)
+dta$tot_time_hh_mean[rowSums(is.na(dta[c("time_prep_hh_mean","time_plant_hh_mean","time_weed_hh_mean","time_spray_hh_mean","time_harv_hh_mean","time_hired_hh_mean")]))==5] <- NA
 
-dta$time_hired_hh <- ifelse(dta$interview_status=="couple interviewed", (dta$time_hired_sp1 + dta$time_hired_sp2)/2,dta$time_hired_sp1 )
-dta$tot_time_hh <-  rowSums(dta[c("time_hired_hh", "tot_own_time_hh")], na.rm=T) 
-
-##################################### interlude: calc measures of plot management ##########################
-###who manages plots?
-dta$mgt_man_pl1 <-  rowSums(cbind((dta$grp1a10==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp1f10==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$mgt_man_pl1[is.na( (dta$grp1a10==1 ) ) & is.na((dta$spouse2grp_sp1f10==1 ) )] <- NA
-dta$mgt_woman_pl1 <-  rowSums(cbind((dta$grp1a10==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp1f10==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$mgt_woman_pl1[is.na((dta$grp1a10==1 ) ) & is.na((dta$spouse2grp_sp1f10==1 ))] <- NA
-dta$mgt_woman_involved_pl1 <- rowSums(cbind((dta$grp1a10%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp1f10%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$mgt_woman_involved_pl1[is.na((dta$grp1a10==1 ) ) & is.na((dta$spouse2grp_sp1f10==1  & dta$person_interviewed=="man"))] <- NA
-##woman says it is both and man says it is both
-dta$mgt_both_pl1 <- rowSums(cbind( (rowSums(cbind((dta$grp1a10==3  & dta$person_interviewed=="woman") , (dta$spouse2grp_sp1f10==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp1a10==3  & dta$person_interviewed=="man") , (dta$spouse2grp_sp1f10==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$mgt_both_pl1[is.na((dta$grp1a10==3 )) & is.na((dta$spouse2grp_sp1f10==3 ))] <- NA
-
-dta$mgt_man_pl2 <-  rowSums(cbind((dta$grp2b10==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp2g10==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$mgt_man_pl2[is.na( (dta$grp2b10==1 ) ) & is.na((dta$spouse2grp_sp2g10==1 ) )] <- NA
-dta$mgt_woman_pl2 <-  rowSums(cbind((dta$grp2b10==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp2g10==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$mgt_woman_pl2[is.na((dta$grp2b10==1 ) ) & is.na((dta$spouse2grp_sp2g10==1 ))] <- NA
-dta$mgt_woman_involved_pl2 <-  rowSums(cbind((dta$grp2b10%in%c(1,3,5)   & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp2g10%in%c(1,3,5)   & dta$person_interviewed=="man")), na.rm=T)
-dta$mgt_woman_involved_pl2[is.na((dta$grp2b10==1 ) ) & is.na((dta$spouse2grp_sp2g10==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$mgt_both_pl2 <- rowSums(cbind( (rowSums(cbind((dta$grp2b10==3  & dta$person_interviewed=="woman") , (dta$spouse2grp_sp2g10==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp2b10==3  & dta$person_interviewed=="man") , (dta$spouse2grp_sp2g10==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$mgt_both_pl2[is.na((dta$grp2b10==3 )) & is.na((dta$spouse2grp_sp2g10==3 ))] <- NA
-
-dta$mgt_man_pl3 <-  rowSums(cbind((dta$grp3c10==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp3h10==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$mgt_man_pl3[is.na( (dta$grp3c10==1 ) ) & is.na((dta$spouse2grp_sp3h10==1 ) )] <- NA
-dta$mgt_woman_pl3 <-  rowSums(cbind((dta$grp3c10==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp3h10==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$mgt_woman_pl3[is.na((dta$grp3c10==1 ) ) & is.na((dta$spouse2grp_sp3h10==1 ))] <- NA
-dta$mgt_woman_involved_pl3 <-  rowSums(cbind((dta$grp3c10%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp3h10%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$mgt_woman_involved_pl3[is.na((dta$grp3c10==1 ) ) & is.na((dta$spouse2grp_sp3h10==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$mgt_both_pl3 <- rowSums(cbind( (rowSums(cbind((dta$grp3c10==3  & dta$person_interviewed=="woman") , (dta$spouse2grp_sp3h10==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp3c10==3  & dta$person_interviewed=="man") , (dta$spouse2grp_sp3h10==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$mgt_both_pl3[is.na((dta$grp3c10==3 )) & is.na((dta$spouse2grp_sp3h10==3 ))] <- NA
-
-dta$mgt_man_pl4 <-  rowSums(cbind((dta$grp4d10==1  & dta$person_interviewed=="man") , (dta$spouse2group_sp4j10==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$mgt_man_pl4[is.na( (dta$grp4d10==1 ) ) & is.na((dta$spouse2group_sp4j10==1 ) )] <- NA
-dta$mgt_woman_pl4 <-  rowSums(cbind((dta$grp4d10==1  & dta$person_interviewed=="woman") ,  (dta$spouse2group_sp4j10==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$mgt_woman_pl4[is.na((dta$grp4d10==1 ) ) & is.na((dta$spouse2group_sp4j10==1 ))] <- NA
-dta$mgt_woman_involved_pl4 <-  rowSums(cbind((dta$grp4d10%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2group_sp4j10%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$mgt_woman_invovled_pl4[is.na((dta$grp4d10==1 ) ) & is.na((dta$spouse2group_sp4j10==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$mgt_both_pl4 <- rowSums(cbind( (rowSums(cbind((dta$grp4d10==3  & dta$person_interviewed=="woman") , (dta$spouse2group_sp4j10==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp4d10==3  & dta$person_interviewed=="man") , (dta$spouse2group_sp4j10==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$mgt_both_pl4[is.na((dta$grp4d10==3 )) & is.na((dta$spouse2group_sp4j10==3 ))] <- NA
-
-dta$mgt_man_pl5 <-  rowSums(cbind((dta$grp5e10==1  & dta$person_interviewed=="man") , (dta$spouse2grp5_sp5k10==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$mgt_man_pl5[is.na( (dta$grp5e10==1 ) ) & is.na((dta$spouse2grp5_sp5k10==1 ) )] <- NA
-dta$mgt_woman_pl5 <-  rowSums(cbind((dta$grp5e10==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp5_sp5k10==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$mgt_woman_pl5[is.na((dta$grp5e10==1 ) ) & is.na((dta$spouse2grp5_sp5k10==1 ))] <- NA
-dta$mgt_woman_invovled_pl5 <-  rowSums(cbind((dta$grp5e10%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2grp5_sp5k10%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$mgt_woman_involved_pl5[is.na((dta$grp5e10==1 ) ) & is.na((dta$spouse2grp5_sp5k10==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$mgt_both_pl5 <- rowSums(cbind( (rowSums(cbind((dta$grp5e10==3  & dta$person_interviewed=="woman") , (dta$spouse2grp5_sp5k10==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp5e10==3  & dta$person_interviewed=="man") , (dta$spouse2grp5_sp5k10==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$mgt_both_pl5[is.na((dta$grp5e10==3 )) & is.na((dta$spouse2grp5_sp5k10==3 ))] <- NA
-
-dta$nr_man_plots_decmaize <- rowSums(dta[c("mgt_man_pl1","mgt_man_pl2","mgt_man_pl3","mgt_man_pl4","mgt_man_pl5")], na.rm=T)
-dta$nr_woman_plots_decmaize <- rowSums(dta[c("mgt_woman_pl1","mgt_woman_pl2","mgt_woman_pl3","mgt_woman_pl4","mgt_woman_pl5")], na.rm=T)
-dta$nr_woman_involved_plots_decmaize <- rowSums(dta[c("mgt_woman_involved_pl1","mgt_woman_involved_pl2","mgt_woman_involved_pl3","mgt_woman_involved_pl4","mgt_woman_involved_pl5")], na.rm=T)
-dta$nr_joint_plots_decmaize <- rowSums(dta[c("mgt_both_pl1","mgt_both_pl2","mgt_both_pl3","mgt_both_pl4","mgt_both_pl5")], na.rm=T)
-
-########################################################################################
-###who decided to start planting maize at particular time (decide1)
-dta$dectime_man_pl1 <-  rowSums(cbind((dta$grp1decide1==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp1decide_sp1==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$dectime_man_pl1[is.na( (dta$grp1decide1==1 ) ) & is.na((dta$spouse2grp_sp1decide_sp1==1 ) )] <- NA
-dta$dectime_woman_pl1 <-  rowSums(cbind((dta$grp1decide1==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp1decide_sp1==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$dectime_woman_pl1[is.na((dta$grp1decide1==1 ) ) & is.na((dta$spouse2grp_sp1decide_sp1==1 ))] <- NA
-dta$dectime_woman_involved_pl1 <- rowSums(cbind((dta$grp1decide1%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp1decide_sp1%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$dectime_woman_involved_pl1[is.na((dta$grp1decide1==1 ) ) & is.na((dta$spouse2grp_sp1decide_sp1==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$dectime_both_pl1 <- rowSums(cbind( (rowSums(cbind((dta$grp1decide1==3  & dta$person_interviewed=="woman") , (dta$spouse2grp_sp1decide_sp1==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp1decide1==3  & dta$person_interviewed=="man") , (dta$spouse2grp_sp1decide_sp1==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$dectime_both_pl1[is.na((dta$grp1decide1==3 )) & is.na((dta$spouse2grp_sp1decide_sp1==3 ))] <- NA
-
-dta$dectime_man_pl2 <-  rowSums(cbind((dta$grp2decide2==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp2decide_sp2==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$dectime_man_pl2[is.na( (dta$grp2decide2==1 ) ) & is.na((dta$spouse2grp_sp2decide_sp2==1 ) )] <- NA
-dta$dectime_woman_pl2 <-  rowSums(cbind((dta$grp2decide2==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp2decide_sp2==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$dectime_woman_pl2[is.na((dta$grp2decide2==1 ) ) & is.na((dta$spouse2grp_sp2decide_sp2==1 ))] <- NA
-dta$dectime_woman_involved_pl2 <-  rowSums(cbind((dta$grp2decide2%in%c(1,3,5)   & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp2decide_sp2%in%c(1,3,5)   & dta$person_interviewed=="man")), na.rm=T)
-dta$dectime_woman_involved_pl2[is.na((dta$grp2decide2==1 ) ) & is.na((dta$spouse2grp_sp2decide_sp2==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$dectime_both_pl2 <- rowSums(cbind( (rowSums(cbind((dta$grp2decide2==3  & dta$person_interviewed=="woman") , (dta$spouse2grp_sp2decide_sp2==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp2decide2==3  & dta$person_interviewed=="man") , (dta$spouse2grp_sp2decide_sp2==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$dectime_both_pl2[is.na((dta$grp2decide2==3 )) & is.na((dta$spouse2grp_sp2decide_sp2==3 ))] <- NA
-
-dta$dectime_man_pl3 <-  rowSums(cbind((dta$grp3decide3==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp3days_sp3==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$dectime_man_pl3[is.na( (dta$grp3decide3==1 ) ) & is.na((dta$spouse2grp_sp3days_sp3==1 ) )] <- NA
-dta$dectime_woman_pl3 <-  rowSums(cbind((dta$grp3decide3==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp3days_sp3==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$dectime_woman_pl3[is.na((dta$grp3decide3==1 ) ) & is.na((dta$spouse2grp_sp3days_sp3==1 ))] <- NA
-dta$dectime_woman_involved_pl3 <-  rowSums(cbind((dta$grp3decide3%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp3days_sp3%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$dectime_woman_involved_pl3[is.na((dta$grp3decide3==1 ) ) & is.na((dta$spouse2grp_sp3days_sp3==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$dectime_both_pl3 <- rowSums(cbind( (rowSums(cbind((dta$grp3decide3==3  & dta$person_interviewed=="woman") , (dta$spouse2grp_sp3days_sp3==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp3decide3==3  & dta$person_interviewed=="man") , (dta$spouse2grp_sp3days_sp3==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$dectime_both_pl3[is.na((dta$grp3decide3==3 )) & is.na((dta$spouse2grp_sp3days_sp3==3 ))] <- NA
-
-dta$dectime_man_pl4 <-  rowSums(cbind((dta$grp4decide4==1  & dta$person_interviewed=="man") , (dta$spouse2group_sp4dayssp4==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$dectime_man_pl4[is.na( (dta$grp4decide4==1 ) ) & is.na((dta$spouse2group_sp4dayssp4==1 ) )] <- NA
-dta$dectime_woman_pl4 <-  rowSums(cbind((dta$grp4decide4==1  & dta$person_interviewed=="woman") ,  (dta$spouse2group_sp4dayssp4==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$dectime_woman_pl4[is.na((dta$grp4decide4==1 ) ) & is.na((dta$spouse2group_sp4dayssp4==1 ))] <- NA
-dta$dectime_woman_involved_pl4 <-  rowSums(cbind((dta$grp4decide4%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2group_sp4dayssp4%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$dectime_woman_invovled_pl4[is.na((dta$grp4decide4==1 ) ) & is.na((dta$spouse2group_sp4dayssp4==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$dectime_both_pl4 <- rowSums(cbind( (rowSums(cbind((dta$grp4decide4==3  & dta$person_interviewed=="woman") , (dta$spouse2group_sp4dayssp4==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp4decide4==3  & dta$person_interviewed=="man") , (dta$spouse2group_sp4dayssp4==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$dectime_both_pl4[is.na((dta$grp4decide4==3 )) & is.na((dta$spouse2group_sp4dayssp4==3 ))] <- NA
-
-dta$dectime_man_pl5 <-  rowSums(cbind((dta$grp5decide5==1  & dta$person_interviewed=="man") , (dta$spouse2grp5_sp5dayssp5==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$dectime_man_pl5[is.na( (dta$grp5decide5==1 ) ) & is.na((dta$spouse2grp5_sp5dayssp5==1 ) )] <- NA
-dta$dectime_woman_pl5 <-  rowSums(cbind((dta$grp5decide5==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp5_sp5dayssp5==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$dectime_woman_pl5[is.na((dta$grp5decide5==1 ) ) & is.na((dta$spouse2grp5_sp5dayssp5==1 ))] <- NA
-dta$dectime_woman_invovled_pl5 <-  rowSums(cbind((dta$grp5decide5%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2grp5_sp5dayssp5%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$dectime_woman_involved_pl5[is.na((dta$grp5decide5==1 ) ) & is.na((dta$spouse2grp5_sp5dayssp5==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$dectime_both_pl5 <- rowSums(cbind( (rowSums(cbind((dta$grp5decide5==3  & dta$person_interviewed=="woman") , (dta$spouse2grp5_sp5dayssp5==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp5decide5==3  & dta$person_interviewed=="man") , (dta$spouse2grp5_sp5dayssp5==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$dectime_both_pl5[is.na((dta$grp5decide5==3 )) & is.na((dta$spouse2grp5_sp5dayssp5==3 ))] <- NA
-
-dta$nr_man_plots_dectime <- rowSums(dta[c("dectime_man_pl1","dectime_man_pl2","dectime_man_pl3","dectime_man_pl4","dectime_man_pl5")], na.rm=T)
-dta$nr_woman_plots_dectime <- rowSums(dta[c("dectime_woman_pl1","dectime_woman_pl2","dectime_woman_pl3","dectime_woman_pl4","dectime_woman_pl5")], na.rm=T)
-dta$nr_woman_involved_plots_dectime <- rowSums(dta[c("dectime_woman_involved_pl1","dectime_woman_involved_pl2","dectime_woman_involved_pl3","dectime_woman_involved_pl4","dectime_woman_involved_pl5")], na.rm=T)
-dta$nr_joint_plots_dectime <- rowSums(dta[c("dectime_both_pl1","dectime_both_pl2","dectime_both_pl3","dectime_both_pl4","dectime_both_pl5")], na.rm=T)
-
-########################################################################################
-###who decides on spacing
-
-###who decides on spacing
-
-dta$decspace_man_pl1 <-  rowSums(cbind((dta$grp1a23==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp1f23==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$decspace_man_pl1[is.na( (dta$grp1a23==1 ) ) & is.na((dta$spouse2grp_sp1f23==1 ) )] <- NA
-dta$decspace_woman_pl1 <-  rowSums(cbind((dta$grp1a23==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp1f23==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$decspace_woman_pl1[is.na((dta$grp1a23==1 ) ) & is.na((dta$spouse2grp_sp1f23==1 ))] <- NA
-dta$decspace_woman_involved_pl1 <- rowSums(cbind((dta$grp1a23%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp1f23%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$decspace_woman_involved_pl1[is.na((dta$grp1a23==1 ) ) & is.na((dta$spouse2grp_sp1f23==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$decspace_both_pl1 <- rowSums(cbind( (rowSums(cbind((dta$grp1a23==3  & dta$person_interviewed=="woman") , (dta$spouse2grp_sp1f23==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp1a23==3  & dta$person_interviewed=="man") , (dta$spouse2grp_sp1f23==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$decspace_both_pl1[is.na((dta$grp1a23==3 )) & is.na((dta$spouse2grp_sp1f23==3 ))] <- NA
-
-dta$decspace_man_pl2 <-  rowSums(cbind((dta$grp2b23==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp2g23==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$decspace_man_pl2[is.na( (dta$grp2b23==1 ) ) & is.na((dta$spouse2grp_sp2g23==1 ) )] <- NA
-dta$decspace_woman_pl2 <-  rowSums(cbind((dta$grp2b23==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp2g23==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$decspace_woman_pl2[is.na((dta$grp2b23==1 ) ) & is.na((dta$spouse2grp_sp2g23==1 ))] <- NA
-dta$decspace_woman_involved_pl2 <-  rowSums(cbind((dta$grp2b23%in%c(1,3,5)   & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp2g23%in%c(1,3,5)   & dta$person_interviewed=="man")), na.rm=T)
-dta$decspace_woman_involved_pl2[is.na((dta$grp2b23==1 ) ) & is.na((dta$spouse2grp_sp2g23==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$decspace_both_pl2 <- rowSums(cbind( (rowSums(cbind((dta$grp2b23==3  & dta$person_interviewed=="woman") , (dta$spouse2grp_sp2g23==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp2b23==3  & dta$person_interviewed=="man") , (dta$spouse2grp_sp2g23==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$decspace_both_pl2[is.na((dta$grp2b23==3 )) & is.na((dta$spouse2grp_sp2g23==3 ))] <- NA
-
-dta$decspace_man_pl3 <-  rowSums(cbind((dta$grp3c23==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp3h23==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$decspace_man_pl3[is.na( (dta$grp3c23==1 ) ) & is.na((dta$spouse2grp_sp3h23==1 ) )] <- NA
-dta$decspace_woman_pl3 <-  rowSums(cbind((dta$grp3c23==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp3h23==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$decspace_woman_pl3[is.na((dta$grp3c23==1 ) ) & is.na((dta$spouse2grp_sp3h23==1 ))] <- NA
-dta$decspace_woman_involved_pl3 <-  rowSums(cbind((dta$grp3c23%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp3h23%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$decspace_woman_involved_pl3[is.na((dta$grp3c23==1 ) ) & is.na((dta$spouse2grp_sp3h23==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$decspace_both_pl3 <- rowSums(cbind( (rowSums(cbind((dta$grp3c23==3  & dta$person_interviewed=="woman") , (dta$spouse2grp_sp3h23==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp3c23==3  & dta$person_interviewed=="man") , (dta$spouse2grp_sp3h23==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$decspace_both_pl3[is.na((dta$grp3c23==3 )) & is.na((dta$spouse2grp_sp3h23==3 ))] <- NA
-
-dta$decspace_man_pl4 <-  rowSums(cbind((dta$grp4d23==1  & dta$person_interviewed=="man") , (dta$spouse2group_sp4j23==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$decspace_man_pl4[is.na( (dta$grp4d23==1 ) ) & is.na((dta$spouse2group_sp4j23==1 ) )] <- NA
-dta$decspace_woman_pl4 <-  rowSums(cbind((dta$grp4d23==1  & dta$person_interviewed=="woman") ,  (dta$spouse2group_sp4j23==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$decspace_woman_pl4[is.na((dta$grp4d23==1 ) ) & is.na((dta$spouse2group_sp4j23==1 ))] <- NA
-dta$decspace_woman_involved_pl4 <-  rowSums(cbind((dta$grp4d23%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2group_sp4j23%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$decspace_woman_invovled_pl4[is.na((dta$grp4d23==1 ) ) & is.na((dta$spouse2group_sp4j23==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$decspace_both_pl4 <- rowSums(cbind( (rowSums(cbind((dta$grp4d23==3  & dta$person_interviewed=="woman") , (dta$spouse2group_sp4j23==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp4d23==3  & dta$person_interviewed=="man") , (dta$spouse2group_sp4j23==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$decspace_both_pl4[is.na((dta$grp4d23==3 )) & is.na((dta$spouse2group_sp4j23==3 ))] <- NA
-
-dta$decspace_man_pl5 <-  rowSums(cbind((dta$grp5e23==1  & dta$person_interviewed=="man") , (dta$spouse2grp5_sp5k23==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$decspace_man_pl5[is.na( (dta$grp5e23==1 ) ) & is.na((dta$spouse2grp5_sp5k23==1 ) )] <- NA
-dta$decspace_woman_pl5 <-  rowSums(cbind((dta$grp5e23==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp5_sp5k23==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$decspace_woman_pl5[is.na((dta$grp5e23==1 ) ) & is.na((dta$spouse2grp5_sp5k23==1 ))] <- NA
-dta$decspace_woman_invovled_pl5 <-  rowSums(cbind((dta$grp5e23%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2grp5_sp5k23%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$decspace_woman_involved_pl5[is.na((dta$grp5e23==1 ) ) & is.na((dta$spouse2grp5_sp5k23==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$decspace_both_pl5 <- rowSums(cbind( (rowSums(cbind((dta$grp5e23==3  & dta$person_interviewed=="woman") , (dta$spouse2grp5_sp5k23==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp5e23==3  & dta$person_interviewed=="man") , (dta$spouse2grp5_sp5k23==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$decspace_both_pl5[is.na((dta$grp5e23==3 )) & is.na((dta$spouse2grp5_sp5k23==3 ))] <- NA
-
-dta$nr_man_plots_decspace <- rowSums(dta[c("decspace_man_pl1","decspace_man_pl2","decspace_man_pl3","decspace_man_pl4","decspace_man_pl5")], na.rm=T)
-dta$nr_woman_plots_decspace <- rowSums(dta[c("decspace_woman_pl1","decspace_woman_pl2","decspace_woman_pl3","decspace_woman_pl4","decspace_woman_pl5")], na.rm=T)
-dta$nr_woman_involved_plots_decspace <- rowSums(dta[c("decspace_woman_involved_pl1","decspace_woman_involved_pl2","decspace_woman_involved_pl3","decspace_woman_involved_pl4","decspace_woman_involved_pl5")], na.rm=T)
-dta$nr_joint_plots_decspace <- rowSums(dta[c("decspace_both_pl1","decspace_both_pl2","decspace_both_pl3","decspace_both_pl4","decspace_both_pl5")], na.rm=T)
-############################
-
-###who decides on striga
-
-dta$decstriga_man_pl1 <-  rowSums(cbind((dta$grp1a25==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp1f25==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$decstriga_man_pl1[is.na( (dta$grp1a25==1 ) ) & is.na((dta$spouse2grp_sp1f25==1 ) )] <- NA
-dta$decstriga_woman_pl1 <-  rowSums(cbind((dta$grp1a25==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp1f25==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$decstriga_woman_pl1[is.na((dta$grp1a25==1 ) ) & is.na((dta$spouse2grp_sp1f25==1 ))] <- NA
-dta$decstriga_woman_involved_pl1 <- rowSums(cbind((dta$grp1a25%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp1f25%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$decstriga_woman_involved_pl1[is.na((dta$grp1a25==1 ) ) & is.na((dta$spouse2grp_sp1f25==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$decstriga_both_pl1 <- rowSums(cbind( (rowSums(cbind((dta$grp1a25==3  & dta$person_interviewed=="woman") , (dta$spouse2grp_sp1f25==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp1a25==3  & dta$person_interviewed=="man") , (dta$spouse2grp_sp1f25==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$decstriga_both_pl1[is.na((dta$grp1a25==3 )) & is.na((dta$spouse2grp_sp1f25==3 ))] <- NA
-
-dta$decstriga_man_pl2 <-  rowSums(cbind((dta$grp2b25==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp2g25==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$decstriga_man_pl2[is.na( (dta$grp2b25==1 ) ) & is.na((dta$spouse2grp_sp2g25==1 ) )] <- NA
-dta$decstriga_woman_pl2 <-  rowSums(cbind((dta$grp2b25==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp2g25==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$decstriga_woman_pl2[is.na((dta$grp2b25==1 ) ) & is.na((dta$spouse2grp_sp2g25==1 ))] <- NA
-dta$decstriga_woman_involved_pl2 <-  rowSums(cbind((dta$grp2b25%in%c(1,3,5)   & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp2g25%in%c(1,3,5)   & dta$person_interviewed=="man")), na.rm=T)
-dta$decstriga_woman_involved_pl2[is.na((dta$grp2b25==1 ) ) & is.na((dta$spouse2grp_sp2g25==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$decstriga_both_pl2 <- rowSums(cbind( (rowSums(cbind((dta$grp2b25==3  & dta$person_interviewed=="woman") , (dta$spouse2grp_sp2g25==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp2b25==3  & dta$person_interviewed=="man") , (dta$spouse2grp_sp2g25==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$decstriga_both_pl2[is.na((dta$grp2b25==3 )) & is.na((dta$spouse2grp_sp2g25==3 ))] <- NA
-
-dta$decstriga_man_pl3 <-  rowSums(cbind((dta$grp3c25==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp3h25==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$decstriga_man_pl3[is.na( (dta$grp3c25==1 ) ) & is.na((dta$spouse2grp_sp3h25==1 ) )] <- NA
-dta$decstriga_woman_pl3 <-  rowSums(cbind((dta$grp3c25==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp3h25==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$decstriga_woman_pl3[is.na((dta$grp3c25==1 ) ) & is.na((dta$spouse2grp_sp3h25==1 ))] <- NA
-dta$decstriga_woman_involved_pl3 <-  rowSums(cbind((dta$grp3c25%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp3h25%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$decstriga_woman_involved_pl3[is.na((dta$grp3c25==1 ) ) & is.na((dta$spouse2grp_sp3h25==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$decstriga_both_pl3 <- rowSums(cbind( (rowSums(cbind((dta$grp3c25==3  & dta$person_interviewed=="woman") , (dta$spouse2grp_sp3h25==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp3c25==3  & dta$person_interviewed=="man") , (dta$spouse2grp_sp3h25==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$decstriga_both_pl3[is.na((dta$grp3c25==3 )) & is.na((dta$spouse2grp_sp3h25==3 ))] <- NA
-
-dta$decstriga_man_pl4 <-  rowSums(cbind((dta$grp4d25==1  & dta$person_interviewed=="man") , (dta$spouse2group_sp4j25==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$decstriga_man_pl4[is.na( (dta$grp4d25==1 ) ) & is.na((dta$spouse2group_sp4j25==1 ) )] <- NA
-dta$decstriga_woman_pl4 <-  rowSums(cbind((dta$grp4d25==1  & dta$person_interviewed=="woman") ,  (dta$spouse2group_sp4j25==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$decstriga_woman_pl4[is.na((dta$grp4d25==1 ) ) & is.na((dta$spouse2group_sp4j25==1 ))] <- NA
-dta$decstriga_woman_involved_pl4 <-  rowSums(cbind((dta$grp4d25%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2group_sp4j25%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$decstriga_woman_invovled_pl4[is.na((dta$grp4d25==1 ) ) & is.na((dta$spouse2group_sp4j25==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$decstriga_both_pl4 <- rowSums(cbind( (rowSums(cbind((dta$grp4d25==3  & dta$person_interviewed=="woman") , (dta$spouse2group_sp4j25==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp4d25==3  & dta$person_interviewed=="man") , (dta$spouse2group_sp4j25==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$decstriga_both_pl4[is.na((dta$grp4d25==3 )) & is.na((dta$spouse2group_sp4j25==3 ))] <- NA
-
-dta$decstriga_man_pl5 <-  rowSums(cbind((dta$grp5e25==1  & dta$person_interviewed=="man") , (dta$spouse2grp5_sp5k25==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$decstriga_man_pl5[is.na( (dta$grp5e25==1 ) ) & is.na((dta$spouse2grp5_sp5k25==1 ) )] <- NA
-dta$decstriga_woman_pl5 <-  rowSums(cbind((dta$grp5e25==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp5_sp5k25==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$decstriga_woman_pl5[is.na((dta$grp5e25==1 ) ) & is.na((dta$spouse2grp5_sp5k25==1 ))] <- NA
-dta$decstriga_woman_invovled_pl5 <-  rowSums(cbind((dta$grp5e25%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2grp5_sp5k25%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$decstriga_woman_involved_pl5[is.na((dta$grp5e25==1 ) ) & is.na((dta$spouse2grp5_sp5k25==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$decstriga_both_pl5 <- rowSums(cbind( (rowSums(cbind((dta$grp5e25==3  & dta$person_interviewed=="woman") , (dta$spouse2grp5_sp5k25==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp5e25==3  & dta$person_interviewed=="man") , (dta$spouse2grp5_sp5k25==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$decstriga_both_pl5[is.na((dta$grp5e25==3 )) & is.na((dta$spouse2grp5_sp5k25==3 ))] <- NA
-
-dta$nr_man_plots_decstriga <- rowSums(dta[c("decstriga_man_pl1","decstriga_man_pl2","decstriga_man_pl3","decstriga_man_pl4","decstriga_man_pl5")], na.rm=T)
-dta$nr_woman_plots_decstriga <- rowSums(dta[c("decstriga_woman_pl1","decstriga_woman_pl2","decstriga_woman_pl3","decstriga_woman_pl4","decstriga_woman_pl5")], na.rm=T)
-dta$nr_woman_involved_plots_decstriga <- rowSums(dta[c("decstriga_woman_involved_pl1","decstriga_woman_involved_pl2","decstriga_woman_involved_pl3","decstriga_woman_involved_pl4","decstriga_woman_involved_pl5")], na.rm=T)
-dta$nr_joint_plots_decstriga <- rowSums(dta[c("decstriga_both_pl1","decstriga_both_pl2","decstriga_both_pl3","decstriga_both_pl4","decstriga_both_pl5")], na.rm=T)
-
-##########################################
-
-###who decides on weed
-
-dta$decweed_man_pl1 <-  rowSums(cbind((dta$grp1a27==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp1f27==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$decweed_man_pl1[is.na( (dta$grp1a27==1 ) ) & is.na((dta$spouse2grp_sp1f27==1 ) )] <- NA
-dta$decweed_woman_pl1 <-  rowSums(cbind((dta$grp1a27==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp1f27==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$decweed_woman_pl1[is.na((dta$grp1a27==1 ) ) & is.na((dta$spouse2grp_sp1f27==1 ))] <- NA
-dta$decweed_woman_involved_pl1 <- rowSums(cbind((dta$grp1a27%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp1f27%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$decweed_woman_involved_pl1[is.na((dta$grp1a27==1 ) ) & is.na((dta$spouse2grp_sp1f27==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$decweed_both_pl1 <- rowSums(cbind( (rowSums(cbind((dta$grp1a27==3  & dta$person_interviewed=="woman") , (dta$spouse2grp_sp1f27==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp1a27==3  & dta$person_interviewed=="man") , (dta$spouse2grp_sp1f27==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$decweed_both_pl1[is.na((dta$grp1a27==3 )) & is.na((dta$spouse2grp_sp1f27==3 ))] <- NA
-
-dta$decweed_man_pl2 <-  rowSums(cbind((dta$grp2b27==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp2g27==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$decweed_man_pl2[is.na( (dta$grp2b27==1 ) ) & is.na((dta$spouse2grp_sp2g27==1 ) )] <- NA
-dta$decweed_woman_pl2 <-  rowSums(cbind((dta$grp2b27==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp2g27==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$decweed_woman_pl2[is.na((dta$grp2b27==1 ) ) & is.na((dta$spouse2grp_sp2g27==1 ))] <- NA
-dta$decweed_woman_involved_pl2 <-  rowSums(cbind((dta$grp2b27%in%c(1,3,5)   & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp2g27%in%c(1,3,5)   & dta$person_interviewed=="man")), na.rm=T)
-dta$decweed_woman_involved_pl2[is.na((dta$grp2b27==1 ) ) & is.na((dta$spouse2grp_sp2g27==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$decweed_both_pl2 <- rowSums(cbind( (rowSums(cbind((dta$grp2b27==3  & dta$person_interviewed=="woman") , (dta$spouse2grp_sp2g27==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp2b27==3  & dta$person_interviewed=="man") , (dta$spouse2grp_sp2g27==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$decweed_both_pl2[is.na((dta$grp2b27==3 )) & is.na((dta$spouse2grp_sp2g27==3 ))] <- NA
-
-dta$decweed_man_pl3 <-  rowSums(cbind((dta$grp3c27==1  & dta$person_interviewed=="man") , (dta$spouse2grp_sp3h27==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$decweed_man_pl3[is.na( (dta$grp3c27==1 ) ) & is.na((dta$spouse2grp_sp3h27==1 ) )] <- NA
-dta$decweed_woman_pl3 <-  rowSums(cbind((dta$grp3c27==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp3h27==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$decweed_woman_pl3[is.na((dta$grp3c27==1 ) ) & is.na((dta$spouse2grp_sp3h27==1 ))] <- NA
-dta$decweed_woman_involved_pl3 <-  rowSums(cbind((dta$grp3c27%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2grp_sp3h27%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$decweed_woman_involved_pl3[is.na((dta$grp3c27==1 ) ) & is.na((dta$spouse2grp_sp3h27==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$decweed_both_pl3 <- rowSums(cbind( (rowSums(cbind((dta$grp3c27==3  & dta$person_interviewed=="woman") , (dta$spouse2grp_sp3h27==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp3c27==3  & dta$person_interviewed=="man") , (dta$spouse2grp_sp3h27==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$decweed_both_pl3[is.na((dta$grp3c27==3 )) & is.na((dta$spouse2grp_sp3h27==3 ))] <- NA
-
-dta$decweed_man_pl4 <-  rowSums(cbind((dta$grp4d27==1  & dta$person_interviewed=="man") , (dta$spouse2group_sp4j27==1  & dta$person_interviewed=="woman")), na.rm=T)
-dta$decweed_man_pl4[is.na( (dta$grp4d27==1 ) ) & is.na((dta$spouse2group_sp4j27==1 ) )] <- NA
-dta$decweed_woman_pl4 <-  rowSums(cbind((dta$grp4d27==1 ) ,  (dta$spouse2group_sp4j27==1 )), na.rm=T)
-dta$decweed_woman_pl4[is.na((dta$grp4d27==1) ) & is.na((dta$spouse2group_sp4j27==1  ))] <- NA
-dta$decweed_woman_involved_pl4 <-  rowSums(cbind((dta$grp4d27%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2group_sp4j27%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$decweed_woman_invovled_pl4[is.na((dta$grp4d27==1 ) ) & is.na((dta$spouse2group_sp4j27==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$decweed_both_pl4 <- rowSums(cbind( (rowSums(cbind((dta$grp4d27==3  & dta$person_interviewed=="woman") , (dta$spouse2group_sp4j27==3 )), na.rm=T) > 0),(rowSums(cbind((dta$grp4d27==3  & dta$person_interviewed=="man") , (dta$spouse2group_sp4j27==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$decweed_both_pl4[is.na((dta$grp4d27==3 )) & is.na((dta$spouse2group_sp4j27==3))] <- NA
-
-dta$decweed_man_pl5 <-  rowSums(cbind((dta$grp5e27==1 ) , (dta$spouse2grp5_sp5k27==1 )), na.rm=T)
-dta$decweed_man_pl5[is.na( (dta$grp5e27==1 ) ) & is.na((dta$spouse2grp5_sp5k27==1) )] <- NA
-dta$decweed_woman_pl5 <-  rowSums(cbind((dta$grp5e27==1  & dta$person_interviewed=="woman") ,  (dta$spouse2grp5_sp5k27==1  & dta$person_interviewed=="man")), na.rm=T)
-dta$decweed_woman_pl5[is.na((dta$grp5e27==1 ) ) & is.na((dta$spouse2grp5_sp5k27==1 ))] <- NA
-dta$decweed_woman_invovled_pl5 <-  rowSums(cbind((dta$grp5e27%in%c(1,3,5)  & dta$person_interviewed=="woman") ,  (dta$spouse2grp5_sp5k27%in%c(1,3,5)  & dta$person_interviewed=="man")), na.rm=T)
-dta$decweed_woman_involved_pl5[is.na((dta$grp5e27==1 ) ) & is.na((dta$spouse2grp5_sp5k27==1 ))] <- NA
-##woman says it is both and man says it is both
-dta$decweed_both_pl5 <- rowSums(cbind( (rowSums(cbind((dta$grp5e27==3  & dta$person_interviewed=="woman") , (dta$spouse2grp5_sp5k27==3  & dta$person_interviewed=="man")), na.rm=T) > 0),(rowSums(cbind((dta$grp5e27==3  & dta$person_interviewed=="man") , (dta$spouse2grp5_sp5k27==3  & dta$person_interviewed=="woman")), na.rm=T) > 0)), na.rm=T)==2
-dta$decweed_both_pl5[is.na((dta$grp5e27==3)) & is.na((dta$spouse2grp5_sp5k27==3))] <- NA
-
-dta$nr_man_plots_decweed <- rowSums(dta[c("decweed_man_pl1","decweed_man_pl2","decweed_man_pl3","decweed_man_pl4","decweed_man_pl5")], na.rm=T)
-dta$nr_woman_plots_decweed <- rowSums(dta[c("decweed_woman_pl1","decweed_woman_pl2","decweed_woman_pl3","decweed_woman_pl4","decweed_woman_pl5")], na.rm=T)
-dta$nr_woman_involved_plots_decweed <- rowSums(dta[c("decweed_woman_involved_pl1","decweed_woman_involved_pl2","decweed_woman_involved_pl3","decweed_woman_involved_pl4","decweed_woman_involved_pl5")], na.rm=T)
-dta$nr_joint_plots_decweed <- rowSums(dta[c("decweed_both_pl1","decweed_both_pl2","decweed_both_pl3","decweed_both_pl4","decweed_both_pl5")], na.rm=T)
-
-dta$dec_man_pl1 <- rowMeans(dta[c("mgt_man_pl1", "dectime_man_pl1", "decspace_man_pl1", "decstriga_man_pl1", "decweed_man_pl1")],na.rm=T)
-dta$dec_man_pl1[is.na(dta$mgt_man_pl1) & is.na(dta$dectime_man_pl1) & is.na(dta$decspace_man_pl1) & is.na(dta$decstriga_man_pl1) & is.na(dta$decweed_man_pl1)] <- NA
-dta$dec_man_pl2 <- rowMeans(dta[c("mgt_man_pl2", "dectime_man_pl2", "decspace_man_pl2", "decstriga_man_pl2", "decweed_man_pl2")],na.rm=T)
-dta$dec_man_pl2[is.na(dta$mgt_man_pl2) & is.na(dta$dectime_man_pl2) & is.na(dta$decspace_man_pl2) & is.na(dta$decstriga_man_pl2) & is.na(dta$decweed_man_pl2)] <- NA
-dta$dec_man_pl3 <- rowMeans(dta[c("mgt_man_pl3", "dectime_man_pl3", "decspace_man_pl3", "decstriga_man_pl3", "decweed_man_pl3")],na.rm=T)
-dta$dec_man_pl3[is.na(dta$mgt_man_pl3) & is.na(dta$dectime_man_pl3) & is.na(dta$decspace_man_pl3) & is.na(dta$decstriga_man_pl3) & is.na(dta$decweed_man_pl3)] <- NA
-dta$dec_man_pl4 <- rowMeans(dta[c("mgt_man_pl4", "dectime_man_pl4", "decspace_man_pl4", "decstriga_man_pl4", "decweed_man_pl4")],na.rm=T)
-dta$dec_man_pl4[is.na(dta$mgt_man_pl4) & is.na(dta$dectime_man_pl4) & is.na(dta$decspace_man_pl4) & is.na(dta$decstriga_man_pl4) & is.na(dta$decweed_man_pl4)] <- NA
-dta$dec_man_pl5 <- rowMeans(dta[c("mgt_man_pl5", "dectime_man_pl5", "decspace_man_pl5", "decstriga_man_pl5", "decweed_man_pl5")],na.rm=T)
-dta$dec_man_pl5[is.na(dta$mgt_man_pl5) & is.na(dta$dectime_man_pl5) & is.na(dta$decspace_man_pl5) & is.na(dta$decstriga_man_pl5) & is.na(dta$decweed_man_pl5)] <- NA
-
-dta$dec_woman_pl1 <- rowMeans(dta[c("mgt_woman_pl1", "dectime_woman_pl1", "decspace_woman_pl1", "decstriga_woman_pl1", "decweed_woman_pl1")],na.rm=T)
-dta$dec_woman_pl1[is.na(dta$mgt_woman_pl1) & is.na(dta$dectime_woman_pl1) & is.na(dta$decspace_woman_pl1) & is.na(dta$decstriga_woman_pl1) & is.na(dta$decweed_woman_pl1)] <- NA
-dta$dec_woman_pl2 <- rowMeans(dta[c("mgt_woman_pl2", "dectime_woman_pl2", "decspace_woman_pl2", "decstriga_woman_pl2", "decweed_woman_pl2")],na.rm=T)
-dta$dec_woman_pl2[is.na(dta$mgt_woman_pl2) & is.na(dta$dectime_woman_pl2) & is.na(dta$decspace_woman_pl2) & is.na(dta$decstriga_woman_pl2) & is.na(dta$decweed_woman_pl2)] <- NA
-dta$dec_woman_pl3 <- rowMeans(dta[c("mgt_woman_pl3", "dectime_woman_pl3", "decspace_woman_pl3", "decstriga_woman_pl3", "decweed_woman_pl3")],na.rm=T)
-dta$dec_woman_pl3[is.na(dta$mgt_woman_pl3) & is.na(dta$dectime_woman_pl3) & is.na(dta$decspace_woman_pl3) & is.na(dta$decstriga_woman_pl3) & is.na(dta$decweed_woman_pl3)] <- NA
-dta$dec_woman_pl4 <- rowMeans(dta[c("mgt_woman_pl4", "dectime_woman_pl4", "decspace_woman_pl4", "decstriga_woman_pl4", "decweed_woman_pl4")],na.rm=T)
-dta$dec_woman_pl4[is.na(dta$mgt_woman_pl4) & is.na(dta$dectime_woman_pl4) & is.na(dta$decspace_woman_pl4) & is.na(dta$decstriga_woman_pl4) & is.na(dta$decweed_woman_pl4)] <- NA
-dta$dec_woman_pl5 <- rowMeans(dta[c("mgt_woman_pl5", "dectime_woman_pl5", "decspace_woman_pl5", "decstriga_woman_pl5", "decweed_woman_pl5")],na.rm=T)
-dta$dec_woman_pl5[is.na(dta$mgt_woman_pl5) & is.na(dta$dectime_woman_pl5) & is.na(dta$decspace_woman_pl5) & is.na(dta$decstriga_woman_pl5) & is.na(dta$decweed_woman_pl5)] <- NA
-
-dta$dec_woman_involved_pl1 <- rowMeans(dta[c("mgt_woman_involved_pl1", "dectime_woman_involved_pl1", "decspace_woman_involved_pl1", "decstriga_woman_involved_pl1", "decweed_woman_involved_pl1")],na.rm=T)
-dta$dec_woman_involved_pl2 <- rowMeans(dta[c("mgt_woman_involved_pl2", "dectime_woman_involved_pl2", "decspace_woman_involved_pl2", "decstriga_woman_involved_pl2", "decweed_woman_involved_pl2")],na.rm=T)
-dta$dec_woman_involved_pl3 <- rowMeans(dta[c("mgt_woman_involved_pl3", "dectime_woman_involved_pl3", "decspace_woman_involved_pl3", "decstriga_woman_involved_pl3", "decweed_woman_involved_pl3")],na.rm=T)
-dta$dec_woman_involved_pl4 <- rowMeans(dta[c("mgt_woman_involved_pl4", "dectime_woman_involved_pl4", "decspace_woman_involved_pl4", "decstriga_woman_involved_pl4", "decweed_woman_involved_pl4")],na.rm=T)
-dta$dec_woman_involved_pl5 <- rowMeans(dta[c("mgt_woman_involved_pl5", "dectime_woman_involved_pl5", "decspace_woman_involved_pl5", "decstriga_woman_involved_pl5", "decweed_woman_involved_pl5")],na.rm=T)
-
-dta$dec_both_pl1 <- rowMeans(dta[c("mgt_both_pl1", "dectime_both_pl1", "decspace_both_pl1", "decstriga_both_pl1", "decweed_both_pl1")],na.rm=T)
-dta$dec_both_pl1[is.na(dta$mgt_both_pl1) & is.na(dta$dectime_both_pl1) & is.na(dta$decspace_both_pl1) & is.na(dta$decstriga_both_pl1) & is.na(dta$decweed_both_pl1)] <- NA
-dta$dec_both_pl2 <- rowMeans(dta[c("mgt_both_pl2", "dectime_both_pl2", "decspace_both_pl2", "decstriga_both_pl2", "decweed_both_pl2")],na.rm=T)
-dta$dec_both_pl2[is.na(dta$mgt_both_pl2) & is.na(dta$dectime_both_pl2) & is.na(dta$decspace_both_pl2) & is.na(dta$decstriga_both_pl2) & is.na(dta$decweed_both_pl2)] <- NA
-dta$dec_both_pl3 <- rowMeans(dta[c("mgt_both_pl3", "dectime_both_pl3", "decspace_both_pl3", "decstriga_both_pl3", "decweed_both_pl3")],na.rm=T)
-dta$dec_both_pl3[is.na(dta$mgt_both_pl3) & is.na(dta$dectime_both_pl3) & is.na(dta$decspace_both_pl3) & is.na(dta$decstriga_both_pl3) & is.na(dta$decweed_both_pl3)] <- NA
-dta$dec_both_pl4 <- rowMeans(dta[c("mgt_both_pl4", "dectime_both_pl4", "decspace_both_pl4", "decstriga_both_pl4", "decweed_both_pl4")],na.rm=T)
-dta$dec_both_pl4[is.na(dta$mgt_both_pl4) & is.na(dta$dectime_both_pl4) & is.na(dta$decspace_both_pl4) & is.na(dta$decstriga_both_pl4) & is.na(dta$decweed_both_pl4)] <- NA
-dta$dec_both_pl5 <- rowMeans(dta[c("mgt_both_pl5", "dectime_both_pl5", "decspace_both_pl5", "decstriga_both_pl5", "decweed_both_pl5")],na.rm=T)
-dta$dec_both_pl5[is.na(dta$mgt_both_pl5) & is.na(dta$dectime_both_pl5) & is.na(dta$decspace_both_pl5) & is.na(dta$decstriga_both_pl5) & is.na(dta$decweed_both_pl5)] <- NA
-
-### as dummy
-
-dta[paste("dec_man_d",paste("_pl",1:5, sep=""), sep="")] <- dta[paste("dec_man",paste("_pl",1:5, sep=""), sep="")] == 1
-dta[paste("dec_woman_d",paste("_pl",1:5, sep=""), sep="")] <- dta[paste("dec_woman",paste("_pl",1:5, sep=""), sep="")] == 1
-dta[paste("dec_both_d",paste("_pl",1:5, sep=""), sep="")] <- dta[paste("dec_both",paste("_pl",1:5, sep=""), sep="")] == 1
-
-#### now engagement based on work 
-#dta[c("grp1field1a50a", "grp1field1a50b", "grp1field1a50c", "grp1field1a50d", "grp1field1a50e", "grp1field1a50f", "grp1field1a50g")] <- lapply(dta[c("grp1field1a50a", "grp1field1a50b", "grp1field1a50c", "grp1field1a50d", "grp1field1a50e", "grp1field1a50f", "grp1field1a50g")], function(x) replace(x, x == 999, NA) )
-#dta$time_pl1_sp1 <- rowSums(dta[c("grp1field1a50a", "grp1field1a50b", "grp1field1a50c", "grp1field1a50d", "grp1field1a50e", "grp1field1a50f", "grp1field1a50g")], na.rm=T)
-#dta$time_pl1_sp1[rowSums(is.na(dta[c("grp1field1a50a", "grp1field1a50b", "grp1field1a50c", "grp1field1a50d", "grp1field1a50e", "grp1field1a50f", "grp1field1a50g")]))==7] <- NA
-
-#dta[c("grp2field3b50a", "grp2field3b50b", "grp2field3b50c", "grp2field3b50d", "grp2field3b50e", "grp2field3b50f", "grp2field3b50g")] <- lapply(dta[c("grp2field3b50a", "grp2field3b50b", "grp2field3b50c", "grp2field3b50d", "grp2field3b50e", "grp2field3b50f", "grp2field3b50g")], function(x) replace(x, x == 999, NA) )
-#dta$time_pl2_sp1 <- rowSums(dta[c("grp2field3b50a", "grp2field3b50b", "grp2field3b50c", "grp2field3b50d", "grp2field3b50e", "grp2field3b50f", "grp2field3b50g")], na.rm=T)
-#dta$time_pl2_sp1[rowSums(is.na(dta[c("grp2field3b50a", "grp2field3b50b", "grp2field3b50c", "grp2field3b50d", "grp2field3b50e", "grp2field3b50f", "grp2field3b50g")]))==7] <- NA
-
-#dta[c("grp3field7c50a", "grp3field7c50b", "grp3field7c50c", "grp3field7c50d", "grp3field7c50e", "grp3field7c50f", "grp3field7c50g")] <- lapply(dta[c("grp3field7c50a", "grp3field7c50b", "grp3field7c50c", "grp3field7c50d", "grp3field7c50e", "grp3field7c50f", "grp3field7c50g")], function(x) replace(x, x == 999, NA) )
-#dta$time_pl3_sp1 <- rowSums(dta[c("grp3field7c50a", "grp3field7c50b", "grp3field7c50c", "grp3field7c50d", "grp3field7c50e", "grp3field7c50f", "grp3field7c50g")], na.rm=T)
-#dta$time_pl3_sp1[rowSums(is.na(dta[c("grp3field7c50a", "grp3field7c50b", "grp3field7c50c", "grp3field7c50d", "grp3field7c50e", "grp3field7c50f", "grp3field7c50g")]))==7] <- NA
-
-#dta[c("grp4field9d50a", "grp4field9d50b", "grp4field9d50c", "grp4field9d50d", "grp4field9d50e", "grp4field9d50f", "grp4field9d50g")] <- lapply(dta[c("grp4field9d50a", "grp4field9d50b", "grp4field9d50c", "grp4field9d50d", "grp4field9d50e", "grp4field9d50f", "grp4field9d50g")], function(x) replace(x, x == 999, NA) ) 
-#dta$time_pl4_sp1 <- rowSums(dta[c("grp4field9d50a", "grp4field9d50b", "grp4field9d50c", "grp4field9d50d", "grp4field9d50e", "grp4field9d50f", "grp4field9d50g")], na.rm=T)
-#dta$time_pl4_sp1[rowSums(is.na(dta[c("grp4field9d50a", "grp4field9d50b", "grp4field9d50c", "grp4field9d50d", "grp4field9d50e", "grp4field9d50f", "grp4field9d50g")]))==7] <- NA
-
-#dta[c("grp5field11e50a", "grp5field11e50b", "grp5field11e50c", "grp5field11e50d", "grp5field11e50e", "grp5field11e50f", "grp5field11e50g")] <- lapply(dta[c("grp5field11e50a", "grp5field11e50b", "grp5field11e50c", "grp5field11e50d", "grp5field11e50e", "grp5field11e50f", "grp5field11e50g")], function(x) replace(x, x == 999, NA) )
-#dta$time_pl5_sp1 <- rowSums(dta[c("grp5field11e50a", "grp5field11e50b", "grp5field11e50c", "grp5field11e50d", "grp5field11e50e", "grp5field11e50f", "grp5field11e50g")], na.rm=T)
-#dta$time_pl5_sp1[rowSums(is.na(dta[c("grp5field11e50a", "grp5field11e50b", "grp5field11e50c", "grp5field11e50d", "grp5field11e50e", "grp5field11e50f", "grp5field11e50g")]))==7] <- NA
-
-###spouse
-
-#dta[c("spouse2grp_sp1field_sp1f50a", "spouse2grp_sp1field_sp1f50b", "spouse2grp_sp1field_sp1f50c", "spouse2grp_sp1field_sp1f50d", "spouse2grp_sp1field_sp1f50e", "spouse2grp_sp1field_sp1f50f", "spouse2grp_sp1field_sp1f50g")]  <- lapply(dta[c("spouse2grp_sp1field_sp1f50a", "spouse2grp_sp1field_sp1f50b", "spouse2grp_sp1field_sp1f50c", "spouse2grp_sp1field_sp1f50d", "spouse2grp_sp1field_sp1f50e", "spouse2grp_sp1field_sp1f50f", "spouse2grp_sp1field_sp1f50g")], function(x) replace(x, x == 999, NA) )
-#dta$time_pl1_sp2 <- rowSums(dta[c("spouse2grp_sp1field_sp1f50a", "spouse2grp_sp1field_sp1f50b", "spouse2grp_sp1field_sp1f50c", "spouse2grp_sp1field_sp1f50d", "spouse2grp_sp1field_sp1f50e", "spouse2grp_sp1field_sp1f50f", "spouse2grp_sp1field_sp1f50g")], na.rm=T)
-#dta$time_pl1_sp2[rowSums(is.na(dta[c("spouse2grp_sp1field_sp1f50a", "spouse2grp_sp1field_sp1f50b", "spouse2grp_sp1field_sp1f50c", "spouse2grp_sp1field_sp1f50d", "spouse2grp_sp1field_sp1f50e", "spouse2grp_sp1field_sp1f50f", "spouse2grp_sp1field_sp1f50g")]))==7] <- NA
-
-#dta[c("spouse2grp_sp2field_sp3g50a", "spouse2grp_sp2field_sp3g50b", "spouse2grp_sp2field_sp3g50c", "spouse2grp_sp2field_sp3g50d", "spouse2grp_sp2field_sp3g50e", "spouse2grp_sp2field_sp3g50f", "spouse2grp_sp2field_sp3g50g")]  <- lapply(dta[c("spouse2grp_sp2field_sp3g50a", "spouse2grp_sp2field_sp3g50b", "spouse2grp_sp2field_sp3g50c", "spouse2grp_sp2field_sp3g50d", "spouse2grp_sp2field_sp3g50e", "spouse2grp_sp2field_sp3g50f", "spouse2grp_sp2field_sp3g50g")], function(x) replace(x, x == 999, NA) )
-#dta$time_pl2_sp2 <- rowSums(dta[c("spouse2grp_sp2field_sp3g50a", "spouse2grp_sp2field_sp3g50b", "spouse2grp_sp2field_sp3g50c", "spouse2grp_sp2field_sp3g50d", "spouse2grp_sp2field_sp3g50e", "spouse2grp_sp2field_sp3g50f", "spouse2grp_sp2field_sp3g50g")], na.rm=T)
-#dta$time_pl2_sp2[rowSums(is.na(dta[c("spouse2grp_sp2field_sp3g50a", "spouse2grp_sp2field_sp3g50b", "spouse2grp_sp2field_sp3g50c", "spouse2grp_sp2field_sp3g50d", "spouse2grp_sp2field_sp3g50e", "spouse2grp_sp2field_sp3g50f", "spouse2grp_sp2field_sp3g50g")]))==7] <- NA
-
-#dta[c("spouse2grp_sp3field_sp5h50a", "spouse2grp_sp3field_sp5h50b", "spouse2grp_sp3field_sp5h50c", "spouse2grp_sp3field_sp5h50d", "spouse2grp_sp3field_sp5h50e", "spouse2grp_sp3field_sp5h50f", "spouse2grp_sp3field_sp5h50g")]  <- lapply(dta[c("spouse2grp_sp3field_sp5h50a", "spouse2grp_sp3field_sp5h50b", "spouse2grp_sp3field_sp5h50c", "spouse2grp_sp3field_sp5h50d", "spouse2grp_sp3field_sp5h50e", "spouse2grp_sp3field_sp5h50f", "spouse2grp_sp3field_sp5h50g")] , function(x) replace(x, x == 999, NA) )
-#dta$time_pl3_sp2 <- rowSums(dta[c("spouse2grp_sp3field_sp5h50a", "spouse2grp_sp3field_sp5h50b", "spouse2grp_sp3field_sp5h50c", "spouse2grp_sp3field_sp5h50d", "spouse2grp_sp3field_sp5h50e", "spouse2grp_sp3field_sp5h50f", "spouse2grp_sp3field_sp5h50g")], na.rm=T)
-#dta$time_pl3_sp2[rowSums(is.na(dta[c("spouse2grp_sp3field_sp5h50a", "spouse2grp_sp3field_sp5h50b", "spouse2grp_sp3field_sp5h50c", "spouse2grp_sp3field_sp5h50d", "spouse2grp_sp3field_sp5h50e", "spouse2grp_sp3field_sp5h50f", "spouse2grp_sp3field_sp5h50g")]))==7] <- NA
-
-#dta[c("spouse2group_sp4field_sp9j50a", "spouse2group_sp4field_sp9j50b", "spouse2group_sp4field_sp9j50c", "spouse2group_sp4field_sp9j50d", "spouse2group_sp4field_sp9j50e", "spouse2group_sp4field_sp9j50f", "spouse2group_sp4field_sp9j50g")]  <- lapply(dta[c("spouse2group_sp4field_sp9j50a", "spouse2group_sp4field_sp9j50b", "spouse2group_sp4field_sp9j50c", "spouse2group_sp4field_sp9j50d", "spouse2group_sp4field_sp9j50e", "spouse2group_sp4field_sp9j50f", "spouse2group_sp4field_sp9j50g")] , function(x) replace(x, x == 999, NA) )
-#dta$time_pl4_sp2 <- rowSums(dta[c("spouse2group_sp4field_sp9j50a", "spouse2group_sp4field_sp9j50b", "spouse2group_sp4field_sp9j50c", "spouse2group_sp4field_sp9j50d", "spouse2group_sp4field_sp9j50e", "spouse2group_sp4field_sp9j50f", "spouse2group_sp4field_sp9j50g")], na.rm=T)
-#dta$time_pl4_sp2[rowSums(is.na(dta[c("spouse2group_sp4field_sp9j50a", "spouse2group_sp4field_sp9j50b", "spouse2group_sp4field_sp9j50c", "spouse2group_sp4field_sp9j50d", "spouse2group_sp4field_sp9j50e", "spouse2group_sp4field_sp9j50f", "spouse2group_sp4field_sp9j50g")]))==7] <- NA
-
-#dta[c("spouse2grp5_sp5field_sp11k50a", "spouse2grp5_sp5field_sp11k50b", "spouse2grp5_sp5field_sp11k50c", "spouse2grp5_sp5field_sp11k50d", "spouse2grp5_sp5field_sp11k50e", "spouse2grp5_sp5field_sp11k50f", "spouse2grp5_sp5field_sp11k50g")]  <- lapply(dta[c("spouse2grp5_sp5field_sp11k50a", "spouse2grp5_sp5field_sp11k50b", "spouse2grp5_sp5field_sp11k50c", "spouse2grp5_sp5field_sp11k50d", "spouse2grp5_sp5field_sp11k50e", "spouse2grp5_sp5field_sp11k50f", "spouse2grp5_sp5field_sp11k50g")], function(x) replace(x, x == 999, NA) )
-#dta$time_pl5_sp2 <- rowSums(dta[c("spouse2grp5_sp5field_sp11k50a", "spouse2grp5_sp5field_sp11k50b", "spouse2grp5_sp5field_sp11k50c", "spouse2grp5_sp5field_sp11k50d", "spouse2grp5_sp5field_sp11k50e", "spouse2grp5_sp5field_sp11k50f", "spouse2grp5_sp5field_sp11k50g")], na.rm=T)
-#dta$time_pl5_sp2[rowSums(is.na(dta[c("spouse2grp5_sp5field_sp11k50a", "spouse2grp5_sp5field_sp11k50b", "spouse2grp5_sp5field_sp11k50c", "spouse2grp5_sp5field_sp11k50d", "spouse2grp5_sp5field_sp11k50e", "spouse2grp5_sp5field_sp11k50f", "spouse2grp5_sp5field_sp11k50g")]))==7] <- NA
-
-##time male
-#dta$time_male_pl1[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl1_sp1[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-#dta$time_male_pl1[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl1_sp2[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-
-#dta$time_female_pl1[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl1_sp1[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-#dta$time_female_pl1[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl1_sp2[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-
-#dta$time_male_pl2[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl2_sp1[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-#dta$time_male_pl2[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl2_sp2[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-
-#dta$time_female_pl2[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl2_sp1[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-#dta$time_female_pl2[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl2_sp2[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-
-#dta$time_male_pl3[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl3_sp1[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-#dta$time_male_pl3[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl3_sp2[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-
-#dta$time_female_pl3[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl3_sp1[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-#dta$time_female_pl3[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl3_sp2[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-
-#dta$time_male_pl4[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl4_sp1[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-#dta$time_male_pl4[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl4_sp2[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-
-#dta$time_female_pl4[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl4_sp1[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-#dta$time_female_pl4[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl4_sp2[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-
-#dta$time_male_pl5[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl5_sp1[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-#dta$time_male_pl5[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl5_sp2[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-
-#dta$time_female_pl5[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl5_sp1[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-#dta$time_female_pl5[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl5_sp2[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-
-#dta$wshare_pl1 <- dta$time_female_pl1/(dta$time_female_pl1 +dta$time_male_pl1)
-#dta$wshare_pl2 <- dta$time_female_pl2/(dta$time_female_pl2 +dta$time_male_pl2)
-#dta$wshare_pl3 <- dta$time_female_pl3/(dta$time_female_pl3 +dta$time_male_pl3)
-#dta$wshare_pl4 <- dta$time_female_pl4/(dta$time_female_pl4 +dta$time_male_pl4)
-#dta$wshare_pl5 <- dta$time_female_pl5/(dta$time_female_pl5 +dta$time_male_pl5)
-#### alternative measure: time allocation as estimated by woman
-#### now engagement based on work 
-###spouse
-#dta[c("grp1field2a50h","grp1field2a50i","grp1field2a50j","grp1field2a50k","grp1field2a50l","grp1field2a50m", "grp1field2a50n")]  <- lapply(dta[c("grp1field2a50h","grp1field2a50i","grp1field2a50j","grp1field2a50k","grp1field2a50l","grp1field2a50m", "grp1field2a50n")], function(x) replace(x, x == 999, NA) )
-#dta$time_pl1_sp1_o <- rowSums(dta[c("grp1field2a50h","grp1field2a50i","grp1field2a50j","grp1field2a50k","grp1field2a50l","grp1field2a50m", "grp1field2a50n")], na.rm=T)
-#dta$time_pl1_sp1_o[rowSums(is.na(dta[c("grp1field2a50h","grp1field2a50i","grp1field2a50j","grp1field2a50k","grp1field2a50l","grp1field2a50m" ,"grp1field2a50n")]))==7] <- NA
-
-#dta[c("grp2field4b50h","grp2field4b50i","grp2field4b50j","grp2field4b50k","grp2field4b50l","grp2field4b50m" ,"grp2field4b50n")]  <- lapply(dta[c("grp2field4b50h","grp2field4b50i","grp2field4b50j","grp2field4b50k","grp2field4b50l","grp2field4b50m" ,"grp2field4b50n")], function(x) replace(x, x == 999, NA) )
-#dta$time_pl2_sp1_o <- rowSums(dta[c("grp2field4b50h","grp2field4b50i","grp2field4b50j","grp2field4b50k","grp2field4b50l","grp2field4b50m", "grp2field4b50n")], na.rm=T)
-#dta$time_pl2_sp1_o[rowSums(is.na(dta[c("grp2field4b50h","grp2field4b50i","grp2field4b50j","grp2field4b50k","grp2field4b50l","grp2field4b50m" ,"grp2field4b50n")]))==7] <- NA
-
-#dta[c("grp3field8c50h","grp3field8c50i","grp3field8c50j","grp3field8c50k","grp3field8c50l","grp3field8c50m", "grp3field8c50n")]  <- lapply(dta[c("grp3field8c50h","grp3field8c50i","grp3field8c50j","grp3field8c50k","grp3field8c50l","grp3field8c50m", "grp3field8c50n")] , function(x) replace(x, x == 999, NA) )
-#dta$time_pl3_sp1_o <- rowSums(dta[c("grp3field8c50h","grp3field8c50i","grp3field8c50j","grp3field8c50k","grp3field8c50l","grp3field8c50m","grp3field8c50n")], na.rm=T)
-#dta$time_pl3_sp1_o[rowSums(is.na(dta[c("grp3field8c50h","grp3field8c50i","grp3field8c50j","grp3field8c50k","grp3field8c50l","grp3field8c50m", "grp3field8c50n")]))==7] <- NA
-
-#dta[c("grp4field10d50h","grp4field10d50i","grp4field10d50j","grp4field10d50k","grp4field10d50l","grp4field10d50m" ,"grp4field10d50n")]  <- lapply(dta[c("grp4field10d50h","grp4field10d50i","grp4field10d50j","grp4field10d50k","grp4field10d50l","grp4field10d50m" ,"grp4field10d50n")], function(x) replace(x, x == 999, NA) )
-#dta$time_pl4_sp1_o <- rowSums(dta[c("grp4field10d50h","grp4field10d50i","grp4field10d50j","grp4field10d50k","grp4field10d50l","grp4field10d50m" ,"grp4field10d50n")], na.rm=T)
-#dta$time_pl4_sp1_o[rowSums(is.na(dta[c("grp4field10d50h","grp4field10d50i","grp4field10d50j","grp4field10d50k","grp4field10d50l","grp4field10d50m", "grp4field10d50n")]))==7] <- NA
-
-#dta[c("grp5field12e50h","grp5field12e50i","grp5field12e50j","grp5field12e50k","grp5field12e50l","grp5field12e50m" ,"grp5field12e50n")]  <- lapply(dta[c("grp5field12e50h","grp5field12e50i","grp5field12e50j","grp5field12e50k","grp5field12e50l","grp5field12e50m", "grp5field12e50n")], function(x) replace(x, x == 999, NA) )
-#dta$time_pl5_sp1_o <- rowSums(dta[c("grp5field12e50h","grp5field12e50i","grp5field12e50j","grp5field12e50k","grp5field12e50l","grp5field12e50m" ,"grp5field12e50n")], na.rm=T)
-#dta$time_pl5_sp1_o[rowSums(is.na(dta[c("grp5field12e50h","grp5field12e50i","grp5field12e50j","grp5field12e50k","grp5field12e50l","grp5field12e50m", "grp5field12e50n")]))==7] <- NA
-
-###spouse
-#dta[c("spouse2grp_sp1field_sp2f50h", "spouse2grp_sp1field_sp2f50i", "spouse2grp_sp1field_sp2f50j", "spouse2grp_sp1field_sp2f50k", "spouse2grp_sp1field_sp2f50l", "spouse2grp_sp1field_sp2f50m", "spouse2grp_sp1field_sp2f50n")]  <- lapply(dta[c("spouse2grp_sp1field_sp2f50h", "spouse2grp_sp1field_sp2f50i", "spouse2grp_sp1field_sp2f50j", "spouse2grp_sp1field_sp2f50k", "spouse2grp_sp1field_sp2f50l", "spouse2grp_sp1field_sp2f50m", "spouse2grp_sp1field_sp2f50n")] , function(x) replace(x, x == 999, NA) )
-#dta$time_pl1_sp2_o <- rowSums(dta[c("spouse2grp_sp1field_sp2f50h", "spouse2grp_sp1field_sp2f50i", "spouse2grp_sp1field_sp2f50j", "spouse2grp_sp1field_sp2f50k", "spouse2grp_sp1field_sp2f50l", "spouse2grp_sp1field_sp2f50m", "spouse2grp_sp1field_sp2f50n")] , na.rm=T)
-#dta$time_pl1_sp2_o[rowSums(is.na(dta[c("spouse2grp_sp1field_sp2f50h", "spouse2grp_sp1field_sp2f50i", "spouse2grp_sp1field_sp2f50j", "spouse2grp_sp1field_sp2f50k", "spouse2grp_sp1field_sp2f50l", "spouse2grp_sp1field_sp2f50m", "spouse2grp_sp1field_sp2f50n")] ))==7] <- NA
-
-#dta[c("spouse2grp_sp2field_sp4g50h", "spouse2grp_sp2field_sp4g50i", "spouse2grp_sp2field_sp4g50j", "spouse2grp_sp2field_sp4g50k", "spouse2grp_sp2field_sp4g50l", "spouse2grp_sp2field_sp4g50m", "spouse2grp_sp2field_sp4g50n")]  <- lapply(dta[c("spouse2grp_sp2field_sp4g50h", "spouse2grp_sp2field_sp4g50i", "spouse2grp_sp2field_sp4g50j", "spouse2grp_sp2field_sp4g50k", "spouse2grp_sp2field_sp4g50l", "spouse2grp_sp2field_sp4g50m", "spouse2grp_sp2field_sp4g50n")], function(x) replace(x, x == 999, NA) )
-#dta$time_pl2_sp2_o <- rowSums(dta[c("spouse2grp_sp2field_sp4g50h", "spouse2grp_sp2field_sp4g50i", "spouse2grp_sp2field_sp4g50j", "spouse2grp_sp2field_sp4g50k", "spouse2grp_sp2field_sp4g50l", "spouse2grp_sp2field_sp4g50m", "spouse2grp_sp2field_sp4g50n")], na.rm=T)
-#dta$time_pl2_sp2_o[rowSums(is.na(dta[c("spouse2grp_sp2field_sp4g50h", "spouse2grp_sp2field_sp4g50i", "spouse2grp_sp2field_sp4g50j", "spouse2grp_sp2field_sp4g50k", "spouse2grp_sp2field_sp4g50l", "spouse2grp_sp2field_sp4g50m", "spouse2grp_sp2field_sp4g50n")]))==7] <- NA
-
-#dta[c("spouse2grp_sp3field_sp6h50h", "spouse2grp_sp3field_sp6h50i", "spouse2grp_sp3field_sp6h50j", "spouse2grp_sp3field_sp6h50k", "spouse2grp_sp3field_sp6h50l", "spouse2grp_sp3field_sp6h50m", "spouse2grp_sp3field_sp6h50n")]  <- lapply(dta[c("spouse2grp_sp3field_sp6h50h", "spouse2grp_sp3field_sp6h50i", "spouse2grp_sp3field_sp6h50j", "spouse2grp_sp3field_sp6h50k", "spouse2grp_sp3field_sp6h50l", "spouse2grp_sp3field_sp6h50m", "spouse2grp_sp3field_sp6h50n")] , function(x) replace(x, x == 999, NA) )
-#dta$time_pl3_sp2_o <- rowSums(dta[c("spouse2grp_sp3field_sp6h50h", "spouse2grp_sp3field_sp6h50i", "spouse2grp_sp3field_sp6h50j", "spouse2grp_sp3field_sp6h50k", "spouse2grp_sp3field_sp6h50l", "spouse2grp_sp3field_sp6h50m", "spouse2grp_sp3field_sp6h50n")], na.rm=T)
-#dta$time_pl3_sp2_o[rowSums(is.na(dta[c("spouse2grp_sp3field_sp6h50h", "spouse2grp_sp3field_sp6h50i", "spouse2grp_sp3field_sp6h50j", "spouse2grp_sp3field_sp6h50k", "spouse2grp_sp3field_sp6h50l", "spouse2grp_sp3field_sp6h50m", "spouse2grp_sp3field_sp6h50n")]))==7] <- NA
-
-#dta[c("spouse2group_sp4field_sp10j50h", "spouse2group_sp4field_sp10j50i", "spouse2group_sp4field_sp10j50j", "spouse2group_sp4field_sp10j50k", "spouse2group_sp4field_sp10j50l", "spouse2group_sp4field_sp10j50m", "spouse2group_sp4field_sp10j50n")]  <- lapply(dta[c("spouse2group_sp4field_sp10j50h", "spouse2group_sp4field_sp10j50i", "spouse2group_sp4field_sp10j50j", "spouse2group_sp4field_sp10j50k", "spouse2group_sp4field_sp10j50l", "spouse2group_sp4field_sp10j50m", "spouse2group_sp4field_sp10j50n")], function(x) replace(x, x == 999, NA) )
-#dta$time_pl4_sp2_o <- rowSums(dta[c("spouse2group_sp4field_sp10j50h", "spouse2group_sp4field_sp10j50i", "spouse2group_sp4field_sp10j50j", "spouse2group_sp4field_sp10j50k", "spouse2group_sp4field_sp10j50l", "spouse2group_sp4field_sp10j50m", "spouse2group_sp4field_sp10j50n")], na.rm=T)
-#dta$time_pl4_sp2_o[rowSums(is.na(dta[c("spouse2group_sp4field_sp10j50h", "spouse2group_sp4field_sp10j50i", "spouse2group_sp4field_sp10j50j", "spouse2group_sp4field_sp10j50k", "spouse2group_sp4field_sp10j50l", "spouse2group_sp4field_sp10j50m", "spouse2group_sp4field_sp10j50n")]))==7] <- NA
-
-#dta[c("spouse2grp5_sp5field_sp12k50h", "spouse2grp5_sp5field_sp12k50i", "spouse2grp5_sp5field_sp12k50j", "spouse2grp5_sp5field_sp12k50k", "spouse2grp5_sp5field_sp12k50l", "spouse2grp5_sp5field_sp12k50m", "spouse2grp5_sp5field_sp12k50n")]  <- lapply(dta[c("spouse2grp5_sp5field_sp12k50h", "spouse2grp5_sp5field_sp12k50i", "spouse2grp5_sp5field_sp12k50j", "spouse2grp5_sp5field_sp12k50k", "spouse2grp5_sp5field_sp12k50l", "spouse2grp5_sp5field_sp12k50m", "spouse2grp5_sp5field_sp12k50n")], function(x) replace(x, x == 999, NA) )
-#dta$time_pl5_sp2_o <- rowSums(dta[c("spouse2grp5_sp5field_sp12k50h", "spouse2grp5_sp5field_sp12k50i", "spouse2grp5_sp5field_sp12k50j", "spouse2grp5_sp5field_sp12k50k", "spouse2grp5_sp5field_sp12k50l", "spouse2grp5_sp5field_sp12k50m", "spouse2grp5_sp5field_sp12k50n")], na.rm=T)
-#dta$time_pl5_sp2_o[rowSums(is.na(dta[c("spouse2grp5_sp5field_sp12k50h", "spouse2grp5_sp5field_sp12k50i", "spouse2grp5_sp5field_sp12k50j", "spouse2grp5_sp5field_sp12k50k", "spouse2grp5_sp5field_sp12k50l", "spouse2grp5_sp5field_sp12k50m", "spouse2grp5_sp5field_sp12k50n")]))==7] <- NA
-
-##time male
-#dta$time2_male_pl1[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl1_sp2_o[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-#dta$time2_male_pl1[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl1_sp1_o[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-
-#dta$time2_female_pl1[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl1_sp1[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-#dta$time2_female_pl1[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl1_sp2[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-
-#dta$time2_male_pl2[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl2_sp2_o[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-#dta$time2_male_pl2[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl2_sp1_o[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-
-#dta$time2_female_pl2[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl2_sp1[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-#dta$time2_female_pl2[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl2_sp2[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-
-#dta$time2_male_pl3[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl3_sp2_o[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-#dta$time2_male_pl3[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl3_sp1_o[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-
-#dta$time2_female_pl3[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl3_sp1[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-#dta$time2_female_pl3[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl3_sp2[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-
-#dta$time2_male_pl4[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl4_sp2_o[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-#dta$time2_male_pl4[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl4_sp1_o[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-
-#dta$time2_female_pl4[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl4_sp1[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-#dta$time2_female_pl4[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl4_sp2[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-
-#dta$time2_male_pl5[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl5_sp2_o[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-#dta$time2_male_pl5[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl5_sp1_o[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-
-#dta$time2_female_pl5[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)] <- dta$time_pl5_sp1[dta$person_interviewed=="woman" & !is.na(dta$person_interviewed)]
-#dta$time2_female_pl5[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)] <- dta$time_pl5_sp2[dta$person_interviewed=="man" & !is.na(dta$person_interviewed)]
-
-#dta$wshare2_pl1 <- dta$time2_female_pl1/(dta$time2_female_pl1 +dta$time2_male_pl1)
-#dta$wshare2_pl2 <- dta$time2_female_pl2/(dta$time2_female_pl2 +dta$time2_male_pl2)
-#dta$wshare2_pl3 <- dta$time2_female_pl3/(dta$time2_female_pl3 +dta$time2_male_pl3)
-#dta$wshare2_pl4 <- dta$time2_female_pl4/(dta$time2_female_pl4 +dta$time2_male_pl4)
-#dta$wshare2_pl5 <- dta$time2_female_pl5/(dta$time2_female_pl5 +dta$time2_male_pl5)
-
-### female managed production
-dta$prod_tot_sp1 <- rowSums(dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")]*(dta[c("dec_woman_pl1","dec_woman_pl2","dec_woman_pl3","dec_woman_pl4","dec_woman_pl5")] >0)
-, na.rm=T)
-dta$prod_tot_sp1[rowSums(is.na(dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")]*(dta[c("dec_woman_pl1","dec_woman_pl2","dec_woman_pl3","dec_woman_pl4","dec_woman_pl5")] >0)))==5] <- NA
-dta$prod_tot_sp1[rowSums(dta[c("dec_woman_pl1","dec_woman_pl2","dec_woman_pl3","dec_woman_pl4","dec_woman_pl5")]!=0,na.rm=T)==0] <- NA
-dta$prod_tot_sp2 <- rowSums(dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")]*(dta[c("dec_woman_pl1","dec_woman_pl2","dec_woman_pl3","dec_woman_pl4","dec_woman_pl5")] >0)
-, na.rm=T)
-dta$prod_tot_sp2[rowSums(is.na(dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")]*(dta[c("dec_woman_pl1","dec_woman_pl2","dec_woman_pl3","dec_woman_pl4","dec_woman_pl5")] >0)))==5] <- NA
-dta$prod_tot_sp2[rowSums(dta[c("dec_woman_pl1","dec_woman_pl2","dec_woman_pl3","dec_woman_pl4","dec_woman_pl5")]!=0,na.rm=T)==0] <- NA
-## take mean of production reported by both spouses as total production
-dta$prod_tot_fm <-  rowMeans(dta[c("prod_tot_sp1","prod_tot_sp2")], na.rm=T)
-
-### female involved production
-dta$prod_tot_sp1 <- rowSums(dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")]*(dta[c("dec_woman_involved_pl1","dec_woman_involved_pl2","dec_woman_involved_pl3","dec_woman_involved_pl4","dec_woman_involved_pl5")] >0), na.rm=T)
-dta$prod_tot_sp1[rowSums(is.na(dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")]*(dta[c("dec_woman_involved_pl1","dec_woman_involved_pl2","dec_woman_involved_pl3","dec_woman_involved_pl4","dec_woman_involved_pl5")] >0)))==5] <- NA
-
-dta$prod_tot_sp1[rowSums(dta[c("dec_woman_involved_pl1","dec_woman_involved_pl2","dec_woman_involved_pl3","dec_woman_involved_pl4","dec_woman_involved_pl5")]!=0,na.rm=T)==0] <- NA
-
-dta$prod_tot_sp2 <- rowSums(dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")]*(dta[c("dec_woman_involved_pl1","dec_woman_involved_pl2","dec_woman_involved_pl3","dec_woman_involved_pl4","dec_woman_involved_pl5")] >0), na.rm=T)
-dta$prod_tot_sp2[rowSums(is.na(dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")]*(dta[c("dec_woman_involved_pl1","dec_woman_involved_pl2","dec_woman_involved_pl3","dec_woman_involved_pl4","dec_woman_involved_pl5")] >0)))==5] <- NA
-dta$prod_tot_sp2[rowSums(dta[c("dec_woman_involved_pl1","dec_woman_involved_pl2","dec_woman_involved_pl3","dec_woman_involved_pl4","dec_woman_involved_pl5")]!=0,na.rm=T)==0] <- NA
-## take mean of production reported by both spouses as total production
-dta$prod_tot_fi <-  rowMeans(dta[c("prod_tot_sp1","prod_tot_sp2")], na.rm=T)
-
-### male managed production
-dta$prod_tot_sp1 <- rowSums(dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")]*(dta[c("dec_man_pl1","dec_man_pl2","dec_man_pl3","dec_man_pl4","dec_man_pl5")] >0)
-, na.rm=T)
-dta$prod_tot_sp1[rowSums(is.na(dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")]*(dta[c("dec_man_pl1","dec_man_pl2","dec_man_pl3","dec_man_pl4","dec_man_pl5")] >0)))==5] <- NA
-### so explicitly make missing if nothing was produced
-dta$prod_tot_sp1[rowSums(dta[c("dec_man_pl1","dec_man_pl2","dec_man_pl3","dec_man_pl4","dec_man_pl5")]!=0,na.rm=T)==0] <- NA
-
-dta$prod_tot_sp2 <- rowSums(dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")]*(dta[c("dec_man_pl1","dec_man_pl2","dec_man_pl3","dec_man_pl4","dec_man_pl5")] >0)
-, na.rm=T)
-dta$prod_tot_sp2[rowSums(is.na(dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")]*(dta[c("dec_man_pl1","dec_man_pl2","dec_man_pl3","dec_man_pl4","dec_man_pl5")] >0)))==5] <- NA
-dta$prod_tot_sp2[rowSums(dta[c("dec_man_pl1","dec_man_pl2","dec_man_pl3","dec_man_pl4","dec_man_pl5")]!=0,na.rm=T)==0] <- NA
-## take mean of production reported by both spouses as total production
-dta$prod_tot_mm <-  rowMeans(dta[c("prod_tot_sp1","prod_tot_sp2")], na.rm=T)
-
-### jointly managed production
-dta$prod_tot_sp1 <- rowSums(dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")]*(dta[c("dec_both_pl1","dec_both_pl2","dec_both_pl3","dec_both_pl4","dec_both_pl5")] >0)
-, na.rm=T)
-dta$prod_tot_sp1[rowSums(is.na(dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")]*(dta[c("dec_both_pl1","dec_both_pl2","dec_both_pl3","dec_both_pl4","dec_both_pl5")] >0)))==5] <- NA
-### so explicitly make missing if nothing was produced
-dta$prod_tot_sp1[rowSums(dta[c("dec_both_pl1","dec_both_pl2","dec_both_pl3","dec_both_pl4","dec_both_pl5")]!=0,na.rm=T)==0] <- NA
-
-dta$prod_tot_sp2 <- rowSums(dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")]*(dta[c("dec_both_pl1","dec_both_pl2","dec_both_pl3","dec_both_pl4","dec_both_pl5")] >0)
-, na.rm=T)
-dta$prod_tot_sp2[rowSums(is.na(dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")]*(dta[c("dec_both_pl1","dec_both_pl2","dec_both_pl3","dec_both_pl4","dec_both_pl5")] >0)))==5] <- NA
-dta$prod_tot_sp2[rowSums(dta[c("dec_both_pl1","dec_both_pl2","dec_both_pl3","dec_both_pl4","dec_both_pl5")]!=0,na.rm=T)==0] <- NA
-## take mean of production reported by both spouses as total production
-dta$prod_tot_bm <-  rowMeans(dta[c("prod_tot_sp1","prod_tot_sp2")], na.rm=T)
-
-## wshare>.5 production
-#dta$prod_tot_sp1 <- rowSums(dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")]*(dta[c("wshare_pl1","wshare_pl2","wshare_pl3","wshare_pl4","wshare_pl5")] >.5), na.rm=T)
-#dta$prod_tot_sp1[rowSums(is.na(dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")]*(dta[c("wshare_pl1","wshare_pl2","wshare_pl3","wshare_pl4","wshare_pl5")] >.5)))==5] <- NA
-#### so explicitly make missing if nothing was produced
-#dta$prod_tot_sp1[rowSums(dta[c("wshare_pl1","wshare_pl2","wshare_pl3","wshare_pl4","wshare_pl5")]>.5,na.rm=T)==0] <- NA
-
-#dta$prod_tot_sp2 <- rowSums(dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")]*(dta[c("wshare_pl1","wshare_pl2","wshare_pl3","wshare_pl4","wshare_pl5")] >.5)
-#, na.rm=T)
-#dta$prod_tot_sp2[rowSums(is.na(dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")]*(dta[c("wshare_pl1","wshare_pl2","wshare_pl3","wshare_pl4","wshare_pl5")] >.5)))==5] <- NA
-#dta$prod_tot_sp2[rowSums(dta[c("wshare_pl1","wshare_pl2","wshare_pl3","wshare_pl4","wshare_pl5")]>.5,na.rm=T)==0] <- NA
-### take mean of production reported by both spouses as total production
-#dta$prod_tot_wm_share1 <-  rowMeans(dta[c("prod_tot_sp1","prod_tot_sp2")], na.rm=T)
-
-### wshare2>.5 production
-#dta$prod_tot_sp1 <- rowSums(dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")]*(dta[c("wshare2_pl1","wshare2_pl2","wshare2_pl3","wshare2_pl4","wshare2_pl5")] >.5)
-#, na.rm=T)
-#dta$prod_tot_sp1[rowSums(is.na(dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")]*(dta[c("wshare2_pl1","wshare2_pl2","wshare2_pl3","wshare2_pl4","wshare2_pl5")] >.5)))==5] <- NA
-#### so explicitly make missing if nothing was produced
-#dta$prod_tot_sp1[rowSums(dta[c("wshare2_pl1","wshare2_pl2","wshare2_pl3","wshare2_pl4","wshare2_pl5")]>.5,na.rm=T)==0] <- NA
-
-#dta$prod_tot_sp2 <- rowSums(dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")]*(dta[c("wshare2_pl1","wshare2_pl2","wshare2_pl3","wshare2_pl4","wshare2_pl5")] >.5)
-#, na.rm=T)
-#dta$prod_tot_sp2[rowSums(is.na(dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")]*(dta[c("wshare2_pl1","wshare2_pl2","wshare2_pl3","wshare2_pl4","wshare2_pl5")] >.5)))==5] <- NA
-#dta$prod_tot_sp2[rowSums(dta[c("wshare2_pl1","wshare2_pl2","wshare2_pl3","wshare2_pl4","wshare2_pl5")]>.5,na.rm=T)==0] <- NA
-### take mean of production reported by both spouses as total production
-#dta$prod_tot_wm_share2 <-  rowMeans(dta[c("prod_tot_sp1","prod_tot_sp2")], na.rm=T)
-
-
-
-### female managed area
-dta$area_tot_sp1 <- rowSums(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")]*(dta[c("dec_woman_pl1","dec_woman_pl2","dec_woman_pl3","dec_woman_pl4","dec_woman_pl5")] >0)
-, na.rm=T)
-dta$area_tot_sp1[rowSums(is.na(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")]*(dta[c("dec_woman_pl1","dec_woman_pl2","dec_woman_pl3","dec_woman_pl4","dec_woman_pl5")] >0)))==5] <- NA
-dta$area_tot_sp1[rowSums(dta[c("dec_woman_pl1","dec_woman_pl2","dec_woman_pl3","dec_woman_pl4","dec_woman_pl5")]!=0,na.rm=T)==0]<- NA
-
-dta$area_tot_sp2 <- rowSums(dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")]*(dta[c("dec_woman_pl1","dec_woman_pl2","dec_woman_pl3","dec_woman_pl4","dec_woman_pl5")] >0)
-, na.rm=T)
-dta$area_tot_sp2[rowSums(is.na(dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")]*(dta[c("dec_woman_pl1","dec_woman_pl2","dec_woman_pl3","dec_woman_pl4","dec_woman_pl5")] >0)))==5] <- NA
-dta$area_tot_sp2[rowSums(dta[c("dec_woman_pl1","dec_woman_pl2","dec_woman_pl3","dec_woman_pl4","dec_woman_pl5")]!=0,na.rm=T)==0]<- NA
-## take mean of areauction reported by both spouses as total areauction
-dta$area_tot_fm <-  rowMeans(dta[c("area_tot_sp1","area_tot_sp2")], na.rm=T)
-dta$yield_av_fm <- dta$prod_tot_fm/dta$area_tot_fm
-## female involved area
-
-dta$area_tot_sp1 <- rowSums(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")]*(dta[c("dec_woman_involved_pl1","dec_woman_involved_pl2","dec_woman_involved_pl3","dec_woman_involved_pl4","dec_woman_involved_pl5")] >0)
-, na.rm=T)
-dta$area_tot_sp1[rowSums(is.na(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")]*(dta[c("dec_woman_involved_pl1","dec_woman_involved_pl2","dec_woman_involved_pl3","dec_woman_involved_pl4","dec_woman_involved_pl5")] >0)))==5] <- NA
-dta$area_tot_sp1[rowSums(dta[c("dec_woman_involved_pl1","dec_woman_involved_pl2","dec_woman_involved_pl3","dec_woman_involved_pl4","dec_woman_involved_pl5")]!=0,na.rm=T)==0]<- NA
-
-dta$area_tot_sp2 <- rowSums(dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")]*(dta[c("dec_woman_involved_pl1","dec_woman_involved_pl2","dec_woman_involved_pl3","dec_woman_involved_pl4","dec_woman_involved_pl5")] >0)
-, na.rm=T)
-dta$area_tot_sp2[rowSums(is.na(dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")]*(dta[c("dec_woman_involved_pl1","dec_woman_involved_pl2","dec_woman_involved_pl3","dec_woman_involved_pl4","dec_woman_involved_pl5")] >0)))==5] <- NA
-dta$area_tot_sp2[rowSums(dta[c("dec_woman_involved_pl1","dec_woman_involved_pl2","dec_woman_involved_pl3","dec_woman_involved_pl4","dec_woman_involved_pl5")]!=0,na.rm=T)==0]<- NA
-## take mean of areauction reported by both spouses as total areauction
-dta$area_tot_fi <-  rowMeans(dta[c("area_tot_sp1","area_tot_sp2")], na.rm=T)
-dta$yield_av_fi <- dta$prod_tot_fi/dta$area_tot_fi
-
-
-### male managed production
-dta$area_tot_sp1 <- rowSums(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")]*(dta[c("dec_man_pl1","dec_man_pl2","dec_man_pl3","dec_man_pl4","dec_man_pl5")] >0)
-, na.rm=T)
-dta$area_tot_sp1[rowSums(is.na(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")]*(dta[c("dec_man_pl1","dec_man_pl2","dec_man_pl3","dec_man_pl4","dec_man_pl5")] >0)))==5] <- NA
-### so explicitly make missing if nothing was produced
-dta$area_tot_sp1[rowSums(dta[c("dec_man_pl1","dec_man_pl2","dec_man_pl3","dec_man_pl4","dec_man_pl5")]!=0,na.rm=T)==0]<- NA
-
-dta$area_tot_sp2 <- rowSums(dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")]*(dta[c("dec_man_pl1","dec_man_pl2","dec_man_pl3","dec_man_pl4","dec_man_pl5")] >0)
-, na.rm=T)
-dta$area_tot_sp2[rowSums(is.na(dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")]*(dta[c("dec_man_pl1","dec_man_pl2","dec_man_pl3","dec_man_pl4","dec_man_pl5")] >0)))==5] <- NA
-dta$area_tot_sp2[rowSums(dta[c("dec_man_pl1","dec_man_pl2","dec_man_pl3","dec_man_pl4","dec_man_pl5")]!=0,na.rm=T)==0]<- NA
-## take mean of areauction reported by both spouses as total areauction
-dta$area_tot_mm <-  rowMeans(dta[c("area_tot_sp1","area_tot_sp2")], na.rm=T)
-dta$yield_av_mm <- dta$prod_tot_mm/dta$area_tot_mm
-### jointly managed production
-dta$area_tot_sp1 <- rowSums(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")]*(dta[c("dec_both_pl1","dec_both_pl2","dec_both_pl3","dec_both_pl4","dec_both_pl5")] >0)
-, na.rm=T)
-dta$area_tot_sp1[rowSums(is.na(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")]*(dta[c("dec_both_pl1","dec_both_pl2","dec_both_pl3","dec_both_pl4","dec_both_pl5")] >0)))==5] <- NA
-### so explicitly make missing if nothing was produced
-dta$area_tot_sp1[rowSums(dta[c("dec_both_pl1","dec_both_pl2","dec_both_pl3","dec_both_pl4","dec_both_pl5")]!=0,na.rm=T)==0]<- NA
-
-dta$area_tot_sp2 <- rowSums(dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")]*(dta[c("dec_both_pl1","dec_both_pl2","dec_both_pl3","dec_both_pl4","dec_both_pl5")] >0)
-, na.rm=T)
-dta$area_tot_sp2[rowSums(is.na(dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")]*(dta[c("dec_both_pl1","dec_both_pl2","dec_both_pl3","dec_both_pl4","dec_both_pl5")] >0)))==5] <- NA
-dta$area_tot_sp2[rowSums(dta[c("dec_both_pl1","dec_both_pl2","dec_both_pl3","dec_both_pl4","dec_both_pl5")]!=0,na.rm=T)==0]<- NA
-## take mean of areauction reported by both spouses as total areauction
-dta$area_tot_bm <-  rowMeans(dta[c("area_tot_sp1","area_tot_sp2")], na.rm=T)
-dta$yield_av_bm <- dta$prod_tot_bm/dta$area_tot_bm
-### wshare>.5 production
-#dta$area_tot_sp1 <- rowSums(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")]*(dta[c("wshare_pl1","wshare_pl2","wshare_pl3","wshare_pl4","wshare_pl5")] >.5)
-#, na.rm=T)
-#dta$area_tot_sp1[rowSums(is.na(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")]*(dta[c("wshare_pl1","wshare_pl2","wshare_pl3","wshare_pl4","wshare_pl5")] >.5)))==5] <- NA
-#### so explicitly make missing if nothing was produced
-#dta$area_tot_sp1[rowSums(dta[c("wshare_pl1","wshare_pl2","wshare_pl3","wshare_pl4","wshare_pl5")]>.5,na.rm=T)==0] <- NA
-
-#dta$area_tot_sp2 <- rowSums(dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")]*(dta[c("wshare_pl1","wshare_pl2","wshare_pl3","wshare_pl4","wshare_pl5")] >.5)
-#, na.rm=T)
-#dta$area_tot_sp2[rowSums(is.na(dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")]*(dta[c("wshare_pl1","wshare_pl2","wshare_pl3","wshare_pl4","wshare_pl5")] >.5)))==5] <- NA
-#dta$area_tot_sp2[rowSums(dta[c("wshare_pl1","wshare_pl2","wshare_pl3","wshare_pl4","wshare_pl5")]>.5,na.rm=T)==0] <- NA
-### take mean of production reported by both spouses as total areauction
-#dta$area_tot_wm_share1 <-  rowMeans(dta[c("area_tot_sp1","area_tot_sp2")], na.rm=T)
-#dta$yield_av_wm_share1 <- dta$prod_tot_wm_share1/dta$area_tot_wm_share1
-### wshare2>.5 areauction
-#dta$area_tot_sp1 <- rowSums(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")]*(dta[c("wshare2_pl1","wshare2_pl2","wshare2_pl3","wshare2_pl4","wshare2_pl5")] >.5)
-#, na.rm=T)
-#dta$area_tot_sp1[rowSums(is.na(dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")]*(dta[c("wshare2_pl1","wshare2_pl2","wshare2_pl3","wshare2_pl4","wshare2_pl5")] >.5)))==5] <- NA
-#### so explicitly make missing if nothing was produced
-#dta$area_tot_sp1[rowSums(dta[c("wshare2_pl1","wshare2_pl2","wshare2_pl3","wshare2_pl4","wshare2_pl5")]>.5,na.rm=T)==0] <- NA
-
-#dta$area_tot_sp2 <- rowSums(dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")]*(dta[c("wshare2_pl1","wshare2_pl2","wshare2_pl3","wshare2_pl4","wshare2_pl5")] >.5)
-#, na.rm=T)
-#dta$area_tot_sp2[rowSums(is.na(dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")]*(dta[c("wshare2_pl1","wshare2_pl2","wshare2_pl3","wshare2_pl4","wshare2_pl5")] >.5)))==5] <- NA
-#dta$area_tot_sp2[rowSums(dta[c("wshare2_pl1","wshare2_pl2","wshare2_pl3","wshare2_pl4","wshare2_pl5")]>.5,na.rm=T)==0] <- NA
-### take mean of areauction reported by both spouses as total areauction
-#dta$area_tot_wm_share2 <-  rowMeans(dta[c("area_tot_sp1","area_tot_sp2")], na.rm=T)
-#dta$yield_av_wm_share2 <- dta$prod_tot_wm_share2/dta$area_tot_wm_share2
 
 ###### yield better compared to normal year?
 dta$yield_better_sp1 <- rowSums(cbind((dta$grp1a18 ==1 | dta$grp1a18==2) ,  (dta$grp2b18 ==1 | dta$grp2b18==2), (dta$grp3c18 ==1 | dta$grp3c18==2), (dta$grp4d18 ==1 | dta$grp4d18==2), (dta$grp5e18 ==1 | dta$grp5e18==2)), na.rm=T)>0
@@ -1291,71 +769,6 @@ dta$decchem_both_pl4[is.na(dta$grp4d56) & is.na(dta$spouse2group_sp4j56) & is.na
 dta$decchem_both_pl5 <-  rowSums(cbind((dta$grp4d56==3  & dta$spouse2grp5_sp5k56==3), (dta$grp4d58==3  & dta$spouse2grp5_sp5k58==3 )), na.rm=T) >0
 dta$decchem_both_pl5[is.na(dta$grp4d56) & is.na(dta$spouse2grp5_sp5k56) & is.na(dta$grp4d58) & is.na(dta$spouse2grp5_sp5k58)] <- NA
 
-################################################################ KNOWLEDGE ##############################################################
-### knowledge at aggreagate level - defined as follows: weak - if at least one person got the answer correct
-dta$know_space <- rowSums(dta[c("a1","spouse2f1")] == 1, na.rm=T) >0
-dta$know_space[is.na(dta$a1) & is.na(dta$spouse2f1)] <- NA 
-
-dta$know_combine <- rowSums(dta[c("a2", "spouse2f2")] == 3, na.rm=T) >0
-dta$know_combine[is.na(dta$a2)  & is.na(dta$spouse2f2)] <- NA
-
-dta$know_weed <-  rowSums(dta[c("a3","spouse2f3")]== 2, na.rm=T) > 0
-dta$know_weed[is.na(dta$a3)  & is.na(dta$spouse2f3)] <- NA
-
-dta$know_armyworm <- rowSums(dta[c("a4","spouse2f4")] == 3, na.rm=T) > 0 
-dta$know_armyworm[is.na(dta$a4) & is.na(dta$spouse2f4)] <- NA
-
-### knowledge at aggreagate level - defined as follows: strong - both spouses got the answer correct
-dta$know_space_j <- rowSums(dta[c("a1","spouse2f1")] == 1, na.rm=T) == 2
-dta$know_space_j[is.na(dta$a1) & is.na(dta$spouse2f1)] <- NA 
-
-dta$know_combine_j <- rowSums(dta[c("a2", "spouse2f2")] == 3, na.rm=T)  == 2
-dta$know_combine_j[is.na(dta$a2)  & is.na(dta$spouse2f2)] <- NA
-
-dta$know_weed_j <-  rowSums(dta[c("a3","spouse2f3")]== 2, na.rm=T)  == 2
-dta$know_weed_j[is.na(dta$a3)  & is.na(dta$spouse2f3)] <- NA
-
-dta$know_armyworm_j <- rowSums(dta[c("a4","spouse2f4")] == 3, na.rm=T)  == 2
-dta$know_armyworm_j[is.na(dta$a4) & is.na(dta$spouse2f4)] <- NA
-
-### knowledge of man:
-
-dta$know_space_m <- NA
-dta$know_space_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$a1[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==1
-dta$know_space_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$spouse2f1[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==1
-
-dta$know_combine_m <- NA
-dta$know_combine_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$a2[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==3
-dta$know_combine_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$spouse2f2[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] == 3
-
-dta$know_weed_m <- NA
-dta$know_weed_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$a3[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==2
-dta$know_weed_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$spouse2f3[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==2
-
-dta$know_armyworm_m <- NA
-dta$know_armyworm_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$a4[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==3
-dta$know_armyworm_m[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$spouse2f4[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==3
-
-### knowledge of woman:
-
-dta$know_space_w <- NA
-dta$know_space_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$a1[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==1
-dta$know_space_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$spouse2f1[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==1
-
-dta$know_combine_w <- NA
-dta$know_combine_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$a2[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==3
-dta$know_combine_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$spouse2f2[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] == 3
-
-dta$know_weed_w <- NA
-dta$know_weed_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$a3[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==2
-dta$know_weed_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$spouse2f3[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==2
-
-
-dta$know_armyworm_w <- NA
-dta$know_armyworm_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] <- dta$a4[!is.na(dta$person_interviewed) & dta$person_interviewed == "woman"] ==3
-dta$know_armyworm_w[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] <- dta$spouse2f4[!is.na(dta$person_interviewed) & dta$person_interviewed == "man"] ==3
-###export knowledge by man and women here for plotting panel data
-write.csv(dta[c("hhid", "messenger", "recipient", "know_space_m", "know_combine_m", "know_weed_m", "know_space_w", "know_combine_w", "know_weed_w")],"/home/bjvca/data/projects/digital green/endline/data/working/knowledge_3.csv")
 
 
 
