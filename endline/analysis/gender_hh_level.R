@@ -321,19 +321,23 @@ res_know[7,3,h] <- ifelse(totrep >0, RI("know_armyworm_j",treatment , ctrls,w_in
 res_know[8,3,h] <- nobs(lm(as.formula(paste("know_armyworm_j",treatment, sep="~")) ,data=dta))
 
 indexer <- FW_index(treatment, c("know_space_j", "know_combine_j", "know_weed_j"),ctrls,w_int="weights",dta, nr_repl=totrep,h_int = h)
-res_know[9,1,h] <- ifelse(h <=2, wtd.mean(indexer[[3]]$index[indexer[[3]]$messenger == "male"],dta$weights na.rm=T), wtd.mean(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
-res_know[10,1,h] <- ifelse(h <=2, wtd.sd(indexer[[3]]$index[indexer[[3]]$messenger == "male"], na.rm=T), wtd.sd(indexer[[3]]$index[indexer[[3]]$recipient == "male"], na.rm=T))
+
+res_know[9,1,h] <- ifelse(h ==1, wtd.mean(indexer[[3]]$index[dta$recipient == "male" | dta$recipient == "female"], dta$weights[dta$recipient == "male" | dta$recipient == "female"], na.rm=T),ifelse(h %in% c(2,3,4), wtd.mean(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 5, wtd.mean(indexer[[3]]$index[dta$messenger == "male" | dta$messenger == "female"],dta$weights[dta$messenger == "male" | dta$messenger == "female"], na.rm=T), ifelse(h == 6, wtd.mean(indexer[[3]]$index[dta$messenger == "male" ],dta$weights[dta$messenger == "male" ], na.rm=T), wtd.mean(indexer[[3]]$index[dta$messenger != dta$recipient],weights[dta$messenger != dta$recipient], na.rm=T)))))
+
+res_know[10,1,h] <- ifelse(h ==1, wtd.sd(indexer[[3]]$index[dta$recipient == "male" | dta$recipient == "female"], dta$sd[dta$recipient == "male" | dta$recipient == "female"], na.rm=T),ifelse(h %in% c(2,3,4), wtd.sd(indexer[[3]]$index[dta$recipient == "male"],dta$sd[dta$recipient == "male"], na.rm=T), ifelse( h == 5, wtd.sd(indexer[[3]]$index[dta$messenger == "male" | dta$messenger == "female"],dta$sd[dta$messenger == "male" | dta$messenger == "female"], na.rm=T), ifelse(h == 6, wtd.sd(indexer[[3]]$index[dta$messenger == "male" ],dta$weights[dta$messenger == "male" ], na.rm=T), wtd.sd(indexer[[3]]$index[dta$messenger != dta$recipient],weights[dta$messenger != dta$recipient], na.rm=T)))))
+
+
 res_know[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
 res_know[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_know[9,3,h] <-  indexer[[2]]
 res_know[10,3,h] <-  nobs(indexer[[1]])
 
 plot_res[1,1,h] <- "knowledge"
-plot_res[1,2,h] <- summary(indexer[[1]])$coefficients[2,1] / wtd.sd(indexer[[3]]$index, na.rm=T)
-plot_res[1,3:4,h] <- confint(indexer[[1]], level=.95)[2,]/wtd.sd(indexer[[3]]$index, na.rm=T)
+plot_res[1,2,h] <- summary(indexer[[1]])$coefficients[2,1] / res_know[10,1,h]
+plot_res[1,3:4,h] <- confint(indexer[[1]], level=.95)[2,]/res_know[10,1,h]
 plot_res[1,5,h] <- "joint"
 
-res_know[11,1:3,h] <- RI_FWER(deps= c("know_space_j","know_combine_j","know_weed_j") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_know[c(1,3,5),3,h], nr_repl = totrep,h_int=h)
+#res_know[11,1:3,h] <- RI_FWER(deps= c("know_space_j","know_combine_j","know_weed_j") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_know[c(1,3,5),3,h], nr_repl = totrep,h_int=h)
 }
 }
 ################################# practices #############################
