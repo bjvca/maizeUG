@@ -1450,4 +1450,39 @@ dta$labour[is.na(dta$labour_sp1) & is.na(dta$labour_sp2)] <- NA
 dta[ paste("yield_sp1",paste("_pl",1:5, sep=""), sep="")] <- dta[c("prod_pl1_sp1","prod_pl2_sp1","prod_pl3_sp1","prod_pl4_sp1", "prod_pl5_sp1")]/dta[c("area_pl1_sp1","area_pl2_sp1","area_pl3_sp1","area_pl4_sp1", "area_pl5_sp1")]
 dta[ paste("yield_sp2",paste("_pl",1:5, sep=""), sep="")] <- dta[c("prod_pl1_sp2","prod_pl2_sp2","prod_pl3_sp2","prod_pl4_sp2", "prod_pl5_sp2")]/dta[c("area_pl1_sp2","area_pl2_sp2","area_pl3_sp2","area_pl4_sp2", "area_pl5_sp2")]
 
+#############sales
+## has sold 
+dta$sold_woman <- ifelse(dta$gender1=="woman", dta$q72>0,dta$spouse2r72>0)
+dta$sold_woman[is.na(dta$sold_woman)] <- 0
+dta$sold_both_woman <- ifelse(dta$gender1=="woman", dta$q78>0,dta$spouse2r78>0)
+dta$sold_both_woman[is.na(dta$sold_both_woman)] <- 0
+
+
+#sold by you alone q72 and R72 - this is in bags of about 100 kgs
+
+
+dta$nr_bags_sold_woman <- ifelse(dta$gender1=="woman", dta$q72,dta$spouse2r72)
+dta$nr_bags_sold_woman[dta$nr_bags_sold_woman > 97] <- NA
+dta$nr_bags_sold_both_woman <- ifelse(dta$gender1=="woman", dta$q78,dta$spouse2r78)
+dta$nr_bags_sold_both_woman[dta$nr_bags_sold_both_woman >97] <- NA
+
+### price sold
+
+dta$price_sold_woman <- ifelse(dta$gender1=="woman", dta$q73/dta$q72,dta$spouse2r73/dta$spouse2r72)
+dta$price_sold_woman[dta$price_sold_woman < 10000] <- NA
+dta$price_sold_both_woman <- ifelse(dta$gender1=="woman", dta$q79/dta$q78,dta$spouse2r79/dta$spouse2r78)
+dta$price_sold_both_woman[dta$price_sold_both_woman <10000] <- NA
+
+### sold to whom?
+dta$sold_to_trader_woman <- ifelse(dta$gender1=="woman", dta$q742,dta$spouse2r742)
+dta$sold_to_middleman_woman <- ifelse(dta$gender1=="woman", dta$q743,dta$spouse2r743)
+dta$sold_to_processor_woman <- ifelse(dta$gender1=="woman", dta$q744,dta$spouse2r744)
+
+### sold to whom?
+dta$sold_to_trader_both_woman <- ifelse(dta$gender1=="woman", dta$q802,dta$spouse2r802)
+dta$sold_to_middleman_both_woman <- ifelse(dta$gender1=="woman", dta$q803,dta$spouse2r803)
+dta$sold_to_processor_both_woman <- ifelse(dta$gender1=="woman", dta$q804,dta$spouse2r804)
+
+
+
 
