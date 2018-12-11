@@ -19,10 +19,10 @@ library(Hmisc)
 set.seed(07032018)
 
 ### indexing results arrays
-res_prod_w <- array(NA, c(9,4,5)) 
-rownames(res_prod_w) <- c(  "production", "","area","", "yield_better","","yield","","padj")
-res_prod_b <- array(NA, c(9,4,5)) 
-rownames(res_prod_b) <-   c(  "production", "","area","", "yield_better","","yield","","padj")
+res_prod_w <- array(NA, c(13,4,5)) 
+rownames(res_prod_w) <- c(  "production", "","area","", "yield_better","","yield","","prod_share","","area_share","","padj")
+res_prod_b <- array(NA, c(13,4,5)) 
+rownames(res_prod_b) <-   c(  "production", "","area","", "yield_better","","yield","","prod_share","","area_share","","padj")
 
 cl <- makeCluster(detectCores(all.tests = FALSE, logical = TRUE))
 registerDoParallel(cl)
@@ -300,14 +300,23 @@ yield_better_ind$yield_better <- ifelse(yield_better_ind$person_interviewed=="wo
 
 prod_ind <- merge(all_ind,merge(prod_ind,merge(area_ind,yield_better_ind, by=c("hhid","time")), by=c("hhid","time")), by=c("hhid","time"))[c("hhid","women_decisions","prod","area","yield_better")]
 
-prod_hh <- aggregate(prod_ind$women_decisions*prod_ind$prod, list(prod_ind$hhid), mean, na.rm=T)
-names(prod_hh) <- c("hhid", "prod")
-area_hh <- aggregate(prod_ind$women_decisions*prod_ind$area, list(prod_ind$hhid), mean, na.rm=T)
-names(area_hh) <- c("hhid", "area")
+prod_hh <- aggregate(cbind(prod_ind$prod,prod_ind$women_decisions*prod_ind$prod), list(prod_ind$hhid), sum, na.rm=T)
+names(prod_hh) <- c("hhid", "prod_tot","prod")
+prod_hh$prod_share <- prod_hh$prod/prod_hh$prod_tot
+prod_hh$prod_tot <- NULL
+area_hh <- aggregate(cbind(prod_ind$area,prod_ind$women_decisions*prod_ind$area), list(prod_ind$hhid), sum, na.rm=T)
+names(area_hh) <- c("hhid", "area_tot","area")
+area_hh$area_share <- area_hh$area/area_hh$area_tot
+area_hh$area_tot <- NULL
 yield_better_hh <- aggregate(prod_ind$women_decisions*prod_ind$yield_better, list(prod_ind$hhid), mean, na.rm=T)
 names(yield_better_hh) <- c("hhid", "yield_better")
-yield_hh <- aggregate(prod_ind$women_decisions*(prod_ind$prod/prod_ind$area), list(prod_ind$hhid), mean, na.rm=T)
-names(yield_hh) <- c("hhid", "yield")
+yield_hh <- aggregate(cbind(prod_ind$women_decisions*prod_ind$prod,prod_ind$women_decisions*prod_ind$area), list(prod_ind$hhid), sum, na.rm=T)
+names(yield_hh) <- c("hhid", "prod","area")
+yield_hh$yield <- yield_hh$prod/yield_hh$area
+yield_hh$yield[yield_hh$prod==0] <- 0 
+yield_hh$yield[yield_hh$area==0] <- 0 
+yield_hh$prod <- NULL
+yield_hh$area <- NULL
 
 dta <- merge(dta_glob,merge(merge(merge(prod_hh,area_hh, by="hhid"),yield_better_hh, by="hhid"),yield_hh, by="hhid"),by="hhid")
 dta$prod[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
@@ -346,9 +355,25 @@ res_prod_w[8,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("yield",t
 res_prod_w[7,3,h] <- ifelse(totrep >0, RI("yield",treatment , ctrls,w_int="weights", dta, nr_repl = totrep, h),ifelse(is.null(ctrls),summary(lm(as.formula(paste("yield",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("yield",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
 res_prod_w[8,3,h] <- nobs(lm(as.formula(paste("yield",treatment, sep="~")) ,data=dta))
 
+dta$prod_share[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
 
+res_prod_w[9,1,h] <- ifelse(h ==5, wtd.mean(dta$prod_share[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$prod_share[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$prod_share[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T))))
+res_prod_w[10,1,h] <-  ifelse(h ==5, wtd.sd(dta$prod_share[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$prod_share[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$prod_share[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T))))
+res_prod_w[9,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("prod_share",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("prod_share",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_prod_w[10,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("prod_share",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("prod_share",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_prod_w[9,3,h] <- ifelse(totrep >0, RI("prod_share",treatment , ctrls,w_int="weights", dta, nr_repl = totrep, h),ifelse(is.null(ctrls),summary(lm(as.formula(paste("prod_share",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("prod_share",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_prod_w[10,3,h] <- nobs(lm(as.formula(paste("prod_share",treatment, sep="~")) ,data=dta))
 
-res_prod_w[9,1:3,h] <- RI_FWER(deps= ,c(  "prod", "area", "yield_better","yield") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_prod_w[c(1,3,5,7),3,h], nr_repl = totrep,h_int=h, w_int="weights")
+dta$area_share[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+
+res_prod_w[11,1,h] <- ifelse(h ==5, wtd.mean(dta$area_share[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$area_share[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$area_share[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T))))
+res_prod_w[12,1,h] <-  ifelse(h ==5, wtd.sd(dta$area_share[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$area_share[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$area_share[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T))))
+res_prod_w[11,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("area_share",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("area_share",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_prod_w[12,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("area_share",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("area_share",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_prod_w[11,3,h] <- ifelse(totrep >0, RI("area_share",treatment , ctrls,w_int="weights", dta, nr_repl = totrep, h),ifelse(is.null(ctrls),summary(lm(as.formula(paste("area_share",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("area_share",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_prod_w[12,3,h] <- nobs(lm(as.formula(paste("area_share",treatment, sep="~")) ,data=dta))
+
+res_prod_w[13,1:3,h] <- RI_FWER(deps= ,c(  "prod", "area", "yield_better","yield", "prod_share","area_share") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_prod_w[c(1,3,5,7,9,11),3,h], nr_repl = totrep,h_int=h, w_int="weights")
 
 ################################################## decisions - jointly made #####################################################
 
@@ -411,14 +436,23 @@ yield_better_ind$yield_better <- ifelse(yield_better_ind$person_interviewed=="wo
 
 prod_ind <- merge(all_ind,merge(prod_ind,merge(area_ind,yield_better_ind, by=c("hhid","time")), by=c("hhid","time")), by=c("hhid","time"))[c("hhid","women_decisions","prod","area","yield_better")]
 
-prod_hh <- aggregate(prod_ind$women_decisions*prod_ind$prod, list(prod_ind$hhid), mean, na.rm=T)
-names(prod_hh) <- c("hhid", "prod")
-area_hh <- aggregate(prod_ind$women_decisions*prod_ind$area, list(prod_ind$hhid), mean, na.rm=T)
-names(area_hh) <- c("hhid", "area")
+prod_hh <- aggregate(cbind(prod_ind$prod,prod_ind$women_decisions*prod_ind$prod), list(prod_ind$hhid), sum, na.rm=T)
+names(prod_hh) <- c("hhid", "prod_tot","prod")
+prod_hh$prod_share <- prod_hh$prod/prod_hh$prod_tot
+prod_hh$prod_tot <- NULL
+area_hh <- aggregate(cbind(prod_ind$area,prod_ind$women_decisions*prod_ind$area), list(prod_ind$hhid), sum, na.rm=T)
+names(area_hh) <- c("hhid", "area_tot","area")
+area_hh$area_share <- area_hh$area/area_hh$area_tot
+area_hh$area_tot <- NULL
 yield_better_hh <- aggregate(prod_ind$women_decisions*prod_ind$yield_better, list(prod_ind$hhid), mean, na.rm=T)
 names(yield_better_hh) <- c("hhid", "yield_better")
-yield_hh <- aggregate(prod_ind$women_decisions*(prod_ind$prod/prod_ind$area), list(prod_ind$hhid), mean, na.rm=T)
-names(yield_hh) <- c("hhid", "yield")
+yield_hh <- aggregate(cbind(prod_ind$women_decisions*prod_ind$prod,prod_ind$women_decisions*prod_ind$area), list(prod_ind$hhid), sum, na.rm=T)
+names(yield_hh) <- c("hhid", "prod","area")
+yield_hh$yield <- yield_hh$prod/yield_hh$area
+yield_hh$yield[yield_hh$prod==0] <- 0 
+yield_hh$yield[yield_hh$area==0] <- 0 
+yield_hh$prod <- NULL
+yield_hh$area <- NULL
 
 dta <- merge(dta_glob,merge(merge(merge(prod_hh,area_hh, by="hhid"),yield_better_hh, by="hhid"),yield_hh, by="hhid"),by="hhid")
 dta$prod[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
@@ -458,8 +492,26 @@ res_prod_b[7,3,h] <- ifelse(totrep >0, RI("yield",treatment , ctrls,w_int="weigh
 res_prod_b[8,3,h] <- nobs(lm(as.formula(paste("yield",treatment, sep="~")) ,data=dta))
 
 
+dta$prod_share[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
 
-res_prod_b[9,1:3,h] <- RI_FWER(deps= ,c(  "prod", "area", "yield_better","yield") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_prod_b[c(1,3,5,7),3,h], nr_repl = totrep,h_int=h, w_int="weights")
+res_prod_b[9,1,h] <- ifelse(h ==5, wtd.mean(dta$prod_share[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$prod_share[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$prod_share[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T))))
+res_prod_b[10,1,h] <-  ifelse(h ==5, wtd.sd(dta$prod_share[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$prod_share[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$prod_share[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T))))
+res_prod_b[9,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("prod_share",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("prod_share",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_prod_b[10,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("prod_share",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("prod_share",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_prod_b[9,3,h] <- ifelse(totrep >0, RI("prod_share",treatment , ctrls,w_int="weights", dta, nr_repl = totrep, h),ifelse(is.null(ctrls),summary(lm(as.formula(paste("prod_share",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("prod_share",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_prod_b[10,3,h] <- nobs(lm(as.formula(paste("prod_share",treatment, sep="~")) ,data=dta))
+
+dta$area_share[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+
+res_prod_b[11,1,h] <- ifelse(h ==5, wtd.mean(dta$area_share[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$area_share[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$area_share[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T))))
+res_prod_b[12,1,h] <-  ifelse(h ==5, wtd.sd(dta$area_share[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$area_share[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$area_share[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T))))
+res_prod_b[11,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("area_share",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("area_share",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_prod_b[12,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("area_share",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("area_share",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_prod_b[11,3,h] <- ifelse(totrep >0, RI("area_share",treatment , ctrls,w_int="weights", dta, nr_repl = totrep, h),ifelse(is.null(ctrls),summary(lm(as.formula(paste("area_share",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("area_share",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_prod_b[12,3,h] <- nobs(lm(as.formula(paste("area_share",treatment, sep="~")) ,data=dta))
+
+res_prod_b[13,1:3,h] <- RI_FWER(deps= ,c(  "prod", "area", "yield_better","yield", "prod_share","area_share") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_prod_b[c(1,3,5,7,9,11),3,h], nr_repl = totrep,h_int=h, w_int="weights")
+
 }
 
 
