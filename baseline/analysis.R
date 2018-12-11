@@ -522,6 +522,7 @@ jointF[3,8] <- x$df[1] + x$df[2]
 
 library(foreign)
 dta <- read.dta("/home/bjvca/data/projects/digital green/baseline/DLEC.dta")
+##dta <- read.csv("/home/bjvca/data/projects/digital green/baseline/baseline.csv")
 
 dta$know_space <- dta$maizeoptimal_spacing == "a"
 dta$know_small <- dta$maizeq22 == "c"
@@ -531,7 +532,7 @@ siglev <-  1.96
 set.seed(54321)
 
 ### here we do not drop the femheaded, in femheaded HH, the video was shown to the female
-dta$recipient[dta$recipient == "n/a"] <- "female"
+dta$recipient[is.na(dta$recipient)] <- "female"
 dta$messenger <- dta$maizevideo_shown
 dta$video <- TRUE
 dta$video[dta$messenger=="ctrl"] <- FALSE
@@ -585,7 +586,7 @@ outmat[i,8] <-  nobs(lm(as.formula(paste(outcome[i],"video+ivr+sms+recipient+fem
 ## F-tests - these are partial F-test as we also control for design effects (messenger, recipient and femhead)
 
 dta_cpy <- dta
-write.csv(dta,"/home/bjvca/data/projects/digital green/endline/data/raw/baseline.csv")
+
 
 ### an extremely inelegant way to get rid of missings...
 fm <- lm(video ~yield+maizeage+eduhead+maizehh_no+maizeprrooms+maizeprinfo_receiv+fert+seed+maizedist_shop + maizemobile + maizemobile_access + recipient +femhead+ivr+sms, data=dta, weights=weight,na.action = na.exclude)

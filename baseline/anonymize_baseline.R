@@ -1,12 +1,7 @@
 library(foreign)
 dta <- read.dta("/home/bjvca/data/projects/digital green/baseline/DLEC.dta")
 ### prepare for public release - make anonymous
-
-
-
 dta$enumerator <- as.numeric(as.factor(dta$enumerator))
-  
- 
 dta$hh_name <- NULL
 dta$spouse_name <- NULL
 dta$name <- NULL
