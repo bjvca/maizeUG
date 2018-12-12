@@ -269,19 +269,21 @@ dta$weight[dta$messenger == "female"] <- 1/(1177*1/1024)
 dta$weight[dta$messenger == "male"] <- 1/(1180*1/1024)
 
 ###number of RI replications: if set to 0, conventional p-values are reported, in the analysis, 10000 replications were used
-totrep <- 0
+totrep <- 10000
 ### better to loop over h: 
 for (h in seq(1,3,1)) {
 if (h == 1) {
 dta_bal <- dta
 treatment <- "(messenger != 'ctrl')+ivr+sms+as.factor(recipient)+ femhead" 
 } else if ( h==2 ) {
-dta_bal <- subset(dta,maizemobile_access == TRUE)
-#dta_bal <- dta
+dta_bal <- dta
+###uncomment here to look at heterogeneity wrt to mobile access
+#dta_bal <- subset(dta,maizemobile_access == TRUE)
 treatment <- "ivr+(messenger != 'ctrl')+sms+as.factor(recipient) + femhead" 
 } else if (h==3) {
-dta_bal <- subset(dta,maizemobile == TRUE)
-#dta_bal <- dta
+dta_bal <- dta
+###uncomment here to look at heterogeneity wrt to mobile ownership
+#dta_bal <- subset(dta,maizemobile == TRUE)
 treatment <- "sms+(messenger != 'ctrl')+ivr+as.factor(recipient) + femhead" 
 }
 ################################ knowledge  ############################
