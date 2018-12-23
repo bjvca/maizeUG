@@ -152,19 +152,6 @@ ies.
  to be limited.
 \end_layout
 
-\begin_layout Abstract
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-to do: source for fertilizers in Context.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section*
 Introduction
 \end_layout
@@ -209,7 +196,7 @@ We draw on a field experiment in which farmers are randomly assigned to
  particular information intervention 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "de2016field"
+key "de2017field"
 
 \end_inset
 
@@ -1861,7 +1848,14 @@ y, as they attempt to measure different aspects of the information intervention.
  From this family-wise sharp null, we can obtain the corresponding FWER-consiste
 nt significance thresholds by determining which cuttoffs yield e.g., 10 percent-,
  5 percent-, and 1 percent significant hypothesis tests across all tests
- and simulations.
+ and simulations 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1093/qje/qjy029,egap"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -3267,10 +3261,11 @@ reference "tab:yield_ag_allh"
  maize.
  This was cultivated on (log(acre)) 0.018 or about 1.19 acres on average.
  It also shows that for the average household in the control, maize yields
- (log(kg/acre)) equal 5.850 or about 430 kg/acre.This is much higher than
- yields recorded at baseline (290 kg/acre) for the previous season, possibly
- because rainfall patterns were better during our intervention and farmers
- may have given greater attention to combating fall armyworm.
+ (log(kg/acre)) equal 5.850 or about 430 kg/acre.
+ This is much higher than yields recorded at baseline (290 kg/acre) for
+ the previous season, possibly because rainfall patterns were better during
+ our intervention and farmers may have given greater attention to combating
+ fall armyworm.
  Still, compared to figures recorded in FAOSTAT (1000 kg/acre) or figures
  from household survey data (typically around 600 kg/acre), yields were
  below what might be considered 
