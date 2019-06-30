@@ -271,7 +271,7 @@ dta$weight[dta$messenger == "male"] <- 1/(1180*1/1024)
 ###number of RI replications: if set to 0, conventional p-values are reported, in the analysis, 10000 replications were used
 totrep <- 10000
 ### better to loop over h: 
-for (h in seq(1,3,1)) {
+for (h in seq(1,2,3)) {
 if (h == 1) {
 dta_bal <- dta
 treatment <- "(messenger != 'ctrl')+ivr+sms+as.factor(recipient)+ femhead" 
