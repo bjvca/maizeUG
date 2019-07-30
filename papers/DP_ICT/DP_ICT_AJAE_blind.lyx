@@ -194,36 +194,6 @@ key "larochelle2017did"
 \end_layout
 
 \begin_layout Standard
-However, different information technologies have different characteristics,
- making their effectiveness highly context specific.
- For instance, to introduce a new agronomic practice or technology, such
- as a new type of disease-resistant seed, showing a video may be more effective
- than a demand-driven technology such as a hot-line, where farmers are assumed
- to be aware of their information needs.
- At the same time, a video shown on a tablet computer or screened using
- a liquid-crystal display (LCD) projector is generally a one-off intervention,
- and particular details such as the exact dose of a new input may be missed
- or easily forgotten by farmers; having access to a demand driven information
- technology such as a hot-line may thus be more effective if agronomic practices
- are complex or require precise implementation.
- SMS messages are most likely too short to provide detailed information
- about modern inputs or agronomic practices.
- Therefore, effects, if any, are likely to work through behavioral channels:
- reminders have been found to be effective in overcoming inertia and procrastina
-tion, and can help prioritize in the event of competing obligations.
- SMS messages may therefore be effective in increasing the use of fertilizer,
- which is known to suffer from procrastination and competing obligations
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "duflo2011nudging"
-
-\end_inset
-
-, or encourage farmers to engage more in tedious activities, such as weeding.
-\end_layout
-
-\begin_layout Standard
 This article investigates the effectiveness of an ICT-mediated extension
  approach designed to provide information about improved maize cultivation
  practices to smallholder farmers in Uganda.
@@ -360,73 +330,81 @@ key "doi:10.1080/1369118X.2016.1200644"
 \end_layout
 
 \begin_layout Standard
-Our study combines three technologies, each with their own characteristics,
- and quantifies the additional effectiveness of each.
+Our study combines three technologies and quantifies the additional effectivenes
+s of each.
  First, video is an ICT intervention through which information is made available
  to the participating farmer on a limited number of occasions and at moments
  that are decided upon by the provider of the information.
  The strength of video is that it can combine audio and visual information
  in an attractive way that is recognizable to the potentially illiterate
  farmer.
- We hypothesize that the video-mediated approach may be particularly effective
- in disseminating information about new technologies and practices.
- However, we also note that the supply-driven nature of video and the management
- of its use by the information provider rather than the farmer, is a potential
- constraint to its effectiveness.
- 
-\end_layout
-
-\begin_layout Standard
-Second, we add an IVR service.
+ Second, we add an IVR service.
  In an IVR system, a farmer calls a phone number and navigates through a
  menu to select a topic.
  The farmer then gets to listen to a pre-recorded message with information
  on the selected topic.
- IVR services (and similarly hot-lines, where a phone number can be called
- by a farmer and questions can be asked to an expert) are demand-driven
- approaches based on the assumption that farmers can identify their information
- needs and are capable of actively searching for additional information.
- One of the main advantages of this approach is that the information is
- supplied through a channel that is continuously accessible to the farmer,
- and can be used on a more timely and relevant basis.
- This technology may be more effective when farmers' key information constraints
- are associated with unanticipated shocks such pests, disease, or adverse
- weather conditions 
+ Third, we add SMS reminders.
+ 
+\end_layout
+
+\begin_layout Section*
+Context
+\end_layout
+
+\begin_layout Standard
+We conducted the field experiment among smallholder maize farmers in Uganda.
+ Maize is widely consumed throughout much of Uganda, yet its value-to-weight
+ ratio is sufficiently high to also make it an important traded commodity.
+ Therefore, efforts to increase maize productivity at the farm-household
+ level are an important dimension of Uganda's strategy to increase food
+ security and reduce poverty through both consumption and income channels.
+ Yet, maize yields in Uganda are low when compared to neighboring countries
+ and global averages: While research station trials conducted in Uganda
+ report potential yields of about 1.6 metric tons per acre (using only improved
+ varieties without fertilizer application), data from the Uganda National
+ Household Survey (UNHS) 2005/06 indicate that average maize yields are
+ much lower at about 618 kg per acre for the main growing season 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "RePEc:hbs:wpaper:13-047"
+key "fermont2011estimating"
 
 \end_inset
 
 .
+ At the same time, the use of modern inputs such as inorganic fertilizer
+ and adoption of modern management practices such as row planting is very
+ low in Uganda.
  
 \end_layout
 
 \begin_layout Standard
-Third, we add SMS reminders.
- SMS messages are often framed as a supply-driven behavioral 
-\begin_inset Quotes eld
-\end_inset
+Maize is especially important in eastern Uganda.
+ We sampled from five districts in eastern Uganda known for their maize
+ production: Bugiri, Mayuge, Iganga, Namayingo, and Namutumba.
+ From this, we removed from our sample town councils and also two sub-counties
+ that consisted of islands in lake Victoria.
+ We used two-stage cluster sampling to obtain a representative sample of
+ this population.
+ In particular, we first selected parishes randomly and in proportion to
+ the number of villages within each parish.
+ In the selected parishes, all villages were included in the study.
+ Within each village, we then listed all households, from which we randomly
+ assigned households to be included in the study.
+ 
+\end_layout
 
-nudge
-\begin_inset Quotes erd
-\end_inset
-
- designed to remind people (with some considerable degree of persistence)
- to make decisions or take actions toward some particular objective.
- Timely reminders have often been found very effective in overcoming inertia,
- procrastination, competing obligations, or simple forgetfulness of human
- beings 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Sunstein2014"
-
-\end_inset
-
-.
- However, SMS messages are short and can not be used to provide new and
- complex information.
- They also require that farmers are able to read.
+\begin_layout Standard
+In eastern Uganda, there are two maize cropping seasons.
+ For our study, we concentrated on the second maize-growing season of the
+ year 2017, which ran from approximately August 2017 to January 2018 and
+ is characterized by a shorter period of rainfall than the first maize-growing
+ season.
+ During this second season, the complete cycle from planting to harvest
+ requires 3 to 3.5 months, and farmers tend to cultivate early-maturing but
+ lower-yielding maize varieties as a result.
+ Fields are prepared in August, planted in September, an harvested beginning
+ in mid to late December and, at higher elevations, through mid January.
+ 
 \end_layout
 
 \begin_layout Section*
@@ -451,7 +429,7 @@ key "de2017field"
 
 
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 This study is part of a larger study that also looked at the role of gender
@@ -605,367 +583,6 @@ i
 
  provides an estimate of the incremental effect of also having been allocated
  to the SMS intervention.
-\end_layout
-
-\begin_layout Section*
-Context
-\end_layout
-
-\begin_layout Standard
-We conducted the field experiment among smallholder maize farmers in Uganda.
- Maize is widely consumed throughout much of Uganda, yet its value-to-weight
- ratio is sufficiently high to also make it an important traded commodity.
- Therefore, efforts to increase maize productivity at the farm-household
- level are an important dimension of Uganda's strategy to increase food
- security and reduce poverty through both consumption and income channels.
- Yet, maize yields in Uganda are low when compared to neighboring countries
- and global averages: While research station trials conducted in Uganda
- report potential yields of about 1.6 metric tons per acre (using only improved
- varieties without fertilizer application), data from the Uganda National
- Household Survey (UNHS) 2005/06 indicate that average maize yields are
- much lower at about 618 kg per acre for the main growing season 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "fermont2011estimating"
-
-\end_inset
-
-.
- At the same time, the use of modern inputs such as inorganic fertilizer
- and adoption of modern management practices such as row planting is very
- low in Uganda.
- 
-\end_layout
-
-\begin_layout Standard
-Maize is especially important in eastern Uganda.
- We sampled from five districts in eastern Uganda known for their maize
- production: Bugiri, Mayuge, Iganga, Namayingo, and Namutumba.
- From this, we removed from our sample town councils and also two sub-counties
- that consisted of islands in lake Victoria.
- We used two-stage cluster sampling to obtain a representative sample of
- this population.
- In particular, we first selected parishes randomly and in proportion to
- the number of villages within each parish.
- In the selected parishes, all villages were included in the study.
- Within each village, we then listed all households, from which we randomly
- assigned households to be included in the study.
- 
-\end_layout
-
-\begin_layout Standard
-In eastern Uganda, there are two maize cropping seasons.
- For our study, we concentrated on the second maize-growing season of the
- year 2017, which ran from approximately August 2017 to January 2018 and
- is characterized by a shorter period of rainfall than the first maize-growing
- season.
- During this second season, the complete cycle from planting to harvest
- requires 3 to 3.5 months, and farmers tend to cultivate early-maturing but
- lower-yielding maize varieties as a result.
- Fields are prepared in August, planted in September, an harvested beginning
- in mid to late December and, at higher elevations, through mid January.
- 
-\end_layout
-
-\begin_layout Section*
-ICT interventions
-\end_layout
-
-\begin_layout Standard
-The comprehensive ICT-mediated extension approach consisted of three ICT
- interventions: a short video, an encouragement to use an IVR system, and
- series of 8 SMS messages.
- The videos were shown on 10-inch Android tablet computers and screened
- by a trained field enumerator during a one-to-one meeting with either an
- individual farmer or the male and female co-head
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-In particular, the person or persons within the household to whom the video
- was shown was dictated by one of the other factors in the factorial design,
- and were either the man co-head within the household alone, the woman co-head
- within the household alone, or the man and woman co-heads as a couple together.
- As this factor was orthogonal to the factor corresponding to the information
- technologies in the factorial design, it does not matter who within the
- household the video is shown to, and the treatment effect corresponds to
- the average impact at the household level.
-\end_layout
-
-\end_inset
-
-.
- The control group received a placebo treatment, which was a music video
- of traditional dancing that contained no information related to farming
- or maize 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "doi:10.1093/wber/lhv014"
-
-\end_inset
-
-.
- Videos (treatment or placebo) were screened twice to the households in
- the sample, once before the time for planting maize (July 2017) and once
- around planting time (August 2017).
-\end_layout
-
-\begin_layout Standard
-The information contained in the treatment groups' video is expected to
- positively influence maize yields by encouraging the adoption of several
- improved technologies and practices which, in turn, are expected to positively
- affect maize productivity.
- The topics included in the video script were obtained from qualitative
- interviews with key informants that were conducted in May 2017.
- The key informants included maize farmers, traders, maize breeders, extension
- workers, district agricultural officers, and other government staff and
- experts.
- 
-\end_layout
-
-\begin_layout Standard
-A significant portion of the videos focuses on providing technical information
- on seed choice, soil nutrient management (including the promotion of both
- organic and inorganic fertilizer application), weeding (with particular
- attention on fighting striga), timely planting, and plant spacing, which
- were ranked among by the experts as the top challenges farmers face.
- We made sure to include information that is likely to be unknown to the
- farmer, as information is likely to be most valuable when individuals learn
- about a new technology or institutional innovation.
- However, other studies also provide evidence of behavioral change occurring
- through the compounding or re-emphasis of common knowledge that, through
- repetition, becomes more salient to the individual 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "duflo2014diffusion"
-
-\end_inset
-
-.
- Therefore, the videos also contain information that farmers are assumed
- to know but do not seem to act upon.
- 
-\end_layout
-
-\begin_layout Standard
-Not all constraints to maize productivity improvement are information deficienci
-es directly related to the use of inputs, technologies, and crop management
- practices.
- Often, missing information problems manifest indirectly, as uncertainty
- about the distribution of the farm-household's profit function.
- This includes uncertainty about the correlations between expected and actual
- returns, the inter-temporality of income streams, estimates of fixed and
- variable costs, hidden transactions costs, probabilities of adverse events,
- and a range of other variables that farmers may simply be unable to conceptuali
-ze or measure.
- Thus, a significant portion of the videos also focuses on evaluating the
- costs and benefits of the different technologies and practices being promoted.
- In addition, the videos encourage long-term thinking, advising farmers
- to (a) start small and grow their farm enterprise over time, and (b) combine
- technologies and practices together rather than investing all of their
- money and effort into one single input, practice, or technology.
- 
-\end_layout
-
-\begin_layout Standard
-We also pay attention to how the information is packaged.
- For instance, prior studies have found that farmers find communicators
- who face agricultural conditions and constraints most comparable to their
- own to be the more persuasive than other communicators 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "benyishay2018social"
-
-\end_inset
-
-.
- Several studies point out the importance of role models on aspirations
- and future-oriented behavior 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "doi:10.1093/wber/lhv014"
-
-\end_inset
-
-.
- A growing strand of the literature investigates how non-cognitive farmer
- characteristics such as aspirations, locus of control and self-esteem can
- lead to behavioral change such as technology adoption 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "RePEc:eee:jeborg:v:143:y:2017:i:c:p:98-115"
-
-\end_inset
-
-.
- Therefore, in our video, the message is conveyed by individuals who are
- readily recognized as 
-\begin_inset Quotes eld
-\end_inset
-
-peer farmers
-\begin_inset Quotes erd
-\end_inset
-
- and who provide information that is framed as a success story.
-\end_layout
-
-\begin_layout Standard
-The two other treatments were incrementally added to the video treatment.
- For these two treatments, the IVR system and the SMS reminders, we collaborated
- with Viamo, a social enterprise that aims to connect individuals and organizati
-ons using digital technology to make better decisions.
- We set up an IVR system that provided the same information as was recommended
- in the video.
- Farm households that were allocated the IVR treatment were encouraged to
- call a toll-free number which explained the IVR system in their own language.
- The caller is then invited to select the number corresponding to the topic
- on which he or she wants more information (e.g., 
-\begin_inset Quotes eld
-\end_inset
-
-Press 1 for seed selection, 2 for spacing and seed rate, 3 for soil nutrient
- management, 4 for advice on weeding
-\begin_inset Quotes erd
-\end_inset
-
-).
- Depending on what number was selected, the IVR then played an audio message
- of a conversation between two farmers where one farmer is explaining the
- recommended practice to the other farmer.
-\end_layout
-
-\begin_layout Standard
-For the SMS campaign, we recorded telephone numbers for mobile phones owned
- by the household head at the time of the experiment's roll-out.
- Households that were allocated to the SMS treatment were sent eight SMS
- messages over the course of the two months following the first screening
- of the video.
- The messages all followed a similar structure: farmers were first reminded
- about an important technology or practice that was relevant at the particular
- time that the message was sent, followed by a reminder about the existence
- of the IVR service.
- The reminders were related to technologies and practices that were also
- promoted in the video and IVR.
- For example, the first message, that was sent out around planting time,
- read 
-\begin_inset Quotes eld
-\end_inset
-
-You will get much more maize if you use hybrid seed instead of recycled
- seed.
- Call the maize hot-line on 0200522420 free for more advice!
-\begin_inset Quotes erd
-\end_inset
-
-.
- About one month into the growing season, the following message was sent:
- 
-\begin_inset Quotes eld
-\end_inset
-
-When your maize is knee high, apply 1 water bottle cap of urea around each
- plant.
- Call the maize hot-line on 0200522420 free for more advice!
-\begin_inset Quotes erd
-\end_inset
-
-.
- All content was produced in the local language (Busoga).
-\end_layout
-
-\begin_layout Section*
-Results
-\end_layout
-
-\begin_layout Standard
-We now turn to the results, starting with orthogonality tests.
- We then estimate the (incremental) impact of the three information technologies
- on a range of outcomes related to knowledge, adoption of recommended practices
- and use of modern inputs, and production.
- Throughout the analysis, we focus on intent-to-treat effects.
- However, the IVR and SMS treatments are probably more effective for households
- that have (access to) a mobile phone, and averaging outcomes over all household
- may dilute the treatment effect, making it more difficult to detect a significa
-nt difference between the treatment group and control group.
- Therefore, we also estimated (conditional) treatment effects using a subsample
- containing only farmers that reported to have (access to) a mobile phone.
- Results were very similar and so not reported here to conserve space.
- Furthermore, while all households that were allocated to the video treatment
- did view it, compliance was not perfect for IVR and SMS treatments.
- Judged by the call log of the IVR system, we find that only a small number
- of households that were encouraged to use the IVR system also actually
- called in (8.9 percent or 214 households)
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-This is a very low compliance rate, which partly reflects low demand for
- the service.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "RePEc:hbs:wpaper:13-047"
-
-\end_inset
-
- find that for a similar service in India, compliance rates were as high
- as 88 percent.
- Among possible explanations for this difference are: the time frame (the
- 88 percent was measured after 2 years of intensive exposure to the system,
- compliance rates were much lower at midline; our IVR system was only 3
- months operational); differences in treatment intensity (we only sent 8
- reminders to only half of the IVR households while 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "RePEc:hbs:wpaper:13-047"
-
-\end_inset
-
- sent bi-weekly reminders); the different study population of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "RePEc:hbs:wpaper:13-047"
-
-\end_inset
-
-, that consisted of cotton farmers that expressed willingness to participate
- and owned a mobile phone; different technologies (hotline where direct
- questions can be asked to real person extension agents vs IVR that works
- with pre-recorded messages and a limited set of options).
- However, there are also signs that our indicator of compliance may under-report
- true compliance (because for instance encouraged farmers use different
- phones to call the IVR).
- This is illustrated by the fact that about 430 unique calls were made to
- the system, representing about 18 percent of encouraged households.
- 
-\end_layout
-
-\end_inset
-
-.
- For the SMS reminders, of the 1,113 households that were supposed to receive
- the reminders, only 860 (77.3 percent) did.
- We therefore also generated Local Average Treatment Effects (LATE) estimates,
- where the IVR encouragement was used as an instrument for having called
- into the IVR system 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "angrist1996identification"
-
-\end_inset
-
-.
- Similarly, we estimated LATEs where allocation to the SMS treatment is
- used as an instrument for having received the SMS message.
- However, also here, results were not substantially different from the intent-to
--treat analysis and are not reported here.
- A much more elaborate report that includes both these additional analyses
- is available upon request from the authors.
-\end_layout
-
-\begin_layout Subsection*
-Balancing Checks
 \end_layout
 
 \begin_layout Standard
@@ -1492,28 +1109,301 @@ We find that about 84 percent of households had access to a mobile phone
  
 \end_layout
 
+\begin_layout Section*
+ICT interventions
+\end_layout
+
 \begin_layout Standard
-Following implementation of the field experiment, attrition within the sample
- was relatively low.
- Only 8.63 percent of the sample could not be tracked or persuaded to complete
- the endline survey.
- In addition, there were no indications that attrition rates were different
- between or among the different treatment groups: attrition was 7.03 in the
- control group; 8.74 percent in the group that was shown a video; 8.90 percent
- in the group that was shown a video and received the IVR encouragement;
- and 7.45 percent in the group that also received an SMS in addition to the
- IVR encouragement and the video.
- In Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Balance_attritors"
+The comprehensive ICT-mediated extension approach consisted of three ICT
+ interventions: a short video, an encouragement to use an IVR system, and
+ series of 8 SMS messages.
+ The videos were shown on 10-inch Android tablet computers and screened
+ by a trained field enumerator during a one-to-one meeting with either an
+ individual farmer or the male and female co-head
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In particular, the person or persons within the household to whom the video
+ was shown was dictated by one of the other factors in the factorial design,
+ and were either the man co-head within the household alone, the woman co-head
+ within the household alone, or the man and woman co-heads as a couple together.
+ As this factor was orthogonal to the factor corresponding to the information
+ technologies in the factorial design, it does not matter who within the
+ household the video is shown to, and the treatment effect corresponds to
+ the average impact at the household level.
+\end_layout
 
 \end_inset
 
- we compare baseline characteristics of attritors and do not find any statistica
-lly meaningful differences in the observable characteristics of attritors
- by treatment status.
+.
+ The control group received a placebo treatment, which was a music video
+ of traditional dancing that contained no information related to farming
+ or maize 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1093/wber/lhv014"
+
+\end_inset
+
+.
+ Videos (treatment or placebo) were screened twice to the households in
+ the sample, once before the time for planting maize (July 2017) and once
+ around planting time (August 2017).
+\end_layout
+
+\begin_layout Standard
+The information contained in the treatment groups' video is expected to
+ positively influence maize yields by encouraging the adoption of several
+ improved technologies and practices which, in turn, are expected to positively
+ affect maize productivity.
+ The topics included in the video script were obtained from qualitative
+ interviews with key informants that were conducted in May 2017.
+ The key informants included maize farmers, traders, maize breeders, extension
+ workers, district agricultural officers, and other government staff and
+ experts.
  
+\end_layout
+
+\begin_layout Standard
+A significant portion of the videos focuses on providing technical information
+ on seed choice, soil nutrient management (including the promotion of both
+ organic and inorganic fertilizer application), weeding (with particular
+ attention on fighting striga), timely planting, and plant spacing, which
+ were ranked among by the experts as the top challenges farmers face.
+ We made sure to include information that is likely to be unknown to the
+ farmer, as information is likely to be most valuable when individuals learn
+ about a new technology or institutional innovation.
+ However, other studies also provide evidence of behavioral change occurring
+ through the compounding or re-emphasis of common knowledge that, through
+ repetition, becomes more salient to the individual 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "duflo2014diffusion"
+
+\end_inset
+
+.
+ Therefore, the videos also contain information that farmers are assumed
+ to know but do not seem to act upon.
+ 
+\end_layout
+
+\begin_layout Standard
+Not all constraints to maize productivity improvement are information deficienci
+es directly related to the use of inputs, technologies, and crop management
+ practices.
+ Often, missing information problems manifest indirectly, as uncertainty
+ about the distribution of the farm-household's profit function.
+ This includes uncertainty about the correlations between expected and actual
+ returns, the inter-temporality of income streams, estimates of fixed and
+ variable costs, hidden transactions costs, probabilities of adverse events,
+ and a range of other variables that farmers may simply be unable to conceptuali
+ze or measure.
+ Thus, a significant portion of the videos also focuses on evaluating the
+ costs and benefits of the different technologies and practices being promoted.
+ In addition, the videos encourage long-term thinking, advising farmers
+ to (a) start small and grow their farm enterprise over time, and (b) combine
+ technologies and practices together rather than investing all of their
+ money and effort into one single input, practice, or technology.
+ 
+\end_layout
+
+\begin_layout Standard
+We also pay attention to how the information is packaged.
+ For instance, prior studies have found that farmers find communicators
+ who face agricultural conditions and constraints most comparable to their
+ own to be the more persuasive than other communicators 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "benyishay2018social"
+
+\end_inset
+
+.
+ Several studies point out the importance of role models on aspirations
+ and future-oriented behavior 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1093/wber/lhv014"
+
+\end_inset
+
+.
+ A growing strand of the literature investigates how non-cognitive farmer
+ characteristics such as aspirations, locus of control and self-esteem can
+ lead to behavioral change such as technology adoption 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "RePEc:eee:jeborg:v:143:y:2017:i:c:p:98-115"
+
+\end_inset
+
+.
+ Therefore, in our video, the message is conveyed by individuals who are
+ readily recognized as 
+\begin_inset Quotes eld
+\end_inset
+
+peer farmers
+\begin_inset Quotes erd
+\end_inset
+
+ and who provide information that is framed as a success story.
+\end_layout
+
+\begin_layout Standard
+The two other treatments were incrementally added to the video treatment.
+ For these two treatments, the IVR system and the SMS reminders, we collaborated
+ with Viamo, a social enterprise that aims to connect individuals and organizati
+ons using digital technology to make better decisions.
+ We set up an IVR system that provided the same information as was recommended
+ in the video.
+ Farm households that were allocated the IVR treatment were encouraged to
+ call a toll-free number which explained the IVR system in their own language.
+ The caller is then invited to select the number corresponding to the topic
+ on which he or she wants more information (e.g., 
+\begin_inset Quotes eld
+\end_inset
+
+Press 1 for seed selection, 2 for spacing and seed rate, 3 for soil nutrient
+ management, 4 for advice on weeding
+\begin_inset Quotes erd
+\end_inset
+
+).
+ Depending on what number was selected, the IVR then played an audio message
+ of a conversation between two farmers where one farmer is explaining the
+ recommended practice to the other farmer.
+\end_layout
+
+\begin_layout Standard
+For the SMS campaign, we recorded telephone numbers for mobile phones owned
+ by the household head at the time of the experiment's roll-out.
+ Households that were allocated to the SMS treatment were sent eight SMS
+ messages over the course of the two months following the first screening
+ of the video.
+ The messages all followed a similar structure: farmers were first reminded
+ about an important technology or practice that was relevant at the particular
+ time that the message was sent, followed by a reminder about the existence
+ of the IVR service.
+ The reminders were related to technologies and practices that were also
+ promoted in the video and IVR.
+ For example, the first message, that was sent out around planting time,
+ read 
+\begin_inset Quotes eld
+\end_inset
+
+You will get much more maize if you use hybrid seed instead of recycled
+ seed.
+ Call the maize hot-line on 0200522420 free for more advice!
+\begin_inset Quotes erd
+\end_inset
+
+.
+ About one month into the growing season, the following message was sent:
+ 
+\begin_inset Quotes eld
+\end_inset
+
+When your maize is knee high, apply 1 water bottle cap of urea around each
+ plant.
+ Call the maize hot-line on 0200522420 free for more advice!
+\begin_inset Quotes erd
+\end_inset
+
+.
+ All content was produced in the local language (Busoga).
+\end_layout
+
+\begin_layout Section*
+Results
+\end_layout
+
+\begin_layout Standard
+We now turn to the results, starting with orthogonality tests.
+ We then estimate the (incremental) impact of the three information technologies
+ on a range of outcomes related to knowledge, adoption of recommended practices
+ and use of modern inputs, and production.
+ Throughout the analysis, we focus on intent-to-treat effects.
+ However, the IVR and SMS treatments are probably more effective for households
+ that have (access to) a mobile phone, and averaging outcomes over all household
+ may dilute the treatment effect, making it more difficult to detect a significa
+nt difference between the treatment group and control group.
+ Therefore, we also estimated (conditional) treatment effects using a subsample
+ containing only farmers that reported to have (access to) a mobile phone.
+ Results were very similar and so not reported here to conserve space.
+ Furthermore, while all households that were allocated to the video treatment
+ did view it, compliance was not perfect for IVR and SMS treatments.
+ Judged by the call log of the IVR system, we find that only a small number
+ of households that were encouraged to use the IVR system also actually
+ called in (8.9 percent or 214 households)
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This is a very low compliance rate, which partly reflects low demand for
+ the service.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "RePEc:hbs:wpaper:13-047"
+
+\end_inset
+
+ find that for a similar service in India, compliance rates were as high
+ as 88 percent.
+ Among possible explanations for this difference are: the time frame (the
+ 88 percent was measured after 2 years of intensive exposure to the system,
+ compliance rates were much lower at midline; our IVR system was only 3
+ months operational); differences in treatment intensity (we only sent 8
+ reminders to only half of the IVR households while 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "RePEc:hbs:wpaper:13-047"
+
+\end_inset
+
+ sent bi-weekly reminders); the different study population of 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "RePEc:hbs:wpaper:13-047"
+
+\end_inset
+
+, that consisted of cotton farmers that expressed willingness to participate
+ and owned a mobile phone; different technologies (hotline where direct
+ questions can be asked to real person extension agents vs IVR that works
+ with pre-recorded messages and a limited set of options).
+ However, there are also signs that our indicator of compliance may under-report
+ true compliance (because for instance encouraged farmers use different
+ phones to call the IVR).
+ This is illustrated by the fact that about 430 unique calls were made to
+ the system, representing about 18 percent of encouraged households.
+ 
+\end_layout
+
+\end_inset
+
+.
+ For the SMS reminders, of the 1,113 households that were supposed to receive
+ the reminders, only 860 (77.3 percent) did.
+ We therefore also generated Local Average Treatment Effects (LATE) estimates,
+ where the IVR encouragement was used as an instrument for having called
+ into the IVR system 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "angrist1996identification"
+
+\end_inset
+
+.
+ Similarly, we estimated LATEs where allocation to the SMS treatment is
+ used as an instrument for having received the SMS message.
+ However, also here, results were not substantially different from the intent-to
+-treat analysis and are not reported here.
+ A much more elaborate report that includes both these additional analyses
+ is available upon request from the authors.
 \end_layout
 
 \begin_layout Subsection*
@@ -3071,6 +2961,74 @@ elated outcomes.
 \end_layout
 
 \begin_layout Section*
+Robustness tests
+\end_layout
+
+\begin_layout Subsection*
+Attrition
+\end_layout
+
+\begin_layout Standard
+Following implementation of the field experiment, 8.63 percent of the sample
+ could not be tracked or persuaded to complete the endline survey.
+ There were no indications that attrition rates were different between or
+ among the different treatment groups: attrition was 7.03 percent in the
+ control group; 8.74 percent in the group that was shown a video; 8.90 percent
+ in the group that was shown a video and received the IVR encouragement;
+ and 7.45 percent in the group that also received an SMS in addition to the
+ IVR encouragement and the video.
+ Table 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+
+ presents a summary of a series of tests we did to investigate differential
+ attrition.
+ They relate to a series of regressions where an indicator of attrition
+ is regressed upon treatment indicator and interactions with baseline characteri
+stics.
+ 
+\end_layout
+
+\begin_layout Standard
+The first line looks at differential attrition among treatment groups more
+ formally.
+ The first column compares attrition between the control group and households
+ that received the video intervention.
+ A t-test shows no significant difference in attrition between these two
+ groups.
+ The second column compares households that (also) received the encouragement
+ treatment to those that did not (the control group and the video only group).
+ Also here, there is no difference in attrition.
+ We then compare attrition among the group that was allocated to the SMS
+ treatment and also find no significant difference with households that
+ were not allocated to the SMS treatment.
+ In the final column, we implement a joint test of differential attrition
+ across the treatment groups and, using an F-test, also find no differential
+ attrition.
+ 
+\end_layout
+
+\begin_layout Standard
+We further investigate if attrition rates are correlated to baseline characteris
+tics and whether this correlation differs by treatment group.
+ We do this by regressing an indicator of attrition on the treatment indicator,
+ the baseline characteristic and the interaction between the baseline characteri
+stic and treatment.
+ We then test if the interaction between treatment and baseline characteristic
+ is significant.
+ For instance in the first column of the second row, we do not find that
+ attrition rates are related to baseline yields among households that received
+ the video intervention.
+  
+\end_layout
+
+\begin_layout Section*
 Conclusion
 \end_layout
 
@@ -3139,51 +3097,100 @@ ment also did not have any additional effect.
 \end_layout
 
 \begin_layout Standard
-One area that needs further attention is related to spillovers.
- It is well known that experimental studies of information treatments are
- especially prone to non-interference violations 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "coppock2014information"
+\begin_inset Note Note
+status open
 
-\end_inset
-
-.
- As such, our estimates are likely to underestimate the true effects of
- ICT-mediated extension approaches.
- On the other hand, there is considerable evidence that much of the learning
- among smallholders happens through peer learning 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bandiera2006social,conley2010learning,benyishay2018social"
-
-\end_inset
-
-.
- Some studies have tried to understand how peer learning can be leveraged
- to accelerate agricultural technology adoption and diffusion 
-\begin_inset CommandInset citation
-LatexCommand citep
-before "eg."
-key "beaman2018can,magnan2015leveling"
-
-\end_inset
-
-.
- The question then becomes which ICT-mediated extension approach maximizes
- spillover effects, for instance through ease of sharing of content.
- Future studies should be designed with such questions in mind, by for example
- ensuring exogenous variation in treatment saturation or by using a multilevel
- design where different levels correspond to different spillover networks
- and treatments are assigned so as to create variation in different levels
+\begin_layout Plain Layout
+Can this be used to explain the findings? However, different information
+ technologies have different characteristics, making their effectiveness
+ highly context specific.
+ For instance, to introduce a new agronomic practice or technology, such
+ as a new type of disease-resistant seed, showing a video may be more effective
+ than a demand-driven technology such as a hot-line, where farmers are assumed
+ to be aware of their information needs.
+ At the same time, a video shown on a tablet computer or screened using
+ a liquid-crystal display (LCD) projector is generally a one-off intervention,
+ and particular details such as the exact dose of a new input may be missed
+ or easily forgotten by farmers; having access to a demand driven information
+ technology such as a hot-line may thus be more effective if agronomic practices
+ are complex or require precise implementation.
+ SMS messages are most likely too short to provide detailed information
+ about modern inputs or agronomic practices.
+ Therefore, effects, if any, are likely to work through behavioral channels:
+ reminders have been found to be effective in overcoming inertia and procrastina
+tion, and can help prioritize in the event of competing obligations.
+ SMS messages may therefore be effective in increasing the use of fertilizer,
+ which is known to suffer from procrastination and competing obligations
  
 \begin_inset CommandInset citation
 LatexCommand citep
-key "baird2017optimal"
+key "duflo2011nudging"
+
+\end_inset
+
+, or encourage farmers to engage more in tedious activities, such as weeding.
+\end_layout
+
+\begin_layout Plain Layout
+this is also from the intro: We hypothesize that the video-mediated approach
+ may be particularly effective in disseminating information about new technologi
+es and practices.
+ However, we also note that the supply-driven nature of video and the management
+ of its use by the information provider rather than the farmer, is a potential
+ constraint to its effectiveness.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+IVR services (and similarly hot-lines, where a phone number can be called
+ by a farmer and questions can be asked to an expert) are demand-driven
+ approaches based on the assumption that farmers can identify their information
+ needs and are capable of actively searching for additional information.
+ One of the main advantages of this approach is that the information is
+ supplied through a channel that is continuously accessible to the farmer,
+ and can be used on a more timely and relevant basis.
+ This technology may be more effective when farmers' key information constraints
+ are associated with unanticipated shocks such pests, disease, or adverse
+ weather conditions 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "RePEc:hbs:wpaper:13-047"
 
 \end_inset
 
 .
+ 
+\end_layout
+
+\begin_layout Plain Layout
+SMS messages are often framed as a supply-driven behavioral 
+\begin_inset Quotes eld
+\end_inset
+
+nudge
+\begin_inset Quotes erd
+\end_inset
+
+ designed to remind people (with some considerable degree of persistence)
+ to make decisions or take actions toward some particular objective.
+ Timely reminders have often been found very effective in overcoming inertia,
+ procrastination, competing obligations, or simple forgetfulness of human
+ beings 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Sunstein2014"
+
+\end_inset
+
+.
+ However, SMS messages are short and can not be used to provide new and
+ complex information.
+ They also require that farmers are able to read.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3248,7 +3255,7 @@ arabic{table}}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Preview
