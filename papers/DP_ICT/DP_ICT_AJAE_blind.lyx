@@ -650,7 +650,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Balance tests for ICT channel used to deliver information
+Balance at baseline for ICT channel used to deliver information
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Balance"
@@ -2651,10 +2651,11 @@ reference "tab:yield_ag_allh"
  maize.
  This was cultivated on (log(acre)) 0.018 or about 1.19 acres on average.
  It also shows that for the average household in the control, maize yields
- (log(kg/acre)) equal 5.850 or about 430 kg/acre.This is much higher than
- yields recorded at baseline (290 kg/acre) for the previous season, possibly
- because rainfall patterns were better during our intervention and farmers
- may have given greater attention to combating fall armyworm.
+ (log(kg/acre)) equal 5.850 or about 430 kg/acre.
+ This is much higher than yields recorded at baseline (290 kg/acre) for
+ the previous season, possibly because rainfall patterns were better during
+ our intervention and farmers may have given greater attention to combating
+ fall armyworm.
  Still, compared to figures recorded in FAOSTAT (1000 kg/acre) or figures
  from household survey data (typically around 600 kg/acre), yields were
  below what might be considered 
@@ -2970,15 +2971,17 @@ Attrition
 \end_layout
 
 \begin_layout Standard
-Following implementation of the field experiment, 8.63 percent of the sample
- could not be tracked or persuaded to complete the endline survey.
- There were no indications that attrition rates were different between or
- among the different treatment groups: attrition was 7.03 percent in the
- control group; 8.74 percent in the group that was shown a video; 8.90 percent
- in the group that was shown a video and received the IVR encouragement;
- and 7.45 percent in the group that also received an SMS in addition to the
- IVR encouragement and the video.
- Table 
+Following implementation of the field experiment, 342 households (or 8.63
+ percent of the sample) could not be tracked or persuaded to complete the
+ endline survey.
+ Given the relative short time between baseline and endline, this is this
+ is quite large.
+ Attrition was 7.03 percent in the control group; 8.74 percent in the group
+ that was shown a video; 8.90 percent in the group that was shown a video
+ and received the IVR encouragement; and 7.45 percent in the group that also
+ received an SMS in addition to the IVR encouragement and the video.
+ Using a simple F-test, we can reject the joint hypothesis that attrition
+ is orthogonal to the Table 
 \begin_inset Note Note
 status open
 
@@ -3256,7 +3259,7 @@ arabic{table}}
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Preview
@@ -3474,8 +3477,9 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: Based on full sample of 3,961 observations; ***, ** and * denote that
- the difference is signficantly different from zero at 
+Note: Based on full sample of 3,959 observations collected at baseline;
+ ***, ** and * denote that the difference is signficantly different from
+ zero at 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3508,6 +3512,311 @@ the 1, 5 and 10 percent level, respectively.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Preview
+
+\begin_layout Standard
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Baseline characteristics of attritors by treatment status
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Balance_attritors-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+&	Mean	&	Video	&	+IVR	&	+SMS & N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+Maize yield (kg/ac) 	&	270.58	&	14.59		&	4.44		&	-3.33		&	3,619	
+\backslash
+
+\backslash
+ 	&	(230.44)	&	(19.68)		&	(12.15)		&	(12.77)		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Age of HH head (years) 	&	40.82	&	-1.22		&	0.94$^{*}$	&	-0.78		&	3,573	
+\backslash
+
+\backslash
+ 	&	(14.29)	&	(0.89)		&	(0.55)		&	(0.58)		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+HH head finshed primary school 	&	0.38	&	-0.02		&	0.01		&	0.01		&	3,619	
+\backslash
+
+\backslash
+ 	&	(0.49)	&	(0.03)		&	(0.02)		&	(0.02)		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+HH size 	&	7.76	&	-0.33		&	0.44$^{***}$	&	-0.28$^{**}$	&	3,619	
+\backslash
+
+\backslash
+ 	&	(3.16)	&	(0.22)		&	(0.13)		&	(0.14)		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of bedrooms	&	2.33	&	-0.14$^{*}$	&	0.12$^{***}$	&	-0.11$^{**}$	&	3,619	
+\backslash
+
+\backslash
+ 	&	(1.21)	&	(0.08)		&	(0.05)		&	(0.05)		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Access to extension last year 	&	0.10	&	0.01		&	0.01		&	0.01		&	3,619	
+\backslash
+
+\backslash
+ 	&	(0.30)	&	(0.02)		&	(0.01)		&	(0.01)		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Has used fertilizer last season 	&	0.16	&	0.04		&	0.01		&	-0.02		&	3,619	
+\backslash
+
+\backslash
+ 	&	(0.37)	&	(0.03)		&	(0.02)		&	(0.02)		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Has used improved seed last season 	&	0.34	&	0.04		&	0.01		&	-0.01		&	3,619	
+\backslash
+
+\backslash
+ 	&	(0.47)	&	(0.03)		&	(0.02)		&	(0.02)		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Distance nearest agro input shop (km) 	&	5.14	&	0.17		&	0.21		&	0.33		&	3,619	
+\backslash
+
+\backslash
+ 	&	(4.87)	&	(0.37)		&	(0.23)		&	(0.24)		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+HH has access to mobile phone 	&	0.76	&	0.01		&	0.01		&	0.00		&	3,619	
+\backslash
+
+\backslash
+ 	&	(0.43)	&	(0.03)		&	(0.02)		&	(0.02)		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+HH has mobile phone 	&	0.84	&	0.00		&	0.01		&	-0.01		&	3,619	
+\backslash
+
+\backslash
+ 	&	(0.36)	&	(0.02)		&	(0.02)		&	(0.02)		&		
+\backslash
+
+\backslash
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+													
+\end_layout
+
+\begin_layout Plain Layout
+
+													
+\end_layout
+
+\begin_layout Plain Layout
+
+												
+\backslash
+
+\backslash
+		 F-test	&		&	0.924		&	1.209		&		1.223	
+\backslash
+
+\backslash
+		 P-value	&		&	0.516		&	0.275		&		0.265	
+\backslash
+
+\backslash
+		 	 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize  
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: ***, ** and * denote that the difference is signficantly different
+ from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
