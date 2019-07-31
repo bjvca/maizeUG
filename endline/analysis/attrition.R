@@ -9,7 +9,7 @@ source("/home/bjvca/data/projects/digital green/endline/data/init.R")
 
 
  dta <- merge(baseline, dta, by="hhid", all.x=T)
-dta$attriter <- is.na(dta$know_space)
+dta$non_attriter <- !is.na(dta$know_space)
 
 dta$know_space <- dta$maizeoptimal_spacing == "a"
 dta$know_small <- dta$maizeq22 == "c"
@@ -40,14 +40,14 @@ dta <- merge(treats, dta, by="hhid", all=F)
 
 
 ## overall attrition
-summary(lm(attriter~1, data=dta))
+summary(lm(non_attriter~1, data=dta))
 ## attrition among those that received video treatment
-summary(lm(attriter~1, data=subset(dta, !video)))
-summary(lm(attriter~1, data=subset(dta, video)))
-summary(lm(attriter~1, data=subset(dta, ivr=="yes")))
-summary(lm(attriter~1, data=subset(dta, sms=="yes")))
+summary(lm(non_attriter~1, data=subset(dta, !video)))
+summary(lm(non_attriter~1, data=subset(dta, video)))
+summary(lm(non_attriter~1, data=subset(dta, ivr=="yes")))
+summary(lm(non_attriter~1, data=subset(dta, sms=="yes")))
 ## F test of joint significance
-summary(lm(attriter~video+ivr+sms, data=dta))
+summary(lm(non_attriter~video+ivr+sms, data=dta))
 
 dta$yield <- dta$maizebags_harv*100/dta$maizearea_cultivation
 dta$eduhead <- as.numeric(dta$maizeeduc>2)
