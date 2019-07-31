@@ -2,14 +2,20 @@
 
 rm(list=ls())
 library(foreign)
-baseline <- read.dta("/home/bjvca/data/projects/digital green/baseline/DLEC.dta")
-##dta <- read.csv("/home/bjvca/data/projects/digital green/baseline/baseline.csv")
-
 source("/home/bjvca/data/projects/digital green/endline/data/init.R")
 
-
+### merge with baseline data
+baseline <- read.csv("/home/bjvca/data/projects/digital green/endline/data/raw/baseline.csv")
  dta <- merge(baseline, dta, by="hhid", all.x=T)
-dta$non_attriter <- !is.na(dta$know_space)
+dta$know_space <-  dta$know_space.y 
+dta$messenger <-  dta$messenger.x
+dta$recipient <-  dta$recipient.x
+dta$femhead <-  dta$femhead.x
+### attrition rate is low
+sum(is.na(dta$know_space[dta$messenger!="ctrl"]))/length(dta$know_spacedta$messenger!="ctrl"])
+###keep only attriters
+dta <- subset(dta, is.na(know_space))
+
 
 dta$know_space <- dta$maizeoptimal_spacing == "a"
 dta$know_small <- dta$maizeq22 == "c"
@@ -19,52 +25,21 @@ siglev <-  1.96
 set.seed(54321)
 
 ### here we do not drop the femheaded, in femheaded HH, the video was shown to the female
-dta$recipient[is.na(dta$recipient)] <- "female"
+dta$recipient[dta$recipient == "n/a"] <- "female"
 dta$messenger <- dta$maizevideo_shown
 dta$video <- TRUE
 dta$video[dta$messenger=="ctrl"] <- FALSE
 
-## merge in treatments
-treats <- read.csv("/home/bjvca/data/projects/digital green/sampling/sampling_list_ID.csv")[c("HHID","IVR","sms")]
-names(treats) <- c("hhid","ivr","sms")
-treats$femhead <- FALSE
-###merge in treatments for FHs - did they receive sms messages?
-treats_FH <- read.csv("/home/bjvca/data/projects/digital green/sampling/femhead_list_ID.csv")[c("HHID","IVR")]
-names(treats_FH) <- c("hhid","ivr")
-treats_FH$sms <- "no"
-treats_FH$femhead <- TRUE
+dta$weight <- 1
+dta$weight[dta$messenger == "female"] <- 1/(112*1/91)
+dta$weight[dta$messenger == "male"] <- 1/(121*1/91)
 
-treats <- rbind(treats_FH, treats)
-treats$sms <- as.factor(treats$sms)
-dta <- merge(treats, dta, by="hhid", all=F)
-
-
-## overall attrition
-summary(lm(non_attriter~1, data=dta))
-## attrition among those that received video treatment
-summary(lm(non_attriter~1, data=subset(dta, !video)))
-summary(lm(non_attriter~1, data=subset(dta, video)))
-summary(lm(non_attriter~1, data=subset(dta, ivr=="yes")))
-summary(lm(non_attriter~1, data=subset(dta, sms=="yes")))
-## F test of joint significance
-summary(lm(non_attriter~video+ivr+sms, data=dta))
-
-dta$yield <- dta$maizebags_harv*100/dta$maizearea_cultivation
-dta$eduhead <- as.numeric(dta$maizeeduc>2)
-dta$maizeprinfo_receiv <- as.numeric(dta$maizeprinfo_receiv=="Yes")
-dta$fert <- as.numeric(dta$maizeprinfo_receiv_spouse=="Yes")
-dta$seed <- as.numeric(dta$maizeprinput_use=="Yes")#### redo balance tests for DP_ICT paper
-dta$maizemobile <- dta$maizemobile == "Yes"
-dta$maizemobile_access <- dta$maizemobile_access == "Yes"
-dta$maizemobile_access[dta$maizemobile == TRUE] <- TRUE 
 
 outmat <- array(NA,c(22, 8))
 
-dta$weight <- 1
-dta$weight[dta$messenger == "female"] <- 1/(1287*1/1115)
-dta$weight[dta$messenger == "male"] <- 1/(1301*1/1115)
 
-outcome <- c("yield","","maizeage","","eduhead","","maizehh_no","","maizeprrooms","","maizeprinfo_receiv","", "fert","","seed","","maizedist_shop","","maizemobile","","maizemobile_access","")
+
+outcome <- outcome <- c("yield","","maizeage","","eduhead","","maizehh_no","","maizeprrooms","","maizeprinfo_receiv","", "fert.x","","seed","","maizedist_shop","","maizemobile","","maizemobile_access","")
 for (i in seq(1,22,2)) {
 print(i)
 outmat[i,1] <-  mean(unlist(dta[ dta$video==FALSE,][outcome[i]]), na.rm=T)
