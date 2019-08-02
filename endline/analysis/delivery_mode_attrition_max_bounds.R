@@ -5,6 +5,9 @@ source("/home/bjvca/data/projects/digital green/endline/data/init.R")
 
 
 
+
+
+
 #### The analysis was done on the Amazon's cloud computing platform, on which data was directly imported from my dropbox account
 #wget https://www.dropbox.com/s/p6kuazj263x9ilr/DLEC.dta?dl=0
 #wget https://www.dropbox.com/s/n7hn2x0y492ofgi/AWS.csv?dl=0
@@ -44,111 +47,92 @@ names(seed_plot) <- c("x","y","ylo","yhi")
 
 res_itt_wel <-  array(NA, c(13,4,3))
 rownames(res_itt_wel) <- c("better_av","","better_6m","","eatpref","","eatenough","","log_cons","","welfare_index","","p-vals")
-res_itt_disp <-  array(NA, c(9,4,3))
-rownames(res_itt_disp) <- c("cons_maize","","sold_maize","","saved_seed","","disp_index","","p-vals")
 
 
 
-
-RI <- function(dep, indep, dta , nr_repl = 1000, h_int=h, w_int = NULL) {
-	### randomization inference function
-	crit <- summary(lm(as.formula(paste(dep,indep,sep="~")), data=dta, weights=unlist(weight)))$coefficients[2,1]
+RI <- function(dep, indep, ctrls = NULL,  dta , nr_repl = 1000, w_int = NULL) {
+# RI("(maizeeduc > 2)",treat ,ctrls = NULL, w_int="weights", dta= dta, nr_repl = totrep)
+#RI("index" ,treat , contr_vars, w_int= w_int2,dta= data, nr_repl = 1000,h_int=1)
+#indep <- "(recipient != 'male') +ivr+sms+ as.factor(messenger)" 
+#ctrls <- NULL
+#h_int <- 1
+#dep <- "weed"
+##dta <- dta_bal
+#nr_repl <- 100
+#w_int <- "weights"
 
 ### determines treatmetn cell
-
 	dta <- dta %>% 
-    		mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
+    		mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger", "ivr","sms"))) 
 	### allocates unique ID based on treatment cell status and village
 	dta <- dta %>% 
     		mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vilID"))) 
-
-	dta <-  data.table(cbind(dta[dep],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms","called","totsms", "femhead","weight")]))
-
+	### the NULL
+	crit <- ifelse(is.null(ctrls),summary(lm(as.formula(paste(dep,indep,sep="~")), weights=unlist(dta[w_int]), data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste(dep,indep,sep="~"), ctrls,sep="+")),  weights=unlist(dta[w_int]),data=dta))$coefficients[2,1])
+if (is.null(ctrls)) {
+	dta <-  data.table(cbind(dta[dep],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms")]),cbind(dta[w_int]))
+} else {
+	dta <-  data.table(cbind(dta[dep],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms")],cbind(dta[w_int]),cbind(dta[unlist(strsplit(ctrls,"[+]"))])))
+}
 	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table")) %dopar% {
 		dta_sim <- data.table(dta)
- 		setDT(dta_sim)[,perm:=sample(treat),by = (uniqID)]
- 		setDT(dta_sim)[!(perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["ctrl",]>0])),perm_ivr:=sample(ivr),by = (uniqID)]
-		dta_sim$perm_ivr[is.na(dta_sim$perm_ivr)] <- "no"
-		setDT(dta_sim)[perm_ivr =="yes",perm_sms:=sample(sms),by = (uniqID)]
-dta_sim$perm_sms[is.na(dta_sim$perm_sms)] <- "no"
+ 		setDT(dta_sim)[,perm:=sample(treat, replace=FALSE)[1:.N],by = (uniqID)]
+
 		dta_sim$recipient <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["male",]>0]),"male", "female"))
-		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["ctrl",]>0]), "ctrl", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male","female")))
-		dta_sim$ivr <- dta_sim$perm_ivr
-		dta_sim$sms <- dta_sim$perm_sms
-		return(abs(coef(lm(as.formula(paste(dep,indep,sep="~")), data=dta_sim, weights=unlist(weight)))[2]) > abs(crit) )
+		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["ctrl",]>0]), "ctrl","female")))
+		dta_sim$ivr <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$ivr,dta$treat))[table(dta$ivr, dta$treat)["yes",]>0]), "yes","no")
+		dta_sim$sms <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$sms,dta$treat))[table(dta$sms, dta$treat)["yes",]>0]), "yes","no")
+		return(abs(ifelse(is.null(ctrls),summary(lm(as.formula(paste(dep,indep,sep="~")), weights=unlist(dta_sim[,w_int, with=FALSE]), data=dta_sim))$coefficients[2,1],summary(lm(as.formula(paste(paste(dep,indep,sep="~"), ctrls,sep="+")), weights=unlist(dta_sim[,w_int, with=FALSE]), data=dta_sim))$coefficients[2,1])) > abs(crit) )
 	}
 	return(sum(oper)/nr_repl)
 }
 
 
-
-RI_IV <- function(dep, indep, dta , nr_repl = 1000, h_int=h) {
-# this does not work... not sure how to do RI in 2SLS
-
-	### the NULL
-	crit <- summary(ivreg(as.formula(paste(dep,indep,sep="~")), data=dta))$coefficients[2,1]
-
-### determines treatmetn cell
-
-	dta <- dta %>% 
-    		mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
-	### allocates unique ID based on treatment cell status and village
-	dta <- dta %>% 
-    		mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vilID"))) 
-
-	dta <-  data.table(cbind(dta[dep],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms","called","totsms", "femhead")]))
-
-	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table","AER")) %dopar% {
-		dta_sim <- data.table(dta)
- 		setDT(dta_sim)[,perm:=sample(treat),by = (uniqID)]
- 		setDT(dta_sim)[!(perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["ctrl",]>0])),perm_ivr:=sample(ivr),by = (uniqID)]
-		dta_sim$perm_ivr[is.na(dta_sim$perm_ivr)] <- "no"
-		setDT(dta_sim)[perm_ivr =="yes",perm_sms:=sample(sms),by = (uniqID)]
-dta_sim$perm_sms[is.na(dta_sim$perm_sms)] <- "no"
-		dta_sim$recipient <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["male",]>0]),"male", "female"))
-		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["ctrl",]>0]), "ctrl", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male","female")))
-		dta_sim$ivr <- dta_sim$perm_ivr
-		dta_sim$sms <- dta_sim$perm_sms
-		return(abs(coef(ivreg(as.formula(paste(dep,indep,sep="~")), data=dta_sim))[2]) > abs(crit) )
-	}
-	return(sum(oper)/nr_repl)
-}
-
-
-
-RI_FWER <- function(deps, indep, dta ,p_vals , nr_repl = 1000, h_int=h) {
+RI_FWER <- function(deps, indep,ctrls = NULL, dta ,p_vals , nr_repl = 1000,  w_int = NULL) {
 ### function to control for FWER using simulation (familywise sharp null)
 ### inspired on https://egap.org/methods-guides/10-things-you-need-know-about-multiple-comparisons
+
+#RI_FWER(deps= c("know_space","know_combine","know_weed") ,indep = treatment, ctrls=ctrls ,dta =dta_bal, p_vals = res_itt_know[c(1,3,5),3,h], nr_repl = totrep, w_int="weight")
+
 threshold_finder<- function(threshold){
   mean(apply(oper, 2, x <- function(x) sum(x <= threshold) > 0 ))
 }
-
+### determines treatmetn cell
+#	dta <- dta %>% 
+#    		mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
 	dta <- dta %>% 
-    		mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger"))) 
+    		mutate(treat = group_indices_(dta, .dots=c("recipient", "messenger", "ivr","sms"))) 
 	### allocates unique ID based on treatment cell status and village
 	dta <- dta %>% 
     		mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vilID"))) 
- data.table(cbind(dta[deps],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms","called","totsms", "femhead", "weight")]))
+if (is.null(ctrls)) {
+dta <-  data.table(cbind(dta[deps],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms")]),cbind(dta[w_int]))
+
+} else {
+	dta <-  data.table(cbind(dta[deps],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms")],cbind(dta[w_int]),cbind(dta[unlist(strsplit(ctrls,"[+]"))])))
+}
 	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table")) %dopar% {
 		dta_sim <- data.table(dta)
- 		setDT(dta_sim)[,perm:=sample(treat),by = (uniqID)]
- 		setDT(dta_sim)[!(perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["ctrl",]>0])),perm_ivr:=sample(ivr),by = (uniqID)]
-		dta_sim$perm_ivr[is.na(dta_sim$perm_ivr)] <- "no"
-		setDT(dta_sim)[perm_ivr =="yes",perm_sms:=sample(sms),by = (uniqID)]
-dta_sim$perm_sms[is.na(dta_sim$perm_sms)] <- "no"
-		dta_sim$recipient <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["male",]>0]),"male", "female"))
-		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["ctrl",]>0]), "ctrl", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male","female")))
-		dta_sim$ivr <- dta_sim$perm_ivr
-		dta_sim$sms <- dta_sim$perm_sms
+ 		setDT(dta_sim)[,perm:=sample(treat, replace=FALSE)[1:.N],by = (uniqID)]
 
-return(unlist(lapply(deps, function(dvar) summary(lm(as.formula(paste(dvar,indep,sep="~")), data=dta_sim, weights = unlist(weight)))$coefficients[2,4])))
-				}
+
+		dta_sim$recipient <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$recipient,dta$treat))[table(dta$recipient, dta$treat)["male",]>0]),"male", "female"))
+		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["ctrl",]>0]), "ctrl","female")))
+		dta_sim$ivr <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$ivr,dta$treat))[table(dta$ivr, dta$treat)["yes",]>0]), "yes","no")
+		dta_sim$sms <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$sms,dta$treat))[table(dta$sms, dta$treat)["yes",]>0]), "yes","no")
+
+if (is.null(ctrls)) {
+return(unlist(lapply(deps, function(dvar)  summary(lm(as.formula(paste(dvar,indep,sep="~")), weights=unlist(dta_sim[,w_int, with=FALSE]),data=dta_sim))$coefficients[2,4])))
+} else {
+return(unlist(lapply(deps, function(dvar)  summary(lm(as.formula(paste(paste(dvar,indep,sep="~"),ctrls, sep="+")), weights=unlist(dta_sim[,w_int, with=FALSE]),data=dta_sim))$coefficients[2,4])))
+}		
+
+		}
 
 thresholds <- seq(0, 0.1, length.out = 10000)
 type_I_rate <- sapply(thresholds, threshold_finder)
 return( list=c(thresholds[max(which(type_I_rate <= 0.1))],thresholds[max(which(type_I_rate <= 0.05))], thresholds[max(which(type_I_rate <= 0.01))]))
 }
-
 
 
 ##@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -194,7 +178,7 @@ trim <- function(var, dataset, trim_perc=.1) {
 return( subset(dataset,dataset[var] > quantile(dataset[var],c(trim_perc/2,1-(trim_perc/2)), na.rm=T)[1] & dataset[var] < quantile(dataset[var], c(trim_perc/2,1-(trim_perc/2)),na.rm=T)[2]) )
 }
 
-FW_index <- function(treat, indexer, data, nr_repl=0,h_ind=h, w_int = NULL) {
+FW_index <- function(treat, indexer, contr_vars, w_int2,data, nr_repl=0) {
 ### function to make family wise index using covariance as weights (following http://cyrussamii.com/?p=2656)
 ### FW_index("messenger != 'ctrl' ", c("know_space", "know_combine", "know_weed"),dta)
 data <- data[complete.cases(data[indexer]),]
@@ -206,40 +190,17 @@ x <- data[indexer]
 
 					i.vec <- as.matrix(rep(1,ncol(x)))
 					Sx <- cov(x)
-					
-					data$index <- t(solve(t(i.vec)%*%solve(Sx)%*%i.vec)%*%t(i.vec)%*%solve(Sx)%*%t(x))
-mod <- lm(as.formula(paste("index",treat,sep="~")) , data=data)
 
-					
+					data$index <- t(solve(t(i.vec)%*%solve(Sx)%*%i.vec)%*%t(i.vec)%*%solve(Sx)%*%t(x))
+mod <- lm(as.formula(paste("index",treat,sep="~")) ,weights=unlist(data[w_int2]), data=data)
+
+
 if (nr_repl > 0) { 
 	data$index <- as.vector(data$index)
-	sig <- RI("index" ,treat , data, nr_repl = nr_repl,h_ind,w_int)
+	sig <- RI("index" ,treat , contr_vars, w_int= w_int2, data, nr_repl = nr_repl)
 } else {
-	sig <- summary(lm(as.formula(paste("index",treat,sep="~")) , data=data, weights = unlist(weight)))$coefficients[2,4]
+	sig <- summary(lm(as.formula(paste("index",treat,sep="~")) ,weights=unlist(data[w_int2]), data=data))$coefficients[2,4]
 }
-return(list(mod,sig, data))
-}
-
-FW_index_IV <- function(treat, indexer, data, nr_repl=0,h_ind=h, w_int = NULL) {
-### function to make family wise index using covariance as weights (following http://cyrussamii.com/?p=2656)
-### FW_index("messenger != 'ctrl' ", c("know_space", "know_combine", "know_weed"),dta)
-data <- data[complete.cases(data[indexer]),]
-x <- data[indexer]
-
-				for(j in 1:ncol(x)){
-					x[,j] <- (x[,j] - mean(x[,j]))/sd(x[,j])
-				}
-
-					i.vec <- as.matrix(rep(1,ncol(x)))
-					Sx <- cov(x)
-					
-					data$index <- t(solve(t(i.vec)%*%solve(Sx)%*%i.vec)%*%t(i.vec)%*%solve(Sx)%*%t(x))
-mod <- ivreg(as.formula(paste("index",treat,sep="~")) , data=data)
-
-					
-
-	sig <- summary(ivreg(as.formula(paste("index",treat,sep="~")) , data=data,weights = unlist(weight)))$coefficients[2,4]
-
 return(list(mod,sig, data))
 }
 
@@ -270,64 +231,66 @@ dta$weight <- 1
 dta$weight[dta$messenger == "female"] <- 1/(1289*1/1115)
 dta$weight[dta$messenger == "male"] <- 1/(1301*1/1115)
 
+dta[c("know_space","know_combine","know_weed","know_armyworm")] <- lapply(dta[c("know_space","know_combine","know_weed","know_armyworm")], function(x) replace(x,is.na(x) & dta$messenger!="ctrl" ,max(x,na.rm=T)) )
 
-dta[c("know_space","know_combine","know_weed","know_armyworm")] <- lapply(dta[c("know_space","know_combine","know_weed","know_armyworm")], function(x) replace(x,is.na(x),max(x,na.rm=T)) )
-
-dta[c("day_one","space","striga","weed","fert","impseed", "fert_dap","fert_urea","fert_org","hybrid","opv", "yield_better")] <- lapply(dta[c("day_one","space","striga","weed","fert","impseed", "fert_dap","fert_urea","fert_org","hybrid","opv", "yield_better")], function(x) replace(x,is.na(x),max(x,na.rm=T)) )
-
-dta[c("better_av","better_6m","eatpref","eatenough")] <- lapply(dta[c("better_av","better_6m","eatpref","eatenough")], function(x) replace(x,is.na(x),max(x,na.rm=T)) )
+dta[c("day_one","space","striga","weed","fert","impseed", "fert_dap","fert_urea","fert_org","hybrid","opv", "yield_better")] <- lapply(dta[c("day_one","space","striga","weed","fert","impseed", "fert_dap","fert_urea","fert_org","hybrid","opv", "yield_better")], function(x) replace(x,is.na(x) & dta$messenger!="ctrl",max(x,na.rm=T)) )
+dta[c("better_av","better_6m","eatpref","eatenough")] <- lapply(dta[c("better_av","better_6m","eatpref","eatenough")], function(x) replace(x,is.na(x) & dta$messenger!="ctrl",max(x,na.rm=T)) )
 
 
 ###number of RI replications: if set to 0, conventional p-values are reported, in the analysis, 10000 replications were used
-totrep <- 0
+totrep <- 1000
 ### better to loop over h: 
-for (h in c(1,2,3)) {
+for (h in c(1:3)) {
 if (h == 1) {
 dta_bal <- dta
-treatment <- "(messenger != 'ctrl')+ivr+sms+as.factor(recipient)+ femhead" 
+treatment <- "(messenger != 'ctrl')+ivr+sms+as.factor(recipient)" 
+ctrls <- "femhead" 
 } else if ( h==2 ) {
 dta_bal <- dta
 ###uncomment here to look at heterogeneity wrt to mobile access
 #dta_bal <- subset(dta,maizemobile_access == TRUE)
-treatment <- "ivr+(messenger != 'ctrl')+sms+as.factor(recipient) + femhead" 
+treatment <- "ivr+(messenger != 'ctrl')+sms+as.factor(recipient)" 
+ctrls <- "femhead" 
 } else if (h==3) {
 dta_bal <- dta
 ###uncomment here to look at heterogeneity wrt to mobile ownership
 #dta_bal <- subset(dta,maizemobile == TRUE)
-treatment <- "sms+(messenger != 'ctrl')+ivr+as.factor(recipient) + femhead" 
+treatment <- "sms+(messenger != 'ctrl')+ivr+as.factor(recipient)" 
+ctrls <- "femhead" 
 }
 ################################ knowledge  ############################
 
+
 res_itt_know[1,1,h] <- mean(dta_bal$know_space[dta_bal$messenger == "ctrl"],na.rm=T)
 res_itt_know[2,1,h] <- sd(dta_bal$know_space[dta_bal$messenger == "ctrl"],na.rm=T)
-res_itt_know[1,2,h] <- summary(lm(as.formula(paste("know_space",treatment, sep="~")) ,data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_know[2,2,h] <- summary(lm(as.formula(paste("know_space",treatment, sep="~")) ,data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_know[1,3,h] <- ifelse(totrep >0, RI("know_space", treatment , dta_bal,  totrep,h, weight),summary(lm(as.formula(paste("know_space",treatment, sep="~")) ,data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_know[1,4,h] <- nobs(lm(as.formula(paste("know_space",treatment, sep="~")) ,data=dta_bal, weights = weight))
+res_itt_know[1,2,h] <- summary(lm(as.formula(paste(paste("know_space",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_know[2,2,h] <- summary(lm(as.formula(paste(paste("know_space",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_know[1,3,h] <- ifelse(totrep >0, RI("know_space", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("know_space",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_know[1,4,h] <- nobs(lm(as.formula(paste(paste("know_space",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
 
 res_itt_know[3,1,h] <-  mean(dta_bal$know_combine[dta_bal$messenger == "ctrl"],na.rm=T)
 res_itt_know[4,1,h] <-  sd(dta_bal$know_combine[dta_bal$messenger == "ctrl"],na.rm=T)
-res_itt_know[3,2,h] <- summary(lm(as.formula(paste("know_combine",treatment, sep="~")) ,data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_know[4,2,h] <- summary(lm(as.formula(paste("know_combine",treatment, sep="~")) ,data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_know[3,3,h] <-  ifelse(totrep >0, RI("know_combine",treatment , dta_bal, nr_repl = totrep, h, weight),summary(lm(as.formula(paste("know_combine",treatment, sep="~")) ,data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_know[3,4,h] <- nobs(lm(as.formula(paste("know_combine",treatment, sep="~")) ,data=dta_bal, weights = weight))
+res_itt_know[3,2,h] <- summary(lm(as.formula(paste(paste("know_combine",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_know[4,2,h] <- summary(lm(as.formula(paste(paste("know_combine",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_know[3,3,h] <-  ifelse(totrep >0, RI("know_combine",treatment ,ctrls, dta_bal, nr_repl = totrep,  "weight"),summary(lm(as.formula(paste(paste("know_combine",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_know[3,4,h] <- nobs(lm(as.formula(paste(paste("know_combine",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
 
 res_itt_know[5,1,h] <-  mean(dta_bal$know_weed[dta_bal$messenger == "ctrl"],na.rm=T)
 res_itt_know[6,1,h] <-  sd(dta_bal$know_weed[dta_bal$messenger == "ctrl"],na.rm=T)
-res_itt_know[5,2,h] <- summary(lm(as.formula(paste("know_weed",treatment, sep="~")) ,data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_know[6,2,h] <- summary(lm(as.formula(paste("know_weed",treatment, sep="~")) ,data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_know[5,3,h] <-  ifelse(totrep >0, RI("know_weed",treatment , dta_bal, nr_repl = totrep,h, weight),summary(lm(as.formula(paste("know_weed",treatment, sep="~")) ,data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_know[5,4,h] <- nobs(lm(as.formula(paste("know_weed",treatment, sep="~")) ,data=dta_bal, weights = weight))
+res_itt_know[5,2,h] <- summary(lm(as.formula(paste(paste("know_weed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_know[6,2,h] <- summary(lm(as.formula(paste(paste("know_weed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_know[5,3,h] <-  ifelse(totrep >0, RI("know_weed",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"),summary(lm(as.formula(paste(paste("know_weed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_know[5,4,h] <- nobs(lm(as.formula(paste(paste("know_weed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
 
 res_itt_know[7,1,h] <- mean(dta_bal$know_armyworm[dta_bal$messenger == "ctrl"],na.rm=T)
 res_itt_know[8,1,h] <- sd(dta_bal$know_armyworm[dta_bal$messenger == "ctrl"],na.rm=T)
-res_itt_know[7,2,h] <- summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_know[8,2,h] <- summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_know[7,3,h] <-  ifelse(totrep >0, RI("know_armyworm",treatment , dta_bal, nr_repl = totrep,h, weight),summary(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_know[7,4,h] <- nobs(lm(as.formula(paste("know_armyworm",treatment, sep="~")) ,data=dta_bal, weights = weight))
+res_itt_know[7,2,h] <- summary(lm(as.formula(paste(paste("know_armyworm",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_know[8,2,h] <- summary(lm(as.formula(paste(paste("know_armyworm",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_know[7,3,h] <-  ifelse(totrep >0, RI("know_armyworm",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"),summary(lm(as.formula(paste(paste("know_armyworm",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_know[7,4,h] <- nobs(lm(as.formula(paste(paste("know_armyworm",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
 
 ## no need to include armyworm in the index because we do not really expect an effect
-indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed"),dta_bal, nr_repl=totrep, h, weight)
+indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed"),ctrls,w_int2 = "weight", data =dta_bal, nr_repl=totrep )
 res_itt_know[9,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"],na.rm=T)
 res_itt_know[10,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"],na.rm=T)
 res_itt_know[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
@@ -340,93 +303,94 @@ prod_plot[1,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[i
 prod_plot[1,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 ##calculated corrected critical values
 print(h)
-#res_itt_know[11,1:3 ,h] <- RI_FWER(deps= c("know_space","know_combine","know_weed") ,indep = treatment ,dta =dta_bal, p_vals = res_itt_know[c(1,3,5),3,h], nr_repl = totrep,h_int=h)
+
+res_itt_know[11,1:3 ,h] <- RI_FWER(deps= c("know_space","know_combine","know_weed") ,indep = treatment, ctrls=ctrls ,dta =dta_bal, p_vals = res_itt_know[c(1,3,5),3,h], nr_repl = totrep, w_int="weight")
 
 ################################### practices #############################
-
 ###timely planting
 res_itt_pract[1,1,h]  <- mean(dta_bal$day_one[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_pract[2,1,h]  <- sd(dta_bal$day_one[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[1,2,h]  <- summary(lm(as.formula(paste("day_one", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_pract[2,2,h]  <- summary(lm(as.formula(paste("day_one", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_pract[1,3,h]  <- ifelse(totrep >0, RI("day_one",treatment , dta_bal, nr_repl = totrep, h, weight), summary(lm(as.formula(paste("day_one", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,4]) 
-res_itt_pract[1,4,h]  <- nobs(lm(as.formula(paste("day_one", treatment, sep ="~")), data=dta_bal, weights = weight))
+res_itt_pract[1,2,h]  <- summary(lm(as.formula(paste(paste("day_one", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_pract[2,2,h]  <- summary(lm(as.formula(paste(paste("day_one", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_pract[1,3,h]  <- ifelse(totrep >0, RI("day_one",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("day_one", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4]) 
+res_itt_pract[1,4,h]  <- nobs(lm(as.formula(paste(paste("day_one", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ### used recommended spacing use on at lease one plot as reported by at least one spouse
 res_itt_pract[3,1,h]  <- mean(dta_bal$space[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_pract[4,1,h]  <- sd(dta_bal$space[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[3,2,h]  <- summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_pract[4,2,h]  <- summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_pract[3,3,h]  <- ifelse(totrep >0, RI("space",treatment, dta_bal, nr_repl = totrep, h, weight),  summary(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_pract[3,4,h]  <- nobs(lm(as.formula(paste("space", treatment, sep ="~")), data=dta_bal, weights = weight))
+res_itt_pract[3,2,h]  <- summary(lm(as.formula(paste(paste("space", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_pract[4,2,h]  <- summary(lm(as.formula(paste(paste("space", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_pract[3,3,h]  <- ifelse(totrep >0, RI("space",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"),  summary(lm(as.formula(paste(paste("space", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_pract[3,4,h]  <- nobs(lm(as.formula(paste(paste("space", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 # used recommended way to fight striga - this should be changed to include info of all plots 
 res_itt_pract[5,1,h]  <- mean(dta_bal$striga[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_pract[6,1,h]  <- sd(dta_bal$striga[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[5,2,h]  <- summary(lm(as.formula(paste("striga", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_pract[6,2,h]  <- summary(lm(as.formula(paste("striga", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_pract[5,3,h]  <- ifelse(totrep >0, RI("striga",treatment , dta_bal, nr_repl = totrep, h, weight), summary(lm(as.formula(paste("striga", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_pract[5,4,h]  <- nobs(lm(as.formula(paste("striga", treatment, sep ="~")), data=dta_bal, weights = weight))
+res_itt_pract[5,2,h]  <- summary(lm(as.formula(paste(paste("striga", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_pract[6,2,h]  <- summary(lm(as.formula(paste(paste("striga", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_pract[5,3,h]  <- ifelse(totrep >0, RI("striga",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("striga", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_pract[5,4,h]  <- nobs(lm(as.formula(paste(paste("striga", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
+
 
 # weeded on recommended timing? - this should be changed to include info of all plots 
 res_itt_pract[7,1,h]  <- mean(dta_bal$weed[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_pract[8,1,h]  <- sd(dta_bal$weed[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[7,2,h]  <- summary(lm(as.formula(paste("weed", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_pract[8,2,h]  <- summary(lm(as.formula(paste("weed", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_pract[7,3,h]  <- ifelse(totrep >0, RI("weed",treatment, dta_bal, nr_repl = totrep, h, weight),summary(lm(as.formula(paste("weed", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_pract[7,4,h]  <- nobs(lm(as.formula(paste("weed", treatment, sep ="~")), data=dta_bal, weights = weight))
+res_itt_pract[7,2,h]  <- summary(lm(as.formula(paste(paste("weed", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_pract[8,2,h]  <- summary(lm(as.formula(paste(paste("weed", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_pract[7,3,h]  <- ifelse(totrep >0, RI("weed",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"),summary(lm(as.formula(paste(paste("weed", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_pract[7,4,h]  <- nobs(lm(as.formula(paste(paste("weed", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 # fertilizer use
 res_itt_pract[9,1,h]  <-  mean(dta_bal$fert[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_pract[10,1,h]  <-  sd(dta_bal$fert[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[9,2,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_pract[10,2,h]  <- summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_pract[9,3,h]  <- ifelse(totrep >0, RI("fert",treatment , dta_bal, nr_repl = totrep, h, weight), summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,4]) 
-res_itt_pract[9,4,h]  <- nobs(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal, weights = weight))
+res_itt_pract[9,2,h]  <- summary(lm(as.formula(paste(paste("fert", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_pract[10,2,h]  <- summary(lm(as.formula(paste(paste("fert", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_pract[9,3,h]  <- ifelse(totrep >0, RI("fert",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("fert", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4]) 
+res_itt_pract[9,4,h]  <- nobs(lm(as.formula(paste(paste("fert", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ##fert_plot[1,1] <- "all fertilizer"
-##fert_plot[1,3:4] <- confint(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal, weights = weight), level=.9)[2,] /  mean(dta_bal$fert[dta_bal$messenger == "ctrl"], na.rm=T)
-##fert_plot[1,2] <-  summary(lm(as.formula(paste("fert", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1] /  mean(dta_bal$fert[dta_bal$messenger == "ctrl"], na.rm=T)
+##fert_plot[1,3:4] <- confint(lm(as.formula(paste(paste("fert", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight), level=.9)[2,] /  mean(dta_bal$fert[dta_bal$messenger == "ctrl"], na.rm=T)
+##fert_plot[1,2] <-  summary(lm(as.formula(paste(paste("fert", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1] /  mean(dta_bal$fert[dta_bal$messenger == "ctrl"], na.rm=T)
 
 #### fert = DAP/NPK
 res_itt_fert[1,1,h]  <-  mean(dta_bal$fert_dap[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_fert[2,1,h]  <-  sd(dta_bal$fert_dap[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_fert[1,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_fert[2,2,h]  <- summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_fert[1,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , dta_bal, nr_repl = totrep, h, weight) , summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_fert[1,4,h]  <- nobs(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal, weights = weight))
+res_itt_fert[1,2,h]  <- summary(lm(as.formula(paste(paste("fert_dap", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_fert[2,2,h]  <- summary(lm(as.formula(paste(paste("fert_dap", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_fert[1,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , ctrls, dta_bal, nr_repl = totrep, "weight") , summary(lm(as.formula(paste(paste("fert_dap", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_fert[1,4,h]  <- nobs(lm(as.formula(paste(paste("fert_dap", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ##fert_plot[2,1] <- "DAP/NPK"
-##fert_plot[2,3:4] <- confint(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal, weights = weight), level=.9)[2,] /  mean(dta_bal$fert_dap[dta_bal$messenger == "ctrl"], na.rm=T)
-##fert_plot[2,2] <-  summary(lm(as.formula(paste("fert_dap", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1] /  mean(dta_bal$fert_dap[dta_bal$messenger == "ctrl"], na.rm=T)
+##fert_plot[2,3:4] <- confint(lm(as.formula(paste(paste("fert_dap", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight), level=.9)[2,] /  mean(dta_bal$fert_dap[dta_bal$messenger == "ctrl"], na.rm=T)
+##fert_plot[2,2] <-  summary(lm(as.formula(paste(paste("fert_dap", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1] /  mean(dta_bal$fert_dap[dta_bal$messenger == "ctrl"], na.rm=T)
 
 #### fert = urea
 res_itt_fert[3,1,h]  <-  mean(dta_bal$fert_urea[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_fert[4,1,h]  <-  sd(dta_bal$fert_urea[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_fert[3,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_fert[4,2,h]  <- summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_fert[3,3,h]  <- ifelse(totrep >0, RI("fert_urea",treatment , dta_bal, nr_repl = totrep, h, weight) , summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_fert[3,4,h]  <- nobs(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal, weights = weight))
+res_itt_fert[3,2,h]  <- summary(lm(as.formula(paste(paste("fert_urea", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_fert[4,2,h]  <- summary(lm(as.formula(paste(paste("fert_urea", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_fert[3,3,h]  <- ifelse(totrep >0, RI("fert_urea",treatment , ctrls, dta_bal, nr_repl = totrep, "weight") , summary(lm(as.formula(paste(paste("fert_urea", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_fert[3,4,h]  <- nobs(lm(as.formula(paste(paste("fert_urea", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ##fert_plot[3,1] <- "urea"
-##fert_plot[3,3:4] <- confint(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal, weights = weight), level=.9)[2,] /  mean(dta_bal$fert_urea[dta_bal$messenger == "ctrl"], na.rm=T)
-##fert_plot[3,2] <-  summary(lm(as.formula(paste("fert_urea", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1] /  mean(dta_bal$fert_urea[dta_bal$messenger == "ctrl"], na.rm=T)
+##fert_plot[3,3:4] <- confint(lm(as.formula(paste(paste("fert_urea", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight), level=.9)[2,] /  mean(dta_bal$fert_urea[dta_bal$messenger == "ctrl"], na.rm=T)
+##fert_plot[3,2] <-  summary(lm(as.formula(paste(paste("fert_urea", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1] /  mean(dta_bal$fert_urea[dta_bal$messenger == "ctrl"], na.rm=T)
 
 #### fert = organic
 res_itt_fert[5,1,h]  <-  mean(dta_bal$fert_org[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_fert[6,1,h]  <-  sd(dta_bal$fert_org[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_fert[5,2,h]  <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_fert[6,2,h]  <- summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_fert[5,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , dta_bal, nr_repl = totrep, h, weight), summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,4]) 
-res_itt_fert[5,4,h]  <-  nobs(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal, weights = weight))
+res_itt_fert[5,2,h]  <-  summary(lm(as.formula(paste(paste("fert_org", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_fert[6,2,h]  <- summary(lm(as.formula(paste(paste("fert_org", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_fert[5,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("fert_org", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4]) 
+res_itt_fert[5,4,h]  <-  nobs(lm(as.formula(paste(paste("fert_org", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ##fert_plot[4,1] <- "organic"
-##fert_plot[4,3:4] <- confint(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal, weights = weight), level=.9)[2,] /  mean(dta_bal$fert_org[dta_bal$messenger == "ctrl"], na.rm=T)
-##fert_plot[4,2] <-  summary(lm(as.formula(paste("fert_org", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1] /  mean(dta_bal$fert_org[dta_bal$messenger == "ctrl"], na.rm=T)
+##fert_plot[4,3:4] <- confint(lm(as.formula(paste(paste("fert_org", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight), level=.9)[2,] /  mean(dta_bal$fert_org[dta_bal$messenger == "ctrl"], na.rm=T)
+##fert_plot[4,2] <-  summary(lm(as.formula(paste(paste("fert_org", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1] /  mean(dta_bal$fert_org[dta_bal$messenger == "ctrl"], na.rm=T)
 
 #dta_bal$fert_dap <- !(dta_bal$fert_dap) 
 #dta_bal$fert_org <- !(dta_bal$fert_org) 
-indexer <-  FW_index(treatment,c("fert_dap","fert_urea","fert_org"),dta_bal, nr_repl=totrep, h, weight)
+indexer <-  FW_index(treatment,c("fert_dap","fert_urea","fert_org"),ctrls,w_int2 = "weight", data =dta_bal, nr_repl=totrep )
 res_itt_fert[7,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 res_itt_fert[8,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 res_itt_fert[7,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
@@ -435,41 +399,41 @@ res_itt_fert[7,3,h] <-  indexer[[2]]
 res_itt_fert[7,4,h] <-  nobs(indexer[[1]])
 
 
+
 ###improved seed  
 res_itt_pract[11,1,h]  <-  mean(dta_bal$impseed[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_pract[12,1,h]  <-  sd(dta_bal$impseed[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_pract[11,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_pract[12,2,h]  <- summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_pract[11,3,h]  <- ifelse(totrep >0, RI("impseed",treatment , dta_bal, nr_repl = totrep, h, weight),  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,4]) 
-res_itt_pract[11,4,h]  <- nobs(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal, weights = weight))
+res_itt_pract[11,2,h]  <- summary(lm(as.formula(paste(paste("impseed", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_pract[12,2,h]  <- summary(lm(as.formula(paste(paste("impseed", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_pract[11,3,h]  <- ifelse(totrep >0, RI("impseed",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"),  summary(lm(as.formula(paste(paste("impseed", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4]) 
+res_itt_pract[11,4,h]  <- nobs(lm(as.formula(paste(paste("impseed", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ##seed_plot[1,1] <- "all seed"
-##seed_plot[1,3:4] <- confint(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal, weights = weight), level=.9)[2,] /  mean(dta_bal$impseed[dta_bal$messenger == "ctrl"], na.rm=T)
-##seed_plot[1,2] <-  summary(lm(as.formula(paste("impseed", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1] /  mean(dta_bal$impseed[dta_bal$messenger == "ctrl"], na.rm=T)
+##seed_plot[1,3:4] <- confint(lm(as.formula(paste(paste("impseed", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight), level=.9)[2,] /  mean(dta_bal$impseed[dta_bal$messenger == "ctrl"], na.rm=T)
+##seed_plot[1,2] <-  summary(lm(as.formula(paste(paste("impseed", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1] /  mean(dta_bal$impseed[dta_bal$messenger == "ctrl"], na.rm=T)
 
 
 
 ### hybrid
 res_itt_seed[1,1,h]  <-  mean(dta_bal$hybrid[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_seed[2,1,h]  <-  sd(dta_bal$hybrid[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_seed[1,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_seed[2,2,h] <- summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_seed[1,3,h] <- ifelse(totrep >0, RI("hybrid",treatment , dta_bal, nr_repl = totrep, h, weight), summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,4]) 
-res_itt_seed[1,4,h] <- nobs(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal, weights = weight))
+res_itt_seed[1,2,h] <- summary(lm(as.formula(paste(paste("hybrid", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_seed[2,2,h] <- summary(lm(as.formula(paste(paste("hybrid", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_seed[1,3,h] <- ifelse(totrep >0, RI("hybrid",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("hybrid", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4]) 
+res_itt_seed[1,4,h] <- nobs(lm(as.formula(paste(paste("hybrid", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ##seed_plot[2,1] <- "hybrid"
-##seed_plot[2,3:4] <- confint(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal, weights = weight), level=.9)[2,] /  mean(dta_bal$hybrid[dta_bal$messenger == "ctrl"], na.rm=T)
-##seed_plot[2,2] <-  summary(lm(as.formula(paste("hybrid", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1] /  mean(dta_bal$hybrid[dta_bal$messenger == "ctrl"], na.rm=T)
-
+##seed_plot[2,3:4] <- confint(lm(as.formula(paste(paste("hybrid", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight), level=.9)[2,] /  mean(dta_bal$hybrid[dta_bal$messenger == "ctrl"], na.rm=T)
+##seed_plot[2,2] <-  summary(lm(as.formula(paste(paste("hybrid", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1] /  mean(dta_bal$hybrid[dta_bal$messenger == "ctrl"], na.rm=T)
 ### opv
 res_itt_seed[3,1,h]  <-  mean(dta_bal$opv[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_seed[4,1,h]  <-  sd(dta_bal$opv[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_seed[3,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_seed[4,2,h] <- summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_seed[3,3,h] <- ifelse(totrep >0, RI("opv",treatment , dta_bal, nr_repl = totrep, h, weight), summary(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal, weights = weight))$coefficients[2,4]) 
-res_itt_seed[3,4,h] <- nobs(lm(as.formula(paste("opv", treatment, sep ="~")), data=dta_bal, weights = weight))
+res_itt_seed[3,2,h] <- summary(lm(as.formula(paste(paste("opv", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_seed[4,2,h] <- summary(lm(as.formula(paste(paste("opv", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_seed[3,3,h] <- ifelse(totrep >0, RI("opv",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("opv", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4]) 
+res_itt_seed[3,4,h] <- nobs(lm(as.formula(paste(paste("opv", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
-indexer <-  FW_index(treatment,c("hybrid","opv"),dta_bal, nr_repl=totrep, h, weight)
+indexer <-  FW_index(treatment,c("hybrid","opv"),ctrls,w_int2 = "weight", data =dta_bal, nr_repl=totrep )
 res_itt_seed[5,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 res_itt_seed[6,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 res_itt_seed[5,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
@@ -477,7 +441,8 @@ res_itt_seed[6,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_itt_seed[5,3,h] <-  indexer[[2]]
 res_itt_seed[6,4,h] <-  nobs(indexer[[1]])
 
-indexer <-  FW_index(treatment,c("day_one","space","striga","weed"),dta_bal,  nr_repl=totrep, h, weight)
+
+indexer <-  FW_index(treatment,c("day_one","space","striga","weed"),ctrls,w_int2 = "weight", data =dta_bal, nr_repl=totrep )
 res_itt_pract[21,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 res_itt_pract[22,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 res_itt_pract[21,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
@@ -490,15 +455,11 @@ res_itt_pract[21,4,h] <-  nobs(indexer[[1]])
 ##prod_plot[2,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 
 
-##res_itt_pract <- Bcorr( c("day_one","space","striga","weed", "fert","impseed", "combiner","bought_seed","chem","labour"),dta_bal, res_itt_pract ,h)
-##res_itt_fert <- Bcorr(c("fert_dap","fert_urea","fert_org"),dta_bal, res_itt_fert ,h)
-##res_itt_seed <- Bcorr(c("hybrid","opv"),dta_bal, res_itt_seed ,h)
+res_itt_pract[23,1:3 ,h] <- RI_FWER(c("day_one","space","striga","weed"),indep = treatment, ctrls=ctrls ,dta =dta_bal, p_vals = res_itt_pract[c(1,3,5,7),3,h], nr_repl = totrep, w_int="weight")
 
-#res_itt_pract[23,1:3 ,h] <- RI_FWER(c("day_one","space","striga","weed"),indep = treatment,dta_bal, res_itt_pract[c(1,3,5,7),3,h], totrep,h_int=h)
+res_itt_fert[9,1:3 ,h] <- RI_FWER(c("fert_dap","fert_urea","fert_org"),indep = treatment, ctrls=ctrls ,dta =dta_bal, p_vals = res_itt_fert[c(1,3,5),3,h], nr_repl = totrep, w_int="weight")
 
-#res_itt_fert[9,1:3 ,h] <- RI_FWER(c("fert_dap","fert_urea","fert_org"),indep = treatment,dta_bal, res_itt_fert[c(1,3,5),3,h],totrep,h_int=h)
-
-#res_itt_seed[7,1:3 ,h] <-  RI_FWER(c("hybrid","opv"),indep = treatment,dta_bal, res_itt_seed[c(1,3),3,h],totrep,h_int=h)
+res_itt_seed[7,1:3 ,h] <-  RI_FWER(c("hybrid","opv"),indep = treatment, ctrls=ctrls ,dta =dta_bal, p_vals = res_itt_seed[c(1,3),3,h], nr_repl = totrep, w_int="weight")
 
 ################################# production ###########################
 ####### does the video increases production related outcomes?
@@ -508,15 +469,15 @@ dta_bal2 <- subset(dta_bal, prod_tot>0)
 dta_bal2$log_prod_tot <- log(dta_bal2$prod_tot)
 dta_trim <- trim("log_prod_tot", dta_bal2, .05)[c("hhid","log_prod_tot")]
 dta_trim <- merge(dta_bal,dta_trim, by="hhid", all.x=T)
-dta_trim$log_prod_tot[dta_trim$attriter & is.na(dta_trim$log_prod_tot)] <- max(dta_trim$log_prod_tot, na.rm=T)
+dta_trim$log_prod_tot[dta_trim$attriter & is.na(dta_trim$log_prod_tot) & dta_trim$messenger!="ctrl"] <- max(dta_trim$log_prod_tot[dta_trim$messenger!="ctrl"], na.rm=T)
 
 ### production
 res_itt_prod[1,1,h] <- mean(dta_trim$log_prod_tot[dta_trim$messenger == "ctrl"], na.rm=T)
 res_itt_prod[2,1,h] <- sd(dta_trim$log_prod_tot[dta_trim$messenger == "ctrl"], na.rm=T)
-res_itt_prod[1,2,h] <- summary(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
-res_itt_prod[2,2,h] <- summary(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
-res_itt_prod[1,3,h] <- ifelse(totrep >0, RI("log_prod_tot",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
-res_itt_prod[1,4,h] <- nobs(lm(as.formula(paste("log_prod_tot",treatment,sep = "~")), data=dta_trim))
+res_itt_prod[1,2,h] <- summary(lm(as.formula(paste(paste("log_prod_tot",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,1]
+res_itt_prod[2,2,h] <- summary(lm(as.formula(paste(paste("log_prod_tot",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,2]
+res_itt_prod[1,3,h] <- ifelse(totrep >0, RI("log_prod_tot",treatment , ctrls, dta_trim, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("log_prod_tot",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,4])
+res_itt_prod[1,4,h] <- nobs(lm(as.formula(paste(paste("log_prod_tot",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))
 
 ## keep for index
 dta_log_tot_prod <- dta_trim
@@ -526,14 +487,15 @@ dta_bal2 <- subset(dta_bal, area_tot>0)
 dta_bal2$log_area_tot <- log(dta_bal2$area_tot)
 dta_trim <- trim("log_area_tot", dta_bal2, .05)[c("hhid","log_area_tot")]
 dta_trim <- merge(dta_bal,dta_trim, by="hhid", all.x=T)
-dta_trim$log_area_tot[dta_trim$attriter & is.na(dta_trim$log_area_tot)] <- max(dta_trim$log_area_tot, na.rm=T)
+dta_trim$log_area_tot[dta_trim$attriter & is.na(dta_trim$log_area_tot) & dta_trim$messenger!="ctrl"] <- max(dta_trim$log_area_tot[dta_trim$messenger!="ctrl"], na.rm=T)
 
 res_itt_prod[3,1,h] <- mean(dta_trim$log_area_tot[dta_trim$messenger == "ctrl"], na.rm=T)
 res_itt_prod[4,1,h] <- sd(dta_trim$log_area_tot[dta_trim$messenger == "ctrl"], na.rm=T)
-res_itt_prod[3,2,h] <- summary(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
-res_itt_prod[4,2,h] <- summary(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
-res_itt_prod[3,3,h] <- ifelse(totrep >0, RI("log_area_tot",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
-res_itt_prod[3,4,h] <- nobs(lm(as.formula(paste("log_area_tot",treatment,sep = "~")), data=dta_trim))
+res_itt_prod[3,2,h] <- summary(lm(as.formula(paste(paste("log_area_tot",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,1]
+res_itt_prod[4,2,h] <- summary(lm(as.formula(paste(paste("log_area_tot",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,2]
+res_itt_prod[3,3,h] <- ifelse(totrep >0, RI("log_area_tot",treatment , ctrls, dta_trim, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("log_area_tot",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,4])
+res_itt_prod[3,4,h] <- nobs(lm(as.formula(paste(paste("log_area_tot",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))
+
 
 ## keep for index
 dta_log_area_tot <- dta_trim[c("hhid","log_area_tot")]
@@ -544,22 +506,24 @@ dta_bal2 <- subset(dta_bal, yield_av >0)
 dta_bal2$log_yield_av <- log(dta_bal2$yield_av)
 dta_trim <- trim("log_yield_av", dta_bal2, .05)[c("hhid","log_yield_av")]
 dta_trim <- merge(dta_bal,dta_trim, by="hhid", all.x=T)
-dta_trim$log_yield_av[dta_trim$attriter & is.na(dta_trim$log_yield_av)] <- max(dta_trim$log_yield_av, na.rm=T)
+dta_trim$log_yield_av[dta_trim$attriter & is.na(dta_trim$log_yield_av) & dta_trim$messenger!="ctrl"] <- max(dta_trim$log_yield_av[dta_trim$messenger!="ctrl"], na.rm=T)
 
 res_itt_prod[5,1,h] <- mean(dta_trim$log_yield_av[dta_trim$messenger == "ctrl"], na.rm=T)
 res_itt_prod[6,1,h] <- sd(dta_trim$log_yield_av[dta_trim$messenger == "ctrl"], na.rm=T)
-res_itt_prod[5,2,h] <- summary(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
-res_itt_prod[6,2,h] <- summary(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
-res_itt_prod[5,3,h] <- ifelse(totrep >0, RI("log_yield_av",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
-res_itt_prod[5,4,h] <- nobs(lm(as.formula(paste("log_yield_av",treatment,sep = "~")), data=dta_trim))
+res_itt_prod[5,2,h] <- summary(lm(as.formula(paste(paste("log_yield_av",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,1]
+res_itt_prod[6,2,h] <- summary(lm(as.formula(paste(paste("log_yield_av",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,2]
+res_itt_prod[5,3,h] <- ifelse(totrep >0, RI("log_yield_av",treatment , ctrls, dta_trim, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("log_yield_av",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,4])
+res_itt_prod[5,4,h] <- nobs(lm(as.formula(paste(paste("log_yield_av",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))
+
 
 ### was yield better compared to normal year?
 res_itt_prod[7,1,h] <- mean(dta_bal$yield_better[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_prod[8,1,h] <- sd(dta_bal$yield_better[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_prod[7,2,h] <- summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_prod[8,2,h] <- summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_prod[7,3,h] <- ifelse(totrep >0, RI("yield_better",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_prod[7,4,h] <- nobs(lm(as.formula(paste("yield_better",treatment,sep = "~")), data=dta_bal, weights = weight))
+res_itt_prod[7,2,h] <- summary(lm(as.formula(paste(paste("yield_better",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_prod[8,2,h] <- summary(lm(as.formula(paste(paste("yield_better",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_prod[7,3,h] <- ifelse(totrep >0, RI("yield_better",treatment , ctrls, dta_trim, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("yield_better",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_prod[7,4,h] <- nobs(lm(as.formula(paste(paste("yield_better",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
+
 
 ## labour
 
@@ -567,14 +531,15 @@ dta_bal2 <- subset(dta_bal, tot_time_hh>0)
 dta_bal2$log_tot_time_hh <- log(dta_bal2$tot_time_hh)
 dta_trim <- trim("log_tot_time_hh", dta_bal2, .05)[c("hhid","log_tot_time_hh")]
 dta_trim <- merge(dta_bal,dta_trim, by="hhid", all.x=T)
-dta_trim$log_tot_time_hh[dta_trim$attriter & is.na(dta_trim$log_tot_time_hh)] <- max(dta_trim$log_tot_time_hh, na.rm=T)
+dta_trim$log_tot_time_hh[dta_trim$attriter & is.na(dta_trim$log_tot_time_hh) & dta_trim$messenger!="ctrl"] <- max(dta_trim$log_tot_time_hh[dta_trim$messenger!="ctrl"], na.rm=T)
 
 res_itt_prod[9,1,h] <- mean(dta_trim$log_tot_time_hh[dta_trim$messenger == "ctrl"], na.rm=T)
 res_itt_prod[10,1,h] <- sd(dta_trim$log_tot_time_hh[dta_trim$messenger == "ctrl"], na.rm=T)
-res_itt_prod[9,2,h] <- summary(lm(as.formula(paste("log_tot_time_hh",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
-res_itt_prod[10,2,h] <- summary(lm(as.formula(paste("log_tot_time_hh",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
-res_itt_prod[9,3,h] <- ifelse(totrep >0, RI("log_tot_time_hh",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("log_tot_time_hh",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
-res_itt_prod[9,4,h] <- nobs(lm(as.formula(paste("log_tot_time_hh",treatment,sep = "~")), data=dta_trim))
+res_itt_prod[9,2,h] <- summary(lm(as.formula(paste(paste("log_tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,1]
+res_itt_prod[10,2,h] <- summary(lm(as.formula(paste(paste("log_tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,2]
+res_itt_prod[9,3,h] <- ifelse(totrep >0, RI("log_tot_time_hh",treatment , ctrls, dta_trim, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("log_tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,4])
+res_itt_prod[9,4,h] <- nobs(lm(as.formula(paste(paste("log_tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))
+
 
 ## keep for index
 dta_log_tot_time_hh <- dta_trim[c("hhid","log_tot_time_hh")]
@@ -586,14 +551,14 @@ dta_bal2$log_labour_prod <- log(dta_bal2$prod_tot/dta_bal2$tot_time_hh)
 dta_bal2$labour_prod <- dta_bal2$prod_tot/dta_bal2$tot_time_hh
 dta_trim <- trim("log_labour_prod", dta_bal2, .05)[c("hhid","log_labour_prod")]
 dta_trim <- merge(dta_bal,dta_trim, by="hhid", all.x=T)
-dta_trim$log_labour_prod[dta_trim$attriter & is.na(dta_trim$log_labour_prod)] <- max(dta_trim$log_labour_prod, na.rm=T)
+dta_trim$log_labour_prod[dta_trim$attriter & is.na(dta_trim$log_labour_prod) & dta_trim$messenger!="ctrl"] <- max(dta_trim$log_labour_prod[dta_trim$messenger!="ctrl"], na.rm=T)
 
 res_itt_prod[11,1,h] <- mean(dta_trim$log_labour_prod[dta_trim$messenger == "ctrl"], na.rm=T)
 res_itt_prod[12,1,h] <- sd(dta_trim$log_labour_prod[dta_trim$messenger == "ctrl"], na.rm=T)
-res_itt_prod[11,2,h] <- summary(lm(as.formula(paste("log_labour_prod",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
-res_itt_prod[12,2,h] <- summary(lm(as.formula(paste("log_labour_prod",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
-res_itt_prod[11,3,h] <- ifelse(totrep >0, RI("log_labour_prod",treatment , dta_trim, nr_repl = totrep), summary(lm(as.formula(paste("tot_time_hh",treatment,sep = "~")), data=dta_trim))$coefficients[2,4]) 
-res_itt_prod[11,4,h] <- nobs(lm(as.formula(paste("log_labour_prod",treatment,sep = "~")), data=dta_trim))
+res_itt_prod[11,2,h] <- summary(lm(as.formula(paste(paste("log_labour_prod",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,1]
+res_itt_prod[12,2,h] <- summary(lm(as.formula(paste(paste("log_labour_prod",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,2]
+res_itt_prod[11,3,h] <- ifelse(totrep >0, RI("log_labour_prod",treatment , ctrls, dta_trim, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,4]) 
+res_itt_prod[11,4,h] <- nobs(lm(as.formula(paste(paste("log_labour_prod",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))
 
 ###index
 
@@ -602,7 +567,7 @@ dta_bal2 <- merge(merge(dta_log_tot_prod, dta_log_area_tot, by="hhid"),dta_log_t
 
 dta_bal2$log_area_tot <- -dta_bal2$log_area_tot
 
-indexer <- FW_index(treatment, c("log_prod_tot", "log_area_tot", "yield_better", "log_tot_time_hh"),dta_bal2, nr_repl=totrep, h, weight)
+indexer <- FW_index(treatment, c("log_prod_tot", "log_area_tot", "yield_better", "log_tot_time_hh"),ctrls,w_int2 = "weight", data =dta_bal2, nr_repl=totrep )
 res_itt_prod[13,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 res_itt_prod[14,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 res_itt_prod[13,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
@@ -614,7 +579,7 @@ res_itt_prod[13,4,h] <-  nobs(indexer[[1]])
 #prod_plot[3,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 #prod_plot[3,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 
-#res_itt_prod[15,1:3 ,h] <- RI_FWER(c("log_prod_tot", "log_area_tot", "yield_better", "tot_time_hh"),indep = treatment,dta_bal2, res_itt_prod[c(1,3,7,9),3,h], totrep,h_int=h)
+res_itt_prod[15,1:3 ,h] <- RI_FWER(c("log_prod_tot", "log_area_tot", "yield_better", "tot_time_hh"),indep = treatment, ctrls=ctrls ,dta =dta_bal2, p_vals = res_itt_prod[c(1,3,7,9),3,h], nr_repl = totrep, w_int="weight")
 
 
 ################################ welfare #############################
@@ -622,52 +587,48 @@ res_itt_prod[13,4,h] <-  nobs(indexer[[1]])
 ## better off than average
 res_itt_wel[1,1,h] <- mean(dta_bal$better_av[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_wel[2,1,h] <- sd(dta_bal$better_av[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_wel[1,2,h]  <- summary(lm(as.formula(paste("better_av",treatment,sep = "~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_wel[2,2,h]  <- summary(lm(as.formula(paste("better_av",treatment,sep = "~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_wel[1,3,h]  <- ifelse(totrep >0, RI("better_av",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("better_av",treatment,sep = "~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_wel[1,4,h]  <- nobs(lm(as.formula(paste("better_av",treatment,sep = "~")), data=dta_bal, weights = weight))
+res_itt_wel[1,2,h]  <- summary(lm(as.formula(paste(paste("better_av",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_wel[2,2,h]  <- summary(lm(as.formula(paste(paste("better_av",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_wel[1,3,h]  <- ifelse(totrep >0, RI("better_av",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("better_av",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_wel[1,4,h]  <- nobs(lm(as.formula(paste(paste("better_av",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ## better off than 6mo
 res_itt_wel[3,1,h] <- mean(dta_bal$better_6m[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_wel[4,1,h] <- sd(dta_bal$better_6m[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_wel[3,2,h]  <- summary(lm(as.formula(paste("better_6m",treatment,sep = "~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_wel[4,2,h]  <- summary(lm(as.formula(paste("better_6m",treatment,sep = "~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_wel[3,3,h]  <- ifelse(totrep >0, RI("better_6m",treatment , dta_bal, nr_repl = totrep),  summary(lm(as.formula(paste("better_6m",treatment,sep = "~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_wel[3,4,h]  <- nobs(lm(as.formula(paste("better_6m",treatment,sep = "~")), data=dta_bal, weights = weight))
+res_itt_wel[3,2,h]  <- summary(lm(as.formula(paste(paste("better_6m",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_wel[4,2,h]  <- summary(lm(as.formula(paste(paste("better_6m",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_wel[3,3,h]  <- ifelse(totrep >0, RI("better_6m",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"),  summary(lm(as.formula(paste(paste("better_6m",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_wel[3,4,h]  <- nobs(lm(as.formula(paste(paste("better_6m",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 #can eat preferred foods
 res_itt_wel[5,1,h] <- mean(dta_bal$eatpref[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_wel[6,1,h] <- sd(dta_bal$eatpref[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_wel[5,2,h]  <-  summary(lm(as.formula(paste("eatpref",treatment,sep = "~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_wel[6,2,h]  <-  summary(lm(as.formula(paste("eatpref",treatment,sep = "~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_wel[5,3,h]  <- ifelse(totrep >0, RI("eatpref",treatment , dta_bal, nr_repl = totrep),summary(lm(as.formula(paste("eatpref",treatment,sep = "~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_wel[5,4,h]  <-  nobs(lm(as.formula(paste("eatpref",treatment,sep = "~")), data=dta_bal, weights = weight))
-
+res_itt_wel[5,2,h]  <-  summary(lm(as.formula(paste(paste("eatpref",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_wel[6,2,h]  <-  summary(lm(as.formula(paste(paste("eatpref",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_wel[5,3,h]  <- ifelse(totrep >0, RI("eatpref",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"),summary(lm(as.formula(paste(paste("eatpref",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_wel[5,4,h]  <-  nobs(lm(as.formula(paste(paste("eatpref",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 #can eat enough foods
 res_itt_wel[7,1,h] <- mean(dta_bal$eatenough[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_wel[8,1,h] <- sd(dta_bal$eatenough[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_wel[7,2,h]  <- summary(lm(as.formula(paste("eatenough",treatment,sep = "~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_wel[8,2,h]  <- summary(lm(as.formula(paste("eatenough",treatment,sep = "~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_wel[7,3,h]  <- ifelse(totrep >0, RI("eatenough",treatment , dta_bal, nr_repl = totrep), summary(lm(as.formula(paste("eatenough",treatment,sep = "~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_wel[7,4,h]  <- nobs(lm(as.formula(paste("eatenough",treatment,sep = "~")), data=dta_bal, weights = weight))
-
+res_itt_wel[7,2,h]  <- summary(lm(as.formula(paste(paste("eatenough",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_wel[8,2,h]  <- summary(lm(as.formula(paste(paste("eatenough",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_wel[7,3,h]  <- ifelse(totrep >0, RI("eatenough",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("eatenough",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_wel[7,4,h]  <- nobs(lm(as.formula(paste(paste("eatenough",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 #consumption - logged and trimmed
 dta_bal2 <- subset(dta_bal, cons>0)
 dta_bal2$log_cons <- log(dta_bal2$cons)
 dta_trim <- trim("log_cons", dta_bal2, .05)[c("hhid","log_cons")]
 dta_trim <- merge(dta_bal,dta_trim, by="hhid", all.x=T)
-dta_trim$log_cons[dta_trim$attriter & is.na(dta_trim$log_cons)] <- max(dta_trim$log_cons, na.rm=T)
+dta_trim$log_cons[dta_trim$attriter & is.na(dta_trim$log_cons) & dta_trim$messenger!="ctrl"] <- max(dta_trim$log_cons[dta_trim$messenger!="ctrl"], na.rm=T)
 
 res_itt_wel[9,1,h] <- mean(dta_trim$log_cons[dta_trim$messenger == "ctrl"], na.rm=T)
 res_itt_wel[10,1,h] <- sd(dta_trim$log_cons[dta_trim$messenger == "ctrl"], na.rm=T)
-res_itt_wel[9,2,h]  <- summary(lm(as.formula(paste("log_cons",treatment,sep = "~")), data=dta_trim))$coefficients[2,1]
-res_itt_wel[10,2,h]  <- summary(lm(as.formula(paste("log_cons",treatment,sep = "~")), data=dta_trim))$coefficients[2,2]
-res_itt_wel[9,3,h]  <- ifelse(totrep >0, RI("log_cons",treatment , dta_bal2, nr_repl = totrep), summary(lm(as.formula(paste("log_cons",treatment,sep = "~")), data=dta_trim))$coefficients[2,4])
-res_itt_wel[9,4,h]  <- nobs(lm(as.formula(paste("log_cons",treatment,sep = "~")), data=dta_trim))
+res_itt_wel[9,2,h]  <- summary(lm(as.formula(paste(paste("log_cons",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,1]
+res_itt_wel[10,2,h]  <- summary(lm(as.formula(paste(paste("log_cons",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,2]
+res_itt_wel[9,3,h]  <- ifelse(totrep >0, RI("log_cons",treatment , ctrls, dta_trim, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("log_cons",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,4])
+res_itt_wel[9,4,h]  <- nobs(lm(as.formula(paste(paste("log_cons",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))
 
-
-
-indexer <- FW_index(treatment, c("better_av", "better_6m", "eatpref","eatenough","log_cons"),dta_trim,  nr_repl=totrep, h, weight)
+indexer <- FW_index(treatment, c("better_av", "better_6m", "eatpref","eatenough","log_cons"),ctrls,w_int2 = "weight", data =dta_trim, nr_repl=totrep )
 res_itt_wel[11,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 res_itt_wel[12,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 res_itt_wel[11,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
@@ -679,9 +640,7 @@ res_itt_wel[11,4,h] <-  nobs(indexer[[1]])
 #prod_plot[4,3:4] <- confint(indexer[[1]], level=.9)[2,]/ sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 #prod_plot[4,2] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 
-#prod_plot$x <- factor(prod_plot$x, levels=rev(prod_plot$x))
-#prod_plot$grp <- "video"
-#res_itt_wel[13,1:3,h] <- RI_FWER(c("better_av", "better_6m", "eatpref","eatenough","log_cons"),indep = treatment,dta_trim, res_itt_wel[c(1,3,5,7,9),3,h], totrep,h_int=h)
+res_itt_wel[13,1:3,h] <- RI_FWER(c("better_av", "better_6m", "eatpref","eatenough","log_cons"),indep = treatment, ctrls=ctrls ,dta =dta_trim, p_vals = res_itt_wel[c(1,3,5,7,9),3,h], nr_repl = totrep, w_int="weight")
 }
 
 #pdf("/home/bjvca/data/projects/digital green/endline/results/summaryplot_video.pdf")
@@ -761,25 +720,25 @@ treatment <- "(totsms>0) + (messenger != 'ctrl') +ivr+as.factor(recipient) + as.
 }
 ################################ knowledge  ############################
 
-res_tot_know[1,1,h] <- summary(ivreg(as.formula(paste("know_space",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_know[2,1,h] <-  summary(ivreg(as.formula(paste("know_space",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_know[1,2,h] <- ifelse(totrep >0, RI_IV("know_space", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("know_space",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_know[1,3,h] <- nobs(ivreg(as.formula(paste("know_space",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_know[1,1,h] <- summary(ivreg(as.formula(paste(paste("know_space",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_know[2,1,h] <-  summary(ivreg(as.formula(paste(paste("know_space",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_know[1,2,h] <- ifelse(totrep >0, RI_IV("know_space", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("know_space",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_know[1,3,h] <- nobs(ivreg(as.formula(paste(paste("know_space",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
-res_tot_know[3,1,h] <- summary(ivreg(as.formula(paste("know_combine",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_know[4,1,h] <-  summary(ivreg(as.formula(paste("know_combine",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_know[3,2,h] <- ifelse(totrep >0, RI_IV("know_combine", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("know_combine",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_know[3,3,h] <- nobs(ivreg(as.formula(paste("know_combine",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_know[3,1,h] <- summary(ivreg(as.formula(paste(paste("know_combine",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_know[4,1,h] <-  summary(ivreg(as.formula(paste(paste("know_combine",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_know[3,2,h] <- ifelse(totrep >0, RI_IV("know_combine", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("know_combine",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_know[3,3,h] <- nobs(ivreg(as.formula(paste(paste("know_combine",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
-res_tot_know[5,1,h] <- summary(ivreg(as.formula(paste("know_weed",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_know[6,1,h] <-  summary(ivreg(as.formula(paste("know_weed",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_know[5,2,h] <- ifelse(totrep >0, RI_IV("know_weed", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("know_weed",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_know[5,3,h] <- nobs(ivreg(as.formula(paste("know_weed",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_know[5,1,h] <- summary(ivreg(as.formula(paste(paste("know_weed",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_know[6,1,h] <-  summary(ivreg(as.formula(paste(paste("know_weed",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_know[5,2,h] <- ifelse(totrep >0, RI_IV("know_weed", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("know_weed",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_know[5,3,h] <- nobs(ivreg(as.formula(paste(paste("know_weed",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
-res_tot_know[7,1,h] <- summary(ivreg(as.formula(paste("know_armyworm",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_know[8,1,h] <-  summary(ivreg(as.formula(paste("know_armyworm",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_know[7,2,h] <- ifelse(totrep >0, RI_IV("know_armyworm", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("know_armyworm",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_know[7,3,h] <- nobs(ivreg(as.formula(paste("know_armyworm",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_know[7,1,h] <- summary(ivreg(as.formula(paste(paste("know_armyworm",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_know[8,1,h] <-  summary(ivreg(as.formula(paste(paste("know_armyworm",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_know[7,2,h] <- ifelse(totrep >0, RI_IV("know_armyworm", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("know_armyworm",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_know[7,3,h] <- nobs(ivreg(as.formula(paste(paste("know_armyworm",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ### no need to include armyworm in the index because we do not really expect an effect
 indexer <- FW_index_IV(treatment, c("know_space", "know_combine", "know_weed"),dta_bal, nr_repl=totrep, h, weight)
@@ -792,47 +751,47 @@ res_tot_know[9,3,h]  <- nobs(indexer[[1]])
 
 ################################# practices #############################
 
-res_tot_pract[1,1,h]  <- summary(ivreg(as.formula(paste("day_one",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_pract[2,1,h] <- summary(ivreg(as.formula(paste("day_one",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_pract[1,2,h]  <- ifelse(totrep >0, RI_IV("day_one", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("day_one",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_pract[1,3,h]  <- nobs(ivreg(as.formula(paste("day_one",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_pract[1,1,h]  <- summary(ivreg(as.formula(paste(paste("day_one",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_pract[2,1,h] <- summary(ivreg(as.formula(paste(paste("day_one",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_pract[1,2,h]  <- ifelse(totrep >0, RI_IV("day_one", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("day_one",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_pract[1,3,h]  <- nobs(ivreg(as.formula(paste(paste("day_one",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 
 #### used recommended spacing use on at lease one plot as reported by at least one spouse
-res_tot_pract[3,1,h]  <- summary(ivreg(as.formula(paste("space",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_pract[4,1,h] <- summary(ivreg(as.formula(paste("space",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_pract[3,2,h]  <- ifelse(totrep >0, RI_IV("space", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("space",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_pract[3,3,h]  <- nobs(ivreg(as.formula(paste("space",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_pract[3,1,h]  <- summary(ivreg(as.formula(paste(paste("space",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_pract[4,1,h] <- summary(ivreg(as.formula(paste(paste("space",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_pract[3,2,h]  <- ifelse(totrep >0, RI_IV("space", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("space",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_pract[3,3,h]  <- nobs(ivreg(as.formula(paste(paste("space",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ## used recommended way to fight striga - this should be changed to include info of all plots 
-res_tot_pract[5,1,h]  <- summary(ivreg(as.formula(paste("striga",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_pract[6,1,h] <- summary(ivreg(as.formula(paste("striga",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_pract[5,2,h]  <- ifelse(totrep >0, RI_IV("striga", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("striga",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_pract[5,3,h]  <- nobs(ivreg(as.formula(paste("striga",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_pract[5,1,h]  <- summary(ivreg(as.formula(paste(paste("striga",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_pract[6,1,h] <- summary(ivreg(as.formula(paste(paste("striga",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_pract[5,2,h]  <- ifelse(totrep >0, RI_IV("striga", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("striga",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_pract[5,3,h]  <- nobs(ivreg(as.formula(paste(paste("striga",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ## weeded on recommended timing? - this should be changed to include info of all plots 
-res_tot_pract[7,1,h]  <- summary(ivreg(as.formula(paste("weed",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_pract[8,1,h] <- summary(ivreg(as.formula(paste("weed",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_pract[7,2,h]  <- ifelse(totrep >0, RI_IV("weed", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("weed",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_pract[7,3,h]  <- nobs(ivreg(as.formula(paste("weed",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_pract[7,1,h]  <- summary(ivreg(as.formula(paste(paste("weed",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_pract[8,1,h] <- summary(ivreg(as.formula(paste(paste("weed",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_pract[7,2,h]  <- ifelse(totrep >0, RI_IV("weed", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("weed",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_pract[7,3,h]  <- nobs(ivreg(as.formula(paste(paste("weed",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 #### fert = DAP/NPK
-res_tot_fert[1,1,h]  <- summary(ivreg(as.formula(paste("fert_dap",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_fert[2,1,h] <- summary(ivreg(as.formula(paste("fert_dap",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_fert[1,2,h]  <- ifelse(totrep >0, RI_IV("fert_dap", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("fert_dap",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_fert[1,3,h]  <- nobs(ivreg(as.formula(paste("fert_dap",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_fert[1,1,h]  <- summary(ivreg(as.formula(paste(paste("fert_dap",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_fert[2,1,h] <- summary(ivreg(as.formula(paste(paste("fert_dap",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_fert[1,2,h]  <- ifelse(totrep >0, RI_IV("fert_dap", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("fert_dap",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_fert[1,3,h]  <- nobs(ivreg(as.formula(paste(paste("fert_dap",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 #### fert = urea
-res_tot_fert[3,1,h]  <- summary(ivreg(as.formula(paste("fert_urea",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_fert[4,1,h] <- summary(ivreg(as.formula(paste("fert_urea",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_fert[3,2,h]  <- ifelse(totrep >0, RI_IV("fert_urea", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("fert_urea",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_fert[3,3,h]  <- nobs(ivreg(as.formula(paste("fert_urea",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_fert[3,1,h]  <- summary(ivreg(as.formula(paste(paste("fert_urea",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_fert[4,1,h] <- summary(ivreg(as.formula(paste(paste("fert_urea",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_fert[3,2,h]  <- ifelse(totrep >0, RI_IV("fert_urea", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("fert_urea",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_fert[3,3,h]  <- nobs(ivreg(as.formula(paste(paste("fert_urea",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 #### fert = organic
-res_tot_fert[5,1,h]  <- summary(ivreg(as.formula(paste("fert_org",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_fert[6,1,h] <- summary(ivreg(as.formula(paste("fert_org",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_fert[5,2,h]  <- ifelse(totrep >0, RI_IV("fert_org", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("fert_org",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_fert[5,3,h]  <- nobs(ivreg(as.formula(paste("fert_org",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_fert[5,1,h]  <- summary(ivreg(as.formula(paste(paste("fert_org",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_fert[6,1,h] <- summary(ivreg(as.formula(paste(paste("fert_org",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_fert[5,2,h]  <- ifelse(totrep >0, RI_IV("fert_org", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("fert_org",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_fert[5,3,h]  <- nobs(ivreg(as.formula(paste(paste("fert_org",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ### fert_index
 indexer <- FW_index_IV(treatment ,c("fert_dap","fert_urea","fert_org"),dta_bal, nr_repl=totrep, h, weight)
@@ -842,15 +801,15 @@ res_tot_fert[7,2,h] <- indexer[[2]]
 res_tot_fert[7,3,h]  <- nobs(indexer[[1]])
 
 ##improved seed  
-res_tot_seed[1,1,h]  <- summary(ivreg(as.formula(paste("hybrid",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_seed[2,1,h] <- summary(ivreg(as.formula(paste("hybrid",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_seed[1,2,h]  <- ifelse(totrep >0, RI_IV("hybrid", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("hybrid",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_seed[1,3,h]  <- nobs(ivreg(as.formula(paste("hybrid",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_seed[1,1,h]  <- summary(ivreg(as.formula(paste(paste("hybrid",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_seed[2,1,h] <- summary(ivreg(as.formula(paste(paste("hybrid",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_seed[1,2,h]  <- ifelse(totrep >0, RI_IV("hybrid", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("hybrid",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_seed[1,3,h]  <- nobs(ivreg(as.formula(paste(paste("hybrid",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
-res_tot_seed[3,1,h]  <- summary(ivreg(as.formula(paste("opv",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_seed[4,1,h] <- summary(ivreg(as.formula(paste("opv",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_seed[3,2,h]  <- ifelse(totrep >0, RI_IV("opv", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("opv",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_seed[3,3,h]  <- nobs(ivreg(as.formula(paste("opv",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_seed[3,1,h]  <- summary(ivreg(as.formula(paste(paste("opv",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_seed[4,1,h] <- summary(ivreg(as.formula(paste(paste("opv",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_seed[3,2,h]  <- ifelse(totrep >0, RI_IV("opv", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("opv",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_seed[3,3,h]  <- nobs(ivreg(as.formula(paste(paste("opv",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 indexer <- FW_index_IV(treatment ,c("hybrid","opv","fert_org"),dta_bal, nr_repl=totrep, h, weight)
 res_tot_seed[5,1,h] <- summary(indexer[[1]])$coefficients[2,1]
@@ -875,10 +834,10 @@ dta_trim <- trim("log_prod_tot", dta_bal2, .05)
 ### production
 
 
-res_tot_prod[1,1,h]  <- summary(ivreg(as.formula(paste("log_prod_tot",treatment,sep="~")), data=dta_trim))$coefficients[2,1]
-res_tot_prod[2,1,h] <- summary(ivreg(as.formula(paste("log_prod_tot",treatment,sep="~")), data=dta_trim))$coefficients[2,2]
-res_tot_prod[1,2,h]  <- ifelse(totrep >0, RI_IV("log_prod_tot", treatment , dta_trim,  totrep, h, weight), summary(ivreg(as.formula(paste("log_prod_tot",treatment,sep="~")), data=dta_trim))$coefficients[2,4])
-res_tot_prod[1,3,h]  <- nobs(ivreg(as.formula(paste("log_prod_tot",treatment,sep="~")), data=dta_trim))
+res_tot_prod[1,1,h]  <- summary(ivreg(as.formula(paste(paste("log_prod_tot",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,1]
+res_tot_prod[2,1,h] <- summary(ivreg(as.formula(paste(paste("log_prod_tot",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,2]
+res_tot_prod[1,2,h]  <- ifelse(totrep >0, RI_IV("log_prod_tot", treatment , dta_trim,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("log_prod_tot",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,4])
+res_tot_prod[1,3,h]  <- nobs(ivreg(as.formula(paste(paste("log_prod_tot",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))
 
 ### area
 
@@ -887,10 +846,10 @@ dta_bal2$log_area_tot <- log(dta_bal2$area_tot)
 
 dta_trim <- trim("log_area_tot", dta_bal2, .05)
 
-res_tot_prod[3,1,h]  <- summary(ivreg(as.formula(paste("log_area_tot",treatment,sep="~")), data=dta_trim))$coefficients[2,1]
-res_tot_prod[4,1,h] <- summary(ivreg(as.formula(paste("log_area_tot",treatment,sep="~")), data=dta_trim))$coefficients[2,2]
-res_tot_prod[3,2,h]  <- ifelse(totrep >0, RI_IV("log_area_tot", treatment , dta_trim,  totrep, h, weight), summary(ivreg(as.formula(paste("log_area_tot",treatment,sep="~")), data=dta_trim))$coefficients[2,4])
-res_tot_prod[3,3,h]  <- nobs(ivreg(as.formula(paste("log_area_tot",treatment,sep="~")), data=dta_trim))
+res_tot_prod[3,1,h]  <- summary(ivreg(as.formula(paste(paste("log_area_tot",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,1]
+res_tot_prod[4,1,h] <- summary(ivreg(as.formula(paste(paste("log_area_tot",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,2]
+res_tot_prod[3,2,h]  <- ifelse(totrep >0, RI_IV("log_area_tot", treatment , dta_trim,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("log_area_tot",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,4])
+res_tot_prod[3,3,h]  <- nobs(ivreg(as.formula(paste(paste("log_area_tot",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))
 
 ###yield
 
@@ -898,18 +857,18 @@ dta_bal2 <- subset(dta_bal, yield_av >0)
 dta_bal2$log_yield_av <- log(dta_bal2$yield_av)
 dta_trim <- trim("log_yield_av", dta_bal2, .05)
 
-res_tot_prod[5,1,h]  <- summary(ivreg(as.formula(paste("log_yield_av",treatment,sep="~")), data=dta_trim))$coefficients[2,1]
-res_tot_prod[6,1,h] <- summary(ivreg(as.formula(paste("log_yield_av",treatment,sep="~")), data=dta_trim))$coefficients[2,2]
-res_tot_prod[5,2,h]  <- ifelse(totrep >0, RI_IV("log_yield_av", treatment , dta_trim,  totrep, h, weight), summary(ivreg(as.formula(paste("log_yield_av",treatment,sep="~")), data=dta_trim))$coefficients[2,4])
-res_tot_prod[5,3,h]  <- nobs(ivreg(as.formula(paste("log_yield_av",treatment,sep="~")), data=dta_trim))
+res_tot_prod[5,1,h]  <- summary(ivreg(as.formula(paste(paste("log_yield_av",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,1]
+res_tot_prod[6,1,h] <- summary(ivreg(as.formula(paste(paste("log_yield_av",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,2]
+res_tot_prod[5,2,h]  <- ifelse(totrep >0, RI_IV("log_yield_av", treatment , dta_trim,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("log_yield_av",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,4])
+res_tot_prod[5,3,h]  <- nobs(ivreg(as.formula(paste(paste("log_yield_av",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))
 
 
 ### was yield better compared to normal year?
 
-res_tot_prod[7,1,h]  <- summary(ivreg(as.formula(paste("yield_better",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_prod[8,1,h] <- summary(ivreg(as.formula(paste("yield_better",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_prod[7,2,h]  <- ifelse(totrep >0, RI_IV("yield_better", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("yield_better",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_prod[7,3,h]  <- nobs(ivreg(as.formula(paste("yield_better",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_prod[7,1,h]  <- summary(ivreg(as.formula(paste(paste("yield_better",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_prod[8,1,h] <- summary(ivreg(as.formula(paste(paste("yield_better",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_prod[7,2,h]  <- ifelse(totrep >0, RI_IV("yield_better", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("yield_better",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_prod[7,3,h]  <- nobs(ivreg(as.formula(paste(paste("yield_better",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 
 ## labour
@@ -918,10 +877,10 @@ dta_bal2 <- subset(dta_bal, tot_time_hh>0)
 dta_bal2$log_tot_time_hh <- log(dta_bal2$tot_time_hh)
 dta_trim <- trim("log_tot_time_hh", dta_bal2, .05)
 
-res_tot_prod[9,1,h]  <- summary(ivreg(as.formula(paste("log_tot_time_hh",treatment,sep="~")), data=dta_trim))$coefficients[2,1]
-res_tot_prod[10,1,h] <- summary(ivreg(as.formula(paste("log_tot_time_hh",treatment,sep="~")), data=dta_trim))$coefficients[2,2]
-res_tot_prod[9,2,h]  <- ifelse(totrep >0, RI_IV("log_tot_time_hh", treatment , dta_trim,  totrep, h, weight), summary(ivreg(as.formula(paste("log_tot_time_hh",treatment,sep="~")), data=dta_trim))$coefficients[2,4])
-res_tot_prod[9,3,h]  <- nobs(ivreg(as.formula(paste("log_tot_time_hh",treatment,sep="~")), data=dta_trim))
+res_tot_prod[9,1,h]  <- summary(ivreg(as.formula(paste(paste("log_tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,1]
+res_tot_prod[10,1,h] <- summary(ivreg(as.formula(paste(paste("log_tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,2]
+res_tot_prod[9,2,h]  <- ifelse(totrep >0, RI_IV("log_tot_time_hh", treatment , dta_trim,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("log_tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,4])
+res_tot_prod[9,3,h]  <- nobs(ivreg(as.formula(paste(paste("log_tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))
 
 
 ### labour productivity
@@ -931,10 +890,10 @@ dta_bal2$log_labour_prod <- log(dta_bal2$prod_tot/dta_bal2$tot_time_hh)
 dta_bal2$labour_prod <- dta_bal2$prod_tot/dta_bal2$tot_time_hh
 dta_trim <- trim("log_labour_prod", dta_bal2, .05)
 
-res_tot_prod[11,1,h]  <- summary(ivreg(as.formula(paste("log_labour_prod",treatment,sep="~")), data=dta_trim))$coefficients[2,1]
-res_tot_prod[12,1,h] <- summary(ivreg(as.formula(paste("log_labour_prod",treatment,sep="~")), data=dta_trim))$coefficients[2,2]
-res_tot_prod[11,2,h]  <- ifelse(totrep >0, RI_IV("log_labour_prod", treatment , dta_trim,  totrep, h, weight), summary(ivreg(as.formula(paste("log_labour_prod",treatment,sep="~")), data=dta_trim))$coefficients[2,4])
-res_tot_prod[11,3,h]  <- nobs(ivreg(as.formula(paste("log_labour_prod",treatment,sep="~")), data=dta_trim))
+res_tot_prod[11,1,h]  <- summary(ivreg(as.formula(paste(paste("log_labour_prod",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,1]
+res_tot_prod[12,1,h] <- summary(ivreg(as.formula(paste(paste("log_labour_prod",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,2]
+res_tot_prod[11,2,h]  <- ifelse(totrep >0, RI_IV("log_labour_prod", treatment , dta_trim,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("log_labour_prod",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,4])
+res_tot_prod[11,3,h]  <- nobs(ivreg(as.formula(paste(paste("log_labour_prod",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))
 
 
 
@@ -960,23 +919,23 @@ res_tot_prod[13,3,h]  <- nobs(indexer[[1]])
 ################################## disposal ##########################
 #### maize consumed
 
-res_tot_disp[1,1,h]  <- summary(ivreg(as.formula(paste("cons_maize_yes",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_disp[2,1,h] <- summary(ivreg(as.formula(paste("cons_maize_yes",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_disp[1,2,h]  <- ifelse(totrep >0, RI_IV("cons_maize_yes", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("cons_maize_yes",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_disp[1,3,h]  <- nobs(ivreg(as.formula(paste("cons_maize_yes",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_disp[1,1,h]  <- summary(ivreg(as.formula(paste(paste("cons_maize_yes",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_disp[2,1,h] <- summary(ivreg(as.formula(paste(paste("cons_maize_yes",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_disp[1,2,h]  <- ifelse(totrep >0, RI_IV("cons_maize_yes", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("cons_maize_yes",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_disp[1,3,h]  <- nobs(ivreg(as.formula(paste(paste("cons_maize_yes",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 
 ### sold maize?
-res_tot_disp[3,1,h]  <- summary(ivreg(as.formula(paste("sold_maize",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_disp[4,1,h] <- summary(ivreg(as.formula(paste("sold_maize",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_disp[3,2,h]  <- ifelse(totrep >0, RI_IV("sold_maize", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("sold_maize",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_disp[3,3,h]  <- nobs(ivreg(as.formula(paste("sold_maize",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_disp[3,1,h]  <- summary(ivreg(as.formula(paste(paste("sold_maize",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_disp[4,1,h] <- summary(ivreg(as.formula(paste(paste("sold_maize",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_disp[3,2,h]  <- ifelse(totrep >0, RI_IV("sold_maize", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("sold_maize",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_disp[3,3,h]  <- nobs(ivreg(as.formula(paste(paste("sold_maize",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ###saved seed?
-res_tot_disp[5,1,h]  <- summary(ivreg(as.formula(paste("save_seed",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_disp[6,1,h] <- summary(ivreg(as.formula(paste("save_seed",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_disp[5,2,h]  <- ifelse(totrep >0, RI_IV("save_seed", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("save_seed",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_disp[5,3,h]  <- nobs(ivreg(as.formula(paste("save_seed",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_disp[5,1,h]  <- summary(ivreg(as.formula(paste(paste("save_seed",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_disp[6,1,h] <- summary(ivreg(as.formula(paste(paste("save_seed",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_disp[5,2,h]  <- ifelse(totrep >0, RI_IV("save_seed", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("save_seed",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_disp[5,3,h]  <- nobs(ivreg(as.formula(paste(paste("save_seed",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 
 
@@ -996,30 +955,30 @@ res_tot_disp[7,3,h]  <- nobs(indexer[[1]])
 
 ## better off than average
 
-res_tot_wel[1,1,h]  <- summary(ivreg(as.formula(paste("better_av",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_wel[2,1,h] <- summary(ivreg(as.formula(paste("better_av",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_wel[1,2,h]  <- ifelse(totrep >0, RI_IV("better_av", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("better_av",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_wel[1,3,h]  <- nobs(ivreg(as.formula(paste("better_av",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_wel[1,1,h]  <- summary(ivreg(as.formula(paste(paste("better_av",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_wel[2,1,h] <- summary(ivreg(as.formula(paste(paste("better_av",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_wel[1,2,h]  <- ifelse(totrep >0, RI_IV("better_av", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("better_av",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_wel[1,3,h]  <- nobs(ivreg(as.formula(paste(paste("better_av",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 
 ## better off than 6mo
 
-res_tot_wel[3,1,h]  <- summary(ivreg(as.formula(paste("better_6m",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_wel[4,1,h] <- summary(ivreg(as.formula(paste("better_6m",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_wel[3,2,h]  <- ifelse(totrep >0, RI_IV("better_6m", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("better_6m",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_wel[3,3,h]  <- nobs(ivreg(as.formula(paste("better_6m",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_wel[3,1,h]  <- summary(ivreg(as.formula(paste(paste("better_6m",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_wel[4,1,h] <- summary(ivreg(as.formula(paste(paste("better_6m",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_wel[3,2,h]  <- ifelse(totrep >0, RI_IV("better_6m", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("better_6m",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_wel[3,3,h]  <- nobs(ivreg(as.formula(paste(paste("better_6m",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 ##can eat preferred foods
-res_tot_wel[5,1,h]  <- summary(ivreg(as.formula(paste("eatpref",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_wel[6,1,h] <- summary(ivreg(as.formula(paste("eatpref",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_wel[5,2,h]  <- ifelse(totrep >0, RI_IV("eatpref", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("eatpref",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_wel[5,3,h]  <- nobs(ivreg(as.formula(paste("eatpref",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_wel[5,1,h]  <- summary(ivreg(as.formula(paste(paste("eatpref",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_wel[6,1,h] <- summary(ivreg(as.formula(paste(paste("eatpref",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_wel[5,2,h]  <- ifelse(totrep >0, RI_IV("eatpref", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("eatpref",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_wel[5,3,h]  <- nobs(ivreg(as.formula(paste(paste("eatpref",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 
 ## enough to eat
-res_tot_wel[7,1,h]  <- summary(ivreg(as.formula(paste("eatenough",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_tot_wel[8,1,h] <- summary(ivreg(as.formula(paste("eatenough",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_tot_wel[7,2,h]  <- ifelse(totrep >0, RI_IV("eatenough", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste("eatenough",treatment,sep="~")), data=dta_bal, weights = weight))$coefficients[2,4])
-res_tot_wel[7,3,h]  <- nobs(ivreg(as.formula(paste("eatenough",treatment,sep="~")), data=dta_bal, weights = weight))
+res_tot_wel[7,1,h]  <- summary(ivreg(as.formula(paste(paste("eatenough",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
+res_tot_wel[8,1,h] <- summary(ivreg(as.formula(paste(paste("eatenough",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
+res_tot_wel[7,2,h]  <- ifelse(totrep >0, RI_IV("eatenough", treatment , dta_bal,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("eatenough",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_tot_wel[7,3,h]  <- nobs(ivreg(as.formula(paste(paste("eatenough",treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 
 #consumption - logged and trimmed
@@ -1027,10 +986,10 @@ dta_bal2 <- subset(dta_bal, cons>0)
 dta_bal2$log_cons <- log(dta_bal2$cons)
 dta_trim <- trim("log_cons", dta_bal2, .05)
 
-res_tot_wel[9,1,h]  <- summary(ivreg(as.formula(paste("log_cons",treatment,sep="~")), data=dta_trim))$coefficients[2,1]
-res_tot_wel[10,1,h] <- summary(ivreg(as.formula(paste("log_cons",treatment,sep="~")), data=dta_trim))$coefficients[2,2]
-res_tot_wel[9,2,h]  <- ifelse(totrep >0, RI_IV("log_cons", treatment , dta_trim,  totrep, h, weight), summary(ivreg(as.formula(paste("log_cons",treatment,sep="~")), data=dta_trim))$coefficients[2,4])
-res_tot_wel[9,3,h]  <- nobs(ivreg(as.formula(paste("log_cons",treatment,sep="~")), data=dta_trim))
+res_tot_wel[9,1,h]  <- summary(ivreg(as.formula(paste(paste("log_cons",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,1]
+res_tot_wel[10,1,h] <- summary(ivreg(as.formula(paste(paste("log_cons",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,2]
+res_tot_wel[9,2,h]  <- ifelse(totrep >0, RI_IV("log_cons", treatment , dta_trim,  totrep, h, weight), summary(ivreg(as.formula(paste(paste("log_cons",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,4])
+res_tot_wel[9,3,h]  <- nobs(ivreg(as.formula(paste(paste("log_cons",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))
 
 
 
