@@ -1,0 +1,1965 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Reviewer 1 - Referee report: AJAE MS 19030, “Information and communication
+ technologies (ICTs) to provide agricultural advice to smallholder farmers:
+ Experimental evidence from Uganda.” 
+\end_layout
+
+\begin_layout Standard
+This paper presents the results of an RCT designed to measure the impact
+ of agricultural extension information for smallholder maize farmers in
+ eastern Uganda provided in three ways using ICT: (i) informational videos
+ shown to farmers (in-person on a tablet, twice), (ii) an invitation to
+ an IVR-based information hotline that farmers could call on demand, and
+ (iii) reminder SMS messages about agricultural practices and the hotline.
+ The intervention was incremental---other than a pure control group, treated
+ farmers received (i), (i) and (ii), or (i), (ii), and (iii) (i.e.
+ no farmers received an invitation to the IVR-based hotline without also
+ seeing the videos).
+ The authors find that farmers retain the new information provided to them
+ in the videos and that they change their behavior accordingly, leading
+ to an increase in yields of 10 percent.
+ They find no increased impact of inviting farmers to the IVR-based hotline
+ nor of the reminder SMS messages.
+ 
+\end_layout
+
+\begin_layout Standard
+Perhaps the greatest strength of this study is the care which the authors
+ put into what information was provided to farmers and when.
+ This is evident in the description of the process by which the authors
+ determined what information to provide farmers and how to package it.
+ It is no surprise to me given this care that the information was valuable
+ and that farmers absorbed it and some acted on it.
+ As such, I believe this paper presents a clear contribution in how agricultural
+ extension information provision, if done carefully, can have an impact.
+ This is especially important given how split the literature is on the possible
+ impacts of information provision for farmers.
+ 
+\end_layout
+
+\begin_layout Standard
+At the same time, perhaps the two greatest weaknesses of this study are
+ both features of the design that are fixed---the incremental design rather
+ than a true test of supply-driven versus demand-driven information and
+ the short-term nature of the outcomes.
+ In the former case, the authors (I believe rightfully) highlight the tension
+ between supply-driven information provision (experts deciding what information
+ farmers would benefit from and giving it to them) and demand-driven (making
+ information available but letting farmers seek out what information they
+ want when they want it).
+ But then the incremental design of the study prohibits the authors from
+ actually testing supply- vs demand-driven information provision in a meaningful
+ way.
+ The challenge with the short-term nature of the outcomes is that the authors
+ find increased yield per acre of land for treated farmers relative to control
+ but no increase in total maize output and, at the same time, changes in
+ inputs.
+ We are left not knowing if households are actually better off in the short
+ term, or even better off in the sense that they may have made changes that
+ come at a cost in the short-term but are worthwhile in the medium-/long-term.
+ 
+\end_layout
+
+\begin_layout Standard
+While these two weaknesses are fixed, I believe the authors can better address
+ them: 
+\end_layout
+
+\begin_layout Standard
+1.
+ While the paper is very clear that only incremental impacts are being measured
+ of the second and third intervention, I still find the supply- versus demand-dr
+iven framing to be misleading.
+ This is especially the case given the very low take-up of the IVR-based
+ hotline.
+ I would remove it from front-and-center (i.e.
+ the intro and research aim sections) and instead discuss this tension and
+ exactly what this study is able to tell us about supply versus demand in
+ a short section at the end of the results, or in the conclusion.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+We agree that putting this front-and-center can create the expectation that
+ we are going to implement a horse race type experiment instead of the increment
+al design we use.
+ We now present the intervention more as an extension package with different
+ components.
+ We have followed the suggestion and have deferred the discussion on the
+ different characteristics the components of the intervention to the end
+ of the paper.
+ The demand driven nature of the IVR is mentioned in the context of the
+ low take-up, which in turn may explain the null results for the incremental
+ IVR effect.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Changes made to the manuscript: We have removed the discussion on supply
+ versus demand driven technologies from the introduction and the research
+ aims section and the following paragraph has been added in the conclusion:
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Different information technologies have different characteristics, making
+ their effectiveness highly context specific.
+ This may help explain why some components of our design seem to be effective
+ for particular outcomes, while others are not.
+ For instance, to introduce a new agronomic practice or technology (such
+ as plant spacing of 75cm x 30cm with a reduced seed rate of 1 seed per
+ hill), showing a video may be more effective than a demand-driven technology
+ such as a hot-line, where farmers are assumed to be aware of their information
+ needs.
+ At the same time, a video shown on a tablet computer is generally a one-off
+ intervention, and particular details such as the exact name and dose of
+ a new type of seed may be missed or easily forgotten by farmers.
+ Access to a demand driven information technology such as a hot-line may
+ thus be more effective if agronomic practices are complex or require precise
+ implementation.
+ However, if there is no demand for such a technology (or take-up is constrained
+ by other factors), information is also not disseminated.
+ SMS messages are often framed as a supply-driven behavioral 
+\begin_inset Quotes eld
+\end_inset
+
+nudge
+\begin_inset Quotes erd
+\end_inset
+
+ designed to remind people to make decisions or take actions toward some
+ particular objective.
+ Timely reminders have often been found very effective in overcoming inertia,
+ procrastination, competing obligations, or simple forgetfulness of human
+ beings 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Sunstein2014"
+
+\end_inset
+
+.
+ However, SMS messages are short, which may be a problem when complex informatio
+n needs to be disseminated.
+ Farmers also need to be literate.
+\end_layout
+
+\begin_layout Standard
+2.
+ On the short-term nature of the outcomes measured, I think that the paper
+ would benefit from a direct discussion of the potential costs and benefits
+ of the changes that farmers make in response to treatment.
+ Does the recommended planting spacing take the same time or more or less
+ in terms of farm labor? And how labor-costly is increased weeding and pest
+ control? And the authors should be able to back-of-the-envelope prices
+ of different fertilizer and seed inputs and give us a sense of whether
+ farmers are investing more as a result of the changes that they are making.
+ And if we assume they in the next planting season use all of their land
+ with a 10% higher yield, would they be better off? Put another way, if
+ farmers are actually spending the same amount on inputs (including labor)
+ but are changing to a more productive mix, they would necessarily be better
+ off and that should be a highlight of the paper.
+\end_layout
+
+\begin_layout Standard
+I have several other major comments: 
+\end_layout
+
+\begin_layout Standard
+3.
+ I think it is too late to first mention the poor take-up of the IVR-based
+ hotline on page 12.
+ I think that it should be highlighted from the intro and on as a potential
+ reason for the lack of impacts.
+ Relatedly, I think that the empirical results on the IVR-system take-up
+ and SMS message receipt should be presented, including both the LATE results
+ themselves and regressions of take-up on farmer characteristics to help
+ interpret selection into take-up.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Reviewer 2 (R2.2) also suggests a more in-depth discussion of the LATE-results.
+ This reviewer's main concern is related to potential contamination of the
+ control group to explain the lack of impact found for the IVR.
+ Also reviewer 3 suggests that the lack of impact of IVR as assessed by
+ the ITT may be due to the low take up (R3.9).
+ The original submission of this manuscript was accompanied by a pdf document
+ entitled 
+\begin_inset Quotes eld
+\end_inset
+
+additional_info.pdf
+\begin_inset Quotes erd
+\end_inset
+
+ of materials we would have liked to make available in on-line appendices.
+ It included the 2SLS (LATE) regressions.
+ Apparently, this was not available to the reviewers.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+We appreciate the suggestions by the reviewers and now discuss the low takeup
+ of the IVR intervention earlier in the paper.
+ In a section entitled additional analysis, explain that farmers self select
+ into the IVR treatment and that also SMS reception is not universal.
+ We then present regressions that show how uptake/message reception is correlate
+d to baseline characteristics.
+ We discuss LATE effects briefly, and refer to tables in the appendix for
+ completeness.
+ We note that results do not change all that much.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+We then reflect on potential reasons for the lack of impact.
+ We look at take up/message reception and using simple back of the envelope
+ calculations show the minimum detectable effect size and how it is affected
+ by low compliance.
+ We then argue that contamination is unlikely to lead to a downward bias,
+ as only 1 percent of households in the control group called the IVR.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+We then discuss a particular concern with our measure of compliance.
+ In particular, we suspect that LATE in our context would overestimate the
+ impact of the IVR.
+ The reason is that our indicator of take up of the intervention is likely
+ to be measured with significant error.
+ In particular, our indicator of compliance is taken from the IVR system
+ log, where recorded telephone numbers are matched to phone numbers that
+ were recorded during baseline data collection.
+ This indicator is likely to severely under-report true compliance, as encourage
+d farmers may use different phones to call the IVR.
+ This is illustrated by the fact that about 430 unique calls were made to
+ the system, representing about 18 percent of encouraged households, hence
+ almost doubling compliance.
+ Using our measure of compliance, we can not maintain that the independence
+ assumption holds, as some of the potential outcomes are directly determined
+ by the instrument.
+ The problem becomes clear when we think about LATE as the Wald estimator
+ that scales the ITT by compliance.
+ In our case, the ITT will be estimated on the basis of all 430 farmers
+ that called in.
+ Our measure of compliance will force all the impact of the treatment to
+ work through the 214 households that show up in the IVR log and could be
+ identified in the baseline, which in the case of a positive impact would
+ lead to an overestimate of the impact of the treatment on compliers.
+ It is well know that especially in the context of a weak first stage the
+ bias can become extremely large 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "duflo2007using"
+
+\end_inset
+
+.
+ We thus conclude that LATE results are difficult to interpret and suggest
+ to focus on the ITT effects.
+\end_layout
+
+\begin_layout Standard
+4.
+ It would be very helpful to better understand the population of study in
+ this paper relative to those studied in similar interventions (i.e.
+ representativeness to other populations in Africa, and even South Asia
+ and/or Latin America) and the result of this paper relative to other results
+ in terms of magnitudes.
+ The paper says “the use of modern inputs...is very low in Uganda” and “Maize
+ is especially important in eastern Uganda,” for example.
+ Both of these comments could be backed with data.
+ Similarly, while I believe the sampling was done correctly, the UNHS could
+ be used to empirically show how representative the finally selected HHs
+ are relative to Uganda as a whole, etc.
+\end_layout
+
+\begin_layout Standard
+5.
+ Relatedly, given how well it sounds this intervention was implemented,
+ I believe the paper would benefit from a brief discussion of the representative
+ness of the implementation and implementing partner(s).
+ Who were the “trained field enumerators” and how do they compare to average
+ extension workers (i.e.
+ could this intervention realistically be scaled with a government or a
+ medium-capacity non-profit)? And how established is Viamo in Uganda? I
+ believe establishing external validity in terms of both the population
+ being studied and the implementation of the intervention is necessary to
+ ensure this paper’s contribution to a mixed literature.
+\end_layout
+
+\begin_layout Standard
+6.
+ I worry about experimenter demand effects quite a bit with these results.
+ I would not be worried about this if the endline enumerators observed plots
+ (especially spacing) and/or collected detailed information about new products
+ that were purchased (where from? Could such be verified?).
+ It may be none of this was feasible but it warrants a discussion.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The dangers of using self-reported survey data to measure key outcomes is
+ a concern that was also echoed by all other reviewers (R2.5, R3.7 an R4.7).
+ We thus added a separate section that discusses experimenter demand effects:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Changes made to the text: we added the following sub-section entitled 
+\begin_inset Quotes eld
+\end_inset
+
+Experimenter demand effects
+\begin_inset Quotes erd
+\end_inset
+
+ in the section on 
+\begin_inset Quotes eld
+\end_inset
+
+Additional analysis and robustness tests
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+A key concern with our study is the fact that we use self-reported survey
+ data on key outcomes, as opposed to outcomes that are measured by a third
+ party in an objective way.
+ Study participants may report what they feel is desired in that context
+ (social desirability bias).
+ In an RCT, social desirability bias becomes a real concern if it is correlated
+ to the treatment, which is sometimes referred to as experimenter demand
+ effects 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "zizzo2010experimenter"
+
+\end_inset
+
+.
+ While recent research suggests that experimenter demand effects may be
+ less problematic than initially thought 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg."
+key "de2018measuring,mummolo2019demand"
+
+\end_inset
+
+, we provide some discussion on why we feel experimenter demand effects
+ are unlikely to drive our results.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+First, during the design of the endline questionnaire, we tried to minimize
+ experimenter demand effects by careful formulation of the questions.
+ Experimenter demand effects are more likely in simple yes/no questions
+ than for more open ended questions.
+ For instance, in our endline survey, we did not ask if the farmers used
+ 
+\begin_inset Quotes eld
+\end_inset
+
+plant spacing of 75cm x 30cm with a reduced seed rate of 1 seed per hill
+\begin_inset Quotes erd
+\end_inset
+
+ as recommended.
+ Rather, we asked to describe the planting process, and the enumerator was
+ then asked to select the appropriate response from a list of possible options.
+ For inputs adoption, we started from broad questions (eg.
+ whether fertilizer was used on a particular plot) and then asked farmers
+ to go further into detail (eg.
+ asking about fertilizer type, timing of application, quantities and price)
+ allowing enumerators to detect inconsistencies that may signal experimenter
+ demand effects.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Second, in our endline survey, not all outcomes are equally likely to be
+ affected by experimenter demand effects.
+ For instance, experimenter demand effects are probably less likely to be
+ an issue for the multiple choice questions used to measure knowledge than
+ for questions about implementation of recommended practices or the use
+ of modern inputs such as inorganic fertilizer or improved seed.
+ It is reassuring that there is consistency between effects found on questions
+ that are more or less prone to experimenter demand effect.
+ In other words, if we would have found that our interventions did not result
+ in a change in knowledge related to optimal plant spacing, yet farmers
+ report that they did use optimal plant spacing on their plots, we would
+ be more worried that the latter effect was driven by experimenter demand
+ effects.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Third, as we will report in the next section, fertilizer adoption, an outcome
+ prone to experimenter demand effects, seems to increase particularly for
+ treated farmers that live close to an agro-input dealer.
+ This finding reduces the possibility that our results are driven by misreportin
+g related to experimenter demand effects, as this would mean that households
+ that have better access to improved inputs strategically decide to report
+ their answers differently than households that have less access to inputs.
+ 
+\end_layout
+
+\begin_layout Standard
+I also have several additional minor comments:
+\end_layout
+
+\begin_layout Standard
+7.
+ I think the research aim section is very repetitive of the introduction.
+ I think it could be cut entirely without more than a few sentences being
+ added to the intro.
+\end_layout
+
+\begin_layout Standard
+8.
+ I realize this may be more of a style choice but I am used to context sections
+ coming before experimental design sections in papers and find such easier
+ to read.
+ Similarly, I am more used to balance tables in the design section rather
+ than results.
+\end_layout
+
+\begin_layout Standard
+9.
+ I realize we can’t see the video in paper-form but a few screenshots and
+ the transcript in the appendix would be helpful along with a copy of the
+ flyer used to invite households to the hotline.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The videos will be made available on a public repository such as YouTube
+ and referenced in the final version of the paper.
+ In fact, when we submitted this manuscript, we also submitted a pdf document
+ entitled 
+\begin_inset Quotes eld
+\end_inset
+
+additional_info.pdf
+\begin_inset Quotes erd
+\end_inset
+
+.
+ These were all materials we would have liked to make available in on-line
+ appendices.
+ It included ITT effects conditional on having a mobile phone, the 2SLS
+ (LATE) regressions, an anonymized version of the pre-analysis plan, the
+ script for the video (scene by scene), a transcript of the content of the
+ IVR system (in English, although the farmers also had access to this informatio
+n in Lusgoga) and the content of the 8 sms messages, both in Lusoga and
+ in English.
+ It is unclear if this additional information was also made available to
+ the reviewers, and if so, this would have been sufficient.
+ We added a copy of the flyer used to invite households to the hotline in
+ the additional information (additional_info.pdf)
+\end_layout
+
+\begin_layout Standard
+10.
+ There are no details on how randomization was done in the paper.
+ Even if clear from the pre-analysis plan, the paper should include details
+ on randomization and any controls necessary given the randomization strategy
+ (i.e.
+ strata fixed effects).
+\end_layout
+
+\begin_layout Standard
+We sampled from five districts from the East known for their maize production:
+ Bugiri, Mayuge, Iganga, Namayingo and Namutumba.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Administrative-structure-of"
+
+\end_inset
+
+ gives an idea of how villages are distributed over parishes, which are
+ in turn allocated to sub-counties within each of the 5 districts in our
+ study.
+ From this, we removed town councils and also two sub-counties that consisted
+ of islands in lake Victoria.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	subcounties	&	parishes	&	villages	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+Bugiri  & 11 & 72 & 399  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Mayuge	&	13	&	73	&	462	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Iganga & 16 & 82 & 360 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Namayingo  & 7 & 43  & 308 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Namutumba  & 7 & 37  & 348 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+Total	&	54	&	307	&	1877	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\backslash
+end{tabular}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Administrative structure of study area
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Administrative-structure-of"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Our study population consists of maize farmers within this region
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In particular, given the subject of our study, we target monogamous households
+ that are growing maize.
+ However, we will also include some female headed households as they are
+ an important disadvantaged group in Uganda.
+ These households can obviously not get all the treatments.
+ For these households, we will only vary the messenger between male and
+ female.
+\end_layout
+
+\end_inset
+
+.
+ Because of cost considerations, however, we will use two-stage cluster
+ sampling to obtain a representative sample of this population.
+ In particular, we will first randomly select parishes (proportional to
+ the number of villages within each parish).
+ In the selected parishes, all villages will be included in the study.
+ Within each village, we will then list all the households, from which we
+ will then sample households to be included in the study.
+ At the same time, we suspect that outcomes within villages will be correlated,
+ for instance due to local weather conditions, or development programs that
+ are implemented in certain areas.
+ We therefore use the village as a blocking factor.
+ In other words, in each village, we will makes sure all possible treatment
+ combinations related to the first 2 factors (plus control) are administered.
+ From the research strategy above, we learn that the messenger and the recipient
+ factor combine into 9 different treatment combinations.
+ Adding the control leads to 10 different households being selected in each
+ village.
+ Of the 9 farmers that are shown a video (not the placebo), about six will
+ also receive the IVR treatment, and of these six, three will also get SMS
+ reminders.
+\end_layout
+
+\begin_layout Standard
+Maize is especially important in eastern Uganda.
+ We sampled from five districts in eastern Uganda known for their maize
+ production: Bugiri, Mayuge, Iganga, Namayingo, and Namutumba.
+ From this, we removed from our sample town councils and also two sub-counties
+ that consisted of islands in lake Victoria.
+ We used two-stage cluster sampling to obtain a representative sample of
+ this population.
+ In particular, we first selected parishes randomly and in proportion to
+ the number of villages within each parish.
+ In the selected parishes, all villages were included in the study.
+ Within each village, we then listed all households, from which we randomly
+ assigned households to be included in the study.
+ 
+\end_layout
+
+\begin_layout Standard
+11.
+ I think that any outcome that was collected at the individual level should
+ be analyzed at the individual level, or at least appendix tables should
+ present individual-level results.
+ Taking a household-level maximum makes some intuitive sense but is a very
+ specific model and it would be good to know the results are robust to others.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+We tend to disagree.
+ The particular intervention that is analyzed in this paper was conceptualized
+ at the household level and the experimental unit was the household.
+ 
+\end_layout
+
+\begin_layout Standard
+12.
+ I find the last paragraph of the conclusion to be a bit out of place given
+ the paper has nothing to say about spillovers.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+We have deleted the entire paragraph.
+\end_layout
+
+\begin_layout Section*
+R2 - Review of “ICTs to Provide Agricultural Advice to Smallholder Farmers:
+ Experimental Evidence from Uganda” 
+\end_layout
+
+\begin_layout Standard
+Summary: The paper investigates the potential of Information and Communication
+ Technologies (ICTs) for agricultural extension.
+ In particular, the authors test whether alternative ICTs can enhance farmers’
+ knowledge of improved practices, increase the adoption of such practices,
+ and improve yields.
+ They set up a field experiment where a random group of farmers was assigned
+ to a treatment group which received access to a video (screened on a tablet
+ by an enumerator) with agricultural advice.
+ Farmers in the treatment group were further split into two groups: one
+ was part of an encouragement design to use an interactive voice response
+ (IVR) technology and the other one was not.
+ The encouragement design promoted farmers’ access to on-demand pre-recorded
+ messages on their phones with the same agricultural advices as the video
+ intervention.
+ Additionally, a randomly selected subgroup of those in the encouragement
+ group were assigned to receive eight text messages around the time of some
+ important agricultural practices related to the overall extension campaign.
+ This design allows the authors to test: (a) the impact of the video extension
+ program, (b) the incremental effect of the IVR system, and (c) the additional
+ impact of the text message reminders.
+ 
+\end_layout
+
+\begin_layout Standard
+Overall, they find that the video intervention increased farmers’ knowledge
+ of practices, improved the likelihood of adopting recommended practices,
+ and raised yields.
+ However, they find that the IVR and text message components generated little
+ further improvements in these outcomes.
+ 
+\end_layout
+
+\begin_layout Standard
+General Comment: I enjoyed reading the paper and believe it makes a useful
+ contribution to the emerging literature on the role of ICTs in agricultural
+ extension.
+ In my view, its biggest contribution is testing the joint effectiveness
+ of different types of ICTs (when most the available work focuses only on
+ one).
+ Methodologically, the authors are able to estimate causal estimates based
+ on randomized assign- ment.
+ They are also rigorous in their inference by using increasingly popular
+ techniques (based on randomization inference and adjusting for family-wise
+ error rates).
+ 
+\end_layout
+
+\begin_layout Standard
+Suggestions: 
+\end_layout
+
+\begin_layout Standard
+1.
+ The paper is based on a traditional theory of change for agricultural extension
+: extension leads to improvements of knowledge, which increases adoption
+ of improved practices and subsequently boosts yields.
+ Along this line, the paper would benefit from better translating this theory
+ of change into their outcomes.
+ For example, the paper’s outcomes for knowledge are plant spacing, input
+ combination, timing of weeding, and fall armyworm control.
+ While they do include some of these concepts in their adoption outcomes
+ (i.e., spacing and weeding), there are several others — timing of planting,
+ management of striga (though somewhat related 1to weeding), fertilizer
+ use, and seed choices — for which there no measures of knowledge gains.
+ Including outcomes related to the same practices in their analysis of adoption
+ and knowledge would lend more credibility to the mechanisms through which
+ ICT-based extension improves farming.
+\end_layout
+
+\begin_layout Standard
+2.
+ The paper would benefit from clarification of the research design.
+ In particular, it would be useful to better understand why — in contrast
+ to most recent field experiments on agricultural extension — the randomization
+ was conducted at the individual rather than the village level.
+ Information can flow easily between subjects and create externalities.
+ While cluster randomization does not eliminate contamination of the control
+ group, it reduces (inasmuch as possible) this flow of information.
+\end_layout
+
+\begin_layout Standard
+The authors find considerable impacts of their video intervention (especially
+ for plant spacing), but no additional effects of the other ICTs (such as
+ IVR).
+ The IVR encouragement design was conducted through randomly providing some
+ farmers with flyers incentivizing them to call a toll-free number and get
+ agricultural information.
+ 
+\end_layout
+
+\begin_layout Standard
+One can always argue that — if there are flows of information from the video
+ to the control group — this would provide an underestimate of the treatment
+ effect (given that it is already sizable and positive).
+ But, the randomization strategy by itself may have a role to play in the
+ IVR effect.
+ Those with access to the extension videos may have shared the toll-free
+ number with others.
+ Because the video and IVR information have complementary effects (as implicitly
+ assumed in the setup of the field experiment), those with information about
+ the toll free number are more likely to have shared it with others that
+ also had been in a video screening session.
+ This would generate a downward bias of the treatment effect (which might
+ be truly positive) of the IVR (consistent with the findings of the paper).
+ Furthermore, text- message intervention was nested within the IVR encouragement
+ design, this contamination can also downward bias the estimates of the
+ text message campaign.
+ 
+\end_layout
+
+\begin_layout Standard
+One potential way to address this is to use the random assignment to the
+ IVR as an instrument for actually calling the toll free number.
+ The authors do account for this possibility in the paper.
+ However, the results are not shown, and the paper might benefit from presenting
+ them.
+ The authors find there were 430 unique calls, out of which 214 corresponded
+ to phone numbers in the encouragement group (about 9% of the encouraged
+ households).
+ It is unclear how many of these unique calls could be traced to individuals
+ in the experiment that were not part of this encouragement group.
+ This could provide an idea of any contamination of the control group that
+ could lead the ITT estimate downwards.
+ It would also tell us how strong the first is and whether the instrument
+ is relevant enough for an IV estimation.
+ Additionally, the take-up in the encouraged group (9%) would suggest that
+ the IV-treatment effect would correspond to the Intent-to-treat (ITT) scaled-up
+ by a factor of 11 (potentially larger once we account for any potential
+ take-up in the control group).
+ This could lead to a different interpretation of the results if the IV
+ estimates are large (even when not statistically significant).
+ This information would help us better understand the IVR (and potentially
+ the text message) results of the paper.
+ Is it that the ITT is low due to contamination? Can we conclude that there
+ are no effects of IVR? Are these effects sizable, but imprecise? Or should
+ we just conclude that the demand was low (and there is not much more to
+ say about this)?
+\end_layout
+
+\begin_layout Standard
+3.
+ The authors report an attrition rate of 7.3%.
+ Considering that the intervention only took place over a few months, this
+ is quite large.
+ While there is no differential attrition between treatment arms (in terms
+ of rates and some selected characteristics), the authors could calculate
+ bounds (Manski-type, Lee-type, or other) to determine how sensitive their
+ estimates are to this problem.
+\end_layout
+
+\begin_layout Standard
+4.
+ The only outcomes for which the paper finds any impact of the IVR platform
+ are the ones related to the adoption of fertilizer (negative effect) and
+ improved seeds (large and positive effect).
+ Given the other results in the paper, this seems counterintuitive.
+ The authors argue that “with access to a more demand-driven ICT channel,
+ farmers that used organic fertilizer may seek information on more complex
+ but efficient types of fertilizers” (p.26) and that “providing farmers with
+ a tool that allows them to actively seek out information about a new input
+ or technology increases the likelihood that they also adopt hybrid maize
+ seed” (p 27).
+ Based on the IVR-dial in codes (e.g., press “1” for recommendations about
+ seeds, press “2” for recommendations about fertilizer”, etc.), can the authors
+ show that these were topics for which farmers in the encouraged group actively
+ demanded? This would lend credibility to the authors’ proposed interpretation
+ of their estimates.
+\end_layout
+
+\begin_layout Standard
+5.
+ The paper’s results on input adoption are based on self-reported measures
+ of input use (e.g., used urea / organic fertilizer / hybrid maize seed /
+ open pollinated varieties in at least one plot).
+ Is there any possibility to cross check this with other measures of input
+ use (such as purchased quantities or expenditures in some inputs)? This
+ can lend credibility to the results if we believe that mere report of any
+ input use is more subject to social desirability bias than other (less
+ direct) measures.
+ The authors might also be able to estimate some back-of-the- envelope calculati
+ons about plant spacing.
+ For example, knowing the size of the area planted for maize and the total
+ amount of seeds (improved or not), they could be able to estimate whether
+ these quantities are consistent with a 75cm x 30cm spacing recommended
+ by the intervention (at least for those who claim that hey followed this
+ advice).
+\end_layout
+
+\begin_layout Standard
+6.
+ The intervention promotes increased input use by aiming to increase farmers’
+ demand for improved seeds and fertilizer.
+ Demand can indeed increase the use of these inputs, but this effect will
+ also depend on their availability or monetary constraints.
+ In this line, the authors might want to estimate heterogeneous treatment
+ effects of input use by baseline expenditures (or resource constraint proxies,
+ if available) and by distance to nearest agro input dealer (included as
+ a variable in Table 1).
+ The results should, in theory, suggest larger impacts among wealthier household
+s and among those closer to agro dealers.
+ A finding along these lines would reduce the possibility that paper’s results
+ are due to misreporting related to social desirability bias: we would need
+ to believe in the unlikely possibility households that are wealthier or
+ have better access to improved inputs strategically decide to report their
+ answers differentially.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+This is an interesting suggestions that is also related to requests for
+ a in-depth exploration of heterogeneity in treatment effects (see R4.8).
+ We have thus explored this as part of a more general analysis of heterogenous
+ treatment effects reported in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Heterogeneity-in-Treatment"
+
+\end_inset
+
+.
+ Results indeed suggest that the positive impact of the video on the use
+ of urea is particularly large for farmers that are relatively close to
+ an input dealer (defined as less or equal than the median distance in the
+ sample, which is 4 km).
+ At the same time, and consistent with the theoretical prediction of the
+ reviewer, we do not find that the increase in organic fertilizer as a result
+ to the video intervention is sensitive to distance to an input provided.
+ It was harder to test for heterogenous effects related to baseline resources,
+ as we did not collect detailed data on consumption at baseline.
+ We tried using different proxies for wealth (such the number of rooms scaled
+ by the number of household members, area cultivated, whether the household
+ had access to off-farm income,...), but we do not find that effects are different
+ between the two groups.
+ This may be because the income constraint is not binding - fertilizer can
+ usually be obtained in small quantities.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Changes made to the text: Third, as we will report in the next section,
+ fertilizer adoption, an outcome prone to experimenter demand effects, seems
+ to increase particularly for treated farmers that live close to an agro-input
+ dealer.
+ This finding reduces the possibility that our results are driven by misreportin
+g related to experimenter demand effects, as this would mean that households
+ that have better access to improved inputs strategically decide to report
+ their answers differently than households that have less access to inputs.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Changes made to the text:
+\end_layout
+
+\begin_layout Standard
+7.
+ The paper suggests that the intervention increased yields: while there
+ are no changes in total production, there are reductions in households’
+ planted areas.
+ The authors attribute this increase in yields to their recommendation to
+ “start small” with the use of practices and inputs.
+ A significant portion of the effect on knowledge and practices comes from
+ recommendations on plant spacing.
+ However, there are no increases in the respondents’ perceptions of better
+ yields in the treatment group.
+ So, another possibility is that, by making space more salient, they might
+ have primed households to think more carefully about the total surface
+ that they had planted (and this might lead to a reduction in their report
+ about their planted areas).
+ This would imply that their results would be driven by differential reporting,
+ rather than actual increases in yields.
+ Can the authors say something about this possibility?
+\end_layout
+
+\begin_layout Standard
+Minor Comments: 
+\end_layout
+
+\begin_layout Standard
+8.
+ Based on the text, the campaign’s impact on knowledge is based on short
+ quizzes with questions that include four multiple-choice answers.
+ However, the examples provided suggest that the number of choices were
+ actually three.
+ For example, for the question about the timing of weeding the alternatives
+ seem to be: “during the first four weeks after planting”, “when the maize
+ is knee high” and “when the maize is at tasseling stage”.
+ Similar cases occur with the other knowledge questions.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+There was a fourth option where farmers could indicate that they did not
+ know the answer.
+ This is indicated in the text: 
+\begin_inset Quotes eld
+\end_inset
+
+The respondent was also allowed to indicate if he or she did not know the
+ correct answer.
+ 
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+9.
+ There are some imbalances between treatment arms at baseline (as suggested
+ by Table 1).
+ Can the authors provide any idea whether their results are sensitive to
+ including imbalanced variables in their estimations? 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+While there is some imbalance, this seems to be within what one would expect
+ by chance alone.
+ In addition, the imbalance is only for the additional IVR and SMS treatments,
+ for which we find little effects.
+ As such, imbalance can not be responsible for the impact of the intervention
+ we find.
+ That said, we have redone the analysis where we now control for the variables
+ where imbalances were found.
+ The results are reported in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Results-including-controls"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+R3 - Title: Information and communication technologies (ICTs) to provide
+ agricultural advice to smallholder farmers: Experimental evidence from
+ Uganda 
+\end_layout
+
+\begin_layout Standard
+Summary This study experimentally assesses the impact of ICT-based agricultural
+ extension on knowledge, adoption of recommended technologies and practices,
+ and agricultural production among maize farmers in Uganda.
+ The main intervention consists of a video clip on maize farming delivered
+ in person.
+ The study also evaluates the additional effects of an IVR hotline service
+ offering an interactive menu-based information service on the same set
+ of agricultural topics, and a series of SMS messages providing the same
+ advice timed appropriately throughout the agricultural season.
+ Using the survey data, the authors find that the video intervention increased
+ relevant agricultural knowledge and the likelihood of adopting recommended
+ practices, leading to a 10% increase in maize yield (kg/acre), whereas
+ the additional effects of IVR and SMS interventions were insignificant.
+ 
+\end_layout
+
+\begin_layout Standard
+The findings of the study can add to the growing literature on the impact
+ of ICT interventions in agricultural extension.
+ However, I have several major concerns about the current analysis and discussio
+n.
+ 
+\end_layout
+
+\begin_layout Standard
+Major comments Inadequate information about experimental design The manuscript
+ lacks information on the intervention, experimental design and randomization
+ procedure: 1.
+ The sample was drawn in three stages – random selection of parishes, villages,
+ and then households.
+ Was randomization carried out at the individual-level without any stratificatio
+n? The estimation model suggests so, but I’d like the authors to confirm
+ as it is unusual to have a sample of 4000 households from a large geographic
+ area without geographic stratification.
+ 
+\end_layout
+
+\begin_layout Standard
+2.
+ What was the rationale for surveying two people from each household at
+ endline? Was the video intervention shown to the couple in each household
+ by design? The authors explained that the best response was taken for the
+ knowledge outcomes and the means were taken for the production outcomes.
+ What about the adoption measures? The gender role in agricultural decision-maki
+ng may also inform the optimal way of generating the outcomes.
+ If one member in a household tends to be responsible for agricultural decision-
+making, his or her responses on knowledge may be more relevant.
+ 
+\end_layout
+
+\begin_layout Standard
+3.
+ It would be helpful for the authors to provide the detailed information
+ on the content of the three ICT interventions in Appendix, including all
+ of the topics covered, the exact scripts of SMS messages, etc.
+ 
+\end_layout
+
+\begin_layout Standard
+Outcomes measures I have several concerns about how the outcomes were selected
+ and constructed.
+\end_layout
+
+\begin_layout Standard
+4.
+ The selection of measures used for knowledge and recommended practices
+ seem somewhat arbitrary.
+ For example, the knowledge section includes a question about practices
+ on managing fall armyworms, but there is no adoption measure that corresponds
+ to this question.
+ Similarly, adoption measures include the timing of planning and removing
+ striga, but there are no corresponding questions in the knowledge section.
+ Do these analyses use all of the relevant questions asked in the survey?
+ If yes, how were they selected at the stage of survey development? 
+\end_layout
+
+\begin_layout Standard
+5.
+ The authors mention in the text that three fertilizers (DAP/NPK, Urea,
+ and organic fertilizers) were recommended separately in the video.
+ And yet, upon reporting the negative treatment effect on the first fertilizer
+ type (DAP/NPK), they decide to create an index that takes non-adoption
+ of DAP/NPK as a positive outcome and explains that there was an additional
+ recommendation to promote balanced input usage.
+ This seems inappropriate: one would expect that the promotion of balanced
+ input usage would lead to an increased likelihood of adopting every input
+ (perhaps at a lower quantity), rather than decreased adoption of one of
+ the three recommended fertilizers.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The reviewer is correct.
+ We have removed this.
+\end_layout
+
+\begin_layout Standard
+6.
+ It is unclear how the production index in Table 5 is constructed.
+ The first two variables (maize production and maize area) generate maize
+ yield (kg/acre).
+ Similarly, labor productivity is a function of labor quantity.
+ Therefore, it seems inappropriate to use all six variables to generate
+ the index.
+ 
+\end_layout
+
+\begin_layout Standard
+7.
+ One important caveat of the analysis is that the outcomes are all self-reported.
+ In particular, if the survey first asked questions about farming knowledge,
+ the subsequent responses on farming practices may be subject to the survey
+ demand effect.
+ 
+\end_layout
+
+\begin_layout Standard
+Interpretation and discussion 
+\end_layout
+
+\begin_layout Standard
+Overall, the discussion of the results warrants a more nuanced interpretation
+ of the results.
+ 
+\end_layout
+
+\begin_layout Standard
+8.The authors equate insignificant results with no impact.
+ However, the study sample may be too small to capture small effects on
+ noisy agricultural outcomes.
+ Given the observed variance of maize yield, what is the minimum detectable
+ effect size? Is it possible that some of the analyses are underpowered?
+ 
+\end_layout
+
+\begin_layout Standard
+9.
+ It is not surprising that the additional effects of IVR access is small
+ given that < 10% of farmers called in.
+ It is possible that this intervention was not well-designed: IVR is not
+ a familiar technology among the study population.
+ Access to the hotline service that requires self-navigation without an
+ appropriate training on how to use it may have attenuated the impact in
+ this particular study.
+ 
+\end_layout
+
+\begin_layout Standard
+10.
+ The authors can verify whether information obtained through the IVR increased
+ improved seed adoption by analyzing the IVR content accessed by farmers.
+ • Similarly, the effects of SMS may depend on the message design.
+ Were the SMS messages tested before the intervention to ensure that farmers
+ comprehend them? • Cost-effectiveness analysis would be useful here given
+ that one of the rationales often given for ICT interventions is its scalability
+ at low cost.
+ The video intervention in this study was delivered in person, increasing
+ the compliance but also the cost of delivery.
+\end_layout
+
+\begin_layout Standard
+11.
+ The current manuscript characterizes the three interventions as follows:
+ (i) a video intervention is supply-driven and may be more appropriate in
+ introducing a new technology but tends to be a one- off intervention, (ii)
+ an IVR hotline is a demand-driven service, and (iii) SMS messages tend
+ to be “too short to provide detailed information” but can be appropriately
+ timed and hence could address behavioral constraints.
+ It is plausible that the particular interventions evaluated in this study
+ can be characterized as above.
+ However, these technologies can be used to address various constraints
+ in different settings, and the above assumptions may or may not apply to
+ other settings.
+ 
+\end_layout
+
+\begin_layout Standard
+12.
+ There are numerous assumptions here that may or may not be true.
+ Videos are used by some organizations as a medium of information dissemination
+ delivered at regular frequencies.
+ As smartphone ownership increases, it will also become more accessible.
+ Other organizations are delivering information on new technologies and
+ agricultural practices via SMS messages.
+ 
+\end_layout
+
+\begin_layout Standard
+13.
+ All of these points together highlight the importance of a more thoughtful
+ discussion and the interpretation of the observed results.
+ The conclusion of the current manuscript – that the video intervention
+ improved knowledge, practices, and production, and other lighter-touch
+ interventions had no additional effects – seems hasty.
+ 
+\end_layout
+
+\begin_layout Standard
+Other minor comments 
+\end_layout
+
+\begin_layout Standard
+14.
+ Estimation method does not include fixed effects or clustering at the geographi
+c level.
+ Access to extension agents, inputs, and soil characteristics may vary significa
+ntly across villages and parishes.
+ It would seem appropriate to use fixed effects at the geographic level.
+ Furthermore, farmers within a village would be more likely to share information
+ or learn from each other than farmers across villages: clustering at the
+ village level may be appropriate.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+We use randomization inference.
+ 
+\end_layout
+
+\begin_layout Standard
+15.
+ Logarithmic calculation for production quantity: Is this not a natural
+ log? ln(440) is not 5.814.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+This is the natural log.
+ However.
+ 440 is the average in levels: 
+\begin_inset Formula 
+\begin{equation}
+\frac{\sum x}{n}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The 5.814 is the average *after* taking the log:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+\begin_inset Formula 
+\begin{equation}
+\frac{\sum ln(x)}{n}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+(which is different from taking the log of the average, which seems to be
+ what the reviewer is hinting at).
+\end_layout
+
+\begin_layout Standard
+16.
+ I suggest the authors to consider reorganizing the paper: Baseline characterist
+ics and randomization balance can be part of the section on the experimental
+ design rather than the section on results.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+This was also suggested by Reviewer 1 (R1.8).
+ We have followed this suggestion.
+\end_layout
+
+\begin_layout Standard
+17.
+ The intervention evaluated in Cole & Fernando (2016) was not a demand-driven
+ hotline service.
+ They sent weekly voice calls with appropriately timed advice, in addition
+ to a hotline service where farmers could call in and record questions.
+ 
+\end_layout
+
+\begin_layout Standard
+18.
+ The sample size for the attrition table is so small that this analysis
+ would be underpowered to detect any differential attrition.
+ I would run a different analysis with a full sample regressing the indicator
+ for completing the follow-up survey on treatment indicators, a vector of
+ baseline characteristics, treatment indicators, and interactions between
+ the two sets of variables.
+ Joint significance across the interaction terms for each treatment indicator
+ would provide a better sense on differential attrition.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The reviewer is right and we are grateful for this excellent suggestion,
+ which we have incorporated in the manuscript.
+ In addition, we also compare balance on the different characteristics among
+ non-attirters, which is a much larger sample.
+\end_layout
+
+\begin_layout Section*
+R 4 - Review of “Information and Communication Technologies (ICT) to Provide
+ Agricultural Advice to Smallholder Farmers: Experimental Evidence From
+ Uganda” 
+\end_layout
+
+\begin_layout Standard
+This paper reports the results of a randomized control trial carried out
+ in Uganda, evaluating the effectiveness of delivering agricultural messages
+ through agricultural extension videos, coupled with SMS and IVR, on farmers’
+ knowledge, agricultural practices, and yields.
+ Relative to a counterfactual group the authors find increases in knowledge
+ and increases in (self-reported) recommended practices and inputs and a
+ ten percent increase in yields.
+ The authors do not find evidence to suggest that adding SMS or IVR messages
+ on top of the videos changed outcomes.
+ 
+\end_layout
+
+\begin_layout Standard
+This paper describes a clean RCT carried out with a representative sample
+ of almost 4,000 farmers in Uganda.
+ The results provide evidence that informational frictions can limit farmer
+ adoption of inputs and show the causal effects of information bundles,
+ delivered through different ICTs on farmer behavior.
+ The paper is clear, but I think it could be more precise about what the
+ interventions are and what we can learn about them.
+ Below, I list a number of issues which I think need to be addressed.
+ 
+\end_layout
+
+\begin_layout Standard
+Main Comments: 
+\end_layout
+
+\begin_layout Standard
+1.
+ You motivate the study by saying that one of the advantages of using ICTs
+ over traditional extension methods is that ICTs can be cost-effective and
+ scalable.
+ However, it is not immediately clear how cost-effective/scalable your video
+ intervention is if it depends on field officers/extension agents visiting
+ farmers.
+ If the argument is that this is an evaluation of a policy-relevant approach,
+ then this requires a more thorough discussion on the pros/cons of this
+ technology and how relevant it is as a policy option.
+ A cost-effectiveness analysis would also be important.
+ 
+\end_layout
+
+\begin_layout Standard
+2.
+ You should explain in more detail why studying the additional value of
+ IVR and SMS over videos is relevant in the context of your actual experiment.
+ Policy-wise, it might have been more natural to test each technology separately
+ or to start with the cheapest technology and then add the other ones.
+ You argue that with this design you might address other constraints that
+ could be better addressed through SMS and IVR (e.g.
+ need for reminders, or continuous access to information during shocks).
+ However, you need to convince us that these additional services were not
+ just offering the same information that farmers already had but that they
+ were actually addressing these other constraints you discuss.
+ For example, I worry that the two SMS examples you provide sound more like
+ general information rather than the types of reminder/nudges that you describe
+ in your introduction (e.g.
+ “weed your maize”).
+\end_layout
+
+\begin_layout Standard
+Overall, I suggest you tie your conceptual description of the rationale
+ for these interventions with the description of the actual features of
+ your intervention more closely.
+ Otherwise, it is difficult to learn anything from the null effects of these
+ other technologies (e.g.
+ were the hypothesized constraints not binding? was the information provided
+ not targeting those constraints? would we have expected effects had farmers
+ suffered a shock? Or over additional seasons? etc.) 
+\end_layout
+
+\begin_layout Standard
+3.
+ Relatedly, the paper emphasizes the different technologies used to deliver
+ information (SMS, IVR and videos).
+ If the claim is that they are serving different needs, then you need to
+ emphasize how the interventions differed from each other beyond the ICTs
+ used to deliver them.
+ In particular, you should spend more time discussing the differences in
+ content and how these interventions were implemented.
+ For example, a big difference between interventions is that for the videos
+ all the farmers were individually visited at home whereas IVR was offered
+ through an encouragement design.
+\end_layout
+
+\begin_layout Standard
+In general, you should provide a more thorough description detailing what
+ exactly was the information delivered (e.g.
+ how specific/broad was the advice? was the same advice given to all farmers?
+ what were all reminders about?), and how were these services implemented
+ (e.g.
+ who visited the farmers? what were the protocols to invite farmers? could
+ farmers opt-out?).
+ 
+\end_layout
+
+\begin_layout Standard
+You should also be more concrete about how the information that was offered
+ relates to the behaviors that were measured (i.e.
+ which inputs you did or did not recommend?) 
+\end_layout
+
+\begin_layout Standard
+4.
+ There is not much information on whether we would have expected the advice
+ to be profitable for farmers.
+ You also mention that some of the advice was ‘controversial’.
+ This requires a longer discussion on the rationale for the advice and/or
+ some acknowledgment that it is not clear what the ‘correct’ advice is.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Controversial may be the wrong word.
+ It is a new way of spacing.
+\end_layout
+
+\begin_layout Standard
+5.
+ In the adoption tables, you code effects on opposite directions as ‘correct’
+ when you construct your indexes.
+ This seems arbitrary.
+ For instance, you claim that “one can argue that DAP/NPK is higher than
+ optimal and urea is lower than optimal” and therefore interpret the positive/ne
+gative direction of the effects as following the advice.
+ You do a similar thing for the negative effect on organic fertilizers for
+ the IVR arm.
+ You should be more transparent on what was the recommendation and what
+ was the hypothesized direction of the effects ex-ante.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+This is also related to the comment made by Reviewer 3 (R3.5).
+ We agree that this was arbitrary (and definitely not in our pre-analysis
+ plan).
+ So we decided to just remove these parts.
+\end_layout
+
+\begin_layout Standard
+6.
+ Since the randomization was carried out at the household level and there
+ might be frictions in the diffusion of information within the household
+ it would be helpful if you could explain in detail the rationale for a
+ household level intervention.
+ I would also like to see a more detailed discussion of attrition in the
+ study (for instance, how do you code households in which you could not
+ find the person who was treated?).
+ A discussion on how close the answers between household members are would
+ be useful.
+\end_layout
+
+\begin_layout Standard
+7.
+ A potential issue with projects that use self-reported data following an
+ intervention is that the answers might be prone to social desirability
+ bias.
+ I would like to know how much of a problem this might be in this context.
+ Were the same field officers providing the intervention and collecting
+ the data? Were there any backchecks that you could use to compare discrepancy
+ between answers? Additionally, can you report how robust are the yield
+ results to outliers, etc?
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+All reviewers are worried about social desirability bias and experimenter
+ demand effects.
+ We therefore included en entire new section that explores this threat to
+ validity.
+\end_layout
+
+\begin_layout Standard
+8.
+ I would have liked to see some heterogeneity tests on education (and potentiall
+y other characteristics) to assess your argument that videos might be more
+ effective for certain subpopulations (e.g.
+ illiterate, etc).
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+We have added regressions where we interact the treatments with binary indicator
+s to explore heterogeneity on a range of characteristics (Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Heterogeneity-in-Treatment"
+
+\end_inset
+
+).
+ They include a measure of well-being and distance to agro-input shops,
+ as this may influence the effectiveness of the interventions on input use
+ (see comment R2.6)
+\end_layout
+
+\begin_layout Standard
+Minor comments: 
+\end_layout
+
+\begin_layout Standard
+9.
+ At some points in the paper, the way you phrase the interventions creates
+ the illusion that you are running a horse-race between IVR, SMS and videos.
+ For instance, your title and abstract mention “ICT to provide agricultural
+ advice”.
+ However, the IVR arm only gave farmers access to information and the SMS
+ was (at least conceptually) meant to serve as reminders not as information
+ provision.
+ At another point you say “IVR did not have a strong influence on the modern
+ use of inputs or management practices”.
+ This should read “additional advice through IVR.” 
+\end_layout
+
+\begin_layout Standard
+10.
+ I disagree with your statement that “SMS cannot be used to provide new
+ and complex information” and that it is “likely to work through behavioral
+ channels”.
+ Some of the papers you cite use SMS to provide agricultural information.
+ Several companies/NGOs around the world also use SMS to provide agricultural
+ advice.
+ You probably might want to qualify this claim a bit more.
+ Also, see work by Fabregas et al (2018) on use of SMS for farmer advice.
+ 
+\end_layout
+
+\begin_layout Standard
+11.
+ The literature you cite needs a bit of an update.
+ The most recent version of the Cole and Fernando (2017) paper finds that
+ the effects on yields are too noisy to conclude whether there were effects
+ in yields.
+ The Casaburi et al (2014) paper find effects in one season but not in a
+ second season.
+ 
+\end_layout
+
+\begin_layout Standard
+12.
+ Could you clarify whether the knowledge questions were framed as (i) what
+ farmers thought was correct (which might have been different from what
+ the video showed) or (ii) what farmers remembered what the video said?
+ 
+\end_layout
+
+\begin_layout Standard
+13.
+ I think it is very interesting that you see a reduction of land cultivated.
+ This seems to be in line with the intervention that told farmers to intensively
+ combine inputs in smaller parts of their land.
+ You should show us that these effects are not driven by outliers or clear
+ misreports in the land size measure.
+ 
+\end_layout
+
+\begin_layout Standard
+14.
+ For the yield index, you double count the effect of land size by including
+ it by itself and as a ratio.
+ Can you show with only one? 
+\end_layout
+
+\begin_layout Standard
+15.
+ I suggest you move the discussion of spillovers to the main body of the
+ paper rather than having it as the last paragraph in the conclusion.
+ You want to show us or at least discuss that these potential spillover
+ effects are not big enough that we are not learning anything from the null
+ effects.
+ 
+\end_layout
+
+\begin_layout Standard
+16.
+ You mention that you carry out LATE estimations but that those results
+ are only available upon request.
+ I would like to see those in an online appendix that could be easily accessible
+ for the reader.
+ Same for the pre-analysis plan you refer to.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+When we submitted this manuscript, we also a pdf document entitled 
+\begin_inset Quotes eld
+\end_inset
+
+additional_info.pdf
+\begin_inset Quotes erd
+\end_inset
+
+.
+ These were all materials we would have liked to make available in on-line
+ appendices.
+ It included ITT effects conditional on having a mobile phone, the 2SLS
+ (LATE) regressions, and an anonymized version of the pre-analysis plan
+ (among others).
+ It seems that these materials were not part of what the reviewers could
+ access.
+ 
+\end_layout
+
+\begin_layout Standard
+17.
+ Since farmers were visited twice for the videos, that could have already
+ served as a reminder and could explain why the SMS were not effective.
+ 
+\end_layout
+
+\begin_layout Standard
+18.
+ Are you controlling for unbalanced characteristics in your specifications?
+ Do results change if you do/don’t? 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+This was also mentioned by reviewer 2 (R2.9).
+ While there is some imbalance, this seems to be within what one would expect
+ by chance alone.
+ In addition, the imbalance is only for the additional IVR and SMS treatments,
+ for which we find little effects.
+ As such, imbalance can not be responsible for the impact of the intervention
+ we find.
+ That said, we have redone the analysis where we now control for the variables
+ where imbalances were found.
+ The results are reported in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Results-including-controls"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+19.
+ It would be useful to say something about whether wives in this context
+ are likely to have their own phone or if they are dependent on their husband’s
+ phone.
+ 
+\end_layout
+
+\begin_layout Standard
+20.
+ In the conclusion, you say that “farmers increasing the use of certain
+ fertilizers and reducing use of others.
+ As a result, [...] increased their yields”.
+ I don’t think you can claim with certainty what drove effects in yields.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+We agree and have removed this from the conclusion.
+ See also R3.5 and R4.5.
+\end_layout
+
+\begin_layout Standard
+21.
+ The finding that farmers did not think that yields improved is quite interestin
+g since that might affect sustained adoption.
+ This is outside scope of this piece but would be very interesting to see
+ if adoption was sustained over the next season.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Heterogeneity in Treatment Effects
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Heterogeneity-in-Treatment"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Results including controls for baseline imbalance
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Results-including-controls"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "/home/bjvca/data/projects/digital green/pre-analysis plan/maizeUG_PAP"
+options "AJAE/IFPRI_Style"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

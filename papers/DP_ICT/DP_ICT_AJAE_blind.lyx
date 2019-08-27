@@ -107,14 +107,11 @@ Agricultural advisory services generally rely on interpersonal knowledge
  We evaluate the effectiveness of an ICT-mediated approach to deliver agricultur
 al information in a field experiment conducted among small-scale maize farmers
  in eastern Uganda.
- However, different ICTs have different characteristics and farmers may
- also differ in their information needs.
- Our approach therefor consists of three complementary technologies: First,
- we investigate the effectiveness of audiovisual messages as a means of
- delivering information to farmers.
+ Our approach consists of three complementary technologies: First, we investigat
+e the effectiveness of audiovisual messages as a means of delivering information
+ to farmers.
  Second, we quantify the additional impact of augmenting video with interactive
- voice response (IVR) technology—a more demand-driven approach to information
- provision.
+ voice response (IVR) technology.
  Third, we estimate the incremental effect of time-sensitive short message
  services (SMS) messages that remind farmers about key agronomic practices.
  We find that ICT-mediated audiovisual content is effective in delivering
@@ -124,7 +121,10 @@ al information in a field experiment conducted among small-scale maize farmers
  than households that did not see this video.
  These same households also reported maize yields about 10 percent higher
  than those that did not see the video.
- Incremental effects of IVR and SMS technologies are limited.
+ Very few of the farmers that were invited to use the IVR systems appeared
+ to make use of it, potentially explaining the absence of an incremental
+ effect.
+ We also find few additional effects from the SMS reminder.
 \begin_inset Newpage newpage
 \end_inset
 
@@ -152,8 +152,9 @@ key "Aker2011"
 
 \end_inset
 
-, and an emerging literature explores the application of different ICTs
- to disseminate agricultural extension information to smallholders.
+.
+ An emerging literature explores the application of different ICTs to disseminat
+e agricultural extension information to smallholders.
  For instance, various studies investigate the potential for audiovisual
  messages as a medium to transfer agricultural extension information 
 \begin_inset CommandInset citation
@@ -232,7 +233,8 @@ y increased their knowledge about modern agronomic inputs and recommended
  it have a strong influence on the use of modern inputs or management practices
  in farming.
  We only find a positive effect of IVR on the uptake of hybrid seed.
- There were no additional effects of the SMS messages.
+ However, uptake of the IVR technology was very low, with only about There
+ were no additional effects of the SMS messages.
 \end_layout
 
 \begin_layout Standard
@@ -1321,71 +1323,16 @@ Results
 \end_layout
 
 \begin_layout Standard
-We now turn to the results, starting with orthogonality tests.
- We then estimate the (incremental) impact of the three information technologies
- on a range of outcomes related to knowledge, adoption of recommended practices
- and use of modern inputs, and production.
- Throughout the analysis, we focus on intent-to-treat effects.
- However, the IVR and SMS treatments are probably more effective for households
- that have (access to) a mobile phone, and averaging outcomes over all household
- may dilute the treatment effect, making it more difficult to detect a significa
-nt difference between the treatment group and control group.
- Therefore, we also estimated (conditional) treatment effects using a subsample
- containing only farmers that reported to have (access to) a mobile phone.
- Results were very similar and so not reported here to conserve space.
- Furthermore, while all households that were allocated to the video treatment
+We now turn to the results.
+ We first estimate intent-to-treat effects for the (incremental) impact
+ of the three information technologies on a range of outcomes related to
+ knowledge, adoption of recommended practices and use of modern inputs,
+ and production.
+ However, while all households that were allocated to the video treatment
  did view it, compliance was not perfect for IVR and SMS treatments.
  Judged by the call log of the IVR system, we find that only a small number
  of households that were encouraged to use the IVR system also actually
- called in (8.9 percent or 214 households)
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-This is a very low compliance rate, which partly reflects low demand for
- the service.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "RePEc:hbs:wpaper:13-047"
-
-\end_inset
-
- find that for a similar service in India, compliance rates were as high
- as 88 percent.
- Among possible explanations for this difference are: the time frame (the
- 88 percent was measured after 2 years of intensive exposure to the system,
- compliance rates were much lower at midline; our IVR system was only 3
- months operational); differences in treatment intensity (we only sent 8
- reminders to only half of the IVR households while 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "RePEc:hbs:wpaper:13-047"
-
-\end_inset
-
- sent bi-weekly reminders); the different study population of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "RePEc:hbs:wpaper:13-047"
-
-\end_inset
-
-, that consisted of cotton farmers that expressed willingness to participate
- and owned a mobile phone; different technologies (hotline where direct
- questions can be asked to real person extension agents vs IVR that works
- with pre-recorded messages and a limited set of options).
- However, there are also signs that our indicator of compliance may under-report
- true compliance (because for instance encouraged farmers use different
- phones to call the IVR).
- This is illustrated by the fact that about 430 unique calls were made to
- the system, representing about 18 percent of encouraged households.
- 
-\end_layout
-
-\end_inset
-
-.
+ called in (8.9 percent or 214 households).
  For the SMS reminders, of the 1,113 households that were supposed to receive
  the reminders, only 860 (77.3 percent) did.
  We therefore also generated Local Average Treatment Effects (LATE) estimates,
@@ -1400,10 +1347,7 @@ key "angrist1996identification"
 .
  Similarly, we estimated LATEs where allocation to the SMS treatment is
  used as an instrument for having received the SMS message.
- However, also here, results were not substantially different from the intent-to
--treat analysis and are not reported here.
- A much more elaborate report that includes both these additional analyses
- is available upon request from the authors.
+ 
 \end_layout
 
 \begin_layout Subsection*
@@ -1858,25 +1802,6 @@ The fourth column (+IVR) shows the incremental effect of IVR (with standard
  SMS campaign on any of the questions.
  We also do not find an effect of the SMS campaign as judged by the knowledge
  index.
-\end_layout
-
-\begin_layout Standard
-The lack of additional effects may be due to the way the experiment was
- designed.
- As we wanted to rule out any possibility that the effects were driven by
- differences in the content, we made sure that no new information was given
- in the IVR system and in the SMS campaign.
- In light of this, it may be less surprising that we do not find additional
- knowledge effects from the two interventions.
- This is also consistent with results from 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "casaburi2014harnessing"
-
-\end_inset
-
-, who find only an impact from their SMS messages if it is more likely that
- the farmers do not already know the information that is contained in them.
 \end_layout
 
 \begin_layout Subsection*
@@ -2415,7 +2340,7 @@ textit{improved seed use}}
 \begin_layout Plain Layout
 
 Used hybrid maize seed on at least one plot? (yes=1) 	&	0.289	&	0.006	&	0.865	&	0.04
-0$^{**}$	&	0.022	&	-0.046	&	0.029	&	3560	
+0$^{**}$	&	0.022	&	-0.046	&	0.029$^{**}$	&	3560	
 \backslash
 
 \backslash
@@ -2554,12 +2479,16 @@ reference "tab:Impact-of-technology_fert"
  types of inorganic fertilizer, the effects are not significant.
  However, we do find that the IVR encouragement reduced the proportion of
  households that reported using organic fertilizer by about 25 percent.
- With access to a more demand-driven ICT channel, farmers that used organic
- fertilizer may seek information on more complex but efficient types of
- fertilizers.
- If we judge the effectiveness of the IVR encouragement by including organic
- fertilizer use in the index with a negative sign, we do indeed find a significa
-nt impact (with a randomization inference-based p-value = 0.009).
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Why is this so?? Can not explain.
+\end_layout
+
+\end_inset
+
  The additive effect of the SMS campaign is reported in columns 6 and 7
  of Table 
 \begin_inset CommandInset ref
@@ -2596,7 +2525,8 @@ reference "tab:Impact-of-technology_fert"
  that they also adopt hybrid maize seed.
  The impact of the IVR treatment on improved seed use is confirmed by the
  seed index.
- There is no additional effect of the SMS campaign on seed use.
+ The SMS campaign appears to counteract the effect of the IVR on hybrid
+ seed use.
  
 \end_layout
 
@@ -2943,7 +2873,471 @@ elated outcomes.
 \end_layout
 
 \begin_layout Section*
-Robustness tests
+Additional analysis and robustness tests
+\end_layout
+
+\begin_layout Standard
+While we find significant effects from the video intervention, we find limited
+ additional effects from the IVR and SMS treatments.
+ In this section, we explore potential reasons for this and provide some
+ further analysis to explore the robustness of our findings.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Demand for IVR, SMS reception and Local Average Treatment Effects
+\end_layout
+
+\begin_layout Standard
+In an encouragement design such as the IVR treatment, households self-select
+ into the treatment.
+ It may be instructive to look at differences in baseline characteristics
+ between households that decide to make use of the IVR system and those
+ that do not.
+ The first column of Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Determinants-of-IVR"
+
+\end_inset
+
+ therefore shows the results of an ordinary least squares (OLS) regression
+ of an indicator that takes the value of one if the IVR system log showed
+ that a household called in at least once using the phone number that was
+ recorded during baseline data collection and zero otherwise on various
+ baseline variables (and the SMS treatment allocation).
+ Results show that none of the baseline characteristics predict demand for
+ the IVR service, except for access to a mobile phone.
+ We also find the SMS messages seemed to have increased the likelihood that
+ farmers called the IVR hotline as intended.
+ Even though farmers do not self-select into the SMS treatment, for mostly
+ technical reason, the system reported that some messages could not be delivered
+ to the intended recipients.
+ We therefore ran a similar regression explaining SMS message reception
+ by a range of baseline characteristics (second column of Appendix Table
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Determinants-of-IVR"
+
+\end_inset
+
+).
+ Unsurprisingly, mobile phone ownership and access are the main determinants
+ of SMS reception.
+ However, we also find that larger households and households with better
+ educated heads were more likely to receive the messages.
+ This may be because these households reside in areas that have better network
+ coverage.
+\end_layout
+
+\begin_layout Standard
+As demand for the IVR service (and to a lesser extent reception of SMS messages)
+ is endogenous, we can not simply compare outcomes of households that called
+ into the system to those that did not.
+ Furthermore, it may be that farmers that were provided with information
+ on the IVR passed this on to households that were shown the video but were
+ not allocated to the IVR treatment.
+ Contamination of the control group may lead to a downward bias of the treatment
+ effect as estimated in the previous section.
+ However, with two-sided non-compliance, Local Average Treatment Effects
+ (LATE) can be estimated, where the random allocation the treatment is used
+ as an instrument of the variable that measures calling into the IVR system
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.2307/2951620"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowLATE"
+
+\end_inset
+
+ to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:prod_LATE"
+
+\end_inset
+
+ in the Appendix provides tables that correspond to Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowh0HH"
+
+\end_inset
+
+ to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:yield_ag_allh"
+
+\end_inset
+
+ showing LATE estimates for IVR and SMS additional effects.
+ In all these tables, means and standard deviations in the control group
+ are repeated for reference in the first column.
+ In the second column, results of a 2 stage least squares (2SLS) regression
+ where we instrument a dummy variable that a household called the IVR with
+ the random allocation to the IVR treatment, are reported.
+ We report point estimates together with standard errors in brackets below;
+ corresponding p-values are in the third column.
+ The fourth column also shows point estimates and standard errors from the
+ second stage of a 2SLS regression that instruments reception of at least
+ one SMS message with the random allocation to the SMS treatment.
+ The fifth column shows corresponding p-values and the last column shows
+ the number of observations used.
+ The same structure is used in all Appendix Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowLATE"
+
+\end_inset
+
+ to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:prod_LATE"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Results do not change much from what we found in the previous section.
+ For knowledge related outcomes and the use or recommended practices (Appendix
+ Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowLATE"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:pract_late"
+
+\end_inset
+
+), point estimates for the IVR impact are generally much higher in absolute
+ value, but remain insignificant.
+ For the SMS treatment, LATE estimates are very similar to the intent to
+ treat effects from the previous section.
+ Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Impact-of-technology_LATE"
+
+\end_inset
+
+ confirms the previous finding that the likelihood of using organic fertilizer
+ reduces among households that called into the IVR system, but we now also
+ find that this effect is reversed by the SMS messages.
+ We now also find that SMS messages reduce the propensity to use of urea
+ somewhat.
+ For seed use, we find results similar to the previous section, with IVR
+ increasing the likelihood of using hybrid seed but SMS reception reducing
+ it again.
+ Now the seed index is not significant anymore.
+ Finally, few effects show up as significant when production related outcomes
+ are considered (Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:prod_LATE"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Thus, even after accounting for non-compliance, we find that additional
+ effects from the IVR and SMS treatment are limited, particularly when judged
+ by outcome indices.
+ A first reason why we fail to find significant effects that are consistent
+ with the effects from the video for the additional treatments may be because
+ the partial compliance greatly reduces the power of the design.
+ Only 8.9 percent of households that were selected for the IVR treatment
+ also actually called in
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+A back-of-the-envelope calculation shows that the minimum detectable effect
+ (MDE) size for maize yields in the original IVR design would be about 6.4
+ percent.
+ With only 8.9 percent compliance, the MDE increases to 71.6 percent.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+( 1.96+ 0.84)* sqrt(1/(0.6519039 *(1-0.6519039))) * sqrt((0.6596119)^2/3703)*1/.089
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ This low compliance rate may reflect low demand for the service
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "New1"
+
+\end_inset
+
+ also find very low uptake of similar demand driven extension technologies
+ in their analysis of different ICT enabled extension programmes in Kenya
+ and Rwanda.
+ In one experiment where farmers were offered to receive a call from an
+ extension agent, only 8% of farmers requested a phone call during planting
+ season.
+ In another project, farmers also had access to a toll-free number, but
+ only about 1% of treated farmers (35 callers) used it.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "RePEc:hbs:wpaper:13-047"
+
+\end_inset
+
+ find 88 percent of farmers called a hotline, but this was only after 2
+ years of intensive exposure to the system using bi-weekly reminders and
+ on a study population of cotton farmers that expressed willingness to participa
+te and owned a mobile phone.
+\end_layout
+
+\end_inset
+
+.
+ For the SMS reminders, of the 1,113 households that were supposed to receive
+ the reminders, 860 (77.3 percent) did, and so partial compliance seems less
+ of a problem
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The MDE for maize yield in the original design for the SMS treatment was
+ 7.5 percent and increases to 9.7 percent with 77.3 percent compliance.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+( 1.96+ 0.84)* sqrt(1/(0.46106 *(1-0.46106))) * sqrt((0.6596119)^2/2414)*1/.773
+ 
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+.
+ Contamination, where farmers that were allocated to the control group end
+ up calling the IVR, may also lead to a downward bias in the estimates,
+ making it harder to detect a significant impact.
+ However, we find that only one percent of farmers that were allocated to
+ the control group called the IVR hotline.
+ 
+\end_layout
+
+\begin_layout Standard
+Rather, we suspect that LATE in our context would lead to an upward bias
+ of the impact of the IVR.
+ The reason is that our indicator of take up of the intervention is likely
+ to be measured with significant error.
+ In particular, our indicator of compliance is taken from the IVR system
+ log, where recorded telephone numbers are matched to phone numbers that
+ were recorded during baseline data collection.
+ This indicator is likely to severely under-report true compliance, as encourage
+d farmers may use different phones to call the IVR.
+ This is illustrated by the fact that about 430 unique calls were made to
+ the system, representing about 18 percent of encouraged households, hence
+ almost doubling compliance.
+ Using our measure of compliance, we can not maintain that the independence
+ assumption holds, as some of the potential outcomes are directly determined
+ by the instrument.
+ The problem becomes clear when we think about LATE as the Wald estimator
+ that scales the ITT by compliance.
+ In our case, the ITT will be estimated on the basis of all 430 farmers
+ that called in.
+ Our measure of compliance will force all the impact of the treatment to
+ work through the 214 households that show up in the IVR log and could be
+ identified in the baseline, which in the case of a positive impact would
+ lead to an overestimate of the impact of the treatment on compliers.
+ It is well know that especially in the context of a weak first stage the
+ bias can become extremely large 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "duflo2007using"
+
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+A similar concern applies to our indicator of takeup of to SMS treatment.
+ Here, however, we fear that compliance is overestimated and so IV estimates
+ will result in a downward bias of the impact of the treatment on compliers.
+ That is, our indicator of compliance is again derived from the system logs
+ and simply looks at message delivery to the intended phone.
+ Probably not all farmers also opened the messages and read them.
+ But the problem is likely to be less severe here, given a stronger first
+ stage and a likely smaller difference between measured compliance and real
+ compliance.
+\end_layout
+
+\end_inset
+
+.
+ The above may make interpretation of the LATE effects difficult.
+ We thus recommend focusing on intent-to-treat effects.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Experimenter demand effects
+\end_layout
+
+\begin_layout Standard
+A key concern with our study is the fact that we use self-reported survey
+ data on key outcomes, as opposed to outcomes that are measured by a third
+ party in an objective way.
+ Study participants may report what they feel is desired in that context
+ (social desirability bias).
+ In an RCT, social desirability bias becomes a real concern if it is correlated
+ to the treatment, which is sometimes referred to as experimenter demand
+ effects 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "zizzo2010experimenter"
+
+\end_inset
+
+.
+ While recent research suggests that experimenter demand effects may be
+ less problematic than initially thought 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg."
+key "de2018measuring,mummolo2019demand"
+
+\end_inset
+
+, we provide some discussion on why we feel experimenter demand effects
+ are unlikely to drive our results.
+\end_layout
+
+\begin_layout Standard
+First, during the design of the endline questionnaire, we tried to minimize
+ experimenter demand effects by careful formulation of the questions.
+ Experimenter demand effects are more likely in simple yes/no questions
+ than for more open ended questions.
+ For instance, in our endline survey, we did not ask if the farmers used
+ 
+\begin_inset Quotes eld
+\end_inset
+
+plant spacing of 75cm x 30cm with a reduced seed rate of 1 seed per hill
+\begin_inset Quotes erd
+\end_inset
+
+ as recommended.
+ Rather, we asked to describe the planting process, and the enumerator was
+ then asked to select the appropriate response from a list of possible options.
+ For inputs adoption, we started from broad questions (eg.
+ whether fertilizer was used on a particular plot) and then asked farmers
+ to go further into detail (eg.
+ asking about fertilizer type, timing of application, quantities and price)
+ allowing enumerators to detect inconsistencies that may signal experimenter
+ demand effects.
+\end_layout
+
+\begin_layout Standard
+Second, in our endline survey, not all outcomes are equally likely to be
+ affected by experimenter demand effects.
+ For instance, experimenter demand effects are probably less likely to be
+ an issue for the multiple choice questions used to measure knowledge than
+ for questions about implementation of recommended practices or the use
+ of modern inputs such as inorganic fertilizer or improved seed.
+ It is reassuring that there is consistency between effects found on questions
+ that are more or less prone to experimenter demand effect.
+ In other words, if we would have found that our interventions did not result
+ in a change in knowledge related to optimal plant spacing, yet farmers
+ report that they did use optimal plant spacing on their plots, we would
+ be more worried that the latter effect was driven by experimenter demand
+ effects.
+\end_layout
+
+\begin_layout Standard
+Third, as we will report in the next section, fertilizer adoption, an outcome
+ prone to experimenter demand effects, seems to increase particularly for
+ treated farmers that live close to an agro-input dealer.
+ This finding reduces the possibility that our results are driven by misreportin
+g related to experimenter demand effects, as this would mean that households
+ that have better access to improved inputs strategically decide to report
+ their answers differently than households that have less access to inputs.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Heterogeneous treatment effects
+\end_layout
+
+\begin_layout Standard
+In this section, we explore potential differences in treatment effects condition
+al on baseline characteristics.
+ 
+\end_layout
+
+\begin_layout Standard
+IVR and SMS treatments are probably more effective for households that have
+ a mobile phone, and averaging outcomes over all household may dilute the
+ treatment effect, making it more difficult to detect a significant difference
+ between the treatment group and control group.
+ Therefore, we also estimated (conditional) treatment effects.
+ 
+\end_layout
+
+\begin_layout Standard
+We find that the video intervention increases knowledge among the less educated.
+ 
+\end_layout
+
+\begin_layout Standard
+We further find that the positive effect of the video intervention on urea
+ fertilizer use should be attributed to farmers that live relatively close
+ to input shops (close being defined as less than 4 kilometers).
+ This suggests that, in addition to information about the existence, use
+ and benefits of this particular fertilizer, availability also seems to
+ play a important role in the uptake of this technology.
+ In line with this, distance to an agro-input shop does not seem to matter
+ for organic fertilizer.
+ We do not find a significant interaction between a proxy of wealth 
 \end_layout
 
 \begin_layout Subsection*
@@ -3009,6 +3403,12 @@ stic and treatment.
  For instance in the first column of the second row, we do not find that
  attrition rates are related to baseline yields among households that received
  the video intervention.
+ 
+\end_layout
+
+\begin_layout Standard
+Finally, we also estimate Manski bounds to get an idea of the potential
+ impact of attrition.
  
 \end_layout
 
@@ -3080,73 +3480,24 @@ ment also did not have any additional effect.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Can this be used to explain the findings? However, different information
- technologies have different characteristics, making their effectiveness
- highly context specific.
- For instance, to introduce a new agronomic practice or technology, such
- as a new type of disease-resistant seed, showing a video may be more effective
- than a demand-driven technology such as a hot-line, where farmers are assumed
- to be aware of their information needs.
- At the same time, a video shown on a tablet computer or screened using
- a liquid-crystal display (LCD) projector is generally a one-off intervention,
- and particular details such as the exact dose of a new input may be missed
- or easily forgotten by farmers; having access to a demand driven information
- technology such as a hot-line may thus be more effective if agronomic practices
- are complex or require precise implementation.
- SMS messages are most likely too short to provide detailed information
- about modern inputs or agronomic practices.
- Therefore, effects, if any, are likely to work through behavioral channels:
- reminders have been found to be effective in overcoming inertia and procrastina
-tion, and can help prioritize in the event of competing obligations.
- SMS messages may therefore be effective in increasing the use of fertilizer,
- which is known to suffer from procrastination and competing obligations
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "duflo2011nudging"
-
-\end_inset
-
-, or encourage farmers to engage more in tedious activities, such as weeding.
-\end_layout
-
-\begin_layout Plain Layout
-this is also from the intro: We hypothesize that the video-mediated approach
- may be particularly effective in disseminating information about new technologi
-es and practices.
- However, we also note that the supply-driven nature of video and the management
- of its use by the information provider rather than the farmer, is a potential
- constraint to its effectiveness.
- 
-\end_layout
-
-\begin_layout Plain Layout
-IVR services (and similarly hot-lines, where a phone number can be called
- by a farmer and questions can be asked to an expert) are demand-driven
- approaches based on the assumption that farmers can identify their information
- needs and are capable of actively searching for additional information.
- One of the main advantages of this approach is that the information is
- supplied through a channel that is continuously accessible to the farmer,
- and can be used on a more timely and relevant basis.
- This technology may be more effective when farmers' key information constraints
- are associated with unanticipated shocks such pests, disease, or adverse
- weather conditions 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "RePEc:hbs:wpaper:13-047"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Plain Layout
-SMS messages are often framed as a supply-driven behavioral 
+Different information technologies have different characteristics, making
+ their effectiveness highly context specific.
+ This may help explain why some components of our design seem to be effective
+ for particular outcomes, while others are not.
+ For instance, to introduce a new agronomic practice or technology (such
+ as plant spacing of 75cm x 30cm with a reduced seed rate of 1 seed per
+ hill), showing a video may be more effective than a demand-driven technology
+ such as a hot-line, where farmers are assumed to be aware of their information
+ needs.
+ At the same time, a video shown on a tablet computer is generally a one-off
+ intervention, and particular details such as the exact name and dose of
+ a new type of seed may be missed or easily forgotten by farmers.
+ Access to a demand driven information technology such as a hot-line may
+ thus be more effective if agronomic practices are complex or require precise
+ implementation.
+ However, if there is no demand for such a technology (or take-up is constrained
+ by other factors), information is also not disseminated.
+ SMS messages are often framed as a supply-driven behavioral 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3154,8 +3505,8 @@ nudge
 \begin_inset Quotes erd
 \end_inset
 
- designed to remind people (with some considerable degree of persistence)
- to make decisions or take actions toward some particular objective.
+ designed to remind people to make decisions or take actions toward some
+ particular objective.
  Timely reminders have often been found very effective in overcoming inertia,
  procrastination, competing obligations, or simple forgetfulness of human
  beings 
@@ -3166,9 +3517,37 @@ key "Sunstein2014"
 \end_inset
 
 .
- However, SMS messages are short and can not be used to provide new and
- complex information.
- They also require that farmers are able to read.
+ However, SMS messages are short, which may be a problem when complex informatio
+n needs to be disseminated.
+ Farmers also need to be literate.
+\end_layout
+
+\begin_layout Standard
+The lack of additional effects may be due to the way the experiment was
+ designed.
+ As we wanted to rule out any possibility that the effects were driven by
+ differences in the content, we made sure that no new information was given
+ in the IVR system and in the SMS campaign.
+ In light of this, it may be less surprising that we do not find additional
+ knowledge effects from the two interventions.
+ This is also consistent with results from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "casaburi2014harnessing"
+
+\end_inset
+
+, who find only an impact from their SMS messages if it is more likely that
+ the farmers do not already know the information that is contained in them.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Also add a discussion on the low uptake of the IVR as a potential explanation
+ for the lack of additional effects.
 \end_layout
 
 \end_inset
@@ -3234,11 +3613,1307 @@ arabic{table}}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Determinants of IVR uptake and SMS reception
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Determinants-of-IVR"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{@{
+\backslash
+extracolsep{5pt}}lcc}  
+\backslash
+
+\backslash
+[-1.8ex]
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]   & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{Dependent variable:}} 
+\backslash
+
+\backslash
+  
+\backslash
+cline{2-3}  
+\backslash
+
+\backslash
+[-1.8ex] & called & (totsms 
+\backslash
+textgreater  0) 
+\backslash
+
+\backslash
+  
+\backslash
+
+\backslash
+[-1.8ex] & (1) & (2)
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\end_layout
+
+\begin_layout Plain Layout
+
+smsyes & 0.057$^{***}$ &  
+\backslash
+
+\backslash
+    & (0.013) &  
+\backslash
+
+\backslash
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+maizemobile
+\backslash
+_access & 0.058$^{**}$ & 0.768$^{***}$ 
+\backslash
+
+\backslash
+    & (0.028) & (0.042) 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+maizemobile & 0.042$^{*}$ & 0.088$^{**}$ 
+\backslash
+
+\backslash
+    & (0.025) & (0.037) 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+yield & 0.00000 & $-$0.00000 
+\backslash
+
+\backslash
+    & (0.00002) & (0.00004) 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+maizeage & $-$0.001 & $-$0.001 
+\backslash
+
+\backslash
+    & (0.0005) & (0.001) 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+maizeeduc & 0.006 & 0.019$^{**}$ 
+\backslash
+
+\backslash
+    & (0.006) & (0.008) 
+\backslash
+
+\backslash
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+maizehh
+\backslash
+_no & 0.002 & 0.010$^{***}$ 
+\backslash
+
+\backslash
+    & (0.002) & (0.003) 
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+maizeprrooms & $-$0.003 & 0.005 
+\backslash
+
+\backslash
+    & (0.006) & (0.009) 
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+maizeprinfo
+\backslash
+_receiv & 0.001 & $-$0.028 
+\backslash
+
+\backslash
+    & (0.020) & (0.027) 
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+maizeprinput
+\backslash
+_useNo & $-$0.075 & $-$0.120 
+\backslash
+
+\backslash
+    & (0.131) & (0.139) 
+\backslash
+
+\backslash
+      
+\end_layout
+
+\begin_layout Plain Layout
+
+maizeprinput
+\backslash
+_useYes & $-$0.089 & $-$0.093 
+\backslash
+
+\backslash
+    & (0.131) & (0.139) 
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+maizedist
+\backslash
+_shop & 0.001 & 0.0001 
+\backslash
+
+\backslash
+    & (0.001) & (0.001) 
+\backslash
+
+\backslash
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Constant & 0.058 & 0.109 
+\backslash
+
+\backslash
+    & (0.136) & (0.147) 
+\backslash
+
+\backslash
+    & & 
+\backslash
+
+\backslash
+  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  Observations & 2,180 & 1,023 
+\backslash
+
+\backslash
+  R$^{2}$ & 0.040 & 0.590 
+\backslash
+
+\backslash
+  Adjusted R$^{2}$ & 0.033 & 0.584 
+\backslash
+
+\backslash
+  Residual Std.
+ Error & 0.292 (df = 2163) & 0.276 (df = 1007) 
+\backslash
+
+\backslash
+  F Statistic & 5.613$^{***}$ (df = 16; 2163) & 96.779$^{***}$ (df = 15; 1007)
+ 
+\backslash
+
+\backslash
+  
+\backslash
+hline  
+\backslash
+hline 
+\backslash
+
+\backslash
+[-1.8ex]  
+\backslash
+textit{Note:}  & 
+\backslash
+multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} 
+\backslash
+
+\backslash
+  
+\backslash
+end{tabular}  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+2SLS estimates of impact of IVR and SMS treatments on household level knowledge
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:knowLATE"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Mean	& +IVR	&		p-value	&		+SMS	&	p-value	&		N 	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal spacing (yes=1) 	&	0.160	&	-0.360	&	0.306	&	0.014	&	0.596	&	3,619	
+\backslash
+
+\backslash
+ 	&	(0.367)	&	(0.351)	&		&	(0.026)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows inputs best combined (yes=1) 	&	0.908	&	-0.331	&	0.115	&	0.014	&	0.379	&	3,619	
+\backslash
+
+\backslash
+ 	&	(0.290)	&	(0.210)	&		&	(0.015)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal time for weeding (yes=1) 	&	0.954	&	0.178	&	0.350	&	0.000	&	0.979	&	3,6
+19	
+\backslash
+
+\backslash
+ 	&	(0.210)	&	(0.191)	&		&	(0.015)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows how to fight armyworm (yes=1) 	&	0.336	&	-0.286	&	0.431	&	0.023	&	0.401	&	3,619
+	
+\backslash
+
+\backslash
+ 	&	(0.473)	&	(0.363)	&		&	(0.028)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knowledge index	&	-0.077	&	-0.396	&	0.376	&	0.026	&	0.458	&	3,619	
+\backslash
+
+\backslash
+ 	&	(0.562)	&	(0.473)	&		&	(0.036)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ Column 2 reports differences between video only and video+ivr (and standard
+ error) with its corresponding p-value in column 3; column 4 reports differences
+ between video+ivr and video+ivr+SMS (and standard error) with its corresponding
+ p-value in column 5; sample size is reported in column 6.
+ All specifications control for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+2SLS estimates of impact of IVR and SMS treatments on agronomic practices
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:pract_late"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Mean	& +IVR	&		p-value	&		+SMS	&	p-value	&		N 	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Planted immediately after start of rains (yes=1) 	&	0.370	&	0.163	&	0.677	&	-0.002	&
+	0.940	&	3,500	
+\backslash
+
+\backslash
+ 	&	(0.484)	&	(0.391)	&		&	(0.029)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used spacing of 75cm x 30cm with a reduced seed rate (yes=1) 	&	0.026	&	-0.089	&	0.
+670	&	0.020	&	0.231	&	3,560	
+\backslash
+
+\backslash
+ 	&	(0.158)	&	(0.210)	&		&	(0.017)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Removed striga early on (yes=1) 	&	0.685	&	-0.170	&	0.617	&	0.033	&	0.215	&	3,560	
+\backslash
+
+\backslash
+ 	&	(0.465)	&	(0.339)	&		&	(0.027)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+First weeding after 18-20 days (yes=1) 	&	0.426	&	0.228	&	0.552	&	-0.012	&	0.693	&	3,
+560	
+\backslash
+
+\backslash
+ 	&	(0.495)	&	(0.383)	&		&	(0.030)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Recommended practices index 	&	-0.086	&	0.102	&	0.804	&	0.028	&	0.364	&	3,500	
+\backslash
+
+\backslash
+ 	&	(0.478)	&	(0.411)	&		&	(0.031)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: In the first column, means (and standard deviations) in the comparison
+ group are presented for each variable.
+ Column 2 reports differences between video only and video+ivr (and standard
+ error) with its corresponding p-value in column 3; column 4 reports differences
+ between video+ivr and video+ivr+SMS (and standard error) with its corresponding
+ p-value in column 5; sample size is reported in column 6.
+ All specifications control for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+2SLS estimates of impact of IVR and SMS treatments on fertilizer and improved
+ seed use
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Impact-of-technology_LATE"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Mean	& +IVR	&		p-value	&		+SMS	&	p-value	&		N 	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{fertilizer use}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Used DAP/NPK on at least one plot? (yes=1) 	&	0.264	&	0.393	&	0.228	&	-0.011	&	0.661	
+&	3,560	
+\backslash
+
+\backslash
+ 	&	(0.442)	&	(0.325)	&		&	(0.025)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used urea on at least one plot? (yes=1) 	&	0.051	&	0.225	&	0.320	&	-0.030	&	0.092	&	3
+,560	
+\backslash
+
+\backslash
+ 	&	(0.221)	&	(0.226)	&		&	(0.018)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used organic fertilizer on at least one plot? (yes=1) 	&	0.157	&	-0.704	&	0.037	&	0.
+044	&	0.077	&	3,560	
+\backslash
+
+\backslash
+ 	&	(0.365)	&	(0.337)	&		&	(0.025)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Fertilizer index 	&	-0.057	&	-0.078	&	0.846	&	-0.003	&	0.994	&	3,560	
+\backslash
+
+\backslash
+ 	&	(0.547)	&	(0.443)	&		&	(0.035)	&		&		
+\backslash
+
+\backslash
+ 														
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{seed use}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+																																			
+\end_layout
+
+\begin_layout Plain Layout
+
+Used hybrid maize seed on at least one plot? (yes=1) 	&	0.289	&	0.732	&	0.046	&	-0.0
+63	&	0.022	&	3,560	
+\backslash
+
+\backslash
+ 	&	(0.454)	&	(0.367)	&		&	(0.027)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used Open Polinated Varieties on at least one plot? (yes=1) 	&	0.302	&	0.164	&	0.63
+5	&	0.033	&	0.220	&	3,560	
+\backslash
+
+\backslash
+ 	&	(0.460)	&	(0.345)	&		&	(0.027)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Seed index	&	0.032	&	0.242	&	0.605	&	0.004	&	0.876	&	3,560	
+\backslash
+
+\backslash
+ 	&	(0.700)	&	(0.447)	&		&	(0.036)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: In the first column, means (and standard deviations) in the control
+ group are presented for each variable.
+ Column 2 reports differences between video only and video+ivr (and standard
+ error) with its corresponding p-value in column 3 and number of observations
+ in column 4; column 5 reports differences between video+ivr and video+ivr+SMS
+ (and standard error) with its corresponding p-value in column 6; sample
+ size is reported in column 7.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote that the difference is signficant at the 1, 5 and
+ 10 percent level, respectively, after correcting for multiple hypothesis
+ testing using a family-wise sharp null (10,000 permutations).
+ All specifications control for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+2SLS estimates of impact of IVR and SMS treatments on production
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:prod_LATE"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Mean	& +IVR	&		p-value	&		+SMS	&	p-value	&		N 	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Maize production (log(kg)) 	&	5.814	&	0.912	&	0.173	&	0.054	&	0.276	&	3,344	
+\backslash
+
+\backslash
+ 	&	(0.765)	&	(0.670)	&		&	(0.050)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Maize area (log(acre)) 	&	0.018	&	-0.240	&	0.614	&	0.031	&	0.415	&	3,341	
+\backslash
+
+\backslash
+ 	&	(0.580)	&	(0.476)	&		&	(0.038)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Maize yield (log(kg/acre)) 	&	5.850	&	0.690	&	0.224	&	0.005	&	0.898	&	3,302	
+\backslash
+
+\backslash
+ 	&	(0.658)	&	(0.568)	&		&	(0.041)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield better than normal (yes=1) 	&	0.387	&	0.008	&	0.983	&	0.048	&	0.103	&	3,560	
+\backslash
+
+\backslash
+ 	&	(0.488)	&	(0.374)	&		&	(0.030)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Labour(log(mandays)) 	&	4.132	&	-0.056	&	0.895	&	0.037	&	0.296	&	3,370	
+\backslash
+
+\backslash
+ 	&	(0.577)	&	(0.421)	&		&	(0.036)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Labour productivity (log(kg/mandays)) 	&	1.650	&	1.185	&	0.076	&	0.000	&	0.996	&	3,34
+1	
+\backslash
+
+\backslash
+ 	&	(0.720)	&	(0.667)	&		&	(0.048)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Production index	&	-0.053	&	0.159	&	0.625	&	0.007	&	0.702	&	3,302	
+\backslash
+
+\backslash
+ 	&	(0.365)	&	(0.297)	&		&	(0.022)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: In the first column, means (and standard deviations) in the control
+ group are presented for each variable.
+ Column 2 reports differences between video only and video+ivr (and standard
+ error) with its corresponding p-value in column 3; column 4 reports differences
+ between video+ivr and video+ivr+SMS (and standard error) with its corresponding
+ p-value in column 5; sample size is reported in column 6.
+ All specifications control for the other orthogonal factors in the factorial
+ design.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Preview

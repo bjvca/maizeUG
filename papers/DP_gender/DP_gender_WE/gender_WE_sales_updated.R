@@ -7,7 +7,7 @@ baseline <-  read.csv("/home/bjvca/data/projects/digital green/baseline/base_mer
 #wget https://www.dropbox.com/s/cr2i9tr3pr32fh3/AWS5.csv?dl=0
 
 rm(list=ls())
-dta <- read.csv("AWS5.csv")
+dta <- read.csv("AWS.csv")
 baseline <- read.csv("baseline.csv")
 #set totrep to zero if you do not want simulation based inferecne
 
@@ -171,7 +171,7 @@ totrep <- 10000
 
 ####
 
-for (h in 4:7) {
+for (h in 1:7) {
 if (h==1) {
 ############################################ H1: empower: rec==couple or woman - rec==male #########################################################
 dta <- dta_copy
@@ -253,7 +253,7 @@ ctrls <- "maizeprrooms+maizeprinfo_receiv+maizeprinput_use"
 
 print(h)
 ################################################## knowledge  #####################################################
-if (h!=4 ) {
+
 dta$sold_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
 
 dta$outcome <- dta$sold_woman
@@ -276,7 +276,7 @@ res_sales_w[3,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="we
 res_sales_w[4,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
 
 dta$price_sold_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$outcome <- dta$nr_bags_sold_woman
+dta$outcome <- dta$price_sold_woman
 
 res_sales_w[5,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
 res_sales_w[6,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
@@ -316,138 +316,142 @@ res_sales_w[12,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,
 
 
 res_sales_w[13,1:3,h] <- RI_FWER(deps= c("sold_woman","nr_bags_sold_woman","price_sold_woman","sold_to_trader_woman","sold_to_middleman_woman","sold_to_processor_woman") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_sales_w[c(1,3,5,7,9,11),3,h], nr_repl = totrep, w_int="weights")
-}
+
 
 ################### both as reported by woman
-if (h!=4 ) {
-dta$sold_both_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
 
-dta$outcome <- dta$sold_both_woman
+#dta$sold_both_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
 
-res_sales_b[1,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_b[2,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_b[1,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_sales_b[2,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_sales_b[1,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_sales_b[2,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
+#dta$outcome <- dta$sold_both_woman
 
-dta$nr_bags_sold_both_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$outcome <- dta$nr_bags_sold_both_woman
+#res_sales_b[1,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_b[2,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_b[1,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_sales_b[2,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_sales_b[1,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_sales_b[2,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
 
-res_sales_b[3,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_b[4,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_b[3,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_sales_b[4,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_sales_b[3,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_sales_b[4,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
+#dta$nr_bags_sold_both_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$outcome <- dta$nr_bags_sold_both_woman
 
-dta$price_sold_both_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$outcome <- dta$nr_bags_sold_both_woman
+#res_sales_b[3,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_b[4,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_b[3,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_sales_b[4,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_sales_b[3,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_sales_b[4,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
 
-res_sales_b[5,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_b[6,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_b[5,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_sales_b[6,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_sales_b[5,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_sales_b[6,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
+#dta$price_sold_both_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$outcome <- dta$price_sold_both_woman
 
-
-dta$sold_to_trader_both_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$outcome <- dta$sold_to_trader_both_woman
-res_sales_b[7,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_b[8,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_b[7,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_sales_b[8,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_sales_b[7,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_sales_b[8,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
-
-dta$sold_to_middleman_both_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$outcome <- dta$sold_to_middleman_both_woman
-res_sales_b[9,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_b[10,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_b[9,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_sales_b[10,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_sales_b[9,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_sales_b[10,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
-
-dta$sold_to_processor_both_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$outcome <- dta$sold_to_processor_both_woman
-res_sales_b[11,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_b[12,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_b[11,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_sales_b[12,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_sales_b[11,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_sales_b[12,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
+#res_sales_b[5,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_b[6,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_b[5,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_sales_b[6,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_sales_b[5,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_sales_b[6,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
 
 
+#dta$sold_to_trader_both_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$outcome <- dta$sold_to_trader_both_woman
+#res_sales_b[7,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_b[8,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_b[7,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_sales_b[8,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_sales_b[7,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_sales_b[8,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
 
-res_sales_b[13,1:3,h] <- RI_FWER(deps= c("sold_both_woman","nr_bags_sold_both_woman","price_sold_both_woman","sold_to_trader_both_woman","sold_to_middleman_both_woman","sold_to_processor_both_woman") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_sales_w[c(1,3,5,7,9,11),3,h], nr_repl = totrep, w_int="weights")
+#dta$sold_to_middleman_both_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$outcome <- dta$sold_to_middleman_both_woman
+#res_sales_b[9,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_b[10,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_b[9,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_sales_b[10,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_sales_b[9,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_sales_b[10,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
+
+#dta$sold_to_processor_both_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$outcome <- dta$sold_to_processor_both_woman
+#res_sales_b[11,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_b[12,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_b[11,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_sales_b[12,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_sales_b[11,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_sales_b[12,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
+
+
+
+#res_sales_b[13,1:3,h] <- RI_FWER(deps= c("sold_both_woman","nr_bags_sold_both_woman","price_sold_both_woman","sold_to_trader_both_woman","sold_to_middleman_both_woman","sold_to_processor_both_woman") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_sales_w[c(1,3,5,7,9,11),3,h], nr_repl = totrep, w_int="weights")
+
+################## man as reported by woman
+#dta$sold_man_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+
+#dta$outcome <- dta$sold_man_woman
+
+#res_sales_m[1,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_m[2,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_m[1,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_sales_m[2,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_sales_m[1,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_sales_m[2,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
+
+#dta$nr_bags_sold_man_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$outcome <- dta$nr_bags_sold_man_woman
+
+#res_sales_m[3,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_m[4,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_m[3,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_sales_m[4,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_sales_m[3,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_sales_m[4,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
+
+#dta$price_sold_man_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$outcome <- dta$price_sold_man_woman
+
+#res_sales_m[5,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_m[6,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_m[5,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_sales_m[6,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_sales_m[5,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_sales_m[6,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
+
+
+#dta$sold_to_trader_man_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$outcome <- dta$sold_to_trader_man_woman
+#res_sales_m[7,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_m[8,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_m[7,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_sales_m[8,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_sales_m[7,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_sales_m[8,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
+
+#dta$sold_to_middleman_man_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$outcome <- dta$sold_to_middleman_man_woman
+#res_sales_m[9,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_m[10,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_m[9,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_sales_m[10,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_sales_m[9,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_sales_m[10,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
+
+#dta$sold_to_processor_man_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$outcome <- dta$sold_to_processor_man_woman
+#res_sales_m[11,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_m[12,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_sales_m[11,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_sales_m[12,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_sales_m[11,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_sales_m[12,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
+
+
+
+#res_sales_m[13,1:3,h] <- RI_FWER(deps= c("sold_man_woman","nr_bags_sold_man_woman","price_sold_man_woman","sold_to_trader_man_woman","sold_to_middleman_man_woman","sold_to_processor_man_woman") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_sales_m[c(1,3,5,7,9,11),3,h], nr_repl = totrep, w_int="weights")
+
 }
-################# man as reported by woman
-dta$sold_man_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-
-dta$outcome <- dta$sold_man_woman
-
-res_sales_m[1,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_m[2,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_m[1,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_sales_m[2,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_sales_m[1,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_sales_m[2,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
-
-dta$nr_bags_sold_man_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$outcome <- dta$nr_bags_sold_man_woman
-
-res_sales_m[3,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_m[4,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_m[3,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_sales_m[4,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_sales_m[3,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_sales_m[4,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
-
-dta$price_sold_man_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$outcome <- dta$nr_bags_sold_man_woman
-
-res_sales_m[5,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_m[6,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_m[5,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_sales_m[6,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_sales_m[5,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_sales_m[6,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
 
 
-dta$sold_to_trader_man_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$outcome <- dta$sold_to_trader_man_woman
-res_sales_m[7,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_m[8,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_m[7,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_sales_m[8,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_sales_m[7,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_sales_m[8,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
+save(res_sales_m, file = "res_sales_m.RData")
 
-dta$sold_to_middleman_man_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$outcome <- dta$sold_to_middleman_man_woman
-res_sales_m[9,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_m[10,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_m[9,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_sales_m[10,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_sales_m[9,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_sales_m[10,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
-
-dta$sold_to_processor_man_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$outcome <- dta$sold_to_processor_man_woman
-res_sales_m[11,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_m[12,1,h] <- ifelse(h %in% c(5,6), wtd.sd(dta$outcome[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$outcome[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$outcome[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$outcome[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_sales_m[11,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_sales_m[12,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("outcome",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_sales_m[11,3,h] <- ifelse(totrep >0, RI("outcome",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("sold_woman",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("outcome",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_sales_m[12,3,h] <- nobs(lm(as.formula(paste("outcome",treatment, sep="~")) ,data=dta))
-
-
-
-res_sales_m[13,1:3,h] <- RI_FWER(deps= c("sold_man_woman","nr_bags_sold_man_woman","price_sold_man_woman","sold_to_trader_man_woman","sold_to_middleman_man_woman","sold_to_processor_man_woman") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_sales_m[c(1,3,5,7,9,11),3,h], nr_repl = totrep, w_int="weights")
-
-}
-
+print(res_sales_m)
 
 

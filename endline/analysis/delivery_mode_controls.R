@@ -1,14 +1,14 @@
 rm(list=ls())
-library(foreign)
+#library(foreign)
 ### running the data preparation file
-source("/home/bjvca/data/projects/digital green/endline/data/init.R")
+#source("/home/bjvca/data/projects/digital green/endline/data/init.R")
 
 #### The analysis was done on the Amazon's cloud computing platform, on which data was directly imported from my dropbox account
 #wget https://www.dropbox.com/s/p6kuazj263x9ilr/DLEC.dta?dl=0
 #wget https://www.dropbox.com/s/n7hn2x0y492ofgi/AWS.csv?dl=0
 #install.packages(c("ggplot2","doParallel","data.table","dplyr"))
 
-dta <- read.csv("AWS_delivery_mode.csv")
+dta <- read.csv("AWS_delivery_mode.csv")[,-1]
 
 
 
@@ -206,6 +206,13 @@ if (nr_repl > 0) {
 return(list(mod,sig, data))
 }
 
+#baseline <- read.csv("/home/bjvca/data/projects/digital green/endline/data/raw/baseline.csv")[c("hhid","maizehh_no","maizeprrooms","maizeage")]
+baseline <- read.csv("baseline_delivery_mode.csv")[,-1]
+### this has someduplicate
+baseline <- subset(baseline, !(hhid %in% baseline$hhid[duplicated(baseline$hhid)]))
+dta <- merge(baseline, dta, by="hhid")
+
+
 dta$weight <- 1
 dta$weight[dta$messenger == "female"] <- 1/(1191*1/1018)
 dta$weight[dta$messenger == "male"] <- 1/(1182*1/1018)
@@ -223,13 +230,13 @@ dta_bal <- dta
 ###uncomment here to look at heterogeneity wrt to mobile access
 #dta_bal <- subset(dta,maizemobile_access == TRUE)
 treatment <- "ivr+(messenger != 'ctrl')+sms+as.factor(recipient)"
-ctrls <- "femhead"  
+ctrls <- "femhead+maizeprrooms+maizehh_no+maizehh_no"  
 } else if (h==3) {
 dta_bal <- dta
 ###uncomment here to look at heterogeneity wrt to mobile ownership
 #dta_bal <- subset(dta,maizemobile == TRUE)
 treatment <- "sms+(messenger != 'ctrl')+ivr+as.factor(recipient)" 
-ctrls <- "femhead" 
+ctrls <- "femhead+maizeprrooms" 
 }
 ################################ knowledge  ############################
 
@@ -645,8 +652,6 @@ cl <- makeCluster(detectCores(all.tests = FALSE, logical = TRUE))
 registerDoParallel(cl)
 library(AER)
 
-
-
 ###TOT analysis did not use RI
 totrep <- 0
 ### better to loop over h: 
@@ -951,45 +956,12 @@ res_tot_wel[11,2,h] <- indexer[[2]]
 res_tot_wel[11,3,h]  <- nobs(indexer[[1]])
 }
 
-###look at correlates of compliance
-### we need to merge in baseline data
-rm(list=ls())
-library(foreign)
-library(stargazer)
-### running the data preparation file
-source("/home/bjvca/data/projects/digital green/endline/data/init.R")
-dta$messenger <- as.character(dta$messenger)
-dta$sms <- dta$sms.x
-dta$sms.x <- NULL
-dta$sms.y <- NULL
-dta$ivr <- dta$ivr.x
-dta$ivr.x <- NULL
-dta$ivr.y <- NULL
-dta<-  subset(dta, messenger != "ctrl")
 
-
-#dta <- subset(dta, ivr=="yes")
-baseline <- read.csv("/home/bjvca/data/projects/digital green/endline/data/raw/baseline.csv")[c("hhid","maizeeduc","maizehh_no","maizeprrooms","maizedist_shop","maizemobile","maizemobile_access","maizeage","maizeprinfo_receiv","maizeprwall","maizeprearn","maizeprinput_use","maizearea_cultivation","maizebags_harv")]
-
-dta <- merge(baseline, dta, by="hhid")
-
-dta$yield <- dta$maizebags_harv*100/dta$maizearea_cultivation
-
-detcalled <- lm(called~sms +as.factor(recipient) + as.factor(messenger) +maizemobile_access + yield +maizeage + maizeeduc + maizehh_no + maizeprrooms + maizeprinfo_receiv+maizeprinput_use+ maizedist_shop +maizemobile,data=dta)
-
-
-
-dta <- subset(dta, sms=="yes")
-detsms <- lm( (totsms>0)~as.factor(recipient) + as.factor(messenger) +maizemobile_access + yield +maizeage + maizeeduc + maizehh_no + maizeprrooms + maizeprinfo_receiv+maizeprinput_use+ maizedist_shop +maizemobile,data=dta)
-
-stargazer(detcalled, detsms)
-
-
+dta <- subset(dta, ivr=="yes")
+summary(lm(called~sms+as.factor(recipient) + as.factor(messenger) + femhead,data=dta))
 summary(ivreg( called~ (totsms>0) +as.factor(recipient) + as.factor(messenger) + femhead | sms+as.factor(recipient) + as.factor(messenger) + femhead, data=dta))
 mean(dta$called[dta$sms=="no"])
 sd(dta$called[dta$sms=="no"])
-
-
 
 
 

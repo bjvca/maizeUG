@@ -1,11 +1,11 @@
-rm(list=ls())
-source("/home/bjvca/data/projects/digital green/endline/data/init_gender_WE.R")
-baseline <-  read.csv("/home/bjvca/data/projects/digital green/baseline/base_merge.cvs")
+#rm(list=ls())
+#source("/home/bjvca/data/projects/digital green/endline/data/init_gender_WE.R")
+#baseline <-  read.csv("/home/bjvca/data/projects/digital green/baseline/base_merge.cvs")
 
-wget https://www.dropbox.com/s/sakp13112o1to6u/baseline.csv?dl=0
-#wget https://www.dropbox.com/s/n7hn2x0y492ofgi/AWS.csv?dl=0
-#wget https://www.dropbox.com/s/t6vkm91bawxbz8g/AWS2.csv?dl=0
-wget https://www.dropbox.com/s/iv11klkgogkb85p/AWS4.csv?dl=0
+#wget https://www.dropbox.com/s/sakp13112o1to6u/baseline.csv?dl=0
+##wget https://www.dropbox.com/s/n7hn2x0y492ofgi/AWS.csv?dl=0
+##wget https://www.dropbox.com/s/t6vkm91bawxbz8g/AWS2.csv?dl=0
+#wget https://www.dropbox.com/s/iv11klkgogkb85p/AWS4.csv?dl=0
 
 rm(list=ls())
 dta <- read.csv("AWS.csv")
@@ -171,7 +171,7 @@ totrep <- 10000
 
 ####
 
-for (h in 4:7) {
+for (h in 1:3) {
 if (h==1) {
 ############################################ H1: empower: rec==couple or woman - rec==male #########################################################
 dta <- dta_copy
@@ -255,295 +255,293 @@ ctrls <- "maizeprrooms+maizeprinfo_receiv+maizeprinput_use"
 print(h)
 ################################################## inputs woman  #####################################################
 dta_glob <- dta
-if (h!=4 ) {
-#use of DAP
-man <- "decDAP_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+
+##use of DAP
+#man <- "decDAP_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
 
 
-dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
-names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
-dta <- merge(dta_glob,share_woman_decide,by="hhid")
-dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$adopt <- dta$share_woman_dec_maize
+#dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
+#names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
+#dta <- merge(dta_glob,share_woman_decide,by="hhid")
+#dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$adopt <- dta$share_woman_dec_maize
 
 
-res_inputs_w[1,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_w[2,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_w[1,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_inputs_w[2,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_inputs_w[1,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_inputs_w[2,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
+#res_inputs_w[1,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_w[2,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_w[1,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_inputs_w[2,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_inputs_w[1,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_inputs_w[2,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
 
-#23. Who decided to use this spacing and/or seed density on ${garden1} plot?  
-dta <- dta_glob
-man <- "decUrea_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+##23. Who decided to use this spacing and/or seed density on ${garden1} plot?  
+#dta <- dta_glob
+#man <- "decUrea_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
 
-dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
-names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
-dta <- merge(dta_glob,share_woman_decide,by="hhid")
-dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$adopt <- dta$share_woman_dec_maize
+#dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
+#names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
+#dta <- merge(dta_glob,share_woman_decide,by="hhid")
+#dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$adopt <- dta$share_woman_dec_maize
 
-res_inputs_w[3,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_w[4,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_w[3,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_w[4,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
 
-res_inputs_w[3,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_inputs_w[4,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_inputs_w[3,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_inputs_w[4,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
+#res_inputs_w[3,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_inputs_w[4,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_inputs_w[3,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_inputs_w[4,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
 
-#23. 25.Who decided  on this particular way to fight striga (kayongo)? 
-dta <- dta_glob
-man <- "decOrg_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+##23. 25.Who decided  on this particular way to fight striga (kayongo)? 
+#dta <- dta_glob
+#man <- "decOrg_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
 
-dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
-names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
-dta <- merge(dta_glob,share_woman_decide,by="hhid")
-dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$adopt <- dta$share_woman_dec_maize
+#dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
+#names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
+#dta <- merge(dta_glob,share_woman_decide,by="hhid")
+#dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$adopt <- dta$share_woman_dec_maize
 
-res_inputs_w[5,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_w[6,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_w[5,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_w[6,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
 
-res_inputs_w[5,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_inputs_w[6,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_inputs_w[5,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_inputs_w[6,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
+#res_inputs_w[5,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_inputs_w[6,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_inputs_w[5,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_inputs_w[6,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
 
-#27. Who decided on when to do the first weeding for ${garden1} plot?
-dta <- dta_glob
-man <- "decHybrid_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+##27. Who decided on when to do the first weeding for ${garden1} plot?
+#dta <- dta_glob
+#man <- "decHybrid_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
 
-dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
-names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
-dta <- merge(dta_glob,share_woman_decide,by="hhid")
-dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$adopt <- dta$share_woman_dec_maize
+#dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
+#names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
+#dta <- merge(dta_glob,share_woman_decide,by="hhid")
+#dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$adopt <- dta$share_woman_dec_maize
 
-res_inputs_w[7,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_w[8,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_w[7,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_w[8,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
 
-res_inputs_w[7,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_inputs_w[8,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_inputs_w[7,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_inputs_w[8,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
+#res_inputs_w[7,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_inputs_w[8,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_inputs_w[7,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_inputs_w[8,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
 
-dta <- dta_glob
-man <- "decOPV_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+#dta <- dta_glob
+#man <- "decOPV_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
 
-dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
-names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
-dta <- merge(dta_glob,share_woman_decide,by="hhid")
-dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$adopt <- dta$share_woman_dec_maize
+#dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
+#names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
+#dta <- merge(dta_glob,share_woman_decide,by="hhid")
+#dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$adopt <- dta$share_woman_dec_maize
 
-res_inputs_w[9,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_w[10,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_w[9,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_w[10,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
 
-res_inputs_w[9,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_inputs_w[10,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_inputs_w[9,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_inputs_w[10,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
-### index /// disregard names, this is copy paste from the gender_WE_decisions.R
+#res_inputs_w[9,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_inputs_w[10,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_inputs_w[9,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_inputs_w[10,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
+#### index /// disregard names, this is copy paste from the gender_WE_decisions.R
 
-man <- "decDAP_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
-dta_ind_mgt_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-names(dta_ind_mgt_woman) <- c("hhid","time","mgt_woman")
-man <- "decUrea_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
-dta_ind_dectime_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-names(dta_ind_dectime_woman) <- c("hhid","time","dectime_woman")
-man <- "decOrg_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
-dta_ind_decspace_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-names(dta_ind_decspace_woman) <-  c("hhid","time","decspace_woman")
-man <- "decHybrid_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
-dta_ind_decstriga_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-names(dta_ind_decstriga_woman) <-  c("hhid","time","decstriga_woman")
-man <- "decOPV_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
-dta_ind_decweed_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-names(dta_ind_decweed_woman) <-  c("hhid","time","decweed_woman")
-
-
-
-all_ind <- merge(merge(merge(merge(dta_ind_mgt_woman,dta_ind_dectime_woman),dta_ind_decspace_woman),dta_ind_decstriga_woman), dta_ind_decweed_woman )
-all_hh <- aggregate(all_ind[c( "mgt_woman"  ,  "dectime_woman", "decspace_woman", "decstriga_woman","decweed_woman")],list(all_ind$hhid),mean,na.rm=T)
-names(all_hh)[names(all_hh) == 'Group.1'] <- 'hhid'
-
-dta <- merge(dta_glob,all_hh,by="hhid")
-dta$mgt_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-
-indexer <- FW_index(treatment,c( "mgt_woman"  ,  "dectime_woman", "decspace_woman", "decstriga_woman","decweed_woman"),ctrls,w_int="weights",dta, nr_repl=totrep)
-
-
-res_inputs_w[11,1,h] <- ifelse(h %in% c(5,6), wtd.mean(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(indexer[[3]]$index[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_w[12,1,h] <- ifelse(h %in% c(5,6), wtd.sd(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(indexer[[3]]$index[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-
-
-res_inputs_w[11,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
-res_inputs_w[12,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
-res_inputs_w[11,3,h] <-  indexer[[2]]
-res_inputs_w[12,3,h] <-  nobs(indexer[[1]])
-
-
-res_inputs_w[13,1:3,h] <- RI_FWER(deps= c( "mgt_woman"  ,  "dectime_woman", "decspace_woman", "decstriga_woman","decweed_woman") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_inputs_w[c(1,3,5,7,9),3,h], nr_repl = totrep, w_int="weights")
-}
-################################################## decisions - jointly made #####################################################
-if (h!=4 ) {
-
-#use of DAP
-man <- "decDAP_both_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
-
-
-dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
-names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
-dta <- merge(dta_glob,share_woman_decide,by="hhid")
-dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$adopt <- dta$share_woman_dec_maize
-
-res_inputs_b[1,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_b[2,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_b[1,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_inputs_b[2,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_inputs_b[1,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_inputs_b[2,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
-
-#23. Who decided to use this spacing and/or seed density on ${garden1} plot?  
-dta <- dta_glob
-man <- "decUrea_both_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
-
-dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
-names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
-dta <- merge(dta_glob,share_woman_decide,by="hhid")
-dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$adopt <- dta$share_woman_dec_maize
-
-res_inputs_b[3,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_b[4,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_b[3,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_inputs_b[4,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_inputs_b[3,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_inputs_b[4,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
-
-#23. 25.Who decided  on this particular way to fight striga (kayongo)? 
-dta <- dta_glob
-man <- "decOrg_both_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
-
-dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
-names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
-dta <- merge(dta_glob,share_woman_decide,by="hhid")
-dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$adopt <- dta$share_woman_dec_maize
-
-res_inputs_b[5,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_b[6,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_b[5,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_inputs_b[6,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_inputs_b[5,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_inputs_b[6,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
-
-#27. Who decided on when to do the first weeding for ${garden1} plot?
-dta <- dta_glob
-man <- "decHybrid_both_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
-
-dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
-names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
-dta <- merge(dta_glob,share_woman_decide,by="hhid")
-dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$adopt <- dta$share_woman_dec_maize
-
-res_inputs_b[7,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_b[8,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_b[7,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_inputs_b[8,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_inputs_b[7,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_inputs_b[8,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
-
-dta <- dta_glob
-man <- "decOPV_both_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
-
-dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
-names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
-dta <- merge(dta_glob,share_woman_decide,by="hhid")
-dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
-dta$adopt <- dta$share_woman_dec_maize
-
-res_inputs_b[9,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_b[10,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_b[9,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_inputs_b[10,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_inputs_b[9,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_inputs_b[10,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
-### index /// disregard names, this is copy paste from the gender_WE_decisions.R
-
-man <- "decDAP_both_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
-dta_ind_mgt_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-names(dta_ind_mgt_woman) <- c("hhid","time","mgt_woman")
-man <- "decUrea_both_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
-dta_ind_dectime_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-names(dta_ind_dectime_woman) <- c("hhid","time","dectime_woman")
-man <- "decOrg_both_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
-dta_ind_decspace_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-names(dta_ind_decspace_woman) <-  c("hhid","time","decspace_woman")
-man <- "decHybrid_both_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
-dta_ind_decstriga_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-names(dta_ind_decstriga_woman) <-  c("hhid","time","decstriga_woman")
-man <- "decOPV_both_woman"
-dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
-dta_ind_decweed_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
-names(dta_ind_decweed_woman) <-  c("hhid","time","decweed_woman")
+#man <- "decDAP_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+#dta_ind_mgt_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#names(dta_ind_mgt_woman) <- c("hhid","time","mgt_woman")
+#man <- "decUrea_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+#dta_ind_dectime_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#names(dta_ind_dectime_woman) <- c("hhid","time","dectime_woman")
+#man <- "decOrg_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+#dta_ind_decspace_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#names(dta_ind_decspace_woman) <-  c("hhid","time","decspace_woman")
+#man <- "decHybrid_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+#dta_ind_decstriga_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#names(dta_ind_decstriga_woman) <-  c("hhid","time","decstriga_woman")
+#man <- "decOPV_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+#dta_ind_decweed_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#names(dta_ind_decweed_woman) <-  c("hhid","time","decweed_woman")
 
 
 
-all_ind <- merge(merge(merge(merge(dta_ind_mgt_woman,dta_ind_dectime_woman),dta_ind_decspace_woman),dta_ind_decstriga_woman), dta_ind_decweed_woman )
-all_hh <- aggregate(all_ind[c( "mgt_woman"  ,  "dectime_woman", "decspace_woman", "decstriga_woman","decweed_woman")],list(all_ind$hhid),mean,na.rm=T)
-names(all_hh)[names(all_hh) == 'Group.1'] <- 'hhid'
+#all_ind <- merge(merge(merge(merge(dta_ind_mgt_woman,dta_ind_dectime_woman),dta_ind_decspace_woman),dta_ind_decstriga_woman), dta_ind_decweed_woman )
+#all_hh <- aggregate(all_ind[c( "mgt_woman"  ,  "dectime_woman", "decspace_woman", "decstriga_woman","decweed_woman")],list(all_ind$hhid),mean,na.rm=T)
+#names(all_hh)[names(all_hh) == 'Group.1'] <- 'hhid'
 
-dta <- merge(dta_glob,all_hh,by="hhid")
-dta$mgt_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta <- merge(dta_glob,all_hh,by="hhid")
+#dta$mgt_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
 
-indexer <- FW_index(treatment,c( "mgt_woman"  ,  "dectime_woman", "decspace_woman", "decstriga_woman","decweed_woman"),ctrls,w_int="weights",dta, nr_repl=totrep)
-
-
-res_inputs_b[11,1,h] <- ifelse(h %in% c(5,6), wtd.mean(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(indexer[[3]]$index[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_inputs_b[12,1,h] <- ifelse(h %in% c(5,6), wtd.sd(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(indexer[[3]]$index[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#indexer <- FW_index(treatment,c( "mgt_woman"  ,  "dectime_woman", "decspace_woman", "decstriga_woman","decweed_woman"),ctrls,w_int="weights",dta, nr_repl=totrep)
 
 
-res_inputs_b[11,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
-res_inputs_b[12,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
-res_inputs_b[11,3,h] <-  indexer[[2]]
-res_inputs_b[12,3,h] <-  nobs(indexer[[1]])
+#res_inputs_w[11,1,h] <- ifelse(h %in% c(5,6), wtd.mean(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(indexer[[3]]$index[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_w[12,1,h] <- ifelse(h %in% c(5,6), wtd.sd(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(indexer[[3]]$index[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
 
 
-res_inputs_b[13,1:3,h] <- RI_FWER(deps= c( "mgt_woman"  ,  "dectime_woman", "decspace_woman", "decstriga_woman","decweed_woman") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_inputs_b[c(1,3,5,7,9),3,h], nr_repl = totrep, w_int="weights")
-}
+#res_inputs_w[11,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
+#res_inputs_w[12,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
+#res_inputs_w[11,3,h] <-  indexer[[2]]
+#res_inputs_w[12,3,h] <-  nobs(indexer[[1]])
+
+
+#res_inputs_w[13,1:3,h] <- RI_FWER(deps= c( "mgt_woman"  ,  "dectime_woman", "decspace_woman", "decstriga_woman","decweed_woman") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_inputs_w[c(1,3,5,7,9),3,h], nr_repl = totrep, w_int="weights")
+
+################################################### decisions - jointly made #####################################################
+
+##use of DAP
+#man <- "decDAP_both_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+
+
+#dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
+#names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
+#dta <- merge(dta_glob,share_woman_decide,by="hhid")
+#dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$adopt <- dta$share_woman_dec_maize
+
+#res_inputs_b[1,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_b[2,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_b[1,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_inputs_b[2,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_inputs_b[1,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_inputs_b[2,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
+
+##23. Who decided to use this spacing and/or seed density on ${garden1} plot?  
+#dta <- dta_glob
+#man <- "decUrea_both_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+
+#dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
+#names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
+#dta <- merge(dta_glob,share_woman_decide,by="hhid")
+#dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$adopt <- dta$share_woman_dec_maize
+
+#res_inputs_b[3,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_b[4,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_b[3,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_inputs_b[4,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_inputs_b[3,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_inputs_b[4,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
+
+##23. 25.Who decided  on this particular way to fight striga (kayongo)? 
+#dta <- dta_glob
+#man <- "decOrg_both_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+
+#dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
+#names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
+#dta <- merge(dta_glob,share_woman_decide,by="hhid")
+#dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$adopt <- dta$share_woman_dec_maize
+
+#res_inputs_b[5,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_b[6,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_b[5,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_inputs_b[6,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_inputs_b[5,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_inputs_b[6,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
+
+##27. Who decided on when to do the first weeding for ${garden1} plot?
+#dta <- dta_glob
+#man <- "decHybrid_both_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+
+#dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
+#names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
+#dta <- merge(dta_glob,share_woman_decide,by="hhid")
+#dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$adopt <- dta$share_woman_dec_maize
+
+#res_inputs_b[7,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_b[8,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_b[7,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_inputs_b[8,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_inputs_b[7,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_inputs_b[8,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
+
+#dta <- dta_glob
+#man <- "decOPV_both_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+
+#dta_ind <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#share_woman_decide <- aggregate(dta_ind$decide,list(dta_ind$hhid),mean,na.rm=T)
+#names(share_woman_decide) <- c("hhid","share_woman_dec_maize")
+#dta <- merge(dta_glob,share_woman_decide,by="hhid")
+#dta$share_woman_dec_maize[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+#dta$adopt <- dta$share_woman_dec_maize
+
+#res_inputs_b[9,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_b[10,1,h] <-   ifelse(h %in% c(5,6), wtd.sd(dta$adopt[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$adopt[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$adopt[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$adopt[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_b[9,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+#res_inputs_b[10,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+#res_inputs_b[9,3,h] <- ifelse(totrep >0, RI("adopt",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("adopt",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("adopt",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+#res_inputs_b[10,3,h] <- nobs(lm(as.formula(paste("adopt",treatment, sep="~")) ,data=dta))
+#### index /// disregard names, this is copy paste from the gender_WE_decisions.R
+
+#man <- "decDAP_both_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+#dta_ind_mgt_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#names(dta_ind_mgt_woman) <- c("hhid","time","mgt_woman")
+#man <- "decUrea_both_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+#dta_ind_dectime_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#names(dta_ind_dectime_woman) <- c("hhid","time","dectime_woman")
+#man <- "decOrg_both_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+#dta_ind_decspace_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#names(dta_ind_decspace_woman) <-  c("hhid","time","decspace_woman")
+#man <- "decHybrid_both_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+#dta_ind_decstriga_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#names(dta_ind_decstriga_woman) <-  c("hhid","time","decstriga_woman")
+#man <- "decOPV_both_woman"
+#dec_vars <- paste(man,paste("_pl",1:5, sep=""), sep="")
+#dta_ind_decweed_woman <- reshape(cbind(dta_glob[c("hhid", dec_vars)]), varying = dec_vars,v.names="decide", idvar="hhid", direction="long")
+#names(dta_ind_decweed_woman) <-  c("hhid","time","decweed_woman")
+
+
+
+#all_ind <- merge(merge(merge(merge(dta_ind_mgt_woman,dta_ind_dectime_woman),dta_ind_decspace_woman),dta_ind_decstriga_woman), dta_ind_decweed_woman )
+#all_hh <- aggregate(all_ind[c( "mgt_woman"  ,  "dectime_woman", "decspace_woman", "decstriga_woman","decweed_woman")],list(all_ind$hhid),mean,na.rm=T)
+#names(all_hh)[names(all_hh) == 'Group.1'] <- 'hhid'
+
+#dta <- merge(dta_glob,all_hh,by="hhid")
+#dta$mgt_woman[dta$interview_status=='one individual interviewed' & dta$gender1 == 'man'] <- NA
+
+#indexer <- FW_index(treatment,c( "mgt_woman"  ,  "dectime_woman", "decspace_woman", "decstriga_woman","decweed_woman"),ctrls,w_int="weights",dta, nr_repl=totrep)
+
+
+#res_inputs_b[11,1,h] <- ifelse(h %in% c(5,6), wtd.mean(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(indexer[[3]]$index[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+#res_inputs_b[12,1,h] <- ifelse(h %in% c(5,6), wtd.sd(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(indexer[[3]]$index[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+
+
+#res_inputs_b[11,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
+#res_inputs_b[12,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
+#res_inputs_b[11,3,h] <-  indexer[[2]]
+#res_inputs_b[12,3,h] <-  nobs(indexer[[1]])
+
+
+#res_inputs_b[13,1:3,h] <- RI_FWER(deps= c( "mgt_woman"  ,  "dectime_woman", "decspace_woman", "decstriga_woman","decweed_woman") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_inputs_b[c(1,3,5,7,9),3,h], nr_repl = totrep, w_int="weights")
 
 ############################### men
 
@@ -686,6 +684,10 @@ res_inputs_m[12,3,h] <-  nobs(indexer[[1]])
 
 res_inputs_m[13,1:3,h] <- RI_FWER(deps= c( "mgt_woman"  ,  "dectime_woman", "decspace_woman", "decstriga_woman","decweed_woman") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_inputs_m[c(1,3,5,7,9),3,h], nr_repl = totrep, w_int="weights")
 }
+
+save(res_inputs_m, file = "res_inputs_m.RData")
+
+print(res_inputs_m)
 
 
 
