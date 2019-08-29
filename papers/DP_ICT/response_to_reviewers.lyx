@@ -239,6 +239,10 @@ n needs to be disseminated.
 \end_layout
 
 \begin_layout Standard
+TO DO: Put in conclusion.
+\end_layout
+
+\begin_layout Standard
 I have several other major comments: 
 \end_layout
 
@@ -520,6 +524,16 @@ I also have several additional minor comments:
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+We have moved the context section forward, before the experimental design
+ section.
+ We also moved the balance tables to the design section instead of presenting
+ it as part of the results (this suggestion was also made by reviewer 3
+ R3.16).
+\end_layout
+
+\begin_layout Standard
 9.
  I realize we can’t see the video in paper-form but a few screenshots and
  the transcript in the appendix would be helpful along with a copy of the
@@ -565,216 +579,28 @@ n in Lusgoga) and the content of the 8 sms messages, both in Lusoga and
 \end_layout
 
 \begin_layout Standard
-We sampled from five districts from the East known for their maize production:
- Bugiri, Mayuge, Iganga, Namayingo and Namutumba.
- Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Administrative-structure-of"
 
-\end_inset
-
- gives an idea of how villages are distributed over parishes, which are
- in turn allocated to sub-counties within each of the 5 districts in our
- study.
- From this, we removed town councils and also two sub-counties that consisted
- of islands in lake Victoria.
- 
+\emph on
+The randomization was somewhat complicated given that this study was part
+ of a larger study that also mixed in other factors to study gender related
+ issues in agricultural extension.
+ We now explain the randomization procedure in detail.
+ Note that the entire project (including code) is under version control,
+ which will be made publicly available.
+ The final version of the manuscript will include a link to to the R code
+ that was used to obtain the sample and allocate the treatments.
 \end_layout
 
 \begin_layout Standard
-\align center
-\begin_inset Float table
-wide false
-sideways false
-status collapsed
 
-\begin_layout Plain Layout
-\begin_inset Preview
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tabular}{rccc} 
-\backslash
-hline 
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-	&	subcounties	&	parishes	&	villages	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-Bugiri  & 11 & 72 & 399  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Mayuge	&	13	&	73	&	462	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Iganga & 16 & 82 & 360 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Namayingo  & 7 & 43  & 308 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Namutumba  & 7 & 37  & 348 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-Total	&	54	&	307	&	1877	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline 
-\backslash
-hline 
-\backslash
-end{tabular}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Administrative structure of study area
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Administrative-structure-of"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+\emph on
+Changes made to the manuscript: We added the following two paragraphs to
+ the experimental design section: 
 \end_layout
 
 \begin_layout Standard
-Our study population consists of maize farmers within this region
-\begin_inset Foot
-status collapsed
 
-\begin_layout Plain Layout
-In particular, given the subject of our study, we target monogamous households
- that are growing maize.
- However, we will also include some female headed households as they are
- an important disadvantaged group in Uganda.
- These households can obviously not get all the treatments.
- For these households, we will only vary the messenger between male and
- female.
-\end_layout
-
-\end_inset
-
-.
- Because of cost considerations, however, we will use two-stage cluster
- sampling to obtain a representative sample of this population.
- In particular, we will first randomly select parishes (proportional to
- the number of villages within each parish).
- In the selected parishes, all villages will be included in the study.
- Within each village, we will then list all the households, from which we
- will then sample households to be included in the study.
- At the same time, we suspect that outcomes within villages will be correlated,
- for instance due to local weather conditions, or development programs that
- are implemented in certain areas.
- We therefore use the village as a blocking factor.
- In other words, in each village, we will makes sure all possible treatment
- combinations related to the first 2 factors (plus control) are administered.
- From the research strategy above, we learn that the messenger and the recipient
- factor combine into 9 different treatment combinations.
- Adding the control leads to 10 different households being selected in each
- village.
- Of the 9 farmers that are shown a video (not the placebo), about six will
- also receive the IVR treatment, and of these six, three will also get SMS
- reminders.
-\end_layout
-
-\begin_layout Standard
+\emph on
 Maize is especially important in eastern Uganda.
  We sampled from five districts in eastern Uganda known for their maize
  production: Bugiri, Mayuge, Iganga, Namayingo, and Namutumba.
@@ -782,12 +608,46 @@ Maize is especially important in eastern Uganda.
  that consisted of islands in lake Victoria.
  We used two-stage cluster sampling to obtain a representative sample of
  this population.
- In particular, we first selected parishes randomly and in proportion to
- the number of villages within each parish.
- In the selected parishes, all villages were included in the study.
- Within each village, we then listed all households, from which we randomly
- assigned households to be included in the study.
+ In particular, from the five districts, we first selected 50 parishes randomly
+ and in proportion to the number of villages within each parish.
+ Within each village in the selected parishes, we then listed all households,
+ from which we randomly assigned up to 10 households to participate in the
+ study.
  
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+In each village, one of the 10 households was randomly allocated to the
+ control group (which got to see a placebo video).
+ The remaining 9 households were all shown a video.
+ As mentioned in footnote 1, this research was part of a larger research
+ project that also used the video intervention to explore issues related
+ to gender in agricultural extension.
+ Because of this, we also experimentally varied who provided the information
+ in the video (a man alone, a woman alone, or a couple (man+woman)) as well
+ as to whom the video was shown within the household (a man alone, a woman
+ alone, or a couple (man+woman)).
+ In the context of a factorial design with two factors and each 3 levels,
+ this corresponded to 9 treatment combinations.
+ We thus used the village as blocs, and randomly assigned the nine potential
+ treatment combinations to the remaining 9 households in each village.
+ We then added the IVR treatment randomly to 2/3 of the households in each
+ treatment cell.
+ For example, from the 385 households where the man within the household
+ would be shown a video where a man provides all the information, 257 randomly
+ selected households were also provided with the encouragement to use the
+ IVR.
+ Among those that were allocated the IVR in each treatment cell, we then
+ randomly allocated 1/2 of households to the SMS treatment.
+ For instance, from the 257 households where the man would be shown a video
+ featuring a man and who also were allocated to the receive the IVR treatment,
+ 128 where randomly allocated to also receive the SMS reminders.
+ As such, the treatment cells created by the interaction of the 2 other
+ factors the were used as blocs in the randomization of IVR and SMS treatments.
+ The exact same sampling procedure was used in the permutation algorithm
+ that was used to judge significance through randomization inference.
 \end_layout
 
 \begin_layout Standard
@@ -866,7 +726,7 @@ General Comment: I enjoyed reading the paper and believe it makes a useful
  of different types of ICTs (when most the available work focuses only on
  one).
  Methodologically, the authors are able to estimate causal estimates based
- on randomized assign- ment.
+ on randomized assignment.
  They are also rigorous in their inference by using increasingly popular
  techniques (based on randomization inference and adjusting for family-wise
  error rates).
@@ -893,6 +753,110 @@ Suggestions:
  Including outcomes related to the same practices in their analysis of adoption
  and knowledge would lend more credibility to the mechanisms through which
  ICT-based extension improves farming.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The way the results are presented in the manuscript may suggest that we
+ had a traditional theory of change in mind, where a lack of technical knowledge
+ is the main constraint to increased modern input use or application of
+ recommended practices.
+ However, we were aware of an emerging body of research that also explores
+ alternative impact pathways, and our research was also informed by this.
+ For instance, our videos use actors that farmers can relate to, drawing
+ on an emerging literature on the importance of peer learning, the effectiveness
+ of model farmers in inspiring others 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "benyishay2018social,doi:10.1093/wber/lhv014"
+
+\end_inset
+
+.
+ Furthermore, our video not only demonstrates the use of new inputs and
+ the application of recommended practices.
+ It also contains parts that draw on studies that shown how behavioural
+ change communication and social marketing can be used to change behavour
+ and practices that are deeply entranced in traditional agricultural societies.
+ Therefore, assessing changes in knowledge was subordinate to assessing
+ changes in behaviour and production and we opted to measure knowledge on
+ four topics using 4 multiple choice questions.
+ However, these four questions were carefully though about.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+One questions was on spacing.
+ The recommendation we provided in the video was a new way of spacing with
+ reduced seeding rate that was only recently being promoted by the government
+ (spacing of 75cm x 30cm with 1 plant per hill).
+ As this was new, we expected to find only few people in the control group
+ would know this and that the intervention would significantly increase
+ this knowledge.
+ This, in turn, we hoped would increase the actual application of the new
+ way of spacing.
+ As such, this follows a traditional theory of change.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The second question that was included is not so much about testing technical
+ knowledge.
+ It is more about testing if farmers understood the broader message given
+ in the video that successful farmers generally see maize farming more as
+ a business than as a means to provide food for the household.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The third question was included to investigate how video can be used to
+ make a known technology more salient.
+ We knew from previous work in the region and from qualitative interviews
+ that farmers are generally well aware about the optimal timing for first
+ weeding, but few farmers actually do it.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The last questions was added to see if our information interventions would
+ crowd in additional search for information.
+ We did not provide any information about fall armyworm in our videos, IVR
+ nor SMS messages.
+ We thus also did not expect our interventions to have a direct effect on
+ knowledge related to fighting fall armyworm.
+ However, it could be that farmers that received information on recommended
+ practices and modern inputs and shown life stories of successful farmers
+ start to look for information from various other sources.
+ As fall armyworm was an important emerging problem at the time, we thought
+ this would be a good topic.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Changes made to the text: In the part where the intervention is described,
+ we already state clearly that 
+\begin_inset Quotes eld
+\end_inset
+
+Not all constraints to maize productivity improvement are information deficienci
+es directly related to the use of inputs, technologies, and crop management
+ practices.
+\begin_inset Quotes erd
+\end_inset
+
+, so we did not think it necessary to further explain that we do not only
+ consider a traditional theory of change.
+ However, when explaining the knowledge questions, we now explain better
+ why the question was included by referring to the potential impact pathway.
 \end_layout
 
 \begin_layout Standard
@@ -963,6 +927,95 @@ One potential way to address this is to use the random assignment to the
  are no effects of IVR? Are these effects sizable, but imprecise? Or should
  we just conclude that the demand was low (and there is not much more to
  say about this)?
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+See also the comments of reviewer 1 (R1.3) and reviewer 3 (R3.9) on making
+ the LATE analysis more prominent.
+
+\emph default
+ 
+\emph on
+The original submission of this manuscript was accompanied by a pdf document
+ entitled 
+\begin_inset Quotes eld
+\end_inset
+
+additional_info.pdf
+\begin_inset Quotes erd
+\end_inset
+
+ of materials we would have liked to make available in on-line appendices.
+ It included the 2SLS (LATE) regressions.
+ Apparently, this was not available to the reviewers.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+We appreciate the suggestions by the reviewers and now discuss the low takeup
+ of the IVR intervention earlier in the paper.
+ In a section entitled additional analysis, explain that farmers self select
+ into the IVR treatment and that also SMS reception is not universal.
+ We then present regressions that show how uptake/message reception is correlate
+d to baseline characteristics.
+ We discuss LATE effects briefly, and refer to tables in the appendix for
+ completeness.
+ We note that results do not change all that much.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+We then reflect on potential reasons for the lack of impact.
+ We look at take up/message reception and using simple back of the envelope
+ calculations show the minimum detectable effect size and how it is affected
+ by low compliance.
+ We then argue that contamination is unlikely to lead to a downward bias,
+ as only 1 percent of households in the control group called the IVR.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+We then discuss a particular concern with our measure of compliance.
+ In particular, we suspect that LATE in our context would overestimate the
+ impact of the IVR.
+ The reason is that our indicator of take up of the intervention is likely
+ to be measured with significant error.
+ In particular, our indicator of compliance is taken from the IVR system
+ log, where recorded telephone numbers are matched to phone numbers that
+ were recorded during baseline data collection.
+ This indicator is likely to severely under-report true compliance, as encourage
+d farmers may use different phones to call the IVR.
+ This is illustrated by the fact that about 430 unique calls were made to
+ the system, representing about 18 percent of encouraged households, hence
+ almost doubling compliance.
+ Using our measure of compliance, we can not maintain that the independence
+ assumption holds, as some of the potential outcomes are directly determined
+ by the instrument.
+ The problem becomes clear when we think about LATE as the Wald estimator
+ that scales the ITT by compliance.
+ In our case, the ITT will be estimated on the basis of all 430 farmers
+ that called in.
+ Our measure of compliance will force all the impact of the treatment to
+ work through the 214 households that show up in the IVR log and could be
+ identified in the baseline, which in the case of a positive impact would
+ lead to an overestimate of the impact of the treatment on compliers.
+ It is well know that especially in the context of a weak first stage the
+ bias can become extremely large 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "duflo2007using"
+
+\end_inset
+
+.
+ We thus conclude that LATE results are difficult to interpret and suggest
+ to focus on the ITT effects.
 \end_layout
 
 \begin_layout Standard
@@ -1251,6 +1304,105 @@ Outcomes measures I have several concerns about how the outcomes were selected
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+This question is similar to the first concern of reviewer 2 (R2.1).
+ Apart from a traditional theory of change, where a lack of technical knowledge
+ is the main constraint to increased modern input use or application of
+ recommended practices, we also drew from the emerging body of research
+ that also explores alternative impact pathways.
+ For instance, our videos use actors that farmers can relate to, drawing
+ on an emerging literature on the importance of peer learning, the effectiveness
+ of model farmers in inspiring others 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "benyishay2018social,doi:10.1093/wber/lhv014"
+
+\end_inset
+
+.
+ Furthermore, our video not only demonstrates the use of new inputs and
+ the application of recommended practices.
+ It also contains parts that draw on studies that shown how behavioural
+ change communication and social marketing can be used to change behavour
+ and practices that are deeply entranced in traditional agricultural societies.
+ Therefore, as we expected that not all impact necessarily works through
+ increasing knowledge, there is no one to one correspondence between knowledge
+ questions and technologies and practices.
+ However, these four questions were carefully though about.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+One questions was on spacing.
+ The recommendation we provided in the video was a new way of spacing with
+ reduced seeding rate that was only recently being promoted by the government
+ (spacing of 75cm x 30cm with 1 plant per hill).
+ As this was new, we expected to find only few people in the control group
+ would know this and that the intervention would significantly increase
+ this knowledge.
+ This, in turn, we hoped would increase the actual application of the new
+ way of spacing.
+ As such, this follows a traditional theory of change.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The second question that was included is not so much about testing technical
+ knowledge.
+ It is more about testing if farmers understood the broader message given
+ in the video that successful farmers generally see maize farming more as
+ a business than as a means to provide food for the household.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The third question was included to investigate how video can be used to
+ make a known technology more salient.
+ We knew from previous work in the region and from qualitative interviews
+ that farmers are generally well aware about the optimal timing for first
+ weeding, but few farmers actually do it.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The last questions was added to see if our information interventions would
+ crowd in additional search for information.
+ We did not provide any information about fall armyworm in our videos, IVR
+ nor SMS messages.
+ We thus also did not expect our interventions to have a direct effect on
+ knowledge related to fighting fall armyworm.
+ However, it could be that farmers that received information on recommended
+ practices and modern inputs and shown life stories of successful farmers
+ start to look for information from various other sources.
+ As fall armyworm was an important emerging problem at the time, we thought
+ this would be a good topic.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+As for the analysis of recommended practices and use of modern inputs, most
+ of the questions are included in the analysis and they were also specified
+ in the pre-analysis plan.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Changes made to the text: In the section where the knowledge questions are
+ discussed, we now explain better the rationale behind inclusion of the
+ particular question by referring to the potential impact pathway.
+\end_layout
+
+\begin_layout Standard
 5.
  The authors mention in the text that three fertilizers (DAP/NPK, Urea,
  and organic fertilizers) were recommended separately in the video.
@@ -1280,6 +1432,22 @@ The reviewer is correct.
  Therefore, it seems inappropriate to use all six variables to generate
  the index.
  
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+This is also mentioned by reviewer 4 (R4.14).
+ We did not include maize productivity (production/area) nor labour productivity
+ (production/time) because of the concerns raised by the reviewer, but we
+ did not explain this in the manuscript.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Changes made to the text: we have now indicated in brackets which variables
+ are included in the index.
 \end_layout
 
 \begin_layout Standard
@@ -1766,6 +1934,22 @@ Minor comments:
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+This was also mentioned by reviewer 3 (R3.6).
+ We did not include maize productivity (production/area) nor labour productivity
+ (production/time) because of the concerns raised by the reviewer, but we
+ did not explain this in the manuscript.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Changes made to the text: we have now indicated in brackets which variables
+ are included in the index.
+\end_layout
+
+\begin_layout Standard
 15.
  I suggest you move the discussion of spillovers to the main body of the
  paper rather than having it as the last paragraph in the conclusion.
@@ -1881,10 +2065,6 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1916,7 +2096,7 @@ name "tab:Heterogeneity-in-Treatment"
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 

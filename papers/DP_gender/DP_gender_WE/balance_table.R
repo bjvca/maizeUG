@@ -1,16 +1,18 @@
 ### look at some balancing variables
 
+
+dta <- read.dta("/home/bjvca/data/projects/digital green/baseline/DLECv2.dta")
+wget https://www.dropbox.com/s/0lzgj61wmv9wmum/DLECv2.dta?dl=0
+rm(list=ls())
+
 library(foreign)
 library(ggplot2)
 library(doParallel)
 library(data.table)
 library(dplyr)
 library(Hmisc)
-dta <- read.dta("/home/bjvca/data/projects/digital green/baseline/DLECv2.dta")
-wget https://www.dropbox.com/s/0lzgj61wmv9wmum/DLECv2.dta?dl=0
-rm(list=ls())
-dta <- read.dta("DLECv2.dta")
 
+dta <- read.dta("DLECv2.dta")
 dta$know_space <- dta$maizeoptimal_spacing == "a"
 dta$know_small <- dta$maizeq22 == "c"
 dta$know_weed <- dta$maizeq23 == "b"
@@ -123,7 +125,7 @@ totrep <- 10000
 
 ####
 
-for (h in 6:7) {
+for (h in 5:6) {
 if (h==1) {
 ############################################ H1: empower: rec==couple or woman - rec==male #########################################################
 dta <- dta_copy
@@ -153,21 +155,19 @@ dta$weights <- 1
 dta$weights[dta$messenger == "female"] <-  1106/1108
 treat <- "(messenger != 'male') +ivr+sms+as.factor(recipient)"
 } else if (h==5) {
-######################## H3: comparision with the status quo  ################################
-#####################   messenger== 'male' & recipient=='male' - messenger!= 'female or couple' & recipient=='female of couple' ##############################
+######################## H3:role model effect  ################################
+
 dta <- dta_copy
 dta$recipient <- factor(dta$recipient)
 dta$messenger <- factor(dta$messenger)
+dta <- subset(dta, recipient =='female'  )
 set.seed(54321)
 
-treat <- "(messenger!= 'male' & recipient!='male') +ivr+sms"
+treat <- "(messenger!= 'male') +ivr+sms"
 
-dta <- subset(dta, !((messenger=='male' & (recipient %in% c("couple","female")) | recipient=='male' & (messenger %in% c("couple","female"))))   )
+
 dta$weights <- 1
-dta$weights[dta$messenger == "female" & dta$recipient == "female"] <-  318/349
-dta$weights[dta$messenger == "female" & dta$recipient == "couple"] <-  318/318
-dta$weights[dta$messenger == "couple" & dta$recipient == "female"] <-  318/347
-dta$weights[dta$messenger == "couple" & dta$recipient == "couple"] <-  318/338
+dta$weights[dta$messenger == "female" & dta$recipient == "female"] <-  368/384
 
 } else if (h==6) {
 ######################## H4: challenging role incongruity###########################
@@ -182,22 +182,8 @@ treat <- "(messenger!= 'male') +ivr+sms"
 
 
 dta$weights <- 1
-dta$weights[dta$messenger == "female" & dta$recipient == "male"] <-  339/348
+dta$weights[dta$messenger == "female" & dta$recipient == "male"] <-  369/382
 
-} else if (h==7) {
-######################## H5: this is the only correct test of gender homophilly ################################
-###################### sex messenger== sex recipient - sex messenger!= sex recipient ##############################
-#### we drop couples here ###################
-dta <- dta_copy
-set.seed(54321)
-dta$recipient <- factor(dta$recipient)
-dta$messenger <- factor(dta$messenger)
-dta <- subset(dta, messenger!='couple' &  recipient!='couple'   )
-treat <- "(messenger== recipient) +ivr+sms"
-
-
-dta$weights <- 1
-## about 350 in each group, no need to use weights here
 
 }
 

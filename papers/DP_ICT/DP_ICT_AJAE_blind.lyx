@@ -381,18 +381,17 @@ key "fermont2011estimating"
 
 \begin_layout Standard
 Maize is especially important in eastern Uganda.
- We sampled from five districts in eastern Uganda known for their maize
- production: Bugiri, Mayuge, Iganga, Namayingo, and Namutumba.
- From this, we removed from our sample town councils and also two sub-counties
- that consisted of islands in lake Victoria.
- We used two-stage cluster sampling to obtain a representative sample of
- this population.
- In particular, we first selected parishes randomly and in proportion to
- the number of villages within each parish.
- In the selected parishes, all villages were included in the study.
- Within each village, we then listed all households, from which we randomly
- assigned households to be included in the study.
  
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+[add more context]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -458,6 +457,13 @@ status collapsed
 \end_inset
 
 .
+\begin_inset CommandInset label
+LatexCommand label
+name "fn:full_study"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -502,6 +508,60 @@ Ex ante, we expected the largest effect size for the video intervention,
 
 .
  
+\end_layout
+
+\begin_layout Standard
+We sampled from five districts in eastern Uganda known for their maize productio
+n: Bugiri, Mayuge, Iganga, Namayingo, and Namutumba.
+ From this, we removed from our sample town councils and also two sub-counties
+ that consisted of islands in lake Victoria.
+ We used two-stage cluster sampling to obtain a representative sample of
+ this population.
+ In particular, from the five districts, we first selected 50 parishes randomly
+ and in proportion to the number of villages within each parish.
+ Within each village in the selected parishes, we then listed all households,
+ from which we randomly assigned up to 10 households to participate in the
+ study.
+ 
+\end_layout
+
+\begin_layout Standard
+In each village, one of the 10 households was randomly allocated to the
+ control group (which got to see a placebo video).
+ The remaining 9 households were all shown a video.
+ As mentioned in footnote 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fn:full_study"
+
+\end_inset
+
+, this research was part of a larger research project that also used the
+ video intervention to explore issues related to gender in agricultural
+ extension.
+ Because of this, we also experimentally varied who provided the information
+ in the video (a man alone, a woman alone, or a couple (man+woman)) as well
+ as to whom the video was shown within the household (a man alone, a woman
+ alone, or a couple (man+woman)).
+ In the context of a factorial design with two factors and each 3 levels,
+ this corresponded to 9 treatment combinations.
+ We thus used the village as blocs, and randomly assigned the nine potential
+ treatment combinations to the remaining 9 households in each village.
+ We then added the IVR treatment randomly to 2/3 of the households in each
+ treatment cell.
+ For example, from the 385 households where the man within the household
+ would be shown a video where a man provides all the information, 257 randomly
+ selected households were also provided with the encouragement to use the
+ IVR.
+ Among those that were allocated the IVR in each treatment cell, we then
+ randomly allocated 1/2 of households to the SMS treatment.
+ For instance, from the 257 households where the man would be shown a video
+ featuring a man and who also were allocated to the receive the IVR treatment,
+ 128 where randomly allocated to also receive the SMS reminders.
+ As such, the treatment cells created by the interaction of the 2 other
+ factors the were used as blocs in the randomization of IVR and SMS treatments.
+ The exact same sampling procedure was used in the permutation algorithm
+ that was used to judge significance through randomization inference.
 \end_layout
 
 \begin_layout Standard
@@ -1157,8 +1217,7 @@ key "doi:10.1093/wber/lhv014"
 \begin_layout Standard
 The information contained in the treatment groups' video is expected to
  positively influence maize yields by encouraging the adoption of several
- improved technologies and practices which, in turn, are expected to positively
- affect maize productivity.
+ improved technologies and practices.
  The topics included in the video script were obtained from qualitative
  interviews with key informants that were conducted in May 2017.
  The key informants included maize farmers, traders, maize breeders, extension
@@ -1386,7 +1445,13 @@ al extension agents, and an intermediate alternative of 75cm x 30cm with
  Because our video recommended a technique that deviates from what is assumed
  to be standard spacing, we assumed that the recommended practice is new
  to most of the farmers.
- The second question is less related to technical knowledge, but more to
+ This question is on the impact pathway tests a traditional theory of change
+ that extension leads to improvements of knowledge, which increases adoption
+ of improved practices and subsequently boosts yields.
+\end_layout
+
+\begin_layout Standard
+The second question is less related to technical knowledge, but more to
  viewing farming as a business.
  In the video, we paid ample attention to promoting an approach where farmers
  start small and grow over time by reinvesting, and we emphasized the benefits
@@ -1414,7 +1479,15 @@ use all the money to buy fertilizer, because with poor soils, yields will
 \end_inset
 
 .
- For the third question, we asked if farmers knew when weeding is most important.
+ This question suggests impact works more through aspirational channels,
+ testing if farmers understood the broader message given in the video that
+ successful farmers generally see maize farming more as a business which
+ requires foresight and risk taking.
+ 
+\end_layout
+
+\begin_layout Standard
+For the third question, we asked if farmers knew when weeding is most important.
  The video showed that weeding is most important during the first four weeks
  after planting, as maize is a poor competitor for light and nutrients.
  We assumed that most farmers would know the correct answer to this question
@@ -1437,7 +1510,12 @@ when the maize is at tasseling stage
 \end_inset
 
 .
- Finally, we asked if farmers knew when spraying against fall armyworm is
+ The relevant theory of change here is that ICT interventions may be used
+ to make a known technology more salient.
+\end_layout
+
+\begin_layout Standard
+Finally, we asked if farmers knew when spraying against fall armyworm is
  most effective.
  No information was given about fighting fall armyworm in the intervention,
  so unless one of our interventions encouraged farmers to search for additional
@@ -2850,7 +2928,8 @@ reference "tab:yield_ag_allh"
  difference is significant at 10 percent after controlling FWER.
  The fact that the video intervention has a clear effect on production-related
  outcomes is also reflected in the significant different in the production
- index between treatment and control.
+ index (aggregating amount produced, area cultivated, labour used and a
+ subjective assessment of maize yield) between treatment and control.
  That said, we do not find that households in the video treatment were more
  inclined to feel that yields are better than normal than control households.
 \end_layout
