@@ -330,29 +330,30 @@ jointF[2,4] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FAL
 jointF[3,4] <- x$df[1] + x$df[2]
 
 
-
-######################## H4: messenger== 'male' & recipient=='male' - messenger!= 'male' & recipient!='male' ##############################
-
+######################## H5: messenger== 'male' & recipient=='female' - messenger!= 'male' & recipient!=='female' ##############################
 dta <- dta_copy
 
-treat <- "(messenger!= 'male' & recipient!='male') +ivr+sms"
+dta$recipient <- factor(dta$recipient)
+dta$messenger <- factor(dta$messenger)
+dta <- subset(dta, recipient =='female'  )
+set.seed(54321)
 
-dta <- subset(dta, !((messenger=='male' & (recipient %in% c("couple","female")) | recipient=='male' & (messenger %in% c("couple","female"))))   )
+treat <- "(messenger!= 'male') +ivr+sms"
+
+
 dta$weights <- 1
-dta$weights[dta$messenger == "female" & dta$recipient == "female"] <-  318/349
-dta$weights[dta$messenger == "female" & dta$recipient == "couple"] <-  318/318
-dta$weights[dta$messenger == "couple" & dta$recipient == "female"] <-  318/347
-dta$weights[dta$messenger == "couple" & dta$recipient == "couple"] <-  318/338
+dta$weights[dta$messenger == "female" & dta$recipient == "female"] <-  368/384
 
 
 dta2 <- trim("yield",dta,.05)
 dta2$log_yield <- log(dta2$yield)
-x <- summary(lm(as.formula(paste("(messenger!= 'male' & recipient!='male')",covars, sep="~")), data= dta2))
+x <- summary(lm(as.formula(paste("(messenger!= 'male')",covars, sep="~")), data= dta2))
 jointF[1,5] <- x$fstatistic[1]
 jointF[2,5] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
 jointF[3,5] <- x$df[1] + x$df[2]
 
-######################## H5: messenger== 'male' & recipient=='male' - messenger!= 'male' & recipient!='male' ##############################
+
+######################## H5: messenger== 'male' & recipient=='male' - messenger!= 'male' & recipient=='male' ##############################
 dta <- dta_copy
 
 dta$recipient <- factor(dta$recipient)
@@ -374,26 +375,5 @@ jointF[1,6] <- x$fstatistic[1]
 jointF[2,6] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
 jointF[3,6] <- x$df[1] + x$df[2]
 
-
-
-######################## H5: this is the only correct test of gender homophilly ################################
-###################### sex messenger== sex recipient - sex messenger!= sex recipient ##############################
-#### we drop couples here ###################
-dta <- dta_copy
-set.seed(54321)
-dta$recipient <- factor(dta$recipient)
-dta$messenger <- factor(dta$messenger)
-dta <- subset(dta, messenger!='couple' &  recipient!='couple'   )
-treat <- "(messenger== recipient) +ivr+sms"
-
-
-dta$weights <- 1
-
-dta2 <- trim("yield",dta,.05)
-dta2$log_yield <- log(dta2$yield)
-x <- summary(lm(as.formula(paste("(messenger== recipient)",covars, sep="~")), data= dta2))
-jointF[1,7] <- x$fstatistic[1]
-jointF[2,7] <- pf(x$fstatistic[1],x$fstatistic[2],x$fstatistic[3],lower.tail=FALSE)
-jointF[3,7] <- x$df[1] + x$df[2]
 
 

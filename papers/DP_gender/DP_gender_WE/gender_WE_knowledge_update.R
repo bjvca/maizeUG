@@ -170,7 +170,7 @@ ctrls <- NULL
 totrep <- 10000
 ####
 
-for (h in 1:3) {
+for (h in 5:5) {
 if (h==1) {
 ############################################ H1: empower: rec==couple or woman - rec==male #########################################################
 dta <- dta_copy
@@ -202,22 +202,20 @@ dta$weights <- 1
 dta$weights[dta$messenger == "female"] <-  1106/1108
 treatment <- "(messenger != 'male') +ivr+sms+as.factor(recipient)"
 } else if (h==5) {
-######################## H3: comparision with the status quo  ################################
-#####################   messenger== 'male' & recipient=='male' - messenger!= 'female or couple' & recipient=='female of couple' ##############################
+############################ H2a: challenging role incongruity###########################
+#############  messenger== 'female or couple' & recipient=='male' - messenger== 'male' & recipient=='male' ##############################
 dta <- dta_copy
-
 dta$recipient <- factor(dta$recipient)
 dta$messenger <- factor(dta$messenger)
-treatment <- "(messenger!= 'male' & recipient!='male') +ivr+sms"
-dta <- merge(dta,baseline, by="hhid")
-dta <- subset(dta, !((messenger=='male' & (recipient %in% c("couple","female")) | recipient=='male' & (messenger %in% c("couple","female"))))   )
-dta$weights <- 1
-dta$weights[dta$messenger == "female" & dta$recipient == "female"] <-  318/349
-dta$weights[dta$messenger == "female" & dta$recipient == "couple"] <-  318/318
-dta$weights[dta$messenger == "couple" & dta$recipient == "female"] <-  318/347
-dta$weights[dta$messenger == "couple" & dta$recipient == "couple"] <-  318/338
+dta <- subset(dta, recipient =='female'  )
+set.seed(54321)
 
-ctrls <- "yield+maizeage+maizeeduc+maizeprinfo_receiv_spouse+maizedist_shop+maizemobile" 
+treatment <- "(messenger!= 'male') +ivr+sms"
+
+
+dta$weights <- 1
+dta$weights[dta$messenger == "female" & dta$recipient == "female"] <-  343/348
+
 } else if (h==6) {
 ######################## H4: challenging role incongruity###########################
 #############  messenger== 'female or couple' & recipient=='male' - messenger== 'male' & recipient=='male' ##############################
@@ -225,161 +223,146 @@ dta <- dta_copy
 dta$recipient <- factor(dta$recipient)
 dta$messenger <- factor(dta$messenger)
 dta <- subset(dta, recipient =='male'  )
+set.seed(54321)
+
 treatment <- "(messenger!= 'male') +ivr+sms"
-dta <- merge(dta,baseline, by="hhid")
+
 
 dta$weights <- 1
-dta$weights[dta$messenger == "female" & dta$recipient == "male"] <-  339/348
+dta$weights[dta$messenger == "female" & dta$recipient == "male"] <-  339/354
 
-ctrls <- "maizeprinfo_receiv+maizeprinput_use+maizedist_shop" 
-} else if (h==7) {
-######################## H5: this is the only correct test of gender homophilly ################################
-###################### sex messenger== sex recipient - sex messenger!= sex recipient ##############################
-#### we drop couples here ###################
-dta <- dta_copy
-
-dta$recipient <- factor(dta$recipient)
-dta$messenger <- factor(dta$messenger)
-dta <- subset(dta, messenger!='couple' &  recipient!='couple'   )
-treatment <- "(messenger== recipient) +ivr+sms"
-dta <- merge(dta,baseline, by="hhid")
-
-dta$weights <- 1
-## about 350 in each group, no need to use weights here
-
-ctrls <- "maizeprrooms+maizeprinfo_receiv+maizeprinput_use" 
 }
 
 print(h)
 ################################################## knowledge  #####################################################
-#res_know_w[1,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$know_space_w[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_space_w[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_space_w[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$know_space_w[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-#res_know_w[2,1,h] <-  ifelse(h %in% c(5,6), wtd.sd(dta$know_space_w[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_space_w[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_space_w[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$know_space_w[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-#res_know_w[1,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_space_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_space_w",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-#res_know_w[2,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_space_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_space_w",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-#res_know_w[1,3,h] <- ifelse(totrep >0, RI("know_space_w",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_space_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_space_w",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-#res_know_w[2,3,h] <- nobs(lm(as.formula(paste("know_space_w",treatment, sep="~")) ,data=dta))
+res_know_w[1,1,h] <- ifelse(h %in% c(6), wtd.mean(dta$know_space_w[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_space_w[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_space_w[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.mean(dta$know_space_w[dta$recipient == "female" & dta$messenger == "male"], dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_w[2,1,h] <-  ifelse(h %in% c(6), wtd.sd(dta$know_space_w[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_space_w[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_space_w[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.sd(dta$know_space_w[dta$recipient == "female" & dta$messenger == "male"], dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_w[1,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_space_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_space_w",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_know_w[2,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_space_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_space_w",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_know_w[1,3,h] <- ifelse(totrep >0, RI("know_space_w",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_space_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_space_w",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_know_w[2,3,h] <- nobs(lm(as.formula(paste("know_space_w",treatment, sep="~")) ,data=dta))
 
 
-#res_know_w[3,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$know_combine_w[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_combine_w[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_combine_w[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$know_combine_w[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-#res_know_w[4,1,h] <-  ifelse(h %in% c(5,6), wtd.sd(dta$know_combine_w[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_combine_w[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_combine_w[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$know_combine_w[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-#res_know_w[3,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_combine_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_combine_w",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-#res_know_w[4,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_combine_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_combine_w",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-#res_know_w[3,3,h] <- ifelse(totrep >0, RI("know_combine_w",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_combine_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_combine_w",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-#res_know_w[4,3,h] <- nobs(lm(as.formula(paste("know_combine_w",treatment, sep="~")) ,data=dta))
+res_know_w[3,1,h] <-ifelse(h %in% c(6), wtd.mean(dta$know_combine_w[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_combine_w[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_combine_w[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.mean(dta$know_combine_w[dta$recipient == "female" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "female"], na.rm=T)))))
+res_know_w[4,1,h] <-  ifelse(h %in% c(6), wtd.sd(dta$know_combine_w[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_combine_w[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_combine_w[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5,wtd.sd(dta$know_combine_w[dta$recipient == "female" & dta$messenger == "male"], dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_w[3,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_combine_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_combine_w",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_know_w[4,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_combine_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_combine_w",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_know_w[3,3,h] <- ifelse(totrep >0, RI("know_combine_w",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_combine_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_combine_w",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_know_w[4,3,h] <- nobs(lm(as.formula(paste("know_combine_w",treatment, sep="~")) ,data=dta))
 
-#res_know_w[5,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$know_weed_w[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_weed_w[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_weed_w[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$know_weed_w[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-#res_know_w[6,1,h] <-  ifelse(h %in% c(5,6), wtd.sd(dta$know_weed_w[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_weed_w[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_weed_w[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$know_weed_w[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-#res_know_w[5,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_weed_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_weed_w",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-#res_know_w[6,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_weed_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_weed_w",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-#res_know_w[5,3,h] <- ifelse(totrep >0, RI("know_weed_w",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_weed_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_weed_w",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-#res_know_w[6,3,h] <- nobs(lm(as.formula(paste("know_weed_w",treatment, sep="~")) ,data=dta))
-
-
-#res_know_w[7,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$know_armyworm_w[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_armyworm_w[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_armyworm_w[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$know_armyworm_w[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-#res_know_w[8,1,h] <-  ifelse(h %in% c(5,6), wtd.sd(dta$know_armyworm_w[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_armyworm_w[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_armyworm_w[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$know_armyworm_w[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-#res_know_w[7,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_armyworm_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_armyworm_w",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-#res_know_w[8,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_armyworm_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_armyworm_w",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-#res_know_w[7,3,h] <- ifelse(totrep >0, RI("know_armyworm_w",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_armyworm_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_armyworm_w",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-#res_know_w[8,3,h] <- nobs(lm(as.formula(paste("know_armyworm_w",treatment, sep="~")) ,data=dta))
-#end_time <- Sys.time()
+res_know_w[5,1,h] <- ifelse(h %in% c(6), wtd.mean(dta$know_weed_w[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_weed_w[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_weed_w[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.mean(dta$know_weed_w[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_w[6,1,h] <-  ifelse(h %in% c(6), wtd.sd(dta$know_weed_w[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_weed_w[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_weed_w[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.sd(dta$know_weed_w[dta$recipient == "female" & dta$messenger == "male"], dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_w[5,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_weed_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_weed_w",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_know_w[6,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_weed_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_weed_w",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_know_w[5,3,h] <- ifelse(totrep >0, RI("know_weed_w",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_weed_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_weed_w",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_know_w[6,3,h] <- nobs(lm(as.formula(paste("know_weed_w",treatment, sep="~")) ,data=dta))
 
 
-#indexer <- FW_index(treatment, c("know_space_w", "know_combine_w", "know_weed_w"),ctrls,w_int="weights",dta, nr_repl=totrep)
-
-#res_know_w[9,1,h] <- ifelse(h %in% c(5,6), wtd.mean(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(indexer[[3]]$index[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-
-#res_know_w[10,1,h] <-  ifelse(h %in% c(5,6), wtd.sd(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(indexer[[3]]$index[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-
-
-#res_know_w[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
-#res_know_w[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
-#res_know_w[9,3,h] <-  indexer[[2]]
-#res_know_w[10,3,h] <-  nobs(indexer[[1]])
+res_know_w[7,1,h] <- ifelse(h %in% c(6), wtd.mean(dta$know_armyworm_w[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_armyworm_w[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_armyworm_w[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.mean(dta$know_armyworm_w[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_w[8,1,h] <-  ifelse(h %in% c(6), wtd.sd(dta$know_armyworm_w[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_armyworm_w[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_armyworm_w[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.sd(dta$know_armyworm_w[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_w[7,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_armyworm_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_armyworm_w",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_know_w[8,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_armyworm_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_armyworm_w",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_know_w[7,3,h] <- ifelse(totrep >0, RI("know_armyworm_w",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_armyworm_w",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_armyworm_w",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_know_w[8,3,h] <- nobs(lm(as.formula(paste("know_armyworm_w",treatment, sep="~")) ,data=dta))
+end_time <- Sys.time()
 
 
-#res_know_w[11,1:3,h] <- RI_FWER(deps= c("know_space_w","know_combine_w","know_weed_w") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_know_w[c(1,3,5),3,h], nr_repl = totrep, w_int="weights")
+indexer <- FW_index(treatment, c("know_space_w", "know_combine_w", "know_weed_w"),ctrls,w_int="weights",dta, nr_repl=totrep)
 
-#################################################### knowledge - both  #####################################################
-#dta$know_space_j <- dta$know_space_w * dta$know_space_m
+res_know_w[9,1,h] <- ifelse(h %in% c(6), wtd.mean(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.mean(indexer[[3]]$index[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
 
-
-#res_know_b[1,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$know_space_j[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_space_j[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_space_j[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$know_space_j[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-#res_know_b[2,1,h] <-  ifelse(h %in% c(5,6), wtd.sd(dta$know_space_j[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_space_j[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_space_j[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$know_space_j[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-#res_know_b[1,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_space_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_space_j",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-#res_know_b[2,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_space_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_space_j",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-#res_know_b[1,3,h] <- ifelse(totrep >0, RI("know_space_j",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_space_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_space_j",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-#res_know_b[2,3,h] <- nobs(lm(as.formula(paste("know_space_j",treatment, sep="~")) ,data=dta))
+res_know_w[10,1,h] <-  ifelse(h %in% c(6), wtd.sd(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.sd(indexer[[3]]$index[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
 
 
-
-#dta$know_combine_j <- dta$know_combine_w * dta$know_combine_m
-
-#res_know_b[3,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$know_combine_j[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_combine_j[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_combine_j[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$know_combine_j[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-#res_know_b[4,1,h] <-  ifelse(h %in% c(5,6), wtd.sd(dta$know_combine_j[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_combine_j[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_combine_j[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$know_combine_j[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-#res_know_b[3,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_combine_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_combine_j",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-#res_know_b[4,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_combine_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_combine_j",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-#res_know_b[3,3,h] <- ifelse(totrep >0, RI("know_combine_j",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_combine_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_combine_j",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-#res_know_b[4,3,h] <- nobs(lm(as.formula(paste("know_combine_j",treatment, sep="~")) ,data=dta))
-
-#dta$know_weed_j <- dta$know_weed_w * dta$know_weed_m
-
-#res_know_b[5,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$know_weed_j[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_weed_j[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_weed_j[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$know_weed_j[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-#res_know_b[6,1,h] <-  ifelse(h %in% c(5,6), wtd.sd(dta$know_weed_j[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_weed_j[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_weed_j[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$know_weed_j[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-#res_know_b[5,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_weed_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_weed_j",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-#res_know_b[6,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_weed_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_weed_j",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-#res_know_b[5,3,h] <- ifelse(totrep >0, RI("know_weed_j",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_weed_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_weed_j",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-#res_know_b[6,3,h] <- nobs(lm(as.formula(paste("know_weed_j",treatment, sep="~")) ,data=dta))
-
-#dta$know_armyworm_j <- dta$know_armyworm_w * dta$know_armyworm_m
-
-#res_know_b[7,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$know_armyworm_j[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_armyworm_j[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_armyworm_j[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$know_armyworm_j[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-#res_know_b[8,1,h] <-  ifelse(h %in% c(5,6), wtd.sd(dta$know_armyworm_j[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_armyworm_j[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_armyworm_j[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$know_armyworm_j[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-#res_know_b[7,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_armyworm_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_armyworm_j",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-#res_know_b[8,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_armyworm_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_armyworm_j",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-#res_know_b[7,3,h] <- ifelse(totrep >0, RI("know_armyworm_j",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_armyworm_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_armyworm_j",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-#res_know_b[8,3,h] <- nobs(lm(as.formula(paste("know_armyworm_j",treatment, sep="~")) ,data=dta))
-
-#indexer <- FW_index(treatment, c("know_space_j", "know_combine_j", "know_weed_j"),ctrls,w_int="weights",dta, nr_repl=totrep)
-
-#res_know_b[9,1,h] <- ifelse(h %in% c(5,6), wtd.mean(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(indexer[[3]]$index[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-
-#res_know_b[10,1,h] <-  ifelse(h %in% c(5,6), wtd.sd(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(indexer[[3]]$index[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+res_know_w[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
+res_know_w[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
+res_know_w[9,3,h] <-  indexer[[2]]
+res_know_w[10,3,h] <-  nobs(indexer[[1]])
 
 
-#res_know_b[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
-#res_know_b[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
-#res_know_b[9,3,h] <-  indexer[[2]]
-#res_know_b[10,3,h] <-  nobs(indexer[[1]])
+res_know_w[11,1:3,h] <- RI_FWER(deps= c("know_space_w","know_combine_w","know_weed_w") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_know_w[c(1,3,5),3,h], nr_repl = totrep, w_int="weights")
+
+################################################### knowledge - both  #####################################################
+dta$know_space_j <- dta$know_space_w * dta$know_space_m
 
 
-#res_know_b[11,1:3,h] <- RI_FWER(deps= c("know_space_j","know_combine_j","know_weed_j") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_know_b[c(1,3,5),3,h], nr_repl = totrep, w_int="weights")
+res_know_b[1,1,h] <- ifelse(h %in% c(6), wtd.mean(dta$know_space_j[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_space_j[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_space_j[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.mean(dta$know_space_j[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_b[2,1,h] <-  ifelse(h %in% c(6), wtd.sd(dta$know_space_j[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_space_j[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_space_j[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.sd(dta$know_space_j[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_b[1,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_space_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_space_j",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_know_b[2,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_space_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_space_j",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_know_b[1,3,h] <- ifelse(totrep >0, RI("know_space_j",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_space_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_space_j",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_know_b[2,3,h] <- nobs(lm(as.formula(paste("know_space_j",treatment, sep="~")) ,data=dta))
 
-################################################## knowledge men #####################################################
 
 
-res_know_m[1,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$know_space_m[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_space_m[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_space_m[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$know_space_m[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_know_m[2,1,h] <-  ifelse(h %in% c(5,6), wtd.sd(dta$know_space_m[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_space_m[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_space_m[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$know_space_m[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+dta$know_combine_j <- dta$know_combine_w * dta$know_combine_m
+
+res_know_b[3,1,h] <-ifelse(h %in% c(6), wtd.mean(dta$know_combine_j[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_combine_j[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_combine_j[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.mean(dta$know_combine_j[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_b[4,1,h] <-  ifelse(h %in% c(6), wtd.sd(dta$know_combine_j[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_combine_j[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_combine_j[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.sd(dta$know_combine_j[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_b[3,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_combine_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_combine_j",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_know_b[4,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_combine_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_combine_j",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_know_b[3,3,h] <- ifelse(totrep >0, RI("know_combine_j",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_combine_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_combine_j",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_know_b[4,3,h] <- nobs(lm(as.formula(paste("know_combine_j",treatment, sep="~")) ,data=dta))
+
+dta$know_weed_j <- dta$know_weed_w * dta$know_weed_m
+
+res_know_b[5,1,h] <- ifelse(h %in% c(6), wtd.mean(dta$know_weed_j[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_weed_j[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_weed_j[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.mean(dta$know_weed_j[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_b[6,1,h] <-  ifelse(h %in% c(6), wtd.sd(dta$know_weed_j[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_weed_j[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_weed_j[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.sd(dta$know_weed_j[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_b[5,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_weed_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_weed_j",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_know_b[6,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_weed_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_weed_j",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_know_b[5,3,h] <- ifelse(totrep >0, RI("know_weed_j",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_weed_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_weed_j",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_know_b[6,3,h] <- nobs(lm(as.formula(paste("know_weed_j",treatment, sep="~")) ,data=dta))
+
+dta$know_armyworm_j <- dta$know_armyworm_w * dta$know_armyworm_m
+
+res_know_b[7,1,h] <- ifelse(h %in% c(6), wtd.mean(dta$know_armyworm_j[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_armyworm_j[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_armyworm_j[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.mean(dta$know_armyworm_j[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_b[8,1,h] <-  ifelse(h %in% c(6), wtd.sd(dta$know_armyworm_j[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_armyworm_j[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_armyworm_j[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.sd(dta$know_armyworm_j[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_b[7,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_armyworm_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_armyworm_j",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_know_b[8,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_armyworm_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_armyworm_j",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_know_b[7,3,h] <- ifelse(totrep >0, RI("know_armyworm_j",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_armyworm_j",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_armyworm_j",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_know_b[8,3,h] <- nobs(lm(as.formula(paste("know_armyworm_j",treatment, sep="~")) ,data=dta))
+
+indexer <- FW_index(treatment, c("know_space_j", "know_combine_j", "know_weed_j"),ctrls,w_int="weights",dta, nr_repl=totrep)
+
+res_know_b[9,1,h] <- ifelse(h %in% c(6), wtd.mean(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.mean(indexer[[3]]$index[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+
+res_know_b[10,1,h] <-  ifelse(h %in% c(6), wtd.sd(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.sd(indexer[[3]]$index[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+
+
+res_know_b[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
+res_know_b[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
+res_know_b[9,3,h] <-  indexer[[2]]
+res_know_b[10,3,h] <-  nobs(indexer[[1]])
+
+
+res_know_b[11,1:3,h] <- RI_FWER(deps= c("know_space_j","know_combine_j","know_weed_j") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_know_b[c(1,3,5),3,h], nr_repl = totrep, w_int="weights")
+
+################################################# knowledge men #####################################################
+
+
+res_know_m[1,1,h] <- ifelse(h %in% c(6), wtd.mean(dta$know_space_m[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_space_m[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_space_m[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.mean(dta$know_space_m[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_m[2,1,h] <-  ifelse(h %in% c(6), wtd.sd(dta$know_space_m[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_space_m[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_space_m[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.sd(dta$know_space_m[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
 res_know_m[1,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_space_m",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_space_m",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
 res_know_m[2,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_space_m",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_space_m",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
 res_know_m[1,3,h] <- ifelse(totrep >0, RI("know_space_m",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_space_m",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_space_m",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
 res_know_m[2,3,h] <- nobs(lm(as.formula(paste("know_space_m",treatment, sep="~")) ,data=dta))
 
-res_know_m[3,1,h] <-ifelse(h %in% c(5,6), wtd.mean(dta$know_combine_m[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_combine_m[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_combine_m[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$know_combine_m[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_know_m[4,1,h] <-  ifelse(h %in% c(5,6), wtd.sd(dta$know_combine_m[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_combine_m[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_combine_m[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$know_combine_m[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+res_know_m[3,1,h] <-ifelse(h %in% c(6), wtd.mean(dta$know_combine_m[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_combine_m[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_combine_m[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.mean(dta$know_combine_m[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_m[4,1,h] <-  ifelse(h %in% c(6), wtd.sd(dta$know_combine_m[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_combine_m[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_combine_m[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.sd(dta$know_combine_m[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
 res_know_m[3,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_combine_m",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_combine_m",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
 res_know_m[4,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_combine_m",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_combine_m",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
 res_know_m[3,3,h] <- ifelse(totrep >0, RI("know_combine_m",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_combine_m",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_combine_m",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
 res_know_m[4,3,h] <- nobs(lm(as.formula(paste("know_combine_m",treatment, sep="~")) ,data=dta))
 
-res_know_m[5,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$know_weed_m[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_weed_m[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_weed_m[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$know_weed_m[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_know_m[6,1,h] <-  ifelse(h %in% c(5,6), wtd.sd(dta$know_weed_m[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_weed_m[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_weed_m[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$know_weed_m[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+res_know_m[5,1,h] <- ifelse(h %in% c(6), wtd.mean(dta$know_weed_m[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_weed_m[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_weed_m[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.mean(dta$know_weed_m[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_m[6,1,h] <-  ifelse(h %in% c(6), wtd.sd(dta$know_weed_m[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_weed_m[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_weed_m[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.sd(dta$know_weed_m[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
 res_know_m[5,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_weed_m",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_weed_m",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
 res_know_m[6,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_weed_m",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_weed_m",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
 res_know_m[5,3,h] <- ifelse(totrep >0, RI("know_weed_m",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_weed_m",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_weed_m",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
 res_know_m[6,3,h] <- nobs(lm(as.formula(paste("know_weed_m",treatment, sep="~")) ,data=dta))
 
-res_know_m[7,1,h] <- ifelse(h %in% c(5,6), wtd.mean(dta$know_armyworm_m[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_armyworm_m[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_armyworm_m[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(dta$know_armyworm_m[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
-res_know_m[8,1,h] <-  ifelse(h %in% c(5,6), wtd.sd(dta$know_armyworm_m[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_armyworm_m[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_armyworm_m[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(dta$know_armyworm_m[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+res_know_m[7,1,h] <- ifelse(h %in% c(6), wtd.mean(dta$know_armyworm_m[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(dta$know_armyworm_m[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(dta$know_armyworm_m[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.mean(dta$know_armyworm_m[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
+res_know_m[8,1,h] <-  ifelse(h %in% c(6), wtd.sd(dta$know_armyworm_m[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(dta$know_armyworm_m[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(dta$know_armyworm_m[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.sd(dta$know_armyworm_m[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
 res_know_m[7,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_armyworm_m",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("know_armyworm_m",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
 res_know_m[8,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_armyworm_m",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("know_armyworm_m",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
 res_know_m[7,3,h] <- ifelse(totrep >0, RI("know_armyworm_m",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("know_armyworm_m",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("know_armyworm_m",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
@@ -388,9 +371,9 @@ res_know_m[8,3,h] <- nobs(lm(as.formula(paste("know_armyworm_m",treatment, sep="
 indexer <- FW_index(treatment, c("know_space_m", "know_combine_m", "know_weed_m"),ctrls,w_int="weights",dta, nr_repl=totrep)
 
 
-res_know_m[9,1,h] <- ifelse(h %in% c(5,6), wtd.mean(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.mean(indexer[[3]]$index[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+res_know_m[9,1,h] <- ifelse(h %in% c(6), wtd.mean(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.mean(indexer[[3]]$index[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
 
-res_know_m[10,1,h] <-  ifelse(h %in% c(5,6), wtd.sd(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 7, wtd.sd(indexer[[3]]$index[dta$messenger != dta$recipient ],dta$weights[dta$messenger != dta$recipient], na.rm=T)))))
+res_know_m[10,1,h] <-  ifelse(h %in% c(6), wtd.sd(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.sd(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.sd(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.sd(indexer[[3]]$index[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
 
 
 res_know_m[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
@@ -404,7 +387,12 @@ res_know_m[11,1:3,h] <- RI_FWER(deps= c("know_space_m","know_combine_m","know_we
 }
 
 save(res_know_m, file = "res_know_m.RData")
+save(res_know_b, file = "res_know_b.RData")
+save(res_know_w, file = "res_know_w.RData")
 
+print(res_know_w)
+print(res_know_b)
 print(res_know_m)
+print("end")
 
 

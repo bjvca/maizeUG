@@ -1,3 +1,6 @@
+### this file computes upper bound Manski bounds - it replaces missing values due to attrition to maximum values
+### note that for the indices, the bounds do not necessarily include the estimated coefficient
+### this is because we replace missings with max values of the components of the index first and then make the index (which involves standardization). An alternative would be to first make the index and then replace missings with maximum values of the index.
 rm(list=ls())
 library(foreign)
 ### running the data preparation file
@@ -238,7 +241,7 @@ dta[c("better_av","better_6m","eatpref","eatenough")] <- lapply(dta[c("better_av
 
 
 ###number of RI replications: if set to 0, conventional p-values are reported, in the analysis, 10000 replications were used
-totrep <- 1000
+totrep <- 0
 ### better to loop over h: 
 for (h in c(1:3)) {
 if (h == 1) {

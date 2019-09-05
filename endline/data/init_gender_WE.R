@@ -1578,10 +1578,13 @@ dta$sold_both_woman[is.na(dta$sold_both_woman)] <- 0
 
 dta$nr_bags_sold_woman <- ifelse(dta$gender1=="woman", dta$q72,dta$spouse2r72)
 dta$nr_bags_sold_woman[dta$nr_bags_sold_woman > 97] <- NA
+dta$nr_bags_sold_woman[is.na(dta$nr_bags_sold_woman)] <- 0
 dta$nr_bags_sold_man_woman <- ifelse(dta$gender1=="woman", dta$q75,dta$spouse2r75)
 dta$nr_bags_sold_man_woman[dta$nr_bags_sold_man_woman > 97] <- NA
+dta$nr_bags_sold_man_woman[is.na(dta$nr_bags_sold_man_woman)] <- 0
 dta$nr_bags_sold_both_woman <- ifelse(dta$gender1=="woman", dta$q78,dta$spouse2r78)
 dta$nr_bags_sold_both_woman[dta$nr_bags_sold_both_woman >97] <- NA
+dta$nr_bags_sold_both_woman[is.na(dta$nr_bags_sold_both_woman)] <- 0
 
 ### price sold
 
@@ -1592,6 +1595,12 @@ dta$price_sold_man_woman[dta$price_sold_woman < 10000] <- NA
 dta$price_sold_both_woman <- ifelse(dta$gender1=="woman", dta$q79/dta$q78,dta$spouse2r79/dta$spouse2r78)
 dta$price_sold_both_woman[dta$price_sold_both_woman <10000] <- NA
 
+summary(ifelse(dta$gender1=="man", dta$q73/dta$q72,dta$spouse2r73/dta$spouse2r72))
+##sold both as reported by man
+dta$price_sold_both_man <- ifelse(dta$gender1=="man", dta$q79/dta$q78,dta$spouse2r79/dta$spouse2r78)
+dta$price_sold_both_man[dta$price_sold_both_man <10000] <- NA
+
+dta$price_sold_both_man[dta$price_sold_both_man > 100000] <- NA
 ### sold to whom?
 dta$sold_to_trader_woman <- ifelse(dta$gender1=="woman", dta$q742,dta$spouse2r742)
 dta$sold_to_middleman_woman <- ifelse(dta$gender1=="woman", dta$q743,dta$spouse2r743)
