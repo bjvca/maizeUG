@@ -257,8 +257,8 @@ key "doi:10.1111/agec.12314,Aker2011"
 \end_inset
 
 .
- Several studies have reported positive impacts of ICTs applied to extension
- services.
+ Several studies, many of which are still ongoing, have hinted at positive
+ impacts of ICTs applied to extension services.
  Notable examples include 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -278,7 +278,7 @@ key "casaburi2014harnessing"
 
  found that in Kenya, sending SMS messages with agricultural advice to smallhold
 er sugarcane farmers increased yields by 11.5% relative to a control group
- with no messages.
+ with no messages (but only in the first season).
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1199,8 +1199,8 @@ key "doi:10.1093/wber/lhv014"
 
 .
  Videos (treatment or placebo) were screened twice to the households in
- the sample, once before the time for planting maize (July 2017) and once
- around planting time (August 2017).
+ the sample, once before the time for planting maize (August 2017) and once
+ around planting time (September 2017).
 \end_layout
 
 \begin_layout Standard
@@ -1415,12 +1415,13 @@ key "feder2004acquisition,feder2004sending,masset2015does"
  consisting of four multiple-choice questions that were asked during the
  endline survey to each of the two spouses in the farm household separately.
  For each question, three possible answers were read out to the respondent,
- who was then asked to indicate which answer he or she thought was correct.
+ who was then asked to indicate which answer he or she thought was correct
+ (which may differ from what he or she recalled from the video).
  The respondent was also allowed to indicate if he or she did not know the
  correct answer.
  The household was considered knowledgeable on a particular topic if at
  least one of the spouses could indicate the correct answer.
- 
+ A
 \end_layout
 
 \begin_layout Standard
@@ -1784,7 +1785,41 @@ reference "tab:knowh0HH"
 \end_inset
 
  shows results for the three incremental levels of ICT-mediated information
- delivery using different information technologies.
+ delivery using different information technologies
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+As we found only limited imbalance in baseline covariates in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance"
+
+\end_inset
+
+, we do not include baseline variables as control here.
+ However, we also did the analysis with controls, results of which can be
+ found in Appendix Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:controls_knowledge"
+
+\end_inset
+
+ through 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:controls_production"
+
+\end_inset
+
+.
+ Results are not sensitive to inclusion of baseline variables.
+\end_layout
+
+\end_inset
+
+.
  The first column reports mean scores in the control group (with standard
  deviations reported below in parentheses).
  For the four individual questions, this is simply the proportion of households
@@ -1793,7 +1828,8 @@ reference "tab:knowh0HH"
  group, at least one of the spouses indicated the correct option among the
  response alternatives to the question on optimal maize seed spacing.
  This relatively low rate of correct responses is due to the fact that this
- is a fairly new and potentially controversial recommendation.
+ is a fairly new recommendation that deviates from what farmers have been
+ taught in the past and have been doing for decades.
  We find that in about 91 percent of control households, at least one spouse
  knew inputs were best combined and in more than 95 percent of households
  it was known that weeding is most important during the first 4 weeks.
@@ -1901,7 +1937,7 @@ reference "tab:pract_h1_ag"
  the recommended way of plant spacing of 75cm x 30cm with a reduced seed
  rate of 1 seed per hill.
  This low rate in the control group is not surprising given that this was
- a new and somewhat controversial recommendation.
+ a new recommendation.
  Almost 69 percent of control households report removing striga before it
  flowered to reduce damage early on and prevent the weed from spreading.
  Finally, we find that about 43 percent of control households reported first
@@ -2920,7 +2956,22 @@ reference "tab:yield_ag_allh"
  index (aggregating amount produced, area cultivated, labour used and a
  subjective assessment of maize yield) between treatment and control.
  That said, we do not find that households in the video treatment were more
- inclined to feel that yields are better than normal than control households.
+ inclined to feel that yields are better than normal than control households
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Farmers may have confused yields with production.
+ Consistent with our recommendation to start small and combine technologies
+ and the results that yield effects are due to producing the same amounts
+ on smaller plots, farmers may indicate that on the plot the same amount
+ of maize was produced when part was left fallow or planted with another
+ crop.
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -3486,11 +3537,20 @@ hline
 \backslash
 
 \backslash
- treatments	&	0.972	&	0.691	&	-1.541	&	1.956	
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	t-test	&	t-test	&	t-test	&	F-test	
 \backslash
 
 \backslash
- 	&	0.331	&	0.490	&	0.124	&	0.118	
+treatments	&	0.972	&	0.691	&	-1.541	&	1.956	
+\backslash
+
+\backslash
+ 	&	(0.331)	&	(0.490)	&	(0.124)	&	(0.118)	
 \backslash
 
 \backslash
@@ -3498,11 +3558,16 @@ hline
 \backslash
 
 \backslash
- Maize yield (kg/ac) 	&	0.626	&	0.087	&	-1.274	&	0.750	
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Maize yield (kg/ac) 	&	0.626	&	0.087	&	-1.274	&	0.750	
 \backslash
 
 \backslash
- 	&	0.531	&	0.931	&	0.203	&	0.522	
+ 	&	(0.531)	&	(0.931)	&	(0.203)	&	(0.522)	
 \backslash
 
 \backslash
@@ -3510,7 +3575,7 @@ hline
 \backslash
 
 \backslash
- 	&	0.366	&	0.595	&	0.810	&	0.858	
+ 	&	(0.366)	&	(0.595)	&	(0.810)	&	(0.858)	
 \backslash
 
 \backslash
@@ -3518,7 +3583,7 @@ hline
 \backslash
 
 \backslash
- 	&	0.222	&	0.196	&	0.744	&	0.462	
+ 	&	(0.222)	&	(0.196)	&	(0.744)	&	(0.462)	
 \backslash
 
 \backslash
@@ -3526,63 +3591,98 @@ hline
 \backslash
 
 \backslash
- 	&	0.640	&	0.590	&	0.070	&	0.362	
+ 	&	(0.640)	&	(0.590)	&	(0.070)	&	(0.362)	
 \backslash
 
 \backslash
- Number of bedrooms 	&	0.321	&	-0.860	&	0.907	&	1.347	
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of bedrooms 	&	0.321	&	-0.860	&	0.907	&	1.347	
 \backslash
 
 \backslash
- 	&	0.748	&	0.390	&	0.365	&	0.257	
+ 	&	(0.748)	&	(0.390)	&	(0.365)	&	(0.257)	
 \backslash
 
 \backslash
- Access to extension last year 	&	-1.765	&	-2.286	&	-0.987	&	2.098	
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Access to extension last year 	&	-1.765	&	-2.286	&	-0.987	&	2.098	
 \backslash
 
 \backslash
- 	&	0.078	&	0.022	&	0.324	&	0.098	
+ 	&	(0.078)	&	(0.022)	&	(0.324)	&	(0.098)	
 \backslash
 
 \backslash
- Has used fertilizer last season 	&	-0.698	&	-0.552	&	1.354	&	1.395	
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Has used fertilizer last season 	&	-0.698	&	-0.552	&	1.354	&	1.395	
 \backslash
 
 \backslash
- 	&	0.486	&	0.581	&	0.176	&	0.242	
+ 	&	(0.486)	&	(0.581)	&	(0.176)	&	(0.242)	
 \backslash
 
 \backslash
- Has used improved seed last season 	&	0.150	&	0.349	&	0.926	&	0.301	
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Has used improved seed last season 	&	0.150	&	0.349	&	0.926	&	0.301	
 \backslash
 
 \backslash
- 	&	0.881	&	0.727	&	0.354	&	0.824	
+ 	&	(0.881)	&	(0.727)	&	(0.354)	&	(0.824)	
 \backslash
 
 \backslash
- Distance nearest agro input shop (km) 	&	-0.448	&	-1.788	&	-0.829	&	1.021	
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Distance nearest agro input shop (km) 	&	-0.448	&	-1.788	&	-0.829	&	1.021	
 \backslash
 
 \backslash
- 	&	0.654	&	0.074	&	0.407	&	0.382	
+ 	&	(0.654)	&	(0.074)	&	(0.407)	&	(0.382)	
 \backslash
 
 \backslash
- HH owns mobile phone 	&	0.096	&	0.894	&	1.385	&	0.684	
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+HH owns mobile phone 	&	0.096	&	0.894	&	1.385	&	0.684	
 \backslash
 
 \backslash
- 	&	0.924	&	0.371	&	0.166	&	0.562	
+ 	&	(0.924)	&	(0.371)	&	(0.166)	&	(0.562)	
 \backslash
 
 \backslash
- HH has access to a mobile phone 	&	-0.474	&	0.645	&	0.894	&	0.456	
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+HH has access to a mobile phone 	&	-0.474	&	0.645	&	0.894	&	0.456	
 \backslash
 
 \backslash
- 	&	0.636	&	0.519	&	0.371	&	0.713	
+ 	&	(0.636)	&	(0.519)	&	(0.371)	&	(0.713)	
 \backslash
 
 \backslash
@@ -3590,11 +3690,11 @@ hline
 \backslash
 
 \backslash
- joint	&	0.782	&	1.212	&	1.137	&	0.926	
+ joint (F-test)	&	0.782	&	1.212	&	1.137	&	0.926	
 \backslash
 
 \backslash
- 	&	0.658	&	0.273	&	0.327	&	0.589	
+ 	&	(0.658)	&	(0.273)	&	(0.327)	&	(0.589)	
 \backslash
 
 \backslash
@@ -3641,13 +3741,22 @@ scriptsize
 
 \begin_layout Plain Layout
 
-Note: In the first column, means (and standard deviations) in the control
- group are presented for each variable.
- Column 2 reports differences between placebo and video treatment (and standard
- error) with its corresponding p-value in column 3; column 4 reports differences
- between video only and video+ivr (and standard error) with its corresponding
- p-value in column 5; column 6 reports differences between video+ivr and
- video+ivr
+Note: All entries are t-tests, except for the last column and the last row,
+ where F-tests are reported for the joint tests.
+ Corresponding p-values in brackets below.
+ Tests are derived from a linear probability models with a binary indicator
+ of attrition as the dependent variable.
+ The first row tests differential attrition rates for each treatment seperately:
+ the video intervention (column 1), the incremental IVR encouragement (column
+ 2) and the additional SMS treatment (column 3).
+ The last column perfoms a joint test of differential attrition on the 3
+ treatments.
+ Subsequent rows test differential attrition rates for interactions between
+ each baseline variable indicated to the left and each treatment indicator
+ seperately (columns 1, 2 and 3) and jointly (column 4).
+ Last row tests differential attrition rates for intractions between all
+ baseline variables jointly and each treatment indicator seperately (columns
+ 1, 2 and 3) and all treatments jointly (column 4).
 \end_layout
 
 \end_inset
@@ -3675,42 +3784,23 @@ reference "tab:Differential-attrition-and"
  presents a summary of a series of tests we did to investigate differential
  attrition.
  They relate to a series of regressions where an indicator of attrition
- is regressed upon treatment indicator and interactions with baseline characteri
-stics.
- The first line looks at differential attrition among treatment groups more
- formally.
+ is regressed upon treatment indicators and interactions with baseline character
+istics.
+ The first row looks at differential attrition among treatment groups.
  The first column compares attrition between the control group and households
  that received the video intervention.
  A t-test shows no significant difference in attrition between these two
- groups
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Differential-attrition-and"
-
-\end_inset
-
- reports F-values, but if only one parameter is tested, this is equivalent
- to a t-test.
-\end_layout
-
-\end_inset
-
-.
+ groups.
  The second column compares households that (also) received the encouragement
  treatment to those that did not (the control group and the video only group).
  Also here, there is no difference in attrition.
  We then compare attrition among the group that was allocated to the SMS
- treatment and also find no significant difference with households that
- were not allocated to the SMS treatment.
+ treatment to those that were not and again find no significant difference.
  In the final column, we implement a joint test of differential attrition
  across the treatment groups.
- We do so by running a regression of the attrition indicator on indicators
- of the three treatments and test if all estimated coefficients are zero.
+ We do so by running a regression of the attrition indicator on dummy variables
+ for the three treatments and test if all estimated coefficients are jointly
+ zero.
  An F-test shows we can not reject the hypothesis of no differential attrition.
  
 \end_layout
@@ -3718,9 +3808,9 @@ reference "tab:Differential-attrition-and"
 \begin_layout Standard
 We further investigate if attrition rates are correlated to baseline characteris
 tics and whether this correlation differs by treatment group.
- We do this by regressing an indicator of attrition on the treatment indicator,
- the baseline characteristic and the interaction between the baseline characteri
-stic and treatment.
+ Here the base specification regresses an indicator of attrition on a treatment
+ indicator, a baseline characteristic and the interaction between the treatment
+ indicator and the baseline characteristic.
  We then test if the interaction between treatment and baseline characteristic
  is significantly different from zero using a t-test.
  For instance in the first column of the second row, we do not find that
@@ -3729,9 +3819,10 @@ stic and treatment.
  In the second column of the second row, also confirm that attrition rates
  are unrelated to baseline yields among households that received the IVR
  encouragement.
- The third column implements a similar test for the sms subgroup.
+ The third column implements a similar test for the SMS subgroup.
  Finally, in the last column, we test if coefficients on yield interacted
- each of the treatment dummies is jointly different from zero using an F-test.
+ with each of the treatment dummies is jointly different from zero using
+ an F-test.
  Also here, balance can not be rejected.
  These series of tests are repeated for each of the baseline characteristics
  that were included in Table 
@@ -3742,17 +3833,23 @@ reference "tab:Balance"
 \end_inset
 
 .
- In the last two rows of Table 
+ In the bottom rows of Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Differential-attrition-and"
 
 \end_inset
 
- implement joint tests for all the baseline characteristics and the interaction
- with the video dummy (column 1), with the IVR dummy (column 2), with the
- SMS dummy (column 3) and with all three treatment dummies jointly (column
- 4).
+, results for joint tests for all the baseline characteristics and the interacti
+on with the video dummy (column 1), with the IVR dummy (column 2), with
+ the SMS dummy (column 3) and with all three treatment dummies jointly (column
+ 4) are reported.
+ Overall, we find that attrition is unrelated to the treatment and also
+ unrelated to baseline characteristics, except perhaps for having received
+ extension at baseline.
+ Attrition appears to be somewhat lower for farmers that received both video
+ and received extension at baseline.
+ Attrition also seems lower for the SMS treatment for this subgroup.
 \end_layout
 
 \begin_layout Standard
@@ -3814,9 +3911,10 @@ Cost-effectiveness
 \end_layout
 
 \begin_layout Standard
-While we did not collect detailed information on prices paid for inputs
- or wages.
- However, we can use the estimates above together with aggregate price data
+Cost-effectiveness and scalability are often major selling points for interventi
+on such as the one being tested.
+ While we did not collect detailed information on prices paid for inputs
+ or wages we can use the estimates above together with aggregate price data
  and some assumptions in a series of back-of-the-envelope cost and benefit
  calculations.
  We first check if the video intervention affected profitability of the
@@ -3836,7 +3934,8 @@ In our sample, a bag of 100 110 kg of maize was sold at a median price of
 
 \begin_layout Standard
 From this, we subtract the cost of inputs.
- We recommended two hybrid seed, Longe 10H and UH5354 (commonly know Bazooka).
+ We recommended two hybrid seed, Longe 10H and UH5354 (commonly known as
+ Bazooka).
  At the time of the experiment, Longe 10H sold for UGX 6,000 per kg, while
  Bazooka costed UGX 8,500 per kg.
  However, the data shows that the use of Bazooka was marginal and not correlated
@@ -4722,7 +4821,7 @@ Note: In the first column, means (and standard deviations) in the comparison
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5458,7 +5557,7 @@ Note: In the first column, means (and standard deviations) in the control
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5673,7 +5772,7 @@ Note: Column 1 reports differences between placebo and video treatment (and
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5884,7 +5983,7 @@ Note: Column 1 reports differences between placebo and video treatment (and
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6394,6 +6493,991 @@ Note: Column 1 reports differences between placebo and video treatment (and
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Additional impact of IVR and SMS treatments on knowledge outcomes after
+ controlling for imbalance
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:controls_knowledge"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+	& +IVR	&		p-value	&		+SMS	&	p-value	&		N 	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal spacing (yes=1) &	-0.028	&	0.096	&	0.013	&	0.444	&	3,554	
+\backslash
+
+\backslash
+ 	&	0.018	&		&	0.019	&		&		
+\backslash
+
+\backslash
+ Knows inputs best combined (yes=1)		&	-0.017	&	0.087	&	0.009	&	0.412	&	3,554	
+\backslash
+
+\backslash
+ 	&	0.011	&		&	0.011	&		&		
+\backslash
+
+\backslash
+ Knows optimal time for weeding (yes=1) &	0.009	&	0.338	&	-0.001	&	0.902	&	3,554	
+\backslash
+
+\backslash
+ 	&	0.010	&		&	0.011	&		&		
+\backslash
+
+\backslash
+ Knows how to fight armyworm (yes=1)	&	-0.018	&	0.526	&	0.021	&	0.287	&	3,554	
+\backslash
+
+\backslash
+ 	&	0.019	&		&	0.020	&		&		
+\backslash
+
+\backslash
+ Knowledge index	&	-0.025	&	0.211	&	0.058	&	0.462	&	3,554	
+\backslash
+
+\backslash
+ 	&	0.025	&		&	0.026	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Column 1 reports differences between video only and video+ivr (and
+ standard error) with its corresponding p-value in column 2; column 3 reports
+ differences between video+ivr and video+ivr+SMS (and standard error) with
+ its corresponding p-value in column 4; sample size is reported in column
+ 5.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote that the difference is signficant at the 1, 5 and
+ 10 percent level, respectively, after correcting for multiple hypothesis
+ testing using a family-wise sharp null (10,000 permutations).
+ All specifications control for the other orthogonal factors in the factorial
+ design.
+ Additional controls for the IVR treatment are  age of household head at
+ baseline, household size at baseline and number of bedrooms at baseline.
+ Additional controls for the SMS treatment are  number of bedrooms at baseline.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Additional impact of IVR and SMS treatments on agronomic practices after
+ controlling for imbalance
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:controls_practices"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+		& +IVR	&		p-value	&		+SMS	&	p-value	&		N 	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Planted immediately after start of rains (yes=1)	&	0.015	&	0.477	&	-0.006	&	0.787	&	
+3,438	
+\backslash
+
+\backslash
+ 	&	(0.021)	&		&	(0.022)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used spacing of 75cm x 30cm with a reduced seed rate (yes=1)  &	-0.004	&	0.746	&	0.
+012	&	0.288	&	3,438	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+&	(0.012)	&		&	(0.012)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Removed striga early on (yes=1) 	&	-0.006	&	0.802	&	0.022	&	0.195	&	3,438	
+\backslash
+
+\backslash
+ 	&	(0.019)	&		&	(0.020)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+First weeding after 18-20 days (yes=1) 	&	0.007	&	0.729	&	-0.001	&	0.975	&	3,438	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+&	(0.021)	&		&	(0.022)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Recommended practices index &	0.011	&	0.657	&	0.038	&	0.382	&	3,438	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+&	(0.022)	&		&	(0.023)	&		&		
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Column 1 reports differences between video only and video+ivr (and
+ standard error) with its corresponding p-value in column 2; column 3 reports
+ differences between video+ivr and video+ivr+SMS (and standard error) with
+ its corresponding p-value in column 4; sample size is reported in column
+ 5.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote that the difference is signficant at the 1, 5 and
+ 10 percent level, respectively, after correcting for multiple hypothesis
+ testing using a family-wise sharp null (10,000 permutations).
+ All specifications control for the other orthogonal factors in the factorial
+ design.
+ Additional controls for the IVR treatment are  age of household head at
+ baseline, household size at baseline and number of bedrooms at baseline.
+ Additional controls for the SMS treatment are  number of bedrooms at baseline.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Additional impact of IVR and SMS treatments on on fertilizer and improved
+ seed use after controlling for imbalance
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:controls_inputs"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Mean	& +IVR	&		p-value	&		+SMS	&	p-value	&		N 	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{fertilizer use}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Used DAP/NPK on at least one plot? (yes=1) 	&	0.018	&	0.261	&	-0.006	&	0.702	&	3,498
+	
+\backslash
+
+\backslash
+ 	&	(0.017)	&		&	(0.018)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used Urea on at least one plot? (yes=1)	&	0.014	&	0.256	&	-0.024	&	0.060	&	3,498	
+\backslash
+
+\backslash
+ 	&	(0.012)	&		&	(0.013)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used organic fertilizer on at least one plot? (yes=1)	&	-0.037$^{**}$	&	0.021	&	0.0
+31	&	0.062	&	3,498	
+\backslash
+
+\backslash
+ 	&	(0.017)	&		&	(0.018)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Fertilizer index	&	-0.005	&	0.837	&	0.014	&	0.931	&	3,498	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.025)	&		&	(0.026)	&		&		
+\backslash
+
+\backslash
+ 														
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{seed use}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+																																			
+\end_layout
+
+\begin_layout Plain Layout
+
+Used hybrid maize seed on at least one plot? (yes=1) 	&	0.041$^{**}$	&	0.031	&	-0.0
+48	&	0.010	&	3,498	
+\backslash
+
+\backslash
+ 	&	(0.019)	&		&	(0.020)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Used Open Polinated Varieties on at least one plot? (yes=1)  	&	0.010	&	0.558	&	0.0
+26	&	0.396	&	3,498	
+\backslash
+
+\backslash
+ 	&	(0.019)	&		&	(0.020)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Seed index	&	0.060$^{**}$	&	0.029	&	0.013	&	0.466	&	3,498	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+&	(0.028)	&		&	(0.029)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Column 1 reports differences between video only and video+ivr (and
+ standard error) with its corresponding p-value in column 2; column 3 reports
+ differences between video+ivr and video+ivr+SMS (and standard error) with
+ its corresponding p-value in column 4; sample size is reported in column
+ 5.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote that the difference is signficant at the 1, 5 and
+ 10 percent level, respectively, after correcting for multiple hypothesis
+ testing using a family-wise sharp null (10,000 permutations).
+ All specifications control for the other orthogonal factors in the factorial
+ design.
+ Additional controls for the IVR treatment are  age of household head at
+ baseline, household size at baseline and number of bedrooms at baseline.
+ Additional controls for the SMS treatment are  number of bedrooms at baseline.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Additional impact of IVR and SMS treatments on production after controlling
+ for imbalance
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:controls_production"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+footnotesize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Mean	& +IVR	&		p-value	&		+SMS	&	p-value	&		N 	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Maize production (log(kg))	&	0.040	&	0.336	&	0.042	&	0.309	&	3,282	
+\backslash
+
+\backslash
+ 	&	(0.035)	&		&	(0.036)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Maize area (log(acre)) 	&	-0.020	&	0.457	&	0.028	&	0.293	&	3,271	
+\backslash
+
+\backslash
+ 	&	(0.026)	&		&	(0.028)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Maize yield (log(kg/acre))	&	0.038	&	0.249	&	0.004	&	0.883	&	3,244	
+\backslash
+
+\backslash
+ 	&	0.029	&		&	0.030	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield better than normal (yes=1)	&	0.006	&	0.787	&	0.030	&	0.205	&	3,498	
+\backslash
+
+\backslash
+ 	&	(0.021)	&		&	(0.022)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Labour (log(days))&	-0.013	&	0.640	&	0.041	&	0.085	&	3,312	
+\backslash
+
+\backslash
+ 	&	0.025	&		&	0.026	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Labour productivity (log(kg/days)) &	0.067	&	0.084	&	-0.008	&	0.757	&	3,280	
+\backslash
+
+\backslash
+ 	&	(0.033)	&		&	(0.035)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Production index	&	0.008	&	0.464	&	0.025	&	0.520	&	3,241	
+\backslash
+
+\backslash
+ 	&	(0.016)	&		&	(0.016)	&		&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Column 1 reports differences between video only and video+ivr (and
+ standard error) with its corresponding p-value in column 2; column 3 reports
+ differences between video+ivr and video+ivr+SMS (and standard error) with
+ its corresponding p-value in column 4; sample size is reported in column
+ 5.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote that the difference is signficant at the 1, 5 and
+ 10 percent level, respectively, after correcting for multiple hypothesis
+ testing using a family-wise sharp null (10,000 permutations).
+ All specifications control for the other orthogonal factors in the factorial
+ design.
+ Additional controls for the IVR treatment are  age of household head at
+ baseline, household size at baseline and number of bedrooms at baseline.
+ Additional controls for the SMS treatment are  number of bedrooms at baseline.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
