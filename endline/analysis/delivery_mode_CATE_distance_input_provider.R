@@ -220,13 +220,13 @@ dta <- merge(baseline, dta, by="hhid")
 
 ### take reverse: did not finish primary school
 #low educated
-#dta$interact <- dta$maizeeduc <= 2
+dta$interact <- !(dta$maizeeduc <= 2)
 #rich
 #dta$interact <- dta$maizeprrooms/dta$maizehh_no >= median(dta$maizeprrooms/dta$maizehh_no, na.rm=T)
 #close to maize shope
 #dta$interact <- dta$maizedist_shop <= median(dta$maizedist_shop, na.rm=T)
 # has mobile
-dta$interact <- dta$maizemobile_access
+#dta$interact <- dta$maizemobile_access
 #has received ag extension
 #dta$interact <- dta$maizeprinfo_receiv==1
 #is young
