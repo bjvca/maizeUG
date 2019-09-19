@@ -3,15 +3,16 @@ stopCluster(cl)
 source("/home/bjvca/data/projects/digital green/endline/data/init_gender.R")
 baseline <-  read.csv("/home/bjvca/data/projects/digital green/baseline/base_merge.cvs")
 
-wget https://www.dropbox.com/s/sakp13112o1to6u/baseline.csv?dl=0
+## uncomment lines below if run on AWS
+#wget https://www.dropbox.com/s/sakp13112o1to6u/baseline.csv?dl=0
 #wget https://www.dropbox.com/s/n7hn2x0y492ofgi/AWS.csv?dl=0
-wget https://www.dropbox.com/s/t6vkm91bawxbz8g/AWS2.csv?dl=0
+#wget https://www.dropbox.com/s/t6vkm91bawxbz8g/AWS2.csv?dl=0
 #install.packages(c("ggplot2","doParallel","data.table","dplyr","Hmisc"))
 
-rm(list=ls())
-dta <- read.csv("AWS.csv")
-baseline <- read.csv("baseline.csv")
-#set totrep to zero if you do not want simulation based inferecne
+#rm(list=ls())
+#dta <- read.csv("AWS.csv")
+#baseline <- read.csv("baseline.csv")
+
 
 library(ggplot2)
 library(doParallel)
@@ -28,6 +29,9 @@ res_know_w <- array(NA, c(11,4,7))
 rownames(res_know_w) <- c("know_space","","know_combine","","know_weed","", "know_armyworm","","know_ind","","padj")
 res_know_b <- array(NA, c(11,4,7)) 
 rownames(res_know_b) <- c("know_space","","know_combine","","know_weed","", "know_armyworm","","know_ind","","padj")
+
+plot_res <- array(NA, c(12,5,7))
+colnames(plot_res) <-  c("x","y","ylo","yhi","grp")
 
 cl <- makeCluster(detectCores(all.tests = FALSE, logical = TRUE))
 registerDoParallel(cl)
@@ -145,6 +149,27 @@ if (nr_repl > 0) {
 return(list(mod,sig, data))
 }
 
+### wrapper function to make graphs to be used for presentations
+credplot.gg <- function(d,units, hypo){
+ # d is a data frame with 4 columns
+ # d$x gives variable names
+ # d$y gives center point
+ # d$ylo gives lower limits
+ # d$yhi gives upper limits
+ require(ggplot2)
+ p <- ggplot(d, aes(x=x, y=y, ymin=ylo, ymax=yhi, colour=as.factor(grp)))+
+ geom_pointrange(position=position_dodge(-.4))+
+ geom_hline(yintercept = 0, linetype=2)+
+ coord_flip(ylim = c(-.25,.25))+
+ xlab('') + ylab(units)+ labs(title=hypo)  + theme(axis.text=element_text(size=18),
+        axis.title=element_text(size=14,face="bold"),legend.text=element_text(size=18), plot.title = element_text(size=22,hjust = 0.5), legend.title=element_blank())+
+    geom_errorbar(aes(ymin=ylo, ymax=yhi),position=position_dodge(-.4),width=0,cex=1.5) + scale_colour_manual(values = c('#25276d','#00d8ff','#cb00ff'))
+ return(p)
+}
+
+
+#########################################################################################
+
 ## drop the control
 dta <- subset(dta, messenger != "ctrl")
 
@@ -166,11 +191,11 @@ baseline$maizemobile <- (baseline$maizemobile=='Yes')
 baseline$yield <- asinh(baseline$yield)
 ctrls <- NULL
 
-
-totrep <- 10000
+#set totrep to zero if you do not want simulation based inferecne
+totrep <- 0
 ####
 
-for (h in 5:5) {
+for (h in 1:6) {
 if (h==1) {
 ############################################ H1: empower: rec==couple or woman - rec==male #########################################################
 dta <- dta_copy
@@ -279,6 +304,11 @@ res_know_w[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_know_w[9,3,h] <-  indexer[[2]]
 res_know_w[10,3,h] <-  nobs(indexer[[1]])
 
+plot_res[1,1,h] <- "knowledge"
+plot_res[1,2,h] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index, na.rm=T)
+plot_res[1,3:4,h] <- confint(indexer[[1]], level=.9)[2,]/sd(indexer[[3]]$index, na.rm=T)
+plot_res[1,5,h] <- "woman"
+
 
 res_know_w[11,1:3,h] <- RI_FWER(deps= c("know_space_w","know_combine_w","know_weed_w") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_know_w[c(1,3,5),3,h], nr_repl = totrep, w_int="weights")
 
@@ -334,6 +364,12 @@ res_know_b[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_know_b[9,3,h] <-  indexer[[2]]
 res_know_b[10,3,h] <-  nobs(indexer[[1]])
 
+plot_res[2,1,h] <- "knowledge"
+plot_res[2,2,h] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index, na.rm=T)
+plot_res[2,3:4,h] <- confint(indexer[[1]], level=.9)[2,]/sd(indexer[[3]]$index, na.rm=T)
+plot_res[2,5,h] <- "joint"
+
+
 
 res_know_b[11,1:3,h] <- RI_FWER(deps= c("know_space_j","know_combine_j","know_weed_j") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_know_b[c(1,3,5),3,h], nr_repl = totrep, w_int="weights")
 
@@ -380,6 +416,11 @@ res_know_m[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
 res_know_m[10,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
 res_know_m[9,3,h] <-  indexer[[2]]
 res_know_m[10,3,h] <-  nobs(indexer[[1]])
+
+plot_res[3,1,h] <- "knowledge"
+plot_res[3,2,h] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$index, na.rm=T)
+plot_res[3,3:4,h] <- confint(indexer[[1]], level=.9)[2,]/sd(indexer[[3]]$index, na.rm=T)
+plot_res[3,5,h] <- "man"
 
 
 res_know_m[11,1:3,h] <- RI_FWER(deps= c("know_space_m","know_combine_m","know_weed_m") ,indep = treatment , ctrls = ctrls,dta =dta, p_vals = res_know_m[c(1,3,5),3,h], nr_repl = totrep, w_int="weights")
