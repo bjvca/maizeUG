@@ -62,7 +62,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
@@ -158,45 +158,64 @@ We agree that the incremental set-up of the experiment prevents us from
  directly comparing the effectiveness of supply- vs demand-driven information
  provision in a meaningful way.
  Putting this front-and-center may indeed create the expectation that we
- are going to implement a horse race type experiment instead of the incremental
- design we use.
- At the same time, we still believe this is a useful experiment and the
- incremental design makes more sense than other combinations (eg.
- starting with the cheapest intervention, which would be SMS messages, see
- also comment 2 by reviewer 4 (R4.2.)).
+ are going to implement a horse race-type experiment instead of the incremental
+ design we use.We also note that other reviewers take issue with the supply-
+ versus demand-framing, and especially the fact that we use this to motivate
+ our paper.
+ By de-emphasizing the supply- vs.
+ demand-driven extension narrative (as suggested by the reviewer), we believe
+ that we can still demonstrate that this is a useful experiment, and that
+ the incremental design makes more sense than other combinations (eg.
+ starting with the lowest-cost intervention, which would be SMS messages;
+ see also comment 2 by reviewer 4 (R4.2.)).
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-More in particular, we wanted to test a comprehensive ICT-mediated extension
- package consisting of different components each with its own characteristics.
+To clarify our motivation, we need to explain why we wanted to test a comprehens
+ive ICT-mediated extension package consisting of different components each
+ with its own characteristics.
  The different components of the intervention, and the incremental way in
- which they were implemented in the experiment, are a result of careful
+ which they were implemented in the experiment, are the result of careful
  analysis of the situation in Uganda (low levels of knowledge on modern
- input due to defunct public extension system, various start-ups experimenting
- with demand-driven initiatives such as WeFarm, DrumNet, Viamo,...
- ) as well as state of the art literature (the aspirations literature and
- importance of role models, reminders as nudges,...).
- From this, we decided we needed to start form a general baseline intervention
- designed to make farmers aware of the most important new technologies and
- recommended practices.
- This messages should be brought in an appealing way and also accessible
- to low educated farmers.
+ input due to a near-defunct public extension system, various start-ups
+ experimenting with demand-driven initiatives such as WeFarm, DrumNet, Viamo,...
+ ), as well as state of the art in the literature (the aspirations literature
+ and importance of role models, reminders as nudges, etc.).
+ With these points in mind, we decided we needed to start from a general
+ baseline intervention designed to make farmers aware of the most important
+ new technologies and recommended practices.
+ We hypothesized that the success of such messaging would depend partly
+ on their provision in an appealing and accessible manner that was specifically
+ tailored to less-educated farmers.
  Hence the idea to create a video.
- However, farmers get to see a video at the beginning of the maize growing
- season, and it is likely that they forget some of the details that are
- explained in the video (for instance the name of a particular hybrid seed,
- the exact quantity of a particular type of inorganic fertilizer,...).
- Therefore, we wanted to add an information sources that is accessible on
- demand.
- The idea that IVR is used to get more precise information on a particular
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+However, we also know from our contextual analysis that farmers who view
+ a video at the beginning of the maize growing season may tend to forget
+ some of the details that are explained in the video (for instance the name
+ of a particular maize hybrid, the exact quantity of a particular type of
+ inorganic fertilizer, etc.).
+ Therefore, we wanted to add an information source for farmers that is accessibl
+e on demand.
+ The idea that IVR is used to provide more precise information on a particular
  technology means that farmers already need to have an idea of the existence
  of the particular technology.
- Finally, we learned that, often, knowledge only is not enough.
- Timely reminders have often been found very effective in overcoming inertia,
- procrastination, competing obligations, or simple forgetfulness of human
- beings 
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Finally, we learned from our contextual analysis and literature review that
+ knowledge only is rarely enough to change behavior.
+ Timely reminders have been shown to be very effective in overcoming inertia,
+ procrastination, competing obligations, or simple forgetfulness 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Sunstein2014"
@@ -208,8 +227,8 @@ key "Sunstein2014"
 .
 
 \emph on
- Recent research on agricultural extension also suggests behavioural change
- occurring through the compounding or re-emphasis of common knowledge that,
+ Recent research on agricultural extension also suggests behavioral change
+ occurs through the compounding or re-emphasis of common knowledge that,
  through repetition, becomes more salient to the individual 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -218,35 +237,29 @@ key "duflo2014diffusion"
 \end_inset
 
 .
- Also here, the conceptualization of an SMS message as a reminder also means
- that the information should have been given before.
+ Hence, we introduced the SMS treatment as a complement to the tailored
+ informational treatment (video) and the detailed on-demand informational
+ treatment (IVR).
+ 
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-We have followed the suggestion and have deferred the discussion on the
- different characteristics the components of the intervention to the end
- of the paper.
- The demand driven nature of the IVR is mentioned in the context of the
- low take-up, which in turn may explain the null results for the incremental
- IVR effect.
- Other reviewers also take issue with the supply- versus demand-framing,
- and especially the fact that we use this to 
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Changes made to the manuscript: We have removed the discussion on supply
- versus demand driven technologies from the introduction and the research
- aims section.
+Changes made to the manuscript: We have removed the discussion on supply-
+ versus demand-driven technologies from the introduction and motivation
+ section.
+ We now mention the demand- driven nature of the IVR treatment only in the
+ context of the low take-up we observe, which in turn may explain the null
+ results for the incremental IVR effect.
  We have rewritten the introduction to better reflect how the different
- component of the intervention are related to each other and we now better
- explain the rationale for making it an incremental design: 
-\end_layout
+ component of the intervention are related to each other, and we now better
+ explain the rationale for making it an incremental design.
+ Specifically, we have included the following language.
+\begin_inset Note Note
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 \begin_inset Quotes eld
@@ -269,7 +282,7 @@ This article investigates the effectiveness of an ICT-mediated extension
  The farmer then gets to listen to a pre-recorded message with information
  on the selected topic.
  The decision to make the same information available in the form of an on-demand
- service is motivated by the fact that farmers may easily forgot some of
+ service is motivated by the fact that farmers may easily forget some of
  the details of the video.
  Third, we add SMS messages that remind farmers at particular points in
  time during the maize growing season about key farming practices shown
@@ -302,14 +315,21 @@ key "duflo2014diffusion"
 
 \end_layout
 
-\begin_layout Standard
+\end_inset
 
-\emph on
-We revisit the different characteristics of the components in the conclusion
- to explain heterogeneity in some of the findings:
+
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+Furthermore, we revisit the different characteristics of the components
+ in the conclusion to explain heterogeneity in some of the findings.
+ Specifically, we have included the following language.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 
 \emph on
 \begin_inset Quotes eld
@@ -337,34 +357,44 @@ key "New1"
  Therefore, the lack of impact may be specific to the nature of the design
  and results may be quite different in, for instance, a parallel design.
  
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+why would the incremental design have lower impact than parallel?
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \emph on
-But even in the narrow context of our experiment, where an effort was made
- to study particular characteristics of the interventions such as the demand
- driven nature of IVR or the ability of SMS to make information more salient,
+But even in the narrow context of our experiment where an effort was made
+ to study particular characteristics of the interventions such as the demand-dri
+ven nature of IVR or the ability of SMS to make information more salient,
  it is not clear if the lack of impact should be taken to mean much.
- For instance, in Sub-section 5.1 we argue that the low take-up of the IVR
- is likely to reduce power too much to detect any reasonable effect.
+ For instance, in Sub-section 5.1 we now argue that the low take-up of the
+ IVR is likely to reduce statistical power to such extent that any reasonable
+ effect cannot be detected anymore.
  Maybe, with some additional promotion of the service, positive effects
  would have been obtained.
  The SMS intervention also has its issues.
  Here, even after restricting to farmers that own a mobile phone, the implicit
- assumption that everyone with a mobile phone also reads and internalizes
- the messages may be too optimistic.
- Furthermore, we found it difficult to get the timing of the messages right.
- While we tried to avoid excessive difference in agro-ecological conditions,
- we still encountered situations where farmers had planted much earlier
- than in other areas due to spatial heterogeneity in the onset of the rains.
- As a result, some farmers will have received the SMS message on fertilizer
- application too early and others too late.
- Therefore, care should be taken when interpreting the results.
+ assumption that everyone with a mobile phone also reads, internalizes the
+ information received in a message, and acts upon the messages may be too
+ optimistic.
 \begin_inset Quotes erd
 \end_inset
 
- 
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -387,13 +417,13 @@ But even in the narrow context of our experiment, where an effort was made
 \begin_layout Standard
 
 \emph on
-This comment is related to the first comment made by reviewers 3 and 4 (R3.12,
- R4.1), who, in addition to a cost-benefit analysis at the level of the farmer,
- also want an estimate of the cost-effectiveness of project.
+This comment is also related to the first comment made by reviewers 3 and
+ 4 (R3.12, R4.1), who, in addition to a cost-benefit analysis at the level
+ of the farmer, also want an estimate of the cost-effectiveness of project.
  We added a separate section in which we first check if the video intervention
- affected profitability of the average farmer and then compare the total
- cost of the intervention to the total benefit derived by the farmers in
- our study.
+ affected the profitability for the average farmer, and then compare the
+ total cost of the intervention to the total benefit derived by the farmers
+ in our study.
  We only estimate cost-effectiveness for the video intervention, as we find
  few additional effects of the additional interventions.
 \end_layout
@@ -416,6 +446,12 @@ Cost-effectiveness
 \begin_layout Standard
 
 \emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
 \begin_inset Quotes eld
 \end_inset
 
@@ -430,7 +466,7 @@ ons such as the ones being tested.
  total benefit derived by the farmers in our study.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 In our sample, a bag of 100 kg of maize was sold at a median price of UGX
@@ -442,7 +478,7 @@ In our sample, a bag of 100 kg of maize was sold at a median price of UGX
  This means a difference in income of UGX 27,000 per acre, or about 7.7 USD.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 From this, we subtract the cost of inputs.
@@ -480,11 +516,11 @@ reference "tab:Impact-of-technology_fert"
 ) and subtract this from the income obtained from maize.
  Doing so actually increases the difference in income between treatment
  and control somewhat, as the likelihood that farmers use the more expensive
- fertilizer DAP reduced somewhat, while the likelihood that farmers use
- Urea increased.
+ fertilizer DAP reduced somewhat as a result of the treatment, while the
+ likelihood that farmers use Urea increased.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 Changes in the cost of labour are harder to value.
@@ -504,14 +540,26 @@ reference "tab:pract_h1_ag"
  is significantly correlated to the time spent on preparing the land (which
  includes application of inorganic fertilizer), to time spend on weeding,
  nor to the likelihood that labor is hired in.
- In addition, labour is very cheap (6,000 per day).
+ In addition, labour is very cheap (6,000 UGX per day).
  Valuing work related to organic fertilizer adoption at 3 days, the adoption
  of the new planting method at 2 days and the work for weeding at 10 days
  (which is the time needed to weed one acre), the difference in profit between
- treatment and control reduces to 22,464 or about 6.5 USD.
+ treatment and control reduces to 22,464 UGX or about 6.5 USD per acre
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+correct?
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
 
 \emph on
 The intervention costed close to USD 37,000.
@@ -527,7 +575,35 @@ The intervention costed close to USD 37,000.
  15,000 observations.
  If the intervention is rolled out to all 360,000 households in the 5 districts
  where the intervention was piloted, the internal rate of return would be
- about 16 %
+ about 16 % 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+i am puzzled: total cost - fixed costs (37000-6300-5600-224)=22876 usd .
+ for 3959 farmers.
+ => that would make 5.77 usd variable cost/farmer.
+ (confusing when you put 2.77 usd for a single screening of the the video
+ ) (and more confusing when you then calculate IRR when you roll out the
+ intervention as implemented (2xvideo+ivr+sms)
+\end_layout
+
+\begin_layout Plain Layout
+
+\emph on
+alternatively, you could consider the fixed costs as sunk costs once an
+ intervention like this is designed and enumerators trained.
+ this leaves you with variable cost of 5.77 (??) usd per farmer to implement
+ the intervention.
+ a treated farmer gains 6.5 usd/acre with average 1.19 acres of maize.
+ so a gain of 0.85 usd/farmer.
+\end_layout
+
+\end_inset
+
+
 \begin_inset Foot
 status collapsed
 
@@ -560,6 +636,11 @@ It may be possible to reduce variable costs considerably.
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 I have several other major comments: 
 \end_layout
@@ -579,7 +660,7 @@ I have several other major comments:
 \begin_layout Standard
 
 \emph on
-Reviewer 2 (R2.2) also suggests a more in-depth discussion of the LATE-results.
+Reviewer 2 (R2.2) also suggests a more in-depth discussion of the LATE results.
  This reviewer's main concern is related to potential contamination of the
  control group to explain the lack of impact found for the IVR.
  Also reviewer 3 suggests that the lack of impact of IVR as assessed by
@@ -593,17 +674,24 @@ additional_info.pdf
 \begin_inset Quotes erd
 \end_inset
 
- of materials we would have liked to make available in on-line appendices.
+ of materials we would have liked to make available in online appendices.
  It included the 2SLS (LATE) regressions.
- Apparently, this was not available to the reviewers.
+ Apparently, this was not made available to the reviewers.
 \end_layout
 
 \begin_layout Standard
 
 \emph on
 We now discuss the low take-up of the IVR intervention earlier in the paper.
- In a section entitled additional analysis, we explain that farmers self
- select into the IVR treatment.
+ In a section entitled 
+\begin_inset Quotes eld
+\end_inset
+
+Additional analysis and robustness tests
+\begin_inset Quotes erd
+\end_inset
+
+, we explain that farmers self-select into the IVR treatment.
  We then present regressions that show how uptake is correlated to baseline
  characteristics.
  We discuss LATE effects briefly, and refer to tables in the appendix for
@@ -615,7 +703,7 @@ We now discuss the low take-up of the IVR intervention earlier in the paper.
 
 \emph on
 We then reflect on potential reasons for the lack of impact.
- We look at take-up and using simple back of the envelope calculations show
+ We examine take-up and using simple back-of-the-envelope calculations show
  the minimum detectable effect size and how it is affected by low compliance.
  We then argue that contamination is unlikely to lead to a downward bias,
  as only 1 percent of households in the control group called the IVR.
@@ -626,30 +714,46 @@ We then reflect on potential reasons for the lack of impact.
 
 \emph on
 We then discuss a particular concern with our measure of compliance.
- In particular, we suspect that LATE in our context would overestimate the
- impact of the IVR.
- The reason is that our indicator of take-up of the intervention is likely
- to be measured with significant error.
+ In particular, we suspect that our indicator of take-up of the intervention
+ is likely to significantly underestimate true compliance.
  In particular, our indicator of compliance is taken from the IVR system
  log, where recorded telephone numbers are matched to phone numbers that
  were recorded during baseline data collection.
  This indicator is likely to severely under-report true compliance, as encourage
-d farmers may use different phones to call the IVR.
- This is illustrated by the fact that about 430 unique calls were made to
- the system, representing about 18 percent of encouraged households Using
- our measure of compliance, we can not maintain that the independence assumption
+d farmers may have used different phones to call the IVR.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+The fact that 430 unique calls to the system were recorded, representing
+ about 18 percent of encouraged households, confirms this suspicion.
+\end_layout
+
+\end_inset
+
+ Using our measure of compliance, we cannot maintain the exclusion restriction
  holds, as some of the potential outcomes are directly determined by the
  instrument.
- The problem becomes clear when we think about LATE as the Wald estimator
- that scales the ITT by compliance.
- In our case, the ITT will be estimated on the basis of all 430 farmers
- that called in.
- Our measure of compliance will force all the impact of the treatment to
- work through the 214 households that show up in the IVR log and could be
- identified in the baseline, which in the case of a positive impact would
- lead to an overestimate of the impact of the treatment on compliers.
- It is well known that especially in the context of a weak first stage the
- bias can become extremely large 
+ The problem becomes apparent when we think about LATE as the Wald estimator
+ that scales the ITT by compliance 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "angrist_mostly_2008"
+
+\end_inset
+
+.
+ In our case, the ITT will be estimated on the basis of all farmers encouraged
+ to call in to the IVR system.
+ Our measure of compliance forces the LATE estimation to work with the 214
+ households that show up in the IVR log and could be identified in the baseline,
+ rather than through the 430 farmers that called in, which in the case of
+ a positive impact would lead to an overestimate of the impact of the treatment
+ among compliers.
+ It is well known that especially in the context of a weak first stage,
+ the bias can become extremely large 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "duflo2007using"
@@ -658,7 +762,7 @@ key "duflo2007using"
 
 .
  We thus conclude that LATE results are difficult to interpret and suggest
- to focus on the ITT effects.
+ to instead focus on the ITT effects.
 \end_layout
 
 \begin_layout Standard
@@ -668,14 +772,23 @@ Redoing the LATE analysis made us realize that actually all farmers that
  were allocated to the SMS treatment did receive the SMS messages.
  As a result, we dropped the LATE analysis for this component of the interventio
 n, but briefly discuss the fact that farmers need a phone to be able to
- receive the messages in the section where we look at treatment heterogeneity.
+ receive the messages.
+ This is highlighted in the section titled 
+\begin_inset Quotes eld
+\end_inset
+
+Heterogeneous treatment effects.
+\begin_inset Quotes erd
+\end_inset
+
  
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-Changes made to the text: We refer to sub-section 
+Changes made to the text: We refer to these issues primarily in the sub-section
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -683,7 +796,7 @@ Demand for IVR and Local Average Treatment Effects
 \begin_inset Quotes erd
 \end_inset
 
- in section 
+, which is in the section titled 
 \begin_inset Quotes eld
 \end_inset
 
@@ -707,35 +820,27 @@ Additional analysis and robustness tests
  Similarly, while I believe the sampling was done correctly, the UNHS could
  be used to empirically show how representative the finally selected HHs
  are relative to Uganda as a whole, etc.
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-The population from which we sample in this study are, broadly, the Baganda,
- a Bantu ethnic group native to Buganda, a subnational kingdom within Uganda.
- Maize is important in Bagandan culture.
- Most households in the area would cultivate maize.
- In fact, the study population may not be that representative for Uganda,
- which is atypical in its dietary diversity.
- For instance, in central Uganda, matooke is the main staple food and in
- the southwest, the highlands are more suited for potato growing.
- In the drier North, sorghum is grown and consumed.
- Only in the West, in the areas around Kasese, Fort Portal and Masindi,
- some maize is grown.
  
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-However, the population in this study was chosen because maize is very important
- in the region, and so the baganda are more representative of populations
- in the larger region.
- Maize is consumed in the form of posho, a kind of maizemeal porridge that
- is consumed throughout much of East and southern Africa under different
- names (Ugali, Nsima,...).
- Many of the ongoing studies are happening in the region.
+The representativeness of the sampled households, and the external validity
+ of the overall study, bears closer consideration, as suggested by the reviewer.T
+he population from which we sample in this study are, broadly, the Baganda,
+ a Bantu ethnic group native to Buganda, a subnational kingdom within Uganda.
+ Maize is important in Bagandan culture, and most households in the area
+ cultivate and consume maize.
+ Their maize-based farming system and maize consumption patterns are generally
+ an accurate reflection of populations in the larger region of eastern and
+ southern Africa.
+ Throughout this region, maize is similarly consumed as a staple in the
+ form of a porridge that goes by different names (posho in Uganda; ugali
+ in Kenya and Tanzania; ssima in Zambia; sadza in Zimbabwe; etc..).
+ Many prior and ongoing studies in the region have similarly focused on
+ maize-based farming systems and on households where maize is the main staple
+ food.
  Many of the projects reported in 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -744,17 +849,43 @@ key "New1"
 \end_inset
 
  are being implemented among similar farmers.
+ While there is, in fact, considerable variation in farming systems, staple
+ foods, and consumption patterns throughout Uganda, we abstract from this
+ variation to focus on the central relevance of maize to both production
+ and consumption in the wider eastern and southern Africa region.
  
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-Changes made to the text: We include the following paragraphs that compares
- modern input use to neighbouring countries in the context section:
+Changes made to the text: We add language to further describe the relevance
+ our study population to wider populations in the region in Section 1 (Context)
+ and Section 2 (Experimental Design and Estimation of Treatment Effects).
+ We include the following paragraphs that compares modern input use to neighbori
+ng countries in the context section:
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+You will have to update this once we finish the editing.
+ Or just omit it and refer the reviewer to the manuscript
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 
 \emph on
 \begin_inset Quotes eld
@@ -784,6 +915,11 @@ key "10.1093/qje/qjx009"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 5.
  Relatedly, given how well it sounds this intervention was implemented,
@@ -801,7 +937,8 @@ ness of the implementation and implementing partner(s).
 \begin_layout Standard
 
 \emph on
-We think this is a realistic intervention.
+We appreciate the reviewer's input on this point.
+ think this is a realistic intervention.
  For the video intervention, we do not think a lot of training is needed.
  In fact, the use of video was partly motivated by the fact that it provides
  a homogeneous treatment (that is, independent of the person who provides
@@ -825,8 +962,11 @@ We think this is a realistic intervention.
 \begin_layout Standard
 
 \emph on
-Changes made to the text: There is now a section on the cost-effectiveness
- of the intervention, where we briefly reflect on the 
+Changes made to the text: We mention the role of the enumerator in more
+ detail in Section 2 (Experimental Design and Estimation of Treatment Effects)
+ and in Section 6 (Cost-effectiveness).
+ There is now a section on the cost-effectiveness of the intervention, where
+ we briefly reflect on the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -845,13 +985,19 @@ trained field enumerators
 \begin_layout Standard
 
 \emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
 \begin_inset Quotes eld
 \end_inset
 
 Uganda has been struggling to set up a functioning extension service.
  In 2000, the National Agricultural Advisory Services (NAADS), an ambitious
  public private partnership was set up with support from various donors.
- After what seemed as a successful start, NAADS became a victim of political
+ After what seemed a successful start, NAADS became a victim of political
  capture and governance problems, culminating in its demise and replacement
  by Operation Wealth Creation 
 \begin_inset CommandInset citation
@@ -861,8 +1007,8 @@ key "benin2011returns,joughin2010politics,doi:10.1111/dpr.12318"
 \end_inset
 
 .
- Operation Wealth Creation is managed by the armed forces, and primarily
- focused on the distribution of inputs.
+ Operation Wealth Creation is managed by the army, and primarily focused
+ on the distribution of inputs.
  Today, access to public extension services is limited.
  The last available data, obtained from the Uganda National Panel Survey
  (wave 2013/2014) suggests 20 percent of household received extension in
@@ -873,9 +1019,14 @@ key "benin2011returns,joughin2010politics,doi:10.1111/dpr.12318"
  IVR.
  The Market-led, User-owned ICT4Ag-enabled Information Service (MUIIS) project
  uses ICT to facilitate farmer-to-farmer extension.
- Through the m-Omulimisa platform, farmers can sent SMS messages with questions
+ Through the m-Omulimisa platform, farmers can send SMS messages with questions
  to agricultural extension officers.
 \begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -901,7 +1052,7 @@ The dangers of using self-reported survey data to measure key outcomes is
 \begin_layout Standard
 
 \emph on
-Changes made to the text: we added the following sub-section entitled 
+Changes made to the text: we added Sub-section 5.2 titled 
 \begin_inset Quotes eld
 \end_inset
 
@@ -909,7 +1060,7 @@ Experimenter demand effects
 \begin_inset Quotes erd
 \end_inset
 
- in the section on 
+ under the section on 
 \begin_inset Quotes eld
 \end_inset
 
@@ -921,6 +1072,12 @@ Additional analysis and robustness tests
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 
 \emph on
 \begin_inset Quotes eld
@@ -954,7 +1111,7 @@ key "de2018measuring,mummolo2019demand"
  are unlikely to drive our results.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 First, during the design of the endline questionnaire, we tried to minimize
@@ -981,7 +1138,7 @@ plant spacing of 75cm x 30cm with a reduced seed rate of 1 seed per hill
  demand effects.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 Second, in our endline survey, not all outcomes are equally likely to be
@@ -1000,7 +1157,7 @@ Second, in our endline survey, not all outcomes are equally likely to be
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 Third, as we will report in the next section, fertilizer adoption, an outcome
@@ -1014,6 +1171,11 @@ Third, as we will report in the next section, fertilizer adoption, an outcome
 \end_inset
 
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1030,8 +1192,9 @@ I also have several additional minor comments:
 \begin_layout Standard
 
 \emph on
-Thanks for this suggestion, we have followed your suggestion and cut out
- the research aim section and added some sentences to the intro.
+Thanks for this suggestion.
+ We have removed the research aim section and added key elements from it
+ to the intro.
 
 \emph default
  
@@ -1061,6 +1224,18 @@ We have follow your suggestion and moved the context section forward, before
  I realize we can’t see the video in paper-form but a few screenshots and
  the transcript in the appendix would be helpful along with a copy of the
  flyer used to invite households to the hotline.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+I added footnote 4 with a link to the videos; do you have a copy of the
+ flyer that can be stuck in an online appendix? Let's keep this reviewer
+ happy!
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1084,11 +1259,11 @@ additional_info.pdf
  (LATE) regressions, an anonymized version of the pre-analysis plan, the
  script for the video (scene by scene), a transcript of the content of the
  IVR system (in English, although the farmers also had access to this informatio
-n in Lusgoga) and the content of the 8 sms messages, both in Lusoga and
- in English, and a copy of the flyer used to invite households to the hotline.
+n in Lusoga) and the content of the 8 SMS messages, both in Lusoga and in
+ English, and a copy of the flyer used to invite households to the IVR hotline.
  It is unclear if this additional information was also made available to
  the reviewers.
- 
+ In any case, all this information will be available in an online appendix.
 \end_layout
 
 \begin_layout Standard
@@ -1105,15 +1280,15 @@ n in Lusgoga) and the content of the 8 sms messages, both in Lusoga and
 \emph on
 The randomization was somewhat complicated given that this study was part
  of a larger study that also mixed in other factors to study gender related
- issues in agricultural extension (see footnote 1 in the manuscript).
+ issues in agricultural extension (see footnote 1 in the revised manuscript).
  We tried to find a balance between providing sufficient information on
  the randomization procedure without overwhelming the reader with too much
  technical detail.
  Note that, in an effort be fully transparent and allow complete reproducibility
 , the entire project (including code) is under version control (using git),
  which will be made publicly available.
- The final version of the manuscript will thus include a link to the time
- stamped R code that was used to obtain the sample and allocate the treatments.
+ The final version of the manuscript will thus include a link to the time-stampe
+d R code that was used to obtain the sample and allocate the treatments.
 \end_layout
 
 \begin_layout Standard
@@ -1124,6 +1299,12 @@ Changes made to the manuscript: We added the following paragraphs to the
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 
 \emph on
 Maize is especially important in eastern Uganda.
@@ -1142,7 +1323,7 @@ Maize is especially important in eastern Uganda.
  The remaining 9 households were all shown a video.
  We then added the IVR treatment randomly to 2/3 of the households that
  were allocated to the video intervention and further randomly allocated
- 1/2 of these households to the SMS treatment
+ 1/2 of the households assigned to the IVR encouragement to the SMS treatment
 \begin_inset Foot
 status collapsed
 
@@ -1159,13 +1340,25 @@ More precisely, and as mentioned in footnote 1, this research was part of
  In the context of a factorial design with two factors with each 3 levels,
  this corresponded to 9 treatment combinations.
  We thus used villages as blocs, and randomly assigned the nine potential
- treatment combinations to the remaining 9 households in each village.
+ treatment combinations to the 9 households in each village and the control
+ placebo video treatment to a 10th hosuehold.
  We then added the IVR treatment randomly to 2/3 of the households in each
- treatment cell.
+ of the nine treatment cells.
  Among those that were allocated the IVR in each treatment cell, we then
  randomly allocated 1/2 of households to the SMS treatment.
  As such, the treatment cells created by the interaction of the 2 other
  factors were used as blocs in the randomization of IVR and SMS treatments.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+this last sentence is not clear to me
+\end_layout
+
+\end_inset
+
  The exact same sampling procedure was used in the permutation algorithm
  that was used to judge significance through randomization inference.
 \end_layout
@@ -1174,6 +1367,11 @@ More precisely, and as mentioned in footnote 1, this research was part of
 
 .
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1197,9 +1395,9 @@ The particular intervention that is analyzed in this paper was conceptualized
  to learn about information flows within the household.
  While the research hypotheses related to these intra-household information
  transfer inefficiencies were conceptualized and implemented at the individual
- level, the research hypotheses related to the delivery mode that is analyzed
- here (video, video+IVR,video+IVR+SMS) was conceptualized and implemented
- at the household level (and dummies for who was shown the video was included
+ level, the research hypotheses related to the delivery mode analyzed here
+ (video, video+IVR,video+IVR+SMS) were conceptualized and implemented at
+ the household level (and dummies for who was shown the video were included
  in all regressions).
  For more information about the design of the entire project and how the
  different factors were integrated into a 3 by 3 full factorial design,
@@ -1210,18 +1408,20 @@ The particular intervention that is analyzed in this paper was conceptualized
 \begin_layout Standard
 
 \emph on
-Answers of both spouses were used to construct household level outcomes.
- For continuous variables, generally, a simple average was taken between
- the two members.
+Answers of both spouses were used to construct household-level outcomes.
+ For continuous variables, generally, a simple average was taken from responses
+ provided by the two members.
  For binary outcomes, such as whether the household gained knowledge on
- a particular topic, we often assumed the household learned if at least
- one member indicated the correct answer.
- For adoption of a particular practice of input, we indicate the household
- adopts if at least one household adopts on at least one plot.
+ a particular topic, we often assumed the household realized that outcome
+ (e.g., knowledge) if at least one member indicated the correct answer.
+ For adoption of a particular input or practice, we indicate that the household
+ is considered an adopter if at least one household member adopts on at
+ least one plot.
  While it would indeed be interesting to look at differences in reporting
  between spouses, this is more related to the research hypotheses that were
- conceptualize at the individual level and will be discussed there; We feel
- it goes beyond the scope of the current paper.
+ conceptualize at the individual level and will be discussed in a separate
+ paper focusing on these issues.
+ We feel this is beyond the scope of the current paper.
 \end_layout
 
 \begin_layout Standard
@@ -1233,7 +1433,8 @@ Answers of both spouses were used to construct household level outcomes.
 \begin_layout Standard
 
 \emph on
-We have deleted the entire paragraph.
+Noted, with thanks.
+ We have deleted the entire paragraph.
 \end_layout
 
 \begin_layout Section*
@@ -1314,15 +1515,20 @@ Suggestions:
 \begin_layout Standard
 
 \emph on
-The way the results are presented in the manuscript may suggest that we
- had a traditional theory of change in mind, where a lack of technical knowledge
- is the main constraint to increased modern input use or application of
- recommended practices.
- However, there is an emerging body of research that also explores alternative
- impact pathways, and our research was also informed by this.
- For instance, our videos use actors that farmers can relate to, drawing
- on an emerging literature on the importance of peer learning and the effectiven
-ess of model farmers in inspiring others 
+Ultimately, a one-to-one correspondence between the knowledge questions
+ and the adoption of specific technologies or practices was not entirely
+ practicable within our design.
+ Nonetheless, we appreciate the reviewer's insights on this.
+ More importantly, we should point out that while the results are presented
+ in a way that suggests a traditional theory of change in mind, where a
+ lack of technical knowledge is the main constraint to increased modern
+ input use or application of recommended practices, we are actually exploring
+ other theories as part of this analysis.
+ For example, there is an emerging body of research that explores the role
+ of peer learning and inspiration in the context of model farmers, and our
+ research was also informed by this.
+ To explore this, our videos use actors that farmers can relate to, drawing
+ on several recent studies 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "benyishay2018social,doi:10.1093/wber/lhv014"
@@ -1331,8 +1537,8 @@ key "benyishay2018social,doi:10.1093/wber/lhv014"
 
 .
  In such cases, it may be that the intervention does not affect knowledge
- (farmers may know the technology but not apply it), yet we would expect
- a change in behaviour
+ (farmers may have prior knowledge about the technology but still not use
+ it), yet we might still expect to see a change in behavior, e.g., adoption.
 \begin_inset Foot
 status collapsed
 
@@ -1348,18 +1554,19 @@ In fact, for the additional interventions, and SMS in particular, these
 
 \end_inset
 
-.
  Therefore, assessing changes in knowledge was subordinate to assessing
- changes in behaviour and we opted to measure knowledge on only four topics
- using 4 multiple choice questions.
- However, these four questions were carefully though about.
+ changes in behavior.
  
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-One questions was on spacing.
+Relatedly, we opted to measure knowledge on only four topics using 4 multiple
+ choice questions.
+ These four questions were carefully considered in light of the information
+ provided in the video.
+ One questions was on spacing.
  The recommendation we provided in the video was a new way of spacing with
  reduced seeding rate that was only recently being promoted by the government
  (spacing of 75cm x 30cm with 1 plant per hill).
@@ -1378,11 +1585,11 @@ The second question that was included is not so much about testing technical
  knowledge.
  It is more about testing if farmers understood the broader message given
  in the video that successful farmers generally see maize farming more as
- a business than as a means to provide food for the household.
+ a business enterprise than as a means to provide food for the household.
  This question suggests impact works more through aspirational channels,
  testing if farmers understood the broader message given in the video that
  successful farmers generally see maize farming more as a business which
- requires foresight and risk taking.
+ requires foresight, planning, and risk taking.
  
 \end_layout
 
@@ -1408,8 +1615,8 @@ The last questions was added to see if our information interventions would
  We thus also did not expect our interventions to have a direct effect on
  knowledge related to fighting fall armyworm.
  However, it could be that farmers that received information on recommended
- practices and modern inputs and shown life stories of successful farmers
- start to look for information from various other sources.
+ practices and modern inputs and shown stories of successful farmers start
+ to look for information from various other sources.
  As fall armyworm was an important emerging problem at the time, we thought
  this would be a good topic.
 \end_layout
@@ -1417,12 +1624,23 @@ The last questions was added to see if our information interventions would
 \begin_layout Standard
 
 \emph on
-Changes made to the text: In the part where the intervention is described,
- we already have two paragraphs that explain the different impact pathways
- we consider:
+Changes made to the text: In Section 3 (
+\begin_inset Quotes eld
+\end_inset
+
+ICT intervention), we have two paragraphs that explain the different impact
+ pathways or theories of change we are considering in this paper.
+ We have edited these paragraphs slightly to help address the concerns raised
+ by the reviewer, with thanks.
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 
 \emph on
 \begin_inset Quotes eld
@@ -1447,7 +1665,7 @@ ze or measure.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 We also pay attention to how the information is packaged.
@@ -1496,6 +1714,11 @@ peer farmers
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 
 \emph on
@@ -1503,6 +1726,18 @@ Furthermore, we made some changes to the part where we explain the knowledge
  questions.
  We now indicate for each question why it was included by referring to the
  potential impact pathway.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+i would copy those excerpts here in the response to reviewers as well
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1538,6 +1773,12 @@ Changes made to the text: We have added the following to the Experimental
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset Quotes eld
 \end_inset
 
@@ -1566,6 +1807,17 @@ status open
 \begin_layout Plain Layout
 
 \emph on
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+this is the same as foot 2 in this document
+\end_layout
+
+\end_inset
+
 More precisely, and as mentioned in footnote 1, this research was part of
  a larger research project that also used the video intervention to explore
  issues related to gender in agricultural extension.
@@ -1576,13 +1828,25 @@ More precisely, and as mentioned in footnote 1, this research was part of
  In the context of a factorial design with two factors with each 3 levels,
  this corresponded to 9 treatment combinations.
  We thus used villages as blocs, and randomly assigned the nine potential
- treatment combinations to the remaining 9 households in each village.
+ treatment combinations to 9 households in each village and the control
+ placebo video treatment to a 10th hosuehold.
  We then added the IVR treatment randomly to 2/3 of the households in each
- treatment cell.
+ of the 9 treatment cells.
  Among those that were allocated the IVR in each treatment cell, we then
  randomly allocated 1/2 of households to the SMS treatment.
  As such, the treatment cells created by the interaction of the 2 other
  factors were used as blocs in the randomization of IVR and SMS treatments.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+this last sentence is not clear to me
+\end_layout
+
+\end_inset
+
  The exact same sampling procedure was used in the permutation algorithm
  that was used to judge significance through randomization inference.
 \end_layout
@@ -1594,6 +1858,11 @@ More precisely, and as mentioned in footnote 1, this research was part of
 \end_inset
 
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1658,7 +1927,8 @@ One potential way to address this is to use the random assignment to the
 \begin_layout Standard
 
 \emph on
-See also the comments of reviewer 1 (R1.3) and reviewer 3 (R3.9) on making
+We appreciate the reviewer's insights here.
+ See also the comments of reviewer 1 (R1.3) and reviewer 3 (R3.9) on making
  the LATE analysis more prominent.
 
 \emph default
@@ -1675,15 +1945,22 @@ additional_info.pdf
 
  of materials we would have liked to make available in on-line appendices.
  It included the 2SLS (LATE) regressions.
- Apparently, this was not available to the reviewers.
+ Apparently, this was not made available to the reviewers.
 \end_layout
 
 \begin_layout Standard
 
 \emph on
 We now discuss the low take-up of the IVR intervention earlier in the paper.
- In a section entitled additional analysis, we explain that farmers self
- select into the IVR treatment.
+ In a section entitled 
+\begin_inset Quotes eld
+\end_inset
+
+Additional analysis and robustness tests
+\begin_inset Quotes erd
+\end_inset
+
+, we explain that farmers self-select into the IVR treatment.
  We then present regressions that show how uptake is correlated to baseline
  characteristics.
  We discuss LATE effects briefly, and refer to tables in the appendix for
@@ -1695,7 +1972,7 @@ We now discuss the low take-up of the IVR intervention earlier in the paper.
 
 \emph on
 We then reflect on potential reasons for the lack of impact.
- We look at take-up and using simple back of the envelope calculations show
+ We examine take-up and using simple back-of-the-envelope calculations show
  the minimum detectable effect size and how it is affected by low compliance.
  We then argue that contamination is unlikely to lead to a downward bias,
  as only 1 percent of households in the control group called the IVR.
@@ -1706,30 +1983,46 @@ We then reflect on potential reasons for the lack of impact.
 
 \emph on
 We then discuss a particular concern with our measure of compliance.
- In particular, we suspect that LATE in our context would overestimate the
- impact of the IVR.
- The reason is that our indicator of take-up of the intervention is likely
- to be measured with significant error.
+ In particular, we suspect that our indicator of take-up of the intervention
+ is likely to significantly underestimate true compliance.
  In particular, our indicator of compliance is taken from the IVR system
  log, where recorded telephone numbers are matched to phone numbers that
  were recorded during baseline data collection.
  This indicator is likely to severely under-report true compliance, as encourage
-d farmers may use different phones to call the IVR.
- This is illustrated by the fact that about 430 unique calls were made to
- the system, representing about 18 percent of encouraged households Using
- our measure of compliance, we can not maintain that the independence assumption
+d farmers may have used different phones to call the IVR.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+The fact that 430 unique calls to the system were recorded, representing
+ about 18 percent of encouraged households, confirms this suspicion.
+\end_layout
+
+\end_inset
+
+ Using our measure of compliance, we cannot maintain the exclusion restriction
  holds, as some of the potential outcomes are directly determined by the
  instrument.
- The problem becomes clear when we think about LATE as the Wald estimator
- that scales the ITT by compliance.
- In our case, the ITT will be estimated on the basis of all 430 farmers
- that called in.
- Our measure of compliance will force all the impact of the treatment to
- work through the 214 households that show up in the IVR log and could be
- identified in the baseline, which in the case of a positive impact would
- lead to an overestimate of the impact of the treatment on compliers.
- It is well known that especially in the context of a weak first stage the
- bias can become extremely large 
+ The problem becomes apparent when we think about LATE as the Wald estimator
+ that scales the ITT by compliance 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "angrist_mostly_2008"
+
+\end_inset
+
+.
+ In our case, the ITT will be estimated on the basis of all farmers encouraged
+ to call in to the IVR system.
+ Our measure of compliance forces the LATE estimation to work with the 214
+ households that show up in the IVR log and could be identified in the baseline,
+ rather than through the 430 farmers that called in, which in the case of
+ a positive impact would lead to an overestimate of the impact of the treatment
+ among compliers.
+ It is well known that especially in the context of a weak first stage,
+ the bias can become extremely large 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "duflo2007using"
@@ -1738,7 +2031,7 @@ key "duflo2007using"
 
 .
  We thus conclude that LATE results are difficult to interpret and suggest
- to focus on the ITT effects.
+ to instead focus on the ITT effects.
 \end_layout
 
 \begin_layout Standard
@@ -1748,14 +2041,23 @@ Redoing the LATE analysis made us realize that actually all farmers that
  were allocated to the SMS treatment did receive the SMS messages.
  As a result, we dropped the LATE analysis for this component of the interventio
 n, but briefly discuss the fact that farmers need a phone to be able to
- receive the messages in the section where we look at treatment heterogeneity.
+ receive the messages.
+ This is highlighted in the section titled 
+\begin_inset Quotes eld
+\end_inset
+
+Heterogeneous treatment effects.
+\begin_inset Quotes erd
+\end_inset
+
  
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-Changes made to the text: We refer to sub-section 
+Changes made to the text: We refer to these issues primarily in the sub-section
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1763,7 +2065,7 @@ Demand for IVR and Local Average Treatment Effects
 \begin_inset Quotes erd
 \end_inset
 
- in section 
+, which is in the section titled 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1792,40 +2094,28 @@ Baseline data was collected in August 2017, while endline data was collected
  from February 2018 onward, so there were about 6 months between baseline
  and endline.
  We therefore would argue that attrition is not all that high.
- However, to better convince the reader, we expanded the section on attrition,
- making it a separate sub-section in the section 
-\begin_inset Quotes eld
-\end_inset
-
-Additional analysis and robustness tests
-\begin_inset Quotes erd
-\end_inset
-
-.
- In this section, we deploy various strategies to convince the reader that
- attrition is unlikely to be related to potential outcomes, including the
- tests that were suggested by reviewer 3 (R3.18), and (in appendix) Manski
- bounds corresponding to all tables in the paper.
+ However, to better address the reviewer's legitimate concerns, we have
+ now refer (using a footnote) to a section in the appendix where we deploy
+ various strategies to explore whether attrition is likely to be related
+ to potential outcomes, including the tests that were suggested by reviewer
+ 3 (R3.18), and Manski bounds (in appendix) corresponding to all tables in
+ the paper.
  
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-Changes made to the text: We refer to sub-section 
-\begin_inset Quotes eld
-\end_inset
+Changes made to the text: 
+\begin_inset Note Note
+status collapsed
 
-Attrition
-\begin_inset Quotes erd
-\end_inset
+\begin_layout Plain Layout
 
- in section 
-\begin_inset Quotes eld
-\end_inset
+\emph on
+Insert appendix with analysis here.
+\end_layout
 
-Additional analysis and robustness tests
-\begin_inset Quotes erd
 \end_inset
 
 
@@ -1853,7 +2143,7 @@ Additional analysis and robustness tests
 \begin_layout Standard
 
 \emph on
-This is an interesting suggestion.
+This is a useful suggestion.
  We find that among farmers that called the IVR service and selected the
  seed topic, 38 percent report that they used hybrid seed.
  This is 35 percent among those that called but did not select this topic.
@@ -1882,6 +2172,12 @@ Changes made to the text: We added the following footnote to the finding
 \begin_layout Standard
 
 \emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
 \begin_inset Quotes eld
 \end_inset
 
@@ -1892,6 +2188,11 @@ Consistent with this interpretation, we find that among farmers that called
  topic.
  However, the difference is not statistically significant.
 \begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -1942,7 +2243,7 @@ We added a separate section where we discuss why it is unlikely that our
 \begin_layout Standard
 
 \emph on
-Changes made to the text: we added the following sub-section entitled 
+Changes made to the text: we added a sub-section entitled 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1962,6 +2263,12 @@ Additional analysis and robustness tests
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 
 \emph on
 \begin_inset Quotes eld
@@ -1995,7 +2302,7 @@ key "de2018measuring,mummolo2019demand"
  are unlikely to drive our results.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 First, during the design of the endline questionnaire, we tried to minimize
@@ -2022,7 +2329,7 @@ plant spacing of 75cm x 30cm with a reduced seed rate of 1 seed per hill
  demand effects.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 Second, in our endline survey, not all outcomes are equally likely to be
@@ -2041,7 +2348,7 @@ Second, in our endline survey, not all outcomes are equally likely to be
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 Third, as we will report in the next section, fertilizer adoption, an outcome
@@ -2055,6 +2362,11 @@ Third, as we will report in the next section, fertilizer adoption, an outcome
 \end_inset
 
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2079,8 +2391,8 @@ s and among those closer to agro dealers.
 \begin_layout Standard
 
 \emph on
-This is an interesting suggestions that is also related to requests for
- a in-depth exploration of heterogeneity in treatment effects (see R4.8).
+This is a good suggestion that is also related to requests for a in-depth
+ exploration of heterogeneity in treatment effects (see R4.8).
  We have thus explored this as part of a more general analysis of heterogeneous
  treatment effects reported in Table 
 \begin_inset CommandInset ref
@@ -2095,7 +2407,7 @@ reference "tab:cate_tech"
  an input dealer (defined as less or equal than 5 km).
  At the same time, and consistent with the theoretical prediction of the
  reviewer, we do not find that the increase in organic fertilizer as a result
- to the video intervention is sensitive to distance to an input provided.
+ to the video intervention is sensitive to distance to an input provider.
  It was harder to test for heterogeneous effects related to baseline resources,
  as we did not collect detailed data on consumption at baseline.
  We tried using different proxies for wealth (such the number of rooms scaled
@@ -2133,6 +2445,12 @@ Additional analysis and robustness tests
 \begin_layout Standard
 
 \emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
 \begin_inset Quotes eld
 \end_inset
 
@@ -2144,6 +2462,11 @@ Third, as we will report in the next section, fertilizer adoption, an outcome
  that have better access to improved inputs strategically decide to report
  their answers differently than households that have less access to inputs.
 \begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -2207,7 +2530,7 @@ Minor Comments:
 \emph on
 There was a fourth option where farmers could indicate that they did not
  know the answer.
- This is indicated in the text: 
+ This is indicated in the revised text: 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2231,11 +2554,12 @@ The respondent was also allowed to indicate if he or she did not know the
 \begin_layout Standard
 
 \emph on
-This was also a (minor) comment of reviewer 4 (R4.18).While there is some
- imbalance, this seems to be within what one would expect by chance alone.
+This was also a (minor) comment of reviewer 4 (R4.18).
+ While there is some imbalance, this seems to be within what one would expect
+ by chance alone.
  Furthermore, joint balance is never rejected.
- In addition, the imbalance is only for the additional IVR and SMS treatments,
- for which we find little effects.
+ In addition, the imbalance is found only for the additional IVR and SMS
+ treatments, for which we find little effects.
  As such, imbalance can not be responsible for the impact of the video intervent
 ion we find (which would be the biggest concern).
  That said, we have redone the analysis where we now control for the variables
@@ -2329,8 +2653,15 @@ n: Bugiri, Mayuge, Iganga, Namayingo, and Namutumba.
  the previous season, from which we randomly selected 10 households to participa
 te in the study.
  This listing was done in July 2017.
- We have rewritten the section on Experimental Design and Estimation of
- Treatment Effects to make this clearer.
+ We have rewritten the section on 
+\begin_inset Quotes eld
+\end_inset
+
+Experimental Design and Estimation of Treatment Effects
+\begin_inset Quotes erd
+\end_inset
+
+ to make this clearer.
  See also comment 2 of reviewer 2 (R2.2).
 \end_layout
 
@@ -2342,6 +2673,10 @@ Changes made to the text: We have added the following to the Experimental
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset Quotes eld
 \end_inset
 
@@ -2365,11 +2700,23 @@ Maize is especially important in eastern Uganda.
  were allocated to the video intervention and further randomly allocated
  1/2 of these households to the SMS treatment
 \begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
 
 \emph on
+again the same as foot 2 and foot 4 in this document - see my comments in
+ earlier foot
+\end_layout
+
+\end_inset
+
 More precisely, and as mentioned in footnote 1, this research was part of
  a larger research project that also used the video intervention to explore
  issues related to gender in agricultural extension.
@@ -2405,6 +2752,11 @@ More precisely, and as mentioned in footnote 1, this research was part of
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 2.
  What was the rationale for surveying two people from each household at
@@ -2422,12 +2774,12 @@ making, his or her responses on knowledge may be more relevant.
 
 \emph on
 As mentioned in footnote 1 in the manuscript, this study was part of a larger
- study that also mixed in other factors to study gender related issues in
- agricultural extension.
- One of these research topics was related to the study of frictions in diffusion
- of information within the household.
- In particular, screening of the video itself was also randomized into three
- 
+ study that introduced other factors to the design in order to (separately)
+ study gender-related issues in agricultural extension.
+ One of these research topics was related to the study of frictions in the
+ diffusion of information within the household.
+ In particular, the screening of the video itself was also randomized into
+ three 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2436,10 +2788,10 @@ treatment arms
 \end_inset
 
  (see also your previous comment).
- In 1/3rd of households that were allocated to the video treatment, the
- man alone in the household was shown the video.
- In another 1/3 rd, the video was shown to the woman alone within the household
- and in the final 1/3rd, the video was shown to the couple (man+woman) together.
+ In 1/3 of households that were allocated to the video treatment, the man
+ alone in the household was shown the video.
+ In another 1/3, the video was shown to the woman alone within the household.In
+ the final 1/3, the video was shown to the couple (man+woman) together.
  In a different paper, we plan to use this part of the field experiment
  to learn about information flows within the household.
  While the research hypotheses related to these intra-household information
@@ -2449,15 +2801,16 @@ ideo+IVR+SMS) was conceptualized and implemented at the household level
  (and dummies for who was shown the video was included in all regressions).
  For more information about the design of the entire project and how the
  different factors were integrated into a 3 by 3 full factorial design,
- we refer to the pre-analysis plan, as we feel an elaborate explanation
- of this in the paper may lead to confusion.
+ we refer readers to the pre-analysis plan.
+ We feel an elaborate explanation of these design specificities in the paper
+ may lead to confusion.
  
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-Answers of both spouses were used to construct household level outcomes.
+Answers of both spouses were used to construct household-level outcomes.
  For continuous variables, generally, a simple average was taken between
  the two members.
  For binary outcomes, such as whether the household gained knowledge on
@@ -2475,8 +2828,9 @@ key "10.1093/qje/qjx009"
 ).
  While it would indeed be interesting to look at differences in reporting
  between spouses, this is more related to the research hypotheses that were
- conceptualized at the individual level and will be discussed there; We
- feel it goes beyond the scope of the current paper.
+ conceptualized at the individual level and will be discussed in the paper
+ focusing on these.
+ We feel this topic goes beyond the scope of the current paper.
 \end_layout
 
 \begin_layout Standard
@@ -2500,17 +2854,18 @@ additional_info.pdf
 \end_inset
 
 .
- These were all materials we would have liked to make available in on-line
- appendices.
+ This document contained all of the materials we want make available in
+ on-line appendices.
  It included ITT effects conditional on having a mobile phone, the 2SLS
  (LATE) regressions, an anonymized version of the pre-analysis plan, the
  script for the video (scene by scene), a transcript of the content of the
  IVR system (in English, although the farmers also had access to this informatio
-n in Lusgoga), the content of the 8 sms messages, both in Lusoga and in
- English and a copy of the flyer used to invite households to the hotline.
+n in Lusgoga), the content of the eight SMS messages, both in Lusoga and
+ in English, and a copy of the flyer used to invite households to the hotline.
  It is unclear if this additional information was also made available to
  the reviewers.
- All these material will thus be made available in an online appendix.
+ It is our expectation that all these material will be made available in
+ an online appendix.
  The videos will be made available on a public repository such as YouTube
  and referenced in the final version of the paper.
  
@@ -2537,16 +2892,17 @@ Outcomes measures - I have several concerns about how the outcomes were
 \begin_layout Standard
 
 \emph on
-This question is similar to the first concern of reviewer 2 (R2.1).
- The way the results are presented in the manuscript may suggest that we
- had a traditional theory of change in mind, where a lack of technical knowledge
- is the main constraint to increased modern input use or application of
- recommended practices.
- However, there is an emerging body of research that also explores alternative
- impact pathways, and our research was also informed by this.
- For instance, our videos use actors that farmers can relate to, drawing
- on an emerging literature on the importance of peer learning and the effectiven
-ess of model farmers in inspiring others 
+This question is similar to the first concern of reviewer 2 (R2.1), and is
+ well taken.
+ Ultimately, close correspondence between the knowledge questions and the
+ adoption of specific technologies or practices was not entirely practicable
+ within our design.
+ Note, however, that while the results are presented in a way that suggests
+ a traditional theory of change(in which a lack of technical knowledge is
+ the main constraint to increased modern input use or application of recommended
+ practices), we are actually exploring other theories as part of this analysis.
+ Specificially, we draw on the emerging body of research on alternative
+ impact pathways such as peer learning and inspirational role models 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "benyishay2018social,doi:10.1093/wber/lhv014"
@@ -2556,9 +2912,9 @@ key "benyishay2018social,doi:10.1093/wber/lhv014"
 .
  In such cases, it may be that the intervention does not affect knowledge
  (farmers may know the technology but not apply it), yet we would expect
- a change in behaviour
+ a change in behavior.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2572,9 +2928,8 @@ In fact, for the additional interventions, and SMS in particular, these
 
 \end_inset
 
-.
  Therefore, assessing changes in knowledge was subordinate to assessing
- changes in behaviour and we opted to measure knowledge on only four topics
+ changes in behavior and we opted to measure knowledge on only four topics
  using 4 multiple choice questions.
  As a result, there is no one-on-one correspondence between the knowledge
  questions and the recommendations and practices, and it may appear the
@@ -2605,11 +2960,11 @@ The second question that was included is not so much about testing technical
  knowledge.
  It is more about testing if farmers understood the broader message given
  in the video that successful farmers generally see maize farming more as
- a business than as a means to provide food for the household.
+ a business enterprise than as a means to provide food for the household.
  This question suggests impact works more through aspirational channels,
  testing if farmers understood the broader message given in the video that
  successful farmers generally see maize farming more as a business which
- requires foresight and risk taking.
+ requires foresight, planning, and risk taking.
  
 \end_layout
 
@@ -2635,8 +2990,8 @@ The last questions was added to see if our information interventions would
  We thus also did not expect our interventions to have a direct effect on
  knowledge related to fighting fall armyworm.
  However, it could be that farmers that received information on recommended
- practices and modern inputs and shown life stories of successful farmers
- start to look for information from various other sources.
+ practices and modern inputs and shown stories of successful farmers start
+ to look for information from various other sources.
  As fall armyworm was an important emerging problem at the time, we thought
  this would be a good topic.
 \end_layout
@@ -2652,9 +3007,29 @@ As for the analysis of recommended practices and use of modern inputs, most
 \begin_layout Standard
 
 \emph on
-Changes made to the text: In the section where the knowledge questions are
- discussed, we now explain better the rationale behind inclusion of the
- particular question by referring to the potential impact pathway.
+Changes made to the text: In Section 4.1 (
+\begin_inset Quotes eld
+\end_inset
+
+Impact on knowledge)
+\begin_inset Quotes erd
+\end_inset
+
+, we now provide a better explanation of the rationale behind inclusion
+ of the particular question by referring to the potential impact pathway.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+Include?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2750,6 +3125,12 @@ Additional analysis and robustness tests
 \begin_layout Standard
 
 \emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
 \begin_inset Quotes eld
 \end_inset
 
@@ -2781,7 +3162,7 @@ key "de2018measuring,mummolo2019demand"
  are unlikely to drive our results.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 First, during the design of the endline questionnaire, we tried to minimize
@@ -2808,7 +3189,7 @@ plant spacing of 75cm x 30cm with a reduced seed rate of 1 seed per hill
  demand effects.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 Second, in our endline survey, not all outcomes are equally likely to be
@@ -2827,7 +3208,7 @@ Second, in our endline survey, not all outcomes are equally likely to be
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 Third, as we will report in the next section, fertilizer adoption, an outcome
@@ -2841,6 +3222,11 @@ Third, as we will report in the next section, fertilizer adoption, an outcome
 \end_inset
 
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2885,13 +3271,19 @@ key "duflo2007using"
 \begin_layout Standard
 
 \emph on
-We added more discussion on this in a separate section where we discuss
+We have added more discussion on this in a separate section where we discuss
  demand for IVR and Local Average Treatment Effects.
- The relevant section is as follows; reflection on power and corresponding
- MDEs are in the footnotes:
+ The relevant section is as follows, with our reflection on power and correspond
+ing MDEs in the footnotes:
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 
 \emph on
 \begin_inset Quotes eld
@@ -2906,7 +3298,7 @@ Thus, even after accounting for non-compliance, we find that additional
  Only 8.9 percent of households that were selected for the IVR treatment
  also actually called in
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2933,7 +3325,7 @@ status open
 .
  This low compliance rate may reflect low demand for the service
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2978,6 +3370,11 @@ s to participate and owned a mobile phone.
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 9.
  It is not surprising that the additional effects of IVR access is small
@@ -2994,19 +3391,33 @@ s to participate and owned a mobile phone.
 
 \emph on
 This is a possible explanation, although we would not call this a poorly
- designed study.
+ designed study per se.
  The idea was to test the incremental effectiveness of a particular IVR
  (as implemented by Viamo).
- This model assumes no training is needed: The first time a farmer dials
- in, he/she gets information on how to use the system, and the underlying
- assumption is that this should be sufficient for a typical farmer to use
- the system.
+ This model assumes no training is needed, and our implementing partner
+ for the IVR treatment (Viamo) has extensive experience in designing and
+ implementing IVR services in developing countries without user training.
+ Indeed, we were cautious about how to design the IVR approach in a manner
+ that made practical sense, and were cognizant of the possibility that few
+ farmers would call in.
+ Indeed, many IVR services take low use rates as a given, but rely on the
+ low cost of reaching large populations to make their service viable.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+In our context, the first time a farmer dials in, he/she gets information
+ on how to use the system, and the underlying assumption is that this should
+ be sufficient for a typical farmer to use the system.
  The messages are also designed by experts in ways that make it attractive
  and comprehensible to the average farmer.
  It may indeed be that different effects would have been found if a different
  version of an IVR would have been tested (eg.
  with dedicated training sessions).
- However, testing different versions of IVR was not the aim of this study.
+ However, testing different versions of the IVR service was not the aim
+ of this study.
 \end_layout
 
 \begin_layout Standard
@@ -3048,6 +3459,12 @@ Changes made to the text: We added the following footnote to the finding
 \begin_layout Standard
 
 \emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
 \begin_inset Quotes eld
 \end_inset
 
@@ -3058,6 +3475,11 @@ Consistent with this interpretation, we find that among farmers that called
  topic.
  However, the difference is not statistically significant.
 \begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -3138,6 +3560,12 @@ Cost-effectiveness
 \begin_layout Standard
 
 \emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
 \begin_inset Quotes eld
 \end_inset
 
@@ -3152,7 +3580,7 @@ ons such as the ones being tested.
  total benefit derived by the farmers in our study.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 In our sample, a bag of 100 kg of maize was sold at a median price of UGX
@@ -3164,7 +3592,7 @@ In our sample, a bag of 100 kg of maize was sold at a median price of UGX
  This means a difference in income of UGX 27,000 per acre, or about 7.7 USD.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 From this, we subtract the cost of inputs.
@@ -3206,7 +3634,7 @@ reference "tab:Impact-of-technology_fert"
  Urea increased.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 Changes in the cost of labour are harder to value.
@@ -3233,7 +3661,7 @@ reference "tab:pract_h1_ag"
  treatment and control reduces to 22,464 or about 6.5 USD.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 The intervention costed close to USD 37,000.
@@ -3251,7 +3679,7 @@ The intervention costed close to USD 37,000.
  where the intervention was piloted, the internal rate of return would be
  about 16 %
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -3276,6 +3704,11 @@ It may be possible to reduce variable costs considerably.
 
 .
 \begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -3321,13 +3754,13 @@ It may be possible to reduce variable costs considerably.
 \begin_layout Standard
 
 \emph on
-We address these 3 related points together.
- They are related to the first comment of reviewer 1 (R1.1), in that we may
+We address these three related points together.
+ They are similar to the first comment of reviewer 1 (R1.1), in that we may
  be misleading the reader by characterizing the interventions in a particular
  way.
- They are also related to comments 2, 3 and 10 made by reviewer 4 (4.2, R4.3,
- R4.10) who similarly notes that others are using SMS messages to provide
- new agricultural extension successfully 
+ They also relate to comments 2, 3 and 10 made by reviewer 4 (4.2, R4.3, R4.10)
+ who similarly notes that others are using SMS messages to provide new agricultu
+ral extension successfully 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "eg."
@@ -3342,36 +3775,50 @@ key "New1"
 \begin_layout Standard
 
 \emph on
-We agree that the components are developed in a particular way, which may
- differ from how the technologies can be used in other settings.
- We wanted to test a comprehensive ICT-mediated extension package consisting
- of different components each with its own characteristics.
+We agree that the components are developed in a particular way, and that
+ may differ from how the technologies can be used in other settings.
+ Our objective was to test a comprehensive ICT-mediated extension package
+ consisting of different components each with its own characteristics.
  The different components of the intervention, and the incremental way in
- which they were implemented in the experiment, are a result of careful
+ which they were implemented in the experiment, are the result of careful
  analysis of the situation in Uganda (low levels of knowledge on modern
  inputs due to a defunct public extension system, various start-ups experimentin
-g with demand-driven initiatives such as WeFarm, DrumNet, Viamo,...
- ) as well as state of the art literature (the aspirations literature and
- importance of role models, reminders as nudges,...).
- From this, we decided we needed to start form a general baseline intervention
- designed to make farmers aware of the most important new technologies and
- recommended practices.
- This messages should be brought in an appealing way and also accessible
- to low educated farmers.
+g with demand-driven initiatives such as WeFarm, DrumNet, Viamo, etc.
+ ), as well as state of the art in the literature (the aspirations literature
+ and importance of role models, reminders as nudges, etc.).
+ With these points in min, we decided to start from a general baseline intervent
+ion designed to make farmers aware of the most important new technologies
+ and recommended practices.
+ We hypothesized that the success of such messaging would depend partly
+ on their provision in an appealing and accessible manner that was specifically
+ tailored to less-educated farmers.
  Hence the idea to create a video.
- However, at least in our intervention, farmers get to see a video only
- two times at the beginning of the maize growing season, and it is likely
- that they forget some of the details that are explained in the video (for
- instance the name of a particular hybrid seed, the exact quantity of a
- particular type of inorganic fertilizer,...).
- Therefore, we wanted to add an information sources that is accessible on
- demand (but with exactly the same information, to rule out that any additional
- effect could be attributed to the content).
- The idea that IVR is used to get more precise information on a particular
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+However, we also know from our contextual analysis that farmers who view
+ a video only two times at the beginning of the maize growing season may
+ forget some of the details that are explained in the video (for instance
+ the name of a particular maize hybrid, the exact quantity of a particular
+ type of inorganic fertilizer, etc.).
+ Therefore, we wanted to add an information source for farmers that is accessibl
+e on demand (but with exactly the same information, to rule out that any
+ additional effect could be attributed to the content).
+ The idea that IVR is used to provide more precise information on a particular
  technology means that farmers already need to have an idea of the existence
  of the particular technology.
- Finally, we learned that, often, knowledge only is not enough.
- Timely reminders have often been found very effective in overcoming inertia,
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Finally, we learned from our contextual analysis and literature review that
+ knowledge is rarely enough to change behavior.
+ Timely reminders have been shown to be very effective in overcoming inertia,
  procrastination, competing obligations, or simple forgetfulness of human
  beings 
 \begin_inset CommandInset citation
@@ -3385,7 +3832,7 @@ key "Sunstein2014"
 .
 
 \emph on
- Recent research on agricultural extension also suggests behavioural change
+ Recent research on agricultural extension also suggests behavioral change
  occurring through the compounding or re-emphasis of common knowledge that,
  through repetition, becomes more salient to the individual 
 \begin_inset CommandInset citation
@@ -3395,8 +3842,10 @@ key "duflo2014diffusion"
 \end_inset
 
 .
- Also here, the conceptualization of an SMS message as a reminder also means
- that the information should have been given before.
+ Hence, we introduced the SMS treatment as a complement to the tailored
+ information treatment (video) and the detailed on-demand informational
+ treatment (IVR).
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3409,6 +3858,12 @@ Changes made to the manuscript: We have rewritten the introduction to better
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 
 \emph on
 \begin_inset Quotes eld
@@ -3431,7 +3886,7 @@ This article investigates the effectiveness of an ICT-mediated extension
  The farmer then gets to listen to a pre-recorded message with information
  on the selected topic.
  The decision to make the same information available in the form of an on-demand
- service is motivated by the fact that farmers may easily forgot some of
+ service is motivated by the fact that farmers may easily forget some of
  the details of the video.
  Third, we add SMS messages that remind farmers at particular points in
  time during the maize growing season about key farming practices shown
@@ -3466,12 +3921,17 @@ key "duflo2014diffusion"
  
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 
 \emph on
 In light of this, we have also rewritten the conclusion, where we now employ
- a much more prudent approach, and discuss some of the reasons why we find
- no additional effects for the IVR and SMS interventions (as we discuss
+ a much more prudent approach, and discuss some of the reasons why we did
+ not find additional effects for the IVR and SMS interventions (as we discuss
  in the section on additional analysis that the low uptake and an issue
  related to how we measure compliance is likely to be too problematic to
  establish a null effect).
@@ -3510,11 +3970,11 @@ key "gibbons2018broken"
 
 \end_inset
 
-) or clustering, we use randomization inference (RI) throughout.
+) or clustering, we use randomization inference throughout.
  The permutation algorithm that was developed for this paper mimics the
  design features of the study; one does not have to control for this ex-post.
- We refer to the following eloquent description of RI by Jed Friedman that
- makes this point
+ We refer to the eloquent description of randomization inference by Jed
+ Friedman that makes this point
 \begin_inset Foot
 status collapsed
 
@@ -3609,7 +4069,7 @@ ics and randomization balance can be part of the section on the experimental
 
 \emph on
 This was also suggested by Reviewer 1 (R1.8).
- We have followed this suggestion.
+ We have followed this suggestion and made changes accordingly.
 \end_layout
 
 \begin_layout Standard
@@ -3624,7 +4084,7 @@ This was also suggested by Reviewer 1 (R1.8).
 \begin_layout Standard
 
 \emph on
-Yes, this is acknowledged in footnote 8.
+The input is appreciated, and this is acknowledged in footnote 8.
 \end_layout
 
 \begin_layout Standard
@@ -3792,15 +4252,15 @@ Main Comments:
 \emph on
 We agree that cost-effectiveness and scalability are big selling points
  for intervention such as the one being tested.
- This is also mentioned by reviewer 3 how notes that showing videos to individua
+ This is also mentioned by reviewer 3 who notes that showing videos to individua
 l farmers can be costly (R3.12).
  In addition, this comment is related to the second remark of the first
- reviewer (R1.2) who wanted to know how the intervention affects profitability
- of maize growing.
+ reviewer (R1.2) who wanted to know how the intervention affects the profitabilit
+y of maize cultivation.
  We thus added a section on cost-effectiveness that starts by calculating
  the expected change in profit for the average farmer due to the video intervent
-ion (as we find limited effects of the other treatments).
- Estimation of cost-benefits at the farmer level are then used as input
+ion (as we find limited effects of the IVR and SMS treatments).
+ Estimation of costs and benefits at the farmer level are then used as input
  to assess the cost-effectiveness of the intervention.
 \end_layout
 
@@ -3822,6 +4282,12 @@ Cost-effectiveness
 \begin_layout Standard
 
 \emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
 \begin_inset Quotes eld
 \end_inset
 
@@ -3836,7 +4302,7 @@ ons such as the ones being tested.
  total benefit derived by the farmers in our study.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 In our sample, a bag of 100 kg of maize was sold at a median price of UGX
@@ -3848,7 +4314,7 @@ In our sample, a bag of 100 kg of maize was sold at a median price of UGX
  This means a difference in income of UGX 27,000 per acre, or about 7.7 USD.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 From this, we subtract the cost of inputs.
@@ -3890,7 +4356,7 @@ reference "tab:Impact-of-technology_fert"
  Urea increased.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 Changes in the cost of labour are harder to value.
@@ -3917,7 +4383,7 @@ reference "tab:pract_h1_ag"
  treatment and control reduces to 22,464 or about 6.5 USD.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 The intervention costed close to USD 37,000.
@@ -3966,6 +4432,11 @@ It may be possible to reduce variable costs considerably.
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 2.
  You should explain in more detail why studying the additional value of
@@ -4003,31 +4474,44 @@ We agree that the manuscript did not clearly explain the rationale behind
  an incremental way and why we start with what is probably the most expensive
  component of the three.
  However, the different components of the intervention, and the incremental
- way in which they were implemented in the experiment, are a result of careful
- analysis of the situation in Uganda (low levels of knowledge on modern
- input due to defunct public extension system, various start-ups experimenting
- with demand-driven initiatives such as WeFarm, DrumNet, Viamo,...
- ) as well as state of the art literature (the aspirations literature and
- importance of role models, reminders as nudges,...).
- From this, we decided we needed to start from a general baseline intervention
- designed to make farmers aware of the most important new technologies and
- recommended practices.
+ way in which they were implemented in the experiment, are the result of
+ careful analysis of the situation in Uganda (low levels of knowledge on
+ modern input due to a near-defunct public extension system, various start-ups
+ experimenting with demand-driven initiatives such as WeFarm, DrumNet, Viamo,
+ etc.) as well as state of the art in the literature (the aspirations literature
+ and importance of role models, reminders as nudges, etc.).
+ With these points in mind, we decided we needed to start from a general
+ baseline intervention designed to make farmers aware of the most important
+ new technologies and recommended practices.
  This messages should be brought in an appealing way and also accessible
  to low educated farmers.
  Hence the idea to create a video.
- However, farmers get to see the video only at the beginning of the maize
- growing season, and it is likely that they forget some of the details that
- are explained in the video (for instance the name of a particular hybrid
- seed, the exact quantity of a particular type of inorganic fertilizer,...).
- Therefore, we wanted to add an information sources that is accessible on
- demand.
- The idea that IVR is used to get more precise information on a particular
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+However, we also know from our contextual analysis that farmers who view
+ a video only at the beginning of the maize growing season may tend to forget
+ some of the details that are explained in the video (for instance the name
+ of a particular maize hybrid, the exact quantity of a particular type of
+ inorganic fertilizer, etc.).
+ Therefore, we wanted to add an information source for farmers that is accessibl
+e on demand.
+ The idea that IVR is used to provide more precise information on a particular
  technology means that farmers already need to know about the existence
  of the particular technology.
- Finally, we learned that, often, knowledge only is not enough.
- Timely reminders have often been found very effective in overcoming inertia,
- procrastination, competing obligations, or simple forgetfulness of human
- beings 
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Finally, we learned from our contextual analysis and literature review that
+ knowledge only is rarely enough to change behavior.
+ Timely reminders have been shown to be very effective in overcoming inertia,
+ procrastination, competing obligations, or simple forgetfulness 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Sunstein2014"
@@ -4039,7 +4523,7 @@ key "Sunstein2014"
 .
 
 \emph on
- Recent research on agricultural extension also suggests behavioural change
+ Recent research on agricultural extension also suggests behavioral change
  occurring through the compounding or re-emphasis of common knowledge that,
  through repetition, becomes more salient to the individual 
 \begin_inset CommandInset citation
@@ -4049,8 +4533,10 @@ key "duflo2014diffusion"
 \end_inset
 
 .
- Also here, the conceptualization of an SMS message as a reminder also means
- that the information should have been given before.
+ Hence, we introduced the SMS treatment as a complement to the tailored
+ informational treatment (video) and the detailed on-demand informational
+ treatment (IVR).
+ 
 \end_layout
 
 \begin_layout Standard
@@ -4063,6 +4549,12 @@ Changes made to the manuscript: We have rewritten the introduction to better
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 
 \emph on
 \begin_inset Quotes eld
@@ -4120,6 +4612,11 @@ key "duflo2014diffusion"
  
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 3.
  Relatedly, the paper emphasizes the different technologies used to deliver
@@ -4137,30 +4634,32 @@ key "duflo2014diffusion"
 \begin_layout Standard
 
 \emph on
-Now that we better explain the rationale of the intervention, this should
- also be clearer.
- We tried as much as possible to keep the content fixed; only the way it
- was delivered was different.
+We appreciate this comment.
+ Now that we have improved the explanation of the rationale behind the intervent
+ion, the concern raised here should be addressed.
+ We tried as much as possible to keep the content fixed: only the delivery
+ of the content was varied.
  In the video intervention, a model farmer explained in an attractive way
  what was needed to become a successful maize farmer.
  The same information could be obtained by dialing into the IVR.
- SMS messages also did not provide new information and covered all of the
- important technologies or practices that were also featured in the video
- and IVR.
+ The SMS messages similarly reinforced the same information, did not provide
+ new information, and covered all of the important technologies or practices
+ that were also featured in the video and IVR.
  In other words, we tried as much as possible to keep content fixed to rule
- out that any additional effect could be attributed to the content
+ out that any additional effect could be attributed to the content.
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-We do not think there is a big difference between the video and IVR in that
- in the former, farmers were visited at home and the latter consisted of
- an encouragement.
+We do not think there is a substantial difference between the video and
+ IVR in that in the former, farmers were visited at home and the latter
+ consisted of an encouragement.
  The encouragement was also administered individually (at the same time
  as the video was shown).
- It is true that video is supply-driven and IVR is demand-driven.
- But this is actually the difference we are trying to get at.
+ It is true that video is supply-driven and IVR is demand-driven, but we
+ have removed this distinction as a key motivation underlying our study
+ in response to several reviewer comments.
 \end_layout
 
 \begin_layout Standard
@@ -4198,7 +4697,7 @@ The information provided was rather specific.
  how investing now can make a farmer grow over time and that it is often
  better to start small using all the inputs and practices than only using
  eg good seed on the entire plot, but no fertilizer.
- We tried as much as possible to provide the same info through the IVR.
+ The info provided through the IVR is as similar as possible .
  For instance, also here the same seeds and fertilizer were named, and the
  same quantities recommended and application methods explained.
  In general, there was a very close correspondence between what we recommend
@@ -4221,8 +4720,8 @@ additional_info.pdf
 \end_inset
 
 .
- These were all materials we would have liked to make available in on-line
- appendices.
+ This document contains materials we would have liked to make available
+ in online appendices.
  It included the script for the video (scene by scene), a transcript of
  the content of the IVR system (in English, although the farmers also had
  access to this information in Lusgoga), the content of the 8 SMS messages,
@@ -4295,7 +4794,7 @@ gative direction of the effects as following the advice.
 This is also related to the comment made by Reviewer 3 (R3.5).
  We agree that this was arbitrary (and definitely not in our pre-analysis
  plan).
- So we decided to just remove these parts.
+ We removed these parts from our analysis.
 \end_layout
 
 \begin_layout Standard
@@ -4352,15 +4851,8 @@ With respect to attrition, during endline, we interviewed men and women
  separately.
  While general attrition was unavoidable, we tried to make sure this attrition
  was not due to eg systematic missing of women within households.
- We have also added a separate sub-section in the section 
-\begin_inset Quotes eld
-\end_inset
-
-Additional analysis and robustness tests
-\begin_inset Quotes erd
-\end_inset
-
- that tests differential attrition and also calculates manski bounds.
+ We have also added a separate section in the appendix that tests differential
+ attrition and also calculates manski bounds.
  
 \end_layout
 
@@ -4371,8 +4863,8 @@ Answers of both spouses were used to construct household level outcomes.
  For continuous variables, generally, a simple average was taken between
  the two members.
  For binary outcomes, such as whether the household gained knowledge on
- a particular topic, we often assumed the household learned if at least
- one member indicated the correct answer.
+ a particular topic, we assumed the household learned if at least one member
+ indicated the correct answer.
  For adoption of a particular practice of input, we indicate the household
  adopts if at least one household adopts on at least one plot.
  While it would indeed be interesting to look at differences in reporting
@@ -4431,6 +4923,12 @@ Additional analysis and robustness tests
 \begin_layout Standard
 
 \emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
 \begin_inset Quotes eld
 \end_inset
 
@@ -4462,7 +4960,7 @@ key "de2018measuring,mummolo2019demand"
  are unlikely to drive our results.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 First, during the design of the endline questionnaire, we tried to minimize
@@ -4489,7 +4987,7 @@ plant spacing of 75cm x 30cm with a reduced seed rate of 1 seed per hill
  demand effects.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 Second, in our endline survey, not all outcomes are equally likely to be
@@ -4508,7 +5006,7 @@ Second, in our endline survey, not all outcomes are equally likely to be
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 Third, as we will report in the next section, fertilizer adoption, an outcome
@@ -4519,6 +5017,11 @@ Third, as we will report in the next section, fertilizer adoption, an outcome
  that have better access to improved inputs strategically decide to report
  their answers differently than households that have less access to inputs.
 \begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -4558,6 +5061,12 @@ Additional analysis and robustness tests
 \begin_layout Standard
 
 \emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
 \begin_inset Quotes eld
 \end_inset
 
@@ -4567,13 +5076,13 @@ In this section, we explore potential heterogeneity in the treatment effects.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 First, we test if treatment effects differ with the education levels of
  farmers.
  We mentioned in the introduction that video may be particularly effective
- in transferring information to low educated and illiterate farmer.
+ in transferring information to lowly educated and illiterate farmer.
  Therefore, we reran model 1, but only for farmers that did not finish primary
  schooling (which is about 65 percent of farmers in our sample).
  In Appendix Table 
@@ -4596,7 +5105,7 @@ reference "tab:knowh0HH"
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 Farmers are unlikely to adopt a particular modern input if they lack information
@@ -4632,13 +5141,14 @@ reference "tab:Impact-of-technology_fert"
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \emph on
 In sub-section 5.1, we already looked at the narrower effect of IVR for farmers
  that actually called in.
  However, also for the additional SMS treatment, one would probably only
- expect to see an effect for households that have a mobile phone.
+ expect to see an effect for households that have a mobile phone and were
+ able to receive the SMS.
  Averaging outcomes over all household may dilute the treatment effect,
  making it more difficult to detect a significant difference between the
  treatment group and control group.
@@ -4648,6 +5158,11 @@ In sub-section 5.1, we already looked at the narrower effect of IVR for farmers
  reported in the previous section.
  
 \begin_inset Quotes eld
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -4674,9 +5189,9 @@ Minor comments:
 \begin_layout Standard
 
 \emph on
-Thanks for this advise.
+Thanks for this advice.
  We have rewritten the manuscript to make it clear that we are looking at
- incremental impacts.
+ incremental impacts and not conducting a horse race.
 \end_layout
 
 \begin_layout Standard
@@ -4704,18 +5219,19 @@ key "New1"
 
 .
  This was not yet publicly available at the time we prepared this manuscript.
- We have rewritten the manuscript and avoided the strong claims up front.
+ We have rewritten the manuscript and removed such strong claims up front.
  
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-In the conclusion, we now also employ a much more agnostic approach of what
- IVR and SMS can and can not do.
+In the conclusion, we now also make more careful claims about what IVR and
+ SMS can and can not do.
  More in particular, we point out particularities of our interventions (eg
- we do not provide new information) and how this may differ from how others
- use this technology (and hence arrive at different conclusions).
+ we do not provide information with IVR or SMS that was not provided in
+ the video) and how this may differ from how others use this technology
+ (and hence arrive at different conclusions).
  We also note that the null results need to be interpreted with caution
  in the light of the low take-up and issues with our measure of compliance.
 \end_layout
@@ -4767,7 +5283,7 @@ The outcome that is used in the paper is what farmers thought was correct,
  and hence this was how it was framed.
  We framed the question this way as this seemed to be the most interesting
  question.
- The eventual aim of interventions like this is to change behaviour, not
+ The eventual aim of interventions like this is to change behavior, not
  merely increasing knowledge.
  Therefore, the interesting outcome to measure is a change in what farmers
  think is correct.
@@ -4785,6 +5301,12 @@ Changes made to the text: we have explicitly added that we ask for the opinion
 \begin_layout Standard
 
 \emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
 \begin_inset Quotes eld
 \end_inset
 
@@ -4792,6 +5314,11 @@ For each question, three possible answers were read out to the respondent,
  who was then asked to indicate which answer he or she thought was correct
  (which may differ from what he or she recalled from the video).
 \begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -4891,12 +5418,12 @@ additional_info.pdf
 \end_inset
 
 .
- These were all materials we would have liked to make available in on-line
- appendices.
+ This document contained all of the materials we would like to make available
+ in the online appendices.
  It included the 2SLS (LATE) regressions, and an anonymized version of the
  pre-analysis plan (among others).
- It seems that these materials were not part of what the reviewers could
- access.
+ It seems that these materials were not provided to the reviewers, so we
+ will ask the editor to make those available to you.
  
 \end_layout
 
@@ -4918,13 +5445,13 @@ We now include the LATE effects in the paper in a separate section of the
 \begin_layout Standard
 
 \emph on
-Farmers were shown the video twice before and early in the agricultural
- season, with the intention of providing all the basic information farmers
- needed.
- The SMS messages reminded farmers of particular topics discussed in the
- video at particular points in time, the idea being that timely reminders
- would make the information more salient.
- They also included a reminder that farmers could use the IVR.
+Farmers were shown the video twice: once before the agricultural season
+ and once early in that same season.
+ The intention here was to provide the participating farmers with all the
+ basic information required.
+ The SMS messages was more targeted, in that it reminded farmers of particular
+ topics discussed in the video at specific points in time, with the inention
+ of providing timely reminders would make the information more salient.
  
 \end_layout
 
@@ -4935,14 +5462,17 @@ One can speculate about the potential reasons why the reminders did not
  work in our case.
  The fact that farmers were already reminded once and reminders have decreasing
  marginal effects may be one potential reason.
- Another reason may be that we found it difficult to get the timing right.
- While we tried to avoid excessive difference in agro-ecological conditions,
- we still encountered situations where farmers had planted much earlier
+ Another reason may be that it is always difficult to get the exact timing
+ right: variation in planting time, rainfall, plant growth, crop duration,
+ and other factors–even with the same agro-ecological zone–imply that even
+ the most well-timed SMS reminders might miss the precise mark.
+ Unavoidably, we encountered situations where farmers had planted much earlier
  than in other areas due to spatial heterogeneity in the onset of the rains.
- As a result, some farmers will have received the SMS message on fertilizer
- application too early and others too late.
- Maybe the content of the reminders was to blame, and a more imperative
- tone such as 
+ As a result, some farmers received the SMS message on fertilizer application
+ too early and others too late.
+ Maybe the content of the reminders could have been adapted accordingly
+ (though not without considerable cost and logistical complexity), or maybe
+ a more imperative tone such as 
 \begin_inset Quotes eld
 \end_inset
 
@@ -4956,12 +5486,13 @@ apply fertilizer now
 \begin_layout Standard
 
 \emph on
-More in general, and also alluded to by reviewer 3 (R.13, R.14 and R.15), we
- feel a more agnostic stance as to what we can actually learn from our experimen
-t about the mechanisms behind the IVR and SMS intervention is in order.
+More generally, and as also suggested by reviewer 3 (R.13, R.14 and R.15),
+ we feel a more careful stance as to what we can actually learn from our
+ experiment about the mechanisms behind the IVR and SMS intervention is
+ in order.
  We thus rewrote the conclusion, indicating some of the issues we encountered
- such as the above timing issue, and are more cautious in interpretation
- of null effects.
+ such as the SMS timing issue note above, and advocating for a more cautious
+ in interpretation of our null effects.
 
 \emph default
  
@@ -4976,15 +5507,15 @@ t about the mechanisms behind the IVR and SMS intervention is in order.
 \begin_layout Standard
 
 \emph on
-While there is some imbalance, this seems to be within what one would expect
- by chance alone.
- Furthermore, joint balance is never rejected.
- In addition, the imbalance is only for the additional IVR and SMS treatments,
- for which we find little effects.
- As such, imbalance can not be responsible for the impact of the video intervent
-ion we find (which would be the biggest concern).
- That said, we have redone the analysis where we now control for the variables
- where imbalances were found.
+While there is some minor imbalance, this seems to be within what one would
+ expect by chance alone; and joint balance is never rejected.
+ Furthermore, the imbalance is only for the additional IVR and SMS treatments,
+ for which we find few effects.
+ As such, imbalance can not be responsible for our findings on the impact
+ of the video intervention (otherwise, this would indeed be one of our greatest
+ concerns).
+ That said, and in response to your suggestion, we have redone the analysis
+ where we now control for the variables where imbalances were found.
  The results are reported in Appendix Tables 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -5017,7 +5548,7 @@ reference "tab:controls_production"
 \emph on
 The intervention that is discussed in this study was conceptualized at the
  household level, and outcomes are also defined at that level.
- Mobile phone ownership, and how it is distributed within the household,
+ Mobile phone ownership, and how ownership is distributed within the household,
  was taken as given.
  This obviously does not mean that phone ownership will not affect outcomes,
  and we do look at heterogeneity in treatment effects due to mobile phone
@@ -5032,7 +5563,8 @@ Additional analysis and robustness tests
 .
  Unfortunately, we did not ask about individual phone ownership at baseline,
  so we can not condition on this.
- We only asked if the household had access to a mobile phone.
+ We only asked if the household owned a phone and if the household had access
+ to a mobile phone.
  
 \end_layout
 
@@ -5048,7 +5580,7 @@ Additional analysis and robustness tests
 \begin_layout Standard
 
 \emph on
-We agree and have removed this from the conclusion.
+We agree with this comment and have removed this from the conclusion.
  See also your fifth comment, as well as the comment from reviewer 3 (R3.5).
  
 \end_layout
@@ -5067,20 +5599,18 @@ g since that might affect sustained adoption.
 We take your point.
  We note that the video intervention does increase the outcome by about
  6 percent, but it is indeed not significant.
- 
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-At the same time, and in hindsight, we also suspect that the insignificant
- result may be due to a poorly formulated question.
- While the measure of maize yield is obtained indirectly by dividing production
- on the plot by the size of the plot, here the farmer is asked to directly
- assess maize yield on the plot.
+ At the same time, and in hindsight, we also suspect that the insignificant
+ result may be due to the inherent difficulty in formulating this kind of
+ subjective question, even though such questions are commonly used to assess
+ not only production outcomes, but also hunger and food security, safety
+ and security, and many other outcomes.
+ In this instance, while our (preferred) measure of maize yield is obtained
+ indirectly by dividing production on the plot by the size of the plot,
+ here the farmer is asked to directly assess his or her maize yields on
+ the plot.
  We fear many farmers may find it difficult to convert production on the
- plot to yields, and therefore compared production on the plot to what it
- normally would be.
+ plot to yields, and therefore may be implicitly comparing production on
+ the plot to what it normally would be.
  If farmers intensify production on only part of the plot and leave the
  rest fallow, they may indicate that maize production on the plot was similar
  to what they normally get from that plot.
@@ -5096,6 +5626,12 @@ Changes made to the text: The following footnote was added to the part where
 \begin_layout Standard
 
 \emph on
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
 Farmers may have confused yields with production.
  Consistent with our recommendation to start small and combine technologies
  and the results that yield effects are due to producing the same amounts
@@ -5104,10 +5640,15 @@ Farmers may have confused yields with production.
  crop.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-bibfiles "/home/bjvca/data/projects/digital green/pre-analysis plan/maizeUG_PAP"
+bibfiles "../../pre-analysis plan/maizeUG_PAP"
 options "AJAE/IFPRI_Style"
 
 \end_inset
@@ -5126,7 +5667,7 @@ Tables
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Preview
@@ -5450,7 +5991,7 @@ the 1, 5 and 10 percent level, respectively.
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5660,7 +6201,7 @@ Note: In the first column, means (and standard deviations) in the control
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5862,7 +6403,7 @@ Note: In the first column, means (and standard deviations) in the control
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6167,7 +6708,7 @@ Note: In the first column, means (and standard deviations) in the control
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6410,7 +6951,7 @@ Note: In the first column, means (and standard deviations) in the control
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6718,7 +7259,7 @@ Note: All entries are t-tests, except for the last column and the last row,
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6934,7 +7475,7 @@ Note: Column 1 reports differences between video only and video+ivr (and
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7159,7 +7700,7 @@ Note: Column 1 reports differences between video only and video+ivr (and
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7465,7 +8006,7 @@ Note: Column 1 reports differences between video only and video+ivr (and
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7703,7 +8244,7 @@ Note: Column 1 reports differences between video only and video+ivr (and
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8021,7 +8562,7 @@ end{tabular}
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8228,7 +8769,7 @@ Note: In the first column, means (and standard deviations) in the control
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8432,7 +8973,7 @@ Note: In the first column, means (and standard deviations) in the control
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8725,7 +9266,7 @@ Note: In the first column, means (and standard deviations) in the control
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8946,7 +9487,7 @@ Note: In the first column, means (and standard deviations) in the control
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9137,7 +9678,7 @@ Note: In the first column, means (and standard deviations) in the control
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9441,7 +9982,7 @@ Note: In the first column, means (and standard deviations) in the control
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9652,7 +10193,7 @@ Note: Column 1 reports differences between placebo and video treatment (and
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9874,7 +10415,7 @@ Note: Column 1 reports differences between placebo and video treatment (and
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -10186,7 +10727,7 @@ Note: Column 1 reports differences between placebo and video treatment (and
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -10407,13 +10948,13 @@ Note: Column 1 reports differences between placebo and video treatment (and
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Impact of ICT treatments on knowledge outcomes for low educated farmers
+Impact of ICT treatments on knowledge outcomes for less educated farmers
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:cate_know"
@@ -10602,7 +11143,7 @@ Note: In the first column, means (and standard deviations) in the control
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
