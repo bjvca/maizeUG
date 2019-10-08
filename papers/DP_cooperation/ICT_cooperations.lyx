@@ -10,12 +10,12 @@
 \language english
 \language_package default
 \inputencoding auto
-\fontencoding 
-\font_roman "times" "default"
-\font_sans "lmss" "default"
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
-\font_default_family rmdefault
+\font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
@@ -117,6 +117,29 @@ Increasing cooperation in agricultural households: Experimental evidence
  from maize farming households in Uganda
 \end_layout
 
+\begin_layout Abstract
+In smallholder agriculture in developing countries, the household is the
+ prevailing unit of production.
+ Decision makers in agricultural households have different preferences and
+ access to production factors.
+ Each member's involvement in activities that benefit the household is also
+ affected by prevailing norms and beliefs.
+ While many interventions have been focusing on empowering women in agriculture,
+ recent research underscores the importance of intra-household cooperation
+ as a catalyst to higher household well-being.
+ We test two interventions designed to increase intra-household cooperation.
+ In one experiment, we assess the effect of reducing information asymmetries
+ between spouses by comparing households where the couple received agricultural
+ extension information to households where an individual was targeted (either
+ the husband of the wife).
+ In a second experiment, we investigate the effectiveness of promoting a
+ household cooperative approach to farming by showing a video in which both
+ spouses are equally involved in maize growing to some households, and compare
+ outcomes to households that were shown a video where farming is depicted
+ as an individual activity (either done by a man or a woman).
+ 
+\end_layout
+
 \begin_layout Section
 Introduction
 \end_layout
@@ -208,13 +231,22 @@ This research aims to generate evidence on the barriers that limit cooperation
 Research questions
 \end_layout
 
+\begin_layout Standard
+Where do we discuss impact pathways? Eg if both spouses have the information,
+ they may be able to more effectively monitor each other.
+ Eg.
+ a man may decide to 
+\end_layout
+
 \begin_layout Itemize
 Does reducing agricultural extension information asymmetries within the
  household improves outcomes at the household level? This research question
  will be answered by comparing outcomes of households in which one adult
  individual (husband or wife) is shown a video with agricultural extension
  information to outcomes of households in which the couple (husband and
- wife together) is shown a video with the same information
+ wife together) is shown a video with the same information.
+ Refer to who find that joint male and female programme participation leads
+ to the highest adoption rates to motivate this experiment.
 \end_layout
 
 \begin_layout Itemize
@@ -226,6 +258,753 @@ Does promoting a household approach to farming improve outcomes at the household
  the same information by a couple of farmers (ie.
  man and woman who are shown to participate as equals in the family farm
  and deliver the message as a couple)
+\end_layout
+
+\begin_layout Section
+Experimental Design
+\end_layout
+
+\begin_layout Standard
+We use a 3 by 3 factorial design to answer the above research questions...
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_treat1"
+
+\end_inset
+
+ reports a range of orthogonality tests related to the treatment aimed at
+ reducing information asymmetries between spouses.
+ The first column reports sample means (and standard deviations in parentheses
+ below) for the variables indicated to the left, measured at baseline.
+ For instance, we found that at the time of baseline data collection, average
+ yields in the sample amounted to about 264 kg per acre.
+ Average age of the household head in our sample is 40 years and only about
+ 36 percent reported to have finished primary education.
+ The average household has more than 7 members who live in a house with
+ 2.2 bedrooms.
+ Only 11 percent had access to agricultural extension in the preceding year,
+ about 20 percent used (inorganic) fertilizer and almost 40 percent reported
+ to have used improved seed.
+ Average distance to the nearest agro-input dealer is 5.5 km and almost 80
+ percent of households own a mobile phone.
+\end_layout
+
+\begin_layout Standard
+In the second column, we report differences in means at baseline between
+ households that received the extension information as a couple and households
+ where only one of the spouses (either the husband of the wife) received
+ the information.
+ We find significant imbalance on various baseline characteristics.
+ For instance, we see that in the sub-sample of households that were given
+ the information as a couple, the household head is almost 4 years older
+ than in households where the information was given to only one of the spouses.
+ Household heads in households that were treated as a couple are also significan
+tly more likely to have finished primary education by about 8 percentage
+ points.
+ We further find that these households are about 10 percentage points more
+ likely to own a mobile phone and 5 percent less likely to have used fertilizer.
+ We also have some indications that access to extension and households size
+ is correlated with the treatment.
+ A test for joint orthogonality also indicates that there are significant
+ differences in baseline characteristics between the groups.
+ 
+\end_layout
+
+\begin_layout Standard
+The next two columns splits up the control group, and compares baseline
+ characteristics for households where couples were provided with information
+ to (a) households where only the men received this information (column
+ 2) and (b) only the women received this information (column 3).
+ We see that most of the imbalance in the first column is a result of imbalance
+ between households were couples were treated and households were only the
+ wife was treated.
+ Household heads in households were only the women was shown the video are
+ more than 8 years younger than in households where the couple was treated.
+ Households that received the information as a couple were 20 percentage
+ points more likely to own a mobile phone that in households where only
+ the woman was shown the video.
+ Household heads in the former group were almost 17 percentage points more
+ likely to report to have finished primary education that in the latter
+ group.
+ While imbalance seems to be less of a problem when comparing households
+ where couples were treated to households where only men got the information,
+ we still reject the joint null of no difference in baseline characteristics.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Balance for treatment 1
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Balance_treat1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+&	Mean	&	Couple vs Individual	&	Couple vs Husband	&	Couple vs Wife	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\end_layout
+
+\begin_layout Plain Layout
+
+Maize yield (kg/ac) 	&	287.097	&	-8.405			&	-7.922			&	-8.795			
+\backslash
+
+\backslash
+ 	&	264.147	&	17.130			&	18.634			&	20.217			
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Age of HH head (years) 	&	39.833	&	3.897$^{**}$	&	-0.530			&	8.400$^{**}$	
+\backslash
+
+\backslash
+ 	&	13.810	&	0.890			&	1.060			&	0.948			
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+HH head finshed primary school 	&	0.367	&	0.079$^{*}$	&	-0.009			&	0.167$^{**}$	
+\backslash
+
+\backslash
+ 	&	0.482	&	0.031			&	0.037			&	0.035			
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+HH size 	&	7.623	&	0.397$^{+}$	&	0.352			&	0.448$^{+}$	
+\backslash
+
+\backslash
+ 	&	3.306	&	0.214			&	0.250			&	0.247			
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of bedrooms	&	2.235	&	0.102			&	0.094			&	0.111			
+\backslash
+
+\backslash
+ 	&	1.142	&	0.074			&	0.088			&	0.083			
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Access to extension last year 	&	0.110	&	-0.038$^{+}$	&	-0.032			&	-0.044$^{+}$	
+\backslash
+
+\backslash
+ 	&	0.312	&	0.020			&	0.023			&	0.023			
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Has used fertilizer last season 	&	0.206	&	-0.055$^{*}$	&	-0.075$^{*}$	&	-0.036			
+\backslash
+
+\backslash
+ 	&	0.404	&	0.026			&	0.030			&	0.029			
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Has used improved seed last season 	&	0.382	&	-0.019			&	-0.062$^{+}$	&	0.024			
+\backslash
+
+\backslash
+ 	&	0.486	&	0.031			&	0.036			&	0.036			
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Distance nearest agro input shop (km) 	&	5.554	&	-0.365			&	-0.260			&	-0.476			
+\backslash
+
+\backslash
+ 	&	5.536	&	0.358			&	0.422			&	0.395			
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+HH has mobile phone 	&	0.776	&	0.104$^{**}$	&	0.008			&	0.200$^{**}$	
+\backslash
+
+\backslash
+ 	&	0.417	&	0.027			&	0.027			&	0.031			
+\backslash
+
+\backslash
+ 														
+\end_layout
+
+\begin_layout Plain Layout
+
+														
+\end_layout
+
+\begin_layout Plain Layout
+
+														
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+
+\backslash
+											
+\end_layout
+
+\begin_layout Plain Layout
+
+														
+\end_layout
+
+\begin_layout Plain Layout
+
+F-test	&		&	9.324$^{**}$			&	2.782$^{**}$			&	34.789$^{**}$			
+\backslash
+
+\backslash
+ P-value	&		&	0.000			&	0.001			&	0.000			
+\backslash
+
+\backslash
+ Nobs	&	3,303	&	3,303			&	2,177			&	2,182			
+\backslash
+
+\backslash
+ 	 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize  
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports sample means (and standard deviations below);
+ Column 2 reports differences (and standard errors below) between 
+\end_layout
+
+\begin_layout Plain Layout
+
+households where the information was given to the both spouses and households
+ where the information was given to only one of the spouses (either husband
+ or wife).
+ Column 3 reports differences (and standard errors below) between households
+ where the information was given to the both spouses and households where
+ the information was given to only the husband.
+ Column 4 reports differences (and standard errors below) between households
+ where the information was given to the both spouses and households where
+ the information was given to only the wife.
+ **, * and + denote that the difference is signficantly different from zero
+ at the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is unclear why we find this imbalance.
+ The most likely explanation may be related to the availability of the person
+ or persons to whom the video needed to be shown.
+ Prior to the intervention, all nuclear households in the selected villages
+ were listed.
+ These lists were then used to carry out the randomization.
+ The names of the household heads were uploaded on the tablet computers
+ which instructed the enumerator to confirm he or she was showing the video
+ to the correct household member (the husband, the wife, or the husband
+ and wife together).
+ However, we also had backup lists with replacement households from which
+ survey supervisors could select if the selected household could not be
+ interviewed (for instance, it often happened that a selected household
+ appeared to be polygamous).
+ It may be that it was harder to get men within the households, such that
+ when the couple treatment or man only treatment needed to be administered,
+ more was relied on the backup list.
+ If absent men have different characteristics (for instance, they are younger,
+ better educated and more likely to have a phone), this may lead to the
+ observed imbalance.
+ We do indeed see that the use of the backup list was significantly lower
+ when the video needed to be shown to only the wife.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+we may want to explore how the use of a replacement list may have been driving
+ this.
+ We have data on whether the original household was interviewed of not:
+ chisq.test(table(dta$hh_yes, dta$recipient=="female"),2) p=.036
+\end_layout
+
+\end_inset
+
+At the same time, the imbalance persists even after removing all households
+ that were taken from the backup lists.
+ We will control for imbalance in the analysis of the endline data below.
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_treat2"
+
+\end_inset
+
+ reports another set of orthogonality tests, but this time for the second
+ treatment related to promoting a household approach to maize farming.
+ Also here, the first column reports means and standard deviations, copied
+ from Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_treat1"
+
+\end_inset
+
+.
+ The second column now compares households where the information was provided
+ by a couple to households that got to see a video in which the information
+ was given by only one individual, either a man or a woman.
+ Similar to Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_treat1"
+
+\end_inset
+
+, the next two columns split up the comparison group, and now compare the
+ baseline characteristics for households that saw the couple video to (a)
+ households were only a man gives all the information (column 3) and to
+ (b) households were only a woman gives all the information (column 3).
+ For this treatment, we find balance among almost all baseline characteristics
+ and also can never reject joint orthogonality.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Balance for treatment 2
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Balance_treat2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+&	Mean	&	Couple vs Individual	&	Couple vs Husband	&	Couple vs Wife	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\end_layout
+
+\begin_layout Plain Layout
+
+Maize yield (kg/ac) 	&	287.097	&	6.137			&	8.227			&	4.165			
+\backslash
+
+\backslash
+ 	&	264.147	&	16.847			&	20.029			&	20.345			
+\backslash
+
+\backslash
+ Age of HH head (years) 	&	39.833	&	-0.031			&	-0.510			&	0.484			
+\backslash
+
+\backslash
+ 	&	13.810	&	0.849			&	0.988			&	0.977			
+\backslash
+
+\backslash
+ HH head finshed primary school 	&	0.367	&	-0.012			&	0.001			&	-0.026			
+\backslash
+
+\backslash
+ 	&	0.482	&	0.030			&	0.035			&	0.035			
+\backslash
+
+\backslash
+ HH size 	&	7.623	&	0.015			&	-0.089			&	0.126			
+\backslash
+
+\backslash
+ 	&	3.306	&	0.210			&	0.248			&	0.238			
+\backslash
+
+\backslash
+ Number of bedrooms	&	2.235	&	0.092			&	0.088			&	0.096			
+\backslash
+
+\backslash
+ 	&	1.142	&	0.073			&	0.083			&	0.084			
+\backslash
+
+\backslash
+ Access to extension last year 	&	0.110	&	0.020			&	0.019			&	0.020			
+\backslash
+
+\backslash
+ 	&	0.312	&	0.020			&	0.023			&	0.023			
+\backslash
+
+\backslash
+ Has used fertilizer last season 	&	0.206	&	-0.003			&	-0.021			&	0.016			
+\backslash
+
+\backslash
+ 	&	0.404	&	0.026			&	0.029			&	0.030			
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Has used improved seed last season 	&	0.382	&	-0.056$^{+}$	&	-0.005			&	-0.108$^{**}
+$	
+\backslash
+
+\backslash
+ 	&	0.486	&	0.031			&	0.035			&	0.036			
+\backslash
+
+\backslash
+ Distance nearest agro input shop (km) 	&	5.554	&	0.124			&	0.259			&	-0.016			
+\backslash
+
+\backslash
+ 	&	5.536	&	0.352			&	0.393			&	0.414			
+\backslash
+
+\backslash
+ HH has mobile phone 	&	0.776	&	0.033			&	0.040			&	0.026			
+\backslash
+
+\backslash
+ 	&	0.417	&	0.026			&	0.030			&	0.030			
+\backslash
+
+\backslash
+ 														
+\end_layout
+
+\begin_layout Plain Layout
+
+														
+\end_layout
+
+\begin_layout Plain Layout
+
+														
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+													
+\end_layout
+
+\begin_layout Plain Layout
+
+														
+\end_layout
+
+\begin_layout Plain Layout
+
+F-test	&		&	0.600			&	0.464			&		0.516		
+\backslash
+
+\backslash
+ P-value	&		&	0.867			&	0.936			&		0.906		
+\backslash
+
+\backslash
+ Nobs	&	3,303	&	3,303			&	2,209			&		2,197		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize  
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports sample means (and standard deviations below);
+ Column 2 reports differences (and standard errors below) between 
+\end_layout
+
+\begin_layout Plain Layout
+
+households where the information was given to the both spouses and households
+ where the information was given to only one of the spouses (either husband
+ or wife).
+ Column 3 reports differences (and standard errors below) between households
+ where the information was given to the both spouses and households where
+ the information was given to only the husband.
+ Column 4 reports differences (and standard errors below) between households
+ where the information was given to the both spouses and households where
+ the information was given to only the wife.
+ **, * and + denote that the difference is signficantly different from zero
+ at the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -258,6 +1037,19 @@ Second, it is not always clear who manages the plot.
 \begin_layout Standard
 Third, recent research suggests much can be won by increasing intra-household
  cooperation.
+ Somewhat indirectly, the WEAI can be used, as empowerment is likely to
+ be correlated to decision making.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "seymour2017women"
+
+\end_inset
+
+ finds that technical efficiency is higher when the empowerment gap between
+ wife and husband is lower.
+ At the same time, there is only a weak association between women empowerment
+ and technical efficiency.
 \end_layout
 
 \begin_layout Standard
@@ -284,57 +1076,423 @@ Ownership
 \begin_layout Standard
 But what does it mean to be a plot manager? Some studies look at decision
  making on plots.
- 
-\end_layout
-
-\begin_layout Standard
-Somewhat indirectly, the WEAI can be used, as empowerment is likely to be
- correlated to decision making.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "seymour2017women"
-
-\end_inset
-
- finds that technical efficiency is higher when the empowerment gap between
- wife and husband is lower.
- At the same time, there is only a weak association between women empowerment
- and technical efficiency.
-\end_layout
-
-\begin_layout Standard
-Another advantage is that if the focus is on women empowerment, there is
- only one way in: the woman.
- If the focus is on cooperation, we can work also through the husband.
+ Alternatively, one could look at labour.
 \end_layout
 
 \begin_layout Standard
 Can we do something with spousal agreement?
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename results/decision_to_grow_maize.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Decision to grow maize on plot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Results
 \end_layout
 
+\begin_layout Subsection
+household level outcomes
+\end_layout
+
 \begin_layout Standard
+We start by looking at standard household level outcomes used in assessing
+ the impact of agricultural extension information.
+ A traditional theory of change assumes that an increase in information
+ would lead to increased adoption of recommended agronomic practices, which
+ in turn affects production and ultimately well-being.
+ We first report results of the experiment where we reduce information asymmetri
+es, and then present results for the experiment that promotes are household
+ cooperative approach.
+\end_layout
+
+\begin_layout Subsubsection
 Reducing intra-household information asymmetries
 \end_layout
 
 \begin_layout Standard
-Promoting a household approach
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:HH_impact_info_asym"
+
+\end_inset
+
+ summarizes results for differences in outcomes for households where information
+ was provided to both spouses and outcomes for households where information
+ was given to only one of the spouses (either the husband or the wife) for
+ indices of six families of outcomes
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The indices are constructed following 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "anderson2008multiple"
+
+\end_inset
+
+, which involves standardizing individual outcomes and weighting by the
+ inverse covariance matrix.
+ Indices are used to account for multiple hypothesis testing.
+ 
 \end_layout
 
-\begin_layout Section
-Impact Pathways
+\end_inset
+
+.
+ In corresponding Tables in the Appendix (Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowledge"
+
+\end_inset
+
+ to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:wellbeing"
+
+\end_inset
+
+), individual outcomes underlying each family of outcomes are reported,
+ which may inform us about the components within each family driving overall
+ impact.
+ 
 \end_layout
 
 \begin_layout Standard
-Here we analyze some of the individual level outcomes.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename results/assynm_summary.pdf
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Household level impact of reducing information asymmetries
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:HH_impact_info_asym"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The first outcome we consider is knowledge.
+ Knowledge at the household level is assessed by the likelihood that both
+ spouses are able to indicate the correct response on multiple choice question.
+ We tested knowledge with four carefully chosen multiple choice questions
+ that were asked to each spouse individually.
+ One question tests technical knowledge about a new agronomic practice that
+ was shown in the video, while another question asked about a practice that
+ was assumed to be known by most farmers.
+ A third question focused less on technical detail, but wanted to assess
+ if farmers also absorbed the broader message in the video that successful
+ farmers approach maize growing as a business, which involves planning,
+ foresight, risk taking and investment.
+ A final question was on a topic on which no information was provided in
+ the video and was added to verify the effectiveness of the video.
+ 
+\end_layout
+
+\begin_layout Standard
+Using an index based on these questions, we do not find that reducing informatio
+n asymmetry significantly increased knowledge at the household level.
+ This null result may indicate that the information treatment was not effective
+ and/or that information is shared efficiently within the household.
+ Following the first explanation of this null result, we do find that reducing
+ information asymmetry increases the likelihood that both spouses know the
+ recommended spacing and seed rate (Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowledge"
+
+\end_inset
+
+, first row, column 2).
+ As can be seen in column 1, average knowledge about this particular topic
+ is very low: only in about 6 percent of households, both spouses were able
+ to select the correct option on the multiple choice question on recommended
+ seed rate and spacing.
+ From this, we conclude that reducing information asymmetries may be effective
+ for increasing household level knowledge if the information concerns new
+ practices or technologies and the potential for learning is high.
+ 
+\end_layout
+
+\begin_layout Standard
+The second outcome is adoption of improved agronomic practices.
+ Here we construct an index from 4 practices; details can be found in Table
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:practices"
+
+\end_inset
+
+.
+ The first practice is timely planting.
+ Maize should be planted at the onset of the rains.
+ We have asked each spouse how many days after the start of the rains the
+ maize was planted on each maize plot.
+ To arrive at a measure at the household level, we first take the average
+ of the responses of the spouses at plot level, and than take averages over
+ plots.
+ We find that maize is planted about 4 days after the onset of the rains.
+ The next three practices are all assessed using a binary variable, that
+ takes the value of 1 if at least one spouse reports that the practice was
+ applied on at least one plot within the household.
+ 
+\end_layout
+
+\begin_layout Standard
+We do not find a significant difference in the adoption of recommended practices
+ between households where both spouses are shown the video together and
+ households where only one of the spouses was shown the video.
+ We do find that adoption of the new way of spacing and planting maize is
+ adopted by 3.3 percentage points more households that were shown the video
+ as a couple as compared to within households where only one of the spouses
+ was shown the video, but the difference is not significant.
+ The difference becomes significant if we decompose the effect and compare
+ households where the couple received the video treatment and only women
+ received the information.
+ This may indicate that women within the household have insufficient agency
+ to implement knowledge gained.
+ As a result, from a policy perspective, it is important to include the
+ husband in extension campaigns if the focus is on household level adoption
+ of new practices.
+ There are also indications that timely weeding was more common among households
+ where only one individual was shown the video, especially if the information
+ was only provided to a woman (although differences are not statistically
+ significant after controlling family wise error rates).
+ This may be because weeding does not require a lot of consultation among
+ spouses and so this information can easily be acted upon by the woman.
+\end_layout
+
+\begin_layout Standard
+Third we look the use of modern inputs.
+ For fertilizer, the index summarizes the use of three types of fertilizer
+ (DAP/NPK, urea and organic fertilizer).
+ For each type, an indicator is calculated that is true if at least one
+ spouse indicated that the particular type of fertilizer was used on at
+ least on of the maize plots that were cultivated by the household.
+ We find that, according to the index, reducing information asymmetries
+ increases fertilizer use, although the effect is only significant at a
+ 10 percent significance level.
+ Analysis of the use of different types, reported in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:inputs"
+
+\end_inset
+
+, show that the impact is driven by an increase in the likelihood that household
+s use organic fertilizer.
+ For seed use, the index aggregates hybrid seed and open pollinated varieties.
+ We do not find that improved seed use changed significantly after reducing
+ intra-household information asymmetry.
+\end_layout
+
+\begin_layout Standard
+We then look at production related outcomes.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:HH_impact_info_asym"
+
+\end_inset
+
+ shows no impact of showing a video to a couple as opposed to showing the
+ video only to one of the spouses.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:production"
+
+\end_inset
+
+ shows results for the different components of the index, but also here,
+ no statistically significant differences are found.
+ Finally, we want to know if efforts to increase intra-household cooperation
+ also led to an increase in household level well-being.
+ Questions related to well-being were only asked to the wife, as she is
+ most likely the one responsible for reproductive chores.
+ We asked subjective well-being questions where households were asked to
+ compare themselves over time and relative to others in the village.
+ We also use self-assessed food security (using two questions from the Household
+ Food Insecurity Access Scale (HFIAS)).
+ We also use food consumption as a proxy for household level well-being.
+ Results show reducing information asymmetries within the household does
+ not impact well-being.
+\end_layout
+
+\begin_layout Subsubsection
+Promoting a household approach
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename results/HHapproach_summary.pdf
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Household level impact of promoting a cooperative approach
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Household-level-impact"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Decision making
+\end_layout
+
+\begin_layout Standard
+We now provide an extensive analysis of the decision making process within
+ the households in our sample.
+ First, we analyze a series of plot level decisions related to maize farming.
+ 
+\end_layout
+
+\begin_layout Standard
+For each activity that needed to be decided upon, we develop a plot level
+ indicator of joint decision making that takes the value of one if both
+ spouses indicate that the decision was made by husband and wife jointly.
+ This is than divided by the number of maize plots within that household
+ to arrive at the share of plots that were jointly decided on.
+\end_layout
+
+\begin_layout Standard
+A first key decision we look at is the decision to plant maize on the particular
+ plot (as opposed to planting other crops or leaving it fallow).
+ 
+\end_layout
+
+\begin_layout Subsection
+Conflict resolution
+\end_layout
+
+\begin_layout Standard
+Spouses may disagree about certain maize production activities.
+ We ask each spouse separately whether, in case of disagreement about any
+ maize related issue, they would tell their spouse.
+ Respondents were allowed to indicate the likeliness that they would tell
+ the other spouse on a scale of 1 (never) to 5 (always).
+ Table X reports results for 
+\end_layout
+
+\begin_layout Standard
+We find that in almost 32 percent of households, both spouses indicate that
+ they always tell each other when there is disagreement.
+ In less than 6 percent of households, both spouses report that they never
+ tell each other.
+ 
+\end_layout
+
+\begin_layout Subsection
+Time use
+\end_layout
+
+\begin_layout Subsection
+Sales
 \end_layout
 
 \begin_layout Section
 Implications
+\end_layout
+
+\begin_layout Itemize
+As a result, from a policy perspective, it is important to include the husband
+ in extension campaigns if the focus is on household level adoption of new
+ practices.
 \end_layout
 
 \begin_layout Standard
@@ -374,10 +1532,1170 @@ key "bernhardt2019household"
 \end_layout
 
 \begin_layout Standard
+Another advantage is that if the focus is on women empowerment, there is
+ only one way in: the woman.
+ If the focus is on cooperation, we can work also through the husband.
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "coop_bib"
 options "IFPRI_Style"
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{table}{0} 
+\backslash
+renewcommand{
+\backslash
+thetable}{A.
+\backslash
+arabic{table}} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on knowledge outcomes
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:knowledge"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccccccccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+	& mean & C-I	&		p-val & C-H	&		p-val & C-W	&		p-val & C-I	&		p-val	& C-H	&		p-v
+al & C-W	&		p-val	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-14} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows optimal spacing (yes=1) 	&	0.056	&	0.036	&	0.020$^{*}$	&	0.036	&	0.046		&	0.040	
+&	0.015$^{*}$	&	-0.017	&	0.241		&	-0.023	&	0.205	&	-0.012	&	0.520	
+\backslash
+
+\backslash
+ 	&	0.230	&	0.016	&			&	0.019	&			&	0.018	&			&	0.015	&			&	0.018	&		&	0.018	&		
+\backslash
+
+\backslash
+ Knows inputs best combined (yes=1)	&	0.577	&	0.009	&	0.768		&	0.016	&	0.642		&	0.013	
+&	0.716		&	0.005	&	0.883		&	-0.010	&	0.793	&	0.018	&	0.660	
+\backslash
+
+\backslash
+ 	&	0.494	&	0.034	&			&	0.038	&			&	0.040	&			&	0.033	&			&	0.038	&		&	0.038	&		
+\backslash
+
+\backslash
+ Knows optimal time for weeding (yes=1) 	&	0.624	&	-0.049	&	0.127		&	-0.041	&	0.317		
+&	-0.059	&	0.090		&	-0.003	&	0.918		&	-0.011	&	0.765	&	0.003	&	0.925	
+\backslash
+
+\backslash
+ 	&	0.484	&	0.033	&			&	0.038	&			&	0.039	&			&	0.032	&			&	0.037	&		&	0.037	&		
+\backslash
+
+\backslash
+ Knows how to fight armyworm (yes=1)	&	0.065	&	-0.003	&	0.866		&	0.016	&	0.389		&	-0.0
+25	&	0.178		&	0.007	&	0.683		&	-0.002	&	0.926	&	0.015	&	0.396	
+\backslash
+
+\backslash
+ 	&	0.247	&	0.017	&			&	0.019	&			&	0.020	&			&	0.016	&			&	0.019	&		&	0.019	&		
+\backslash
+
+\backslash
+ Knowledge index	&	0.000	&	0.037	&	0.404		&	0.042	&	0.407		&	0.042	&	0.408		&	-0.030	&	0.
+494		&	-0.052	&	0.291	&	-0.008	&	0.862	
+\backslash
+
+\backslash
+ 	&	0.693	&	0.047	&			&	0.054	&			&	0.056	&			&	0.046	&			&	0.053	&		&	0.054	&		
+\backslash
+
+\backslash
+ 																															
+\backslash
+
+\backslash
+ Nobs	&		&	3,021	&			&	2,002	&			&	1,994	&			&	3,047	&			&	2,032	&		&	2,039	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Column 1 reports differences between video only and video+ivr (and
+ standard error) with its corresponding p-value in column 2; column 3 reports
+ differences between video+ivr and video+ivr+SMS (and standard error) with
+ its corresponding p-value in column 4; sample size is reported in column
+ 5.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote that the difference is signficant at the 1, 5 and
+ 10 percent level, respectively, after correcting for multiple hypothesis
+ testing using a family-wise sharp null (10,000 permutations).
+ All specifications control for the other orthogonal factors in the factorial
+ design.
+ Additional controls for the IVR treatment are  age of household head at
+ baseline, household size at baseline and number of bedrooms at baseline.
+ Additional controls for the SMS treatment are  number of bedrooms at baseline.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on agronomic practices
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:practices"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccccccccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+	& mean & C-I	&		p-val & C-H	&		p-val & C-W	&		p-val & C-I	&		p-val	& C-H	&		p-v
+al & C-W	&		p-val	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-14} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Planted immediately after start of rains (yes=1)	&	4.011	&	-0.704	&	0.189		&	-0.933	
+&	0.089		&	-0.242	&	0.715		&	-0.248	&	0.620		&	-0.280	&	0.692	&	-0.233	&	0.633	
+\backslash
+
+\backslash
+ 	&	4.972	&	0.401	&			&	0.490	&			&	0.432	&			&	0.395	&			&	0.469	&		&	0.493	&		
+\backslash
+
+\backslash
+ Used spacing of 75cm x 30cm with a reduced seed rate (yes=1)	&	0.089	&	0.033	&	0.0
+76		&	0.015	&	0.520		&	0.056	&	0.008	*	&	0.017	&	0.377		&	0.023	&	0.273	&	0.011	&	0.605	
+\backslash
+
+\backslash
+ 	&	0.285	&	0.020	&			&	0.023	&			&	0.022	&			&	0.019	&			&	0.022	&		&	0.023	&		
+\backslash
+
+\backslash
+ Removed striga early on (yes=1) 	&	0.749	&	0.036	&	0.162		&	0.037	&	0.174		&	0.045	&	
+0.178		&	-0.010	&	0.723		&	0.001	&	0.982	&	-0.018	&	0.687	
+\backslash
+
+\backslash
+ 	&	0.434	&	0.030	&			&	0.034	&			&	0.035	&			&	0.029	&			&	0.034	&		&	0.033	&		
+\backslash
+
+\backslash
+ First weeding after 18-20 days (yes=1) 	&	0.450	&	-0.067	&	0.053		&	-0.057	&	0.120		
+&	-0.077	&	0.048		&	-0.017	&	0.589		&	-0.027	&	0.453	&	-0.005	&	0.890	
+\backslash
+
+\backslash
+ 	&	0.498	&	0.034	&			&	0.039	&			&	0.040	&			&	0.033	&			&	0.039	&		&	0.038	&		
+\backslash
+
+\backslash
+ Recommended practices index &		0.000	&	0.009	&	0.795		&	0.012	&	0.752		&	0.002	&	0.959
+		&	0.008	&	0.828		&	0.016	&	0.778	&	0.001	&	0.989	
+\backslash
+
+\backslash
+ 	&	0.485	&	0.040	&			&	0.045	&			&	0.047	&			&	0.039	&			&	0.045	&		&	0.046	&		
+\backslash
+
+\backslash
+ 																															
+\backslash
+
+\backslash
+ Nobs	&		&	2,058	&			&	1,361	&			&	1,356	&			&	2,077	&			&	1,391	&		&	1,399	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Column 1 reports differences between video only and video+ivr (and
+ standard error) with its corresponding p-value in column 2; column 3 reports
+ differences between video+ivr and video+ivr+SMS (and standard error) with
+ its corresponding p-value in column 4; sample size is reported in column
+ 5.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote that the difference is signficant at the 1, 5 and
+ 10 percent level, respectively, after correcting for multiple hypothesis
+ testing using a family-wise sharp null (10,000 permutations).
+ All specifications control for the other orthogonal factors in the factorial
+ design.
+ Additional controls for the IVR treatment are  age of household head at
+ baseline, household size at baseline and number of bedrooms at baseline.
+ Additional controls for the SMS treatment are  number of bedrooms at baseline.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on fertilizer and improved seed use
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:inputs"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccccccccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+	& mean & C-I	&		p-val & C-H	&		p-val & C-W	&		p-val & C-I	&		p-val	& C-H	&		p-v
+al & C-W	&		p-val	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-14} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{13}{c}{
+\backslash
+textit{fertilizer use}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Used DAP/NPK on at least one plot? (yes=1) 	&	0.229	&	-0.032	&	0.243		&	-0.039	&	0.41
+6		&	-0.031	&	0.250		&	0.004	&	0.925		&	-0.007	&	0.894		&	0.016	&	0.613		
+\backslash
+
+\backslash
+ 	&	0.420	&	0.028	&			&	0.032	&			&	0.033	&			&	0.028	&			&	0.032	&			&	0.032	&			
+\backslash
+
+\backslash
+ Used Urea on at least one plot? (yes=1)	&	0.101	&	0.001	&	0.964		&	-0.017	&	0.449		&
+	0.021	&	0.311		&	-0.035	&	0.069		&	-0.025	&	0.261		&	-0.044	&	0.053		
+\backslash
+
+\backslash
+ 	&	0.302	&	0.021	&			&	0.024	&			&	0.024	&			&	0.020	&			&	0.023	&			&	0.023	&			
+\backslash
+
+\backslash
+ Used organic fertilizer on at least one plot? (yes=1)	&	0.219	&	0.103	&	0.001$^{**
+}$	&	0.087	&	0.011$^{+}$	&	0.129	&	0.000$^{**}$	&	0.009	&	0.720		&	-0.003	&	0.925		&	0.02
+0	&	0.577		
+\backslash
+
+\backslash
+ 	&	0.413	&	0.028	&			&	0.033	&			&	0.034	&			&	0.028	&			&	0.032	&			&	0.032	&			
+\backslash
+
+\backslash
+ Fertilizer index	&	0.000	&	0.068	&	0.062$^{+}$		&	0.030	&	0.507		&	0.110	&	0.010$^{**}
+$	&	-0.022	&	0.603		&	-0.033	&	0.546		&	-0.011	&	0.791		
+\backslash
+
+\backslash
+ 	&	0.582	&	0.039	&			&	0.045	&			&	0.046	&			&	0.039	&			&	0.045	&			&	0.044	&			
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&
+\backslash
+multicolumn{13}{c}{
+\backslash
+textit{seed use}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+																																			
+\end_layout
+
+\begin_layout Plain Layout
+
+Used hybrid maize seed on at least one plot? (yes=1) 	&	0.304	&	-0.024	&	0.422		&	-
+0.028	&	0.409		&	-0.003	&	0.926		&	0.045	&	0.120		&	0.061	&	0.064		&	0.031	&	0.344		
+\backslash
+
+\backslash
+ 	&	0.460	&	0.031	&			&	0.036	&			&	0.036	&			&	0.030	&			&	0.035	&			&	0.035	&			
+\backslash
+
+\backslash
+ Used Open Polinated Varieties on at least one plot? (yes=1)  	&	0.288	&	0.002	&	0.
+944		&	0.010	&	0.768		&	-0.002	&	0.940		&	-0.024	&	0.396		&	-0.037	&	0.279		&	-0.011	&	0.7
+44		
+\backslash
+
+\backslash
+ 	&	0.453	&	0.031	&			&	0.035	&			&	0.037	&			&	0.030	&			&	0.035	&			&	0.035	&			
+\backslash
+
+\backslash
+ Seed index	&	0.000	&	-0.024	&	0.570		&	-0.019	&	0.664		&	-0.006	&	0.892		&	0.022	&	0.582
+		&	0.025	&	0.588		&	0.021	&	0.644		
+\backslash
+
+\backslash
+ 	&	0.662	&	0.045	&			&	0.050	&			&	0.053	&			&	0.043	&			&	0.050	&			&	0.049	&			
+\backslash
+
+\backslash
+ 																																
+\end_layout
+
+\begin_layout Plain Layout
+
+Nobs	&		&	2,974	&			&	1,972	&			&	1,964	&			&	3,000	&			&	2,000	&			&	2,007	&			
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Column 1 reports differences between video only and video+ivr (and
+ standard error) with its corresponding p-value in column 2; column 3 reports
+ differences between video+ivr and video+ivr+SMS (and standard error) with
+ its corresponding p-value in column 4; sample size is reported in column
+ 5.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote that the difference is signficant at the 1, 5 and
+ 10 percent level, respectively, after correcting for multiple hypothesis
+ testing using a family-wise sharp null (10,000 permutations).
+ All specifications control for the other orthogonal factors in the factorial
+ design.
+ Additional controls for the IVR treatment are  age of household head at
+ baseline, household size at baseline and number of bedrooms at baseline.
+ Additional controls for the SMS treatment are  number of bedrooms at baseline.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on production outcomes
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:production"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccccccccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+	& mean & C-I	&		p-val & C-H	&		p-val & C-W	&		p-val & C-I	&		p-val	& C-H	&		p-v
+al & C-W	&		p-val	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-14} 
+\end_layout
+
+\begin_layout Plain Layout
+
+Maize production (log(kg))	&	5.857	&	-0.034	&	0.509		&	-0.004	&	0.945		&	-0.061	&	0.340
+		&	-0.022	&	0.701		&	-0.008	&	0.878	&	-0.033	&	0.683	
+\backslash
+
+\backslash
+ 	&	0.793	&	0.055	&			&	0.063	&			&	0.066	&			&	0.054	&			&	0.062	&		&	0.063	&		
+\backslash
+
+\backslash
+ Maize area (log(acre)) 	&	-0.058	&	0.018	&	0.667		&	0.052	&	0.235		&	-0.028	&	0.541		&
+	-0.010	&	0.805		&	0.000	&	0.996	&	-0.017	&	0.775	
+\backslash
+
+\backslash
+ 	&	0.598	&	0.042	&			&	0.048	&			&	0.050	&			&	0.041	&			&	0.047	&		&	0.047	&		
+\backslash
+
+\backslash
+ Maize yield (log(kg/acre))	&	5.972	&	-0.048	&	0.236		&	-0.035	&	0.435		&	-0.064	&	0.16
+8		&	0.046	&	0.306		&	0.040	&	0.471	&	0.047	&	0.302	
+\backslash
+
+\backslash
+ 	&	0.648	&	0.046	&			&	0.053	&			&	0.054	&			&	0.045	&			&	0.052	&		&	0.051	&		
+\backslash
+
+\backslash
+ Yield better than normal (yes=1)	&	0.422	&	0.019	&	0.701		&	0.007	&	0.974		&	0.049	&	
+0.408		&	-0.045	&	0.328		&	-0.026	&	0.800	&	-0.064	&	0.184	
+\backslash
+
+\backslash
+ 	&	0.494	&	0.034	&			&	0.039	&			&	0.040	&			&	0.033	&			&	0.038	&		&	0.038	&		
+\backslash
+
+\backslash
+ Labour (log(days))	&	4.137	&	-0.021	&	0.700		&	0.013	&	0.762		&	-0.054	&	0.261		&	0.002
+	&	0.965		&	-0.001	&	0.982	&	-0.005	&	0.913	
+\backslash
+
+\backslash
+ 	&	0.564	&	0.040	&			&	0.045	&			&	0.047	&			&	0.039	&			&	0.045	&		&	0.044	&		
+\backslash
+
+\backslash
+ Labour productivity (log(kg/days)) 	&	1.720	&	-0.019	&	0.697		&	-0.047	&	0.414		&	0.0
+10	&	0.853		&	-0.017	&	0.734		&	-0.026	&	0.613	&	-0.013	&	0.817	
+\backslash
+
+\backslash
+ 	&	0.765	&	0.053	&			&	0.061	&			&	0.064	&			&	0.053	&			&	0.060	&		&	0.061	&		
+\backslash
+
+\backslash
+ Production index	&	0.000	&	-0.019	&	0.454		&	-0.025	&	0.373		&	-0.013	&	0.630		&	0.017	
+&	0.521		&	0.021	&	0.495	&	0.007	&	0.790	
+\backslash
+
+\backslash
+ 	&	0.380	&	0.027	&			&	0.031	&			&	0.031	&			&	0.026	&			&	0.031	&		&	0.030	&		
+\backslash
+
+\backslash
+ 																														
+\end_layout
+
+\begin_layout Plain Layout
+
+Nobs	&		&	2,802	&			&	1,859	&			&	1,851	&			&	2,826	&			&	1,886	&		&	1,888	&		
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Column 1 reports differences between video only and video+ivr (and
+ standard error) with its corresponding p-value in column 2; column 3 reports
+ differences between video+ivr and video+ivr+SMS (and standard error) with
+ its corresponding p-value in column 4; sample size is reported in column
+ 5.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote that the difference is signficant at the 1, 5 and
+ 10 percent level, respectively, after correcting for multiple hypothesis
+ testing using a family-wise sharp null (10,000 permutations).
+ All specifications control for the other orthogonal factors in the factorial
+ design.
+ Additional controls for the IVR treatment are  age of household head at
+ baseline, household size at baseline and number of bedrooms at baseline.
+ Additional controls for the SMS treatment are  number of bedrooms at baseline.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on well-being
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:wellbeing"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccccccccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+Is your household better off than average? (yes=1)	&	0.424	&	0.045	&	0.154		&	0.062	
+&	0.082		&	0.023	&	0.512		&	-0.027	&	0.378		&	0.016	&	0.661	&	-0.071	&	0.065		
+\backslash
+
+\backslash
+ 	&	0.494	&	0.033	&			&	0.038	&			&	0.039	&			&	0.033	&			&	0.038	&		&	0.038	&			
+\backslash
+
+\backslash
+ Is your household better off than 6 months ago? (yes=1)	&	0.423	&	0.017	&	0.666		&
+	0.034	&	0.452		&	-0.015	&	0.717		&	-0.047	&	0.131		&	0.002	&	0.948	&	-0.096	&	0.005	*	
+\backslash
+
+\backslash
+ 	&	0.494	&	0.033	&			&	0.038	&			&	0.040	&			&	0.033	&			&	0.038	&		&	0.038	&			
+\backslash
+
+\backslash
+ Is able to eat preferred food? (yes=1)	&	0.412	&	-0.004	&	0.887		&	-0.013	&	0.707		&
+	-0.003	&	0.935		&	-0.042	&	0.209		&	-0.040	&	0.295	&	-0.047	&	0.174		
+\backslash
+
+\backslash
+ 	&	0.492	&	0.033	&			&	0.038	&			&	0.039	&			&	0.033	&			&	0.038	&		&	0.038	&			
+\backslash
+
+\backslash
+ Is able to eat enough food? (yes=1)	&	0.571	&	-0.002	&	0.955		&	0.003	&	0.946		&	-0.0
+12	&	0.737		&	-0.054	&	0.130		&	-0.047	&	0.255	&	-0.064	&	0.119		
+\backslash
+
+\backslash
+ 	&	0.495	&	0.034	&			&	0.039	&			&	0.040	&			&	0.033	&			&	0.038	&		&	0.038	&			
+\backslash
+
+\backslash
+ Consumption expenditure (log)	&	10.909	&	0.012	&	0.728		&	0.034	&	0.407		&	-0.002	&	0.
+954		&	0.007	&	0.862		&	-0.007	&	0.850	&	0.032	&	0.538		
+\backslash
+
+\backslash
+ 	&	0.547	&	0.037	&			&	0.044	&			&	0.043	&			&	0.037	&			&	0.043	&		&	0.043	&			
+\backslash
+
+\backslash
+ Welfare index	&	0.000	&	0.010	&	0.805		&	0.038	&	0.365		&	-0.021	&	0.641		&	-0.047	&	0.2
+28		&	-0.019	&	0.650	&	-0.071	&	0.103		
+\backslash
+
+\backslash
+ 	&	0.597	&	0.041	&			&	0.047	&			&	0.049	&			&	0.041	&			&	0.046	&		&	0.047	&			
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+																															
+\end_layout
+
+\begin_layout Plain Layout
+
+Nobs	&		&	3,020	&			&	2,001	&			&	1,994	&			&	3,046	&			&	2,031	&		&	2,038	&			
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Column 1 reports differences between video only and video+ivr (and
+ standard error) with its corresponding p-value in column 2; column 3 reports
+ differences between video+ivr and video+ivr+SMS (and standard error) with
+ its corresponding p-value in column 4; sample size is reported in column
+ 5.
+ Reported p-values are based on randomization inference (10,000 permutations);
+ ***, ** and * denote that the difference is signficant at the 1, 5 and
+ 10 percent level, respectively, after correcting for multiple hypothesis
+ testing using a family-wise sharp null (10,000 permutations).
+ All specifications control for the other orthogonal factors in the factorial
+ design.
+ Additional controls for the IVR treatment are  age of household head at
+ baseline, household size at baseline and number of bedrooms at baseline.
+ Additional controls for the SMS treatment are  number of bedrooms at baseline.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
