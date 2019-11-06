@@ -5,6 +5,12 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
+\begin_preamble
+% Added by lyx2lyx
+\usepackage{float}
+% Added by lyx2lyx
+\usepackage{rotfloat}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -120,23 +126,24 @@ Increasing cooperation in agricultural households: Experimental evidence
 \begin_layout Abstract
 In smallholder agriculture in developing countries, the household is the
  prevailing unit of production.
- Decision makers in agricultural households have different preferences and
- access to production factors.
- Each member's involvement in activities that benefit the household is also
- affected by prevailing norms and beliefs.
- While many interventions have been focusing on empowering women in agriculture,
- recent research underscores the importance of intra-household cooperation
- as a catalyst to higher household well-being.
- We test two interventions designed to increase intra-household cooperation.
- In one experiment, we assess the effect of reducing information asymmetries
- between spouses by comparing households where the couple received agricultural
- extension information to households where an individual was targeted (either
- the husband of the wife).
- In a second experiment, we investigate the effectiveness of promoting a
- household cooperative approach to farming by showing a video in which both
- spouses are equally involved in maize growing to some households, and compare
- outcomes to households that were shown a video where farming is depicted
- as an individual activity (either done by a man or a woman).
+ These households are composed of different individuals, each with their
+ own preferences and access to resources, and operate in a context governed
+ by particular norms and beliefs.
+ Household members both cooperate and compete to maximize a utility function
+ that includes both individual and household level well-being.
+ We test two interventions designed to increase spousal cooperation.
+ The first targets cognitive channels and estimates the impact of reducing
+ differences in the information available to each spouse on spousal cooperation.
+ The second targets socio-emotional traits, encouraging household members
+ to approach maize farming as a household business, thereby challenging
+ social norms and gender stereotypes that men specialize in productive and
+ women in reproductive activities.
+ We find that reducing intra-household information asymmetries increases
+ joint decision making, the intention to jointly invest in agriculture,
+ and reduces labor time gap between spouses.
+ We find no effects on household level production outcomes.
+ We find few effects of promoting a household cooperative approach to maize
+ farming.
  
 \end_layout
 
@@ -146,33 +153,235 @@ Introduction
 
 \begin_layout Standard
 In subsistence agriculture, the prevailing unit of production is the agricultura
-l household, consisting of different household members.
- Within these households, there is generally considerable heterogeneity
- in ownership and control of the different production factors by each member.
- Household members compete as well as co-operate and this has important
- implications for household level outcomes, as preferences are not necessarily
- aligned and some members are likely to have less bargaining power than
- others 
+l household.
+ However, these households consist of different household members, each
+ with their own utility functions and access to resources.
+ The preferences of the different household members may not perfectly align
+ and there may be considerable inequality in access to resources.
+ Research shows that this often results in inefficient allocation of production
+ factors within households.
+ For instance, 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "udry1995gender"
+key "udry1995gender,udry1996gender"
+
+\end_inset
+
+ finds significant differences in productivity between man managed and women
+ managed plots due to the fact that more fertilizer and labor is allocated
+ to man managed plots.
+ This suggests that reallocating some production factors from man managed
+ to women managed plots may increase overall productivity.
+ The realization that household members compete as well as cooperate has
+ led to a burgeoning literature grounded in collective bargain theory.
+ An important policy implication was that interventions may have different
+ impact depending on who is targeted within the household 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "haddad1997intrahousehold"
 
 \end_inset
 
 .
- We test two different strategies to improve household level outcomes though
- increasing intra-household cooperation among a sample of smallholder maize
- farmers in Uganda.
+ Many interventions started to target women within households.
+\end_layout
+
+\begin_layout Standard
+Recently, the focus has shifted somewhat, focusing less on intra-household
+ competition and more on cooperation between members.
+ This is partly due to the fact that alternative models of the household
+ have been proposed that provide more room for intra-household cooperation.
+ For example, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doss2015collective"
+
+\end_inset
+
+ point out that households face collective action problems similar to those
+ studied in the context of common pool resources management.
+ Furthermore, many resources are jointly owned and decisions jointly made
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doss2014owns,twyman2015gendered,doi:10.1111/dpr.12243"
+
+\end_inset
+
+.
+ While to some extent normative, is unclear whether unilateral decisions
+ made by a women within the household should be strictly preferred to instances
+ where decisions are taken together.
  
 \end_layout
 
 \begin_layout Standard
-Our first strategy involves reducing information asymmetries within households.
- Agricultural extension information services are generally biased toward
- men.
- Most often, extension officers target the main decision maker with respect
- to agriculture within households, which is generally assumed to be the
- male farmer.
+In this paper, we test two different strategies to improve outcomes though
+ increasing intra-household cooperation among a sample of smallholder maize
+ farmers in Uganda.
+ Each strategy targets a different impact pathway.
+ 
+\end_layout
+
+\begin_layout Standard
+A first strategy involves reducing information asymmetries within households.
+ Indeed, it has been argued that information inefficiencies are important
+ barriers to agricultural technology adoption and sustainable intensification
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "jack2011constraints"
+
+\end_inset
+
+.
+ Access to information and ensuing knowledge may be unequally distributed
+ between spouses within the household, which may reduce the likelihood that
+ spouses cooperate in an effective way.
+ We test the effectiveness of reducing information gaps between spouses
+ by comparing outcomes in households in which information was given to only
+ one of the spouses (either the husband or wife) to outcomes in households
+ in which this information was given to both spouses.
+\end_layout
+
+\begin_layout Standard
+The second strategy consists of promoting a mental image of farming as a
+ joint venture, with both spouses having an equal role in decision making
+ and activities.
+ Farming happens in a particular cultural context, and social norms may
+ hamper efficient allocation of production factors.
+ For instance, in patrilineal societies it may be that only men are assumed
+ to make decisions on certain crops or inputs or only women are allowed
+ to carry out certain activities.
+ However, norms and customs can change, and role models can be important
+ catalysts 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "porter2019gender"
+
+\end_inset
+
+.
+ We therefore devise an intervention aimed at promoting a cooperative approach
+ to farming, and compare outcomes to households where we promote farming
+ as a largely individual activity.
+\end_layout
+
+\begin_layout Standard
+Central to both treatments are short, engaging videos that were produced
+ with a dual purpose.
+ First, the videos are designed to provide information on a range of yield
+ increasing agricultural management practices such as timely planting, seed
+ spacing and seed rate, and strategies to deal with striga, a parasitic
+ weed that is a major threat to maize in the area.
+ It also recommends the use of modern inputs such as fertilizer and quality
+ seed.
+ Second, the videos are also designed to change a range of socio-emotional
+ skills, including a wide set of personality traits such as aspirations,
+ locus-of-control, and attitudes to change of the persons that view the
+ video.
+ In particular, it tell the story of a farm household that used to struggle
+ with low maize yields and, after a particularly bad year, decided things
+ needed to change.
+ It is then shown how the farmer uses recommended practices and improved
+ inputs.
+ It is explained that becoming a successful farmer takes time, and money
+ needs to be invested now to get better results in the future.
+ The video ends with the image of a successful farmer assuring the viewer
+ that he or she can also become successful by following the advice provided
+ in the video.
+\end_layout
+
+\begin_layout Standard
+We find that reducing intra-household information asymmetries increases
+ joint decision making for a range of agronomic practices.
+ We also find that there is an increase in the likelihood that spouses jointly
+ decide to use fertilizer.
+ Furthermore, reducing intra-household information asymmetries increases
+ the likelihood that both spouses prioritize investment in agriculture.
+ It also reduces the gap between labour time contributed by the wife and
+ labor time contributed by the husband.
+ We find no effects on household level production outcomes.
+ Projecting a cooperative approach to maize farming does not have much impact.
+ This may be because farmers are unable to identify with the role models
+ in the video.
+ It may also be that the treatment is too light to have an impact along
+ non-cognitive pathways.
+\end_layout
+
+\begin_layout Standard
+The remainder of the paper is organized as follows: In the next section
+ presents the research questions, the intervention we use to test research
+ hypotheses, and the underlying theory of change.
+ We then present the experimental design and test pre-treatment balance
+ between the different treatment groups on a range of household characteristics.
+\end_layout
+
+\begin_layout Section
+Research questions and theory or change
+\end_layout
+
+\begin_layout Standard
+Often, the poor appear to make sub-optimal decision because they lack critical
+ pieces of information, fail to notice 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "34"
+
+\end_inset
+
+, or hold beliefs that are not true 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "jensen2010perceived,dupas2011teenagers"
+
+\end_inset
+
+.
+ Therefore, in many instances, information campaigns designed to address
+ these information inefficiencies can make a big difference 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "banerjee2011poor"
+
+\end_inset
+
+.
+ Also in the context of smallholder agriculture, it has been argued that
+ a lack of information about the existence, use, and profitability of modern
+ inputs and recommended practices is a major constraint to sustainable crop
+ intensification 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "de2017field,magruder2018assessment"
+
+\end_inset
+
+.
+ However, due to its public, non-rival nature, agricultural extension informatio
+n is generally under-supplied by the private sector.
+ Therefore, governments across the developing world provide extension informatio
+n as a public service.
+\end_layout
+
+\begin_layout Standard
+However, information as a critical production factor is also likely to be
+ unequally distributed within the household and information with respect
+ to new practices and modern inputs are likely to benefit men more than
+ women.
+ Knowledge obtained from experience and experimentation may be monopolized
+ by the man.
+ A large literature underscores the importance of social networks for agricultur
+al technology adoption, which may be segregated according to sex 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BEAMAN2018147,MEKONNEN2018321"
+
+\end_inset
+
+.
+ Extension services often target the farmer-landowner, which is generally
+ the man.
  The assumption that extension messages targeting one household member will
  trickle down to the rest of the household, including women and younger
  household members, may be false.
@@ -186,49 +395,24 @@ key "fletschner2011gender"
 \end_inset
 
 .
- We compare outcomes in households in which information was given to only
- one of the spouses (either the husband or wife) to outcomes in households
- in which this information was given to both spouses.
 \end_layout
 
 \begin_layout Standard
-Our second strategy consists of promoting an image of farming as a joint
- venture, with both spouses having an equal role in decision making and
- activities.
- Farming happens in a particular cultural context, and social norms may
- hamper efficient allocation of production factors.
- For instance, it may be that only men are assumed to make decisions on
- certain crops or inputs or only women are allowed to carry out certain
- activities.
- However, norms and customs can change, and role models can be important
- catalysts 
+There is some evidence that suggest that a more equal distribution of knowledge
+ within the households leads to better outcomes.
+ 
 \begin_inset CommandInset citation
-LatexCommand citep
-key "porter2019gender"
+LatexCommand citet
+key "lambrecht2016agricultural"
 
 \end_inset
 
-.
- We compare outcomes in households that were shown a video only one spouse
- (either a man or a woman) is involved in farming to outcomes in households.
-\end_layout
-
-\begin_layout Standard
-This research aims to generate evidence on the barriers that limit cooperation
- within households.
- The prevalence of the cooperative bargaining models to study gender related
- issues in agriculture has, with its emphasis on outside options and thread
- points, pitched the main decision makers in the household against each
- other.
- Most of the evidence therefore is derived from studies that compare outcomes
- from women owned or managed plots to outcomes of plots owned by the man.
- More recently, the focus has shifted somewhat from intra-household bargaining
- towards cooperation.
- 
-\end_layout
-
-\begin_layout Section
-Research questions
+ investigate the effect of participating in extension training as a couple.
+ They investigate whether participation of female farmers in an agricultural
+ extension programme in South-Kivu increases adoption of three technologies:
+ improved legume varieties, row planting and mineral fertilizer.
+ In their study, joint male and female programme participation leads to
+ the highest adoption rates.
 \end_layout
 
 \begin_layout Standard
@@ -238,34 +422,78 @@ Where do we discuss impact pathways? Eg if both spouses have the information,
  a man may decide to 
 \end_layout
 
-\begin_layout Itemize
-Does reducing agricultural extension information asymmetries within the
- household improves outcomes at the household level? This research question
- will be answered by comparing outcomes of households in which one adult
- individual (husband or wife) is shown a video with agricultural extension
- information to outcomes of households in which the couple (husband and
- wife together) is shown a video with the same information.
- Refer to who find that joint male and female programme participation leads
- to the highest adoption rates to motivate this experiment.
+\begin_layout Standard
+Several studies point out the importance of role models to behaviour change
+ in context of strong norms and beliefs (Nguyen, 2008; Riley, 2017; Porter
+ and Serra, 2017).
 \end_layout
 
 \begin_layout Itemize
-Does promoting a household approach to farming improve outcomes at the household
- level? This research question will be answered by comparing outcomes of
- households that are shown a video with agricultural extension information
- where the messenger is an individual farmer (ie.
- a man or a women) to outcomes of households that are shown a video providing
- the same information by a couple of farmers (ie.
- man and woman who are shown to participate as equals in the family farm
- and deliver the message as a couple)
+We should also say that there is now an emerging literature on the use of
+ role models to change development outcomes.
+ In the psychology literature, there is also substantial evidence on the
+ predictive power of personality traits for socio-economic outcomes (Macours
+ and Lajaaj)
 \end_layout
 
 \begin_layout Section
-Experimental Design
+Interventions and Experimental design
 \end_layout
 
 \begin_layout Standard
-We use a 3 by 3 factorial design to answer the above research questions...
+Both experiments are implemented using short videos that were shown to farmers
+ on tablet computers.
+ The videos were designed with a dual purpose in mind.
+ 
+\end_layout
+
+\begin_layout Standard
+First, the videos serve to transfer knowledge about new recommended agronomic
+ management practices and the use of modern technologies.
+ It is shown how fields need to be prepared using organic fertilizer, and
+ proper seed spacing and seeding rates.
+ It is shown in detail how inorganic needs to be applied and in what quantities.
+ Furthermore, detailed attention is devoted to identifying striga, a parasitic
+ weed that affects maize yields in the area.
+ Other recommended practices include timely planting and weeding.
+\end_layout
+
+\begin_layout Standard
+Second, the information was packaged as an inspirational story of poor farmers
+ that, over time, are able to break out of a poverty trap.
+ The video starts with a farmer explaining that he used to struggle with
+ low yields, producing barely enough food to feed his family, but that over
+ the years, he learned how to increase the number of bags of maize produced
+ on his maize plots.
+ It is shown how the farmer starts using recommended practices on a small
+ part of his land.
+ It is also shown how he sells a chicken and borrows some money from a neighbour
+ to buy improved seed and fertilizer.
+ The extra money from this initial investment is then re-invested, and the
+ viewer is taken through some basic inter-temporal cost-benefit calculations.
+ The video ends by showing a happy farmers that assures that the viewer
+ can also become a successful farmer by following his example.
+ 
+\end_layout
+
+\begin_layout Itemize
+The first research question, whether reducing agricultural extension information
+ asymmetries within the household improves outcomes, will be answered by
+ comparing outcomes of households in which one adult individual (husband
+ or wife) is shown a video to outcomes of households in which the couple
+ (husband and wife together) is shown a video with the same information.
+ 
+\end_layout
+
+\begin_layout Itemize
+The first research question, whether promoting a household approach to farming
+ improve outcomes at the household level, will be answered by comparing
+ outcomes of households that are shown a video where the messenger is an
+ individual farmer (ie.
+ a man or a women) to outcomes of households that are shown a video providing
+ the same information by a couple of farmers (ie.
+ man and woman who are shown to participate as equals in the family farm
+ and deliver the message as a couple).
 \end_layout
 
 \begin_layout Standard
@@ -339,7 +567,7 @@ The next two columns splits up the control group, and compares baseline
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -736,7 +964,7 @@ reference "tab:Balance_treat1"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1012,64 +1240,6 @@ Jointness and cooperation
 \end_layout
 
 \begin_layout Standard
-There are various reasons why attention has shifted from bargaining to cooperati
-on.
- 
-\end_layout
-
-\begin_layout Standard
-First, new models are less fixated on bargaining.
- For example, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "doss2015collective"
-
-\end_inset
-
- point out that households face collective action problems similar to those
- studied in the context of common pool resources management.
-\end_layout
-
-\begin_layout Standard
-Second, it is not always clear who manages the plot.
-\end_layout
-
-\begin_layout Standard
-Third, recent research suggests much can be won by increasing intra-household
- cooperation.
- Somewhat indirectly, the WEAI can be used, as empowerment is likely to
- be correlated to decision making.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "seymour2017women"
-
-\end_inset
-
- finds that technical efficiency is higher when the empowerment gap between
- wife and husband is lower.
- At the same time, there is only a weak association between women empowerment
- and technical efficiency.
-\end_layout
-
-\begin_layout Standard
-Fourth, and more of a conceptual nature, it remains unclear what empowerment
- means and how best to achieve it in a given context.
- Often, women empowerment in agriculture is operationalized as the ability
- to make more decisions themselves on their own plots, from which proceeds
- can be derived for their own benefit.
- However, it is unclear if an increase in women's unilateral decisions at
- the expense of men's and/or joint decisions consists of women empowerment.
- For instance, in the context of a project aimed at empowering women in
- coffee production in Uganda, 
-\end_layout
-
-\begin_layout Standard
-Does empowerment mean that women make more decisions unilateral at the expense
- of unilateral or Focusing exclucively on women may 
-\end_layout
-
-\begin_layout Standard
 Ownership
 \end_layout
 
@@ -1084,16 +1254,59 @@ Can we do something with spousal agreement?
 \end_layout
 
 \begin_layout Standard
+We collected detailed information about intra-household decision making.
+ For instance, we asked each spouse individually who decided that maize
+ should be planted on each plot.
+ Spouses could then indicate that this decision was made: by (1) him or
+ her alone, by (2) his wife or her husband alone, (3) by both spouses together,
+ (4) someone else, (5) he or she together with someone else, and (6) his
+ wife or her husband together with someone else.
+ We focus only on the first 3 responses, which are by far the most important
+ ways in which decisions on maize farming are made.
+ 
+\end_layout
+
+\begin_layout Standard
+The barchart in the first panel in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Decision_maize_dif_reporters"
+
+\end_inset
+
+ shows answers provided by the husbands in our sample.
+ Man say that they unilaterally decided to plant maize on 28 percent of
+ the plots.
+ They further report that on less than 10 percent of the plots, his wife
+ was the one who decided to plan maize.
+ According to the husband, that largest share of plots is decided upon jointly.
+ In the second panel, we shown the answers that the wives in our sample
+ gave.
+ According to them, the share of plots on which the husband decided unilaterally
+ is somewhat smaller than what husbands report, and the share of plots on
+ which they report that they made the decision to plant maize increases
+ to about 17 percent.
+ However, women also indicate that most plots are decided upon jointly.
+ In the final panel, we report the share of plots on which husband and wife
+ agree that the decision to plant maize was made by the husband, the wife,
+ or jointly.
+ We see there is substantial disagreement about individual decision making.
+ Interestingly, there seems to be much more agreement about joint decision
+ making, with the share coming close to what women report.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename results/decision_to_grow_maize.pdf
-	scale 60
+	scale 50
 
 \end_inset
 
@@ -1105,6 +1318,178 @@ status open
 
 \begin_layout Plain Layout
 Decision to grow maize on plot
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Decision_maize_dif_reporters"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We did not only ask about who made the decision to plant maize on a particular
+ plot.
+ We also asked each spouse how decisions were made on a range of other decisions
+ that typically have to be made when cultivating maize.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision-making"
+
+\end_inset
+
+ shows average share of plots on which decisions are made (1) jointly, (2)
+ by the husband alone, and (3) by the wife alone for seven key decisions.
+ For (1), we classified the decision as having been taken jointly if both
+ spouses agree that the decision was taken jointly.
+ For (2), a decision was classified as taken by the husband if the husband
+ reported that he unilaterally decided and for (3), a decision was classified
+ as taken by the wife if the wife reported that she unilaterally decided.
+ Note that Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Decision_maize_dif_reporters"
+
+\end_inset
+
+ suggests the (2) and (3) are likely to be an overestimate of true unilateral
+ decision making.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename results/decsion_activities.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Decision making on different practices and inputs
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Joint-decision-making"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We see that decision making patterns are similar across management practices,
+ but that men are more likely to make decisions related to the use of modern
+ inputs.
+ For practices such as timing of planting, seeds spacing, managing striga
+ and timing of first weeding, shares of plots on which decisions are taken
+ jointly are in line with the decision to plant maize on the plot in the
+ first place.
+ We do see that women unilaterally decide on the timing of first weeding
+ on relatively more plots.
+ For inputs, we see that relatively less decisions are made jointly: the
+ decision to use fertilizer (organic or inorganic) is taken jointly on about
+ 22 percent of the plots.
+ Finally, only on about 12 percent or plots, the decision to use improved
+ seed, either hybrid or open pollinated varieties, is taken by both spouses
+ together.
+ For both fertilizer and seed, women report similar reductions in unilateral
+ decision making.
+ On almost half of the plots, the husband alone decided to use inputs.
+ This suggests that new technologies, especially if these need to be purchased
+ on the market, remain the domain of the husband.
+ 
+\end_layout
+
+\begin_layout Standard
+We also explore gendered patterns in labour supply.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Labour-time"
+
+\end_inset
+
+ shows labour time expressed in man-days allocated to various key task in
+ maize growing.
+ We have asked each spouse separately to provide an estimate of their own
+ time use, as well as an estimate of the time spent on the particular task
+ by their spouse.
+ As with decision making, time use patterns also suggest that own time use
+ is over-reported and time use of the spouses seems to be under-reported.
+ We therefore report averages between own and spouse reported time use for
+ both spouses.
+ We find that for most activities, the wife spends significantly more time
+ than the husband.
+ Spraying, which often involves carrying has heavy knapsack sprayer, is
+ a typically done by men.
+ Weeding is mostly done by women.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename results/labour_time.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Labour time
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Labour-time"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1129,35 +1514,28 @@ Results
 household level outcomes
 \end_layout
 
-\begin_layout Standard
-We start by looking at standard household level outcomes used in assessing
- the impact of agricultural extension information.
- A traditional theory of change assumes that an increase in information
- would lead to increased adoption of recommended agronomic practices, which
- in turn affects production and ultimately well-being.
- We first report results of the experiment where we reduce information asymmetri
-es, and then present results for the experiment that promotes are household
- cooperative approach.
-\end_layout
-
 \begin_layout Subsubsection
-Reducing intra-household information asymmetries
+Efficiency
 \end_layout
 
 \begin_layout Standard
-Figure 
+We start by looking at standard household level outcomes typically used
+ in assessing the impact of agricultural extension information.
+ A traditional theory of change assumes that an increase in information
+ would lead to increased adoption of recommended agronomic practices and
+ use of modern inputs, which in turn affects production and ultimately well-bein
+g.
+ Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:HH_impact_info_asym"
 
 \end_inset
 
- summarizes results for differences in outcomes for households where information
- was provided to both spouses and outcomes for households where information
- was given to only one of the spouses (either the husband or the wife) for
- indices of six families of outcomes
+ summarizes results of the impact of the two treatments on six families
+ of outcomes using indices
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 The indices are constructed following 
@@ -1176,6 +1554,14 @@ key "anderson2008multiple"
 \end_inset
 
 .
+ In light blue, we report differences in outcomes for households where informati
+on was provided to both spouses (the treatment group), and outcomes for
+ households where information was given to only one of the spouses (either
+ the husband or the wife; the comparison group).
+ In dark blue, we report differences in outcomes for households where the
+ information was provided by a couple (the treatment group) and outcomes
+ for households where information was by a single individual (either a man
+ or a woman; the comparison group).
  In corresponding Tables in the Appendix (Tables 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1190,9 +1576,8 @@ reference "tab:wellbeing"
 
 \end_inset
 
-), individual outcomes underlying each family of outcomes are reported,
- which may inform us about the components within each family driving overall
- impact.
+), individual outcomes underlying each index are reported, which may inform
+ us about the components within each family driving overall impact.
  
 \end_layout
 
@@ -1200,13 +1585,13 @@ reference "tab:wellbeing"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename results/assynm_summary.pdf
-	scale 40
+	filename results/ourcomes.png
+	scale 50
 
 \end_inset
 
@@ -1238,9 +1623,8 @@ name "fig:HH_impact_info_asym"
 \end_layout
 
 \begin_layout Standard
-The first outcome we consider is knowledge.
- Knowledge at the household level is assessed by the likelihood that both
- spouses are able to indicate the correct response on multiple choice question.
+Following a traditional theory of change, the first outcome we consider
+ is knowledge.
  We tested knowledge with four carefully chosen multiple choice questions
  that were asked to each spouse individually.
  One question tests technical knowledge about a new agronomic practice that
@@ -1252,17 +1636,24 @@ The first outcome we consider is knowledge.
  foresight, risk taking and investment.
  A final question was on a topic on which no information was provided in
  the video and was added to verify the effectiveness of the video.
+ Knowledge at the household level is assessed by the likelihood that at
+ least one of the spouses is able to indicate the correct response on the
+ multiple choice question.
+ Using an index based on these four questions, we do not find that reducing
+ information asymmetry significantly increased knowledge at the household
+ level.
  
-\end_layout
+\begin_inset Note Note
+status collapsed
 
-\begin_layout Standard
-Using an index based on these questions, we do not find that reducing informatio
-n asymmetry significantly increased knowledge at the household level.
- This null result may indicate that the information treatment was not effective
- and/or that information is shared efficiently within the household.
- Following the first explanation of this null result, we do find that reducing
- information asymmetry increases the likelihood that both spouses know the
- recommended spacing and seed rate (Table 
+\begin_layout Plain Layout
+This null result may indicate that the information treatment was not effective
+ in changing the knowledge we measure using the index and/or that information
+ is shared efficiently within the household.
+ We find support for both explanations.
+ On the one hand, looking into the different components of the index, we
+ find that reducing information asymmetry does increase the likelihood that
+ both spouses know the recommended spacing and seed rate (Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:knowledge"
@@ -1272,17 +1663,58 @@ reference "tab:knowledge"
 , first row, column 2).
  As can be seen in column 1, average knowledge about this particular topic
  is very low: only in about 6 percent of households, both spouses were able
- to select the correct option on the multiple choice question on recommended
- seed rate and spacing.
+ to select the correct option on the multiple choice question.
  From this, we conclude that reducing information asymmetries may be effective
  for increasing household level knowledge if the information concerns new
  practices or technologies and the potential for learning is high.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Note that knowledge on what to do against fall armyworm is similarly low.
+ But recall that here we did not expect to find an impact as the intervention
+ does not provide information on this topic.
+\end_layout
+
+\end_inset
+
+ On the other hand, if we split the comparison group into two according
+ to gender, we find that the difference becomes insignificant if we compare
+ knowledge of households where couples were treated to households where
+ men alone were treated (column 4), but remains significant between households
+ where couples were treated and households where only women were treated
+ (column 6).
+ Consistent with the existence of information spillovers within the household,
+ we find that in households where the husband alone was shown the video,
+ 81 percent say they discussed the video with their wife.
+ Among households where only the wife was shown the video, only 71 percent
+ say they discussed the video with their husband (and this difference is
+ significant at p<0.001 using Fisher's exact test).
+ In other words, information seems to be shared less if targeted to the
+ wife only.
+ We do not find that projecting a household approach affected knowledge
+ at the household level.
+ Also when looking at the components of the index individually (column 7
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowledge"
+
+\end_inset
+
+), we do not find an impact.
  
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-The second outcome is adoption of improved agronomic practices.
- Here we construct an index from 4 practices; details can be found in Table
+The second outcome family collects outcomes related to the adoption of the
+ improved agronomic practices that were recommended in the video.
+ Here, we construct an index from 4 practices; details can be found in Table
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1296,12 +1728,22 @@ reference "tab:practices"
  We have asked each spouse how many days after the start of the rains the
  maize was planted on each maize plot.
  To arrive at a measure at the household level, we first take the average
- of the responses of the spouses at plot level, and than take averages over
+ of the responses of the spouses at plot level, and then take averages over
  plots.
- We find that maize is planted about 4 days after the onset of the rains.
- The next three practices are all assessed using a binary variable, that
- takes the value of 1 if at least one spouse reports that the practice was
- applied on at least one plot within the household.
+ Using this measure, we find that maize on the average plot is planted about
+ 4 days after the onset of the rains.
+ 
+\end_layout
+
+\begin_layout Standard
+The next three practices—the use of the recommended seeds spacing and seed
+ rate, the recommended way to fight striga, and optimal timing of first
+ weeding—are all assessed using simple yes/no questions asked to each spouse
+ individually for each plot.
+ To aggregate these outcomes at the household level, we take a generous
+ approach and construct a household level indicator that takes the value
+ of one if at least one spouse reports that the practice was applied on
+ at least one plot particular plot.
  
 \end_layout
 
@@ -1317,25 +1759,39 @@ We do not find a significant difference in the adoption of recommended practices
  households where the couple received the video treatment and only women
  received the information.
  This may indicate that women within the household have insufficient agency
- to implement knowledge gained.
- As a result, from a policy perspective, it is important to include the
- husband in extension campaigns if the focus is on household level adoption
- of new practices.
+ to implement knowledge gained, which is consistent with the decision making
+ pattern in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision-making"
+
+\end_inset
+
+.
  There are also indications that timely weeding was more common among households
  where only one individual was shown the video, especially if the information
  was only provided to a woman (although differences are not statistically
  significant after controlling family wise error rates).
  This may be because weeding does not require a lot of consultation among
  spouses and so this information can easily be acted upon by the woman.
+ Also here, we do not find any significant impact of the second treatment.
+ 
 \end_layout
 
 \begin_layout Standard
-Third we look the use of modern inputs.
- For fertilizer, the index summarizes the use of three types of fertilizer
- (DAP/NPK, urea and organic fertilizer).
- For each type, an indicator is calculated that is true if at least one
- spouse indicated that the particular type of fertilizer was used on at
- least on of the maize plots that were cultivated by the household.
+Third we look the use of modern inputs: fertilizer and improved maize seed.
+ For fertilizer, the index in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:HH_impact_info_asym"
+
+\end_inset
+
+ summarizes the use of three types: DAP/NPK, urea, and organic fertilizer.
+ We again define input use at the household level generously: for each type
+ of fertilizer an indicator is calculated that is true if at least one spouse
+ indicated that the particular type of fertilizer was used on at least on
+ of the maize plots.
  We find that, according to the index, reducing information asymmetries
  increases fertilizer use, although the effect is only significant at a
  10 percent significance level.
@@ -1351,29 +1807,63 @@ s use organic fertilizer.
  For seed use, the index aggregates hybrid seed and open pollinated varieties.
  We do not find that improved seed use changed significantly after reducing
  intra-household information asymmetry.
+ 
+\end_layout
+
+\begin_layout Standard
+Promoting a household cooperative approach does not seem to affect household
+ level input use if judged by the indices.
+ We do find a sizable reduction in the use of Urea when a household cooperative
+ approach is promoted, particularly when compared to only the subgroup that
+ viewed the video where a woman provides all the information.
+ However, the difference is not statistically significant after controlling
+ Family Wise Error rates.
+ Furthermore, the use of hybrid seed seems to be higher among households
+ that saw a video featuring a couple role model.
+ Here the difference is largest when compared to households that saw a video
+ showing only a male farmer.
+ But also here, the difference is not statistically significant after controllin
+g Family Wise Error rates.
 \end_layout
 
 \begin_layout Standard
 We then look at production related outcomes.
- Figure 
+ The index summarized in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:HH_impact_info_asym"
 
 \end_inset
 
- shows no impact of showing a video to a couple as opposed to showing the
- video only to one of the spouses.
- Table 
+ was calculated from household level production, area (included as a negative
+ outcome since we are interested intensification where more is produced
+ on less land), and a subjective assessment of productivity.
+ Household level production was estimated by taking the average between
+ plot level production reported by man and woman, and them summing production
+ on all plots within the household.
+ Following our pre-analysis plan, we then take logarithms and trim at 5
+ percent.
+ Similarly, for area, we take averages of plot level area estimates between
+ spouses, sum to obtain household level estimates, and use trimmed logarithms.
+ The subjective question takes the form of a binary variable that takes
+ the value of one if any spouse reports better yield on any plot than normal.
+ In Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:production"
 
 \end_inset
 
- shows results for the different components of the index, but also here,
- no statistically significant differences are found.
- Finally, we want to know if efforts to increase intra-household cooperation
+, where we shows results for the different components of the index, we also
+ include yield (defined as kilograms produced per acre).
+ We find no impact of showing a video to a couple as opposed to showing
+ the video only to one of the spouses.
+ We also find no impact of showing a video that uses a couple as a role
+ model compared to a video that depicts farming as an individual activity.
+\end_layout
+
+\begin_layout Standard
+Finally, we want to know if efforts to increase intra-household cooperation
  also led to an increase in household level well-being.
  Questions related to well-being were only asked to the wife, as she is
  most likely the one responsible for reproductive chores.
@@ -1382,12 +1872,163 @@ reference "tab:production"
  We also use self-assessed food security (using two questions from the Household
  Food Insecurity Access Scale (HFIAS)).
  We also use food consumption as a proxy for household level well-being.
- Results show reducing information asymmetries within the household does
- not impact well-being.
+ Results show neither treatment has an effect on household level well-being.
 \end_layout
 
 \begin_layout Subsubsection
-Promoting a household approach
+Equity
+\end_layout
+
+\begin_layout Standard
+Households comprise of individuals, hence only looking at household level
+ efficiency may mask potentially undesirable situations where aggregate
+ outcomes are obtained at the expense of certain individuals within the
+ household.
+ Inequality within the household related to agricultural production has
+ been documented at a variety of levels.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1111/agec.12171"
+
+\end_inset
+
+ review the literature on differential access to land and tenure insecurity
+ related to gender and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "peterman2014review"
+
+\end_inset
+
+ review the evidence on inequality in use, access, and adoption of non-land
+ agricultural inputs.
+ Partly as a result of differential access to these production factors,
+ gender productivity gaps, where women managed plots are farmed less intensively
+ than male managed plots resulting in significantly lower yields, have been
+ documented since the 1990s 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "udry1995gender"
+
+\end_inset
+
+.
+ In Uganda, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ALI2016152"
+
+\end_inset
+
+ find that female managed plots are almost 20 percent less productive than
+ male managed plots.
+ In this section, we thus investigate intra-household inequality in the
+ outcomes used in the previous section.
+ In particular, we test if knowledge gaps, adoption gaps and productivity
+ gaps reduce as a result of the interventions.
+\end_layout
+
+\begin_layout Standard
+There are different ways to define gaps.
+ For example, if inequality is defined symmetrically, one can simply take
+ the difference between men and women and take the absolute value (or the
+ square if larger differences are weighted more).
+ We will follow convention and conceptualize the gap as man's - woman's.
+\end_layout
+
+\begin_layout Standard
+Knowledge gaps at the household level are thus defined as the share of household
+s where the husband knows the correct answer, but the wife does not.
+ 
+\end_layout
+
+\begin_layout Standard
+Next, we look at inequality in adoption of recommended practices.
+ To do so, we first need to be able to allocate plots within the household
+ to husband and wife.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ALI2016152"
+
+\end_inset
+
+ use data from the Uganda National Panel Survey where the household head
+ is asked to indicate, for each plot, who is the primary decision maker.
+ They simply drop all plots where decisions are made jointly and concentrate
+ on the difference in yield between male managed and female managed plots.
+ Our data is much richer.
+ As mentioned above, we interview both husband and wife separately.
+ Furthermore, instead of only asking who is the primary decision maker on
+ a particular plot, we ask who made the decision to implement a range of
+ activities, as decision making may vary according to the specific activity
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "twyman2015gendered"
+
+\end_inset
+
+.
+ For each activity, each spouse can indicate if the decision was made by
+ (1) him or her alone, (2) his or her spouse alone, (3) jointly.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+There were other categories, including the option to indicate that the person
+ interviewed did not know who made the decision
+\end_layout
+
+\end_inset
+
+ We use this data to construct an indicator of plot management as follows:
+\end_layout
+
+\begin_layout Standard
+We for each activity on each plot, we construct an indicator variable for
+ women involvement if the wife reports that she took the decision alone
+ or if the decision was taken jointly with her husband.
+ Similarly, an indicator is constructed for male involvement that is true
+ if the husband reports that he took the decisions alone of if the decision
+ was taken jointly with his wife.
+ For each spouse, the average is taken over the different activities for
+ which 
+\end_layout
+
+\begin_layout Standard
+We need an adoption index for 
+\end_layout
+
+\begin_layout Subsection
+Decision making
+\end_layout
+
+\begin_layout Standard
+We now zoom in on the decision making process within the households in our
+ sample.
+ We revisit the seven key activities and technologies on which decisions
+ have to made from Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision-making"
+
+\end_inset
+
+.
+ We focus on joint decision making, again defined as both spouses stating
+ that the decision to implement a particular practice of to use a certain
+ input was decided jointly.
+ This is then divided by the number of maize plots within that household
+ to arrive at the share of plots that was jointly decided on.
+ Averages of these household level shares are then compared between treatment
+ and control.
+\end_layout
+
+\begin_layout Standard
+A first key decision we look at is the decision to plant maize on the particular
+ plot (as opposed to planting other crops or leaving it fallow).
 \end_layout
 
 \begin_layout Standard
@@ -1399,8 +2040,8 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename results/HHapproach_summary.pdf
-	scale 40
+	filename results/decsion_impacts.png
+	scale 50
 
 \end_inset
 
@@ -1411,14 +2052,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Household level impact of promoting a cooperative approach
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Household-level-impact"
-
-\end_inset
-
-
+Impact on joint decision making
 \end_layout
 
 \end_inset
@@ -1426,34 +2060,13 @@ name "fig:Household-level-impact"
 
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsection
-Decision making
-\end_layout
-
-\begin_layout Standard
-We now provide an extensive analysis of the decision making process within
- the households in our sample.
- First, we analyze a series of plot level decisions related to maize farming.
- 
-\end_layout
-
-\begin_layout Standard
-For each activity that needed to be decided upon, we develop a plot level
- indicator of joint decision making that takes the value of one if both
- spouses indicate that the decision was made by husband and wife jointly.
- This is than divided by the number of maize plots within that household
- to arrive at the share of plots that were jointly decided on.
-\end_layout
-
-\begin_layout Standard
-A first key decision we look at is the decision to plant maize on the particular
- plot (as opposed to planting other crops or leaving it fallow).
- 
 \end_layout
 
 \begin_layout Subsection
@@ -1466,7 +2079,66 @@ Spouses may disagree about certain maize production activities.
  maize related issue, they would tell their spouse.
  Respondents were allowed to indicate the likeliness that they would tell
  the other spouse on a scale of 1 (never) to 5 (always).
- Table X reports results for 
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Do-spouses-tell"
+
+\end_inset
+
+ compare this outcome for the two treatments.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We have reduced the scale to 4 categories by collapsing never and rarely
+ into one category.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename results/likert_plot_tell_each_other.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Do spouses tell each other if they do not agree about agricultural practices?
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Do-spouses-tell"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1477,22 +2149,262 @@ We find that in almost 32 percent of households, both spouses indicate that
  
 \end_layout
 
+\begin_layout Standard
+We also asked a follow up question.
+ We asked what generally happens when spouses disagree.
+ One of the options was that spouses talk to each other and come to an agreement.
+ We use this option to construct an indicator of agreement that is equal
+ to one if both spouses within a household selected this option.
+ 
+\end_layout
+
 \begin_layout Subsection
 Time use
+\end_layout
+
+\begin_layout Standard
+Assessing the impact of our interventions on time use is complicated by
+ challenges related to measuring time use, and results are somewhat sensitive
+ to outcome measures used.
+ Below, consistent with Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Labour-time"
+
+\end_inset
+
+, we use averages of time use reported by both spouses.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename results/coop_time.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Time use
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Time-use"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Labour-time"
+
+\end_inset
+
+ shows the difference between time spent by the wife and time spent by the
+ husband.
+ As can be seen, for most activities, women spent more time.
+ 
 \end_layout
 
 \begin_layout Subsection
 Sales
 \end_layout
 
+\begin_layout Standard
+We also collect information on maize sales.
+ We first ask spouses separately if maize was sold and use this question
+ to get an indication of income hiding.
+ In particular, based on the responses of both spouses, we construct and
+ indicator that is true if one spouse reports that maize was sold, while
+ the other spouse reports that no maize was sold.
+ We find that, in our sample, in 32 percent of households spouses do not
+ agree on whether maize was sold or not.
+ We do not find that our interventions aimed at increasing inter-spousal
+ cooperation changes this percentage (Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sales"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+As a follow-up questions, if it was reported that maize was sold, we asked
+ if how many bags of maize was sold by whom.
+ Each spouse needed to indicate how many bags were sold (1) by him or herself;
+ (2) by his or her spouse; (3) how much was sold together; and (4) how much
+ was sold by someone else.
+ This data was then used to calculate the average amount on which both spouses
+ agreed that sales were made jointly, and this amount is then expressed
+ as a share of total sales reported by the household.
+ Also here, Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sales"
+
+\end_inset
+
+ shows that no significant differences in share of joint sales are found.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename results/sales.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sales
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sales"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, we asked each spouse separately to indicate the top three spending
+ categories for which they want to use the money that they got from selling
+ maize.
+ Categories included spending on education and health, spending on consumption,
+ investment in agriculture (buying inputs or hire in agricultural labour),
+ investment in non-agricultural business or savings.
+ There was also a separate category that attempts to measure adult goods
+ that are often used in outlay equivalent analyses to detect discrimination
+ against girls 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1093/wber/3.1.1"
+
+\end_inset
+
+.
+ Also here, the treatments have little impact on the likelihood that any
+ of the categories are mentioned.
+ The only exception is spending on investment in agriculture: Among households
+ where both spouses received information, investment in agriculture is more
+ frequently mentioned as a key spending area than among households where
+ information was only provided to one of the spouses.
+ This is consistent with the increase in fertilizer use as a response to
+ reducing information asymmetries reported in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:HH_impact_info_asym"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Implications
 \end_layout
 
+\begin_layout Standard
+We confirm 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doss2014owns"
+
+\end_inset
+
+ that little difference in the share of men and women who participate in
+ four agricultural decisions: what crops to grow, what inputs to use, what
+ to sell, and who keeps the revenue from sales.
+ 
+\end_layout
+
 \begin_layout Itemize
-As a result, from a policy perspective, it is important to include the husband
- in extension campaigns if the focus is on household level adoption of new
- practices.
+Couples disagree about the unilateral decision making, but agree about joint
+ decision making.
+ Joint decision making is the prevailing mode of decision making
+\end_layout
+
+\begin_layout Itemize
+We see that decision making patterns are similar across management practices,
+ but that men are more likely to make decisions related to the use of modern
+ inputs.
+\end_layout
+
+\begin_layout Itemize
+information seems to be shared less if targeted to the wife only.
+\end_layout
+
+\begin_layout Itemize
+women within the household have insufficient agency to implement knowledge
+ gained, which is consistent with the decision making pattern in Figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision-making"
+
+\end_inset
+
+.
+ As a result, from a policy perspective, it is important to include the
+ husband in extension campaigns if the focus is on household level adoption
+ of new practices.
 \end_layout
 
 \begin_layout Standard
@@ -1572,13 +2484,22 @@ arabic{table}}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways true
-status open
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
+
+
+\backslash
+begin{sidewaystable}[H]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1597,7 +2518,7 @@ name "tab:knowledge"
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -1774,6 +2695,14 @@ Note: Column 1 reports differences between video only and video+ivr (and
 \end_inset
 
 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sidewaystable}
 \end_layout
 
 \end_inset
@@ -2551,6 +3480,19 @@ hline
 
 \begin_layout Plain Layout
 
+	& mean & C-I	&		p-val & C-H	&		p-val & C-W	&		p-val & C-I	&		p-val	& C-H	&		p-v
+al & C-W	&		p-val	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-14} 
 \end_layout
 
 \begin_layout Plain Layout

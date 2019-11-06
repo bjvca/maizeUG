@@ -23,11 +23,11 @@ set.seed(07032018)
 
 ### indexing results arrays
 
-res_coop_conflict <- array(NA, c(4,4,7)) 
-rownames(res_coop_conflict) <- c("Spouses tell each other in case of disagreement (1=never ... 5=always)","","Spouses discuss and come to agreement (Yes/No)","")
+res_coop_time <- array(NA, c(12,4,7)) 
+rownames(res_coop_time) <- c("Spouses tell each other in case of disagreement (1=never ... 5=always)","","Spouses discuss and come to agreement (Yes/No)","")
 
-conf_plot <- array(NA, c(2,5,7))
-colnames(conf_plot) <-  c("x","y","ylo","yhi","grp")
+time_plot <- array(NA, c(6,5,7))
+colnames(time_plot) <-  c("x","y","ylo","yhi","grp")
 
 cl <- makeCluster(detectCores(all.tests = FALSE, logical = TRUE))
 registerDoParallel(cl)
@@ -200,6 +200,22 @@ dta$weight_av[dta$recipient=="couple" & dta$messenger=="female"] <- 309/319
 dta$weight_av[dta$recipient=="couple" & dta$messenger=="couple"] <- 309/336
 dta$weight_av[dta$recipient=="couple" & dta$messenger=="male"] <- 309/309
 
+
+### take mean - man
+dta$time_prep_man_mean <- rowMeans(dta[c("time_prep_man_man","time_prep_man_woman")], na.rm=F)
+dta$time_plant_man_mean <- rowMeans(dta[c("time_plant_man_man","time_plant_man_woman")], na.rm=F)
+dta$time_weed_man_mean <- rowMeans(dta[c("time_weed_man_man","time_weed_man_woman")], na.rm=F)
+dta$time_spray_man_mean <- rowMeans(dta[c("time_spray_man_man","time_spray_man_woman")], na.rm=F)
+dta$time_harv_man_mean <- rowMeans(dta[c("time_harv_man_man","time_harv_man_woman")], na.rm=F)
+dta$time_tot_man_mean <- rowMeans(dta[c("time_tot_man_man","time_tot_man_woman")], na.rm=F)
+### take mean - woman
+dta$time_prep_woman_mean <- rowMeans(dta[c("time_prep_woman_man","time_prep_woman_woman")], na.rm=F)
+dta$time_plant_woman_mean <- rowMeans(dta[c("time_plant_woman_man","time_plant_woman_woman")], na.rm=F)
+dta$time_weed_woman_mean <- rowMeans(dta[c("time_weed_woman_man","time_weed_woman_woman")], na.rm=F)
+dta$time_spray_woman_mean <- rowMeans(dta[c("time_spray_woman_man","time_spray_woman_woman")], na.rm=F)
+dta$time_harv_woman_mean <- rowMeans(dta[c("time_harv_woman_man","time_harv_woman_woman")], na.rm=F)
+dta$time_tot_woman_mean <- rowMeans(dta[c("time_tot_woman_man","time_tot_woman_woman")], na.rm=F)
+
 dta_copy <- dta
 
 
@@ -266,52 +282,98 @@ print(h)
 
 
 
-wtd.mean(as.numeric(dta$maizeeduc>2), na.rm=T)
-sqrt(wtd.var(as.numeric(dta$maizeeduc>2), na.rm=T))
+dta$timedif_prep <- dta$time_prep_woman_mean - dta$time_prep_man_mean
+res_coop_time[1,1,h] <- wtd.mean(as.numeric(dta$timedif_prep), dta$weight_av, na.rm=T) 
+res_coop_time[2,1,h] <- sqrt(wtd.var(as.numeric(dta$timedif_prep), dta$weight_av, na.rm=T))
+res_coop_time[1,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("timedif_prep",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("timedif_prep",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_coop_time[2,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("timedif_prep",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("timedif_prep",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_coop_time[1,3,h] <- ifelse(totrep >0, RI("timedif_prep",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("timedif_prep",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("timedif_prep",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_coop_time[2,3,h] <- nobs(lm(as.formula(paste("timedif_prep",treatment, sep="~")) ,data=dta))
 
+time_plot[1,1,h] <- "Preparation"
+time_plot[1,3:4,h] <- confint(lm(as.formula(paste(paste("timedif_prep",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))[2,]/ res_coop_time[2,1,h]
+time_plot[1,2,h] <- res_coop_time[1,2,h] / res_coop_time[2,1,h]
 
+dta$timedif_plant <- dta$time_plant_woman_mean - dta$time_plant_man_mean
 
+res_coop_time[3,1,h] <- wtd.mean(as.numeric(dta$timedif_plant), dta$weight_av, na.rm=T) 
+res_coop_time[4,1,h] <- sqrt(wtd.var(as.numeric(dta$timedif_plant), dta$weight_av, na.rm=T))
+res_coop_time[3,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("timedif_plant",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("timedif_plant",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_coop_time[4,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("timedif_plant",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("totdif_time",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_coop_time[3,3,h] <- ifelse(totrep >0, RI("timedif_plant",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("timedif_plant",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("totdif_time",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_coop_time[4,3,h] <- nobs(lm(as.formula(paste("timedif_plant",treatment, sep="~")) ,data=dta))
 
+time_plot[2,1,h] <- "Planting"
+time_plot[2,3:4,h] <- confint(lm(as.formula(paste(paste("timedif_plant",treatment, sep="~"),ctrls,sep="+")) ,data=dta, weights = weights))[2,]/ res_coop_time[4,1,h]
+time_plot[2,2,h] <- res_coop_time[3,2,h] / res_coop_time[4,1,h]
 
+dta$timedif_weed_man <- dta$time_weed_woman_mean - dta$time_weed_man_mean
 
-res_coop_conflict[1,1,h] <- wtd.mean(as.numeric(dta$tell_each_other), dta$weight_av, na.rm=T) 
-res_coop_conflict[2,1,h] <- sqrt(wtd.var(as.numeric(dta$tell_each_other), dta$weight_av, na.rm=T))
-res_coop_conflict[1,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("tell_each_other",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("tell_each_other",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_coop_conflict[2,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("tell_each_other",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("tell_each_other",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_coop_conflict[1,3,h] <- ifelse(totrep >0, RI("tell_each_other",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("tell_each_other",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("tell_each_other",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_coop_conflict[2,3,h] <- nobs(lm(as.formula(paste("tell_each_other",treatment, sep="~")) ,data=dta))
+res_coop_time[5,1,h] <- wtd.mean(as.numeric(dta$timedif_weed_man), dta$weight_av, na.rm=T) 
+res_coop_time[6,1,h] <- sqrt(wtd.var(as.numeric(dta$timedif_weed_man), dta$weight_av, na.rm=T))
+res_coop_time[5,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("timedif_weed_man",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("timedif_weed_man",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_coop_time[6,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("timedif_weed_man",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("timedif_weed_man",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_coop_time[5,3,h] <- ifelse(totrep >0, RI("timedif_weed_man",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("timedif_weed_man",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("timedif_weed_man",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_coop_time[6,3,h] <- nobs(lm(as.formula(paste("timedif_weed_man",treatment, sep="~")) ,data=dta))
 
-conf_plot[1,1,h] <- "Spouses tell each other"
-conf_plot[1,3:4,h] <- confint(lm(as.formula(paste(paste("tell_each_other",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))[2,]/ res_coop_conflict[2,1,h]
-conf_plot[1,2,h] <- res_coop_conflict[1,2,h] / res_coop_conflict[2,1,h]
+time_plot[3,1,h] <- "Weeding"
+time_plot[3,3:4,h] <- confint(lm(as.formula(paste(paste("timedif_weed_man",treatment, sep="~"),ctrls,sep="+")) ,data=dta, weights = weights))[2,]/ res_coop_time[6,1,h]
+time_plot[3,2,h] <- res_coop_time[5,2,h] / res_coop_time[6,1,h]
 
+dta$timedif_spray_man <- dta$time_spray_woman_mean - dta$time_spray_man_mean
 
-res_coop_conflict[3,1,h] <- wtd.mean(as.numeric(dta$spouses_listen), dta$weight_av, na.rm=T) 
-res_coop_conflict[4,1,h] <- sqrt(wtd.var(as.numeric(dta$spouses_listen), dta$weight_av, na.rm=T))
-res_coop_conflict[3,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("spouses_listen",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("spouses_listen",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
-res_coop_conflict[4,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("spouses_listen",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("spouses_listen",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
-res_coop_conflict[3,3,h] <- ifelse(totrep >0, RI("spouses_listen",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("spouses_listen",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("spouses_listen",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
-res_coop_conflict[4,3,h] <- nobs(lm(as.formula(paste("spouses_listen",treatment, sep="~")) ,data=dta))
+res_coop_time[7,1,h] <- wtd.mean(as.numeric(dta$timedif_spray_man), dta$weight_av, na.rm=T) 
+res_coop_time[8,1,h] <- sqrt(wtd.var(as.numeric(dta$timedif_spray_man), dta$weight_av, na.rm=T))
+res_coop_time[7,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("timedif_spray_man",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("timedif_spray_man",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_coop_time[8,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("timedif_spray_man",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("timedif_spray_man",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_coop_time[7,3,h] <- ifelse(totrep >0, RI("timedif_spray_man",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("timedif_spray_man",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("timedif_spray_man",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_coop_time[8,3,h] <- nobs(lm(as.formula(paste("timedif_spray_man",treatment, sep="~")) ,data=dta))
 
-conf_plot[2,1,h] <- "Spouses listen to each other"
-conf_plot[2,3:4,h] <- confint(lm(as.formula(paste(paste("spouses_listen",treatment, sep="~"),ctrls,sep="+")) ,data=dta, weights = weights))[2,]/ res_coop_conflict[4,1,h]
-conf_plot[2,2,h] <- res_coop_conflict[3,2,h] / res_coop_conflict[4,1,h]
+time_plot[4,1,h] <- "Spraying"
+time_plot[4,3:4,h] <- confint(lm(as.formula(paste(paste("timedif_spray_man",treatment, sep="~"),ctrls,sep="+")) ,data=dta, weights = weights))[2,]/ res_coop_time[8,1,h]
+time_plot[4,2,h] <- res_coop_time[7,2,h] / res_coop_time[8,1,h]
+
+dta$timedif_harv_man <- dta$time_harv_woman_mean - dta$time_harv_man_mean
+
+res_coop_time[9,1,h] <- wtd.mean(as.numeric(dta$timedif_harv_man), dta$weight_av, na.rm=T) 
+res_coop_time[10,1,h] <- sqrt(wtd.var(as.numeric(dta$timedif_harv_man), dta$weight_av, na.rm=T))
+res_coop_time[9,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("timedif_harv_man",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("timedif_harv_man",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_coop_time[10,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("timedif_harv_man",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("timedif_harv_man",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_coop_time[9,3,h] <- ifelse(totrep >0, RI("timedif_harv_man",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("timedif_harv_man",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("timedif_harv_man",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_coop_time[10,3,h] <- nobs(lm(as.formula(paste("timedif_harv_man",treatment, sep="~")) ,data=dta))
+
+time_plot[5,1,h] <- "Harvesting"
+time_plot[5,3:4,h] <- confint(lm(as.formula(paste(paste("timedif_harv_man",treatment, sep="~"),ctrls,sep="+")) ,data=dta, weights = weights))[2,]/ res_coop_time[10,1,h]
+time_plot[5,2,h] <- res_coop_time[9,2,h] / res_coop_time[10,1,h]
+
+dta$totdif_time <- dta$time_tot_woman_mean - dta$time_tot_man_mean
+
+res_coop_time[11,1,h] <- wtd.mean(as.numeric(dta$totdif_time), dta$weight_av, na.rm=T) 
+res_coop_time[12,1,h] <- sqrt(wtd.var(as.numeric(dta$totdif_time), dta$weight_av, na.rm=T))
+res_coop_time[11,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("totdif_time",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("totdif_time",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
+res_coop_time[12,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("totdif_time",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,2],summary(lm(as.formula(paste(paste("totdif_time",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,2])
+res_coop_time[11,3,h] <- ifelse(totrep >0, RI("totdif_time",treatment , ctrls,w_int="weights", dta, nr_repl = totrep),ifelse(is.null(ctrls),summary(lm(as.formula(paste("totdif_time",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,4],summary(lm(as.formula(paste(paste("totdif_time",treatment, sep="~"),ctrls, sep="+")),weights=weights,data=dta))$coefficients[2,4]))
+res_coop_time[12,3,h] <- nobs(lm(as.formula(paste("totdif_time",treatment, sep="~")) ,data=dta))
+
+time_plot[6,1,h] <- "Total"
+time_plot[6,3:4,h] <- confint(lm(as.formula(paste(paste("totdif_time",treatment, sep="~"),ctrls,sep="+")) ,data=dta, weights = weights))[2,]/ res_coop_time[12,1,h]
+time_plot[6,2,h] <- res_coop_time[11,2,h] / res_coop_time[12,1,h]
 
 }
 
 
-save(res_coop_conflict, file = "res_coop_conflict.RData")
+save(res_coop_time, file = "res_coop_time.RData")
 
-print(res_coop_conflict)
+print(res_coop_time)
 
 ##plotting
-plotter <- data.frame(conf_plot[,,1])
+plotter <- data.frame(time_plot[,,1])
 plotter$y <- as.numeric(as.character(plotter$y))
 plotter$ylo <- as.numeric(as.character(plotter$ylo))
 plotter$yhi <- as.numeric(as.character(plotter$yhi))
 plotter$grp <- "reducing info asymmetry"
 
-plotter2 <- data.frame(conf_plot[,,4])
+plotter2 <- data.frame(time_plot[,,4])
 plotter2$y <- as.numeric(as.character(plotter2$y))
 plotter2$ylo <- as.numeric(as.character(plotter2$ylo))
 plotter2$yhi <- as.numeric(as.character(plotter2$yhi))
@@ -319,42 +381,37 @@ plotter2$grp <- "HH cooperative approach"
 
 plotter <- rbind(plotter,plotter2)
 
-plotter$x <-  factor(plotter$x, levels=rev((c('Spouses tell each other','Spouses listen to each other'))))
-png("/home/bjvca/data/projects/digital green/papers/DP_cooperation/results/conflict_resolution.png", units="px", height=3200, width= 6400, res=600)
+plotter$x <-  factor(plotter$x, levels=rev((c('Preparation','Planting','Weeding','Spraying','Harvesting','Total'))))
+png("/home/bjvca/data/projects/digital green/papers/DP_cooperation/results/coop_time.png", units="px", height=3200, width= 6400, res=600)
 
 credplot.gg(plotter,'SDs','',levels(plotter$x),.5)
 dev.off()
 
-## analysis of likert scales for telling each other
-#bin it
-dta <- dta_copy
-dta$tell_each_other_binned <- cut(dta$tell_each_other, c(1,2.5,3.5,4.5,5))
-levels(dta$tell_each_other_binned) <- c("Rarely","Sometimes","Mostly","Always")
-pdf("/home/bjvca/data/projects/digital green/papers/DP_cooperation/results/likert_plot_tell_each_other.pdf")
-par(mfrow=c(1,3), xpd=NA) 
-colfunc<-colorRampPalette(c("#104E8B", "#6E8DAB","#CCCCCC"))
-barplot(prop.table(table(dta$tell_each_other_binned, dta$recipient=="couple"),2), col=colfunc(4), main="Reducing information \nasymmetry", names.arg=c("Ctrl","Treat"), cex.main=1.5,cex.axis=1.5, cex.names=1.5)
-
-barplot(prop.table(table(dta$tell_each_other_binned, dta$messenger=="couple"),2), col=colfunc(4), main="HH cooperative \napproach", names.arg=c("Ctrl","Treat"), cex.main=1.5,cex.axis=1.5, cex.names=1.5)
-barplot(prop.table(table(dta$tell_each_other_binned, dta$messenger=="couple"),2), col=colfunc(4),plot=F)
-legend("right", legend=rev(c("Rarely","Sometimes","Mostly","Always")), cex=1.5, bty="n", fill=rev(colfunc(4)), inset=c(-1.3,0))
-dev.off()
 
 dta <- dta_copy
-dta$tell_each_other_binned <- cut(dta$tell_each_other, c(1,2.5,3.5,4.5,5))
-levels(dta$tell_each_other_binned) <- c("Rarely","Sometimes","Mostly","Always")
-pdf("/home/bjvca/data/projects/digital green/papers/DP_cooperation/results/likert_plot_tell_each_other_presentation.pdf")
-par(mfrow=c(1,3), xpd=NA) 
-colfunc<-colorRampPalette(c("red","yellow","green"))
-barplot(prop.table(table(dta$tell_each_other_binned, dta$recipient=="couple"),2), col=colfunc(4), main="Reducing information \nasymmetry", names.arg=c("Ctrl","Treat"), cex.main=1.5,cex.axis=1.5, cex.names=1.5)
 
-barplot(prop.table(table(dta$tell_each_other_binned, dta$messenger=="couple"),2), col=colfunc(4), main="HH cooperative \napproach", names.arg=c("Ctrl","Treat"), cex.main=1.5,cex.axis=1.5, cex.names=1.5)
-barplot(prop.table(table(dta$tell_each_other_binned, dta$messenger=="couple"),2), col=colfunc(4),plot=F)
-legend("right", legend=rev(c("Rarely","Sometimes","Mostly","Always")), cex=1.5, bty="n", fill=rev(colfunc(4)), inset=c(-1.3,0))
+
+df_w <- data.frame(cbind(c(wtd.mean(dta$time_prep_woman_mean,dta$weight_av),wtd.mean(dta$time_plant_woman_mean,dta$weight_av),wtd.mean(dta$time_weed_woman_mean,dta$weight_av),
+wtd.mean(dta$time_spray_woman_mean,dta$weight_av),
+wtd.mean(dta$time_harv_woman_mean,dta$weight_av))))
+#df_m$decison_maker <- "man"
+
+
+df_m <- data.frame(cbind(c(wtd.mean(dta$time_prep_man_mean,dta$weight_av),wtd.mean(dta$time_plant_man_mean,dta$weight_av),wtd.mean(dta$time_weed_man_mean,dta$weight_av),wtd.mean(dta$time_spray_man_mean,dta$weight_av),wtd.mean(dta$time_harv_man_mean,dta$weight_av))))
+#df_w$decison_maker <- "woman"
+
+df <-cbind(df_m,df_w)
+rownames(df) <- c("prepare land","planting","weeding","spraying","harvesting")
+
+names(df) <- c("man","woman")
+
+colours <- c("#CCCCCC", "#6E8DAB")
+
+png("/home/bjvca/data/projects/digital green/papers/DP_cooperation/results/labour_time.png", units="px", height=3200, width= 6400, res=600)
+
+barplot(as.matrix(t(df)), main="", ylab = "days of work", cex.lab = 1.5, cex.main = 1.4, beside=TRUE, col=colours)
+legend("topleft", c("husband","wife"), cex=1.3, bty="n", fill=colours)
 dev.off()
 
-
-
-colours <- c("#CCCCCC", "#6E8DAB", "#104E8B")
 
 

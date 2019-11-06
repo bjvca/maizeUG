@@ -81,7 +81,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
@@ -89,6 +89,42 @@
 \end_header
 
 \begin_body
+
+\begin_layout Standard
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+author{Bjorn Van Campenhout
+\backslash
+thanks{Development Strategy and Governance Division, International Food
+ Policy Research Institute and LICOS - Centre for Institutions and Economic
+ Performance, KULeuven, Waaistraat 6 bus 3511, 3000 Leuven, Belgium - correspond
+ing author: +32 488147073, b.vancampenhout@cgiar.org} , David J Spielman
+\backslash
+thanks{Environment and Production Technology Division, International Food
+ Policy Research Institute, 1201 I St NW Eye Street, NW, Washington, DC
+ 20005, USA}, and Els Lecoutere
+\backslash
+thanks{Institute for Development Policy (IOB), University of Antwerp, Lange
+ Sint-Annastraat 7, 2000 Antwerpen, Belgium}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Title
 Information and communication technologies (ICTs) to provide agricultural
@@ -129,7 +165,35 @@ al information in a field experiment conducted among small-scale maize farmers
  While our results demonstrate the potential gains from ICT-mediated approaches
  to agricultural extension, they also emphasize the role that context and
  design play in realizing such gains.
- 
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Acknowledgments
+\end_layout
+
+\begin_layout Standard
+This research was funded by the U.S.
+ Agency for International Development under the Feed the Future Developing
+ Local Extension Capacity (DLEC) project, led by Digital Green, and the
+ Feed the Future Digital Development Lab; and by the CGIAR Research Program
+ on Policies, Institutions, and Markets (PIM), led by the International
+ Food Policy Research Institute (IFPRI) and carried out with support from
+ the CGIAR Fund contributors (https://www.cgiar.org/funders/).
+ We thank Jamie Arkin, Kristin Davis, Rikin Gandhi, Suprita Kudesia, and
+ Karin Lion for their support for this research; and Fiona Nattembo, Wilberforce
+ Walukano and Marc Charles Wanume for excellent field support.
+ This paper has benefited from comments provided by participants held at
+ IFPRI's offices in Kampala and Washington, DC, and in Leuven at KULeuven.
+ The analysis contained here is the sole responsibility of the authors,
+ and does not reflect the views of any funding agency or organization mentioned
+ here.
+ The research was cleared by IFPRI's IRB (IRB #00007490 FWA #00005121) and
+ was pre-registered (including a pre-analysis plan) at the AEA RCT registry
+ (AEARCTR-0002153).
 \begin_inset Newpage newpage
 \end_inset
 

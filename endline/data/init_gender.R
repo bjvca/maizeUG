@@ -132,11 +132,11 @@ dta$prod_tot_sp1[is.na(dta$prod_pl1_sp1) & is.na(dta$prod_pl2_sp1) &is.na(dta$pr
 dta[c("spouse2grp_sp1f16","spouse2grp_sp2g16","spouse2grp_sp3h16","spouse2group_sp4j16", "spouse2grp5_sp5k16")] <- lapply(dta[c("spouse2grp_sp1f16","spouse2grp_sp2g16","spouse2grp_sp3h16","spouse2group_sp4j16", "spouse2grp5_sp5k16")], function(x) replace(x, x == 999, NA) )
 dta[c("spouse2grp_sp1f17","spouse2grp_sp2g17","spouse2grp_sp3h17","spouse2group_sp4j17", "spouse2grp5_sp5k17")] <- lapply(dta[c("spouse2grp_sp1f17","spouse2grp_sp2g17","spouse2grp_sp3h17","spouse2group_sp4j17", "spouse2grp5_sp5k17")], function(x) replace(x, x == 999, NA) )
 ## note: if number of bags was zero, bagsize is missing (set here to zero)
-dta$spouse2grp_sp1f17[dta$spouse2grp_sp1f16] <- 0 
-dta$spouse2grp_sp2g17[dta$spouse2grp_sp2g16] <- 0 
-dta$spouse2grp_sp3h17[dta$spouse2grp_sp3h16] <- 0 
-dta$spouse2group_sp4j17[dta$spouse2group_sp4j16] <- 0 
-dta$spouse2grp5_sp5k17[dta$spouse2grp5_sp5k16] <- 0 
+dta$spouse2grp_sp1f17[dta$spouse2grp_sp1f16==0] <- 0 
+dta$spouse2grp_sp2g17[dta$spouse2grp_sp2g16==0] <- 0 
+dta$spouse2grp_sp3h17[dta$spouse2grp_sp3h16==0] <- 0 
+dta$spouse2group_sp4j17[dta$spouse2group_sp4j16==0] <- 0 
+dta$spouse2grp5_sp5k17[dta$spouse2grp5_sp5k16==0] <- 0 
 
 dta$prod_pl1_sp2 <- dta$spouse2grp_sp1f16 * dta$spouse2grp_sp1f17
 dta$prod_pl2_sp2 <- dta$spouse2grp_sp2g16 * dta$spouse2grp_sp2g17

@@ -292,36 +292,36 @@ dta_bal <- dta
 
 ################################ knowledge  ############################
 
-res_itt_know[1,1,h] <- mean(dta_bal$know_space_j,na.rm=T)
-res_itt_know[2,1,h] <- sd(dta_bal$know_space_j,na.rm=T)
-res_itt_know[1,2,h] <- summary(lm(as.formula(paste(paste("know_space_j",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_know[2,2,h] <- summary(lm(as.formula(paste(paste("know_space_j",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_know[1,3,h] <- ifelse(totrep >0, RI("know_space_j", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("know_space_j",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_know[1,4,h] <- nobs(lm(as.formula(paste(paste("know_space_j",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
+res_itt_know[1,1,h] <- mean(dta_bal$know_space,na.rm=T)
+res_itt_know[2,1,h] <- sd(dta_bal$know_space,na.rm=T)
+res_itt_know[1,2,h] <- summary(lm(as.formula(paste(paste("know_space",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_know[2,2,h] <- summary(lm(as.formula(paste(paste("know_space",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_know[1,3,h] <- ifelse(totrep >0, RI("know_space", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("know_space",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_know[1,4,h] <- nobs(lm(as.formula(paste(paste("know_space",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
 
-res_itt_know[3,1,h] <-  mean(dta_bal$know_combine_j,na.rm=T)
-res_itt_know[4,1,h] <-  sd(dta_bal$know_combine_j,na.rm=T)
-res_itt_know[3,2,h] <- summary(lm(as.formula(paste(paste("know_combine_j",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_know[4,2,h] <- summary(lm(as.formula(paste(paste("know_combine_j",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_know[3,3,h] <-  ifelse(totrep >0, RI("know_combine_j",treatment ,ctrls, dta_bal, nr_repl = totrep,  "weight"),summary(lm(as.formula(paste(paste("know_combine_j",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_know[3,4,h] <- nobs(lm(as.formula(paste(paste("know_combine_j",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
+res_itt_know[3,1,h] <-  mean(dta_bal$know_combine,na.rm=T)
+res_itt_know[4,1,h] <-  sd(dta_bal$know_combine,na.rm=T)
+res_itt_know[3,2,h] <- summary(lm(as.formula(paste(paste("know_combine",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_know[4,2,h] <- summary(lm(as.formula(paste(paste("know_combine",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_know[3,3,h] <-  ifelse(totrep >0, RI("know_combine",treatment ,ctrls, dta_bal, nr_repl = totrep,  "weight"),summary(lm(as.formula(paste(paste("know_combine",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_know[3,4,h] <- nobs(lm(as.formula(paste(paste("know_combine",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
 
-res_itt_know[5,1,h] <-  mean(dta_bal$know_weed_j,na.rm=T)
-res_itt_know[6,1,h] <-  sd(dta_bal$know_weed_j,na.rm=T)
-res_itt_know[5,2,h] <- summary(lm(as.formula(paste(paste("know_weed_j",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_know[6,2,h] <- summary(lm(as.formula(paste(paste("know_weed_j",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_know[5,3,h] <-  ifelse(totrep >0, RI("know_weed_j",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"),summary(lm(as.formula(paste(paste("know_weed_j",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_know[5,4,h] <- nobs(lm(as.formula(paste(paste("know_weed_j",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
+res_itt_know[5,1,h] <-  mean(dta_bal$know_weed,na.rm=T)
+res_itt_know[6,1,h] <-  sd(dta_bal$know_weed,na.rm=T)
+res_itt_know[5,2,h] <- summary(lm(as.formula(paste(paste("know_weed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_know[6,2,h] <- summary(lm(as.formula(paste(paste("know_weed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_know[5,3,h] <-  ifelse(totrep >0, RI("know_weed",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"),summary(lm(as.formula(paste(paste("know_weed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_know[5,4,h] <- nobs(lm(as.formula(paste(paste("know_weed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
 
-res_itt_know[7,1,h] <- mean(dta_bal$know_armyworm_j,na.rm=T)
-res_itt_know[8,1,h] <- sd(dta_bal$know_armyworm_j,na.rm=T)
-res_itt_know[7,2,h] <- summary(lm(as.formula(paste(paste("know_armyworm_j",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_know[8,2,h] <- summary(lm(as.formula(paste(paste("know_armyworm_j",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_know[7,3,h] <-  ifelse(totrep >0, RI("know_armyworm_j",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"),summary(lm(as.formula(paste(paste("know_armyworm_j",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_know[7,4,h] <- nobs(lm(as.formula(paste(paste("know_armyworm_j",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
+res_itt_know[7,1,h] <- mean(dta_bal$know_armyworm,na.rm=T)
+res_itt_know[8,1,h] <- sd(dta_bal$know_armyworm,na.rm=T)
+res_itt_know[7,2,h] <- summary(lm(as.formula(paste(paste("know_armyworm",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_know[8,2,h] <- summary(lm(as.formula(paste(paste("know_armyworm",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_know[7,3,h] <-  ifelse(totrep >0, RI("know_armyworm",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"),summary(lm(as.formula(paste(paste("know_armyworm",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_know[7,4,h] <- nobs(lm(as.formula(paste(paste("know_armyworm",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
 
 ## no need to include armyworm in the index because we do not really expect an effect
-indexer <- FW_index(treatment, c("know_space_j", "know_combine_j", "know_weed_j"),ctrls,w_int2 = "weight", data =dta_bal, nr_repl=totrep )
+indexer <- FW_index(treatment, c("know_space", "know_combine", "know_weed"),ctrls,w_int2 = "weight", data =dta_bal, nr_repl=totrep )
 res_itt_know[9,1,h] <-  mean(indexer[[3]]$index,na.rm=T)
 res_itt_know[10,1,h] <-  sd(indexer[[3]]$index,na.rm=T)
 res_itt_know[9,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
@@ -336,7 +336,7 @@ prod_plot[1,2,h] <- summary(indexer[[1]])$coefficients[2,1] / sd(indexer[[3]]$in
 ##calculated corrected critical values
 print(h)
 
-res_itt_know[11,1:3 ,h] <- RI_FWER(deps= c("know_space_j","know_combine_j","know_weed_j") ,indep = treatment, ctrls=ctrls ,dta =dta_bal, p_vals = res_itt_know[c(1,3,5),3,h], nr_repl = totrep, w_int="weight")
+res_itt_know[11,1:3 ,h] <- RI_FWER(deps= c("know_space","know_combine","know_weed") ,indep = treatment, ctrls=ctrls ,dta =dta_bal, p_vals = res_itt_know[c(1,3,5),3,h], nr_repl = totrep, w_int="weight")
 
 ################################### practices #############################
 
@@ -557,38 +557,38 @@ res_itt_prod[7,4,h] <- nobs(lm(as.formula(paste(paste("yield_better",treatment, 
 
 ## labour
 
-dta_bal2 <- subset(dta_bal, tot_time_hh>0)
-dta_bal2$log_tot_time_hh <- log(dta_bal2$tot_time_hh)
-dta_trim <- trim("log_tot_time_hh", dta_bal2, .05)
+#dta_bal2 <- subset(dta_bal, tot_time_hh>0)
+#dta_bal2$log_tot_time_hh <- log(dta_bal2$tot_time_hh)
+#dta_trim <- trim("log_tot_time_hh", dta_bal2, .05)
 
-res_itt_prod[9,1,h] <- mean(dta_trim$log_tot_time_hh, na.rm=T)
-res_itt_prod[10,1,h] <- sd(dta_trim$log_tot_time_hh, na.rm=T)
-res_itt_prod[9,2,h] <- summary(lm(as.formula(paste(paste("log_tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,1]
-res_itt_prod[10,2,h] <- summary(lm(as.formula(paste(paste("log_tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,2]
-res_itt_prod[9,3,h] <- ifelse(totrep >0, RI("log_tot_time_hh",treatment , ctrls, dta_trim, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("log_tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,4])
-res_itt_prod[9,4,h] <- nobs(lm(as.formula(paste(paste("log_tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))
+#res_itt_prod[9,1,h] <- mean(dta_trim$log_tot_time_hh, na.rm=T)
+#res_itt_prod[10,1,h] <- sd(dta_trim$log_tot_time_hh, na.rm=T)
+#res_itt_prod[9,2,h] <- summary(lm(as.formula(paste(paste("log_tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,1]
+#res_itt_prod[10,2,h] <- summary(lm(as.formula(paste(paste("log_tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,2]
+#res_itt_prod[9,3,h] <- ifelse(totrep >0, RI("log_tot_time_hh",treatment , ctrls, dta_trim, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("log_tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,4])
+#res_itt_prod[9,4,h] <- nobs(lm(as.formula(paste(paste("log_tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))
 
-## labour productivity
-dta_bal2 <- subset(dta_bal, prod_tot>0)
-dta_bal2 <- subset(dta_bal2, tot_time_hh>0)
-dta_bal2$log_labour_prod <- log(dta_bal2$prod_tot/dta_bal2$tot_time_hh)
-dta_bal2$labour_prod <- dta_bal2$prod_tot/dta_bal2$tot_time_hh
-dta_trim <- trim("log_labour_prod", dta_bal2, .05)
+### labour productivity
+#dta_bal2 <- subset(dta_bal, prod_tot>0)
+#dta_bal2 <- subset(dta_bal2, tot_time_hh>0)
+#dta_bal2$log_labour_prod <- log(dta_bal2$prod_tot/dta_bal2$tot_time_hh)
+#dta_bal2$labour_prod <- dta_bal2$prod_tot/dta_bal2$tot_time_hh
+#dta_trim <- trim("log_labour_prod", dta_bal2, .05)
 
-res_itt_prod[11,1,h] <- mean(dta_trim$log_labour_prod, na.rm=T)
-res_itt_prod[12,1,h] <- sd(dta_trim$log_labour_prod, na.rm=T)
-res_itt_prod[11,2,h] <- summary(lm(as.formula(paste(paste("log_labour_prod",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,1]
-res_itt_prod[12,2,h] <- summary(lm(as.formula(paste(paste("log_labour_prod",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,2]
-res_itt_prod[11,3,h] <- ifelse(totrep >0, RI("log_labour_prod",treatment , ctrls, dta_trim, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,4]) 
-res_itt_prod[11,4,h] <- nobs(lm(as.formula(paste(paste("log_labour_prod",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))
+#res_itt_prod[11,1,h] <- mean(dta_trim$log_labour_prod, na.rm=T)
+#res_itt_prod[12,1,h] <- sd(dta_trim$log_labour_prod, na.rm=T)
+#res_itt_prod[11,2,h] <- summary(lm(as.formula(paste(paste("log_labour_prod",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,1]
+#res_itt_prod[12,2,h] <- summary(lm(as.formula(paste(paste("log_labour_prod",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,2]
+#res_itt_prod[11,3,h] <- ifelse(totrep >0, RI("log_labour_prod",treatment , ctrls, dta_trim, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("tot_time_hh",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))$coefficients[2,4]) 
+#res_itt_prod[11,4,h] <- nobs(lm(as.formula(paste(paste("log_labour_prod",treatment, sep="~"),ctrls,sep="+")), data=dta_trim))
 
 ###index
 dta_bal2 <- subset(dta_bal, area_tot >0 & prod_tot>0 & yield_av >0)
 dta_bal2$log_prod_tot <- log(dta_bal2$prod_tot)
 dta_bal2$log_area_tot <- log(dta_bal2$area_tot)
 dta_bal2$log_yield_av <- log(dta_bal2$yield_av)
-dta_bal2$log_tot_time_hh <- log(dta_bal2$tot_time_hh)
-dta_bal2$log_tot_time_hh[is.infinite(dta_bal2$log_tot_time_hh)] <- NA 
+#dta_bal2$log_tot_time_hh <- log(dta_bal2$tot_time_hh)
+#dta_bal2$log_tot_time_hh[is.infinite(dta_bal2$log_tot_time_hh)] <- NA 
 
 
 dta_bal2 <- trim("log_yield_av", dta_bal2, .05)
@@ -597,9 +597,9 @@ dta_bal2 <- trim("log_yield_av", dta_bal2, .05)
 
 
 dta_bal2$log_area_tot <- -dta_bal2$log_area_tot
-dta_bal2$log_tot_time_hh <- -dta_bal2$log_tot_time_hh
+#dta_bal2$log_tot_time_hh <- -dta_bal2$log_tot_time_hh
 
-indexer <- FW_index(treatment, c("log_prod_tot", "log_area_tot", "yield_better", "log_tot_time_hh"),ctrls,w_int2 = "weight", data =dta_bal2, nr_repl=totrep )
+indexer <- FW_index(treatment, c("log_prod_tot", "log_area_tot", "yield_better"),ctrls,w_int2 = "weight", data =dta_bal2, nr_repl=totrep )
 res_itt_prod[13,1,h] <-  mean(indexer[[3]]$index)
 res_itt_prod[14,1,h] <-  sd(indexer[[3]]$index)
 res_itt_prod[13,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
@@ -702,20 +702,23 @@ plotter <- data.frame(prod_plot[,,1])
 plotter$y <- as.numeric(as.character(plotter$y))
 plotter$ylo <- as.numeric(as.character(plotter$ylo))
 plotter$yhi <- as.numeric(as.character(plotter$yhi))
-plotter$grp <- 1
+plotter$grp <- "reducing info asymmetry"
+
+
+plotter2 <- data.frame(prod_plot[,,4])
+plotter2$y <- as.numeric(as.character(plotter2$y))
+plotter2$ylo <- as.numeric(as.character(plotter2$ylo))
+plotter2$yhi <- as.numeric(as.character(plotter2$yhi))
+plotter2$grp <- "HH cooperative approach"
+
+plotter <- rbind(plotter,plotter2)
 
 plotter$x <-  factor(plotter$x, levels=(c('welfare','production','seed','fertilizer','adoption','knowledge')))
-pdf("/home/bjvca/data/projects/digital green/papers/DP_cooperation/results/assynm_summary.pdf")
-credplot.gg(plotter,'SDs','',levels(plotter$x),.25)+ theme(legend.position = "none")
+png("/home/bjvca/data/projects/digital green/papers/DP_cooperation/results/ourcomes.png", units="px", height=3200, width= 6400, res=600)
+credplot.gg(plotter,'SDs','',levels(plotter$x),.25)
 dev.off()
 
-plotter <- data.frame(prod_plot[,,4])
-plotter$y <- as.numeric(as.character(plotter$y))
-plotter$ylo <- as.numeric(as.character(plotter$ylo))
-plotter$yhi <- as.numeric(as.character(plotter$yhi))
-plotter$grp <- 1
 
-plotter$x <-  factor(plotter$x, levels=(c('welfare','production','seed','fertilizer','adoption','knowledge')))
-pdf("/home/bjvca/data/projects/digital green/papers/DP_cooperation/results/HHapproach_summary.pdf")
-credplot.gg(plotter,'SDs','',levels(plotter$x),.25)+ theme(legend.position = "none")
+
+
 
