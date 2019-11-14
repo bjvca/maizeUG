@@ -328,32 +328,39 @@ dev.off()
 ## analysis of likert scales for telling each other
 #bin it
 dta <- dta_copy
+dta <- subset(dta, interview_status == "couple interviewed")
 dta$tell_each_other_binned <- cut(dta$tell_each_other, c(1,2.5,3.5,4.5,5))
 levels(dta$tell_each_other_binned) <- c("Rarely","Sometimes","Mostly","Always")
 pdf("/home/bjvca/data/projects/digital green/papers/DP_cooperation/results/likert_plot_tell_each_other.pdf")
 par(mfrow=c(1,3), xpd=NA) 
 colfunc<-colorRampPalette(c("#104E8B", "#6E8DAB","#CCCCCC"))
 barplot(prop.table(table(dta$tell_each_other_binned, dta$recipient=="couple"),2), col=colfunc(4), main="Reducing information \nasymmetry", names.arg=c("Ctrl","Treat"), cex.main=1.5,cex.axis=1.5, cex.names=1.5)
-
-barplot(prop.table(table(dta$tell_each_other_binned, dta$messenger=="couple"),2), col=colfunc(4), main="HH cooperative \napproach", names.arg=c("Ctrl","Treat"), cex.main=1.5,cex.axis=1.5, cex.names=1.5)
-barplot(prop.table(table(dta$tell_each_other_binned, dta$messenger=="couple"),2), col=colfunc(4),plot=F)
+dta <- subset(dta, interview_status == "couple interviewed")
+barplot(prop.table(table(dta$tell_each_other_binned, dta$messenger=="male"),2), col=colfunc(4), main="HH cooperative \napproach", names.arg=c("Ctrl","Treat"), cex.main=1.5,cex.axis=1.5, cex.names=1.5)
+barplot(prop.table(table(dta$tell_each_other_binned, dta$messenger=="male"),2), col=colfunc(4),plot=F)
 legend("right", legend=rev(c("Rarely","Sometimes","Mostly","Always")), cex=1.5, bty="n", fill=rev(colfunc(4)), inset=c(-1.3,0))
 dev.off()
 
+chisq.test(table(dta$tell_each_other_binned, dta$recipient=="couple")) 
+wilcox.test(as.numeric(dta$tell_each_other_binned)~dta$recipient=="couple", mu=0)
+
 dta <- dta_copy
+dta <- subset(dta_copy, messenger != "female")
+dta <- subset(dta, interview_status == "couple interviewed")
 dta$tell_each_other_binned <- cut(dta$tell_each_other, c(1,2.5,3.5,4.5,5))
 levels(dta$tell_each_other_binned) <- c("Rarely","Sometimes","Mostly","Always")
 pdf("/home/bjvca/data/projects/digital green/papers/DP_cooperation/results/likert_plot_tell_each_other_presentation.pdf")
 par(mfrow=c(1,3), xpd=NA) 
 colfunc<-colorRampPalette(c("red","yellow","green"))
-barplot(prop.table(table(dta$tell_each_other_binned, dta$recipient=="couple"),2), col=colfunc(4), main="Reducing information \nasymmetry", names.arg=c("Ctrl","Treat"), cex.main=1.5,cex.axis=1.5, cex.names=1.5)
+barplot(prop.table(table(dta$tell_each_other_binned, dta$recipient=="male"),2), col=colfunc(4), main="Reducing information \nasymmetry", names.arg=c("Ctrl","Treat"), cex.main=1.5,cex.axis=1.5, cex.names=1.5)
 
-barplot(prop.table(table(dta$tell_each_other_binned, dta$messenger=="couple"),2), col=colfunc(4), main="HH cooperative \napproach", names.arg=c("Ctrl","Treat"), cex.main=1.5,cex.axis=1.5, cex.names=1.5)
-barplot(prop.table(table(dta$tell_each_other_binned, dta$messenger=="couple"),2), col=colfunc(4),plot=F)
+barplot(prop.table(table(dta$tell_each_other_binned, dta$messenger=="male"),2), col=colfunc(4), main="HH cooperative \napproach", names.arg=c("Ctrl","Treat"), cex.main=1.5,cex.axis=1.5, cex.names=1.5)
+barplot(prop.table(table(dta$tell_each_other_binned, dta$messenger=="male"),2), col=colfunc(4),plot=F)
 legend("right", legend=rev(c("Rarely","Sometimes","Mostly","Always")), cex=1.5, bty="n", fill=rev(colfunc(4)), inset=c(-1.3,0))
 dev.off()
 
-
+chisq.test(table(  dta$messenger=="couple",dta$tell_each_other_binned)) 
+wilcox.test(as.numeric(dta$tell_each_other_binned)~dta$messenger=="male", mu=0)
 
 colours <- c("#CCCCCC", "#6E8DAB", "#104E8B")
 

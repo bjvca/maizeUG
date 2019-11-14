@@ -30,9 +30,9 @@ set.seed(07032018)
 res_itt_know <- array(NA, c(11,4,6)) 
 rownames(res_itt_know) <- c("know_space","","know_combine","","know_weed","", "know_armyworm","","know_ind","","p-vals")
 res_itt_pract <- array(NA, c(23,4,6))
-rownames(res_itt_pract) <- c("first_day","","space","","striga","","weed","", "use_fert","","seed","","combiner","","bought_seed","","chem","","labour","","pract_index","","p-vals")
-res_itt_fert <- array(NA, c(9,4,6))
-rownames(res_itt_fert) <- c("use_DAP","","use_urea","","use_organic","","fert_index","","p-vals")
+rownames(res_itt_pract) <- c("first_day","","space","","striga","","weed","", "use_dec_input","","seed","","combiner","","bought_seed","","chem","","labour","","pract_index","","p-vals")
+res_itt_dec_input <- array(NA, c(9,4,6))
+rownames(res_itt_dec_input) <- c("use_DAP","","use_urea","","use_organic","","fert_index","","p-vals")
 res_itt_seed <- array(NA, c(7,4,6))
 rownames(res_itt_seed) <- c("hybrid","","opv","","seed_inded","","p-vals")
 res_itt_prod <- array(NA, c(15,4,6))
@@ -43,8 +43,8 @@ names(fert_plot) <- c("x","y","ylo","yhi")
 seed_plot <- data.frame(matrix(NA, 4,4))
 names(seed_plot) <- c("x","y","ylo","yhi")
 
-res_itt_wel <-  array(NA, c(13,4,6))
-rownames(res_itt_wel) <- c("better_av","","better_6m","","eatpref","","eatenough","","log_cons","","welfare_index","","p-vals")
+res_itt_dec_pract <-  array(NA, c(13,4,6))
+rownames(res_itt_dec_pract) <- c("better_av","","better_6m","","eatpref","","eatenough","","log_cons","","welfare_index","","p-vals")
 
 prod_plot <- array(NA, c(7,4,6))
 colnames(prod_plot) <-  c("x","y","ylo","yhi")
@@ -197,6 +197,8 @@ credplot.gg <- function(d,units, hypo, axlabs, lim){
 
 ## drop the control
 dta <- subset(dta, messenger != "ctrl")
+dta <- subset(dta, interview_status == "couple interviewed")
+
 
 dta_copy <- dta
 
@@ -219,15 +221,15 @@ ctrls <- NULL
 
 
 dta$weight_av <- 1
-dta$weight_av[dta$recipient=="male" & dta$messenger=="female"] <- 309/354
-dta$weight_av[dta$recipient=="male" & dta$messenger=="couple"] <- 309/339
-dta$weight_av[dta$recipient=="male" & dta$messenger=="male"] <- 309/347
-dta$weight_av[dta$recipient=="female" & dta$messenger=="female"] <- 309/348
-dta$weight_av[dta$recipient=="female" & dta$messenger=="couple"] <- 309/343
-dta$weight_av[dta$recipient=="female" & dta$messenger=="male"] <- 309/347
-dta$weight_av[dta$recipient=="couple" & dta$messenger=="female"] <- 309/319
-dta$weight_av[dta$recipient=="couple" & dta$messenger=="couple"] <- 309/336
-dta$weight_av[dta$recipient=="couple" & dta$messenger=="male"] <- 309/309
+dta$weight_av[dta$recipient=="male" & dta$messenger=="female"] <- 235/273
+dta$weight_av[dta$recipient=="male" & dta$messenger=="couple"] <- 235/268
+dta$weight_av[dta$recipient=="male" & dta$messenger=="male"] <- 235/273
+dta$weight_av[dta$recipient=="female" & dta$messenger=="female"] <- 235/247
+dta$weight_av[dta$recipient=="female" & dta$messenger=="couple"] <- 235/272
+dta$weight_av[dta$recipient=="female" & dta$messenger=="male"] <- 235/265
+dta$weight_av[dta$recipient=="couple" & dta$messenger=="female"] <- 235/235
+dta$weight_av[dta$recipient=="couple" & dta$messenger=="couple"] <- 309/261
+dta$weight_av[dta$recipient=="couple" & dta$messenger=="male"] <- 235/240
 ###graph for decision to grow maize
 dta_copy <- dta
 #pdf("/home/bjvca/data/projects/digital green/papers/DP_cooperation/results/decision_to_grow_maize.pdf")
@@ -372,7 +374,7 @@ colours <- c("#CCCCCC", "#6E8DAB", "#104E8B")
 
 png("/home/bjvca/data/projects/digital green/papers/DP_cooperation/results/decsion_activities.png", units="px", height=3200, width= 6400, res=600)
 
-barplot(as.matrix(t(df)), main="", ylab = "share of plots", cex.lab = 1.5, cex.main = 1.4, beside=TRUE, col=colours)
+barplot(as.matrix(t(df)), main="", ylab = "share of plots", cex.lab = 1.5, cex.main = 1.4, beside=TRUE, col=colours, ylim = c(0,.5))
 legend("topleft", c("spouses thogether","husband alone","wife alone"), cex=1.3, bty="n", fill=colours)
 dev.off()
 ### men
@@ -398,13 +400,13 @@ col = "#104E8B", ylim=c(0,0.05), cex.axis=1.5, cex.names=1.5 , las=2)
 totrep <- 0
 ####
 
-for (h in 1:6) {
+for (h in c(1,5)) {
 if (h==1) {
 ############################################ H1: info asymmetry: rec=individual vs rec=couple #########################################################
 dta <- dta_copy
 dta$weight <- 1
-dta$weight[dta$recipient == "female"] <-  1131/1144
-dta$weight[dta$recipient == "male"] <- 1
+dta$weight[dta$recipient == "female"] <-  1
+dta$weight[dta$recipient == "male"] <- 811/814
 dta <- merge(dta,baseline, by="hhid")
 
 ctrls <- "maizeage+maizeeduc+maizehh_no+maizeprinfo_receiv+maizeprinfo_receiv_spouse+maizemobile" 
@@ -457,123 +459,123 @@ dta_bal <- dta
 
 ################################   ############################
 
-res_itt_wel[1,1,h] <- wtd.mean(dta_bal$share_plots_both_decide,dta_bal$weight_av,na.rm=T)
-res_itt_wel[2,1,h] <- sqrt(wtd.var(dta_bal$share_plots_both_decide,dta_bal$weight_av,na.rm=T))
-res_itt_wel[1,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decide",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_wel[2,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decide",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_wel[1,3,h] <- ifelse(totrep >0, RI("share_plots_both_decide", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("share_plots_both_decide",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_wel[1,4,h] <- nobs(lm(as.formula(paste(paste("share_plots_both_decide",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
+res_itt_dec_pract[1,1,h] <- wtd.mean(dta_bal$share_plots_both_decide,dta_bal$weight_av,na.rm=T)
+res_itt_dec_pract[2,1,h] <- sqrt(wtd.var(dta_bal$share_plots_both_decide,dta_bal$weight_av,na.rm=T))
+res_itt_dec_pract[1,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decide",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_dec_pract[2,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decide",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_dec_pract[1,3,h] <- ifelse(totrep >0, RI("share_plots_both_decide", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("share_plots_both_decide",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_dec_pract[1,4,h] <- nobs(lm(as.formula(paste(paste("share_plots_both_decide",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
 
 prod_plot[1,1,h] <- "plant maize"
-prod_plot[1,3:4,h] <- confint(lm(as.formula(paste(paste("share_plots_both_decide",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))[2,]/ res_itt_wel[2,1,h]
-prod_plot[1,2,h] <- res_itt_wel[1,2,h] / res_itt_wel[2,1,h]
+prod_plot[1,3:4,h] <- confint(lm(as.formula(paste(paste("share_plots_both_decide",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))[2,]/ res_itt_dec_pract[2,1,h]
+prod_plot[1,2,h] <- res_itt_dec_pract[1,2,h] / res_itt_dec_pract[2,1,h]
 
-res_itt_wel[3,1,h] <- wtd.mean(dta_bal$share_plots_both_dectime,dta_bal$weight_av,na.rm=T)
-res_itt_wel[4,1,h] <- sqrt(wtd.var(dta_bal$share_plots_both_dectime,dta_bal$weight_av,na.rm=T))
-res_itt_wel[3,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_dectime",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_wel[4,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_dectime",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_wel[3,3,h] <- ifelse(totrep >0, RI("share_plots_both_dectime", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("share_plots_both_dectime",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_wel[3,4,h] <- nobs(lm(as.formula(paste(paste("share_plots_both_dectime",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
+res_itt_dec_pract[3,1,h] <- wtd.mean(dta_bal$share_plots_both_dectime,dta_bal$weight_av,na.rm=T)
+res_itt_dec_pract[4,1,h] <- sqrt(wtd.var(dta_bal$share_plots_both_dectime,dta_bal$weight_av,na.rm=T))
+res_itt_dec_pract[3,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_dectime",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_dec_pract[4,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_dectime",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_dec_pract[3,3,h] <- ifelse(totrep >0, RI("share_plots_both_dectime", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("share_plots_both_dectime",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_dec_pract[3,4,h] <- nobs(lm(as.formula(paste(paste("share_plots_both_dectime",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
 
 prod_plot[2,1,h] <- "timing of planting"
-prod_plot[2,3:4,h] <- confint(lm(as.formula(paste(paste("share_plots_both_dectime",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))[2,]/ res_itt_wel[4,1,h]
-prod_plot[2,2,h] <- res_itt_wel[3,2,h] / res_itt_wel[4,1,h]
+prod_plot[2,3:4,h] <- confint(lm(as.formula(paste(paste("share_plots_both_dectime",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))[2,]/ res_itt_dec_pract[4,1,h]
+prod_plot[2,2,h] <- res_itt_dec_pract[3,2,h] / res_itt_dec_pract[4,1,h]
 
-res_itt_wel[5,1,h] <- wtd.mean(dta_bal$share_plots_both_decspace,dta_bal$weight_av,na.rm=T)
-res_itt_wel[6,1,h] <- sqrt(wtd.var(dta_bal$share_plots_both_decspace,dta_bal$weight_av,na.rm=T))
-res_itt_wel[5,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decspace",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_wel[6,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decspace",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_wel[5,3,h] <- ifelse(totrep >0, RI("share_plots_both_decspace", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("share_plots_both_decspace",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_wel[5,4,h] <- nobs(lm(as.formula(paste(paste("share_plots_both_decspace",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
+res_itt_dec_pract[5,1,h] <- wtd.mean(dta_bal$share_plots_both_decspace,dta_bal$weight_av,na.rm=T)
+res_itt_dec_pract[6,1,h] <- sqrt(wtd.var(dta_bal$share_plots_both_decspace,dta_bal$weight_av,na.rm=T))
+res_itt_dec_pract[5,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decspace",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_dec_pract[6,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decspace",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_dec_pract[5,3,h] <- ifelse(totrep >0, RI("share_plots_both_decspace", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("share_plots_both_decspace",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_dec_pract[5,4,h] <- nobs(lm(as.formula(paste(paste("share_plots_both_decspace",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
 
 prod_plot[3,1,h] <- "spacing and seed rate"
-prod_plot[3,3:4,h] <- confint(lm(as.formula(paste(paste("share_plots_both_decspace",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))[2,]/ res_itt_wel[6,1,h]
-prod_plot[3,2,h] <- res_itt_wel[5,2,h] / res_itt_wel[6,1,h]
+prod_plot[3,3:4,h] <- confint(lm(as.formula(paste(paste("share_plots_both_decspace",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))[2,]/ res_itt_dec_pract[6,1,h]
+prod_plot[3,2,h] <- res_itt_dec_pract[5,2,h] / res_itt_dec_pract[6,1,h]
 
 
-res_itt_wel[7,1,h] <- wtd.mean(dta_bal$share_plots_both_decstriga,dta_bal$weight_av,na.rm=T)
-res_itt_wel[8,1,h] <- sqrt(wtd.var(dta_bal$share_plots_both_decstriga,dta_bal$weight_av,na.rm=T))
-res_itt_wel[7,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decstriga",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_wel[8,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decstriga",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_wel[7,3,h] <- ifelse(totrep >0, RI("share_plots_both_decstriga", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("share_plots_both_decstriga",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_wel[7,4,h] <- nobs(lm(as.formula(paste(paste("share_plots_both_decstriga",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
+res_itt_dec_pract[7,1,h] <- wtd.mean(dta_bal$share_plots_both_decstriga,dta_bal$weight_av,na.rm=T)
+res_itt_dec_pract[8,1,h] <- sqrt(wtd.var(dta_bal$share_plots_both_decstriga,dta_bal$weight_av,na.rm=T))
+res_itt_dec_pract[7,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decstriga",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_dec_pract[8,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decstriga",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_dec_pract[7,3,h] <- ifelse(totrep >0, RI("share_plots_both_decstriga", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("share_plots_both_decstriga",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_dec_pract[7,4,h] <- nobs(lm(as.formula(paste(paste("share_plots_both_decstriga",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
 
 prod_plot[4,1,h] <- "fight striga"
-prod_plot[4,3:4,h] <- confint(lm(as.formula(paste(paste("share_plots_both_decstriga",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))[2,]/ res_itt_wel[8,1,h]
-prod_plot[4,2,h] <- res_itt_wel[7,2,h] / res_itt_wel[8,1,h]
+prod_plot[4,3:4,h] <- confint(lm(as.formula(paste(paste("share_plots_both_decstriga",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))[2,]/ res_itt_dec_pract[8,1,h]
+prod_plot[4,2,h] <- res_itt_dec_pract[7,2,h] / res_itt_dec_pract[8,1,h]
 
-res_itt_wel[9,1,h] <- wtd.mean(dta_bal$share_plots_both_decweed,dta_bal$weight_av,na.rm=T)
-res_itt_wel[10,1,h] <- sqrt(wtd.var(dta_bal$share_plots_both_decweed,dta_bal$weight_av,na.rm=T))
-res_itt_wel[9,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decweed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_wel[10,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decweed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_wel[9,3,h] <- ifelse(totrep >0, RI("share_plots_both_decweed", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("share_plots_both_decweed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_wel[9,4,h] <- nobs(lm(as.formula(paste(paste("share_plots_both_decweed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
+res_itt_dec_pract[9,1,h] <- wtd.mean(dta_bal$share_plots_both_decweed,dta_bal$weight_av,na.rm=T)
+res_itt_dec_pract[10,1,h] <- sqrt(wtd.var(dta_bal$share_plots_both_decweed,dta_bal$weight_av,na.rm=T))
+res_itt_dec_pract[9,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decweed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_dec_pract[10,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decweed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_dec_pract[9,3,h] <- ifelse(totrep >0, RI("share_plots_both_decweed", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("share_plots_both_decweed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_dec_pract[9,4,h] <- nobs(lm(as.formula(paste(paste("share_plots_both_decweed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
 
 prod_plot[5,1,h] <- "timing first weeding"
-prod_plot[5,3:4,h] <- confint(lm(as.formula(paste(paste("share_plots_both_decweed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))[2,]/ res_itt_wel[10,1,h]
-prod_plot[5,2,h] <- res_itt_wel[9,2,h] / res_itt_wel[10,1,h]
+prod_plot[5,3:4,h] <- confint(lm(as.formula(paste(paste("share_plots_both_decweed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))[2,]/ res_itt_dec_pract[10,1,h]
+prod_plot[5,2,h] <- res_itt_dec_pract[9,2,h] / res_itt_dec_pract[10,1,h]
 
-res_itt_fert[1,1,h] <- wtd.mean(dta_bal$share_plots_both_decfert,dta_bal$weight_av,na.rm=T)
-res_itt_fert[2,1,h] <- sqrt(wtd.var(dta_bal$share_plots_both_decfert,dta_bal$weight_av,na.rm=T))
-res_itt_fert[1,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decfert",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_fert[2,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decfert",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_fert[1,3,h] <- ifelse(totrep >0, RI("share_plots_both_decfert", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("share_plots_both_decfert",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_fert[1,4,h] <- nobs(lm(as.formula(paste(paste("share_plots_both_decfert",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
+res_itt_dec_input[1,1,h] <- wtd.mean(dta_bal$share_plots_both_decfert,dta_bal$weight_av,na.rm=T)
+res_itt_dec_input[2,1,h] <- sqrt(wtd.var(dta_bal$share_plots_both_decfert,dta_bal$weight_av,na.rm=T))
+res_itt_dec_input[1,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decfert",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_dec_input[2,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decfert",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_dec_input[1,3,h] <- ifelse(totrep >0, RI("share_plots_both_decfert", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("share_plots_both_decfert",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_dec_input[1,4,h] <- nobs(lm(as.formula(paste(paste("share_plots_both_decfert",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
 
 prod_plot[6,1,h] <- "use fertilizer"
-prod_plot[6,3:4,h] <- confint(lm(as.formula(paste(paste("share_plots_both_decfert",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))[2,]/ res_itt_fert[2,1,h]
-prod_plot[6,2,h] <- res_itt_fert[1,2,h] / res_itt_fert[2,1,h]
+prod_plot[6,3:4,h] <- confint(lm(as.formula(paste(paste("share_plots_both_decfert",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))[2,]/ res_itt_dec_input[2,1,h]
+prod_plot[6,2,h] <- res_itt_dec_input[1,2,h] / res_itt_dec_input[2,1,h]
 
-res_itt_fert[3,1,h] <- wtd.mean(dta_bal$share_plots_both_decseed,dta_bal$weight_av,na.rm=T)
-res_itt_fert[4,1,h] <- sqrt(wtd.var(dta_bal$share_plots_both_decseed,dta_bal$weight_av,na.rm=T))
-res_itt_fert[3,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decseed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_fert[4,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decseed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_fert[3,3,h] <- ifelse(totrep >0, RI("share_plots_both_decseed", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("share_plots_both_decseed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
-res_itt_fert[3,4,h] <- nobs(lm(as.formula(paste(paste("share_plots_both_decseed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
+res_itt_dec_input[3,1,h] <- wtd.mean(dta_bal$share_plots_both_decseed,dta_bal$weight_av,na.rm=T)
+res_itt_dec_input[4,1,h] <- sqrt(wtd.var(dta_bal$share_plots_both_decseed,dta_bal$weight_av,na.rm=T))
+res_itt_dec_input[3,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decseed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,1]
+res_itt_dec_input[4,2,h] <- summary(lm(as.formula(paste(paste("share_plots_both_decseed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,2]
+res_itt_dec_input[3,3,h] <- ifelse(totrep >0, RI("share_plots_both_decseed", treatment ,ctrls, dta_bal,  totrep, "weight"),summary(lm(as.formula(paste(paste("share_plots_both_decseed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_dec_input[3,4,h] <- nobs(lm(as.formula(paste(paste("share_plots_both_decseed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))
 
 prod_plot[7,1,h] <- "use improved seed"
-prod_plot[7,3:4,h] <- confint(lm(as.formula(paste(paste("share_plots_both_decseed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))[2,]/ res_itt_fert[4,1,h]
-prod_plot[7,2,h] <- res_itt_fert[3,2,h] / res_itt_fert[4,1,h]
+prod_plot[7,3:4,h] <- confint(lm(as.formula(paste(paste("share_plots_both_decseed",treatment, sep="~"),ctrls,sep="+")) ,data=dta_bal, weights = weight))[2,]/ res_itt_dec_input[4,1,h]
+prod_plot[7,2,h] <- res_itt_dec_input[3,2,h] / res_itt_dec_input[4,1,h]
 
 indexer <- FW_index(treatment, c("share_plots_both_decide", "share_plots_both_dectime", "share_plots_both_decspace","share_plots_both_decstriga","share_plots_both_decweed"),ctrls,w_int2 = "weight", data =dta_bal, nr_repl=totrep )
-res_itt_wel[11,1,h] <-  mean(indexer[[3]]$index)
-res_itt_wel[12,1,h] <-  sd(indexer[[3]]$index)
-res_itt_wel[11,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
-res_itt_wel[12,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
-res_itt_wel[11,3,h] <-  indexer[[2]]
-res_itt_wel[11,4,h] <-  nobs(indexer[[1]])
+res_itt_dec_pract[11,1,h] <-  mean(indexer[[3]]$index)
+res_itt_dec_pract[12,1,h] <-  sd(indexer[[3]]$index)
+res_itt_dec_pract[11,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
+res_itt_dec_pract[12,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
+res_itt_dec_pract[11,3,h] <-  indexer[[2]]
+res_itt_dec_pract[11,4,h] <-  nobs(indexer[[1]])
 
 
-res_itt_wel[13,1:3,h] <- RI_FWER(c("share_plots_both_decide", "share_plots_both_dectime", "share_plots_both_decspace","share_plots_both_decstriga","share_plots_both_decweed"),indep = treatment, ctrls=ctrls ,dta =dta, p_vals = res_itt_wel[c(1,3,5,7,9),3,h], nr_repl = totrep, w_int="weight")
+res_itt_dec_pract[13,1:3,h] <- RI_FWER(c("share_plots_both_decide", "share_plots_both_dectime", "share_plots_both_decspace","share_plots_both_decstriga","share_plots_both_decweed"),indep = treatment, ctrls=ctrls ,dta =dta, p_vals = res_itt_dec_pract[c(1,3,5,7,9),3,h], nr_repl = totrep, w_int="weight")
 
 }
 
 
-save(res_itt_fert, file = "res_itt_fert.RData")
-save(res_itt_wel, file = "res_itt_wel.RData")
+save(res_itt_dec_input, file = "res_itt_dec_input.RData")
+save(res_itt_dec_pract, file = "res_itt_dec_pract.RData")
 
-print(res_itt_fert)
-print(res_itt_wel)
+print(res_itt_dec_input)
+print(res_itt_dec_pract)
 
 ###plotting
 plotter <- data.frame(prod_plot[,,1])
 plotter$y <- as.numeric(as.character(plotter$y))
 plotter$ylo <- as.numeric(as.character(plotter$ylo))
 plotter$yhi <- as.numeric(as.character(plotter$yhi))
-plotter$grp <- "reducing info asymmetry"
+plotter$grp <- "T1: reducing info asymmetry"
 
 plotter2 <- data.frame(prod_plot[,,5])
 plotter2$y <- as.numeric(as.character(plotter2$y))
 plotter2$ylo <- as.numeric(as.character(plotter2$ylo))
 plotter2$yhi <- as.numeric(as.character(plotter2$yhi))
-plotter2$grp <- "HH cooperative approach"
+plotter2$grp <- "T2: HH cooperative approach"
 
-plotter <- rbind(plotter,plotter2)
+plotter <- rbind(plotter2,plotter)
 
 plotter$x <-  factor(plotter$x, levels=rev((c('plant maize','timing of planting','spacing and seed rate','fight striga','timing first weeding','use fertilizer','use improved seed'))))
 png("/home/bjvca/data/projects/digital green/papers/DP_cooperation/results/decsion_impacts.png", units="px", height=3200, width= 6400, res=600)
 
-credplot.gg(plotter,'SDs','',levels(plotter$x),.5)
+credplot.gg(plotter,'SDs','',levels(plotter$x),.7)
 dev.off()
 
 

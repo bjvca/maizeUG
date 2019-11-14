@@ -194,7 +194,7 @@ credplot.gg <- function(d,units, hypo, axlabs, lim){
 
 ## drop the control
 dta <- subset(dta, messenger != "ctrl")
-
+dta <- subset(dta, interview_status == "couple interviewed")
 dta_copy <- dta
 
 
@@ -216,17 +216,16 @@ baseline <- subset(baseline,!(hhid %in% baseline$hhid[duplicated(baseline$hhid)]
 ctrls <- NULL
 
 
-
 dta$weight_av <- 1
-dta$weight_av[dta$recipient=="male" & dta$messenger=="female"] <- 309/354
-dta$weight_av[dta$recipient=="male" & dta$messenger=="couple"] <- 309/339
-dta$weight_av[dta$recipient=="male" & dta$messenger=="male"] <- 309/347
-dta$weight_av[dta$recipient=="female" & dta$messenger=="female"] <- 309/348
-dta$weight_av[dta$recipient=="female" & dta$messenger=="couple"] <- 309/343
-dta$weight_av[dta$recipient=="female" & dta$messenger=="male"] <- 309/347
-dta$weight_av[dta$recipient=="couple" & dta$messenger=="female"] <- 309/319
-dta$weight_av[dta$recipient=="couple" & dta$messenger=="couple"] <- 309/336
-dta$weight_av[dta$recipient=="couple" & dta$messenger=="male"] <- 309/309
+dta$weight_av[dta$recipient=="male" & dta$messenger=="female"] <- 235/273
+dta$weight_av[dta$recipient=="male" & dta$messenger=="couple"] <- 235/268
+dta$weight_av[dta$recipient=="male" & dta$messenger=="male"] <- 235/273
+dta$weight_av[dta$recipient=="female" & dta$messenger=="female"] <- 235/247
+dta$weight_av[dta$recipient=="female" & dta$messenger=="couple"] <- 235/272
+dta$weight_av[dta$recipient=="female" & dta$messenger=="male"] <- 235/265
+dta$weight_av[dta$recipient=="couple" & dta$messenger=="female"] <- 235/235
+dta$weight_av[dta$recipient=="couple" & dta$messenger=="couple"] <- 309/261
+dta$weight_av[dta$recipient=="couple" & dta$messenger=="male"] <- 235/240
 
 dta_copy <- dta
 
@@ -240,8 +239,8 @@ if (h==1) {
 ############################################ H1: info asymmetry: rec=individual vs rec=couple #########################################################
 dta <- dta_copy
 dta$weight <- 1
-dta$weight[dta$recipient == "female"] <-  1131/1144
-dta$weight[dta$recipient == "male"] <- 1
+dta$weight[dta$recipient == "female"] <-  1
+dta$weight[dta$recipient == "male"] <- 811/814
 dta <- merge(dta,baseline, by="hhid")
 
 ctrls <- "maizeage+maizeeduc+maizehh_no+maizeprinfo_receiv+maizeprinfo_receiv_spouse+maizemobile" 

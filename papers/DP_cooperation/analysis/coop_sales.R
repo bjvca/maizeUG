@@ -168,7 +168,7 @@ credplot.gg <- function(d,units, hypo, axlabs, lim){
 
 ## drop the control
 dta <- subset(dta, messenger != "ctrl")
-
+dta <- subset(dta, interview_status == "couple interviewed")
 dta_copy <- dta
 
 
@@ -190,15 +190,16 @@ ctrls <- NULL
 
 
 dta$weight_av <- 1
-dta$weight_av[dta$recipient=="male" & dta$messenger=="female"] <- 309/354
-dta$weight_av[dta$recipient=="male" & dta$messenger=="couple"] <- 309/339
-dta$weight_av[dta$recipient=="male" & dta$messenger=="male"] <- 309/347
-dta$weight_av[dta$recipient=="female" & dta$messenger=="female"] <- 309/348
-dta$weight_av[dta$recipient=="female" & dta$messenger=="couple"] <- 309/343
-dta$weight_av[dta$recipient=="female" & dta$messenger=="male"] <- 309/347
-dta$weight_av[dta$recipient=="couple" & dta$messenger=="female"] <- 309/319
-dta$weight_av[dta$recipient=="couple" & dta$messenger=="couple"] <- 309/336
-dta$weight_av[dta$recipient=="couple" & dta$messenger=="male"] <- 309/309
+dta$weight_av[dta$recipient=="male" & dta$messenger=="female"] <- 235/273
+dta$weight_av[dta$recipient=="male" & dta$messenger=="couple"] <- 235/268
+dta$weight_av[dta$recipient=="male" & dta$messenger=="male"] <- 235/273
+dta$weight_av[dta$recipient=="female" & dta$messenger=="female"] <- 235/247
+dta$weight_av[dta$recipient=="female" & dta$messenger=="couple"] <- 235/272
+dta$weight_av[dta$recipient=="female" & dta$messenger=="male"] <- 235/265
+dta$weight_av[dta$recipient=="couple" & dta$messenger=="female"] <- 235/235
+dta$weight_av[dta$recipient=="couple" & dta$messenger=="couple"] <- 309/261
+dta$weight_av[dta$recipient=="couple" & dta$messenger=="male"] <- 235/240
+
 
 
 ### take mean - man
@@ -223,13 +224,13 @@ dta_copy <- dta
 totrep <- 0
 ####
 
-for (h in 1:6) {
+for (h in c(1,5)) {
 if (h==1) {
 ############################################ H1: info asymmetry: rec=individual vs rec=couple #########################################################
 dta <- dta_copy
 dta$weights <- 1
-dta$weights[dta$recipient == "female"] <-  1131/1144
-dta$weights[dta$recipient == "male"] <- 1
+dta$weights[dta$recipient == "female"] <-  1
+dta$weights[dta$recipient == "male"] <- 811/814
 dta <- merge(dta,baseline, by="hhid")
 
 ctrls <- "maizeage+maizeeduc+maizehh_no+maizeprinfo_receiv+maizeprinfo_receiv_spouse+maizeprinfo_receiv_spouse+maizemobile" 
@@ -391,21 +392,21 @@ save(res_coop_time, file = "res_coop_time.RData")
 print(res_coop_time)
 
 ##plotting
-plotter <- data.frame(time_plot[,,1])
+plotter <- data.frame(time_plot[3:8,,1])
 plotter$y <- as.numeric(as.character(plotter$y))
 plotter$ylo <- as.numeric(as.character(plotter$ylo))
 plotter$yhi <- as.numeric(as.character(plotter$yhi))
-plotter$grp <- "reducing info asymmetry"
+plotter$grp <- "T1: reducing info asymmetry"
 
-plotter2 <- data.frame(time_plot[,,4])
+plotter2 <- data.frame(time_plot[3:8,,5])
 plotter2$y <- as.numeric(as.character(plotter2$y))
 plotter2$ylo <- as.numeric(as.character(plotter2$ylo))
 plotter2$yhi <- as.numeric(as.character(plotter2$yhi))
-plotter2$grp <- "HH cooperative approach"
+plotter2$grp <- "T2: HH cooperative approach"
 
 plotter <- rbind(plotter,plotter2)
 
-plotter$x <-  factor(plotter$x, levels=rev((c('Disagree about sales','Share sold jointly','Spending on education/health','Spending on consumption','Investing in agriculture','Investing in business','Saving','Spending on adult goods'))))
+plotter$x <-  factor(plotter$x, levels=rev((c('Spending on education/health','Spending on consumption','Investing in agriculture','Investing in business','Saving','Spending on adult goods'))))
 png("/home/bjvca/data/projects/digital green/papers/DP_cooperation/results/sales.png", units="px", height=3200, width= 6400, res=600)
 
 credplot.gg(plotter,'SDs','',levels(plotter$x),.5)

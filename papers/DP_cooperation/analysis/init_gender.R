@@ -2205,6 +2205,7 @@ dta$tot_time_hh[dta$interview_status!="couple interviewed"] <- NA
 
 ### agree that they sold
 dta$disagree_sold <- dta$q71 != dta$spouse2r71 
+dta$agree_sold <- dta$q71 == dta$spouse2r71 
 dta$agree_both <- dta$q71 == "Yes" & dta$spouse2r71 == "Yes" 
 dta$agree_both[is.na(dta$disagree_sold)] <- NA
 
@@ -2272,5 +2273,48 @@ dta$agree_spend_alc[dta$q71 == "No" & dta$spouse2r71 == "No"] <- NA
 
 
 
+## agreement planting days after rain
+dta$disagree_plant_share <- rowSums((dta[c("grp1days1","grp2days2","grp3days3","grp4days4", "grp5days5")] != dta[c("spouse2grp_sp1days1","spouse2grp_sp2days_sp2","spouse2grp_sp3days_sp3","spouse2group_sp4dayssp4", "spouse2grp5_sp5dayssp5")]), na.rm=T)/ 
+rowSums( !is.na(dta[c("mgt_both_pl1","mgt_both_pl2","mgt_both_pl3","mgt_both_pl4","mgt_both_pl5")]))
+
+### disagreement on recommended spacing
+
+dta$disagree_spacing_share <- rowSums(dta[c("grp1a201","grp2b201","grp3c201","grp4d201","grp5e201")] != dta[c("spouse2grp_sp1f201","spouse2grp_sp2g201","spouse2grp_sp3h201","spouse2group_sp4j201","spouse2grp5_sp5k201")],na.rm=T)/ 
+rowSums( !is.na(dta[c("mgt_both_pl1","mgt_both_pl2","mgt_both_pl3","mgt_both_pl4","mgt_both_pl5")]))
+
+### disagreement on recommended striga
+
+dta$disagree_striga_share <- rowSums(dta[c("grp1a241","grp2b241","grp3c241","grp4d241", "grp5e241")] != 
+dta[c("spouse2grp_sp1f241","spouse2grp_sp2g241","spouse2grp_sp3h241","spouse2group_sp4j241", "spouse2grp5_sp5k241")],na.rm=T)/ 
+rowSums( !is.na(dta[c("mgt_both_pl1","mgt_both_pl2","mgt_both_pl3","mgt_both_pl4","mgt_both_pl5")]))
+
+## disagreement on weeding
+
+dta$disagree_weeding_share <- rowSums((dta[c("grp1a26","grp2b26", "grp3c26", "grp4d26", "grp5e26")] == 3) != 
+(dta[c("spouse2grp_sp1f26","spouse2grp_sp2g26","spouse2grp_sp3h26","spouse2group_sp4j26", "spouse2grp5_sp5k26")] == 3),na.rm=T)/ 
+rowSums( !is.na(dta[c("mgt_both_pl1","mgt_both_pl2","mgt_both_pl3","mgt_both_pl4","mgt_both_pl5")]))
+
+##  disagreement on fertilizer
+
+dta$disagree_fert_share <- rowSums((dta[c("grp1a29","grp2b29","grp3c29","grp4d29","grp5e29")] == "Yes") !=
+(dta[c("spouse2grp_sp1f29","spouse2grp_sp2g29","spouse2grp_sp3h29","spouse2group_sp4j29","spouse2grp5_sp5k29")] == "Yes"),na.rm=T)/ 
+rowSums( !is.na(dta[c("mgt_both_pl1","mgt_both_pl2","mgt_both_pl3","mgt_both_pl4","mgt_both_pl5")]))
+
+## disagreement on seed
+dta$disagree_seed_share <- rowSums((dta[c("grp1a42","grp2b42","grp3c42","grp4d42","grp5e42")] == "Yes") != 
+(dta[c("spouse2grp_sp1f42","spouse2grp_sp2g42","spouse2grp_sp3h42","spouse2group_sp4j42","spouse2grp5_sp5k42")] == "Yes"),na.rm=T)/ 
+rowSums( !is.na(dta[c("mgt_both_pl1","mgt_both_pl2","mgt_both_pl3","mgt_both_pl4","mgt_both_pl5")]))
+
+dta$disagree_prod <- abs(dta$prod_tot_sp1- dta$prod_tot_sp2) 
+
+dta$disagree_area <- abs(dta$area_tot_sp1- dta$area_tot_sp2) 
+dta$disagree_yield <- abs(dta$prod_tot_sp1/dta$area_tot_sp1- dta$prod_tot_sp2/dta$area_tot_sp2) 
+
+dta$disagree_man_time <- dta$time_tot_man_man - dta$time_tot_man_woman
+dta$disagree_woman_time <-  dta$time_tot_woman_woman - dta$time_tot_woman_man 
+
+dta$disagree_sold_woman <- dta$nr_bags_sold_woman - dta$nr_bags_sold_woman_man
+dta$disagree_sold_man <- dta$nr_bags_sold_man - dta$nr_bags_sold_man_woman
+dta$disagree_sold_both <- abs(dta$nr_bags_sold_both_man - dta$nr_bags_sold_both_woman)
 
 

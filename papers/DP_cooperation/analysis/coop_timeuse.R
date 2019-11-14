@@ -8,9 +8,9 @@ baseline <-  read.csv("/home/bjvca/data/projects/digital green/baseline/base_mer
 #wget https://www.dropbox.com/s/s4xne419eyhgsf0/base_coop.cvs?dl=0
 #install.packages(c("ggplot2","doParallel","data.table","dplyr","Hmisc"))
 
-#rm(list=ls())
-#dta <- read.csv("AWS_coop.csv")
-#baseline <- read.csv("base_coop.csv")
+rm(list=ls())
+dta <- read.csv("AWS_coop.csv")
+baseline <- read.csv("base_coop.csv")
 
 
 library(ggplot2)
@@ -168,6 +168,7 @@ credplot.gg <- function(d,units, hypo, axlabs, lim){
 
 ## drop the control
 dta <- subset(dta, messenger != "ctrl")
+dta <- subset(dta,interview_status == "couple interviewed")
 
 dta_copy <- dta
 
@@ -190,15 +191,15 @@ ctrls <- NULL
 
 
 dta$weight_av <- 1
-dta$weight_av[dta$recipient=="male" & dta$messenger=="female"] <- 309/354
-dta$weight_av[dta$recipient=="male" & dta$messenger=="couple"] <- 309/339
-dta$weight_av[dta$recipient=="male" & dta$messenger=="male"] <- 309/347
-dta$weight_av[dta$recipient=="female" & dta$messenger=="female"] <- 309/348
-dta$weight_av[dta$recipient=="female" & dta$messenger=="couple"] <- 309/343
-dta$weight_av[dta$recipient=="female" & dta$messenger=="male"] <- 309/347
-dta$weight_av[dta$recipient=="couple" & dta$messenger=="female"] <- 309/319
-dta$weight_av[dta$recipient=="couple" & dta$messenger=="couple"] <- 309/336
-dta$weight_av[dta$recipient=="couple" & dta$messenger=="male"] <- 309/309
+dta$weight_av[dta$recipient=="male" & dta$messenger=="female"] <- 235/273
+dta$weight_av[dta$recipient=="male" & dta$messenger=="couple"] <- 235/268
+dta$weight_av[dta$recipient=="male" & dta$messenger=="male"] <- 235/273
+dta$weight_av[dta$recipient=="female" & dta$messenger=="female"] <- 235/247
+dta$weight_av[dta$recipient=="female" & dta$messenger=="couple"] <- 235/272
+dta$weight_av[dta$recipient=="female" & dta$messenger=="male"] <- 235/265
+dta$weight_av[dta$recipient=="couple" & dta$messenger=="female"] <- 235/235
+dta$weight_av[dta$recipient=="couple" & dta$messenger=="couple"] <- 309/261
+dta$weight_av[dta$recipient=="couple" & dta$messenger=="male"] <- 235/240
 
 
 ### take mean - man
@@ -220,7 +221,7 @@ dta_copy <- dta
 
 
 #set totrep to zero if you do not want simulation based inferecne
-totrep <- 0
+totrep <- 10000
 ####
 
 for (h in 1:6) {
@@ -228,38 +229,69 @@ if (h==1) {
 ############################################ H1: info asymmetry: rec=individual vs rec=couple #########################################################
 dta <- dta_copy
 dta$weights <- 1
-dta$weights[dta$recipient == "female"] <-  1131/1144
-dta$weights[dta$recipient == "male"] <- 1
+dta$weights[dta$recipient == "female"] <-  1
+dta$weights[dta$recipient == "male"] <- 811/814
 dta <- merge(dta,baseline, by="hhid")
 
 ctrls <- "maizeage+maizeeduc+maizehh_no+maizeprinfo_receiv+maizeprinfo_receiv_spouse+maizeprinfo_receiv_spouse+maizemobile" 
 
 treatment <- "(recipient == 'couple') +as.factor(messenger)*ivr*sms + ivr*(recipient == 'couple')*sms" 
-} else if (h==4) {
+dta$timedif_prep <- dta$time_prep_woman_woman - dta$time_prep_man_man
+dta$timedif_plant <- dta$time_plant_woman_woman - dta$time_plant_man_man
+dta$timedif_weed_man <- dta$time_weed_woman_woman - dta$time_weed_man_man
+dta$timedif_spray_man <- dta$time_spray_woman_woman - dta$time_spray_man_man
+dta$timedif_harv_man <- dta$time_harv_woman_woman - dta$time_harv_man_man
+dta$totdif_time <- dta$time_tot_woman_woman- dta$time_tot_man_man
+} else if (h==2) {
 ############################################ H2: promote collective approach ###################################################
 dta <- dta_copy
+
 dta$weights <- 1
-dta$weights[dta$messenger == "female"] <-  1
-dta$weights[dta$messenger == "male"] <- 1102/1114
-treatment <- "(messenger == 'couple') +as.factor(recipient)*ivr*sms + ivr*(messenger == 'couple')*sms"
+dta$weights[dta$recipient == "female"] <-  1
+dta$weights[dta$recipient == "male"] <- 811/814
 dta <- merge(dta,baseline, by="hhid")
-ctrls <- "maizeprinput_use" 
-} else if (h==2) {
+
+ctrls <- "maizeage+maizeeduc+maizehh_no+maizeprinfo_receiv+maizeprinfo_receiv_spouse+maizeprinfo_receiv_spouse+maizemobile" 
+
+treatment <- "(recipient == 'couple') +as.factor(messenger)*ivr*sms + ivr*(recipient == 'couple')*sms" 
+dta$timedif_prep <-  dta$time_prep_man_man
+dta$timedif_plant <- dta$time_plant_man_man
+dta$timedif_weed_man <-  dta$time_weed_man_man
+dta$timedif_spray_man <-  dta$time_spray_man_man
+dta$timedif_harv_man <-  dta$time_harv_man_man
+dta$totdif_time <- dta$time_tot_man_man
+
+} else if (h==3) {
 ############################################ H1a: info assym men vs couple ###################################################
 dta <- subset(dta_copy, recipient != "female")
+dta <- dta_copy
 dta$weights <- 1
-treatment <- "(recipient == 'couple') +as.factor(messenger)*ivr*sms + ivr*(recipient == 'couple')*sms" 
+dta$weights[dta$recipient == "female"] <-  1
+dta$weights[dta$recipient == "male"] <- 811/814
 dta <- merge(dta,baseline, by="hhid")
 
-ctrls <- "maizeprinfo_receiv_spouse+maizeprinput_use" 
-} else if (h==3) {
+ctrls <- "maizeage+maizeeduc+maizehh_no+maizeprinfo_receiv+maizeprinfo_receiv_spouse+maizeprinfo_receiv_spouse+maizemobile" 
+
+treatment <- "(recipient == 'couple') +as.factor(messenger)*ivr*sms + ivr*(recipient == 'couple')*sms" 
+dta$timedif_prep <- dta$time_prep_woman_woman 
+dta$timedif_plant <- dta$time_plant_woman_woman 
+dta$timedif_weed_man <- dta$time_weed_woman_woman 
+dta$timedif_spray_man <- dta$time_spray_woman_woman 
+dta$timedif_harv_man <- dta$time_harv_woman_woman 
+dta$totdif_time <- dta$time_tot_woman_woman
+} else if (h==4) {
 ############################################ H1b: info assym women vs couple ###################################################
-dta <- subset(dta_copy, recipient != "male")
+dta <- subset(dta_copy, messenger != "female")
 dta$weights <- 1
-treatment <- "(recipient == 'couple') +as.factor(messenger)*ivr*sms + ivr*(recipient == 'couple')*sms" 
+treatment <- "(messenger == 'couple') +as.factor(recipient)*ivr*sms + ivr*(messenger == 'couple')*sms" 
 dta <- merge(dta,baseline, by="hhid")
-
-ctrls <- "maizeage+maizeeduc+maizehh_no+maizeprinfo_receiv+maizemobile" 
+ctrls <- "maizeprinput_use" 
+dta$timedif_prep <- dta$time_prep_woman_woman - dta$time_prep_man_man
+dta$timedif_plant <- dta$time_plant_woman_woman - dta$time_plant_man_man
+dta$timedif_weed_man <- dta$time_weed_woman_woman - dta$time_weed_man_man
+dta$timedif_spray_man <- dta$time_spray_woman_woman - dta$time_spray_man_man
+dta$timedif_harv_man <- dta$time_harv_woman_woman - dta$time_harv_man_man
+dta$totdif_time <- dta$time_tot_woman_woman- dta$time_tot_man_man
 } else if (h==5) {
 ############################################ H2a: info assym men vs couple ###################################################
 dta <- subset(dta_copy, messenger != "female")
@@ -267,13 +299,25 @@ dta$weights <- 1
 treatment <- "(messenger == 'couple') +as.factor(recipient)*ivr*sms + ivr*(messenger == 'couple')*sms" 
 dta <- merge(dta,baseline, by="hhid")
 ctrls <- "maizeprinput_use" 
+dta$timedif_prep <-  dta$time_prep_man_man
+dta$timedif_plant <-  dta$time_plant_man_man
+dta$timedif_weed_man <-  dta$time_weed_man_man
+dta$timedif_spray_man <- dta$time_spray_man_man
+dta$timedif_harv_man <-  dta$time_harv_man_man
+dta$totdif_time <- dta$time_tot_man_man
 } else if (h==6) {
 ############################################ H2b: info assym women vs couple ###################################################
-dta <- subset(dta_copy, messenger != "male")
+dta <- subset(dta_copy, messenger != "female")
 dta$weights <- 1
-treatment <- "(messenger == 'couple') +as.factor(recipient)*ivr*sms + ivr*(messenger == 'couple')*sms"
+treatment <- "(messenger == 'couple') +as.factor(recipient)*ivr*sms + ivr*(messenger == 'couple')*sms" 
 dta <- merge(dta,baseline, by="hhid")
 ctrls <- "maizeprinput_use" 
+dta$timedif_prep <- dta$time_prep_woman_woman
+dta$timedif_plant <- dta$time_plant_woman_woman
+dta$timedif_weed_man <- dta$time_weed_woman_woman
+dta$timedif_spray_man <- dta$time_spray_woman_woman
+dta$timedif_harv_man <- dta$time_harv_woman_woman 
+dta$totdif_time <- dta$time_tot_woman_woman
 }
 
 print(h)
@@ -282,7 +326,7 @@ print(h)
 
 
 
-dta$timedif_prep <- dta$time_prep_woman_mean - dta$time_prep_man_mean
+
 res_coop_time[1,1,h] <- wtd.mean(as.numeric(dta$timedif_prep), dta$weight_av, na.rm=T) 
 res_coop_time[2,1,h] <- sqrt(wtd.var(as.numeric(dta$timedif_prep), dta$weight_av, na.rm=T))
 res_coop_time[1,2,h] <- ifelse(is.null(ctrls),summary(lm(as.formula(paste("timedif_prep",treatment, sep="~")) ,weights=weights,data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste("timedif_prep",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))$coefficients[2,1])
@@ -294,7 +338,6 @@ time_plot[1,1,h] <- "Preparation"
 time_plot[1,3:4,h] <- confint(lm(as.formula(paste(paste("timedif_prep",treatment, sep="~"),ctrls, sep="+")) ,weights=weights,data=dta))[2,]/ res_coop_time[2,1,h]
 time_plot[1,2,h] <- res_coop_time[1,2,h] / res_coop_time[2,1,h]
 
-dta$timedif_plant <- dta$time_plant_woman_mean - dta$time_plant_man_mean
 
 res_coop_time[3,1,h] <- wtd.mean(as.numeric(dta$timedif_plant), dta$weight_av, na.rm=T) 
 res_coop_time[4,1,h] <- sqrt(wtd.var(as.numeric(dta$timedif_plant), dta$weight_av, na.rm=T))
@@ -307,7 +350,7 @@ time_plot[2,1,h] <- "Planting"
 time_plot[2,3:4,h] <- confint(lm(as.formula(paste(paste("timedif_plant",treatment, sep="~"),ctrls,sep="+")) ,data=dta, weights = weights))[2,]/ res_coop_time[4,1,h]
 time_plot[2,2,h] <- res_coop_time[3,2,h] / res_coop_time[4,1,h]
 
-dta$timedif_weed_man <- dta$time_weed_woman_mean - dta$time_weed_man_mean
+
 
 res_coop_time[5,1,h] <- wtd.mean(as.numeric(dta$timedif_weed_man), dta$weight_av, na.rm=T) 
 res_coop_time[6,1,h] <- sqrt(wtd.var(as.numeric(dta$timedif_weed_man), dta$weight_av, na.rm=T))
@@ -320,7 +363,6 @@ time_plot[3,1,h] <- "Weeding"
 time_plot[3,3:4,h] <- confint(lm(as.formula(paste(paste("timedif_weed_man",treatment, sep="~"),ctrls,sep="+")) ,data=dta, weights = weights))[2,]/ res_coop_time[6,1,h]
 time_plot[3,2,h] <- res_coop_time[5,2,h] / res_coop_time[6,1,h]
 
-dta$timedif_spray_man <- dta$time_spray_woman_mean - dta$time_spray_man_mean
 
 res_coop_time[7,1,h] <- wtd.mean(as.numeric(dta$timedif_spray_man), dta$weight_av, na.rm=T) 
 res_coop_time[8,1,h] <- sqrt(wtd.var(as.numeric(dta$timedif_spray_man), dta$weight_av, na.rm=T))
@@ -333,7 +375,6 @@ time_plot[4,1,h] <- "Spraying"
 time_plot[4,3:4,h] <- confint(lm(as.formula(paste(paste("timedif_spray_man",treatment, sep="~"),ctrls,sep="+")) ,data=dta, weights = weights))[2,]/ res_coop_time[8,1,h]
 time_plot[4,2,h] <- res_coop_time[7,2,h] / res_coop_time[8,1,h]
 
-dta$timedif_harv_man <- dta$time_harv_woman_mean - dta$time_harv_man_mean
 
 res_coop_time[9,1,h] <- wtd.mean(as.numeric(dta$timedif_harv_man), dta$weight_av, na.rm=T) 
 res_coop_time[10,1,h] <- sqrt(wtd.var(as.numeric(dta$timedif_harv_man), dta$weight_av, na.rm=T))
@@ -346,7 +387,6 @@ time_plot[5,1,h] <- "Harvesting"
 time_plot[5,3:4,h] <- confint(lm(as.formula(paste(paste("timedif_harv_man",treatment, sep="~"),ctrls,sep="+")) ,data=dta, weights = weights))[2,]/ res_coop_time[10,1,h]
 time_plot[5,2,h] <- res_coop_time[9,2,h] / res_coop_time[10,1,h]
 
-dta$totdif_time <- dta$time_tot_woman_mean - dta$time_tot_man_mean
 
 res_coop_time[11,1,h] <- wtd.mean(as.numeric(dta$totdif_time), dta$weight_av, na.rm=T) 
 res_coop_time[12,1,h] <- sqrt(wtd.var(as.numeric(dta$totdif_time), dta$weight_av, na.rm=T))
@@ -371,13 +411,13 @@ plotter <- data.frame(time_plot[,,1])
 plotter$y <- as.numeric(as.character(plotter$y))
 plotter$ylo <- as.numeric(as.character(plotter$ylo))
 plotter$yhi <- as.numeric(as.character(plotter$yhi))
-plotter$grp <- "reducing info asymmetry"
+plotter$grp <- "T1: reducing info asymmetry"
 
 plotter2 <- data.frame(time_plot[,,4])
 plotter2$y <- as.numeric(as.character(plotter2$y))
 plotter2$ylo <- as.numeric(as.character(plotter2$ylo))
 plotter2$yhi <- as.numeric(as.character(plotter2$yhi))
-plotter2$grp <- "HH cooperative approach"
+plotter2$grp <- "T2: HH cooperative approach"
 
 plotter <- rbind(plotter,plotter2)
 
@@ -391,13 +431,13 @@ dev.off()
 dta <- dta_copy
 
 
-df_w <- data.frame(cbind(c(wtd.mean(dta$time_prep_woman_mean,dta$weight_av),wtd.mean(dta$time_plant_woman_mean,dta$weight_av),wtd.mean(dta$time_weed_woman_mean,dta$weight_av),
-wtd.mean(dta$time_spray_woman_mean,dta$weight_av),
-wtd.mean(dta$time_harv_woman_mean,dta$weight_av))))
+df_w <- data.frame(cbind(c(wtd.mean(dta$time_prep_woman_woman,dta$weight_av),wtd.mean(dta$time_plant_woman_woman,dta$weight_av),wtd.mean(dta$time_weed_woman_woman,dta$weight_av),
+wtd.mean(dta$time_spray_woman_woman,dta$weight_av),
+wtd.mean(dta$time_harv_woman_woman,dta$weight_av))))
 #df_m$decison_maker <- "man"
 
 
-df_m <- data.frame(cbind(c(wtd.mean(dta$time_prep_man_mean,dta$weight_av),wtd.mean(dta$time_plant_man_mean,dta$weight_av),wtd.mean(dta$time_weed_man_mean,dta$weight_av),wtd.mean(dta$time_spray_man_mean,dta$weight_av),wtd.mean(dta$time_harv_man_mean,dta$weight_av))))
+df_m <- data.frame(cbind(c(wtd.mean(dta$time_prep_man_man,dta$weight_av),wtd.mean(dta$time_plant_man_man,dta$weight_av),wtd.mean(dta$time_weed_man_man,dta$weight_av),wtd.mean(dta$time_spray_man_man,dta$weight_av),wtd.mean(dta$time_harv_man_man,dta$weight_av))))
 #df_w$decison_maker <- "woman"
 
 df <-cbind(df_m,df_w)
