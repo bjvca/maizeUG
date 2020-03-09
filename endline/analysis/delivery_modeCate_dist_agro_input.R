@@ -1,7 +1,7 @@
 rm(list=ls())
 library(foreign)
 ### running the data preparation file
-source("/home/bjvca/data/projects/digital green/endline/data/init.R")
+#source("/home/bjvca/data/projects/digital green/endline/data/init.R")
 
 #### The analysis was done on the Amazon's cloud computing platform, on which data was directly imported from my dropbox account
 
@@ -10,7 +10,7 @@ source("/home/bjvca/data/projects/digital green/endline/data/init.R")
 #install.packages(c("ggplot2","doParallel","data.table","dplyr"))
 
 dta <- read.csv("AWS_delivery_mode.csv")
-baseline <- read.csv("baseline_delivery_mode.csv")[c("hhid","maizeeduc","maizehh_no","maizeprrooms","maizedist_shop","maizemobile_access","maizeage","maizeprinfo_receiv","maizeprwall","maizeprearn","maizeprinfo_receiv_spouse","maizearea_cultivation","maizebags_harv")]
+baseline <- read.csv("baseline.csv")[c("hhid","maizeeduc","maizehh_no","maizeprrooms","maizedist_shop","maizemobile_access","maizeage","maizeprinfo_receiv","maizeprwall","maizeprearn","maizeprinfo_receiv_spouse","maizearea_cultivation","maizebags_harv")]
 
 #source("/home/bjvca/data/projects/digital green/endline/data/init.R")
 #baseline <- read.csv("/home/bjvca/data/projects/digital green/endline/data/raw/baseline.csv")[c("hhid","maizeeduc","maizehh_no","maizeprrooms","maizedist_shop","maizemobile_access","maizeage","maizeprinfo_receiv","maizeprwall","maizeprearn","maizeprinfo_receiv_spouse","maizearea_cultivation","maizebags_harv")]
@@ -61,11 +61,11 @@ rownames(res_itt_wel) <- c("better_av","","better_6m","","eatpref","","eatenough
 RI <- function(dep, indep, ctrls = NULL,  dta , nr_repl = 1000, w_int = NULL) {
 # RI("(maizeeduc > 2)",treat ,ctrls = NULL, w_int="weights", dta= dta, nr_repl = totrep)
 #RI("index" ,treat , contr_vars, w_int= w_int2,dta= data, nr_repl = 1000,h_int=1)
-#indep <- "(recipient != 'male') +ivr+sms+ as.factor(messenger)" 
+#indep <- "(recipient != 'male')*ind_close +ivr+sms+ as.factor(messenger)" 
 #ctrls <- NULL
 #h_int <- 1
 #dep <- "weed"
-##dta <- dta_bal
+#dta <- dta_bal
 #nr_repl <- 100
 #w_int <- "weights"
 
@@ -76,11 +76,11 @@ RI <- function(dep, indep, ctrls = NULL,  dta , nr_repl = 1000, w_int = NULL) {
 	dta <- dta %>% 
     		mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vilID"))) 
 	### the NULL
-	crit <- ifelse(is.null(ctrls),summary(lm(as.formula(paste(dep,indep,sep="~")), weights=unlist(dta[w_int]), data=dta))$coefficients[2,1],summary(lm(as.formula(paste(paste(dep,indep,sep="~"), ctrls,sep="+")),  weights=unlist(dta[w_int]),data=dta))$coefficients[2,1])
+	crit <- ifelse(is.null(ctrls),summary(lm(as.formula(paste(dep,indep,sep="~")), weights=unlist(dta[w_int]), data=dta))$coefficients[9,1],summary(lm(as.formula(paste(paste(dep,indep,sep="~"), ctrls,sep="+")),  weights=unlist(dta[w_int]),data=dta))$coefficients[9,1])
 if (is.null(ctrls)) {
-	dta <-  data.table(cbind(dta[dep],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms")]),cbind(dta[w_int]))
+	dta <-  data.table(cbind(dta[dep],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms","ind_close")]),cbind(dta[w_int]))
 } else {
-	dta <-  data.table(cbind(dta[dep],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms")],cbind(dta[w_int]),cbind(dta[unlist(strsplit(ctrls,"[+]"))])))
+	dta <-  data.table(cbind(dta[dep],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms","ind_close")],cbind(dta[w_int]),cbind(dta[unlist(strsplit(ctrls,"[+]"))])))
 }
 	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table")) %dopar% {
 		dta_sim <- data.table(dta)
@@ -90,7 +90,7 @@ if (is.null(ctrls)) {
 		dta_sim$messenger <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["couple",]>0]), "couple", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["male",]>0]), "male", ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$messenger,dta$treat))[table(dta$messenger, dta$treat)["ctrl",]>0]), "ctrl","female")))
 		dta_sim$ivr <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$ivr,dta$treat))[table(dta$ivr, dta$treat)["yes",]>0]), "yes","no")
 		dta_sim$sms <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$sms,dta$treat))[table(dta$sms, dta$treat)["yes",]>0]), "yes","no")
-		return(abs(ifelse(is.null(ctrls),summary(lm(as.formula(paste(dep,indep,sep="~")), weights=unlist(dta_sim[,w_int, with=FALSE]), data=dta_sim))$coefficients[2,1],summary(lm(as.formula(paste(paste(dep,indep,sep="~"), ctrls,sep="+")), weights=unlist(dta_sim[,w_int, with=FALSE]), data=dta_sim))$coefficients[2,1])) > abs(crit) )
+		return(abs(ifelse(is.null(ctrls),summary(lm(as.formula(paste(dep,indep,sep="~")), weights=unlist(dta_sim[,w_int, with=FALSE]), data=dta_sim))$coefficients[9,1],summary(lm(as.formula(paste(paste(dep,indep,sep="~"), ctrls,sep="+")), weights=unlist(dta_sim[,w_int, with=FALSE]), data=dta_sim))$coefficients[9,1])) > abs(crit) )
 	}
 	return(sum(oper)/nr_repl)
 }
@@ -114,10 +114,10 @@ threshold_finder<- function(threshold){
 	dta <- dta %>% 
     		mutate(uniqID = group_indices_(dta, .dots=c("distID", "subID","vilID"))) 
 if (is.null(ctrls)) {
-dta <-  data.table(cbind(dta[deps],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms")]),cbind(dta[w_int]))
+dta <-  data.table(cbind(dta[deps],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms","ind_close")]),cbind(dta[w_int]))
 
 } else {
-	dta <-  data.table(cbind(dta[deps],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms")],cbind(dta[w_int]),cbind(dta[unlist(strsplit(ctrls,"[+]"))])))
+	dta <-  data.table(cbind(dta[deps],dta[c("messenger","recipient","treat","uniqID","hhid","ivr","sms","ind_close")],cbind(dta[w_int]),cbind(dta[unlist(strsplit(ctrls,"[+]"))])))
 }
 	oper <- foreach (repl = 1:nr_repl,.combine=cbind,.packages = c("data.table")) %dopar% {
 		dta_sim <- data.table(dta)
@@ -130,9 +130,9 @@ dta <-  data.table(cbind(dta[deps],dta[c("messenger","recipient","treat","uniqID
 		dta_sim$sms <- ifelse(dta_sim$perm %in% as.numeric(colnames(table(dta$sms,dta$treat))[table(dta$sms, dta$treat)["yes",]>0]), "yes","no")
 
 if (is.null(ctrls)) {
-return(unlist(lapply(deps, function(dvar)  summary(lm(as.formula(paste(dvar,indep,sep="~")), weights=unlist(dta_sim[,w_int, with=FALSE]),data=dta_sim))$coefficients[2,4])))
+return(unlist(lapply(deps, function(dvar)  summary(lm(as.formula(paste(dvar,indep,sep="~")), weights=unlist(dta_sim[,w_int, with=FALSE]),data=dta_sim))$coefficients[9,4])))
 } else {
-return(unlist(lapply(deps, function(dvar)  summary(lm(as.formula(paste(paste(dvar,indep,sep="~"),ctrls, sep="+")), weights=unlist(dta_sim[,w_int, with=FALSE]),data=dta_sim))$coefficients[2,4])))
+return(unlist(lapply(deps, function(dvar)  summary(lm(as.formula(paste(paste(dvar,indep,sep="~"),ctrls, sep="+")), weights=unlist(dta_sim[,w_int, with=FALSE]),data=dta_sim))$coefficients[9,4])))
 }		
 
 		}
@@ -188,7 +188,9 @@ return( subset(dataset,dataset[var] > quantile(dataset[var],c(trim_perc/2,1-(tri
 
 FW_index <- function(treat, indexer, contr_vars, w_int2,data, nr_repl=0) {
 ### function to make family wise index using covariance as weights (following http://cyrussamii.com/?p=2656)
-### FW_index("messenger != 'ctrl' ", c("know_space", "know_combine", "know_weed"),dta)
+###  FW_index(treatment,c("fert_dap","fert_urea","fert_org"),ctrls,w_int2 = "weight", data =dta_bal, nr_repl=totrep )
+
+
 data <- data[complete.cases(data[indexer]),]
 x <- data[indexer]
 
@@ -200,14 +202,14 @@ x <- data[indexer]
 					Sx <- cov(x)
 
 					data$index <- t(solve(t(i.vec)%*%solve(Sx)%*%i.vec)%*%t(i.vec)%*%solve(Sx)%*%t(x))
-mod <- lm(as.formula(paste("index",treat,sep="~")) ,weights=unlist(data[w_int2]), data=data)
+mod <- lm(as.formula(paste("index",paste(treat,contr_vars,sep="+"),sep="~")) ,weights=unlist(data[w_int2]), data=data)
 
 
 if (nr_repl > 0) { 
 	data$index <- as.vector(data$index)
 	sig <- RI("index" ,treat , contr_vars, w_int= w_int2, data, nr_repl = nr_repl)
 } else {
-	sig <- summary(lm(as.formula(paste("index",treat,sep="~")) ,weights=unlist(data[w_int2]), data=data))$coefficients[2,4]
+	sig <- summary(lm(as.formula(paste("index",paste(treat,contr_vars,sep="+"),sep="~")) ,weights=unlist(data[w_int2]), data=data))$coefficients[9,4]
 }
 return(list(mod,sig, data))
 }
@@ -221,7 +223,8 @@ baseline <- subset(baseline, !(hhid %in% baseline$hhid[duplicated(baseline$hhid)
 dta <- merge(baseline, dta, by="hhid")
 
 ### only for the 66 percent closest to agro-input dealer
-dta <- subset(dta, maizedist_shop<=5)
+#dta <- subset(dta, maizedist_shop<=5)
+dta$ind_close <-  dta$maizedist_shop <= median(dta$maizedist_shop)
 
 ###number of RI replications: if set to 0, conventional p-values are reported, in the analysis, 10000 replications were used
 totrep <- 10000
@@ -229,19 +232,19 @@ totrep <- 10000
 for (h in 1:3) {
 if (h == 1) {
 dta_bal <- dta
-treatment <- "(messenger != 'ctrl')+ivr+sms+as.factor(recipient)"
+treatment <- "(messenger != 'ctrl')*ind_close +ivr+sms+as.factor(recipient)"
 ctrls <- "femhead" 
 } else if ( h==2 ) {
 dta_bal <- dta
 ###uncomment here to look at heterogeneity wrt to mobile access
 #dta_bal <- subset(dta,maizemobile_access == TRUE)
-treatment <- "ivr+(messenger != 'ctrl')+sms+as.factor(recipient)"
+treatment <- "ivr*ind_close+(messenger != 'ctrl')+sms+as.factor(recipient)"
 ctrls <- "femhead"  
 } else if (h==3) {
 dta_bal <- dta
 ###uncomment here to look at heterogeneity wrt to mobile ownership
 #dta_bal <- subset(dta,maizemobile == TRUE)
-treatment <- "sms+(messenger != 'ctrl')+ivr+as.factor(recipient)" 
+treatment <- "sms*ind_close+(messenger != 'ctrl')+ivr+as.factor(recipient)" 
 ctrls <- "femhead" 
 }
 ################################ knowledge  ############################
@@ -340,9 +343,9 @@ ctrls <- "femhead"
 #### fert = DAP/NPK
 res_itt_fert[1,1,h]  <-  mean(dta_bal$fert_dap[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_fert[2,1,h]  <-  sd(dta_bal$fert_dap[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_fert[1,2,h]  <- summary(lm(as.formula(paste(paste("fert_dap", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_fert[2,2,h]  <- summary(lm(as.formula(paste(paste("fert_dap", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_fert[1,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , ctrls, dta_bal, nr_repl = totrep, "weight") , summary(lm(as.formula(paste(paste("fert_dap", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_fert[1,2,h]  <- summary(lm(as.formula(paste(paste("fert_dap", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[9,1]
+res_itt_fert[2,2,h]  <- summary(lm(as.formula(paste(paste("fert_dap", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[9,2]
+res_itt_fert[1,3,h]  <- ifelse(totrep >0, RI("fert_dap",treatment , ctrls, dta_bal, nr_repl = totrep, "weight") , summary(lm(as.formula(paste(paste("fert_dap", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[9,4])
 res_itt_fert[1,4,h]  <- nobs(lm(as.formula(paste(paste("fert_dap", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ##fert_plot[2,1] <- "DAP/NPK"
@@ -352,9 +355,9 @@ res_itt_fert[1,4,h]  <- nobs(lm(as.formula(paste(paste("fert_dap", treatment, se
 #### fert = urea
 res_itt_fert[3,1,h]  <-  mean(dta_bal$fert_urea[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_fert[4,1,h]  <-  sd(dta_bal$fert_urea[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_fert[3,2,h]  <- summary(lm(as.formula(paste(paste("fert_urea", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_fert[4,2,h]  <- summary(lm(as.formula(paste(paste("fert_urea", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_fert[3,3,h]  <- ifelse(totrep >0, RI("fert_urea",treatment , ctrls, dta_bal, nr_repl = totrep, "weight") , summary(lm(as.formula(paste(paste("fert_urea", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4])
+res_itt_fert[3,2,h]  <- summary(lm(as.formula(paste(paste("fert_urea", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[9,1]
+res_itt_fert[4,2,h]  <- summary(lm(as.formula(paste(paste("fert_urea", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[9,2]
+res_itt_fert[3,3,h]  <- ifelse(totrep >0, RI("fert_urea",treatment , ctrls, dta_bal, nr_repl = totrep, "weight") , summary(lm(as.formula(paste(paste("fert_urea", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[9,4])
 res_itt_fert[3,4,h]  <- nobs(lm(as.formula(paste(paste("fert_urea", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ##fert_plot[3,1] <- "urea"
@@ -364,9 +367,9 @@ res_itt_fert[3,4,h]  <- nobs(lm(as.formula(paste(paste("fert_urea", treatment, s
 #### fert = organic
 res_itt_fert[5,1,h]  <-  mean(dta_bal$fert_org[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_fert[6,1,h]  <-  sd(dta_bal$fert_org[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_fert[5,2,h]  <-  summary(lm(as.formula(paste(paste("fert_org", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_fert[6,2,h]  <- summary(lm(as.formula(paste(paste("fert_org", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_fert[5,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("fert_org", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4]) 
+res_itt_fert[5,2,h]  <-  summary(lm(as.formula(paste(paste("fert_org", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[9,1]
+res_itt_fert[6,2,h]  <- summary(lm(as.formula(paste(paste("fert_org", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[9,2]
+res_itt_fert[5,3,h]  <- ifelse(totrep >0, RI("fert_org",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("fert_org", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[9,4]) 
 res_itt_fert[5,4,h]  <-  nobs(lm(as.formula(paste(paste("fert_org", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ##fert_plot[4,1] <- "organic"
@@ -401,9 +404,9 @@ res_itt_fert[7,4,h] <-  nobs(indexer[[1]])
 ### hybrid
 res_itt_seed[1,1,h]  <-  mean(dta_bal$hybrid[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_seed[2,1,h]  <-  sd(dta_bal$hybrid[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_seed[1,2,h] <- summary(lm(as.formula(paste(paste("hybrid", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_seed[2,2,h] <- summary(lm(as.formula(paste(paste("hybrid", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_seed[1,3,h] <- ifelse(totrep >0, RI("hybrid",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("hybrid", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4]) 
+res_itt_seed[1,2,h] <- summary(lm(as.formula(paste(paste("hybrid", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[9,1]
+res_itt_seed[2,2,h] <- summary(lm(as.formula(paste(paste("hybrid", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[9,2]
+res_itt_seed[1,3,h] <- ifelse(totrep >0, RI("hybrid",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("hybrid", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[9,4]) 
 res_itt_seed[1,4,h] <- nobs(lm(as.formula(paste(paste("hybrid", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 ##seed_plot[2,1] <- "hybrid"
@@ -413,16 +416,16 @@ res_itt_seed[1,4,h] <- nobs(lm(as.formula(paste(paste("hybrid", treatment, sep="
 ### opv
 res_itt_seed[3,1,h]  <-  mean(dta_bal$opv[dta_bal$messenger == "ctrl"], na.rm=T)
 res_itt_seed[4,1,h]  <-  sd(dta_bal$opv[dta_bal$messenger == "ctrl"], na.rm=T)
-res_itt_seed[3,2,h] <- summary(lm(as.formula(paste(paste("opv", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,1]
-res_itt_seed[4,2,h] <- summary(lm(as.formula(paste(paste("opv", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,2]
-res_itt_seed[3,3,h] <- ifelse(totrep >0, RI("opv",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("opv", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[2,4]) 
+res_itt_seed[3,2,h] <- summary(lm(as.formula(paste(paste("opv", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[9,1]
+res_itt_seed[4,2,h] <- summary(lm(as.formula(paste(paste("opv", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[9,2]
+res_itt_seed[3,3,h] <- ifelse(totrep >0, RI("opv",treatment , ctrls, dta_bal, nr_repl = totrep, "weight"), summary(lm(as.formula(paste(paste("opv", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))$coefficients[9,4]) 
 res_itt_seed[3,4,h] <- nobs(lm(as.formula(paste(paste("opv", treatment, sep="~"),ctrls,sep="+")), data=dta_bal, weights = weight))
 
 indexer <-  FW_index(treatment,c("hybrid","opv"),ctrls,w_int2 = "weight", data =dta_bal, nr_repl=totrep )
 res_itt_seed[5,1,h] <-  mean(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
 res_itt_seed[6,1,h] <-  sd(indexer[[3]]$index[indexer[[3]]$messenger == "ctrl"])
-res_itt_seed[5,2,h] <-  summary(indexer[[1]])$coefficients[2,1]
-res_itt_seed[6,2,h] <-  summary(indexer[[1]])$coefficients[2,2]
+res_itt_seed[5,2,h] <-  summary(indexer[[1]])$coefficients[9,1]
+res_itt_seed[6,2,h] <-  summary(indexer[[1]])$coefficients[9,2]
 res_itt_seed[5,3,h] <-  indexer[[2]]
 res_itt_seed[6,4,h] <-  nobs(indexer[[1]])
 
