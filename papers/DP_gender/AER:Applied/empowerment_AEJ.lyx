@@ -1641,15 +1641,194 @@ Next, to examine the impact of providing women and men with information
 \end_layout
 
 \begin_layout Subsection
-Inference
+Estimation
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Estimation"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-We estimate effects in a regression framework
+We estimate average treatment effects using the following Ordinary Least
+ Squares specification for the impact of the different treatments on outcome
+ 
+\begin_inset Formula $y$
+\end_inset
+
+ in household 
+\begin_inset Formula $i$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{i}=\alpha+\beta.T_{i}+\gamma X_{i}+\delta.O_{i}+\varepsilon_{i}\label{eq:ols}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the equation, 
+\begin_inset Formula $T_{i}$
+\end_inset
+
+ is an indicator that is one if a household received the treatment for the
+ particular hypothesis that is tested, and zero otherwise.
+ 
+\begin_inset Formula $O_{i}$
+\end_inset
+
+ is a vector of indicators for the orthogonal factor for household 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ is a vector of baseline control variables that are included to adjust for
+ any imbalance that is found between treatment and control at baseline (See
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Data"
+
+\end_inset
+
+).
+ For example, to test the first hypothesis whether involving women as recipients
+ of information is effective, 
+\begin_inset Formula $T_{i}$
+\end_inset
+
+ equals one if the video was shown to the couple or to the woman alone and
+ zero if the video was shown to the man alone within the household.
+ 
+\begin_inset Formula $O_{i}$
+\end_inset
+
+ is a vector of 2 dummy variables, corresponding to what version of the
+ video was shown.
+ The first dummy takes the value of one if the version of the video was
+ shown where the information was provided by the woman alone (and zero other
+ wise).
+ The first dummy takes the value of one if the version of the video was
+ shown where the information was provided by a couple (and zero other wise).
+ The reference category is thus the video where a man alone provides the
+ information.
+ 
+\end_layout
+
+\begin_layout Standard
+The parameter of interest in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ols"
+
+\end_inset
+
+ is the treatment effect 
+\begin_inset Formula $\left(\beta\right)$
+\end_inset
+
+.
+ It is important to note that this is a composite parameter, denoting the
+ effect of the treatment when approximately approximately equal shares of
+ households receive the orthogonal treatment.
+ In factorial designs where each factor has a treatment and a control condition,
+ one can run a fully interacted model.
+ The main effects can then be interpreted as the effect of the treatment
+ alone.
+ However, in our design, we do not have strict control categories in the
+ factors (at least someone needs to provide information in the video and
+ at least one person in the household was shown a video).
+ It is therefore more informative to estimate treatment effects that are
+ weighted-averages of the interactions with other treatments.
+ To continue with the example of the first hypothesis, 
+\begin_inset Formula $\beta$
+\end_inset
+
+ denotes the effect of involving women in receiving information when about
+ one third of the sample receives this information in the form of a video
+ where only a man provides the information, one third where only a women
+ provides this information, and one third where the information is given
+ by a couple.
+\end_layout
+
+\begin_layout Standard
+In addition to controlling for the orthogonal factor in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ols"
+
+\end_inset
+
+, we need to take into account the fact that also within a factor, treatment
+ cells may have a different number of observations.
+ This becomes an issue when two cells are pooled.
+ For example, in testing the first hypothesis, we see from figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Layout-of-experimental"
+
+\end_inset
+
+ that there are 1,139 households where the woman alone is to receive the
+ information treatment, but only 1,053 households are allocated to receive
+ the information treatment as a couple.
+ When pooling these two groups into a singles group to assess women involvement
+ in receiving information, the women alone group gets a higher weight.
+ We thus make sure each group gets an equal weight when pooling groups.
+ 
+\end_layout
+
+\begin_layout Standard
+We use randomization inference to calculate associated p-values for the
+ two-sided hypothesis of no effect.
+ We aggregate families of outcomes into indices, which are constructed as
+ the weighted mean of the individual standardized outcomes, using as weights
+ the inverse of the co-variance matrix of the transformed outcomes 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.2307/27640197"
+
+\end_inset
+
+.
+ Combining outcomes in indices is a common strategy to guard against over-reject
+ion of the null hypothesis due to multiple inference.
+ However, it may also be interesting to see the effect of the intervention
+ on individual outcomes.
+ An alternative strategy to deal with the multiple comparisons problem is
+ to adjustment the significance levels to control the Family Wise Error
+ Rates (FWER).
+ We used re-randomization to construct the joint null distribution for the
+ family of outcomes we are testing.
+ From this family-wise sharp null, we obtained the corresponding FWER-consistent
+ significance thresholds by determining which cutoffs yield 10 percent,
+ five percent and one percent significant hypothesis tests across all tests
+ and simulations.
 \end_layout
 
 \begin_layout Subsection
-Data 
+Data
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Data"
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1704,7 +1883,7 @@ reference "tab:Balance"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1756,6 +1935,19 @@ hline
 
 \begin_layout Plain Layout
 
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
 	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
 \backslash
 
@@ -1767,10 +1959,15 @@ hline
 
 
 \backslash
-cline{2-6} 
+cline{2-7} 
 \end_layout
 
 \begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
 
 \end_layout
 
@@ -1817,15 +2014,12 @@ Yield (log)	&	5.310	&	0.823	&	-0.068	&	0.031	&	0.013	&	3,153
 \backslash
 
 \backslash
- F-statistic	&	20.253	&		&		&		&		&		
-\backslash
+ 
+\end_layout
 
-\backslash
- p-value of F	&	0.000	&		&		&		&		&		
-\backslash
+\begin_layout Plain Layout
 
-\backslash
- N	&	3,126	&		&		&		&		&		 	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+
 \backslash
 
 \backslash
@@ -1833,6 +2027,40 @@ Yield (log)	&	5.310	&	0.823	&	-0.068	&	0.031	&	0.013	&	3,153
 \end_layout
 
 \begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
 
 \end_layout
 
@@ -1879,26 +2107,15 @@ Yield (log)	&	5.310	&	0.823	&	-0.014	&	0.031	&	0.619	&	3,153
 \backslash
 
 \backslash
- F-statistic	&	0.682	&		&		&		&		&		
-\backslash
-
-\backslash
- p-value of F	&	0.742	&		&		&		&		&		
-\backslash
-
-\backslash
- N	&	3,126	&		&		&		&		&		
-\backslash
-
-\backslash
- 		 
+ 
 \end_layout
 
 \begin_layout Plain Layout
 
-\end_layout
 
-\begin_layout Plain Layout
+\backslash
+
+\backslash
 
 \end_layout
 
@@ -1984,15 +2201,60 @@ end{threeparttable}
 \end_layout
 
 \begin_layout Standard
-The table also serves as a balance test for the different comparisons we
- will make.
- We observe baseline imbalances in observable characteristics that are statistic
-ally significant, and we further test for joint significance of the differences
- and find that certain groups are significantly different in the characteristics
- we measured at baseline.
+The table also serves as a balance test for the two main comparisons we
+ will make (Balance tests for the other hypothesis tests can be found in
+ Appendix Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance1AB"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance2AB"
+
+\end_inset
+
+).
+ We find baseline imbalances in observable characteristics that are statisticall
+y significant, especially for the hypothesis related to empowering women
+ with information (Model 1 in the upper panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance"
+
+\end_inset
+
+).
+ For example we find that, at baseline, male co-heads were significantly
+ younger in households where women were involved in receiving information,
+ and that male co-heads were less likely to have finished primary education.
+ We also find that they were less likely to use improved seed, use fertilizer,
+ or own a mobile phone and that they reported lower maize yields.
+ Households also were larger.
+ A test for joint significance of the differences confirms this imbalance
+ for the comparison in Model 1 (F-statistic = 20,253; p-value < 0.001).
+ For the comparison to test the impact of role model effects, we do not
+ find imbalance between the groups (lower panel in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance"
+
+\end_inset
+
+) (F-statistic = 0,682; p-value = 0.742).
  We will control for baseline characteristics that show up as significant
- in the balance tables by estimating analysis of covariance (ANCOVA) models
- when treatment and control outcomes are compared throughout the paper.
+ in the balance tables when treatment and control outcomes are compared
+ throughout the paper.
+ 
+\end_layout
+
+\begin_layout Standard
+Endline data was collected between February and April 2018.
+ Households were revisisted and male and female co-heads where interviewed
+ separately.
  
 \end_layout
 
@@ -2003,7 +2265,7 @@ Indicator definition
 \begin_layout Standard
 Since this study aims to estimate effects on women’s empowerment, we consider
  a woman as ‘empowered’ not only if she achieves things on her own, but
- also if she does so in partnership with the man co-head in the household.
+ also if she does so in partnership with the male co-head in the household.
  Thus, we examine effects on both women’s outcomes and outcomes that are
  shared (joint) between the female and male co-heads of household.
  Those outcomes are cast as increases in (a) the female co-head’s knowledge
@@ -2042,8 +2304,9 @@ First, respondents are considered knowledgeable about plant spacing if they
  Fourth, respondents are considered knowledgeable about fall armyworm control
  if they correctly answered that spraying in the evening is most effective
  since fall armyworm eats during night.
- This information was not provided in the video but could be common knowledge
- made more salient by providing the other agronomic information.
+ The information needed to correctly answer the first three questions was
+ provided in the videos.
+ The videos did not provide information on fall armyworm control.
 \end_layout
 
 \end_inset
@@ -2053,31 +2316,28 @@ First, respondents are considered knowledgeable about plant spacing if they
  the female and male co-heads, where it was considered a correct joint answer
  if both of them got the answer correct, otherwise, not.
  We combine the outcomes of the four knowledge questions into a Women’s
- Knowledge Index, a Joint Knowledge Index and a Men’s Knowledge Index, which
- are constructed as the weighted mean of the individual standardized outcomes,
- using as weights the inverse of the co-variance matrix of the transformed
- outcomes (Anderson 2008).
- This, in addition to adjustments to the significance levels to account
- for Family Wise Error Rates (FWER), guards against over-rejection of the
- null hypothesis due to multiple inference.
- We used re-randomization to construct the joint null distribution for the
- family of outcomes we are testing.
- From this family-wise sharp null, we obtained the corresponding FWER-consistent
- significance thresholds by determining which cutoffs yield 10 percent,
- five percent and one percent significant hypothesis tests across all tests
- and simulations.
+ Knowledge Index, a Joint Knowledge Index and a Men’s Knowledge Index as
+ mentioned in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Estimation"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
 Agricultural decision-making is based on women’s answers about whether she
  made particular decisions related to household maize production individually
- or jointly with her spouse, or whether her husband made the decisions by
- himself.
- We look at the following decisions: whether to plant maize on a particular
- plot; the timing of maize planting (the number of days after the start
- of the rain) on a particular plot; the spacing of maize plants and the
- number of seeds to plant per hill; how to control striga on a particular
- plot; and the timing of the first weeding on a particular plot.
+ or jointly with her spouse, or whether her husband made the decisions unilatera
+lly.
+ For each maize plot within the household, we thus recorded who made the
+ following decisions: whether to plant maize on the plot; when to start
+ planting the maize on the plot; what spacing of maize plants to use and
+ how many seeds per hill to plant on the plot; what strategies to use to
+ control striga on the plot; and when to start weeding on the plot.
  Per household, we consider the proportion of maize plots within the household
  on which the female co-head reported to have made the decision alone (jointly,
  or her husband alone).
@@ -2086,8 +2346,6 @@ Agricultural decision-making is based on women’s answers about whether she
  plots for which the female co-head made the decisions described above alone,
  along with a corresponding Joint Decision-making Index and Men’s Decision-makin
 g Index.
- We also calculated FWER-consistent significance thresholds for the family
- of decision-making outcomes in the same manner as discussed above.
  
 \end_layout
 
@@ -2121,9 +2379,9 @@ It is important to note that our intervention may change both the likelihood
 \end_inset
 
  We measure adoption of the following practices: planting within one day
- after the start of the rain, using the correct spacing and number of seeds
- per hill, removing striga before it flowers, and doing the first weeding
- in the third week after planting.
+ after the start of the rain, using the recommended spacing and number of
+ seeds per hill, removing striga before it flowers, and doing the first
+ weeding in the third week after planting.
  
 \end_layout
 
@@ -2151,8 +2409,7 @@ This means the indicator measures P(Decision about the use of the input
 
  As before, we used the same method to construct a Women’s Adoption Index,
  a Joint Adoption Index, a Men’s Adoption index, a Women’s Input Use Index,
- a Joint Input Use Index, and a Men’s Input Use Index and defined FWER-consisten
-t significance thresholds.
+ a Joint Input Use Index, and a Men’s Input Use Index.
 \end_layout
 
 \begin_layout Standard
@@ -2177,8 +2434,7 @@ Next, we measured outcomes related to production, area of production, and
  we measure both the share of household maize production that was produced
  on female-managed maize plots and the share of household acreage under
  maize cultivation that is on female-managed maize plots.
- We also defined indicators for jointly managed plots, and calculated FWER-consi
-stent significance thresholds.
+ We also defined indicators for jointly managed plots.
  
 \end_layout
 
@@ -3389,6 +3645,628 @@ status open
 
 \begin_layout Section
 Appendix
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Balance tests for Models 1A and 1B
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Balance1AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield (log)	&	5.339	&	0.801	&	-0.029	&	0.035	&	0.370	&	2,154	
+\backslash
+
+\backslash
+ Age of male co-head	&	38.702	&	13.511	&	-8.630	&	0.541	&	0.000	&	2,242	
+\backslash
+
+\backslash
+ Male co-head finished primary school	&	0.338	&	0.473	&	-0.162	&	0.020	&	0.000	&	2,26
+9	
+\backslash
+
+\backslash
+ Household size	&	7.521	&	3.233	&	0.071	&	0.136	&	0.599	&	2,269	
+\backslash
+
+\backslash
+ Nbr of bedrooms	&	2.218	&	1.126	&	-0.079	&	0.047	&	0.073	&	2,269	
+\backslash
+
+\backslash
+ Access to extension	&	0.112	&	0.316	&	0.001	&	0.013	&	0.967	&	2,269	
+\backslash
+
+\backslash
+ Used fertilizer	&	0.221	&	0.415	&	-0.036	&	0.017	&	0.023	&	2,269	
+\backslash
+
+\backslash
+ Used improved seed	&	0.387	&	0.487	&	-0.081	&	0.020	&	0.000	&	2,269	
+\backslash
+
+\backslash
+ Distance to input provider	&	5.516	&	5.598	&	-0.113	&	0.235	&	0.577	&	2,269	
+\backslash
+
+\backslash
+ Household owns mobile	&	0.742	&	0.438	&	-0.180	&	0.018	&	0.000	&	2,269	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1B: Zooming in on providing information to women as part of
+ the couple}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield (log)	&	5.313	&	0.823	&	-0.092	&	0.036	&	0.004	&	2,077	
+\backslash
+
+\backslash
+ Age of male co-head	&	42.521	&	14.254	&	-0.988	&	0.612	&	0.098	&	2,176	
+\backslash
+
+\backslash
+ Male co-head finished primary school	&	0.425	&	0.494	&	0.011	&	0.021	&	0.596	&	2,187
+	
+\backslash
+
+\backslash
+ Household size	&	7.655	&	3.355	&	0.352	&	0.143	&	0.011	&	2,187	
+\backslash
+
+\backslash
+ Nbr of bedrooms	&	2.263	&	1.180	&	0.014	&	0.051	&	0.779	&	2,187	
+\backslash
+
+\backslash
+ Access to extension	&	0.108	&	0.311	&	-0.008	&	0.013	&	0.543	&	2,187	
+\backslash
+
+\backslash
+ Used fertilizer	&	0.209	&	0.406	&	-0.063	&	0.017	&	0.000	&	2,187	
+\backslash
+
+\backslash
+ Used improved seed	&	0.401	&	0.490	&	-0.055	&	0.021	&	0.009	&	2,187	
+\backslash
+
+\backslash
+ Distance to input provider	&	5.599	&	5.671	&	0.062	&	0.243	&	0.764	&	2,187	
+\backslash
+
+\backslash
+ Household owns mobile	&	0.840	&	0.366	&	0.019	&	0.016	&	0.226	&	2,187	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports sample means and second column associated standard
+ deviations; Column 3 reports average treatment effect with associated standard
+ error in column 4 and randomazation inference p-values in column5.
+ Column 6 resports sample size.
+ A joint test for balance is rejected for the first model (F-statistic 49.319,
+ p-value < 0.001) and also for the second model (F-statistic 4.168, p-value
+ < 0.001).
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Balance tests for Models 2A and 2B
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Balance2AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield (log)	&	5.303	&	0.824	&	-0.067	&	0.053	&	0.165	&	1,075	
+\backslash
+
+\backslash
+ Age of male co-head	&	34.370	&	11.043	&	0.851	&	0.696	&	0.220	&	1,118	
+\backslash
+
+\backslash
+ Male co-head finished primary school	&	0.257	&	0.437	&	0.002	&	0.027	&	0.928	&	1,135
+	
+\backslash
+
+\backslash
+ Household size	&	7.554	&	3.212	&	0.108	&	0.201	&	0.582	&	1,135	
+\backslash
+
+\backslash
+ Nbr of bedrooms	&	2.177	&	1.064	&	0.095	&	0.066	&	0.139	&	1,135	
+\backslash
+
+\backslash
+ Access to extension	&	0.113	&	0.316	&	-0.011	&	0.020	&	0.569	&	1,135	
+\backslash
+
+\backslash
+ Used fertilizer	&	0.203	&	0.402	&	-0.049	&	0.025	&	0.047	&	1,135	
+\backslash
+
+\backslash
+ Used improved seed	&	0.346	&	0.476	&	-0.037	&	0.030	&	0.186	&	1,135	
+\backslash
+
+\backslash
+ Distance to input provider	&	5.459	&	5.273	&	0.075	&	0.330	&	0.777	&	1,135	
+\backslash
+
+\backslash
+ Household owns mobile	&	0.652	&	0.477	&	0.007	&	0.030	&	0.803	&	1,135	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield (log)	&	5.372	&	0.778	&	-0.022	&	0.050	&	0.629	&	1,075	
+\backslash
+
+\backslash
+ Age of male co-head	&	43.002	&	14.349	&	0.151	&	0.904	&	0.863	&	1,124	
+\backslash
+
+\backslash
+ Male co-head finished primary school	&	0.420	&	0.494	&	0.015	&	0.031	&	0.616	&	1,134
+	
+\backslash
+
+\backslash
+ Household size	&	7.487	&	3.257	&	-0.243	&	0.204	&	0.249	&	1,134	
+\backslash
+
+\backslash
+ Nbr of bedrooms	&	2.258	&	1.183	&	-0.100	&	0.074	&	0.154	&	1,134	
+\backslash
+
+\backslash
+ Access to extension	&	0.112	&	0.315	&	0.035	&	0.020	&	0.079	&	1,134	
+\backslash
+
+\backslash
+ Used fertilizer	&	0.239	&	0.427	&	-0.002	&	0.027	&	0.935	&	1,134	
+\backslash
+
+\backslash
+ Used improved seed	&	0.427	&	0.495	&	0.062	&	0.031	&	0.043	&	1,134	
+\backslash
+
+\backslash
+ Distance to input provider	&	5.573	&	5.898	&	-0.723	&	0.369	&	0.022	&	1,134	
+\backslash
+
+\backslash
+ Household owns mobile	&	0.832	&	0.374	&	-0.018	&	0.023	&	0.424	&	1,134	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports sample means and second column associated standard
+ deviations; Column 3 reports average treatment effect with associated standard
+ error in column 4 and randomazation inference p-values in column5.
+ Column 6 resports sample size.
+ A joint test for balance can not be rejected for the first model (F-statistic
+ 0.974, p-value = 0.465) and also not for the second model (F-statistic 1.579,
+ p-value = 0.108).
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
