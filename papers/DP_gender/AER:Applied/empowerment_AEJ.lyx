@@ -1705,7 +1705,11 @@ reference "subsec:Data"
 
 \end_inset
 
-).
+), and 
+\begin_inset Formula $\varepsilon_{i}$
+\end_inset
+
+ is the error term.
  For example, to test the first hypothesis whether involving women as recipients
  of information is effective, 
 \begin_inset Formula $T_{i}$
@@ -1743,8 +1747,8 @@ reference "eq:ols"
 
 .
  It is important to note that this is a composite parameter, denoting the
- effect of the treatment when approximately approximately equal shares of
- households receive the orthogonal treatment.
+ effect of the treatment when approximately equal shares of households receive
+ the orthogonal treatment.
  In factorial designs where each factor has a treatment and a control condition,
  one can run a fully interacted model.
  The main effects can then be interpreted as the effect of the treatment
@@ -2253,7 +2257,7 @@ reference "tab:Balance"
 
 \begin_layout Standard
 Endline data was collected between February and April 2018.
- Households were revisisted and male and female co-heads where interviewed
+ Households were revisited and male and female co-heads where interviewed
  separately.
  
 \end_layout
@@ -2330,35 +2334,44 @@ reference "subsec:Estimation"
 
 \begin_layout Standard
 Agricultural decision-making is based on women’s answers about whether she
- made particular decisions related to household maize production individually
- or jointly with her spouse, or whether her husband made the decisions unilatera
-lly.
- For each maize plot within the household, we thus recorded who made the
- following decisions: whether to plant maize on the plot; when to start
- planting the maize on the plot; what spacing of maize plants to use and
- how many seeds per hill to plant on the plot; what strategies to use to
- control striga on the plot; and when to start weeding on the plot.
+ made particular decisions related to household maize production.
+ We differentiate between decisions made individually by the women co-head
+ and decisions made jointly with her spouse.
+ As women empowerment may also lead to a reduction in unilateral decision
+ making by the male co-head, we also consider decisions that, according
+ to the woman co-head, were decided by the man without consulting her.
+ For each maize plot within the household, we thus recorded if the following
+ decisions were made by the woman, jointly or by the man: whether to plant
+ maize on the plot; when to start planting the maize on the plot; what spacing
+ of maize plants to use and how many maize seeds per hill to plant on the
+ plot; what strategies to use to control striga on the plot; and when to
+ start weeding on the plot.
  Per household, we consider the proportion of maize plots within the household
- on which the female co-head reported to have made the decision alone (jointly,
- or her husband alone).
+ on which the female co-head reported that she made the decision alone,
+ that the decision was taken jointly with her husband, or that her husband
+ took the decision alone.
  Following a similar procedure as discussed above, we constructed a Women’s
  Decision-making Index, based on the proportion of the household’s maize
- plots for which the female co-head made the decisions described above alone,
- along with a corresponding Joint Decision-making Index and Men’s Decision-makin
-g Index.
+ plots for which the female co-head made the decisions described above alone.
+ We make also make indices for joint decision making and an index for male
+ unilateral decision making.
  
 \end_layout
 
 \begin_layout Standard
-Next, we consider actual adoption of the practices recommended in the video
- upon which, according to the female co-head respondent, she individually
- made decisions or jointly with her male co-head, or her husband did.
- We specifically consider the proportion of the household’s maize plots
- for which the female co-head decided about a particular practice alone
- and adopted the recommended practice by herself (respectively the proportion
- of the household’s maize plots for which the female and male co-head decided
- and adopted a particular practice jointly, and for which the male co-head
- decided and adopted the practice alone).
+Decision making is central to women empowerment.
+ However, we may also want to check if the practices and inputs that were
+ recommended in the video were also implemented on the plots.
+ For instance, it may be that due to the video, women gain voice in the
+ decision making process, but if additional investments are needed (for
+ instance in terms of labour time or inputs), they are still constrained.
+ We thus also consider the proportion of the household’s maize plots for
+ which the female co-head decided about a particular practice alone and
+ adopted the recommended practice.
+ Similarly, we consider the proportion of the household’s maize plots for
+ which the female and male co-head decided and adopted a particular practice
+ jointly, as well as the proportion of household's maize plots for which
+ the male co-head decided unilaterally and adopted the practice.
 \begin_inset Foot
 status collapsed
 
@@ -2366,23 +2379,18 @@ status collapsed
 It is important to note that our intervention may change both the likelihood
  that a spouse makes a decision as well as the likelihood that the decision
  maker then adopts what was recommended in the video.
- In other words, we only observe the reduced form outcome of our intervention:
- P(Adoption by woman * Decision by woman) with P(Adoption by woman * Decision
- by woman) = P(Adoption by woman | Decision by woman) * P(Decision by woman).
- P(Adoption by woman * Decision by woman) is what estimated in Table 6 and
- P(Decision by woman) is estimated in Table 5.
- For reference purposes, women’s likelihood of adoption on condition of
- making the decision by herself = P(Adoption by woman | Decision by woman)
- = P(Adoption by woman * Decision by woman) / P(Decision by woman).
+ Therefore, it is instructive to also consider impact on decision making
+ when considering impact on adoption.
 \end_layout
 
 \end_inset
 
- We measure adoption of the following practices: planting within one day
- after the start of the rain, using the recommended spacing and number of
- seeds per hill, removing striga before it flowers, and doing the first
- weeding in the third week after planting.
- 
+ We measure adoption of the following practices as recommended in the video:
+ planting within one day after the start of the rain, using the recommended
+ spacing and number of seeds per hill, removing striga before it flowers,
+ and doing the first weeding in the third week after planting.
+ As before, we use the same method to construct a Women’s Adoption Index,
+ a Joint Adoption Index and a Men’s Adoption index.
 \end_layout
 
 \begin_layout Standard
@@ -2392,24 +2400,13 @@ Diammonium phosphate
 \emph default
 ), urea, organic fertilizer, maize hybrids, and open pollinated varieties
  (OPVs).
- We specifically consider the proportion of the household’s maize plots
- for which a particular input was used and this was decided individually
- by the female co-head (jointly/individually by the male co-head) (based
- on the female co-head’s answers).
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-This means the indicator measures P(Decision about the use of the input
- by woman * Use of input) = P(Decision about the use of the input by woman
- | Use of input) * P(Use of input).
-\end_layout
-
-\end_inset
-
- As before, we used the same method to construct a Women’s Adoption Index,
- a Joint Adoption Index, a Men’s Adoption index, a Women’s Input Use Index,
- a Joint Input Use Index, and a Men’s Input Use Index.
+ Similar to adoption of recommended practices, we consider the proportion
+ of the household’s maize plots for which a particular input was used and
+ this was decided individually by the female co-head.
+ Similar outcomes for input adoption were constructed for joint input adoption
+ and for unilateral adoption by the male co-head.
+ Also here, adoption of different inputs is aggregated in a Women’s Input
+ Use Index, a Joint Input Use Index, and a Men’s Input Use Index respectively.
 \end_layout
 
 \begin_layout Standard
@@ -2417,9 +2414,7 @@ Next, we measured outcomes related to production, area of production, and
  productivity on maize plots under female and joint management.
  Female (jointly) managed plots are defined as plots on which, according
  to female co-head respondents, female co-heads alone (jointly) took at
- least three out of five decisions about planting maize on the plot, the
- timing of planting, spacing and seed rate, striga control, and the timing
- of the first weeding.
+ least three out of five decisions.
  We use the total amount of maize produced on female-managed maize plots
  within the household as our measure of production.
  The area of production is the total area (in acres) of female-managed maize
@@ -2427,53 +2422,37 @@ Next, we measured outcomes related to production, area of production, and
  Yield (in kg per acre) is the total amount of maize produced on female-managed
  plots divided by the total area of the female-managed maize plots in the
  household.
- A secondary, more subjective indicator for yield takes the value of one
- if the female co-head respondent believes the yield on at least one of
- her maize plots was greater than in a normal year.
- To capture the change in women’s control over total household production,
+ A secondary, more subjective indicator for yield effects is an indicator
+ variable that takes the value of one if the female co-head indicates if
+ the yield on at least one of the maize plots under her management was greater
+ than in a normal year.
+ To capture the change in women’s control over total household maize production,
  we measure both the share of household maize production that was produced
  on female-managed maize plots and the share of household acreage under
- maize cultivation that is on female-managed maize plots.
+ maize cultivation that is female-managed.
  We also defined indicators for jointly managed plots.
  
 \end_layout
 
 \begin_layout Standard
-Finally, we looked at maize sales as an outcome.
+Finally, we look at maize sales as an outcome.
  A first indicator takes the value of one if any amount of the maize produced
  in the household was reported by the female co-head respondent to have
  been sold independently by the female co-head (respectively, jointly and
  independently by the male co-head).
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Selling independently by the female (male) co-head means all decisions regarding
- quantity, price and to whom the maize was sold were taken by the female
- (male) co-head according to the female co-head respondent.
+ Selling independently by the female (male) co-head means all decisions
+ regarding quantity, price and to whom the maize was sold were taken by
+ the female (male) co-head according to the female co-head respondent.
  Jointly means all those decisions were taken together by the female and
  male co-head together.
-\end_layout
-
-\end_inset
-
  A second indicator is the amount of maize (in bags of about 100 kg) that
  the woman respondent reported to have sold independently (jointly/independently
  by the male co-head).
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Note that for the first indicator of the likelihood of selling independently
- we assumed women did not sell any maize independently if they did not know
- the amount sold independently.
+ For the first indicator of the likelihood of selling independently we assumed
+ women did not sell any maize independently if they did not know the amount
+ sold independently.
  For the second indicator (amount of maize sold independently), we only
  considered positive amounts of maize sold independently.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -2492,67 +2471,767 @@ Knowledge of recommended practices
 \end_layout
 
 \begin_layout Standard
-We begin our discussion of results by initially examining women’s and joint
- (couple’s) knowledge outcomes, focusing on the knowledge index described
- earlier as well as the individual recommended practices that respondents
- answered questions about.
+We begin our discussion of results by examining women’s and joint (couple’s)
+ knowledge outcomes, focusing on the knowledge index described earlier as
+ well as the individual recommended practices that respondents answered
+ questions about.
 \end_layout
 
 \begin_layout Standard
 First, we examine whether involving women as recipients of information leads
  to an increase in their knowledge.
- We do this by comparing: (a) groups in which female co-heads received the
- information, either alone or with their male spouse, against (b) groups
- in which only the male co-head received the information (, Model 1).
- Results (Table 4,Error: Reference source not found Model 1, Panel a) show
- a positive and statistically significant treatment effect on the women’s
- knowledge index of 0.11.
- We further observe positive and significant treatment effects of involving
+ We do this by comparing knowledge of women in households in which female
+ co-heads received the information, either alone or with their male spouse
+ to knowledge of women in households in which only the male co-head received
+ the information (Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowlege"
+
+\end_inset
+
+, upper panel).
+ Results show involving women as recipients of information leads to an overall
+ positive and statistically significant increase women’s knowledge as judged
+ by the index.
+ This is driven by a positive and significant treatment effects of involving
  women as recipients of information on women’s knowledge about adequate
- spacing and the number of maize seeds per hill of 7 percentage points (pp).
- This translates into a 52 percent increase over the mean of the control
- group.
- We observe a similar 5 pp increase in women’s knowledge about combining
- practices and starting small.
- These results remain consistent when the treatment group is restricted
- to: (a) the group in which the female co-head received the information
- alone (, Model 1A; Table 4, Model 1A, Panel a), and (b) the group in which
- she receives the information together with her male spouse (, Model 1B;
- Appendix Table 4A, Model 1B, Panel a).
+ spacing and the number of maize seeds per hill and about the importance
+ of combining inputs.
+ Knowledge about the former increased by 7 percentage points (pp), essentially
+ doubling women's knowledge on this topic.
+ We observe a 5 pp increase in women’s knowledge about combining inputs.
+ Similar results are obtained when the treatment group is restricted to
+ the sub-sample of households in which the female co-head received the informati
+on alone (model 1A, top panel in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_women_model1AB"
+
+\end_inset
+
+), and he sub-sample of households in which the female co-head received
+ the information together with her male spouse (model 1B, lower panel in
+ Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_women_model1AB"
+
+\end_inset
+
+).
  
 \end_layout
 
 \begin_layout Standard
-Second, we examine joint knowledge outcomes, and present results in terms
- of a comparison between the same sets of groups ( Model 1).
- Results (Table 4, Model 1, Panel b) show no significant effects of the
- treatment on joint knowledge outcomes.
- There is an indication that new information (about spacing) received by
- female co-heads alone is somewhat less likely to be passed on to their
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women knowledge of recommended practices 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:knowlege"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.127	&	0.334	&	0.066$^{**}$	&	0.016	&	0.000	&	2,
+758	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Combining practices &	0.817	&	0.387	&	0.051$^{**}$	&	0.015	&	0.000	&	2,758	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Optimal weeding	&	0.880	&	0.325	&	0.005	&	0.013	&	0.699	&	2,758	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Fall armyworm control	&	0.207	&	0.406	&	-0.011	&	0.016	&	0.459	&	2,758	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Womens  Joint knowledge index	&	-0.018	&	0.605	&	0.114$^{**}$	&	0.024	&	0.000	&	2,758
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.169	&	0.375	&	0.007	&	0.015	&	0.651	&	2,753	
+\backslash
+
+\backslash
+ Combining practices &	0.848	&	0.359	&	0.005	&	0.014	&	0.719	&	2,753	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.888	&	0.316	&	-0.003	&	0.013	&	0.842	&	2,753	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.203	&	0.403	&	-0.014	&	0.016	&	0.375	&	2,753	
+\backslash
+
+\backslash
+ Women Joint knowledge index	&	0.021	&	0.607	&	0.008	&	0.024	&	0.756	&	2,753
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Second, we examine the knowledge outcomes that result from variation in
+ the provider of information.
+ We examine results for role-model effects by comparing women’s knowledge
+ outcomes in households that were shown the video in which a female actor
+ in the video provides information (whether alone or with a male co-actor),
+ to women's knowledge outcomes in households that were shown the video in
+ which only a male actor provides information.
+ Results, reported in the lower panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowlege"
+
+\end_inset
+
+, show no evidence of a generalized role-model effect: we observe no change
+ in women’s knowledge outcomes as a result of involving female actors in
+ the provision of information.
+ Restricting the sample to households where only women were shown the video
+ (model 2A) does not change this conclusion (top panel in Appendix Table
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_women_model2AB"
+
+\end_inset
+
+).
+ Restricting the sample to households where only men were shown the video
+ (model 2B) also does not change this conclusion (bottom panel in Appendix
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_women_model2AB"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Third, we examine joint knowledge outcomes, and present results in terms
+ of a comparison between the same sets of groups.
+ Results are reported in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowlegeJoint"
+
+\end_inset
+
+ for model 1 (top panel) and model 2 (bottom panel).
+ Neither reducing intra-household information asymmetries nor female role
+ models seem to affect joint knowledge outcomes.
+ There is some indication that new information (about spacing) received
+ by female co-head alone is somewhat less likely to be passed on to their
  spouses than when male co-heads received the information, which is evident
- from the negative treatment effect of –3 pp on joint knowledge (significant
- at 11 percent) (Table 4, Model 1A, Panel b).
- Men’s knowledge index, and particularly his knowledge of new information
- (about spacing and starting small with a combination of practices), is
- negatively affected by involving women in receiving information (Appendix
- Table 4B, Model 1).
- 
+ from the negative treatment effect of –2.6 pp on joint knowledge (top panel
+ in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_joint_model1AB"
+
+\end_inset
+
+).
+ However, the difference becomes insignificant after controlling FWER.
+ Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_joint_model2AB"
+
+\end_inset
+
+ also reports results for Models 2A and 2B.
 \end_layout
 
 \begin_layout Standard
-Third, we examine the knowledge outcomes that result from variation in the
- provider of information.
- We examine results for role-model effects by examining women’s knowledge
- outcomes in terms of a comparison between: (a) groups in which a female
- actor in the video provides information (whether alone or with a male co-actor)
- against (b) groups in which only a male actor provides information (, Model
- 2).
- Results (Table 4, Model 2, Panel a) show no evidence of a generalized role-mode
-l effect: we observe no change in women’s knowledge outcomes as a result
- of female actors providing information.
- Fourth, joint knowledge outcomes seem unaffected by involving women in
- conveying the information as well (Table 4, Model 2, Panel b).
+In Appendix Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowlege_main_men"
+
+\end_inset
+
+ to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_men_model2AB-1"
+
+\end_inset
+
+, we also repeat the analysis for men’s knowledge.
+ Men's knowledge index, and particularly his knowledge of new information
+ (about spacing and starting small with a combination of practices), is
+ negatively affected by involving women in receiving information (top panel
+ in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowlege_main_men"
+
+\end_inset
+
+).
+ Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_men_model1AB-1"
+
+\end_inset
+
+ is consistent with the previous finding that women tend to monopolize new
+ information they receive alone.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint knowledge of recommended practices 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:knowlegeJoint"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
  
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.073	&	0.260	&	0.003	&	0.012	&	0.780	&	2,361	
+\backslash
+
+\backslash
+ Combining practices and starting small	&	0.737	&	0.440	&	0.015	&	0.019	&	0.449	&	2,3
+61	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.805	&	0.396	&	-0.003	&	0.018	&	0.855	&	2,361	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.075	&	0.264	&	0.019	&	0.012	&	0.096	&	2,361	
+\backslash
+
+\backslash
+ Women  Joint knowledge index	&	-0.003	&	0.602	&	0.010	&	0.026	&	0.636	&	2,361	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.073	&	0.261	&	-0.003	&	0.011	&	0.783	&	2,358	
+\backslash
+
+\backslash
+ Combining practices and starting small	&	0.739	&	0.439	&	0.008	&	0.019	&	0.683	&	2,3
+58	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.817	&	0.387	&	-0.018	&	0.017	&	0.295	&	2,358	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.091	&	0.288	&	-0.012	&	0.012	&	0.310	&	2,358	
+\backslash
+
+\backslash
+ Women  Joint knowledge index	&	0.001	&	0.595	&	-0.014	&	0.026	&	0.581	&	2,358	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2566,62 +3245,108 @@ Next, we explore the effect of the treatments on decision-making in the
  (alone or as part of a couple) results in their participation in decisions
  about maize production on an average plot managed by the household.
  We do this by again making the comparison as described in the previous
- section and illustrated in , Model 1.
+ section and illustrated in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+ (Model 1).
  
 \end_layout
 
 \begin_layout Standard
-Results (Table 5, Model 1, Panel a) shows a positive and statistically significa
-nt treatment effect of 0.13 on the women’s decision-making index.
+Results (Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:decision_main"
+
+\end_inset
+
+, top panel) shows a positive and statistically significant treatment effect
+ of 0.13 on the women’s decision-making index.
  The results are also evident across all of the decisions, where low mean
  values in the control group suggest high percent increases in women’s decision-
 making.
  A restriction of the comparison to the treatment group in which the female
  co-head received the information alone versus the male co-head alone (as
- in , Model 1A) shows a larger positive effect on the women’s decision-making
- index of 0.22 (Table 5, Model 1A, Panel a).
+ in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+, Model 1A) shows a larger positive effect on the women’s decision-making
+ index of 0.22 (Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:decide_women_model1AB"
+
+\end_inset
+
+, top panel).
  No such increase is found when the treatment group is restricted to the
  group in which female co-heads received the information together with their
- male spouse (, Model 1B; Appendix Error: Reference source not found, Model
- 1B, Panel a).
+ male spouse (Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+, Model 1B; Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:decide_women_model1AB"
+
+\end_inset
+
+, bottom panel).
  This implies that the gains in women’s individual decision-making are largely
  driven by providing only the female co-heads with information.
- 
 \end_layout
 
 \begin_layout Standard
-We find no change in joint decision-making outcomes as a result of involving
- women as information recipients (alone or as part of a couple) based on
- a comparison between the same groups (, Model 1; Table 5, Model 1, Panel
- b).
- But, when the treatment group is restricted to the group in which female
- co-heads received the information together with their male spouse (as in
- , Model 1B), there is a significant and positive effect on joint decision-makin
-g about the novel way of spacing and number of seeds (Appendix Error: Reference
- source not found, Model 1B, Panel b).
- We do find significant negative effects of involving women in receiving
- information on men’s individual decision-making.
- The men’s decision-making index decreases by 0.18 and men are less likely
- to make each of the decisions alone (Appendix Table 5B, Model 1).
- These negative effects on men’s individual decision-making do not only
- follow from giving the female co-head the information alone (in which case
- the female co-head can monopolize the information) (, Model 1A; Appendix
- Table 5B, Model 1A), but also from giving the female and male co-head the
- information together (, Model 1B; Appendix Table 5B, Model 1B).
-\end_layout
+In the lower panel of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:decision_main"
 
-\begin_layout Standard
-Next, we explore decision-making outcomes that result from variations in
- the information provider by making the same comparison as described in
- the previous section and illustrated in , Model 2.
- Results (Table 5, Model 2, Panel a) show no evidence of a generalized role-mode
-l effect on women’s decision-making.
+\end_inset
+
+, we explore decision-making outcomes that result from variations in the
+ information provider by making the same comparison as described in the
+ previous section and illustrated in Model 2 of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+.
+ Results show no evidence of a generalized role-model effect on women’s
+ decision-making.
  However, when we restrict this comparison to groups in which a female actor
  in the video provides information (whether alone or with a male co-actor)
  to female co-heads against groups in which a male actor provides information
- to female co-heads (, Model 2A), we do observe positive and statistically
- significant effects associated with role-model effects (Appendix Table
- 5A, Model 2A, Panel a).
+ to female co-heads (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+, Model 2A), we do observe positive and statistically significant effects
+ associated with role-model effects (top panel of Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:decide_women_model2AB"
+
+\end_inset
+
+).
  Specifically, we observe an increase of 0.16 in the women’s decision-making
  index and increases in women’s decision-making about the timing for planting
  maize, about spacing, about striga control measures, and the timing of
@@ -2630,24 +3355,722 @@ l effect on women’s decision-making.
  control group.
  Challenging role incongruity among male co-heads by showing them the video
  that involves a female actor (whether alone or with a male co-actor) instead
- of a male actor (as in , Model 2B) does not make a difference for women’s
- decision-making (Appendix Table 5B, Model 2A, Panel a).
+ of a male actor (as in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+, Model 2B) does not make a difference for women’s decision-making (bottom
+ panel of Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:decide_women_model2AB"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women decision making 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:decision_main"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.158	&	0.338	&	0.046$^{**}$	&	0.015	&	0.002	&	2,661	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.163	&	0.340	&	0.053$^{**}$	&	0.016	&	0.001	&	2,661	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.150	&	0.333	&	0.049$^{**}$	&	0.015	&	0.001	&	2,661	
+\backslash
+
+\backslash
+ Striga control measures	&	0.113	&	0.295	&	0.055$^{**}$	&	0.014	&	0.000	&	2,596	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.178	&	0.357	&	0.049$^{**}$	&	0.016	&	0.002	&	2,661	
+\backslash
+
+\backslash
+ Women decision-making index	&	-0.032	&	0.783	&	0.132$^{**}$	&	0.034	&	0.000	&	2,596	
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.184	&	0.359	&	0.004	&	0.015	&	0.762	&	2,714	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.197	&	0.367	&	0.000	&	0.015	&	0.989	&	2,714	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.180	&	0.356	&	0.004	&	0.015	&	0.782	&	2,714	
+\backslash
+
+\backslash
+ Striga control measures	&	0.152	&	0.339	&	-0.001	&	0.014	&	0.971	&	2,645	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.227	&	0.393	&	-0.019	&	0.016	&	0.227	&	2,714	
+\backslash
+
+\backslash
+ Womens  Joint decision-making index	&	-0.066	&	0.761	&	-0.014	&	0.033	&	0.672	&	2,64
+5	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We find no change in joint decision-making outcomes as a result of involving
+ women as information recipients (alone or as part of a couple) based on
+ a comparison between the same groups (top panel in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:decision_joint_main"
+
+\end_inset
+
+).
+ But, when the treatment group is restricted to the group in which female
+ co-heads received the information together with their male spouse (Model
+ 1B), there is a significant and positive effect on joint decision-making
+ about the novel way of spacing and number of seeds (bottem panel of Appendix
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_joint_model1AB-1"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+We do find significant negative effects of involving women in receiving
+ information on men’s individual decision-making.
+ The men’s decision-making index decreases by 0.18 and men are less likely
+ to make each of the decisions alone (top panel Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowlege_main_men-1"
+
+\end_inset
+
+).
+ These negative effects on men’s individual decision-making do not only
+ follow from giving the female co-head the information alone (in which case
+ the female co-head can monopolize the information) (top panel Appendix
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_men_model1AB-1-1"
+
+\end_inset
+
+), but also from giving the female and male co-head the information together
+ (bottom panel Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_men_model1AB-1-1"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint decision making 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:decision_joint_main"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.520	&	0.472	&	0.015	&	0.020	&	0.443	&	2,661	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.477	&	0.470	&	0.011	&	0.020	&	0.553	&	2,661	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.475	&	0.473	&	0.029	&	0.020	&	0.135	&	2,661	
+\backslash
+
+\backslash
+ Striga control measures	&	0.420	&	0.464	&	0.024	&	0.020	&	0.193	&	2,596	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.535	&	0.469	&	-0.007	&	0.020	&	0.702	&	2,661	
+\backslash
+
+\backslash
+ Joint decision-making index	&	0.021	&	0.787	&	0.008	&	0.033	&	0.294	&	2,596	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.524	&	0.469	&	-0.007	&	0.019	&	0.702	&	2,714	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.471	&	0.465	&	0.006	&	0.019	&	0.733	&	2,714	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.481	&	0.471	&	0.003	&	0.019	&	0.870	&	2,714	
+\backslash
+
+\backslash
+ Striga control measures	&	0.423	&	0.464	&	0.010	&	0.019	&	0.580	&	2,645	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.512	&	0.470	&	0.008	&	0.019	&	0.679	&	2,714	
+\backslash
+
+\backslash
+ Joint decision-making index	&	0.000	&	0.788	&	0.006	&	0.033	&	0.838	&	2,645	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 While joint decision-making does not change as a result of variations in
- the information provider (Table 5, Model 2, Panel b), men’s decision-making
- does.
+ the information provider (bottom panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:decision_joint_main"
+
+\end_inset
+
+), men’s decision-making does.
  Men’s unilateral decision-making about whether to plant maize on the plot
  is reduced by 4 pp (an 11 percent reduction over the mean of the control)
  when a female actor is involved in providing the information (alone or
  together with a male actor) as compared to only a male actor, regardless
- of whom the video was shown to (Appendix Table 5B, Model 2).
+ of whom the video was shown to (Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowlege_main_men-1"
+
+\end_inset
+
+, Model 2).
  The fact that this reduction in men’s decision-making about whether to
  plant maize is mirrored when male co-heads viewed the video that involved
- a female actor instead of the video with only a male actor (, Model 2B)
- demonstrates that role incongruity challenges may be at work among male
- co-heads (Appendix Table 5B, Model 2B).
+ a female actor instead of the video with only a male actor (Model 2B) suggests
+ that role incongruity challenges may be at work among male co-heads (bottom
+ panel in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_men_model2AB-1-1"
+
+\end_inset
+
+).
  
 \end_layout
 
@@ -2657,10 +4080,24 @@ Adoption of recommended practices
 
 \begin_layout Standard
 We apply the same approach to our presentation of adoption outcomes, tested
- by making the comparison illustrated in , Model 1.
- Results (Table 6, Model 1, Panel a) shows a positive and statistically
- significant treatment effect of involving women in receiving information,
- denoted by an increase of 0.12 in the women’s adoption index.
+ by making the comparison illustrated in Model 1 of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+.
+ Results (top panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:adoption_main"
+
+\end_inset
+
+) shows a positive and statistically significant treatment effect of involving
+ women in receiving information, denoted by an increase of 0.12 in the women’s
+ adoption index.
  The likelihood of adoption of each of the practices individually decided
  upon by the female co-head increases between 1 and 5 pp.
  Given that adoption individually decided upon by the female co-head is
@@ -2668,30 +4105,349 @@ We apply the same approach to our presentation of adoption outcomes, tested
  percent increases in women’s decided-upon adoption.
  Effects remain generally consistent when the treatment group is restricted
  to the group in which the female co-head received the information alone
- (as in , Model 1A), in which case the women’s adoption index increases
- by 0.15 (Table 6, Model 1A, Panel a).
+ (Model 1A), in which case the women’s adoption index increases by 0.15 (top
+ panel in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:adoption_women_model1AB"
+
+\end_inset
+
+).
  When the treatment group is restricted to the group in which the female
- co-head receives the information together with her male spouse (as in ,
- Model 1B), the women’s adoption index increases by 0.09 and only the adoption
- of striga control measures decided upon by the female co-head is positively
- affected (Appendix Table 6A, Model 1B, Panel a).
+ co-head receives the information together with her male spouse (Model 1B),
+ the women’s adoption index increases by 0.09 and only the adoption of striga
+ control measures decided upon by the female co-head is positively affected
+ (bottom panel in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:adoption_women_model1AB"
+
+\end_inset
+
+).
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women adoption of recommended practices 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:adoption_main"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize	&	0.043	&	0.179	&	0.021$^{**}$	&	0.009	&	0.014	&	2,493	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.001	&	0.034	&	0.007$^{**}$	&	0.003	&	0.015	&	2,660	
+\backslash
+
+\backslash
+ Striga control measures	&	0.080	&	0.253	&	0.052$^{**}$	&	0.013	&	0.000	&	2,595	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.157	&	0.338	&	0.048$^{**}$	&	0.016	&	0.001	&	2,660	
+\backslash
+
+\backslash
+ Women adoption index	&	0.001	&	0.599	&	0.117$^{**}$	&	0.026	&	0.000	&	2,433	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize	&	0.050	&	0.194	&	0.007	&	0.009	&	0.419	&	2,542	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.005	&	0.069	&	0.001	&	0.003	&	0.703	&	2,713	
+\backslash
+
+\backslash
+ Striga control measures	&	0.116	&	0.302	&	0.002	&	0.012	&	0.871	&	2,644	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.205	&	0.379	&	-0.021	&	0.015	&	0.156	&	2,713	
+\backslash
+
+\backslash
+ Women adoption index	&	-0.034	&	0.546	&	0.004	&	0.026	&	0.872	&	2,478	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Second, we examine joint adoption outcomes, and present results in terms
  of a comparison between the same sets of groups as in Model 1.
- Involving women in receiving information has a positive significant effect
- of 2 pp on the adoption of the novel practice of spacing and number of
- seeds per hill jointly decided upon by the female and male co-head (Table
- 6, Model 1, Panel b).
+ Involving women in receiving information has a positive and significant
+ effect of 1.5 pp on the adoption of the novel practice of spacing and number
+ of seeds per hill jointly decided upon by the female and male co-head (top
+ panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:adoption_joint"
+
+\end_inset
+
+).
  Joint adoption outcomes follow from providing the information to the female
  and male co-head together in contrast to only providing the male co-head
- with information, as illustrated in , Model 1B.
- Results (Appendix Table 6A, Model 1B, Panel b) show an increase in the
- joint adoption index of 0.08, a 2 pp increase in the jointly decided-upon
- adoption of proper spacing, and a 5 pp increase in the jointly decided-upon
- adoption of striga control measures.
+ with information (Model 1B).
+ Results (bottom panel in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:adopt_joint_model1AB"
+
+\end_inset
+
+) show an increase in the joint adoption index of 0.08, a 2 pp increase in
+ the jointly decided-upon adoption of proper spacing, and a 5 pp increase
+ in the jointly decided-upon adoption of striga control measures.
  
 \end_layout
 
@@ -2699,42 +4455,376 @@ Second, we examine joint adoption outcomes, and present results in terms
 Next, we examine the effect on men’s adoption outcomes by the making the
  same comparisons between groups.
  Involving women in receiving information, alone or as part of the couple,
- as compared to giving the information only to the male co-head (as in ,
- Model 1), reduces men’s individually decided-upon adoption of striga control
- measures by 3 pp (Appendix Table 6B, Model 1).
+ as compared to giving the information only to the male co-head (Model 1),
+ reduces men’s individually decided-upon adoption of striga control measures
+ by 3 pp (top panel in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:adoption_main_men"
+
+\end_inset
+
+).
  Providing only the female co-head with information as compared to only
- the male co-head (as in , Model 1A) reduces men’s individually decided-upon
- adoption of striga control measures by 4 pp and timely weeding practices
- by 6 pp, which come down to about a 30 percent reduction (Appendix Table
- 6B, Model 1A).
+ the male co-head (Model 1A) reduces men’s individually decided-upon adoption
+ of striga control measures by 4 pp and timely weeding practices by 6 pp,
+ which come down to about a 30 percent reduction (top panel in Appendix
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:adopt_men_model1AB"
+
+\end_inset
+
+).
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint adoption of recommended practices 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:adoption_joint"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize	&	0.110	&	0.294	&	0.006	&	0.013	&	0.624	&	2,493	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.014	&	0.112	&	0.015$^{**}$	&	0.006	&	0.011	&	2,660	
+\backslash
+
+\backslash
+ Striga control measures	&	0.321	&	0.437	&	0.025	&	0.019	&	0.154	&	2,595	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.478	&	0.470	&	0.006	&	0.020	&	0.751	&	2,660	
+\backslash
+
+\backslash
+ Joint adoption index	&	-0.010	&	0.577	&	0.043	&	0.026	&	0.044	&	2,433	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize	&	0.125	&	0.307	&	-0.015	&	0.013	&	0.226	&	2,542	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.024	&	0.147	&	-0.001	&	0.006	&	0.925	&	2,713	
+\backslash
+
+\backslash
+ Striga control measures	&	0.328	&	0.439	&	0.006	&	0.018	&	0.744	&	2,644	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.478	&	0.468	&	-0.012	&	0.019	&	0.541	&	2,713	
+\backslash
+
+\backslash
+ Joint adoption index	&	-0.004	&	0.585	&	-0.003	&	0.026	&	0.898	&	2,478	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 We proceed by assessing the effects of variation in the information provider
- in the same manner as before (as in , Model 2).
- Results (Table 6, Model 2, Panel a) do not indicate any difference in women’s
- adoption outcomes as a result of involving women in conveying information.
+ in the same manner as before (Model 2).
+ Results (top panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:adoption_main"
+
+\end_inset
+
+) do not indicate any difference in women’s adoption outcomes as a result
+ of involving women in conveying information.
  But when we make the comparison between the groups in which the female
  co-heads were shown the video with a female actor (alone or with a male
- co-actor) instead of the video with only a male actor (as in , Model 2A),
- there are indications of positive role-model effects on women’s individually
- decided-upon adoption of the appropriate timing of planting maize (Appendix
- Table 6A Model 2A Panel a): an increase of 3 pp, which translates into
- a 62 percent increase over the mean of the control.
+ co-actor) instead of the video with only a male actor (Model 2A), there
+ are indications of positive role-model effects on women’s individually
+ decided-upon adoption of the appropriate timing of planting maize (top
+ panel in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:adoption_women_model2AB"
+
+\end_inset
+
+): an increase of 2.6 pp, which translates into a 62 percent increase over
+ the mean of the control.
  
 \end_layout
 
 \begin_layout Standard
 Involving women in conveying information does not make any difference in
- joint adoption outcomes (Table 6, Model 2, Panel b).
+ joint adoption outcomes (bottom panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:adoption_joint"
+
+\end_inset
+
+).
  There are indications, however, that men’s adoption outcomes are negatively
  affected by showing male co-heads the video with a female actor (whether
- alone or with a male co-actor) rather than with only a male actor (as illustrat
-ed in , Model 2B).
- Results (Appendix Table 6B, Model 2B) show a decrease of 3 pp (a 38 percent
- decrease relative to the mean of the control) in men’s individually decided-upo
-n adoption of the appropriate timing for planting maize.
+ alone or with a male co-actor) rather than with only a male actor (Model
+ 2B).
+ Results (bottom panel in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:adopt_men_model2AB"
+
+\end_inset
+
+) show a decrease of 2.9 pp (a 38 percent decrease relative to the mean of
+ the control) in men’s individually decided-upon adoption of the appropriate
+ timing for planting maize.
  
 \end_layout
 
@@ -3647,11 +5737,15 @@ status open
 Appendix
 \end_layout
 
+\begin_layout Subsection
+Balance tests
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -4239,6 +6333,6077 @@ Note: First column reports sample means and second column associated standard
  A joint test for balance can not be rejected for the first model (F-statistic
  0.974, p-value = 0.465) and also not for the second model (F-statistic 1.579,
  p-value = 0.108).
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Knowledge results
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women knowledge of recommended practices (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:know_women_model1AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.127	&	0.334	&	0.058$^{**}$	&	0.019	&	0.000	&	1,
+875	&	
+\backslash
+
+\backslash
+ Combining practices and starting small	&	0.817	&	0.387	&	0.060$^{**}$	&	0.018	&	0.00
+1	&	1,875	&	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.880	&	0.325	&	0.026	&	0.016	&	0.078	&	1,875	&	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.207	&	0.406	&	-0.014	&	0.020	&	0.416	&	1,875	&	
+\backslash
+
+\backslash
+ Womens  Joint knowledge index	&	0.003	&	0.612	&	0.128$^{**}$	&	0.028	&	0.000	&	1,875
+	&	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1B: Zooming in on providing information to women as part of
+ the couple}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.127	&	0.334	&	0.071$^{**}$	&	0.018	&	0.000	&	1,
+770	&	
+\backslash
+
+\backslash
+ Combining practices and starting small	&	0.817	&	0.387	&	0.051$^{**}$	&	0.018	&	0.00
+3	&	1,770	&	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.880	&	0.325	&	-0.005	&	0.016	&	0.761	&	1,770	&	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.207	&	0.406	&	-0.008	&	0.019	&	0.652	&	1,770	&	
+\backslash
+
+\backslash
+ Womens  Joint knowledge index	&	-0.028	&	0.622	&	0.102$^{**}$	&	0.029	&	0.000	&	1,77
+0	&	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women knowledge of recommended practices (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:know_women_model2AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.196	&	0.398	&	0.000	&	0.027	&	0.991	&	981	
+\backslash
+
+\backslash
+ Combining practices and starting small	&	0.868	&	0.339	&	0.003	&	0.023	&	0.907	&	981
+	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.896	&	0.306	&	0.005	&	0.020	&	0.805	&	981	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.175	&	0.380	&	0.005	&	0.026	&	0.850	&	981	
+\backslash
+
+\backslash
+ Women  Joint knowledge index	&	0.007	&	0.578	&	0.008	&	0.040	&	0.835	&	981	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.131	&	0.338	&	-0.006	&	0.024	&	0.800	&	887	
+\backslash
+
+\backslash
+ Combining practices and starting small	&	0.815	&	0.389	&	-0.004	&	0.028	&	0.884	&	88
+7	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.875	&	0.331	&	0.008	&	0.023	&	0.731	&	887	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.212	&	0.410	&	-0.010	&	0.029	&	0.706	&	887	
+\backslash
+
+\backslash
+ Women  Joint knowledge index	&	0.000	&	0.548	&	0.005	&	0.043	&	0.987	&	887	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint knowledge of recommended practices (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:know_joint_model1AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.073	&	0.260	&	-0.026	&	0.013	&	0.032	&	1,626	
+\backslash
+
+\backslash
+ Combining practices and starting small	&	0.737	&	0.440	&	-0.011	&	0.024	&	0.638	&	1,
+626	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.805	&	0.396	&	0.033	&	0.021	&	0.089	&	1,626	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.075	&	0.264	&	0.017	&	0.015	&	0.191	&	1,626	
+\backslash
+
+\backslash
+ Women  Joint knowledge index	&	-0.022	&	0.642	&	-0.021	&	0.030	&	0.596	&	1,626	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1B: Zooming in on providing information to women as part of
+ the couple}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.073	&	0.260	&	0.026	&	0.014	&	0.067	&	1,546	
+\backslash
+
+\backslash
+ Combining practices and starting small	&	0.737	&	0.440	&	0.043	&	0.022	&	0.052	&	1,5
+46	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.805	&	0.396	&	-0.028	&	0.021	&	0.162	&	1,546	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.075	&	0.264	&	0.019	&	0.014	&	0.156	&	1,546	
+\backslash
+
+\backslash
+ Women  Joint knowledge index	&	0.004	&	0.615	&	0.037	&	0.031	&	0.226	&	1,546	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint knowledge of recommended practices (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:know_joint_model2AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.053	&	0.224	&	-0.005	&	0.016	&	0.765	&	810	
+\backslash
+
+\backslash
+ Combining practices and starting small	&	0.732	&	0.444	&	-0.013	&	0.034	&	0.704	&	81
+0	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.853	&	0.355	&	-0.035	&	0.028	&	0.236	&	810	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.075	&	0.265	&	0.011	&	0.021	&	0.548	&	810	
+\backslash
+
+\backslash
+ Women  Joint knowledge index	&	0.010	&	0.611	&	-0.049	&	0.045	&	0.273	&	810	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.076	&	0.266	&	-0.006	&	0.019	&	0.778	&	811	
+\backslash
+
+\backslash
+ Combining practices and starting small	&	0.746	&	0.436	&	-0.022	&	0.033	&	0.564	&	81
+1	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.812	&	0.392	&	-0.008	&	0.029	&	0.772	&	811	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.083	&	0.277	&	-0.015	&	0.020	&	0.435	&	811	
+\backslash
+
+\backslash
+ Women  Joint knowledge index	&	-0.003	&	0.584	&	-0.027	&	0.045	&	0.552	&	811	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mens knowledge of recommended practices 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:knowlege_main_men"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.266	&	0.442	&	-0.083$^{**}$	&	0.017	&	0.000	&	2
+650	
+\backslash
+
+\backslash
+ Combining practices and starting small	&	0.893	&	0.310	&	-0.043$^{**}$	&	0.014	&	0.0
+03	&	2650	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.884	&	0.320	&	-0.011	&	0.014	&	0.411	&	2650	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.237	&	0.426	&	0.002	&	0.018	&	0.893	&	2650	
+\backslash
+
+\backslash
+ Mens knowledge index	&	0.004	&	0.614	&	-0.129$^{**}$	&	0.024	&	0.000	&	2650	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.187	&	0.390	&	0.022	&	0.016	&	0.157	&	2647	
+\backslash
+
+\backslash
+ Combining practices and starting small	&	0.849	&	0.358	&	0.021	&	0.014	&	0.141	&	264
+7	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.888	&	0.316	&	-0.013	&	0.013	&	0.343	&	2647	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.229	&	0.421	&	0.005	&	0.017	&	0.753	&	2647	
+\backslash
+
+\backslash
+ Mens knowledge index	&	0.024	&	0.593	&	0.024	&	0.025	&	0.329	&	2647	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mens knowledge of recommended practices (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:know_men_model1AB-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+PProper spacing and seeds per hill	&	0.266	&	0.442	&	-0.151$^{**}$	&	0.020	&	0.000	&	
+1833	
+\backslash
+
+\backslash
+ Combining practices and starting small	&	0.893	&	0.310	&	-0.091$^{**}$	&	0.019	&	0.0
+00	&	1833	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.884	&	0.320	&	0.010	&	0.016	&	0.491	&	1833	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.237	&	0.426	&	-0.004	&	0.022	&	0.849	&	1833	
+\backslash
+
+\backslash
+ Mens knowledge index	&	0.049	&	0.619	&	-0.185$^{**}$	&	0.028	&	0.000	&	1833	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1B: Zooming in on providing information to women as part of
+ the couple}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.266	&	0.442	&	-0.044$^{+}$	&	0.021	&	0.029	&	17
+78	
+\backslash
+
+\backslash
+ Combining practices and starting small	&	0.893	&	0.310	&	-0.007	&	0.015	&	0.690	&	17
+78	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.884	&	0.320	&	-0.030	&	0.016	&	0.067	&	1778	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.237	&	0.426	&	-0.004	&	0.020	&	0.832	&	1778	
+\backslash
+
+\backslash
+ Mens knowledge index	&	-0.010	&	0.606	&	-0.071	&	0.029	&	0.042	&	1778	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mens knowledge of recommended practices (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:know_men_model2AB-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.115	&	0.320	&	0.005	&	0.023	&	0.831	&	867	
+\backslash
+
+\backslash
+ Combining practices and starting small	&	0.801	&	0.400	&	0.013	&	0.028	&	0.638	&	867
+	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.913	&	0.283	&	-0.025	&	0.022	&	0.286	&	867	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.206	&	0.405	&	0.042	&	0.031	&	0.168	&	867	
+\backslash
+
+\backslash
+ Mens knowledge index	&	-0.007	&	0.603	&	-0.011	&	0.044	&	0.782	&	867	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Proper spacing and seeds per hill	&	0.237	&	0.426	&	0.049	&	0.030	&	0.124	&	961	
+\backslash
+
+\backslash
+ Combining practices and starting small	&	0.891	&	0.313	&	0.002	&	0.021	&	0.942	&	961
+	
+\backslash
+
+\backslash
+ Optimal weeding	&	0.891	&	0.313	&	-0.007	&	0.022	&	0.744	&	961	
+\backslash
+
+\backslash
+ Fall armyworm control	&	0.243	&	0.430	&	-0.007	&	0.029	&	0.789	&	961	
+\backslash
+
+\backslash
+ Mens knowledge index	&	-0.013	&	0.604	&	0.026	&	0.041	&	0.462	&	961	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Decision making results
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women decision making (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:decide_women_model1AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.158	&	0.338	&	0.094$^{**}$	&	0.019	&	0.000	&	1,809	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.163	&	0.340	&	0.099$^{**}$	&	0.020	&	0.000	&	1,809	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.150	&	0.333	&	0.094$^{**}$	&	0.019	&	0.000	&	1,809	
+\backslash
+
+\backslash
+ Striga control measures	&	0.113	&	0.295	&	0.086$^{**}$	&	0.018	&	0.000	&	1,764	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.178	&	0.357	&	0.090$^{**}$	&	0.020	&	0.000	&	1,809	
+\backslash
+
+\backslash
+ Women decision-making index	&	-0.015	&	0.825	&	0.220$^{**}$	&	0.039	&	0.000	&	1,764	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1B: Zooming in on providing information to women as part of
+ the couple}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.158	&	0.338	&	0.004	&	0.016	&	0.783	&	1,710	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.163	&	0.340	&	0.013	&	0.017	&	0.450	&	1,710	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.150	&	0.333	&	0.008	&	0.016	&	0.594	&	1,710	
+\backslash
+
+\backslash
+ Striga control measures	&	0.113	&	0.295	&	0.025	&	0.015	&	0.076	&	1,665	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.178	&	0.357	&	0.011	&	0.018	&	0.507	&	1,710	
+\backslash
+
+\backslash
+ Women Joint decision-making index	&	-0.015	&	0.784	&	0.037	&	0.039	&	0.345	&	1,665	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women decision making (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:decide_women_model2AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.287	&	0.418	&	0.017	&	0.031	&	0.562	&	854	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.258	&	0.409	&	0.068$^{+}$	&	0.032	&	0.031	&	854	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.264	&	0.415	&	0.090$^{*}$	&	0.032	&	0.008	&	854	
+\backslash
+
+\backslash
+ Striga control measures	&	0.175	&	0.364	&	0.068$^{+}$	&	0.029	&	0.018	&	835	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.236	&	0.398	&	0.080$^{*}$	&	0.031	&	0.011	&	854	
+\backslash
+
+\backslash
+ Women's / Joint decision-making index	&	0.066	&	0.856	&	0.155$^{*}$	&	0.060	&	0.006	
+&	835	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.174	&	0.351	&	-0.023	&	0.025	&	0.337	&	858	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.174	&	0.345	&	-0.012	&	0.025	&	0.603	&	858	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.153	&	0.328	&	0.000	&	0.024	&	0.997	&	858	
+\backslash
+
+\backslash
+ Striga control measures	&	0.109	&	0.291	&	0.008	&	0.022	&	0.711	&	833	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.192	&	0.365	&	-0.014	&	0.026	&	0.579	&	858	
+\backslash
+
+\backslash
+ Women's / Joint decision-making index	&	-0.029	&	0.765	&	-0.038	&	0.059	&	0.659	&	83
+3	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint decision making (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:know_joint_model1AB-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.520	&	0.472	&	-0.012	&	0.025	&	0.576	&	1,809	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.477	&	0.470	&	-0.005	&	0.024	&	0.814	&	1,809	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.475	&	0.473	&	0.006	&	0.025	&	0.790	&	1,809	
+\backslash
+
+\backslash
+ Striga control measures	&	0.420	&	0.464	&	-0.010	&	0.025	&	0.652	&	1,764	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.535	&	0.469	&	-0.019	&	0.025	&	0.398	&	1,809	
+\backslash
+
+\backslash
+ Joint decision-making index	&	0.018	&	0.790	&	-0.055	&	0.038	&	0.671	&	1,764	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1B: Zooming in on providing information to women as part of
+ the couple}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.520	&	0.472	&	0.038	&	0.023	&	0.106	&	1,710	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.477	&	0.470	&	0.022	&	0.023	&	0.322	&	1,710	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.475	&	0.473	&	0.053$^{+}$	&	0.023	&	0.019	&	1,710	
+\backslash
+
+\backslash
+ Striga control measures	&	0.420	&	0.464	&	0.050	&	0.023	&	0.029	&	1,665	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.535	&	0.469	&	0.009	&	0.023	&	0.680	&	1,710	
+\backslash
+
+\backslash
+ Joint decision-making index	&	0.010	&	0.781	&	0.074	&	0.039	&	0.034	&	1,665	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint knowledge of recommended practices (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:know_joint_model2AB-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.520	&	0.472	&	0.038	&	0.023	&	0.106	&	1,710	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.477	&	0.470	&	0.022	&	0.023	&	0.322	&	1,710	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.475	&	0.473	&	0.053	&	0.023	&	0.019	&	1,710	
+\backslash
+
+\backslash
+ Striga control measures	&	0.420	&	0.464	&	0.050	&	0.023	&	0.029	&	1,665	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.535	&	0.469	&	0.009	&	0.023	&	0.680	&	1,710	
+\backslash
+
+\backslash
+ Joint decision-making index	&	0.010	&	0.781	&	0.074	&	0.039	&	0.034	&	1,665	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.512	&	0.471	&	0.006	&	0.034	&	0.857	&	858	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.475	&	0.465	&	-0.003	&	0.034	&	0.941	&	858	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.480	&	0.469	&	-0.016	&	0.034	&	0.638	&	858	
+\backslash
+
+\backslash
+ Striga control measures	&	0.423	&	0.460	&	-0.017	&	0.034	&	0.612	&	833	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.540	&	0.462	&	-0.017	&	0.034	&	0.610	&	858	
+\backslash
+
+\backslash
+ Joint decision-making index	&	0.035	&	0.781	&	0.000	&	0.058	&	0.753	&	833	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mens decision making 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:knowlege_main_men-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.369	&	0.454	&	-0.077$^{**}$	&	0.019	&	0.000	&	2,563	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.395	&	0.461	&	-0.085$^{**}$	&	0.019	&	0.000	&	2,563	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.431	&	0.468	&	-0.107$^{**}$	&	0.019	&	0.000	&	2,563	
+\backslash
+
+\backslash
+ Striga control measures	&	0.323	&	0.442	&	-0.093$^{**}$	&	0.018	&	0.000	&	2,497	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.394	&	0.460	&	-0.109$^{**}$	&	0.019	&	0.000	&	2,563	
+\backslash
+
+\backslash
+ Men decision-making index	&	0.033	&	0.823	&	-0.184$^{**}$	&	0.034	&	0.000	&	2,497	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.354	&	0.444	&	-0.039$^{+}$	&	0.018	&	0.030	&	2,612	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.348	&	0.446	&	-0.004	&	0.019	&	0.848	&	2,612	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.363	&	0.453	&	0.007	&	0.019	&	0.711	&	2,612	
+\backslash
+
+\backslash
+ Striga control measures	&	0.273	&	0.418	&	-0.008	&	0.018	&	0.663	&	2,542	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.331	&	0.440	&	0.001	&	0.018	&	0.943	&	2,612	
+\backslash
+
+\backslash
+ Men decision-making index	&	0.047	&	0.829	&	-0.023	&	0.034	&	0.491	&	2,542	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mens decision making (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:know_men_model1AB-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.369	&	0.454	&	-0.092$^{**}$	&	0.024	&	0.000	&	1,772	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.395	&	0.461	&	-0.114$^{**}$	&	0.024	&	0.000	&	1,772	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.431	&	0.468	&	-0.136$^{**}$	&	0.024	&	0.000	&	1,772	
+\backslash
+
+\backslash
+ Striga control measures	&	0.323	&	0.442	&	-0.121$^{**}$	&	0.023	&	0.000	&	1,728	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.394	&	0.460	&	-0.121$^{**}$	&	0.024	&	0.000	&	1,772	
+\backslash
+
+\backslash
+ Men decision-making index	&	-0.007	&	0.811	&	-0.210$^{**}$	&	0.039	&	0.000	&	1,728	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1B: Zooming in on providing information to women as part of
+ the couple}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.369	&	0.454	&	-0.062$^{*}$	&	0.022	&	0.005	&	1,721	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.395	&	0.461	&	-0.060$^{*}$	&	0.022	&	0.006	&	1,721	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.431	&	0.468	&	-0.084$^{**}$	&	0.022	&	0.000	&	1,721	
+\backslash
+
+\backslash
+ Striga control measures	&	0.323	&	0.442	&	-0.066$^{**}$	&	0.021	&	0.001	&	1,673	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.394	&	0.460	&	-0.087$^{**}$	&	0.022	&	0.000	&	1,721	
+\backslash
+
+\backslash
+ Men decision-making index	&	-0.026	&	0.816	&	-0.152$^{**}$	&	0.040	&	0.001	&	1,673	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mens decision making (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:know_men_model2AB-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.228	&	0.398	&	0.012	&	0.027	&	0.652	&	967	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.232	&	0.395	&	0.024	&	0.028	&	0.399	&	967	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.237	&	0.404	&	-0.006	&	0.027	&	0.836	&	967	
+\backslash
+
+\backslash
+ Striga control measures	&	0.197	&	0.383	&	0.000	&	0.026	&	0.990	&	946	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.274	&	0.431	&	-0.006	&	0.029	&	0.838	&	967	
+\backslash
+
+\backslash
+ Men decision-making index	&	0.036	&	0.847	&	-0.001	&	0.057	&	0.985	&	946	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Planting maize on the plot	&	0.421	&	0.462	&	-0.075	&	0.031	&	0.044	&	930	
+\backslash
+
+\backslash
+ Timing of planting maize	&	0.420	&	0.463	&	-0.035	&	0.032	&	0.288	&	930	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.445	&	0.466	&	-0.014	&	0.032	&	0.661	&	930	
+\backslash
+
+\backslash
+ Striga control measures	&	0.353	&	0.447	&	-0.040	&	0.031	&	0.187	&	904	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.404	&	0.457	&	-0.014	&	0.032	&	0.656	&	930	
+\backslash
+
+\backslash
+ Men decision-making index	&	0.069	&	0.825	&	-0.098	&	0.058	&	0.123	&	904	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Adoption results
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women adoption of recommended practices (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:adoption_women_model1AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize	&	0.043	&	0.179	&	0.028$^{**}$	&	0.011	&	0.003	&	1,686	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.001	&	0.034	&	0.008$^{*}$	&	0.003	&	0.005	&	1,808	
+\backslash
+
+\backslash
+ Striga control measures	&	0.080	&	0.253	&	0.076$^{**}$	&	0.016	&	0.000	&	1,763	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.157	&	0.338	&	0.086$^{**}$	&	0.020	&	0.000	&	1,808	
+\backslash
+
+\backslash
+ Women Joint adoption index	&	-0.002	&	0.589	&	0.147$^{**}$	&	0.030	&	0.000	&	1,646	
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1B: Zooming in on providing information to women as part of
+ the couple}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize	&	0.043	&	0.179	&	0.019	&	0.010	&	0.057	&	1,599	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.001	&	0.034	&	0.007	&	0.003	&	0.035	&	1,709	
+\backslash
+
+\backslash
+ Striga control measures	&	0.080	&	0.253	&	0.031$^{+}$	&	0.013	&	0.020	&	1,664	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.157	&	0.338	&	0.011	&	0.017	&	0.503	&	1,709	
+\backslash
+
+\backslash
+ Women Joint adoption index	&	-0.011	&	0.601	&	0.092$^{**}$	&	0.031	&	0.003	&	1,558	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women adoption of recommended practices (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:adoption_women_model2AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize	&	0.042	&	0.178	&	0.026	&	0.015	&	0.080	&	909	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.005	&	0.062	&	0.005	&	0.005	&	0.382	&	967	
+\backslash
+
+\backslash
+ Striga control measures	&	0.154	&	0.347	&	0.003	&	0.024	&	0.904	&	946	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.248	&	0.419	&	-0.006	&	0.028	&	0.834	&	967	
+\backslash
+
+\backslash
+ Women adoption index	&	0.021	&	0.682	&	0.050	&	0.043	&	0.231	&	889	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize	&	0.053	&	0.196	&	-0.013	&	0.014	&	0.322	&	792	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.004	&	0.059	&	-0.003	&	0.002	&	0.327	&	857	
+\backslash
+
+\backslash
+ Striga control measures	&	0.077	&	0.244	&	0.008	&	0.019	&	0.652	&	832	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.178	&	0.353	&	-0.025	&	0.024	&	0.311	&	857	
+\backslash
+
+\backslash
+ Women adoption index	&	-0.016	&	0.799	&	-0.074	&	0.050	&	0.242	&	771	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint adoption of recommended practices (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:adopt_joint_model1AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize	&	0.110	&	0.294	&	0.009	&	0.016	&	0.538	&	1,686	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.014	&	0.112	&	0.011	&	0.007	&	0.081	&	1,808	
+\backslash
+
+\backslash
+ Striga control measures	&	0.321	&	0.437	&	-0.005	&	0.023	&	0.828	&	1,763	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.478	&	0.470	&	-0.012	&	0.025	&	0.598	&	1,808	
+\backslash
+
+\backslash
+ Joint adoption index	&	0.000	&	0.600	&	0.015	&	0.030	&	0.285	&	1,646	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1B: Zooming in on providing information to women as part of
+ the couple}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize	&	0.110	&	0.294	&	0.007	&	0.015	&	0.651	&	1,599	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.014	&	0.112	&	0.018	&	0.007	&	0.007	&	1,709	
+\backslash
+
+\backslash
+ Striga control measures	&	0.321	&	0.437	&	0.051	&	0.022	&	0.018	&	1,664	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.478	&	0.470	&	0.029	&	0.023	&	0.206	&	1,709	
+\backslash
+
+\backslash
+ Joint adoption index	&	0.004	&	0.619	&	0.076	&	0.030	&	0.005	&	1,558	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint adoption of recommended practices (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:adopt_joint_model2AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize	&	0.112	&	0.286	&	0.002	&	0.021	&	0.935	&	909	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.027	&	0.149	&	-0.001	&	0.011	&	0.946	&	967	
+\backslash
+
+\backslash
+ Striga control measures	&	0.317	&	0.441	&	-0.013	&	0.030	&	0.636	&	946	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.462	&	0.471	&	-0.037	&	0.032	&	0.228	&	967	
+\backslash
+
+\backslash
+ Joint adoption index	&	-0.044	&	0.533	&	0.010	&	0.042	&	0.796	&	889	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize	&	0.119	&	0.298	&	-0.010	&	0.022	&	0.640	&	792	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.009	&	0.089	&	0.006	&	0.008	&	0.456	&	857	
+\backslash
+
+\backslash
+ Striga control measures	&	0.317	&	0.428	&	-0.004	&	0.032	&	0.888	&	832	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.491	&	0.466	&	-0.030	&	0.034	&	0.384	&	857	
+\backslash
+
+\backslash
+ Joint adoption index	&	0.058	&	0.631	&	0.008	&	0.046	&	0.999	&	771	
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mens adoption of recommended practices 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:adoption_main_men"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize	&	0.057	&	0.208	&	-0.009	&	0.009	&	0.308	&	2,493	
+\backslash
+
+\backslash
+ Spacing and number of seeds	&	0.008	&	0.082	&	0.003	&	0.004	&	0.447	&	2,660	
+\backslash
+
+\backslash
+ Striga control measures	&	0.143	&	0.325	&	-0.027$^{+}$	&	0.014	&	0.029	&	2,595	
+\backslash
+
+\backslash
+ Timing of the first weeding	&	0.202	&	0.375	&	-0.019	&	0.016	&	0.226	&	2,660	
+\backslash
+
+\backslash
+ Men adoption index	&	0.025	&	0.610	&	-0.002	&	0.026	&	0.386	&	2,433	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+timing of planting maize	&	0.057	&	0.213	&	-0.002	&	0.009	&	0.793	&	2,542	
+\backslash
+
+\backslash
+ spacing and number of seeds	&	0.012	&	0.105	&	-0.001	&	0.004	&	0.754	&	2,713	
+\backslash
+
+\backslash
+ striga control measures	&	0.126	&	0.306	&	0.004	&	0.013	&	0.752	&	2,644	
+\backslash
+
+\backslash
+ timing of the first weeding	&	0.189	&	0.363	&	0.014	&	0.015	&	0.355	&	2,713	
+\backslash
+
+\backslash
+ Men adoption index	&	0.037	&	0.657	&	0.009	&	0.026	&	0.731	&	2,478	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mens adoption of recommended practices (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:adopt_men_model1AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+timing of planting maize	&	0.057	&	0.208	&	-0.004	&	0.012	&	0.672	&	1,686	
+\backslash
+
+\backslash
+ spacing and number of seeds	&	0.008	&	0.082	&	0.003	&	0.005	&	0.487	&	1,808	
+\backslash
+
+\backslash
+ striga control measures	&	0.143	&	0.325	&	-0.039$^{*}$	&	0.016	&	0.006	&	1,763	
+\backslash
+
+\backslash
+ timing of the first weeding	&	0.202	&	0.375	&	-0.056$^{**}$	&	0.019	&	0.001	&	1,808	
+\backslash
+
+\backslash
+ men's adoption index	&	0.005	&	0.610	&	-0.014	&	0.030	&	0.179	&	1,646	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1B: Zooming in on providing information to women as part of
+ the couple}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+timing of planting maize	&	0.057	&	0.208	&	-0.012	&	0.010	&	0.242	&	1,599	
+\backslash
+
+\backslash
+ spacing and number of seeds	&	0.008	&	0.082	&	0.004	&	0.005	&	0.361	&	1,709	
+\backslash
+
+\backslash
+ striga control measures	&	0.143	&	0.325	&	-0.013	&	0.016	&	0.398	&	1,664	
+\backslash
+
+\backslash
+ timing of the first weeding	&	0.202	&	0.375	&	0.009	&	0.019	&	0.623	&	1,709	
+\backslash
+
+\backslash
+ men's adoption index	&	-0.022	&	0.576	&	0.011	&	0.030	&	0.965	&	1,558	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mens adoption of recommended practices (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:adopt_men_model2AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+timing of planting maize	&	0.050	&	0.201	&	0.014	&	0.016	&	0.365	&	909	
+\backslash
+
+\backslash
+ spacing and number of seeds	&	0.011	&	0.100	&	0.002	&	0.007	&	0.774	&	967	
+\backslash
+
+\backslash
+ striga control measures	&	0.095	&	0.265	&	0.019	&	0.020	&	0.313	&	946	
+\backslash
+
+\backslash
+ timing of the first weeding	&	0.162	&	0.348	&	0.025	&	0.024	&	0.285	&	967	
+\backslash
+
+\backslash
+ men's adoption index	&	-0.008	&	0.599	&	0.047	&	0.044	&	0.259	&	889	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+timing of planting maize	&	0.076	&	0.239	&	-0.029	&	0.016	&	0.065	&	792	
+\backslash
+
+\backslash
+ spacing and number of seeds	&	0.011	&	0.102	&	-0.003	&	0.006	&	0.570	&	857	
+\backslash
+
+\backslash
+ striga control measures	&	0.140	&	0.318	&	0.009	&	0.024	&	0.678	&	832	
+\backslash
+
+\backslash
+ timing of the first weeding	&	0.185	&	0.358	&	0.027	&	0.027	&	0.319	&	857	
+\backslash
+
+\backslash
+ men's adoption index	&	0.028	&	0.602	&	-0.021	&	0.046	&	0.684	&	771	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
 \end_layout
 
 \begin_layout Plain Layout
