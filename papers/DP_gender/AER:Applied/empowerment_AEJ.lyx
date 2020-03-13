@@ -4100,8 +4100,26 @@ reference "tab:adoption_main"
  adoption index.
  The likelihood of adoption of each of the practices individually decided
  upon by the female co-head increases between 1 and 5 pp.
- Given that adoption individually decided upon by the female co-head is
- generally low in the control group, these changes translate into sizable
+ Given that adoption individually decided upon by the female co-head
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+I still think that the way we refer to this could be improved.
+ What about something like 
+\begin_inset Quotes eld
+\end_inset
+
+the combined effect on women both deciding and adopting a particular practice
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ is generally low in the control group, these changes translate into sizable
  percent increases in women’s decided-upon adoption.
  Effects remain generally consistent when the treatment group is restricted
  to the group in which the female co-head received the information alone
@@ -4423,7 +4441,14 @@ end{threeparttable}
 
 \begin_layout Standard
 Second, we examine joint adoption outcomes, and present results in terms
- of a comparison between the same sets of groups as in Model 1.
+ of a comparison between the same sets of groups as in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+, Model 1.
  Involving women in receiving information has a positive and significant
  effect of 1.5 pp on the adoption of the novel practice of spacing and number
  of seeds per hill jointly decided upon by the female and male co-head (top
@@ -4484,7 +4509,7 @@ reference "tab:adopt_men_model1AB"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -4845,52 +4870,723 @@ In this section, we explore the impact of the different treatments on the
 \begin_layout Standard
 First, we examine the effect of involving women in receiving information,
  alone or as part of the couple.
- Results (Table 7, Model 1, Panel a) show a positive and significant increase
- of women’s input use index by 0.08.
+ Results (top panel Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:inputs_main"
+
+\end_inset
+
+) show a positive and significant increase of women’s input use index by
+ 0.08.
  The effect of providing only female co-heads with information as opposed
- to only male co-heads (as in , Model 1A) is an increase of the women’s
- input use index by 0.13 and is based on an increase of the use of each of
- the listed inputs by women who decided individually upon their use (Table
- 7, Model 1A, Panel a).
- In contrast, providing the female co-heads together with their male co-heads
- with information as opposed to only the male co-heads (as in , Model 1B)
- has no effect on women’s input use index (Appendix Table 7A, Model 1B,
- Panel a).
+ to only male co-heads (as in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+, Model 1A) is an increase of the women’s input use index by 0.13 and is
+ based on an increase of the use of each of the listed inputs by women who
+ decided individually upon their use (top panel of Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:input_women_model1AB"
+
+\end_inset
+
+).
+ Providing the female co-heads together with their male co-heads with informatio
+n as opposed to only the male co-heads (as in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+, Model 1B) has only a weak effect on women’s input use index (bottom panel
+ of Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:input_women_model1AB"
+
+\end_inset
+
+).
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women input use 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:inputs_main"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.016	&	0.121	&	0.017$^{**}$	&	0.006	&	0.002	&	2,661	
+\backslash
+
+\backslash
+ Urea	&	0.002	&	0.038	&	0.010$^{**}$	&	0.003	&	0.001	&	2,661	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.017	&	0.126	&	0.011	&	0.006	&	0.057	&	2,661	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.013	&	0.111	&	0.009	&	0.005	&	0.078	&	2,661	
+\backslash
+
+\backslash
+ OPV	&	0.018	&	0.126	&	0.011	&	0.006	&	0.059	&	2,661	
+\backslash
+
+\backslash
+ Women input use index	&	0.009	&	0.547	&	0.083$^{**}$	&	0.021	&	0.000	&	2,661	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.020	&	0.133	&	0.004	&	0.006	&	0.524	&	2,714	
+\backslash
+
+\backslash
+ Urea	&	0.011	&	0.099	&	-0.004	&	0.003	&	0.279	&	2,714	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.016	&	0.111	&	0.015$^{+}$	&	0.006	&	0.013	&	2,714	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.017	&	0.116	&	0.003	&	0.005	&	0.549	&	2,714	
+\backslash
+
+\backslash
+ OPV	&	0.019	&	0.129	&	0.010	&	0.006	&	0.084	&	2,714	
+\backslash
+
+\backslash
+ Women input use index	&	-0.028	&	0.487	&	0.038$^{+}$	&	0.021	&	0.070	&	2,714	
+\backslash
+
+\backslash
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Next, we examine the effects of involving women in receiving information,
  alone or as part of the couple, on joint input-use outcomes.
- Results (Table 7, Model 1, Panel b) show a positive and significant effect
- on the joint input use index, which is increased by 0.06.
+ Results (top panel Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:input_joint"
+
+\end_inset
+
+) show a positive and significant effect on the joint input use index, which
+ is increased by 0.06.
  Providing only female co-heads with information as opposed to only male
- co-heads ( Model 1A) increases the joint input use index by 0.04 (Table
- 7, Model 1A, Panel b).
+ co-heads (Model 1A) increases the joint input use index by 0.04 (top panel
+ Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:input_joint_model1AB"
+
+\end_inset
+
+).
  Providing female co-heads and their male co-heads with information as opposed
- to only the male co-heads (as in , Model 1B) increases the joint input
- use index by 0.09 (Appendix Table 7A, Model 1B, Panel b).
+ to only the male co-heads (Model 1B) increases the joint input use index
+ by 0.09 (bottom panel Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:input_joint_model1AB"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint input use 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:input_joint"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
  
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.050	&	0.207	&	0.022$^{*}$	&	0.009	&	0.014	&	2,661	
+\backslash
+
+\backslash
+ Urea	&	0.014	&	0.116	&	0.003	&	0.005	&	0.528	&	2,661	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.051	&	0.209	&	0.027$^{*}$	&	0.010	&	0.005	&	2,661	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.027	&	0.150	&	0.021$^{*}$	&	0.008	&	0.004	&	2,661	
+\backslash
+
+\backslash
+ OPV	&	0.021	&	0.084	&	0.005	&	0.004	&	0.157	&	2,700	
+\backslash
+
+\backslash
+ Joint input use index	&	0.002	&	0.484	&	0.063$^{**}$	&	0.020	&	0.000	&	2,661	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.048	&	0.201	&	0.017	&	0.009	&	0.049	&	2,714	
+\backslash
+
+\backslash
+ Urea	&	0.011	&	0.095	&	0.009	&	0.005	&	0.074	&	2,714	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.065	&	0.235	&	0.003	&	0.010	&	0.716	&	2,714	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.036	&	0.176	&	0.002	&	0.007	&	0.787	&	2,714	
+\backslash
+
+\backslash
+ OPV	&	0.024	&	0.091	&	-0.002	&	0.004	&	0.593	&	2,754	
+\backslash
+
+\backslash
+ Joint input use index	&	-0.007	&	0.484	&	0.031	&	0.020	&	0.119	&	2,714	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 The effect of involving women in receiving information, alone or as part
  of the couple, on input use decided upon by men is mixed: it is negative
- for the use of the fertilizer DAP and positive for organic fertilizer (,
- Model 1; Appendix Table 7B, Model 1).
+ for the use of the fertilizer DAP and positive for organic fertilizer (Model
+ 1; top panel Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:input_main_men"
+
+\end_inset
+
+).
  The negative effect on men’s decided-upon use of DAP emerges when the female
- co-heads receive the information alone (, Model 1A; Appendix Table 7B,
- Model 1A), which may be linked to men lacking information about the use
- of DAP.
+ co-heads receive the information alone (Model 1A; top panel Appendix Table
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:adopt_men_model1AB-1"
+
+\end_inset
+
+), which may be linked to men lacking information about the use of DAP.
  
 \end_layout
 
 \begin_layout Standard
 We continue by examining role-model effects with the comparison illustrated
- in , Model 2.
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+, Model 2.
  Involving women in conveying extension information has a positive and significa
 nt effect of 2 pp on the use of organic fertilizer by women who individually
- made the decision about its use (Table 7, Model 2, Panel a).
+ made the decision about its use (bottom panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:inputs_main"
+
+\end_inset
+
+).
  There are also indications of positive effects on women’s decided-upon
  use of OPVs and the women’s input use index.
  The estimated effects have p-values lower than 0.10 but are not significant
@@ -4899,17 +5595,46 @@ nt effect of 2 pp on the use of organic fertilizer by women who individually
 
 \begin_layout Standard
 Involving women in conveying the information has no significant effects
- on joint input use (Table 7, Model 2, Panel b).
+ on joint input use (bottom panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:input_joint"
+
+\end_inset
+
+).
  Yet there are indications that jointly decided-upon use of urea increased
  by 2 pp as a result of female co-heads having seen the video with a female
  actor (alone or with a male co-actor) instead of the video with only a
- male actor (as in , Model 2A) (Appendix Table 7A, Model 2A, Panel b).
+ male actor (Model 2A; top panel Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:input_joint_model2AB"
+
+\end_inset
+
+).
  The use of DAP individually decided upon by men, however, seems negatively
- affected by that treatment (Appendix, Table 7B, Model 2A).
+ affected by that treatment (bottom panel of Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:input_main_men"
+
+\end_inset
+
+).
  There are indications that the use of both urea and hybrid seed individually
  decided upon by men are positively affected as a result of showing male
  co-heads the video with a female actor (alone or with a male co-actor)
- instead of the video with only a male actor (Appendix Table 7B, Model 2B).
+ instead of the video with only a male actor (botom panel of Appendix Table
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:adopt_men_model2AB-1"
+
+\end_inset
+
+).
  
 \end_layout
 
@@ -4920,65 +5645,723 @@ Production and productivity
 \begin_layout Standard
 Next, we assess effects on production and productivity of female-managed
  maize plots as a result of involving women in receiving information versus
- only targeting the man (as illustrated in , Model 1).
- The results (Table 8, Model 1, Panel a) show a significant and positive
- increase of the total area of female-managed maize plots in the household
- by 0.07 acres, an increase of the total amount of household maize produced
- on female-managed plots by 35.8 kg, and an increase of the yield on female-manag
-ed maize plots by 50.4 kg/acre; and a 2 pp higher likelihood of a better-than-nor
-mal yield.
+ only targeting the man (as illustrated in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+, Model 1).
+ The results (top panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:prod_main"
+
+\end_inset
+
+) show a significant and positive increase of the total area of female-managed
+ maize plots in the household by 0.07 acres, an increase of the total amount
+ of household maize produced on female-managed plots by 35.8 kg, and an increase
+ of the yield on female-managed maize plots by 50.4 kg/acre; and a 2 pp higher
+ likelihood of a better-than-normal yield.
  Both the share of household maize production and maize area under female
  management increased by 6 pp.
  The positive effects on production and productivity outcomes on female-managed
  plots that result from providing only the female co-head with information
- instead of the male co-head (as in , Model 1A) are even larger in magnitude
- (Table 8, Model 1A, Panel a).
+ instead of the male co-head (Model 1A) are even larger in magnitude (top
+ panel in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:prod_women_model1AB"
+
+\end_inset
+
+).
  In contrast, involving the female co-head as part of a couple receiving
- the information instead of only the male co-head (as in , Model 1B) shows
- no effect on production and productivity outcomes on female-managed plots
- (Appendix Table 8A, Model 1B, Panel a).
+ the information instead of only the male co-head (Model 1B) shows no effect
+ on production and productivity outcomes on female-managed plots (bottom
+ panel in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:prod_women_model1AB"
+
+\end_inset
+
+).
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women production outcomes
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:prod_main"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Production	&	39.094	&	155.909	&	35.849$^{**}$	&	8.687	&	0.000	&	2,700	
+\backslash
+
+\backslash
+ Area	&	0.105	&	0.332	&	0.074$^{**}$	&	0.019	&	0.000	&	2,700	
+\backslash
+
+\backslash
+ Yield better than normal	&	0.024	&	0.142	&	0.026$^{**}$	&	0.008	&	0.001	&	2,595	
+\backslash
+
+\backslash
+ Yield	&	57.675	&	237.920	&	50.389$^{**}$	&	12.853	&	0.000	&	2,700	
+\backslash
+
+\backslash
+ Share of household maize production	&	0.122	&	0.315	&	0.060$^{**}$	&	0.015	&	0.000	&
+	2,534	
+\backslash
+
+\backslash
+ Share of area under maize cultivation	&	0.122	&	0.315	&	0.063$^{**}$	&	0.016	&	0.000
+	&	2,507	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Production	&	64.273	&	227.836	&	-7.349	&	8.347	&	0.381	&	2,754	
+\backslash
+
+\backslash
+ Area	&	0.152	&	0.431	&	-0.001	&	0.018	&	0.955	&	2,754	
+\backslash
+
+\backslash
+ Yield better than normal	&	0.041	&	0.177	&	0.001	&	0.007	&	0.916	&	2,644	
+\backslash
+
+\backslash
+ Yield	&	112.428	&	410.309	&	-35.867$^{**}$	&	12.415	&	0.003	&	2,754	
+\backslash
+
+\backslash
+ Share of household maize production	&	0.171	&	0.358	&	-0.012	&	0.015	&	0.395	&	2,584
+	
+\backslash
+
+\backslash
+ Share of area under maize cultivation	&	0.173	&	0.362	&	-0.012	&	0.015	&	0.416	&	2,5
+56	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Involving women in receiving information, however, does not have any effect
- on production and productivity outcomes on jointly managed plots (Table
- 8 ,Model 1, Panel b).
+ on production and productivity outcomes on jointly managed plots (top panel
+ of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:prod_joint"
+
+\end_inset
+
+).
  Even when the female and male co-heads received the information together
- (as in , Model 1B), there is no impact on production and productivity outcomes
- on jointly managed plots (Appendix, Table 8A, Model 1B, Panel b).
+ (Model 1B), there is no impact on production and productivity outcomes
+ on jointly managed plots (bottom panel of Appendix, Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:prod_joint_model1AB"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint production outcomes 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:prod_joint"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
  
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Production	&	239.898	&	478.920	&	-14.825	&	17.251	&	0.359	&	2,700	
+\backslash
+
+\backslash
+ Area	&	0.591	&	0.908	&	-0.019	&	0.036	&	0.576	&	2,700	
+\backslash
+
+\backslash
+ Yield better than normal	&	0.132	&	0.326	&	0.003	&	0.014	&	0.799	&	2,595	
+\backslash
+
+\backslash
+ Yield	&	222.381	&	383.192	&	-3.393	&	15.549	&	0.823	&	2,700	
+\backslash
+
+\backslash
+ Share of household maize production	&	0.501	&	0.486	&	0.011	&	0.021	&	0.592	&	2,534	
+\backslash
+
+\backslash
+ Share of area under maize cultivation	&	0.502	&	0.485	&	0.007	&	0.021	&	0.709	&	2,50
+7	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Production	&	222.311	&	417.654	&	-0.363	&	16.763	&	0.983	&	2,754	
+\backslash
+
+\backslash
+ Area	&	0.586	&	0.874	&	-0.033	&	0.034	&	0.337	&	2,754	
+\backslash
+
+\backslash
+ Yield better than normal	&	0.119	&	0.306	&	0.017	&	0.013	&	0.187	&	2,644	
+\backslash
+
+\backslash
+ Yield	&	207.692	&	340.322	&	13.985	&	15.192	&	0.349	&	2,754	
+\backslash
+
+\backslash
+ Share of household maize production	&	0.500	&	0.484	&	0.000	&	0.020	&	0.997	&	2,584	
+\backslash
+
+\backslash
+ Share of area under maize cultivation	&	0.502	&	0.484	&	-0.003	&	0.021	&	0.870	&	2,5
+56	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Next, we examine the effect of involving women in conveying the information
- rather than only a man (as in , Model 2) on production and productivity
- outcomes of female-managed plots.
- Results (Table 8, Model 2, Panel a) point to a significant and negative
- effect on the yield on female-managed plots.
+ rather than only a man (Model 2) on production and productivity outcomes
+ of female-managed plots.
+ Results (bottom panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:prod_main"
+
+\end_inset
+
+) point to a significant and negative effect on the yield on female-managed
+ plots.
  Suggestive indications of the negative effects on yield on female-managed
  plots emerge both when female co-heads and when male co-heads have seen
  the video featuring a female actor (alone or with a male co-actor) instead
  of the video featuring only a male actor (respectively Model 2A and Model
- 2B in ).
+ 2B in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+).
  In the latter case, there are also indications of a negative effect on
- production on female-managed plots (Appendix Table 8A, Model 2A, Panel
- a and Model 2B, Panel a).
+ production on female-managed plots (Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:prod_women_model2AB"
+
+\end_inset
+
+).
  
 \end_layout
 
 \begin_layout Standard
 There is no evidence that production and productivity outcomes of jointly
  managed plots changed as a result of involving women in conveying the informati
-on (alone or with a male co-actor) rather than only a man (as in Table 2,
- Model 2) (Table 8, Model 2, Panel b).
+on (alone or with a male co-actor) rather than only a man (bottom part of
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:prod_joint"
+
+\end_inset
+
+).
  However, both as a result of showing female co-heads and as result of showing
  male co-heads the video featuring a female actor (alone or with a male
- co-actor) instead of the video with only a male actor (respectively, Model
- 2A and Model 2B in Table 2), the likelihood that the yield on jointly managed
- plots is better than normal is (indicatively) increased by about 4 pp.
+ co-actor) instead of the video with only a male actor (Model 2A and Model
+ 2B), the likelihood that the yield on jointly managed plots is better than
+ normal is (indicatively) increased by about 4 pp.
  This translates into about a 40 percent increase over the mean of the control
- (Appendix Table 8A, Model 2A, Panel b and Model 2B, Panel b).
+ (Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:prod_joint_model2AB"
+
+\end_inset
+
+).
  
 \end_layout
 
@@ -4989,12 +6372,25 @@ Sales
 \begin_layout Standard
 Maize produced in the household independently sold by the female co-head
  is not affected by involving women in receiving information, alone or as
- part of the couple ( Model 1; Error: Reference source not found, Model
- 1, Panel a).
+ part of the couple (top panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sales_main"
+
+\end_inset
+
+).
  Yet providing the information to only the female co-head as opposed to
- providing it to only the male co-head (as in , Model 1A) increases the
- likelihood that she independently sells maize by 4 pp (Error: Reference
- source not found, Model 1A, Panel a).
+ providing it to only the male co-head (Model 1A) increases the likelihood
+ that she independently sells maize by 4 pp (top panel in Appendix Table
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sales_women_model1AB"
+
+\end_inset
+
+).
  As few women in the control group actually sell maize independently, this
  translates into a substantial percentage increase of 46 percent over the
  mean of the control.
@@ -5002,23 +6398,564 @@ Maize produced in the household independently sold by the female co-head
  independently by women as well.
  The selling of maize by the female and male co-head jointly does not change
  by involving women in receiving information, alone or as part of the couple
- ( Model 1; Table 9, Model 1, Panel b).
- Neither does the selling of maize individually by the male co-head (Appendix
- Error: Reference source not foundB, Model 1).
+ (top panel in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sales_joint"
+
+\end_inset
+
+).
+ Neither does the selling of maize individually by the male co-head (top
+ panel Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sales_main_men"
+
+\end_inset
+
+).
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women sales outcomes
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:sales_main"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.088	&	0.284	&	0.018	&	0.013	&	0.159	&	2,700	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	0.184	&	0.977	&	0.030	&	0.037	&	0.399	&	2,700	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.103	&	0.305	&	-0.009	&	0.012	&	0.490	&	2,754	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	0.238	&	1.204	&	-0.084$^{*}$	&	0.036	&	0.018	&	2,754	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Next, we look into the effect of involving women in conveying information
- (by making the comparison visualized in , Model 2).
- Results (Table 9, Model 2, Panel a) show a significant and negative effect
- on the amount of maize that women independently sell.
+ (Model 2).
+ Results (bottom panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sales_main"
+
+\end_inset
+
+) show a significant and negative effect on the amount of maize that women
+ independently sell.
  There are indications of negative effects on the likelihood and the amount
  sold independently by women when male co-heads view the video featuring
  a female actor (alone or with a male co-actor) delivering the information
- instead of only a male actor (as in , Model 2B) (Appendix Table 9A, Model
- 2B, Panel a).
+ instead of only a male actor (bottom panel of Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sales_women_model2AB"
+
+\end_inset
+
+).
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint sales 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:sales_joint"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.319	&	0.466	&	-0.003	&	0.020	&	0.881	&	2,700	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	1.179	&	3.173	&	-0.022	&	0.131	&	0.867	&	2,700	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.296	&	0.457	&	0.035	&	0.019	&	0.060	&	2,754	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	1.236	&	3.948	&	-0.105	&	0.132	&	0.420	&	2,754	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5026,22 +6963,56 @@ Involving women in conveying information has a positive effect of 4 pp (though
  just under the FWER-consistent significance threshold) on the likelihood
  that maize produced in the household is jointly sold.
  This translates into a 12 percent increase over the mean of the control
- (Table 9, Model 2, Panel b).
+ (bottom panel in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sales_joint"
+
+\end_inset
+
+).
  An indication of a similar positive role model effect on joint sales emerges
  when women are involved in conveying information given to the female co-heads
- alone (Table 9, Model 2A, Panel b).
+ alone (top panel in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sales_joint_model2AB"
+
+\end_inset
+
+).
  
 \end_layout
 
 \begin_layout Standard
 The amount of maize independently sold by men, however, is significantly
- and negatively affected by involving women in conveying information (Appendix
- Table 9B, Model 2).
+ and negatively affected by involving women in conveying information (bottom
+ panel Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sales_main_men"
+
+\end_inset
+
+).
  This seems particularly the case when female co-heads alone viewed the
- video in which women are involved in conveying information ( Model 2A;
- Appendix Table 9B, Model 2A), and seems unrelated to challenging role incongrui
-ty among men since significant effects are absent in that case (, Model
- 2B; Appendix Table 9B, Model 2B).
+ video in which women are involved in conveying information (top panel of
+ Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sales_men_model2AB"
+
+\end_inset
+
+), and seems unrelated to challenging role incongruity among men since significa
+nt effects are absent in that case (bottom panel of Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sales_men_model2AB"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Section
@@ -10463,7 +12434,7 @@ Adoption results
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -11024,7 +12995,7 @@ end{threeparttable}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -11309,7 +13280,7 @@ end{threeparttable}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -11589,7 +13560,7 @@ end{threeparttable}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -11872,7 +13843,7 @@ end{threeparttable}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -12153,7 +14124,7 @@ end{threeparttable}
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -12338,6 +14309,4964 @@ timing of planting maize	&	0.076	&	0.239	&	-0.029	&	0.016	&	0.065	&	792
 
 \backslash
  men's adoption index	&	0.028	&	0.602	&	-0.021	&	0.046	&	0.684	&	771	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Input use results
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women input use (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:input_women_model1AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.016	&	0.121	&	0.027$^{**}$	&	0.007	&	0.000	&	1,809	
+\backslash
+
+\backslash
+ Urea	&	0.002	&	0.038	&	0.014$^{**}$	&	0.004	&	0.000	&	1,809	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.017	&	0.126	&	0.021$^{*}$	&	0.008	&	0.004	&	1,809	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.013	&	0.111	&	0.024$^{**}$	&	0.007	&	0.000	&	1,809	
+\backslash
+
+\backslash
+ OPV	&	0.018	&	0.126	&	0.017$^{+}$	&	0.008	&	0.020	&	1,809	
+\backslash
+
+\backslash
+ Women input use index	&	-0.027	&	0.461	&	0.129$^{**}$	&	0.025	&	0.000	&	1,809	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.016	&	0.121	&	0.007	&	0.006	&	0.255	&	1,710	
+\backslash
+
+\backslash
+ Urea	&	0.002	&	0.038	&	0.006	&	0.003	&	0.028	&	1,710	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.017	&	0.126	&	0.006	&	0.006	&	0.332	&	1,710	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.013	&	0.111	&	-0.001	&	0.005	&	0.874	&	1,710	
+\backslash
+
+\backslash
+ OPV	&	0.018	&	0.126	&	0.002	&	0.006	&	0.764	&	1,710	
+\backslash
+
+\backslash
+ Women input use index	&	-0.012	&	0.484	&	0.033$^{+}$	&	0.024	&	0.063	&	1,710	
+\backslash
+
+\backslash
+   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women input use (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:input_women_model2AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.029	&	0.156	&	0.005	&	0.011	&	0.650	&	967	
+\backslash
+
+\backslash
+ Urea	&	0.017	&	0.127	&	-0.004	&	0.007	&	0.586	&	967	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.021	&	0.128	&	0.021	&	0.012	&	0.077	&	967	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.029	&	0.152	&	0.004	&	0.011	&	0.727	&	967	
+\backslash
+
+\backslash
+ OPV	&	0.031	&	0.169	&	0.007	&	0.012	&	0.545	&	967	
+\backslash
+
+\backslash
+ Women input use index	&	-0.037	&	0.470	&	0.041	&	0.037	&	0.272	&	967	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.015	&	0.120	&	0.002	&	0.009	&	0.780	&	858	
+\backslash
+
+\backslash
+ Urea	&	0.000	&	0.000	&	0.003	&	0.003	&	0.129	&	858	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.014	&	0.110	&	0.005	&	0.009	&	0.613	&	858	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.011	&	0.097	&	0.003	&	0.008	&	0.747	&	858	
+\backslash
+
+\backslash
+ OPV	&	0.015	&	0.120	&	0.006	&	0.009	&	0.553	&	858	
+\backslash
+
+\backslash
+ Women input use index	&	-0.028	&	0.385	&	0.038	&	0.035	&	0.238	&	858	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint input use (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:input_joint_model1AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.050	&	0.207	&	0.020	&	0.011	&	0.042	&	1,809	
+\backslash
+
+\backslash
+ Urea	&	0.014	&	0.116	&	0.001	&	0.006	&	0.886	&	1,809	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.051	&	0.209	&	0.008	&	0.011	&	0.385	&	1,809	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.027	&	0.150	&	0.013	&	0.009	&	0.110	&	1,809	
+\backslash
+
+\backslash
+ OPV	&	0.021	&	0.084	&	0.008	&	0.005	&	0.052	&	1,836	
+\backslash
+
+\backslash
+ Joint input use index	&	0.001	&	0.489	&	0.039$^{**}$	&	0.023	&	0.010	&	1,809	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1B: Zooming in on providing information to women as part of
+ the couple}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.050	&	0.207	&	0.022	&	0.011	&	0.035	&	1,710	
+\backslash
+
+\backslash
+ Urea	&	0.014	&	0.116	&	0.004	&	0.006	&	0.506	&	1,710	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.051	&	0.209	&	0.043$^{**}$	&	0.012	&	0.000	&	1,710	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.027	&	0.150	&	0.027$^{**}$	&	0.009	&	0.002	&	1,710	
+\backslash
+
+\backslash
+ OPV	&	0.021	&	0.084	&	0.002	&	0.004	&	0.629	&	1,735	
+\backslash
+
+\backslash
+ Joint input use index	&	0.001	&	0.509	&	0.089$^{**}$	&	0.024	&	0.000	&	1,710	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint input use (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:input_joint_model2AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.056	&	0.215	&	0.009	&	0.015	&	0.554	&	967	
+\backslash
+
+\backslash
+ Urea	&	0.006	&	0.079	&	0.019	&	0.009	&	0.056	&	967	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.058	&	0.220	&	0.000	&	0.015	&	0.991	&	967	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.034	&	0.173	&	0.001	&	0.012	&	0.959	&	967	
+\backslash
+
+\backslash
+ OPV	&	0.022	&	0.088	&	0.002	&	0.006	&	0.755	&	981	
+\backslash
+
+\backslash
+ Joint input use index	&	0.007	&	0.489	&	0.043	&	0.033	&	0.199	&	967	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.041	&	0.192	&	0.010	&	0.015	&	0.498	&	858	
+\backslash
+
+\backslash
+ Urea	&	0.008	&	0.086	&	0.010	&	0.008	&	0.268	&	858	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.040	&	0.186	&	0.019	&	0.015	&	0.188	&	858	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.026	&	0.152	&	0.000	&	0.011	&	0.999	&	858	
+\backslash
+
+\backslash
+ OPV	&	0.022	&	0.089	&	-0.001	&	0.006	&	0.850	&	871	
+\backslash
+
+\backslash
+ Joint input use index	&	-0.003	&	0.505	&	0.044	&	0.035	&	0.200	&	858	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mens use of inputs 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:input_main_men"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.067	&	0.239	&	-0.026$^{**}$	&	0.009	&	0.002	&	2,661	
+\backslash
+
+\backslash
+ Urea	&	0.018	&	0.122	&	0.002	&	0.005	&	0.766	&	2,661	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.051	&	0.209	&	0.027$^{*}$	&	0.010	&	0.006	&	2,661	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.055	&	0.215	&	-0.006	&	0.009	&	0.495	&	2,661	
+\backslash
+
+\backslash
+ OPV	&	0.019	&	0.077	&	0.005	&	0.004	&	0.191	&	2,700	
+\backslash
+
+\backslash
+ Men input use index	&	-0.008	&	0.480	&	-0.012	&	0.021	&	0.381	&	2,661	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.055	&	0.217	&	-0.005	&	0.009	&	0.550	&	2,714	
+\backslash
+
+\backslash
+ Urea	&	0.015	&	0.114	&	0.005	&	0.005	&	0.309	&	2,714	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.065	&	0.235	&	0.003	&	0.010	&	0.717	&	2,714	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.048	&	0.204	&	0.002	&	0.008	&	0.854	&	2,714	
+\backslash
+
+\backslash
+ OPV	&	0.022	&	0.087	&	0.002	&	0.004	&	0.678	&	2,754	
+\backslash
+
+\backslash
+ Men input use index	&	0.010	&	0.516	&	-0.007	&	0.020	&	0.741	&	2,714	
+\backslash
+
+\backslash
+ 	&	2,713	
+\backslash
+
+\backslash
+ Men adoption index	&	0.037	&	0.657	&	0.009	&	0.026	&	0.731	&	2,478	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mens adoption of recommended practices (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:adopt_men_model1AB-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.067	&	0.239	&	-0.032$^{**}$	&	0.011	&	0.000	&	1,809	
+\backslash
+
+\backslash
+ Urea	&	0.018	&	0.122	&	-0.005	&	0.006	&	0.359	&	1,809	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.051	&	0.209	&	0.008	&	0.011	&	0.391	&	1,809	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.055	&	0.215	&	-0.011	&	0.011	&	0.271	&	1,809	
+\backslash
+
+\backslash
+ OPV	&	0.019	&	0.077	&	0.003	&	0.004	&	0.448	&	1,836	
+\backslash
+
+\backslash
+ Men input use index	&	0.018	&	0.514	&	-0.023	&	0.023	&	0.058	&	1,809	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1B: Zooming in on providing information to women as part of
+ the couple}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.067	&	0.239	&	-0.021	&	0.011	&	0.036	&	1,710	
+\backslash
+
+\backslash
+ Urea	&	0.018	&	0.122	&	0.007	&	0.007	&	0.269	&	1,710	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.051	&	0.209	&	0.043$^{**}$	&	0.012	&	0.000	&	1,710	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.055	&	0.215	&	-0.003	&	0.010	&	0.804	&	1,710	
+\backslash
+
+\backslash
+ OPV	&	0.019	&	0.077	&	0.006	&	0.004	&	0.166	&	1,735	
+\backslash
+
+\backslash
+ Men input use index	&	-0.006	&	0.499	&	0.001	&	0.024	&	0.783	&	1,710	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mens adoption of recommended practices (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:adopt_men_model2AB-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.054	&	0.218	&	-0.020	&	0.013	&	0.093	&	967	
+\backslash
+
+\backslash
+ Urea	&	0.017	&	0.127	&	-0.003	&	0.008	&	0.664	&	967	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.058	&	0.220	&	0.000	&	0.015	&	0.993	&	967	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.047	&	0.205	&	-0.006	&	0.013	&	0.650	&	967	
+\backslash
+
+\backslash
+ OPV	&	0.022	&	0.089	&	0.004	&	0.006	&	0.564	&	981	
+\backslash
+
+\backslash
+ Men input use index	&	-0.010	&	0.484	&	-0.045	&	0.034	&	0.168	&	967	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DAP	&	0.054	&	0.213	&	0.017	&	0.017	&	0.324	&	858	
+\backslash
+
+\backslash
+ Urea	&	0.009	&	0.078	&	0.014	&	0.009	&	0.090	&	858	
+\backslash
+
+\backslash
+ Organic fertilizer	&	0.040	&	0.186	&	0.019	&	0.015	&	0.183	&	858	
+\backslash
+
+\backslash
+ Hybrid seeds	&	0.036	&	0.172	&	0.026	&	0.016	&	0.083	&	858	
+\backslash
+
+\backslash
+ OPV	&	0.019	&	0.075	&	-0.001	&	0.006	&	0.819	&	871	
+\backslash
+
+\backslash
+ Men input use index	&	-0.010	&	0.500	&	0.037	&	0.035	&	0.378	&	858	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Production results
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women production outcomes (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:prod_women_model1AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Production	&	39.094	&	155.909	&	51.576$^{**}$	&	10.641	&	0.000	&	1,836	
+\backslash
+
+\backslash
+ Area	&	0.105	&	0.332	&	0.103$^{**}$	&	0.022	&	0.000	&	1,836	
+\backslash
+
+\backslash
+ Yield better than normal	&	0.024	&	0.142	&	0.043$^{**}$	&	0.010	&	0.000	&	1,763	
+\backslash
+
+\backslash
+ Yield	&	57.675	&	237.920	&	75.144$^{**}$	&	16.607	&	0.000	&	1,836	
+\backslash
+
+\backslash
+ Share of household maize production	&	0.122	&	0.315	&	0.106$^{**}$	&	0.019	&	0.000	&
+	1,729	
+\backslash
+
+\backslash
+ Share of area under maize cultivation	&	0.122	&	0.315	&	0.107$^{**}$	&	0.020	&	0.000
+	&	1,697	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Production	&	39.094	&	155.909	&	18.834	&	8.911	&	0.033	&	1,735	
+\backslash
+
+\backslash
+ Area	&	0.105	&	0.332	&	0.045	&	0.021	&	0.029	&	1,735	
+\backslash
+
+\backslash
+ Yield better than normal	&	0.024	&	0.142	&	0.011	&	0.008	&	0.131	&	1,664	
+\backslash
+
+\backslash
+ Yield	&	57.675	&	237.920	&	27.178	&	12.515	&	0.027	&	1,735	
+\backslash
+
+\backslash
+ Share of household maize production	&	0.122	&	0.315	&	0.019	&	0.016	&	0.208	&	1,618	
+\backslash
+
+\backslash
+ Share of area under maize cultivation	&	0.122	&	0.315	&	0.021	&	0.016	&	0.200	&	1,60
+4	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women production outcomes (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:prod_women_model2AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Production	&	74.487	&	183.926	&	11.897	&	16.217	&	0.458	&	981	
+\backslash
+
+\backslash
+ Area	&	0.193	&	0.451	&	0.005	&	0.033	&	0.873	&	981	
+\backslash
+
+\backslash
+ Yield better than normal	&	0.055	&	0.207	&	0.011	&	0.015	&	0.458	&	946	
+\backslash
+
+\backslash
+ Yield	&	154.249	&	512.437	&	-49.172	&	25.418	&	0.053	&	981	
+\backslash
+
+\backslash
+ Share of household maize production	&	0.235	&	0.413	&	-0.024	&	0.028	&	0.381	&	930	
+\backslash
+
+\backslash
+ Share of area under maize cultivation	&	0.239	&	0.415	&	-0.027	&	0.028	&	0.329	&	918
+	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Production	&	52.850	&	215.563	&	-19.752	&	11.276	&	0.070	&	871	
+\backslash
+
+\backslash
+ Area	&	0.117	&	0.384	&	-0.017	&	0.024	&	0.477	&	871	
+\backslash
+
+\backslash
+ Yield better than normal	&	0.029	&	0.156	&	-0.005	&	0.010	&	0.606	&	832	
+\backslash
+
+\backslash
+ Yield	&	79.907	&	345.055	&	-32.709	&	17.220	&	0.061	&	871	
+\backslash
+
+\backslash
+ Share of household maize production	&	0.131	&	0.320	&	-0.010	&	0.024	&	0.653	&	813	
+\backslash
+
+\backslash
+ Share of area under maize cultivation	&	0.121	&	0.311	&	0.006	&	0.024	&	0.800	&	794	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint production outcomes (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:prod_joint_model1AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Production	&	239.898	&	478.920	&	-35.666	&	21.564	&	0.057	&	1,836	
+\backslash
+
+\backslash
+ Area	&	0.591	&	0.908	&	-0.036	&	0.044	&	0.343	&	1,836	
+\backslash
+
+\backslash
+ Yield better than normal	&	0.132	&	0.326	&	-0.009	&	0.017	&	0.521	&	1,763	
+\backslash
+
+\backslash
+ Yield	&	222.381	&	383.192	&	-16.996	&	19.671	&	0.338	&	1,836	
+\backslash
+
+\backslash
+ Share of household maize production	&	0.501	&	0.486	&	-0.013	&	0.026	&	0.573	&	1,729
+	
+\backslash
+
+\backslash
+ Share of area under maize cultivation	&	0.502	&	0.485	&	-0.012	&	0.026	&	0.633	&	1,6
+97	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1B: Zooming in on providing information to women as part of
+ the couple}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Production	&	239.898	&	478.920	&	-1.069	&	21.157	&	0.960	&	1,735	
+\backslash
+
+\backslash
+ Area	&	0.591	&	0.908	&	0.004	&	0.042	&	0.915	&	1,735	
+\backslash
+
+\backslash
+ Yield better than normal	&	0.132	&	0.326	&	0.016	&	0.016	&	0.303	&	1,664	
+\backslash
+
+\backslash
+ Yield	&	222.381	&	383.192	&	7.339	&	17.845	&	0.671	&	1,735	
+\backslash
+
+\backslash
+ Share of household maize production	&	0.501	&	0.486	&	0.031	&	0.024	&	0.197	&	1,618	
+\backslash
+
+\backslash
+ Share of area under maize cultivation	&	0.502	&	0.485	&	0.029	&	0.025	&	0.224	&	1,60
+4	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint production outcomes (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:prod_joint_model2AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Production	&	183.716	&	309.267	&	26.039	&	24.464	&	0.269	&	981	
+\backslash
+
+\backslash
+ Area	&	0.555	&	0.878	&	-0.050	&	0.055	&	0.344	&	981	
+\backslash
+
+\backslash
+ Yield better than normal	&	0.090	&	0.267	&	0.038	&	0.021	&	0.066	&	946	
+\backslash
+
+\backslash
+ Yield	&	184.792	&	332.737	&	25.809	&	25.834	&	0.311	&	981	
+\backslash
+
+\backslash
+ Share of household maize production	&	0.467	&	0.486	&	0.014	&	0.034	&	0.668	&	930	
+\backslash
+
+\backslash
+ Share of area under maize cultivation	&	0.469	&	0.486	&	0.004	&	0.034	&	0.904	&	918	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Production	&	250.434	&	526.708	&	-20.439	&	34.440	&	0.552	&	871	
+\backslash
+
+\backslash
+ Area	&	0.621	&	0.915	&	-0.064	&	0.065	&	0.320	&	871	
+\backslash
+
+\backslash
+ Yield better than normal	&	0.103	&	0.295	&	0.041	&	0.024	&	0.079	&	832	
+\backslash
+
+\backslash
+ Yield	&	210.600	&	336.621	&	18.882	&	27.606	&	0.483	&	871	
+\backslash
+
+\backslash
+ Share of household maize production	&	0.508	&	0.486	&	-0.019	&	0.036	&	0.610	&	813	
+\backslash
+
+\backslash
+ Share of area under maize cultivation	&	0.518	&	0.484	&	-0.035	&	0.037	&	0.348	&	794
+	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Sales results
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women sales (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:sales_women_model1AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.088	&	0.284	&	0.041$^{**}$	&	0.016	&	0.005	&	1,836	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	0.184	&	0.977	&	0.071	&	0.047	&	0.098	&	1,836	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.088	&	0.284	&	-0.005	&	0.013	&	0.691	&	1,735	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	0.184	&	0.977	&	-0.025	&	0.044	&	0.574	&	1,735	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Women sales use (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:sales_women_model2AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.113	&	0.318	&	0.016	&	0.022	&	0.476	&	981	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	0.238	&	1.055	&	-0.023	&	0.057	&	0.684	&	981	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.109	&	0.312	&	-0.030	&	0.020	&	0.130	&	891	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	0.255	&	1.231	&	-0.106	&	0.069	&	0.122	&	891	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint sales use (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:sales_joint_model1AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.319	&	0.466	&	-0.029	&	0.024	&	0.178	&	1,836	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	1.179	&	3.173	&	-0.157	&	0.151	&	0.241	&	1,836	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.319	&	0.466	&	0.009	&	0.023	&	0.673	&	1,735	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	1.179	&	3.173	&	0.053	&	0.162	&	0.740	&	1,735	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Joint sales (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:sales_joint_model2AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.273	&	0.446	&	0.052	&	0.031	&	0.106	&	981	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	0.959	&	2.210	&	0.171	&	0.189	&	0.372	&	981	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.296	&	0.457	&	0.038	&	0.033	&	0.245	&	891	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	1.333	&	4.326	&	-0.155	&	0.244	&	0.516	&	891	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mens sales 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:sales_main_men"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.116	&	0.320	&	-0.006	&	0.013	&	0.669	&	2,700	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	0.409	&	2.544	&	-0.055	&	0.089	&	0.547	&	2,700	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.124	&	0.330	&	-0.015	&	0.013	&	0.234	&	2,754	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	0.525	&	2.840	&	-0.228$^{**}$	&	0.084	&	0.004	&	2,754
+	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mens sales (models 1A and 1B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:sales_men_model1AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Models 1A: Zooming in on providing information to the female co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.116	&	0.320	&	-0.028$^{+}$	&	0.016	&	0.053	&	1,836	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	0.409	&	2.544	&	-0.111	&	0.109	&	0.273	&	1,836	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1B: Zooming in on providing information to women as part of
+ the couple}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.116	&	0.320	&	0.008	&	0.016	&	0.596	&	1,735	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	0.409	&	2.544	&	-0.021	&	0.114	&	0.855	&	1,735	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tiny
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports control group means (and standard deviations
+ below); Column 2 reports differences between 
+\end_layout
+
+\begin_layout Plain Layout
+
+placebo (control) and video treatment (and standard error below), column
+ 3 between video only and video+ivr, column 4 between 
+\end_layout
+
+\begin_layout Plain Layout
+
+video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
+ * denote that the difference is signficantly different from zero at 
+\end_layout
+
+\begin_layout Plain Layout
+
+the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mens sales (models 2A and 2B)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:sales_men_model2AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information to the female
+ co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.110	&	0.314	&	-0.007	&	0.021	&	0.741	&	981	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	0.456	&	1.944	&	-0.181	&	0.103	&	0.077	&	981	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information to the male co-heads
+ alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold any	&	0.112	&	0.316	&	0.005	&	0.023	&	0.822	&	891	
+\backslash
+
+\backslash
+ Amount sold (in 100 kg bags)	&	0.487	&	3.175	&	-0.127	&	0.178	&	0.540	&	891	
 \backslash
 
 \backslash
