@@ -576,31 +576,28 @@ reference "sec:Methods"
 
 \end_inset
 
- we explain the methods and elaborate on the experimental design, the data,
- indicator definition and specifications we will estimate.
- Results are presented in Section 
+ we explain the methods and elaborate on the experimental design, present
+ the specifications we will estimate, look at baseline data, and define
+ indicators that will be used to assess impact of the different interventions.
+ The design of our experiment in combination with the richness of the data
+ we collected means we have a lot of results to present; Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Results"
 
 \end_inset
 
- and discussed in Section 
+ does this in a systematic way.
+ The results are then interpreted and discussed in a separate section (Section
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Discussion"
 
 \end_inset
 
-.
- We conclude and formulate some recommendations in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Policy-recommendations-and"
-
-\end_inset
-
-.
+).
+ A final section concludes.
 \end_layout
 
 \begin_layout Section
@@ -1821,7 +1818,14 @@ ion of the null hypothesis due to multiple inference.
  From this family-wise sharp null, we obtained the corresponding FWER-consistent
  significance thresholds by determining which cutoffs yield 10 percent,
  five percent and one percent significant hypothesis tests across all tests
- and simulations.
+ and simulations 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ottoboni2021permutation,doi:10.1086/689287"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -2776,32 +2780,19 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ Note that no information on the recommended way to fight  fall armyworm
+ was given in the video, so no effects were expected.
 \end_layout
 
 \begin_layout Plain Layout
@@ -2833,8 +2824,52 @@ end{threeparttable}
 \end_layout
 
 \begin_layout Standard
-Second, we examine the knowledge outcomes that result from variation in
- the provider of information.
+Second, we examine joint knowledge outcomes, and present results in terms
+ of a comparison between the same sets of groups.
+ Results are reported in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowlegeJoint"
+
+\end_inset
+
+ for model 1 (top panel) and model 2 (bottom panel).
+ Neither reducing intra-household information asymmetries nor female role
+ models seem to affect joint knowledge outcomes.
+ There is some indication that new information (about spacing) received
+ by female co-head alone is somewhat less likely to be passed on to their
+ spouses than when male co-heads received the information, which is evident
+ from the negative treatment effect of –2.6 pp on joint knowledge (top panel
+ in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_joint_model1AB"
+
+\end_inset
+
+).
+ However, the difference becomes insignificant after controlling FWER.
+ Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_joint_model2AB"
+
+\end_inset
+
+ also reports results for Models 2A and 2B.
+ 
+\end_layout
+
+\begin_layout Standard
+Furthermore, we examine the knowledge outcomes that result from variation
+ in the provider of information, as in model 2 in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+.
  We examine results for role-model effects by comparing women’s knowledge
  outcomes in households that were shown the video in which a female actor
  in the video provides information (whether alone or with a male co-actor),
@@ -2871,42 +2906,6 @@ reference "tab:know_women_model2AB"
 
 ).
  
-\end_layout
-
-\begin_layout Standard
-Third, we examine joint knowledge outcomes, and present results in terms
- of a comparison between the same sets of groups.
- Results are reported in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:knowlegeJoint"
-
-\end_inset
-
- for model 1 (top panel) and model 2 (bottom panel).
- Neither reducing intra-household information asymmetries nor female role
- models seem to affect joint knowledge outcomes.
- There is some indication that new information (about spacing) received
- by female co-head alone is somewhat less likely to be passed on to their
- spouses than when male co-heads received the information, which is evident
- from the negative treatment effect of –2.6 pp on joint knowledge (top panel
- in Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:know_joint_model1AB"
-
-\end_inset
-
-).
- However, the difference becomes insignificant after controlling FWER.
- Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:know_joint_model2AB"
-
-\end_inset
-
- also reports results for Models 2A and 2B.
 \end_layout
 
 \begin_layout Standard
@@ -3172,32 +3171,19 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ Note that no information on the recommended way to fight  fall armyworm
+ was given in the video, so no effects were expected.
 \end_layout
 
 \begin_layout Plain Layout
@@ -3616,32 +3602,18 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3975,32 +3947,18 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4384,25 +4342,18 @@ tiny
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4613,7 +4564,7 @@ Timing of planting maize	&	0.110	&	0.294	&	0.006	&	0.013	&	0.624	&	2,493
 \backslash
 
 \backslash
- Joint adoption index	&	-0.010	&	0.577	&	0.043	&	0.026	&	0.044	&	2,433	
+ Joint adoption index	&	-0.010	&	0.577	&	0.043$^{*}$	&	0.026	&	0.044	&	2,433	
 \backslash
 
 \backslash
@@ -7016,62 +6967,78 @@ name "sec:Discussion"
 
 \end_layout
 
+\begin_layout Standard
+In this section we interpret the results provided in the previous section.
+\end_layout
+
 \begin_layout Subsection
 Women’s access to information and extension services 
 \end_layout
 
 \begin_layout Standard
-Results suggest spouses monopolize agricultural extension information.
- Involving women in receiving extension information instead of giving it
- exclusively to the male co-head has positive effects on women’s individual
- knowledge.
+Results suggest that, to some extent, spouses monopolize agricultural extension
+ information.
+ Involving women in receiving extension information instead (as opposed
+ to exclusively targeting the male co-head) has positive effects on women’s
+ individual knowledge.
  This finding suggests that male co-heads do not necessarily pass the informatio
 n to their female co-heads.
  The fact that men’s knowledge, particularly knowledge about new information,
- is negatively affected by giving the information to the female co-head
- alone, suggests that also female co-heads do not necessarily share information
- with their spouse.
+ is reduces when the information if targeted exclusively to the female co-head
+ (as opposed to exclusively to the male co-head), suggests that also female
+ co-heads also do not necessarily share information with their spouse.
  
 \end_layout
 
 \begin_layout Standard
-Women’s knowledge gains do not differ when a woman saw the extension video
- alone or when she saw it together with her male co-head, hence the presence
- of the male spouse in the exposure process apparently does not influence
- her knowledge.
+Results further show that women’s knowledge gains are similar regardless
+ of whether a woman saw the extension video alone or together with her male
+ co-head.
+ This suggests that the presence of the male spouse in the exposure process
+ does not influence her knowledge.
  Unlike for the women co-head, the presence of the female spouse in the
  exposure process does influence the knowledge of the man, who appears to
  learn less when information is provided to the couple than when this informatio
 n is targeted to him alone.
- Joint knowledge, however, does not increase when involving women.
- 
+ This suggest limited discussion of the content of the video between spouses
+ even when the video was shown to both of them as a couple.
+ Hence, from a knowledge transfer point of view, it seems most effective
+ to target the female co-head.
 \end_layout
 
 \begin_layout Standard
-Women gain individual agricultural decision-making when they are involved
- in receiving extension information, particularly when they receive it alone.
- Joint decision-making, however, remains unchanged.
+Women gain individual agricultural decision-making power when they are involved
+ in receiving extension information, particularly if this information is
+ exclusively provided to them.
+ Joint decision-making remains unchanged.
  These results suggest that women’s agency in the domain of agriculture
  gains footing vis-à-vis men’s by the reduction of information asymmetries
  between the two co-heads in the household.
  This may follow directly from her access to the required information for
  making a decision, or, indirectly, from a gain in bargaining power based
- on her—albeit unique—access to information.
- Conversely, men’s individual decision-making is reduced as a result of
- involving women in receiving information, no matter if this happens by
- reaching the female co-head alone or together with the male co-head.
+ on her exclusive access to information.
+ 
+\end_layout
+
+\begin_layout Standard
+Men’s unilateral decision-making is reduced as a result of involving women
+ in receiving information, no matter if this happens by reaching the female
+ co-head alone or together with the male co-head.
  If this reduction only occurred in the former case, men’s reduced decision-maki
 ng could have been related to a lack of information.
  The fact that the reduction occurs in both cases suggest that men’s individual
- decision-making does not only decrease by not having direct access to informati
-on but also because of women’s increased access to information
-\begin_inset Note Note
+ decision-making does not only decrease due to a lack of direct access to
+ information.
+ Apparently, the fact that women can also access information leads them
+ to refrain from unilateral decision making
+\begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-I don't think I agree here: we find above that men learn less when information
- is provided to the couple, so this would still mean men withdraw because
- they have less information (not because women have more)
+At the same time, it should be noted that men also seem to learn less in
+ the presence of women.
+ This may indicate that, if information is provided to the couple, men pay
+ less attention and start shirking.
 \end_layout
 
 \end_inset
@@ -7102,9 +7069,9 @@ key "10.1093/erae/jbv039"
 
  who found a positive impact of joint participation in an extension program
  on fertilizer adoption on jointly (and men-) managed plots.
- In parallel with decision-making, the adoption of recommended practices
- and use of inputs individually decided upon by men is negatively affected
- by providing women with information.
+ The adoption of recommended practices and use of inputs individually decided
+ upon by men is negatively affected by providing women with information,
+ but the effect is less convincing than for male unilateral decision-making.
 \end_layout
 
 \begin_layout Standard
@@ -7119,7 +7086,11 @@ As a result of providing only women with information, the total area of
  of recommended practices and inputs by women as a result of solely involving
  women as information recipients paid off in higher production, increased
  area, and higher productivity on female-managed maize plots.
- In contrast, providing the information to the female and male co-head together
+ 
+\end_layout
+
+\begin_layout Standard
+In contrast, providing the information to the female and male co-head together
  did not make a change for area, production and productivity of female-managed
  maize plots.
  This probably relates to the fact that providing the information to the
@@ -7149,43 +7120,38 @@ Women are also more likely to sell (more) maize independently if they alone
  information reduces men’s dominance over maize sales.
  Giving the information to the female and male co-head together does not
  affect women’s (nor men’s) individual sales of maize.
- Joint sales of maize remain unaffected by involving women receiving information
-, even as part of a couple.
+ Joint sales of maize remain unaffected by involving women in receiving
+ information, even as part of a couple.
  
 \end_layout
 
 \begin_layout Standard
-The fact that achievements in terms of production and sales by women individuall
-y when the information is given to the couple are absent whereas women can
- individually achieve gains in production and sales if they receive the
- information alone suggests that a woman’s monopoly over information is
- essential for her individual achievements.
- Without that monopoly she seemingly cannot attain individual achievements.
+Women seem to gains in production and sales if they receive agricultural
+ extension information alone.
+ However, these effects are not there if the information is given to the
+ couple.
+ This suggests that a woman’s monopoly over information is essential for
+ her individual achievements.
  The fact that giving the information to the couple instead of only the
  male co-head increased women’s agency in terms of joint decision-making
  and adoption but not joint achievement implies that, despite women’s greater
  (joint) agency, these joint achievement are not different from what men
  individually achieve.
- This may be explained by the fact that the male co-head is involved in
- receiving the information in both cases, but it implies that women’s greater
- involvement in joint decision-making and action did not lead to greater
- joint achievements.
+ 
 \end_layout
 
 \begin_layout Standard
 A lingering question is the extent to which the increased efforts by women
  that result from exclusively giving them extension information, in terms
  of applying the recommended practices and inputs and larger areas of maize
- cultivation under their management, augment their work burden (see 5.3.,
- 5.4., and 5.5).
+ cultivation under their management, augment their work burden.
  Indeed, we observe that the time women spent on preparing fields and weeding
  went up by 1.4 and 3.3 person-days/maize season, respectively, as a result
  of providing only the female co-head, instead of only the male co-head,
  with information.
- This increase in women’s labor relates to the fact that women mainly apply
- labor-based intensification practices, which are likely more accessible
- to women than capital intensive practices such as the use of improved seeds
- or fertilizer.
+ Women generally apply labor-based intensification practices, which are
+ likely more accessible to women than capital intensive practices such as
+ the use of improved seeds or fertilizer.
  This suggests the need for further research on the labor and drudgery implicati
 ons of these outcomes and the need to reflect upon making less labor-intensive
  intensification practices accessible to women.
@@ -7205,28 +7171,27 @@ We expected that including women in the extension information videos portrayed
  women’s individual decision-making and adoption of recommended practices,
  and indications of a negative effect on the yield on female-managed plots
  and sales of maize by women.
- Maybe not coincidentally, one of the limited positive role-model effects
- is on the use of organic fertilizer decided upon by women, which is a productiv
-ity-enhancing input that may be directly available to a woman and which
- she does not need to bargain for.
+ There is some indication of a positive role-model effects on the use of
+ organic fertilizer decided upon by women, a productivity-enhancing input
+ that may be directly available to a woman without a need for bargaining.
  
 \end_layout
 
 \begin_layout Standard
 There are no effects of involving women in conveying information on joint
- outcomes, except for an indication that jointly selling maize has become
- more likely.
+ outcomes either, except for an indication that jointly selling maize has
+ become more likely.
  The lack of effects on joint decision-making and adoption means that couples
  nor men were inspired to accept a greater participation of women in those
  decisions.
- There are, however, negative effects on men’s individual decision-making,
+ There are, however, negative effects on men’s unilateral decision-making,
  as well as on the amount of maize independently sold by men, which may
  make way for more involvement of women in decision-making and action.
  
 \end_layout
 
 \begin_layout Standard
-Zooming in to role-model effects among female co-heads who viewed the extension
+Zooming in on role-model effects among female co-heads who viewed the extension
  information videos with women involved as messengers alone paints a slightly
  different picture.
  If women were the sole recipients of information provided by women, women’s
@@ -7236,8 +7201,12 @@ on adoption of the appropriate timing for planting maize and use of organic
  cost.
  Yet, the indication of a negative effect on yield on female-managed plots
  emerges in this case as well.
- There are some indications of positive effects on joint outcomes, such
- as use of fertilizer, improved yields on jointly managed plots and a higher
+ 
+\end_layout
+
+\begin_layout Standard
+There are some indications of positive effects on joint outcomes, such as
+ use of fertilizer, improved yields on jointly managed plots and a higher
  likelihood of jointly selling maize.
  The amount of maize sold independently by men seems to decrease as a result.
  The effects on joint and men’s outcomes of including women in the extension
@@ -7264,7 +7233,7 @@ making less.
 In the literature, the effects of role models on success were mixed 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Beaman582,RePEc:csa:wpaper:2017-13,raghunathan2018women"
+key "Beaman582,RePEc:csa:wpaper:2017-13"
 
 \end_inset
 
@@ -7302,7 +7271,7 @@ us effects among women farmers with high and low aspirations, or among high-
 \end_layout
 
 \begin_layout Section
-Policy recommendations and conclusions
+Conclusions
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Policy-recommendations-and"
@@ -7313,69 +7282,50 @@ name "sec:Policy-recommendations-and"
 \end_layout
 
 \begin_layout Standard
-This paper examines the extent to which the reduction of women’s extension
- information deficiency empowers women in agriculture and the extent to
- which information provided by women farmers as role models contributes
- to women’s empowerment in agriculture.
- To examine the effect of those two factors, a field experiment with a factorial
- design was run in eastern Uganda with monogamous smallholder maize farmers.
- The intervention consisted of a short video shown twice in which farmer-actors
- explain and demonstrate various strategies and practices to intensify the
- production of maize.
- Three versions were randomized across farming households: one version portrays
- a man farmer, another a woman farmer, the third a couple formed by man
- and woman farmers.
- Three constellations of recipients of information in the household were
- randomized as well: the male co-head alone, the female co-head alone, the
- male and female co-heads together.
- As such, we can assess (a) the impact of involving women as extension informati
-on recipients, alone or as part of a couple, versus a man receiving information;
- and (b) the impact of involving women in conveying extension information,
- alone or as part of a couple, whereby these women can function as role
- models, versus a man giving information.
- We look at the impact on women’s knowledge about agronomic practices and
- joint knowledge of the male and female co-heads, women’s and joint decision-mak
-ing about maize production, women’s and jointly decided-upon adoption of
- practices and use of inputs, production and productivity on women-managed
- maize plots and jointly managed maize plots in the households, and sales
- of maize independently by women and jointly by the male and female co-heads
- as indicators of women’s empowerment in agriculture.
- Additionally, we examine men’s outcomes in terms of knowledge, decision-making,
- adoption and input use, and maize sales where a reduction could imply the
- potential for greater involvement of women.
+In smallholder agriculture, women perform a lot of the work, yet have little
+ say in which crops to plant, what technologies and inputs to use, and how
+ much of the crop to sell on the market.
+ Targeting women with relevant information in formats that are appealing
+ and accessible to them have been found to increase empowerment.
+ However, the main source of agricultural information in many developing
+ countries remains severely male biased.
+\end_layout
+
+\begin_layout Standard
+In this paper, we tests two different potential ways in which information
+ may increase women's access to resources, their agency, and their achievements
+ in the context of smallholder agriculture.
+ We do this through a field experiment in the form of a factorial design
+ that was run in eastern Uganda with monogamous maize farmers.
+ In one treatment arm, we compare how providing women with information affects
+ knowledge, decision making, adoption of recommended agronomic practices
+ and technology, and outcomes.
+ In a cross treatment, we test if it makes a difference if this information
+ is provided by a man, a woman, or a couple.
  
 \end_layout
 
 \begin_layout Standard
-The findings of this study are largely consistent with other studies on
- gender and agriculture 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "doi:10.1111/j.1574-0862.2001.tb00233.x,KABUNGA201425,FISHER201582,KONDYLIS2016436,10.1093/erae/jbv039"
+The experiment is implemented using short videos shown twice to farmers.
+ In these videos, farmer-actors explain and demonstrate various strategies
+ and practices to intensify the production of maize.
+ Three versions were randomized across farming households: one version portrays
+ a male farmer, another a female farmer, the third a couple formed by male
+ and female co-head.
+ Three constellations of recipients of information in the household were
+ randomized as well: the male co-head alone, the female co-head alone, the
+ male and female co-heads together.
+ 
+\end_layout
 
-\end_inset
-
-.
- Yet, they give us pause for thought when we turn our attention to the role
- of ICTs in extension service provision.
- It is well-established that agricultural extension and rural advisory services
- tend to be male biased in both delivery and content, with predominantly
- male extension agents targeting male members of households with information
- that is often relevant to those crops, plots, or resources perceived to
- be under male control.
- And while there may be tacit—or even explicit—recognition that women play
- a significant role in agricultural production, a key assumption within
- extension practice is that men will share information with women within
- their household.
- In reality, men may have incentives to keep (part of this) information
- private.
- The results of this study clearly show that significant advances in women’s
+\begin_layout Standard
+The results of this study clearly show that significant advances in women’s
  role in agriculture are made by giving women direct access to extension
  information.
  Furthermore, while the evidence is somewhat mixed, the results of this
  study suggest that women as role models, through peer effects, gender homophily
- effects, and/or challenges to role incongruity, influence women and men
- in different ways.
+ effects, and/or through challenging role incongruity, influence women and
+ men in different ways.
  Women are inspired to aspire when they receive information delivered by
  women but cannot turn that into individual success, in terms of yield and
  maize sales.
@@ -7386,49 +7336,10 @@ key "doi:10.1111/j.1574-0862.2001.tb00233.x,KABUNGA201425,FISHER201582,KONDYLIS2
 \end_layout
 
 \begin_layout Standard
-Three key policy recommendations follow from the results of this study.
- First, if the aim is to empower women by increasing their own agricultural
- knowledge, their independent decision-making, adoption of intensive production
- practices and, ultimately, to boost yields on plots that they autonomously
- manage, then there is considerable value in providing the necessary information
- directly to women.
- Second, if the aim is to empower women in collaboration with their male
- co-heads in the household, then providing information to female and male
- co-heads together can contribute to greater involvement of women in joint
- decision-making and joint action, but may not translate into better agricultura
-l outcomes on jointly managed plots or increased joint sales.
- Besides, providing extension information to female and male co-heads together
- may not necessarily benefit women’s independent agricultural outcomes.
- Third, including women as role models may prove particularly useful to
- reduce men’s dominance in the domain of agriculture, which can create opportuni
-ties for greater involvement of women.
- Including women as role models in information campaigns targeted at women
- can stimulate women’s individual decision-making and action and can engender
- improved joint production and sales.
- Care should be taken, however, to avoid negative impact on women’s individual
- production and sales.
- Facilitating women’s access to complementary inputs, including capital,
- may be needed.
- 
-\end_layout
+\begin_inset Note Note
+status open
 
-\begin_layout Standard
-Further research could explore the existence of heterogeneous treatment
- effects.
- Both video-based extension treatments may have had heterogeneous effects
- among women farmers with high and low aspirations, or among high- and low-perfo
-rming women maize farmers.
- Heterogeneity that is linked to women’s relative bargaining power in their
- household, or to women’s (direct) access to complementary inputs needed
- for adoption, such as off-farm income or own capital, could exist as well.
- Finally, examining the effects of women’s direct access to extension informatio
-n and role models complemented by improved access to complementary inputs
- on women’s empowerment in agriculture could answer questions about the
- role of such constraints to women’s achievements.
- 
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -7481,11 +7392,11 @@ Figure notes with optional leadin (Source, in this case).
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Sample table:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
@@ -7635,7 +7546,7 @@ Table notes environment with optional leadin (Source, in this case).
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 References here (manual or bibTeX).
  If you are using bibTeX, add your bib file name in place of BibFile in
  the bibliography command.
@@ -7655,6 +7566,11 @@ status collapsed
 \end_inset
 
  
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "empowerment"
@@ -8393,7 +8309,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Women knowledge of recommended practices (models 1A and 1B)
+Women's knowledge of recommended practices (models 1A and 1B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:know_women_model1AB"
@@ -8708,7 +8624,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Women knowledge of recommended practices (models 2A and 2B)
+Women's knowledge of recommended practices (models 2A and 2B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:know_women_model2AB"
@@ -9643,7 +9559,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mens knowledge of recommended practices 
+Men's knowledge of recommended practices 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:knowlege_main_men"
@@ -9947,7 +9863,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mens knowledge of recommended practices (models 1A and 1B)
+Men's knowledge of recommended practices (models 1A and 1B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:know_men_model1AB-1"
@@ -10050,8 +9966,8 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-PProper spacing and seeds per hill	&	0.266	&	0.442	&	-0.151$^{**}$	&	0.020	&	0.000	&	
-1833	
+Proper spacing and seeds per hill	&	0.266	&	0.442	&	-0.151$^{**}$	&	0.020	&	0.000	&	1
+833	
 \backslash
 
 \backslash
@@ -10262,7 +10178,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mens knowledge of recommended practices (models 2A and 2B)
+Men's knowledge of recommended practices (models 2A and 2B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:know_men_model2AB-1"
@@ -11422,7 +11338,7 @@ Planting maize on the plot	&	0.520	&	0.472	&	0.038	&	0.023	&	0.106	&	1,710
 \backslash
 
 \backslash
- Joint decision-making index	&	0.010	&	0.781	&	0.074	&	0.039	&	0.034	&	1,665	
+ Joint decision-making index	&	0.010	&	0.781	&	0.074$^{*}$	&	0.039	&	0.034	&	1,665	
 \backslash
 
 \backslash
@@ -11529,7 +11445,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Joint knowledge of recommended practices (models 2A and 2B)
+Joint decision making (models 2A and 2B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:know_joint_model2AB-1"
@@ -11630,27 +11546,27 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Planting maize on the plot	&	0.520	&	0.472	&	0.038	&	0.023	&	0.106	&	1,710	
+Planting maize on the plot	&	0.502	&	0.474	&	-0.018	&	0.032	&	0.565	&	967	
 \backslash
 
 \backslash
- Timing of planting maize	&	0.477	&	0.470	&	0.022	&	0.023	&	0.322	&	1,710	
+ Timing of planting maize	&	0.461	&	0.464	&	-0.009	&	0.032	&	0.783	&	967	
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.475	&	0.473	&	0.053	&	0.023	&	0.019	&	1,710	
+ Spacing and number of seeds	&	0.438	&	0.468	&	0.026	&	0.032	&	0.412	&	967	
 \backslash
 
 \backslash
- Striga control measures	&	0.420	&	0.464	&	0.050	&	0.023	&	0.029	&	1,665	
+ Striga control measures	&	0.399	&	0.465	&	0.011	&	0.032	&	0.732	&	946	
 \backslash
 
 \backslash
- Timing of the first weeding	&	0.535	&	0.469	&	0.009	&	0.023	&	0.680	&	1,710	
+ Timing of the first weeding	&	0.490	&	0.477	&	-0.013	&	0.033	&	0.669	&	967	
 \backslash
 
 \backslash
- Joint decision-making index	&	0.010	&	0.781	&	0.074	&	0.039	&	0.034	&	1,665	
+ Joint decision-making index	&	-0.045	&	0.805	&	-0.001	&	0.056	&	0.982	&	946	
 \backslash
 
 \backslash
@@ -13588,11 +13504,11 @@ Timing of planting maize	&	0.110	&	0.294	&	0.007	&	0.015	&	0.651	&	1,599
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.014	&	0.112	&	0.018	&	0.007	&	0.007	&	1,709	
+ Spacing and number of seeds	&	0.014	&	0.112	&	0.018$^{*}$	&	0.007	&	0.007	&	1,709	
 \backslash
 
 \backslash
- Striga control measures	&	0.321	&	0.437	&	0.051	&	0.022	&	0.018	&	1,664	
+ Striga control measures	&	0.321	&	0.437	&	0.051$^{+}$	&	0.022	&	0.018	&	1,664	
 \backslash
 
 \backslash
@@ -13600,7 +13516,7 @@ Timing of planting maize	&	0.110	&	0.294	&	0.007	&	0.015	&	0.651	&	1,599
 \backslash
 
 \backslash
- Joint adoption index	&	0.004	&	0.619	&	0.076	&	0.030	&	0.005	&	1,558	
+ Joint adoption index	&	0.004	&	0.619	&	0.076$^{**}$	&	0.030	&	0.005	&	1,558	
 \backslash
 
 \backslash
@@ -16477,7 +16393,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mens adoption of recommended practices (models 1A and 1B)
+Men's use of inputs (models 1A and 1B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:adopt_men_model1AB-1"
@@ -16596,7 +16512,7 @@ DAP	&	0.067	&	0.239	&	-0.032$^{**}$	&	0.011	&	0.000	&	1,809
 \backslash
 
 \backslash
- Men input use index	&	0.018	&	0.514	&	-0.023	&	0.023	&	0.058	&	1,809	
+ Men input use index	&	0.018	&	0.514	&	-0.023$^{+}$	&	0.023	&	0.058	&	1,809	
 \backslash
 
 \backslash
@@ -16792,7 +16708,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mens adoption of recommended practices (models 2A and 2B)
+Men's use of inputs (models 2A and 2B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:adopt_men_model2AB-1"
