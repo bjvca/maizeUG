@@ -120,7 +120,7 @@ Empowering Women
 \begin_layout Author
 Els Lecoutere, David J Spielman and Bjorn Van Campenhout
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Lecoutere: Development Economics, Wageningen University and Research, Hollandsew
@@ -132,11 +132,27 @@ eg 1, 6706 KN Wageningen, The Netherlands, els.lecoutere@wur.nl.
  Food Policy Research Institute & LICOS Center for Institutions and Economic
  Performance, KU Leuven, Waaistraat 6 - bus 3511, B 3000 Leuven, Belgium,
  b.vancampenhout@cgiar.org (corresponding author).
- Acknowledgments: This study received financial support from Digital Green
- with funding from the U.S.
+ Acknowledgments: This study was carried out with financial support from
+ Digital Green and the U.S.
  Agency for International Development (USAID) under Feed the Future’s Developing
- Local Extension Capacity (DLEC) Project; and from the CGIAR Research Program
- on Policies, Institutions, and Markets.
+ Local Extension Capacity (DLEC) project; the CGIAR Research Program on
+ Policies, Institutions, and Markets (PIM), led by the International Food
+ Policy Research Institute (IFPRI) the CGIAR Research Program on Maize (MAIZE),
+ led by the International Maize and Wheat Improvement Center (CIMMYT); and
+ the International Development Research Center, Ottawa, Canada (grant no.
+ 109177-001), through the CGIAR Collaborative Platform for Gender Research.
+ The CGIAR programs and platforms, in turn, are supported by 
+\begin_inset CommandInset href
+LatexCommand href
+name "these funders"
+target "https://www.cgiar.org/funders/"
+
+\end_inset
+
+.
+ The views expressed in this study do not necessarily represent those of
+ Digital Green, USAID, IDRC or its Board of Governors, or the CGIAR research
+ programs, platforms, and centers mentioned above.
  The study is registered in the American Economic Association RCT Registry
  (#AEARCTR-0002153), and received approval from IFPRI’s Institutional Review
  Board (IRB).
@@ -149,6 +165,7 @@ eg 1, 6706 KN Wageningen, The Netherlands, els.lecoutere@wur.nl.
  seminars for their comments.
  We thank Hagar El-Didi and Simrin Makhija for input on earlier drafts.
  Any and all errors are the sole responsibility of the authors.
+ 
 \end_layout
 
 \end_inset
@@ -189,7 +206,7 @@ Agricultural extension services are generally biased towards men, with male
  and quantity sold.
  The gender of the person providing information has mixed effects on empowerment.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 To do:
@@ -228,14 +245,14 @@ Women provide a lot of work, yet men generally make the decisions.
  While women form a substantial part of the workforce these days, relatively
  few hold executive positions across a range of sectors and industries.
  One extreme example is that, according to Fortune 500's 2019 list, only
- 6.6 percent of companies had a woman Chief Executive.
+ 6.6 percent of companies had a female Chief Executive.
  And while there is an increase in the share of women in middle management
  globally, women are often promoted in positions that involve little strategic
  decisions making, such as human resource departments or communications.
  This problem is even more compelling when considering unpaid work such
  as household care and child care.
  For instance, while women bare the brunt of child care, their voice in
- deciding how many children to have is limited 
+ deciding how many children to bear is limited 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1257/aer.104.7.2210"
@@ -249,8 +266,8 @@ key "10.1257/aer.104.7.2210"
 \end_layout
 
 \begin_layout Standard
-One route towards increasing women empowerment may be targeting them with
- information.
+Research suggests that targeting women with information may be one route
+ towards increasing empowerment.
  The existence of information asymmetries between spouses has been found
  to affect intra-household resource allocation in ways that suggests information
  increases bargaining power 
@@ -278,13 +295,16 @@ key "10.1257/app.3.1.1"
 
 \end_inset
 
- finds that providing new information to adolescent girls – that older men
- are more likely to be infected with HIV – reduced sex with older men.
+ finds that providing new information to adolescent girls—that older men
+ are more likely to be infected with HIV—reduced sex with older men.
  
 \end_layout
 
 \begin_layout Standard
-Information campaigns have several features that determine effectiveness.
+At the same time, it is well known that not all information campaigns are
+ equally successful.
+ It has been found that often seemingly small design attributes can have
+ a substantial impact on effectiveness.
  In addition to who is targeted by the information, the source of the informatio
 n has also been found to matter.
  Some studies show that information may be more credible if it comes from
@@ -307,7 +327,7 @@ key "doi:10.1146/annurev.soc.27.1.415"
 
 .
  Homophily effects, where women learn more from other women, may be particularly
- important for women empowerment.
+ important in the context of information campaigns to promote women empowerment.
  More recently, the behavioral economics literature also started to point
  out the importance of role models, suggesting important non-cognitive impact
  pathways that can be exploited in information campaigns.
@@ -332,8 +352,15 @@ key "10.1162/qjec.2009.124.4.1497"
 
 .
  More in general, role models may facilitate shifts in social norms.
- For instance, a large part of the reduction in fertility as a consequence
- of introducing soap operas in Brazil reported in 
+ For instance, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "banerjee2012poor"
+
+\end_inset
+
+ note that a large part of the reduction in fertility as a consequence of
+ introducing soap operas in Brazil reported in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1257/app.4.4.1"
@@ -341,14 +368,7 @@ key "10.1257/app.4.4.1"
 \end_inset
 
  should be attributed the fact that the show projected a very different
- vision of the good life than the one that Brazilians were used to 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "banerjee2012poor"
-
-\end_inset
-
-.
+ vision of the good life than the one that Brazilians were used to.
 \end_layout
 
 \begin_layout Standard
@@ -430,7 +450,7 @@ key "BENYISHAY2020102380"
 \end_inset
 
  show that men and women learn and retain information about the new technology
- equally well, with the women applying it on their own farm more often than
+ equally well, with women applying it on their own farm more often than
  their male counterparts.
  In Uganda, 
 \begin_inset CommandInset citation
@@ -467,7 +487,17 @@ key "benyishay2019social"
  influences others’ learning and adoption, as farmers appear most convinced
  by communicators who share a group identity with them, or who face agricultural
  conditions most comparable to themselves.
- 
+ In Mozambique, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "KONDYLIS2016436"
+
+\end_inset
+
+ find that women’s awareness of pit planting farming techniques increased
+ by 9 percentage points and adoption of the technology by 5 percentage points
+ in communities where they trained female messengers on sustainable land
+ management techniques.
 \end_layout
 
 \begin_layout Standard
@@ -478,11 +508,21 @@ In the context of smallholder agriculture in developing countries, information
  with information targeted mainly to male members of a farming household
  and in formats that are rarely tailored to female members.
  A recent survey on public service delivery in Uganda found that only 16
- percent of extension agents are women.
- As such, extension information systems fail to recognize gendered power
- dynamics governing intra-household information exchanges and confirm a
- worldview in which women are largely absent from agricultural decision-making
- 
+ percent of extension agents are women
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+I calculated this from the endline data of the baraza study; not sure how
+ I should reference this.
+\end_layout
+
+\end_inset
+
+.
+ Extension information systems thus fail to recognize gendered power dynamics
+ governing intra-household information exchanges and confirm a worldview
+ in which women are largely absent from agricultural decision-making 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "DOSS20012075,QUISUMBING2010581"
@@ -496,19 +536,26 @@ key "DOSS20012075,QUISUMBING2010581"
 In this paper, we examine ways in which extension services can be designed
  to effectively increase women’s access to informational resources, their
  agency, and their achievements in farming, all of which directly relate
- to women’s empowerment in agriculture.
- Specifically, we conduct a field experiment among 3,600 maize-farming household
-s in eastern Uganda to test cognitive and behavioral channels through which
- extension information affects outcomes related to maize management and
- production.
+ to women’s empowerment in agriculture 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1111/1467-7660.00125"
+
+\end_inset
+
+.
+ We conduct a field experiment among 3,330 maize-farming households in eastern
+ Uganda to test cognitive and behavioral channels through which extension
+ information affects outcomes related to maize management and production.
  To test the cognitive channel, we compare outcomes of households where
  the female co-head was included in the target audience to outcomes of household
 s where information was targeted to the male co-head alone.
  To test the behavioral channel, we compare outcomes of households where
  a women was included in the dissemination of the information to outcomes
- of households where the information is provided by only a man.
- Our experimental design also allows us to test for the existence of gender
- homophily effects.
+ of households where the information is provided exclusively by a man.
+ Our study design, which takes the form of a factorial experiments with
+ 3 levels in each of the two factors, allows us to further explore mechanisms
+ behind these channels, such as the the importance of gender homophily effects.
 \end_layout
 
 \begin_layout Standard
@@ -526,20 +573,31 @@ The information intervention is implemented as a short video that provides
  Varying the exposure to the actors of different gender in this way allows
  us to test a second hypothesis related to the importance of role models
  to empower women.
- 
+ The videos were shown to study participants twice, once before the start
+ of the agricultural season and once at the time of planting, using tablet
+ computers.
 \end_layout
 
 \begin_layout Standard
 We find that targeting women with extension videos has a positive effect
  on different domains of empowerment including their knowledge of agronomic
- practices; participation in agricultural decision-making especially on
- the adoption of recommended practices and inputs; increased maize yields,
- quantities and sales by women.
+ practices; participation in agricultural decision-making; the adoption
+ of recommended practices and inputs; maize yields, and sales by women.
  However, portraying women as successful farmers and role models in the
  screening produces mixed results in these domains.
  Further, results suggest that role-model effects work differently for women
  and men.
  
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Should this be extended? Seems a bit thin at the moment.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -551,8 +609,11 @@ reference "sec:Prior-Literature"
 
 \end_inset
 
- we review the literature on women’s information deficiencies and role models
- and in Section 
+ we review the literature on women’s information deficiencies and how this
+ is linked to women empowerment.
+ We then give an overview of the emerging literature on how exposure to
+ role models may affect women decision making power.
+ In Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Testable-hypotheses"
