@@ -1911,7 +1911,7 @@ reference "tab:Balance"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2474,61 +2474,187 @@ name "sec:Results"
  
 \end_layout
 
+\begin_layout Standard
+We present results for the six comparisons laid out in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+.
+ As mentioned above, we consider results for female co-head alone, for male
+ and female co-head jointly as a couple, and for male co-heads alone.
+ We look at the changes in knowledge, decision making, adoption of recommended
+ practices and input use, production, and sales.
+ Together, this means a large number of results have to be presented, so
+ a fairly rigid structure is adopted.
+ In the next section (Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Discussion"
+
+\end_inset
+
+) we summarize and interpret the most important findings.
+\end_layout
+
 \begin_layout Subsection
 Knowledge of recommended practices
 \end_layout
 
 \begin_layout Standard
-We begin our discussion of results by examining women’s and joint (couple’s)
- knowledge outcomes, focusing on the knowledge index described earlier as
- well as the individual recommended practices that respondents answered
- questions about.
+We begin our discussion of results by examining women’s knowledge outcomes,
+ focusing on the knowledge index described earlier as well as the individual
+ recommended practices that respondents answered questions about.
 \end_layout
 
 \begin_layout Standard
 First, we examine whether involving women as recipients of information leads
- to an increase in their knowledge.
+ to an increase in their knowledge (Model 1 in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+).
  We do this by comparing knowledge of women in households in which female
- co-heads received the information, either alone or with their male spouse
+ co-heads received the information, either alone or with their male spouse,
  to knowledge of women in households in which only the male co-head received
- the information (Table 
+ the information.
+ Results are reported in the upper panel of Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:knowlege"
 
 \end_inset
 
-, upper panel).
+.
  Results show involving women as recipients of information leads to an overall
  positive and statistically significant increase women’s knowledge as judged
  by the index.
  This is driven by a positive and significant treatment effects of involving
  women as recipients of information on women’s knowledge about adequate
- spacing and the number of maize seeds per hill and about the importance
+ spacing and the number of maize seeds per hill, and about the importance
  of combining inputs.
  Knowledge about the former increased by 7 percentage points (pp), essentially
  doubling women's knowledge on this topic.
  We observe a 5 pp increase in women’s knowledge about combining inputs.
- Similar results are obtained when the treatment group is restricted to
- the sub-sample of households in which the female co-head received the informati
-on alone (model 1A, top panel in Appendix Table 
+ 
+\end_layout
+
+\begin_layout Standard
+In the Appendix, we also report results for comparisons between households
+ in which the female co-head received the information alone and households
+ in which the male co-head received the information alone (model 1A in in
+ Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:know_women_model1AB"
-
-\end_inset
-
-), and he sub-sample of households in which the female co-head received
- the information together with her male spouse (model 1B, lower panel in
- Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:know_women_model1AB"
+reference "fig:Hypotheses-tests"
 
 \end_inset
 
 ).
+ Results for this comparison, reported in the top panel in Appendix Table
  
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_women_model1AB"
+
+\end_inset
+
+, show similar increase in knowledge.
+ Also in the Appendix, we report results for comparisons between households
+ in which the couple received the information alone and households in which
+ the male co-head received the information alone (model 1B in in Figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+).
+ Results for this comparison, reported in the lower panel in Appendix Table
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_women_model1AB"
+
+\end_inset
+
+.
+ Also for this comparison, the increase in knowledge is similar to the one
+ reported in the top panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowlege"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Second, we examine the knowledge outcomes that result from variation in
+ the provider of information, as in model 2 in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+.
+ We examine results for role-model effects by comparing women’s knowledge
+ outcomes in households that were shown the video in which a female actor
+ in the video provides information (whether alone or with a male co-actor),
+ to women's knowledge outcomes in households that were shown the video in
+ which only a male actor provides information.
+ Results, reported in the lower panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowlege"
+
+\end_inset
+
+, show no evidence of a generalized role-model effect: we observe no change
+ in women’s knowledge outcomes as a result of involving female actors in
+ the provision of information.
+ Restricting the sample to households where only women were shown the video
+ (as in model 2A in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+) does not change this conclusion.
+ Results for this are reported in the top panel in of Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_women_model2AB"
+
+\end_inset
+
+.
+ Restricting the sample to households where only men were shown the video
+ (as in model 2B in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+) also does not change this conclusion (bottom panel in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:know_women_model2AB"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -2828,7 +2954,7 @@ end{threeparttable}
 \end_layout
 
 \begin_layout Standard
-Second, we examine joint knowledge outcomes, and present results in terms
+Third, we examine joint knowledge outcomes, and present results in terms
  of a comparison between the same sets of groups.
  Results are reported in Table 
 \begin_inset CommandInset ref
@@ -2841,10 +2967,17 @@ reference "tab:knowlegeJoint"
  Neither reducing intra-household information asymmetries nor female role
  models seem to affect joint knowledge outcomes.
  There is some indication that new information (about spacing) received
- by female co-head alone is somewhat less likely to be passed on to their
- spouses than when male co-heads received the information, which is evident
- from the negative treatment effect of –2.6 pp on joint knowledge (top panel
- in Appendix Table 
+ by female co-head alone (as in model 1A in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+) is somewhat less likely to be passed on to their spouses than when male
+ co-heads received the information, which is evident from the negative treatment
+ effect of –2.6 pp on joint knowledge (reported in top panel in Appendix
+ Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:know_joint_model1AB"
@@ -2860,55 +2993,7 @@ reference "tab:know_joint_model2AB"
 
 \end_inset
 
- also reports results for Models 2A and 2B.
- 
-\end_layout
-
-\begin_layout Standard
-Furthermore, we examine the knowledge outcomes that result from variation
- in the provider of information, as in model 2 in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Hypotheses-tests"
-
-\end_inset
-
-.
- We examine results for role-model effects by comparing women’s knowledge
- outcomes in households that were shown the video in which a female actor
- in the video provides information (whether alone or with a male co-actor),
- to women's knowledge outcomes in households that were shown the video in
- which only a male actor provides information.
- Results, reported in the lower panel of Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:knowlege"
-
-\end_inset
-
-, show no evidence of a generalized role-model effect: we observe no change
- in women’s knowledge outcomes as a result of involving female actors in
- the provision of information.
- Restricting the sample to households where only women were shown the video
- (model 2A) does not change this conclusion (top panel in Appendix Table
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:know_women_model2AB"
-
-\end_inset
-
-).
- Restricting the sample to households where only men were shown the video
- (model 2B) also does not change this conclusion (bottom panel in Appendix
- Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:know_women_model2AB"
-
-\end_inset
-
-).
+ also reports results for Models 2A and 2B for joint knowledge.
  
 \end_layout
 
@@ -2946,8 +3031,8 @@ reference "tab:know_men_model1AB-1"
 
 \end_inset
 
- is consistent with the previous finding that women tend to monopolize new
- information they receive alone.
+ shows this is especially the case if women co-heads receive information
+ alone.
 \end_layout
 
 \begin_layout Standard
@@ -3223,20 +3308,19 @@ Decision-making about maize production
 \end_layout
 
 \begin_layout Standard
-Next, we explore the effect of the treatments on decision-making in the
- household.
+Next, we explore the effect of the treatments on decision-making related
+ to maize production within the household.
  We do this by first examining whether involving women as information recipients
- (alone or as part of a couple) results in their participation in decisions
- about maize production on an average plot managed by the household.
- We do this by again making the comparison as described in the previous
- section and illustrated in Figure 
+ (alone or as part of a couple) results in an increase in their participation
+ in decisions about maize production on an average plot managed by the household
+ (Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Hypotheses-tests"
 
 \end_inset
 
- (Model 1).
+, Model 1).
  
 \end_layout
 
@@ -3253,9 +3337,8 @@ reference "tab:decision_main"
  The results are also evident across all of the decisions, where low mean
  values in the control group suggest high percent increases in women’s decision-
 making.
- A restriction of the comparison to the treatment group in which the female
- co-head received the information alone versus the male co-head alone (as
- in Figure 
+ Comparing the group in which the female co-head received the information
+ alone versus the male co-head alone (as in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Hypotheses-tests"
@@ -3273,14 +3356,14 @@ reference "tab:decide_women_model1AB"
 , top panel).
  No such increase is found when the treatment group is restricted to the
  group in which female co-heads received the information together with their
- male spouse (Figure 
+ male spouse (as in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Hypotheses-tests"
 
 \end_inset
 
-, Model 1B; Appendix Table 
+, Model 1B; results in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:decide_women_model1AB"
@@ -3288,8 +3371,8 @@ reference "tab:decide_women_model1AB"
 \end_inset
 
 , bottom panel).
- This implies that the gains in women’s individual decision-making are largely
- driven by providing only the female co-heads with information.
+ The gains in women’s individual decision-making are thus largely driven
+ by exclusively targeting female co-heads with information.
 \end_layout
 
 \begin_layout Standard
@@ -3301,15 +3384,14 @@ reference "tab:decision_main"
 \end_inset
 
 , we explore decision-making outcomes that result from variations in the
- information provider by making the same comparison as described in the
- previous section and illustrated in Model 2 of Figure 
+ information provider (illustrated in Model 2 of Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Hypotheses-tests"
 
 \end_inset
 
-.
+).
  Results show no evidence of a generalized role-model effect on women’s
  decision-making.
  However, when we restrict this comparison to groups in which a female actor
@@ -3323,7 +3405,7 @@ reference "fig:Hypotheses-tests"
 \end_inset
 
 , Model 2A), we do observe positive and statistically significant effects
- associated with role-model effects (top panel of Appendix Table 
+ (top panel of Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:decide_women_model2AB"
@@ -3332,7 +3414,7 @@ reference "tab:decide_women_model2AB"
 
 ).
  Specifically, we observe an increase of 0.16 in the women’s decision-making
- index and increases in women’s decision-making about the timing for planting
+ index and an increase in women’s decision-making about the timing for planting
  maize, about spacing, about striga control measures, and the timing of
  weeding that amount to 7, 9 and 7 pp respectively, which translates into
  increases of 26, 34 and 39 percent, respectively, over the mean of the
@@ -3574,11 +3656,6 @@ Planting maize on the plot	&	0.184	&	0.359	&	0.004	&	0.015	&	0.762	&	2,714
 
 \begin_layout Plain Layout
 
-
-\backslash
-
-\backslash
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -3650,8 +3727,8 @@ end{threeparttable}
 
 \begin_layout Standard
 We find no change in joint decision-making outcomes as a result of involving
- women as information recipients (alone or as part of a couple) based on
- a comparison between the same groups (top panel in Table 
+ women as information recipients (alone or as part of a couple, see top
+ panel in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:decision_joint_main"
@@ -3660,9 +3737,16 @@ reference "tab:decision_joint_main"
 
 ).
  But, when the treatment group is restricted to the group in which female
- co-heads received the information together with their male spouse (Model
- 1B), there is a significant and positive effect on joint decision-making
- about the novel way of spacing and number of seeds (bottem panel of Appendix
+ co-heads received the information together with their male spouse (as in
+ Model 1B in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+), there is a significant and positive effect on joint decision-making about
+ the novel way of spacing and number of seeds (bottom panel of Appendix
  Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3921,15 +4005,6 @@ Planting maize on the plot	&	0.524	&	0.469	&	-0.007	&	0.019	&	0.702	&	2,714
 
 
 \backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
 hline 
 \backslash
 hline 
@@ -4035,8 +4110,9 @@ Adoption of recommended practices
 \end_layout
 
 \begin_layout Standard
-We apply the same approach to our presentation of adoption outcomes, tested
- by making the comparison illustrated in Model 1 of Figure 
+We apply the same approach to our presentation of changes in the likelihood
+ that spouses both decide on and also adopt each of the recommended practices.
+ We start by making the comparison illustrated in Model 1 of Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Hypotheses-tests"
@@ -4054,33 +4130,22 @@ reference "tab:adoption_main"
 ) shows a positive and statistically significant treatment effect of involving
  women in receiving information, denoted by an increase of 0.12 in the women’s
  adoption index.
- The likelihood of adoption of each of the practices individually decided
- upon by the female co-head increases between 1 and 5 pp.
- Given that adoption individually decided upon by the female co-head
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-I still think that the way we refer to this could be improved.
- What about something like 
-\begin_inset Quotes eld
-\end_inset
-
-the combined effect on women both deciding and adopting a particular practice
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- is generally low in the control group, these changes translate into sizable
- percent increases in women’s decided-upon adoption.
+ The likelihood of a woman both deciding and adopting a particular recommended
+ practice increases by between 1 and 5 pp.
+ Given that women alone both decided and adopt a particular practice is
+ generally low in the control group, these changes translate into sizable
+ percent increases.
  Effects remain generally consistent when the treatment group is restricted
  to the group in which the female co-head received the information alone
- (Model 1A), in which case the women’s adoption index increases by 0.15 (top
- panel in Appendix Table 
+ (Model 1A in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+), in which case the women’s adoption index increases by 0.15 (top panel
+ in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:adoption_women_model1AB"
@@ -4089,10 +4154,18 @@ reference "tab:adoption_women_model1AB"
 
 ).
  When the treatment group is restricted to the group in which the female
- co-head receives the information together with her male spouse (Model 1B),
- the women’s adoption index increases by 0.09 and only the adoption of striga
- control measures decided upon by the female co-head is positively affected
- (bottom panel in Appendix Table 
+ co-head receives the information together with her male spouse (Model 1B
+ in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+), the women’s adoption index increases by 0.09 and only the likelihood of
+ the female co-head unilateral deciding about striga control and adoption
+ the recommended striga control strategy is positively affected (bottom
+ panel in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:adoption_women_model1AB"
@@ -4100,6 +4173,48 @@ reference "tab:adoption_women_model1AB"
 \end_inset
 
 ).
+ 
+\end_layout
+
+\begin_layout Standard
+We proceed by assessing the effects of variation in the information provider
+ in the same manner as before (Model 2 of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+).
+ Results (bottom panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:adoption_main"
+
+\end_inset
+
+) do not indicate any difference in women’s adoption outcomes as a result
+ of involving women in conveying information.
+ But when we compare groups in which the female co-heads were shown the
+ video with a female actor (alone or with a male co-actor) instead of the
+ video with only a male actor (Model 2A of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+), there are indications of positive role-model effects on the likelihood
+ that female co-heads both decide about when to plant and adopt the recommended
+ timing of planting maize (top panel in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:adoption_women_model2AB"
+
+\end_inset
+
+): an increase of 2.6 pp, which translates into a 62 percent increase over
+ the mean of the control.
  
 \end_layout
 
@@ -4307,11 +4422,6 @@ Timing of planting maize	&	0.050	&	0.194	&	0.007	&	0.009	&	0.419	&	2,542
 
 \begin_layout Plain Layout
 
-
-\backslash
-
-\backslash
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -4335,13 +4445,6 @@ end{tabular}
   
 \backslash
 begin{tablenotes}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-tiny
 \end_layout
 
 \begin_layout Plain Layout
@@ -4389,19 +4492,26 @@ end{threeparttable}
 \end_layout
 
 \begin_layout Standard
-Second, we examine joint adoption outcomes, and present results in terms
- of a comparison between the same sets of groups as in Figure 
+Next, we examine joint adoption outcomes, and present results in terms of
+ a comparison depicted in Model 1 of Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Hypotheses-tests"
 
 \end_inset
 
-, Model 1.
+ in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:adoption_joint"
+
+\end_inset
+
+.
  Involving women in receiving information has a positive and significant
- effect of 1.5 pp on the adoption of the novel practice of spacing and number
- of seeds per hill jointly decided upon by the female and male co-head (top
- panel of Table 
+ effect of 1.5 pp on the likelihood of jointly deciding upon spacing and
+ subsequent adoption of the recommended practice of spacing and number of
+ seeds per hill (top panel of Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:adoption_joint"
@@ -4411,8 +4521,14 @@ reference "tab:adoption_joint"
 ).
  Joint adoption outcomes follow from providing the information to the female
  and male co-head together in contrast to only providing the male co-head
- with information (Model 1B).
- Results (bottom panel in Appendix Table 
+ with information (Model 1B of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+): Results (bottom panel in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:adopt_joint_model1AB"
@@ -4426,12 +4542,19 @@ reference "tab:adopt_joint_model1AB"
 \end_layout
 
 \begin_layout Standard
-Next, we examine the effect on men’s adoption outcomes by the making the
- same comparisons between groups.
+In the appendix, we examine the effect of involving women as recipients
+ and messengers on men’s adoption as well.
  Involving women in receiving information, alone or as part of the couple,
- as compared to giving the information only to the male co-head (Model 1),
- reduces men’s individually decided-upon adoption of striga control measures
- by 3 pp (top panel in Appendix Table 
+ as compared to giving the information only to the male co-head (Model 1
+ of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+), reduces the likelihood that men unilaterally decide on and subsequently
+ adopt striga control measures by 3 pp (top panel in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:adoption_main_men"
@@ -4440,10 +4563,17 @@ reference "tab:adoption_main_men"
 
 ).
  Providing only the female co-head with information as compared to only
- the male co-head (Model 1A) reduces men’s individually decided-upon adoption
- of striga control measures by 4 pp and timely weeding practices by 6 pp,
- which come down to about a 30 percent reduction (top panel in Appendix
- Table 
+ the male co-head (Model 1A of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+) reduces this likelihood by 4 pp.
+ We further find that it also reduces the likelihood that man alone decide
+ about when to weed and also follow recommendations by 6 pp, which is equivalent
+ to a 30 percent reduction (top panel in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:adopt_men_model1AB"
@@ -4658,11 +4788,6 @@ Timing of planting maize	&	0.125	&	0.307	&	-0.015	&	0.013	&	0.226	&	2,542
 
 \begin_layout Plain Layout
 
-
-\backslash
-
-\backslash
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -4690,32 +4815,18 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4747,32 +4858,7 @@ end{threeparttable}
 \end_layout
 
 \begin_layout Standard
-We proceed by assessing the effects of variation in the information provider
- in the same manner as before (Model 2).
- Results (top panel of Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:adoption_main"
 
-\end_inset
-
-) do not indicate any difference in women’s adoption outcomes as a result
- of involving women in conveying information.
- But when we make the comparison between the groups in which the female
- co-heads were shown the video with a female actor (alone or with a male
- co-actor) instead of the video with only a male actor (Model 2A), there
- are indications of positive role-model effects on women’s individually
- decided-upon adoption of the appropriate timing of planting maize (top
- panel in Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:adoption_women_model2AB"
-
-\end_inset
-
-): an increase of 2.6 pp, which translates into a 62 percent increase over
- the mean of the control.
- 
 \end_layout
 
 \begin_layout Standard
@@ -4818,7 +4904,14 @@ In this section, we explore the impact of the different treatments on the
 
 \begin_layout Standard
 First, we examine the effect of involving women in receiving information,
- alone or as part of the couple.
+ alone or as part of the couple (Model 1 of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+).
  Results (top panel Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4836,9 +4929,9 @@ reference "fig:Hypotheses-tests"
 
 \end_inset
 
-, Model 1A) is an increase of the women’s input use index by 0.13 and is
- based on an increase of the use of each of the listed inputs by women who
- decided individually upon their use (top panel of Appendix Table 
+, Model 1A) is an increase of the women’s input use index by 0.13.
+ We register an increase of the use of all inputs (top panel of Appendix
+ Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:input_women_model1AB"
@@ -4863,7 +4956,32 @@ reference "tab:input_women_model1AB"
 \end_inset
 
 ).
- 
+\end_layout
+
+\begin_layout Standard
+We continue by examining role-model effects with the comparison illustrated
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+, Model 2.
+ Involving women in conveying extension information has a positive and significa
+nt effect of 2 pp on the use of organic fertilizer by women who individually
+ made the decision about its use (bottom panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:inputs_main"
+
+\end_inset
+
+).
+ There are also indications of positive effects on women’s decided-upon
+ use of OPVs and the women’s input use index.
+ The estimated effects have p-values lower than 0.10 but are not significant
+ according to FWER consistent significance thresholds.
 \end_layout
 
 \begin_layout Standard
@@ -5101,32 +5219,18 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5170,8 +5274,14 @@ reference "tab:input_joint"
 ) show a positive and significant effect on the joint input use index, which
  is increased by 0.06.
  Providing only female co-heads with information as opposed to only male
- co-heads (Model 1A) increases the joint input use index by 0.04 (top panel
- Appendix Table 
+ co-heads (Model 1A of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+) increases the joint input use index by 0.04 (top panel Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:input_joint_model1AB"
@@ -5180,8 +5290,15 @@ reference "tab:input_joint_model1AB"
 
 ).
  Providing female co-heads and their male co-heads with information as opposed
- to only the male co-heads (Model 1B) increases the joint input use index
- by 0.09 (bottom panel Appendix Table 
+ to only the male co-heads (Model 1B of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+) increases the joint input use index by 0.09 (bottom panel Appendix Table
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:input_joint_model1AB"
@@ -5390,11 +5507,6 @@ DAP	&	0.048	&	0.201	&	0.017	&	0.009	&	0.049	&	2,714
 
 \begin_layout Plain Layout
 
-
-\backslash
-
-\backslash
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -5431,32 +5543,18 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5491,7 +5589,14 @@ end{threeparttable}
 The effect of involving women in receiving information, alone or as part
  of the couple, on input use decided upon by men is mixed: it is negative
  for the use of the fertilizer DAP and positive for organic fertilizer (Model
- 1; top panel Appendix Table 
+ 1 of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+; top panel Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:input_main_men"
@@ -5499,9 +5604,15 @@ reference "tab:input_main_men"
 \end_inset
 
 ).
- The negative effect on men’s decided-upon use of DAP emerges when the female
- co-heads receive the information alone (Model 1A; top panel Appendix Table
- 
+ The negative effect on men’s decided-upon use of DAP is driven by the female
+ co-heads receiving the information alone (Model 1A of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+; top panel Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:adopt_men_model1AB-1"
@@ -5510,32 +5621,6 @@ reference "tab:adopt_men_model1AB-1"
 
 ), which may be linked to men lacking information about the use of DAP.
  
-\end_layout
-
-\begin_layout Standard
-We continue by examining role-model effects with the comparison illustrated
- in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Hypotheses-tests"
-
-\end_inset
-
-, Model 2.
- Involving women in conveying extension information has a positive and significa
-nt effect of 2 pp on the use of organic fertilizer by women who individually
- made the decision about its use (bottom panel of Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:inputs_main"
-
-\end_inset
-
-).
- There are also indications of positive effects on women’s decided-upon
- use of OPVs and the women’s input use index.
- The estimated effects have p-values lower than 0.10 but are not significant
- according to FWER consistent significance thresholds.
 \end_layout
 
 \begin_layout Standard
@@ -5551,7 +5636,14 @@ reference "tab:input_joint"
  Yet there are indications that jointly decided-upon use of urea increased
  by 2 pp as a result of female co-heads having seen the video with a female
  actor (alone or with a male co-actor) instead of the video with only a
- male actor (Model 2A; top panel Appendix Table 
+ male actor (Model 2A of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+; top panel Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:input_joint_model2AB"
@@ -5571,7 +5663,7 @@ reference "tab:input_main_men"
  There are indications that the use of both urea and hybrid seed individually
  decided upon by men are positively affected as a result of showing male
  co-heads the video with a female actor (alone or with a male co-actor)
- instead of the video with only a male actor (botom panel of Appendix Table
+ instead of the video with only a male actor (bottom panel of Appendix Table
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -5606,16 +5698,23 @@ reference "tab:prod_main"
 \end_inset
 
 ) show a significant and positive increase of the total area of female-managed
- maize plots in the household by 0.07 acres, an increase of the total amount
- of household maize produced on female-managed plots by 35.8 kg, and an increase
- of the yield on female-managed maize plots by 50.4 kg/acre; and a 2 pp higher
- likelihood of a better-than-normal yield.
+ maize plots in the household, an increase of the total amount of household
+ maize produced on female-managed plots, and an increase of the yield on
+ female-managed maize plots.
+ There is also a 2 pp increase in the likelihood of reporting better-than-normal
+ yield.
  Both the share of household maize production and maize area under female
  management increased by 6 pp.
  The positive effects on production and productivity outcomes on female-managed
  plots that result from providing only the female co-head with information
- instead of the male co-head (Model 1A) are even larger in magnitude (top
- panel in Table 
+ instead of the male co-head (Model 1A of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+) are even larger in magnitude (top panel in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:prod_women_model1AB"
@@ -5624,12 +5723,61 @@ reference "tab:prod_women_model1AB"
 
 ).
  In contrast, involving the female co-head as part of a couple receiving
- the information instead of only the male co-head (Model 1B) shows no effect
- on production and productivity outcomes on female-managed plots (bottom
- panel in Table 
+ the information instead of only the male co-head (Model 1B of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+) shows no effect on production and productivity outcomes on female-managed
+ plots (bottom panel in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:prod_women_model1AB"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+We also again examine the effect of involving women in conveying the information
+ rather than only a man (Model 2 of 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+) on production and productivity outcomes of female-managed plots.
+ Results (bottom panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:prod_main"
+
+\end_inset
+
+) point to a significant and negative effect on the yield on female-managed
+ plots.
+ Suggestive indications of the negative effects on yield on female-managed
+ plots emerge both when female co-heads and when male co-heads have seen
+ the video featuring a female actor (alone or with a male co-actor) instead
+ of the video featuring only a male actor (respectively Model 2A and Model
+ 2B in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+).
+ In the latter case, there are also indications of a negative effect on
+ production on female-managed plots (Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:prod_women_model2AB"
 
 \end_inset
 
@@ -5876,32 +6024,18 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -5944,8 +6078,15 @@ reference "tab:prod_joint"
 
 ).
  Even when the female and male co-heads received the information together
- (Model 1B), there is no impact on production and productivity outcomes
- on jointly managed plots (bottom panel of Appendix, Table 
+ (Model 1B of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+), there is no impact on production and productivity outcomes on jointly
+ managed plots (bottom panel of Appendix, Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:prod_joint_model1AB"
@@ -5959,7 +6100,7 @@ reference "tab:prod_joint_model1AB"
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6188,32 +6329,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -6245,43 +6371,6 @@ end{threeparttable}
 \end_layout
 
 \begin_layout Standard
-Next, we examine the effect of involving women in conveying the information
- rather than only a man (Model 2) on production and productivity outcomes
- of female-managed plots.
- Results (bottom panel of Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:prod_main"
-
-\end_inset
-
-) point to a significant and negative effect on the yield on female-managed
- plots.
- Suggestive indications of the negative effects on yield on female-managed
- plots emerge both when female co-heads and when male co-heads have seen
- the video featuring a female actor (alone or with a male co-actor) instead
- of the video featuring only a male actor (respectively Model 2A and Model
- 2B in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Hypotheses-tests"
-
-\end_inset
-
-).
- In the latter case, there are also indications of a negative effect on
- production on female-managed plots (Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:prod_women_model2AB"
-
-\end_inset
-
-).
- 
-\end_layout
-
-\begin_layout Standard
 There is no evidence that production and productivity outcomes of jointly
  managed plots changed as a result of involving women in conveying the informati
 on (alone or with a male co-actor) rather than only a man (bottom part of
@@ -6296,8 +6385,15 @@ reference "tab:prod_joint"
  However, both as a result of showing female co-heads and as result of showing
  male co-heads the video featuring a female actor (alone or with a male
  co-actor) instead of the video with only a male actor (Model 2A and Model
- 2B), the likelihood that the yield on jointly managed plots is better than
- normal is (indicatively) increased by about 4 pp.
+ 2B of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+), the likelihood that the yield on jointly managed plots is better than
+ normal increased by about 4 pp.
  This translates into about a 40 percent increase over the mean of the control
  (Appendix Table 
 \begin_inset CommandInset ref
@@ -6326,9 +6422,15 @@ reference "tab:sales_main"
 
 ).
  Yet providing the information to only the female co-head as opposed to
- providing it to only the male co-head (Model 1A) increases the likelihood
- that she independently sells maize by 4 pp (top panel in Appendix Table
- 
+ providing it to only the male co-head (Model 1A of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+) increases the likelihood that she independently sells maize by 4 pp (top
+ panel in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:sales_women_model1AB"
@@ -6341,8 +6443,8 @@ reference "tab:sales_women_model1AB"
  mean of the control.
  There are indications of a positive effect on the amount of maize sold
  independently by women as well.
- The selling of maize by the female and male co-head jointly does not change
- by involving women in receiving information, alone or as part of the couple
+ Sales of maize by the female and male co-head jointly does not change by
+ involving women in receiving information, alone or as part of the couple
  (top panel in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -6351,8 +6453,8 @@ reference "tab:sales_joint"
 \end_inset
 
 ).
- Neither does the selling of maize individually by the male co-head (top
- panel Appendix Table 
+ Neither does sales of maize individually by the male co-head (top panel
+ Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:sales_main_men"
@@ -6367,7 +6469,7 @@ reference "tab:sales_main_men"
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6566,32 +6668,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -6624,7 +6711,14 @@ end{threeparttable}
 
 \begin_layout Standard
 Next, we look into the effect of involving women in conveying information
- (Model 2).
+ (Model 2 of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Hypotheses-tests"
+
+\end_inset
+
+).
  Results (bottom panel of Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -6847,32 +6941,18 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -6982,13 +7062,13 @@ Women’s access to information and extension services
 \begin_layout Standard
 Results suggest that, to some extent, spouses monopolize agricultural extension
  information.
- Involving women in receiving extension information instead (as opposed
- to exclusively targeting the male co-head) has positive effects on women’s
- individual knowledge.
+ Involving women in receiving extension information (as opposed to exclusively
+ targeting the male co-head) has positive effects on women’s individual
+ knowledge.
  This finding suggests that male co-heads do not necessarily pass the informatio
-n to their female co-heads.
+n to their spouse.
  The fact that men’s knowledge, particularly knowledge about new information,
- is reduces when the information if targeted exclusively to the female co-head
+ is reduced when the information if targeted exclusively to the female co-head
  (as opposed to exclusively to the male co-head), suggests that also female
  co-heads also do not necessarily share information with their spouse.
  
@@ -6997,9 +7077,8 @@ n to their female co-heads.
 \begin_layout Standard
 Results further show that women’s knowledge gains are similar regardless
  of whether a woman saw the extension video alone or together with her male
- co-head.
- This suggests that the presence of the male spouse in the exposure process
- does not influence her knowledge.
+ co-head; the presence of the male spouse in the exposure process does not
+ influence her knowledge.
  Unlike for the women co-head, the presence of the female spouse in the
  exposure process does influence the knowledge of the man, who appears to
  learn less when information is provided to the couple than when this informatio
@@ -7007,7 +7086,7 @@ n is targeted to him alone.
  This suggest limited discussion of the content of the video between spouses
  even when the video was shown to both of them as a couple.
  Hence, from a knowledge transfer point of view, it seems most effective
- to target the female co-head.
+ to exclusively target the female co-head.
 \end_layout
 
 \begin_layout Standard
@@ -7026,7 +7105,7 @@ Women gain individual agricultural decision-making power when they are involved
 
 \begin_layout Standard
 Men’s unilateral decision-making is reduced as a result of involving women
- in receiving information, no matter if this happens by reaching the female
+ in receiving information, no matter if this happens by targeting the female
  co-head alone or together with the male co-head.
  If this reduction only occurred in the former case, men’s reduced decision-maki
 ng could have been related to a lack of information.
@@ -7052,9 +7131,9 @@ At the same time, it should be noted that men also seem to learn less in
 \end_layout
 
 \begin_layout Standard
-Beyond women’s decision-making, the adoption of recommended practices and
- use of inputs individually decided upon by women is also positively affected
- by providing women with information.
+Going beyond women’s decision-making, the adoption of recommended practices
+ and use of inputs individually decided upon by women is also positively
+ affected by providing women with information.
  Hence, women seem to use their increased agency as a result of reduced
  intra-household information asymmetries to become more involved in farm-related
  activities.
@@ -7097,12 +7176,12 @@ As a result of providing only women with information, the total area of
 In contrast, providing the information to the female and male co-head together
  did not make a change for area, production and productivity of female-managed
  maize plots.
- This probably relates to the fact that providing the information to the
+ This is probably due to the fact that providing the information to the
  female and male co-head together does not have the same strong positive
  effects on women’s individual agency as providing the information to only
  the woman.
- Her lack of a unique possession of an informational asset seems to be in
- the way of capitalizing on her gain of information.
+ Her lack of an exclusive informational asset seems to be in the way of
+ capitalizing on her gain of information.
  There is no evidence of an increase of maize production, productivity,
  or area under cultivation under joint management as result of involving
  women in receiving information either, not even when the female and male
@@ -7201,7 +7280,7 @@ Zooming in on role-model effects among female co-heads who viewed the extension
  If women were the sole recipients of information provided by women, women’s
  individual decision-making increased as well as women’s individually decided-up
 on adoption of the appropriate timing for planting maize and use of organic
- fertilizer - again practices that are available to a woman at no or limited
+ fertilizer—again practices that are available to a woman at no or limited
  cost.
  Yet, the indication of a negative effect on yield on female-managed plots
  emerges in this case as well.
@@ -7209,9 +7288,9 @@ on adoption of the appropriate timing for planting maize and use of organic
 \end_layout
 
 \begin_layout Standard
-There are some indications of positive effects on joint outcomes, such as
- use of fertilizer, improved yields on jointly managed plots and a higher
- likelihood of jointly selling maize.
+There are some indications of positive effects on joint outcomes as well,
+ such as use of fertilizer, improved yields on jointly managed plots and
+ a higher likelihood of jointly selling maize.
  The amount of maize sold independently by men seems to decrease as a result.
  The effects on joint and men’s outcomes of including women in the extension
  information videos shown to female co-heads as the sole recipients of the
@@ -7223,9 +7302,9 @@ There are some indications of positive effects on joint outcomes, such as
 
 \begin_layout Standard
 The effects of involving women in conveying information in the extension
- videos shown to male co-heads alone, which most likely mainly work through
- challenging role incongruity, seem to have reduced men’s individual decision-ma
-king, particularly about whether to plant maize on a plot, men’s individually
+ videos shown to male co-heads alone, which most likely work through challenging
+ role incongruity, seem to have reduced men’s individual decision-making,
+ particularly about whether to plant maize on a plot, men’s individually
  decided-upon adoption, and improve yield of jointly managed plots.
  These results suggest that role-model effects and challenging role incongruity
  among male co-heads may have encouraged them to dominate agricultural decision-
@@ -7234,44 +7313,28 @@ making less.
 \end_layout
 
 \begin_layout Standard
-In the literature, the effects of role models on success were mixed 
+In sum, we find only weak evidence that role models work, both directly
+ by increasing aspirations of women and indirectly by challenging role incongrui
+ty of men.
+ The fact that effects we find are less convincing than what other studies
+ such as 
 \begin_inset CommandInset citation
-LatexCommand citep
-key "Beaman582,RePEc:csa:wpaper:2017-13"
+LatexCommand citet
+key "RePEc:csa:wpaper:2017-13"
 
 \end_inset
 
-.
- In this study they seem negative for women’s achievements about maize productiv
-ity and sales.
- We believe there are three possible explanations for the decline in yield
- on female-managed plots as a result of role-model effects.
- First, the (indications of) increases in women’s decided-upon use of organic
- fertilizer and timely planting of maize may have been insufficient to generate
- positive changes in production and productivity outcomes on woman management
- plots – and, as the sole productivity-enhancing measures, may even have
- been counterproductive.
- Second, involving women in conveying information had negative effects on
- men individually deciding upon the planting of maize on the average household
- plot.
- Potentially, with men withdrawing from individually deciding to grow maize,
- women gained the opportunity to decide upon growing and focusing their
- efforts on other crops, which could explain a decline in women’s maize
- production and sales.
- The effects of role models on success rather emerge in joint outcomes,
- in terms of (indications of) improved yields on jointly managed plots and
- a greater likelihood of joint maize sales, and particularly when the female
- co-head was the only one receiving the information by women role models.
- Third, the literature is inconclusive about whether to expect strongest
- role-model effects among highly performing or highly aspiring people or
- among lowly performing or aspiring people.
- Involving women as role models in the extension videos may have had heterogeneo
-us effects among women farmers with high and low aspirations, or among high-
- and low-performing women maize farmers.
- If such heterogeneous treatment effects exist and go in opposite directions,
- they could be a reason for the absence of significant effects and for seemingly
- overall negative effects.
- 
+ or 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "10.1162/qjec.2009.124.4.1497"
+
+\end_inset
+
+ find may be due to the fact that our intervention was relatively light.
+ A 10 minute video, even though screened twice, is still quite different
+ from a two hour feel good movie or first hand experience with women leaders
+ over the course of multiple years of quota policy.
 \end_layout
 
 \begin_layout Section
@@ -7290,9 +7353,13 @@ In smallholder agriculture, women perform a lot of the work, yet have little
  say in which crops to plant, what technologies and inputs to use, and how
  much of the crop to sell on the market.
  Targeting women with relevant information in formats that are appealing
- and accessible to them have been found to increase empowerment.
- However, the main source of agricultural information in many developing
- countries remains severely male biased.
+ and accessible to them have been found to increase empowerment in a variety
+ of settings., and so providing extension information to women may be an
+ effective way to increase their voice in agricultural production.
+ However, public agricultural advisory services, the main source of agricultural
+ information in many developing countries, remains severely male biased,
+ with predominantly male experts targeting the main decision maker within
+ the household, which is assumed to be the male co-head.
 \end_layout
 
 \begin_layout Standard
@@ -7300,17 +7367,19 @@ In this paper, we tests two different potential ways in which information
  may increase women's access to resources, their agency, and their achievements
  in the context of smallholder agriculture.
  We do this through a field experiment in the form of a factorial design
- that was run in eastern Uganda with monogamous maize farmers.
- In one treatment arm, we compare how providing women with information affects
- knowledge, decision making, adoption of recommended agronomic practices
- and technology, and outcomes.
- In a cross treatment, we test if it makes a difference if this information
- is provided by a man, a woman, or a couple.
+ that was run in eastern Uganda.
+ Working with monogamous maize farming households, in one treatment arm,
+ we assess the importance of who within the household is targeted with informati
+on in terms of knowledge, decision making, adoption of recommended agronomic
+ practices and technology, and outcomes.
+ In a cross treatment, we test if the gender of the person who provides
+ this information makes a difference.
  
 \end_layout
 
 \begin_layout Standard
-The experiment is implemented using short videos shown twice to farmers.
+The information intercvention is implemented using short videos shown twice
+ to farmers.
  In these videos, farmer-actors explain and demonstrate various strategies
  and practices to intensify the production of maize.
  Three versions were randomized across farming households: one version portrays
@@ -7324,15 +7393,15 @@ The experiment is implemented using short videos shown twice to farmers.
 
 \begin_layout Standard
 The results of this study clearly show that significant advances in women’s
- role in agriculture are made by giving women direct access to extension
- information.
+ role in agriculture are made by giving women direct and exclusive access
+ to extension information.
  Furthermore, while the evidence is somewhat mixed, the results of this
  study suggest that women as role models, through peer effects, gender homophily
  effects, and/or through challenging role incongruity, influence women and
  men in different ways.
- Women are inspired to aspire when they receive information delivered by
- women but cannot turn that into individual success, in terms of yield and
- maize sales.
+ In particular, women are inspired to aspire when they receive information
+ delivered by women but cannot turn that into individual success, in terms
+ of yield and maize sales.
  The success emerges in joint outcomes.
  Men’s individual decision-making and agency, however, seems to reduce when
  men receive information delivered by women, which may create space for
@@ -7583,6 +7652,10 @@ options "/home/bjvca/latex_templates/aea"
 \end_inset
 
 
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7623,15 +7696,11 @@ status open
 Appendix
 \end_layout
 
-\begin_layout Subsection
-Balance tests
-\end_layout
-
 \begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8299,10 +8368,6 @@ end{threeparttable}
 
 \end_layout
 
-\begin_layout Subsection
-Knowledge results
-\end_layout
-
 \begin_layout Standard
 \begin_inset Float table
 wide false
@@ -8417,24 +8482,24 @@ cline{2-7}
 \begin_layout Plain Layout
 
 Proper spacing and seeds per hill	&	0.127	&	0.334	&	0.058$^{**}$	&	0.019	&	0.000	&	1,
-875	&	
+875		
 \backslash
 
 \backslash
  Combining practices and starting small	&	0.817	&	0.387	&	0.060$^{**}$	&	0.018	&	0.00
-1	&	1,875	&	
+1	&	1,875		
 \backslash
 
 \backslash
- Optimal weeding	&	0.880	&	0.325	&	0.026	&	0.016	&	0.078	&	1,875	&	
+ Optimal weeding	&	0.880	&	0.325	&	0.026	&	0.016	&	0.078	&	1,875		
 \backslash
 
 \backslash
- Fall armyworm control	&	0.207	&	0.406	&	-0.014	&	0.020	&	0.416	&	1,875	&	
+ Fall armyworm control	&	0.207	&	0.406	&	-0.014	&	0.020	&	0.416	&	1,875		
 \backslash
 
 \backslash
- Women$'$s  knowledge index	&	0.003	&	0.612	&	0.128$^{**}$	&	0.028	&	0.000	&	1,875	&	
+ Women$'$s  knowledge index	&	0.003	&	0.612	&	0.128$^{**}$	&	0.028	&	0.000	&	1,875		
 \backslash
 
 \backslash
@@ -8504,24 +8569,24 @@ cline{2-7}
 \begin_layout Plain Layout
 
 Proper spacing and seeds per hill	&	0.127	&	0.334	&	0.071$^{**}$	&	0.018	&	0.000	&	1,
-770	&	
+770		
 \backslash
 
 \backslash
  Combining practices and starting small	&	0.817	&	0.387	&	0.051$^{**}$	&	0.018	&	0.00
-3	&	1,770	&	
+3	&	1,770		
 \backslash
 
 \backslash
- Optimal weeding	&	0.880	&	0.325	&	-0.005	&	0.016	&	0.761	&	1,770	&	
+ Optimal weeding	&	0.880	&	0.325	&	-0.005	&	0.016	&	0.761	&	1,770		
 \backslash
 
 \backslash
- Fall armyworm control	&	0.207	&	0.406	&	-0.008	&	0.019	&	0.652	&	1,770	&	
+ Fall armyworm control	&	0.207	&	0.406	&	-0.008	&	0.019	&	0.652	&	1,770		
 \backslash
 
 \backslash
- Women$'$s knowledge index	&	-0.028	&	0.622	&	0.102$^{**}$	&	0.029	&	0.000	&	1,770	&	
+ Women$'$s knowledge index	&	-0.028	&	0.622	&	0.102$^{**}$	&	0.029	&	0.000	&	1,770		
 \backslash
 
 \backslash
@@ -8562,32 +8627,19 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ Note that no information on the recommended way to fight  fall armyworm
+ was given in the video, so no effects were expected.
 \end_layout
 
 \begin_layout Plain Layout
@@ -8873,32 +8925,19 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ Note that no information on the recommended way to fight  fall armyworm
+ was given in the video, so no effects were expected.
 \end_layout
 
 \begin_layout Plain Layout
@@ -9193,25 +9232,19 @@ tiny
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ Note that no information on the recommended way to fight  fall armyworm
+ was given in the video, so no effects were expected.
 \end_layout
 
 \begin_layout Plain Layout
@@ -9497,32 +9530,19 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ Note that no information on the recommended way to fight  fall armyworm
+ was given in the video, so no effects were expected.
 \end_layout
 
 \begin_layout Plain Layout
@@ -9801,32 +9821,19 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ Note that no information on the recommended way to fight  fall armyworm
+ was given in the video, so no effects were expected.
 \end_layout
 
 \begin_layout Plain Layout
@@ -10075,7 +10082,7 @@ Proper spacing and seeds per hill	&	0.266	&	0.442	&	-0.044$^{+}$	&	0.021	&	0.029
 \backslash
 
 \backslash
- Men$'$s knowledge index	&	-0.010	&	0.606	&	-0.071	&	0.029	&	0.042	&	1778	
+ Men$'$s knowledge index	&	-0.010	&	0.606	&	-0.071^{*}$	&	0.029	&	0.042	&	1778	
 \backslash
 
 \backslash
@@ -10116,32 +10123,19 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ Note that no information on the recommended way to fight  fall armyworm
+ was given in the video, so no effects were expected.
 \end_layout
 
 \begin_layout Plain Layout
@@ -10427,32 +10421,19 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
+ Note that no information on the recommended way to fight  fall armyworm
+ was given in the video, so no effects were expected.
 \end_layout
 
 \begin_layout Plain Layout
@@ -10483,10 +10464,6 @@ end{threeparttable}
 
 \end_layout
 
-\begin_layout Subsection
-Decision making results
-\end_layout
-
 \begin_layout Standard
 \begin_inset Float table
 wide false
@@ -10497,7 +10474,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Women decision making (models 1A and 1B)
+Women's decision making (models 1A and 1B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:decide_women_model1AB"
@@ -10751,32 +10728,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -10817,7 +10779,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Women decision making (models 2A and 2B)
+Women's decision making (models 2A and 2B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:decide_women_model2AB"
@@ -11064,32 +11026,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -11383,32 +11330,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -11700,32 +11632,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -11766,7 +11683,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mens decision making 
+Men's decision making 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:knowlege_main_men-1"
@@ -12001,32 +11918,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -12067,7 +11969,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mens decision making (models 1A and 1B)
+Men's decision making (models 1A and 1B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:know_men_model1AB-1-1"
@@ -12318,32 +12220,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -12384,7 +12271,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mens decision making (models 2A and 2B)
+Men's decision making (models 2A and 2B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:know_men_model2AB-1-1"
@@ -12635,32 +12522,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -12691,10 +12563,6 @@ end{threeparttable}
 
 \end_layout
 
-\begin_layout Subsection
-Adoption results
-\end_layout
-
 \begin_layout Standard
 \begin_inset Float table
 wide false
@@ -12705,7 +12573,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Women adoption of recommended practices (models 1A and 1B)
+Women's adoption of recommended practices (models 1A and 1B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:adoption_women_model1AB"
@@ -12945,32 +12813,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -13011,7 +12864,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Women adoption of recommended practices (models 2A and 2B)
+Women's adoption of recommended practices (models 2A and 2B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:adoption_women_model2AB"
@@ -13250,32 +13103,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -13561,32 +13399,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -13865,32 +13688,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -13925,13 +13733,13 @@ end{threeparttable}
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mens adoption of recommended practices 
+Men's adoption of recommended practices 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:adoption_main_men"
@@ -14148,32 +13956,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -14214,7 +14007,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mens adoption of recommended practices (models 1A and 1B)
+Men's adoption of recommended practices (models 1A and 1B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:adopt_men_model1AB"
@@ -14455,32 +14248,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -14521,7 +14299,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mens adoption of recommended practices (models 2A and 2B)
+Men's adoption of recommended practices (models 2A and 2B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:adopt_men_model2AB"
@@ -14764,32 +14542,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -14820,10 +14583,6 @@ end{threeparttable}
 
 \end_layout
 
-\begin_layout Subsection
-Input use results
-\end_layout
-
 \begin_layout Standard
 \begin_inset Float table
 wide false
@@ -14834,7 +14593,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Women input use (models 1A and 1B)
+Women's input use (models 1A and 1B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:input_women_model1AB"
@@ -15087,32 +14846,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -15153,7 +14897,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Women input use (models 2A and 2B)
+Women's input use (models 2A and 2B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:input_women_model2AB"
@@ -15400,32 +15144,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -15715,32 +15444,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -16032,32 +15746,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -16098,7 +15797,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mens use of inputs 
+Men's use of inputs 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:input_main_men"
@@ -16331,32 +16030,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -16646,32 +16330,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -16963,32 +16632,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -17019,10 +16673,6 @@ end{threeparttable}
 
 \end_layout
 
-\begin_layout Subsection
-Production results
-\end_layout
-
 \begin_layout Standard
 \begin_inset Float table
 wide false
@@ -17033,7 +16683,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Women production outcomes (models 1A and 1B)
+Women's production outcomes (models 1A and 1B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:prod_women_model1AB"
@@ -17289,32 +16939,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -17355,7 +16990,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Women production outcomes (models 2A and 2B)
+Women's production outcomes (models 2A and 2B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:prod_women_model2AB"
@@ -17603,32 +17238,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -17921,32 +17541,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -18239,32 +17844,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -18295,10 +17885,6 @@ end{threeparttable}
 
 \end_layout
 
-\begin_layout Subsection
-Sales results
-\end_layout
-
 \begin_layout Standard
 \begin_inset Float table
 wide false
@@ -18309,7 +17895,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Women sales (models 1A and 1B)
+Women's sales (models 1A and 1B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:sales_women_model1AB"
@@ -18526,32 +18112,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -18592,7 +18163,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Women sales use (models 2A and 2B)
+Women's sales (models 2A and 2B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:sales_women_model2AB"
@@ -18807,32 +18378,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -18873,7 +18429,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Joint sales use (models 1A and 1B)
+Joint sales (models 1A and 1B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:sales_joint_model1AB"
@@ -19090,32 +18646,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -19146,7 +18687,7 @@ end{threeparttable}
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -19202,12 +18743,24 @@ hline
 \backslash
 multicolumn{6}{c}{
 \backslash
-textit{Model 2A: Involving women in conveying information to the female
- co-heads alone}}	
+textit{Model 2A: Involving women in conveying information}}	
 \backslash
 
 \backslash
  
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{to the female co-heads alone}}	
+\backslash
+
+\backslash
+  
 \end_layout
 
 \begin_layout Plain Layout
@@ -19263,8 +18816,20 @@ Sold any	&	0.273	&	0.446	&	0.052	&	0.031	&	0.106	&	981
 \backslash
 multicolumn{6}{c}{
 \backslash
-textit{Model 2B: Involving women in conveying information to the male co-heads
- alone}}	
+textit{Model 2B: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{to the male co-heads alone}}	
 \backslash
 
 \backslash
@@ -19343,32 +18908,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -19409,7 +18959,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mens sales 
+Men's sales 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:sales_main_men"
@@ -19599,32 +19149,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -19665,7 +19200,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mens sales (models 1A and 1B)
+Men's sales (models 1A and 1B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:sales_men_model1AB"
@@ -19882,32 +19417,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
@@ -19948,7 +19468,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Mens sales (models 2A and 2B)
+Men's sales (models 2A and 2B)
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:sales_men_model2AB"
@@ -20167,32 +19687,17 @@ begin{tablenotes}
 
 \begin_layout Plain Layout
 
-
-\backslash
-tiny
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference; the last column is sample size; **, * and + indicate that
+ the difference is signficantly different from zero at 
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports control group means (and standard deviations
- below); Column 2 reports differences between 
-\end_layout
-
-\begin_layout Plain Layout
-
-placebo (control) and video treatment (and standard error below), column
- 3 between video only and video+ivr, column 4 between 
-\end_layout
-
-\begin_layout Plain Layout
-
-video+ivr and video+ivr+SMS; the last column is sample size; **, ** and
- * denote that the difference is signficantly different from zero at 
-\end_layout
-
-\begin_layout Plain Layout
-
-the 1, 5 and 10 percent level, respectively.
+the 1, 5 and 10 percent level after controlling FWER using an omnibus test.
 \end_layout
 
 \begin_layout Plain Layout
