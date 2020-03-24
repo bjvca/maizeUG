@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -48,8 +48,6 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
-\use_microtype false
-\use_dash_ligatures false
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -89,7 +87,6 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
-\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -98,10 +95,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\is_math_indent 0
-\math_numbering_side default
-\quotes_style english
-\dynamic_quotes 0
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -110,7 +104,6 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author 1966826031 "lecou002"
 \end_header
 
 \begin_body
@@ -130,15 +123,8 @@ Els Lecoutere, David J Spielman and Bjorn Van Campenhout
 status open
 
 \begin_layout Plain Layout
-Lecoutere: Development Economics
-\change_inserted 1966826031 1584981301
- Group
-\change_unchanged
-, Wageningen University 
-\change_deleted 1966826031 1584981305
-and Research
-\change_unchanged
-, Hollandseweg 1, 6706 KN Wageningen, The Netherlands, els.lecoutere@wur.nl.
+Lecoutere: Development Economics Group, Wageningen University , Hollandseweg
+ 1, 6706 KN Wageningen, The Netherlands, els.lecoutere@wur.nl.
  Spielman: Development Strategy and Governance Division, International Food
  Policy Research Institute, 1201 Eye St NW, Washington, DC 20005, USA, d.spielman
 @cgiar.org.
@@ -160,7 +146,6 @@ and Research
 LatexCommand href
 name "these funders"
 target "https://www.cgiar.org/funders/"
-literal "false"
 
 \end_inset
 
@@ -219,15 +204,7 @@ Agricultural extension services are generally biased towards men, with male
  management practices, their role in agricultural decision-making, their
  adoption of recommended practices and inputs, production-related outcomes,
  and quantity sold.
- The gender of the person providing information has mixed effects on 
-\change_inserted 1966826031 1584980719
-women's 
-\change_unchanged
-empowerment
-\change_inserted 1966826031 1584980726
- in agriculture
-\change_unchanged
-.
+ The gender of the person providing information has mixed effects on empowerment.
 \begin_inset Note Note
 status collapsed
 
@@ -264,14 +241,10 @@ Should we also refer to Delecourt and Ng article on vegetable sellers in
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1966826031 1584982064
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 1966826031 1584984227
 As I discussed with Bjorn, I still have my reservations about this first
  paragraph although I agree the broader relevance of the study needs to
  be demonstrated.
@@ -296,31 +269,21 @@ the ability to make important choices and act upon them in your daily life
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1966826031 1584983696
 My suggestion would be to 
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1966826031 1584983697
 - start with a statement that women in different contexts have limited ability
  to make strategic choices that are important to live the life they value
  ; and to transform those choices into desired action and outcomes
-\change_unchanged
-
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1966826031 1584983700
 - then give some examples of limited women's agency like low of percentage
  of female CEOs, decision on number of children, 
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1966826031 1584983702
 - include examples of constrained achievement (achievement, i.e.
  the outcomes of the ability to make choices and decisions that are meaningful
  to women; i.e.
@@ -329,23 +292,17 @@ My suggestion would be to
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1966826031 1584983852
 - explain that there are various reasons for limited agency and achievement,
  some linked to economic inequalities by gender (i.e.
  resources); others to gendered norms and institutions
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1966826031 1584983938
 - (possibly include examples like inequal access to capital and to e.g.
  expectations of women with regard to care work)
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1966826031 1584984118
 - then connection to women in developing contexts where economic inequalities
  by gender (i.e.
  resources) are significant; and where strong gendered norms and institutions
@@ -356,8 +313,6 @@ tions about women's role in agriculture
 
 \end_inset
 
-
-\change_unchanged
 Women provide a lot of work, yet men generally make the decisions.
  While women form a substantial part of the workforce these days, relatively
  few hold executive positions across a range of sectors and industries.
@@ -373,51 +328,17 @@ Women provide a lot of work, yet men generally make the decisions.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1257/aer.104.7.2210"
-literal "true"
 
 \end_inset
 
 .
- 
-\change_inserted 1966826031 1584981069
-Gendered norms and institutions and 
-\change_deleted 1966826031 1584981049
-E
-\change_inserted 1966826031 1584981049
-e
-\change_unchanged
-conomic dependency upon men 
-\change_deleted 1966826031 1584981057
-in the context of strict gender norms
-\change_unchanged
- mean
-\change_deleted 1966826031 1584981060
-s
-\change_unchanged
- that the vast majority of women in developing countries 
-\change_deleted 1966826031 1584957239
-lack
-\change_inserted 1966826031 1584957242
-have limited
-\change_deleted 1966826031 1584957243
- the
-\change_unchanged
- ability to make important choices and act upon them in their daily lives
-\change_inserted 1966826031 1584981261
- Gammage, S., Kabeer, N., & van der Meulen Rodgers, Y.
- (2016).
- Voice and Agency: Where Are We Now?.
- Feminist Economics, 22(1), 1-29.
-\change_deleted 1966826031 1584981264
-.
-\change_inserted 1966826031 1584957029
-
+ Gendered norms and institutions and economic dependency upon men mean that
+ the vast majority of women in developing countries have limited ability
+ to make important choices and act upon them in their daily lives
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted 1966826031 1584957338
 you seem to suggest economic dependency is the reason.
  economic dependency is a consequence of limited decision-making power as
  well.
@@ -425,38 +346,23 @@ you seem to suggest economic dependency is the reason.
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 1966826031 1584957355
 also, a statement like this needs a reference in my view
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
 Research suggests that targeting women with information may be one route
- towards increasing 
-\change_inserted 1966826031 1584951899
-the 
-\change_unchanged
-empowerment
-\change_inserted 1966826031 1584951903
- of women
-\change_unchanged
-.
+ towards increasing the empowerment of women.
  The existence of information asymmetries between spouses has been found
  to affect intra-household resource allocation in ways that suggests information
  increases bargaining power 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "AMBLER201552,10.1257/aer.103.3.263,10.1257/aer.99.4.1245,chen2006migration"
-literal "true"
 
 \end_inset
 
@@ -465,7 +371,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1257/app.20170416"
-literal "true"
 
 \end_inset
 
@@ -476,7 +381,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1257/app.3.1.1"
-literal "true"
 
 \end_inset
 
@@ -498,7 +402,6 @@ n has also been found to matter.
 LatexCommand citep
 before "eg."
 key "10.1257/app.5.1.104"
-literal "true"
 
 \end_inset
 
@@ -508,17 +411,13 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1146/annurev.soc.27.1.415"
-literal "true"
 
 \end_inset
 
 .
  Homophily effects, where women learn more from other women, may be particularly
- important in the context of information campaigns to promote women
-\change_inserted 1966826031 1584952130
-'s
-\change_unchanged
- empowerment.
+ important in the context of information campaigns to promote women's empowermen
+t.
  More recently, the behavioral economics literature also started to point
  out the importance of role models, suggesting important non-cognitive impact
  pathways that can be exploited in information campaigns.
@@ -526,7 +425,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "porter2019gender"
-literal "true"
 
 \end_inset
 
@@ -539,7 +437,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1162/qjec.2009.124.4.1497"
-literal "true"
 
 \end_inset
 
@@ -549,7 +446,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "banerjee2012poor"
-literal "true"
 
 \end_inset
 
@@ -558,7 +454,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1257/app.4.4.1"
-literal "true"
 
 \end_inset
 
@@ -573,7 +468,6 @@ Also in the context of smallholder agriculture, women work long days on
 \begin_inset CommandInset citation
 LatexCommand citep
 key "magnan2015information,FISHER201582"
-literal "true"
 
 \end_inset
 
@@ -587,7 +481,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1093/wber/lhw011,10.2307/24582373,DEBRAUW2014487"
-literal "true"
 
 \end_inset
 
@@ -596,25 +489,12 @@ literal "true"
  dietary outcomes at the household level 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "doi:10.1111/1468-0084.t01-1-00052,duflo2004intrahousehold"
-literal "true"
+key "HECKERT201993,duflo2004intrahousehold,doi:10.1111/1468-0084.t01-1-00052"
 
 \end_inset
 
 .
  
-\change_inserted 1966826031 1584952430
-Heckert, J., Olney, D.
- K., & Ruel, M.
- T.
- (2019).
- Is women’s empowerment a pathway to improving child nutrition outcomes
- in a nutrition-sensitive agriculture program?: Evidence from a randomized
- controlled trial in Burkina Faso.
- Social Science & Medicine, 233, 93–102.
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -625,7 +505,6 @@ on in decision-making on agricultural production
 \begin_inset CommandInset citation
 LatexCommand citep
 key "FISHER201582"
-literal "true"
 
 \end_inset
 
@@ -635,7 +514,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "magnan2015information,FISHER201582"
-literal "true"
 
 \end_inset
 
@@ -644,7 +522,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1111/j.1574-0862.2001.tb00233.x,DOSS20012075"
-literal "true"
 
 \end_inset
 
@@ -659,7 +536,6 @@ Reducing information asymmetry related to agriculture between men and women
 \begin_inset CommandInset citation
 LatexCommand citet
 key "BENYISHAY2020102380"
-literal "true"
 
 \end_inset
 
@@ -670,7 +546,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "KABUNGA201425"
-literal "true"
 
 \end_inset
 
@@ -681,17 +556,12 @@ literal "true"
 
 \begin_layout Standard
 There are also reasons to believe that the source of information may be
- important for women
-\change_inserted 1966826031 1584956685
-'s
-\change_unchanged
- empowerment in agriculture.
+ important for women's empowerment in agriculture.
  Peer effects have been found important in learning about new technologies
  or practices 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "BEAMAN2018147,10.1257/aer.100.1.35,bandiera2006social,doi:10.1086/601447"
-literal "true"
 
 \end_inset
 
@@ -700,7 +570,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "benyishay2019social"
-literal "true"
 
 \end_inset
 
@@ -712,7 +581,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "KONDYLIS2016436"
-literal "true"
 
 \end_inset
 
@@ -748,7 +616,6 @@ I calculated this from the endline data of the baraza study; not sure how
 \begin_inset CommandInset citation
 LatexCommand citep
 key "DOSS20012075,QUISUMBING2010581"
-literal "true"
 
 \end_inset
 
@@ -763,7 +630,6 @@ In this paper, we examine ways in which extension services can be designed
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1111/1467-7660.00125"
-literal "true"
 
 \end_inset
 
@@ -777,13 +643,9 @@ s where information was targeted to the male co-head alone.
  To test the behavioral channel, we compare outcomes of households where
  a women was included in the dissemination of the information to outcomes
  of households where the information is provided exclusively by a man.
- Our study design, which takes the form of a factorial experiment
-\change_deleted 1966826031 1584957463
-s
-\change_unchanged
- with 3 levels in each of the two factors, allows us to further explore
- mechanisms behind these channels, such as the the importance of gender
- homophily effects.
+ Our study design, which takes the form of a factorial experiment with 3
+ levels in each of the two factors, allows us to further explore mechanisms
+ behind these channels, such as the the importance of gender homophily effects.
 \end_layout
 
 \begin_layout Standard
@@ -793,13 +655,8 @@ The information intervention is implemented as a short video that provides
  obtain higher maize yields.
  To test the impact of reducing information asymmetries between spouses,
  we randomly varied who was shown the video within the household.
- This could either be the male co-head alone, the wom
-\change_deleted 1966826031 1584957512
-en
-\change_inserted 1966826031 1584957513
-female
-\change_unchanged
- co-head alone, or both co-heads together (the couple).
+ This could either be the male co-head alone, the female co-head alone,
+ or both co-heads together (the couple).
  Furthermore, three versions of the video were created—one featuring a male
  actor, another featuring a female actor, and a third featuring both actors
  together—with no difference in the information contained in the video.
@@ -845,11 +702,7 @@ reference "sec:Prior-Literature"
  we review the literature on women’s information deficiencies and how this
  is linked to women empowerment.
  We then give an overview of the emerging literature on how exposure to
- role models may affect women
-\change_inserted 1966826031 1584957651
-'s
-\change_unchanged
- decision making power.
+ role models may affect women's decision making power.
  In Section 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -877,9 +730,7 @@ reference "sec:Methods"
  we explain the methods and elaborate on the experimental design, present
  the specifications we will estimate, look at baseline data, and define
  indicators that will be used to assess impact of the different interventions.
- 
-\change_deleted 1966826031 1584958119
-The design of our experiment in combination with the richness of the data
+ The design of our experiment in combination with the richness of the data
  we collected means we have a lot of results to present; Section 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -888,22 +739,7 @@ reference "sec:Results"
 \end_inset
 
  does this in a systematic way.
-
-\change_unchanged
- 
-\change_inserted 1966826031 1584958187
-In Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Results"
-
-\end_inset
-
- we systematically present our rich results in terms of knowlegde, decision-maki
-ng, adoption, yields and sales by following the design of our experiment.
- 
-\change_unchanged
-The results are then interpreted and discussed in a separate section (Section
+ The results are then interpreted and discussed in a separate section (Section
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -930,22 +766,13 @@ name "sec:Prior-Literature"
 This section offers a review of related literature on gender and agriculture
  with specific emphasis on the gendered dimensions of intra-household asymmetrie
 s of information and role models, drawing on examples that highlight their
- influence on
-\change_inserted 1966826031 1584958343
- extension service provision and
-\change_unchanged
- technology adoption 
-\change_deleted 1966826031 1584958348
-and extension service provision
-\change_unchanged
-.
+ influence on extension service provision and technology adoption .
  Throughout the study, we define empowerment as a process where those (women)
  who were previously denied the ability to make and act upon important choices
  in their lives gain such ability 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1111/1467-7660.00125"
-literal "true"
 
 \end_inset
 
@@ -960,7 +787,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "JOHNSON2016295"
-literal "true"
 
 \end_inset
 
@@ -981,7 +807,6 @@ n regarding good agronomic practices
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1111/j.1574-0862.2001.tb00233.x,DOSS20012075,10.1093/erae/jbv039"
-literal "true"
 
 \end_inset
 
@@ -992,7 +817,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "NDIRITU2014117"
-literal "true"
 
 \end_inset
 
@@ -1005,7 +829,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1111/j.1574-0862.2001.tb00233.x"
-literal "true"
 
 \end_inset
 
@@ -1015,7 +838,6 @@ s in banana cultivation as men in male-headed households if they were as
 \begin_inset CommandInset citation
 LatexCommand citep
 key "KABUNGA201425"
-literal "true"
 
 \end_inset
 
@@ -1034,26 +856,11 @@ d constraints.
  responsibilities 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "wodon2006gender"
-literal "true"
-
-\end_inset
-
-
-\change_inserted 1966826031 1584958491
-
-\begin_inset CommandInset citation
-LatexCommand citep
-key "FLETSCHNER20111422"
-literal "true"
+key "FLETSCHNER20111422,wodon2006gender"
 
 \end_inset
 
 .
-\change_deleted 1966826031 1584958493
-.
-
-\change_unchanged
  Extra-household constraints may also exist in terms of information content
  or delivery: it may not be adapted to women’s interests or needs, or may
  not recognize women’s role as agricultural producers, and therefore may
@@ -1065,7 +872,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "FLETSCHNER20111422"
-literal "true"
 
 \end_inset
 
@@ -1078,7 +884,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "magnan2015information"
-literal "true"
 
 \end_inset
 
@@ -1094,7 +899,6 @@ ld) source of information on agriculture.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "FLETSCHNER20111422"
-literal "true"
 
 \end_inset
 
@@ -1107,7 +911,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "lundberg1994noncooperative,10.2307/2117819,10.2307/3986564"
-literal "true"
 
 \end_inset
 
@@ -1115,7 +918,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.2307/2138950,duflo2004intrahousehold,10.1257/aer.99.4.1245,IVERSEN2011569"
-literal "true"
 
 \end_inset
 
@@ -1131,7 +933,6 @@ Several studies explore intra-household information asymmetries in the context
 \begin_inset CommandInset citation
 LatexCommand citet
 key "KONDYLIS2016436"
-literal "true"
 
 \end_inset
 
@@ -1146,7 +947,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1093/ajae/aay012"
-literal "true"
 
 \end_inset
 
@@ -1154,16 +954,11 @@ literal "true"
  training and access to hybrid maize seed, particularly for fellow women
  smallholder farmers.
  They find significant positive effects on the adoption of low-cost recommended
- agronomic practices and inputs
-\change_inserted 1966826031 1584958709
- by households
-\change_unchanged
-, and on household food security.
+ agronomic practices and inputs by households, and on household food security.
  
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1093/erae/jbv039"
-literal "true"
 
 \end_inset
 
@@ -1177,7 +972,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "FISHER201582"
-literal "true"
 
 \end_inset
 
@@ -1207,7 +1001,6 @@ There is also a growing literature that explores the socio-psychological
 \begin_inset CommandInset citation
 LatexCommand citep
 key "porter2019gender"
-literal "true"
 
 \end_inset
 
@@ -1224,7 +1017,6 @@ Role models are seen as important in stimulating aspirations and the development
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Beaman582,RePEc:csa:wpaper:2017-13"
-literal "true"
 
 \end_inset
 
@@ -1235,7 +1027,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "RePEc:csa:wpaper:2017-13"
-literal "true"
 
 \end_inset
 
@@ -1245,7 +1036,6 @@ ng aspirations among Ethiopian farmers
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1093/wber/lhv014"
-literal "true"
 
 \end_inset
 
@@ -1255,7 +1045,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Beaman582"
-literal "true"
 
 \end_inset
 
@@ -1266,7 +1055,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1111/ecoj.12145"
-literal "true"
 
 \end_inset
 
@@ -1277,7 +1065,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "porter2019gender"
-literal "true"
 
 \end_inset
 
@@ -1295,7 +1082,6 @@ Evidence shows that role models not only increase aspirations, but also
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1093/wber/lhv014"
-literal "true"
 
 \end_inset
 
@@ -1304,7 +1090,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "porter2019gender"
-literal "true"
 
 \end_inset
 
@@ -1315,22 +1100,16 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1111/ecoj.12145"
-literal "true"
 
 \end_inset
 
 .
+ Some studies also show that role models can help people becoming more successfu
+l.
  
-\change_inserted 1966826031 1584967060
-Although evidence is scarcer, role models can help people becoming more
- successful.
- 
-\change_unchanged
-
 \begin_inset CommandInset citation
 LatexCommand citet
 key "nguyen2008information"
-literal "true"
 
 \end_inset
 
@@ -1339,7 +1118,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "RePEc:csa:wpaper:2017-13"
-literal "true"
 
 \end_inset
 
@@ -1350,7 +1128,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Beaman582"
-literal "true"
 
 \end_inset
 
@@ -1367,7 +1144,6 @@ The power of role models can also be linked to the fact that people’s tendency
 \begin_inset CommandInset citation
 LatexCommand citep
 key "thaler2008nudge"
-literal "true"
 
 \end_inset
 
@@ -1381,18 +1157,13 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "eagly2002role"
-literal "true"
 
 \end_inset
 
 .
- Role models can affect women
-\change_inserted 1966826031 1584966729
-'s
-\change_unchanged
- empowerment directly: as women start questioning cultural norms and gender
- stereotypes, their locus of control may shift, resulting in increased entry
- into traditionally male-dominated domains.
+ Role models can affect women's empowerment directly: as women start questioning
+ cultural norms and gender stereotypes, their locus of control may shift,
+ resulting in increased entry into traditionally male-dominated domains.
  Indirectly, role models can challenge beliefs and stereotypes about lesser
  abilities of another group held by the group whose abilities are not underestim
 ated.
@@ -1400,7 +1171,6 @@ ated.
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1162/qjec.2009.124.4.1497"
-literal "true"
 
 \end_inset
 
@@ -1419,7 +1189,6 @@ Other mechanisms, including peer effects (which are linked to recognition
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1146/annurev.soc.27.1.415"
-literal "true"
 
 \end_inset
 
@@ -1449,71 +1218,25 @@ We explore cognitive and socio-psychological dimensions of extension information
 \begin_inset CommandInset citation
 LatexCommand citet
 key "JOHNSON2016295"
-literal "true"
 
 \end_inset
 
 , where empowerment encompasses both an increase in women’s individual and
  joint decision-making within the household with respect to a set of key
  livelihood-related variables.
- We thus assess empowerment as a positive change both for 
-\change_deleted 1966826031 1584967425
-a woma
-\change_inserted 1966826031 1584967432
-the female co-head 
-\change_deleted 1966826031 1584967433
-n
-\change_inserted 1966826031 1584967416
-alone
-\change_unchanged
- and for the female and male co-heads jointly in their knowledge about recommend
-ed agronomic practices and inputs, their participation in intra-household
- decision-making on farm production, the choices they make about the adoption
- of recommended practices and the use of inputs, the output and yield from
- plots under either wom
-\change_inserted 1966826031 1584967447
-a
-\change_deleted 1966826031 1584967446
-e
-\change_unchanged
-n’s or joint management, and their participation in selling farm output.
+ We thus assess empowerment as a positive change both for the female co-head
+ individually and for the female and male co-heads jointly in their knowledge
+ about recommended agronomic practices and inputs, their participation in
+ intra-household decision-making on farm production, the choices they make
+ about the adoption of recommended practices and the use of inputs, the
+ output and yield from plots under either woman’s or joint management, and
+ their participation in selling farm output.
  A reduction in male domination over these different dimensions is considered
  empowering as well.
  In the context of our study, these variables are specific to the types
  of smallholders defined by our population of interest (and described in
- detail below), but are likely to be 
-\change_deleted 1966826031 1584967506
-generalizable to
-\change_inserted 1966826031 1584967508
-relevant for
-\change_unchanged
- other smallholder agricultural contexts
-\change_inserted 1966826031 1584967512
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 1966826031 1584967591
-\begin_inset Quotes eld
-\end_inset
-
-generalisable
-\begin_inset Quotes erd
-\end_inset
-
- suggests that our study design ensures that our findings are externally
- valid for smallholders in other agricultural context which they are not
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-.
+ detail below), but are likely to be relevant for other smallholder agricultural
+ contexts.
  
 \end_layout
 
@@ -1565,11 +1288,8 @@ In a second hypothesis, we test the relative importance of the behavioral
  and responsibilities in the household as a result of receiving information
  from a messenger that is somehow inconsistent with their beliefs.
  We expect such effects to increase women’s aspirations about their households
- and livelihoods, thereby causing them to make more ambitious choices
-\change_inserted 1966826031 1584967955
-, which is expected to contribute to improved outcomes
-\change_unchanged
-.
+ and livelihoods, thereby causing them to make more ambitious choices, in
+ turn contributing to improved outcomes.
  
 \end_layout
 
@@ -1622,7 +1342,6 @@ Maize yields in the study area, and in Uganda more generally, are well below
 \begin_inset CommandInset citation
 LatexCommand citep
 key "fermont2011estimating"
-literal "true"
 
 \end_inset
 
@@ -1633,37 +1352,21 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "GOURLAY2019102376"
-literal "true"
 
 \end_inset
 
 .
  There is also evidence that maize plots under female management are less
- productive than maize plots under male management
-\change_inserted 1966826031 1584972472
- Sell, M., Bäckman, S., TettehAnang, B., & Niemi, J.K.
- (2018).
- The unequal efficiency gap: Key factors influencing women farmer’s efficiency
- in Uganda.
- Cogent Food & Agriculture 4(1), 1551750.
-\change_deleted 1966826031 1584972485
-.
-
-\change_unchanged
+ productive than maize plots under male management.
  
 \begin_inset CommandInset citation
 LatexCommand citet
 key "ALI2016152"
-literal "true"
 
 \end_inset
 
- observe that
-\change_inserted 1966826031 1584972509
-, generally,
-\change_unchanged
- male-managed plots are on average 17.5 percent more productive than female-manag
-ed plots in Uganda.
+ observe that, generally, male-managed plots are on average 17.5 percent
+ more productive than female-managed plots in Uganda.
  They link the productivity gap between male- and female-managed plots in
  Uganda (controlled for plot size but without distinguishing between type
  of crops) to an unequal distribution between men and women of responsibilities
@@ -1678,17 +1381,18 @@ Decision-making power over agricultural production is related to the actual
  In Uganda, ownership of land for married women is constrained by patrilineal
  land inheritance customs and by customs and traditional rules prescribing
  that, through marriage, women gain access to land owned by their husband
-\change_inserted 1966826031 1584972652
- Krista Jacobs & Aslihan Kes (2015) The Ambiguity of Joint Asset Ownership:
- Cautionary Tales From Uganda and South Africa, Feminist Economics, 21:3,
- 23-55, DOI: 10.1080/13545701.2014.926559
-\change_unchanged
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1080/13545701.2014.926559"
+
+\end_inset
+
 .
  
 \begin_inset CommandInset citation
 LatexCommand citet
 key "FISHER201582"
-literal "true"
 
 \end_inset
 
@@ -1706,7 +1410,6 @@ ities which, in turn, affect intra-household labor allocations.
 \begin_inset CommandInset citation
 LatexCommand citet
 key "FISHER201582"
-literal "true"
 
 \end_inset
 
@@ -1737,18 +1440,11 @@ The experiment: A video extension information intervention in a factorial
 
 \begin_layout Standard
 In this study, we test hypotheses about the (relative) effectiveness of
- involving women in receiving and conveying 
-\change_inserted 1966826031 1584972747
-extension 
-\change_unchanged
-information 
-\change_inserted 1966826031 1584972809
-via ICT-enabled videos 
-\change_unchanged
-on a range of outcomes related to knowledge, intra-household decision-making,
- adoption of maize cultivation practices, maize outputs and yields, and
- maize marketing, both for women individually and jointly with their male
- co-heads of households.
+ involving women in receiving and conveying extension information via ICT-enable
+d videos on a range of outcomes related to knowledge, intra-household decision-m
+aking, adoption of maize cultivation practices, maize outputs and yields,
+ and maize marketing, both for women individually and jointly with their
+ male co-heads of households.
  To do so, we developed a 3x3 factorial design, in which one factor corresponds
  to the gender of the person (or persons) who receives the information (hencefor
 th referred to as the 
@@ -1800,7 +1496,6 @@ Power calculations were based on a set of comparisons using different outcomes
 \begin_inset CommandInset citation
 LatexCommand citet
 key "New2"
-literal "true"
 
 \end_inset
 
@@ -1874,7 +1569,6 @@ To investigate the effect of gender for small business performance,
 \begin_inset CommandInset citation
 LatexCommand citet
 key "New3"
-literal "true"
 
 \end_inset
 
@@ -1895,7 +1589,6 @@ literal "true"
 LatexCommand href
 name "here"
 target "https://www.youtube.com/watch?v=1albuXRm9a8&index=3&list=PLeqdWbb3KnJ8VdzDX-ikrnOnizHRB09Ob"
-literal "false"
 
 \end_inset
 
@@ -1922,11 +1615,8 @@ ally queued and enumerators were only able to screen the appropriate version
 
 \begin_layout Standard
 The video itself consists of a 10-minute inspirational story in which a
- farmer (man, woman, or a 
-\change_inserted 1966826031 1584973382
-man and woman acting together as a 
-\change_unchanged
-couple) recounts how s/he used to struggle with low maize yields.
+ farmer (man, woman, or a man and woman acting together as a couple) recounts
+ how s/he used to struggle with low maize yields.
  The actor-farmer then shows what inputs s/he used and what recommended
  practices s/he followed to successfully increase his/her yields.
  The choice of what inputs and practices to promote in this video was based
@@ -2058,25 +1748,10 @@ Next, to examine the impact of providing women and men with information
  a male actor featured was shown to the female co-head (Model 2A).
  We additionally zoom in on effects following from men updating role incongruent
  beliefs when a woman is providing information and portrayed as a successful
- farmer by comparing outcomes of the 754 households 
-\change_deleted 1966826031 1584973940
-where the male co-head was shown the video in which a female actor was featured
- (either alone or as part of a couple) 
-\change_inserted 1966826031 1584973954
-where the video in which a female actor was featured (either alone or as
- part of a couple) was shown to the male co-head 
-\change_unchanged
-to
-\change_inserted 1966826031 1584973977
- outcomes of
-\change_unchanged
- the 385 households 
-\change_deleted 1966826031 1584974006
-where the male co-head was shown the video featuring a male actor
-\change_inserted 1966826031 1584974006
-where the video in which a male actor featured was shown to the male co-head
-\change_unchanged
- (Model 2B).
+ farmer by comparing outcomes of the 754 households where the video in which
+ a female actor was featured (either alone or as part of a couple) was shown
+ to the male co-head to outcomes of the 385 households where the video in
+ which a male actor featured was shown to the male co-head (Model 2B).
 \end_layout
 
 \begin_layout Subsection
@@ -2120,14 +1795,8 @@ In the equation,
 \begin_inset Formula $T_{i}$
 \end_inset
 
- is an indicator that 
-\change_deleted 1966826031 1584974056
-is
-\change_inserted 1966826031 1584974059
-takes the value
-\change_unchanged
- one if a household received the treatment for the particular hypothesis
- that is tested, and zero otherwise.
+ is an indicator that takes the value one if a household received the treatment
+ for the particular hypothesis that is tested, and zero otherwise.
  
 \begin_inset Formula $O_{i}$
 \end_inset
@@ -2160,35 +1829,23 @@ reference "subsec:Data"
 \begin_inset Formula $T_{i}$
 \end_inset
 
- equals one if the video was shown to the couple or to the 
-\change_deleted 1966826031 1584974114
-woman
-\change_inserted 1966826031 1584974116
-female co-head
-\change_unchanged
- alone and zero if the video was shown to the ma
-\change_inserted 1966826031 1584974121
-le co-head
-\change_deleted 1966826031 1584974118
-n
-\change_unchanged
- alone within the household, and 
+ equals one if the video was shown to the couple or to the female co-head
+ alone, and zero if the video was shown to the male co-head alone within
+ the household.
+ 
 \begin_inset Formula $O_{i}$
 \end_inset
 
- is a vector of 
-\change_deleted 1966826031 1584974131
-2
-\change_inserted 1966826031 1584974131
-two
-\change_unchanged
- dummy variables, corresponding to what version of the video was shown.
+ is a vector of two dummy variables, corresponding to what version of the
+ video was shown.
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
 The first dummy takes the value of one if the version of the video was shown
- where the information was provided by a couple (and zero other wise).
+ where the information was provided by a woman alone (and zero otherwise).
+ The second dummy takes the value of one if the version of the video was
+ shown where the information was provided by a couple (and zero other wise).
  The reference category is thus the video where a man alone provides the
  information.
 \end_layout
@@ -2196,30 +1853,6 @@ The first dummy takes the value of one if the version of the video was shown
 \end_inset
 
  
-\change_inserted 1966826031 1584974212
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 1966826031 1584974273
-foot 4 is confusing...
- it is not clear to me what Oi vector of indicators for the orthogonal factor
- for household 
-\begin_inset Formula $i$
-\end_inset
-
- is exactly 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -2260,14 +1893,10 @@ reference "eq:ols"
 
 \begin_layout Standard
 In addition to controlling for the orthogonal factor 
-\change_inserted 1966826031 1584974355
-
 \begin_inset Formula $O_{i}$
 \end_inset
 
- 
-\change_unchanged
-in equation 
+ in equation 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:ols"
@@ -2284,60 +1913,24 @@ reference "fig:Layout-of-experimental"
 
 \end_inset
 
- that there are 1,139 households where the 
-\change_deleted 1966826031 1584974372
-wo
-\change_inserted 1966826031 1584974375
-female co-head
-\change_deleted 1966826031 1584974376
-man
-\change_unchanged
- alone is to receive the information treatment, but only 1,053 households
- are allocated to receive the information treatment as a couple.
- When pooling these two groups into a single
-\change_deleted 1966826031 1584974389
-s
-\change_unchanged
- group to assess women involvement in receiving information, the women alone
- group gets a higher weight.
+ that there are 1,139 households where the female co-head alone is to receive
+ the information treatment, but only 1,053 households are allocated to receive
+ the information treatment as a couple.
+ When pooling these two groups into a single group to assess women involvement
+ in receiving information, the women alone group gets a higher weight.
  We thus make sure each group gets an appropriate weight when pooling groups.
  
-\change_inserted 1966826031 1584974614
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 1966826031 1584974651
-Because we assume that outcomes within villages will be correlated (e.g.,
- due to local weather conditions, or development programs that are implemented
- in certain areas), we used village as a blocking factor such that, in each
- village, all possible treatment combinations related to the two factors
- were administered.
- Because the experimental design described above lays out nine different
- treatment combinations, a maximum of nine different households were selected
- in each village.
- 
-\change_unchanged
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted 1966826031 1584974428
-Furthermore, w
-\change_deleted 1966826031 1584974425
-W
-\change_unchanged
-e use randomization inference to calculate associated p-values for the two-sided
- hypothesis of no effect.
+Furthermore, we use randomization inference to calculate associated p-values
+ for the two-sided hypothesis of no effect.
  We aggregate families of outcomes into indices, which are constructed as
  the weighted mean of the individual standardized outcomes, using as weights
  the inverse of the co-variance matrix of the transformed outcomes 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.2307/27640197"
-literal "true"
 
 \end_inset
 
@@ -2358,7 +1951,6 @@ ion of the null hypothesis due to multiple inference.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "ottoboni2021permutation,doi:10.1086/689287"
-literal "true"
 
 \end_inset
 
@@ -2389,18 +1981,6 @@ Data were collected from households in five districts in eastern Uganda:
  Within each village, we then listed all households, from which we randomly
  selected households to be included in the study.
  
-\change_deleted 1966826031 1584974609
-Because we assume that outcomes within villages will be correlated (e.g.,
- due to local weather conditions, or development programs that are implemented
- in certain areas), we used the village as a blocking factor such that in
- each village, we ensured that all possible treatment combinations related
- to the two factors were administered.
- Because the experimental design described above lays out nine different
- treatment combinations, a maximum of nine different households were selected
- in each village.
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -2422,11 +2002,8 @@ reference "tab:Balance"
  Households are large, consisting of more than 7.6 members.
  Only 11 percent of sampled households reported having access to extension
  in the previous year.
- Few farmers use inorganic fertilizer at baseline; the use of 
-\change_inserted 1966826031 1584974745
-fresh 
-\change_unchanged
-improved seed is higher.
+ Few farmers use inorganic fertilizer at baseline; the use of fresh improved
+ seed is higher.
  About 78 percent of households report to be owning a mobile phone.
  
 \end_layout
@@ -2795,27 +2372,20 @@ Indicator definition
 
 \begin_layout Standard
 This study aims to estimate effects on women’s empowerment.
- We consider a woman as ‘empowered’ not only if she 
-\change_inserted 1966826031 1584974995
-decides or 
-\change_unchanged
-achieves things on her own, but also if she does so in partnership with
- the male co-head in the household.
+ We consider a woman as ‘empowered’ not only if she decides or achieves
+ things on her own, but also if she does so in partnership with the male
+ co-head in the household.
  Thus, we examine effects on both women’s outcomes and outcomes that are
  shared (joint) between the female and male co-heads of household.
  Those outcomes are cast as increases in (a) the female co-head’s knowledge
  (individually and/or jointly with her male co-head) about the information
- promoted in the video
-\change_inserted 1966826031 1584975087
- or re-activated by it
-\change_unchanged
-; (b) the extent to which maize production decisions in the household are
- taken by the female co-head alone and/or jointly with her male co-head;
- (c) the adoption of the recommended practices and inputs decided upon by
- the female co-head individually and/or jointly with her male co-head; (d)
- output and yield on maize plots that were female-managed and/or jointly
- managed; and (e) maize sales decided upon by the female co-head individually
- or jointly with her male co-head.
+ promoted in the video or re-activated by it; (b) the extent to which maize
+ production decisions in the household are taken by the female co-head alone
+ and/or jointly with her male co-head; (c) the adoption of the recommended
+ practices and inputs decided upon by the female co-head individually and/or
+ jointly with her male co-head; (d) output and yield on maize plots that
+ were female-managed and/or jointly managed; and (e) maize sales decided
+ upon by the female co-head individually or jointly with her male co-head.
  Additionally, we will examine effects on men’s outcomes assuming that a
  reduction of men’s individual decision-making and adoption can be empowering
  for women as well.
@@ -2869,53 +2439,16 @@ reference "subsec:Estimation"
 \end_layout
 
 \begin_layout Standard
-Agricultural decision-making is based on 
-\change_inserted 1966826031 1584975162
-the 
-\change_unchanged
-wom
-\change_deleted 1966826031 1584975164
-e
-\change_inserted 1966826031 1584975164
-a
-\change_unchanged
-n’s answers about whether she made a series of decisions related to household
- maize production.
- We differentiate between decisions made individually by the 
-\change_deleted 1966826031 1584975172
-women
-\change_inserted 1966826031 1584975175
-female
-\change_unchanged
- co-head and decisions made jointly with her spouse.
- As women
-\change_deleted 1966826031 1584975183
- 
-\change_inserted 1966826031 1584975184
-'s 
-\change_unchanged
-empowerment may also lead to a reduction in unilateral decision making by
- the male co-head, we also consider decisions that, according to the 
-\change_deleted 1966826031 1584975197
-woman
-\change_inserted 1966826031 1584975197
-female
-\change_unchanged
- co-head, were decided by the man without consulting her.
+Agricultural decision-making is based on the woman’s answers about whether
+ she made a series of decisions related to household maize production.
+ We differentiate between decisions made individually by the female co-head
+ and decisions made jointly with her spouse.
+ As women's empowerment may also lead to a reduction in unilateral decision
+ making by the male co-head, we also consider decisions that, according
+ to the female co-head, were decided by the man without consulting her.
  For each maize plot within the household, we thus recorded if the following
- decisions were made by the 
-\change_deleted 1966826031 1584975255
-woman
-\change_inserted 1966826031 1584975261
-female co-head
-\change_unchanged
-, jointly or by the m
-\change_deleted 1966826031 1584975265
-an
-\change_inserted 1966826031 1584975269
-ale co-head
-\change_unchanged
-: whether to plant maize on the plot; when to start planting the maize on
+ decisions were made by the female co-head, jointly or by the male co-head:
+ whether to plant maize on the plot; when to start planting the maize on
  the plot; what spacing of maize plants to use and how many maize seeds
  per hill to plant on the plot; what strategies to use to control striga
  on the plot; and when to start weeding on the plot.
@@ -2932,20 +2465,12 @@ ale co-head
 \end_layout
 
 \begin_layout Standard
-Decision making is central to women
-\change_inserted 1966826031 1584975302
-'s
-\change_unchanged
- empowerment.
+Decision making is central to women's empowerment.
  However, we may also want to check if the practices and inputs that were
  recommended in the video were also implemented on the plots.
- For instance, it may be that
-\change_inserted 1966826031 1584975315
-,
-\change_unchanged
- due to the video, women gain voice in the decision making process, but
- if additional investments are needed (for instance in terms of labour time
- or inputs), they may still be constrained.
+ For instance, it may be that, due to the video, women gain voice in the
+ decision making process, but if additional investments are needed (for
+ instance in terms of labour time or inputs), they may still be constrained.
  We thus also consider the proportion of the household’s maize plots for
  which the female co-head decided about a particular practice alone and
  adopted the recommended practice.
@@ -3014,13 +2539,7 @@ Next, we measured outcomes related to production, area of production, and
  we measure both the share of household maize production that was produced
  on female-managed maize plots and the share of household acreage under
  maize cultivation that is female-managed.
- We also defined
-\change_deleted 1966826031 1584975430
- 
-\change_inserted 1966826031 1584975431
- similar 
-\change_unchanged
-indicators for jointly managed plots.
+ We also defined similar indicators for jointly managed plots.
  
 \end_layout
 
@@ -3036,23 +2555,13 @@ Finally, we look at maize sales as an outcome.
  Jointly means all those decisions were taken together by the female and
  male co-head together.
  A second indicator is the amount of maize (in bags of about 100 kg) that
- the 
-\change_deleted 1966826031 1584975492
-woman
-\change_inserted 1966826031 1584975492
-female co-head
-\change_unchanged
- respondent reported to have sold independently (jointly/independently by
- the male co-head).
+ the female co-head respondent reported to have sold independently (jointly/inde
+pendently by the male co-head).
  For the first indicator of the likelihood of selling independently we assumed
  women did not sell any maize independently if they did not know the amount
  sold independently.
  For the second indicator (amount of maize sold independently), we only
- considered 
-\change_inserted 1966826031 1584975522
-non-zero 
-\change_unchanged
-positive amounts of maize sold independently.
+ considered non-zero positive amounts of maize sold independently.
 \end_layout
 
 \begin_layout Section
@@ -3158,16 +2667,9 @@ reference "tab:know_women_model1AB"
 
 , show similar increase in knowledge.
  Also in the Appendix, we report results for comparisons between households
- in which the
-\change_inserted 1966826031 1584976106
- female and male co-heads together as a
-\change_unchanged
- couple received the information 
-\change_deleted 1966826031 1584976111
-alone
-\change_unchanged
- and households in which the male co-head received the information alone
- (model 1B in in Figure 
+ in which the female and male co-heads together as a couple received the
+ information and households in which the male co-head received the information
+ alone (model 1B in in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Hypotheses-tests"
@@ -3566,11 +3068,7 @@ reference "tab:knowlegeJoint"
  Neither reducing intra-household information asymmetries nor female role
  models seem to affect joint knowledge outcomes.
  There is some indication that new information (about spacing) received
- by female co-head
-\change_inserted 1966826031 1584976785
-s
-\change_unchanged
- alone (as in model 1A in 
+ by female co-heads alone (as in model 1A in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Hypotheses-tests"
@@ -3597,11 +3095,6 @@ reference "tab:know_joint_model2AB"
 \end_inset
 
  also reports results for Models 2A and 2B for joint knowledge.
-
-\change_deleted 1966826031 1584976783
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -7686,21 +7179,10 @@ Results further show that women’s knowledge gains are similar regardless
  of whether a woman saw the extension video alone or together with her male
  co-head; the presence of the male spouse in the exposure process does not
  influence her knowledge.
- Unlike for the 
-\change_deleted 1966826031 1584979140
-women
-\change_inserted 1966826031 1584979141
-female
-\change_unchanged
- co-head, the presence of the female spouse in the exposure process does
- influence the knowledge of the ma
-\change_inserted 1966826031 1584979157
-le co-head
-\change_deleted 1966826031 1584979154
-n
-\change_unchanged
-, who appears to learn less when information is provided to the couple than
- when this information is targeted to him alone.
+ Unlike for the female co-head, the presence of the female spouse in the
+ exposure process does influence the knowledge of the male co-head, who
+ appears to learn less when information is provided to the couple than when
+ this information is targeted to him alone.
  This suggest limited discussion of the content of the video between spouses
  even when the video was shown to both of them as a couple.
  Hence, from a knowledge transfer point of view, it seems most effective
@@ -7765,24 +7247,11 @@ Going beyond women’s decision-making, the adoption of recommended practices
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1093/erae/jbv039"
-literal "true"
 
 \end_inset
 
  who found a positive impact of joint participation in an extension program
- on fertilizer adoption on jointly (and m
-\change_inserted 1966826031 1584979285
-ale
-\change_deleted 1966826031 1584979284
-en
-\change_unchanged
--
-\change_deleted 1966826031 1584979287
-)
-\change_inserted 1966826031 1584979290
-)
-\change_unchanged
- managed plots.
+ on fertilizer adoption on jointly (and male-) managed plots.
  The adoption of recommended practices and use of inputs individually decided
  upon by men is negatively affected by providing women with information,
  but the effect is less convincing than for male unilateral decision-making.
@@ -7840,12 +7309,8 @@ Women are also more likely to sell (more) maize independently if they alone
 \end_layout
 
 \begin_layout Standard
-Women seem to gain
-\change_deleted 1966826031 1584979406
-s
-\change_unchanged
- in production and sales if they receive agricultural extension information
- alone.
+Women seem to gain in production and sales if they receive agricultural
+ extension information alone.
  However, these effects are not there if the information is given to the
  couple.
  This suggests that a woman’s monopoly over information is essential for
@@ -7956,7 +7421,6 @@ ty of men.
 \begin_inset CommandInset citation
 LatexCommand citet
 key "RePEc:csa:wpaper:2017-13"
-literal "true"
 
 \end_inset
 
@@ -7964,7 +7428,6 @@ literal "true"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1162/qjec.2009.124.4.1497"
-literal "true"
 
 \end_inset
 
@@ -7972,10 +7435,19 @@ literal "true"
  A 10 minute video, even though screened twice, is still quite different
  from a two hour feel good movie or first hand experience with women leaders
  over the course of multiple years of quota policy.
+ 
+\begin_inset Note Note
+status collapsed
 
-\change_inserted 1966826031 1584980634
- While evidence of effects of role models on success is scarce in the literature
-, in this case there are indications of negative effects remale role models
+\begin_layout Plain Layout
+Els: i agree these explanations are speculative but we can't remain silent
+ about the negative effects as we didn't notice.
+ She suggests:
+\end_layout
+
+\begin_layout Plain Layout
+While evidence of effects of role models on success is scarce in the literature,
+ in this case there are indications of negative effects remale role models
  on yield and sales by women.
  We do not have straightforward explanations for these but believe these
  may relate to limited, potentially ineffective, increases in the use of
@@ -7983,23 +7455,10 @@ literal "true"
  their efforts on other crops when men become less likely to decide on planting
  maize; or to potentially opposing heterogenous treatment effects among
  high- and low-performing or high- and low aspiring women maize farmers.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 1966826031 1584980677
-i agree these explanations are speculative but we can't remain silent about
- the negative effects as we didn't notice.
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -8044,11 +7503,8 @@ on in terms of knowledge, decision making, adoption of recommended agronomic
 \end_layout
 
 \begin_layout Standard
-The information inter
-\change_deleted 1966826031 1584979671
-c
-\change_unchanged
-vention is implemented using short videos shown twice to farmers.
+The information intervention is implemented using short videos shown twice
+ to farmers.
  In these videos, farmer-actors explain and demonstrate various strategies
  and practices to intensify the production of maize.
  Three versions were randomized across farming households: one version portrays
@@ -8079,7 +7535,7 @@ The results of this study clearly show that significant advances in women’s
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Float figure
