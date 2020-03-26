@@ -100,10 +100,11 @@
 \papersides 1
 \paperpagestyle default
 \tracking_changes false
-\output_changes false
+\output_changes true
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 973716962 "DSPIELMAN"
 \end_header
 
 \begin_body
@@ -194,65 +195,34 @@ O13, O33, Q16, J16
 \end_layout
 
 \begin_layout Abstract
-Agricultural extension services are generally biased towards men, with male
- extension agents targeting the man within the household.
- In a field experiment among maize-farming households in Uganda, we investigate
- the consequences of this by varying exposure to extension information by
- gender within the household, as well as by varying the gender of the person
- who provides this information.
- We find that targeting women increases their knowledge about improved maize
- management practices, their role in agricultural decision-making, their
- adoption of recommended practices and inputs, production-related outcomes,
- and quantity sold.
- The gender of the person providing information has mixed effects on empowerment.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-To do:
-\end_layout
-
-\begin_layout Itemize
-Add following stylized facts somewhere: Udry finds that Women have lower
- yield than man in the same households (instead of ALI).
- 
-\end_layout
-
-\begin_layout Itemize
-For conclusion: All in all, this is a promising set of results and shows
- that we can move these norms, in line with a set of results from Norwegian
- boot camps that I blogged about awhile back.
- Excitingly, Dhar and co.
- close with the promise that they’ll follow these folks as they graduate
- and settle in families.
- It will be interesting to see how this plays out when folks get married.
- https://blogs.worldbank.org/impactevaluations/changing-gender-attitudes-one-teena
-ger-time
-\end_layout
-
-\begin_layout Itemize
-Should we also refer to Delecourt and Ng article on vegetable sellers in
- India?
-\end_layout
-
-\end_inset
-
-
+ In a field experiment among maize-farming households in Uganda, we explore
+ how gendered designs affect women’s empowerment and agricultural productivity-e
+nhancing outcomes.
+ We focus on two pathways—a cognitive pathway in which information asymmetries
+ between spouses are removed, and a behavioral pathway in which households
+ are exposed to role models for women—in the context of agricultural extension
+ provision in Uganda, where male targeting bias and the absence of female
+ role models is otherwise prevalent.
 \end_layout
 
 \begin_layout Standard
-Women provide a lot of work, yet men generally make the decisions.
- While women form a substantial part of the workforce these days, relatively
- few hold executive positions across a range of sectors and industries.
- One extreme example is that, according to Fortune 500's 2019 list, only
- 6.6 percent of companies had a female Chief Executive.
+In a variety of contexts, women have limited ability to make strategic choices
+ that are important to live the life they value, and to transform those
+ choices into desired action and outcomes.
+ 
+\end_layout
+
+\begin_layout Standard
+While women represent a substantial part of the workforce, relatively few
+ hold executive positions across a range of sectors and industries.
+ Only 6.6 percent of companies on the Fortune 500 list for 2019 had a female
+ chief executive.
  And while there is an increase in the share of women in middle management
  globally, women are often promoted in positions that involve little strategic
- decisions making, such as human resource departments or communications.
- This problem is even more compelling when considering unpaid work such
- as household care and child care.
- For instance, while women bare the brunt of child care, their voice in
- deciding how many children to bear is limited 
+ decisions making, relegated instead to marginalized departments such as
+ human resources or communications.
+ This problem is even more pervasive when accounting for unpaid work conducted
+ primarily by women, such as household care and child care 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1257/aer.104.7.2210"
@@ -260,17 +230,22 @@ key "10.1257/aer.104.7.2210"
 \end_inset
 
 .
- Economic dependency upon men in the context of strict gender norms means
- that the vast majority of women in developing countries lack the ability
- to make important choices and act upon them in their daily lives.
+ The problem is particularly acute in developing countries, where g, in
+ the context of strict gender norms means that the vast majority of women
+ lack the ability to make important choices and act upon them in their daily
+ lives.
 \end_layout
 
 \begin_layout Standard
-Research suggests that targeting women with information may be one route
+Public programs designed to reduce gender inequality in productive activities
+ often emphasize the provision of information alongside the supply of new
+ technologies, legal rights, financial capital, and other factors and inputs
+ to production.
+ Research suggests that targeting women with information may be one route
  towards increasing empowerment.
- The existence of information asymmetries between spouses has been found
- to affect intra-household resource allocation in ways that suggests information
- increases bargaining power 
+ Information asymmetries between spouses have been empirically shown to
+ affect intra-household resource allocations by limiting women's bargaining
+ power relative to their male spouse's 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "AMBLER201552,10.1257/aer.103.3.263,10.1257/aer.99.4.1245,chen2006migration"
@@ -278,7 +253,7 @@ key "AMBLER201552,10.1257/aer.103.3.263,10.1257/aer.99.4.1245,chen2006migration"
 \end_inset
 
 .
- 
+ For example, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1257/app.20170416"
@@ -288,7 +263,7 @@ key "10.1257/app.20170416"
  find that the share of girls reporting sex against their will dropped by
  close to a third as a result of providing them with, inter alia, information
  on sex, reproduction, and marriage.
- 
+ Similarly, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1257/app.3.1.1"
@@ -302,11 +277,11 @@ key "10.1257/app.3.1.1"
 
 \begin_layout Standard
 At the same time, it is well known that not all information campaigns are
- equally successful.
- It has been found that often seemingly small design attributes can have
- a substantial impact on effectiveness.
- In addition to who is targeted by the information, the source of the informatio
-n has also been found to matter.
+ equally successful, and that seemingly small design attributes can often
+ have a substantial impact on effectiveness.
+ While particular emphasis is often placed on selecting who to target infromatio
+n to within the household, less emphasis is typically placed on selecting
+ who should provide the information.
  Some studies show that information may be more credible if it comes from
  an official source 
 \begin_inset CommandInset citation
@@ -316,9 +291,8 @@ key "10.1257/app.5.1.104"
 
 \end_inset
 
-.
- Other studies find that information is more effective if one can identify
- more with the person or persons who provide the information 
+, or if the recipient of the information can identify with the person or
+ persons who provide the information 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1146/annurev.soc.27.1.415"
@@ -326,11 +300,12 @@ key "doi:10.1146/annurev.soc.27.1.415"
 \end_inset
 
 .
- Homophily effects, where women learn more from other women, may be particularly
- important in the context of information campaigns to promote women empowerment.
- More recently, the behavioral economics literature also started to point
- out the importance of role models, suggesting important non-cognitive impact
- pathways that can be exploited in information campaigns.
+ Homophily effects, where individuals learn from similar individuals, may
+ be particularly important in the context of information campaigns to promote
+ women empowerment.
+ This is highlighted in recent studies in behavioral economics on role model
+ effects which suggest important non-cognitive impact pathways that can
+ be instrumental to information campaigns.
  For instance, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -338,11 +313,8 @@ key "porter2019gender"
 
 \end_inset
 
- show that successful role models can increase entry in traditionally male
- dominated sectors.
- Role models not only affect the behavior of those that identify with the
- model; they have also been found to influence the behavior of others in
- situations where women are constrained by relationships and social norms
+ show that successful role models can increase entry into traditionally
+ male-dominated sectors.
  
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -350,31 +322,48 @@ key "10.1162/qjec.2009.124.4.1497"
 
 \end_inset
 
+ who that role models not only affect the behavior of those that identify
+ with the model, but also influence the behavior of others in situations
+ where women are constrained by relationships and social norms
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1162/qjec.2009.124.4.1497"
+
+\end_inset
+
 .
- More in general, role models may facilitate shifts in social norms.
- For instance, 
+ More generally, role models may facilitate shifts in social norms: 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "banerjee2012poor"
 
 \end_inset
 
- note that a large part of the reduction in fertility as a consequence of
- introducing soap operas in Brazil reported in 
+ attribute a large share of reductions in fertility in Brazil to soap operas
+ that projected a very different vision of the 
+\begin_inset Quotes eld
+\end_inset
+
+good life''—including smaller families—than what Brazilians were otherwise
+ used to (see 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1257/app.4.4.1"
 
 \end_inset
 
- should be attributed the fact that the show projected a very different
- vision of the good life than the one that Brazilians were used to.
+).
 \end_layout
 
 \begin_layout Standard
-Also in the context of smallholder agriculture, women work long days on
- the field, yet have little voice in deciding what crops to grow, which
- technologies to use, and how to dispose of the crops 
+These gendered dimensions of information campaigns are particularly relevant
+ in developing-country agriculture, where smallholder production systems
+ are typically characterized by strong social norms that marginalize women
+ in productive decision-making processes [doi:10.1596/1813-9450-6370].
+ In these systems, women typically work long days in the field, yet have
+ little voice in deciding what crops to grow, which technologies and inputs
+ to use, and how much of the output to allocate to home consumption or sale
+ in markets 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "magnan2015information,FISHER201582"
@@ -382,10 +371,10 @@ key "magnan2015information,FISHER201582"
 \end_inset
 
 .
- However, there are many well-established benefits to empowering women farmers
+ Yet there are many well-established benefits to empowering women farmers
  in developing countries.
  A more prominent role for women in the farm household has been shown to
- result in more efficient allocations of scarce resources within the household,
+ result in more efficient intra-household allocations of scarce resources,
  more equitable distributions of the returns to investments in household
  production, and general improvements in welfare and poverty 
 \begin_inset CommandInset citation
@@ -395,8 +384,8 @@ key "10.1093/wber/lhw011,10.2307/24582373,DEBRAUW2014487"
 \end_inset
 
 .
- Involving women in the choice of crops may also lead to more nutritious
- dietary outcomes at the household level 
+ Involving women in the choice of which crops to cultivate may also lead
+ to better dietary and nutritional outcomes at the household level 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1111/1468-0084.t01-1-00052,duflo2004intrahousehold"
@@ -408,10 +397,12 @@ key "doi:10.1111/1468-0084.t01-1-00052,duflo2004intrahousehold"
 \end_layout
 
 \begin_layout Standard
-One important constraining factor is asymmetric information between spouses
- on a range of productivity-enhancing technologies and practices.
- The fact that women possess less knowledge necessarily limits their participati
-on in decision-making on agricultural production 
+A constraint to realizing such outcomes is the presence of asymmetric informatio
+n between spouses on a range of productivity-enhancing technologies, inputs,
+ and practices.
+ The fact that women possess less knowledge than their male spouses necessarily
+ limits their participation in decision-making on agricultural production
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "FISHER201582"
@@ -419,8 +410,8 @@ key "FISHER201582"
 \end_inset
 
 .
- Men rarely discuss agronomic practices or management choices with their
- wives or female partners 
+ In many contexts, men rarely discuss agronomic practices or management
+ choices with their wives or female partners 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "magnan2015information,FISHER201582"
@@ -439,9 +430,9 @@ key "doi:10.1111/j.1574-0862.2001.tb00233.x,DOSS20012075"
 \end_layout
 
 \begin_layout Standard
-Reducing information asymmetry related to agriculture between men and women
- by targeting women with information that is presented in an appealing way
- may thus be empowering.
+Reducing gendered information asymmetries by targeting women with information
+ may thus be empowering, particularly if the infomration is presented in
+ an appealing manner.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -501,12 +492,13 @@ key "KONDYLIS2016436"
 \end_layout
 
 \begin_layout Standard
-In the context of smallholder agriculture in developing countries, information
- related to productivity-enhancing technologies and practices is generally
- disseminated though public agricultural extension information systems.
- However, agricultural extension systems are generally biased toward men,
- with information targeted mainly to male members of a farming household
- and in formats that are rarely tailored to female members.
+In smallholder agriculture systems in developing countries, information
+ related to productivity-enhancing technologies, inputs, and practices is
+ generally disseminated though public extension services.
+ .
+ However, agricultural extension services are typically biased toward men,
+ with information targeted mainly to male members of a farm-household and
+ in formats that are rarely tailored to women.
  A recent survey on public service delivery in Uganda found that only 16
  percent of extension agents are women
 \begin_inset Note Note
@@ -530,6 +522,25 @@ key "DOSS20012075,QUISUMBING2010581"
 \end_inset
 
 .
+
+\change_inserted 973716962 1585157179
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 973716962 1585157198
+Use the language from the VoxDev blog HERE once it is edited.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -1414,7 +1425,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/design.png
+	filename /AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/HKKTHO7M/figures/design.png
 	scale 50
 
 \end_inset
@@ -1588,7 +1599,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/hypothesis_tests.png
+	filename /AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/HKKTHO7M/figures/hypothesis_tests.png
 	scale 50
 
 \end_inset
@@ -1787,7 +1798,11 @@ reference "eq:ols"
 \end_layout
 
 \begin_layout Standard
-In addition to controlling for the orthogonal factor in equation 
+In addition to controlling for the orthogonal factor 
+\begin_inset Formula $O_{i}$
+\end_inset
+
+ in equation 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:ols"
@@ -7647,7 +7662,7 @@ status collapsed
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "empowerment"
-options "/home/bjvca/latex_templates/aea"
+options "../../../../../../latex_templates/aea"
 
 \end_inset
 
