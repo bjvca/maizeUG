@@ -104,7 +104,6 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author 973716962 "DSPIELMAN"
 \end_header
 
 \begin_body
@@ -196,35 +195,41 @@ O13, O33, Q16, J16
 \end_layout
 
 \begin_layout Abstract
- In a field experiment among maize-farming households in Uganda, we explore
- how gendered designs affect women’s empowerment and agricultural productivity-e
-nhancing outcomes.
+Public programs designed to increase productivity usually emphasize information
+ as a key production factor alongside the supply of new technologies.
+ Often, such information interventions ignore complex dynamics that govern
+ intra-household decision making.
+ In a field experiment, we explore how gendered information campaigns affect
+ women’s agency, achievements and outcomes.
  We focus on two pathways—a cognitive pathway in which information asymmetries
  between spouses are removed, and a behavioral pathway in which households
- are exposed to role models for women—in the context of agricultural extension
- provision in Uganda, where male targeting bias and the absence of female
- role models is otherwise prevalent.
+ are exposed to female role models—in the context of agricultural extension
+ provision in Uganda, where male targeting bias and the absence of women
+ extension agents is otherwise prevalent.
 \end_layout
 
 \begin_layout Standard
-In a variety of contexts, women have limited ability to make strategic choices
- that are important to live the life they value, and to transform those
- choices into desired action and outcomes.
- 
-\end_layout
+Women have limited ability to make strategic choices that are important
+ to live the life they value, and to transform those choices into desired
+ action and outcomes.
+ This lack of agency manifests itself in a variety of contexts.
+ For instance, only 6.6 percent of companies on the Fortune 500 list for
+ 2019 had a female chief executive, and while there is an increase in the
+ share of women in middle management globally, women are often promoted
+ in positions that involve little strategic decisions making, relegated
+ instead to departments such as human resources or communications.
+ This problem is even more pervasive in developing countries and when accounting
+ for unpaid work conducted primarily by women, such as household care and
+ child care 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1146/annurev-economics-080614-115404"
 
-\begin_layout Standard
+\end_inset
 
-While women represent a substantial part of the workforce, relatively few
- hold executive positions across a range of sectors and industries.
- Only 6.6 percent of companies on the Fortune 500 list for 2019 had a female
- chief executive.
- And while there is an increase in the share of women in middle management
- globally, women are often promoted in positions that involve little strategic
- decisions making, relegated instead to marginalized departments such as
- human resources or communications.
- This problem is even more pervasive when accounting for unpaid work conducted
- primarily by women, such as household care and child care 
+.
+ For instance, while women bare the brunt of child care, their voice in
+ deciding how many children to bear is limited 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1257/aer.104.7.2210"
@@ -232,11 +237,48 @@ key "10.1257/aer.104.7.2210"
 \end_inset
 
 .
+ Partly as a results of this lack of decision making power, women are also
+ often constrained in their achievements.
+ Women get significantly lower wages for similar work 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1257/jel.20160995"
 
- The problem is particularly acute in developing countries, where g, in
- the context of strict gender norms means that the vast majority of women
- lack the ability to make important choices and act upon them in their daily
- lives.
+\end_inset
+
+.
+ In societies with son-biased fertility preferences, mothers breastfeed
+ girls less than boys, with consequences for survival rates and potentially
+ long run health effects 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1093/qje/qjr029"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+There are various factors that limit women's agency and achievements.
+ Some of these are linked to economic inequalities in access to resources
+ by gender.
+ In patrilineal communities, land is inherited through the male lineage
+ and property passes directly to sons.
+ Unequal access to land has also been linked to reduced investment in human
+ capital of girls within the household 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Deininger01012013"
+
+\end_inset
+
+.
+ Unequal access to resources is thus often the result of gendered norms
+ and institutions.
+ At the same time, these norms and institutions may also mean that, even
+ if women have access to resources, they can not be put to use.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -266,7 +308,7 @@ key "10.1257/app.20170416"
  find that the share of girls reporting sex against their will dropped by
  close to a third as a result of providing them with, inter alia, information
  on sex, reproduction, and marriage.
- Similarly, 
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1257/app.3.1.1"
@@ -282,7 +324,7 @@ key "10.1257/app.3.1.1"
 At the same time, it is well known that not all information campaigns are
  equally successful, and that seemingly small design attributes can often
  have a substantial impact on effectiveness.
- While particular emphasis is often placed on selecting who to target infromatio
+ While particular emphasis is often placed on selecting who to target informatio
 n to within the household, less emphasis is typically placed on selecting
  who should provide the information.
  Some studies show that information may be more credible if it comes from
@@ -320,21 +362,14 @@ key "porter2019gender"
  male-dominated sectors.
  
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "10.1162/qjec.2009.124.4.1497"
 
 \end_inset
 
- who that role models not only affect the behavior of those that identify
+ show that role models not only affect the behavior of those that identify
  with the model, but also influence the behavior of others in situations
- where women are constrained by relationships and social norms
-\begin_inset CommandInset citation
-LatexCommand citep
-key "10.1162/qjec.2009.124.4.1497"
-
-\end_inset
-
-.
+ where women are constrained by relationships and social norms.
  More generally, role models may facilitate shifts in social norms: 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -362,7 +397,14 @@ key "10.1257/app.4.4.1"
 These gendered dimensions of information campaigns are particularly relevant
  in developing-country agriculture, where smallholder production systems
  are typically characterized by strong social norms that marginalize women
- in productive decision-making processes [doi:10.1596/1813-9450-6370].
+ in productive decision-making processes 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.2307/24582373"
+
+\end_inset
+
+.
  In these systems, women typically work long days in the field, yet have
  little voice in deciding what crops to grow, which technologies and inputs
  to use, and how much of the output to allocate to home consumption or sale
@@ -434,7 +476,7 @@ key "doi:10.1111/j.1574-0862.2001.tb00233.x,DOSS20012075"
 
 \begin_layout Standard
 Reducing gendered information asymmetries by targeting women with information
- may thus be empowering, particularly if the infomration is presented in
+ may thus be empowering, particularly if the information is presented in
  an appealing manner.
  
 \begin_inset CommandInset citation
@@ -498,26 +540,15 @@ key "KONDYLIS2016436"
 In smallholder agriculture systems in developing countries, information
  related to productivity-enhancing technologies, inputs, and practices is
  generally disseminated though public extension services.
- .
  However, agricultural extension services are typically biased toward men,
  with information targeted mainly to male members of a farm-household and
  in formats that are rarely tailored to women.
  A recent survey on public service delivery in Uganda found that only 16
- percent of extension agents are women
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-I calculated this from the endline data of the baraza study; not sure how
- I should reference this.
-\end_layout
-
-\end_inset
-
-.
- Extension information systems thus fail to recognize gendered power dynamics
- governing intra-household information exchanges and confirm a worldview
- in which women are largely absent from agricultural decision-making 
+ percent of extension agents are women.
+ This suggests that extension systems do not sufficiently recognize the
+ gendered power dynamics governing intra-household information exchanges,
+ thus reinforcing the dis-empowerment of women in agricultural decision-making
+ processes 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "DOSS20012075,QUISUMBING2010581"
@@ -525,25 +556,6 @@ key "DOSS20012075,QUISUMBING2010581"
 \end_inset
 
 .
-
-\change_inserted 973716962 1585157179
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 973716962 1585157198
-Use the language from the VoxDev blog HERE once it is edited.
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -569,7 +581,8 @@ s where information was targeted to the male co-head alone.
  of households where the information is provided exclusively by a man.
  Our study design, which takes the form of a factorial experiment with 3
  levels in each of the two factors, allows us to further explore mechanisms
- behind these channels, such as the the importance of gender homophily effects.
+ behind these channels, such as the the importance of gender homophily effects
+ and of challenging gendered norms.
 \end_layout
 
 \begin_layout Standard
@@ -593,25 +606,44 @@ The information intervention is implemented as a short video that provides
 \end_layout
 
 \begin_layout Standard
-We find that targeting women with extension videos has a positive effect
- on different domains of empowerment including their knowledge of agronomic
- practices; participation in agricultural decision-making; the adoption
- of recommended practices and inputs; maize yields, and sales by women.
- However, portraying women as successful farmers and role models in the
- screening produces mixed results in these domains.
- Further, results suggest that role-model effects work differently for women
- and men.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Should this be extended? Seems a bit thin at the moment.
+We find that targeting women within the household (as opposed to only the
+ male co-head) with extension information has a positive effect on different
+ domains of empowerment—including women’s knowledge of agronomic practices,
+ their participation in agricultural decision-making, and their adoption
+ of recommended practices and inputs.
+ Most of the impact seems driven by the subsample of women who received
+ the information alone, suggesting that both male and female co-heads tend
+ to monopolize information.
+ While there is some evidence that the subsample of women who received informati
+on jointly with their husbands increased joint decision-making somewhat,
+ effects are much weaker.
 \end_layout
+
+\begin_layout Standard
+The empowerment impacts of involving women as messengers—the role model
+ effect—seem more complicated.
+ While we find no effect on women’s knowledge, decision-making, or adoption
+ of recommended agronomic practices, involving women as messengers may lead
+ to an increase in the use of organic fertilizer by women.
+ Looking only at households where women co-heads were targeted, we find
+ that if these women were shown a video featuring a woman, they are more
+ likely to make decisions than if they were shown a video in which a man
+ provided the information.
+ This suggests that gender homophily may be at work.
+ Furthermore, if we look only at households where male co-heads were targeted,
+ we find that if these men were shown a video featuring a woman, they are
+ less likely to make decisions unilaterally.
+ This suggests that involving women as messengers may have challenged beliefs
+ and stereotypes about women being less able to make decisions related to
+ agriculture 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1162/qjec.2009.124.4.1497"
 
 \end_inset
 
-
+.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1428,7 +1460,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/HKKTHO7M/figures/design.png
+	filename figures/design.png
 	scale 50
 
 \end_inset
@@ -1602,7 +1634,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/HKKTHO7M/figures/hypothesis_tests.png
+	filename figures/hypothesis_tests.png
 	scale 50
 
 \end_inset
