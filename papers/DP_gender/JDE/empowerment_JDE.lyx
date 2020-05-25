@@ -4,34 +4,10 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass AEA
+\textclass article
 \begin_preamble
-% AEJ-Article.tex for AEA last revised 22 June 2011
-
-
-% The mathtime package uses a Times font instead of Computer Modern.
-% Uncomment the line below if you wish to use the mathtime package:
-%\usepackage[cmbold]{mathtime}
-% Note that miktex, by default, configures the mathtime package to use commercial fonts
-% which you may not have. If you would like to use mathtime but you are seeing error
-% messages about missing fonts (mtex.pfb, mtsy.pfb, or rmtmi.pfb) then please see
-% the technical support document at http://www.aeaweb.org/templates/technical_support.pdf
-% for instructions on fixing this problem.
-
-% Note: you may use either harvard or natbib (but not both) to provide a wider
-% variety of citation commands than latex supports natively. See below.
-
-% Uncomment the next line to use the natbib package with bibtex 
-%\usepackage{natbib}
-
-% Uncomment the next line to use the harvard package with bibtex
-%\usepackage[abbr]{harvard}
-
-% This command determines the leading (vertical space between lines) in draft mode
-% with 1.5 corresponding to "double" spacing.
-\draftSpacing{1.5}
+\usepackage{threeparttable}
 \end_preamble
-\options AEJ
 \use_default_options false
 \maintain_unincluded_children false
 \language english
@@ -113,10 +89,6 @@ Empowering Women through Agricultural Extension: Assessing Cognitive and
  Behavioral Channels
 \end_layout
 
-\begin_layout ShortTitle
-Empowering Women
-\end_layout
-
 \begin_layout Author
 Els Lecoutere, David J Spielman and Bjorn Van Campenhout
 \begin_inset Foot
@@ -166,32 +138,12 @@ target "https://www.cgiar.org/funders/"
  We thank Caroline Miehe, Hagar El-Didi and Simrin Makhija for input on
  earlier drafts.
  Any and all errors are the sole responsibility of the authors.
- 
+ JEL-codes: O13, O33, Q16, J16
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Date
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-today
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout JEL
-O13, O33, Q16, J16
 \end_layout
 
 \begin_layout Abstract
@@ -206,6 +158,13 @@ Programs designed to increase well-being among low-income households generally
  households are exposed to female role models—in the context of agricultural
  extension information provision in Uganda, where male targeting bias and
  the absence of female extension agents is prevalent.
+ We find that targeting women directly with relevant information in ways
+ that are appealing increases their agency, access to resources, and achievement
+s in farming.
+ Featuring women as role models in information campaigns may be useful in
+ reducing men’s dominance in the domain of agriculture, and therefore can
+ create opportunities for greater involvement of women.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1475,7 +1434,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename figures/design.png
-	scale 50
+	scale 40
 
 \end_inset
 
@@ -1649,7 +1608,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename figures/hypothesis_tests.png
-	scale 50
+	scale 40
 
 \end_inset
 
@@ -1657,12 +1616,14 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 Note: M=man; W= woman; Cpl= couple.
  Dark grey cells represent the control group and light gray cells represent
  the treatment group used to test the specific hypothesis.
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -7492,245 +7453,10 @@ The results of this study clearly show that significant advances in women’s
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-Figure here.
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Caption for figure below.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Figure Notes
-Figure notes without optional leadin.
- 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Figure Notes
-\begin_inset Argument 1
-status collapsed
-
-\begin_layout Plain Layout
-Source
-\end_layout
-
-\end_inset
-
-Figure notes with optional leadin (Source, in this case).
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-Sample table:
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float table
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Caption for table above.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="3">
-<features tabularvalignment="middle">
-<column alignment="left" valignment="top">
-<column alignment="left" valignment="top">
-<column alignment="left" valignment="top">
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Heading 1 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Heading 2 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Row 1 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Row 2 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-3 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-4
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Table Notes
-Table notes environment without optional leadin.
- 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Table Notes
-\begin_inset Argument 1
-status collapsed
-
-\begin_layout Plain Layout
-Source
-\end_layout
-
-\end_inset
-
-Table notes environment with optional leadin (Source, in this case).
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-References here (manual or bibTeX).
- If you are using bibTeX, add your bib file name in place of BibFile in
- the bibliography command.
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Remove or comment out the next two lines if you are not using bibtex.
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\end_inset
-
-
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "empowerment"
-options "../../../../../../latex_templates/aea"
+options "chicago"
 
 \end_inset
 
@@ -7741,41 +7467,8 @@ options "../../../../../../latex_templates/aea"
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-% The appendix command is issued once, prior to all appendices, if any.
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\start_of_appendix
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%dummy comment inserted by tex2lyx to ensure that this paragraph is not
- empty
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
+\start_of_appendix
 Appendix
 \end_layout
 
