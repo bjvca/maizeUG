@@ -75,7 +75,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
@@ -152,11 +152,12 @@ target "https://www.cgiar.org/funders/"
 Programs designed to increase well-being among low-income households generally
  include an information provision component.
  Often, these components ignore complex dynamics that govern intra-household
- decision making.
- In the context of agricultural extension information provision in Uganda,
- where male targeting bias and the absence of female extension agents, experts
- and model farmers is prevalent, we test how gendered information campaigns
- affect women’s agency and achievements.
+ decision-making.
+ In the context of digital agricultural extension provision in Uganda—where
+ male targeting bias is common and female extension agents, experts, and
+ model farmers are rare—we conduct a field experiment with 3,330 Ugandan
+ maize farmers to examine how gendered information campaigns affect women’s
+ agency and achievements.
  In one treatment, we investigate the effect of targeting women within household
 s, either alone or as part of the couple.
  In a second treatment, we explore exposure to female role models.
@@ -166,7 +167,6 @@ s, either alone or as part of the couple.
  Featuring women as role models in information campaigns may be useful in
  reducing men’s dominance in the domain of agriculture, and therefore can
  create opportunities for greater involvement of women.
- 
 \end_layout
 
 \begin_layout Standard
@@ -180,10 +180,10 @@ key "doi:10.1111/1467-7660.00125"
 \end_inset
 
 .
- This lack of agency manifests itself in a variety of contexts but is even
- more pervasive in developing countries.
+ This lack of agency manifests itself in a variety of contexts but is particular
+ly in many developing countries.
  For instance, while women bare the brunt of child care, their voice in
- deciding how many children to bear is limited 
+ deciding how many children to bear is often limited 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1257/aer.104.7.2210"
@@ -192,9 +192,9 @@ key "10.1257/aer.104.7.2210"
 
 .
  In a number of low income countries, nearly fifty percent of adult women
- are restricted in their movement, lack control over resources, married
- as a child, condone or have ever suffered intimate partner violence, and
- cannot ask for the use of a condom 
+ are restricted in their movement, lack control over resources, are married
+ as a child, condone or have suffered intimate partner violence, and cannot
+ ask for the use of a condom 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1080/13545701.2015.1091087"
@@ -202,10 +202,10 @@ key "doi:10.1080/13545701.2015.1091087"
 \end_inset
 
 .
- Partly as a results of this lack of decision making power, women are also
+ Partly as a result of this lack of decision-making power, women are also
  often constrained in their achievements.
  In low- and middle income countries in particular, women's labor force
- participation is generally lower then men's and women get significantly
+ participation is generally lower then men's and women receive significantly
  lower wages for similar work 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -215,40 +215,23 @@ key "doi:10.1146/annurev-economics-080614-115404"
 
 .
  In societies with son-biased fertility preferences, mothers breastfeed
- girls less than boys, with consequences for survival rates and potentially
- long run health effects 
+ girls less than boys and provide greater care for boys, with consequences
+ for daugthers' survival rates, their long-run health effect, and broader
+ demographic inequalities 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "10.1093/qje/qjr029"
+key "10.1093/qje/qjr029,10.1111/j.1467-937X.2010.00609.x_2"
 
 \end_inset
 
 .
- Son-biased fertility preferences and preferential care for male children
- are at the basis of the phenomenon of missing women.
- Also beyond childhood, women have higher age-adjusted mortality to specific
- diseases relative to men in low and middle income countries.
- In sub-Saharan Africa, for instance, in 2000, the death rate from HIV/AIDS
- for women aged 15-29 was 2.3 times that of men in the same age group, while
- elsewhere the death rate was higher for men at all ages 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "10.1111/j.1467-937X.2010.00609.x_2"
-
-\end_inset
-
-.
- 
 \end_layout
 
 \begin_layout Standard
 There are various factors that limit women's agency and achievements.
- Some of these are linked to economic inequalities by gender in access to
- resources.
- In patrilineal communities, land is inherited through the male lineage
- and property passes directly to sons.
- Unequal access to land has also been linked to reduced investment in human
- capital of girls within households 
+ Some are linked to gendered economic inequalities in access to resources,
+ for example, ownership and use-rights over land or capital owned by a household
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Deininger01012013"
@@ -256,10 +239,11 @@ key "Deininger01012013"
 \end_inset
 
 .
- Asymmetric access to information between spouses in households (where women
- are informationally disadvantaged) have been empirically shown to affect
- intra-household resource allocations by limiting women's bargaining power
- relative to their male spouse's 
+ These inequalities may be further exacerbated by asymmetric access to informati
+on between spouses in a household, as women who are informationally disadvantage
+d have been empirically shown to affect intra-household allocations of assets,
+ income, and consumption goods, or access to health and education services,
+ and other resources 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "AMBLER201552,10.1257/aer.103.3.263,10.1257/aer.99.4.1245,chen2006migration"
@@ -267,10 +251,9 @@ key "AMBLER201552,10.1257/aer.103.3.263,10.1257/aer.99.4.1245,chen2006migration"
 \end_inset
 
 .
- Unequal access to resources is often the result of gendered norms and instituti
-ons.
- At the same time, these norms and institutions may constrain women's agency,
- even if women have access to resources 
+ Strong gendered norms and institutions often perpetuate these inequalities,
+ even in the presence of equitable access to resources and information,
+ to women's agency over both 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "agarwal1997bargaining"
@@ -282,8 +265,8 @@ key "agarwal1997bargaining"
 \end_layout
 
 \begin_layout Standard
-Research suggests that targeting women with information may be an important
- route towards increasing women empowerment.
+Research suggests that programs that target women with information may be
+ an important route to increasing women's empowerment.
  For example, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -303,14 +286,10 @@ key "10.1257/app.3.1.1"
 
  finds that providing new information to adolescent girls—that older men
  are more likely to be infected with HIV—reduced sex with older men.
- 
-\end_layout
-
-\begin_layout Standard
-While particular emphasis is often placed on selecting who to target information
+ But while emphasis is often placed on selecting who to target information
  to, less emphasis is typically placed on selecting who should provide the
  information.
- Some studies show that information may be more credible if it comes from
+ Yet studies show that information may be more credible if it comes from
  an official source 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -328,22 +307,12 @@ key "doi:10.1146/annurev.soc.27.1.415"
 \end_inset
 
 .
- In the context of smallholder farming, women who passed on information
- about a new technology for maize farming were perceived to be less knowledgeabl
-e both by male and female maize farmers, while, objectively, they were not
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "BENYISHAY2020102380"
-
-\end_inset
-
-.
- Peer effects and gender homophily effects, where individuals learn from
- similar individuals, albeit from the same gender, may be particularly important
- in the context of information campaigns to promote women empowerment.
- This is highlighted in recent studies in behavioral economics on role model
- effects which suggest important non-cognitive impact pathways that can
+ The combination of peer effects and gender homophily effects, where individuals
+ learn from similar individuals of the same gender, may be particularly
+ important in the context of information campaigns to promote women's empowermen
+t.
+ This is highlighted in several recent studies on the influence of role
+ models, which suggest important non-cognitive impact pathways that can
  be instrumental to information campaigns.
  For instance, 
 \begin_inset CommandInset citation
@@ -371,8 +340,8 @@ key "10.1257/app.4.4.1"
 
 \end_inset
 
- shows how reductions in fertility in Brazil are caused by soap operas portrayin
-g small families.
+ shows how reductions in fertility result from television soap operas portraying
+ small families.
  
 \end_layout
 
@@ -439,7 +408,7 @@ key "FISHER201582"
 \end_inset
 
 .
- In many contexts, men rarely discuss agronomic practices or management
+ In many contexts, men rarely discuss agronomic practices or crop management
  choices with their wives or female partners 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -518,6 +487,7 @@ key "KONDYLIS2016436"
  by 9 percentage points and adoption of the technology by 5 percentage points
  in communities where they trained female messengers on sustainable land
  management techniques.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -527,7 +497,19 @@ In smallholder agriculture systems in developing countries, information
  However, agricultural extension services are typically biased toward men,
  with information targeted mainly to male members of a farm-household and
  in formats that are rarely tailored to women.
- A recent survey on public service delivery in Uganda found that only 16
+ In Malawi, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BENYISHAY2020102380"
+
+\end_inset
+
+ find that women who provided information about a new maize farming technology
+ were perceived to be less knowledgeable both by male and female maize farmers,
+ while, objectively, they were not.
+ These perceptions are both pervasive and influential, deepening the male
+ bias in extension systems.
+ In Uganda, a recent survey on public service delivery found that only 16
  percent of extension agents are women 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -550,13 +532,14 @@ key "DOSS20012075,QUISUMBING2010581"
 \end_layout
 
 \begin_layout Standard
-In this paper, we examine ways in which extension services can be designed
- to effectively increase women’s access to informational resources, their
- agency, and their achievements in farming, all of which directly relate
- to women’s empowerment in agriculture.
+In this paper, we examine ways in which information and communication technology
+ (ICT) applications used in agricultural extension services can be designed
+ to increase women’s access to informational resources, their agency, and
+ their achievements in farming, all of which directly relate to women’s
+ empowerment in agriculture.
  We conduct a field experiment among 3,330 maize-farming households in eastern
- Uganda with the aim of testing the effectiveness of including women as
- recipients of information, and of exposure to female role models.
+ Uganda to test the effectiveness of including women as recipients of informatio
+n, and of exposure to female role models.
  To test the effectiveness of targeting women with information, we compare
  outcomes of households where the female co-head was included in the target
  audience to outcomes of households where information was targeted to the
@@ -574,83 +557,59 @@ n to outcomes of households where the information is provided exclusively
 \end_layout
 
 \begin_layout Standard
-The information intervention is implemented as a short video that provides
- viewers with information and recommendations on appropriate input use,
- management practices, and investment strategies that can be followed to
- obtain higher maize yields.
- To test the impact of who is targeted within the household, we randomly
- varied who was shown the video within the household.
- This could either be the male co-head alone, the female co-head alone,
- or both co-heads together (the couple).
- Furthermore, three versions of the video were created—one featuring a male
- actor, another featuring a female actor, and a third featuring both actors
- together—with no difference in the information contained in the video.
- Varying the exposure to the actors of different gender in this way allows
- us to test the usefulness of role models to empower women.
- The videos were shown to study participants twice, once before the start
- of the agricultural season and once at the time of planting, using tablet
- computers.
+The information intervention is implemented as a set of short videos that
+ provides viewers with information and recommendations on appropriate input
+ use, management practices, and investment strategies that can be followed
+ to obtain higher maize yields.
+ To test the impact of information effects on women's empowerment, we vary
+ who is targeted within the household by randomly assigning household members—th
+e male co-head alone, the female co-head alone, or both co-heads together—to
+ the video screenings.
+ To test the impact of role model, peer, and gender homophily effects on
+ women's empowerment, we randomly assigned farmers to screenings of three
+ different versions of the video: one featuring a male actor, another featuring
+ a female actor, and a third featuring both actors together, holding constant
+ all other information contained in the video.
+ The videos were screened with study participants at their homes using tablet
+ computers, and were screened twice during the course of the field experiment:
+ once before the start of the agricultural season and once at the time of
+ planting.
 \end_layout
 
 \begin_layout Standard
-We find that targeting women within the household (as opposed to only the
- male co-head) with extension information has a positive effect on different
- domains of empowerment—including women’s knowledge of agronomic practices,
- their participation in agricultural decision-making, and their adoption
- of recommended practices and inputs.
- Most of the impact seems driven by the subsample of women who received
+The empowerment impacts of information provision are fairly straightforward
+ in our experiment.
+ We find that targeting women within the household (as opposed to only targeting
+ the male co-head) with information had a positive effect on different domains
+ of empowerment, including women’s knowledge of agronomic practices, their
+ participation in agricultural decision-making, and their adoption of recommende
+d practices and inputs.
+ Most of the effects were driven by the subsample of women who received
  the information alone, suggesting that both male and female co-heads tend
- to monopolize information.
+ to monopolize information or engage in only very limited intra-household
+ information sharing.
  While there is some evidence that the subsample of women who received informati
-on jointly with their husbands increased joint decision-making somewhat,
- effects are much weaker.
+on jointly with their husbands increased joint decision-making, these effects
+ are much weaker.
 \end_layout
 
 \begin_layout Standard
-The empowerment impacts of involving women as messengers seem more complicated.
+The empowerment impacts of involving women as messengers are more complicated.
  While we find no effect on women’s knowledge, decision-making, or adoption
- of recommended agronomic practices, involving women as messengers may lead
- to an increase in the use of organic fertilizer by women.
+ of recommended agronomic practices, we do find that involving women as
+ messengers may lead to an increase in the use of organic fertilizer by
+ women.
  Looking only at households where women co-heads were targeted, we find
- that if these women were shown a video featuring a woman, they are more
+ that if these women were shown a video featuring a woman, they were more
  likely to make decisions than if they were shown a video in which a man
  provided the information.
- This suggests that peer effects or gender homophily may be at work
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Or that role incongruity was challenged...
- add later in main text
-\end_layout
-
-\end_inset
-
-.
- Furthermore, if we look only at households where male co-heads were targeted,
- we find that if these men were shown a video featuring a woman, they are
- less likely to make decisions unilaterally.
- This suggests that involving women as messengers may have challenged beliefs
+ This suggests the presence of peer or gender homophily effects.
+ Furthermore, if we consider only households where male co-heads were targeted,
+ we find that if these men were shown a video featuring a woman, they were
+ less likely to make decisions unilaterally, suggesting that presence of
+ role incongruity effects that result from challenging widely held beliefs
  and stereotypes about women being less able to make decisions related to
- agriculture
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Or that gender homophilly effects were at work, add later in main text
-\end_layout
-
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "10.1162/qjec.2009.124.4.1497"
-
-\end_inset
-
-.
- 
+ agriculture.
 \end_layout
 
 \begin_layout Standard
@@ -1483,7 +1442,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/design.png
+	filename /AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/HKKTHO7M/figures/design.png
 	scale 40
 
 \end_inset
@@ -1638,7 +1597,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/hypothesis_tests.png
+	filename /AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/HKKTHO7M/figures/hypothesis_tests.png
 	scale 40
 
 \end_inset
@@ -4923,10 +4882,6 @@ end{threeparttable}
 \end_layout
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
 Involving women in conveying information does not make any difference in
  joint adoption outcomes (bottom panel of Table 
 \begin_inset CommandInset ref
@@ -7302,7 +7257,7 @@ ons of these outcomes and the need to reflect upon making less labor-intensive
 \end_layout
 
 \begin_layout Subsection
-Role model Effects 
+Role Model Effects 
 \end_layout
 
 \begin_layout Standard
