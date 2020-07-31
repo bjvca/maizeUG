@@ -1958,7 +1958,7 @@ literal "true"
 \end_layout
 
 \begin_layout Subsection
-Data
+Sampling
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Data"
@@ -1969,8 +1969,8 @@ name "subsec:Data"
 \end_layout
 
 \begin_layout Standard
-Data were collected from households in five districts in eastern Uganda:
- Bugiri, Mayuge, Iganga, Namayingo, and Namutumba.
+Households were sampled from five districts in eastern Uganda: Bugiri, Mayuge,
+ Iganga, Namayingo, and Namutumba.
  From among these districts, we first removed town councils and two sub-counties
  that consisted of islands in Lake Victoria.
  We then used a two-stage cluster sampling approach to obtain a representative
@@ -1980,31 +1980,37 @@ Data were collected from households in five districts in eastern Uganda:
  In the selected parishes, all villages were included in the study.
  Within each village, we then listed all households, from which we randomly
  selected households to be included in the study.
- 
+ The randomization was done using a computer and selected households names,
+ contact details and the treatment assignment was uploaded to tablet computers
+ such that the correct version of the video was cued and the enumerator
+ received clear instructions about who the video should be shown to.
+ As such, the treatments were integrated into our Computer Assisted Personal
+ Interview (CAPI) system, which allowed us to monitor implementation fidelity
+ in real time.
 \end_layout
 
 \begin_layout Standard
-Table 
+While we did not carry out a dedicated baseline survey, we did ask some
+ questions to the person that was assigned to view the video immediately
+ prior to the first treatment administration.
+ Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Balance"
 
 \end_inset
 
- summarizes pre-treatment characteristics of the households that were enrolled
- in the study.
+ summarizes some of the information that was obtained in this way.
  The first column provides averages for the entire sample, with corresponding
  standard deviations in parentheses below.
- The 5 percent trimmed log maize yield (defined as kilograms produced per
- acre) was 5.3 on average.
- The average household head is about 40 years old, and in only 37 percent
- of households did the head finish primary school.
- Households are large, consisting of more than 7.6 members.
- Only 11 percent of sampled households reported having access to extension
- in the previous year.
- Few farmers use inorganic fertilizer at baseline; the use of fresh improved
- seed is higher.
- About 78 percent of households report to be owning a mobile phone.
+ For instance, we find that the average household in the study cultivated
+ maize in about 0.4 acres of land.
+ The average age of heads of the household is 42 years and in 44 percent
+ of the households, the head finished primary education.
+ Households are large, consisting of more than 7 individuals.
+ The average household lives about 5.5 km from the nearest input dealer.
+ In 30 percent of households, the walls of the house are made of mud and
+ the average house has only 2 rooms.
  
 \end_layout
 
@@ -2018,7 +2024,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Balance tests
+Pre-treatment characteristics
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Balance"
@@ -2283,9 +2289,21 @@ end{threeparttable}
 \end_layout
 
 \begin_layout Standard
-The table also serves as a balance test for the two main comparisons we
- will make (Balance tests for the other hypothesis tests can be found in
- Appendix Tables 
+Pre-treatment characteristics are often used to demonstrate balance between
+ treatment and control groups.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ compares differences between treatment and control groups for the two main
+ comparisons we will make (Similar tables for the other hypotheses can be
+ found in Appendix Tables 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Balance1AB"
@@ -2300,26 +2318,24 @@ reference "tab:Balance2AB"
 \end_inset
 
 ).
- We find baseline imbalance in observable characteristics that are statistically
- significant for the hypothesis related to empowering women with information
- (Model 1 in the upper panel of Table 
+ We find statistically significant differences for some characteristics
+ between treatment and control groups for the hypothesis related to empowering
+ women with information (Model 1 in the upper panel of Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Balance"
 
 \end_inset
 
-) and a test for joint significance of the differences confirms this imbalance
- (F-statistic = 3.40; p-value = 0.001).
- However, this apparent imbalance can be explained by the fact that the
- gender of the respondent at baseline was confounded with the treatment.
- In particular, if the woman alone was targeted as the recipient of information,
- she was the person that was interviewed.
- If the man alone would view the video, it was the man who responded.
- In cases where the couple was targeted, both spouses were present during
- baseline interview.
- The significant differences are thus likely the result of spousal disagreement
- in survey data that has been documented in a variety of settings 
+).
+ A joint test for orthogonality is also rejected (F-statistic = 3.40; p-value
+ = 0.001).
+ This apparent imbalance for the first treatment can be explained by the
+ fact that the gender of the respondent at baseline is confounded with the
+ treatment, as baseline questions were asked to the person that was targeted
+ in the treatment.
+ Most likely, the significant differences are a reflection of spousal disagreeme
+nt in survey data that has been documented in a variety of settings 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "eg."
