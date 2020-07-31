@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -24,6 +24,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -63,6 +65,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -71,11 +74,14 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
@@ -85,8 +91,8 @@
 \begin_body
 
 \begin_layout Title
-Agricultural Extension to Empower Women: Access to Information and Role
- Models
+Disentangling informational and role model effects: Evidence from an experiment
+ in agricultural extension in Uganda 
 \end_layout
 
 \begin_layout Author
@@ -120,6 +126,7 @@ t Policy, Antwerp University, Lange Sint-Annastraat 7, 2000 Antwerp, Belgium,
 LatexCommand href
 name "these funders"
 target "https://www.cgiar.org/funders/"
+literal "false"
 
 \end_inset
 
@@ -153,17 +160,15 @@ Programs designed to increase well-being among low-income households generally
  include an information provision component.
  Often, these components ignore complex dynamics that govern intra-household
  decision-making.
- In the context of digital agricultural extension provision in Uganda—where
- male targeting bias is common and female extension agents, experts, and
- model farmers are rare—we conduct a field experiment with 3,330 Ugandan
- maize farmers to examine how gendered information campaigns affect women’s
- agency and achievements.
+ In the context of agricultural extension provision in Uganda—where male
+ targeting bias is common and female extension experts and model farmers
+ are rare—we conduct a field experiment among maize farmers to examine how
+ gendered information campaigns affect women’s agency and achievements.
  In one treatment, we investigate the effect of targeting women within household
 s, either alone or as part of the couple.
  In a second treatment, we explore exposure to female role models.
- We find that targeting women with relevant information in ways that are
- appealing increases their agency, access to resources, and achievements
- in farming.
+ We find that targeting women with information increases their agency, access
+ to resources, and achievements in farming.
  Featuring women as role models in information campaigns may be useful in
  reducing men’s dominance in the domain of agriculture, and therefore can
  create opportunities for greater involvement of women.
@@ -176,6 +181,7 @@ Women have limited ability to make strategic choices that are important
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1111/1467-7660.00125"
+literal "true"
 
 \end_inset
 
@@ -187,6 +193,7 @@ ly in many developing countries.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1257/aer.104.7.2210"
+literal "true"
 
 \end_inset
 
@@ -198,6 +205,7 @@ key "10.1257/aer.104.7.2210"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1080/13545701.2015.1091087"
+literal "true"
 
 \end_inset
 
@@ -210,6 +218,7 @@ key "doi:10.1080/13545701.2015.1091087"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1146/annurev-economics-080614-115404"
+literal "true"
 
 \end_inset
 
@@ -221,6 +230,7 @@ key "doi:10.1146/annurev-economics-080614-115404"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1093/qje/qjr029,10.1111/j.1467-937X.2010.00609.x_2"
+literal "true"
 
 \end_inset
 
@@ -235,6 +245,7 @@ There are various factors that limit women's agency and achievements.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Deininger01012013"
+literal "true"
 
 \end_inset
 
@@ -247,6 +258,7 @@ d have been empirically shown to affect intra-household allocations of assets,
 \begin_inset CommandInset citation
 LatexCommand citep
 key "AMBLER201552,10.1257/aer.103.3.263,10.1257/aer.99.4.1245,chen2006migration"
+literal "true"
 
 \end_inset
 
@@ -257,6 +269,7 @@ key "AMBLER201552,10.1257/aer.103.3.263,10.1257/aer.99.4.1245,chen2006migration"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "agarwal1997bargaining"
+literal "true"
 
 \end_inset
 
@@ -271,6 +284,7 @@ Research suggests that programs that target women with information may be
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1257/app.20170416"
+literal "true"
 
 \end_inset
 
@@ -281,6 +295,7 @@ key "10.1257/app.20170416"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1257/app.3.1.1"
+literal "true"
 
 \end_inset
 
@@ -295,6 +310,7 @@ key "10.1257/app.3.1.1"
 LatexCommand citep
 before "eg."
 key "10.1257/app.5.1.104"
+literal "true"
 
 \end_inset
 
@@ -303,6 +319,7 @@ key "10.1257/app.5.1.104"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1146/annurev.soc.27.1.415"
+literal "true"
 
 \end_inset
 
@@ -318,6 +335,7 @@ t.
 \begin_inset CommandInset citation
 LatexCommand citet
 key "porter2019gender"
+literal "true"
 
 \end_inset
 
@@ -327,6 +345,7 @@ key "porter2019gender"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1162/qjec.2009.124.4.1497"
+literal "true"
 
 \end_inset
 
@@ -337,6 +356,7 @@ key "10.1162/qjec.2009.124.4.1497"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1257/app.4.4.1"
+literal "true"
 
 \end_inset
 
@@ -354,6 +374,7 @@ Gendered dimensions of information campaigns such as targeting information
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.2307/24582373"
+literal "true"
 
 \end_inset
 
@@ -365,6 +386,7 @@ key "10.2307/24582373"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "magnan2015information,FISHER201582"
+literal "true"
 
 \end_inset
 
@@ -378,6 +400,7 @@ key "magnan2015information,FISHER201582"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1093/wber/lhw011,10.2307/24582373,DEBRAUW2014487"
+literal "true"
 
 \end_inset
 
@@ -387,6 +410,7 @@ key "10.1093/wber/lhw011,10.2307/24582373,DEBRAUW2014487"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "HECKERT201993,duflo2004intrahousehold,doi:10.1111/1468-0084.t01-1-00052,SRABONI201411"
+literal "true"
 
 \end_inset
 
@@ -404,6 +428,7 @@ One constraint to realizing such outcomes is the presence of asymmetric
 \begin_inset CommandInset citation
 LatexCommand citep
 key "FISHER201582"
+literal "true"
 
 \end_inset
 
@@ -413,6 +438,7 @@ key "FISHER201582"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "magnan2015information,FISHER201582"
+literal "true"
 
 \end_inset
 
@@ -421,6 +447,7 @@ key "magnan2015information,FISHER201582"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1111/j.1574-0862.2001.tb00233.x,DOSS20012075"
+literal "true"
 
 \end_inset
 
@@ -435,6 +462,7 @@ Reducing womens' information disadvantage by targeting women with information
 \begin_inset CommandInset citation
 LatexCommand citet
 key "BENYISHAY2020102380"
+literal "true"
 
 \end_inset
 
@@ -445,6 +473,7 @@ key "BENYISHAY2020102380"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "KABUNGA201425"
+literal "true"
 
 \end_inset
 
@@ -461,6 +490,7 @@ There are also reasons to believe that the source of information may be
 \begin_inset CommandInset citation
 LatexCommand citep
 key "BEAMAN2018147,10.1257/aer.100.1.35,bandiera2006social,doi:10.1086/601447"
+literal "true"
 
 \end_inset
 
@@ -469,6 +499,7 @@ key "BEAMAN2018147,10.1257/aer.100.1.35,bandiera2006social,doi:10.1086/601447"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "benyishay2019social"
+literal "true"
 
 \end_inset
 
@@ -480,6 +511,7 @@ key "benyishay2019social"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "KONDYLIS2016436"
+literal "true"
 
 \end_inset
 
@@ -501,6 +533,7 @@ In smallholder agriculture systems in developing countries, information
 \begin_inset CommandInset citation
 LatexCommand citep
 key "BENYISHAY2020102380"
+literal "true"
 
 \end_inset
 
@@ -514,6 +547,7 @@ key "BENYISHAY2020102380"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "kabunga2016state"
+literal "true"
 
 \end_inset
 
@@ -525,6 +559,7 @@ key "kabunga2016state"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "DOSS20012075,QUISUMBING2010581"
+literal "true"
 
 \end_inset
 
@@ -695,6 +730,7 @@ This section offers a review of related literature on gender and agriculture
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1111/1467-7660.00125"
+literal "true"
 
 \end_inset
 
@@ -709,6 +745,7 @@ t (the social and economic outcomes such as income and well-being).
 \begin_inset CommandInset citation
 LatexCommand citep
 key "JOHNSON2016295"
+literal "true"
 
 \end_inset
 
@@ -729,6 +766,7 @@ n regarding good agronomic practices
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1111/j.1574-0862.2001.tb00233.x,DOSS20012075,10.1093/erae/jbv039"
+literal "true"
 
 \end_inset
 
@@ -739,6 +777,7 @@ key "doi:10.1111/j.1574-0862.2001.tb00233.x,DOSS20012075,10.1093/erae/jbv039"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "NDIRITU2014117"
+literal "true"
 
 \end_inset
 
@@ -751,6 +790,7 @@ key "NDIRITU2014117"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1111/j.1574-0862.2001.tb00233.x"
+literal "true"
 
 \end_inset
 
@@ -769,6 +809,7 @@ d constraints.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "FLETSCHNER20111422,wodon2006gender"
+literal "true"
 
 \end_inset
 
@@ -784,6 +825,7 @@ key "FLETSCHNER20111422,wodon2006gender"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "FLETSCHNER20111422"
+literal "true"
 
 \end_inset
 
@@ -796,6 +838,7 @@ key "FLETSCHNER20111422"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1257/app.20180201,BEAMAN2018147"
+literal "true"
 
 \end_inset
 
@@ -811,6 +854,7 @@ usehold) source of information on agriculture.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "FLETSCHNER20111422"
+literal "true"
 
 \end_inset
 
@@ -823,6 +867,7 @@ key "FLETSCHNER20111422"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "lundberg1994noncooperative,10.2307/2117819,10.2307/3986564"
+literal "true"
 
 \end_inset
 
@@ -830,6 +875,7 @@ key "lundberg1994noncooperative,10.2307/2117819,10.2307/3986564"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.2307/2138950,duflo2004intrahousehold,10.1257/aer.99.4.1245,IVERSEN2011569"
+literal "true"
 
 \end_inset
 
@@ -845,6 +891,7 @@ Several studies explore intra-household information asymmetries in the context
 \begin_inset CommandInset citation
 LatexCommand citet
 key "KONDYLIS2016436"
+literal "true"
 
 \end_inset
 
@@ -859,6 +906,7 @@ key "KONDYLIS2016436"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1093/ajae/aay012"
+literal "true"
 
 \end_inset
 
@@ -871,6 +919,7 @@ key "10.1093/ajae/aay012"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1093/erae/jbv039"
+literal "true"
 
 \end_inset
 
@@ -884,6 +933,7 @@ key "10.1093/erae/jbv039"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "FISHER201582"
+literal "true"
 
 \end_inset
 
@@ -913,6 +963,7 @@ There is also a growing literature that explores the psychosocial dimensions
 \begin_inset CommandInset citation
 LatexCommand citep
 key "porter2019gender"
+literal "true"
 
 \end_inset
 
@@ -929,6 +980,7 @@ Role models are seen as important in stimulating aspirations and the development
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Beaman582,RePEc:csa:wpaper:2017-13"
+literal "true"
 
 \end_inset
 
@@ -939,6 +991,7 @@ key "Beaman582,RePEc:csa:wpaper:2017-13"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "RePEc:csa:wpaper:2017-13"
+literal "true"
 
 \end_inset
 
@@ -948,6 +1001,7 @@ ng aspirations among Ethiopian farmers
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1093/wber/lhv014"
+literal "true"
 
 \end_inset
 
@@ -957,6 +1011,7 @@ key "10.1093/wber/lhv014"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Beaman582"
+literal "true"
 
 \end_inset
 
@@ -965,6 +1020,7 @@ key "Beaman582"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "KANDPAL201926"
+literal "true"
 
 \end_inset
 
@@ -978,6 +1034,7 @@ key "KANDPAL201926"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1111/ecoj.12145"
+literal "true"
 
 \end_inset
 
@@ -989,6 +1046,7 @@ key "doi:10.1111/ecoj.12145"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "BARGAIN2019102379"
+literal "true"
 
 \end_inset
 
@@ -1005,6 +1063,7 @@ Evidence shows that role models not only increase aspirations, but also
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1093/wber/lhv014"
+literal "true"
 
 \end_inset
 
@@ -1013,6 +1072,7 @@ key "10.1093/wber/lhv014"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "porter2019gender"
+literal "true"
 
 \end_inset
 
@@ -1023,6 +1083,7 @@ key "porter2019gender"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1111/ecoj.12145"
+literal "true"
 
 \end_inset
 
@@ -1036,6 +1097,7 @@ key "doi:10.1111/ecoj.12145"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "GHANI2014138"
+literal "true"
 
 \end_inset
 
@@ -1046,6 +1108,7 @@ l.
 \begin_inset CommandInset citation
 LatexCommand citet
 key "nguyen2008information"
+literal "true"
 
 \end_inset
 
@@ -1054,6 +1117,7 @@ key "nguyen2008information"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "RePEc:csa:wpaper:2017-13"
+literal "true"
 
 \end_inset
 
@@ -1064,6 +1128,7 @@ key "RePEc:csa:wpaper:2017-13"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Beaman582"
+literal "true"
 
 \end_inset
 
@@ -1080,6 +1145,7 @@ The power of role models can also be linked to the fact that people’s tendency
 \begin_inset CommandInset citation
 LatexCommand citep
 key "thaler2008nudge"
+literal "true"
 
 \end_inset
 
@@ -1093,6 +1159,7 @@ key "thaler2008nudge"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "eagly2002role"
+literal "true"
 
 \end_inset
 
@@ -1107,6 +1174,7 @@ ated.
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1162/qjec.2009.124.4.1497"
+literal "true"
 
 \end_inset
 
@@ -1125,6 +1193,7 @@ Other mechanisms, including peer effects (which are linked to recognition
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1146/annurev.soc.27.1.415,10.1257/app.20180201"
+literal "true"
 
 \end_inset
 
@@ -1154,6 +1223,7 @@ We explore cognitive and socio-psychological dimensions of extension information
 \begin_inset CommandInset citation
 LatexCommand citet
 key "JOHNSON2016295"
+literal "true"
 
 \end_inset
 
@@ -1274,6 +1344,7 @@ Maize yields in the study area, and in Uganda more generally, are well below
 \begin_inset CommandInset citation
 LatexCommand citep
 key "fermont2011estimating"
+literal "true"
 
 \end_inset
 
@@ -1284,6 +1355,7 @@ key "fermont2011estimating"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "GOURLAY2019102376"
+literal "true"
 
 \end_inset
 
@@ -1294,6 +1366,7 @@ key "GOURLAY2019102376"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "ALI2016152"
+literal "true"
 
 \end_inset
 
@@ -1317,6 +1390,7 @@ Decision-making power over agricultural production is related to the actual
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1080/13545701.2014.926559"
+literal "true"
 
 \end_inset
 
@@ -1325,6 +1399,7 @@ key "doi:10.1080/13545701.2014.926559"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "FISHER201582"
+literal "true"
 
 \end_inset
 
@@ -1342,6 +1417,7 @@ ities which, in turn, affect intra-household labor allocations.
 \begin_inset CommandInset citation
 LatexCommand citet
 key "FISHER201582"
+literal "true"
 
 \end_inset
 
@@ -1422,6 +1498,7 @@ Power calculations were based on a set of comparisons using different outcomes
 \begin_inset CommandInset citation
 LatexCommand citet
 key "New2"
+literal "true"
 
 \end_inset
 
@@ -1497,6 +1574,7 @@ y the same video, with the only difference being the actor(s) featured in
 LatexCommand href
 name "here"
 target "https://www.youtube.com/watch?v=1albuXRm9a8&index=3&list=PLeqdWbb3KnJ8VdzDX-ikrnOnizHRB09Ob"
+literal "false"
 
 \end_inset
 
@@ -1851,6 +1929,7 @@ We use randomization inference to calculate associated p-values for the
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.2307/27640197"
+literal "true"
 
 \end_inset
 
@@ -1871,6 +1950,7 @@ ion of the null hypothesis due to multiple inference.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "ottoboni2021permutation,doi:10.1086/689287"
+literal "true"
 
 \end_inset
 
@@ -1932,7 +2012,7 @@ reference "tab:Balance"
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2022,44 +2102,31 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Yield (log)	&	5.310	&	0.823	&	-0.068	&	0.031	&	0.013	&	3,153	
+Area of maize	&	0.385	&	0.404	&	-0.016	&	0.016	&	0.340	&	2,633	
 \backslash
 
 \backslash
- Age of male co-head	&	39.891	&	13.834	&	-4.788	&	0.499	&	0.000	&	3,294	
+ Age head	&	42.152	&	13.940	&	0.016	&	0.514	&	0.010	&	3,195	
 \backslash
 
 \backslash
- Male co-head finished primary school	&	0.371	&	0.483	&	-0.076	&	0.018	&	0.000	&	3,32
-2	
+ Head finished primary	&	0.443	&	0.497	&	0.036	&	0.018	&	0.048	&	3,322	
 \backslash
 
 \backslash
- Household size	&	7.623	&	3.309	&	0.211	&	0.120	&	0.069	&	3,322	
+ HH size	&	7.623	&	3.309	&	0.211	&	0.120	&	0.079	&	3,322	
 \backslash
 
 \backslash
- Nbr of bedrooms	&	2.236	&	1.144	&	-0.033	&	0.042	&	0.401	&	3,322	
+ Distance to input shop	&	5.554	&	5.544	&	-0.027	&	0.202	&	0.893	&	3,322	
 \backslash
 
 \backslash
- Access to extension	&	0.110	&	0.313	&	-0.003	&	0.011	&	0.748	&	3,322	
+ Wall is mud	&	0.296	&	0.457	&	-0.007	&	0.017	&	0.666	&	3,322	
 \backslash
 
 \backslash
- Used fertilizer	&	0.207	&	0.405	&	-0.049	&	0.015	&	0.001	&	3,322	
-\backslash
-
-\backslash
- Used improved seed	&	0.384	&	0.486	&	-0.068	&	0.018	&	0.000	&	3,322	
-\backslash
-
-\backslash
- Distance to input provider	&	5.554	&	5.544	&	-0.027	&	0.202	&	0.876	&	3,322	
-\backslash
-
-\backslash
- Household owns mobile	&	0.779	&	0.415	&	-0.081	&	0.015	&	0.000	&	3,322	
+ Number of rooms	&	2.236	&	1.144	&	-0.033	&	0.042	&	0.424	&	3,322	
 \backslash
 
 \backslash
@@ -2115,44 +2182,31 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Yield (log)	&	5.310	&	0.823	&	-0.014	&	0.031	&	0.619	&	3,153	
+Area of maize	&	0.384	&	0.404	&	-0.020	&	0.017	&	0.236	&	2,633	
 \backslash
 
 \backslash
- Age of male co-head	&	39.756	&	13.798	&	0.236	&	0.490	&	0.644	&	3,294	
+ Age head	&	42.133	&	13.923	&	-0.085	&	0.522	&	0.870	&	3,195	
 \backslash
 
 \backslash
- Male co-head finished primary school	&	0.368	&	0.482	&	0.015	&	0.018	&	0.403	&	3,322
-	
+ Head finished primary	&	0.444	&	0.497	&	0.007	&	0.018	&	0.703	&	3,322	
 \backslash
 
 \backslash
- Household size	&	7.621	&	3.307	&	-0.024	&	0.121	&	0.844	&	3,322	
+ HH size	&	7.621	&	3.307	&	-0.024	&	0.121	&	0.843	&	3,322	
 \backslash
 
 \backslash
- Nbr of bedrooms	&	2.234	&	1.143	&	0.003	&	0.042	&	0.945	&	3,322	
+ Distance to input shop	&	5.551	&	5.537	&	-0.132	&	0.204	&	0.518	&	3,322	
 \backslash
 
 \backslash
- Access to extension	&	0.110	&	0.313	&	0.013	&	0.012	&	0.236	&	3,322	
+ mud Wall is mud	&	0.296	&	0.457	&	0.007	&	0.017	&	0.695	&	3,322	
 \backslash
 
 \backslash
- Used fertilizer	&	0.206	&	0.405	&	-0.009	&	0.015	&	0.516	&	3,322	
-\backslash
-
-\backslash
- Used improved seed	&	0.383	&	0.486	&	0.022	&	0.018	&	0.213	&	3,322	
-\backslash
-
-\backslash
- Distance to input provider	&	5.551	&	5.537	&	-0.132	&	0.204	&	0.450	&	3,322	
-\backslash
-
-\backslash
- Household owns mobile	&	0.776	&	0.417	&	0.005	&	0.015	&	0.735	&	3,322	
+ nr Number of rooms	&	2.234	&	1.143	&	0.003	&	0.042	&	0.948	&	3,322	
 \backslash
 
 \backslash
@@ -2247,23 +2301,37 @@ reference "tab:Balance2AB"
 
 ).
  We find baseline imbalance in observable characteristics that are statistically
- significant, especially for the hypothesis related to empowering women
- with information (Model 1 in the upper panel of Table 
+ significant for the hypothesis related to empowering women with information
+ (Model 1 in the upper panel of Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Balance"
 
 \end_inset
 
-).
- For example we find that, at baseline, male co-heads were significantly
- younger in households where women were involved in receiving information,
- and that male co-heads were less likely to have finished primary education.
- We also find that they were less likely to use improved seed, use fertilizer,
- or own a mobile phone and that they reported lower maize yields.
- Households also were larger.
- A test for joint significance of the differences confirms this imbalance
- for the comparison in Model 1 (F-statistic = 20.253; p-value < 0.001).
+) and a test for joint significance of the differences confirms this imbalance
+ (F-statistic = 3.40; p-value = 0.001).
+ However, this apparent imbalance can be explained by the fact that the
+ gender of the respondent at baseline was confounded with the treatment.
+ In particular, if the woman alone was targeted as the recipient of information,
+ she was the person that was interviewed.
+ If the man alone would view the video, it was the man who responded.
+ In cases where the couple was targeted, both spouses were present during
+ baseline interview.
+ The significant differences are thus likely the result of spousal disagreement
+ in survey data that has been documented in a variety of settings 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg."
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+.
+ This is consistent with the fact that we do find balance on characteristics
+ that are easier to verify by the enumerator, such as the material of the
+ wall of the house or the distance to the nearest input provider.
  For the comparison to test the impact of role model effects, we do not
  find imbalance between the groups (lower panel in Table 
 \begin_inset CommandInset ref
@@ -2272,10 +2340,7 @@ reference "tab:Balance"
 
 \end_inset
 
-) (F-statistic = 0.682; p-value = 0.742).
- We will control for baseline characteristics that show up as significant
- in the balance tables when treatment and control outcomes are compared
- throughout the paper.
+) (F-statistic = 0.661; p-value = 0.706).
  
 \end_layout
 
@@ -2779,58 +2844,48 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Proper spacing and seeds per hill	&	0.127	&	0.334	&	0.066$^{**}$	&	0.016	&	0.000	&	2,
-758	
+Proper spacing and seeds per hill 	&	0.126	&	0.332	&	0.070$^{**}$ 	&	0.015	&	0.000	&	
+2,753	
+\backslash
+
+\backslash
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Combining practices 	&	0.818	&	0.386	&	0.050$^{**}$ 	&	0.014	&	0.001	&	2,753	
+\backslash
+
+\backslash
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Optimal weeding 	&	0.880	&	0.325	&	0.009		&	0.013	&	0.476	&	2,753	
+\backslash
+
+\backslash
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Fall armyworm control 	&	0.209	&	0.407	&	-0.022		&	0.016	&	0.146	&	2,753	
+\backslash
+
+\backslash
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Women$'$s knowledge index 	&	0.011	&	0.597	&	0.115$^{**}$ 	&	0.024	&	0.000	&	2,753	
 \backslash
 
 \backslash
  
-\end_layout
-
-\begin_layout Plain Layout
-
-Combining practices &	0.817	&	0.387	&	0.051$^{**}$	&	0.015	&	0.000	&	2,758	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Optimal weeding	&	0.880	&	0.325	&	0.005	&	0.013	&	0.699	&	2,758	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Fall armyworm control	&	0.207	&	0.406	&	-0.011	&	0.016	&	0.459	&	2,758	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Women$'$s knowledge index	&	-0.018	&	0.605	&	0.114$^{**}$	&	0.024	&	0.000	&	2,758	
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-
 \backslash
 
 \backslash
@@ -3152,28 +3207,47 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Proper spacing and seeds per hill	&	0.073	&	0.260	&	0.003	&	0.012	&	0.780	&	2,361	
+Proper spacing and seeds per hill 	&	0.070	&	0.255	&	0.003		&	0.011	&	0.814	&	2,358	
 \backslash
 
 \backslash
- Combining practices and starting small	&	0.737	&	0.440	&	0.015	&	0.019	&	0.449	&	2,3
-61	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Combining practices 	&	0.738	&	0.440	&	0.011		&	0.019	&	0.592	&	2,358	
 \backslash
 
 \backslash
- Optimal weeding	&	0.805	&	0.396	&	-0.003	&	0.018	&	0.855	&	2,361	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Optimal weeding 	&	0.803	&	0.398	&	0.003		&	0.017	&	0.853	&	2,358	
 \backslash
 
 \backslash
- Fall armyworm control	&	0.075	&	0.264	&	0.019	&	0.012	&	0.096	&	2,361	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Fall armyworm control 	&	0.075	&	0.264	&	0.013		&	0.012	&	0.274	&	2,358	
 \backslash
 
 \backslash
- Joint knowledge index	&	-0.003	&	0.602	&	0.010	&	0.026	&	0.636	&	2,361	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Women$'$s knowledge index 	&	0.003	&	0.590	&	0.014		&	0.026	&	0.591	&	2,358	
 \backslash
 
 \backslash
-  
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -3560,32 +3634,53 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Planting maize on the plot	&	0.158	&	0.338	&	0.046$^{**}$	&	0.015	&	0.002	&	2,661	
+Planting maize on the plot 	&	0.159	&	0.338	&	0.041$^{*}$ 	&	0.015	&	0.004	&	2,714	
 \backslash
 
 \backslash
- Timing of planting maize	&	0.163	&	0.340	&	0.053$^{**}$	&	0.016	&	0.001	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize 	&	0.162	&	0.339	&	0.049$^{**}$ 	&	0.015	&	0.001	&	2,714	
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.150	&	0.333	&	0.049$^{**}$	&	0.015	&	0.001	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.149	&	0.332	&	0.048$^{**}$ 	&	0.015	&	0.001	&	2,714	
 \backslash
 
 \backslash
- Striga control measures	&	0.113	&	0.295	&	0.055$^{**}$	&	0.014	&	0.000	&	2,596	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.114	&	0.296	&	0.053$^{**}$ 	&	0.014	&	0.000	&	2,645	
 \backslash
 
 \backslash
- Timing of the first weeding	&	0.178	&	0.357	&	0.049$^{**}$	&	0.016	&	0.002	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.176	&	0.355	&	0.053$^{**}$ 	&	0.016	&	0.000	&	2,714	
 \backslash
 
 \backslash
- Women$'$s decision-making index	&	-0.032	&	0.783	&	0.132$^{**}$	&	0.034	&	0.000	&	2,
-596	
-\backslash
+ 													
+\end_layout
 
-\backslash
- 
+\begin_layout Plain Layout
+
+Women$'$s decision-making index 	&	-0.022	&	0.801	&	0.132$^{**}$ 	&	0.033	&	0.000	&	2
+,645	
 \backslash
 
 \backslash
@@ -3911,31 +4006,56 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Planting maize on the plot	&	0.520	&	0.472	&	0.015	&	0.020	&	0.443	&	2,661	
+Planting maize on the plot 	&	0.515	&	0.472	&	0.008		&	0.019	&	0.689	&	2,714	
 \backslash
 
 \backslash
- Timing of planting maize	&	0.477	&	0.470	&	0.011	&	0.020	&	0.553	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize 	&	0.475	&	0.469	&	0.002		&	0.019	&	0.920	&	2,714	
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.475	&	0.473	&	0.029	&	0.020	&	0.135	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.473	&	0.473	&	0.017		&	0.019	&	0.385	&	2,714	
 \backslash
 
 \backslash
- Striga control measures	&	0.420	&	0.464	&	0.024	&	0.020	&	0.193	&	2,596	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.420	&	0.462	&	0.016		&	0.019	&	0.408	&	2,645	
 \backslash
 
 \backslash
- Timing of the first weeding	&	0.535	&	0.469	&	-0.007	&	0.020	&	0.702	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.535	&	0.468	&	-0.025		&	0.019	&	0.180	&	2,714	
 \backslash
 
 \backslash
- Joint decision-making index	&	0.021	&	0.787	&	0.008	&	0.033	&	0.294	&	2,596	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Joint decision-making index 	&	0.012	&	0.792	&	0.010		&	0.033	&	0.766	&	2,645	
 \backslash
 
 \backslash
-  
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4340,23 +4460,43 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Timing of planting maize	&	0.043	&	0.179	&	0.021$^{**}$	&	0.009	&	0.014	&	2,493	
+Timing of planting maize 	&	0.042	&	0.178	&	0.018		&	0.009	&	0.034	&	2,542	
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.001	&	0.034	&	0.007$^{**}$	&	0.003	&	0.015	&	2,660	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.001	&	0.034	&	0.007$^{*}$ 	&	0.003	&	0.014	&	2,713	
 \backslash
 
 \backslash
- Striga control measures	&	0.080	&	0.253	&	0.052$^{**}$	&	0.013	&	0.000	&	2,595	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.082	&	0.255	&	0.052$^{**}$ 	&	0.012	&	0.000	&	2,644	
 \backslash
 
 \backslash
- Timing of the first weeding	&	0.157	&	0.338	&	0.048$^{**}$	&	0.016	&	0.001	&	2,660	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.156	&	0.336	&	0.050$^{**}$ 	&	0.015	&	0.000	&	2,713	
 \backslash
 
 \backslash
- Women$'$s adoption index	&	0.001	&	0.599	&	0.117$^{**}$	&	0.026	&	0.000	&	2,433	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Women$'$s adoption index 	&	-0.024	&	0.576	&	0.117$^{**}$ 	&	0.026	&	0.000	&	2,478	
 \backslash
 
 \backslash
@@ -4706,23 +4846,43 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Timing of planting maize	&	0.110	&	0.294	&	0.006	&	0.013	&	0.624	&	2,493	
+Timing of planting maize 	&	0.109	&	0.292	&	0.009		&	0.013	&	0.475	&	2,542	
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.014	&	0.112	&	0.015$^{**}$	&	0.006	&	0.011	&	2,660	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.014	&	0.111	&	0.015$^{*}$ 	&	0.006	&	0.012	&	2,713	
 \backslash
 
 \backslash
- Striga control measures	&	0.321	&	0.437	&	0.025	&	0.019	&	0.154	&	2,595	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.321	&	0.436	&	0.017		&	0.018	&	0.323	&	2,644	
 \backslash
 
 \backslash
- Timing of the first weeding	&	0.478	&	0.470	&	0.006	&	0.020	&	0.751	&	2,660	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.476	&	0.469	&	-0.007		&	0.019	&	0.724	&	2,713	
 \backslash
 
 \backslash
- Joint adoption index	&	-0.010	&	0.577	&	0.043$^{*}$	&	0.026	&	0.044	&	2,433	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Joint adoption index 	&	0.000	&	0.586	&	0.046$^{+}$ 	&	0.026	&	0.067	&	2,478	
 \backslash
 
 \backslash
@@ -5102,27 +5262,52 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-DAP	&	0.016	&	0.121	&	0.017$^{**}$	&	0.006	&	0.002	&	2,661	
+DAP	&	0.016	&	0.119	&	0.010		&	0.006	&	0.070	&	2,714	
 \backslash
 
 \backslash
- Urea	&	0.002	&	0.038	&	0.010$^{**}$	&	0.003	&	0.001	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+urea	&	0.002	&	0.038	&	0.009$^{*}$ 	&	0.003	&	0.003	&	2,714	
 \backslash
 
 \backslash
- Organic fertilizer	&	0.017	&	0.126	&	0.011	&	0.006	&	0.057	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Organic fertilizer	&	0.017	&	0.124	&	0.013		&	0.006	&	0.026	&	2,714	
 \backslash
 
 \backslash
- Hybrid seeds	&	0.013	&	0.111	&	0.009	&	0.005	&	0.078	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Hybrid seed	&	0.013	&	0.110	&	0.010		&	0.005	&	0.059	&	2,714	
 \backslash
 
 \backslash
- OPV	&	0.018	&	0.126	&	0.011	&	0.006	&	0.059	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+OPV	&	0.020	&	0.130	&	0.008		&	0.006	&	0.165	&	2,714	
 \backslash
 
 \backslash
- Women$'$s input use index	&	0.009	&	0.547	&	0.083$^{**}$	&	0.021	&	0.000	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Women$'$s input use index 	&	0.007	&	0.541	&	0.082$^{**}$ 	&	0.021	&	0.000	&	2,714	
 \backslash
 
 \backslash
@@ -5422,27 +5607,52 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-DAP	&	0.050	&	0.207	&	0.022$^{*}$	&	0.009	&	0.014	&	2,661	
+DAP	&	0.051	&	0.210	&	0.013		&	0.009	&	0.148	&	2,714	
 \backslash
 
 \backslash
- Urea	&	0.014	&	0.116	&	0.003	&	0.005	&	0.528	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+urea	&	0.015	&	0.115	&	0.003		&	0.005	&	0.571	&	2,714	
 \backslash
 
 \backslash
- Organic fertilizer	&	0.051	&	0.209	&	0.027$^{*}$	&	0.010	&	0.005	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Organic fertilizer	&	0.050	&	0.207	&	0.027$^{*}$ 	&	0.010	&	0.005	&	2,714	
 \backslash
 
 \backslash
- Hybrid seeds	&	0.027	&	0.150	&	0.021$^{*}$	&	0.008	&	0.004	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Hybrid seed	&	0.027	&	0.150	&	0.016		&	0.007	&	0.028	&	2,714	
 \backslash
 
 \backslash
- OPV	&	0.021	&	0.084	&	0.005	&	0.004	&	0.157	&	2,700	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+OPV	&	0.021	&	0.085	&	0.002		&	0.004	&	0.562	&	2,754	
 \backslash
 
 \backslash
- Joint input use index	&	0.002	&	0.484	&	0.063$^{**}$	&	0.020	&	0.000	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Joint input use index 	&	-0.016	&	0.468	&	0.063$^{**}$ 	&	0.020	&	0.002	&	2,714	
 \backslash
 
 \backslash
@@ -5903,29 +6113,54 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Production	&	39.094	&	155.909	&	35.849$^{**}$	&	8.687	&	0.000	&	2,700	
+Production	&	38.721	&	154.430	&	29.985	$^{**}$ 	&	8.288	&	0.000	&	2,754	
 \backslash
 
 \backslash
- Area	&	0.105	&	0.332	&	0.074$^{**}$	&	0.019	&	0.000	&	2,700	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Area	&	0.104	&	0.330	&	0.070	$^{**}$ 	&	0.018	&	0.000	&	2,754	
 \backslash
 
 \backslash
- Yield better than normal	&	0.024	&	0.142	&	0.026$^{**}$	&	0.008	&	0.001	&	2,595	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield better than normal	&	0.025	&	0.145	&	0.024	$^{**}$ 	&	0.007	&	0.001	&	2,644	
 \backslash
 
 \backslash
- Yield	&	57.675	&	237.920	&	50.389$^{**}$	&	12.853	&	0.000	&	2,700	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield	&	58.850	&	244.257	&	43.128	$^{**}$ 	&	12.303	&	0.001	&	2,754	
 \backslash
 
 \backslash
- Share of household maize production	&	0.122	&	0.315	&	0.060$^{**}$	&	0.015	&	0.000	&
-	2,534	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Share of household maize production 	&	0.122	&	0.314	&	0.058	$^{**}$ 	&	0.015	&	0.000
+	&	2,584	
 \backslash
 
 \backslash
- Share of area under maize cultivation	&	0.122	&	0.315	&	0.063$^{**}$	&	0.016	&	0.000
-	&	2,507	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Share of area under maize cultivation 	&	0.121	&	0.312	&	0.062	$^{**}$ 	&	0.015	&	0.0
+00	&	2,556	
 \backslash
 
 \backslash
@@ -6210,28 +6445,54 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Production	&	239.898	&	478.920	&	-14.825	&	17.251	&	0.359	&	2,700	
+Production	&	238.811	&	475.554	&	-24.203		&	16.758	&	0.135	&	2,754	
 \backslash
 
 \backslash
- Area	&	0.591	&	0.908	&	-0.019	&	0.036	&	0.576	&	2,700	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Area	&	0.589	&	0.904	&	-0.036		&	0.034	&	0.279	&	2,754	
 \backslash
 
 \backslash
- Yield better than normal	&	0.132	&	0.326	&	0.003	&	0.014	&	0.799	&	2,595	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield better than normal	&	0.132	&	0.326	&	-0.002		&	0.013	&	0.907	&	2,644	
 \backslash
 
 \backslash
- Yield	&	222.381	&	383.192	&	-3.393	&	15.549	&	0.823	&	2,700	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield	&	223.450	&	383.693	&	-8.746		&	15.133	&	0.551	&	2,754	
 \backslash
 
 \backslash
- Share of household maize production	&	0.501	&	0.486	&	0.011	&	0.021	&	0.592	&	2,534	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Share of household maize production 	&	0.499	&	0.485	&	0.004		&	0.020	&	0.851	&	2,584
+	
 \backslash
 
 \backslash
- Share of area under maize cultivation	&	0.502	&	0.485	&	0.007	&	0.021	&	0.709	&	2,50
-7	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Share of area under maize cultivation 	&	0.500	&	0.484	&	0.000		&	0.021	&	0.990	&	2,5
+56	
 \backslash
 
 \backslash
@@ -6579,15 +6840,20 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Sold any	&	0.088	&	0.284	&	0.018	&	0.013	&	0.159	&	2,700	
+Sold any maize?	&	0.089	&	0.284	&	0.012		&	0.012	&	0.324	&	2,754	
 \backslash
 
 \backslash
- Amount sold (in 100 kg bags)	&	0.184	&	0.977	&	0.030	&	0.037	&	0.399	&	2,700	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Amount sold (100 kg bags)	&	0.182	&	0.968	&	-0.004		&	0.036	&	0.919	&	2,754	
 \backslash
 
 \backslash
- 
+  
 \end_layout
 
 \begin_layout Plain Layout
@@ -6856,15 +7122,20 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Sold any	&	0.319	&	0.466	&	-0.003	&	0.020	&	0.881	&	2,700	
+Sold any maize?	&	0.321	&	0.467	&	-0.002		&	0.019	&	0.913	&	2,754	
 \backslash
 
 \backslash
- Amount sold (in 100 kg bags)	&	1.179	&	3.173	&	-0.022	&	0.131	&	0.867	&	2,700	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Amount sold (100 kg bags)	&	1.232	&	3.431	&	-0.092		&	0.132	&	0.480	&	2,754	
 \backslash
 
 \backslash
- 
+  
 \end_layout
 
 \begin_layout Plain Layout
@@ -7170,6 +7441,7 @@ e more in joint action.
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1093/erae/jbv039"
+literal "true"
 
 \end_inset
 
@@ -7337,6 +7609,7 @@ ty of men.
 \begin_inset CommandInset citation
 LatexCommand citet
 key "RePEc:csa:wpaper:2017-13"
+literal "true"
 
 \end_inset
 
@@ -7344,6 +7617,7 @@ key "RePEc:csa:wpaper:2017-13"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "10.1162/qjec.2009.124.4.1497"
+literal "true"
 
 \end_inset
 
@@ -7356,6 +7630,7 @@ key "10.1162/qjec.2009.124.4.1497"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "KANDPAL201926"
+literal "true"
 
 \end_inset
 
@@ -7510,7 +7785,7 @@ arabic{table}}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7615,44 +7890,36 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Yield (log)	&	5.339	&	0.801	&	-0.029	&	0.035	&	0.370	&	2,154	
+Area of maize	&	0.381	&	0.406	&	-0.030	&	0.019	&	0.119	&	1,769	
 \backslash
 
 \backslash
- Age of male co-head	&	38.702	&	13.511	&	-8.630	&	0.541	&	0.000	&	2,242	
+ Age head	&	42.196	&	13.819	&	-1.702	&	0.597	&	0.004	&	2,143	
 \backslash
 
 \backslash
- Male co-head finished primary school	&	0.338	&	0.473	&	-0.162	&	0.020	&	0.000	&	2,26
-9	
+ Head finished primary	&	0.450	&	0.498	&	0.060	&	0.021	&	0.004	&	2,269	
 \backslash
 
 \backslash
- Household size	&	7.521	&	3.233	&	0.071	&	0.136	&	0.599	&	2,269	
+ HH size	&	7.521	&	3.233	&	0.071	&	0.136	&	0.603	&	2,269	
 \backslash
 
 \backslash
- Nbr of bedrooms	&	2.218	&	1.126	&	-0.079	&	0.047	&	0.073	&	2,269	
+ Distance to input shop	&	5.516	&	5.598	&	-0.113	&	0.235	&	0.630	&	2,269	
 \backslash
 
 \backslash
- Access to extension	&	0.112	&	0.316	&	0.001	&	0.013	&	0.967	&	2,269	
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Wall is mud	&	0.296	&	0.456	&	-0.010	&	0.019	&	0.602	&	2,269	
 \backslash
 
 \backslash
- Used fertilizer	&	0.221	&	0.415	&	-0.036	&	0.017	&	0.023	&	2,269	
-\backslash
-
-\backslash
- Used improved seed	&	0.387	&	0.487	&	-0.081	&	0.020	&	0.000	&	2,269	
-\backslash
-
-\backslash
- Distance to input provider	&	5.516	&	5.598	&	-0.113	&	0.235	&	0.577	&	2,269	
-\backslash
-
-\backslash
- Household owns mobile	&	0.742	&	0.438	&	-0.180	&	0.018	&	0.000	&	2,269	
+ Number of rooms	&	2.218	&	1.126	&	-0.079	&	0.047	&	0.093	&	2,269	
 \backslash
 
 \backslash
@@ -7721,44 +7988,31 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Yield (log)	&	5.313	&	0.823	&	-0.092	&	0.036	&	0.004	&	2,077	
+Area of maize	&	0.394	&	0.404	&	-0.002	&	0.019	&	0.897	&	1,785	
 \backslash
 
 \backslash
- Age of male co-head	&	42.521	&	14.254	&	-0.988	&	0.612	&	0.098	&	2,176	
+ Age head	&	42.521	&	14.254	&	-0.988	&	0.612	&	0.106	&	2,176	
 \backslash
 
 \backslash
- Male co-head finished primary school	&	0.425	&	0.494	&	0.011	&	0.021	&	0.596	&	2,187
-	
+ Head finished primary	&	0.425	&	0.494	&	0.011	&	0.021	&	0.599	&	2,187	
 \backslash
 
 \backslash
- Household size	&	7.655	&	3.355	&	0.352	&	0.143	&	0.011	&	2,187	
+ HH size	&	7.655	&	3.355	&	0.352	&	0.143	&	0.014	&	2,187	
 \backslash
 
 \backslash
- Nbr of bedrooms	&	2.263	&	1.180	&	0.014	&	0.051	&	0.779	&	2,187	
+ Distance to input shop	&	5.599	&	5.671	&	0.062	&	0.243	&	0.798	&	2,187	
 \backslash
 
 \backslash
- Access to extension	&	0.108	&	0.311	&	-0.008	&	0.013	&	0.543	&	2,187	
+ Wall is mud	&	0.299	&	0.458	&	-0.005	&	0.020	&	0.818	&	2,187	
 \backslash
 
 \backslash
- Used fertilizer	&	0.209	&	0.406	&	-0.063	&	0.017	&	0.000	&	2,187	
-\backslash
-
-\backslash
- Used improved seed	&	0.401	&	0.490	&	-0.055	&	0.021	&	0.009	&	2,187	
-\backslash
-
-\backslash
- Distance to input provider	&	5.599	&	5.671	&	0.062	&	0.243	&	0.764	&	2,187	
-\backslash
-
-\backslash
- Household owns mobile	&	0.840	&	0.366	&	0.019	&	0.016	&	0.226	&	2,187	
+ Number of rooms	&	2.263	&	1.180	&	0.014	&	0.051	&	0.788	&	2,187	
 \backslash
 
 \backslash
@@ -7804,9 +8058,9 @@ First column reports sample means; standard deviations are in the second
  in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
  standard errors are in column 4; column 5 reports p-values based on randomizati
 on inference.
- A joint test for balance is rejected for the first model (F-statistic 49.319,
- p-value $<$ 0.001) and also for the second model (F-statistic 4.168, p-value
- $<$ 0.001).
+ A joint test for balance is rejected for the first model (F-statistic 3.379,
+ p-value $=$ 0.001) and also for the second model (F-statistic 2.321, p-value
+ $=$ 0.023).
 \end_layout
 
 \begin_layout Plain Layout
@@ -7948,44 +8202,31 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Yield (log)	&	5.303	&	0.824	&	-0.067	&	0.053	&	0.165	&	1,075	
+Area of maize	&	0.159	&	0.554	&	0.026	&	0.036	&	0.468	&	1,052	
 \backslash
 
 \backslash
- Age of male co-head	&	34.370	&	11.043	&	0.851	&	0.696	&	0.220	&	1,118	
+ Age head	&	41.302	&	13.157	&	-0.095	&	0.868	&	0.913	&	1,019	
 \backslash
 
 \backslash
- Male co-head finished primary school	&	0.257	&	0.437	&	0.002	&	0.027	&	0.928	&	1,135
-	
+ Head finished primary	&	0.481	&	0.500	&	-0.020	&	0.031	&	0.532	&	1,135	
 \backslash
 
 \backslash
- Household size	&	7.554	&	3.212	&	0.108	&	0.201	&	0.582	&	1,135	
+ HH size	&	7.554	&	3.212	&	0.108	&	0.201	&	0.590	&	1,135	
 \backslash
 
 \backslash
- Nbr of bedrooms	&	2.177	&	1.064	&	0.095	&	0.066	&	0.139	&	1,135	
+ Distance to input shop	&	5.459	&	5.273	&	0.075	&	0.330	&	0.820	&	1,135	
 \backslash
 
 \backslash
- Access to extension	&	0.113	&	0.316	&	-0.011	&	0.020	&	0.569	&	1,135	
+ Wall is mud	&	0.290	&	0.454	&	0.017	&	0.028	&	0.552	&	1,135	
 \backslash
 
 \backslash
- Used fertilizer	&	0.203	&	0.402	&	-0.049	&	0.025	&	0.047	&	1,135	
-\backslash
-
-\backslash
- Used improved seed	&	0.346	&	0.476	&	-0.037	&	0.030	&	0.186	&	1,135	
-\backslash
-
-\backslash
- Distance to input provider	&	5.459	&	5.273	&	0.075	&	0.330	&	0.777	&	1,135	
-\backslash
-
-\backslash
- Household owns mobile	&	0.652	&	0.477	&	0.007	&	0.030	&	0.803	&	1,135	
+ Number of rooms	&	2.177	&	1.064	&	0.095	&	0.066	&	0.154	&	1,135	
 \backslash
 
 \backslash
@@ -8054,44 +8295,31 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Yield (log)	&	5.372	&	0.778	&	-0.022	&	0.050	&	0.629	&	1,075	
+Area of maize	&	0.395	&	0.407	&	0.000	&	0.028	&	0.995	&	921	
 \backslash
 
 \backslash
- Age of male co-head	&	43.002	&	14.349	&	0.151	&	0.904	&	0.863	&	1,124	
+ Age of head	&	43.000	&	14.347	&	0.149	&	0.903	&	0.869	&	1,124	
 \backslash
 
 \backslash
- Male co-head finished primary school	&	0.420	&	0.494	&	0.015	&	0.031	&	0.616	&	1,134
-	
+ Head finished primary	&	0.420	&	0.494	&	0.015	&	0.031	&	0.626	&	1,134	
 \backslash
 
 \backslash
- Household size	&	7.487	&	3.257	&	-0.243	&	0.204	&	0.249	&	1,134	
+ HH size	&	7.488	&	3.258	&	-0.242	&	0.204	&	0.235	&	1,134	
 \backslash
 
 \backslash
- Nbr of bedrooms	&	2.258	&	1.183	&	-0.100	&	0.074	&	0.154	&	1,134	
+ Distance to input shop	&	5.573	&	5.896	&	-0.724	&	0.369	&	0.050	&	1,134	
 \backslash
 
 \backslash
- Access to extension	&	0.112	&	0.315	&	0.035	&	0.020	&	0.079	&	1,134	
+ Wall is mud	&	0.301	&	0.459	&	0.024	&	0.029	&	0.398	&	1,134	
 \backslash
 
 \backslash
- Used fertilizer	&	0.239	&	0.427	&	-0.002	&	0.027	&	0.935	&	1,134	
-\backslash
-
-\backslash
- Used improved seed	&	0.427	&	0.495	&	0.062	&	0.031	&	0.043	&	1,134	
-\backslash
-
-\backslash
- Distance to input provider	&	5.573	&	5.898	&	-0.723	&	0.369	&	0.022	&	1,134	
-\backslash
-
-\backslash
- Household owns mobile	&	0.832	&	0.374	&	-0.018	&	0.023	&	0.424	&	1,134	
+ Number of  rooms	&	2.258	&	1.183	&	-0.100	&	0.074	&	0.178	&	1,134	
 \backslash
 
 \backslash
@@ -8138,8 +8366,8 @@ First column reports sample means; standard deviations are in the second
  standard errors are in column 4; column 5 reports p-values based on randomizati
 on inference.
  A joint test for balance can not be rejected for the first model (F-statistic
- 0.974, p-value = 0.465) and also not for the second model (F-statistic 1.579,
- p-value = 0.108).
+ 0.532, p-value = 0.811) and also not for the second model (F-statistic 0.632,
+ p-value = 0.730).
 \end_layout
 
 \begin_layout Plain Layout
@@ -8287,29 +8515,44 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
+Proper spacing and seeds per hill 	&	0.126	&	0.332	&	0.070$^{**}$ 	&	0.017	&	0.000	&	
+1,871	
+\backslash
+
+\backslash
+ 													
 \end_layout
 
 \begin_layout Plain Layout
 
-Proper spacing and seeds per hill	&	0.127	&	0.334	&	0.058$^{**}$	&	0.019	&	0.000	&	1,
-875		
+Combining practices 	&	0.818	&	0.386	&	0.051$^{**}$ 	&	0.017	&	0.002	&	1,871	
 \backslash
 
 \backslash
- Combining practices and starting small	&	0.817	&	0.387	&	0.060$^{**}$	&	0.018	&	0.00
-1	&	1,875		
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Optimal weeding 	&	0.880	&	0.325	&	0.020		&	0.015	&	0.174	&	1,871	
 \backslash
 
 \backslash
- Optimal weeding	&	0.880	&	0.325	&	0.026	&	0.016	&	0.078	&	1,875		
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Fall armyworm control 	&	0.209	&	0.407	&	-0.032		&	0.018	&	0.066	&	1,871	
 \backslash
 
 \backslash
- Fall armyworm control	&	0.207	&	0.406	&	-0.014	&	0.020	&	0.416	&	1,875		
-\backslash
+ 													
+\end_layout
 
-\backslash
- Women$'$s  knowledge index	&	0.003	&	0.612	&	0.128$^{**}$	&	0.028	&	0.000	&	1,875		
+\begin_layout Plain Layout
+
+Women$'$s knowledge index 	&	0.010	&	0.603	&	0.129$^{**}$ 	&	0.028	&	0.000	&	1,871	
 \backslash
 
 \backslash
@@ -8378,25 +8621,44 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Proper spacing and seeds per hill	&	0.127	&	0.334	&	0.071$^{**}$	&	0.018	&	0.000	&	1,
-770		
+Proper spacing and seeds per hill 	&	0.126	&	0.332	&	0.071$^{**}$ 	&	0.017	&	0.000	&	
+1,772	
 \backslash
 
 \backslash
- Combining practices and starting small	&	0.817	&	0.387	&	0.051$^{**}$	&	0.018	&	0.00
-3	&	1,770		
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Combining practices 	&	0.818	&	0.386	&	0.048$^{**}$ 	&	0.017	&	0.005	&	1,772	
 \backslash
 
 \backslash
- Optimal weeding	&	0.880	&	0.325	&	-0.005	&	0.016	&	0.761	&	1,770		
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Optimal weeding 	&	0.880	&	0.325	&	-0.002		&	0.016	&	0.889	&	1,772	
 \backslash
 
 \backslash
- Fall armyworm control	&	0.207	&	0.406	&	-0.008	&	0.019	&	0.652	&	1,770		
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Fall armyworm control 	&	0.209	&	0.407	&	-0.011		&	0.019	&	0.527	&	1,772	
 \backslash
 
 \backslash
- Women$'$s knowledge index	&	-0.028	&	0.622	&	0.102$^{**}$	&	0.029	&	0.000	&	1,770		
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Women$'$s knowledge index 	&	-0.020	&	0.609	&	0.102$^{**}$ 	&	0.029	&	0.000	&	1,772	
 \backslash
 
 \backslash
@@ -8891,28 +9153,47 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Proper spacing and seeds per hill	&	0.073	&	0.260	&	-0.026	&	0.013	&	0.032	&	1,626	
+Proper spacing and seeds per hill 	&	0.070	&	0.255	&	-0.021		&	0.012	&	0.084	&	1,623	
 \backslash
 
 \backslash
- Combining practices and starting small	&	0.737	&	0.440	&	-0.011	&	0.024	&	0.638	&	1,
-626	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Combining practices 	&	0.738	&	0.440	&	-0.015		&	0.022	&	0.524	&	1,623	
 \backslash
 
 \backslash
- Optimal weeding	&	0.805	&	0.396	&	0.033	&	0.021	&	0.089	&	1,626	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Optimal weeding 	&	0.803	&	0.398	&	0.027		&	0.019	&	0.167	&	1,623	
 \backslash
 
 \backslash
- Fall armyworm control	&	0.075	&	0.264	&	0.017	&	0.015	&	0.191	&	1,626	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Fall armyworm control 	&	0.075	&	0.264	&	0.007		&	0.013	&	0.570	&	1,623	
 \backslash
 
 \backslash
- Joint knowledge index	&	-0.022	&	0.642	&	-0.021	&	0.030	&	0.596	&	1,626	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Joint knowledge index 	&	-0.035	&	0.581	&	-0.016		&	0.030	&	0.594	&	1,623	
 \backslash
 
 \backslash
-  
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -8977,24 +9258,43 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Proper spacing and seeds per hill	&	0.073	&	0.260	&	0.026	&	0.014	&	0.067	&	1,546	
+Proper spacing and seeds per hill 	&	0.070	&	0.255	&	0.027		&	0.014	&	0.060	&	1,548	
 \backslash
 
 \backslash
- Combining practices and starting small	&	0.737	&	0.440	&	0.043	&	0.022	&	0.052	&	1,5
-46	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Combining practices 	&	0.738	&	0.440	&	0.037		&	0.022	&	0.087	&	1,548	
 \backslash
 
 \backslash
- Optimal weeding	&	0.805	&	0.396	&	-0.028	&	0.021	&	0.162	&	1,546	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Optimal weeding 	&	0.803	&	0.398	&	-0.021		&	0.021	&	0.292	&	1,548	
 \backslash
 
 \backslash
- Fall armyworm control	&	0.075	&	0.264	&	0.019	&	0.014	&	0.156	&	1,546	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Fall armyworm control 	&	0.075	&	0.264	&	0.018		&	0.014	&	0.179	&	1,548	
 \backslash
 
 \backslash
- Joint knowledge index	&	0.004	&	0.615	&	0.037	&	0.031	&	0.226	&	1,546	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Joint knowledge index 	&	0.001	&	0.595	&	0.042		&	0.031	&	0.186	&	1,548	
 \backslash
 
 \backslash
@@ -9481,34 +9781,44 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Proper spacing and seeds per hill	&	0.266	&	0.442	&	-0.083$^{**}$	&	0.017	&	0.000	&	2
-650	
+Proper spacing and seeds per hill 	&	0.263	&	0.440	&	-0.094$^{**}$ 	&	0.016	&	0.000	&
+	2,647	
 \backslash
 
 \backslash
- Combining practices and starting small	&	0.893	&	0.310	&	-0.043$^{**}$	&	0.014	&	0.0
-03	&	2650	
-\backslash
-
-\backslash
- Optimal weeding	&	0.884	&	0.320	&	-0.011	&	0.014	&	0.411	&	2650	
-\backslash
-
-\backslash
- Fall armyworm control	&	0.237	&	0.426	&	0.002	&	0.018	&	0.893	&	2650	
-\backslash
-
-\backslash
- Men$'$s knowledge index	&	0.004	&	0.614	&	-0.129$^{**}$	&	0.024	&	0.000	&	2650	
-\backslash
-
-\backslash
- 
+ 													
 \end_layout
 
 \begin_layout Plain Layout
 
+Combining practices 	&	0.892	&	0.311	&	-0.045$^{**}$ 	&	0.014	&	0.002	&	2,647	
+\backslash
 
+\backslash
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Optimal weeding 	&	0.883	&	0.322	&	-0.006		&	0.013	&	0.654	&	2,647	
+\backslash
+
+\backslash
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Fall armyworm control 	&	0.237	&	0.425	&	-0.006		&	0.017	&	0.705	&	2,647	
+\backslash
+
+\backslash
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Men$'$s knowledge index 	&	0.002	&	0.610	&	-0.124$^{**}$ 	&	0.024	&	0.000	&	2,647	
 \backslash
 
 \backslash
@@ -9787,25 +10097,44 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Proper spacing and seeds per hill	&	0.266	&	0.442	&	-0.151$^{**}$	&	0.020	&	0.000	&	1
-833	
+Proper spacing and seeds per hill 	&	0.263	&	0.440	&	-0.144$^{**}$ 	&	0.018	&	0.000	&
+	1,830	
 \backslash
 
 \backslash
- Combining practices and starting small	&	0.893	&	0.310	&	-0.091$^{**}$	&	0.019	&	0.0
-00	&	1833	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Combining practices 	&	0.892	&	0.311	&	-0.082$^{**}$ 	&	0.016	&	0.000	&	1,830	
 \backslash
 
 \backslash
- Optimal weeding	&	0.884	&	0.320	&	0.010	&	0.016	&	0.491	&	1833	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Optimal weeding 	&	0.883	&	0.322	&	0.014		&	0.015	&	0.356	&	1,830	
 \backslash
 
 \backslash
- Fall armyworm control	&	0.237	&	0.426	&	-0.004	&	0.022	&	0.849	&	1833	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Fall armyworm control 	&	0.237	&	0.425	&	-0.002		&	0.020	&	0.933	&	1,830	
 \backslash
 
 \backslash
- Men$'$s knowledge index	&	0.049	&	0.619	&	-0.185$^{**}$	&	0.028	&	0.000	&	1833	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Men$'$s knowledge index 	&	-0.005	&	0.611	&	-0.178$^{**}$ 	&	0.028	&	0.000	&	1,830	
 \backslash
 
 \backslash
@@ -9874,25 +10203,44 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Proper spacing and seeds per hill	&	0.266	&	0.442	&	-0.044$^{+}$	&	0.021	&	0.029	&	17
-78	
+Proper spacing and seeds per hill 	&	0.263	&	0.440	&	-0.044	$^{+}$ 	&	0.020	&	0.029	&
+	1,780	
 \backslash
 
 \backslash
- Combining practices and starting small	&	0.893	&	0.310	&	-0.007	&	0.015	&	0.690	&	17
-78	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Combining practices 	&	0.892	&	0.311	&	-0.008		&	0.015	&	0.604	&	1,780	
 \backslash
 
 \backslash
- Optimal weeding	&	0.884	&	0.320	&	-0.030	&	0.016	&	0.067	&	1778	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Optimal weeding 	&	0.883	&	0.322	&	-0.026		&	0.016	&	0.115	&	1,780	
 \backslash
 
 \backslash
- Fall armyworm control	&	0.237	&	0.426	&	-0.004	&	0.020	&	0.832	&	1778	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Fall armyworm control 	&	0.237	&	0.425	&	-0.011		&	0.020	&	0.561	&	1,780	
 \backslash
 
 \backslash
- Men$'$s knowledge index	&	-0.010	&	0.606	&	-0.071^{*}$	&	0.029	&	0.042	&	1778	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Men$'$s knowledge index 	&	-0.010	&	0.614	&	-0.069		&	0.029	&	0.051	&	1,780	
 \backslash
 
 \backslash
@@ -10387,32 +10735,57 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Planting maize on the plot	&	0.158	&	0.338	&	0.094$^{**}$	&	0.019	&	0.000	&	1,809	
+Planting maize on the plot 	&	0.159	&	0.338	&	0.078$^{**}$ 	&	0.017	&	0.000	&	1,844	
 \backslash
 
 \backslash
- Timing of planting maize	&	0.163	&	0.340	&	0.099$^{**}$	&	0.020	&	0.000	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize 	&	0.162	&	0.339	&	0.086$^{**}$ 	&	0.017	&	0.000	&	1,844	
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.150	&	0.333	&	0.094$^{**}$	&	0.019	&	0.000	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.149	&	0.332	&	0.084$^{**}$ 	&	0.017	&	0.000	&	1,844	
 \backslash
 
 \backslash
- Striga control measures	&	0.113	&	0.295	&	0.086$^{**}$	&	0.018	&	0.000	&	1,764	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.114	&	0.296	&	0.083$^{**}$ 	&	0.016	&	0.000	&	1,796	
 \backslash
 
 \backslash
- Timing of the first weeding	&	0.178	&	0.357	&	0.090$^{**}$	&	0.020	&	0.000	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.176	&	0.355	&	0.093$^{**}$ 	&	0.018	&	0.000	&	1,844	
 \backslash
 
 \backslash
- Women$'$s decision-making index	&	-0.015	&	0.825	&	0.220$^{**}$	&	0.039	&	0.000	&	1,
-764	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Women$'$s decision-making index 	&	-0.022	&	0.814	&	0.222$^{**}$ 	&	0.038	&	0.000	&	1
+,796	
 \backslash
 
 \backslash
-  
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10477,27 +10850,52 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Planting maize on the plot	&	0.158	&	0.338	&	0.004	&	0.016	&	0.783	&	1,710	
+Planting maize on the plot 	&	0.159	&	0.338	&	0.002		&	0.016	&	0.886	&	1,747	
 \backslash
 
 \backslash
- Timing of planting maize	&	0.163	&	0.340	&	0.013	&	0.017	&	0.450	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize 	&	0.162	&	0.339	&	0.011		&	0.017	&	0.511	&	1,747	
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.150	&	0.333	&	0.008	&	0.016	&	0.594	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.149	&	0.332	&	0.011		&	0.016	&	0.507	&	1,747	
 \backslash
 
 \backslash
- Striga control measures	&	0.113	&	0.295	&	0.025	&	0.015	&	0.076	&	1,665	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.114	&	0.296	&	0.022		&	0.015	&	0.132	&	1,699	
 \backslash
 
 \backslash
- Timing of the first weeding	&	0.178	&	0.357	&	0.011	&	0.018	&	0.507	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.176	&	0.355	&	0.011		&	0.017	&	0.483	&	1,747	
 \backslash
 
 \backslash
- Women$'$s decision-making index	&	-0.015	&	0.784	&	0.037	&	0.039	&	0.345	&	1,665	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Women$'$s decision-making index 	&	-0.033	&	0.772	&	0.033		&	0.039	&	0.402	&	1,699	
 \backslash
 
 \backslash
@@ -10990,27 +11388,52 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Planting maize on the plot	&	0.520	&	0.472	&	-0.012	&	0.025	&	0.576	&	1,809	
+Planting maize on the plot 	&	0.515	&	0.472	&	-0.025		&	0.022	&	0.239	&	1,844	
 \backslash
 
 \backslash
- Timing of planting maize	&	0.477	&	0.470	&	-0.005	&	0.024	&	0.814	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize 	&	0.475	&	0.469	&	-0.019		&	0.022	&	0.372	&	1,844	
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.475	&	0.473	&	0.006	&	0.025	&	0.790	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.473	&	0.473	&	-0.017		&	0.022	&	0.445	&	1,844	
 \backslash
 
 \backslash
- Striga control measures	&	0.420	&	0.464	&	-0.010	&	0.025	&	0.652	&	1,764	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.420	&	0.462	&	-0.015		&	0.022	&	0.494	&	1,796	
 \backslash
 
 \backslash
- Timing of the first weeding	&	0.535	&	0.469	&	-0.019	&	0.025	&	0.398	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.535	&	0.468	&	-0.054		&	0.022	&	0.016	&	1,844	
 \backslash
 
 \backslash
- Joint decision-making index	&	0.018	&	0.790	&	-0.055	&	0.038	&	0.671	&	1,764	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Joint decision-making index 	&	0.019	&	0.790	&	-0.052		&	0.038	&	0.162	&	1,796	
 \backslash
 
 \backslash
@@ -11079,27 +11502,52 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Planting maize on the plot	&	0.520	&	0.472	&	0.038	&	0.023	&	0.106	&	1,710	
+Planting maize on the plot 	&	0.515	&	0.472	&	0.041		&	0.022	&	0.083	&	1,747	
 \backslash
 
 \backslash
- Timing of planting maize	&	0.477	&	0.470	&	0.022	&	0.023	&	0.322	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize 	&	0.475	&	0.469	&	0.024		&	0.023	&	0.266	&	1,747	
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.475	&	0.473	&	0.053$^{+}$	&	0.023	&	0.019	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.473	&	0.473	&	0.051		&	0.023	&	0.018	&	1,747	
 \backslash
 
 \backslash
- Striga control measures	&	0.420	&	0.464	&	0.050	&	0.023	&	0.029	&	1,665	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.420	&	0.462	&	0.047		&	0.023	&	0.031	&	1,699	
 \backslash
 
 \backslash
- Timing of the first weeding	&	0.535	&	0.469	&	0.009	&	0.023	&	0.680	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.535	&	0.468	&	0.005		&	0.022	&	0.830	&	1,747	
 \backslash
 
 \backslash
- Joint decision-making index	&	0.010	&	0.781	&	0.074$^{*}$	&	0.039	&	0.034	&	1,665	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Joint decision-making index 	&	0.017	&	0.782	&	0.073		&	0.038	&	0.049	&	1,699	
 \backslash
 
 \backslash
@@ -11581,37 +12029,55 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Planting maize on the plot	&	0.369	&	0.454	&	-0.077$^{**}$	&	0.019	&	0.000	&	2,563	
+Planting maize on the plot 	&	0.372	&	0.455	&	-0.070$^{**}$ 	&	0.018	&	0.000	&	2,612	
 \backslash
 
 \backslash
- Timing of planting maize	&	0.395	&	0.461	&	-0.085$^{**}$	&	0.019	&	0.000	&	2,563	
-\backslash
-
-\backslash
- Spacing and number of seeds	&	0.431	&	0.468	&	-0.107$^{**}$	&	0.019	&	0.000	&	2,563	
-\backslash
-
-\backslash
- Striga control measures	&	0.323	&	0.442	&	-0.093$^{**}$	&	0.018	&	0.000	&	2,497	
-\backslash
-
-\backslash
- Timing of the first weeding	&	0.394	&	0.460	&	-0.109$^{**}$	&	0.019	&	0.000	&	2,563	
-\backslash
-
-\backslash
- Men$'$s decision-making index	&	0.033	&	0.823	&	-0.184$^{**}$	&	0.034	&	0.000	&	2,49
-7	
-\backslash
-
-\backslash
-  
+ 													
 \end_layout
 
 \begin_layout Plain Layout
 
+Timing of planting maize 	&	0.396	&	0.461	&	-0.079$^{**}$ 	&	0.018	&	0.000	&	2,612	
+\backslash
 
+\backslash
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.431	&	0.468	&	-0.099$^{**}$ 	&	0.018	&	0.000	&	2,612
+	
+\backslash
+
+\backslash
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.323	&	0.442	&	-0.087$^{**}$ 	&	0.017	&	0.000	&	2,542	
+\backslash
+
+\backslash
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.396	&	0.460	&	-0.102$^{**}$ 	&	0.018	&	0.000	&	2,612
+	
+\backslash
+
+\backslash
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Men$'$s decision-making index 	&	0.047	&	0.828	&	-0.191$^{**}$ 	&	0.034	&	0.000	&	2,5
+42	
 \backslash
 
 \backslash
@@ -11878,28 +12344,55 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Planting maize on the plot	&	0.369	&	0.454	&	-0.092$^{**}$	&	0.024	&	0.000	&	1,772	
+Planting maize on the plot 	&	0.372	&	0.455	&	-0.073$^{**}$ 	&	0.021	&	0.000	&	1,804	
 \backslash
 
 \backslash
- Timing of planting maize	&	0.395	&	0.461	&	-0.114$^{**}$	&	0.024	&	0.000	&	1,772	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize 	&	0.396	&	0.461	&	-0.092$^{**}$ 	&	0.021	&	0.000	&	1,804	
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.431	&	0.468	&	-0.136$^{**}$	&	0.024	&	0.000	&	1,772	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.431	&	0.468	&	-0.107$^{**}$ 	&	0.022	&	0.000	&	1,804
+	
 \backslash
 
 \backslash
- Striga control measures	&	0.323	&	0.442	&	-0.121$^{**}$	&	0.023	&	0.000	&	1,728	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.323	&	0.442	&	-0.103$^{**}$ 	&	0.020	&	0.000	&	1,757	
 \backslash
 
 \backslash
- Timing of the first weeding	&	0.394	&	0.460	&	-0.121$^{**}$	&	0.024	&	0.000	&	1,772	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.396	&	0.460	&	-0.107$^{**}$ 	&	0.021	&	0.000	&	1,804
+	
 \backslash
 
 \backslash
- Men$'$s decision-making index	&	-0.007	&	0.811	&	-0.210$^{**}$	&	0.039	&	0.000	&	1,7
-28	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Men$'$s decision-making index 	&	0.001	&	0.807	&	-0.212$^{**}$ 	&	0.039	&	0.000	&	1,7
+57	
 \backslash
 
 \backslash
@@ -11968,28 +12461,55 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Planting maize on the plot	&	0.369	&	0.454	&	-0.062$^{*}$	&	0.022	&	0.005	&	1,721	
+Planting maize on the plot 	&	0.372	&	0.455	&	-0.066$^{*}$ 	&	0.021	&	0.003	&	1,758	
 \backslash
 
 \backslash
- Timing of planting maize	&	0.395	&	0.461	&	-0.060$^{*}$	&	0.022	&	0.006	&	1,721	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of planting maize 	&	0.396	&	0.461	&	-0.066$^{*}$ 	&	0.022	&	0.002	&	1,758	
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.431	&	0.468	&	-0.084$^{**}$	&	0.022	&	0.000	&	1,721	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.431	&	0.468	&	-0.090$^{**}$ 	&	0.022	&	0.000	&	1,758
+	
 \backslash
 
 \backslash
- Striga control measures	&	0.323	&	0.442	&	-0.066$^{**}$	&	0.021	&	0.001	&	1,673	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.323	&	0.442	&	-0.070$^{**}$ 	&	0.021	&	0.000	&	1,707	
 \backslash
 
 \backslash
- Timing of the first weeding	&	0.394	&	0.460	&	-0.087$^{**}$	&	0.022	&	0.000	&	1,721	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.396	&	0.460	&	-0.096$^{**}$ 	&	0.021	&	0.000	&	1,758
+	
 \backslash
 
 \backslash
- Men$'$s decision-making index	&	-0.026	&	0.816	&	-0.152$^{**}$	&	0.040	&	0.001	&	1,6
-73	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Men$'$s decision-making index 	&	-0.008	&	0.833	&	-0.165$^{**}$ 	&	0.040	&	0.000	&	1,
+707	
 \backslash
 
 \backslash
@@ -12486,27 +13006,52 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Timing of planting maize	&	0.043	&	0.179	&	0.028$^{**}$	&	0.011	&	0.003	&	1,686	
+Timing of planting maize 	&	0.042	&	0.178	&	0.017		&	0.010	&	0.061	&	1,719	
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.001	&	0.034	&	0.008$^{*}$	&	0.003	&	0.005	&	1,808	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.001	&	0.034	&	0.007$^{+}$ 	&	0.003	&	0.018	&	1,843	
 \backslash
 
 \backslash
- Striga control measures	&	0.080	&	0.253	&	0.076$^{**}$	&	0.016	&	0.000	&	1,763	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.082	&	0.255	&	0.075$^{**}$ 	&	0.014	&	0.000	&	1,795	
 \backslash
 
 \backslash
- Timing of the first weeding	&	0.157	&	0.338	&	0.086$^{**}$	&	0.020	&	0.000	&	1,808	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.156	&	0.336	&	0.088$^{**}$ 	&	0.018	&	0.000	&	1,843	
 \backslash
 
 \backslash
- Women Joint adoption index	&	-0.002	&	0.589	&	0.147$^{**}$	&	0.030	&	0.000	&	1,646	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Women$'$s adoption index 	&	-0.014	&	0.579	&	0.151$^{**}$ 	&	0.030	&	0.000	&	1,676	
 \backslash
 
 \backslash
  
+\end_layout
+
+\begin_layout Plain Layout
+
+
 \backslash
 
 \backslash
@@ -12566,27 +13111,47 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Timing of planting maize	&	0.043	&	0.179	&	0.019	&	0.010	&	0.057	&	1,599	
+Timing of planting maize 	&	0.042	&	0.178	&	0.019		&	0.010	&	0.054	&	1,633	
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.001	&	0.034	&	0.007	&	0.003	&	0.035	&	1,709	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.001	&	0.034	&	0.007$^{+}$ 	&	0.003	&	0.020	&	1,746	
 \backslash
 
 \backslash
- Striga control measures	&	0.080	&	0.253	&	0.031$^{+}$	&	0.013	&	0.020	&	1,664	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.082	&	0.255	&	0.028		&	0.013	&	0.032	&	1,698	
 \backslash
 
 \backslash
- Timing of the first weeding	&	0.157	&	0.338	&	0.011	&	0.017	&	0.503	&	1,709	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.156	&	0.336	&	0.011		&	0.016	&	0.491	&	1,746	
 \backslash
 
 \backslash
- Women Joint adoption index	&	-0.011	&	0.601	&	0.092$^{**}$	&	0.031	&	0.003	&	1,558	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Women$'$s adoption index 	&	-0.010	&	0.575	&	0.090$^{**}$ 	&	0.031	&	0.002	&	1,589	
 \backslash
 
 \backslash
-  
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -13067,27 +13632,47 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Timing of planting maize	&	0.110	&	0.294	&	0.009	&	0.016	&	0.538	&	1,686	
+Timing of planting maize 	&	0.109	&	0.292	&	0.005		&	0.014	&	0.726	&	1,719	
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.014	&	0.112	&	0.011	&	0.007	&	0.081	&	1,808	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.014	&	0.111	&	0.013		&	0.006	&	0.032	&	1,843	
 \backslash
 
 \backslash
- Striga control measures	&	0.321	&	0.437	&	-0.005	&	0.023	&	0.828	&	1,763	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.321	&	0.436	&	-0.014		&	0.021	&	0.498	&	1,795	
 \backslash
 
 \backslash
- Timing of the first weeding	&	0.478	&	0.470	&	-0.012	&	0.025	&	0.598	&	1,808	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.476	&	0.469	&	-0.038		&	0.022	&	0.080	&	1,843	
 \backslash
 
 \backslash
- Joint adoption index	&	0.000	&	0.600	&	0.015	&	0.030	&	0.285	&	1,646	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Joint adoption index 	&	-0.005	&	0.595	&	0.017		&	0.029	&	0.551	&	1,676	
 \backslash
 
 \backslash
- 
+  
 \end_layout
 
 \begin_layout Plain Layout
@@ -13152,23 +13737,43 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Timing of planting maize	&	0.110	&	0.294	&	0.007	&	0.015	&	0.651	&	1,599	
+Timing of planting maize 	&	0.109	&	0.292	&	0.013		&	0.015	&	0.375	&	1,633	
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.014	&	0.112	&	0.018$^{*}$	&	0.007	&	0.007	&	1,709	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.014	&	0.111	&	0.017$^{*}$ 	&	0.007	&	0.007	&	1,746	
 \backslash
 
 \backslash
- Striga control measures	&	0.321	&	0.437	&	0.051$^{+}$	&	0.022	&	0.018	&	1,664	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.321	&	0.436	&	0.050$^{+}$ 	&	0.022	&	0.017	&	1,698	
 \backslash
 
 \backslash
- Timing of the first weeding	&	0.478	&	0.470	&	0.029	&	0.023	&	0.206	&	1,709	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.476	&	0.469	&	0.025		&	0.023	&	0.268	&	1,746	
 \backslash
 
 \backslash
- Joint adoption index	&	0.004	&	0.619	&	0.076$^{**}$	&	0.030	&	0.005	&	1,558	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Joint adoption index 	&	0.006	&	0.613	&	0.079$^{**}$ 	&	0.030	&	0.003	&	1,589	
 \backslash
 
 \backslash
@@ -13637,23 +14242,43 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Timing of planting maize	&	0.057	&	0.208	&	-0.009	&	0.009	&	0.308	&	2,493	
+Timing of planting maize 	&	0.057	&	0.209	&	-0.003		&	0.009	&	0.760	&	2,542	
 \backslash
 
 \backslash
- Spacing and number of seeds	&	0.008	&	0.082	&	0.003	&	0.004	&	0.447	&	2,660	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.009	&	0.089	&	0.003		&	0.004	&	0.435	&	2,713	
 \backslash
 
 \backslash
- Striga control measures	&	0.143	&	0.325	&	-0.027$^{+}$	&	0.014	&	0.029	&	2,595	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.145	&	0.325	&	-0.023		&	0.013	&	0.059	&	2,644	
 \backslash
 
 \backslash
- Timing of the first weeding	&	0.202	&	0.375	&	-0.019	&	0.016	&	0.226	&	2,660	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.205	&	0.377	&	-0.009		&	0.015	&	0.538	&	2,713	
 \backslash
 
 \backslash
- Men adoption index	&	0.025	&	0.610	&	-0.002	&	0.026	&	0.386	&	2,433	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Men$'$s adoption index 	&	0.029	&	0.649	&	-0.008		&	0.026	&	0.753	&	2,478	
 \backslash
 
 \backslash
@@ -13916,27 +14541,47 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-timing of planting maize	&	0.057	&	0.208	&	-0.004	&	0.012	&	0.672	&	1,686	
+Timing of planting maize 	&	0.057	&	0.209	&	0.002		&	0.011	&	0.827	&	1,719	
 \backslash
 
 \backslash
- spacing and number of seeds	&	0.008	&	0.082	&	0.003	&	0.005	&	0.487	&	1,808	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.009	&	0.089	&	0.003		&	0.005	&	0.557	&	1,843	
 \backslash
 
 \backslash
- striga control measures	&	0.143	&	0.325	&	-0.039$^{*}$	&	0.016	&	0.006	&	1,763	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.145	&	0.325	&	-0.037$^{*}$ 	&	0.014	&	0.006	&	1,795	
 \backslash
 
 \backslash
- timing of the first weeding	&	0.202	&	0.375	&	-0.056$^{**}$	&	0.019	&	0.001	&	1,808	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.205	&	0.377	&	-0.026		&	0.017	&	0.129	&	1,843	
 \backslash
 
 \backslash
- men's adoption index	&	0.005	&	0.610	&	-0.014	&	0.030	&	0.179	&	1,646	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Men$'$s adoption index 	&	0.009	&	0.622	&	-0.023		&	0.030	&	0.427	&	1,676	
 \backslash
 
 \backslash
-  
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -14001,23 +14646,43 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-timing of planting maize	&	0.057	&	0.208	&	-0.012	&	0.010	&	0.242	&	1,599	
+Timing of planting maize 	&	0.057	&	0.209	&	-0.007		&	0.010	&	0.470	&	1,633	
 \backslash
 
 \backslash
- spacing and number of seeds	&	0.008	&	0.082	&	0.004	&	0.005	&	0.361	&	1,709	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Spacing and number of seeds 	&	0.009	&	0.089	&	0.004		&	0.005	&	0.424	&	1,746	
 \backslash
 
 \backslash
- striga control measures	&	0.143	&	0.325	&	-0.013	&	0.016	&	0.398	&	1,664	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Striga control measures 	&	0.145	&	0.325	&	-0.009		&	0.016	&	0.553	&	1,698	
 \backslash
 
 \backslash
- timing of the first weeding	&	0.202	&	0.375	&	0.009	&	0.019	&	0.623	&	1,709	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Timing of the first weeding 	&	0.205	&	0.377	&	0.008		&	0.018	&	0.654	&	1,746	
 \backslash
 
 \backslash
- men's adoption index	&	-0.022	&	0.576	&	0.011	&	0.030	&	0.965	&	1,558	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Men$'$s adoption index 	&	-0.015	&	0.593	&	0.007		&	0.030	&	0.803	&	1,589	
 \backslash
 
 \backslash
@@ -14506,27 +15171,52 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-DAP	&	0.016	&	0.121	&	0.027$^{**}$	&	0.007	&	0.000	&	1,809	
+DAP	&	0.016	&	0.119	&	0.017$^{+}$ 	&	0.007	&	0.013	&	1,844	
 \backslash
 
 \backslash
- Urea	&	0.002	&	0.038	&	0.014$^{**}$	&	0.004	&	0.000	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+urea	&	0.002	&	0.038	&	0.013$^{**}$ 	&	0.004	&	0.000	&	1,844	
 \backslash
 
 \backslash
- Organic fertilizer	&	0.017	&	0.126	&	0.021$^{*}$	&	0.008	&	0.004	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Organic fertilizer	&	0.017	&	0.124	&	0.019$^{*}$ 	&	0.007	&	0.008	&	1,844	
 \backslash
 
 \backslash
- Hybrid seeds	&	0.013	&	0.111	&	0.024$^{**}$	&	0.007	&	0.000	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Hybrid seed	&	0.013	&	0.110	&	0.020$^{*}$ 	&	0.007	&	0.003	&	1,844	
 \backslash
 
 \backslash
- OPV	&	0.018	&	0.126	&	0.017$^{+}$	&	0.008	&	0.020	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+OPV	&	0.020	&	0.130	&	0.016		&	0.007	&	0.026	&	1,844	
 \backslash
 
 \backslash
- Women input use index	&	-0.027	&	0.461	&	0.129$^{**}$	&	0.025	&	0.000	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Women$'$s input use index 	&	-0.024	&	0.480	&	0.127$^{**}$ 	&	0.025	&	0.000	&	1,844	
 \backslash
 
 \backslash
@@ -14595,31 +15285,56 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-DAP	&	0.016	&	0.121	&	0.007	&	0.006	&	0.255	&	1,710	
+DAP	&	0.016	&	0.119	&	0.003		&	0.006	&	0.594	&	1,747	
 \backslash
 
 \backslash
- Urea	&	0.002	&	0.038	&	0.006	&	0.003	&	0.028	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+urea	&	0.002	&	0.038	&	0.006		&	0.003	&	0.048	&	1,747	
 \backslash
 
 \backslash
- Organic fertilizer	&	0.017	&	0.126	&	0.006	&	0.006	&	0.332	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Organic fertilizer	&	0.017	&	0.124	&	0.007		&	0.006	&	0.245	&	1,747	
 \backslash
 
 \backslash
- Hybrid seeds	&	0.013	&	0.111	&	-0.001	&	0.005	&	0.874	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Hybrid seed	&	0.013	&	0.110	&	-0.001		&	0.005	&	0.867	&	1,747	
 \backslash
 
 \backslash
- OPV	&	0.018	&	0.126	&	0.002	&	0.006	&	0.764	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+OPV	&	0.020	&	0.130	&	0.000		&	0.006	&	0.973	&	1,747	
 \backslash
 
 \backslash
- Women input use index	&	-0.012	&	0.484	&	0.033$^{+}$	&	0.024	&	0.063	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Women$'$s input use index 	&	-0.021	&	0.466	&	0.034		&	0.024	&	0.135	&	1,747	
 \backslash
 
 \backslash
-   
+  
 \end_layout
 
 \begin_layout Plain Layout
@@ -15104,27 +15819,52 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-DAP	&	0.050	&	0.207	&	0.020	&	0.011	&	0.042	&	1,809	
+DAP	&	0.051	&	0.210	&	0.011		&	0.010	&	0.275	&	1,844	
 \backslash
 
 \backslash
- Urea	&	0.014	&	0.116	&	0.001	&	0.006	&	0.886	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+urea	&	0.015	&	0.115	&	0.004		&	0.006	&	0.492	&	1,844	
 \backslash
 
 \backslash
- Organic fertilizer	&	0.051	&	0.209	&	0.008	&	0.011	&	0.385	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Organic fertilizer	&	0.050	&	0.207	&	0.008		&	0.010	&	0.397	&	1,844	
 \backslash
 
 \backslash
- Hybrid seeds	&	0.027	&	0.150	&	0.013	&	0.009	&	0.110	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Hybrid seed	&	0.027	&	0.150	&	0.007		&	0.008	&	0.330	&	1,844	
 \backslash
 
 \backslash
- OPV	&	0.021	&	0.084	&	0.008	&	0.005	&	0.052	&	1,836	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+OPV	&	0.021	&	0.085	&	0.002		&	0.004	&	0.588	&	1,872	
 \backslash
 
 \backslash
- Joint input use index	&	0.001	&	0.489	&	0.039$^{**}$	&	0.023	&	0.010	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Joint input use index 	&	0.008	&	0.498	&	0.038$^{+}$ 	&	0.023	&	0.079	&	1,844	
 \backslash
 
 \backslash
@@ -15193,27 +15933,52 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-DAP	&	0.050	&	0.207	&	0.022	&	0.011	&	0.035	&	1,710	
+DAP	&	0.051	&	0.210	&	0.015		&	0.011	&	0.159	&	1,747	
 \backslash
 
 \backslash
- Urea	&	0.014	&	0.116	&	0.004	&	0.006	&	0.506	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+urea	&	0.015	&	0.115	&	0.002		&	0.006	&	0.770	&	1,747	
 \backslash
 
 \backslash
- Organic fertilizer	&	0.051	&	0.209	&	0.043$^{**}$	&	0.012	&	0.000	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Organic fertilizer	&	0.050	&	0.207	&	0.046$^{**}$ 	&	0.012	&	0.000	&	1,747	
 \backslash
 
 \backslash
- Hybrid seeds	&	0.027	&	0.150	&	0.027$^{**}$	&	0.009	&	0.002	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Hybrid seed	&	0.027	&	0.150	&	0.025$^{*}$ 	&	0.009	&	0.004	&	1,747	
 \backslash
 
 \backslash
- OPV	&	0.021	&	0.084	&	0.002	&	0.004	&	0.629	&	1,735	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+OPV	&	0.021	&	0.085	&	0.002		&	0.004	&	0.627	&	1,773	
 \backslash
 
 \backslash
- Joint input use index	&	0.001	&	0.509	&	0.089$^{**}$	&	0.024	&	0.000	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Joint input use index 	&	-0.006	&	0.497	&	0.089$^{**}$ 	&	0.024	&	0.000	&	1,747	
 \backslash
 
 \backslash
@@ -15695,27 +16460,52 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-DAP	&	0.067	&	0.239	&	-0.026$^{**}$	&	0.009	&	0.002	&	2,661	
+DAP	&	0.070	&	0.245	&	-0.028$^{**}$ 	&	0.009	&	0.001	&	2,714	
 \backslash
 
 \backslash
- Urea	&	0.018	&	0.122	&	0.002	&	0.005	&	0.766	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+urea	&	0.019	&	0.125	&	0.001		&	0.005	&	0.872	&	2,714	
 \backslash
 
 \backslash
- Organic fertilizer	&	0.051	&	0.209	&	0.027$^{*}$	&	0.010	&	0.006	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Organic fertilizer	&	0.050	&	0.207	&	0.027$^{*}$ 	&	0.010	&	0.004	&	2,714	
 \backslash
 
 \backslash
- Hybrid seeds	&	0.055	&	0.215	&	-0.006	&	0.009	&	0.495	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Hybrid seed	&	0.055	&	0.216	&	-0.008		&	0.008	&	0.310	&	2,714	
 \backslash
 
 \backslash
- OPV	&	0.019	&	0.077	&	0.005	&	0.004	&	0.191	&	2,700	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+OPV	&	0.020	&	0.079	&	0.004		&	0.004	&	0.209	&	2,754	
 \backslash
 
 \backslash
- Men input use index	&	-0.008	&	0.480	&	-0.012	&	0.021	&	0.381	&	2,661	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Men$'$s input use index 	&	0.012	&	0.511	&	-0.020		&	0.020	&	0.311	&	2,714	
 \backslash
 
 \backslash
@@ -15990,27 +16780,52 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-DAP	&	0.067	&	0.239	&	-0.032$^{**}$	&	0.011	&	0.000	&	1,809	
+DAP	&	0.070	&	0.245	&	-0.029$^{**}$ 	&	0.010	&	0.002	&	1,844	
 \backslash
 
 \backslash
- Urea	&	0.018	&	0.122	&	-0.005	&	0.006	&	0.359	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+urea	&	0.019	&	0.125	&	-0.004		&	0.006	&	0.467	&	1,844	
 \backslash
 
 \backslash
- Organic fertilizer	&	0.051	&	0.209	&	0.008	&	0.011	&	0.391	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Organic fertilizer	&	0.050	&	0.207	&	0.008		&	0.010	&	0.395	&	1,844	
 \backslash
 
 \backslash
- Hybrid seeds	&	0.055	&	0.215	&	-0.011	&	0.011	&	0.271	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Hybrid seed	&	0.055	&	0.216	&	-0.012		&	0.009	&	0.227	&	1,844	
 \backslash
 
 \backslash
- OPV	&	0.019	&	0.077	&	0.003	&	0.004	&	0.448	&	1,836	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+OPV	&	0.020	&	0.079	&	0.005		&	0.004	&	0.218	&	1,872	
 \backslash
 
 \backslash
- Men input use index	&	0.018	&	0.514	&	-0.023$^{+}$	&	0.023	&	0.058	&	1,809	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Men$'$s input use index 	&	0.024	&	0.523	&	-0.031		&	0.023	&	0.157	&	1,844	
 \backslash
 
 \backslash
@@ -16079,27 +16894,52 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-DAP	&	0.067	&	0.239	&	-0.021	&	0.011	&	0.036	&	1,710	
+DAP	&	0.070	&	0.245	&	-0.026$^{+}$ 	&	0.011	&	0.013	&	1,747	
 \backslash
 
 \backslash
- Urea	&	0.018	&	0.122	&	0.007	&	0.007	&	0.269	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+urea	&	0.019	&	0.125	&	0.005		&	0.006	&	0.393	&	1,747	
 \backslash
 
 \backslash
- Organic fertilizer	&	0.051	&	0.209	&	0.043$^{**}$	&	0.012	&	0.000	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Organic fertilizer	&	0.050	&	0.207	&	0.046$^{**}$ 	&	0.012	&	0.000	&	1,747	
 \backslash
 
 \backslash
- Hybrid seeds	&	0.055	&	0.215	&	-0.003	&	0.010	&	0.804	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Hybrid seed	&	0.055	&	0.216	&	-0.005		&	0.010	&	0.630	&	1,747	
 \backslash
 
 \backslash
- OPV	&	0.019	&	0.077	&	0.006	&	0.004	&	0.166	&	1,735	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+OPV	&	0.020	&	0.079	&	0.004		&	0.004	&	0.304	&	1,773	
 \backslash
 
 \backslash
- Men input use index	&	-0.006	&	0.499	&	0.001	&	0.024	&	0.783	&	1,710	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Men$'$s input use index 	&	0.001	&	0.515	&	-0.006		&	0.024	&	0.798	&	1,747	
 \backslash
 
 \backslash
@@ -16596,29 +17436,54 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Production	&	39.094	&	155.909	&	51.576$^{**}$	&	10.641	&	0.000	&	1,836	
+Production	&	38.721	&	154.430	&	43.869	$^{**}$ 	&	9.426	&	0.000	&	1,872	
 \backslash
 
 \backslash
- Area	&	0.105	&	0.332	&	0.103$^{**}$	&	0.022	&	0.000	&	1,836	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Area	&	0.104	&	0.330	&	0.092	$^{**}$ 	&	0.020	&	0.000	&	1,872	
 \backslash
 
 \backslash
- Yield better than normal	&	0.024	&	0.142	&	0.043$^{**}$	&	0.010	&	0.000	&	1,763	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield better than normal	&	0.025	&	0.145	&	0.038	$^{**}$ 	&	0.009	&	0.000	&	1,795	
 \backslash
 
 \backslash
- Yield	&	57.675	&	237.920	&	75.144$^{**}$	&	16.607	&	0.000	&	1,836	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield	&	58.850	&	244.257	&	63.089	$^{**}$ 	&	14.771	&	0.000	&	1,872	
 \backslash
 
 \backslash
- Share of household maize production	&	0.122	&	0.315	&	0.106$^{**}$	&	0.019	&	0.000	&
-	1,729	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Share of household maize production 	&	0.122	&	0.314	&	0.097	$^{**}$ 	&	0.017	&	0.000
+	&	1,762	
 \backslash
 
 \backslash
- Share of area under maize cultivation	&	0.122	&	0.315	&	0.107$^{**}$	&	0.020	&	0.000
-	&	1,697	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Share of area under maize cultivation 	&	0.121	&	0.312	&	0.100	$^{**}$ 	&	0.017	&	0.0
+00	&	1,729	
 \backslash
 
 \backslash
@@ -16687,28 +17552,54 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Production	&	39.094	&	155.909	&	18.834	&	8.911	&	0.033	&	1,735	
+Production	&	38.721	&	154.430	&	15.552		&	8.734	&	0.071	&	1,773	
 \backslash
 
 \backslash
- Area	&	0.105	&	0.332	&	0.045	&	0.021	&	0.029	&	1,735	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Area	&	0.104	&	0.330	&	0.046	$^{+}$ 	&	0.021	&	0.018	&	1,773	
 \backslash
 
 \backslash
- Yield better than normal	&	0.024	&	0.142	&	0.011	&	0.008	&	0.131	&	1,664	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield better than normal	&	0.025	&	0.145	&	0.009		&	0.007	&	0.220	&	1,698	
 \backslash
 
 \backslash
- Yield	&	57.675	&	237.920	&	27.178	&	12.515	&	0.027	&	1,735	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield	&	58.850	&	244.257	&	22.344		&	12.338	&	0.064	&	1,773	
 \backslash
 
 \backslash
- Share of household maize production	&	0.122	&	0.315	&	0.019	&	0.016	&	0.208	&	1,618	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Share of household maize production 	&	0.122	&	0.314	&	0.017		&	0.016	&	0.258	&	1,654
+	
 \backslash
 
 \backslash
- Share of area under maize cultivation	&	0.122	&	0.315	&	0.021	&	0.016	&	0.200	&	1,60
-4	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Share of area under maize cultivation 	&	0.121	&	0.312	&	0.023	$^{**}$ 	&	0.016	&	0.1
+48	&	1,638	
 \backslash
 
 \backslash
@@ -17198,33 +18089,58 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Production	&	239.898	&	478.920	&	-35.666	&	21.564	&	0.057	&	1,836	
+Production	&	238.811	&	475.554	&	-37.786		&	19.415	&	0.043	&	1,872	
 \backslash
 
 \backslash
- Area	&	0.591	&	0.908	&	-0.036	&	0.044	&	0.343	&	1,836	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Area	&	0.589	&	0.904	&	-0.067		&	0.040	&	0.080	&	1,872	
 \backslash
 
 \backslash
- Yield better than normal	&	0.132	&	0.326	&	-0.009	&	0.017	&	0.521	&	1,763	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield better than normal	&	0.132	&	0.326	&	-0.016		&	0.015	&	0.266	&	1,795	
 \backslash
 
 \backslash
- Yield	&	222.381	&	383.192	&	-16.996	&	19.671	&	0.338	&	1,836	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield	&	223.450	&	383.693	&	-20.937		&	17.723	&	0.243	&	1,872	
 \backslash
 
 \backslash
- Share of household maize production	&	0.501	&	0.486	&	-0.013	&	0.026	&	0.573	&	1,729
-	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Share of household maize production 	&	0.499	&	0.485	&	-0.022		&	0.023	&	0.333	&	1,76
+2	
 \backslash
 
 \backslash
- Share of area under maize cultivation	&	0.502	&	0.485	&	-0.012	&	0.026	&	0.633	&	1,6
-97	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Share of area under maize cultivation 	&	0.500	&	0.484	&	-0.028	$^{**}$ 	&	0.023	&	0.
+231	&	1,729	
 \backslash
 
 \backslash
-  
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -17289,28 +18205,54 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Production	&	239.898	&	478.920	&	-1.069	&	21.157	&	0.960	&	1,735	
+Production	&	238.811	&	475.554	&	-10.014		&	20.845	&	0.627	&	1,773	
 \backslash
 
 \backslash
- Area	&	0.591	&	0.908	&	0.004	&	0.042	&	0.915	&	1,735	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Area	&	0.589	&	0.904	&	-0.003		&	0.041	&	0.946	&	1,773	
 \backslash
 
 \backslash
- Yield better than normal	&	0.132	&	0.326	&	0.016	&	0.016	&	0.303	&	1,664	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield better than normal	&	0.132	&	0.326	&	0.014		&	0.016	&	0.365	&	1,698	
 \backslash
 
 \backslash
- Yield	&	222.381	&	383.192	&	7.339	&	17.845	&	0.671	&	1,735	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Yield	&	223.450	&	383.693	&	3.957		&	17.578	&	0.815	&	1,773	
 \backslash
 
 \backslash
- Share of household maize production	&	0.501	&	0.486	&	0.031	&	0.024	&	0.197	&	1,618	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Share of household maize production 	&	0.499	&	0.485	&	0.031		&	0.024	&	0.178	&	1,654
+	
 \backslash
 
 \backslash
- Share of area under maize cultivation	&	0.502	&	0.485	&	0.029	&	0.025	&	0.224	&	1,60
-4	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Share of area under maize cultivation 	&	0.500	&	0.484	&	0.030	$^{**}$ 	&	0.024	&	0.2
+02	&	1,638	
 \backslash
 
 \backslash
@@ -17804,11 +18746,16 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Sold any	&	0.088	&	0.284	&	0.041$^{**}$	&	0.016	&	0.005	&	1,836	
+Sold any maize?	&	0.089	&	0.284	&	0.036	$^{*}$ 	&	0.014	&	0.012	&	1,872	
 \backslash
 
 \backslash
- Amount sold (in 100 kg bags)	&	0.184	&	0.977	&	0.071	&	0.047	&	0.098	&	1,836	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Amount sold (100 kg bags)	&	0.182	&	0.968	&	0.039		&	0.042	&	0.352	&	1,872	
 \backslash
 
 \backslash
@@ -17877,11 +18824,16 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Sold any	&	0.088	&	0.284	&	-0.005	&	0.013	&	0.691	&	1,735	
+Sold any maize?	&	0.089	&	0.284	&	-0.013		&	0.013	&	0.345	&	1,773	
 \backslash
 
 \backslash
- Amount sold (in 100 kg bags)	&	0.184	&	0.977	&	-0.025	&	0.044	&	0.574	&	1,735	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Amount sold (100 kg bags)	&	0.182	&	0.968	&	-0.049		&	0.043	&	0.266	&	1,773	
 \backslash
 
 \backslash
@@ -18338,11 +19290,16 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Sold any	&	0.319	&	0.466	&	-0.029	&	0.024	&	0.178	&	1,836	
+Sold any maize?	&	0.321	&	0.467	&	-0.013		&	0.021	&	0.529	&	1,872	
 \backslash
 
 \backslash
- Amount sold (in 100 kg bags)	&	1.179	&	3.173	&	-0.157	&	0.151	&	0.241	&	1,836	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Amount sold (100 kg bags)	&	1.232	&	3.431	&	-0.154		&	0.144	&	0.266	&	1,872	
 \backslash
 
 \backslash
@@ -18411,15 +19368,20 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Sold any	&	0.319	&	0.466	&	0.009	&	0.023	&	0.673	&	1,735	
+Sold any maize?	&	0.321	&	0.467	&	0.009		&	0.022	&	0.710	&	1,773	
 \backslash
 
 \backslash
- Amount sold (in 100 kg bags)	&	1.179	&	3.173	&	0.053	&	0.162	&	0.740	&	1,735	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Amount sold (100 kg bags)	&	1.232	&	3.431	&	-0.027		&	0.165	&	0.861	&	1,773	
 \backslash
 
 \backslash
-  
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -18853,11 +19815,16 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Sold any	&	0.116	&	0.320	&	-0.006	&	0.013	&	0.669	&	2,700	
+Sold any maize?	&	0.116	&	0.320	&	-0.001		&	0.013	&	0.914	&	2,754	
 \backslash
 
 \backslash
- Amount sold (in 100 kg bags)	&	0.409	&	2.544	&	-0.055	&	0.089	&	0.547	&	2,700	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Amount sold (100 kg bags)	&	0.404	&	2.517	&	-0.043		&	0.084	&	0.630	&	2,754	
 \backslash
 
 \backslash
@@ -19109,11 +20076,16 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Sold any	&	0.116	&	0.320	&	-0.028$^{+}$	&	0.016	&	0.053	&	1,836	
+Sold any maize?	&	0.116	&	0.320	&	-0.010		&	0.015	&	0.502	&	1,872	
 \backslash
 
 \backslash
- Amount sold (in 100 kg bags)	&	0.409	&	2.544	&	-0.111	&	0.109	&	0.273	&	1,836	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Amount sold (100 kg bags)	&	0.404	&	2.517	&	-0.066		&	0.095	&	0.503	&	1,872	
 \backslash
 
 \backslash
@@ -19182,11 +20154,16 @@ cline{2-7}
 
 \begin_layout Plain Layout
 
-Sold any	&	0.116	&	0.320	&	0.008	&	0.016	&	0.596	&	1,735	
+Sold any maize?	&	0.116	&	0.320	&	0.007		&	0.015	&	0.636	&	1,773	
 \backslash
 
 \backslash
- Amount sold (in 100 kg bags)	&	0.409	&	2.544	&	-0.021	&	0.114	&	0.855	&	1,735	
+ 													
+\end_layout
+
+\begin_layout Plain Layout
+
+Amount sold (100 kg bags)	&	0.404	&	2.517	&	-0.016		&	0.110	&	0.892	&	1,773	
 \backslash
 
 \backslash
