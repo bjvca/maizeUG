@@ -1,0 +1,1097 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+While we did not carry out a dedicated baseline survey, we did ask some
+ questions to the person that was assigned to view the video immediately
+ prior to the first treatment administration.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance"
+
+\end_inset
+
+ summarizes some of the information that was obtained in this way.
+ The first column provides averages for the entire sample, with corresponding
+ standard deviations in parentheses below.
+ For instance, we find that the average household in the study cultivated
+ maize in about 0.4 acres of land.
+ The average age of heads of the household is 42 years and in 44 percent
+ of the households, the head finished primary education.
+ Households are large, consisting of more than 7 individuals.
+ The average household lives about 5.5 km from the nearest input dealer.
+ In 30 percent of households, the walls of the house are made of mud and
+ the average house has only 2 rooms.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pre-treatment characteristics
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Balance"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1: Involving women in receiving information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Area of maize	&	0.385	&	0.404	&	-0.016	&	0.016	&	0.340	&	2,633	
+\backslash
+
+\backslash
+ Age head	&	42.152	&	13.940	&	0.016	&	0.514	&	0.010	&	3,195	
+\backslash
+
+\backslash
+ Head finished primary	&	0.443	&	0.497	&	0.036	&	0.018	&	0.048	&	3,322	
+\backslash
+
+\backslash
+ HH size	&	7.623	&	3.309	&	0.211	&	0.120	&	0.079	&	3,322	
+\backslash
+
+\backslash
+ Distance to input shop	&	5.554	&	5.544	&	-0.027	&	0.202	&	0.893	&	3,322	
+\backslash
+
+\backslash
+ Wall is mud	&	0.296	&	0.457	&	-0.007	&	0.017	&	0.666	&	3,322	
+\backslash
+
+\backslash
+ Number of rooms	&	2.236	&	1.144	&	-0.033	&	0.042	&	0.424	&	3,322	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Area of maize	&	0.384	&	0.404	&	-0.020	&	0.017	&	0.236	&	2,633	
+\backslash
+
+\backslash
+ Age head	&	42.133	&	13.923	&	-0.085	&	0.522	&	0.870	&	3,195	
+\backslash
+
+\backslash
+ Head finished primary	&	0.444	&	0.497	&	0.007	&	0.018	&	0.703	&	3,322	
+\backslash
+
+\backslash
+ HH size	&	7.621	&	3.307	&	-0.024	&	0.121	&	0.843	&	3,322	
+\backslash
+
+\backslash
+ Distance to input shop	&	5.551	&	5.537	&	-0.132	&	0.204	&	0.518	&	3,322	
+\backslash
+
+\backslash
+ mud Wall is mud	&	0.296	&	0.457	&	0.007	&	0.017	&	0.695	&	3,322	
+\backslash
+
+\backslash
+ nr Number of rooms	&	2.234	&	1.143	&	0.003	&	0.042	&	0.948	&	3,322	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1 for top panel and Model 2 for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference.
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pre-treatment characteristics are often used to demonstrate balance between
+ treatment and control groups.
+ The third column in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ compares differences between treatment and the relevant control groups
+ for the two main comparisons we will make (Similar tables for the other
+ hypotheses can be found in Appendix Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance1AB"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance2AB"
+
+\end_inset
+
+).
+ We find statistically significant differences for some characteristics
+ between treatment and control groups for the hypothesis related to empowering
+ women with information (Model 1 in the upper panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance"
+
+\end_inset
+
+).
+ Joint orthogonality is rejected as well (F-statistic = 3.40; p-value = 0.001).
+ This apparent imbalance for the first treatment, however, can be explained
+ by the fact that the gender of the respondent at baseline is confounded
+ with the treatment, as baseline questions were asked to the person that
+ was targeted in the treatment.
+ In other words, at least half of respondents to baseline questions in the
+ treatment group were women, while all respondents in the control group
+ were men.
+ Most likely, the significant differences are a reflection of disagreement
+ between the male and female co-heads in survey data that has been documented
+ in a variety of settings 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg."
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+.
+ This is consistent with the fact that we do find balance on characteristics
+ that are easier to verify by the enumerator, such as the material of the
+ wall of the house or the distance to the nearest input provider.
+ It is also consistent with the finding that imbalance is worse for model
+ 1A (in the top panel of Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance1AB"
+
+\end_inset
+
+) than for model 1B (bottom panel of Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance1AB"
+
+\end_inset
+
+), as in the former comparison the answers from men in the control group
+ are compared to answers of women in the treatment group and in the latter
+ answers from men in the control group are compared to answers given by
+ the couple together in the treatment group.
+ For the comparison to test the impact of role model effects, we do not
+ find imbalance between the groups (lower panel in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance"
+
+\end_inset
+
+) (F-statistic = 0.661; p-value = 0.706).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Balance tests for Models 1A and 1B
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Balance1AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1A: Zooming in on providing information}}	
+\backslash
+
+\backslash
+ 
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{ to the female co-heads alone}}	
+\backslash
+
+\backslash
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Area of maize	&	0.381	&	0.406	&	-0.030	&	0.019	&	0.119	&	1,769	
+\backslash
+
+\backslash
+ Age head	&	42.196	&	13.819	&	-1.702	&	0.597	&	0.004	&	2,143	
+\backslash
+
+\backslash
+ Head finished primary	&	0.450	&	0.498	&	0.060	&	0.021	&	0.004	&	2,269	
+\backslash
+
+\backslash
+ HH size	&	7.521	&	3.233	&	0.071	&	0.136	&	0.603	&	2,269	
+\backslash
+
+\backslash
+ Distance to input shop	&	5.516	&	5.598	&	-0.113	&	0.235	&	0.630	&	2,269	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Wall is mud	&	0.296	&	0.456	&	-0.010	&	0.019	&	0.602	&	2,269	
+\backslash
+
+\backslash
+ Number of rooms	&	2.218	&	1.126	&	-0.079	&	0.047	&	0.093	&	2,269	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 1B: Zooming in on providing information}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{to women as part of the couple}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Area of maize	&	0.394	&	0.404	&	-0.002	&	0.019	&	0.897	&	1,785	
+\backslash
+
+\backslash
+ Age head	&	42.521	&	14.254	&	-0.988	&	0.612	&	0.106	&	2,176	
+\backslash
+
+\backslash
+ Head finished primary	&	0.425	&	0.494	&	0.011	&	0.021	&	0.599	&	2,187	
+\backslash
+
+\backslash
+ HH size	&	7.655	&	3.355	&	0.352	&	0.143	&	0.014	&	2,187	
+\backslash
+
+\backslash
+ Distance to input shop	&	5.599	&	5.671	&	0.062	&	0.243	&	0.798	&	2,187	
+\backslash
+
+\backslash
+ Wall is mud	&	0.299	&	0.458	&	-0.005	&	0.020	&	0.818	&	2,187	
+\backslash
+
+\backslash
+ Number of rooms	&	2.263	&	1.180	&	0.014	&	0.051	&	0.788	&	2,187	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 1A for top panel and Model 1B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference.
+ A joint test for balance is rejected for the first model (F-statistic 3.379,
+ p-value $=$ 0.001) and also for the second model (F-statistic 2.321, p-value
+ $=$ 0.023).
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Balance tests for Models 2A and 2B
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Balance2AB"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2A: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{to the female co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Area of maize	&	0.159	&	0.554	&	0.026	&	0.036	&	0.468	&	1,052	
+\backslash
+
+\backslash
+ Age head	&	41.302	&	13.157	&	-0.095	&	0.868	&	0.913	&	1,019	
+\backslash
+
+\backslash
+ Head finished primary	&	0.481	&	0.500	&	-0.020	&	0.031	&	0.532	&	1,135	
+\backslash
+
+\backslash
+ HH size	&	7.554	&	3.212	&	0.108	&	0.201	&	0.590	&	1,135	
+\backslash
+
+\backslash
+ Distance to input shop	&	5.459	&	5.273	&	0.075	&	0.330	&	0.820	&	1,135	
+\backslash
+
+\backslash
+ Wall is mud	&	0.290	&	0.454	&	0.017	&	0.028	&	0.552	&	1,135	
+\backslash
+
+\backslash
+ Number of rooms	&	2.177	&	1.064	&	0.095	&	0.066	&	0.154	&	1,135	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{Model 2B: Involving women in conveying information}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{6}{c}{
+\backslash
+textit{to the male co-heads alone}}	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	Avg	&	S.D.	&	ATE	&	S.E.	&	p-value	&	N	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Area of maize	&	0.395	&	0.407	&	0.000	&	0.028	&	0.995	&	921	
+\backslash
+
+\backslash
+ Age of head	&	43.000	&	14.347	&	0.149	&	0.903	&	0.869	&	1,124	
+\backslash
+
+\backslash
+ Head finished primary	&	0.420	&	0.494	&	0.015	&	0.031	&	0.626	&	1,134	
+\backslash
+
+\backslash
+ HH size	&	7.488	&	3.258	&	-0.242	&	0.204	&	0.235	&	1,134	
+\backslash
+
+\backslash
+ Distance to input shop	&	5.573	&	5.896	&	-0.724	&	0.369	&	0.050	&	1,134	
+\backslash
+
+\backslash
+ Wall is mud	&	0.301	&	0.459	&	0.024	&	0.029	&	0.398	&	1,134	
+\backslash
+
+\backslash
+ Number of  rooms	&	2.258	&	1.183	&	-0.100	&	0.074	&	0.178	&	1,134	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+First column reports sample means; standard deviations are in the second
+ column; column 3 reports differences between treatment and control as defined
+ in Figure 2 (Model 2A for top panel and Model 2B for bottom panel); associated
+ standard errors are in column 4; column 5 reports p-values based on randomizati
+on inference.
+ A joint test for balance can not be rejected for the first model (F-statistic
+ 0.532, p-value = 0.811) and also not for the second model (F-statistic 0.632,
+ p-value = 0.730).
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

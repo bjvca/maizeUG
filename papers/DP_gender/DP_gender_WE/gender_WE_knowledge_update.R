@@ -1,5 +1,5 @@
 rm(list=ls())
-stopCluster(cl)
+
 source("/home/bjvca/data/projects/digital green/endline/data/init_gender.R")
 baseline <-  read.csv("/home/bjvca/data/projects/digital green/baseline/base_merge.cvs")
 
@@ -9,9 +9,9 @@ baseline <-  read.csv("/home/bjvca/data/projects/digital green/baseline/base_mer
 #wget https://www.dropbox.com/s/t6vkm91bawxbz8g/AWS2.csv?dl=0
 #install.packages(c("ggplot2","doParallel","data.table","dplyr","Hmisc"))
 
-rm(list=ls())
-dta <- read.csv("AWS.csv")
-baseline <- read.csv("baseline.csv")
+#rm(list=ls())
+#dta <- read.csv("AWS.csv")
+#baseline <- read.csv("baseline.csv")
 
 
 library(ggplot2)
@@ -19,6 +19,7 @@ library(doParallel)
 library(data.table)
 library(dplyr)
 library(Hmisc)
+library(car)
 
 set.seed(07032018)
 
@@ -262,7 +263,7 @@ wtd.sd <- function(x, w,...) {
 return(sqrt(wtd.var(x,w)))
 }
 
-FW_index <- function(treat, indexer, contr_vars, w_int2,data, nr_repl=0) {
+FW_index <- function(treat, indexer, data, nr_repl=0) {
 ### function to make family wise index using covariance as weights (following http://cyrussamii.com/?p=2656)
 ### FW_index("messenger != 'ctrl' ", c("know_space", "know_combine", "know_weed"),dta)
 data <- data[complete.cases(data[indexer]),]
@@ -276,14 +277,14 @@ x <- data[indexer]
 					Sx <- cov(x)
 					
 					data$index <- t(solve(t(i.vec)%*%solve(Sx)%*%i.vec)%*%t(i.vec)%*%solve(Sx)%*%t(x))
-mod <- lm(as.formula(paste("index",treat,sep="~")) ,weights=unlist(data[w_int2]), data=data)
+mod <- lm(as.formula(paste("index",treat,sep="~")) , data=data)
 
 					
 if (nr_repl > 0) { 
 	data$index <- as.vector(data$index)
-	sig <- RI("index" ,treat , contr_vars, w_int= w_int2, data, nr_repl = nr_repl)
+	sig <- RI("index" ,treat , data, nr_repl = nr_repl)
 } else {
-	sig <- summary(lm(as.formula(paste("index",treat,sep="~")) ,weights=unlist(data[w_int2]), data=data))$coefficients[2,4]
+	sig <- summary(lm(as.formula(paste("index",treat,sep="~")) , data=data))$coefficients[2,4]
 }
 return(list(mod,sig, data))
 }
@@ -331,71 +332,106 @@ dta_copy <- dta
 ctrls <- NULL
 
 #set totrep to zero if you do not want simulation based inferecne
-totrep <- 10000
+totrep <- 0
+
+
 ####
+outcomes_ind <- c("know_space","know_comine","know_weed","know_armyworm")
+out_w <- array(NA,c(length(outcomes_ind),12,2))
+out_m <- array(NA,c(length(outcomes_ind),12,2))
+out_j <- array(NA,c(length(outcomes_ind),12,2))
+#relevel treatments to make sure male is control group
+dta$recipient <- as.factor(dta$recipient)
+dta$messenger <- as.factor(dta$messenger)
+treatment <- "recipient*messenger"
+dta <- within(dta, recipient <- relevel(recipient, ref = "male"))
+dta <- within(dta, messenger <- relevel(messenger, ref = "male"))
+i <- 1
+for (outcome in c("know_space","know_combine","know_weed","know_armyworm")) {
 
-for (h in 1:3) {
-if (h==1) {
-############################################ H1: empower: rec==couple or woman - rec==male #########################################################
-dta <- dta_copy
-treatment <- "(recipient != 'male') +ivr+sms+ as.factor(messenger)" 
-#dta <- merge(dta,baseline, by="hhid")
-dta$weights <- 1
-dta$weights[dta$recipient == "female"] <-  1053/1135
-#ctrls <- "yield+maizeage+maizeeduc+maizehh_no+maizeprinfo_receiv_spouse+maizeprinput_use+maizemobile" 
-} else if (h==2) {
-############################################ H1a: empower : rec==female - rec==male ###################################################
-dta <- subset(dta_copy, recipient == "male" | recipient == "female")
-treatment <- "(recipient == 'female') +ivr+sms+as.factor(messenger)" 
-#dta <- merge(dta,baseline, by="hhid")
-dta$weights <- 1
-#ctrls <- "maizeage+maizeeduc+maizeprrooms+maizeprinfo_receiv_spouse+maizeprinput_use+maizemobile" 
-} else if (h==3) {
-############################################ H1b: rec==couple - rec==male  ###################################################
-dta <- subset(dta_copy, recipient == "male" | recipient == "couple")
-treatment <- "(recipient == 'couple') +ivr+sms+ as.factor(messenger)"
-#dta <- merge(dta,baseline, by="hhid")
-dta$weights <- 1
-#ctrls <- "yield+maizeage+maizehh_no+maizeprinfo_receiv_spouse+maizeprinput_use" 
-} else if (h==4) {
-############################################ H2: involving women in conveying info
-#############################mes==couple or woman - mes==male ###################################################
-dta <- dta_copy
-ctrls<- NULL
-dta$weights <- 1
-dta$weights[dta$messenger == "female"] <-  1106/1108
-treatment <- "(messenger != 'male') +ivr+sms+as.factor(recipient)"
-} else if (h==5) {
-############################ H2a: challenging role incongruity###########################
-#############  messenger== 'female or couple' & recipient=='male' - messenger== 'male' & recipient=='male' ##############################
-dta <- dta_copy
-dta$recipient <- factor(dta$recipient)
-dta$messenger <- factor(dta$messenger)
-dta <- subset(dta, recipient =='female'  )
-set.seed(54321)
+out_w[i,1,1] <- mean(unlist(dta[dta$recipient=="male",][paste(outcome,"w",sep="_")]), na.rm=T)
+out_m[i,1,1] <- mean(unlist(dta[dta$recipient=="male",][paste(outcome,"m",sep="_")]), na.rm=T)
+out_j[i,1,1] <- mean(unlist(dta[dta$recipient=="male",][paste(outcome,"j",sep="_")]), na.rm=T)
 
-treatment <- "(messenger!= 'male') +ivr+sms"
+out_w[i,2,1] <- sd(unlist(dta[dta$recipient=="male",][paste(outcome,"w",sep="_")]), na.rm=T)
+out_m[i,2,1] <- sd(unlist(dta[dta$recipient=="male",][paste(outcome,"m",sep="_")]), na.rm=T)
+out_j[i,2,1] <- sd(unlist(dta[dta$recipient=="male",][paste(outcome,"j",sep="_")]), na.rm=T)
 
+out_w[i,1,2] <- mean(unlist(dta[dta$messenger=="male",][paste(outcome,"w",sep="_")]), na.rm=T)
+out_m[i,1,2] <- mean(unlist(dta[dta$messenger=="male",][paste(outcome,"m",sep="_")]), na.rm=T)
+out_j[i,1,2] <- mean(unlist(dta[dta$messenger=="male",][paste(outcome,"j",sep="_")]), na.rm=T)
 
-dta$weights <- 1
-dta$weights[dta$messenger == "female" & dta$recipient == "female"] <-  343/348
+out_w[i,2,2] <- sd(unlist(dta[dta$messenger=="male",][paste(outcome,"w",sep="_")]), na.rm=T)
+out_m[i,2,2] <- sd(unlist(dta[dta$messenger=="male",][paste(outcome,"m",sep="_")]), na.rm=T)
+out_j[i,2,2] <- sd(unlist(dta[dta$messenger=="male",][paste(outcome,"j",sep="_")]), na.rm=T)
 
-} else if (h==6) {
-######################## H4: challenging role incongruity###########################
-#############  messenger== 'female or couple' & recipient=='male' - messenger== 'male' & recipient=='male' ##############################
-dta <- dta_copy
-dta$recipient <- factor(dta$recipient)
-dta$messenger <- factor(dta$messenger)
-dta <- subset(dta, recipient =='male'  )
-set.seed(54321)
+mod_w <- lm(as.formula(paste(paste(outcome,"w",sep="_"),treatment, sep="~")),data=dta)
+mod_m <- lm(as.formula(paste(paste(outcome,"m",sep="_"),treatment, sep="~")),data=dta)
+mod_j <- lm(as.formula(paste(paste(outcome,"j",sep="_"),treatment, sep="~")),data=dta)
+#out[,,1] collects results for T1
+#couple treatment
+#coef estimate, se and p-value
+out_w[i,3:5,1] <- summary(mod_w)$coefficients[2,c(1:2,4)]
+out_m[i,3:5,1] <- summary(mod_m)$coefficients[2,c(1:2,4)]
+out_j[i,3:5,1] <- summary(mod_j)$coefficients[2,c(1:2,4)]
 
-treatment <- "(messenger!= 'male') +ivr+sms"
+#lower and upper conf limits
+out_w[i,6:7,1] <- confint(mod_w)[2,]
+out_m[i,6:7,1] <- confint(mod_m)[2,]
+out_j[i,6:7,1] <- confint(mod_j)[2,]
 
+#woman treatment
+#coef estimate, se and p-value
+out_w[i,8:10,1] <- summary(mod_w)$coefficients[3,c(1:2,4)]
+out_m[i,8:10,1] <- summary(mod_m)$coefficients[3,c(1:2,4)]
+out_j[i,8:10,1] <- summary(mod_j)$coefficients[3,c(1:2,4)]
+#lower and upper conf limits
+out_w[i,11:12,1] <- confint(mod_w)[3,]
+out_m[i,11:12,1] <- confint(mod_m)[3,]
+out_j[i,11:12,1] <- confint(mod_j)[3,]
 
-dta$weights <- 1
-dta$weights[dta$messenger == "female" & dta$recipient == "male"] <-  339/354
+#out[,,2] collects results for T2
+#couple treatment
+#coef estimate, se and p-value
+out_w[i,3:5,2] <- summary(mod_w)$coefficients[4,c(1:2,4)]
+out_m[i,3:5,2] <- summary(mod_m)$coefficients[4,c(1:2,4)]
+out_j[i,3:5,2] <- summary(mod_j)$coefficients[4,c(1:2,4)]
 
+#lower and upper conf limits
+out_w[i,6:7,2] <- confint(mod_w)[4,]
+out_m[i,6:7,2] <- confint(mod_m)[4,]
+out_j[i,6:7,2] <- confint(mod_j)[4,]
+
+#woman treatment
+#coef estimate, se and p-value
+out_w[i,8:10,2] <- summary(mod_w)$coefficients[5,c(1:2,4)]
+out_m[i,8:10,2] <- summary(mod_m)$coefficients[5,c(1:2,4)]
+out_j[i,8:10,2] <- summary(mod_j)$coefficients[5,c(1:2,4)]
+#lower and upper conf limits
+out_w[i,11:12,2] <- confint(mod_w)[5,]
+out_m[i,11:12,2] <- confint(mod_m)[5,]
+out_j[i,11:12,2] <- confint(mod_j)[5,]
+i <- i + 1
 }
+
+
+summary(lm(know_space_w~dta$messenger,dta[dta$recipient == "male"]))
+
+treatment <- "recipient*messenger"
+mod < lm(as.formula(paste("know_space_w",treatment, sep="~")),data=dta)
+summary(mod)
+
+linearHypothesis(mod,"recipientcouple = recipientfemale")
+
+#using bootstrap
+
+mod <- lm(as.formula(paste("know_space_w",treatment, sep="~")),data=na.omit(dta[c("know_space_w","messenger","recipient")]))
+Boot(mod)
+
+
+test.boot <- Boot(mod)
+
+linearHypothesis(mod,"recipientcouple = recipientfemale",vcov=vcov(test.boot) )
 
 print(h)
 ################################################## knowledge  #####################################################
@@ -431,7 +467,7 @@ res_know_w[8,3,h] <- nobs(lm(as.formula(paste("know_armyworm_w",treatment, sep="
 end_time <- Sys.time()
 
 
-indexer <- FW_index(treatment, c("know_space_w", "know_combine_w", "know_weed_w"),ctrls,w_int="weights",dta, nr_repl=totrep)
+indexer <- FW_index(treatment, c("know_space_w", "know_combine_w", "know_weed_w"),dta, nr_repl=0)
 
 res_know_w[9,1,h] <- ifelse(h %in% c(6), wtd.mean(indexer[[3]]$index[dta$recipient == "male" & dta$messenger == "male"], dta$weights[dta$recipient == "male" & dta$messenger == "male"], na.rm=T),ifelse(h %in% c(1,2,3), wtd.mean(indexer[[3]]$index[dta$recipient == "male"],dta$weights[dta$recipient == "male"], na.rm=T), ifelse( h == 4, wtd.mean(indexer[[3]]$index[dta$messenger == "male"],dta$weights[dta$messenger == "male"], na.rm=T), ifelse( h == 5, wtd.mean(indexer[[3]]$index[dta$recipient == "female" & dta$messenger == "male" ],dta$weights[dta$recipient == "female" & dta$messenger == "male"], na.rm=T)))))
 
