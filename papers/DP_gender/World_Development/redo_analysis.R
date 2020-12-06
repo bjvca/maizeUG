@@ -1350,7 +1350,8 @@ dev.off()
 lims <- .5
 ## create data.frame to plot - make sure you get correct i's for the indices; last one is overall index
 d_plot <- rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA))
-
+d_plot <-  rbind(d_plot,rbind(ind_out_w[1,c(8,11,12),1],ind_out_j[1,c(8,11,12),1],ind_out_m[1,c(8,11,12),1]))
+d_plot <- rbind(d_plot,rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA)))
 d_plot <-  rbind(d_plot,rbind(ind_out_w[2,c(8,11,12),1],ind_out_j[2,c(8,11,12),1],ind_out_m[2,c(8,11,12),1]))
 
 for (i in 1:4) {
@@ -1388,12 +1389,13 @@ d_plot <- rbind(d_plot,rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA)))
 d_plot <- data.frame(d_plot) 
 names(d_plot) <- c("y","ylo","yhi")
 
-d_plot$x <- rep(c("","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding", "   ","input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     "), each=3)
-d_plot$grp <- rep(c("woman outcome","joint outcome","man outcome"), times=33)
+d_plot$x <- rep(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding", "   ","input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     "), each=3)
+d_plot$grp <- rep(c("woman outcome","joint outcome","man outcome"), times=35)
 d_plot$grp <-  factor(d_plot$grp , levels=c("woman outcome","joint outcome","man outcome"))
-d_plot$x <-  factor(d_plot$x, levels=rev(c("","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding","   ", "input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     ")))
+d_plot$x <-  factor(d_plot$x, levels=rev(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding","   ", "input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     ")))
 
-bold.labels <- ifelse(levels(d_plot$x) %in% c("knowledge index","decision index","adoption index","input use index","outcome index"), yes = "bold", no = "plain")
+
+bold.labels <- ifelse(levels(d_plot$x) %in% c("overall index","knowledge index","decision index","adoption index","input use index","outcome index"), yes = "bold", no = "plain")
 
 
 plot1 <- credplot.gg(d_plot,'SDs','woman receives information',levels(d_plot$x), lims) + theme(legend.position = "none") +
@@ -1402,7 +1404,8 @@ plot1 <- credplot.gg(d_plot,'SDs','woman receives information',levels(d_plot$x),
 
 ## create data.frame to plot - make sure you get correct i's for the indices; last one is overall index
 d_plot <- rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA))
-
+d_plot <-  rbind(d_plot,rbind(ind_out_w[1,c(3,6,7),1],ind_out_j[1,c(3,6,7),1],ind_out_m[1,c(3,6,7),1]))
+d_plot <- rbind(d_plot,rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA)))
 d_plot <-  rbind(d_plot,rbind(ind_out_w[2,c(3,6,7),1],ind_out_j[2,c(3,6,7),1],ind_out_m[2,c(3,6,7),1]))
 
 for (i in 1:4) {
@@ -1440,13 +1443,13 @@ d_plot <- rbind(d_plot,rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA)))
 d_plot <- data.frame(d_plot) 
 names(d_plot) <- c("y","ylo","yhi")
 
-d_plot$x <- rep(c("","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding", "   ","input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     "), each=3)
-d_plot$grp <- rep(c("woman outcome","joint outcome","man outcome"), times=33)
+d_plot$x <- rep(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding", "   ","input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     "), each=3)
+d_plot$grp <- rep(c("woman outcome","joint outcome","man outcome"), times=35)
 d_plot$grp <-  factor(d_plot$grp , levels=c("woman outcome","joint outcome","man outcome"))
-d_plot$x <-  factor(d_plot$x, levels=rev(c("","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding","   ", "input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     ")))
+d_plot$x <-  factor(d_plot$x, levels=rev(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding","   ", "input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     ")))
 
 
-bold.labels <- ifelse(levels(d_plot$x) %in% c("knowledge index","decision index","adoption index","input use index","outcome index"), yes = "bold", no = "plain")
+bold.labels <- ifelse(levels(d_plot$x) %in% c("overall index","knowledge index","decision index","adoption index","input use index","outcome index"), yes = "bold", no = "plain")
 
 plot2 <- credplot.gg(d_plot,'SDs','couple receives information',levels(d_plot$x),lims) + theme(axis.title.y=element_blank(), axis.text.y=element_blank(), axis.ticks.y=element_blank())  + theme(legend.position = "right")
 
@@ -1460,7 +1463,8 @@ dev.off()
 lims <- .5
 ## create data.frame to plot - make sure you get correct i's for the indices; last one is overall index
 d_plot <- rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA))
-
+d_plot <-  rbind(d_plot,rbind(ind_out_w[1,c(8,11,12),2],ind_out_j[1,c(8,11,12),2],ind_out_m[1,c(8,11,12),2]))
+d_plot <- rbind(d_plot,rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA)))
 d_plot <-  rbind(d_plot,rbind(ind_out_w[2,c(8,11,12),2],ind_out_j[2,c(8,11,12),2],ind_out_m[2,c(8,11,12),2]))
 
 for (i in 1:4) {
@@ -1498,12 +1502,13 @@ d_plot <- rbind(d_plot,rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA)))
 d_plot <- data.frame(d_plot) 
 names(d_plot) <- c("y","ylo","yhi")
 
-d_plot$x <- rep(c("","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding", "   ","input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     "), each=3)
-d_plot$grp <- rep(c("woman outcome","joint outcome","man outcome"), times=33)
+d_plot$x <- rep(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding", "   ","input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     "), each=3)
+d_plot$grp <- rep(c("woman outcome","joint outcome","man outcome"), times=35)
 d_plot$grp <-  factor(d_plot$grp , levels=c("woman outcome","joint outcome","man outcome"))
-d_plot$x <-  factor(d_plot$x, levels=rev(c("","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding","   ", "input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     ")))
+d_plot$x <-  factor(d_plot$x, levels=rev(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding","   ", "input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     ")))
 
-bold.labels <- ifelse(levels(d_plot$x) %in% c("knowledge index","decision index","adoption index","input use index","outcome index"), yes = "bold", no = "plain")
+
+bold.labels <- ifelse(levels(d_plot$x) %in% c("overall index","knowledge index","decision index","adoption index","input use index","outcome index"), yes = "bold", no = "plain")
 
 
 plot1 <- credplot.gg(d_plot,'SDs','woman gives information',levels(d_plot$x), lims) + theme(legend.position = "none") +
@@ -1512,7 +1517,8 @@ plot1 <- credplot.gg(d_plot,'SDs','woman gives information',levels(d_plot$x), li
 
 ## create data.frame to plot - make sure you get correct i's for the indices; last one is overall index
 d_plot <- rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA))
-
+d_plot <-  rbind(d_plot,rbind(ind_out_w[1,c(3,6,7),2],ind_out_j[1,c(3,6,7),2],ind_out_m[1,c(3,6,7),2]))
+d_plot <- rbind(d_plot,rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA)))
 d_plot <-  rbind(d_plot,rbind(ind_out_w[2,c(3,6,7),2],ind_out_j[2,c(3,6,7),2],ind_out_m[2,c(3,6,7),2]))
 
 for (i in 1:4) {
@@ -1550,13 +1556,13 @@ d_plot <- rbind(d_plot,rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA)))
 d_plot <- data.frame(d_plot) 
 names(d_plot) <- c("y","ylo","yhi")
 
-d_plot$x <- rep(c("","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding", "   ","input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     "), each=3)
-d_plot$grp <- rep(c("woman outcome","joint outcome","man outcome"), times=33)
+d_plot$x <- rep(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding", "   ","input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     "), each=3)
+d_plot$grp <- rep(c("woman outcome","joint outcome","man outcome"), times=35)
 d_plot$grp <-  factor(d_plot$grp , levels=c("woman outcome","joint outcome","man outcome"))
-d_plot$x <-  factor(d_plot$x, levels=rev(c("","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding","   ", "input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     ")))
+d_plot$x <-  factor(d_plot$x, levels=rev(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding","   ", "input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     ")))
 
 
-bold.labels <- ifelse(levels(d_plot$x) %in% c("knowledge index","decision index","adoption index","input use index","outcome index"), yes = "bold", no = "plain")
+bold.labels <- ifelse(levels(d_plot$x) %in% c("overall index","knowledge index","decision index","adoption index","input use index","outcome index"), yes = "bold", no = "plain")
 
 plot2 <- credplot.gg(d_plot,'SDs','couple gives information',levels(d_plot$x),lims) + theme(axis.title.y=element_blank(), axis.text.y=element_blank(), axis.ticks.y=element_blank())  + theme(legend.position = "right")
 
