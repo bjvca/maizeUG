@@ -745,10 +745,10 @@ names(dta)[names(dta) == "nr_bags_sold_man_woman"] <- "nr_bags_sold_m"
 
 
 #################################################################################ANALYSIS##########################################
-outcomes_ind <- c("know_space","know_combine","know_weed","know_armyworm","mgt", "dectime", "decspace", "decstriga","decweed","adopt_time", "adopt_space", "adopt_striga","adopt_weed","decDAP",  "decUREA", "decOrg", "decHybrid","decOPV","prod", "prod_share", "area", "area_share", "yield_better", "yield", "sold", "nr_bags_sold")
-out_w <- array(NA,c(length(outcomes_ind),13,2))
-out_m <- array(NA,c(length(outcomes_ind),13,2))
-out_j <- array(NA,c(length(outcomes_ind),13,2))
+outcomes_ind <- c("know_space","know_combine","know_weed","know_armyworm","mgt", "dectime", "decspace", "decstriga","decweed","adopt_time", "adopt_space", "adopt_striga","adopt_weed","decDAP",  "decUREA", "decOrg", "decHybrid","decOPV","prod",  "area","yield_better", "yield")
+out_w <- array(NA,c(length(outcomes_ind),14,2))
+out_m <- array(NA,c(length(outcomes_ind),14,2))
+out_j <- array(NA,c(length(outcomes_ind),14,2))
 #relevel treatments to make sure male is control group
 dta$recipient <- as.factor(dta$recipient)
 dta$messenger <- as.factor(dta$messenger)
@@ -804,6 +804,10 @@ out_j[i,11:12,1] <- confint(mod_j)[3,]
 out_w[i,13,1] <- linearHypothesis(mod_w,"recipientcouple = recipientfemale")[2,6]
 out_m[i,13,1] <- linearHypothesis(mod_m,"recipientcouple = recipientfemale")[2,6]
 out_j[i,13,1] <- linearHypothesis(mod_j,"recipientcouple = recipientfemale")[2,6]
+### sampel size
+out_w[i,14,1] <- nobs(mod_w)
+out_m[i,14,1] <- nobs(mod_m)
+out_j[i,14,1] <- nobs(mod_j)
 
 #out[,,2] collects results for T2
 #couple treatment
@@ -830,6 +834,10 @@ out_j[i,11:12,2] <- confint(mod_j)[5,]
 out_w[i,13,2] <- linearHypothesis(mod_w,"messengercouple = messengerfemale")[2,6]
 out_m[i,13,2] <- linearHypothesis(mod_m,"messengercouple = messengerfemale")[2,6]
 out_j[i,13,2] <- linearHypothesis(mod_j,"messengercouple = messengerfemale")[2,6]
+### sampel size
+out_w[i,14,2] <- nobs(mod_w)
+out_m[i,14,2] <- nobs(mod_m)
+out_j[i,14,2] <- nobs(mod_j)
 
 
 i <- i + 1
@@ -860,20 +868,20 @@ input_ind_res_j <- FW_index(treatment, paste(c("decDAP",  "decUREA", "decOrg", "
 input_ind_res_m <- FW_index(treatment, paste(c("decDAP",  "decUREA", "decOrg", "decHybrid","decOPV"),"m",sep="_"),dta)
 
 
-outcome_ind_res_w <- FW_index(treatment, paste(c("yield_better", "yield", "sold", "nr_bags_sold"),"w",sep="_"),dta)
-outcome_ind_res_j <- FW_index(treatment, paste(c("yield_better", "yield", "sold", "nr_bags_sold"),"j",sep="_"),dta)
-outcome_ind_res_m <- FW_index(treatment, paste(c("yield_better", "yield", "sold", "nr_bags_sold"),"m",sep="_"),dta)
+outcome_ind_res_w <- FW_index(treatment, paste(c("prod","area","yield_better", "yield"),"w",sep="_"),dta)
+outcome_ind_res_j <- FW_index(treatment, paste(c("prod","area","yield_better", "yield"),"j",sep="_"),dta)
+outcome_ind_res_m <- FW_index(treatment, paste(c("prod","area","yield_better", "yield"),"m",sep="_"),dta)
 
 
-all_ind_res_w <- FW_index(treatment, paste(c("know_space", "know_combine", "know_weed","mgt", "dectime", "decspace", "decstriga","decweed","adopt_time", "adopt_space", "adopt_striga","adopt_weed","decDAP",  "decUREA", "decOrg", "decHybrid","decOPV", "yield_better", "yield", "sold", "nr_bags_sold" ),"w",sep="_"),dta)
-all_ind_res_j <- FW_index(treatment, paste(c("know_space", "know_combine", "know_weed","mgt", "dectime", "decspace", "decstriga","decweed","adopt_time", "adopt_space", "adopt_striga","adopt_weed","decDAP",  "decUREA", "decOrg", "decHybrid","decOPV", "yield_better", "yield", "sold", "nr_bags_sold" ),"j",sep="_"),dta)
+all_ind_res_w <- FW_index(treatment, paste(c("know_space", "know_combine", "know_weed","mgt", "dectime", "decspace", "decstriga","decweed","adopt_time", "adopt_space", "adopt_striga","adopt_weed","decDAP",  "decUREA", "decOrg", "decHybrid","decOPV", "prod","area","yield_better", "yield" ),"w",sep="_"),dta)
+all_ind_res_j <- FW_index(treatment, paste(c("know_space", "know_combine", "know_weed","mgt", "dectime", "decspace", "decstriga","decweed","adopt_time", "adopt_space", "adopt_striga","adopt_weed","decDAP",  "decUREA", "decOrg", "decHybrid","decOPV", "prod","area","yield_better", "yield" ),"j",sep="_"),dta)
 ################## dec_weed and adopt_weed
-all_ind_res_m <- FW_index(treatment, paste(c("know_space", "know_combine", "know_weed","mgt", "dectime", "decspace", "decstriga","decweed","adopt_time", "adopt_space", "adopt_striga","adopt_weed","decDAP",  "decUREA", "decOrg", "decHybrid","decOPV", "yield_better", "yield", "sold", "nr_bags_sold" ),"m",sep="_"),dta)
+all_ind_res_m <- FW_index(treatment, paste(c("know_space", "know_combine", "know_weed","mgt", "dectime", "decspace", "decstriga","decweed","adopt_time", "adopt_space", "adopt_striga","adopt_weed","decDAP",  "decUREA", "decOrg", "decHybrid","decOPV", "prod","area","yield_better", "yield" ),"m",sep="_"),dta)
 
 ### put this also all in matrices
-ind_out_w <- array(NA,c(6,13,2))
-ind_out_m <- array(NA,c(6,13,2))
-ind_out_j <- array(NA,c(6,13,2))
+ind_out_w <- array(NA,c(6,14,2))
+ind_out_m <- array(NA,c(6,14,2))
+ind_out_j <- array(NA,c(6,14,2))
 
 ### overall index
 ind_out_w[1,1,1] <- mean(all_ind_res_w[[2]]$index[all_ind_res_w[[2]]$recipient=="male"])
@@ -914,6 +922,9 @@ ind_out_w[1,13,1] <- linearHypothesis(all_ind_res_w[[1]],"recipientcouple = reci
 ind_out_j[1,13,1] <- linearHypothesis(all_ind_res_j[[1]],"recipientcouple = recipientfemale")[2,6]
 ind_out_m[1,13,1] <- linearHypothesis(all_ind_res_m[[1]],"recipientcouple = recipientfemale")[2,6]
 
+ind_out_w[1,14,1] <- nobs(all_ind_res_w[[1]])
+ind_out_j[1,14,1] <- nobs(all_ind_res_j[[1]])
+ind_out_m[1,14,1] <- nobs(all_ind_res_m[[1]])
 
 ind_out_w[1,3:5,2] <-  summary(all_ind_res_w[[1]])$coefficients[4,c(1:2,4)]
 ind_out_j[1,3:5,2] <-  summary(all_ind_res_j[[1]])$coefficients[4,c(1:2,4)]
@@ -936,6 +947,10 @@ ind_out_m[1,11:12,2] <- confint(all_ind_res_m[[1]])[5,]
 ind_out_w[1,13,2] <- linearHypothesis(all_ind_res_w[[1]],"messengercouple = messengerfemale")[2,6]
 ind_out_j[1,13,2] <- linearHypothesis(all_ind_res_j[[1]],"messengercouple = messengerfemale")[2,6]
 ind_out_m[1,13,2] <- linearHypothesis(all_ind_res_m[[1]],"messengercouple = messengerfemale")[2,6]
+
+ind_out_w[1,14,2] <- nobs(all_ind_res_w[[1]])
+ind_out_j[1,14,2] <- nobs(all_ind_res_j[[1]])
+ind_out_m[1,14,2] <- nobs(all_ind_res_m[[1]])
 
 ### knowledge index
 i <- 2
@@ -977,6 +992,9 @@ ind_out_w[i,13,1] <- linearHypothesis(know_ind_res_w[[1]],"recipientcouple = rec
 ind_out_j[i,13,1] <- linearHypothesis(know_ind_res_j[[1]],"recipientcouple = recipientfemale")[2,6]
 ind_out_m[i,13,1] <- linearHypothesis(know_ind_res_m[[1]],"recipientcouple = recipientfemale")[2,6]
 
+ind_out_w[i,14,1] <- nobs(know_ind_res_w[[1]])
+ind_out_j[i,14,1] <- nobs(know_ind_res_j[[1]])
+ind_out_m[i,14,1] <- nobs(know_ind_res_m[[1]])
 
 ind_out_w[i,3:5,2] <-  summary(know_ind_res_w[[1]])$coefficients[4,c(1:2,4)]
 ind_out_j[i,3:5,2] <-  summary(know_ind_res_j[[1]])$coefficients[4,c(1:2,4)]
@@ -999,6 +1017,10 @@ ind_out_m[i,11:12,2] <- confint(know_ind_res_m[[1]])[5,]
 ind_out_w[i,13,2] <- linearHypothesis(know_ind_res_w[[1]],"messengercouple = messengerfemale")[2,6]
 ind_out_j[i,13,2] <- linearHypothesis(know_ind_res_j[[1]],"messengercouple = messengerfemale")[2,6]
 ind_out_m[i,13,2] <- linearHypothesis(know_ind_res_m[[1]],"messengercouple = messengerfemale")[2,6]
+
+ind_out_w[i,14,2] <- nobs(know_ind_res_w[[1]])
+ind_out_j[i,14,2] <- nobs(know_ind_res_j[[1]])
+ind_out_m[i,14,2] <- nobs(know_ind_res_m[[1]])
 
 ### decision index
 i <- 3
@@ -1040,6 +1062,10 @@ ind_out_w[i,13,1] <- linearHypothesis(dec_ind_res_w[[1]],"recipientcouple = reci
 ind_out_j[i,13,1] <- linearHypothesis(dec_ind_res_j[[1]],"recipientcouple = recipientfemale")[2,6]
 ind_out_m[i,13,1] <- linearHypothesis(dec_ind_res_m[[1]],"recipientcouple = recipientfemale")[2,6]
 
+ind_out_w[i,14,1] <- nobs(dec_ind_res_w[[1]])
+ind_out_j[i,14,1] <- nobs(dec_ind_res_j[[1]])
+ind_out_m[i,14,1] <- nobs(dec_ind_res_m[[1]])
+
 
 ind_out_w[i,3:5,2] <-  summary(dec_ind_res_w[[1]])$coefficients[4,c(1:2,4)]
 ind_out_j[i,3:5,2] <-  summary(dec_ind_res_j[[1]])$coefficients[4,c(1:2,4)]
@@ -1063,6 +1089,10 @@ ind_out_w[i,13,2] <- linearHypothesis(dec_ind_res_w[[1]],"messengercouple = mess
 ind_out_j[i,13,2] <- linearHypothesis(dec_ind_res_j[[1]],"messengercouple = messengerfemale")[2,6]
 ind_out_m[i,13,2] <- linearHypothesis(dec_ind_res_m[[1]],"messengercouple = messengerfemale")[2,6]
 
+
+ind_out_w[i,14,2] <- nobs(dec_ind_res_w[[1]])
+ind_out_j[i,14,2] <- nobs(dec_ind_res_j[[1]])
+ind_out_m[i,14,2] <- nobs(dec_ind_res_m[[1]])
 ### adoption index
 i <- 4
 ind_out_w[i,1,1] <- mean(adopt_ind_res_w[[2]]$index[adopt_ind_res_w[[2]]$recipient=="male"])
@@ -1103,6 +1133,9 @@ ind_out_w[i,13,1] <- linearHypothesis(adopt_ind_res_w[[1]],"recipientcouple = re
 ind_out_j[i,13,1] <- linearHypothesis(adopt_ind_res_j[[1]],"recipientcouple = recipientfemale")[2,6]
 ind_out_m[i,13,1] <- linearHypothesis(adopt_ind_res_m[[1]],"recipientcouple = recipientfemale")[2,6]
 
+ind_out_w[i,14,1] <- nobs(adopt_ind_res_w[[1]])
+ind_out_j[i,14,1] <- nobs(adopt_ind_res_j[[1]])
+ind_out_m[i,14,1] <- nobs(adopt_ind_res_m[[1]])
 
 ind_out_w[i,3:5,2] <-  summary(adopt_ind_res_w[[1]])$coefficients[4,c(1:2,4)]
 ind_out_j[i,3:5,2] <-  summary(adopt_ind_res_j[[1]])$coefficients[4,c(1:2,4)]
@@ -1126,6 +1159,9 @@ ind_out_w[i,13,2] <- linearHypothesis(adopt_ind_res_w[[1]],"messengercouple = me
 ind_out_j[i,13,2] <- linearHypothesis(adopt_ind_res_j[[1]],"messengercouple = messengerfemale")[2,6]
 ind_out_m[i,13,2] <- linearHypothesis(adopt_ind_res_m[[1]],"messengercouple = messengerfemale")[2,6]
 
+ind_out_w[i,14,2] <- nobs(adopt_ind_res_w[[1]])
+ind_out_j[i,14,2] <- nobs(adopt_ind_res_j[[1]])
+ind_out_m[i,14,2] <- nobs(adopt_ind_res_m[[1]])
 ### input index
 i <- 5
 ind_out_w[i,1,1] <- mean(input_ind_res_w[[2]]$index[input_ind_res_w[[2]]$recipient=="male"])
@@ -1166,6 +1202,9 @@ ind_out_w[i,13,1] <- linearHypothesis(input_ind_res_w[[1]],"recipientcouple = re
 ind_out_j[i,13,1] <- linearHypothesis(input_ind_res_j[[1]],"recipientcouple = recipientfemale")[2,6]
 ind_out_m[i,13,1] <- linearHypothesis(input_ind_res_m[[1]],"recipientcouple = recipientfemale")[2,6]
 
+ind_out_w[i,14,1] <- nobs(input_ind_res_w[[1]])
+ind_out_j[i,14,1] <- nobs(input_ind_res_j[[1]])
+ind_out_m[i,14,1] <- nobs(input_ind_res_m[[1]])
 
 ind_out_w[i,3:5,2] <-  summary(input_ind_res_w[[1]])$coefficients[4,c(1:2,4)]
 ind_out_j[i,3:5,2] <-  summary(input_ind_res_j[[1]])$coefficients[4,c(1:2,4)]
@@ -1189,6 +1228,9 @@ ind_out_w[i,13,2] <- linearHypothesis(input_ind_res_w[[1]],"messengercouple = me
 ind_out_j[i,13,2] <- linearHypothesis(input_ind_res_j[[1]],"messengercouple = messengerfemale")[2,6]
 ind_out_m[i,13,2] <- linearHypothesis(input_ind_res_m[[1]],"messengercouple = messengerfemale")[2,6]
 
+ind_out_w[i,14,2] <- nobs(input_ind_res_w[[1]])
+ind_out_j[i,14,2] <- nobs(input_ind_res_j[[1]])
+ind_out_m[i,14,2] <- nobs(input_ind_res_m[[1]])
 ### outcome index
 i <- 6
 ind_out_w[i,1,1] <- mean(outcome_ind_res_w[[2]]$index[outcome_ind_res_w[[2]]$recipient=="male"])
@@ -1229,6 +1271,9 @@ ind_out_w[i,13,1] <- linearHypothesis(outcome_ind_res_w[[1]],"recipientcouple = 
 ind_out_j[i,13,1] <- linearHypothesis(outcome_ind_res_j[[1]],"recipientcouple = recipientfemale")[2,6]
 ind_out_m[i,13,1] <- linearHypothesis(outcome_ind_res_m[[1]],"recipientcouple = recipientfemale")[2,6]
 
+ind_out_w[i,14,1] <- nobs(outcome_ind_res_w[[1]])
+ind_out_j[i,14,1] <- nobs(outcome_ind_res_j[[1]])
+ind_out_m[i,14,1] <- nobs(outcome_ind_res_m[[1]])
 
 ind_out_w[i,3:5,2] <-  summary(outcome_ind_res_w[[1]])$coefficients[4,c(1:2,4)]
 ind_out_j[i,3:5,2] <-  summary(outcome_ind_res_j[[1]])$coefficients[4,c(1:2,4)]
@@ -1251,6 +1296,11 @@ ind_out_m[i,11:12,2] <- confint(outcome_ind_res_m[[1]])[5,]
 ind_out_w[i,13,2] <- linearHypothesis(outcome_ind_res_w[[1]],"messengercouple = messengerfemale")[2,6]
 ind_out_j[i,13,2] <- linearHypothesis(outcome_ind_res_j[[1]],"messengercouple = messengerfemale")[2,6]
 ind_out_m[i,13,2] <- linearHypothesis(outcome_ind_res_m[[1]],"messengercouple = messengerfemale")[2,6]
+
+
+ind_out_w[i,14,2] <- nobs(outcome_ind_res_w[[1]])
+ind_out_j[i,14,2] <- nobs(outcome_ind_res_j[[1]])
+ind_out_m[i,14,2] <- nobs(outcome_ind_res_m[[1]])
 
 ### create graphs
 
@@ -1380,7 +1430,7 @@ d_plot <- rbind(d_plot,rbind(out_w[i,c(8,11,12),1]/out_w[i,2,1],out_j[i,c(8,11,1
 }
 d_plot <- rbind(d_plot,rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA)))
 d_plot <-  rbind(d_plot,rbind(ind_out_w[6,c(8,11,12),1],ind_out_j[6,c(8,11,12),1],ind_out_m[6,c(8,11,12),1]))
-for (i in 23:26) {
+for (i in 19:22) {
 
 d_plot <- rbind(d_plot,rbind(out_w[i,c(8,11,12),1]/out_w[i,2,1],out_j[i,c(8,11,12),1]/out_j[i,2,1],out_m[i,c(8,11,12),1]/out_m[i,2,1]))
 }
@@ -1389,10 +1439,10 @@ d_plot <- rbind(d_plot,rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA)))
 d_plot <- data.frame(d_plot) 
 names(d_plot) <- c("y","ylo","yhi")
 
-d_plot$x <- rep(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding", "   ","input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     "), each=3)
+d_plot$x <- rep(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding", "   ","input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","prod","area","yield improved","yield","     "), each=3)
 d_plot$grp <- rep(c("woman outcome","joint outcome","man outcome"), times=35)
 d_plot$grp <-  factor(d_plot$grp , levels=c("woman outcome","joint outcome","man outcome"))
-d_plot$x <-  factor(d_plot$x, levels=rev(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding","   ", "input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     ")))
+d_plot$x <-  factor(d_plot$x, levels=rev(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding","   ", "input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","prod","area","yield improved","yield","     ")))
 
 
 bold.labels <- ifelse(levels(d_plot$x) %in% c("overall index","knowledge index","decision index","adoption index","input use index","outcome index"), yes = "bold", no = "plain")
@@ -1434,7 +1484,7 @@ d_plot <- rbind(d_plot,rbind(out_w[i,c(3,6,7),1]/out_w[i,2,1],out_j[i,c(3,6,7),1
 }
 d_plot <- rbind(d_plot,rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA)))
 d_plot <-  rbind(d_plot,rbind(ind_out_w[6,c(3,6,7),1],ind_out_j[6,c(3,6,7),1],ind_out_m[6,c(3,6,7),1]))
-for (i in 23:26) {
+for (i in 19:22) {
 
 d_plot <- rbind(d_plot,rbind(out_w[i,c(3,6,7),1]/out_w[i,2,1],out_j[i,c(3,6,7),1]/out_j[i,2,1],out_m[i,c(3,6,7),1]/out_m[i,2,1]))
 }
@@ -1443,10 +1493,10 @@ d_plot <- rbind(d_plot,rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA)))
 d_plot <- data.frame(d_plot) 
 names(d_plot) <- c("y","ylo","yhi")
 
-d_plot$x <- rep(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding", "   ","input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     "), each=3)
+d_plot$x <- rep(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding", "   ","input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","prod","area","yield improved","yield","     "), each=3)
 d_plot$grp <- rep(c("woman outcome","joint outcome","man outcome"), times=35)
 d_plot$grp <-  factor(d_plot$grp , levels=c("woman outcome","joint outcome","man outcome"))
-d_plot$x <-  factor(d_plot$x, levels=rev(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding","   ", "input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     ")))
+d_plot$x <-  factor(d_plot$x, levels=rev(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding","   ", "input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","prod","area","yield improved","yield","     ")))
 
 
 bold.labels <- ifelse(levels(d_plot$x) %in% c("overall index","knowledge index","decision index","adoption index","input use index","outcome index"), yes = "bold", no = "plain")
@@ -1493,7 +1543,7 @@ d_plot <- rbind(d_plot,rbind(out_w[i,c(8,11,12),2]/out_w[i,2,2],out_j[i,c(8,11,1
 }
 d_plot <- rbind(d_plot,rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA)))
 d_plot <-  rbind(d_plot,rbind(ind_out_w[6,c(8,11,12),2],ind_out_j[6,c(8,11,12),2],ind_out_m[6,c(8,11,12),2]))
-for (i in 23:26) {
+for (i in 19:22) {
 
 d_plot <- rbind(d_plot,rbind(out_w[i,c(8,11,12),2]/out_w[i,2,2],out_j[i,c(8,11,12),2]/out_j[i,2,2],out_m[i,c(8,11,12),2]/out_m[i,2,2]))
 }
@@ -1502,10 +1552,10 @@ d_plot <- rbind(d_plot,rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA)))
 d_plot <- data.frame(d_plot) 
 names(d_plot) <- c("y","ylo","yhi")
 
-d_plot$x <- rep(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding", "   ","input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     "), each=3)
+d_plot$x <- rep(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding", "   ","input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","prod","area","yield improved","yield","     "), each=3)
 d_plot$grp <- rep(c("woman outcome","joint outcome","man outcome"), times=35)
 d_plot$grp <-  factor(d_plot$grp , levels=c("woman outcome","joint outcome","man outcome"))
-d_plot$x <-  factor(d_plot$x, levels=rev(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding","   ", "input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     ")))
+d_plot$x <-  factor(d_plot$x, levels=rev(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding","   ", "input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","prod","area","yield improved","yield","     ")))
 
 
 bold.labels <- ifelse(levels(d_plot$x) %in% c("overall index","knowledge index","decision index","adoption index","input use index","outcome index"), yes = "bold", no = "plain")
@@ -1547,7 +1597,7 @@ d_plot <- rbind(d_plot,rbind(out_w[i,c(3,6,7),2]/out_w[i,2,2],out_j[i,c(3,6,7),2
 }
 d_plot <- rbind(d_plot,rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA)))
 d_plot <-  rbind(d_plot,rbind(ind_out_w[6,c(3,6,7),2],ind_out_j[6,c(3,6,7),2],ind_out_m[6,c(3,6,7),2]))
-for (i in 23:26) {
+for (i in 19:22) {
 
 d_plot <- rbind(d_plot,rbind(out_w[i,c(3,6,7),2]/out_w[i,2,2],out_j[i,c(3,6,7),2]/out_j[i,2,2],out_m[i,c(3,6,7),2]/out_m[i,2,2]))
 }
@@ -1556,10 +1606,10 @@ d_plot <- rbind(d_plot,rbind(c(NA,NA,NA),c(NA,NA,NA),c(NA,NA,NA)))
 d_plot <- data.frame(d_plot) 
 names(d_plot) <- c("y","ylo","yhi")
 
-d_plot$x <- rep(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding", "   ","input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     "), each=3)
+d_plot$x <- rep(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding", "   ","input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","prod","area","yield improved","yield","     "), each=3)
 d_plot$grp <- rep(c("woman outcome","joint outcome","man outcome"), times=35)
 d_plot$grp <-  factor(d_plot$grp , levels=c("woman outcome","joint outcome","man outcome"))
-d_plot$x <-  factor(d_plot$x, levels=rev(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding","   ", "input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","yield improved","yield","sold","quantity sold","     ")))
+d_plot$x <-  factor(d_plot$x, levels=rev(c("","overall index","      ","knowledge index","knows about spacing", "knows about combining","knows about weeding","knows about FAW", " ","decision index","decision to plant maze","decision on timing of planting","decision on spacing & seed rate","decision on how to fight striga","decision on weeding","  ","adoption index","timely planting","optimal spacing & seed rate","recommended striga weeding","recommended timing of weeding","   ", "input use index","DAP","UREA","Organic","Hybrid seed", "OPV","    ", "outcome index","prod","area","yield improved","yield","     ")))
 
 
 bold.labels <- ifelse(levels(d_plot$x) %in% c("overall index","knowledge index","decision index","adoption index","input use index","outcome index"), yes = "bold", no = "plain")
@@ -1571,5 +1621,21 @@ png("/home/bjvca/data/projects/digital green/papers/DP_gender/World_Development/
 ggarrange(plot1,plot2, common.legend = TRUE, legend = "bottom", widths=c(.5,.3))
 dev.off()
 
+save(ind_out_m, file="/home/bjvca/data/projects/digital green/papers/DP_gender/World_Development/ind_out_m")
+save(ind_out_w, file="/home/bjvca/data/projects/digital green/papers/DP_gender/World_Development/ind_out_w")
+save(ind_out_j, file="/home/bjvca/data/projects/digital green/papers/DP_gender/World_Development/ind_out_j")
+
+save(out_m, file="/home/bjvca/data/projects/digital green/papers/DP_gender/World_Development/out_m")
+save(out_w, file="/home/bjvca/data/projects/digital green/papers/DP_gender/World_Development/out_w")
+save(out_j, file="/home/bjvca/data/projects/digital green/papers/DP_gender/World_Development/out_j")
+
+## additional analysis - compare knowledge gain for men between messenger == couple and messenger == men alone
+ dta <- within(dta, messenger <- relevel(messenger, ref = "male"))
+ dta <- within(dta, recipient <- relevel(recipient, ref = "female"))
+
+know_ind_res_m <- FW_index(treatment, paste(c("know_space", "know_combine", "know_weed"),"m",sep="_"),dta)
+
+
+linearHypothesis(know_ind_res_m[[1]],"recipientcouple = recipientmale")
 
 
