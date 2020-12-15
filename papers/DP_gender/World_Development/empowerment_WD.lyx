@@ -35,7 +35,7 @@ knitr
 \bibtex_command default
 \index_command default
 \paperfontsize default
-\spacing double
+\spacing single
 \use_hyperref true
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
@@ -103,36 +103,33 @@ Els Lecoutere, David J Spielman and Bjorn Van Campenhout
 \end_layout
 
 \begin_layout Abstract
-Agricultural extension advisory services are generally biased towards men,
- with information targeted mainly to male members within the household,
- and in formats that often reinforce male dominance in agricultural decision
- making.
+Agricultural advisory services are generally biased towards men, with informatio
+n targeted mainly to male members within the household, and in formats that
+ often reinforce male dominance in agricultural decision making.
  We conduct a gendered field experiment among maize-farming households in
  eastern Uganda, where, in the context of a video-mediated agricultural
  extension information campaign, we first test whether targeting women as
  recipients of information within the household—showing the video to the
  female co-head either alone or as part of a couple—affects household members
- individual knowledge, decision making, behavior, and outcomes.
+ individual and joint knowledge, decision making, behavior, and outcomes.
  In a second treatment, we vary exposure to the gender of the actors in
  the videos to test for role model effects, exploring whether involving
  women as information messengers—either alone or as part of a couple—challenges
- the idea that decision-making is a predominantly male domain.
+ the idea that maize farming related decision-making is a predominantly
+ male domain.
  We find that targeting the female co-head with information (as opposed
  to targeting only the man) increases their knowledge about improved maize
  management practices, their role in agricultural decision-making, adoption
- of inputs, and yields on fields they manage.
- while men's unilateral decision making reduces.
+ of inputs, and yields on fields they manage, while men's unilateral decision
+ making reduces.
  When couples are targeted, adoption of recommended practices and use of
  inputs increases on jointly managed fields, while men's unilateral decision
  making reduces.
- For the second treatment, we only find that men reduce unilateral decision
- making if the video features a couple.
- Overall, our findings suggest that extension efforts aimed at directly
- addressing intra-household information asymmetries may be a first-best
- means of empowering women in agriculture.
- Other, more subtle means that seek to influence perceptions and norms about
- gendered roles in the household may not generate expected effects or work
- via expected impact pathways, at least in the short run.
+ For the second treatment, we find that men reduce unilateral decision making
+ if the video features a couple.
+ We also find that a female role model increases adoption of recommended
+ practices on women managed plots, but only if the information was targeted
+ to the female co-head.
  
 \end_layout
 
@@ -153,7 +150,7 @@ literal "false"
  often important components of agricultural development strategies.
  However, agricultural extension services are typically biased toward men,
  with information targeted mainly to male members of a farm-household and
- in formats that are rarely tailored to women.
+ delivered in ways that is rarely tailored to women.
  Such biases affects womens' ability to make informed decisions and erodes
  their intra-household bargaining power.
  
@@ -163,9 +160,10 @@ literal "false"
 There are many well-established benefits to empowering women farmers in
  agriculture.
  A more prominent role for women in the farm household has been shown to
- result in more efficient allocations of scarce resources within the household,
- more equitable distributions of the returns to investments in household
- production, and general improvements in welfare and poverty 
+ result in a more efficient allocation of scarce resources within the household,
+ a more equitable distribution of the returns to investments in household
+ production, and general improvements in welfare and reductions in poverty
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "DEBRAUW2014487,10.1093/wber/lhw011,mccarthy2017stronger,10.2307/24582373-2"
@@ -210,17 +208,6 @@ literal "true"
 \end_inset
 
 .
- In certain situations, this may be directly linked to unequal access to
- agricultural extension and advisory services between men and women farmers
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "NDIRITU2014117"
-literal "true"
-
-\end_inset
-
-.
  This unequal access may contribute to lower adoption rates of improved
  agricultural practices and technologies among women.
  For example, studies show that with equal access to extension services,
@@ -235,6 +222,16 @@ literal "true"
 
 .
  
+\begin_inset CommandInset citation
+LatexCommand citet
+key "KABUNGA201425"
+literal "false"
+
+\end_inset
+
+ find that female farmers are less likely to adopt tissue banana culture
+ technology in Kenya, but that they would have an equal chance to adopt
+ innovations if they acquire sufficient knowledge about the innovation.
 \end_layout
 
 \begin_layout Standard
@@ -260,15 +257,7 @@ literal "true"
  Human capital constraints may also play a role given women’s generally
  lower levels of education in many rural contexts in developing countries.
  Norms limiting women’s mobility and women’s interaction with men may impose
- additional constraints 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "FLETSCHNER20111422"
-literal "true"
-
-\end_inset
-
-.
+ additional constraints.
  These extra-household constraints to women’s access to information mean
  that, in many situations, women may rely more on informal networks for
  gathering information.
@@ -326,18 +315,19 @@ literal "true"
 \begin_layout Standard
 In this paper, we examine how the design of information and communication
  technology (ICT) applications used in agricultural extension information
- campaigns affects household member's access to informational resources,
- their agency, and their achievements in smallholder semi-subsistence farming.
- In particular, we conduct a field experiment among 3,330 maize-farming
- households in eastern Uganda and zoom in on two design features.
- In a first experiment, we focus on targeting of the information and compare
+ campaigns affects household member's access—the female co-head in particular—to
+ informational resources, their agency, and their achievements in smallholder
+ semi-subsistence farming.
+ We conduct a field experiment among 3,330 maize-farming households in eastern
+ Uganda and zoom in on two design features.
+ In a first experiment, we focus on targeting of the information, and compare
  outcomes of households where the informational video was shown to the male
- co-head only (i.e.
- the status quo), to outcomes in households the female co-head was also
- exposed to the video—either alone or as part of a couple.
+ co-head only (corresponding to the status quo in generic agricultural extension
+ models), to outcomes in households where the female co-head was also exposed
+ to the video—either alone or as part of a couple.
  In a second treatment, we investigate the potential of role models to increase
- participation in traditionally male dominated activities such as maize
- farming 
+ participation in maize farming, a traditionally male dominated activity
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "porter2019gender"
@@ -347,65 +337,63 @@ literal "false"
 
 .
  Here, we vary exposure to the gender of the actors in the videos, and compare
- outcomes of households that were shown a video with a male actor (the status
- quo) to outcomes of households where the video features an actress—either
- alone or as part of a couple.
- The outcomes we compare to assess impact of the treatments are individual
- level outcomes (eg.
- the women co-head's knowledge, decision making, adoption and production,
- the women co-head's knowledge, decision making, adoption and production,
- or joint knowledge, decision making, adoption and production) as reported
- by the women co-head.
+ outcomes within households that were shown a video with a male actor (again
+ corresponding to the status quo in generic agricultural extension models)
+ to outcomes within households where shown a video that features an actress—eith
+er alone or as part of a couple.
+ The outcomes we use to assess impact of the treatments are individual level
+ and joint outcomes (the female co-head's knowledge, decision making, adoption
+ and production, the male co-head's knowledge, decision making, adoption
+ and production, or joint knowledge, decision making, adoption and production)
+ as reported by the female co-head.
 \end_layout
 
 \begin_layout Standard
-We find that targeting the woman co-head within the household (as opposed
+We find that targeting the female co-head within the household (as opposed
  to targeting the male co-head) increased women's outcomes and reduced men's
  outcomes.
  In particular, the treatment increased women’s knowledge of agronomic practices
 , their participation in agricultural decision-making, and their adoption
  of inputs such as inorganic fertilizer on fields they manage.
- They also report higher yields on the plots they manage.
- The increase in knowledge came at the cost of a decrease in knowledge of
- the male co-head, indicating frictions in the flow of information between
+ They also reported higher yields on the plots they manage.
+ The increase in female knowledge came at the cost of a decrease in knowledge
+ of the male co-head, indicating frictions in the flow of information between
  spouses.
  Men also reduced the likelihood that they made agricultural related decisions
- unilaterally, but adoption of practices and inputs and production on fields
- managed by the male co-head alone does not differ between households where
- only the woman co-head was exposed to the information and households where
- only the male co-head saw the video.
+ unilaterally, but adoption of practices and inputs, and production on fields
+ managed by male co-heads alone does not differ between households where
+ only the male co-head was exposed to the information and households where
+ only the female co-head saw the video.
  
 \end_layout
 
 \begin_layout Standard
-We further find that targeting the woman co-head and male co-head within
- the household jointly (as opposed to targeting the male co-head alone)
- increased joint outcomes.
+We further find that targeting both the female co-head and male co-head
+ within the household jointly (as opposed to targeting the male co-head
+ alone) increased joint outcomes.
  In the subgroup where both spouses were targeted, effects are driven by
- an increased in adoption of a novel planting method that was promoted,
- as well as the use of organic fertilizer on plots that are jointly managed.
- We also find that men reduce unilateral decision making if the video was
- shown to the male and female co-head together (as compared to to the male
- co-head alone).
- Despite an increase in adoption on joint plots, we do not see that an increase
- in joint decision making.
+ an increase in adoption of a novel planting method that was promoted, as
+ well as the use of organic fertilizer on plots that are jointly managed.
+ We also find that men reduced unilateral decision making.
+ Despite an increase in adoption of recommended practices and increased
+ use of modern inputs on joint plots, we do not see an increase in production
+ related outcomes.
 \end_layout
 
 \begin_layout Standard
-The empowerment impacts are less clear.
+The effectiveness of the use of role models is less evident.
  We only find that in the subgroup where a video was shown in which the
  couple provided information (as opposed to the status quo where a man provides
  all the advice), men were less likely to take decisions without involving
  their wives.
- This may indicate role incongruity effects that result from challenging
- widely held beliefs and stereotypes about women being less able to make
- decisions related to agriculture.
+ This may indicate that the intervention challenged beliefs and stereotypes
+ held by men that women are less able to make decisions related to agriculture.
 \end_layout
 
 \begin_layout Standard
-Our study contributes to the literature on intra-household information asymmetri
-es in the context of developing-country agriculture and the provision of
- agricultural extension services using non-cooperative models of the household.
+Our study contributes to the literature on the provision of agricultural
+ extension information to address intra-household information asymmetries
+ in the context of developing-country agriculture.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -448,21 +436,6 @@ literal "true"
  Focusing on integrated soil fertility management practices in eastern DR
  Congo, they find that joint participation of male and female co-heads in
  extension information events increases adoption most.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "FISHER201582"
-literal "true"
-
-\end_inset
-
- use observational data to explore explanations for the relatively low adoption
- rates for drought-tolerant maize varieties among women farmers (in male-headed
- households) in eastern Uganda.
- They do not find support for the idea that this is caused by differences
- in technology preferences, but that differences in adoption are related
- to awareness, and particularly whether the woman farmer received information
- about the varieties.
  
 \end_layout
 
@@ -631,9 +604,9 @@ reference "sec:Methods"
 
 \end_inset
 
- we explain the methods, with subsections on the experimental design, the
- specification we will estimate, sampling, and the indicators that will
- be used to assess impact of the different interventions.
+ we explain the methods, with subsections on the experimental design, sampling,
+ the specification we will estimate, and the indicators that will be used
+ to assess impact of the different interventions.
  We then turn to the results in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -644,7 +617,11 @@ noprefix "false"
 
 \end_inset
 
-.
+, where we first discuss the impact of targeting the information to the
+ female co-head, alone or as part of the couple.
+ We then look at role model effects.
+ We also have a subsection that reports on interactions between the two
+ treatments.
  A final section concludes.
 \end_layout
 
@@ -660,20 +637,17 @@ name "sec:Study-context"
 \end_layout
 
 \begin_layout Standard
-To study the importance of targeting information and role models in the
- design of inclusive agricultural extension information campaigns, we conducted
- a field experiment in 2017 among smallholder maize-farming households in
- eastern Uganda.
- Participants in the field experiment were drawn from monogamous maize-cultivati
-ng households residing in five districts where maize is particularly important,
+We conducted a field experiment in 2017 among smallholder maize-farming
+ households in eastern Uganda.
+ Participants in the experiment were drawn from monogamous maize-cultivating
+ households residing in five districts where maize is particularly important,
  both as a staple and as a marketable crop.
  The experiment was conducted during the second maize-growing season, which
  runs from approximately August to January of the following year, and is
  characterized by a shorter period of rainfall than the first maize-growing
- season.
- During this second season, the complete cycle from planting to harvest
- requires three to three and a half months, and farmers tend to cultivate
- early-maturing but lower yielding maize varieties.
+ season: During this second season, the complete cycle from planting to
+ harvest requires three to three and a half months, and farmers tend to
+ cultivate early-maturing but lower yielding maize varieties.
  Fields are prepared in August, planted in September, and harvested from
  December onward.
  
@@ -713,8 +687,8 @@ literal "true"
 
 \end_inset
 
- observe that, generally, male-managed plots are on average 17.5 percent
- more productive than female-managed plots in Uganda.
+ observe that male-managed plots are on average 17.5 percent more productive
+ than female-managed plots in Uganda.
  They link the productivity gap between male- and female-managed plots (controll
 ed for plot size but without distinguishing between type of crops) to an
  unequal distribution between men and women of responsibilities and resources,
@@ -739,8 +713,8 @@ literal "false"
 .
  The latter is organized by the army and approaches problems in the sector
  from a logistical angle.
- As a result, the focus has shifted for provision of advise towards (subsidized)
- input distribution.
+ As a result, the focus has shifted from provision of advise towards (subsidized
+) input distribution.
  Data obtained from the Uganda National Panel Survey (wave 2013/2014) suggest
  that only 20% of households received extension in the past twelve months.
  While there is no reliable data on who was targeted within these households,
@@ -774,11 +748,15 @@ The Experiment: A Video Extension Information Intervention in a Factorial
 \end_layout
 
 \begin_layout Standard
-We test hypotheses about the effectiveness of involving women in receiving
- and conveying extension information via ICT-enabled videos.
- To do so, we developed a 3x3 factorial design, in which one factor corresponds
- to the gender of the person (or persons) who receives the information (hencefor
-th referred to as the 
+We test the effectiveness of involving women in receiving and conveying
+ extension information via ICT-enabled videos.
+ To do so, we use a 
+\begin_inset Formula $3^{2}$
+\end_inset
+
+ factorial design, in which one factor corresponds to the gender of the
+ person (or persons) who receives the information (henceforth referred to
+ as the 
 \emph on
 recipient
 \emph default
@@ -800,8 +778,8 @@ In the context of this study, we refer to these factors in terms of “gender”
 
 \end_inset
 
- Each factor contained three levels: man alone, woman alone, or man and
- woman together (as a couple).
+ Each factor contained three levels: male co-head alone, female co-head
+ alone, or male and female co-heads together (as a couple).
  The design is represented in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -809,15 +787,19 @@ reference "fig:Layout-of-experimental"
 
 \end_inset
 
- below, with sample sizes shown in each of the nine treatment combinations
- to indicate the number of households randomly allocated to one of these
- nine treatment cells.
+ below, with numbers shown in each of the nine treatment cells to indicate
+ the number of households randomly allocated to one of these nine treatment
+ combinations.
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
 Power calculations were based on a set of comparisons using different outcomes
- to power the complete 3x3 factorial design.
+ to power the complete 
+\begin_inset Formula $3^{2}$
+\end_inset
+
+ factorial design.
  We used simulation techniques that allowed us to sample from actual data
  on outcome variables (maize yields obtained from Uganda National Household
  Survey of 2005/06) instead of a theoretical distribution with an assumed
@@ -926,7 +908,7 @@ s including: management of pests and disease, including striga (
 \emph on
 Striga hermonihica
 \emph default
-) a parasitic plant affecting maize growth; improvement of soil fertility
+), a parasitic plant affecting maize growth; improvement of soil fertility
  through the timely application of organic and inorganic fertilizers; use
  of fresh seed of improved maize varieties and hybrids; and crop management
  practices such as timely planting, optimal plant spacing, and timely weeding.
@@ -935,6 +917,50 @@ Striga hermonihica
  a long-term perspective on improving their maize cultivation by starting
  small and reinvesting profits on increasingly larger areas of land.
  
+\end_layout
+
+\begin_layout Subsection
+Sampling and treatment assignment
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Data"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Households were sampled from five districts in eastern Uganda: Bugiri, Mayuge,
+ Iganga, Namayingo, and Namutumba.
+ From among these districts, we first removed town councils and two sub-counties
+ that consisted of islands in Lake Victoria.
+ We then used a two-stage cluster sampling approach to obtain a representative
+ sample of this population.
+ Specifically, we first selected parishes randomly and in proportion to
+ the number of villages within each parish.
+ In the selected parishes, all villages were included in the study.
+ Within each village, we then listed all households, from which we randomly
+ selected households to be included in the study.
+ 
+\end_layout
+
+\begin_layout Standard
+Treatment was randomized at the farm household level.
+ Assignment of the households to a particular treatment combination was
+ randomized using a random number generator.
+ Information on the sampled households, including names, contact details,
+ and their treatment assignment, were pre-loaded onto the tablets so that
+ the correct video was automatically queued for screening.
+ The integration of treatment assignment into our Computer Assisted Personal
+ Interview (CAPI) system allowed us to monitor implementation fidelity in
+ real time.
+\end_layout
+
+\begin_layout Standard
+Endline data was collected between February and April 2018.
+ Households were revisited and both male and female co-heads where interviewed
+ separately.
 \end_layout
 
 \begin_layout Subsection
@@ -964,8 +990,19 @@ i
 
 \begin_layout Standard
 \begin_inset Formula 
+\[
+y_{i}=\alpha+\overset{T_{R}=W,J}{\sum}\beta^{T_{R}}.R_{i}^{T_{R}}+\overset{T_{M}=W,J}{\sum}\gamma^{T_{M}}.I_{i}^{T_{M}}+
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
 \begin{equation}
-y_{i}=\alpha+\overset{T_{R}=W,J}{\sum}\beta^{T_{R}}.R_{i}^{T_{R}}+\overset{T_{M}=W,J}{\sum}\gamma^{T_{M}}.I_{i}^{T_{M}}+\overset{T_{R}=W,J}{\sum}\overset{T_{M}=W,J}{\sum}\delta^{T_{R}T_{M}}R_{i}^{T_{R}}M_{i}^{T_{M}}+\varepsilon_{i}\label{eq:ols}
+\overset{T_{R}=W,J}{\sum}\overset{T_{M}=W,J}{\sum}\delta^{T_{R}T_{M}}R_{i}^{T_{R}}M_{i}^{T_{M}}+\varepsilon_{i}\label{eq:ols}
 \end{equation}
 
 \end_inset
@@ -980,7 +1017,7 @@ In this equation,
 
  are indicator dummy variables that denote who within the household was
  shown the video (the recipient factor).
- If the video was shown to the woman co-head in household 
+ If the video was shown to the woman co-head alone in household 
 \emph on
 i
 \emph default
@@ -1006,8 +1043,8 @@ i
 \end_inset
 
 .
- The comparison category consist of households where the video was shown
- to the male co-head in household
+ The comparison category thus consist of households where the video was
+ shown to the male co-head only in household
 \emph on
  i
 \emph default
@@ -1038,7 +1075,7 @@ i
 \end_inset
 
 .
- If the video where the couple was acting was shown, the 
+ If the video where the couple was acting was shown, then 
 \begin_inset Formula $M_{i}^{W}=0$
 \end_inset
 
@@ -1060,7 +1097,7 @@ i
 \end_layout
 
 \begin_layout Standard
-We have four primary parameters of interest.
+We obtain four parameters of interest.
  First,
 \family roman
 \series medium
@@ -1102,25 +1139,24 @@ We have four primary parameters of interest.
  (as compared to a situation where the video is shown to the husband alone
  and keeping the version of the video fixed).
  Third, 
-\begin_inset Formula $\gamma^{J}$
+\begin_inset Formula $\gamma^{W}$
 \end_inset
 
  provides and estimate of the effect of showing a video featuring a woman
  role model (as compared to a situation where the video features a male
- actor only and controlling for who within the household the video is shown
- to).
+ actor only and controlling for who the video is shown to within the household).
  Fourth, 
 \begin_inset Formula $\gamma^{J}$
 \end_inset
 
  provides and estimate of the effect of showing a video where a couple provides
  all the information (as compared to a situation where the video features
- only a male actor and and keeping recipient fixed).
+ only a male actor and keeping recipient fixed).
  We also test if 
 \begin_inset Formula $\beta^{W}=\beta^{J}$
 \end_inset
 
-and 
+ and 
 \begin_inset Formula $\gamma^{W}=\gamma^{J}$
 \end_inset
 
@@ -1164,68 +1200,18 @@ literal "false"
 
 .
  While our primary interest lies in the main effects and estimates of interactio
-ns are not reported in the figures and tables, we may in some cases comment
- on interesting effects.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-For instance, significant coefficient estimates of 
+ns are not reported in figures and tables to conserve space, some of these
+ interactions may be informative for particular outcomes.
+ For instance, significant coefficient estimates of 
 \begin_inset Formula $\delta^{WW}$
 \end_inset
 
-may indicate that gender related homophily effects—the tendency of individuals
- to associate more to individuals of the same gender—are important.
-\end_layout
-
-\end_inset
-
- However, it needs to be kept in mind that interactions may be poorly powered.
-\end_layout
-
-\begin_layout Subsection
-Sampling and treatment assignment
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Data"
-
-\end_inset
-
+ for knowledge outcomes may indicate that gender related homophily effects—the
+ tendency of individuals to associate more to individuals of the same gender—are
+ important for learning.
+ When we discuss results, we thus include a subsection that highlights the
+ most important findings.
  
-\end_layout
-
-\begin_layout Standard
-Households were sampled from five districts in eastern Uganda: Bugiri, Mayuge,
- Iganga, Namayingo, and Namutumba.
- From among these districts, we first removed town councils and two sub-counties
- that consisted of islands in Lake Victoria.
- We then used a two-stage cluster sampling approach to obtain a representative
- sample of this population.
- Specifically, we first selected parishes randomly and in proportion to
- the number of villages within each parish.
- In the selected parishes, all villages were included in the study.
- Within each village, we then listed all households, from which we randomly
- selected households to be included in the study.
- 
-\end_layout
-
-\begin_layout Standard
-Assignment of the households to a particular treatment combination was randomize
-d using a random number generator.
- Information on the sampled households, including names, contact details,
- and their treatment assignment, were pre-loaded onto the tablets so that
- the correct video was automatically queued for screening.
- Enumerators received appropriate instructions and were only able to screen
- the appropriate version of the video.
- As such, the treatments were integrated into our Computer Assisted Personal
- Interview (CAPI) system, which allowed us to monitor implementation fidelity
- in real time.
-\end_layout
-
-\begin_layout Standard
-Endline data was collected between February and April 2018.
- Households were revisited and both male and female co-heads where interviewed
- separately in all households in treatment and control groups.
 \end_layout
 
 \begin_layout Subsection
@@ -1272,23 +1258,24 @@ ion of the null hypothesis due to multiple inference.
 \end_layout
 
 \begin_layout Standard
-Knowledge about four different practices recommended in the video is measured
+Knowledge about the different practices recommended in the video is measured
  by the extent to which respondents answered correctly to multiple choice
  questions about the practices.
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-First, respondents are considered knowledgeable about plant spacing if they
- correctly answered that the best spacing is two and a half feet between
- rows and one foot between plants, with one seed per hill.
+First, respondents are considered knowledgeable about recommended plant
+ spacing and seed rate if they correctly answered that the best spacing
+ is two and a half feet between rows and one foot between plants, with one
+ seed per hill.
  Second, respondents are considered knowledgeable about combining practices
- if they correctly answered they would allocate 40,000 Ugandan shillings
+ if they correctly answered that they would allocate 40,000 Ugandan shillings
  to buy improved seed and fertilizer, as combining inputs is a better strategy
  than putting all the eggs in one basket.
  Third, respondents are considered knowledgeable about optimal weeding if
- they correctly answered weeding is most important during the first four
- weeks after planting.
+ they correctly answered that weeding is most important during the first
+ four weeks after planting.
  Fourth, respondents are considered knowledgeable about fall armyworm control
  if they correctly answered that spraying in the evening is most effective
  since fall armyworm eats during night.
@@ -1390,8 +1377,8 @@ Diammonium phosphate
 \end_layout
 
 \begin_layout Standard
-Next, we measured outcomes related to production, area of production, and
- productivity on maize plots under female, male and joint management.
+Finally, we measured outcomes related to production, area of production,
+ and productivity on maize plots under female, male and joint management.
  Female (male, jointly) managed plots are defined as plots on which, according
  to female co-head respondents, female co-head alone (male co-head alone,
  jointly) took at least three out of five decisions.
@@ -1408,8 +1395,8 @@ Next, we measured outcomes related to production, area of production, and
  than in a normal year.
  We also defined similar indicators for male managed plots and for jointly
  managed plots.
- This family of outcomes is summarized in outcome indices (one for female
- managed, one for male managed and one for jointly managed plots).
+ This family of outcomes is again summarized in outcome indices (one for
+ female managed, one for male managed and one for jointly managed plots).
 \end_layout
 
 \begin_layout Section
@@ -1424,12 +1411,13 @@ name "sec:Results"
 \end_layout
 
 \begin_layout Standard
-In this section, we present the impact of the intervention on knowledge,
+In this section, we present the impact of the interventions on knowledge,
  decision making, adoption and production.
- We look at the impact of information targeting treatment first, and then
- at the impact of the role model experiment.
+ We look at the impact of the information targeting treatment first, and
+ then at the impact of the role model experiment.
  In both cases we report results for the two treatment levels (female co-head
  alone or joint).
+ We consider interaction effects separately.
 \end_layout
 
 \begin_layout Standard
@@ -1587,15 +1575,15 @@ noprefix "false"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align left
 \begin_inset Graphics
 	filename fig3_pub.png
 	lyxscale 20
-	scale 65
-	BoundingBox 1250bp 0bp 6400bp 6400bp
+	scale 60
+	BoundingBox 900bp 0bp 6400bp 6400bp
 
 \end_inset
 
@@ -2054,8 +2042,8 @@ status open
 \begin_inset Graphics
 	filename fig4_pub.png
 	lyxscale 20
-	scale 65
-	BoundingBox 1250bp 0bp 6400bp 6400bp
+	scale 60
+	BoundingBox 900bp 0bp 6400bp 6400bp
 
 \end_inset
 
@@ -2135,6 +2123,13 @@ noprefix "false"
 
 \begin_layout Subsection
 Interaction effects
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Interaction-effects"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2424,7 +2419,7 @@ makeatother
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3208,7 +3203,7 @@ end{threeparttable}
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -4104,7 +4099,7 @@ end{threeparttable}
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -4880,7 +4875,7 @@ end{threeparttable}
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5776,7 +5771,7 @@ end{threeparttable}
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6552,7 +6547,7 @@ end{threeparttable}
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7336,7 +7331,7 @@ end{threeparttable}
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8232,7 +8227,7 @@ end{threeparttable}
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9008,7 +9003,7 @@ end{threeparttable}
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9904,7 +9899,7 @@ end{threeparttable}
 \begin_inset Float table
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
