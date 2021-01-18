@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -12,6 +12,9 @@
 \usepackage{rotfloat}
 \end_preamble
 \use_default_options true
+\begin_modules
+knitr
+\end_modules
 \maintain_unincluded_children false
 \language english
 \language_package default
@@ -27,6 +30,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -66,6 +71,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -74,7 +80,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -165,6 +174,7 @@ l household.
 \begin_inset CommandInset citation
 LatexCommand citet
 key "udry1996gender"
+literal "true"
 
 \end_inset
 
@@ -181,6 +191,7 @@ ing production factors from man managed to women managed plots may increase
 \begin_inset CommandInset citation
 LatexCommand citep
 key "New1,haddad1997intrahousehold"
+literal "true"
 
 \end_inset
 
@@ -197,6 +208,7 @@ Recently, the focus has shifted somewhat, focusing less on intra-household
 \begin_inset CommandInset citation
 LatexCommand citet
 key "doss2015collective"
+literal "true"
 
 \end_inset
 
@@ -208,6 +220,7 @@ g bargaining models may be the exception rather that the rule
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doss2014owns,twyman2015gendered,doi:10.1111/dpr.12243"
+literal "true"
 
 \end_inset
 
@@ -219,6 +232,7 @@ key "doss2014owns,twyman2015gendered,doi:10.1111/dpr.12243"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "alkire2013women"
+literal "true"
 
 \end_inset
 
@@ -241,6 +255,7 @@ A first strategy involves reducing information asymmetries within households.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "magruder2018assessment"
+literal "true"
 
 \end_inset
 
@@ -268,6 +283,7 @@ The second strategy consists of promoting a mental image of farming as a
 \begin_inset CommandInset citation
 LatexCommand citep
 key "porter2019gender"
+literal "true"
 
 \end_inset
 
@@ -336,6 +352,7 @@ ion of labor.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "bernard2014future"
+literal "true"
 
 \end_inset
 
@@ -361,6 +378,7 @@ Often, the poor appear to make sub-optimal decision because they lack critical
 \begin_inset CommandInset citation
 LatexCommand citep
 key "34"
+literal "true"
 
 \end_inset
 
@@ -368,6 +386,7 @@ key "34"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "jensen2010perceived,dupas2011teenagers"
+literal "true"
 
 \end_inset
 
@@ -377,6 +396,7 @@ key "jensen2010perceived,dupas2011teenagers"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "banerjee2011poor"
+literal "true"
 
 \end_inset
 
@@ -388,6 +408,7 @@ key "banerjee2011poor"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "de2017field,magruder2018assessment"
+literal "true"
 
 \end_inset
 
@@ -406,6 +427,7 @@ d within the household.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1257/aer.104.7.2210"
+literal "true"
 
 \end_inset
 
@@ -415,6 +437,7 @@ al technology adoption, which may be segregated according to sex
 \begin_inset CommandInset citation
 LatexCommand citep
 key "BEAMAN2018147,MEKONNEN2018321"
+literal "true"
 
 \end_inset
 
@@ -426,6 +449,7 @@ key "BEAMAN2018147,MEKONNEN2018321"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "fletschner2011gender"
+literal "true"
 
 \end_inset
 
@@ -439,6 +463,7 @@ There is some evidence that suggest that a more equal distribution of knowledge
 \begin_inset CommandInset citation
 LatexCommand citet
 key "lambrecht2016agricultural"
+literal "true"
 
 \end_inset
 
@@ -452,6 +477,7 @@ key "lambrecht2016agricultural"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "ashraf2009spousal"
+literal "true"
 
 \end_inset
 
@@ -484,6 +510,7 @@ s between spouses may lead to different outcomes.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doss2015collective"
+literal "true"
 
 \end_inset
 
@@ -536,6 +563,7 @@ desirable
 LatexCommand citep
 before "eg."
 key "10.1093/qje/qjv001,10.2307/27804976"
+literal "true"
 
 \end_inset
 
@@ -546,6 +574,7 @@ key "10.1093/qje/qjv001,10.2307/27804976"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1257/pandp.20181086,bursztyn2018misperceived"
+literal "true"
 
 \end_inset
 
@@ -559,6 +588,7 @@ Several studies point out the importance of role models to behaviour change
 \begin_inset CommandInset citation
 LatexCommand citet
 key "porter2019gender"
+literal "true"
 
 \end_inset
 
@@ -568,6 +598,7 @@ key "porter2019gender"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "campos2015breaking"
+literal "true"
 
 \end_inset
 
@@ -578,6 +609,7 @@ key "campos2015breaking"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "nguyen2008information"
+literal "true"
 
 \end_inset
 
@@ -587,6 +619,7 @@ key "nguyen2008information"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "bernard2019parental"
+literal "true"
 
 \end_inset
 
@@ -594,6 +627,7 @@ key "bernard2019parental"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "bernard2015will"
+literal "true"
 
 \end_inset
 
@@ -602,6 +636,7 @@ key "bernard2015will"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "riley2017increasing"
+literal "true"
 
 \end_inset
 
@@ -787,7 +822,7 @@ reference "tab:Balance_treat1"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1187,6 +1222,39 @@ Analysis of household decision making
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<analysis,  echo=FALSE, warning = FALSE, message=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+path <- getwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+source(paste(path,"analysis/decision_making_update.R
+\begin_inset Quotes erd
+\end_inset
+
+, sep = "/"))
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 We start by looking at joint decision making within households.
  We asked each spouse how decisions were made on a range of maize related
  activities.
@@ -1208,15 +1276,970 @@ reference "fig:Joint-decision-making"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
+\begin_inset Float table
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on decision making
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:decisions"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{joint decision}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{man decision}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{women decision}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	ctrl mean	&	ATE	&	ctrl mean	&	ATE	&	ctrl mean	&	ATE	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+plant maize	&	
+\backslash
+Sexpr{format(round(df_ols[1,1,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,1,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,1,1]<.01,"**",ifelse(df_ols[5,1,1]<.05,"*",ifelse(df_ols[5,1
+,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,2,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,2,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,2,1]<.01,"**",ifelse(df_ols[5,2,1]<.05,"*",ifelse(df_ols[5,2
+,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,3,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,3,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,3,1]<.01,"**",ifelse(df_ols[5,3,1]<.05,"*",ifelse(df_ols[5,3
+,1]<.1,"+","")))}}$ 	
+\backslash
+
+\backslash
+ 	&	(
+\backslash
+Sexpr{format(round(df_ols[2,1,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,1,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,3,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,3,1],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ timing	&	
+\backslash
+Sexpr{format(round(df_ols[1,1,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,1,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,1,2]<.01,"**",ifelse(df_ols[5,1,2]<.05,"*",ifelse(df_ols[5,1
+,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,2,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,2,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,2,2]<.01,"**",ifelse(df_ols[5,2,2]<.05,"*",ifelse(df_ols[5,2
+,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,3,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,3,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,3,2]<.01,"**",ifelse(df_ols[5,3,2]<.05,"*",ifelse(df_ols[5,3
+,2]<.1,"+","")))}}$ 	
+\backslash
+
+\backslash
+ 	&	(
+\backslash
+Sexpr{format(round(df_ols[2,1,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,1,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,3,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,3,2],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ spacing	&	
+\backslash
+Sexpr{format(round(df_ols[1,1,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,1,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,1,3]<.01,"**",ifelse(df_ols[5,1,3]<.05,"*",ifelse(df_ols[5,1
+,3]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,2,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,2,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,2,3]<.01,"**",ifelse(df_ols[5,2,3]<.05,"*",ifelse(df_ols[5,2
+,3]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,3,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,3,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,3,3]<.01,"**",ifelse(df_ols[5,3,3]<.05,"*",ifelse(df_ols[5,3
+,3]<.1,"+","")))}}$ 	
+\backslash
+
+\backslash
+ 	&	(
+\backslash
+Sexpr{format(round(df_ols[2,1,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,1,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,3,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,3,3],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ striga	&	
+\backslash
+Sexpr{format(round(df_ols[1,1,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,1,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,1,4]<.01,"**",ifelse(df_ols[5,1,4]<.05,"*",ifelse(df_ols[5,1
+,4]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,2,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,2,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,2,4]<.01,"**",ifelse(df_ols[5,2,4]<.05,"*",ifelse(df_ols[5,2
+,4]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,3,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,3,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,3,4]<.01,"**",ifelse(df_ols[5,3,4]<.05,"*",ifelse(df_ols[5,3
+,4]<.1,"+","")))}}$ 	
+\backslash
+
+\backslash
+ 	&	(
+\backslash
+Sexpr{format(round(df_ols[2,1,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,1,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,3,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,3,4],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ weeding	&	
+\backslash
+Sexpr{format(round(df_ols[1,1,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,1,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,1,5]<.01,"**",ifelse(df_ols[5,1,5]<.05,"*",ifelse(df_ols[5,1
+,5]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,2,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,2,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,2,5]<.01,"**",ifelse(df_ols[5,2,5]<.05,"*",ifelse(df_ols[5,2
+,5]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,3,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,3,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,3,5]<.01,"**",ifelse(df_ols[5,3,5]<.05,"*",ifelse(df_ols[5,3
+,5]<.1,"+","")))}}$ 	
+\backslash
+
+\backslash
+ 	&	(
+\backslash
+Sexpr{format(round(df_ols[2,1,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,1,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,3,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,3,5],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports sample means (and standard deviations below);
+ Column 2 reports differences (and standard errors below) between 
+\end_layout
+
+\begin_layout Plain Layout
+
+households  **, * and + denote that the difference is signficant at the
+ 1, 5 and 10 percent level, respectively.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on division of labour
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:labout"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{woman - man}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{man labour}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{women labour}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	ctrl mean	&	ATE	&	ctrl mean	&	ATE	&	ctrl mean	&	ATE	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+land preparation	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,1,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,1,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,1,1]<.01,"**",ifelse(df_ols_time[5,1,1]<.05,"*",ifelse(
+df_ols_time[5,1,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,2,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,2,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,2,1]<.01,"**",ifelse(df_ols_time[5,2,1]<.05,"*",ifelse(
+df_ols_time[5,2,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,3,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,3,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,3,1]<.01,"**",ifelse(df_ols_time[5,3,1]<.05,"*",ifelse(
+df_ols_time[5,3,1]<.1,"+","")))}}$ 	
+\backslash
+
+\backslash
+ 	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,1,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,1,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,3,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,3,1],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ planting	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,1,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,1,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,1,2]<.01,"**",ifelse(df_ols_time[5,1,2]<.05,"*",ifelse(
+df_ols_time[5,1,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,2,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,2,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,2,2]<.01,"**",ifelse(df_ols_time[5,2,2]<.05,"*",ifelse(
+df_ols_time[5,2,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,3,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,3,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,3,2]<.01,"**",ifelse(df_ols_time[5,3,2]<.05,"*",ifelse(
+df_ols_time[5,3,2]<.1,"+","")))}}$ 	
+\backslash
+
+\backslash
+ 	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,1,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,1,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,3,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,3,2],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ weeding	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,1,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,1,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,1,3]<.01,"**",ifelse(df_ols_time[5,1,3]<.05,"*",ifelse(
+df_ols_time[5,1,3]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,2,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,2,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,2,3]<.01,"**",ifelse(df_ols_time[5,2,3]<.05,"*",ifelse(
+df_ols_time[5,2,3]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,3,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,3,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,3,3]<.01,"**",ifelse(df_ols_time[5,3,3]<.05,"*",ifelse(
+df_ols_time[5,3,3]<.1,"+","")))}}$ 	
+\backslash
+
+\backslash
+ 	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,1,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,1,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,3,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,3,3],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ spraying	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,1,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,1,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,1,4]<.01,"**",ifelse(df_ols_time[5,1,4]<.05,"*",ifelse(
+df_ols_time[5,1,4]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,2,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,2,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,2,4]<.01,"**",ifelse(df_ols_time[5,2,4]<.05,"*",ifelse(
+df_ols_time[5,2,4]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,3,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,3,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,3,4]<.01,"**",ifelse(df_ols_time[5,3,4]<.05,"*",ifelse(
+df_ols_time[5,3,4]<.1,"+","")))}}$ 	
+\backslash
+
+\backslash
+ 	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,1,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,1,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,3,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,3,4],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ harvesting	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,1,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,1,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,1,5]<.01,"**",ifelse(df_ols_time[5,1,5]<.05,"*",ifelse(
+df_ols_time[5,1,5]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,2,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,2,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,2,5]<.01,"**",ifelse(df_ols_time[5,2,5]<.05,"*",ifelse(
+df_ols_time[5,2,5]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,3,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,3,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,3,5]<.01,"**",ifelse(df_ols_time[5,3,5]<.05,"*",ifelse(
+df_ols_time[5,3,5]<.1,"+","")))}}$ 	
+\backslash
+
+\backslash
+ 	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,1,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,1,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,3,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,3,5],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports sample means (and standard deviations below);
+ Column 2 reports differences (and standard errors below) between 
+\end_layout
+
+\begin_layout Plain Layout
+
+households  **, * and + denote that the difference is signficant at the
+ 1, 5 and 10 percent level, respectively.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on conflict resolution
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:labout-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{man}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{woman}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{both}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	ctrl mean	&	ATE	&	ctrl mean	&	ATE	&	ctrl mean	&	ATE	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+speak up	&	
+\backslash
+Sexpr{format(round(df_ols_confl[1,1,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[3,1,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_confl[5,1,1]<.01,"**",ifelse(df_ols_confl[5,1,1]<.05,"*",ifels
+e(df_ols_confl[5,1,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[1,2,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[3,2,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_confl[5,2,1]<.01,"**",ifelse(df_ols_confl[5,2,1]<.05,"*",ifels
+e(df_ols_confl[5,2,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[1,3,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[3,3,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_confl[5,3,1]<.01,"**",ifelse(df_ols_confl[5,3,1]<.05,"*",ifels
+e(df_ols_confl[5,3,1]<.1,"+","")))}}$ 	
+\backslash
+
+\backslash
+ 	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[2,1,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[4,1,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[2,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[4,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[2,3,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[4,3,1],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ take advice	&	
+\backslash
+Sexpr{format(round(df_ols_confl[1,1,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[3,1,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_confl[5,1,2]<.01,"**",ifelse(df_ols_confl[5,1,2]<.05,"*",ifels
+e(df_ols_confl[5,1,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[1,2,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[3,2,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_confl[5,2,2]<.01,"**",ifelse(df_ols_confl[5,2,2]<.05,"*",ifels
+e(df_ols_confl[5,2,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[1,3,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[3,3,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_confl[5,3,2]<.01,"**",ifelse(df_ols_confl[5,3,2]<.05,"*",ifels
+e(df_ols_confl[5,3,2]<.1,"+","")))}}$ 	
+\backslash
+
+\backslash
+ 	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[2,1,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[4,1,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[2,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[4,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[2,3,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[4,3,2],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports sample means (and standard deviations below);
+ Column 2 reports differences (and standard errors below) between 
+\end_layout
+
+\begin_layout Plain Layout
+
+households  **, * and + denote that the difference is signficant at the
+ 1, 5 and 10 percent level, respectively.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename results/decsion_activities.png
+	lyxscale 25
 	scale 50
 
 \end_inset
@@ -1431,6 +2454,7 @@ To account for multiple hypothesis testing, we also calculate an index based
 \begin_inset CommandInset citation
 LatexCommand citet
 key "anderson2008multiple"
+literal "true"
 
 \end_inset
 
@@ -1447,7 +2471,7 @@ key "anderson2008multiple"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2295,6 +3319,7 @@ Household members need to make decisions about how to allocate scarce resources
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1080/00220388.2017.1400014"
+literal "true"
 
 \end_inset
 
@@ -2313,6 +3338,7 @@ We asked each spouse separately to indicate the top three spending categories
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1093/wber/3.1.1"
+literal "true"
 
 \end_inset
 
@@ -2394,6 +3420,7 @@ The seminal paper by
 \begin_inset CommandInset citation
 LatexCommand citet
 key "udry1996gender"
+literal "true"
 
 \end_inset
 
@@ -2742,6 +3769,7 @@ Many studies have found substantial disagreement about what men and women
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1086/703082"
+literal "true"
 
 \end_inset
 
@@ -2926,6 +3954,7 @@ Finally, we also look at disagreement with respect to amounts of maize sold.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "castilla2013ignorance"
+literal "true"
 
 \end_inset
 
@@ -3180,6 +4209,7 @@ We start by looking at decision making and confirm findings form
 \begin_inset CommandInset citation
 LatexCommand citet
 key "doss2014owns"
+literal "true"
 
 \end_inset
 
