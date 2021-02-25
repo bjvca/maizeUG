@@ -1,0 +1,4146 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Added by lyx2lyx
+\usepackage{float}
+% Added by lyx2lyx
+\usepackage{rotfloat}
+\end_preamble
+\use_default_options true
+\begin_modules
+knitr
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, urlcolor=blue, citecolor=blue, pdfstartview={FitH}, hyperfootnotes=false, unicode=true"
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+author{Bjorn Van Campenhout
+\backslash
+thanks{Development Strategy and Governance Division, International Food
+ Policy Research Institute and LICOS Center for Institutions and Economic
+ Performance, KULeuven, Belgium - corresponding author: b.vancampenhout@cgiar.org}
+  , Els Lecoutere
+\backslash
+thanks{Development Economics Group, Wageningen University and Research,
+ The Netherlands}, and David J Spielman
+\backslash
+thanks{Environment, Production and Technology Division, International Food
+ Policy Research Institute, USA}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Cheating Spouses
+\end_layout
+
+\begin_layout Abstract
+The household is often considered the primary unit of production in smallholder
+ agriculture.
+ However, to some extent, household members also compete over scarce resources
+ and revenue.
+ To gain a better understanding of intra-household bargaining processes,
+ data on decision making, access to production assets and appropriation
+ of revenue are now often collected from co-heads individually.
+ Recent research has shown that answers provided by spouses on the same
+ set of questions may differ substantially, and while this is partly due
+ to measurement error, there is also evidence that at least part of this
+ disagreement is due to differences in the information set held by the co-heads.
+ Using detailed data on a large sample of monogamous smallholder maize farming
+ households in eastern Uganda, we document patterns in spousal disagreement
+ in decision making, reported labour time and sales.
+ In two subsamples, we implement light weight interventions to test if we
+ can increase reduce disagreement by increasing cooperation between spouses
+ and reducing information asymmetries.
+ 
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+In subsistence agriculture, the prevailing unit of analysis is the agricultural
+ household.
+ However, these households consist of different household members, each
+ with their own utility functions and access to resources.
+ The preferences of the different household members may not perfectly align,
+ and there may be considerable inequality in access to resources.
+ This, in turn, may also result in differences in command over revenue obtained
+ from selling agricultural commodities produced.
+ The realization that household members compete as well as cooperate has
+ led to a burgeoning literature grounded in collective bargain theory, with
+ the important policy implication being that interventions may have different
+ impact depending on who is targeted within the household 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "haddad1997intrahousehold"
+literal "true"
+
+\end_inset
+
+.
+ Many interventions started to target women within households.
+\end_layout
+
+\begin_layout Standard
+Increased attention for the inner workings of the household farm by both
+ researchers and practitioners also led to innovations in data collection
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "https://doi.org/10.1111/agec.12540"
+literal "false"
+
+\end_inset
+
+.
+ One example is the Women's Empowerment in Agriculture Index (WEAI), a comprehen
+sive and standardized measure to directly measure women’s empowerment and
+ inclusion in the agricultural sector 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "alkire2013women"
+literal "false"
+
+\end_inset
+
+.
+ More generally, the focus on intra-household processes has substantially
+ increased the availability of data that is collected at the individual
+ household member level, especially of the co-heads of the households.
+ 
+\end_layout
+
+\begin_layout Standard
+Studies that collect data from male and female co-heads separately find
+ that spouses often provide different answers on the most basic questions,
+ such as for instance the number of household members or when asked about
+ household assets.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+ demonstrate that while part of the this may be attributable to measurement
+ error, there is also a systematic component that reflects asymmetric informatio
+n within households.
+ 
+\end_layout
+
+\begin_layout Standard
+As a first objective of this paper, we use detailed data from both male
+ and female co-heads of monogamous semi-subsistence farm households in eastern
+ Uganda to contributes to a growing literature that provides insight into
+ intra-household processes by collecting data from multiple household members.
+ A key paper on spousal disagreement is 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+.
+ It provides a theoretical framework to explain spousal disagreement in
+ survey data collected at the level of the individual co-heads.
+ The model differentiates between three types of bias: (1) random measurement
+ error that affects both spouses symmetrically; (2) systematic error, where
+ for example the male co-head always exaggerates; and (3) information asymmetrie
+s.
+ Using this framework, they find evidence of significant information asymmetries
+ between spouses in Bangladeshi households.
+\end_layout
+
+\begin_layout Standard
+Arguably the most interesting form of spousal disagreement is the one that
+ stems from information asymmetries.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+ argue that the fact that bias is larger for some assets (eg for assets
+ that can be hidden more easily) than for others suggests that asymmetric
+ information in the form of hidden assets and decisions is present in the
+ household
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+However, while most studies on spousal disagreement seem to assume that
+ information asymmetry is a sign that individuals hide resources or actions
+ from other household members, information asymmetry does not always have
+ to be the result of one spouse intentionally deceiving another.
+ There may be other systematic biases that manifest more in one asset or
+ decision category than others.
+ We think of cognitive bias that may be shaped by prevailing gender norms.
+ For example, when society sees spraying chemicals as a dangerous activity
+ that only men should do, men may exaggerate the resources they allocated
+ to this task and the decision power in this sphere.
+\end_layout
+
+\end_inset
+
+.
+ A number of lab-in-the-field experiments indeed confirm that household
+ members conceal resources from one another 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg."
+key "ashraf2009spousal,10.1093/wber/lhw011,castilla2013ignorance"
+literal "false"
+
+\end_inset
+
+.
+ We contribute to this line of research by looking at disagreement with
+ respect to a range of maize farming related decisions, difference in options
+ on individual time allocations to particular tasks, and income hiding..
+ In particular, at the plot level, we look at how decisions are made on
+ a series of important agronomic practices.
+ We also look at who provides labour for different agronomic activities
+ such as land preparation, planting, weeding and harvesting.
+ We further look at maize sales and patterns of income hiding between spouses.
+ We finally collected some information on how spouses deal with agricultural
+ related disagreement.
+ 
+\end_layout
+
+\begin_layout Standard
+As mentioned above, new ways of thinking about intra-household decision
+ making had a significant impact policies and interventions.
+ However, impact evaluations of interventions that explicitly target women
+ within households did not always produce the expected results.
+ Partly, this was explained by the fact that the pendulum may have swung
+ too far the other way and the importance of cooperation within the household
+ had been ignored 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "https://doi.org/10.1111/agec.12540"
+literal "false"
+
+\end_inset
+
+.
+ Many resources are jointly owned and decisions jointly made, and so the
+ clear division between man managed and women managed plots underlying bargainin
+g models may be the exception rather that the rule 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doss2014owns,twyman2015gendered,doi:10.1111/dpr.12243"
+literal "true"
+
+\end_inset
+
+.
+ Furthermore, alternative models of the household have been proposed that
+ provide more room for intra-household cooperation.
+ For example, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doss2015collective"
+literal "true"
+
+\end_inset
+
+ point out that households face collective action problems similar to those
+ studied in the context of common pool resources management.
+ 
+\end_layout
+
+\begin_layout Standard
+A second contribution of this paper is thus to test a light touch intervention
+ aimed at increasing cooperation between spouses and reducing information
+ asymmetries in the form of hidden assets or decision making.
+ Inspired by recent research on behavioral change communication and social
+ marketing, we design an video intervention that promotes a mental model
+ of farming as a joint venture, with both spouses having an equal role in
+ decision making, activities, and rewards.
+ 
+\end_layout
+
+\begin_layout Standard
+We find that 
+\end_layout
+
+\begin_layout Standard
+The remainder of the paper is organized as follows: The next section presents
+ the research questions, the interventions we use to test the research hypothese
+s, and the underlying theory of change.
+ We then present the experimental design and test pre-treatment balance
+ between the different treatment groups on a range of household characteristics.
+ We then turn to the results, first looking at how the interventions affect
+ joint decision making.
+ We then test if increasing cooperation also leads to a more equitable distribut
+ion of labor.
+ As changes in aspirations have been found to affect forward looking behavior
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bernard2014future"
+literal "true"
+
+\end_inset
+
+, we also look at the impact of the interventions on intentions to invest
+ proceeds from maize farming.
+ We then explore household level outcomes.
+ A next section explores spousal disagreement and we also report effects
+ on the likelihood that farmers tell each other in the event of disagreement.
+ A final section concludes.
+\end_layout
+
+\begin_layout Section
+Details
+\end_layout
+
+\begin_layout Section
+Research questions and theory or change
+\end_layout
+
+\begin_layout Subsection
+Social norms and gender stereotypes
+\end_layout
+
+\begin_layout Standard
+Smallholder agricultural production does not happen in a vacuum.
+ Smallholders are generally located in remote areas, where customs and norms
+ that prescribe 
+\begin_inset Quotes eld
+\end_inset
+
+desirable
+\begin_inset Quotes erd
+\end_inset
+
+ behavior still play an important role.
+ In close-knit societies, what individuals can and can not do often depends
+ on how others, including one's spouse, judge it.
+ There is a large literature on how cultural values and gender norms are
+ important determinants of women’s work choices 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg."
+key "10.1093/qje/qjv001,10.2307/27804976"
+literal "true"
+
+\end_inset
+
+.
+ More recently, research also started to look into the intra-household dynamics
+ that mediate the role that norms play, as the cost of violating norms may
+ differ between spouses and/or there may be important externalities 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1257/pandp.20181086,bursztyn2018misperceived"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Several studies point out the importance of role models to behaviour change
+ in context of strong norms and beliefs.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "porter2019gender"
+literal "true"
+
+\end_inset
+
+ show that role models can be effective in increasing women participation
+ in sectors that are traditionally dominated by men.
+ In the context of economic development, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "campos2015breaking"
+literal "true"
+
+\end_inset
+
+ document female entrepreneurs who succeed in male-dominated sectors in
+ Uganda, and also point out the importance of exposure to role models to
+ circumvent or overcome the norms that maintain occupational segregation.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "nguyen2008information"
+literal "true"
+
+\end_inset
+
+ finds that in Madagascar, a role model sharing her life story at a school
+ significantly increased student's test performance.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bernard2019parental"
+literal "true"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bernard2015will"
+literal "true"
+
+\end_inset
+
+ study how videos of role models may have long run effects in Ethiopia.
+ Finally, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "riley2017increasing"
+literal "true"
+
+\end_inset
+
+ shows that the inspirational story of a Ugandan girl from a slum that goes
+ on to become a world chess champion (as chronicled in the Disney feel-good
+ movie 
+\begin_inset Quotes eld
+\end_inset
+
+Queen of Katwe
+\begin_inset Quotes erd
+\end_inset
+
+) positively impacted test results of Ugandan school girls.
+\end_layout
+
+\begin_layout Standard
+As a second hypothesis, we will therefore test whether projecting a household
+ cooperative approach to farming leads to better outcomes.
+ Also here, we posit different impact pathways.
+ First, there may be aspirational effects of seeing a couple farming maize
+ successfully together.
+ The intervention may also serve to challenge social norms and gender roles
+ that prescribe that men specialize in productive and women in reproductive
+ activities.
+ This may lead women to become more assertive when men take decisions or
+ it may make men more open to women participation in farming.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Also here, can we look more into mechanisms? Unfortunately, we threw out
+ all questions that attempted to measure aspirations, but maybe we can argue
+ that the decision to invest in agriculture is indicative of an aspirational
+ effect?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Farming happens in a particular cultural context, and social norms may hamper
+ efficient allocation of production factors.
+ For instance, in patrilineal societies it may be that only men are assumed
+ to make decisions on certain crops, or only women are allowed to carry
+ out certain activities.
+ However, norms and customs can change, and role models have been found
+ to be important catalysts 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "porter2019gender"
+literal "true"
+
+\end_inset
+
+.
+ We therefore devise an intervention aimed at promoting a cooperative approach
+ to farming.
+\end_layout
+
+\begin_layout Section
+Study context, Interventions and Experimental design
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Study-context,-Interventions"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The study involved a among a random sample of maize farmers in southwestern
+ Uganda.
+ Two-stage cluster sampling was used to obtain a representative sample of
+ this population.
+ In particular, from five districts (Bugiri, Mayuge, Iganga, Namayingo,
+ and Namutumba), we first selected 50 parishes randomly and in proportion
+ to the number of villages within each parish.
+ In the selected parishes, all villages were included in the study.
+ Within each village, we then listed all the households, from which we sampled
+ 10 households to be included in the study.
+ This resulted in a total sample size of 3,280 households.
+ However, to investigate cooperation within the household, we only use household
+s where we managed to interview both spouses separately, which was the case
+ in 2,548 households.
+\end_layout
+
+\begin_layout Standard
+The intervention was only implemented on a subset of the data.
+ In 261 households, a video was shown where a couple is depicted, while
+ in 475 households, a video was shown where the recommended practices were
+ illustrated by a man or a woman alone.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We made sure that in about half of the cases this was a man alone and in
+ half a woman alone.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_treat1"
+
+\end_inset
+
+ reports orthogonality tests for experiments.
+ The first column reports sample means (and standard deviations in parentheses
+ below) for the variables indicated to the left, measured at baseline (baseline
+ data was collected in August 2017).
+ For instance, we found that at the time of baseline data collection, average
+ yields in the sample amounted to about 264 kg per acre
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This is a very low yield; during focus group discussions, we learned that
+ yields are normally about 500 to 700 kg per acre.
+ The low yield is most likely a result of adverse weather shocks and the
+ fall armyworm outbreak during the first season of 2017.
+\end_layout
+
+\end_inset
+
+.
+ Average age of the household head in our sample is 40 years and only about
+ 36 percent reported to have finished primary education.
+ The average household has more than 7 members who live in a house with
+ 2.2 bedrooms.
+ Only 11 percent had access to agricultural extension in the preceding year,
+ about 20 percent used (inorganic) fertilizer and almost 40 percent reported
+ to have used improved seed.
+ Average distance to the nearest agro-input dealer is 5.5 km and almost 80
+ percent of households own a mobile phone.
+\end_layout
+
+\begin_layout Standard
+In the second column, we report differences in means at baseline between
+ households that received the extension information as a couple and households
+ where only one of the spouses (either the husband of the wife) received
+ the information.
+ We find significant imbalance on various baseline characteristics for this
+ first treatment.
+ For instance, we see that in the sub-sample of households that were given
+ the information as a couple, the household head is almost 4 years older
+ than in households where the information was given to only one of the spouses.
+ Household heads in households that were treated as a couple are also significan
+tly more likely to have finished primary education.
+ We further find that these households are about 10 percentage points more
+ likely to own a mobile phone and 5 percentage points less likely to have
+ used fertilizer.
+ We also have some indications that access to extension and households size
+ is correlated with the treatment.
+ A test for joint orthogonality also indicates that there are significant
+ differences in baseline characteristics between the two groups.
+ The third column of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_treat1"
+
+\end_inset
+
+ compares households where a video was shown featuring a couple role model
+ to households that got to see a video in which a male maize farmer did
+ all the acting.
+ For this treatment, we find balance among almost all baseline characteristics.
+ We also can not reject joint orthogonality.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Balance for treatment 1
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Balance_treat1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+&	Mean	&	reduce info asymmetry	&	HH cooperative approach	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Maize yield (kg/ac) 	&	287.097	&	-8.405			&	8.227	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+&	(264.147)	&	(17.130)			&	(20.029)	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Age of HH head (years) 	&	39.833	&	3.897$^{**}$	&	-0.510	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+&	(13.810)	&	(0.890)			&	(0.988)	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+HH head finshed primary school 	&	0.367	&	0.079$^{*}$	&	0.001	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(0.482)	&	(0.031)			&	(0.035)	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+HH size 	&	7.623	&	0.397$^{+}$	&	-0.089	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+&	(3.306)	&	(0.214)			&	(0.248)	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of bedrooms	&	2.235	&	0.102			&	0.088	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(1.142)	&	(0.074)			&	(0.083)	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Access to extension last year 	&	0.110	&	-0.038$^{+}$	&	0.019	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+&	(0.312)	&	(0.020)			&	(0.023)	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Has used fertilizer last season 	&	0.206	&	-0.055$^{*}$	&	-0.021	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+&	(0.404)	&	(0.026)			&	(0.029)	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Has used improved seed last season 	&	0.382	&	-0.019			&	-0.005	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+&	(0.486)	&	(0.031)			&	(0.035)	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Distance nearest agro input shop (km) 	&	5.554	&	-0.365			&	0.259	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+&	(5.536)	&	(0.358)			&	(0.393)	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+HH has mobile phone 	&	0.776	&	0.104$^{**}$	&	0.040	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+&	(0.417)	&	(0.027)			&	(0.030)	
+\backslash
+
+\backslash
+ 											
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+								
+\end_layout
+
+\begin_layout Plain Layout
+
+F-test	&		&	9.324$^{**}$			&	0.464	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+P-value	&		&	0.000			&	0.936	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Nobs	&	3,303	&	3,303			&	2,209	
+\backslash
+
+\backslash
+ 	 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize  
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports sample means (and standard deviations below);
+ Column 2 reports differences (and standard errors below) between 
+\end_layout
+
+\begin_layout Plain Layout
+
+households where the information was given to the both spouses and households
+ where the information was given to only one of the spouses (either husband
+ or wife).
+ Column 3 reports differences (and standard errors below) between households
+ where a couple role model was used and households where a male role model
+ was used.
+ **, * and + denote that the difference is signficantly different from zero
+ at the 1, 5 and 10 percent level, respectively.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Both experiments are implemented using short videos that were shown to farmers
+ on tablet computers.
+ The videos were designed with a dual purpose in mind.
+ First, the videos serve to transfer knowledge about recommended agronomic
+ management practices and the use of modern technologies.
+ It is shown how fields need to be prepared using organic fertilizer.
+ Proper seed spacing and seeding rates and it importance are explained.
+ furthermore, it is shown in detail how inorganic fertilizer needs to be
+ applied and in what quantities.
+ Furthermore, attention is devoted to identifying striga, a parasitic weed
+ that affects maize yields in the area.
+ We also devote ample attention to the importance of seed quality and recommend
+ using hybrid seed or Open Pollinated Varieties (OPV).
+ Other recommended practices include timely planting and weeding.
+ Second, the information was packaged as an inspirational story of poor
+ farmers that, over time, are able to break out of a poverty trap.
+ The video starts with a farmer explaining that he used to struggle with
+ low yields, producing barely enough food to feed his family, but that over
+ the years, he learned how to increase the number of bags of maize produced
+ on his maize plots.
+ It is shown how the farmer starts using recommended practices on a small
+ part of his land.
+ It is also shown how he sells a chicken and borrows some money from a neighbor
+ to buy improved seed and fertilizer.
+ The return on this initial investment is then re-invested, and the viewer
+ is taken through some basic inter-temporal cost-benefit calculations.
+ The video ends by showing a happy farmer that assures the viewer that he
+ or she can also become a successful farmer by following his example.
+ 
+\end_layout
+
+\begin_layout Standard
+To answer the first research question–whether reducing information asymmetry
+ within households is effective–we compare outcomes of households in which
+ the couple (husband and wife together) is shown a video to outcomes of
+ households in which with only one co-head of the household (husband or
+ wife) is shown the video.
+ To answer the second research question–whether promoting a household cooperativ
+e approach to farming is effective–we compare outcomes of households where
+ an aspirational video was shown in which a man and woman participate as
+ equals on the family farm and deliver the message as a couple to outcomes
+ of households where where an aspirational video was shown featuring only
+ a man.
+\end_layout
+
+\begin_layout Section
+Results
+\end_layout
+
+\begin_layout Subsection
+Decision making
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<analysis,  echo=FALSE, warning = FALSE, message=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+path <- getwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+source(paste(path,"analysis/decision_making_update.R
+\begin_inset Quotes erd
+\end_inset
+
+, sep = "/"))
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this section,we start by exploring patterns of decision making related
+ to maize growing within the household.
+ We asked the head of the household to list all maize plots that the household
+ was cultivating during the season preceding the survey, which was the second
+ agricultural seasons of 2018.
+ We then cycle through the different plots and repeat a series of questions
+ for each plot.
+ The same questions were asked separately to each co-head.
+ We asked, for a range of key decisions that need to be made and that are
+ known to significantly affect maize yields, who made the decision on that
+ particular plot.
+ Respondents could answer that decisions were made by the person that was
+ interviewed alone; by the spouse of the person interviewed alone; by the
+ person interviewed and his or her spouse jointly; by someone else inside
+ or outside the household; by the person interviewed together with someone
+ else inside or outside the household; or by the spouse jointly with someone
+ else inside or outside the household.
+ Respondents could also indicate that they did not know who made the decision.
+ 
+\end_layout
+
+\begin_layout Standard
+We start by looking at the responses given by the male co-heads within the
+ household (Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision-making"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ The first decision we consider was simply who decided maize should be planted
+ on the particular plot.
+ A second decision is related to timing of planting.
+ Timely planting of maize is very important for subsequent maize yields.
+ Maize planting should start immediately after the first rains of the season,
+ resulting in significant time pressure when large areas need to be planted.
+ A third important decision that maize farmers have to make is related to
+ the spacing of seed and seed rate.
+ There is a wide range of seed methods used by farmers.
+ Some simply broadcast the seeds.
+ However, row planting leads to significantly higher yields as plants have
+ optimal space to obtain sufficient sun and nutrients.
+ Farmers also often plant more than one seed per hill, because they fear
+ some seeds may not geminate.
+ However, planting more than one seed per hill may also increase competition
+ for light and nutrients, leading to stunted growth.
+ It is therefore recommended to use only one seed per hill and engage in
+ gap filling when seeds do not germinate after one week.
+ We also asked who made decisions related to weed control.
+ For weeding, we differentiate between decision making related to strategies
+ used to combat striga infestations and weeding more general.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename results/decsion_activities_update_man.png
+	lyxscale 10
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Decision making on different practices and inputs as reported by the male
+ co-head
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Joint-decision-making"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision-making"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that, at least according to the male co-head, joint decision making
+ is the norm.
+ For example, on the 3,723 maize plots on which data was collected, men
+ indicate that on 1,947 plots the decision to start planting maize was taken
+ together with the wife.
+ This corresponds to about 52 percent of plots.
+ The pattern seems to be rather consistent across the different decision
+ spheres.
+ For the decision on how to fight striga, the percentage drops to 42 percent,
+ but this is due to the fact that part of the plots, striga was not a problem
+ and so no decision needed to be made.
+\end_layout
+
+\begin_layout Standard
+The figure also shows that on one out of three plots, the male co-head states
+ that decisions are made by him alone, without consulting his wife.
+ Also here, the percentages remain stable across the decision makings spheres,
+ with a slightly higher incidence of male co-head unilateral decision making
+ on spacing and slightly less unilateral male decision making on weeding.
+ Finally, the figure also shows that, according to men, women decide to
+ plant maize without consulting their husband on 414 out of the total 3,723
+ plots, corresponding to about 11 percent.
+ This share is also stable over the five decision spheres considered in
+ the figure, with slightly more decisions taken by women on weeding and
+ slight less on seed spacing.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+[how does this compare to other countries?]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename results/decsion_activities_update_woman.png
+	lyxscale 10
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Decision making on different practices and inputs as reported by the female
+ co-head
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Joint-decision-making-woman"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision-making-woman"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is similar to Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision-making"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, but now shows responses as provided by the female co-head.
+ Also here, we see that women report that decisions are generally made jointly:
+ on the 3,723 maize plots in the sample, the woman co-head indicates that
+ on 1,892 plots the decision to start planting maize was taken by the male
+ and female co-head together.
+ Also for the other decisions, on about half of all plots women say the
+ decision was made jointly.
+ 
+\end_layout
+
+\begin_layout Standard
+Women also report that it is more common that men take decisions alone than
+ that women take decisions alone.
+ For instance, women report that on 1,015 out of the 3,723 maize plots,
+ man took the decision to start planting without consulting anyone else.
+ However, there is less consistency over the different decision spheres.
+ Men are relatively less likely to unilaterally decide on weeding related
+ activities.
+ Finally, women report that they make decisions unilaterally on about 15
+ percent of the plots.
+\end_layout
+
+\begin_layout Standard
+A comparison between Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision-making"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision-making-woman"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ suggest some degree of disagreement between spouses.
+ For instance, while male co-heads indicated that they alone took the decision
+ to plant maize on about 32 percent of the plots, women say that man unilaterall
+y took the decision to plant maize on only 27 percent of the plots.
+ At the same time, female co-heads say they alone decided to plant maize
+ on 16 percent of the plots.
+ Men indicate that women unilaterally decided to plant maize on only 11
+ percent of the plots.
+ 
+\end_layout
+
+\begin_layout Standard
+To investigate this disagreement further, we construct two indices based
+ on answers of both spouses.
+ A first indicator, labeled female disagreement, is true if the male co-head
+ claims he was involved in the decision (that is, he responds that he took
+ the decision alone or the decision was taken jointly), while his wife says
+ the particular decision was taken by her alone.
+ A second indictor, labeled male disagreement, is true if the women co-head
+ says she was involved in the particular decision (either because she took
+ the decision alone or jointly with her husband), while the husband claims
+ the decision was taken by him without consultation of his wife.
+ This is similar to one of the measures of disagreement in decision making
+ used in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that on about 11 percent of all plots, the male co-head thinks he
+ was involved in the decision to plant maize on the plot, while women claim
+ they made the decision alone.
+ At the same time, we see that on about 17 percent of all plots, the female
+ co-head thinks she was involved in the decision to plant maize, but the
+ male co-head indicates he made the decision alone.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename results/decsion_activities_joint_deception.png
+	lyxscale 10
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Disagreement in decision making
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Joint-decision"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will now use these disagreement indicators as outcomes to test the effectiven
+ess of the two intervention described in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Study-context,-Interventions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Results are in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:decisions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The first column in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:decisions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that among household where a video was shown where one individual
+ provided the information (the control group), on about 10 percent of the
+ plots the female co-head says she took the decision to plant maize alone
+ while the male co-head thinks he was involved in this decision 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This is essentially the same information as depicted in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, but now in the smaller sample of households included in our experiment.
+\end_layout
+
+\end_inset
+
+.
+ The second column shows the average treatment effect of the treatment and
+ reveals that there is no effect of the treatment on this outcome.
+ This comparison between those who saw the couple video and those who saw
+ a video with a single actor is repeated for all five decision spheres.
+ We do find a significant impact of the intervention on the the likelihood
+ that women disagree that the man was involved in decisions related to weeding.
+ Here we see that among households where the video was shown with a single
+ actor providing all the information, women say they took the decision related
+ to weeding alone while men think they were involved on 12.5 percent of plots.
+ Among households that were exposed to the video the features a couple,
+ this type of disagreement occurs on only 8.4 percent of plots.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on disagreement in decision making
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:decisions"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccccccc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{couple role model}} & & 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{couple information}}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5}   
+\backslash
+cline{7-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{female disagrees}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{male disagrees}} & & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{female disagrees}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{male disagrees}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{man was involved}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{woman was involved}} & & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{man was invovled}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{woman was invovled}} 	 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5}   
+\backslash
+cline{7-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	ctrl mean	&	ATE	&	ctrl mean	&	ATE	& &	ctrl mean	&	ATE	&	ctrl mean	&	ATE	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+plant maize 	&	
+\backslash
+Sexpr{format(round(df_ols[1,2,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,2,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,2,1]<.01,"**",ifelse(df_ols[5,2,1]<.05,"*",ifelse(df_ols[5,2
+,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,3,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,3,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,3,1]<.01,"**",ifelse(df_ols[5,3,1]<.05,"*",ifelse(df_ols[5,3
+,1]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    & &  
+\backslash
+Sexpr{format(round(df_ols_2[1,2,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,2,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,2,1]<.01,"**",ifelse(df_ols_2[5,2,1]<.05,"*",ifelse(df_ols
+_2[5,2,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2[1,3,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,3,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,3,1]<.01,"**",ifelse(df_ols_2[5,3,1]<.05,"*",ifelse(df_ols
+_2[5,3,1]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols[2,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,3,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,3,1],digits=3),nsmall=3)}) 	& &	(
+\backslash
+Sexpr{format(round(df_ols_2[2,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,3,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,3,1],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ timing	&	
+\backslash
+Sexpr{format(round(df_ols[1,2,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,2,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,2,2]<.01,"**",ifelse(df_ols[5,2,2]<.05,"*",ifelse(df_ols[5,2
+,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,3,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,3,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,3,2]<.01,"**",ifelse(df_ols[5,3,2]<.05,"*",ifelse(df_ols[5,3
+,2]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    &  & 
+\backslash
+Sexpr{format(round(df_ols_2[1,2,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,2,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,2,2]<.01,"**",ifelse(df_ols_2[5,2,2]<.05,"*",ifelse(df_ols
+_2[5,2,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2[1,3,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,3,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,3,2]<.01,"**",ifelse(df_ols_2[5,3,2]<.05,"*",ifelse(df_ols
+_2[5,3,2]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols[2,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,3,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,3,2],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,3,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,3,2],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+spacing  &	
+\backslash
+Sexpr{format(round(df_ols[1,2,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,2,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,2,3]<.01,"**",ifelse(df_ols[5,2,3]<.05,"*",ifelse(df_ols[5,2
+,3]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,3,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,3,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,3,3]<.01,"**",ifelse(df_ols[5,3,3]<.05,"*",ifelse(df_ols[5,3
+,3]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+  &  &   
+\backslash
+Sexpr{format(round(df_ols_2[1,2,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,2,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,2,3]<.01,"**",ifelse(df_ols_2[5,2,3]<.05,"*",ifelse(df_ols
+_2[5,2,3]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2[1,3,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,3,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,3,3]<.01,"**",ifelse(df_ols_2[5,3,3]<.05,"*",ifelse(df_ols
+_2[5,3,3]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols[2,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,3,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,3,3],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,3,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,3,3],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+striga  &	
+\backslash
+Sexpr{format(round(df_ols[1,2,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,2,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,2,4]<.01,"**",ifelse(df_ols[5,2,4]<.05,"*",ifelse(df_ols[5,2
+,4]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,3,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,3,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,3,4]<.01,"**",ifelse(df_ols[5,3,4]<.05,"*",ifelse(df_ols[5,3
+,4]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+   & &   
+\backslash
+Sexpr{format(round(df_ols_2[1,2,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,2,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,2,4]<.01,"**",ifelse(df_ols_2[5,2,4]<.05,"*",ifelse(df_ols
+_2[5,2,4]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2[1,3,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,3,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,3,4]<.01,"**",ifelse(df_ols_2[5,3,4]<.05,"*",ifelse(df_ols
+_2[5,3,4]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols[2,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,3,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,3,4],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,3,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,3,4],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+weeding	&	
+\backslash
+Sexpr{format(round(df_ols[1,2,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,2,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,2,5]<.01,"**",ifelse(df_ols[5,2,5]<.05,"*",ifelse(df_ols[5,2
+,5]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,3,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,3,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,3,5]<.01,"**",ifelse(df_ols[5,3,5]<.05,"*",ifelse(df_ols[5,3
+,5]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ &   &   
+\backslash
+Sexpr{format(round(df_ols_2[1,2,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,2,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,2,5]<.01,"**",ifelse(df_ols_2[5,2,5]<.05,"*",ifelse(df_ols
+_2[5,2,5]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2[1,3,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,3,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,3,5]<.01,"**",ifelse(df_ols_2[5,3,5]<.05,"*",ifelse(df_ols
+_2[5,3,5]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols[2,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,3,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,3,5],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,3,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,3,5],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports sample means (and standard deviations below);
+ Column 2 reports differences (and standard errors below) between 
+\end_layout
+
+\begin_layout Plain Layout
+
+households  **, * and + denote that the difference is signficant at the
+ 1, 5 and 10 percent level, respectively.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the third column, we report control group means for the share of plots
+ on which women claim they were involved in decision making but men say
+ they took the decision unilaterally.
+ Again in line with Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we see for instance that this type of disagreement on when to plant maize
+ applies to about 18 percent of the plots.
+ The fourth column shows that disagreement on the timing reduced by 6.3 percentag
+e points among households that received the couple role model treatment.
+ We also see a significant reduction in men disagreeing that women were
+ involved in decisions related to spacing of maize seed.
+ More generally, for the couple role model treatment, while not all coefficients
+ are statistically significant, they are all negative, indicating that the
+ treatment reduced disagreement with respect to decision making.
+\end_layout
+
+\begin_layout Standard
+We next turn to the second treatment and compare disagreement on decision
+ making between co-heads in households where only one co-head viewed the
+ video and households where the video was shown to both co-heads.
+ Column 5 of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:decisions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ show that in households where only one of the co-heads was exposed to the
+ video, the female co-head said she decided to plant maize alone while the
+ male co-head thought he was involved in this decision on about 13 percent
+ of the plots.
+ Column 6 indicates that this percentage was 3.1 percentage points lower
+ among households where both spouses was shown the video, although the reduction
+ in disagreement is not statistically different from zero.
+ We do, however, find significant reductions in this type of disagreement
+ for decisions related to spacing and weeding among households where both
+ spouses were treated with the video.
+\end_layout
+
+\begin_layout Standard
+In the last two columns, we look at the impact of providing both spouses
+ with the same information on the likelihood that the male co-head says
+ he took the decision alone while the female co-head thinks she was involved.
+ Control group means are again in close to what we find in the entire sample
+ (Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ We find again that disagreement reduced somewhat as a result of targeting
+ both spouses with information, but only for decisions relate to the timing
+ of planting and the difference is only significant at the 10 percent significan
+t level.
+ However, also for this treatment, all but one of the coefficients are estimated
+ negative, suggesting that overall, targeting the couple with information
+ instead on only one co-head reduced disagreement with respect to decision
+ making in agriculture.
+\end_layout
+
+\begin_layout Subsection
+Division of labour
+\end_layout
+
+\begin_layout Standard
+We also collected detailed information on labour.
+ On each maize plot, we ask each co-head how much time, expressed in labour
+ days, he or she worked on a particular activity.
+ We also ask each co-head to give an estimate of how much time his or her
+ spouse worked on the plot on that particular task.
+ The activities we inquired about are land preparation, planting, weeding,
+ spraying and harvesting.
+ Weeding happens at three different times, but is aggregated into one measure
+ for this analysis.
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Time-spent-man"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows time spent on different activities as reported by the male co-head.
+ We see that the male co-head spends about 8 days preparing the plot, 2
+ days planting, almost 15 days weeding, one day of spraying and another
+ 2 days harvesting.
+ The figure also shows that the male co-head reports that his wife spends
+ one day less in preparing the land and also half a day less in weeding.
+ Men think women almost never engage in spraying of insecticides, herbicides
+ or fungicides.
+ The average male co-head in our sample thus reports to work about 28 days
+ on the average plot over the entire agricultural season.
+ He reports that women work about 26 days on that plot over the entire season.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename results/labour_time_man.png
+	lyxscale 10
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Time spent on different activities as reported by the male co-head
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Time-spent-man"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Time-spent-woman"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows a graph similar to Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Time-spent-man"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, but now as reported by the female co-head within the household.
+ Interestingly, while male co-heads think they spent more time on all activities
+, female co-heads are also of the opinion that they work harder than men
+ on all activities, the only exception being spraying.
+ Female co-heads claim they work on average about 7 to 8 days on field preparati
+on on a plot, while they think the male co-head only work 6 days.
+ Female co-heads also indicate that they spend 16.5 days on weeding, while
+ men spend only 13.5 days on that activity.
+ Male and female co-heads spend about the same time on planting and harvesting.
+ Only for spraying, they agree that the male co-head provides most of the
+ work.
+ According to the female co-head, she works almost 30 days, while the male
+ co-head works about 25 days over the entire season.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename results/labour_time_woman.png
+	lyxscale 10
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Time spent on different activities as reported by the female co-head
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Time-spent-woman"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Comparing Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Time-spent-man"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Time-spent-woman"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ again suggests substantial disagreement between spouses on time worked.
+ For instance, we see that male co-heads report that they work on average
+ about 8 days to prepare the land, yet women indicate that men only work
+ 6 days to prepare the land.
+ Women on the other hand report that they work on average 16 days on the
+ field to weed, while men think that women only work 14 days on the field
+ for weeding.
+\end_layout
+
+\begin_layout Standard
+While on average, spouses tend to overestimate their own labour and underestimat
+e their spouses labour, there is also a substantial part of the sample where
+ a co-head reports to work less than what the other thinks.
+ We will refer to this type of disagreement in labour reported as shirking.
+ For the analysis, we define shirking as a simple binary event where a male
+ co-head shirks on a particular activity if he reports he worked fewer hours
+ than his wife thinks.
+ A female co-head shirks if she works less than the male co-head thinks.
+ 
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Shirking"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows shirking by spouses.
+ For example, we find that on about 30 percent of the plots, the male co-head
+ spends less time preparing the land than the female co-head thinks he does.
+ For the task of preparing the land, women shirk slightly more.
+ However, in general, the figure indicates male co-heads shirk more than
+ female co-heads.
+ Shirking is highest for men when it comes to weeding: On 40 percent of
+ the plots, male co-heads put in less time than their female co-head thinks
+ he does.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename results/shirking.png
+	lyxscale 10
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Shirking
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Shirking"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:labout"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ reports on the impact of the role model intervention (left) and the interventio
+n aimed at increasing information symmetry (right) on shirking for different
+ tasks.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on division of labour
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:labout"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccccccc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{couple role model}} & & 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{couple information}}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5}   
+\backslash
+cline{7-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{male shirking}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{female shirking}} & & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{male shirking}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{female shirking}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{man was involved}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{woman was involved}} & & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{man was invovled}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{woman was invovled}} 	 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5}   
+\backslash
+cline{7-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	ctrl mean	&	ATE	&	ctrl mean	&	ATE	& &	ctrl mean	&	ATE	&	ctrl mean	&	ATE	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+prepare land 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,2,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,2,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,2,1]<.01,"**",ifelse(df_ols_time[5,2,1]<.05,"*",ifelse(
+df_ols_time[5,2,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,3,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,3,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,3,1]<.01,"**",ifelse(df_ols_time[5,3,1]<.05,"*",ifelse(
+df_ols_time[5,3,1]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    & &  
+\backslash
+Sexpr{format(round(df_ols_2_time[1,2,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,2,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,2,1]<.01,"**",ifelse(df_ols_2_time[5,2,1]<.05,"*",ife
+lse(df_ols_2_time[5,2,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[1,3,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,3,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,3,1]<.01,"**",ifelse(df_ols_2_time[5,3,1]<.05,"*",ife
+lse(df_ols_2_time[5,3,1]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,3,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,3,1],digits=3),nsmall=3)}) 	& &	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,3,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,3,1],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+plant maize	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,2,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,2,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,2,2]<.01,"**",ifelse(df_ols_time[5,2,2]<.05,"*",ifelse(
+df_ols_time[5,2,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,3,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,3,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,3,2]<.01,"**",ifelse(df_ols_time[5,3,2]<.05,"*",ifelse(
+df_ols_time[5,3,2]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    &  & 
+\backslash
+Sexpr{format(round(df_ols_2_time[1,2,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,2,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,2,2]<.01,"**",ifelse(df_ols_2_time[5,2,2]<.05,"*",ife
+lse(df_ols_2_time[5,2,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[1,3,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,3,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,3,2]<.01,"**",ifelse(df_ols_2_time[5,3,2]<.05,"*",ife
+lse(df_ols_2_time[5,3,2]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,3,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,3,2],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,3,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,3,2],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+weeding  &	
+\backslash
+Sexpr{format(round(df_ols_time[1,2,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,2,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,2,3]<.01,"**",ifelse(df_ols_time[5,2,3]<.05,"*",ifelse(
+df_ols_time[5,2,3]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,3,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,3,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,3,3]<.01,"**",ifelse(df_ols_time[5,3,3]<.05,"*",ifelse(
+df_ols_time[5,3,3]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+  &  &   
+\backslash
+Sexpr{format(round(df_ols_2_time[1,2,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,2,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,2,3]<.01,"**",ifelse(df_ols_2_time[5,2,3]<.05,"*",ife
+lse(df_ols_2_time[5,2,3]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[1,3,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,3,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,3,3]<.01,"**",ifelse(df_ols_2_time[5,3,3]<.05,"*",ife
+lse(df_ols_2_time[5,3,3]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,3,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,3,3],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,3,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,3,3],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+spraying  &	
+\backslash
+Sexpr{format(round(df_ols_time[1,2,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,2,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,2,4]<.01,"**",ifelse(df_ols_time[5,2,4]<.05,"*",ifelse(
+df_ols_time[5,2,4]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,3,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,3,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,3,4]<.01,"**",ifelse(df_ols_time[5,3,4]<.05,"*",ifelse(
+df_ols_time[5,3,4]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+   & &   
+\backslash
+Sexpr{format(round(df_ols_2_time[1,2,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,2,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,2,4]<.01,"**",ifelse(df_ols_2_time[5,2,4]<.05,"*",ife
+lse(df_ols_2_time[5,2,4]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[1,3,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,3,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,3,4]<.01,"**",ifelse(df_ols_2_time[5,3,4]<.05,"*",ife
+lse(df_ols_2_time[5,3,4]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,3,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,3,4],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,3,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,3,4],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+harvesting	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,2,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,2,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,2,5]<.01,"**",ifelse(df_ols_time[5,2,5]<.05,"*",ifelse(
+df_ols_time[5,2,5]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,3,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,3,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,3,5]<.01,"**",ifelse(df_ols_time[5,3,5]<.05,"*",ifelse(
+df_ols_time[5,3,5]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ &   &   
+\backslash
+Sexpr{format(round(df_ols_2_time[1,2,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,2,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,2,5]<.01,"**",ifelse(df_ols_2_time[5,2,5]<.05,"*",ife
+lse(df_ols_2_time[5,2,5]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[1,3,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,3,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,3,5]<.01,"**",ifelse(df_ols_2_time[5,3,5]<.05,"*",ife
+lse(df_ols_2_time[5,3,5]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,3,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,3,5],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,3,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,3,5],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports sample means (and standard deviations below);
+ Column 2 reports differences (and standard errors below) between 
+\end_layout
+
+\begin_layout Plain Layout
+
+households  **, * and + denote that the difference is signficant at the
+ 1, 5 and 10 percent level, respectively.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Maize sales
+\end_layout
+
+\begin_layout Standard
+Finally, we look at maize sales.
+ Also here, we asked each spouse separately how much maize was sold from
+ the season under consideration.
+ In particular, we asked each of the spouses separately to estimate how
+ much was sold by (1) him or her, (2) by his or her spouse, and (3) jointly
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We specify that sales by an individuals means all decisions regarding quantity,
+ price and to whom to sell were taken by that individual without involving
+ anyone else.
+\end_layout
+
+\end_inset
+
+.
+ We also asked them to indicate the revenue that was derived from these
+ sales.
+\end_layout
+
+\begin_layout Standard
+Men report that households sold on average 1.4 bags of maize as a couple
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+A typical bag contains about 120 kilograms of maize.
+\end_layout
+
+\end_inset
+
+.
+ Women report that they sold just under one bag as a household.
+ Averaged over the entire sample, joint sales amounted to about 23 dollars,
+ at least as reported by the male co-head.
+ Women estimated this amount much lower at 13 dollars.
+ 
+\end_layout
+
+\begin_layout Standard
+As this paper is more about spousals disagreement, we focus on unilateral
+ sales as reported by both spouses.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Maize-sales"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows in the left panel that men reported they sold half a bag themselves.
+ Women reported that the male co-head only sold 0.25 bags of maize.
+ This may indicate that the average male co-head in our sample sold about
+ one quarter of a bag behind the female co-head's back.
+ Women, on the other hand, report that they sold only about 12 kilograms
+ of maize alone.
+ Men think that the female co-head unilaterally sold about 6 kilograms.
+ As such, in percentage terms, quantities hidden is similar between male
+ and female co-heads.
+ 
+\end_layout
+
+\begin_layout Standard
+The right panel of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Maize-sales"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ looks at income derived from these sales.
+ Male co-heads indicate that they received about 7.6 dollars on average from
+ their unilateral sales of maize.
+ Women estimate this revenue to be only about 2 dollar.
+ The fact that the gap between what men report and what women report has
+ increased dramatically may indicate that men also hide income by reporting
+ to the female co-head lower prices than what they actually received for
+ the maize.
+ This seems to be less the case for women, where differences in male and
+ female reported revenues are in line with differences in quantities sold.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename results/sales.png
+	lyxscale 10
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Maize sales
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Maize-sales"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As in previous sections, we look at the impact of the two interventions
+ on disagreement related to maize sales.
+ We conjecture that encouraging cooperation and reducing information asymmetries
+ between spouses may lead to a reduction in income hiding.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:income_hiding"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ reports results for three outcomes.
+ A first outcome is a simple binary indicator that takes the value of one
+ if a spouse appears to engage in concealing sales.
+ 
+\end_layout
+
+\begin_layout Standard
+The first row in the table shows that among households that were shown a
+ video with only one actor, about 14 percent of male co-heads sold more
+ than what the female co-head thought.
+ In this same subset, about 6 percent of female co-heads sold more than
+ what the male co-head thought the female co-head sold.
+ We do not find that these rates are significantly different among households
+ that were given the couple role model treatment video.
+ 
+\end_layout
+
+\begin_layout Standard
+Similarly, the right panel in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:income_hiding"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ reports result for the second treatment.
+ It shows that there is also no impact of providing both spouses with the
+ same information on the likelihood that spouses engage in income hiding.
+ We further consider quantities hidden in rows 3 and 4 of the table, and
+ translate this into income obtained from selling these quantities in rows
+ 5 and 6.
+ Overall, we do not find that our interventions affect disagreement related
+ to maize sales.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on income hiding
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:income_hiding"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccccccc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{couple role model}} & & 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{couple information}}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5}   
+\backslash
+cline{7-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{male hides}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{female hides}} & & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{male hides}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{fmale hides}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{man was involved}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{woman was involved}} & & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{man was invovled}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{woman was invovled}} 	 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5}   
+\backslash
+cline{7-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	ctrl mean	&	ATE	&	ctrl mean	&	ATE	& &	ctrl mean	&	ATE	&	ctrl mean	&	ATE	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+income hiding	&	
+\backslash
+Sexpr{format(round(df_ols_inc[1,2,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[3,2,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_inc[5,2,1]<.01,"**",ifelse(df_ols_inc[5,2,1]<.05,"*",ifelse(df
+_ols_inc[5,2,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[1,3,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[3,3,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_inc[5,3,1]<.01,"**",ifelse(df_ols_inc[5,3,1]<.05,"*",ifelse(df
+_ols_inc[5,3,1]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    & &  
+\backslash
+Sexpr{format(round(df_ols_2_inc[1,2,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[3,2,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_inc[5,2,1]<.01,"**",ifelse(df_ols_2_inc[5,2,1]<.05,"*",ifels
+e(df_ols_2_inc[5,2,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[1,3,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[3,3,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_inc[5,3,1]<.01,"**",ifelse(df_ols_2_inc[5,3,1]<.05,"*",ifels
+e(df_ols_2_inc[5,3,1]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[2,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[4,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[2,3,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[4,3,1],digits=3),nsmall=3)}) 	& &	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[2,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[4,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[2,3,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[4,3,1],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+quantity	&	
+\backslash
+Sexpr{format(round(df_ols_inc[1,2,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[3,2,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_inc[5,2,2]<.01,"**",ifelse(df_ols_inc[5,2,2]<.05,"*",ifelse(df
+_ols_inc[5,2,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[1,3,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[3,3,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_inc[5,3,2]<.01,"**",ifelse(df_ols_inc[5,3,2]<.05,"*",ifelse(df
+_ols_inc[5,3,2]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    &  & 
+\backslash
+Sexpr{format(round(df_ols_2_inc[1,2,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[3,2,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_inc[5,2,2]<.01,"**",ifelse(df_ols_2_inc[5,2,2]<.05,"*",ifels
+e(df_ols_2_inc[5,2,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[1,3,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[3,3,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_inc[5,3,2]<.01,"**",ifelse(df_ols_2_inc[5,3,2]<.05,"*",ifels
+e(df_ols_2_inc[5,3,2]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[2,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[4,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[2,3,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[4,3,2],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[2,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[4,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[2,3,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[4,3,2],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+amount	&	
+\backslash
+Sexpr{format(round(df_ols_inc[1,2,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[3,2,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_inc[5,2,3]<.01,"**",ifelse(df_ols_inc[5,2,3]<.05,"*",ifelse(df
+_ols_inc[5,2,3]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[1,3,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[3,3,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_inc[5,3,3]<.01,"**",ifelse(df_ols_inc[5,3,3]<.05,"*",ifelse(df
+_ols_inc[5,3,3]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    &  & 
+\backslash
+Sexpr{format(round(df_ols_2_inc[1,2,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[3,2,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_inc[5,2,3]<.01,"**",ifelse(df_ols_2_inc[5,2,3]<.05,"*",ifels
+e(df_ols_2_inc[5,2,3]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[1,3,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[3,3,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_inc[5,3,3]<.01,"**",ifelse(df_ols_2_inc[5,3,3]<.05,"*",ifels
+e(df_ols_2_inc[5,3,3]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[2,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[4,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[2,3,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[4,3,3],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[2,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[4,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[2,3,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[4,3,3],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports sample means (and standard deviations below);
+ Column 2 reports differences (and standard errors below) between 
+\end_layout
+
+\begin_layout Plain Layout
+
+households  **, * and + denote that the difference is signficant at the
+ 1, 5 and 10 percent level, respectively.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Conflict resolution
+\end_layout
+
+\begin_layout Standard
+Spouses may disagree about certain maize production activities.
+ We ask each spouse separately whether, in case of disagreement about any
+ maize related issue, they would tell their spouse that they disagree.
+ Respondents were allowed to indicate the likelihood that they would tell
+ the other spouse on a scale of 1 (never) to 5 (always).
+ 
+\end_layout
+
+\begin_layout Standard
+Results for the entire sample are in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Spouses-talk"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ We see that, generally, spouses communicate well.
+ About two in three men indicate that they would tell their wife if they
+ do not agree with something.
+ This is not too different for female co-heads.
+ Based on these two variables, we also construct a new dummy variable that
+ is one if both spouses indicate that they would always or mostly tell each
+ other if they do not agree.
+ In the entire sample, we find that out of 2,544 households, about 1,435
+ households report always or mostly tell each other if they disagree.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename results/likert_plot_tell_each_other.png
+	lyxscale 10
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Spouses talk
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Spouses-talk"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As a follow up questions, we also asked what happens when one spouse tells
+ the other that he or she does not agree.
+ Here, we focus on instances where spouses indicate that they discuss and
+ come to a solution that is mutually agreed upon.
+ We find that in the entire sample, 66 percent of male co-heads agree in
+ that spouses talk and come to a solution.
+ Again, we find little difference between men and women: 65 percent of women
+ indicate that a mutually beneficial solution is sought.
+ In half of all households in our sample, there is agreement between spouses
+ that a mutually agreed upon solution is discussed.
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:conf"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ looks at the impact of our role model intervention on communication and
+ conflict resolution within the household.
+ We do not find that the intervention increases the likelihood that male
+ co-heads tell the female co-heads if they disagree (column 2, row 1).
+ We also do not find a significant impact on the likelihood that the female
+ co-head tells the male co-head if she disagrees (column 4, row 1).
+ We also do not find that the intervention increases two way communication
+ (column 6, row 1).
+ We do, however, find that the intervention increases the likelihood that
+ man indicate that a mutual agreement is sought when there is disagreement
+ (column 2, row 3).
+ The effect is even larger on the likelihood that there is agreement between
+ spouses that a solution that is acceptable to both is sought.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on conflict resolution
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:conf"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccccc} 
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{man}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{woman}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{both}}	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	ctrl mean	&	ATE	&	ctrl mean	&	ATE	&	ctrl mean	&	ATE	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-7} 
+\end_layout
+
+\begin_layout Plain Layout
+
+speak up	&	
+\backslash
+Sexpr{format(round(df_ols_confl[1,1,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[3,1,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_confl[5,1,1]<.01,"**",ifelse(df_ols_confl[5,1,1]<.05,"*",ifels
+e(df_ols_confl[5,1,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[1,2,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[3,2,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_confl[5,2,1]<.01,"**",ifelse(df_ols_confl[5,2,1]<.05,"*",ifels
+e(df_ols_confl[5,2,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[1,3,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[3,3,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_confl[5,3,1]<.01,"**",ifelse(df_ols_confl[5,3,1]<.05,"*",ifels
+e(df_ols_confl[5,3,1]<.1,"+","")))}}$ 	
+\backslash
+
+\backslash
+ 	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[2,1,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[4,1,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[2,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[4,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[2,3,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[4,3,1],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ take advice	&	
+\backslash
+Sexpr{format(round(df_ols_confl[1,1,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[3,1,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_confl[5,1,2]<.01,"**",ifelse(df_ols_confl[5,1,2]<.05,"*",ifels
+e(df_ols_confl[5,1,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[1,2,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[3,2,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_confl[5,2,2]<.01,"**",ifelse(df_ols_confl[5,2,2]<.05,"*",ifels
+e(df_ols_confl[5,2,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[1,3,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_confl[3,3,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_confl[5,3,2]<.01,"**",ifelse(df_ols_confl[5,3,2]<.05,"*",ifels
+e(df_ols_confl[5,3,2]<.1,"+","")))}}$ 	
+\backslash
+
+\backslash
+ 	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[2,1,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[4,1,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[2,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[4,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[2,3,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_confl[4,3,2],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports sample means (and standard deviations below);
+ Column 2 reports differences (and standard errors below) between 
+\end_layout
+
+\begin_layout Plain Layout
+
+households  **, * and + denote that the difference is signficant at the
+ 1, 5 and 10 percent level, respectively.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Section*
+Acknowledgments
+\end_layout
+
+\begin_layout Standard
+This research was funded by the U.S.
+ Agency for International Development under the Feed the Future Developing
+ Local Extension Capacity (DLEC) project, led by Digital Green, and the
+ Feed the Future Digital Development Lab; by the CGIAR Research Programs
+ on Wheat AgriFood System (CRP WHEAT) led by CIMMYT, and on Policies, Institutio
+ns, and Markets (PIM), led by the International Food Policy Research Institute
+ (IFPRI) and carried out with support from the CGIAR Fund contributors (https://
+www.cgiar.org/funders/).
+ We thank Jamie Arkin, Kristin Davis, Rikin Gandhi, Vivian Hoffman, Suprita
+ Kudesia, and Karin Lion for their support for this research; and Fiona
+ Nattembo, Wilberforce Walukano and Marc Charles Wanume for excellent field
+ support.
+ This paper has benefited from comments provided by participants of the
+ Third Annual Workshop on Gender, Agricultural Growth, and Rural Transformation
+ Research in the CGIAR.
+ The analysis contained here is the sole responsibility of the authors,
+ and does not reflect the views of any funding agency or organization mentioned
+ here.
+ The research was cleared by IFPRI's IRB (IRB #00007490 FWA #00005121) and
+ was pre-registered (including a pre-analysis plan) at the AEA RCT registry
+ (AEARCTR-0002153).
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "coop_bib"
+options "IFPRI_Style"
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
