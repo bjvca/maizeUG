@@ -169,7 +169,6 @@ credplot.gg <- function(d,units, hypo, axlabs, lim){
 ## drop the control
 dta <- subset(dta, messenger != "ctrl")
 dta <- subset(dta, interview_status == "couple interviewed")
-dta <- subset(dta, recipient=='couple')
 dta_copy <- dta
 
 
