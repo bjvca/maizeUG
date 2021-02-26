@@ -312,17 +312,17 @@ dta$time_prep_hh_man[dta$person_interviewed=="woman"] <- rowSums(dta[c("time_pre
 dta$time_prep_hh_man[(dta$person_interviewed=="man" & rowSums(is.na(dta[c("time_prep_pl1_sp1_self","time_prep_pl2_sp1_self","time_prep_pl3_sp1_self","time_prep_pl4_sp1_self","time_prep_pl5_sp1_self","time_prep_pl1_sp1_other","time_prep_pl2_sp1_other","time_prep_pl3_sp1_other","time_prep_pl4_sp1_other","time_prep_pl5_sp1_other")]))==10)
 | (dta$person_interviewed=="woman" & rowSums(is.na(dta[c("time_prep_pl1_sp2_self","time_prep_pl2_sp2_self","time_prep_pl3_sp2_self","time_prep_pl4_sp2_self","time_prep_pl5_sp2_self","time_prep_pl1_sp2_other","time_prep_pl2_sp2_other","time_prep_pl3_sp2_other","time_prep_pl4_sp2_other","time_prep_pl5_sp2_other")]))==10)] <- NA
 
-dta$time_prep_man_man <- NA
-dta$time_prep_man_man[dta$person_interviewed=="man"]  <- rowSums(dta[c("time_prep_pl1_sp1_self","time_prep_pl2_sp1_self","time_prep_pl3_sp1_self","time_prep_pl4_sp1_self","time_prep_pl5_sp1_self")], na.rm=T)[dta$person_interviewed=="man"] 
-dta$time_prep_man_man[dta$person_interviewed=="man" & (rowSums(is.na(dta[c("time_prep_pl1_sp1_self","time_prep_pl2_sp1_self","time_prep_pl3_sp1_self","time_prep_pl4_sp1_self","time_prep_pl5_sp1_self")]))==5)]  <- NA
-dta$time_prep_man_man[dta$person_interviewed=="woman"]  <- rowSums(dta[c("time_prep_pl1_sp2_self","time_prep_pl2_sp2_self","time_prep_pl3_sp2_self","time_prep_pl4_sp2_self","time_prep_pl5_sp2_self")], na.rm=T)[dta$person_interviewed=="woman"] 
-dta$time_prep_man_man[dta$person_interviewed=="woman" & (rowSums(is.na(dta[c("time_prep_pl1_sp2_self","time_prep_pl2_sp2_self","time_prep_pl3_sp2_self","time_prep_pl4_sp2_self","time_prep_pl5_sp2_self")]))==5)]  <- NA
+dta$time_prep_man <- NA
+dta$time_prep_man[dta$person_interviewed=="man"]  <- rowSums(dta[c("time_prep_pl1_sp1_self","time_prep_pl2_sp1_self","time_prep_pl3_sp1_self","time_prep_pl4_sp1_self","time_prep_pl5_sp1_self")], na.rm=T)[dta$person_interviewed=="man"] 
+dta$time_prep_man[dta$person_interviewed=="man" & (rowSums(is.na(dta[c("time_prep_pl1_sp1_self","time_prep_pl2_sp1_self","time_prep_pl3_sp1_self","time_prep_pl4_sp1_self","time_prep_pl5_sp1_self")]))==5)]  <- NA
+dta$time_prep_man[dta$person_interviewed=="woman"]  <- rowSums(dta[c("time_prep_pl1_sp2_self","time_prep_pl2_sp2_self","time_prep_pl3_sp2_self","time_prep_pl4_sp2_self","time_prep_pl5_sp2_self")], na.rm=T)[dta$person_interviewed=="woman"] 
+dta$time_prep_man[dta$person_interviewed=="woman" & (rowSums(is.na(dta[c("time_prep_pl1_sp2_self","time_prep_pl2_sp2_self","time_prep_pl3_sp2_self","time_prep_pl4_sp2_self","time_prep_pl5_sp2_self")]))==5)]  <- NA
 
-dta$time_prep_woman_woman  <- NA
-dta$time_prep_woman_woman [dta$person_interviewed=="woman"]  <- rowSums(dta[c("time_prep_pl1_sp1_self","time_prep_pl2_sp1_self","time_prep_pl3_sp1_self","time_prep_pl4_sp1_self","time_prep_pl5_sp1_self")], na.rm=T)[dta$person_interviewed=="woman"] 
-dta$time_prep_woman_woman [dta$person_interviewed=="woman" & (rowSums(is.na(dta[c("time_prep_pl1_sp1_self","time_prep_pl2_sp1_self","time_prep_pl3_sp1_self","time_prep_pl4_sp1_self","time_prep_pl5_sp1_self")]))==5)]  <- NA
-dta$time_prep_woman_woman [dta$person_interviewed=="man"]  <- rowSums(dta[c("time_prep_pl1_sp2_self","time_prep_pl2_sp2_self","time_prep_pl3_sp2_self","time_prep_pl4_sp2_self","time_prep_pl5_sp2_self")], na.rm=T)[dta$person_interviewed=="man"] 
-dta$time_prep_woman_woman [dta$person_interviewed=="man" & (rowSums(is.na(dta[c("time_prep_pl1_sp2_self","time_prep_pl2_sp2_self","time_prep_pl3_sp2_self","time_prep_pl4_sp2_self","time_prep_pl5_sp2_self")]))==5)]  <- NA
+dta$time_prep_woman  <- NA
+dta$time_prep_woman[dta$person_interviewed=="woman"]  <- rowSums(dta[c("time_prep_pl1_sp1_self","time_prep_pl2_sp1_self","time_prep_pl3_sp1_self","time_prep_pl4_sp1_self","time_prep_pl5_sp1_self")], na.rm=T)[dta$person_interviewed=="woman"] 
+dta$time_prep_woman[dta$person_interviewed=="woman" & (rowSums(is.na(dta[c("time_prep_pl1_sp1_self","time_prep_pl2_sp1_self","time_prep_pl3_sp1_self","time_prep_pl4_sp1_self","time_prep_pl5_sp1_self")]))==5)]  <- NA
+dta$time_prep_woman[dta$person_interviewed=="man"]  <- rowSums(dta[c("time_prep_pl1_sp2_self","time_prep_pl2_sp2_self","time_prep_pl3_sp2_self","time_prep_pl4_sp2_self","time_prep_pl5_sp2_self")], na.rm=T)[dta$person_interviewed=="man"] 
+dta$time_prep_woman[dta$person_interviewed=="man" & (rowSums(is.na(dta[c("time_prep_pl1_sp2_self","time_prep_pl2_sp2_self","time_prep_pl3_sp2_self","time_prep_pl4_sp2_self","time_prep_pl5_sp2_self")]))==5)]  <- NA
 
 dta$time_plant_hh_man <- NA
 dta$time_plant_hh_man[dta$person_interviewed=="man"] <- rowSums(dta[c("time_plant_pl1_sp1_self","time_plant_pl2_sp1_self","time_plant_pl3_sp1_self","time_plant_pl4_sp1_self","time_plant_pl5_sp1_self")], na.rm=T)[dta$person_interviewed=="man"] + rowSums(dta[c("time_plant_pl1_sp1_other","time_plant_pl2_sp1_other","time_plant_pl3_sp1_other","time_plant_pl4_sp1_other","time_plant_pl5_sp1_other")], na.rm=T)[dta$person_interviewed=="man"]
@@ -2183,7 +2183,7 @@ df <- data.frame(rbind(df,cbind(dta$male_discuss,dta$group)))
 names(df) <- c("discuss","group")
 prop.table(table(df[,1:2]),2)
 chisq.test(table(df[,1:2]),simulate.p.value=TRUE)
-fisher.test(table(df[,1:2]))
+#fisher.test(table(df[,1:2]))
 
 
 #### redo timing

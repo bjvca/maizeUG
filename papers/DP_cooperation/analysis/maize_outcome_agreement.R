@@ -8,9 +8,9 @@ baseline <-  read.csv("/home/bjvca/data/projects/digital green/baseline/base_mer
 #wget https://www.dropbox.com/s/s4xne419eyhgsf0/base_coop.cvs?dl=0
 #install.packages(c("ggplot2","doParallel","data.table","dplyr","Hmisc"))
 
-rm(list=ls())
-dta <- read.csv("AWS_coop.csv")
-baseline <- read.csv("base_coop.csv")
+#rm(list=ls())
+#dta <- read.csv("AWS_coop.csv")
+#baseline <- read.csv("base_coop.csv")
 
 
 library(ggplot2)
@@ -214,7 +214,7 @@ dta_copy <- dta
 
 
 #set totrep to zero if you do not want simulation based inferecne
-totrep <- 10000
+totrep <- 0
 ####
 
 for (h in c(1,5)) {

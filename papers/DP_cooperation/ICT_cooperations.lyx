@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -27,6 +27,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -66,6 +68,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -74,7 +77,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -165,6 +171,7 @@ l household.
 \begin_inset CommandInset citation
 LatexCommand citet
 key "udry1996gender"
+literal "true"
 
 \end_inset
 
@@ -181,6 +188,7 @@ ing production factors from man managed to women managed plots may increase
 \begin_inset CommandInset citation
 LatexCommand citep
 key "New1,haddad1997intrahousehold"
+literal "true"
 
 \end_inset
 
@@ -197,6 +205,7 @@ Recently, the focus has shifted somewhat, focusing less on intra-household
 \begin_inset CommandInset citation
 LatexCommand citet
 key "doss2015collective"
+literal "true"
 
 \end_inset
 
@@ -208,6 +217,7 @@ g bargaining models may be the exception rather that the rule
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doss2014owns,twyman2015gendered,doi:10.1111/dpr.12243"
+literal "true"
 
 \end_inset
 
@@ -219,6 +229,7 @@ key "doss2014owns,twyman2015gendered,doi:10.1111/dpr.12243"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "alkire2013women"
+literal "true"
 
 \end_inset
 
@@ -241,6 +252,7 @@ A first strategy involves reducing information asymmetries within households.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "magruder2018assessment"
+literal "true"
 
 \end_inset
 
@@ -268,6 +280,7 @@ The second strategy consists of promoting a mental image of farming as a
 \begin_inset CommandInset citation
 LatexCommand citep
 key "porter2019gender"
+literal "true"
 
 \end_inset
 
@@ -336,6 +349,7 @@ ion of labor.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "bernard2014future"
+literal "true"
 
 \end_inset
 
@@ -361,6 +375,7 @@ Often, the poor appear to make sub-optimal decision because they lack critical
 \begin_inset CommandInset citation
 LatexCommand citep
 key "34"
+literal "true"
 
 \end_inset
 
@@ -368,6 +383,7 @@ key "34"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "jensen2010perceived,dupas2011teenagers"
+literal "true"
 
 \end_inset
 
@@ -377,6 +393,7 @@ key "jensen2010perceived,dupas2011teenagers"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "banerjee2011poor"
+literal "true"
 
 \end_inset
 
@@ -388,6 +405,7 @@ key "banerjee2011poor"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "de2017field,magruder2018assessment"
+literal "true"
 
 \end_inset
 
@@ -406,6 +424,7 @@ d within the household.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1257/aer.104.7.2210"
+literal "true"
 
 \end_inset
 
@@ -415,6 +434,7 @@ al technology adoption, which may be segregated according to sex
 \begin_inset CommandInset citation
 LatexCommand citep
 key "BEAMAN2018147,MEKONNEN2018321"
+literal "true"
 
 \end_inset
 
@@ -426,6 +446,7 @@ key "BEAMAN2018147,MEKONNEN2018321"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "fletschner2011gender"
+literal "true"
 
 \end_inset
 
@@ -439,6 +460,7 @@ There is some evidence that suggest that a more equal distribution of knowledge
 \begin_inset CommandInset citation
 LatexCommand citet
 key "lambrecht2016agricultural"
+literal "true"
 
 \end_inset
 
@@ -452,6 +474,7 @@ key "lambrecht2016agricultural"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "ashraf2009spousal"
+literal "true"
 
 \end_inset
 
@@ -484,6 +507,7 @@ s between spouses may lead to different outcomes.
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doss2015collective"
+literal "true"
 
 \end_inset
 
@@ -536,6 +560,7 @@ desirable
 LatexCommand citep
 before "eg."
 key "10.1093/qje/qjv001,10.2307/27804976"
+literal "true"
 
 \end_inset
 
@@ -546,6 +571,7 @@ key "10.1093/qje/qjv001,10.2307/27804976"
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1257/pandp.20181086,bursztyn2018misperceived"
+literal "true"
 
 \end_inset
 
@@ -559,6 +585,7 @@ Several studies point out the importance of role models to behaviour change
 \begin_inset CommandInset citation
 LatexCommand citet
 key "porter2019gender"
+literal "true"
 
 \end_inset
 
@@ -568,6 +595,7 @@ key "porter2019gender"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "campos2015breaking"
+literal "true"
 
 \end_inset
 
@@ -578,6 +606,7 @@ key "campos2015breaking"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "nguyen2008information"
+literal "true"
 
 \end_inset
 
@@ -587,6 +616,7 @@ key "nguyen2008information"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "bernard2019parental"
+literal "true"
 
 \end_inset
 
@@ -594,6 +624,7 @@ key "bernard2019parental"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "bernard2015will"
+literal "true"
 
 \end_inset
 
@@ -602,6 +633,7 @@ key "bernard2015will"
 \begin_inset CommandInset citation
 LatexCommand citet
 key "riley2017increasing"
+literal "true"
 
 \end_inset
 
@@ -1211,12 +1243,13 @@ reference "fig:Joint-decision-making"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename results/decsion_activities.png
+	lyxscale 10
 	scale 50
 
 \end_inset
@@ -1331,12 +1364,13 @@ s where the information was provided by a couple (the treatment group) and
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename results/decsion_impacts.png
+	lyxscale 10
 	scale 50
 
 \end_inset
@@ -1431,6 +1465,7 @@ To account for multiple hypothesis testing, we also calculate an index based
 \begin_inset CommandInset citation
 LatexCommand citet
 key "anderson2008multiple"
+literal "true"
 
 \end_inset
 
@@ -1447,7 +1482,7 @@ key "anderson2008multiple"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1738,11 +1773,13 @@ reference "fig:Labour-time"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename results/labour_time.png
+	lyxscale 10
 	scale 50
 
 \end_inset
@@ -1813,11 +1850,13 @@ reference "tab:time_use_full"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename results/coop_time.png
+	lyxscale 10
 	scale 50
 
 \end_inset
@@ -1895,7 +1934,7 @@ For the second treatment, we find that time reduces for both husband and
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2295,6 +2334,7 @@ Household members need to make decisions about how to allocate scarce resources
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1080/00220388.2017.1400014"
+literal "true"
 
 \end_inset
 
@@ -2313,6 +2353,7 @@ We asked each spouse separately to indicate the top three spending categories
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1093/wber/3.1.1"
+literal "true"
 
 \end_inset
 
@@ -2349,11 +2390,13 @@ reference "tab:spending_full"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename results/sales.png
+	lyxscale 10
 	scale 50
 
 \end_inset
@@ -2394,6 +2437,7 @@ The seminal paper by
 \begin_inset CommandInset citation
 LatexCommand citet
 key "udry1996gender"
+literal "true"
 
 \end_inset
 
@@ -2446,6 +2490,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename results/ourcomes.png
+	lyxscale 10
 	scale 50
 
 \end_inset
@@ -2733,320 +2778,6 @@ reference "tab:wellbeing"
 \end_layout
 
 \begin_layout Subsection
-Spousal disagreement
-\end_layout
-
-\begin_layout Standard
-Many studies have found substantial disagreement about what men and women
- separately report in agriculture 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "doi:10.1086/703082"
-
-\end_inset
-
-.
- If spouses monitor each other better, we can expect that there is less
- disagreement about practices and inputs used on maize plots.
- As mentioned above, the ability of spouses to monitor each other may be
- one of the mechanisms through which our interventions affect outcomes.
- We thus look at a range of practices and inputs, and verify if spouses
- are more or less likely to agree on the fact that these practices or inputs
- were adopted on a particular plot depending on the treatment group.
- The results from comparisons between treatment and control for both treatments
- are summarized by an index of disagreement on recommended agronomic practices
- and modern inputs in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Disagreement"
-
-\end_inset
-
-.
- Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:disagree_adopt"
-
-\end_inset
-
- provides detailed information.
- From this table, we see that there is substantial variation in disagreement
- between the different activities and practices.
- For instance, on almost 60 percent of maize plots, spouses disagree about
- the timing of planting that was used on the plot.
- There is far less disagreement about plant spacing and seed density, partly
- because there are only a few common ways of planting maize: here spouses
- disagreed about planting method on only 8 percent of plots.
- Overall, we do not find that reducing information asymmetry reduces that
- likelihood that spouses report that different practices or technologies
- were used on a given plot.
- In fact, we find that in the sub-group of farmers where the video was shown
- to both spouses, the likelihood that one spouse says fertilizer was used
- and the other spouse says this was not the case, increases.
- This suggests that reducing information asymmetry did not lead spouses
- to better monitor each other.
- There are also no effects of projecting a household cooperative approach.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename results/disagreement.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Disagreement
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Disagreement"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Even though the interventions did not seem to increase monitoring of agronomic
- practices, it may be that spouses are more focused on output, and as a
- result, may engage in closer monitoring of production.
- As mentioned in the previous section, we asked husband and wife separately
- to estimate how much maize was harvested on each maize plot.
- Similarly, we asked each spouse about the area on which this maize was
- planted.
- Both measures are then combined to calculate yields as estimated by the
- husband and the wife separately.
- We then define disagreement as the absolute difference between what was
- reported by the husband and by the wife.
- Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:disagree_prod"
-
-\end_inset
-
- shows that these differences are large.
- For instance, the difference in the estimates of area between spouses is
- more than half an acre (with the average household cultivating maize on
- 1.2 acres).
- Average household level production in our sample is about 512 kg of maize,
- and the difference in the estimates of production between spouses is 287
- kg.
- This combines into an even larger difference for yields: almost 360 (while
- average yields are 530 kg per acre).
- We find no effect from reducing information asymmetry.
- For the second intervention, all outcomes do seem to go in the same direction,
- suggesting that projecting a household cooperative approach to farming
- reduces disagreement in production related outcomes, but not significantly.
-\end_layout
-
-\begin_layout Standard
-Next, we look at disagreement with respect to labor time invested in agriculture.
- For instance, it may be that increasing cooperation may reduce the tendency
- to shirk by the spouses.
- Here, we exploit the fact that we did not only ask spouses about their
- own labor time on each of the activities in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Analysis-of-time"
-
-\end_inset
-
-; we also asked each spouse to provide an estimate of the time that the
- other spouse spent on each activity.
- We define disagreement about the husband's labor supply as the difference
- between what was reported by the husband himself and what the wife reported
- as her husband's contribution.
- Similarly, we define disagreement about the wife's labor supply as the
- time she reported working and what the husband thinks she worked.
- Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Disagreement"
-
-\end_inset
-
- suggests that reducing information asymmetry reduces disagreement about
- labor somewhat.
- Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:disagree_labor"
-
-\end_inset
-
- shows that this effect is mainly due a reduction in disagreement about
- women's labor, as the gap between what the women reported and what the
- man reports that he thinks this wife works reduces significantly.
- Most of this effect is due to the fact that women reduce labor and bring
- it more in line with man's estimate, consistent with the results reported
- in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:time_use_full"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-Finally, we also look at disagreement with respect to amounts of maize sold.
- Income hiding by one of the spouses has been documented in several contexts
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "castilla2013ignorance"
-
-\end_inset
-
-.
- We conjecture that encouraging cooperation may lead to a reduction in income
- hiding.
- We assess the impact on income hiding through four outcomes.
- The first outcome simply looks at disagreement about whether sales have
- happened or not.
- If one of the spouses says that (part of the) maize was sold but the other
- says this was not the case, this may be a sign of income hiding.
- Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:disagree_sales"
-
-\end_inset
-
- shows that in almost one third of the households, there is disagreement
- this.
- We also asked each of the spouses separately to estimate how much was sold
- by (1) him or her, (2) by his or her spouse, and (3) jointly.
- Using this, we calculate the difference between what the husband reported
- to have sold alone and what the wife estimated was sold by her husband
- alone.
- Similarly, we calculate the difference between what the wife reported to
- have sold alone and what the husband estimated was sold by his wife alone.
- For joint sales, we take the absolute value of the difference between what
- was reported by the husband and the wife.
- Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:disagree_sales"
-
-\end_inset
-
- shows there is some degree of income hiding, but there does not seem to
- be an impact from our interventions.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-The barchart in the first panel in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Decision_maize_dif_reporters"
-
-\end_inset
-
- shows answers provided by the husbands in our sample.
- Man say that they unilaterally decided to plant maize on 28 percent of
- the plots.
- They further report that on less than 10 percent of the plots, his wife
- was the one who decided to plan maize.
- According to the husband, that largest share of plots is decided upon jointly.
- In the second panel, we shown the answers that the wives in our sample
- gave.
- According to them, the share of plots on which the husband decided unilaterally
- is somewhat smaller than what husbands report, and the share of plots on
- which they report that they made the decision to plant maize increases
- to about 17 percent.
- However, women also indicate that most plots are decided upon jointly.
- In the final panel, we report the share of plots on which husband and wife
- agree that the decision to plant maize was made by the husband, the wife,
- or jointly.
- We see there is substantial disagreement about individual decision making.
- Interestingly, there seems to be much more agreement about joint decision
- making, with the share coming close to what women report.
- 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename results/decision_to_grow_maize.pdf
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Decision to grow maize on plot
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Decision_maize_dif_reporters"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
 Conflict resolution
 \end_layout
 
@@ -3066,12 +2797,13 @@ Spouses may disagree about certain maize production activities.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename results/likert_plot_tell_each_other.pdf
+	lyxscale 10
 	scale 50
 
 \end_inset
@@ -3180,6 +2912,7 @@ We start by looking at decision making and confirm findings form
 \begin_inset CommandInset citation
 LatexCommand citet
 key "doss2014owns"
+literal "true"
 
 \end_inset
 

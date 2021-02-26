@@ -402,6 +402,245 @@ Details
 Research questions and theory or change
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This is from an earlier version of the cooperation paper: Many studies have
+ found substantial disagreement about what men and women separately report
+ in agriculture 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1086/703082"
+literal "true"
+
+\end_inset
+
+.
+ If spouses monitor each other better, we can expect that there is less
+ disagreement about practices and inputs used on maize plots.
+ As mentioned above, the ability of spouses to monitor each other may be
+ one of the mechanisms through which our interventions affect outcomes.
+ We thus look at a range of practices and inputs, and verify if spouses
+ are more or less likely to agree on the fact that these practices or inputs
+ were adopted on a particular plot depending on the treatment group.
+ The results from comparisons between treatment and control for both treatments
+ are summarized by an index of disagreement on recommended agronomic practices
+ and modern inputs in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Disagreement"
+
+\end_inset
+
+.
+ Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:disagree_adopt"
+
+\end_inset
+
+ provides detailed information.
+ From this table, we see that there is substantial variation in disagreement
+ between the different activities and practices.
+ For instance, on almost 60 percent of maize plots, spouses disagree about
+ the timing of planting that was used on the plot.
+ There is far less disagreement about plant spacing and seed density, partly
+ because there are only a few common ways of planting maize: here spouses
+ disagreed about planting method on only 8 percent of plots.
+ Overall, we do not find that reducing information asymmetry reduces that
+ likelihood that spouses report that different practices or technologies
+ were used on a given plot.
+ In fact, we find that in the sub-group of farmers where the video was shown
+ to both spouses, the likelihood that one spouse says fertilizer was used
+ and the other spouse says this was not the case, increases.
+ This suggests that reducing information asymmetry did not lead spouses
+ to better monitor each other.
+ There are also no effects of projecting a household cooperative approach.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../DP_cooperation/results/disagreement.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Disagreement
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Disagreement"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Even though the interventions did not seem to increase monitoring of agronomic
+ practices, it may be that spouses are more focused on output, and as a
+ result, may engage in closer monitoring of production.
+ As mentioned in the previous section, we asked husband and wife separately
+ to estimate how much maize was harvested on each maize plot.
+ Similarly, we asked each spouse about the area on which this maize was
+ planted.
+ Both measures are then combined to calculate yields as estimated by the
+ husband and the wife separately.
+ We then define disagreement as the absolute difference between what was
+ reported by the husband and by the wife.
+ Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:disagree_prod"
+
+\end_inset
+
+ shows that these differences are large.
+ For instance, the difference in the estimates of area between spouses is
+ more than half an acre (with the average household cultivating maize on
+ 1.2 acres).
+ Average household level production in our sample is about 512 kg of maize,
+ and the difference in the estimates of production between spouses is 287
+ kg.
+ This combines into an even larger difference for yields: almost 360 (while
+ average yields are 530 kg per acre).
+ We find no effect from reducing information asymmetry.
+ For the second intervention, all outcomes do seem to go in the same direction,
+ suggesting that projecting a household cooperative approach to farming
+ reduces disagreement in production related outcomes, but not significantly.
+\end_layout
+
+\begin_layout Plain Layout
+Next, we look at disagreement with respect to labor time invested in agriculture.
+ For instance, it may be that increasing cooperation may reduce the tendency
+ to shirk by the spouses.
+ Here, we exploit the fact that we did not only ask spouses about their
+ own labor time on each of the activities in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Analysis-of-time"
+
+\end_inset
+
+; we also asked each spouse to provide an estimate of the time that the
+ other spouse spent on each activity.
+ We define disagreement about the husband's labor supply as the difference
+ between what was reported by the husband himself and what the wife reported
+ as her husband's contribution.
+ Similarly, we define disagreement about the wife's labor supply as the
+ time she reported working and what the husband thinks she worked.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Disagreement"
+
+\end_inset
+
+ suggests that reducing information asymmetry reduces disagreement about
+ labor somewhat.
+ Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:disagree_labor"
+
+\end_inset
+
+ shows that this effect is mainly due a reduction in disagreement about
+ women's labor, as the gap between what the women reported and what the
+ man reports that he thinks this wife works reduces significantly.
+ Most of this effect is due to the fact that women reduce labor and bring
+ it more in line with man's estimate, consistent with the results reported
+ in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:time_use_full"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Finally, we also look at disagreement with respect to amounts of maize sold.
+ Income hiding by one of the spouses has been documented in several contexts
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "castilla2013ignorance"
+literal "true"
+
+\end_inset
+
+.
+ We conjecture that encouraging cooperation may lead to a reduction in income
+ hiding.
+ We assess the impact on income hiding through four outcomes.
+ The first outcome simply looks at disagreement about whether sales have
+ happened or not.
+ If one of the spouses says that (part of the) maize was sold but the other
+ says this was not the case, this may be a sign of income hiding.
+ Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:disagree_sales"
+
+\end_inset
+
+ shows that in almost one third of the households, there is disagreement
+ this.
+ We also asked each of the spouses separately to estimate how much was sold
+ by (1) him or her, (2) by his or her spouse, and (3) jointly.
+ Using this, we calculate the difference between what the husband reported
+ to have sold alone and what the wife estimated was sold by her husband
+ alone.
+ Similarly, we calculate the difference between what the wife reported to
+ have sold alone and what the husband estimated was sold by his wife alone.
+ For joint sales, we take the absolute value of the difference between what
+ was reported by the husband and the wife.
+ Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:disagree_sales"
+
+\end_inset
+
+ shows there is some degree of income hiding, but there does not seem to
+ be an impact from our interventions.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Social norms and gender stereotypes
 \end_layout
