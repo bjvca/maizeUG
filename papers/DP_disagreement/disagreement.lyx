@@ -128,27 +128,23 @@ thanks{Environment, Production and Technology Division, International Food
 
 \end_inset
 
-Cheating and Shirking: Spousal Disagreement among Ugandan Maize farmers
+Grabbing, Shirking and Hiding: Spousal Disagreement among Ugandan Maize
+ farmers
 \end_layout
 
 \begin_layout Abstract
-The household is often considered the primary unit of production in smallholder
- agriculture.
- However, to some extent, household members also compete over scarce resources
- and revenue.
- To gain a better understanding of intra-household bargaining processes,
- data on decision making, access to production assets and appropriation
- of revenue are now often collected from co-heads individually.
- Recent research has shown that answers provided by spouses on the same
- set of questions may differ substantially, and while this is partly due
- to measurement error, there is also evidence that at least part of this
- disagreement is due to differences in the information set held by the co-heads.
+To gain a better understanding of intra-household bargaining processes,
+ surveys increasingly collect data from co-heads individually.
+ Answers provided by spouses on the same set of questions often differ substanti
+ally, and while this is partly due to measurement error, there is also evidence
+ that at least part of this disagreement originates from spouses strategically
+ hiding information from each other.
  Using detailed data on a large sample of monogamous smallholder maize farming
  households in eastern Uganda, we document patterns in spousal disagreement
- in decision making, reported labour time and sales.
- In two subsamples, we implement light weight interventions to test if we
- can increase reduce disagreement by increasing cooperation between spouses
- and reducing information asymmetries.
+ in reporting related to decision making, labour time and sales.
+ We also implement two light weight interventions to test if we can reduce
+ disagreement by increasing cooperation between spouses and reducing information
+ asymmetries.
  
 \end_layout
 
@@ -157,33 +153,8 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-In subsistence agriculture, the prevailing unit of analysis is the agricultural
- household.
- However, these households consist of different household members, each
- with their own utility functions and access to resources.
- The preferences of the different household members may not perfectly align,
- and there may be considerable inequality in access to resources.
- This, in turn, may also result in differences in command over revenue obtained
- from selling agricultural commodities produced.
- The realization that household members compete as well as cooperate has
- led to a burgeoning literature grounded in collective bargain theory, with
- the important policy implication being that interventions may have different
- impact depending on who is targeted within the household 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "haddad1997intrahousehold"
-literal "true"
-
-\end_inset
-
-.
- Many interventions started to target women within households.
-\end_layout
-
-\begin_layout Standard
 Increased attention for the inner workings of the household farm by both
- researchers and practitioners also led to innovations in data collection
- 
+ researchers and practitioners led to innovations in data collection 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "https://doi.org/10.1111/agec.12540"
@@ -203,17 +174,11 @@ literal "false"
 \end_inset
 
 .
- More generally, the focus on intra-household processes has substantially
- increased the availability of data that is collected at the individual
- household member level, especially of the co-heads of the households.
- 
-\end_layout
-
-\begin_layout Standard
-Studies that collect data from male and female co-heads separately find
- that spouses often provide different answers on the most basic questions,
- such as for instance the number of household members or when asked about
- household assets.
+ The focus on intra-household processes has also substantially increased
+ the availability of data that is collected at the individual household
+ member level, especially from the co-heads of the households.
+ Studies that collect data from male and female co-heads separately find
+ that spouses often provide different answers on even the most basic questions.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -222,18 +187,11 @@ literal "false"
 
 \end_inset
 
- demonstrate that while part of the this may be attributable to measurement
- error, there is also a systematic component that reflects asymmetric informatio
-n within households.
- 
-\end_layout
-
-\begin_layout Standard
-As a first objective of this paper, we use detailed data from both male
- and female co-heads of monogamous semi-subsistence farm households in eastern
- Uganda to contributes to a growing literature that provides insight into
- intra-household processes by collecting data from multiple household members.
- A key paper on spousal disagreement is 
+ demonstrate that while part of the this may be due to measurement error,
+ there is also a systematic component that reflects asymmetric information
+ within households where one co-head does not have accurate knowledge about
+ the decisions made, actions taken, or assets owned of the other.
+ Furthermore, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "doi:10.1086/703082"
@@ -241,51 +199,10 @@ literal "false"
 
 \end_inset
 
-.
- It provides a theoretical framework to explain spousal disagreement in
- survey data collected at the level of the individual co-heads.
- The model differentiates between three types of bias: (1) random measurement
- error that affects both spouses symmetrically; (2) systematic error, where
- for example the male co-head always exaggerates; and (3) information asymmetrie
-s.
- Using this framework, they find evidence of significant information asymmetries
- between spouses in Bangladeshi households.
-\end_layout
-
-\begin_layout Standard
-Arguably the most interesting form of spousal disagreement is the one that
- stems from information asymmetries.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "doi:10.1086/703082"
-literal "false"
-
-\end_inset
-
- argue that the fact that bias is larger for some assets (eg for assets
- that can be hidden more easily) than for others suggests that asymmetric
- information in the form of hidden assets and decisions is present in the
- household
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-However, while most studies on spousal disagreement seem to assume that
- information asymmetry is a sign that individuals hide resources or actions
- from other household members, information asymmetry does not always have
- to be the result of one spouse intentionally deceiving another.
- There may be other systematic biases that manifest more in one asset or
- decision category than others.
- We think of cognitive bias that may be shaped by prevailing gender norms.
- For example, when society sees spraying chemicals as a dangerous activity
- that only men should do, men may exaggerate the resources they allocated
- to this task and the decision power in this sphere.
-\end_layout
-
-\end_inset
-
-.
+ argue that the fact that spousal disagreement in reporting is larger for
+ assets that can be hidden more easily than for others suggests that, to
+ some extent, spouses exploit these information asymmetries by deliberately
+ hiding assets and decisions from each other.
  A number of lab-in-the-field experiments indeed confirm that household
  members conceal resources from one another 
 \begin_inset CommandInset citation
@@ -297,74 +214,60 @@ literal "false"
 \end_inset
 
 .
- We contribute to this line of research by looking at disagreement with
- respect to a range of maize farming related decisions, difference in options
- on individual time allocations to particular tasks, and income hiding..
- In particular, at the plot level, we look at how decisions are made on
- a series of important agronomic practices.
- We also look at who provides labour for different agronomic activities
- such as land preparation, planting, weeding and harvesting.
- We further look at maize sales and patterns of income hiding between spouses.
- We finally collected some information on how spouses deal with agricultural
- related disagreement.
  
 \end_layout
 
 \begin_layout Standard
-As mentioned above, new ways of thinking about intra-household decision
- making had a significant impact policies and interventions.
- However, impact evaluations of interventions that explicitly target women
- within households did not always produce the expected results.
- Partly, this was explained by the fact that the pendulum may have swung
- too far the other way and the importance of cooperation within the household
- had been ignored 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "https://doi.org/10.1111/agec.12540"
-literal "false"
-
-\end_inset
-
-.
- Many resources are jointly owned and decisions jointly made, and so the
- clear division between man managed and women managed plots underlying bargainin
-g models may be the exception rather that the rule 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "doss2014owns,twyman2015gendered,doi:10.1111/dpr.12243"
-literal "true"
-
-\end_inset
-
-.
- Furthermore, alternative models of the household have been proposed that
- provide more room for intra-household cooperation.
- For example, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "doss2015collective"
-literal "true"
-
-\end_inset
-
- point out that households face collective action problems similar to those
- studied in the context of common pool resources management.
+We contribute to this line of research by documenting spousal disagreement
+ in reported behaviour among a large sample of semi-subsistance maize farming
+ household in Uganda.
+ First, on a range of decisions that are crucial to increase yields such
+ as timely planting, seed spacing and weeding, we ask both spouses to indicate
+ who made each decision on each plot.
+ Spouses can indicate they took the decision alone, that their spouse took
+ the decision alone, or that the decision was taken jointly.
+ These answers are then combined to assess the degree of disagreement in
+ decision making.
+ Second, we ask each spouse separately how much time he or she spent on
+ each of five important maize farming related activities (land preparation,
+ planting, weeding, spraying, and harvesting) on each plot and also to provide
+ an estimate of how much time his or her spouse spent on these activities.
+ We combine these answers to construct a measure of shirking, where one
+ spouse devotes less time on a particular activity than his or her spouse
+ thinks.
+ Finally, we ask each spouse how much maize he of she sold unilaterally
+ (as opposed to joint sales) and also ask each spouse to provide an estimate
+ of how much his or her spouses sold alone.
+ In addition to estimating quantities, we also inquire about how much income
+ was derived from this transaction.
+ We again combine this information to reflect income hiding, where one spouse
+ reports more sales than the other spouse is aware of.
  
 \end_layout
 
 \begin_layout Standard
-A second contribution of this paper is thus to test a light touch intervention
- aimed at increasing cooperation between spouses and reducing information
- asymmetries in the form of hidden assets or decision making.
+In addition to documenting patterns in spousal disagreement, the paper also
+ tests two simple interventions aimed at reducing disagreement related to
+ decision making, shirking and income hiding.
  Inspired by recent research on behavioral change communication and social
- marketing, we design an video intervention that promotes a mental model
- of farming as a joint venture, with both spouses having an equal role in
- decision making, activities, and rewards.
- 
+ marketing, a first intervention consists of a video treatment that promotes
+ a mental model of farming as a joint venture, with both spouses having
+ an equal role in decision making, activities, and rewards.
+ A second intervention focuses more on reducing information asymmetry between
+ spouses.
+ By making sure both spouses have similar information about what decision
+ need to be made, what labour is required and what yields can be expected,
+ spouses are expected to be better able to monitor each other and provide
+ better estimates of each other's efforts.
 \end_layout
 
 \begin_layout Standard
-We find that 
+We find substantial disagreement between spouses.
+ We find some indications that couple role models reduce the likelihood
+ that men disagree that women were involved, while reducing information
+ asymmetry reduces the likelihood that women disagree that men were involved.
+ Reducing information asymmetry reduces male shirking.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -395,250 +298,92 @@ literal "true"
 \end_layout
 
 \begin_layout Section
-Details
-\end_layout
-
-\begin_layout Section
-Research questions and theory or change
+Literature
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
+In this section, we review related literature.
+ We mainly focus on the empirical empowerment literature.
+ A number of studies investigate whether disagreement in responses of spouses
+ on the same question means something, or if this should just be discounted
+ as noise.
+ Generally, studies find that response differences are significant and systemati
+c.
+\end_layout
 
-\begin_layout Plain Layout
-This is from an earlier version of the cooperation paper: Many studies have
- found substantial disagreement about what men and women separately report
- in agriculture 
+\begin_layout Standard
+One particularly insightful study that tries to separate signal from noise
+ is 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "doi:10.1086/703082"
-literal "true"
+literal "false"
 
 \end_inset
 
 .
- If spouses monitor each other better, we can expect that there is less
- disagreement about practices and inputs used on maize plots.
- As mentioned above, the ability of spouses to monitor each other may be
- one of the mechanisms through which our interventions affect outcomes.
- We thus look at a range of practices and inputs, and verify if spouses
- are more or less likely to agree on the fact that these practices or inputs
- were adopted on a particular plot depending on the treatment group.
- The results from comparisons between treatment and control for both treatments
- are summarized by an index of disagreement on recommended agronomic practices
- and modern inputs in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Disagreement"
-
-\end_inset
-
-.
- Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:disagree_adopt"
-
-\end_inset
-
- provides detailed information.
- From this table, we see that there is substantial variation in disagreement
- between the different activities and practices.
- For instance, on almost 60 percent of maize plots, spouses disagree about
- the timing of planting that was used on the plot.
- There is far less disagreement about plant spacing and seed density, partly
- because there are only a few common ways of planting maize: here spouses
- disagreed about planting method on only 8 percent of plots.
- Overall, we do not find that reducing information asymmetry reduces that
- likelihood that spouses report that different practices or technologies
- were used on a given plot.
- In fact, we find that in the sub-group of farmers where the video was shown
- to both spouses, the likelihood that one spouse says fertilizer was used
- and the other spouse says this was not the case, increases.
- This suggests that reducing information asymmetry did not lead spouses
- to better monitor each other.
- There are also no effects of projecting a household cooperative approach.
+ They develop a conceptual model that differentiates between three explanations
+ for spousal disagreement.
+ First, they note that if disagreement solely derives from measurement error,
+ disagreement should be symmetric, and the female co-head's responses should
+ not differ differ systematically from the male co-head's responses.
+ Secondly, they test for asymmetric measurement error, where men and women
+ interpret questions differently.
+ In this case, answers may differ systematically between spouses, but disagreeme
+nt should be similar for the different questions asked in the survey.
+ Finally, they argue that finding differing rates of disagreement across
+ survey questions, and higher disagreement for assets and activities that
+ are easier to hide in particular, points to asymmetric information.
+ Using observational data on decision making and asset ownership in Bangladesh,
+ they find that asymmetric information in the form of hidden assets and
+ decisions is present in the households.
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../DP_cooperation/results/disagreement.png
-	lyxscale 10
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Disagreement
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Disagreement"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-Even though the interventions did not seem to increase monitoring of agronomic
- practices, it may be that spouses are more focused on output, and as a
- result, may engage in closer monitoring of production.
- As mentioned in the previous section, we asked husband and wife separately
- to estimate how much maize was harvested on each maize plot.
- Similarly, we asked each spouse about the area on which this maize was
- planted.
- Both measures are then combined to calculate yields as estimated by the
- husband and the wife separately.
- We then define disagreement as the absolute difference between what was
- reported by the husband and by the wife.
- Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:disagree_prod"
-
-\end_inset
-
- shows that these differences are large.
- For instance, the difference in the estimates of area between spouses is
- more than half an acre (with the average household cultivating maize on
- 1.2 acres).
- Average household level production in our sample is about 512 kg of maize,
- and the difference in the estimates of production between spouses is 287
- kg.
- This combines into an even larger difference for yields: almost 360 (while
- average yields are 530 kg per acre).
- We find no effect from reducing information asymmetry.
- For the second intervention, all outcomes do seem to go in the same direction,
- suggesting that projecting a household cooperative approach to farming
- reduces disagreement in production related outcomes, but not significantly.
-\end_layout
-
-\begin_layout Plain Layout
-Next, we look at disagreement with respect to labor time invested in agriculture.
- For instance, it may be that increasing cooperation may reduce the tendency
- to shirk by the spouses.
- Here, we exploit the fact that we did not only ask spouses about their
- own labor time on each of the activities in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Analysis-of-time"
-
-\end_inset
-
-; we also asked each spouse to provide an estimate of the time that the
- other spouse spent on each activity.
- We define disagreement about the husband's labor supply as the difference
- between what was reported by the husband himself and what the wife reported
- as her husband's contribution.
- Similarly, we define disagreement about the wife's labor supply as the
- time she reported working and what the husband thinks she worked.
- Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Disagreement"
-
-\end_inset
-
- suggests that reducing information asymmetry reduces disagreement about
- labor somewhat.
- Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:disagree_labor"
-
-\end_inset
-
- shows that this effect is mainly due a reduction in disagreement about
- women's labor, as the gap between what the women reported and what the
- man reports that he thinks this wife works reduces significantly.
- Most of this effect is due to the fact that women reduce labor and bring
- it more in line with man's estimate, consistent with the results reported
- in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:time_use_full"
-
-\end_inset
-
-.
+\begin_layout Standard
+However, while most studies on spousal disagreement seem to assume that
+ information asymmetry is a sign that individuals hide resources or actions
+ from other household members, information asymmetry does not always have
+ to be the result of one spouse intentionally deceiving another.
+ There may be other systematic biases that manifest more in one asset or
+ decision category than others.
+ There may be cognitive bias shaped by prevailing gender norms.
+ For example, when society sees spraying chemicals as a dangerous activity
+ that only men should do, men may exaggerate the resources they allocated
+ to this task and the decision power in this sphere.
+ Some activities or assets may simply be difficult to get information about
+ or to monitor, which does not necessarily mean that one spouse is strategically
+ hiding it.
  
 \end_layout
 
-\begin_layout Plain Layout
-Finally, we also look at disagreement with respect to amounts of maize sold.
- Income hiding by one of the spouses has been documented in several contexts
- 
+\begin_layout Standard
 \begin_inset CommandInset citation
-LatexCommand citep
-key "castilla2013ignorance"
-literal "true"
+LatexCommand citet
+key "ANNAN2021105292"
+literal "false"
 
 \end_inset
 
-.
- We conjecture that encouraging cooperation may lead to a reduction in income
- hiding.
- We assess the impact on income hiding through four outcomes.
- The first outcome simply looks at disagreement about whether sales have
- happened or not.
- If one of the spouses says that (part of the) maize was sold but the other
- says this was not the case, this may be a sign of income hiding.
- Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:disagree_sales"
-
-\end_inset
-
- shows that in almost one third of the households, there is disagreement
- this.
- We also asked each of the spouses separately to estimate how much was sold
- by (1) him or her, (2) by his or her spouse, and (3) jointly.
- Using this, we calculate the difference between what the husband reported
- to have sold alone and what the wife estimated was sold by her husband
- alone.
- Similarly, we calculate the difference between what the wife reported to
- have sold alone and what the husband estimated was sold by his wife alone.
- For joint sales, we take the absolute value of the difference between what
- was reported by the husband and the wife.
- Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:disagree_sales"
-
-\end_inset
-
- shows there is some degree of income hiding, but there does not seem to
- be an impact from our interventions.
+ is another powerful illustration of the conceptual and analytical value
+ of intra-household contention over decision-making.
+ They use disagreement to identify households where women take power (as
+ opposed to a more commonly used measure women empowerment where spouses
+ agree that the women is involved in decision making).
+ 
 \end_layout
 
-\end_inset
+\begin_layout Subsection
+Asymmetric information
+\end_layout
 
-
+\begin_layout Standard
+For example, if both spouses are provided with information on planting,
+ they will also have a better idea of the resources that are needed in this
+ activity.
+ This may mean that they revise their estimates of the time needed to complete
+ the task.
+ Furthermore, it may increase the ability and of spouses to monitor each
+ other 
 \end_layout
 
 \begin_layout Subsection
@@ -1336,7 +1081,7 @@ Results
 \end_layout
 
 \begin_layout Subsection
-Decision making
+Taking power
 \end_layout
 
 \begin_layout Standard
@@ -1646,24 +1391,15 @@ y took the decision to plant maize on only 27 percent of the plots.
 \begin_layout Standard
 To investigate this disagreement further, we construct two indices based
  on answers of both spouses.
- A first indicator, labeled female disagreement, is true if the male co-head
- claims he was involved in the decision (that is, he responds that he took
- the decision alone or the decision was taken jointly), while his wife says
- the particular decision was taken by her alone.
- A second indictor, labeled male disagreement, is true if the women co-head
- says she was involved in the particular decision (either because she took
- the decision alone or jointly with her husband), while the husband claims
- the decision was taken by him without consultation of his wife.
- This is similar to one of the measures of disagreement in decision making
- used in 
+ In particular, we follow 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "doi:10.1086/703082"
+key "ANNAN2021105292"
 literal "false"
 
 \end_inset
 
-.
+ and define plots on which female co-head take power.
  Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1686,7 +1422,7 @@ noprefix "false"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1898,19 +1634,19 @@ cline{7-10}
 \backslash
 multicolumn{2}{c}{
 \backslash
-textit{female disagrees}} & 
+textit{woman takes}} & 
 \backslash
 multicolumn{2}{c}{
 \backslash
-textit{male disagrees}} & & 
+textit{man gives}} & & 
 \backslash
 multicolumn{2}{c}{
 \backslash
-textit{female disagrees}} &  
+textit{woman takes}} &  
 \backslash
 multicolumn{2}{c}{
 \backslash
-textit{male disagrees}} 
+textit{man gives}} 
 \backslash
 
 \backslash
@@ -1927,19 +1663,19 @@ textit{male disagrees}}
 \backslash
 multicolumn{2}{c}{
 \backslash
-textit{man was involved}} & 
+textit{power}} & 
 \backslash
 multicolumn{2}{c}{
 \backslash
-textit{woman was involved}} & & 
+textit{power}} & & 
 \backslash
 multicolumn{2}{c}{
 \backslash
-textit{man was invovled}} &  
+textit{power}} &  
 \backslash
 multicolumn{2}{c}{
 \backslash
-textit{woman was invovled}} 	 
+textit{power}} 	 
 \backslash
 
 \backslash
@@ -2462,7 +2198,7 @@ t level.
 \end_layout
 
 \begin_layout Subsection
-Division of labour
+Shirking
 \end_layout
 
 \begin_layout Standard
@@ -2860,35 +2596,6 @@ textit{male shirking}} &
 multicolumn{2}{c}{
 \backslash
 textit{female shirking}} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{2}{c}{
-\backslash
-textit{man was involved}} & 
-\backslash
-multicolumn{2}{c}{
-\backslash
-textit{woman was involved}} & & 
-\backslash
-multicolumn{2}{c}{
-\backslash
-textit{man was invovled}} &  
-\backslash
-multicolumn{2}{c}{
-\backslash
-textit{woman was invovled}} 	 
 \backslash
 
 \backslash
@@ -3339,7 +3046,7 @@ households  **, * and + denote that the difference is signficant at the
 \end_layout
 
 \begin_layout Subsection
-Maize sales
+Income hiding
 \end_layout
 
 \begin_layout Standard
@@ -3534,7 +3241,7 @@ noprefix "false"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3653,31 +3360,6 @@ textit{fmale hides}}
 \end_layout
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{2}{c}{
-\backslash
-textit{man was involved}} & 
-\backslash
-multicolumn{2}{c}{
-\backslash
-textit{woman was involved}} & & 
-\backslash
-multicolumn{2}{c}{
-\backslash
-textit{man was invovled}} &  
-\backslash
-multicolumn{2}{c}{
-\backslash
-textit{woman was invovled}} 	 
-\backslash
-
-\backslash
 
 \end_layout
 
@@ -3980,362 +3662,42 @@ households  **, * and + denote that the difference is signficant at the
 
 \end_layout
 
-\begin_layout Subsection
-Conflict resolution
+\begin_layout Section
+Conclusion
 \end_layout
 
 \begin_layout Standard
-Spouses may disagree about certain maize production activities.
- We ask each spouse separately whether, in case of disagreement about any
- maize related issue, they would tell their spouse that they disagree.
- Respondents were allowed to indicate the likelihood that they would tell
- the other spouse on a scale of 1 (never) to 5 (always).
- 
+Why is this important? If there is indeed hiding can affect allocation.
+ For instance, if it is easier to shirk on particular activities, it
 \end_layout
 
 \begin_layout Standard
-Results for the entire sample are in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Spouses-talk"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
- We see that, generally, spouses communicate well.
- About two in three men indicate that they would tell their wife if they
- do not agree with something.
- This is not too different for female co-heads.
- Based on these two variables, we also construct a new dummy variable that
- is one if both spouses indicate that they would always or mostly tell each
- other if they do not agree.
- In the entire sample, we find that out of 2,544 households, about 1,435
- households report always or mostly tell each other if they disagree.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename results/likert_plot_tell_each_other.png
-	lyxscale 10
-	scale 75
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Spouses talk
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Spouses-talk"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-As a follow up questions, we also asked what happens when one spouse tells
- the other that he or she does not agree.
- Here, we focus on instances where spouses indicate that they discuss and
- come to a solution that is mutually agreed upon.
- We find that in the entire sample, 66 percent of male co-heads agree in
- that spouses talk and come to a solution.
- Again, we find little difference between men and women: 65 percent of women
- indicate that a mutually beneficial solution is sought.
- In half of all households in our sample, there is agreement between spouses
- that a mutually agreed upon solution is discussed.
-\end_layout
-
-\begin_layout Standard
-Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:conf"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- looks at the impact of our role model intervention on communication and
- conflict resolution within the household.
- We do not find that the intervention increases the likelihood that male
- co-heads tell the female co-heads if they disagree (column 2, row 1).
- We also do not find a significant impact on the likelihood that the female
- co-head tells the male co-head if she disagrees (column 4, row 1).
- We also do not find that the intervention increases two way communication
- (column 6, row 1).
- We do, however, find that the intervention increases the likelihood that
- man indicate that a mutual agreement is sought when there is disagreement
- (column 2, row 3).
- The effect is even larger on the likelihood that there is agreement between
- spouses that a solution that is acceptable to both is sought.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Impact on conflict resolution
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:conf"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
+When spouses choose to exploit their information advantages by hiding income,
+ they must allocate resources away from goods that can easily be monitored,
+ which can result in underinvestment in household goods.
+ Child human capital investments, such as education and nutrition, tend
+ to be easily monitored.
+ These investments have important spillover effects in a household’s ability
+ to step out of poverty because they increase child productivity later in
+ life, providing further sources of income diversification to the household
+ (Duflo 2001; Rosenzweig 1990).
+ Further, household surveys where expenditure and income of the entire household
+ is reported by one spouse are commonly used for poverty measurement.
+ However, when imperfect information flows exist between household members
+ over resources, reporting of expenditures other than one’s own is unreliable.
 \end_layout
 
 \begin_layout Plain Layout
-
-
-\backslash
-begin{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tabular}{rcccccc} 
-\backslash
-hline 
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{2}{c}{
-\backslash
-textit{man}} & 
-\backslash
-multicolumn{2}{c}{
-\backslash
-textit{woman}} & 
-\backslash
-multicolumn{2}{c}{
-\backslash
-textit{both}}	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-	&	ctrl mean	&	ATE	&	ctrl mean	&	ATE	&	ctrl mean	&	ATE	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-7} 
-\end_layout
-
-\begin_layout Plain Layout
-
-speak up	&	
-\backslash
-Sexpr{format(round(df_ols_confl[1,1,1],digits=3),nsmall=3)} 	&	
-\backslash
-Sexpr{format(round(df_ols_confl[3,1,1],digits=3),nsmall=3)}$^{
-\backslash
-Sexpr{ifelse(df_ols_confl[5,1,1]<.01,"**",ifelse(df_ols_confl[5,1,1]<.05,"*",ifels
-e(df_ols_confl[5,1,1]<.1,"+","")))}}$ 	&	
-\backslash
-Sexpr{format(round(df_ols_confl[1,2,1],digits=3),nsmall=3)} 	&	
-\backslash
-Sexpr{format(round(df_ols_confl[3,2,1],digits=3),nsmall=3)}$^{
-\backslash
-Sexpr{ifelse(df_ols_confl[5,2,1]<.01,"**",ifelse(df_ols_confl[5,2,1]<.05,"*",ifels
-e(df_ols_confl[5,2,1]<.1,"+","")))}}$ 	&	
-\backslash
-Sexpr{format(round(df_ols_confl[1,3,1],digits=3),nsmall=3)} 	&	
-\backslash
-Sexpr{format(round(df_ols_confl[3,3,1],digits=3),nsmall=3)}$^{
-\backslash
-Sexpr{ifelse(df_ols_confl[5,3,1]<.01,"**",ifelse(df_ols_confl[5,3,1]<.05,"*",ifels
-e(df_ols_confl[5,3,1]<.1,"+","")))}}$ 	
-\backslash
-
-\backslash
- 	&	(
-\backslash
-Sexpr{format(round(df_ols_confl[2,1,1],digits=3),nsmall=3)})	&	(
-\backslash
-Sexpr{format(round(df_ols_confl[4,1,1],digits=3),nsmall=3)})	&	(
-\backslash
-Sexpr{format(round(df_ols_confl[2,2,1],digits=3),nsmall=3)})	&	(
-\backslash
-Sexpr{format(round(df_ols_confl[4,2,1],digits=3),nsmall=3)})	&	(
-\backslash
-Sexpr{format(round(df_ols_confl[2,3,1],digits=3),nsmall=3)})	&	(
-\backslash
-Sexpr{format(round(df_ols_confl[4,3,1],digits=3),nsmall=3)})	
-\backslash
-
-\backslash
- take advice	&	
-\backslash
-Sexpr{format(round(df_ols_confl[1,1,2],digits=3),nsmall=3)} 	&	
-\backslash
-Sexpr{format(round(df_ols_confl[3,1,2],digits=3),nsmall=3)}$^{
-\backslash
-Sexpr{ifelse(df_ols_confl[5,1,2]<.01,"**",ifelse(df_ols_confl[5,1,2]<.05,"*",ifels
-e(df_ols_confl[5,1,2]<.1,"+","")))}}$ 	&	
-\backslash
-Sexpr{format(round(df_ols_confl[1,2,2],digits=3),nsmall=3)} 	&	
-\backslash
-Sexpr{format(round(df_ols_confl[3,2,2],digits=3),nsmall=3)}$^{
-\backslash
-Sexpr{ifelse(df_ols_confl[5,2,2]<.01,"**",ifelse(df_ols_confl[5,2,2]<.05,"*",ifels
-e(df_ols_confl[5,2,2]<.1,"+","")))}}$ 	&	
-\backslash
-Sexpr{format(round(df_ols_confl[1,3,2],digits=3),nsmall=3)} 	&	
-\backslash
-Sexpr{format(round(df_ols_confl[3,3,2],digits=3),nsmall=3)}$^{
-\backslash
-Sexpr{ifelse(df_ols_confl[5,3,2]<.01,"**",ifelse(df_ols_confl[5,3,2]<.05,"*",ifels
-e(df_ols_confl[5,3,2]<.1,"+","")))}}$ 	
-\backslash
-
-\backslash
- 	&	(
-\backslash
-Sexpr{format(round(df_ols_confl[2,1,2],digits=3),nsmall=3)})	&	(
-\backslash
-Sexpr{format(round(df_ols_confl[4,1,2],digits=3),nsmall=3)})	&	(
-\backslash
-Sexpr{format(round(df_ols_confl[2,2,2],digits=3),nsmall=3)})	&	(
-\backslash
-Sexpr{format(round(df_ols_confl[4,2,2],digits=3),nsmall=3)})	&	(
-\backslash
-Sexpr{format(round(df_ols_confl[2,3,2],digits=3),nsmall=3)})	&	(
-\backslash
-Sexpr{format(round(df_ols_confl[4,3,2],digits=3),nsmall=3)})	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline  
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{tabular}
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Note: First column reports sample means (and standard deviations below);
- Column 2 reports differences (and standard errors below) between 
-\end_layout
-
-\begin_layout Plain Layout
-
-households  **, * and + denote that the difference is signficant at the
- 1, 5 and 10 percent level, respectively.
- 
+discretionary expenditure
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Conclusion
 \end_layout
 
 \begin_layout Section*

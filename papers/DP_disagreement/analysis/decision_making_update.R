@@ -102,30 +102,50 @@ dta_long$differ <- NA
 dta_long$differ <- unlist((dta_long[paste(dec[i],"both_man",sep="_")] ==1 & dta_long[paste(dec[i],"both_woman",sep="_")]==1))
 df_b <- data.frame(rbind(df_b,mean(dta_long$differ, na.rm=T)))
 
-
+### women take power
 dm <- dta[c("hhid","messenger",paste(paste(dec[i],"man_pl",sep="_") ,1:5,sep=""))]
-db <- dta[c("hhid","messenger",paste(paste(dec[i],"both_man_pl",sep="_") ,1:5,sep=""))]
+db_m <- dta[c("hhid","messenger",paste(paste(dec[i],"both_man_pl",sep="_") ,1:5,sep=""))]
 dw <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_pl",sep="_") ,1:5,sep=""))]
+db_w <- dta[c("hhid","messenger",paste(paste(dec[i],"both_woman_pl",sep="_") ,1:5,sep=""))]
+
 
 dta_long_m <- reshape(dm, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man",sep="_") , idvar = "hhid")
-dta_long_b <- reshape(db, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_man",sep="_") , idvar = "hhid")
+dta_long_b_m <- reshape(db_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_man",sep="_") , idvar = "hhid")
+dta_long_b_w <- reshape(db_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_woman",sep="_") , idvar = "hhid")
 dta_long_w <- reshape(dw, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman",sep="_") , idvar = "hhid")
-dta_long <- merge(merge(dta_long_m, dta_long_w), dta_long_b)
+
+dta_long <- merge(merge(merge(dta_long_m, dta_long_w), dta_long_b_m),dta_long_b_w)
 dta_long$differ <- NA
-dta_long$differ <- unlist(((dta_long[paste(dec[i],"man",sep="_")] ==1 |  dta_long[paste(dec[i],"both_man",sep="_")] ==1 ) & dta_long[paste(dec[i],"woman",sep="_")]==1))
+
+dta_long$differ <- unlist( (dta_long[paste(dec[i],"man",sep="_")] ==1 &  dta_long[paste(dec[i],"both_woman",sep="_")] ==1 ) |
+(dta_long[paste(dec[i],"man",sep="_")] ==1 &  dta_long[paste(dec[i],"woman",sep="_")] ==1 )
+|
+(dta_long[paste(dec[i],"both_man",sep="_")] ==1 &  dta_long[paste(dec[i],"woman",sep="_")] ==1 ))
+
+#dta_long$differ <- unlist(((dta_long[paste(dec[i],"man",sep="_")] ==1 |  dta_long[paste(dec[i],"both_man",sep="_")] ==1 ) & dta_long[paste(dec[i],"woman",sep="_")]==1))
 
 df_m <- data.frame(rbind(df_m,mean(dta_long$differ, na.rm=T)))
 
-dm <- dta[c("hhid","messenger",paste(paste(dec[i],"man_pl",sep="_") ,1:5,sep=""))]
-db <- dta[c("hhid","messenger",paste(paste(dec[i],"both_woman_pl",sep="_") ,1:5,sep=""))]
-dw <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_pl",sep="_") ,1:5,sep=""))]
 
-dta_long_m <- reshape(dm, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man",sep="_") , idvar = "hhid")
-dta_long_b <- reshape(db, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_woman",sep="_") , idvar = "hhid")
-dta_long_w <- reshape(dw, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman",sep="_") , idvar = "hhid")
-dta_long <- merge(merge(dta_long_m, dta_long_w), dta_long_b)
+#men give power
+
+dm_w <- dta[c("hhid","messenger",paste(paste(dec[i],"man_woman_pl",sep="_") ,1:5,sep=""))]
+db_m <- dta[c("hhid","messenger",paste(paste(dec[i],"both_man_pl",sep="_") ,1:5,sep=""))]
+dw_m <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_man_pl",sep="_") ,1:5,sep=""))]
+db_w <- dta[c("hhid","messenger",paste(paste(dec[i],"both_woman_pl",sep="_") ,1:5,sep=""))]
+
+dta_long_m_w <- reshape(dm_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_woman",sep="_") , idvar = "hhid")
+dta_long_b_m <- reshape(db_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_man",sep="_") , idvar = "hhid")
+dta_long_b_w <- reshape(db_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_woman",sep="_") , idvar = "hhid")
+dta_long_w_m <- reshape(dw_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_man",sep="_") , idvar = "hhid")
+dta_long <- merge(merge(merge(dta_long_m_w, dta_long_b_m),dta_long_b_w),dta_long_w_m)
 dta_long$differ <- NA
-dta_long$differ <- unlist(((dta_long[paste(dec[i],"woman",sep="_")] ==1 |  dta_long[paste(dec[i],"both_woman",sep="_")] ==1 ) & dta_long[paste(dec[i],"man",sep="_")]==1))
+
+dta_long$differ <- unlist( (dta_long[paste(dec[i],"both_man",sep="_")] ==1 &  dta_long[paste(dec[i],"man_woman",sep="_")] ==1 ) |
+(dta_long[paste(dec[i],"woman_man",sep="_")] ==1 &  dta_long[paste(dec[i],"man_woman",sep="_")] ==1 )
+|
+(dta_long[paste(dec[i],"woman_man",sep="_")] ==1 &  dta_long[paste(dec[i],"both_woman",sep="_")] ==1 ))
+
 
 df_w <- data.frame(rbind(df_w,mean(dta_long$differ, na.rm=T)))
 }
@@ -140,8 +160,8 @@ colours <- c("#E5F5E0", "#A1D99B")
 
 png("/home/bjvca/data/projects/digital green/papers/DP_disagreement/results/decsion_activities_joint_deception.png", units="px", height=3200, width= 4200, res=600)
 
-barplot(as.matrix(t(df)), main="", ylab = "share of plots", cex.lab = 1.5, cex.main = 1.4, beside=TRUE, col=colours, ylim = c(0,.25))
-legend("topleft", c("woman disagrees man was involved","man disagrees women was involved"), cex=1.3, bty="n", fill=colours)
+barplot(as.matrix(t(df)), main="", ylab = "share of plots", cex.lab = 1.5, cex.main = 1.4, beside=TRUE, col=colours, ylim = c(0,.35))
+legend("topleft", c("woman takes power","man gives power"), cex=1.3, bty="n", fill=colours)
 dev.off()
 
 ### labour time graph
@@ -445,16 +465,25 @@ df_ols[4,1,i] <- res[2,2]
 df_ols[5,1,i] <- res[2,5]
 df_ols[6,1,i] <- nobs(ols)
 
+### women take power
 dm <- dta[c("hhid","messenger",paste(paste(dec[i],"man_pl",sep="_") ,1:5,sep=""))]
-db <- dta[c("hhid","messenger",paste(paste(dec[i],"both_man_pl",sep="_") ,1:5,sep=""))]
+db_m <- dta[c("hhid","messenger",paste(paste(dec[i],"both_man_pl",sep="_") ,1:5,sep=""))]
 dw <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_pl",sep="_") ,1:5,sep=""))]
+db_w <- dta[c("hhid","messenger",paste(paste(dec[i],"both_woman_pl",sep="_") ,1:5,sep=""))]
+
 
 dta_long_m <- reshape(dm, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man",sep="_") , idvar = "hhid")
-dta_long_b <- reshape(db, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_man",sep="_") , idvar = "hhid")
+dta_long_b_m <- reshape(db_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_man",sep="_") , idvar = "hhid")
+dta_long_b_w <- reshape(db_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_woman",sep="_") , idvar = "hhid")
 dta_long_w <- reshape(dw, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman",sep="_") , idvar = "hhid")
-dta_long <- merge(merge(dta_long_m, dta_long_w), dta_long_b)
+
+dta_long <- merge(merge(merge(dta_long_m, dta_long_w), dta_long_b_m),dta_long_b_w)
 dta_long$differ <- NA
-dta_long$differ <- unlist(((dta_long[paste(dec[i],"man",sep="_")] ==1 |  dta_long[paste(dec[i],"both_man",sep="_")] ==1 ) & dta_long[paste(dec[i],"woman",sep="_")]==1))
+
+dta_long$differ <- unlist( (dta_long[paste(dec[i],"man",sep="_")] ==1 &  dta_long[paste(dec[i],"both_woman",sep="_")] ==1 ) |
+(dta_long[paste(dec[i],"man",sep="_")] ==1 &  dta_long[paste(dec[i],"woman",sep="_")] ==1 )
+|
+(dta_long[paste(dec[i],"both_man",sep="_")] ==1 &  dta_long[paste(dec[i],"woman",sep="_")] ==1 ))
 
 ols <- lm( as.formula(paste("differ","(messenger=='couple')", sep ="~")),data=dta_long)
 vcov_cluster <- vcovCR(ols, cluster = dta_long$hhid, type = "CR0")
@@ -468,16 +497,24 @@ df_ols[4,2,i] <- res[2,2]
 df_ols[5,2,i] <- res[2,5]
 df_ols[6,2,i] <- nobs(ols)
 
-dm <- dta[c("hhid","messenger",paste(paste(dec[i],"man_pl",sep="_") ,1:5,sep=""))]
-db <- dta[c("hhid","messenger",paste(paste(dec[i],"both_woman_pl",sep="_") ,1:5,sep=""))]
-dw <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_pl",sep="_") ,1:5,sep=""))]
+#men give power
 
-dta_long_m <- reshape(dm, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man",sep="_") , idvar = "hhid")
-dta_long_b <- reshape(db, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_woman",sep="_") , idvar = "hhid")
-dta_long_w <- reshape(dw, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman",sep="_") , idvar = "hhid")
-dta_long <- merge(merge(dta_long_m, dta_long_w), dta_long_b)
+dm_w <- dta[c("hhid","messenger",paste(paste(dec[i],"man_woman_pl",sep="_") ,1:5,sep=""))]
+db_m <- dta[c("hhid","messenger",paste(paste(dec[i],"both_man_pl",sep="_") ,1:5,sep=""))]
+dw_m <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_man_pl",sep="_") ,1:5,sep=""))]
+db_w <- dta[c("hhid","messenger",paste(paste(dec[i],"both_woman_pl",sep="_") ,1:5,sep=""))]
+
+dta_long_m_w <- reshape(dm_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_woman",sep="_") , idvar = "hhid")
+dta_long_b_m <- reshape(db_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_man",sep="_") , idvar = "hhid")
+dta_long_b_w <- reshape(db_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_woman",sep="_") , idvar = "hhid")
+dta_long_w_m <- reshape(dw_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_man",sep="_") , idvar = "hhid")
+dta_long <- merge(merge(merge(dta_long_m_w, dta_long_b_m),dta_long_b_w),dta_long_w_m)
 dta_long$differ <- NA
-dta_long$differ <- unlist(((dta_long[paste(dec[i],"woman",sep="_")] ==1 |  dta_long[paste(dec[i],"both_woman",sep="_")] ==1 ) & dta_long[paste(dec[i],"man",sep="_")]==1))
+
+dta_long$differ <- unlist( (dta_long[paste(dec[i],"both_man",sep="_")] ==1 &  dta_long[paste(dec[i],"man_woman",sep="_")] ==1 ) |
+(dta_long[paste(dec[i],"woman_man",sep="_")] ==1 &  dta_long[paste(dec[i],"man_woman",sep="_")] ==1 )
+|
+(dta_long[paste(dec[i],"woman_man",sep="_")] ==1 &  dta_long[paste(dec[i],"both_woman",sep="_")] ==1 ))
 
 ols <- lm( as.formula(paste("differ","(messenger=='couple')", sep ="~")),data=dta_long)
 vcov_cluster <- vcovCR(ols, cluster = dta_long$hhid, type = "CR0")
@@ -739,17 +776,26 @@ df_ols_2[3,1,i] <- res[2,1]
 df_ols_2[4,1,i] <- res[2,2]
 df_ols_2[5,1,i] <- res[2,5]
 df_ols_2[6,1,i] <- nobs(ols)
-
+### women take power
 dm <- dta[c("hhid","recipient",paste(paste(dec[i],"man_pl",sep="_") ,1:5,sep=""))]
-db <- dta[c("hhid","recipient",paste(paste(dec[i],"both_man_pl",sep="_") ,1:5,sep=""))]
+db_m <- dta[c("hhid","recipient",paste(paste(dec[i],"both_man_pl",sep="_") ,1:5,sep=""))]
 dw <- dta[c("hhid","recipient",paste(paste(dec[i],"woman_pl",sep="_") ,1:5,sep=""))]
+db_w <- dta[c("hhid","recipient",paste(paste(dec[i],"both_woman_pl",sep="_") ,1:5,sep=""))]
+
 
 dta_long_m <- reshape(dm, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man",sep="_") , idvar = "hhid")
-dta_long_b <- reshape(db, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_man",sep="_") , idvar = "hhid")
+dta_long_b_m <- reshape(db_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_man",sep="_") , idvar = "hhid")
+dta_long_b_w <- reshape(db_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_woman",sep="_") , idvar = "hhid")
 dta_long_w <- reshape(dw, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman",sep="_") , idvar = "hhid")
-dta_long <- merge(merge(dta_long_m, dta_long_w), dta_long_b)
+
+dta_long <- merge(merge(merge(dta_long_m, dta_long_w), dta_long_b_m),dta_long_b_w)
 dta_long$differ <- NA
-dta_long$differ <- unlist(((dta_long[paste(dec[i],"man",sep="_")] ==1 |  dta_long[paste(dec[i],"both_man",sep="_")] ==1 ) & dta_long[paste(dec[i],"woman",sep="_")]==1))
+
+dta_long$differ <- unlist( (dta_long[paste(dec[i],"man",sep="_")] ==1 &  dta_long[paste(dec[i],"both_woman",sep="_")] ==1 ) |
+(dta_long[paste(dec[i],"man",sep="_")] ==1 &  dta_long[paste(dec[i],"woman",sep="_")] ==1 )
+|
+(dta_long[paste(dec[i],"both_man",sep="_")] ==1 &  dta_long[paste(dec[i],"woman",sep="_")] ==1 ))
+
 
 ols <- lm( as.formula(paste("differ","(recipient=='couple')", sep ="~")),data=dta_long)
 vcov_cluster <- vcovCR(ols, cluster = dta_long$hhid, type = "CR0")
@@ -763,16 +809,24 @@ df_ols_2[4,2,i] <- res[2,2]
 df_ols_2[5,2,i] <- res[2,5]
 df_ols_2[6,2,i] <- nobs(ols)
 
-dm <- dta[c("hhid","recipient",paste(paste(dec[i],"man_pl",sep="_") ,1:5,sep=""))]
-db <- dta[c("hhid","recipient",paste(paste(dec[i],"both_woman_pl",sep="_") ,1:5,sep=""))]
-dw <- dta[c("hhid","recipient",paste(paste(dec[i],"woman_pl",sep="_") ,1:5,sep=""))]
+#men give power
 
-dta_long_m <- reshape(dm, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man",sep="_") , idvar = "hhid")
-dta_long_b <- reshape(db, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_woman",sep="_") , idvar = "hhid")
-dta_long_w <- reshape(dw, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman",sep="_") , idvar = "hhid")
-dta_long <- merge(merge(dta_long_m, dta_long_w), dta_long_b)
+dm_w <- dta[c("hhid","recipient",paste(paste(dec[i],"man_woman_pl",sep="_") ,1:5,sep=""))]
+db_m <- dta[c("hhid","recipient",paste(paste(dec[i],"both_man_pl",sep="_") ,1:5,sep=""))]
+dw_m <- dta[c("hhid","recipient",paste(paste(dec[i],"woman_man_pl",sep="_") ,1:5,sep=""))]
+db_w <- dta[c("hhid","recipient",paste(paste(dec[i],"both_woman_pl",sep="_") ,1:5,sep=""))]
+
+dta_long_m_w <- reshape(dm_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_woman",sep="_") , idvar = "hhid")
+dta_long_b_m <- reshape(db_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_man",sep="_") , idvar = "hhid")
+dta_long_b_w <- reshape(db_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_woman",sep="_") , idvar = "hhid")
+dta_long_w_m <- reshape(dw_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_man",sep="_") , idvar = "hhid")
+dta_long <- merge(merge(merge(dta_long_m_w, dta_long_b_m),dta_long_b_w),dta_long_w_m)
 dta_long$differ <- NA
-dta_long$differ <- unlist(((dta_long[paste(dec[i],"woman",sep="_")] ==1 |  dta_long[paste(dec[i],"both_woman",sep="_")] ==1 ) & dta_long[paste(dec[i],"man",sep="_")]==1))
+
+dta_long$differ <- unlist( (dta_long[paste(dec[i],"both_man",sep="_")] ==1 &  dta_long[paste(dec[i],"man_woman",sep="_")] ==1 ) |
+(dta_long[paste(dec[i],"woman_man",sep="_")] ==1 &  dta_long[paste(dec[i],"man_woman",sep="_")] ==1 )
+|
+(dta_long[paste(dec[i],"woman_man",sep="_")] ==1 &  dta_long[paste(dec[i],"both_woman",sep="_")] ==1 ))
 
 ols <- lm( as.formula(paste("differ","(recipient=='couple')", sep ="~")),data=dta_long)
 vcov_cluster <- vcovCR(ols, cluster = dta_long$hhid, type = "CR0")
