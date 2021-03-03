@@ -309,6 +309,7 @@ In this section, we review related literature.
  as noise.
  Generally, studies find that response differences are significant and systemati
 c.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -345,15 +346,22 @@ However, while most studies on spousal disagreement seem to assume that
  from other household members, information asymmetry does not always have
  to be the result of one spouse intentionally deceiving another.
  There may be other systematic biases that manifest more in one asset or
- decision category than others.
- There may be cognitive bias shaped by prevailing gender norms.
- For example, when society sees spraying chemicals as a dangerous activity
- that only men should do, men may exaggerate the resources they allocated
- to this task and the decision power in this sphere.
- Some activities or assets may simply be difficult to get information about
- or to monitor, which does not necessarily mean that one spouse is strategically
- hiding it.
- 
+ decision category than others and are shaped by prevailing gender norms.
+ For example, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1080/00220388.2019.1650169"
+literal "false"
+
+\end_inset
+
+ find that in a careful case study in northern Uganda, men often report
+ unilateral decision making in areas where they are assumed to bear final
+ responsibility, even if women had some degree of involvement.
+ Women tented to view these scenarios as joint decisions.
+ As such, it is important to understand the local cultural context to differenti
+ate between information asymmetry stemming form intentional hiding and disagreem
+ent that is more superficial.
 \end_layout
 
 \begin_layout Standard
@@ -1081,7 +1089,7 @@ Results
 \end_layout
 
 \begin_layout Subsection
-Taking power
+Decision making
 \end_layout
 
 \begin_layout Standard
@@ -1389,9 +1397,23 @@ y took the decision to plant maize on only 27 percent of the plots.
 \end_layout
 
 \begin_layout Standard
-To investigate this disagreement further, we construct two indices based
+To investigate this disagreement further, we can construct measures based
  on answers of both spouses.
- In particular, we follow 
+ As there are a large number of potential response combinations, it is customary
+ to collapse responses into a few meaningful categories to reduce noise
+ and facilitate analysis.
+ For example, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+ define a variable for cases where the wife says that she is involved (alone
+ or joint), but the husband says she is not and a variable for cases where
+ the husband says the wife is involved but she reports that she is not.
+ In this study, we follow 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "ANNAN2021105292"
@@ -1399,8 +1421,72 @@ literal "false"
 
 \end_inset
 
- and define plots on which female co-head take power.
- Figure 
+ and define plots on which co-heads overestimate their own role in decision
+ making.
+ These are instances where the one co-head responds that decisions are made
+ by him or her alone, but the spouse says she or he was involved (either
+ alone or as part of the couple), and instances where the co-head says decisions
+ were taken jointly but the spouse says she or he took the decisions alone.
+ We further define instances where co-heads underestimate their own role
+ in decision making.
+ These are cases where one co-head says his or her spouse decided unilaterally,
+ but the spouse says the co-head was involved (either alone or as part of
+ the couple), and cases where the co-head says the decision was made jointly,
+ but the spouse says the co-head took the decision alone
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ANNAN2021105292"
+literal "false"
+
+\end_inset
+
+ refer to the first measure as instances where the female co-head 
+\begin_inset Quotes eld
+\end_inset
+
+takes power
+\begin_inset Quotes erd
+\end_inset
+
+ and the second measure is interpreted as the male co-head 
+\begin_inset Quotes eld
+\end_inset
+
+giving power
+\begin_inset Quotes erd
+\end_inset
+
+ to the female co-head.
+ These terms are somewhat contentious, as such an interpretation rests on
+ assumptions.
+ For instance, in cases where both spouses indicate that they themselves
+ took a particular decision, the interpretation that the women 
+\begin_inset Quotes eld
+\end_inset
+
+takes power
+\begin_inset Quotes erd
+\end_inset
+
+ is only valid if we assume all power rests with the male co-head to begin
+ with, and we believe that the female co-head is correct while the male
+ co-head is not (assuming that they can not both have taken the decision
+ unilaterally).
+ 
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Joint-decision"
@@ -1634,19 +1720,19 @@ cline{7-10}
 \backslash
 multicolumn{2}{c}{
 \backslash
-textit{woman takes}} & 
+textit{overestimate decision}} & 
 \backslash
 multicolumn{2}{c}{
 \backslash
-textit{man gives}} & & 
+textit{underestimate decision}} & & 
 \backslash
 multicolumn{2}{c}{
 \backslash
-textit{woman takes}} &  
+textit{overestimate decision}} &  
 \backslash
 multicolumn{2}{c}{
 \backslash
-textit{man gives}} 
+textit{underestimate decision}} 
 \backslash
 
 \backslash
