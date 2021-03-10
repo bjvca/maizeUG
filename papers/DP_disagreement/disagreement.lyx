@@ -136,16 +136,18 @@ Grabbing, Shirking and Hiding: Spousal Disagreement among Ugandan Maize
 To gain a better understanding of intra-household bargaining processes,
  surveys increasingly collect data from co-heads individually.
  Answers provided by spouses on the same set of questions often differ substanti
-ally, and while this is partly due to measurement error, there is also evidence
- that at least part of this disagreement originates from spouses strategically
- hiding information from each other.
+ally, and while this is partly due to measurement error, there is also some
+ signal in the noise.
+ Some studies argue that cultural context may lead to systematic bias that
+ may be due to a different meaning attached to concepts being elicited.
+ Others suggest that at least part of the disagreement originates from spouses
+ strategically hiding information from each other.
  Using detailed data on a large sample of monogamous smallholder maize farming
  households in eastern Uganda, we document patterns in spousal disagreement
  in reporting related to decision making, labour time and sales.
  We also implement two light weight interventions to test if we can reduce
  disagreement by increasing cooperation between spouses and reducing information
  asymmetries.
- 
 \end_layout
 
 \begin_layout Section
@@ -154,7 +156,8 @@ Introduction
 
 \begin_layout Standard
 Increased attention for the inner workings of the household farm by both
- researchers and practitioners led to innovations in data collection 
+ researchers and practitioners led to various innovations in data collection
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "https://doi.org/10.1111/agec.12540"
@@ -180,6 +183,9 @@ literal "false"
  Studies that collect data from male and female co-heads separately find
  that spouses often provide different answers on even the most basic questions.
  
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset citation
 LatexCommand citet
 key "doi:10.1086/703082"
@@ -214,7 +220,9 @@ literal "false"
 \end_inset
 
 .
- 
+ However, it may also be that prevailing gender norms result in such a bias,
+ if for example male co-heads start exaggerating when asked about issues
+ they are assumed to be responsible for.
 \end_layout
 
 \begin_layout Standard
@@ -226,20 +234,19 @@ We contribute to this line of research by documenting spousal disagreement
  who made each decision on each plot.
  Spouses can indicate they took the decision alone, that their spouse took
  the decision alone, or that the decision was taken jointly.
- These answers are then combined to assess the degree of disagreement in
- decision making.
+ These answers are then combined to assess the degree of disagreement with
+ respect to decision making.
  Second, we ask each spouse separately how much time he or she spent on
  each of five important maize farming related activities (land preparation,
- planting, weeding, spraying, and harvesting) on each plot and also to provide
- an estimate of how much time his or her spouse spent on these activities.
+ planting, weeding, spraying, and harvesting) on each plot.
+ We also ask each co-head to provide an estimate of how much time his or
+ her spouse spent on these same activities.
  We combine these answers to construct a measure of shirking, where one
  spouse devotes less time on a particular activity than his or her spouse
  thinks.
- Finally, we ask each spouse how much maize he of she sold unilaterally
- (as opposed to joint sales) and also ask each spouse to provide an estimate
+ Finally, we ask each co-head how much maize he of she sold unilaterally
+ (as opposed to joint sales) and also ask each co-head to provide an estimate
  of how much his or her spouses sold alone.
- In addition to estimating quantities, we also inquire about how much income
- was derived from this transaction.
  We again combine this information to reflect income hiding, where one spouse
  reports more sales than the other spouse is aware of.
  
@@ -259,41 +266,37 @@ In addition to documenting patterns in spousal disagreement, the paper also
  need to be made, what labour is required and what yields can be expected,
  spouses are expected to be better able to monitor each other and provide
  better estimates of each other's efforts.
+ We think that the second intervention will be relatively more effective
+ if spouses engage in intentional concealment, while the first may reduce
+ the likelihood that spouses feel they need to report behaviour that is
+ more in line with norms and customs.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 We find substantial disagreement between spouses.
- We find some indications that couple role models reduce the likelihood
- that men disagree that women were involved, while reducing information
- asymmetry reduces the likelihood that women disagree that men were involved.
- Reducing information asymmetry reduces male shirking.
  
 \end_layout
-
-\begin_layout Standard
-The remainder of the paper is organized as follows: The next section presents
- the research questions, the interventions we use to test the research hypothese
-s, and the underlying theory of change.
- We then present the experimental design and test pre-treatment balance
- between the different treatment groups on a range of household characteristics.
- We then turn to the results, first looking at how the interventions affect
- joint decision making.
- We then test if increasing cooperation also leads to a more equitable distribut
-ion of labor.
- As changes in aspirations have been found to affect forward looking behavior
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bernard2014future"
-literal "true"
 
 \end_inset
 
-, we also look at the impact of the interventions on intentions to invest
- proceeds from maize farming.
- We then explore household level outcomes.
- A next section explores spousal disagreement and we also report effects
- on the likelihood that farmers tell each other in the event of disagreement.
+
+\end_layout
+
+\begin_layout Standard
+The remainder of the paper is organized as follows: The next section gives
+ a brief overview of the literature on spousal disagreement.
+ We then present the experimental design and explain the rationale underlying
+ the intervention.
+ Next is a brief section describing the context and the characteristics
+ of the households in our sample.
+ We then turn to the results, first looking at how the interventions affect
+ disagreement about decision making.
+ This is followed by a section on disagreement on labour and disagreement
+ related to maize sales.
  A final section concludes.
 \end_layout
 
@@ -580,55 +583,105 @@ literal "false"
 \end_layout
 
 \begin_layout Section
-Experimental design
+Experimental design and Interventions
 \end_layout
 
 \begin_layout Standard
-For example, if both spouses are provided with information on planting,
- they will also have a better idea of the resources that are needed in this
- activity.
- This may mean that they revise their estimates of the time needed to complete
- the task.
- Furthermore, it may increase the ability and of spouses to monitor each
- other 
+The emerging literature on spousal disagreement suggests at least two underlying
+ mechanism.
+ First, to some extent, spousal disagreement may reflect different cognitive
+ understandings of the responses categories and what the appropriate response
+ should be 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "GHUMAN20061"
+literal "false"
+
+\end_inset
+
+.
+ This problem is compounded by the cultural context in which these questions
+ are asked and answered 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1080/00220388.2019.1650169"
+literal "false"
+
+\end_inset
+
+.
+ A first treatment therefore attempts to challenge pre-conceived ideas of
+ what decision making of a spouse involves and who is expected to make decisions
+ in a farm household.
+ Second, the literature also establishes that spousal disagreement reflects
+ information asymmetry between spouses 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+.
+ A second intervention tests if this informational imbalance can be influenced
+ by giving spouses equal ex-ante knowledge on maize farming best practices.
+ 
+\end_layout
+
+\begin_layout Standard
+At the heart of both treatments is a short video that is shown to individuals
+ within households using tablet computers.
+ The aim of the video was to increase knowledge of the viewer with respect
+ to best practices in maize farmer, such as timely planting, row planting
+ and the use of improved inputs such hybrid seed and inorganic fertilizer.
+ It does this though an inspirational story where a farmer (or farmers)
+ recount how he/she/they used to be poor but managed to increase yields
+ over time by applying a set of techniques and inputs.
+ It thus encourages farmers to view maize growing as a business that needs
+ investment to grow over time.
+ Some simple inter-temporal cost-benefit calculations are use to illustrate
+ this.
+ Viewers are encouraged to follow the example of the model farmer in the
+ video if they also want to lead the good life.
+ The treatments itself consist of slightly adapted version of the video
+ and variations on who within the household was exposed to the video.
+ These variation and the rationale behind it are explained below.
 \end_layout
 
 \begin_layout Subsection
-Social norms and gender stereotypes
+Gender roles within the household
 \end_layout
 
 \begin_layout Standard
-Smallholder agricultural production does not happen in a vacuum.
- Smallholders are generally located in remote areas, where customs and norms
- that prescribe 
-\begin_inset Quotes eld
-\end_inset
-
-desirable
-\begin_inset Quotes erd
-\end_inset
-
- behavior still play an important role.
- In close-knit societies, what individuals can and can not do often depends
- on how others, including one's spouse, judge it.
- There is a large literature on how cultural values and gender norms are
- important determinants of women’s work choices 
+Within households, individual members often have differing spheres of influence,
+ resulting in some degree of division of labour reflecting traditional gender
+ roles 
 \begin_inset CommandInset citation
 LatexCommand citep
-before "eg."
-key "10.1093/qje/qjv001,10.2307/27804976"
-literal "true"
+key "lundberg1993separate"
+literal "false"
 
 \end_inset
 
 .
- More recently, research also started to look into the intra-household dynamics
- that mediate the role that norms play, as the cost of violating norms may
- differ between spouses and/or there may be important externalities 
+ Gendered differences in crop diversity choices may emerge from a variety
+ of factors, including gender related differences in knowledge about the
+ crop, access to planting material, and customs and traditions 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "10.1257/pandp.20181086,bursztyn2018misperceived"
-literal "true"
+key "NORDHAGEN2021105134"
+literal "false"
+
+\end_inset
+
+.
+ While the existence of such gendered patterns are widely acknowledged,
+ it is not always easy to capture this in data, as gender is only one of
+ the determinants of crop portfolio choice 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "CARR2008900,DOSS20021987"
+literal "false"
 
 \end_inset
 
@@ -636,129 +689,164 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-Several studies point out the importance of role models to behaviour change
- in context of strong norms and beliefs.
+In in patrilineal societies such as Uganda, maize is considered to be mostly
+ in the influence sphere of men.
+ Generally, men will make all important decisions such as on what plots
+ to plant, how to prepare the land, when to start planting and what seeds
+ to use.
+ Men also generally decide on how much labour is needed, and women assist
+ men, often with weeding.
+ Women generally have a larger voice in the cultivation of food security
+ crops such as cassava or sweet potato.
  
+\end_layout
+
+\begin_layout Standard
+We expect that such a separation in spheres of influence between male and
+ female co-head contributes to spousal disagreement.
+ Therefor, we devised a treatment consisting of an adaptation of the video
+ featuring role models to promote a worldview where both spouses participate
+ equally in maize farming.
+ Recent research has shown that role models may be important to increase
+ women participation in otherwise male dominated sectors 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "porter2019gender"
-literal "true"
+LatexCommand citep
+key "porter2019gender,beaman2012female"
+literal "false"
 
 \end_inset
 
- show that role models can be effective in increasing women participation
- in sectors that are traditionally dominated by men.
- In the context of economic development, 
+.
+ One way in which large groups of people can be exposed to role models is
+ through engaging media content 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "campos2015breaking"
-literal "true"
+LatexCommand citep
+key "la2012soap,riley2017increasing"
+literal "false"
 
 \end_inset
 
- document female entrepreneurs who succeed in male-dominated sectors in
- Uganda, and also point out the importance of exposure to role models to
- circumvent or overcome the norms that maintain occupational segregation.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "nguyen2008information"
-literal "true"
-
-\end_inset
-
- finds that in Madagascar, a role model sharing her life story at a school
- significantly increased student's test performance.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "bernard2019parental"
-literal "true"
-
-\end_inset
-
- and 
+.
+ In the context of smallholder agriculture, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "bernard2015will"
-literal "true"
+literal "false"
 
 \end_inset
 
- study how videos of role models may have long run effects in Ethiopia.
- Finally, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "riley2017increasing"
-literal "true"
-
-\end_inset
-
- shows that the inspirational story of a Ugandan girl from a slum that goes
- on to become a world chess champion (as chronicled in the Disney feel-good
- movie 
-\begin_inset Quotes eld
-\end_inset
-
-Queen of Katwe
-\begin_inset Quotes erd
-\end_inset
-
-) positively impacted test results of Ugandan school girls.
+ find that exposure to video that show life stories of successful farmers
+ affected both viewers’ investment in their children’s education and other
+ future-oriented behaviors.
+ 
 \end_layout
 
 \begin_layout Standard
-As a second hypothesis, we will therefore test whether projecting a household
- cooperative approach to farming leads to better outcomes.
- Also here, we posit different impact pathways.
- First, there may be aspirational effects of seeing a couple farming maize
- successfully together.
- The intervention may also serve to challenge social norms and gender roles
- that prescribe that men specialize in productive and women in reproductive
- activities.
- This may lead women to become more assertive when men take decisions or
- it may make men more open to women participation in farming.
-\begin_inset Note Note
-status collapsed
+To test the hypothesis that spouses disagree less if they view farming as
+ a collective activity, we randomly selected 261 households from our sample
+ and showed them (male and female co-heads together) a version of the video
+ where a couple is depicted.
+ In another random sample of 475 households, we showed exactly the same
+ video, except for the fact that it only featured a single actor: either
+ a man or a woman.
+\begin_inset Foot
+status open
 
 \begin_layout Plain Layout
-Also here, can we look more into mechanisms? Unfortunately, we threw out
- all questions that attempted to measure aspirations, but maybe we can argue
- that the decision to invest in agriculture is indicative of an aspirational
- effect?
+We made sure that in about half of the cases this was an actor alone and
+ in the other half an actress alone.
 \end_layout
 
 \end_inset
 
+ As the only difference between the two videos was the fact that in one
+ video a single actor appeared and in the other a couple was shown, any
+ difference in outcomes between the two groups should be attributed to a
+ couple role model effect.
+\end_layout
 
+\begin_layout Subsection
+Information asymmetry
 \end_layout
 
 \begin_layout Standard
-Farming happens in a particular cultural context, and social norms may hamper
- efficient allocation of production factors.
- For instance, in patrilineal societies it may be that only men are assumed
- to make decisions on certain crops, or only women are allowed to carry
- out certain activities.
- However, norms and customs can change, and role models have been found
- to be important catalysts 
+Smallholder agricultural households consist of different individuals, each
+ with their own preferences, skills and access to assets.
+ At the same time, individuals also need to invest in common goods for the
+ survival of both the unit and its members.
+ There are also various shared assets and resources from which individual
+ household members draw.
+ As such, households can be considered as institutions, governed by its
+ own rules with members that have a particular place within the hierarchy.
+ The means that many of the problems encountered in common pool resource
+ management and collective action, such as free-riding and over-extraction
+ of resources also apply within the household 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "porter2019gender"
-literal "true"
+key "doss2015collective"
+literal "false"
 
 \end_inset
 
 .
- We therefore devise an intervention aimed at promoting a cooperative approach
- to farming.
 \end_layout
 
-\begin_layout Subsection
-Information assymetry
+\begin_layout Standard
+One way in which collective action problems can be attenuated is through
+ increased mutual monitoring.
+ For instance, if one co-head can better asses the actual time that the
+ other co-head worked on preparing the field, the latter will be less likely
+ to engage in shirking.
+ Or, if it becomes easier to check how much each co-head obtained from the
+ sale of maize, instances of income hiding will decrease.
+ However, in order for monitoring to work, co-heads need to have a good
+ idea of what to compare against, as merely observing an outcome may be
+ insufficient to determine if a co-head cheated.
+ For instance, it may be difficult for the female co-head to check if a
+ the male co-head over-reports time spent preparing the field if she does
+ not have a good understanding of what land preparation entails.
+ If both spouses have a good understanding of what agricultural management
+ entails, they are also in a better position to monitor each other.
+ 
+\end_layout
+
+\begin_layout Standard
+In a second treatment, we therefore make sure both co-heads start off with
+ the same information with respect to best agronomic practices, as this
+ will enable increased mutual monitoring.
+ To do so, we show the video that showcases best practices in maize farming
+ to both spouses in a random sample of 261 households.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We show the version of the video that features a couple (male and female
+ co-head), that is the video used in the treatment group of the previous
+ treatment.
+\end_layout
+
+\end_inset
+
+ In another random sample of 540 households, the same video was shown, but
+ only to one of the two co-heads.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We again made sure that in about half of the cases the video was shown to
+ the male co-head alone and in the other half of cases to the female co-head
+ alone.
+\end_layout
+
+\end_inset
+
+ As the only difference between the two groups is related to whom the video
+ was shown to, any difference in outcomes between the two groups should
+ be attributed to reducing information asymmetry between spouses.
 \end_layout
 
 \begin_layout Section
-Study context, Interventions and Experimental design
+Study context,
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Study-context,-Interventions"
@@ -769,8 +857,8 @@ name "sec:Study-context,-Interventions"
 \end_layout
 
 \begin_layout Standard
-The study involved a among a random sample of maize farmers in southwestern
- Uganda.
+The study involved a among a random sample of maize farmers in eastern Uganda,
+ an area that is know for its maize production.
  Two-stage cluster sampling was used to obtain a representative sample of
  this population.
  In particular, from five districts (Bugiri, Mayuge, Iganga, Namayingo,
@@ -783,512 +871,48 @@ The study involved a among a random sample of maize farmers in southwestern
  However, to investigate cooperation within the household, we only use household
 s where we managed to interview both spouses separately, which was the case
  in 2,548 households.
+ The intervention was only implemented on a subset of the data.
 \end_layout
 
 \begin_layout Standard
-The intervention was only implemented on a subset of the data.
- In 261 households, a video was shown where a couple is depicted, while
- in 475 households, a video was shown where the recommended practices were
- illustrated by a man or a woman alone.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-We made sure that in about half of the cases this was a man alone and in
- half a woman alone.
-\end_layout
-
-\end_inset
-
-
+We focus on the second maize growing season of 2017, which runs from about
+ August, when fields are prepared to January when harvesting is done in
+ higher altitude areas.
+ The video intervention happened twice, once in August when farmers were
+ preparing and once in September during planting time.
+ Concurrent with the first treatment, we also collected some information
+ on household characteristics and on the previous harvest, which was the
+ first harvesting season of 2017.
 \end_layout
 
 \begin_layout Standard
-Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Balance_treat1"
-
-\end_inset
-
- reports orthogonality tests for experiments.
- The first column reports sample means (and standard deviations in parentheses
- below) for the variables indicated to the left, measured at baseline (baseline
- data was collected in August 2017).
- For instance, we found that at the time of baseline data collection, average
- yields in the sample amounted to about 264 kg per acre
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-This is a very low yield; during focus group discussions, we learned that
- yields are normally about 500 to 700 kg per acre.
- The low yield is most likely a result of adverse weather shocks and the
- fall armyworm outbreak during the first season of 2017.
-\end_layout
-
-\end_inset
-
-.
- Average age of the household head in our sample is 40 years and only about
- 36 percent reported to have finished primary education.
- The average household has more than 7 members who live in a house with
- 2.2 bedrooms.
- Only 11 percent had access to agricultural extension in the preceding year,
- about 20 percent used (inorganic) fertilizer and almost 40 percent reported
- to have used improved seed.
- Average distance to the nearest agro-input dealer is 5.5 km and almost 80
- percent of households own a mobile phone.
-\end_layout
-
-\begin_layout Standard
-In the second column, we report differences in means at baseline between
- households that received the extension information as a couple and households
- where only one of the spouses (either the husband of the wife) received
- the information.
- We find significant imbalance on various baseline characteristics for this
- first treatment.
- For instance, we see that in the sub-sample of households that were given
- the information as a couple, the household head is almost 4 years older
- than in households where the information was given to only one of the spouses.
- Household heads in households that were treated as a couple are also significan
-tly more likely to have finished primary education.
- We further find that these households are about 10 percentage points more
- likely to own a mobile phone and 5 percentage points less likely to have
- used fertilizer.
- We also have some indications that access to extension and households size
- is correlated with the treatment.
- A test for joint orthogonality also indicates that there are significant
- differences in baseline characteristics between the two groups.
- The third column of Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Balance_treat1"
-
-\end_inset
-
- compares households where a video was shown featuring a couple role model
- to households that got to see a video in which a male maize farmer did
- all the acting.
- For this treatment, we find balance among almost all baseline characteristics.
- We also can not reject joint orthogonality.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Balance for treatment 1
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:Balance_treat1"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-scriptsize
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tabular}{rccc} 
-\backslash
-hline 
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-&	Mean	&	reduce info asymmetry	&	HH cooperative approach	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Maize yield (kg/ac) 	&	287.097	&	-8.405			&	8.227	
-\backslash
-
-\backslash
- 	
-\end_layout
-
-\begin_layout Plain Layout
-
-&	(264.147)	&	(17.130)			&	(20.029)	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Age of HH head (years) 	&	39.833	&	3.897$^{**}$	&	-0.510	
-\backslash
-
-\backslash
- 	
-\end_layout
-
-\begin_layout Plain Layout
-
-&	(13.810)	&	(0.890)			&	(0.988)	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-HH head finshed primary school 	&	0.367	&	0.079$^{*}$	&	0.001	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-	&	(0.482)	&	(0.031)			&	(0.035)	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-HH size 	&	7.623	&	0.397$^{+}$	&	-0.089	
-\backslash
-
-\backslash
- 	
-\end_layout
-
-\begin_layout Plain Layout
-
-&	(3.306)	&	(0.214)			&	(0.248)	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Number of bedrooms	&	2.235	&	0.102			&	0.088	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-	&	(1.142)	&	(0.074)			&	(0.083)	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Access to extension last year 	&	0.110	&	-0.038$^{+}$	&	0.019	
-\backslash
-
-\backslash
- 	
-\end_layout
-
-\begin_layout Plain Layout
-
-&	(0.312)	&	(0.020)			&	(0.023)	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Has used fertilizer last season 	&	0.206	&	-0.055$^{*}$	&	-0.021	
-\backslash
-
-\backslash
- 	
-\end_layout
-
-\begin_layout Plain Layout
-
-&	(0.404)	&	(0.026)			&	(0.029)	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Has used improved seed last season 	&	0.382	&	-0.019			&	-0.005	
-\backslash
-
-\backslash
- 	
-\end_layout
-
-\begin_layout Plain Layout
-
-&	(0.486)	&	(0.031)			&	(0.035)	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-Distance nearest agro input shop (km) 	&	5.554	&	-0.365			&	0.259	
-\backslash
-
-\backslash
- 	
-\end_layout
-
-\begin_layout Plain Layout
-
-&	(5.536)	&	(0.358)			&	(0.393)	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-HH has mobile phone 	&	0.776	&	0.104$^{**}$	&	0.040	
-\backslash
-
-\backslash
- 	
-\end_layout
-
-\begin_layout Plain Layout
-
-&	(0.417)	&	(0.027)			&	(0.030)	
-\backslash
-
-\backslash
- 											
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-								
-\end_layout
-
-\begin_layout Plain Layout
-
-F-test	&		&	9.324$^{**}$			&	0.464	
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-P-value	&		&	0.000			&	0.936	
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Nobs	&	3,303	&	3,303			&	2,209	
-\backslash
-
-\backslash
- 	 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline 
-\backslash
-hline 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{tabular}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{center} 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-scriptsize  
-\end_layout
-
-\begin_layout Plain Layout
-
-Note: First column reports sample means (and standard deviations below);
- Column 2 reports differences (and standard errors below) between 
-\end_layout
-
-\begin_layout Plain Layout
-
-households where the information was given to the both spouses and households
- where the information was given to only one of the spouses (either husband
- or wife).
- Column 3 reports differences (and standard errors below) between households
- where a couple role model was used and households where a male role model
- was used.
- **, * and + denote that the difference is signficantly different from zero
- at the 1, 5 and 10 percent level, respectively.
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Both experiments are implemented using short videos that were shown to farmers
- on tablet computers.
- The videos were designed with a dual purpose in mind.
- First, the videos serve to transfer knowledge about recommended agronomic
- management practices and the use of modern technologies.
- It is shown how fields need to be prepared using organic fertilizer.
- Proper seed spacing and seeding rates and it importance are explained.
- furthermore, it is shown in detail how inorganic fertilizer needs to be
- applied and in what quantities.
- Furthermore, attention is devoted to identifying striga, a parasitic weed
- that affects maize yields in the area.
- We also devote ample attention to the importance of seed quality and recommend
- using hybrid seed or Open Pollinated Varieties (OPV).
- Other recommended practices include timely planting and weeding.
- Second, the information was packaged as an inspirational story of poor
- farmers that, over time, are able to break out of a poverty trap.
- The video starts with a farmer explaining that he used to struggle with
- low yields, producing barely enough food to feed his family, but that over
- the years, he learned how to increase the number of bags of maize produced
- on his maize plots.
- It is shown how the farmer starts using recommended practices on a small
- part of his land.
- It is also shown how he sells a chicken and borrows some money from a neighbor
- to buy improved seed and fertilizer.
- The return on this initial investment is then re-invested, and the viewer
- is taken through some basic inter-temporal cost-benefit calculations.
- The video ends by showing a happy farmer that assures the viewer that he
- or she can also become a successful farmer by following his example.
- 
-\end_layout
-
-\begin_layout Standard
-To answer the first research question–whether reducing information asymmetry
- within households is effective–we compare outcomes of households in which
- the couple (husband and wife together) is shown a video to outcomes of
- households in which with only one co-head of the household (husband or
- wife) is shown the video.
- To answer the second research question–whether promoting a household cooperativ
-e approach to farming is effective–we compare outcomes of households where
- an aspirational video was shown in which a man and woman participate as
- equals on the family farm and deliver the message as a couple to outcomes
- of households where where an aspirational video was shown featuring only
- a man.
+Farmers in our study area cultivate on average about 1.5 plots of maize.
+ Yields during the first season of 2017 were extremely low (about 270 kilograms
+ per acre) as a result of the Fall Armyworm invasion.
+ The baseline data also shows that the average household head is 40 years
+ old and only about 60 percent did not finish primary education.
+ The average household consists of almost 8 individuals.
+ Only 11 percent of households report that that had access to extension
+ in the year prior to the survey.
+ Only 17 percent used fertilizer on at least one plot, and 34 percent reported
+ to be using hybrid maize seed or an open pollinated variety.
+ About three quarters reported that the household had owned a mobile phone.
 \end_layout
 
 \begin_layout Section
 Results
+\end_layout
+
+\begin_layout Standard
+We now turn to an in depth analysis of the data that was collected at endline.
+ The focus is on spousal disagreement using own and cross reporting.
+ We start by looking at patterns in decision making about a series of important
+ maize cultivation practices.
+ We then turn time use, again disaggregated by a set of important tasks.
+ Finally, we look at market participation.
+ Under each heading, we provide a detailed descriptive analysis of disagreement
+ based on the entire sample, and then report on the findings from the two
+ treatment in the respective sub-samples.
 \end_layout
 
 \begin_layout Subsection
@@ -1333,7 +957,7 @@ In this section,we start by exploring patterns of decision making related
  to maize growing within the household.
  We asked the head of the household to list all maize plots that the household
  was cultivating during the season preceding the survey, which was the second
- agricultural seasons of 2018.
+ agricultural seasons of 2017.
  We then cycle through the different plots and repeat a series of questions
  for each plot.
  The same questions were asked separately to each co-head.
@@ -2487,7 +2111,7 @@ t level.
 \end_layout
 
 \begin_layout Subsection
-Shirking
+Labour time
 \end_layout
 
 \begin_layout Standard
@@ -4028,9 +3652,7 @@ www.cgiar.org/funders/).
  The analysis contained here is the sole responsibility of the authors,
  and does not reflect the views of any funding agency or organization mentioned
  here.
- The research was cleared by IFPRI's IRB (IRB #00007490 FWA #00005121) and
- was pre-registered (including a pre-analysis plan) at the AEA RCT registry
- (AEARCTR-0002153).
+ The research was cleared by IFPRI's IRB (IRB #00007490 FWA #00005121).
 \end_layout
 
 \begin_layout Standard
