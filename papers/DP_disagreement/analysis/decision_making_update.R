@@ -446,6 +446,8 @@ dta_bkp <- dta
 dta <- subset(dta, recipient == "couple")
 
 dta <- subset(dta, messenger != "ctrl")
+dta <- subset(dta, messenger != "female")
+
 
 ### decision making
 dec <- c("mgt","dectime", "decspace","decstriga", "decweed")
@@ -1068,10 +1070,171 @@ df_ols_2_inc[4,3,i] <- summary(ols)$coefficients[2, 2]
 df_ols_2_inc[5,3,i] <- summary(ols)$coefficients[2, 4]
 df_ols_2_inc[6,3,i] <- nobs(ols)
 
+dta <- read.csv("/home/bjvca/data/projects/digital green/papers/DP_disagreement/endline_dta.csv")
+dta <- subset(dta, interview_status == "couple interviewed")
+
+### creating the matrix
+### women take power
+i <- 1
+dec <- c("mgt","dectime", "decspace","decstriga", "decweed")
+
+dw_m <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_man_pl",sep="_") ,1:5,sep=""))]
+dm_w <- dta[c("hhid","messenger",paste(paste(dec[i],"man_woman_pl",sep="_") ,1:5,sep=""))]
 
 
+dta_long_w_m <- reshape(dw_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_man",sep="_") , idvar = "hhid")
+dta_long_m_w <- reshape(dm_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_woman",sep="_") , idvar = "hhid")
 
 
+dta_long <- merge(dta_long_w_m, dta_long_m_w)
+dta_long$differ <- NA
 
+dta_long$differ <- NA
+
+dta_long$differ <- unlist( (dta_long[paste(dec[i],"woman_man",sep="_")] ==1 &  dta_long[paste(dec[i],"man_woman",sep="_")] ==1 ) )
+prop.table(table(dta_long$differ))
+
+#cel 2
+
+### women take power
+db_m <- dta[c("hhid","messenger",paste(paste(dec[i],"both_man_pl",sep="_") ,1:5,sep=""))]
+dm_w <- dta[c("hhid","messenger",paste(paste(dec[i],"man_woman_pl",sep="_") ,1:5,sep=""))]
+
+
+dta_long_b_m <- reshape(db_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_man",sep="_") , idvar = "hhid")
+dta_long_m_w <- reshape(dm_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_woman",sep="_") , idvar = "hhid")
+
+
+dta_long <- merge(dta_long_b_m, dta_long_m_w)
+dta_long$differ <- NA
+
+dta_long$differ <- NA
+
+dta_long$differ <- unlist( (dta_long[paste(dec[i],"both_man",sep="_")] ==1 &  dta_long[paste(dec[i],"man_woman",sep="_")] ==1 ) )
+prop.table(table(dta_long$differ))
+
+#cel 3
+
+### women take power
+dm_m <- dta[c("hhid","messenger",paste(paste(dec[i],"man_pl",sep="_") ,1:5,sep=""))]
+dm_w <- dta[c("hhid","messenger",paste(paste(dec[i],"man_woman_pl",sep="_") ,1:5,sep=""))]
+
+
+dta_long_m_m <- reshape(dm_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man",sep="_") , idvar = "hhid")
+dta_long_m_w <- reshape(dm_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_woman",sep="_") , idvar = "hhid")
+
+
+dta_long <- merge(dta_long_m_m, dta_long_m_w)
+dta_long$differ <- NA
+
+dta_long$differ <- NA
+
+dta_long$differ <- unlist( (dta_long[paste(dec[i],"man",sep="_")] ==1 &  dta_long[paste(dec[i],"man_woman",sep="_")] ==1 ) )
+prop.table(table(dta_long$differ))
+
+#cel 4
+dw_m <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_man_pl",sep="_") ,1:5,sep=""))]
+db_w <- dta[c("hhid","messenger",paste(paste(dec[i],"both_woman_pl",sep="_") ,1:5,sep=""))]
+
+
+dta_long_w_m <- reshape(dw_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_man",sep="_") , idvar = "hhid")
+dta_long_b_w <- reshape(db_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_woman",sep="_") , idvar = "hhid")
+
+
+dta_long <- merge(dta_long_w_m, dta_long_b_w)
+dta_long$differ <- NA
+
+dta_long$differ <- NA
+
+dta_long$differ <- unlist( (dta_long[paste(dec[i],"woman_man",sep="_")] ==1 &  dta_long[paste(dec[i],"both_woman",sep="_")] ==1 ) )
+prop.table(table(dta_long$differ))
+
+#cel 5
+
+### women take power
+db_m <- dta[c("hhid","messenger",paste(paste(dec[i],"both_man_pl",sep="_") ,1:5,sep=""))]
+db_w <- dta[c("hhid","messenger",paste(paste(dec[i],"both_woman_pl",sep="_") ,1:5,sep=""))]
+
+
+dta_long_b_m <- reshape(db_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_man",sep="_") , idvar = "hhid")
+dta_long_b_w <- reshape(db_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_woman",sep="_") , idvar = "hhid")
+
+
+dta_long <- merge(dta_long_b_m, dta_long_b_w)
+dta_long$differ <- NA
+
+
+dta_long$differ <- unlist( (dta_long[paste(dec[i],"both_man",sep="_")] ==1 &  dta_long[paste(dec[i],"both_woman",sep="_")] ==1 ) )
+prop.table(table(dta_long$differ))
+
+#cel 6
+
+### women take power
+dm_m <- dta[c("hhid","messenger",paste(paste(dec[i],"man_pl",sep="_") ,1:5,sep=""))]
+db_w <- dta[c("hhid","messenger",paste(paste(dec[i],"both_woman_pl",sep="_") ,1:5,sep=""))]
+
+
+dta_long_m_m <- reshape(dm_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man",sep="_") , idvar = "hhid")
+dta_long_b_w <- reshape(db_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_woman",sep="_") , idvar = "hhid")
+
+
+dta_long <- merge(dta_long_m_m, dta_long_b_w)
+dta_long$differ <- NA
+
+
+dta_long$differ <- unlist( (dta_long[paste(dec[i],"man",sep="_")] ==1 &  dta_long[paste(dec[i],"both_woman",sep="_")] ==1 ) )
+prop.table(table(dta_long$differ))
+
+#cel 7
+dw_m <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_man_pl",sep="_") ,1:5,sep=""))]
+dw_w <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_pl",sep="_") ,1:5,sep=""))]
+
+
+dta_long_w_m <- reshape(dw_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_man",sep="_") , idvar = "hhid")
+dta_long_w_w <- reshape(dw_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman",sep="_") , idvar = "hhid")
+
+
+dta_long <- merge(dta_long_w_m, dta_long_w_w)
+dta_long$differ <- NA
+
+
+dta_long$differ <- unlist( (dta_long[paste(dec[i],"woman_man",sep="_")] ==1 &  dta_long[paste(dec[i],"woman",sep="_")] ==1 ) )
+prop.table(table(dta_long$differ))
+
+#cel 8
+
+### women take power
+db_m <- dta[c("hhid","messenger",paste(paste(dec[i],"both_man_pl",sep="_") ,1:5,sep=""))]
+dw_w <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_pl",sep="_") ,1:5,sep=""))]
+
+
+dta_long_b_m <- reshape(db_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"both_man",sep="_") , idvar = "hhid")
+dta_long_w_w <- reshape(dw_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman",sep="_") , idvar = "hhid")
+
+
+dta_long <- merge(dta_long_b_m, dta_long_w_w)
+dta_long$differ <- NA
+
+dta_long$differ <- unlist( (dta_long[paste(dec[i],"both_man",sep="_")] ==1 &  dta_long[paste(dec[i],"woman",sep="_")] ==1 ) )
+prop.table(table(dta_long$differ))
+
+#cel 9
+
+### women take power
+dm_m <- dta[c("hhid","messenger",paste(paste(dec[i],"man_pl",sep="_") ,1:5,sep=""))]
+dw_w <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_pl",sep="_") ,1:5,sep=""))]
+
+
+dta_long_m_m <- reshape(dm_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man",sep="_") , idvar = "hhid")
+dta_long_w_w <- reshape(dw_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman",sep="_") , idvar = "hhid")
+
+
+dta_long <- merge(dta_long_m_m, dta_long_w_w)
+dta_long$differ <- NA
+
+dta_long$differ <- NA
+
+dta_long$differ <- unlist( (dta_long[paste(dec[i],"man",sep="_")] ==1 &  dta_long[paste(dec[i],"woman",sep="_")] ==1 ) )
+prop.table(table(dta_long$differ))
 
 

@@ -128,7 +128,7 @@ thanks{Environment, Production and Technology Division, International Food
 
 \end_inset
 
-Grabbing, Shirking and Hiding: Spousal Disagreement among Ugandan Maize
+Boasting, Shirking and Hiding: Spousal Disagreement among Ugandan Maize
  farmers
 \end_layout
 
@@ -273,17 +273,19 @@ In addition to documenting patterns in spousal disagreement, the paper also
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
 We find substantial disagreement between spouses.
- 
-\end_layout
-
-\end_inset
-
-
+ For instance, we find that co-heads exaggerate their own decision making
+ power on almost one in four plots.
+ We find that the couple role model intervention reduces in the likelihood
+ that co-heads overestimate own influence on decision making.
+ We find similar effects from reducing information asymmetry between spouses.
+ We further find that male co-heads shirk more frequently than female co-heads.
+ There is weak evidence that both treatments reduce the incidence of male
+ co-head shirking, but only for one activity.
+ We also find that spouses report they sell about double of what the other
+ spouse is aware of.
+ The interventions did not affect the likelihood that spouses get a better
+ idea of each other's sales.
 \end_layout
 
 \begin_layout Standard
@@ -330,10 +332,10 @@ literal "false"
 \end_inset
 
  collect data from both spouses on a range of autonomy items, including
- the need of the woman to obtain the husband's permission to go to a set
- of places, the mother's capacity to decide on the children's affairs, if
- women are allowed to have a job, their role in deciding on the number of
- children and some household expenditure related decisions.
+ the need of the wife to obtain the husband's permission to go to a set
+ of places, the mother's capacity to decide on children's affairs, if the
+ wife is allowed to have a job, her role in deciding on the number of children
+ and some household expenditure related decisions.
 \end_layout
 
 \begin_layout Standard
@@ -341,7 +343,8 @@ A common finding in studies that ask the same set of questions to different
  individuals within the household is substantial disagreement between spouses,
  even on questions that would seem uncontroversial such as the number of
  children.
- This may indicate that part of this is simply due to measurement error.
+ This may indicate that part of this divergence is simply due to measurement
+ error.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -350,14 +353,11 @@ literal "false"
 
 \end_inset
 
- suggests that disagreement is also partly due the fact that that the response
+ suggests that disagreement is also partly due the fact that the response
  categories do not have the same cognitive or semantic meanings to men and
  women, leading to the somewhat pessimistic conclusion that survey questions
  are of limited utility for understanding differences in gender stratification
  across context.
- A number of studies investigate whether disagreement in responses of spouses
- on the same question means something, or if this should just be discounted
- as noise.
 \end_layout
 
 \begin_layout Standard
@@ -371,9 +371,9 @@ literal "false"
 
 , the primary focus is on testing if sole decision making correlates differently
  to a measure of autonomy than joint decision making.
- However, they note spouses often give inconsistent answers when asked who
- decided, and also consider how these correlations are affected by this
- disagreement between spouses.
+ However, they note spouses often give inconsistent answers when asked about
+ who made a particular decision, and also consider heterogeneity in the
+ relationship between decision making and autonomy conditional on disagreement.
  They conclude that disagreement may signal underlying power dynamics within
  the household that are likely to be relevant when assessing individual
  level agency and empowerment.
@@ -388,7 +388,7 @@ literal "false"
  study spousal disagreement among 500 couples in western Guatemala and correlate
  this to preventive health behaviour.
  They find that, relative to their husbands’ report, wives tend to under-report
- their household decision-making power.
+ their decision-making power.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -439,7 +439,7 @@ literal "false"
  for spousal disagreement.
  First, they note that if disagreement solely derives from measurement error,
  disagreement should be symmetric, and the female co-head's responses should
- not differ differ systematically from the male co-head's responses.
+ not differ systematically from the male co-head's responses.
  Secondly, they test for asymmetric measurement error, where men and women
  interpret questions differently.
  In this case, answers may differ systematically between spouses, but disagreeme
@@ -450,13 +450,8 @@ nt should be similar for the different questions asked in the survey.
  Using observational data on decision making and asset ownership in Bangladesh,
  they find that asymmetric information in the form of hidden assets and
  decisions is present in the households.
-\end_layout
-
-\begin_layout Standard
-However, while most studies on spousal disagreement seem to assume that
- information asymmetry is a sign that individuals hide resources or actions
- from other household members, information asymmetry does not always have
- to be the result of one spouse intentionally deceiving another.
+ However, we feel that information asymmetry does not always have to be
+ the result of one spouse intentionally deceiving another.
  There may be other systematic biases that manifest more in one asset or
  decision category than others and are shaped by prevailing gender norms.
  For example, 
@@ -500,7 +495,7 @@ taking power
 \begin_inset Quotes erd
 \end_inset
 
-, while in the second case women are 
+, while in the second case women are said to be 
 \begin_inset Quotes eld
 \end_inset
 
@@ -533,7 +528,7 @@ These days, most studies that focus on decision making acknowledge that
 \end_inset
 
  Questions related to asset ownership also generally take a binary nature,
- asking for each asset if the respondent owns it but also requiring if the
+ asking for each asset if the respondent owns it but also inquiring if the
  spouse owns it.
  Some studies go further and try to put amounts on this.
  For example 
@@ -547,7 +542,7 @@ literal "false"
  uses the husband's own reporting of his own farm income and compares this
  to the wife’s reporting of the husband's farm income to identify income
  hiding by men.
- She finds that the women's estimate farm income is on average 28 thousand
+ She finds that the women's estimate of farm income is on average 28 thousand
  Cedis lower than what men report, representing 14 per cent of household
  income.
  In Malawi, 
@@ -584,11 +579,18 @@ literal "false"
 
 \begin_layout Section
 Experimental design and Interventions
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Experimental-design-and"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 The emerging literature on spousal disagreement suggests at least two underlying
- mechanism.
+ mechanisms.
  First, to some extent, spousal disagreement may reflect different cognitive
  understandings of the responses categories and what the appropriate response
  should be 
@@ -612,7 +614,7 @@ literal "false"
 .
  A first treatment therefore attempts to challenge pre-conceived ideas of
  what decision making of a spouse involves and who is expected to make decisions
- in a farm household.
+ in a farm household by promoting a cooperative approach to maize farming.
  Second, the literature also establishes that spousal disagreement reflects
  information asymmetry between spouses 
 \begin_inset CommandInset citation
@@ -629,18 +631,17 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-At the heart of both treatments is a short video that is shown to individuals
- within households using tablet computers.
+At the heart of both treatments is a short video that is shown twice to
+ individuals within households using tablet computers.
  The aim of the video was to increase knowledge of the viewer with respect
  to best practices in maize farmer, such as timely planting, row planting
  and the use of improved inputs such hybrid seed and inorganic fertilizer.
  It does this though an inspirational story where a farmer (or farmers)
  recount how he/she/they used to be poor but managed to increase yields
  over time by applying a set of techniques and inputs.
- It thus encourages farmers to view maize growing as a business that needs
- investment to grow over time.
- Some simple inter-temporal cost-benefit calculations are use to illustrate
- this.
+ It also encourages farmers to view maize growing as a business that needs
+ investment to grow over time and some simple inter-temporal cost-benefit
+ calculations are use to illustrate this.
  Viewers are encouraged to follow the example of the model farmer in the
  video if they also want to lead the good life.
  The treatments itself consist of slightly adapted version of the video
@@ -746,23 +747,12 @@ To test the hypothesis that spouses disagree less if they view farming as
  a collective activity, we randomly selected 261 households from our sample
  and showed them (male and female co-heads together) a version of the video
  where a couple is depicted.
- In another random sample of 475 households, we showed exactly the same
- video, except for the fact that it only featured a single actor: either
- a man or a woman.
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-We made sure that in about half of the cases this was an actor alone and
- in the other half an actress alone.
-\end_layout
-
-\end_inset
-
+ In another random sample of 240 households, we showed exactly the same
+ video, except for the fact that it only featured a single male actor.
  As the only difference between the two videos was the fact that in one
- video a single actor appeared and in the other a couple was shown, any
- difference in outcomes between the two groups should be attributed to a
- couple role model effect.
+ video a single male actor appeared and in the other a couple was shown,
+ any difference in outcomes between the two groups should be attributed
+ to a couple role model effect.
 \end_layout
 
 \begin_layout Subsection
@@ -773,14 +763,13 @@ Information asymmetry
 Smallholder agricultural households consist of different individuals, each
  with their own preferences, skills and access to assets.
  At the same time, individuals also need to invest in common goods for the
- survival of both the unit and its members.
- There are also various shared assets and resources from which individual
- household members draw.
- As such, households can be considered as institutions, governed by its
- own rules with members that have a particular place within the hierarchy.
- The means that many of the problems encountered in common pool resource
- management and collective action, such as free-riding and over-extraction
- of resources also apply within the household 
+ survival of both the household as a unit and its members.
+ In households, there are also various shared assets and resources from
+ which individual household members draw.
+ As such, households can be considered as informal institutions, and many
+ of the problems encountered in common pool resource management and collective
+ action, such as free-riding and over-extraction of resources also apply
+ within the household 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doss2015collective"
@@ -813,7 +802,7 @@ One way in which collective action problems can be attenuated is through
 \begin_layout Standard
 In a second treatment, we therefore make sure both co-heads start off with
  the same information with respect to best agronomic practices, as this
- will enable increased mutual monitoring.
+ facilitates mutual monitoring.
  To do so, we show the video that showcases best practices in maize farming
  to both spouses in a random sample of 261 households.
 \begin_inset Foot
@@ -821,7 +810,7 @@ status collapsed
 
 \begin_layout Plain Layout
 We show the version of the video that features a couple (male and female
- co-head), that is the video used in the treatment group of the previous
+ co-head), that is, the video used in the treatment group of the previous
  treatment.
 \end_layout
 
@@ -833,8 +822,8 @@ We show the version of the video that features a couple (male and female
 status collapsed
 
 \begin_layout Plain Layout
-We again made sure that in about half of the cases the video was shown to
- the male co-head alone and in the other half of cases to the female co-head
+We made sure that in about half of the cases the video was shown to the
+ male co-head alone and in the other half of cases to the female co-head
  alone.
 \end_layout
 
@@ -846,7 +835,7 @@ We again made sure that in about half of the cases the video was shown to
 \end_layout
 
 \begin_layout Section
-Study context,
+Study context
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Study-context,-Interventions"
@@ -857,43 +846,52 @@ name "sec:Study-context,-Interventions"
 \end_layout
 
 \begin_layout Standard
-The study involved a among a random sample of maize farmers in eastern Uganda,
- an area that is know for its maize production.
+The study involved a random sample of maize farmers in eastern Uganda, an
+ area that is know for its maize production.
  Two-stage cluster sampling was used to obtain a representative sample of
  this population.
  In particular, from five districts (Bugiri, Mayuge, Iganga, Namayingo,
  and Namutumba), we first selected 50 parishes randomly and in proportion
  to the number of villages within each parish.
  In the selected parishes, all villages were included in the study.
- Within each village, we then listed all the households, from which we sampled
- 10 households to be included in the study.
+ Within each village, we then listed all the households, and in each village
+ we sampled 10 households to be included in the study.
  This resulted in a total sample size of 3,280 households.
- However, to investigate cooperation within the household, we only use household
-s where we managed to interview both spouses separately, which was the case
- in 2,548 households.
- The intervention was only implemented on a subset of the data.
+ However, in an about 23 percent of the households, we were unable to interview
+ both spouses separately, resulting in an effective sample of 2,548 households.
+ The interventions described in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Experimental-design-and"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ were implemented in random subsets of this sample.
 \end_layout
 
 \begin_layout Standard
 We focus on the second maize growing season of 2017, which runs from about
- August, when fields are prepared to January when harvesting is done in
- higher altitude areas.
- The video intervention happened twice, once in August when farmers were
- preparing and once in September during planting time.
- Concurrent with the first treatment, we also collected some information
- on household characteristics and on the previous harvest, which was the
- first harvesting season of 2017.
+ August 2017, when fields are prepared to January 2018 when harvesting is
+ done in higher altitude areas.
+ The video intervention happened twice, once in August 2017 when farmers
+ were preparing and one month later during planting time.
+ Concurrent with the first treatment administration in 2017, we also collected
+ some information on household characteristics and on the previous harvest,
+ which was the first harvesting season of 2017.
 \end_layout
 
 \begin_layout Standard
-Farmers in our study area cultivate on average about 1.5 plots of maize.
+Farmers in our study area cultivated on average about 1.5 plots of maize.
  Yields during the first season of 2017 were extremely low (about 270 kilograms
  per acre) as a result of the Fall Armyworm invasion.
  The baseline data also shows that the average household head is 40 years
- old and only about 60 percent did not finish primary education.
+ old and about 60 percent did not finish primary education.
  The average household consists of almost 8 individuals.
- Only 11 percent of households report that that had access to extension
- in the year prior to the survey.
+ Only 11 percent of households report that that had access to agricultural
+ extension in the year prior to the survey.
  Only 17 percent used fertilizer on at least one plot, and 34 percent reported
  to be using hybrid maize seed or an open pollinated variety.
  About three quarters reported that the household had owned a mobile phone.
@@ -908,7 +906,8 @@ We now turn to an in depth analysis of the data that was collected at endline.
  The focus is on spousal disagreement using own and cross reporting.
  We start by looking at patterns in decision making about a series of important
  maize cultivation practices.
- We then turn time use, again disaggregated by a set of important tasks.
+ We then turn to time use, again disaggregated over a set of important tasks
+ in maize cultivation.
  Finally, we look at market participation.
  Under each heading, we provide a detailed descriptive analysis of disagreement
  based on the entire sample, and then report on the findings from the two
@@ -953,8 +952,8 @@ source(paste(path,"analysis/decision_making_update.R
 \end_layout
 
 \begin_layout Standard
-In this section,we start by exploring patterns of decision making related
- to maize growing within the household.
+We start by exploring patterns of decision making related to maize growing
+ within the household.
  We asked the head of the household to list all maize plots that the household
  was cultivating during the season preceding the survey, which was the second
  agricultural seasons of 2017.
@@ -968,8 +967,8 @@ In this section,we start by exploring patterns of decision making related
  interviewed alone; by the spouse of the person interviewed alone; by the
  person interviewed and his or her spouse jointly; by someone else inside
  or outside the household; by the person interviewed together with someone
- else inside or outside the household; or by the spouse jointly with someone
- else inside or outside the household.
+ else inside or outside the household; or by the spouse of the person interview
+ jointly with someone else inside or outside the household.
  Respondents could also indicate that they did not know who made the decision.
  
 \end_layout
@@ -979,7 +978,7 @@ We start by looking at the responses given by the male co-heads within the
  household (Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Joint-decision-making"
+reference "fig:decision_male_reporting"
 plural "false"
 caps "false"
 noprefix "false"
@@ -987,8 +986,8 @@ noprefix "false"
 \end_inset
 
 ).
- The first decision we consider was simply who decided maize should be planted
- on the particular plot.
+ The first decision we consider was simply who decided that maize should
+ be planted on the particular plot.
  A second decision is related to timing of planting.
  Timely planting of maize is very important for subsequent maize yields.
  Maize planting should start immediately after the first rains of the season,
@@ -1007,7 +1006,8 @@ noprefix "false"
  gap filling when seeds do not germinate after one week.
  We also asked who made decisions related to weed control.
  For weeding, we differentiate between decision making related to strategies
- used to combat striga infestations and weeding more general.
+ used to combat striga infestation (a parasitic weed that feeds off the
+ roots of the maize plant) and weeding more general.
  
 \end_layout
 
@@ -1015,14 +1015,14 @@ noprefix "false"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename results/decsion_activities_update_man.png
 	lyxscale 10
-	scale 75
+	scale 50
 
 \end_inset
 
@@ -1037,7 +1037,7 @@ Decision making on different practices and inputs as reported by the male
  co-head
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Joint-decision-making"
+name "fig:decision_male_reporting"
 
 \end_inset
 
@@ -1058,7 +1058,7 @@ name "fig:Joint-decision-making"
 Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Joint-decision-making"
+reference "fig:decision_male_reporting"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1074,7 +1074,7 @@ noprefix "false"
  The pattern seems to be rather consistent across the different decision
  spheres.
  For the decision on how to fight striga, the percentage drops to 42 percent,
- but this is due to the fact that part of the plots, striga was not a problem
+ but this is due to the fact that on some plots striga was not a problem
  and so no decision needed to be made.
 \end_layout
 
@@ -1093,19 +1093,6 @@ The figure also shows that on one out of three plots, the male co-head states
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-[how does this compare to other countries?]
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -1116,7 +1103,7 @@ status open
 \begin_inset Graphics
 	filename results/decsion_activities_update_woman.png
 	lyxscale 10
-	scale 75
+	scale 50
 
 \end_inset
 
@@ -1131,7 +1118,7 @@ Decision making on different practices and inputs as reported by the female
  co-head
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Joint-decision-making-woman"
+name "fig:decision_woman_reporting"
 
 \end_inset
 
@@ -1152,7 +1139,7 @@ name "fig:Joint-decision-making-woman"
 Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Joint-decision-making-woman"
+reference "fig:decision_woman_reporting"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1162,7 +1149,7 @@ noprefix "false"
  is similar to Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Joint-decision-making"
+reference "fig:decision_male_reporting"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1195,7 +1182,7 @@ Women also report that it is more common that men take decisions alone than
 A comparison between Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Joint-decision-making"
+reference "fig:decision_male_reporting"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1205,7 +1192,7 @@ noprefix "false"
  and Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Joint-decision-making-woman"
+reference "fig:decision_woman_reporting"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1224,8 +1211,8 @@ y took the decision to plant maize on only 27 percent of the plots.
 \end_layout
 
 \begin_layout Standard
-To investigate this disagreement further, we can construct measures based
- on answers of both spouses.
+To investigate this disagreement further, we construct measures based on
+ answers of both spouses.
  As there are a large number of potential response combinations, it is customary
  to collapse responses into a few meaningful categories to reduce noise
  and facilitate analysis.
@@ -1238,9 +1225,14 @@ literal "false"
 \end_inset
 
  define a variable for cases where the wife says that she is involved (alone
- or joint), but the husband says she is not and a variable for cases where
- the husband says the wife is involved but she reports that she is not.
- In this study, we follow 
+ or jointly as part of the couple), but the husband says she is not, and
+ a variable for cases where the husband says the wife is involved but she
+ reports that she is not.
+ 
+\end_layout
+
+\begin_layout Standard
+In this study, we follow 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "ANNAN2021105292"
@@ -1248,18 +1240,82 @@ literal "false"
 
 \end_inset
 
- and define plots on which co-heads overestimate their own role in decision
- making.
- These are instances where the one co-head responds that decisions are made
- by him or her alone, but the spouse says she or he was involved (either
- alone or as part of the couple), and instances where the co-head says decisions
- were taken jointly but the spouse says she or he took the decisions alone.
- We further define instances where co-heads underestimate their own role
+ and define plots on which co-heads over or underestimate their own role
  in decision making.
+ Cases where co-heads over estimate their decision making power are indicated
+ in the dark shaded area at the right of the agreement diagonal in Figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Agreement-matrix"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ These are instances where one co-head claims that decisions are made by
+ him or her alone, but the spouse says disagrees and claims that she or
+ he took the decision alone or was at least involved in it.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Agreement-matrix"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that for the decision to plant maize on the plot, following this
+ definition, co-heads overestimate their own decision power on 23.3 percent
+ of the plots in our sample: on 5.3 percent of plots the male or female co-head
+ says he or she made the decision to plant maize but the other disagrees
+ and claims it is her or him who decided unilaterally; on 5.9 percent of
+ plots the male co-head says he was involved in the decision but the female
+ co-head says she took the decision alone; and on 12.1 percent of plots the
+ female co-head says she was involved in the decision but the male co-head
+ says he took the decision alone.
+\end_layout
+
+\begin_layout Standard
+We further define instances where co-heads underestimate their own role
+ in decision making.
+ These are cases in the light shaded area to the left of the diagonal in
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Agreement-matrix"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
  These are cases where one co-head says his or her spouse decided unilaterally,
- but the spouse says the co-head was involved (either alone or as part of
- the couple), and cases where the co-head says the decision was made jointly,
- but the spouse says the co-head took the decision alone
+ but the spouse disagrees and says the co-head took the decision alone,
+ or was at least involved in the decision.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Agreement-matrix"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that for the decision to plant maize on the plot, following this
+ definition, co-heads underestimate their own decision power on 17.6 percent
+ of the plots in our sample: on 2.7 percent of plots the male or female co-head
+ says the other co-head made the decision to plant maize but the other co-head
+ disagrees; on 4.0 percent of plots the male co-head says his spouse took
+ the decision alone but the wife says he was involved; and in 10.9 percent
+ of the cases the female co-head says the husband took the decision to plant
+ maize unilaterally, but the husband disagrees and claims his wife was involved.
+ 
 \begin_inset Foot
 status collapsed
 
@@ -1289,9 +1345,10 @@ giving power
 
  to the female co-head.
  These terms are somewhat contentious, as such an interpretation rests on
- assumptions.
+ additional assumptions.
  For instance, in cases where both spouses indicate that they themselves
- took a particular decision, the interpretation that the women 
+ took a particular decision unilaterally, the interpretation that the women
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1303,13 +1360,70 @@ takes power
  with, and we believe that the female co-head is correct while the male
  co-head is not (assuming that they can not both have taken the decision
  unilaterally).
- 
+ Also, if in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Agreement-matrix"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ in 5.9 percent of cases women claim power, it seems that in the absence
+ of additional assumptions by symmetry, in 12.1 percent of cases men are
+ claiming power.
 \end_layout
 
 \end_inset
 
 .
- 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename results/matrix_agreement.png
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Agreement matrix
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Agreement-matrix"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1323,26 +1437,40 @@ noprefix "false"
 
 \end_inset
 
- shows that on about 11 percent of all plots, the male co-head thinks he
- was involved in the decision to plant maize on the plot, while women claim
- they made the decision alone.
- At the same time, we see that on about 17 percent of all plots, the female
- co-head thinks she was involved in the decision to plant maize, but the
- male co-head indicates he made the decision alone.
+ shows the frequency of overestimation and underestimation of decision power
+ for the five decision categories.
+ The first two bars refer to the decision to plant maize and correspond
+ to the information also provided in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Agreement-matrix"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+: on 23.3 percent of the plots spouses overestimate and on 17.6 percent of
+ the plots spouses underestimate their contribution to the decision to plant
+ maize.
+ The Figure further shows that spouses are more likely to exaggerate their
+ their role in decision making than to underestimate their contribution.
+ Especially for weeding (and related striga weeding) the locus of decision
+ making is in the self.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename results/decsion_activities_joint_deception.png
 	lyxscale 10
-	scale 75
+	scale 50
 
 \end_inset
 
@@ -1407,10 +1535,9 @@ noprefix "false"
 
 \end_inset
 
- shows that among household where a video was shown where one individual
- provided the information (the control group), on about 10 percent of the
- plots the female co-head says she took the decision to plant maize alone
- while the male co-head thinks he was involved in this decision 
+ shows that among household where a video was shown where a male actor provided
+ the information (the control group), on about 23.5 percent of the plots
+ co-heads overestimate their own contribution in the decision to plant maize
 \begin_inset Foot
 status collapsed
 
@@ -1432,23 +1559,36 @@ noprefix "false"
 
 .
  The second column shows the average treatment effect of the treatment and
- reveals that there is no effect of the treatment on this outcome.
+ reveals that there is no effect of the treatment on this measure of disagreemen
+t.
  This comparison between those who saw the couple video and those who saw
  a video with a single actor is repeated for all five decision spheres.
- We do find a significant impact of the intervention on the the likelihood
- that women disagree that the man was involved in decisions related to weeding.
- Here we see that among households where the video was shown with a single
- actor providing all the information, women say they took the decision related
- to weeding alone while men think they were involved on 12.5 percent of plots.
- Among households that were exposed to the video the features a couple,
- this type of disagreement occurs on only 8.4 percent of plots.
+ 
+\end_layout
+
+\begin_layout Standard
+We do find significant reductions in the likelihood that co-head overestimate
+ own influence as a result of the couple role model intervention for the
+ decisions on when to start planting and on weeding.
+ For the timing on planting, we see that among households where the video
+ featuring only a male farmer was shown, co-heads overestimate their involvement
+ in this decision on 22.5 percent of plots.
+ In households that were exposed to the couple role model video, the share
+ of plots where co-heads overestimate their involvement in this decision
+ is only 16.9 percent.
+ For the decision related to weeding, we see that in the control group,
+ overestimation of own influence affects 25.6 percent of the plots, but this
+ happens on only 19.3 percent of the plots in the group that was exposed
+ to the couple role model video treatment.
+ Average treatment effect estimates for all other decision categories are
+ also negative, but not significantly different from zero.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
 wide false
-sideways false
-status collapsed
+sideways true
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1475,9 +1615,6 @@ status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-scriptsize
 \end_layout
 
 \begin_layout Plain Layout
@@ -1517,7 +1654,7 @@ textit{couple role model}} & &
 \backslash
 multicolumn{4}{c}{
 \backslash
-textit{couple information}}
+textit{information asymmetry}}
 \backslash
 
 \backslash
@@ -2008,18 +2145,34 @@ end{center}
 
 \begin_layout Plain Layout
 
+
+\backslash
+scriptsize
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports sample means (and standard deviations below);
- Column 2 reports differences (and standard errors below) between 
-\end_layout
-
-\begin_layout Plain Layout
-
-households  **, * and + denote that the difference is signficant at the
- 1, 5 and 10 percent level, respectively.
+Note: First column reports mean rates of overestimation in decsion making
+ power in the control group for the couple role model treatment (and standard
+ deviations below); Column 2 reports differences in rates of overestimation
+ in decsion making power between treatment and the control group for the
+ couple role model treatment (and standard errors below); cloumn 3 reports
+ mean rates of underestimation in decsion making power in the control group
+ for the couple role model treatment (and standard deviations below); column
+ 4 reports differences in rates of underestimation in decsion making power
+ between treatment and the control group for the couple role model treatment(and
+ standard errors below); column 5 shows mean rates of overestimation in
+ decsion making power in the control group for the information asymmetry
+ treatment (and standard deviations below); Column 6 reports differences
+ in rates of overestimation in decsion making power between treatment and
+ the control group for the information asymmetry treatment (and standard
+ errors below); cloumn 7 reports mean rates of underestimation in decsion
+ making power in the control group for the information asymmetry treatment
+ (and standard deviations below); column 8 reports differences in rates
+ of underestimation in decsion making power between treatment and the control
+ group for the information asymmetry  treatment (and standard errors below);
+ **, * and + denote that the difference is signficant at the 1, 5 and 10
+ percent level, respectively.
  
 \end_layout
 
@@ -2035,27 +2188,14 @@ households  **, * and + denote that the difference is signficant at the
 
 \begin_layout Standard
 In the third column, we report control group means for the share of plots
- on which women claim they were involved in decision making but men say
- they took the decision unilaterally.
- Again in line with Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Joint-decision"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-, we see for instance that this type of disagreement on when to plant maize
- applies to about 18 percent of the plots.
- The fourth column shows that disagreement on the timing reduced by 6.3 percentag
-e points among households that received the couple role model treatment.
- We also see a significant reduction in men disagreeing that women were
- involved in decisions related to spacing of maize seed.
- More generally, for the couple role model treatment, while not all coefficients
- are statistically significant, they are all negative, indicating that the
- treatment reduced disagreement with respect to decision making.
+ on which spouses underestimate own decision making power.
+ We see that in the control group the decision to plant maize is affected
+ by this type of disagreement on 13.7 percent of the plots.
+ The fourth column shows the difference in this type of disagreement between
+ households that received the couple role model treatment and those who
+ did not.
+ Overall, we do not find that the treatment reduced the likelihood that
+ spouses underestimate own decision making.
 \end_layout
 
 \begin_layout Standard
@@ -2073,23 +2213,24 @@ noprefix "false"
 \end_inset
 
  show that in households where only one of the co-heads was exposed to the
- video, the female co-head said she decided to plant maize alone while the
- male co-head thought he was involved in this decision on about 13 percent
- of the plots.
- Column 6 indicates that this percentage was 3.1 percentage points lower
- among households where both spouses was shown the video, although the reduction
- in disagreement is not statistically different from zero.
- We do, however, find significant reductions in this type of disagreement
- for decisions related to spacing and weeding among households where both
- spouses were treated with the video.
+ video, spouses overestimate their own influence on the decision to plant
+ maize on the plot on 23.5 percent of the plots.
+ Column 6 indicates that this percentage was 5.0 percentage points lower
+ among households where both spouses were shown the video, and this reduction
+ is statistically different from zero at the 5 percent significance level.
+ We also find that on decisions related to the timing of planting and weeding,
+ making sure spouses start off with the same information leads to a reduction
+ in the likelihood that one spouse assigns him or herself more decision
+ power than the other spouse claims.
+ 
 \end_layout
 
 \begin_layout Standard
 In the last two columns, we look at the impact of providing both spouses
- with the same information on the likelihood that the male co-head says
- he took the decision alone while the female co-head thinks she was involved.
- Control group means are again in close to what we find in the entire sample
- (Figure 
+ with the same information on the likelihood that one spouse gives too much
+ credit to the other spouse.
+ Control group means, shown in column 7, are again in close to what we find
+ in the entire sample depicted in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Joint-decision"
@@ -2099,15 +2240,25 @@ noprefix "false"
 
 \end_inset
 
-).
- We find again that disagreement reduced somewhat as a result of targeting
- both spouses with information, but only for decisions relate to the timing
- of planting and the difference is only significant at the 10 percent significan
-t level.
- However, also for this treatment, all but one of the coefficients are estimated
- negative, suggesting that overall, targeting the couple with information
- instead on only one co-head reduced disagreement with respect to decision
- making in agriculture.
+.
+ The last column shows that the likelihood that spouses underestimate their
+ own contribution reduces as a result of providing both spouses with the
+ same information, but the effect is never significant.
+ Overall, we conclude that both treatment are effective in reducing the
+ likelihood that that spouses overestimate their own role in decision making.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+How can we interpret this? Especially the strong effects for the second
+ treatment: Why would an increase in monitoring lead to a reduction that
+ spouses overestimate their own decision making power? What are the mechanisms
+ here?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2122,8 +2273,6 @@ We also collected detailed information on labour.
  spouse worked on the plot on that particular task.
  The activities we inquired about are land preparation, planting, weeding,
  spraying and harvesting.
- Weeding happens at three different times, but is aggregated into one measure
- for this analysis.
 \end_layout
 
 \begin_layout Standard
@@ -2147,7 +2296,8 @@ noprefix "false"
  or fungicides.
  The average male co-head in our sample thus reports to work about 28 days
  on the average plot over the entire agricultural season.
- He reports that women work about 26 days on that plot over the entire season.
+ He reports that his wife works about 26 days on that plot over the entire
+ season.
 \end_layout
 
 \begin_layout Standard
@@ -2161,7 +2311,7 @@ status open
 \begin_inset Graphics
 	filename results/labour_time_man.png
 	lyxscale 10
-	scale 75
+	scale 50
 
 \end_inset
 
@@ -2215,15 +2365,17 @@ noprefix "false"
 
 , but now as reported by the female co-head within the household.
  Interestingly, while male co-heads think they spent more time on all activities
-, female co-heads are also of the opinion that they work harder than men
- on all activities, the only exception being spraying.
+, female co-heads are also of the opinion that they work harder than their
+ spouse on all activities, the only exception being spraying.
  Female co-heads claim they work on average about 7 to 8 days on field preparati
-on on a plot, while they think the male co-head only work 6 days.
+on on a plot, while they think the male co-head only works 6 days on field
+ preparation.
  Female co-heads also indicate that they spend 16.5 days on weeding, while
- men spend only 13.5 days on that activity.
- Male and female co-heads spend about the same time on planting and harvesting.
- Only for spraying, they agree that the male co-head provides most of the
- work.
+ they report that their spouse spend only 13.5 days on that activity.
+ According to women, male and female co-heads spend about the same time
+ on planting and harvesting.
+ Only for spraying, co-heads agree that the male co-head provides most of
+ the work.
  According to the female co-head, she works almost 30 days, while the male
  co-head works about 25 days over the entire season.
 \end_layout
@@ -2239,7 +2391,7 @@ status open
 \begin_inset Graphics
 	filename results/labour_time_woman.png
 	lyxscale 10
-	scale 75
+	scale 50
 
 \end_inset
 
@@ -2304,11 +2456,12 @@ noprefix "false"
 While on average, spouses tend to overestimate their own labour and underestimat
 e their spouses labour, there is also a substantial part of the sample where
  a co-head reports to work less than what the other thinks.
- We will refer to this type of disagreement in labour reported as shirking.
- For the analysis, we define shirking as a simple binary event where a male
- co-head shirks on a particular activity if he reports he worked fewer hours
- than his wife thinks.
- A female co-head shirks if she works less than the male co-head thinks.
+ This type of disagreement in labour reported may signal some level of shirking.
+ For the analysis, we define shirking as a simple binary variable where
+ a male co-head shirks on a particular activity if he reports he worked
+ fewer hours than his wife thinks he did.
+ A female co-head shirks if she works less than the male co-head thinks
+ she did.
  
 \end_layout
 
@@ -2323,7 +2476,7 @@ noprefix "false"
 
 \end_inset
 
- shows shirking by spouses.
+ shows the incidence of shirking by male and female co-heads.
  For example, we find that on about 30 percent of the plots, the male co-head
  spends less time preparing the land than the female co-head thinks he does.
  For the task of preparing the land, women shirk slightly more.
@@ -2345,7 +2498,7 @@ status open
 \begin_inset Graphics
 	filename results/shirking.png
 	lyxscale 10
-	scale 75
+	scale 50
 
 \end_inset
 
@@ -2387,16 +2540,28 @@ noprefix "false"
 
 \end_inset
 
- reports on the impact of the role model intervention (left) and the interventio
-n aimed at increasing information symmetry (right) on shirking for different
- tasks.
- 
+ reports on the impact of the role model intervention (left panel) and the
+ intervention aimed at increasing information symmetry (right panel) on
+ male co-head and female co-head shirking behaviour disaggregated by the
+ different tasks.
+ We see for instant that in the control group of households that got to
+ see the video where a male actor is providing all the information, on about
+ 18 percent of the plots male co-heads indicate that they spent less time
+ on spraying the plot than their wife thinks he does.
+ The second column reveals a significant treatment effect of the couple
+ role model video on the likelihood that men shirk on this activity.
+ In the treatment group, the incidence of male shirking on spraying reduced
+ by 5.3 percentage points.
+ However, we only find an effect for spraying, and no clear pattern for
+ the impact of the first intervention on male shirking on other activities.
+ We do not find any effect of the couple video intervention on female shirking
+ (column 4).
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
 wide false
-sideways false
+sideways true
 status collapsed
 
 \begin_layout Plain Layout
@@ -2424,9 +2589,6 @@ status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-scriptsize
 \end_layout
 
 \begin_layout Plain Layout
@@ -2466,7 +2628,7 @@ textit{couple role model}} & &
 \backslash
 multicolumn{4}{c}{
 \backslash
-textit{couple information}}
+textit{information asymmetry}}
 \backslash
 
 \backslash
@@ -2933,18 +3095,31 @@ end{center}
 
 \begin_layout Plain Layout
 
+
+\backslash
+scriptsize
 \end_layout
 
 \begin_layout Plain Layout
 
-Note: First column reports sample means (and standard deviations below);
- Column 2 reports differences (and standard errors below) between 
-\end_layout
-
-\begin_layout Plain Layout
-
-households  **, * and + denote that the difference is signficant at the
- 1, 5 and 10 percent level, respectively.
+Note: First column reports mean rates of male shirking in the control group
+ for the couple role model treatment (and standard deviations below); Column
+ 2 reports differences in rates of male shirking between treatment and the
+ control group for the couple role model treatment (and standard errors
+ below); cloumn 3 reports mean rates of female shirking in the control group
+ for the couple role model treatment (and standard deviations below); column
+ 4 reports differences in rates of female shirking between treatment and
+ the control group for the couple role model treatment(and standard errors
+ below); column 5 shows mean rates of male shirking in the control group
+ for the information asymmetry treatment (and standard deviations below);
+ Column 6 reports differences in rates of male shirking between treatment
+ and the control group for the information asymmetry treatment (and standard
+ errors below); cloumn 7 reports mean rates of female shirking in the control
+ group for the information asymmetry treatment (and standard deviations
+ below); column 8 reports differences in rates of female shirking between
+ treatment and the control group for the information asymmetry  treatment
+ (and standard errors below); **, * and + denote that the difference is
+ signficant at the 1, 5 and 10 percent level, respectively.
  
 \end_layout
 
@@ -2958,16 +3133,44 @@ households  **, * and + denote that the difference is signficant at the
 
 \end_layout
 
+\begin_layout Standard
+A similar negative effect on male shirking related to spraying in the field
+ emerges from the second treatment: while men in households where only one
+ spouse saw the video report less time spent on this activity then their
+ wives think on 19.9 percent of the plots, this happens on only 12.8 percent
+ of the plots in households where both spouses were exposed to the video.
+ Interestingly, we also find that reducing asymmetric information within
+ the household increases male co-head shirking on weeding.
+ As was the case for the first treatment, the second treatment does not
+ seem to affect shirking by the female co-head.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+How can we explain that the strongest reductions are found for reducing
+ information asymmetry related to spraying while we do not provide any informati
+on on spraying in the video?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Income hiding
 \end_layout
 
 \begin_layout Standard
-Finally, we look at maize sales.
- Also here, we asked each spouse separately how much maize was sold from
- the season under consideration.
+Finally, we look at maize marketing.
+ We asked each spouse separately how much maize was sold from the season
+ under consideration.
  In particular, we asked each of the spouses separately to estimate how
- much was sold by (1) him or her, (2) by his or her spouse, and (3) jointly
+ much was sold by (1) him or her alone, (2) by his or her spouse alone,
+ and (3) jointly
 \begin_inset Foot
 status collapsed
 
@@ -2980,12 +3183,11 @@ We specify that sales by an individuals means all decisions regarding quantity,
 \end_inset
 
 .
- We also asked them to indicate the revenue that was derived from these
- sales.
-\end_layout
-
-\begin_layout Standard
-Men report that households sold on average 1.4 bags of maize as a couple
+ We also asked both co-heads to indicate the revenue that was derived from
+ these sales.
+ Overall, just as in the case of decision making related to maize cultivation,
+ most maize marketing happens as a couple.
+ Men report that households sold on average 1.4 bags of maize as a couple
 \begin_inset Foot
 status collapsed
 
@@ -3000,12 +3202,8 @@ A typical bag contains about 120 kilograms of maize.
  Averaged over the entire sample, joint sales amounted to about 23 dollars,
  at least as reported by the male co-head.
  Women estimated this amount much lower at 13 dollars.
- 
-\end_layout
-
-\begin_layout Standard
-As this paper is more about spousals disagreement, we focus on unilateral
- sales as reported by both spouses.
+ However, as we are particularly interested in spousal disagreement, we
+ focus on unilateral sales as reported by both spouses.
  Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3017,7 +3215,7 @@ noprefix "false"
 \end_inset
 
  shows in the left panel that men reported they sold half a bag themselves.
- Women reported that the male co-head only sold 0.25 bags of maize.
+ Women reported that they think the male co-head only sold 0.25 bags of maize.
  This may indicate that the average male co-head in our sample sold about
  one quarter of a bag behind the female co-head's back.
  Women, on the other hand, report that they sold only about 12 kilograms
@@ -3062,7 +3260,7 @@ status open
 \begin_inset Graphics
 	filename results/sales.png
 	lyxscale 10
-	scale 75
+	scale 50
 
 \end_inset
 
@@ -3100,8 +3298,9 @@ name "fig:Maize-sales"
 \begin_layout Standard
 As in previous sections, we look at the impact of the two interventions
  on disagreement related to maize sales.
- We conjecture that encouraging cooperation and reducing information asymmetries
- between spouses may lead to a reduction in income hiding.
+ We conjecture that encouraging cooperation through the use of a couple
+ as role models and reducing information asymmetries between spouses may
+ lead to a reduction in income hiding.
  Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3115,14 +3314,17 @@ noprefix "false"
  reports results for three outcomes.
  A first outcome is a simple binary indicator that takes the value of one
  if a spouse appears to engage in concealing sales.
- 
+ In particular, male income hiding happens if men's own reported quantities
+ exceed what the wife reports that the man sold unilaterally.
+ Female income hiding happens if female co-head's own reported quantities
+ exceed what her husband reports that she sold unilaterally.
 \end_layout
 
 \begin_layout Standard
 The first row in the table shows that among households that were shown a
- video with only one actor, about 14 percent of male co-heads sold more
- than what the female co-head thought.
- In this same subset, about 6 percent of female co-heads sold more than
+ video with only one actor, 13.6 percent of male co-heads sold more than
+ what the female co-head thought.
+ In this same subset, about 6.7 percent of female co-heads sold more than
  what the male co-head thought the female co-head sold.
  We do not find that these rates are significantly different among households
  that were given the couple role model treatment video.
@@ -3143,18 +3345,14 @@ noprefix "false"
  reports result for the second treatment.
  It shows that there is also no impact of providing both spouses with the
  same information on the likelihood that spouses engage in income hiding.
- We further consider quantities hidden in rows 3 and 4 of the table, and
- translate this into income obtained from selling these quantities in rows
- 5 and 6.
- Overall, we do not find that our interventions affect disagreement related
- to maize sales.
+ 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
 wide false
-sideways false
-status collapsed
+sideways true
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3181,9 +3379,6 @@ status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-scriptsize
 \end_layout
 
 \begin_layout Plain Layout
@@ -3265,7 +3460,7 @@ textit{male hides}} &
 \backslash
 multicolumn{2}{c}{
 \backslash
-textit{fmale hides}} 
+textit{female hides}} 
 \backslash
 
 \backslash
@@ -3307,7 +3502,7 @@ cline{2-10}
 
 \begin_layout Plain Layout
 
-income hiding	&	
+hiding	&	
 \backslash
 Sexpr{format(round(df_ols_inc[1,2,1],digits=3),nsmall=3)} 	&	
 \backslash
@@ -3554,25 +3749,79 @@ end{center}
 
 \begin_layout Plain Layout
 
-Note: First column reports sample means (and standard deviations below);
- Column 2 reports differences (and standard errors below) between 
+
+\backslash
+scriptsize
 \end_layout
 
 \begin_layout Plain Layout
 
-households  **, * and + denote that the difference is signficant at the
- 1, 5 and 10 percent level, respectively.
+Note: First column reports means for male income hiding indicator in the
+ control group for the couple role model treatment (and standard deviations
+ below); Column 2 reports differences in  male income hiding indicator between
+ treatment and the control group for the couple role model treatment (and
+ standard errors below); cloumn 3 reports means for female income hiding
+ indicator in the control group for the couple role model treatment (and
+ standard deviations below); column 4 reports differences in female income
+ hiding indicator between treatment and the control group for the couple
+ role model treatment(and standard errors below); column 5 shows means for
+ male income hiding indicator in the control group for the information asymmetry
+ treatment (and standard deviations below); Column 6 reports differences
+ in male income hiding indicator between treatment and the control group
+ for the information asymmetry treatment (and standard errors below); cloumn
+ 7 reports means for female income hiding indicator in the control group
+ for the information asymmetry treatment (and standard deviations below);
+ column 8 reports differences in female income hiding indicator between
+ treatment and the control group for the information asymmetry  treatment
+ (and standard errors below); **, * and + denote that the difference is
+ signficant at the 1, 5 and 10 percent level, respectively.
+  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Instead of simply using a binary variable indicating income hiding, we further
+ consider quantities hidden in rows 3 and 4 of the table.
+ We see that in the control group for the first treatment, men hid on average
+ 0.1 bags of maize, while women hide 0.05 bags of maize.
+ The couple role model intervention does not appear to affect these amounts.
+ The amounts are somewhat higher in the control groups used to compare the
+ second treatment with, reflecting the high variance in the outcome variable.
+ Also for the treatment designed to reduce information asymmetry between
+ spouses, we do not find an impact on amounts hidden.
+\end_layout
+
+\begin_layout Standard
+Finally, as we found income hiding seems more prevalent for men when revenue
+ is considered in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Maize-sales"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we also look at income obtained from selling these quantities in rows
+ 5 and 6.
+ Indeed, we see men hide income worth between USD 2.5 and 3.8 depending on
+ what control group used.
+ For women, these amounts range between 63 and 77 cents.
+ We again do not find an impact of the interventions on amounts hidden.
+ From this we conclude that our interventions did not affect disagreement
+ related to maize sales, though it should be noted that outcome variables
+ are extremely noisy.
  
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -3580,53 +3829,128 @@ Conclusion
 \end_layout
 
 \begin_layout Standard
-Why is this important? If there is indeed hiding can affect allocation.
- For instance, if it is easier to shirk on particular activities, it
+Household surveys that are serious about capturing gender related heterogeneity
+ will, at least for part of the survey, interview both male and female co-heads
+ separately, as opposed to only the household head or most knowledgeable
+ person.
+ A common finding in these surveys is that male and female co-heads often
+ give substantially different answers to the same questions.
+ While some discordance is inevitable due to measurement error, recent studies
+ have been searching for patterns in this disagreement, and suggest that
+ systematic disagreement between spouses may be key in understanding intra-house
+hold power dynamics.
 \end_layout
 
 \begin_layout Standard
-Further, household surveys where expenditure and income of the entire household
- is reported by one spouse are commonly used for poverty measurement.
- However, when imperfect information flows exist between household members
- over resources, reporting of expenditures other than one’s own is unreliable.
+Earlier studies often investigate spousal disagreement through a simple
+ binary variable indicating that the answer of one co-head differs (to some
+ degree) from the answer of the other co-head.
+ In some cases, the direction of disagreement is also considered, differentiatin
+g for instance between cases where husbands report higher levels of consumption
+ then wives, and cases where husbands report lower levels of consumption
+ than the wives.
+ Often, these questions relate to household level data, such as consumption
+ expenditure of investment in household public goods.
+ However, studies interested in women autonomy and women empowerment go
+ further and ask more personal questions on behaviour and personal belongings,
+ and spouses are typically asked to answer these questions about themselves
+ but also about their spouse.
+ This allows a range of interesting indicators of disagreement to be constructed
+ based on what one co-head claims about his or her own behaviour (or asset
+ ownership), and what his or her spouse thinks he or she did (or owns).
  
+\end_layout
+
+\begin_layout Standard
+In this study, we focused mostly on directional disagreement indicators
+ that exploit questions about individual spouses obtained from both co-heads.
+ In addition to documenting patterns in spousal disagreement in this way,
+ we also tested two simple interventions aimed at reducing disagreement
+ related to decision making, shirking and income hiding.
+ Both these interventions consisted of showing short engaging video's to
+ co-heads within the household.
+ More in particular, in a first treatment we tested if promoting a cooperative
+ approach to maize farming (by showing a couple farming together) reduced
+ disagreement.
+ In a second treatment we vary who gets to see the video to test if reducing
+ information asymmetry between spouses also reduced disagreement.
+\end_layout
+
+\begin_layout Standard
+We found substantial disagreement between spouses.
+ For instance, we found that co-heads exaggerate their own decision making
+ power on almost one in four plots.
+ We found significant reductions in the likelihood that co-heads overestimate
+ own influence as a result of the couple role model intervention for the
+ decisions related to timing of planting and weeding.
+ We did not find that the couple role model treatment reduced the likelihood
+ that spouses underestimate own decision making.
+ We found that reducing information asymmetry between spouses led to a reduction
+ in the likelihood that one spouse assigns him or herself more decision
+ power than the other spouse claimed.
+ The likelihood that spouses underestimated their own contribution also
+ reduced as a result of providing both spouses with the same information,
+ but the effect was never significant.
+ 
+\end_layout
+
+\begin_layout Standard
+For labour, we found that male co-heads shirk more frequently than female
+ co-heads.
+ There is weak evidence that both treatments reduced the incidence of male
+ co-head shirking related to spraying.
+ Shirking by the female co-head was not affected by the interventions.
+ With respect to income hiding, we found that spouses reported they sold
+ about double of what the other spouse was aware of.
+ However, men also hid income by reporting to the female co-head lower prices
+ than what they actually received for the maize.
+ The interventions did not affect the likelihood that spouses had a better
+ idea of each other's sales.
+\end_layout
+
+\begin_layout Standard
+The fact that we find similar effects from both interventions suggest that
+ two distinct mechanisms are likely at play.
+ On the one hand, some of the disagreement may be because one spouse overestimat
+es his or her own role or position to make it appear in line with expectations
+ within communities.
+ Reducing this disagreement will involve longer run efforts to challenge
+ perceptions and gender stereotypes.
+ Recent research has found that role models may be particularly effective
+ for this 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "FISHER2010966"
+LatexCommand citep
+key "beaman2009powerful,porter2019gender"
 literal "false"
 
 \end_inset
 
- argue that limiting interviews to one person has the advantage of reducing
- the time and expense of household surveys, this appears detrimental in
- terms of accuracy, and may lead to incorrect conclusions on the correlates
- of poverty.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-When spouses choose to exploit their information advantages by hiding income,
- they must allocate resources away from goods that can easily be monitored,
- which can result in underinvestment in household goods.
- Child human capital investments, such as education and nutrition, tend
- to be easily monitored.
- These investments have important spillover effects in a household’s ability
- to step out of poverty because they increase child productivity later in
- life, providing further sources of income diversification to the household
- (Duflo 2001; Rosenzweig 1990).
+.
+ On the other hand, some disagreement may reflect genuine hiding.
+ Here, interventions aimed as reducing the information disadvantage of one
+ spouse, may be effective.
  
 \end_layout
 
-\begin_layout Plain Layout
-discretionary expenditure
-\end_layout
+\begin_layout Standard
+Our findings are consistent with other studies on spousal disagreement and
+ makes us wary about studies that use household surveys where expenditure
+ and income of the entire household is reported by one spouse to assess
+ poverty.
+ In light of the fact that we find some evidence of discretionary spending,
+ we also want to reiterate that this can result in suboptimal allocation,
+ away from easily observable investments such as education and nutrition
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1086/703082"
+literal "false"
 
 \end_inset
 
-
+.
+ Finally, we confirm that spousal disagreement represents much more than
+ statistical noise, and much more research is warranted.
 \end_layout
 
 \begin_layout Section*
