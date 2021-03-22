@@ -89,6 +89,8 @@
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author -461408743 "Bjorn Van Campenhout"
+\author 1966826031 "lecou002"
 \end_header
 
 \begin_body
@@ -130,14 +132,16 @@ Increasing cooperation in agricultural households: Experimental evidence
 \end_layout
 
 \begin_layout Abstract
-In smallholder agriculture in developing countries, the household is the
- prevailing unit of production.
- These households are composed of different individuals, each with their
- own preferences and access to resources, who operate in a context governed
- by particular norms and beliefs.
- Household members both cooperate and compete to maximize a utility function
- that includes both individual and household level well-being.
- We test two interventions designed to increase spousal cooperation.
+Smallholder agriculture households are composed of different individuals,
+ each with their own preferences and access to resources, operating in a
+ context governed by particular norms and beliefs.
+ This realization resulted in many interventions aimed at strengthening
+ the bargaining position of women within the household.
+ At the same time, the household is also the predominant unit of production
+ in which cooperation, specialization and investment in common goods may
+ lead better outcomes.
+ Instead of pitching spouses against each other, test two interventions
+ designed to increase spousal cooperation.
  The first targets cognitive channels and estimates the impact of reducing
  differences in the information available to each spouse.
  The second targets non-cognitive skills, encouraging household members
@@ -151,7 +155,6 @@ In smallholder agriculture in developing countries, the household is the
  We find no effects on household level production outcomes.
  We find no effect of promoting a household cooperative approach to maize
  farming.
- 
 \end_layout
 
 \begin_layout Section
@@ -159,12 +162,20 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-In subsistence agriculture, the prevailing unit of production is the agricultura
-l household.
+In semi-subsistence agriculture, the prevailing unit of production is the
+ agricultural household.
  However, these households consist of different household members, each
  with their own utility functions and access to resources.
  The preferences of the different household members may not perfectly align,
- and there may be considerable inequality in access to resources.
+ and there may be considerable inequality in access to resources
+\change_inserted 1966826031 1579183971
+ (Alderman, H., Chiappori, P.A., Haddad, L., Hoddinott, J.
+ & Kanbur, R.
+ (1995).
+ Unitary versus collective models of the household: Is it time to shift
+ the burden of proof? World Bank Research Observer, 10, 1-19.) 
+\change_unchanged
+.
  Research shows that this often results in inefficient allocation of production
  factors within these households.
  For instance, 
@@ -175,9 +186,9 @@ literal "true"
 
 \end_inset
 
- finds significant differences in productivity between man managed and women
- managed plots due to the fact that more fertilizer and labor is allocated
- to man managed plots.
+ finds significant differences in productivity between male-managed and
+ female-managed plots due to the fact that more fertilizer and labor is
+ allocated to man managed plots.
  Given diminishing returns to especially fertilizer use, he finds that reallocat
 ing production factors from man managed to women managed plots may increase
  household level productivity by 6 percent.
@@ -201,6 +212,15 @@ Recently, the focus has shifted somewhat, focusing less on intra-household
  competition and more on cooperation between household members.
  This is partly due to the fact that alternative models of the household
  have been proposed that provide more room for intra-household cooperation.
+\change_inserted 1966826031 1579184024
+Non-cooperative bargaining models acknowledge that households can persist
+ in Pareto inefficient outcomes (Doss 2013).
+ There is also ample (experimental) evidence that households do not always
+ opt for cooperation and efficiency gains can be made (Munro 2018; Iversen
+ et al.
+ 2011; Fiala and He 2016).
+
+\change_unchanged
  For example, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -238,11 +258,35 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-In this paper, we test two different strategies to improve various outcomes
- though increasing intra-household cooperation among a sample of smallholder
- maize farmers in Uganda.
+In this paper, we test two different strategies to improve 
+\change_deleted 1966826031 1579184070
+various outcomes though increasing
+\change_unchanged
+ intra-household cooperation among a sample of smallholder maize farmers
+ in Uganda.
  Each strategy targets a different impact pathway.
  
+\change_inserted 1966826031 1579184091
+We examine a number of outcomes that proxy the level of cooperation.
+ These include joint decision-making about strategic agricultural decisions
+ under the assumption that maximizing the joint household utility function
+ is more likely if both spouses participate in decision making (McPeak and
+ Doss 2006).
+ A related outcome is the extent to which spouses can express disagreement
+ about decisions related to agriculture.
+ Another outcome is the gap between labor time contributed by the wife and
+ labor time contributed by the husband whereby we assume that unbalanced
+ contributions of time can hamper productivity by the overburdened spouse
+ and therefore the total agricultural production of the household ( Diksha
+ Arora & Codrina Rada (2017) A Gendered Model of the Peasant Household:
+ Time poverty and Farm Production in Rural Mozambique, Feminist Economics,
+ 23:2, 93-119, DOI: 10.1080/13545701.2016.1220676 ).
+ With cooperation, the efficiency of household farming is assumed to be
+ maximized.
+ We therefore also look at outcomes such the likelihood that both spouses
+ prioritize investment in agriculture and household level production outcomes.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -259,9 +303,33 @@ literal "true"
 .
  Access to information and ensuing knowledge may be unequally distributed
  between spouses within the household, which may reduce the likelihood that
- spouses cooperate in an effective way.
+ spouses cooperate in an effective way
+\change_inserted 1966826031 1579184130
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1579184132
+this needs some more explanation, possibly a reference.
+ it is not all that obvious that unequal distribution of info/knowledge
+ would encumber cooperation (understood as Pareto efficiency)
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  We test the effectiveness of reducing information gaps between spouses
- by comparing outcomes in households in which information was made available
+ 
+\change_inserted 1966826031 1579184166
+for more cooperative outcomes 
+\change_unchanged
+by comparing outcomes in households in which information was made available
  to only one of the spouses—the husband or wife—to outcomes in households
  in which this information was made available to both spouses.
 \end_layout
@@ -286,7 +354,7 @@ literal "true"
 
 .
  We therefore devise an intervention aimed at promoting a cooperative approach
- to farming.
+ to farming by the household.
 \end_layout
 
 \begin_layout Standard
@@ -302,12 +370,21 @@ Central to both treatments are short, engaging videos that were produced
  traits, such as aspirations, locus-of-control, and attitudes to change,
  of the persons that view the video.
  In particular, the videos bring the story of a farmer that used to struggle
- with low maize yields and, after a particularly bad year, decides things
- need to change.
+ with low maize yields and
+\change_deleted 1966826031 1579184192
+, after a particularly bad year,
+\change_unchanged
+ decides things need to change.
  It is then shown how the farmer uses recommended practices and improved
  inputs.
  It is explained that becoming a successful farmer takes time, and money
- needs to be invested now to get better results in the future.
+ needs to be invested 
+\change_deleted 1966826031 1579184207
+now
+\change_inserted 1966826031 1579184207
+incrementally
+\change_unchanged
+ to get better results in the future.
  The video ends with the image of a successful farmer assuring the viewer
  that he or she can also become successful by following the advice provided
  in the video.
@@ -344,7 +421,9 @@ s, and the underlying theory of change.
  joint decision making.
  We then test if increasing cooperation also leads to a more equitable distribut
 ion of labor.
- As changes in aspirations have been found to affect forward looking behavior
+ 
+\change_deleted 1966826031 1579184229
+As changes in aspirations have been found to affect forward looking behavior
  
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -353,9 +432,15 @@ literal "true"
 
 \end_inset
 
+
+\change_unchanged
 , we also look at the impact of the interventions on intentions to invest
  proceeds from maize farming.
- We then explore household level outcomes.
+ We then explore household level 
+\change_inserted 1966826031 1579184240
+production 
+\change_unchanged
+outcomes.
  A next section explores spousal disagreement and we also report effects
  on the likelihood that farmers tell each other in the event of disagreement.
  A final section concludes.
@@ -439,7 +524,25 @@ literal "true"
 \end_inset
 
 .
- Extension services often target the farmer-landowner.
+ Extension services often target the farmer-landowner
+\change_inserted 1966826031 1579184296
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1579184297
+often target the head of household....
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  The assumption that extension messages targeting one household member will
  trickle down to the rest of the household, including women and younger
  household members, may be false 
@@ -478,8 +581,13 @@ literal "true"
 
 \end_inset
 
- shows how decision making is greatly influenced by to what extent information
- is shared between spouses.
+ shows how decision making is greatly influenced by 
+\change_deleted 1966826031 1579184321
+to what extent
+\change_inserted 1966826031 1579184327
+the extent to which
+\change_unchanged
+ information is shared between spouses.
  
 \begin_inset Note Note
 status collapsed
@@ -495,15 +603,51 @@ We need more examples: who knows/can review the literature?
 
 \begin_layout Standard
 One hypothesis we will test is therefore whether reducing information asymmetrie
-s between spouses may lead to different outcomes.
+s between spouses may lead to 
+\change_deleted 1966826031 1579184335
+different
+\change_inserted 1966826031 1579184337
+more cooperative
+\change_unchanged
+ outcomes.
  There are various reasons why this may be the case.
  It may be that when both spouses receive information, spouses discuss and
- reflect on this information, making it more likely that they also act upon
- it.
- For example In addition, borrowing from research on common pool resource
- management, if both spouses have the same information, they can monitor
- each other, which strengthens incentives for contributions to the common
- (household level) goods and discourages over-consumption 
+ reflect on this information, making it more likely that they also 
+\change_inserted 1966826031 1579184367
+decide and 
+\change_unchanged
+act upon it
+\change_inserted 1966826031 1579184372
+ jointly
+\change_unchanged
+.
+ 
+\change_deleted 1966826031 1579184399
+For example In addition
+\change_inserted 1966826031 1579184399
+In addition, a reduction in information asymmetry also reduces the ability
+ to monopolize or conceal information by one of the spouses.
+\change_deleted 1966826031 1579184401
+,
+\change_unchanged
+ 
+\change_inserted 1966826031 1579184412
+B
+\change_deleted 1966826031 1579184412
+b
+\change_unchanged
+orrowing from research on common pool resource management, if both spouses
+ have 
+\change_deleted 1966826031 1579184446
+the
+\change_unchanged
+ 
+\change_deleted 1966826031 1579184443
+same
+\change_unchanged
+ information, they can monitor each other, which strengthens incentives
+ for contributions to the common (household level) goods and discourages
+ over-consumption 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doss2015collective"
@@ -512,11 +656,38 @@ literal "true"
 \end_inset
 
 .
- Furthermore, a reduction in information asymmetry also reduces the ability
- to monopolize or conceal information by one of the spouses.
+\change_inserted 1966826031 1579184512
+Hence, more efficient outcomes in terms of production and investments in
+ agriculture can be expected.
+
+\change_unchanged
  
+\change_deleted 1966826031 1579184546
+Furthermore, a reduction in information asymmetry also reduces the ability
+ to monopolize or conceal information by one of the spouses.
+
+\change_unchanged
+ 
+\change_inserted 1966826031 1579184535
+
 \begin_inset Note Note
-status collapsed
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1579184540
+Add: why would reduction in information asymmetry reduce gap in labor time??
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
 Maybe this should be extended: Are these all the impact pathways we can
@@ -651,8 +822,21 @@ Queen of Katwe
 \end_layout
 
 \begin_layout Standard
-As a second hypothesis, we will therefore test whether projecting a household
- cooperative approach to farming leads to better outcomes.
+As a second hypothesis, we will therefore test whether projecting a 
+\change_deleted 1966826031 1579184574
+household
+\change_unchanged
+ cooperative approach to 
+\change_inserted 1966826031 1579184577
+household 
+\change_unchanged
+farming leads to 
+\change_deleted 1966826031 1579184593
+better
+\change_inserted 1966826031 1579184597
+more cooperative
+\change_unchanged
+ outcomes.
  Also here, we posit different impact pathways.
  First, there may be aspirational effects of seeing a couple farming maize
  successfully together.
@@ -661,8 +845,27 @@ As a second hypothesis, we will therefore test whether projecting a household
  activities.
  This may lead women to become more assertive when men take decisions or
  it may make men more open to women participation in farming.
+\change_inserted 1966826031 1579184617
+
 \begin_inset Note Note
-status collapsed
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1579184627
+Explain: why this is expected to result in more joint decision making, more
+ equal labor allocation and more efficient production and investment?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
 Also here, can we look more into mechanisms? Unfortunately, we threw out
@@ -682,18 +885,62 @@ Interventions and Experimental design
 
 \begin_layout Standard
 Both experiments are implemented using short videos that were shown to farmers
- on tablet computers.
- The videos were designed with a dual purpose in mind.
+ on tablet computers
+\change_inserted 1966826031 1579185999
+ during a private meeting
+\change_unchanged
+.
+ 
+\change_inserted 1966826031 1579186106
+The video was shown twice to our study participants, once before the maize
+ planting time (July 2017) and once around the actual time of planting time
+ (August 2017).
+ 
+\change_unchanged
+The videos were designed with a dual purpose in mind.
  First, the videos serve to transfer knowledge about recommended agronomic
  management practices and the use of modern technologies.
  It is shown how fields need to be prepared using organic fertilizer.
  Proper seed spacing and seeding rates and it importance are explained.
- furthermore, it is shown in detail how inorganic fertilizer needs to be
- applied and in what quantities.
- Furthermore, attention is devoted to identifying striga, a parasitic weed
- that affects maize yields in the area.
- We also devote ample attention to the importance of seed quality and recommend
- using hybrid seed or Open Pollinated Varieties (OPV).
+ 
+\change_inserted 1966826031 1579184665
+F
+\change_deleted 1966826031 1579184665
+f
+\change_unchanged
+urthermore, it is shown in detail how inorganic fertilizer needs to be applied
+ and in what quantities.
+ 
+\change_deleted 1966826031 1579184672
+Furthermore, a
+\change_inserted 1966826031 1579184673
+A
+\change_unchanged
+ttention is 
+\change_inserted 1966826031 1579184676
+also 
+\change_unchanged
+devoted to identifying striga, a parasitic weed that affects maize yields
+ in the area.
+ 
+\change_deleted 1966826031 1579184691
+We also devote ample attention to t
+\change_inserted 1966826031 1579184691
+T
+\change_unchanged
+he importance of seed quality 
+\change_inserted 1966826031 1579184736
+receives ample attention as well 
+\change_unchanged
+and 
+\change_deleted 1966826031 1579184743
+recommend
+\change_unchanged
+ using hybrid seed or Open Pollinated Varieties (OPV)
+\change_inserted 1966826031 1579184749
+ is recommended
+\change_unchanged
+.
  Other recommended practices include timely planting and weeding.
  Second, the information was packaged as an inspirational story of poor
  farmers that, over time, are able to break out of a poverty trap.
@@ -714,10 +961,13 @@ Both experiments are implemented using short videos that were shown to farmers
 
 \begin_layout Standard
 To answer the first research question–whether reducing information asymmetry
- within households is effective–we compare outcomes of households in which
- the couple (husband and wife together) is shown a video to outcomes of
- households in which with only one co-head of the household (husband or
- wife) is shown the video.
+ within households is effective
+\change_inserted 1966826031 1579184911
+ for more cooperative outcomes 
+\change_unchanged
+–we compare outcomes of households in which the couple (husband and wife
+ together) is shown a video to outcomes of households in which with only
+ one co-head of the household (husband or wife) is shown the video.
  To answer the second research question–whether promoting a household cooperativ
 e approach to farming is effective–we compare outcomes of households where
  an aspirational video was shown in which a man and woman participate as
@@ -728,57 +978,53 @@ e approach to farming is effective–we compare outcomes of households where
 
 \begin_layout Standard
 The field experiment was carried out among a random sample of maize farmers
- in eastern Uganda.
+ in 
+\change_deleted 1966826031 1579185127
+southwestern
+\change_inserted 1966826031 1579185129
+eastern
+\change_unchanged
+ Uganda.
  Two-stage cluster sampling was used to obtain a representative sample of
  this population.
  In particular, from five districts (Bugiri, Mayuge, Iganga, Namayingo,
- and Namutumba), we first selected 50 parishes randomly and in proportion
- to the number of villages within each parish.
+ and Namutumba), we first selected 50
+\change_inserted 1966826031 1579185167
+ rural
+\change_unchanged
+ parishes randomly and in proportion to the number of villages within each
+ parish.
  In the selected parishes, all villages were included in the study.
  Within each village, we then listed all the households, from which we sampled
  10 households to be included in the study.
- About 3,300 households participated in the first experiment; about 2,200
+ 
+\change_deleted 1966826031 1579185202
+About
+\change_inserted 1966826031 1579185206
+A total of
+\change_unchanged
+ 3,30
+\change_deleted 1966826031 1579185209
+0
+\change_inserted 1966826031 1579185209
+3
+\change_unchanged
+ households participated in the first experiment; 
+\change_deleted 1966826031 1579185213
+about
+\change_unchanged
+ 2,20
+\change_deleted 1966826031 1579185216
+0
+\change_inserted 1966826031 1579185216
+9
+\change_unchanged
  in the second experiment.
+
+\change_deleted -461408743 1616078296
  
-\end_layout
+\change_unchanged
 
-\begin_layout Standard
-Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Balance_treat1"
-
-\end_inset
-
- reports orthogonality tests for the two experiments.
- The first column reports sample means (and standard deviations in parentheses
- below) for the variables indicated to the left, measured at baseline (baseline
- data was collected in August 2017).
- For instance, we found that at the time of baseline data collection, average
- yields in the sample amounted to about 264 kg per acre
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-This is a very low yield; during focus group discussions, we learned that
- yields are normally about 500 to 700 kg per acre.
- The low yield is most likely a result of adverse weather shocks and the
- fall armyworm outbreak during the first season of 2017.
- 
-\end_layout
-
-\end_inset
-
-.
- Average age of the household head in our sample is 40 years and only about
- 36 percent reported to have finished primary education.
- The average household has more than 7 members who live in a house with
- 2.2 bedrooms.
- Only 11 percent had access to agricultural extension in the preceding year,
- about 20 percent used (inorganic) fertilizer and almost 40 percent reported
- to have used improved seed.
- Average distance to the nearest agro-input dealer is 5.5 km and almost 80
- percent of households own a mobile phone.
 \end_layout
 
 \begin_layout Section
@@ -800,13 +1046,31 @@ reference "fig:Joint-decision-making"
 
 \end_inset
 
- shows the average share of plots on which decisions are made (1) jointly,
- (2) by the husband alone, and (3) by the wife alone for seven key decisions.
+ shows the average share of plots
+\change_deleted 1966826031 1579186736
+ 
+\change_inserted 1966826031 1579186742
+ of the household 
+\change_unchanged
+on which decisions are made (1) jointly, (2) by the husband alone, and (3)
+ by the wife alone for seven key decisions.
  For (1), we classified the decision as having been taken jointly if both
  spouses agree that the decision was taken jointly.
  For (2), a decision was classified as taken by the husband if the husband
- reported that he unilaterally decided and for (3), a decision was classified
- as taken by the wife if the wife reported that she unilaterally decided.
+ reported that he unilaterally 
+\change_deleted 1966826031 1579186678
+decided
+\change_inserted 1966826031 1579186681
+took the decision
+\change_unchanged
+ and for (3), a decision was classified as taken by the wife if the wife
+ reported that she unilaterally 
+\change_deleted 1966826031 1579186686
+decided
+\change_inserted 1966826031 1579186690
+took the decision
+\change_unchanged
+.
  
 \end_layout
 
@@ -814,13 +1078,12 @@ reference "fig:Joint-decision-making"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename results/decsion_activities.png
-	lyxscale 10
 	scale 50
 
 \end_inset
@@ -876,7 +1139,25 @@ reference "fig:Joint-decision-making"
  timing, spacing, striga management, and weeding ranges from 13 to 18 percent.
  Overall, patterns are according to expectations, with women somewhat more
  important for decisions related to weeding and men more likely to decide
- on spacing.
+ on spacing
+\change_inserted 1966826031 1579186882
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1579186904
+not clear why we would expect men to be more likely to decide on spacing??
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  Already, a sizable part of decisions are made jointly.
 \end_layout
 
@@ -886,10 +1167,40 @@ The decision to use fertilizer (barplot 6), and the decision to use improved
  husband alone.
  For instance, on 41 percent of the plots where fertilizer was used, this
  decision was made by the man alone.
- The decision to use improved seed is made jointly on only 12 percent of
- the plots.
- This suggests that new technologies, especially if these need to be purchased
- on the market, remain the domain of the husband.
+ The decision to use improved seed is made
+\change_inserted 1966826031 1579187017
+ by the husbands on 44 percent 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1579187021
+correct?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+of the plots and
+\change_unchanged
+ jointly on only 12 percent of the plots.
+ This suggests that 
+\change_deleted 1966826031 1579187048
+new
+\change_unchanged
+ technologies
+\change_deleted 1966826031 1579187055
+, especially if these need 
+\change_inserted 1966826031 1579187066
+that need 
+\change_unchanged
+to be purchased on the market
+\change_deleted 1966826031 1579187060
+,
+\change_unchanged
+ remain the domain of the husband.
  
 \end_layout
 
@@ -926,7 +1237,11 @@ s where the information was provided by a couple (the treatment group) and
  joint decision making in households where information was given by a man
  (the comparison group).
  While we find no impact of the second treatment, reducing information asymmetry
- significantly increases joint decision making related to the decision to
+ 
+\change_inserted 1966826031 1579187160
+with the first treatment 
+\change_unchanged
+significantly increases joint decision making related to the decision to
  plant maize on the plot, on strategies to fight striga, on the timing of
  the first weeding, and on the use of fertilizer.
 \end_layout
@@ -935,13 +1250,12 @@ s where the information was provided by a couple (the treatment group) and
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename results/decsion_impacts.png
-	lyxscale 10
 	scale 50
 
 \end_inset
@@ -974,6 +1288,24 @@ name "fig:Impact_dec"
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted 1966826031 1579187382
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1579187428
+why not *** for 1percent, ** for 5percent and * for 10 percent significance
+ as is standard? 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -986,10 +1318,21 @@ reference "tab:decision_full"
  in brackets below).
  For instance, we see that overall, the decision to cultivate maize is taken
  jointly on 36 percent of the plots.
- In the second column, we see that this share is almost 10 percentage points
- higher in the subgroup of households where the video was shown to both
- spouses together than in the subgroup of households where the video was
- shown to only one of the spouses (either the husband of the wife).
+ In the second column, 
+\change_inserted 1966826031 1579187285
+average treatment effects are shown.
+ W
+\change_deleted 1966826031 1579187286
+w
+\change_unchanged
+e see that this share 
+\change_inserted 1966826031 1579187323
+of plots on which the decision to cultivate maize is taken jointly 
+\change_unchanged
+is almost 10 percentage points higher in the subgroup of households where
+ the video was shown to both spouses together than in the subgroup of households
+ where the video was shown to only one of the spouses (either the husband
+ of the wife).
  This difference is significantly different from zero at a p-value of 0.007
  (reported in column 3) as determined by randomization inference and remains
  significant at the 5 percent level after accounting for multiple hypothesis
@@ -998,34 +1341,88 @@ reference "tab:decision_full"
 \end_layout
 
 \begin_layout Standard
-The decision on when to start planting is taken jointly on 32 percent of
- the plots.
+The decision on when to start planting is taken jointly on 
+\change_inserted 1966826031 1579187480
+an average 
+\change_unchanged
+32 percent of the plots.
  This decision is made jointly on an additional 2 percent of plots (correspondin
 g to a 6 percent increase) among household where information asymmetry was
- reduced, but the increase is not significant.
+ reduced
+\change_inserted 1966826031 1579187513
+ with the first treatment
+\change_unchanged
+, but the increase is not significant.
  The decision on spacing is also taken jointly on 32 percent of the plots.
- Also for this decision, the rate increases after the treatment, but not
- significantly.
- Next, we find that decisions related to strategies to fight striga are
- taken jointly on 27 percent of maize plots.
+ Also for this decision, the rate increases 
+\change_deleted 1966826031 1579187528
+after
+\change_inserted 1966826031 1579187528
+with
+\change_unchanged
+ the 
+\change_inserted 1966826031 1579187525
+first 
+\change_unchanged
+treatment, but not significantly
+\change_inserted 1966826031 1579187533
+ so
+\change_unchanged
+.
+ Next, 
+\change_deleted 1966826031 1579187547
+we find that
+\change_unchanged
+ decisions related to strategies to fight striga are taken jointly on 27
+ percent of maize plots.
  This percentage is almost 7 percentage points higher (corresponding to
  an increase of 26 percent) among households where both spouses were shown
  a video than among households where only one spouse got the information.
- We also find that the decision on when to start weeding is taken jointly
+ 
+\change_inserted 1966826031 1579187598
+The difference is significant.
+ 
+\change_unchanged
+We also find that the decision on when to start weeding is taken jointly
  on a significantly higher share of plots after reducing information asymmetries
  between spouses.
- Results for the second intervention are shown in the fifth column of Table
  
+\change_inserted 1966826031 1579187614
+
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 1966826031 1579187687
+Results
+\change_inserted 1966826031 1579187690
+Average treatment effects
+\change_unchanged
+ 
+\change_deleted 1966826031 1579187692
+for
+\change_inserted 1966826031 1579187695
+of
+\change_unchanged
+ the second intervention are shown in the fifth column of Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:decision_full"
 
 \end_inset
 
-, also assessed as the difference between treatment and control (with standard
+, 
+\change_inserted 1966826031 1579187713
+which are 
+\change_unchanged
+also assessed as the difference between treatment and control (with standard
  error in brackets below).
- We find that, in general, promoting a cooperative approach also increases
- joint decision making, but differences are never statistically significant.
+ We find that, in general, promoting a cooperative approach 
+\change_inserted 1966826031 1579187723
+to hosuehold farming 
+\change_unchanged
+also increases joint decision making, but differences are never statistically
+ significant.
  
 \end_layout
 
@@ -1043,17 +1440,32 @@ literal "true"
  and construct an inverse covariance weighted index that ensures that outcomes
  that are highly correlated with each other receive less weight, while outcomes
  that are uncorrelated and thus represent new information receive more weight.
- Judged by this index, we confirm that reducing information gaps between
- spouses increases joint decision making about agronomic practices.
+ Judged by this index, we confirm that reducing information gaps
+\change_deleted 1966826031 1579187770
+ 
+\change_inserted 1966826031 1579187763
+ 
+\change_unchanged
+between spouses
+\change_deleted 1966826031 1579187772
+ 
+\change_inserted 1966826031 1579187773
+ (first treatment) 
+\change_unchanged
+increases joint decision making about agronomic practices.
  There is no impact from the intervention that aims to promote a cooperative
- approach using role models.
+ approach using role models
+\change_inserted 1966826031 1579187783
+ (second treatment)
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1289,14 +1701,29 @@ reference "tab:decision_full"
 \end_inset
 
  also shows results for decisions related to input use.
- These are treated separately, as questions on who decided on input use
- were only asked in households that reported to use the input.
+ These are 
+\change_deleted 1966826031 1579187800
+treated
+\change_inserted 1966826031 1579187802
+analysed
+\change_unchanged
+ separately, as questions on who decided on input use were only asked in
+ households that reported to use the input.
  For instance, we find that fertilizer was used in only 509 households in
  our sample.
  Among these households, the decision to use fertilizer was taken jointly
- on about 21 percent of the plots.
+ on 
+\change_inserted 1966826031 1579187828
+average on 
+\change_unchanged
+about 21 percent of the plots.
  For the first treatment, we see that this percentage is about 15 percentage
  points higher in the treatment group than in the control group.
+
+\change_inserted 1966826031 1579187865
+ The difference is significant.
+
+\change_unchanged
  We do not find a significant effect for the second treatment.
  Furthermore, we find no effects from either treatment on the likelihood
  that the decision to use improved seed was made jointly.
@@ -1328,15 +1755,23 @@ reference "fig:Labour-time"
  he or she spent on preparing land, planting, weeding, spraying, and harvesting.
  Households spent most time on weeding.
  Furthermore, households spent on average 23 days preparing land.
- We find that, generally, there is not much difference in labor time between
- spouses.
+ We find that, generally, there is not much difference in 
+\change_inserted 1966826031 1579188461
+reported 
+\change_unchanged
+labor time between spouses.
  Summing over all activities, women work about 40 days in maize farming,
  men work about 39 days.
  We do see some differences according to gender, with men spending on average
  one day more on land preparation than women, and women spending on average
  2 days more on weeding than men.
- Spraying, which often involves carrying has heavy knapsack sprayer, is
- also generally done by men.
+ Spraying, which often involves carrying 
+\change_deleted 1966826031 1579188486
+has
+\change_inserted 1966826031 1579188486
+a
+\change_unchanged
+ heavy knapsack sprayer, is also generally done by men.
  
 \end_layout
 
@@ -1344,13 +1779,11 @@ reference "fig:Labour-time"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Graphics
 	filename results/labour_time.png
-	lyxscale 10
 	scale 50
 
 \end_inset
@@ -1390,8 +1823,14 @@ reference "fig:Time-use"
 
 \end_inset
 
- summarizes the impact of the two interventions on the difference in labor
- provided by the wife and labor provided by the husband.
+ summarizes the impact of the two 
+\change_deleted 1966826031 1579188520
+interventions
+\change_inserted 1966826031 1579188522
+treatments
+\change_unchanged
+ on the difference in labor provided by the wife and labor provided by the
+ husband.
  Full results corresponding to this figure can be found in the top panel
  of Table 
 \begin_inset CommandInset ref
@@ -1402,18 +1841,78 @@ reference "tab:time_use_full"
 
 .
  Again, the first column reports sample means for these differences.
- Generally, women work more than man and the difference is positive, except
- for land preparation and spraying.
- We find that reducing information asymmetry reduces the gap between time
- spend by the wife and time spent by the husband.
+ Generally, 
+\change_inserted 1966826031 1579188669
+the difference between wives' and husbands' labor time is positive and 
+\change_unchanged
+women work more than man 
+\change_deleted 1966826031 1579188672
+and
+\change_unchanged
+ 
+\change_deleted 1966826031 1579188641
+the difference is positive
+\change_unchanged
+, except for land preparation and spraying.
+ 
+\change_inserted 1966826031 1579188737
+Average treatment effects in the second column show
+\change_deleted 1966826031 1579188740
+We find
+\change_unchanged
+ that reducing information asymmetry 
+\change_inserted 1966826031 1579188688
+between spouses (first treatment) 
+\change_unchanged
+reduces the gap between 
+\change_inserted 1966826031 1579188697
+labor 
+\change_unchanged
+time spend by the wife and 
+\change_inserted 1966826031 1579188700
+labor 
+\change_unchanged
+time spent by the husband.
  The reduction is significantly different from zero for time spent on preparing
  the land and on total labor time.
- When we use randomization inference to judge significance, we also find
- a significant reduction in the difference in time allocated to harvesting.
- However, for most other activities, the gap also seems to reduce in response
- to the first treatment.
- Promoting a cooperative approach to maize farming, reported in column 5,
- does not seem to affect the labor time gap between wife and husband.
+ 
+\change_deleted 1966826031 1579189143
+When we use randomization inference to judge significance,
+\change_unchanged
+ we also find a significant reduction in the difference in time allocated
+ to harvesting.
+ 
+\change_deleted 1966826031 1579189206
+However, 
+\change_inserted 1966826031 1579189212
+The gap also seems to reduce in response to the first treatment 
+\change_unchanged
+for most other activities,
+\change_inserted 1966826031 1579189223
+ but insignificantly so.
+
+\change_unchanged
+ 
+\change_deleted 1966826031 1579189197
+the gap also seems to reduce in response to the first treatment
+\change_unchanged
+.
+ 
+\change_inserted 1966826031 1579189280
+As can be seen from average effects of the second treatment reported in
+ column 5, p
+\change_deleted 1966826031 1579189281
+P
+\change_unchanged
+romoting a cooperative approach to 
+\change_inserted 1966826031 1579189287
+household 
+\change_unchanged
+maize farming, 
+\change_deleted 1966826031 1579189265
+reported in column 5
+\change_unchanged
+, does not seem to affect the labor time gap between wife and husband.
  
 \end_layout
 
@@ -1421,13 +1920,11 @@ reference "tab:time_use_full"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Graphics
 	filename results/coop_time.png
-	lyxscale 10
 	scale 50
 
 \end_inset
@@ -1468,14 +1965,56 @@ reference "tab:time_use_full"
 \end_inset
 
 , we provide further information on how the labor time gap is reduced by
- looking at difference in labor provision for each of the spouses separately.
- In the middle panel, we report the impact of the interventions on the time
- the husband reported to be spending on each activity.
- While none of the differences are significant, we do see that time spent
- by the man increases over all activities.
+ looking at 
+\change_deleted 1966826031 1579189364
+difference in
+\change_inserted 1966826031 1579189365
+the
+\change_unchanged
+ labor provision 
+\change_deleted 1966826031 1579189369
+for
+\change_inserted 1966826031 1579189369
+of
+\change_unchanged
+ each of the spouses separately.
+ In the middle panel, we report the impact of the 
+\change_deleted 1966826031 1579189408
+interventions
+\change_inserted 1966826031 1579189414
+first and second treatment
+\change_unchanged
+ on the time the husband reported to be spending on each activity.
+ While none of the 
+\change_deleted 1966826031 1579189396
+differences
+\change_inserted 1966826031 1579189404
+average treatment effects
+\change_unchanged
+ are significant, we do see that time spent by the man increases over all
+ activities.
  In total, men in households that were shown the video as a couple work
  about 1.2 man-days more that in households where the video was shown to
- only one individual.
+ only one individual
+\change_inserted 1966826031 1579189455
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1579189520
+i would not claim that the difference is 1.2 man-days as we cannot be certain
+ that the difference is significantly different from zero 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  In the bottom panel of Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1484,28 +2023,68 @@ reference "tab:time_use_full"
 \end_inset
 
 , we see sizable reductions in time spent by the wife after information
- asymmetry is reduced.
- Women spent more then four days less in total, with large reductions in
- time spent on weeding, and on land preparation.
+ asymmetry is reduced
+\change_inserted 1966826031 1579189879
+ (first treatment)
+\change_unchanged
+.
+ Women spent more th
+\change_inserted 1966826031 1579189970
+a
+\change_deleted 1966826031 1579189970
+e
+\change_unchanged
+n four days less in total, with large 
+\change_inserted 1966826031 1579189990
+snf significant 
+\change_unchanged
+reductions in time spent 
+\change_inserted 1966826031 1579190001
+on land preparation.
+ Time spent 
+\change_unchanged
+on weeding
+\change_inserted 1966826031 1579190022
+ reduced a lot as well, but insignificantly so.
+\change_deleted 1966826031 1579190008
+, and
+\change_unchanged
+ 
+\change_deleted 1966826031 1579190026
+on land preparation.
+
+\change_unchanged
  
 \end_layout
 
 \begin_layout Standard
 For the second treatment, we find that time reduces for both husband and
  wife, but differences are never significant, except perhaps for the wife's
- time spent on planting.
+ time spent on planting
+\change_inserted 1966826031 1579190138
+ (The difference, however, is only significant at the 10 percent level and
+ insignificant after controlling for multiple hypotheses testing)
+\change_unchanged
+.
  This could be because row planting is an activity that probably benefits
- most from cooperation and indeed, in the video where a household cooperative
- approach is promoted, it is shown how husband and wife together rig a wire
- to arrive at proper plant spacing.
- However, the difference is only significant at the 10 percent level.
+ most from cooperation and indeed, in the video where a 
+\change_deleted 1966826031 1579190093
+household
+\change_unchanged
+ cooperative approach is promoted, it is shown how husband and wife together
+ rig a wire to arrive at proper plant spacing.
+ 
+\change_deleted 1966826031 1579190117
+However, the difference is only significant at the 10 percent level.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1920,7 +2499,13 @@ We asked each spouse separately to indicate the top three spending categories
  investment in non-agricultural business, and savings.
  There was also a separate category that attempts to measure adult goods
  that are often used in outlay equivalent analyses to detect discrimination
- against girls 
+ against 
+\change_deleted 1966826031 1579190469
+girls
+\change_inserted 1966826031 1579190500
+female household members
+\change_unchanged
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1093/wber/3.1.1"
@@ -1941,7 +2526,13 @@ reference "fig:Sales"
 \end_inset
 
  shows the impact of our interventions on the likelihood that both spouses
- include a particular category in their top 3 spending categories.
+ include a particular category in their top 
+\change_deleted 1966826031 1579190509
+3
+\change_inserted 1966826031 1579190511
+three
+\change_unchanged
+ spending categories.
  Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1950,10 +2541,16 @@ reference "tab:spending_full"
 \end_inset
 
  shows full results.
- Among households where both spouses received information, investment in
- agriculture is more frequently mentioned as a key spending area by both
- spouses than among households where information was only provided to one
- of the spouses.
+ Among households where both spouses received information
+\change_inserted 1966826031 1579190672
+ (first treatment)
+\change_unchanged
+, investment in agriculture is 
+\change_inserted 1966826031 1579190696
+significantly 
+\change_unchanged
+more frequently mentioned as a key spending area by both spouses than among
+ households where information was only provided to one of the spouses.
  
 \end_layout
 
@@ -1961,13 +2558,11 @@ reference "tab:spending_full"
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Graphics
 	filename results/sales.png
-	lyxscale 10
 	scale 50
 
 \end_inset
@@ -2012,17 +2607,37 @@ literal "true"
 
 \end_inset
 
- shows that, as a result of under-investment in women controlled plots and
- over-investment in man controlled plots, there are substantial productivity
- losses at the household level.
+ shows that, as a result of under-investment in 
+\change_deleted 1966826031 1579190722
+women
+\change_inserted 1966826031 1579190725
+female-
+\change_deleted 1966826031 1579190726
+ 
+\change_unchanged
+controlled plots and over-investment in 
+\change_inserted 1966826031 1579190732
+male-
+\change_deleted 1966826031 1579190731
+man 
+\change_unchanged
+controlled plots, there are substantial productivity losses at the household
+ level.
  We therefore also test if increasing intra-household cooperation increases
- household level outcomes.
+ household level 
+\change_inserted 1966826031 1579190774
+agricultural 
+\change_unchanged
+outcomes.
  We look at outcomes typically used in assessing the impact of agricultural
  extension information.
  A traditional theory of change assumes that an increase in information
- would lead to increased adoption of recommended agronomic practices and
- use of modern inputs, which in turn affects production, and ultimately
- well-being.
+ would lead to
+\change_inserted 1966826031 1579190849
+ increased knowledge about and
+\change_unchanged
+ increased adoption of recommended agronomic practices and use of modern
+ inputs, which in turn affects production, and ultimately well-being.
  Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2061,7 +2676,6 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename results/ourcomes.png
-	lyxscale 10
 	scale 50
 
 \end_inset
@@ -2106,13 +2720,41 @@ Following a traditional theory of change, the first outcome we consider
  farmers approach maize growing as a business, which involves planning,
  foresight, risk taking, and investment outlays.
  A final question was on a topic on which no information was provided in
- the video and was added to verify the effectiveness of the video.
+ the video and was added to verify the effectiveness of the video
+\change_inserted 1966826031 1579191138
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1579191014
+??? how so?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+ (Details can be found in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:knowledge"
+
+\end_inset
+
+)
+\change_unchanged
+.
  Knowledge at the household level is assessed by the likelihood that at
  least one of the spouses is able to indicate the correct response on the
  multiple choice question.
  Using an index based on these four questions, we do not find that reducing
- information asymmetry significantly increased knowledge at the household
- level.
+ information asymmetry 
+\change_inserted 1966826031 1579191135
+between spouses (first treatment) 
+\change_unchanged
+significantly increased knowledge at the household level.
  We also find no effect of the second treatment on household level knowledge.
  
 \begin_inset Note Note
@@ -2207,9 +2849,16 @@ reference "tab:practices"
  Maize should be planted at the onset of the rains.
  We have asked each spouse how many days after the start of the rains the
  maize was planted on each maize plot.
- To arrive at a measure at the household level, we first take the average
- of the responses of the spouses at plot level, and then take averages over
- plots.
+ To arrive at a 
+\change_inserted 1966826031 1579191190
+household level 
+\change_unchanged
+measure 
+\change_deleted 1966826031 1579191193
+at the household level
+\change_unchanged
+, we first take the average of the responses of the spouses at plot level,
+ and then take averages over plots.
  Using this measure, we find that maize on the average plot is planted about
  4 days after the onset of the rains.
  The next three practices–the use of the recommended seeds spacing and seed
@@ -2226,7 +2875,11 @@ reference "tab:practices"
 \begin_layout Standard
 We do not find a significant difference in the adoption of recommended practices
  between households where both spouses are shown the video together and
- households where only one of the spouses was shown the video.
+ households where only one of the spouses was shown the video
+\change_inserted 1966826031 1579191274
+ (first treatment)
+\change_unchanged
+.
  Looking at Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2234,21 +2887,51 @@ reference "tab:practices"
 
 \end_inset
 
-, we see that reducing information asymmetries also reduced average time
- between the first rain and planting by almost one day, but the effect is
- not significant.
+, we see that reducing information asymmetries 
+\change_deleted 1966826031 1579191287
+also
+\change_unchanged
+ reduced average time between the first rain and planting by almost one
+ day, but the effect is not significant.
  We also find that adoption of the new way of spacing and planting maize
  is adopted by 3.2 percentage points more households that were shown the
  video as a couple as compared to within households where only one of the
  spouses was shown the video, but also here the difference is not significant.
- There are also indications that timely weeding was more common among households
- where only one individual was shown the video.
+ There are 
+\change_deleted 1966826031 1579191307
+also
+\change_unchanged
+ indications that timely weeding was 
+\change_deleted 1966826031 1579191355
+more
+\change_inserted 1966826031 1579191355
+less
+\change_unchanged
+ common among households where 
+\change_deleted 1966826031 1579191370
+only
+\change_unchanged
+ 
+\change_deleted 1966826031 1579191365
+one individual
+\change_inserted 1966826031 1579191367
+the couple
+\change_unchanged
+ was shown the video
+\change_inserted 1966826031 1579191400
+, but the difference is not significant
+\change_unchanged
+.
  Also here, we do not find any significant impact of the second treatment.
  
 \end_layout
 
 \begin_layout Standard
-Third we look the use of modern inputs: fertilizer and improved maize seed.
+Third
+\change_inserted 1966826031 1579191411
+,
+\change_unchanged
+ we look the use of modern inputs: fertilizer and improved maize seed.
  For fertilizer, the index in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2256,15 +2939,27 @@ reference "fig:HH_impact_info_asym"
 
 \end_inset
 
- summarizes the use of three types: DAP/NPK, urea, and organic fertilizer.
+ summarizes the use of three types: DAP/NPK
+\change_inserted 1966826031 1579191537
+ (Diammonium phosphate/Nitrogen-Phosphorus-Potassium)
+\change_unchanged
+, urea, and organic fertilizer.
  We again define input use at the household level generously: for each type
  of fertilizer, an indicator is calculated that is true if at least one
  spouse indicated that the particular type of fertilizer was used on at
  least one of the maize plots.
  We find that, according to the index, reducing information asymmetries
- increases fertilizer use, although the effect is only significant at a
- 10 percent significance level.
- Analysis of the use of different types, reported in Table 
+ 
+\change_inserted 1966826031 1579191582
+(first treatment) 
+\change_unchanged
+increases fertilizer use, although the effect is only significant at a 10
+ percent significance level.
+ Analysis of the use of different 
+\change_inserted 1966826031 1579191654
+fertiliser 
+\change_unchanged
+types, reported in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:inputs"
@@ -2275,9 +2970,20 @@ reference "tab:inputs"
 s use organic fertilizer.
  For seed use, the index aggregates hybrid seed and Open Pollinated Varieties.
  We do not find that improved seed use changed significantly after reducing
- intra-household information asymmetry.
- Promoting a household cooperative approach does not seem to affect household
- level input use if judged by the indices.
+ intra-household information asymmetry
+\change_inserted 1966826031 1579191674
+ (first treatmnt)
+\change_unchanged
+.
+ Promoting a 
+\change_deleted 1966826031 1579191682
+household
+\change_unchanged
+ cooperative approach 
+\change_inserted 1966826031 1579191697
+to household farming (second treatment) 
+\change_unchanged
+does not seem to affect household level input use if judged by the indices.
  The use of hybrid seed seems to be somewhat higher among households that
  saw a video featuring a couple role model.
  However, the difference is not statistically significant after controlling
@@ -2304,7 +3010,15 @@ reference "fig:HH_impact_info_asym"
  Similarly, for area, we take averages of plot level area estimates between
  spouses, sum to obtain household level estimates, and use trimmed logarithms.
  The subjective question takes the form of a binary variable that takes
- the value of one if any spouse reports better yield on any plot than normal.
+ the value of one if any spouse reports better yield 
+\change_inserted 1966826031 1579191819
+than normal 
+\change_unchanged
+on any plot 
+\change_deleted 1966826031 1579191814
+than normal
+\change_unchanged
+.
  In Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2312,24 +3026,102 @@ reference "tab:production"
 
 \end_inset
 
-, where we shows results for the different components of the index, we also
- include yield (defined as kilograms produced per acre).
- We find no impact of showing a video to a couple as opposed to showing
- the video only to one of the spouses.
- We also find no impact of showing a video that uses a couple as a role
- model compared to a video that depicts farming as a male activity.
+, where we show
+\change_deleted 1966826031 1579191832
+s
+\change_unchanged
+ results for the different components of the index, we also include yield
+ (defined as kilograms produced per acre).
+ We find no impact 
+\change_inserted 1966826031 1579191901
+on any of the production related outcomes 
+\change_unchanged
+of showing a video to a couple as opposed to showing the video only to one
+ of the spouses
+\change_inserted 1966826031 1579191857
+ (first treatment)
+\change_unchanged
+.
+ We 
+\change_deleted 1966826031 1579191914
+also
+\change_inserted 1966826031 1579191915
+neither
+\change_unchanged
+ find 
+\change_deleted 1966826031 1579191918
+no
+\change_unchanged
+ impact of showing a video that uses a couple as a role model compared to
+ a video that depicts 
+\change_inserted 1966826031 1579191949
+a male role model 
+\change_unchanged
+farm
+\change_deleted 1966826031 1579191956
+ing
+\change_inserted 1966826031 1579191956
+er
+\change_unchanged
+ 
+\change_deleted 1966826031 1579191959
+as a male activity
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
 Finally, we want to know if efforts to increase intra-household cooperation
  affected household level well-being.
  Questions related to well-being were only asked to the wife, as she is
- most likely the one responsible for reproductive chores.
+ most likely the one responsible for reproductive chores
+\change_inserted 1966826031 1579192004
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1579192044
+not so obvious that she would know best because she does resproductive work...
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  We asked subjective well-being questions where households were asked to
- compare themselves over time and relative to others in the village.
+ compare themselves over time and relative to other
+\change_inserted 1966826031 1579192070
+ households
+\change_deleted 1966826031 1579192068
+s
+\change_unchanged
+ in the village.
  We also use self-assessed food security (using two questions from the Household
- Food Insecurity Access Scale (HFIAS)).
- We also use food consumption as a proxy for household level well-being.
+ Food Insecurity Access Scale (HFIAS))
+\change_deleted 1966826031 1579192112
+.
+ We also us
+\change_inserted 1966826031 1579192109
+ and
+\change_deleted 1966826031 1579192108
+e
+\change_unchanged
+ food consumption as 
+\change_deleted 1966826031 1579192119
+a
+\change_unchanged
+ prox
+\change_inserted 1966826031 1579192121
+ies
+\change_deleted 1966826031 1579192121
+y
+\change_unchanged
+ for household level well-being.
  The indices in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2368,13 +3160,12 @@ Spouses may disagree about certain maize production activities.
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename results/likert_plot_tell_each_other.pdf
-	lyxscale 10
 	scale 50
 
 \end_inset
@@ -2440,15 +3231,28 @@ rarely
 
 \end_inset
 
- We see that among households where the video was shown to both spouses,
- there is an increase in the proportion of households in which both spouses
- say that they always talk to each other when there is disagreement, and
- a decrease in the proportion of households in which both spouses say that
- they never or rarely tell each other when there is disagreement.
+ We see that among households where the video was shown to both spouses
+\change_inserted 1966826031 1579193179
+ instead of only one spouse (first treatment)
+\change_unchanged
+, there is an increase in the proportion of households in which both spouses
+ say that t
+\change_deleted 1966826031 1579193196
+hey always talk to each 
+\change_inserted 1966826031 1579193207
+they would tell the 
+\change_unchanged
+other when there is disagreement, and a decrease in the proportion of households
+ in which both spouses say that they never or rarely tell each other when
+ there is disagreement.
  This increase in communication among spouses is confirmed using a Mann-Whitney
  U-test (p=0.001).
- The second treatment does not seem to affect the likelihood that spouses
- tell each other when they disagree (Mann-Whitney U-test p-value=0.1481).
+ The second treatment 
+\change_inserted 1966826031 1579193239
+promoting a cooperative approach 
+\change_unchanged
+does not seem to affect the likelihood that spouses tell each other when
+ they disagree (Mann-Whitney U-test p-value=0.1481).
 \end_layout
 
 \begin_layout Section
@@ -2459,27 +3263,164 @@ Conclusion
 Increased cooperation among spouses may render preferences of the individual
  members more aligned and lead to a more efficient allocation of resources.
  We test two strategies to increase cooperation between spouses.
- One directly targets the unequal distribution of knowledge related to recommend
-ed practices and modern inputs.
+ One directly targets the 
+\change_deleted 1966826031 1579193668
+unequal distribution
+\change_inserted 1966826031 1579193672
+assymetry
+\change_unchanged
+ of 
+\change_deleted 1966826031 1579193266
+knowledge
+\change_inserted 1966826031 1579193267
+information
+\change_deleted 1966826031 1579193680
+ 
+\change_inserted 1966826031 1579193682
+ between spouses 
+\change_unchanged
+related to recommended practices and modern inputs
+\change_inserted 1966826031 1579193286
+ for agricultural production
+\change_unchanged
+.
  Information related to crop management, an important determinant of sustainable
  intensification, is generally provided to only one individual, under the
  assumption that information flows freely within the household.
- In a first treatment, we compare the impact on a range of outcomes between
- households where information was provided to the couple (husband and wife)
- and households where only one individual was given this same information.
- A second strategy targets gendered norms and customs, as in traditional
+ In a first treatment, we 
+\change_deleted 1966826031 1579193771
+compare
+\change_inserted 1966826031 1579193772
+assess
+\change_unchanged
+ the impact on a range of outcomes 
+\change_deleted 1966826031 1579193337
+between
+\change_inserted 1966826031 1579193353
+of providing
+\change_unchanged
+ 
+\change_deleted 1966826031 1579193363
+households where
+\change_unchanged
+ information 
+\change_deleted 1966826031 1579193367
+was provided 
+\change_unchanged
+to the couple (husband and wife
+\change_inserted 1966826031 1579193372
+ together
+\change_unchanged
+) 
+\change_deleted 1966826031 1579193381
+and
+\change_inserted 1966826031 1579193403
+versus providing this same information to
+\change_deleted 1966826031 1579193392
+ households where
+\change_unchanged
+ only one individual 
+\change_deleted 1966826031 1579193407
+was given this same information
+\change_inserted 1966826031 1579193411
+(husband or wife)
+\change_unchanged
+.
+ A second strategy targets gendered norms and customs, as in 
+\change_deleted 1966826031 1579193440
+traditional
+\change_inserted 1966826031 1579193448
+patriarchal 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1579193460
+not clear what you mean with 'traditional'
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
  societies, these may prevent the efficient allocation of resources within
  households.
- In a second treatment, we compare the impact on a range of outcomes between
- households that were shown an aspirational video of a couple farming together
- and households that were shown a video in which a man is responsible for
- productive activities.
+ 
+\change_inserted 1966826031 1579193482
+Therefore, i
+\change_deleted 1966826031 1579193480
+I
+\change_unchanged
+n a second treatment, 
+\change_inserted 1966826031 1579193760
+projecting a cooperative approach to household farming and 
+\change_deleted 1966826031 1579193760
+w
+\change_inserted 1966826031 1579193763
+w
+\change_unchanged
+e 
+\change_deleted 1966826031 1579193767
+compare
+\change_inserted 1966826031 1579193768
+assess
+\change_unchanged
+ the impact on a range of outcomes 
+\change_deleted 1966826031 1579193497
+between households that were
+\change_inserted 1966826031 1579193497
+of
+\change_unchanged
+ show
+\change_deleted 1966826031 1579193531
+n
+\change_inserted 1966826031 1579193501
+ing
+\change_unchanged
+ an aspirational video of a couple farming
+\change_deleted 1966826031 1579193572
+ 
+\change_inserted 1966826031 1579193574
+ and providing the extention information 
+\change_unchanged
+together 
+\change_deleted 1966826031 1579193521
+and households that were 
+\change_inserted 1966826031 1579193572
+versus 
+\change_unchanged
+show
+\change_inserted 1966826031 1579193572
+ing
+\change_deleted 1966826031 1579193527
+n
+\change_unchanged
+ a video in which a 
+\change_deleted 1966826031 1579193586
+man
+\change_inserted 1966826031 1579193601
+male farmer provides the same extention information
+\change_unchanged
+ 
+\change_deleted 1966826031 1579193609
+is responsible for productive activities
+\change_unchanged
+.
  We do this using a field experiment involving 3,300 maize growing households
  in eastern Uganda.
 \end_layout
 
 \begin_layout Standard
-We start by looking at decision making and confirm findings form 
+We start by looking at decision making and confirm findings 
+\change_deleted 1966826031 1579193626
+form 
+\change_inserted 1966826031 1579193630
+from 
+\change_unchanged
+
 \begin_inset CommandInset citation
 LatexCommand citet
 key "doss2014owns"
@@ -2492,72 +3433,229 @@ literal "true"
  Still, in most cases the man is still the predominant decision maker, especiall
 y if monetary outlays are involved, such as the decision to use fertilizer
  or improved seed.
- Reducing information asymmetry significantly increases joint decision making
- related to the decision to plant maize on the plot, on strategies to fight
- striga, and on the timing of the first weeding.
+ Reducing information asymmetry
+\change_inserted 1966826031 1579193698
+ between spouses
+\change_unchanged
+ significantly increases joint decision making related to the decision to
+ plant maize on the plot, on strategies to fight striga, and on the timing
+ of the first weeding.
  There is also some evidence that reducing information asymmetry increases
  joint decision making related to the use of fertilizer.
- No effects are found from projecting a cooperative approach to farming.
+ No effects are found from projecting a cooperative approach to 
+\change_inserted 1966826031 1579193718
+household 
+\change_unchanged
+farming
+\change_inserted 1966826031 1579193725
+, the second treatment
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
 Next, we look at labor time allocations of husband and wife with respect
  to maize farming.
- We find that the gap between woman labor and man labor reduces after reducing
+ 
+\change_inserted 1966826031 1579193833
+Women tend to work more than men but 
+\change_deleted 1966826031 1579193834
+W
+\change_inserted 1966826031 1579193835
+w
+\change_unchanged
+e find that the gap between woman labor and man labor reduces after reducing
  information asymmetry.
  While we find suggestive evidence that the husband works more on land preparati
 on and harvesting, the effects are driven by a decrease in the labor supply
  of the wife.
  Also here, we find no impact of promoting a household cooperative approach.
- We further find that households where information was distributed among
+ 
+\change_inserted 1966826031 1579193877
+
+\end_layout
+
+\begin_layout Standard
+We further find that households where information was distributed among
  both spouses are more likely to indicate the intention to invest in agriculture.
+
+\change_inserted 1966826031 1579193900
+ 
+\change_deleted 1966826031 1579193900
+
 \end_layout
 
 \begin_layout Standard
 As increased cooperation was expected to increase overall efficiency, we
- also look at household level outcomes.
+ also look at household level 
+\change_inserted 1966826031 1579193946
+agricultural production related 
+\change_unchanged
+outcomes.
  In particular, we test if household level knowledge about recommended practices
- and modern inputs is affected differently by the two treatments.
+ and modern inputs is affected 
+\change_deleted 1966826031 1579193910
+differently
+\change_unchanged
+ by the two treatments.
  We also look at differences in adoption of a range of practices and inputs.
- A third family of household level outcomes we consider is related to production.
+ A third family of household level outcomes we consider is related to 
+\change_inserted 1966826031 1579193964
+maize 
+\change_unchanged
+production
+\change_inserted 1966826031 1579193971
+ itself
+\change_unchanged
+.
  Finally, we test if our interventions have impacted household level welfare.
- We do not find any impact of our interventions on any of these household
- level outcomes.
+ We do not find 
+\change_deleted 1966826031 1579193989
+any
+\change_unchanged
+ impact of 
+\change_deleted 1966826031 1579193982
+our interventions
+\change_inserted 1966826031 1579193986
+any of the treatments
+\change_unchanged
+ on any of these household level outcomes.
  
 \end_layout
 
 \begin_layout Standard
 Finally, we explore some of the impact pathways through which we expected
- our interventions to work.
- For instance, we assume that our interventions would facilitate monitoring,
- which we would expect to reduce disagreement between spouse's answers.
- We do not generally find this to be the case.
+ our 
+\change_deleted 1966826031 1579194001
+interventions
+\change_inserted 1966826031 1579194003
+treatments
+\change_unchanged
+ to work.
+ For instance, we assume that our 
+\change_deleted 1966826031 1579194009
+interventions
+\change_inserted 1966826031 1579194013
+treatments
+\change_unchanged
+ would facilitate 
+\change_inserted 1966826031 1579194022
+mutual 
+\change_unchanged
+monitoring
+\change_inserted 1966826031 1579194027
+ by spouses
+\change_unchanged
+, which we would expect to reduce disagreement between spouse's answers.
+ We do not 
+\change_deleted 1966826031 1579194035
+generally
+\change_unchanged
+ find this to be the case.
  Finally, we expect that spouses communicate more if they are encouraged
  to cooperate.
  Here, we do find that households where information asymmetry was reduced
- are more likely to tell each other when they do not agree about a particular
- maize related issue.
+ are more likely to tell each other when they do not agree
+\change_inserted 1966826031 1579194057
+ with the other
+\change_unchanged
+ about a particular maize related issue.
 \end_layout
 
 \begin_layout Standard
-Overall, we conclude that despite some evidence of increased joint decision
- making, we find little impact of our interventions at the household level.
- The null results we obtain from the second intervention across the board
- in particular are at odds with findings in other studies on role model
- effects.
+Overall, we conclude that 
+\change_deleted 1966826031 1579194653
+despite some evidence of increased joint decision making, we find little
+ impact of our interventions at the household level
+\change_inserted 1966826031 1579195153
+the first treatment which aimed to reduce information assymmetry between
+ spouses about good agronomic practices for maize production was succesful
+ in increasing cooperation between spouses in some regards.
+ Joint decision making about strategic agricultural decisions was increased,
+ which may increase the likelihood that the joint household utility function
+ will be maximized (McPeak and Doss 2006).
+ Spouses also became also more likely to express any disagreement about
+ decisions related to maize production.
+ The labor allocations by wife and husband became somewhat more balanced,
+ particularly through a reduction in labor time by women, who tend to be
+ the ones with the heaviest work burden.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 1966826031 1579194451
+.
+ 
+\change_unchanged
+The null results we obtain from the second 
+\change_deleted 1966826031 1579194068
+intervention
+\change_inserted 1966826031 1579194463
+treatment projecting a cooperative approach to household farming
+\change_unchanged
+ across the board 
+\change_deleted 1966826031 1579194104
+in particular
+\change_unchanged
+ are at odds with findings in other studies on role model effects.
  Most likely, this is due to the fact that the exposure to the role models
  was not intensive enough: while the videos were engaging, they were only
  about 10 minutes long.
  Other studies use movies of over one hour, or repeated exposure to role
- models.
+ models
+\change_inserted 1966826031 1579194463
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1579194164
+include references Riley; Bernard et al.; Beaman
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  In addition, there are some indications that the farmers that were enrolled
  in the study had difficulty identifying with the actors, as most perceived
  them to be quite different from themselves.
- Furthermore, the fact that we do not find effects does not mean that efforts
- to increase cooperation are futile.
+ 
+\change_inserted 1966826031 1579194603
+
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 1966826031 1579194609
+Furthermore, t
+\change_inserted 1966826031 1579194610
+T
+\change_unchanged
+he fact that we do not find effects 
+\change_inserted 1966826031 1579194388
+on the efficiency of household level agricultural production 
+\change_unchanged
+does not mean that efforts to increase cooperation are futile.
  There may be impact in the future given that we find a significant increase
  in joint investment in agriculture.
- The only impact at the household level of reducing information asymmetry
+ The only impact 
+\change_inserted 1966826031 1579194378
+of reducing information asymmetry on the efficiency 
+\change_deleted 1966826031 1579194253
+at the
+\change_unchanged
+ household level 
+\change_inserted 1966826031 1579194378
+agricultural production 
+\change_deleted 1966826031 1579194247
+of reducing information asymmetry
+\change_unchanged
  is an increase in organic fertilizer use, which contributes to long run
  soil health.
 \end_layout
