@@ -87,11 +87,12 @@ knitr
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\author 1966826031 "lecou002"
 \end_header
 
 \begin_body
@@ -155,9 +156,14 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-Increased attention for the inner workings of the household farm by both
- researchers and practitioners led to various innovations in data collection
- 
+Increased attention for the inner workings of 
+\change_inserted 1966826031 1616161207
+agricultural households 
+\change_deleted 1966826031 1616161198
+the household farm
+\change_unchanged
+ by both researchers and practitioners led to various innovations in data
+ collection 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "https://doi.org/10.1111/agec.12540"
@@ -177,11 +183,37 @@ literal "false"
 \end_inset
 
 .
- The focus on intra-household processes has also substantially increased
- the availability of data that is collected at the individual household
- member level, especially from the co-heads of the households.
+ The focus on intra-household processes
+\change_inserted 1966826031 1616161298
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616161307
+decision-making processes??
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ has also substantially increased the availability of data that is collected
+ at the individual household member level, especially from the co-heads
+ of the households.
  Studies that collect data from male and female co-heads separately find
- that spouses often provide different answers on even the most basic questions.
+ that spouses often provide different answers on even the most basic questions
+\change_inserted 1966826031 1616161542
+ (Ambler et al.
+ 2021; Annan et al.
+ 2020; Acosta et al.2020; Twyman et al.
+ 2015; Seymour, G., & Peterman, A.
+ 2018)
+\change_unchanged
+.
  
 \end_layout
 
@@ -193,10 +225,20 @@ literal "false"
 
 \end_inset
 
- demonstrate that while part of the this may be due to measurement error,
- there is also a systematic component that reflects asymmetric information
- within households where one co-head does not have accurate knowledge about
- the decisions made, actions taken, or assets owned of the other.
+ demonstrate that while part of 
+\change_deleted 1966826031 1616162060
+the
+\change_unchanged
+ this may be due to measurement error, there is also a systematic component
+ that reflects asymmetric information within households where one co-head
+ does not have accurate knowledge about the decisions made, actions taken,
+ or assets owned 
+\change_deleted 1966826031 1616161566
+of
+\change_inserted 1966826031 1616161566
+by
+\change_unchanged
+ the other.
  Furthermore, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -209,8 +251,26 @@ literal "false"
  assets that can be hidden more easily than for others suggests that, to
  some extent, spouses exploit these information asymmetries by deliberately
  hiding assets and decisions from each other.
- A number of lab-in-the-field experiments indeed confirm that household
- members conceal resources from one another 
+ 
+\change_inserted 1966826031 1616161770
+However, it may also be that prevailing gender norms result in reporting
+ bias, if for example male co-heads exaggerate when asked about issues they
+ are normatively expected to be responsible for.
+ But 
+\change_deleted 1966826031 1616161774
+A
+\change_inserted 1966826031 1616161775
+a
+\change_unchanged
+ number of lab-in-the-field experiments indeed confirm that
+\change_inserted 1966826031 1616161896
+, in many cases,
+\change_unchanged
+ household members conceal
+\change_inserted 1966826031 1616161902
+ part of their
+\change_unchanged
+ resources from one another 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "eg."
@@ -219,73 +279,415 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted 1966826031 1616162043
+Hoel 2015 10.1016/j.jebo.2015.02.016 
+\change_unchanged
 .
- However, it may also be that prevailing gender norms result in such a bias,
+ 
+\change_inserted 1966826031 1616161652
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616161684
+in lab in the field experiment hiding is not based on reported but observed
+ data
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_deleted 1966826031 1616161645
+However, it may also be that prevailing gender norms result in such a bias,
  if for example male co-heads start exaggerating when asked about issues
  they are assumed to be responsible for.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
 We contribute to this line of research by documenting spousal disagreement
  in reported behaviour among a large sample of semi-subsistance maize farming
- household in Uganda.
- First, on a range of decisions that are crucial to increase yields such
- as timely planting, seed spacing and weeding, we ask both spouses to indicate
- who made each decision on each plot.
+ household
+\change_inserted 1966826031 1616162109
+s
+\change_unchanged
+ in Uganda.
+ First, on a range of decisions that are crucial to increase 
+\change_inserted 1966826031 1616162117
+maize 
+\change_unchanged
+yields
+\change_inserted 1966826031 1616162135
+,
+\change_unchanged
+ such as timely planting, seed spacing
+\change_inserted 1966826031 1616162124
+,
+\change_unchanged
+ and weeding, we ask both spouses 
+\change_inserted 1966826031 1616162185
+seperately 
+\change_unchanged
+to indicate who made each 
+\change_inserted 1966826031 1616162150
+of these 
+\change_unchanged
+decision
+\change_inserted 1966826031 1616162152
+s
+\change_unchanged
+ on each plot
+\change_inserted 1966826031 1616162171
+ of the household farm
+\change_unchanged
+.
  Spouses can indicate they took the decision alone, that their spouse took
  the decision alone, or that the decision was taken jointly.
- These answers are then combined to assess the degree of disagreement with
- respect to decision making.
+ These answers are then combined to assess the 
+\change_inserted 1966826031 1616162248
+extent and direction of
+\change_deleted 1966826031 1616162242
+degree of
+\change_unchanged
+ disagreement with respect to decision making.
  Second, we ask each spouse separately how much time he or she spent on
- each of five important maize farming related activities (land preparation,
- planting, weeding, spraying, and harvesting) on each plot.
+ 
+\change_deleted 1966826031 1616162279
+each of
+\change_unchanged
+ five 
+\change_inserted 1966826031 1616162284
+different 
+\change_unchanged
+important maize farming related activities (land preparation, planting,
+ weeding, spraying, and harvesting) on each plot.
  We also ask each co-head to provide an estimate of how much time his or
  her spouse spent on these same activities.
- We combine these answers to construct a measure of shirking, where one
- spouse devotes less time on a particular activity than his or her spouse
- thinks.
- Finally, we ask each co-head how much maize he of she sold unilaterally
- (as opposed to joint sales) and also ask each co-head to provide an estimate
- of how much his or her spouses sold alone.
- We again combine this information to reflect income hiding, where one spouse
+ We 
+\change_inserted 1966826031 1616162438
+similarly 
+\change_unchanged
+combine these answers
+\change_deleted 1966826031 1616162445
+ 
+\change_inserted 1966826031 1616162454
+ to assess the extent and direction of disagreement with respect to labour
+ time allocation 
+\change_deleted 1966826031 1616162459
+to construct a measure of shirking
+\change_inserted 1966826031 1616162503
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616162475
+check later if this corresponds to revised measures
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+.
+ 
+\change_deleted 1966826031 1616162969
+, where
+\change_inserted 1966826031 1616162969
+The cases where
+\change_unchanged
+ one 
+\change_deleted 1966826031 1616162969
+spouse
+\change_inserted 1966826031 1616162538
+co-head
+\change_unchanged
+ devotes less time on a particular activity than his or her spouse 
+\change_deleted 1966826031 1616162969
+thinks
+\change_inserted 1966826031 1616162975
+believes, can be considered cases of labour time shirking on the part of
+ that co-head
+\change_unchanged
+.
+ 
+\change_inserted 1966826031 1616162834
+We also ask each co-head how much maize was sold jointly with his or her
+ spouse.
+ 
+\change_unchanged
+Finally, we ask each co-head how much maize he o
+\change_deleted 1966826031 1616162969
+f
+\change_inserted 1966826031 1616162788
+r
+\change_unchanged
+ she sold unilaterally (as opposed to joint sales) and also ask each co-head
+ to provide an estimate of how much his or her spouses sold 
+\change_inserted 1966826031 1616162788
+by him/herself
+\change_deleted 1966826031 1616162969
+alone
+\change_unchanged
+.
+ 
+\change_inserted 1966826031 1616163116
+These answers are again combined to assess the extent and direction of disagreem
+ent with respect to joint maize sales, and unilateral maize sales by the
+ male and the female co-head.
+ The cases where one co-head reports larger amounts of maize sold (jointly
+ or unilaterally) 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616162917
+or income earned?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+ than his or her spouse believes, can be considered cases of income hiding
+ on the part of that co-head.
+ 
+\change_deleted 1966826031 1616163007
+We again combine this information to reflect income hiding, where one spouse
  reports more sales than the other spouse is aware of.
+
+\change_unchanged
  
 \end_layout
 
 \begin_layout Standard
-In addition to documenting patterns in spousal disagreement, the paper also
- tests two simple interventions aimed at reducing disagreement related to
- decision making, shirking and income hiding.
+
+\change_deleted 1966826031 1616163138
+In 
+\change_inserted 1966826031 1616163139
+An 
+\change_unchanged
+addition
+\change_inserted 1966826031 1616163155
+al contribution of our study
+\change_unchanged
+ 
+\change_deleted 1966826031 1616163168
+to documenting patterns in spousal disagreement, the paper also tests 
+\change_inserted 1966826031 1616163311
+consists of testing the impact of 
+\change_unchanged
+two 
+\change_deleted 1966826031 1616163182
+simple
+\change_unchanged
+ interventions
+\change_inserted 1966826031 1616163414
+.
+
+\change_deleted 1966826031 1616163498
+ aimed at reducing disagreement related to decision making, shirking and
+ income hiding
+\change_unchanged
+.
  Inspired by recent research on behavioral change communication and social
- marketing, a first intervention consists of a video treatment that promotes
- a mental model of farming as a joint venture, with both spouses having
- an equal role in decision making, activities, and rewards.
- A second intervention focuses more on reducing information asymmetry between
- spouses.
+ marketing, 
+\change_deleted 1966826031 1616163376
+a
+\change_inserted 1966826031 1616163377
+the
+\change_unchanged
+ first intervention consists of a video treatment that promotes a mental
+ model of 
+\change_inserted 1966826031 1616163427
+maize 
+\change_unchanged
+farming as a joint venture, with both spouses having an equal role in decision
+ making, activities, and rewards.
+ 
+\change_deleted 1966826031 1616163398
+A
+\change_inserted 1966826031 1616163399
+The
+\change_unchanged
+ second intervention 
+\change_deleted 1966826031 1616163476
+focuses more on
+\change_inserted 1966826031 1616163478
+aims to
+\change_unchanged
+ reduc
+\change_inserted 1966826031 1616163482
+e
+\change_deleted 1966826031 1616163482
+ing
+\change_unchanged
+ information asymmetry
+\change_inserted 1966826031 1616163493
+ with regard to good maize farming practices
+\change_unchanged
+ between spouses.
  By making sure both spouses have similar information about what decision
- need to be made, what labour is required and what yields can be expected,
- spouses are expected to be better able to monitor each other and provide
- better estimates of each other's efforts.
- We think that the second intervention will be relatively more effective
+ need to be made, what labour is required
+\change_inserted 1966826031 1616163506
+,
+\change_unchanged
+ and what yields can be expected, spouses are expected to be better able
+ to monitor each other and provide better estimates of each other's efforts.
+ 
+\change_deleted 1966826031 1616165142
+We think that the second intervention will be relatively more effective
  if spouses engage in intentional concealment, while the first may reduce
  the likelihood that spouses feel they need to report behaviour that is
  more in line with norms and customs.
+
+\change_inserted 1966826031 1616165486
+ Both interventions are hypothesized to reduce both disagreement where one
+ understates one's own role and disagreement where one overstates one's
+ own role.
+ But in the case of the first intervention such reductions are triggered
+ by a role model projecting farming as a couple's joint venture, and in
+ case of the second intervention by reduced information asymmetry between
+ spouses which potentially facilitated mutual monitoring.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616165216
+do we need to formulate more detailed hypotheses about expected ate on understat
+ed, resp.
+ overstated, disagreement as a result of a) couple videos, b) info asym
+ videos?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
 We find substantial disagreement between spouses.
  For instance, we find that co-heads exaggerate their own decision making
  power on almost one in four plots.
- We find that the couple role model intervention reduces in the likelihood
- that co-heads overestimate own influence on decision making.
+ We find that the couple role model
+\change_inserted 1966826031 1616165598
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616165625
+does couple role model do as a label? joint venture role model? 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+ intervention reduces 
+\change_deleted 1966826031 1616165671
+in
+\change_unchanged
+ the likelihood that co-heads overestimate own influence on decision making.
  We find similar effects from reducing information asymmetry between spouses.
- We further find that male co-heads shirk more frequently than female co-heads.
+ We further find that
+\change_deleted 1966826031 1616166108
+ 
+\change_inserted 1966826031 1616166170
+ shirking on the part of male co-heads, where a 
+\change_unchanged
+male co-head
+\change_deleted 1966826031 1616166118
+s
+\change_unchanged
+ 
+\change_inserted 1966826031 1616166133
+reported labour time is lower then his spouse's expectation, 
+\change_deleted 1966826031 1616166145
+shirk
+\change_inserted 1966826031 1616166145
+is
+\change_unchanged
+ more 
+\change_deleted 1966826031 1616166154
+frequently
+\change_inserted 1966826031 1616166181
+likely shirking on the part of female co-heads
+\change_unchanged
+ 
+\change_deleted 1966826031 1616166188
+than female co-heads
+\change_unchanged
+.
  There is weak evidence that both treatments reduce the incidence of male
- co-head shirking, but only for one activity.
- We also find that spouses report they sell about double of what the other
- spouse is aware of.
+ co-head shirking, but only for one activity
+\change_inserted 1966826031 1616166226
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616166238
+adapt to revised analysis if needed
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
+ We also find that spouses report they 
+\change_inserted 1966826031 1616166258
+unilaterally 
+\change_unchanged
+sell about double
+\change_inserted 1966826031 1616166263
+ the amount
+\change_unchanged
+ of what the other spouse is aware of
+\change_inserted 1966826031 1616166272
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616166294
+include also result on joint sales later
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  The interventions did not affect the likelihood that spouses get a better
- idea of each other's sales.
+ idea of each other's 
+\change_inserted 1966826031 1616166310
+unilateral 
+\change_unchanged
+sales.
 \end_layout
 
 \begin_layout Standard
@@ -295,10 +697,41 @@ The remainder of the paper is organized as follows: The next section gives
  the intervention.
  Next is a brief section describing the context and the characteristics
  of the households in our sample.
- We then turn to the results, first looking at how the interventions affect
- disagreement about decision making.
- This is followed by a section on disagreement on labour and disagreement
- related to maize sales.
+ We then turn to the results, first looking at 
+\change_inserted 1966826031 1616166430
+the extent and direction of spousal disagreement about decision making,
+ followed by an assessment of the impact of the two 
+\change_deleted 1966826031 1616166432
+how the
+\change_unchanged
+ interventions 
+\change_deleted 1966826031 1616166439
+affect 
+\change_inserted 1966826031 1616166440
+on spousal overstated and understated 
+\change_unchanged
+disagreement about decision making.
+ This is followed by a section on 
+\change_inserted 1966826031 1616166466
+spousal 
+\change_unchanged
+disagreement on labour 
+\change_inserted 1966826031 1616166560
+time allocation and the impact of the interventions, and a section 
+\change_deleted 1966826031 1616166524
+and
+\change_inserted 1966826031 1616166527
+on spousal
+\change_unchanged
+ disagreement related to 
+\change_inserted 1966826031 1616166537
+joint and unilateral 
+\change_unchanged
+maize sales
+\change_inserted 1966826031 1616166558
+ and impact of the interventions
+\change_unchanged
+.
  A final section concludes.
 \end_layout
 
@@ -308,10 +741,22 @@ Literature
 
 \begin_layout Standard
 In this section, we review related literature.
- We mainly focus on the empirical empowerment literature that uses observational
- data from surveys in which both spouses are interviewed separately and
- are asked the same set of questions.
- Such studies are often interested in learning about women's autonomy.
+ We mainly focus on the empirical 
+\change_deleted 1966826031 1616167749
+empowerment
+\change_unchanged
+ literature 
+\change_inserted 1966826031 1616167802
+intrahousehold resource allocation and decision-making in rural development
+ contexts 
+\change_unchanged
+that uses observational data from surveys in which both spouses are interviewed
+ separately and are asked the same set of questions.
+ Such studies are often interested in learning about women's 
+\change_inserted 1966826031 1616167744
+empowerment and 
+\change_unchanged
+autonomy.
  For example 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -332,17 +777,51 @@ literal "false"
 \end_inset
 
  collect data from both spouses on a range of autonomy items, including
- the need of the wife to obtain the husband's permission to go to a set
- of places, the mother's capacity to decide on children's affairs, if the
- wife is allowed to have a job, her role in deciding on the number of children
- and some household expenditure related decisions.
+ the need of the wife to obtain the husband's permission to go to a 
+\change_deleted 1966826031 1616167835
+set
+\change_inserted 1966826031 1616167836
+range
+\change_unchanged
+ of places, the 
+\change_deleted 1966826031 1616167863
+mother's
+\change_inserted 1966826031 1616167864
+wife's
+\change_unchanged
+ capacity to decide on children's affairs, if the wife is allowed to have
+ a job, her role in deciding on the number of children and some household
+ expenditure related decisions.
 \end_layout
 
 \begin_layout Standard
 A common finding in studies that ask the same set of questions to different
  individuals within the household is substantial disagreement between spouses,
- even on questions that would seem uncontroversial such as the number of
- children.
+ even on questions that would seem 
+\change_deleted 1966826031 1616167954
+uncontroversial
+\change_inserted 1966826031 1616167976
+objectively verifiable
+\change_unchanged
+ such as the number of children
+\change_inserted 1966826031 1616168027
+ or type of material used for house construction 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616167925
+i would say the number of children could be very controversial ;-)
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  This may indicate that part of this divergence is simply due to measurement
  error.
  
@@ -371,9 +850,31 @@ literal "false"
 
 , the primary focus is on testing if sole decision making correlates differently
  to a measure of autonomy than joint decision making.
- However, they note spouses often give inconsistent answers when asked about
- who made a particular decision, and also consider heterogeneity in the
- relationship between decision making and autonomy conditional on disagreement.
+ However, they note 
+\change_inserted 1966826031 1616168097
+that 
+\change_unchanged
+spouses often give inconsistent answers when asked about who made a particular
+ decision, and also consider heterogeneity in the relationship between decision
+ making and autonomy conditional on disagreement
+\change_inserted 1966826031 1616168348
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616168355
+please clarify sentence
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  They conclude that disagreement may signal underlying power dynamics within
  the household that are likely to be relevant when assessing individual
  level agency and empowerment.
@@ -388,7 +889,25 @@ literal "false"
  study spousal disagreement among 500 couples in western Guatemala and correlate
  this to preventive health behaviour.
  They find that, relative to their husbands’ report, wives tend to under-report
- their decision-making power.
+ their decision-making power
+\change_inserted 1966826031 1616168404
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616168425
+is there a relevant correlation with preventive health behaviour?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -453,7 +972,19 @@ nt should be similar for the different questions asked in the survey.
  However, we feel that information asymmetry does not always have to be
  the result of one spouse intentionally deceiving another.
  There may be other systematic biases that manifest more in one asset or
- decision category than others and are shaped by prevailing gender norms.
+ decision category than others 
+\change_deleted 1966826031 1616168599
+and are
+\change_inserted 1966826031 1616168601
+that may be
+\change_unchanged
+ shaped by prevailing gender 
+\change_deleted 1966826031 1616168606
+norms
+\change_inserted 1966826031 1616168629
+roles and norms
+\change_unchanged
+.
  For example, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -465,10 +996,23 @@ literal "false"
  find that in a careful case study in northern Uganda, men often report
  unilateral decision making in areas where they are assumed to bear final
  responsibility, even if women had some degree of involvement.
- Women tented to view these scenarios as joint decisions.
+ Women ten
+\change_deleted 1966826031 1616168665
+te
+\change_unchanged
+d to view these scenarios as joint decisions.
  As such, it is important to understand the local cultural context to differenti
-ate between information asymmetry stemming form intentional hiding and disagreem
-ent that is more superficial.
+ate between information asymmetry stemming 
+\change_deleted 1966826031 1616168686
+form
+\change_inserted 1966826031 1616168686
+from
+\change_unchanged
+ intentional hiding
+\change_inserted 1966826031 1616168780
+, other gender related systematic bias,
+\change_unchanged
+ and disagreement that is more superficial.
 \end_layout
 
 \begin_layout Standard
@@ -508,20 +1052,39 @@ given power
 \end_layout
 
 \begin_layout Standard
-In surveys where women autonomy is central, spouses are often simply asked
- if the other spouse has a say in decisions being made with a simple yes/no
- questions, allowing for four categories (man says woman was included and
- woman agrees, woman says she was included and man agrees, man says woman
- was included while women disagrees, and woman says she was included and
- man disagrees).
+In surveys where women
+\change_inserted 1966826031 1616168893
+'s
+\change_unchanged
+ autonomy is central, spouses are often simply asked if the other spouse
+ has a say in decisions being made with a simple yes/no questions, allowing
+ for four categories (man says woman was included and woman agrees, woman
+ says she was included and man agrees, man says woman was included while
+ wom
+\change_deleted 1966826031 1616168919
+e
+\change_inserted 1966826031 1616168919
+a
+\change_unchanged
+n disagrees, and woman says she was included and man disagrees).
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 These days, most studies that focus on decision making acknowledge that
- the majority of decisions are made jointly, and a category is added: spouses
- are asked to indicate if a decision was made by themselves, by the other,
- or jointly, leading to nine possible combinations.
+ 
+\change_deleted 1966826031 1616168967
+the majority of 
+\change_unchanged
+decisions 
+\change_deleted 1966826031 1616168959
+are
+\change_inserted 1966826031 1616168973
+can also be
+\change_unchanged
+ made jointly, and a category is added: spouses are asked to indicate if
+ a decision was made by themselves, by the other, or jointly, leading to
+ nine possible combinations.
  
 \end_layout
 
@@ -529,7 +1092,25 @@ These days, most studies that focus on decision making acknowledge that
 
  Questions related to asset ownership also generally take a binary nature,
  asking for each asset if the respondent owns it but also inquiring if the
- spouse owns it.
+ spouse owns it
+\change_inserted 1966826031 1616169011
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616169030
+the same asset? and if both own it is jointly owned?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  Some studies go further and try to put amounts on this.
  For example 
 \begin_inset CommandInset citation
@@ -542,9 +1123,12 @@ literal "false"
  uses the husband's own reporting of his own farm income and compares this
  to the wife’s reporting of the husband's farm income to identify income
  hiding by men.
- She finds that the women's estimate of farm income is on average 28 thousand
- Cedis lower than what men report, representing 14 per cent of household
- income.
+ She finds that 
+\change_deleted 1966826031 1616169067
+the
+\change_unchanged
+ women's estimate of farm income is on average 28 thousand Cedis lower than
+ what men report, representing 14 per cent of household income.
  In Malawi, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -553,15 +1137,77 @@ literal "false"
 
 \end_inset
 
- finds that in 66% of households in their sample, the husband underestimated
- his wife’s income by an average of 47%.
+ finds that in 66
+\change_deleted 1966826031 1616169117
+%
+\change_inserted 1966826031 1616169119
+ per cent
+\change_unchanged
+ of households in their sample, the husband underestimated his wife’s income
+ by an average of 47
+\change_deleted 1966826031 1616169123
+%
+\change_inserted 1966826031 1616169145
+ per cent 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616169147
+of what?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
-All the above studies are descriptive in nature, exploring patterns in agreement
- and disagreement in decision making, asset ownership and income.
- The emerging consensus is that disagreement has real effects on important
- outcomes.
+
+\change_deleted 1966826031 1616169310
+All 
+\change_inserted 1966826031 1616169317
+Most of 
+\change_unchanged
+the above studies are descriptive in nature, exploring patterns in agreement
+ and disagreement in 
+\change_inserted 1966826031 1616169162
+spousal 
+\change_unchanged
+decision making, asset ownership and income.
+ 
+\change_inserted 1966826031 1616170676
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ANNAN2021105292"
+literal "false"
+
+\end_inset
+
+ show that spousal agreement and different directions of disagreement correlate
+ differently with important outcomes for households, women, and children.
+ Ambler et al.
+ 2021 and Seymour and Peterman 2018 observe assocation with intrahousehold
+ information asymmetry and power dynamics.
+ 
+\change_unchanged
+The emerging consensus is that 
+\change_inserted 1966826031 1616169957
+spousal 
+\change_unchanged
+disagreement 
+\change_deleted 1966826031 1616169979
+has real effects
+\change_inserted 1966826031 1616169990
+indicates intrahousehold dynamics with impact
+\change_unchanged
+ on important outcomes.
  Therefore, we agree with 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -570,11 +1216,54 @@ literal "false"
 
 \end_inset
 
- that more research is needed to understand which interventions move the
- needle on women’s taking of power, versus the husband giving her power
- or couples agreeing.
- Therefor, in the next section, we describe two interventions designed to
- reduce disagreement among spouses.
+ that more research is needed to understand which interventions 
+\change_inserted 1966826031 1616170648
+can change or reduce spousal disagreement and the intrahousehold dynamics
+ that drive it.
+ 
+\change_deleted 1966826031 1616170471
+move the needle on women’s taking of power, versus the husband giving her
+ power or couples agreeing
+\change_unchanged
+.
+ Therefor
+\change_inserted 1966826031 1616170477
+e
+\change_unchanged
+, in the next section, we describe two interventions designed to 
+\change_deleted 1966826031 1616170731
+reduce
+\change_inserted 1966826031 1616170734
+change intrahousehold dynamics and
+\change_unchanged
+ disagreement among spouses
+\change_inserted 1966826031 1616170477
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616170144
+i do not agree our interventions are designed to reduce disagreement (i.e.
+ a case of meta-intrahousehold disagreement :-))
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616170207
+in my view our interventions are designed to change intrahousehold dynamics,
+ one interventions inspires to a joint venture approach to farming, the
+ other reduces information asymmetry
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Section
@@ -614,7 +1303,11 @@ literal "false"
 .
  A first treatment therefore attempts to challenge pre-conceived ideas of
  what decision making of a spouse involves and who is expected to make decisions
- in a farm household by promoting a cooperative approach to maize farming.
+ in a farm household by promoting a cooperative
+\change_inserted 1966826031 1616171258
+, joint venture
+\change_unchanged
+ approach to maize farming.
  Second, the literature also establishes that spousal disagreement reflects
  information asymmetry between spouses 
 \begin_inset CommandInset citation
@@ -625,28 +1318,157 @@ literal "false"
 \end_inset
 
 .
- A second intervention tests if this informational imbalance can be influenced
- by giving spouses equal ex-ante knowledge on maize farming best practices.
+ A second intervention tests if this informational 
+\change_deleted 1966826031 1616171361
+imbalance
+\change_inserted 1966826031 1616171361
+asymmetry
+\change_unchanged
+ can be influenced by giving spouses equal ex-ante knowledge on 
+\change_inserted 1966826031 1616171350
+good 
+\change_unchanged
+maize farming 
+\change_deleted 1966826031 1616171361
+best
+\change_unchanged
+ practices.
  
 \end_layout
 
 \begin_layout Standard
-At the heart of both treatments is a short video that is shown twice to
- individuals within households using tablet computers.
+At the heart of both 
+\change_deleted 1966826031 1616171546
+treatments
+\change_inserted 1966826031 1616171548
+interventions
+\change_unchanged
+ is a short video that is shown twice to individuals within households using
+ tablet computers.
  The aim of the video was to increase knowledge of the viewer with respect
- to best practices in maize farmer, such as timely planting, row planting
+ to 
+\change_deleted 1966826031 1616171392
+best
+\change_inserted 1966826031 1616171393
+good
+\change_unchanged
+ practices in maize farm
+\change_deleted 1966826031 1616171400
+er
+\change_inserted 1966826031 1616171401
+ing
+\change_unchanged
+, such as timely planting, row planting
+\change_inserted 1966826031 1616171406
+,
+\change_unchanged
  and the use of improved inputs such hybrid seed and inorganic fertilizer.
- It does this though an inspirational story where a farmer (or farmers)
- recount how he/she/they used to be poor but managed to increase yields
- over time by applying a set of techniques and inputs.
+ It does this th
+\change_inserted 1966826031 1616171420
+r
+\change_unchanged
+ough an 
+\change_deleted 1966826031 1616171427
+in
+\change_inserted 1966826031 1616171427
+a
+\change_unchanged
+spirational story where a farmer (or farmers) recount how he/she/they used
+ to be poor but managed to increase yields over time by applying a set of
+ techniques and inputs.
  It also encourages farmers to view maize growing as a business that needs
- investment to grow over time and some simple inter-temporal cost-benefit
- calculations are use to illustrate this.
- Viewers are encouraged to follow the example of the model farmer in the
- video if they also want to lead the good life.
- The treatments itself consist of slightly adapted version of the video
- and variations on who within the household was exposed to the video.
- These variation and the rationale behind it are explained below.
+ investment to 
+\change_deleted 1966826031 1616171457
+gr
+\change_inserted 1966826031 1616171459
+develop
+\change_deleted 1966826031 1616171460
+ow
+\change_unchanged
+ over time and 
+\change_inserted 1966826031 1616171471
+includes 
+\change_unchanged
+some simple inter-temporal cost-benefit calculations 
+\change_deleted 1966826031 1616171481
+are use
+\change_unchanged
+ to illustrate this.
+ Viewers are encouraged to follow the example of the model farmer
+\change_inserted 1966826031 1616171495
+(s)
+\change_unchanged
+ in the video if they 
+\change_deleted 1966826031 1616171524
+also 
+\change_unchanged
+want to 
+\change_deleted 1966826031 1616171518
+lead
+\change_inserted 1966826031 1616171520
+attain
+\change_unchanged
+ the 
+\change_inserted 1966826031 1616171527
+same 
+\change_deleted 1966826031 1616171510
+good life
+\change_inserted 1966826031 1616171514
+achievements
+\change_unchanged
+.
+ The 
+\change_inserted 1966826031 1616171591
+first 
+\change_deleted 1966826031 1616171559
+treatments itself
+\change_inserted 1966826031 1616171563
+intervention
+\change_unchanged
+ consist
+\change_inserted 1966826031 1616171599
+s
+\change_unchanged
+ of 
+\change_inserted 1966826031 1616171721
+an 
+\change_deleted 1966826031 1616171716
+slightly
+\change_unchanged
+ adapted 
+\change_inserted 1966826031 1616171706
+casting for 
+\change_deleted 1966826031 1616171709
+version of
+\change_unchanged
+ the video and 
+\change_inserted 1966826031 1616171614
+the second intervention of a 
+\change_unchanged
+variation
+\change_deleted 1966826031 1616171617
+s
+\change_unchanged
+ on who within the household was 
+\change_deleted 1966826031 1616171662
+exposed
+\change_inserted 1966826031 1616171663
+shown
+\change_deleted 1966826031 1616171665
+ to
+\change_unchanged
+ the video.
+ These variation
+\change_inserted 1966826031 1616171670
+s
+\change_unchanged
+ and the rationale behind 
+\change_deleted 1966826031 1616171675
+it
+\change_inserted 1966826031 1616171676
+them
+\change_unchanged
+ are explained below.
 \end_layout
 
 \begin_layout Subsection
@@ -655,8 +1477,13 @@ Gender roles within the household
 
 \begin_layout Standard
 Within households, individual members often have differing spheres of influence,
- resulting in some degree of division of labour reflecting traditional gender
- roles 
+ resulting in some degree of division of labour reflecting 
+\change_deleted 1966826031 1616171752
+traditional
+\change_inserted 1966826031 1616171754
+prevailing
+\change_unchanged
+ gender roles 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "lundberg1993separate"
@@ -665,9 +1492,13 @@ literal "false"
 \end_inset
 
 .
- Gendered differences in crop diversity choices may emerge from a variety
- of factors, including gender related differences in knowledge about the
- crop, access to planting material, and customs and traditions 
+ Gendered differences in crop 
+\change_deleted 1966826031 1616171779
+diversity
+\change_unchanged
+ choices may emerge from a variety of factors, including gender related
+ differences in knowledge about the crop, access to planting material, and
+ customs and traditions 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "NORDHAGEN2021105134"
@@ -677,8 +1508,12 @@ literal "false"
 
 .
  While the existence of such gendered patterns are widely acknowledged,
- it is not always easy to capture this in data, as gender is only one of
- the determinants of crop portfolio choice 
+ it is not always easy to capture 
+\change_deleted 1966826031 1616171804
+this
+\change_unchanged
+ in data, as gender is only one of the determinants of crop portfolio choice
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "CARR2008900,DOSS20021987"
@@ -690,24 +1525,104 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-In in patrilineal societies such as Uganda, maize is considered to be mostly
- in the influence sphere of men.
+In in patrilineal 
+\change_inserted 1966826031 1616171832
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616172526
+why does patrilineality (descent, kinship,inheritance through male line)
+ explain maize being man's crop?? land is de facto mostly owned by men by,
+ in my memory, that is not seen as the reason why maize or other cash crops
+ are in men's sphere of influence.
+ when it concerns cash crop it falls in men's sphere of influence, which
+ has to do with his role as 'provider' for the household.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616172726
+Doss 2002 in Ghana DOI: 10.1016/S0305-750X(02)00109-2
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616172754
+in Burundi ( Iradukunda, Bullock, Rietveld, .2019 https://doi.org/10.1177/003072701
+9831704: 
+\begin_inset Quotes eld
+\end_inset
+
+Women manage crops grown for household consumption, typically annual crops,
+ while men manage crops grown for income, including banana varieties.
+ Reasons for this distinction included references to culture that validate
+ men’s authority in crop decision-making, increased access to information
+ and mobility compared to women.
+\begin_inset Quotes erd
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+societies such as Uganda, maize
+\change_inserted 1966826031 1616172221
+, which is in a part a cash crop,
+\change_unchanged
+ is considered to be mostly in the influence sphere of men.
  Generally, men will make all important decisions such as on what plots
- to plant, how to prepare the land, when to start planting and what seeds
- to use.
+ to plant
+\change_inserted 1966826031 1616172783
+ maize on
+\change_unchanged
+, how to prepare the land, when to start planting and what seeds to use.
  Men also generally decide on how much labour is needed, and women assist
  men, often with weeding.
- Women generally have a larger voice in the cultivation of food security
- crops such as cassava or sweet potato.
+ Women generally have a 
+\change_deleted 1966826031 1616172796
+larger
+\change_inserted 1966826031 1616172797
+stronger
+\change_unchanged
+ voice in the cultivation of food security crops such as cassava or sweet
+ potato.
  
 \end_layout
 
 \begin_layout Standard
 We expect that such a separation in spheres of influence between male and
- female co-head contributes to spousal disagreement.
- Therefor, we devised a treatment consisting of an adaptation of the video
- featuring role models to promote a worldview where both spouses participate
- equally in maize farming.
+ female co-head
+\change_inserted 1966826031 1616172811
+s
+\change_unchanged
+ contributes to spousal disagreement.
+ Therefor, we devised 
+\change_deleted 1966826031 1616172821
+a treatment
+\change_inserted 1966826031 1616172824
+an intervention
+\change_unchanged
+ consisting of an adaptation of the 
+\change_inserted 1966826031 1616172837
+casting of the 
+\change_unchanged
+video featuring
+\change_deleted 1966826031 1616172861
+ 
+\change_inserted 1966826031 1616172858
+ male and female actor-farmer 
+\change_unchanged
+role models to promote a worldview where both spouses participate equally
+ in maize farming.
  Recent research has shown that role models may be important to increase
  women participation in otherwise male dominated sectors 
 \begin_inset CommandInset citation
@@ -736,22 +1651,44 @@ literal "false"
 
 \end_inset
 
- find that exposure to video that show life stories of successful farmers
- affected both viewers’ investment in their children’s education and other
- future-oriented behaviors.
+ find that exposure to video that show
+\change_inserted 1966826031 1616172913
+ aspirational
+\change_unchanged
+ life stories of successful farmers affected both viewers’ investment in
+ their children’s education and other future-oriented behaviors.
  
 \end_layout
 
 \begin_layout Standard
 To test the hypothesis that spouses disagree less if they view farming as
- a collective activity, we randomly selected 261 households from our sample
- and showed them (male and female co-heads together) a version of the video
- where a couple is depicted.
+ a collective 
+\change_inserted 1966826031 1616172936
+spousal 
+\change_unchanged
+activity, we randomly selected 261 households from our sample and showed
+ them (male and female co-heads together) a version of the video where a
+ couple is depicted.
  In another random sample of 240 households, we showed exactly the same
- video, except for the fact that it only featured a single male actor.
+ video, except for the fact that it only featured a single male actor
+\change_inserted 1966826031 1616173106
+-farmer
+\change_unchanged
+.
  As the only difference between the two videos was the fact that in one
- video a single male actor appeared and in the other a couple was shown,
- any difference in outcomes between the two groups should be attributed
+ video 
+\change_inserted 1966826031 1616173139
+a couple was shown and in the other 
+\change_unchanged
+a single male actor appeared 
+\change_deleted 1966826031 1616173137
+and in the other
+\change_unchanged
+ 
+\change_deleted 1966826031 1616173129
+a couple was shown
+\change_unchanged
+, any difference in outcomes between the two groups should be attributed
  to a couple role model effect.
 \end_layout
 
@@ -784,16 +1721,47 @@ literal "false"
 One way in which collective action problems can be attenuated is through
  increased mutual monitoring.
  For instance, if one co-head can better asses the actual time that the
- other co-head worked on preparing the field, the latter will be less likely
- to engage in shirking.
- Or, if it becomes easier to check how much each co-head obtained from the
- sale of maize, instances of income hiding will decrease.
- However, in order for monitoring to work, co-heads need to have a good
- idea of what to compare against, as merely observing an outcome may be
- insufficient to determine if a co-head cheated.
- For instance, it may be difficult for the female co-head to check if a
- the male co-head over-reports time spent preparing the field if she does
- not have a good understanding of what land preparation entails.
+ other co-head worked on preparing the field, the latter 
+\change_inserted 1966826031 1616173258
+is expected to 
+\change_deleted 1966826031 1616173260
+will 
+\change_unchanged
+be less likely to engage in 
+\change_inserted 1966826031 1616173203
+labour 
+\change_unchanged
+shirking.
+ Or, if it becomes easier to check how much each co-head 
+\change_deleted 1966826031 1616173218
+obtained
+\change_inserted 1966826031 1616173220
+earned through
+\change_deleted 1966826031 1616173222
+ from
+\change_unchanged
+ the sale of maize, instances of income hiding 
+\change_inserted 1966826031 1616173244
+can be expected to 
+\change_deleted 1966826031 1616173246
+will
+\change_unchanged
+ decrease.
+ However, in order for 
+\change_inserted 1966826031 1616173272
+mutual 
+\change_unchanged
+monitoring to work, co-heads need to have a good idea of what to compare
+ against, as merely observing an outcome may be insufficient to determine
+ if a co-head cheated.
+ For instance, it may be difficult for the female co-head to check if 
+\change_deleted 1966826031 1616173300
+a the male co-head 
+\change_inserted 1966826031 1616173303
+her spouse 
+\change_unchanged
+over-reports time spent preparing the field if she does not have a good
+ understanding of what land preparation entails.
  If both spouses have a good understanding of what agricultural management
  entails, they are also in a better position to monitor each other.
  
@@ -801,17 +1769,52 @@ One way in which collective action problems can be attenuated is through
 
 \begin_layout Standard
 In a second treatment, we therefore make sure both co-heads start off with
- the same information with respect to best agronomic practices, as this
- facilitates mutual monitoring.
- To do so, we show the video that showcases best practices in maize farming
- to both spouses in a random sample of 261 households.
+ 
+\change_deleted 1966826031 1616173374
+the same
+\change_inserted 1966826031 1616173379
+symmetric
+\change_unchanged
+ information with respect to 
+\change_deleted 1966826031 1616173342
+best
+\change_inserted 1966826031 1616173342
+good
+\change_unchanged
+ 
+\change_deleted 1966826031 1616173351
+agronomic
+\change_unchanged
+ practices
+\change_inserted 1966826031 1616173348
+ for maize farming
+\change_unchanged
+, as this facilitates mutual monitoring.
+ To do so, we show the video that showcases 
+\change_deleted 1966826031 1616173387
+best
+\change_inserted 1966826031 1616173388
+good
+\change_unchanged
+ practices in maize farming to both spouses in a random sample of 261 households.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 We show the version of the video that features a couple (male and female
- co-head), that is, the video used in the treatment group of the previous
- treatment.
+ 
+\change_deleted 1966826031 1616173423
+co-head
+\change_inserted 1966826031 1616173429
+actor-farmers
+\change_unchanged
+), that is, the video used in the treatment group of the 
+\change_inserted 1966826031 1616173450
+previous intervention
+\change_deleted 1966826031 1616173440
+previous treatment
+\change_unchanged
+.
 \end_layout
 
 \end_inset
@@ -819,7 +1822,7 @@ We show the version of the video that features a couple (male and female
  In another random sample of 540 households, the same video was shown, but
  only to one of the two co-heads.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 We made sure that in about half of the cases the video was shown to the
@@ -858,7 +1861,25 @@ The study involved a random sample of maize farmers in eastern Uganda, an
  we sampled 10 households to be included in the study.
  This resulted in a total sample size of 3,280 households.
  However, in an about 23 percent of the households, we were unable to interview
- both spouses separately, resulting in an effective sample of 2,548 households.
+ both spouses separately
+\change_inserted 1966826031 1616173618
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616173636
+do we need to prove absence of attrition bias?
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+, resulting in an effective sample of 2,548 households.
  The interventions described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -874,10 +1895,42 @@ noprefix "false"
 
 \begin_layout Standard
 We focus on the second maize growing season of 2017, which runs from about
- August 2017, when fields are prepared to January 2018 when harvesting is
- done in higher altitude areas.
- The video intervention happened twice, once in August 2017 when farmers
- were preparing and one month later during planting time.
+ August 2017
+\change_deleted 1966826031 1616173651
+,
+\change_unchanged
+ when fields are prepared
+\change_inserted 1966826031 1616173649
+,
+\change_unchanged
+ to January 2018 when 
+\change_inserted 1966826031 1616173674
+maize is 
+\change_deleted 1966826031 1616173682
+harvesting is done
+\change_inserted 1966826031 1616173685
+harvested
+\change_unchanged
+ in 
+\change_inserted 1966826031 1616173691
+these relatively 
+\change_unchanged
+high
+\change_deleted 1966826031 1616173694
+er
+\change_unchanged
+ altitude areas.
+ The video intervention 
+\change_deleted 1966826031 1616173707
+happened
+\change_inserted 1966826031 1616173709
+was implemented
+\change_unchanged
+ twice, once in August 2017 when farmers were preparing 
+\change_inserted 1966826031 1616173715
+fields 
+\change_unchanged
+and one month later during planting time.
  Concurrent with the first treatment administration in 2017, we also collected
  some information on household characteristics and on the previous harvest,
  which was the first harvesting season of 2017.
@@ -888,13 +1941,32 @@ Farmers in our study area cultivated on average about 1.5 plots of maize.
  Yields during the first season of 2017 were extremely low (about 270 kilograms
  per acre) as a result of the Fall Armyworm invasion.
  The baseline data also shows that the average household head is 40 years
- old and about 60 percent did not finish primary education.
+ old and about 60 per
+\change_inserted 1966826031 1616173760
+ 
+\change_unchanged
+cent did not finish primary education.
  The average household consists of almost 8 individuals.
- Only 11 percent of households report that that had access to agricultural
- extension in the year prior to the survey.
- Only 17 percent used fertilizer on at least one plot, and 34 percent reported
- to be using hybrid maize seed or an open pollinated variety.
- About three quarters reported that the household had owned a mobile phone.
+ Only 11 per
+\change_inserted 1966826031 1616173757
+ 
+\change_unchanged
+cent of households report that that had access to agricultural extension
+ in the year prior to the survey.
+ Only 17 per
+\change_inserted 1966826031 1616173764
+ 
+\change_unchanged
+cent used fertilizer on at least one plot, and 34 per
+\change_inserted 1966826031 1616173769
+ 
+\change_unchanged
+cent reported to be using hybrid maize seed or an open pollinated variety.
+ About three quarters reported that the household 
+\change_deleted 1966826031 1616173780
+had
+\change_unchanged
+ owned a mobile phone.
 \end_layout
 
 \begin_layout Section
@@ -956,7 +2028,11 @@ We start by exploring patterns of decision making related to maize growing
  within the household.
  We asked the head of the household to list all maize plots that the household
  was cultivating during the season preceding the survey, which was the second
- agricultural seasons of 2017.
+ agricultural season
+\change_deleted 1966826031 1616173803
+s
+\change_unchanged
+ of 2017.
  We then cycle through the different plots and repeat a series of questions
  for each plot.
  The same questions were asked separately to each co-head.
@@ -1242,9 +2318,14 @@ literal "false"
 
  and define plots on which co-heads over or underestimate their own role
  in decision making.
- Cases where co-heads over estimate their decision making power are indicated
- in the dark shaded area at the right of the agreement diagonal in Figure
- 
+ Cases where co-heads 
+\change_deleted 1966826031 1616173844
+over estimate
+\change_inserted 1966826031 1616173845
+overstate
+\change_unchanged
+ their decision making power are indicated in the dark shaded area at the
+ right of the agreement diagonal in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Agreement-matrix"
@@ -1453,10 +2534,33 @@ noprefix "false"
 : on 23.3 percent of the plots spouses overestimate and on 17.6 percent of
  the plots spouses underestimate their contribution to the decision to plant
  maize.
- The Figure further shows that spouses are more likely to exaggerate their
+ The Figure further shows that spouses are more likely to exaggerate 
+\change_deleted 1966826031 1616173859
+their
+\change_unchanged
  their role in decision making than to underestimate their contribution.
  Especially for weeding (and related striga weeding) the locus of decision
  making is in the self.
+
+\change_inserted 1966826031 1616173875
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616173920
+figure labels: decision wrongly spelled; I would refer to overstate and
+ understate decision-making power
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -1582,6 +2686,33 @@ We do find significant reductions in the likelihood that co-head overestimate
  to the couple role model video treatment.
  Average treatment effect estimates for all other decision categories are
  also negative, but not significantly different from zero.
+
+\change_inserted 1966826031 1616173938
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616173976
+in the tables: i would label the second intervention 
+\begin_inset Quotes eld
+\end_inset
+
+reduced information asymmetry
+\begin_inset Quotes erd
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -3346,6 +4477,32 @@ noprefix "false"
  It shows that there is also no impact of providing both spouses with the
  same information on the likelihood that spouses engage in income hiding.
  
+\change_inserted 1966826031 1616174025
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1966826031 1616174068
+table 3: correct label of second intervention (couple information) to 
+\begin_inset Quotes eld
+\end_inset
+
+reduced information asymmetry
+\begin_inset Quotes erd
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
