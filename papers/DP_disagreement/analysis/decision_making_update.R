@@ -42,7 +42,7 @@ colours <- c("#CCCCCC", "#6E8DAB", "#104E8B")
 png("/home/bjvca/data/projects/digital green/papers/DP_disagreement/results/decsion_activities_update_woman.png", units="px", height=3200, width= 4200, res=600)
 
 barplot(as.matrix(t(df)), main="", ylab = "share of plots", cex.lab = 1.5, cex.main = 1.4, beside=TRUE, col=colours, ylim = c(0,.8))
-legend("topleft", c("spouses thogether","husband alone","wife alone"), cex=1.3, bty="n", fill=colours)
+legend("topleft", c("spouses together","husband alone","wife alone"), cex=1.3, bty="n", fill=colours)
 dev.off()
 
 df_b <- data.frame(NA)
@@ -82,10 +82,10 @@ colours <- c("#CCCCCC", "#6E8DAB", "#104E8B")
 png("/home/bjvca/data/projects/digital green/papers/DP_disagreement/results/decsion_activities_update_man.png", units="px", height=3200, width= 4200, res=600)
 
 barplot(as.matrix(t(df)), main="", ylab = "share of plots", cex.lab = 1.5, cex.main = 1.4, beside=TRUE, col=colours, ylim = c(0,.8))
-legend("topleft", c("spouses thogether","husband alone","wife alone"), cex=1.3, bty="n", fill=colours)
+legend("topleft", c("spouses together","husband alone","wife alone"), cex=1.3, bty="n", fill=colours)
 dev.off()
 
-### graphs for joint decsion making and secrecy in decsion making
+### graphs for joint decsion making and secrecy in  making
 df_b <- data.frame(NA)
 df_w <- data.frame(NA)
 df_m <- data.frame(NA)
@@ -162,7 +162,7 @@ colours <- c("#E5F5E0", "#A1D99B")
 png("/home/bjvca/data/projects/digital green/papers/DP_disagreement/results/decsion_activities_joint_deception.png", units="px", height=3200, width= 4200, res=600)
 
 barplot(as.matrix(t(df)), main="", ylab = "share of plots", cex.lab = 1.5, cex.main = 1.4, beside=TRUE, col=colours, ylim = c(0,.35))
-legend("topleft", c("overestimate decision power","underestimate decsion power"), cex=1.3, bty="n", fill=colours)
+legend("topleft", c("overstate decision power","understate decision power"), cex=1.3, bty="n", fill=colours)
 dev.off()
 
 ### labour time graph
@@ -293,42 +293,40 @@ dec <- c("time_prep","time_plant", "time_weed","time_spray", "time_harv")
 for (i in 1:length(dec)) {
 
 
-dm <- dta[c("hhid","messenger",paste(paste(dec[i],"man_man_pl",sep="_") ,1:5,sep=""))]
-dw <- dta[c("hhid","messenger",paste(paste(dec[i],"man_woman_pl",sep="_") ,1:5,sep=""))]
+dw_w <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_woman_pl",sep="_") ,1:5,sep=""))]
+dw_m <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_man_pl",sep="_") ,1:5,sep=""))]
 
-dta_long_m <- reshape(dm, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_man",sep="_") , idvar = "hhid")
-dta_long_w <- reshape(dw, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_woman",sep="_") , idvar = "hhid")
-dta_long <- merge(dta_long_m, dta_long_w)
+dm_m <- dta[c("hhid","messenger",paste(paste(dec[i],"man_man_pl",sep="_") ,1:5,sep=""))]
+dm_w <- dta[c("hhid","messenger",paste(paste(dec[i],"man_woman_pl",sep="_") ,1:5,sep=""))]
+
+dta_long_m_m <- reshape(dm_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_man",sep="_") , idvar = "hhid")
+dta_long_w_w <- reshape(dw_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_woman",sep="_") , idvar = "hhid")
+dta_long_m_w <- reshape(dm_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_woman",sep="_") , idvar = "hhid")
+dta_long_w_m <- reshape(dw_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_man",sep="_") , idvar = "hhid")
+dta_long <- merge(merge(merge(dta_long_m_m, dta_long_w_w),dta_long_m_w),dta_long_w_m)
 dta_long$differ <- NA
-dta_long$differ <- (unlist( dta_long[paste(dec[i],"man_man",sep="_")] < dta_long[paste(dec[i],"man_woman",sep="_")]) )
+dta_long$differ <- (unlist( (dta_long[paste(dec[i],"woman_woman",sep="_")] + dta_long[paste(dec[i],"man_man",sep="_")]) < (dta_long[paste(dec[i],"man_woman",sep="_")] +dta_long[paste(dec[i],"man_woman",sep="_")])) )
 
 df_m <- data.frame(rbind(df_m,mean(dta_long$differ, na.rm=T)))
-
-dm <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_woman_pl",sep="_") ,1:5,sep=""))]
-dw <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_man_pl",sep="_") ,1:5,sep=""))]
-
-dta_long_m <- reshape(dm, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_woman",sep="_") , idvar = "hhid")
-dta_long_w <- reshape(dw, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_man",sep="_") , idvar = "hhid")
-dta_long <- merge(dta_long_m, dta_long_w)
 dta_long$differ <- NA
-dta_long$differ <- (unlist(dta_long[paste(dec[i],"woman_woman",sep="_")] < dta_long[paste(dec[i],"woman_man",sep="_")]) )
+dta_long$differ <- (unlist( (dta_long[paste(dec[i],"woman_woman",sep="_")] + dta_long[paste(dec[i],"man_man",sep="_")]) > (dta_long[paste(dec[i],"man_woman",sep="_")] +dta_long[paste(dec[i],"man_woman",sep="_")])) )
 
 df_w <- data.frame(rbind(df_w,mean(dta_long$differ, na.rm=T)))
 }
 
 
 
-df <-cbind(df_m,df_w)[2:6,]
+df <-cbind(df_w,df_m)[2:6,]
 rownames(df) <- c("prepare land","planting","weeding","spraying","harvesting")
 
-names(df) <- c("man","woman")
+names(df) <- c("overstate labour","understate labour")
 
 colours <- c( "#A1D99B", "#31A354")
 
 png("/home/bjvca/data/projects/digital green/papers/DP_disagreement/results/shirking.png", units="px", height=3200, width= 4200, res=600)
 
-barplot(as.matrix(t(df)), main="", ylab = "shirking", cex.lab = 1.5, cex.main = 1.4, beside=TRUE, col=colours)
-legend("topright", c("man","woman"), cex=1.3, bty="n", fill=colours)
+barplot(as.matrix(t(df)), main="", ylab = "share of plots", cex.lab = 1.5, cex.main = 1.4, beside=TRUE, col=colours)
+legend("topright", c("overstate labour","understate labour"), cex=1.3, bty="n", fill=colours)
 dev.off()
 
 ## graph for difference in time 
@@ -383,12 +381,12 @@ dta[sel] <- lapply(dta[sel], function(x) replace(x, x > quantile(x,.99),NA) )
 df <- cbind(data.frame(colMeans(dta[sel[1:3]], na.rm=T)),  data.frame(colMeans(dta[sel[4:6]], na.rm=T)))
 names(df) <- c("man reports","woman reports")
 
-colours <- c( "#6E8DAB", "#104E8B")
+colours <- c("#CCCCCC", "#6E8DAB", "#104E8B")
 
 
 png("/home/bjvca/data/projects/digital green/papers/DP_disagreement/results/sales.png", units="px", height=3200, width= 4200, res=600)
 par(mfrow=c(1,2)) 
-barplot(as.matrix(df[2:3,]), main="quantity sold", ylab = "bags", cex.lab = 1.5, cex.main = 1.4, beside=TRUE, col=colours)
+barplot(as.matrix(df[1:3,]), main="quantity sold", ylab = "bags", cex.lab = 1.5, cex.main = 1.4, beside=TRUE, col=colours)
 
 
 
@@ -401,8 +399,8 @@ df <- cbind(data.frame(colMeans(dta[sel[1:3]], na.rm=T)),  data.frame(colMeans(d
 df <- df/3600
 names(df) <- c("man reports","woman reports")
 
-barplot(as.matrix(df[2:3,]), main="revenue from sales", ylab = "USD", cex.lab = 1.5, cex.main = 1.4, beside=TRUE, col=colours)
-legend("topright", c("man sold","woman sold"), cex=1.3, bty="n", fill=colours)
+barplot(as.matrix(df[1:3,]), main="revenue from sales", ylab = "USD", cex.lab = 1.5, cex.main = 1.4, beside=TRUE, col=colours)
+legend("topright", c("sold jointly","man sold","woman sold"), cex=1.3, bty="n", fill=colours)
 dev.off()
 
 dta$man_hiding <- (dta$nr_bags_sold_man ) >  ( dta$nr_bags_sold_man_woman )
@@ -579,14 +577,21 @@ df_ols_time[4,1,i] <- res[2,2]
 df_ols_time[5,1,i] <- res[2,5]
 df_ols_time[6,1,i] <- nobs(ols)
 
-dm <- dta[c("hhid","messenger",paste(paste(dec[i],"man_man_pl",sep="_") ,1:5,sep=""))]
-dw <- dta[c("hhid","messenger",paste(paste(dec[i],"man_woman_pl",sep="_") ,1:5,sep=""))]
 
-dta_long_m <- reshape(dm, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_man",sep="_") , idvar = "hhid")
-dta_long_w <- reshape(dw, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_woman",sep="_") , idvar = "hhid")
-dta_long <- merge(dta_long_m, dta_long_w)
+
+dw_w <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_woman_pl",sep="_") ,1:5,sep=""))]
+dw_m <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_man_pl",sep="_") ,1:5,sep=""))]
+
+dm_m <- dta[c("hhid","messenger",paste(paste(dec[i],"man_man_pl",sep="_") ,1:5,sep=""))]
+dm_w <- dta[c("hhid","messenger",paste(paste(dec[i],"man_woman_pl",sep="_") ,1:5,sep=""))]
+
+dta_long_m_m <- reshape(dm_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_man",sep="_") , idvar = "hhid")
+dta_long_w_w <- reshape(dw_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_woman",sep="_") , idvar = "hhid")
+dta_long_m_w <- reshape(dm_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_woman",sep="_") , idvar = "hhid")
+dta_long_w_m <- reshape(dw_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_man",sep="_") , idvar = "hhid")
+dta_long <- merge(merge(merge(dta_long_m_m, dta_long_w_w),dta_long_m_w),dta_long_w_m)
 dta_long$differ <- NA
-dta_long$differ <- (unlist( dta_long[paste(dec[i],"man_man",sep="_")] < dta_long[paste(dec[i],"man_woman",sep="_")]) )
+dta_long$differ <- (unlist( (dta_long[paste(dec[i],"woman_woman",sep="_")] + dta_long[paste(dec[i],"man_man",sep="_")]) > (dta_long[paste(dec[i],"man_woman",sep="_")] +dta_long[paste(dec[i],"man_woman",sep="_")])) )
 
 ols <- lm( "differ~(messenger=='couple')",data=dta_long)
 vcov_cluster <- vcovCR(ols, cluster = dta_long$hhid, type = "CR0")
@@ -600,14 +605,20 @@ df_ols_time[4,2,i] <- res[2,2]
 df_ols_time[5,2,i] <- res[2,5]
 df_ols_time[6,2,i] <- nobs(ols)
 
-dm <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_woman_pl",sep="_") ,1:5,sep=""))]
-dw <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_man_pl",sep="_") ,1:5,sep=""))]
+dw_w <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_woman_pl",sep="_") ,1:5,sep=""))]
+dw_m <- dta[c("hhid","messenger",paste(paste(dec[i],"woman_man_pl",sep="_") ,1:5,sep=""))]
 
-dta_long_m <- reshape(dm, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_woman",sep="_") , idvar = "hhid")
-dta_long_w <- reshape(dw, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_man",sep="_") , idvar = "hhid")
-dta_long <- merge(dta_long_m, dta_long_w)
+dm_m <- dta[c("hhid","messenger",paste(paste(dec[i],"man_man_pl",sep="_") ,1:5,sep=""))]
+dm_w <- dta[c("hhid","messenger",paste(paste(dec[i],"man_woman_pl",sep="_") ,1:5,sep=""))]
+
+dta_long_m_m <- reshape(dm_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_man",sep="_") , idvar = "hhid")
+dta_long_w_w <- reshape(dw_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_woman",sep="_") , idvar = "hhid")
+dta_long_m_w <- reshape(dm_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_woman",sep="_") , idvar = "hhid")
+dta_long_w_m <- reshape(dw_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_man",sep="_") , idvar = "hhid")
+dta_long <- merge(merge(merge(dta_long_m_m, dta_long_w_w),dta_long_m_w),dta_long_w_m)
+
 dta_long$differ <- NA
-dta_long$differ <- (unlist(dta_long[paste(dec[i],"woman_woman",sep="_")] < dta_long[paste(dec[i],"woman_man",sep="_")]) )
+dta_long$differ <- (unlist( (dta_long[paste(dec[i],"woman_woman",sep="_")] + dta_long[paste(dec[i],"man_man",sep="_")]) < (dta_long[paste(dec[i],"man_woman",sep="_")] +dta_long[paste(dec[i],"man_woman",sep="_")])) )
 
 ols <- lm( "differ~(messenger=='couple')",data=dta_long)
 vcov_cluster <- vcovCR(ols, cluster = dta_long$hhid, type = "CR0")
@@ -674,8 +685,24 @@ df_ols_confl[4,3,i] <- summary(ols)$coefficients[2, 2]
 df_ols_confl[5,3,i] <- summary(ols)$coefficients[2, 4]
 df_ols_confl[6,3,i] <- nobs(ols)
 
+##important note: this is not man_ and woman_ anymore but overstate and understate
+
+dta$man_hiding <- (dta$nr_bags_sold_man ) +  (dta$nr_bags_sold_woman )  >  ( dta$nr_bags_sold_man_woman ) + ( dta$nr_bags_sold_woman_man )
+dta$woman_hiding <-  (dta$nr_bags_sold_man ) +  (dta$nr_bags_sold_woman )  <  ( dta$nr_bags_sold_man_woman ) + ( dta$nr_bags_sold_woman_man )
+
+dta$joint_quant <- (dta$nr_bags_sold_both_man + dta$nr_bags_sold_both_woman)/2 
+dta$man_hiding_quant <- dta$man_hiding*((dta$nr_bags_sold_man ) +  (dta$nr_bags_sold_woman )  - ( dta$nr_bags_sold_man_woman ) - ( dta$nr_bags_sold_woman_man ))
+dta$woman_hiding_quant <-  -dta$woman_hiding*((dta$nr_bags_sold_man ) +  (dta$nr_bags_sold_woman )  - ( dta$nr_bags_sold_man_woman ) - ( dta$nr_bags_sold_woman_man ))
+
+dta$joint_income <- (dta$income_both_man + dta$income_both_woman)/2
+dta$man_hiding_income  <- dta$man_hiding*((dta$income_man ) +  (dta$income_woman )  - ( dta$income_man_woman ) - ( dta$income_woman_man ))/3600
+
+dta$woman_hiding_income <- -dta$woman_hiding*((dta$income_man ) +  (dta$income_woman )  - ( dta$income_man_woman ) - ( dta$income_woman_man ))/3600
+
 df_ols_inc <-  array(NA,dim=c(6,3,3))
 i <- 1
+
+library(Zelig)
 
 ols <- lm( "joint_quant~(messenger=='couple')",data=dta)
 df_ols_inc[1,1,i] <- mean(dta$joint_quant[dta$messenger != "couple"], na.rm=T)
@@ -712,21 +739,28 @@ df_ols_inc[4,1,i] <- summary(ols)$coefficients[2, 2]
 df_ols_inc[5,1,i] <- summary(ols)$coefficients[2, 4]
 df_ols_inc[6,1,i] <- nobs(ols)
 
-ols <- lm( "man_hiding_quant~(messenger=='couple')",data=dta)
+ols <- zelig("man_hiding_quant~(messenger=='couple')", below=0,
+          above=Inf, model="tobit",
+          data = dta)
+
+
 df_ols_inc[1,2,i] <- mean(dta$man_hiding_quant[dta$messenger != "couple"], na.rm=T)
 df_ols_inc[2,2,i] <- sd(dta$man_hiding_quant[dta$messenger != "couple"], na.rm=T)
-df_ols_inc[3,2,i] <- summary(ols)$coefficients[2, 1]
-df_ols_inc[4,2,i] <- summary(ols)$coefficients[2, 2]
-df_ols_inc[5,2,i] <- summary(ols)$coefficients[2, 4]
-df_ols_inc[6,2,i] <- nobs(ols)
+df_ols_inc[3,2,i] <-  coefficients(ols)[2]
+df_ols_inc[4,2,i] <- get_se(ols)[[1]][2]
+df_ols_inc[5,2,i] <- get_pvalue(ols)[[1]][2]
+df_ols_inc[6,2,i] <- dim(dta)[1]
 
-ols <- lm( "woman_hiding_quant~(messenger=='couple')",data=dta)
+ols <- zelig("woman_hiding_quant~(messenger=='couple')", below=0,
+          above=Inf, model="tobit",
+          data = dta)
+
 df_ols_inc[1,3,i] <- mean(dta$woman_hiding_quant[dta$messenger != "couple"], na.rm=T)
 df_ols_inc[2,3,i] <- sd(dta$woman_hiding_quant[dta$messenger != "couple"], na.rm=T)
-df_ols_inc[3,3,i] <- summary(ols)$coefficients[2, 1]
-df_ols_inc[4,3,i] <- summary(ols)$coefficients[2, 2]
-df_ols_inc[5,3,i] <- summary(ols)$coefficients[2, 4]
-df_ols_inc[6,3,i] <- nobs(ols)
+df_ols_inc[3,3,i] <-  coefficients(ols)[2]
+df_ols_inc[4,3,i] <- get_se(ols)[[1]][2]
+df_ols_inc[5,3,i] <-  get_pvalue(ols)[[1]][2]
+df_ols_inc[6,3,i] <- dim(dta)[1]
 
 
 ### income hiding
@@ -740,21 +774,26 @@ df_ols_inc[4,1,i] <- summary(ols)$coefficients[2, 2]
 df_ols_inc[5,1,i] <- summary(ols)$coefficients[2, 4]
 df_ols_inc[6,1,i] <- nobs(ols)
 
-ols <- lm( "man_hiding_income~(messenger=='couple')",data=dta)
+ols <- zelig("man_hiding_income~(messenger=='couple')", below=0,
+          above=Inf, model="tobit",
+          data = dta)
+
 df_ols_inc[1,2,i] <- mean(dta$man_hiding_income[dta$messenger != "couple"], na.rm=T)
 df_ols_inc[2,2,i] <- sd(dta$man_hiding_income[dta$messenger != "couple"], na.rm=T)
-df_ols_inc[3,2,i] <- summary(ols)$coefficients[2, 1]
-df_ols_inc[4,2,i] <- summary(ols)$coefficients[2, 2]
-df_ols_inc[5,2,i] <- summary(ols)$coefficients[2, 4]
-df_ols_inc[6,2,i] <- nobs(ols)
+df_ols_inc[3,2,i] <- coefficients(ols)[2]
+df_ols_inc[4,2,i] <-  get_se(ols)[[1]][2]
+df_ols_inc[5,2,i] <-  get_pvalue(ols)[[1]][2]
+df_ols_inc[6,2,i] <-  dim(dta)[1]
 
-ols <- lm( "woman_hiding_income~(messenger=='couple')",data=dta)
+ols <- zelig("woman_hiding_income~(messenger=='couple')", below=0,
+          above=Inf, model="tobit",
+          data = dta)
 df_ols_inc[1,3,i] <- mean(dta$woman_hiding_income[dta$messenger != "couple"], na.rm=T)
 df_ols_inc[2,3,i] <- sd(dta$woman_hiding_income[dta$messenger != "couple"], na.rm=T)
-df_ols_inc[3,3,i] <- summary(ols)$coefficients[2, 1]
-df_ols_inc[4,3,i] <- summary(ols)$coefficients[2, 2]
-df_ols_inc[5,3,i] <- summary(ols)$coefficients[2, 4]
-df_ols_inc[6,3,i] <- nobs(ols)
+df_ols_inc[3,3,i] <- coefficients(ols)[2]
+df_ols_inc[4,3,i] <- get_se(ols)[[1]][2]
+df_ols_inc[5,3,i] <-  get_pvalue(ols)[[1]][2]
+df_ols_inc[6,3,i] <- dim(dta)[1]
 
 ################ analysis 2
 #only use subset where both spouses saw the video
@@ -893,14 +932,20 @@ df_ols_2_time[4,1,i] <- res[2,2]
 df_ols_2_time[5,1,i] <- res[2,5]
 df_ols_2_time[6,1,i] <- nobs(ols)
 
-dm <- dta[c("hhid","recipient",paste(paste(dec[i],"man_man_pl",sep="_") ,1:5,sep=""))]
-dw <- dta[c("hhid","recipient",paste(paste(dec[i],"man_woman_pl",sep="_") ,1:5,sep=""))]
 
-dta_long_m <- reshape(dm, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_man",sep="_") , idvar = "hhid")
-dta_long_w <- reshape(dw, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_woman",sep="_") , idvar = "hhid")
-dta_long <- merge(dta_long_m, dta_long_w)
+dw_w <- dta[c("hhid","recipient",paste(paste(dec[i],"woman_woman_pl",sep="_") ,1:5,sep=""))]
+dw_m <- dta[c("hhid","recipient",paste(paste(dec[i],"woman_man_pl",sep="_") ,1:5,sep=""))]
+
+dm_m <- dta[c("hhid","recipient",paste(paste(dec[i],"man_man_pl",sep="_") ,1:5,sep=""))]
+dm_w <- dta[c("hhid","recipient",paste(paste(dec[i],"man_woman_pl",sep="_") ,1:5,sep=""))]
+
+dta_long_m_m <- reshape(dm_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_man",sep="_") , idvar = "hhid")
+dta_long_w_w <- reshape(dw_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_woman",sep="_") , idvar = "hhid")
+dta_long_m_w <- reshape(dm_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_woman",sep="_") , idvar = "hhid")
+dta_long_w_m <- reshape(dw_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_man",sep="_") , idvar = "hhid")
+dta_long <- merge(merge(merge(dta_long_m_m, dta_long_w_w),dta_long_m_w),dta_long_w_m)
 dta_long$differ <- NA
-dta_long$differ <- (unlist( dta_long[paste(dec[i],"man_man",sep="_")] < dta_long[paste(dec[i],"man_woman",sep="_")]) )
+dta_long$differ <- (unlist( (dta_long[paste(dec[i],"woman_woman",sep="_")] + dta_long[paste(dec[i],"man_man",sep="_")]) > (dta_long[paste(dec[i],"man_woman",sep="_")] +dta_long[paste(dec[i],"man_woman",sep="_")])) )
 
 ols <- lm( "differ~(recipient=='couple')",data=dta_long)
 vcov_cluster <- vcovCR(ols, cluster = dta_long$hhid, type = "CR0")
@@ -914,14 +959,20 @@ df_ols_2_time[4,2,i] <- res[2,2]
 df_ols_2_time[5,2,i] <- res[2,5]
 df_ols_2_time[6,2,i] <- nobs(ols)
 
-dm <- dta[c("hhid","recipient",paste(paste(dec[i],"woman_woman_pl",sep="_") ,1:5,sep=""))]
-dw <- dta[c("hhid","recipient",paste(paste(dec[i],"woman_man_pl",sep="_") ,1:5,sep=""))]
+dw_w <- dta[c("hhid","recipient",paste(paste(dec[i],"woman_woman_pl",sep="_") ,1:5,sep=""))]
+dw_m <- dta[c("hhid","recipient",paste(paste(dec[i],"woman_man_pl",sep="_") ,1:5,sep=""))]
 
-dta_long_m <- reshape(dm, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_woman",sep="_") , idvar = "hhid")
-dta_long_w <- reshape(dw, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_man",sep="_") , idvar = "hhid")
-dta_long <- merge(dta_long_m, dta_long_w)
+dm_m <- dta[c("hhid","recipient",paste(paste(dec[i],"man_man_pl",sep="_") ,1:5,sep=""))]
+dm_w <- dta[c("hhid","recipient",paste(paste(dec[i],"man_woman_pl",sep="_") ,1:5,sep=""))]
+
+dta_long_m_m <- reshape(dm_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_man",sep="_") , idvar = "hhid")
+dta_long_w_w <- reshape(dw_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_woman",sep="_") , idvar = "hhid")
+dta_long_m_w <- reshape(dm_w, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"man_woman",sep="_") , idvar = "hhid")
+dta_long_w_m <- reshape(dw_m, direction = "long",varying = 3:7 ,v.names=paste(dec[i],"woman_man",sep="_") , idvar = "hhid")
+dta_long <- merge(merge(merge(dta_long_m_m, dta_long_w_w),dta_long_m_w),dta_long_w_m)
+
 dta_long$differ <- NA
-dta_long$differ <- (unlist(dta_long[paste(dec[i],"woman_woman",sep="_")] < dta_long[paste(dec[i],"woman_man",sep="_")]) )
+dta_long$differ <- (unlist( (dta_long[paste(dec[i],"woman_woman",sep="_")] + dta_long[paste(dec[i],"man_man",sep="_")]) < (dta_long[paste(dec[i],"man_woman",sep="_")] +dta_long[paste(dec[i],"man_woman",sep="_")])) )
 
 ols <- lm( "differ~(recipient=='couple')",data=dta_long)
 vcov_cluster <- vcovCR(ols, cluster = dta_long$hhid, type = "CR0")
@@ -1025,21 +1076,31 @@ df_ols_2_inc[4,1,i] <- summary(ols)$coefficients[2, 2]
 df_ols_2_inc[5,1,i] <- summary(ols)$coefficients[2, 4]
 df_ols_2_inc[6,1,i] <- nobs(ols)
 
-ols <- lm( "man_hiding_quant~(recipient=='couple')",data=dta)
+
+ols <- zelig("man_hiding_quant~(recipient=='couple')", below=0,
+          above=Inf, model="tobit",
+          data = dta)
+
+
 df_ols_2_inc[1,2,i] <- mean(dta$man_hiding_quant[dta$recipient != "couple"], na.rm=T)
 df_ols_2_inc[2,2,i] <- sd(dta$man_hiding_quant[dta$recipient != "couple"], na.rm=T)
-df_ols_2_inc[3,2,i] <- summary(ols)$coefficients[2, 1]
-df_ols_2_inc[4,2,i] <- summary(ols)$coefficients[2, 2]
-df_ols_2_inc[5,2,i] <- summary(ols)$coefficients[2, 4]
-df_ols_2_inc[6,2,i] <- nobs(ols)
+df_ols_2_inc[3,2,i] <- coefficients(ols)[2]
+df_ols_2_inc[4,2,i] <- get_se(ols)[[1]][2]
+df_ols_2_inc[5,2,i] <-  get_pvalue(ols)[[1]][2]
+df_ols_2_inc[6,2,i] <- dim(dta)[1]
 
-ols <- lm( "woman_hiding_quant~(recipient=='couple')",data=dta)
+ols <- zelig("woman_hiding_quant~(recipient=='couple')", below=0,
+          above=Inf, model="tobit",
+          data = dta)
+
 df_ols_2_inc[1,3,i] <- mean(dta$woman_hiding_quant[dta$recipient != "couple"], na.rm=T)
 df_ols_2_inc[2,3,i] <- sd(dta$woman_hiding_quant[dta$recipient != "couple"], na.rm=T)
-df_ols_2_inc[3,3,i] <- summary(ols)$coefficients[2, 1]
-df_ols_2_inc[4,3,i] <- summary(ols)$coefficients[2, 2]
-df_ols_2_inc[5,3,i] <- summary(ols)$coefficients[2, 4]
-df_ols_2_inc[6,3,i] <- nobs(ols)
+df_ols_2_inc[3,3,i] <- coefficients(ols)[2]
+df_ols_2_inc[4,3,i] <- get_se(ols)[[1]][2]
+df_ols_2_inc[5,3,i] <-  get_pvalue(ols)[[1]][2]
+df_ols_2_inc[6,3,i] <- dim(dta)[1]
+
+
 
 
 ### income hiding
@@ -1054,21 +1115,29 @@ df_ols_2_inc[4,1,i] <- summary(ols)$coefficients[2, 2]
 df_ols_2_inc[5,1,i] <- summary(ols)$coefficients[2, 4]
 df_ols_2_inc[6,1,i] <- nobs(ols)
 
-ols <- lm( "man_hiding_income~(recipient=='couple')",data=dta)
+ols <- zelig("man_hiding_income~(recipient=='couple')", below=0,
+          above=Inf, model="tobit",
+          data = dta)
+
+
 df_ols_2_inc[1,2,i] <- mean(dta$man_hiding_income[dta$recipient != "couple"], na.rm=T)
 df_ols_2_inc[2,2,i] <- sd(dta$man_hiding_income[dta$recipient != "couple"], na.rm=T)
-df_ols_2_inc[3,2,i] <- summary(ols)$coefficients[2, 1]
-df_ols_2_inc[4,2,i] <- summary(ols)$coefficients[2, 2]
-df_ols_2_inc[5,2,i] <- summary(ols)$coefficients[2, 4]
-df_ols_2_inc[6,2,i] <- nobs(ols)
+df_ols_2_inc[3,2,i] <-  coefficients(ols)[2]
+df_ols_2_inc[4,2,i] <- get_se(ols)[[1]][2]
+df_ols_2_inc[5,2,i] <- get_pvalue(ols)[[1]][2]
+df_ols_2_inc[6,2,i] <- dim(dta)[1]
 
-ols <- lm( "woman_hiding_income~(recipient=='couple')",data=dta)
+ols <- zelig("woman_hiding_income~(recipient=='couple')", below=0,
+          above=Inf, model="tobit",
+          data = dta)
+
+
 df_ols_2_inc[1,3,i] <- mean(dta$woman_hiding_income[dta$recipient != "couple"], na.rm=T)
 df_ols_2_inc[2,3,i] <- sd(dta$woman_hiding_income[dta$recipient != "couple"], na.rm=T)
-df_ols_2_inc[3,3,i] <- summary(ols)$coefficients[2, 1]
-df_ols_2_inc[4,3,i] <- summary(ols)$coefficients[2, 2]
-df_ols_2_inc[5,3,i] <- summary(ols)$coefficients[2, 4]
-df_ols_2_inc[6,3,i] <- nobs(ols)
+df_ols_2_inc[3,3,i] <-  coefficients(ols)[2]
+df_ols_2_inc[4,3,i] <- get_se(ols)[[1]][2]
+df_ols_2_inc[5,3,i] <- get_pvalue(ols)[[1]][2]
+df_ols_2_inc[6,3,i] <- dim(dta)[1]
 
 dta <- read.csv("/home/bjvca/data/projects/digital green/papers/DP_disagreement/endline_dta.csv")
 dta <- subset(dta, interview_status == "couple interviewed")
