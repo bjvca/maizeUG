@@ -319,14 +319,14 @@ df_w <- data.frame(rbind(df_w,mean(dta_long$differ, na.rm=T)))
 df <-cbind(df_w,df_m)[2:6,]
 rownames(df) <- c("prepare land","planting","weeding","spraying","harvesting")
 
-names(df) <- c("overstate labour","understate labour")
+names(df) <- c("overstate labor","understate labor")
 
 colours <- c( "#A1D99B", "#31A354")
 
 png("/home/bjvca/data/projects/digital green/papers/DP_disagreement/results/shirking.png", units="px", height=3200, width= 4200, res=600)
 
 barplot(as.matrix(t(df)), main="", ylab = "share of plots", cex.lab = 1.5, cex.main = 1.4, beside=TRUE, col=colours)
-legend("topright", c("overstate labour","understate labour"), cex=1.3, bty="n", fill=colours)
+legend("topright", c("overstate labor","understate labor"), cex=1.3, bty="n", fill=colours)
 dev.off()
 
 ## graph for difference in time 
