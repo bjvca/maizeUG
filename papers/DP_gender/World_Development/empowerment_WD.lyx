@@ -15,7 +15,7 @@ knitr
 \maintain_unincluded_children false
 \language english
 \language_package none
-\inputencoding auto
+\inputencoding utf8
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -738,9 +738,34 @@ ls.
 \begin_layout Standard
 The public agricultural advisory system in Uganda has a turbulent history.
  The National Agricultural Advisory Services (NAADS), which was set up as
- a demand-driven public-private partnership in 2000, became a victim of
- political capture and governance problems, and was eventually replaced
- by Operation Wealth Creation in 2014 
+ a public-private partnership in 2000, was hailed by experts and donors
+ as an example of how to increasing market oriented agricultural production
+ by empowering farmers to demand and control agricultural advisory services.
+ NAADS did consider gender in its programming, for instance by distributing
+ dairy cattle to women for food security, and initial descriptive evidence
+ suggested some success in reaching and benefiting women and other vulnerable
+ groups 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg."
+key "turyahikayo2016trust"
+literal "false"
+
+\end_inset
+
+.
+ However, a large scale impact evaluation finds nevertheless the program
+ has been relatively more effective among male-headed households 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "https://doi.org/10.1111/j.1574-0862.2010.00512.x"
+literal "false"
+
+\end_inset
+
+.
+ NAADS became a victim of political capture and governance problems, and
+ was eventually replaced by Operation Wealth Creation in 2014 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "https://doi.org/10.1111/dpr.12324"
@@ -750,9 +775,9 @@ literal "false"
 
 .
  The latter is organized by the army and approaches problems in the sector
- from a logistical angle.
- As a result, the focus has shifted from provision of advise towards (subsidized
-) input distribution.
+ from a logistical angle, with a strong focus on (subsidized) input distribution.
+ This shift is likely to further reduce the gender sensitivity of the public
+ extension system in Uganda.
  Data obtained from the Uganda National Panel Survey (wave 2013/2014) suggest
  that only 20 percent of households received extension in the past twelve
  months.
@@ -1435,7 +1460,7 @@ Diammonium phosphate
 \begin_layout Standard
 Finally, we measured outcomes related to production, area of production,
  and productivity on maize plots under female, male and joint management.
- Female-managed (male-managed jointly managed) plots are defined as plots
+ Female-managed (male-managed, jointly managed) plots are defined as plots
  on which, according to female co-head respondents, female co-head alone
  (male co-head alone, female and male co-heads jointly) took at least three
  out of the five decisions listed above.
@@ -1454,6 +1479,51 @@ Finally, we measured outcomes related to production, area of production,
  managed plots.
  This family of outcomes is again summarized in production indices (one
  for female-managed, one for male-managed and one for jointly managed plots).
+\end_layout
+
+\begin_layout Standard
+Most of these outcomes are based on what women reported.
+ However, it is well known that when male and female co-heads of the household
+ are interviewed separately, they often provide different answers on the
+ same set of questions.
+ While part of these divergent responses may be attributable to measurement
+ error, there is also a systematic component that may be due to spouses
+ hiding decisions made, actions taken, or assets owned 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+.
+ Alternatively, differences may be due to prevailing gender roles and norms
+ in society.
+ For instance 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1080/00220388.2019.1650169"
+literal "false"
+
+\end_inset
+
+ find that men often report unilateral decision-making in areas where they
+ are assumed to bear final responsibility, even if women had some degree
+ of involvement.
+ Women tend to view these scenarios as joint decisions.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "PETERMAN2021105387"
+literal "false"
+
+\end_inset
+
+ find similar signs of social desirability bias in Uganda.
+ This raises the question on who to believe when answers differ.
+ The implicit assumption that what the female co-head reports probably best
+ reflects that we want to measure should be kept in mind when interpreting
+ results.
 \end_layout
 
 \begin_layout Section
@@ -2191,6 +2261,7 @@ n is not fully shared between household members.
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
+btprint "btPrintCited"
 bibfiles "../JDE/empowerment"
 options "chicago"
 
