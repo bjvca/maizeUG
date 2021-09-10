@@ -84,12 +84,11 @@ knitr
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -408277422 "ELecoutere"
 \end_header
 
 \begin_body
@@ -136,6 +135,10 @@ y to the female co-head within the household.
  in agriculture.
 \end_layout
 
+\begin_layout Section
+Introduction
+\end_layout
+
 \begin_layout Standard
 A lack of information about the existence, use, and profitability of modern
  inputs, improved technologies, and recommended management practices is
@@ -143,7 +146,7 @@ A lack of information about the existence, use, and profitability of modern
 tion, and food security in developing countries 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "jack2011constraints"
+key "doi:10.1146/annurev-resource-100517-023202"
 literal "false"
 
 \end_inset
@@ -160,6 +163,139 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+In this paper, we examine how the design of information and communication
+ technology (ICT) applications used in agricultural extension information
+ campaigns affects household member's access—the female co-head within the
+ household in particular—to informational resources, their agency, and their
+ achievements in smallholder semi-subsistence farming.
+ We conduct a field experiment among 3,330 maize-farming households in eastern
+ Uganda and zoom in on two design features.
+ In a first treatment, we focus on targeting of the information, and compare
+ outcomes of households where the informational video was shown to the male
+ co-head only (corresponding to the status quo in generic agricultural extension
+ models), to outcomes in households where the female co-head was also exposed
+ to the video—either alone or as part of the couple of co-heads.
+ In a second treatment, we investigate the potential of role models to increase
+ participation in maize farming, a traditionally male dominated activity
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "porter2019gender"
+literal "false"
+
+\end_inset
+
+.
+ Here, we vary exposure to the gender of the actors in the videos, and compare
+ outcomes within households that were shown a video with a male actor (again
+ corresponding to the status quo of male extension providers in generic
+ agricultural extension models) to outcomes within households that were
+ shown a video that features a female actress—either alone or together with
+ a male actor.
+ The outcomes we use to assess impact of the treatments are individual level
+ and joint outcomes (the female co-head's knowledge, decision making, adoption
+ and production, the male co-head's knowledge, decision making, adoption
+ and production, or joint knowledge, decision making, adoption and production)
+ as reported by the female co-head.
+\end_layout
+
+\begin_layout Standard
+We find that targeting the female co-head alone within the household (as
+ opposed to targeting the male co-head alone) increased the female co-head's
+ outcomes and reduced the male co-head's outcomes.
+ In particular, the treatment increased the female co-head's knowledge of
+ recommended agronomic practices.
+ It also increased the female co-head's participation in agricultural decision
+ making and her adoption of inputs such as inorganic fertilizer.
+ Female co-heads also reported higher yields on the maize plots under their
+ management.
+ The increase in knowledge of the female co-head came at the cost of a decrease
+ in knowledge of the male co-head, indicating frictions in the flow of informati
+on between spouses.
+ The likelihood that male co-heads made agricultural related decisions unilatera
+lly also reduced.
+ Male co-heads' adoption of practices and inputs, and production on fields
+ managed by male co-heads alone does not differ between households where
+ only the male co-head was exposed to the information and households where
+ only the female co-head saw the video.
+\end_layout
+
+\begin_layout Standard
+We further find that targeting both the female co-head and male co-head
+ within the household jointly with information (as opposed to targeting
+ the male co-head alone) increased joint outcomes.
+ As is the case when female co-heads alone are targeted with information,
+ we also see a reduction in unilateral decision making by the male co-head
+ (which suggest that this reduction is only partly due to a knowledge effect,
+ as in this case, male co-heads also received the information as part of
+ the couple).
+ The increase in joint outcomes seems to be driven by the fact that couples
+ jointly decide and adopt a novel planting method that was promoted, as
+ well as by their joint use of organic fertilizer.
+ We do not see an increase in production related outcomes on jointly managed
+ plots.
+\end_layout
+
+\begin_layout Standard
+The effectiveness of the use of female role models is less straightforward.
+ We only find that in the subgroup where a video was shown in which a couple
+ of male and female actors provided information (as opposed to the status
+ quo where a male actor provides all the advice), men were less likely to
+ take decisions without involving their wives.
+ This suggests that the intervention challenged prevailing beliefs and stereotyp
+es held by men that women are less able to make decisions related to agriculture.
+ We also find that women role models may be important for adoption of inputs
+ and recommended practices by female co-heads.
+\end_layout
+
+\begin_layout Standard
+The remainder of the paper is structured as follows.
+ The next section situates our study in the literature and highlights its
+ contribution.
+ In Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Study-context"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we present the study context.
+ In Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Methods"
+
+\end_inset
+
+ we explain the methods, with subsections on the experimental design, sampling,
+ the specification we will estimate, and the indicators that will be used
+ to assess impact of the different interventions.
+ We then turn to the results in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Results"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, where we first discuss the impact of targeting the information to the
+ female co-head, alone or as part of the couple.
+ We then look at role model effects.
+ We also have a subsection that reports on interactions between the two
+ treatments.
+ A final section concludes.
+\end_layout
+
+\begin_layout Section
+Related literature and contribution
+\end_layout
+
+\begin_layout Standard
 There are many well-established benefits to empowering women in agriculture.
  A more prominent role for women in the farm household has been shown to
  result in a more efficient allocation of scarce resources within the household,
@@ -168,7 +304,8 @@ There are many well-established benefits to empowering women in agriculture.
  
 \begin_inset CommandInset citation
 LatexCommand citep
-key "DEBRAUW2014487,10.1093/wber/lhw011,mccarthy2017stronger,10.2307/24582373-2"
+before "eg."
+key "DEBRAUW2014487,10.1093/wber/lhw011,10.2307/24582373-2"
 literal "false"
 
 \end_inset
@@ -188,7 +325,7 @@ literal "false"
  value in empowering women 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "doi:10.1111/1467-7660.00125,meinzen2019women"
+key "doi:10.1111/1467-7660.00125"
 literal "false"
 
 \end_inset
@@ -312,105 +449,6 @@ literal "true"
 
 .
  
-\end_layout
-
-\begin_layout Standard
-In this paper, we examine how the design of information and communication
- technology (ICT) applications used in agricultural extension information
- campaigns affects household member's access—the female co-head within the
- household in particular—to informational resources, their agency, and their
- achievements in smallholder semi-subsistence farming.
- We conduct a field experiment among 3,330 maize-farming households in eastern
- Uganda and zoom in on two design features.
- In a first treatment, we focus on targeting of the information, and compare
- outcomes of households where the informational video was shown to the male
- co-head only (corresponding to the status quo in generic agricultural extension
- models), to outcomes in households where the female co-head was also exposed
- to the video—either alone or as part of the couple of co-heads.
- In a second treatment, we investigate the potential of role models to increase
- participation in maize farming, a traditionally male dominated activity
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "porter2019gender"
-literal "false"
-
-\end_inset
-
-.
- Here, we vary exposure to the gender of the actors in the videos, and compare
- outcomes within households that were shown a video with a male actor (again
- corresponding to the status quo of male extension providers in generic
- agricultural extension models) to outcomes within households that were
- shown a video that features a female actress—either alone or together with
- a male actor.
- The outcomes we use to assess impact of the treatments are individual level
- and joint outcomes (the female co-head's knowledge, decision making, adoption
- and production, the male co-head's knowledge, decision making, adoption
- and production, or joint knowledge, decision making, adoption and production)
- as reported by the female co-head.
-\end_layout
-
-\begin_layout Standard
-We find that targeting the female co-head alone within the household (as
- opposed to targeting the male co-head alone) increased the female co-head's
- outcomes and reduced the male co-head's outcomes
-\change_inserted -408277422 1631189719
-, mainly men's knowledge and men's unilateral decision making
-\change_unchanged
-.
- In particular, the treatment increased the female co-head's knowledge of
- recommended agronomic practices.
- It also increased the female co-head's participation in agricultural decision
- making and her adoption of inputs such as inorganic fertilizer.
- Female co-heads also reported higher yields on the maize plots under their
- management.
- The increase in knowledge of the female co-head came at the cost of a decrease
- in knowledge of the male co-head, indicating frictions in the flow of informati
-on between spouses.
- The likelihood that male co-heads made agricultural related decisions unilatera
-lly also reduced.
- Male co-heads' adoption of practices and inputs, and production on fields
- managed by male co-heads alone does not differ between households where
- only the male co-head was exposed to the information and households where
- only the female co-head saw the video.
-\end_layout
-
-\begin_layout Standard
-We further find that targeting both the female co-head and male co-head
- within the household jointly with information (as opposed to targeting
- the male co-head alone) increased joint outcomes.
- 
-\change_inserted -408277422 1631189920
-As is the case when female co-heads alone are targeted with information,
- w
-\change_deleted -408277422 1631189921
-W
-\change_unchanged
-e also see a reduction in unilateral decision making by the male co-head
-\change_inserted -408277422 1631189899
- (which suggest that this reduction is only partly due to a knowledge effect,
- as in this case, male co-heads also received the information as part of
- the couple)
-\change_unchanged
-.
- The increase in joint outcomes seems to be driven by the fact that couples
- jointly decide and adopt a novel planting method that was promoted, as
- well as by their joint use of organic fertilizer.
- We do not see an increase in production related outcomes on jointly managed
- plots.
-\end_layout
-
-\begin_layout Standard
-The effectiveness of the use of female role models is less straightforward.
- We only find that in the subgroup where a video was shown in which a couple
- of male and female actors provided information (as opposed to the status
- quo where a male actor provides all the advice), men were less likely to
- take decisions without involving their wives.
- This suggests that the intervention challenged prevailing beliefs and stereotyp
-es held by men that women are less able to make decisions related to agriculture.
- We also find that women role models may be important for adoption of inputs
- and recommended practices by female co-heads.
 \end_layout
 
 \begin_layout Standard
@@ -544,6 +582,17 @@ literal "true"
 \end_inset
 
 .
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1080/13552074.2014.889346"
+literal "false"
+
+\end_inset
+
+ argues that in mixed-sex schools in Zambia, seeing girls demonstrate equal
+ competence can undermine gender stereotypes, on the part of girls and boys
+ alike.
  Most of these studies show that role models not only increased aspirations,
  but also led to changes in choices made, such as women employment 
 \begin_inset CommandInset citation
@@ -640,47 +689,6 @@ literal "true"
  men’s perceptions of women’s leadership abilities.
 \end_layout
 
-\begin_layout Standard
-The remainder of the paper is structured as follows.
- In Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Study-context"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-, we present the study context.
- In Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Methods"
-
-\end_inset
-
- we explain the methods, with subsections on the experimental design, sampling,
- the specification we will estimate, and the indicators that will be used
- to assess impact of the different interventions.
- We then turn to the results in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Results"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-, where we first discuss the impact of targeting the information to the
- female co-head, alone or as part of the couple.
- We then look at role model effects.
- We also have a subsection that reports on interactions between the two
- treatments.
- A final section concludes.
-\end_layout
-
 \begin_layout Section
 Study Context
 \begin_inset CommandInset label
@@ -761,11 +769,8 @@ The public agricultural advisory system in Uganda has a turbulent history.
  by empowering farmers to demand and control agricultural advisory services.
  NAADS did consider gender in its programming, for instance by distributing
  dairy cattle to women for food security, and initial descriptive evidence
- suggested some success in reaching and benefiting women and 
-\change_deleted -408277422 1631121469
-other
-\change_unchanged
- vulnerable groups 
+ suggested some success in reaching and benefiting women and vulnerable
+ groups 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "eg."
@@ -776,11 +781,8 @@ literal "false"
 
 .
  However, a large scale impact evaluation finds nevertheless the program
- has been relatively more effective among male-headed 
-\change_inserted -408277422 1631121491
-than among female-headed 
-\change_unchanged
-households 
+ has been relatively more effective among male-headed than among female-headed
+ households 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "https://doi.org/10.1111/j.1574-0862.2010.00512.x"
@@ -801,13 +803,8 @@ literal "false"
 .
  The latter is organized by the army and approaches problems in the sector
  from a logistical angle, with a strong focus on (subsidized) input distribution.
- This shift is likely to further reduce the gender 
-\change_deleted -408277422 1631121499
-sensitivity
-\change_inserted -408277422 1631121502
-responsiveness
-\change_unchanged
- of the public extension system in Uganda.
+ This shift is likely to further reduce the gender responsiveness of the
+ public extension system in Uganda.
  Data obtained from the Uganda National Panel Survey (wave 2013/2014) suggest
  that only 20 percent of households received extension in the past twelve
  months.
@@ -884,7 +881,7 @@ reference "fig:Layout-of-experimental"
  the number of households randomly allocated to one of these nine treatment
  combinations.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Power calculations were based on a set of comparisons using different outcomes
@@ -1043,14 +1040,10 @@ Households were sampled from five districts in eastern Uganda: Bugiri, Mayuge,
  In the selected parishes, all villages were included in the study.
  Within each village, we then listed all households, from which we selected
  a random sub-set of monogamous households to be included in the study.
-\change_inserted -408277422 1631121545
-
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\change_inserted -408277422 1631121571
 We focus on addressing intrahousehold challenges to extension information
  in households with monogamous marital/cohabiting relationships and excluded
  polygynous households from this study.
@@ -1059,17 +1052,13 @@ s vary in the way they are organized) different from those in monogamous
  households, testing our hypotheses may have required additional treatment
  arms in the experiment and/or interaction terms controlling for type of
  relationship.
- Besides, only about eight percent of the adult population is in a polygamous
- marital/cohabiting relationship (Ugandan National Population and Housing
- Census 2014).
-\change_unchanged
-
+ Besides, according to the Ugandan National Population and Housing Census
+ of 2016/17, only about ten percent of the adult population is in a polygamous
+ marital/cohabiting relationship.
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1315,14 +1304,6 @@ reference "fig:Layout-of-experimental"
 plural "false"
 caps "false"
 noprefix "false"
-
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "muralidharan2019factorial"
-literal "false"
 
 \end_inset
 
@@ -1754,36 +1735,14 @@ Judged by the overall index, the left panel of the figure shows that exclusively
  while it significantly reduced men's outcomes.
  Joint outcomes were not affected by this shift in information targeting
  from the male co-head to the female co-head.
- 
-\change_inserted -408277422 1631186442
-
 \end_layout
 
 \begin_layout Standard
-Th
-\change_deleted -408277422 1631186498
-is result
-\change_inserted -408277422 1631186529
-e overall increase in women's outcomes and reduction in men's outcomes
-\change_unchanged
- 
-\change_deleted -408277422 1631186535
-is
-\change_inserted -408277422 1631186535
-are
-\change_unchanged
- largely driven by important effects on decision making, with large reductions
- in male unilateral decision making and an increase in female unilateral
- decision making in all decision-making areas we measured.
-
-\change_inserted -408277422 1631186507
- 
-\change_deleted -408277422 1631186448
-
-\end_layout
-
-\begin_layout Standard
-The shift in decision making as a result of directly targeting female co-heads
+The overall increase in women's outcomes and reduction in men's outcomes
+ are largely driven by important effects on decision making, with large
+ reductions in male unilateral decision making and an increase in female
+ unilateral decision making in all decision-making areas we measured.
+ The shift in decision making as a result of directly targeting female co-heads
  with information instead of male co-heads seems at least partly the result
  of a knowledge effect.
  The figure shows that women scored significantly better on the multiple
@@ -1798,26 +1757,12 @@ The shift in decision making as a result of directly targeting female co-heads
  A similar pattern is found for knowledge about the recommendation to combine
  practices, although baseline knowledge levels were higher and impact of
  the recipient treatment was smaller.
- 
-\change_inserted -408277422 1631186713
-As expected, we also find no impact of the intervention on knowledge related
+ As expected, we also find no impact of the intervention on knowledge related
  to how to deal with fall armyworm, as this was not covered in the video.
- 
-\change_unchanged
-Joint knowledge was not affected by targeting female co-heads instead of
- male co-heads as the recipients of information
-\change_inserted -408277422 1631186853
-, suggesting female co-heads do not necessarily share the information with
- their spouse
-\change_unchanged
-.
- 
-\change_deleted -408277422 1631186710
-As expected, we also find no impact of the intervention on knowledge related
- to how to deal with fall armyworm, as this was not covered in the video.
- 
-\change_unchanged
-See Appendix Table A1 for detailed results.
+ Joint knowledge was not affected by targeting female co-heads instead of
+ male co-heads as the recipients of information, suggesting female co-heads
+ do not necessarily share the information with their spouse.
+ See Appendix Table A1 for detailed results.
 \end_layout
 
 \begin_layout Standard
@@ -1887,8 +1832,6 @@ Turning to production outcomes, we again find a large impact of exclusively
  precise coefficient estimate).
  Interestingly, exclusively targeting female co-heads with information does
  not seem to affect yields on male-managed nor jointly managed plots.
-
-\change_inserted -408277422 1631188146
  A first reason for the lack of effects on yields on jointly managed plots
  can be the fact that yields on these plots actually benefit from input
  of information both in the treatment group where female co-heads gained
@@ -1904,9 +1847,7 @@ Turning to production outcomes, we again find a large impact of exclusively
  They may be less certain of such access on jointly managed plots and ,
  therefore, be less inclined to apply their gained knowledge (albeit through
  sharing information with their spouse) on joint plots.
- 
-\change_unchanged
-See Appendix Table A5 for details.
+ See Appendix Table A5 for details.
 \end_layout
 
 \begin_layout Standard
@@ -2012,51 +1953,15 @@ Interestingly, unlike for the female co-head, the presence of the spouse
 Men’s unilateral decision making is reduced as a result of involving women
  in receiving information, no matter if this happens by targeting the female
  co-head alone or together with the male co-head.
- If this reduction
-\change_inserted -408277422 1631121897
- would have
-\change_unchanged
- only occurred in the former case, men’s reduced decision making could have
- been related to a lack of information.
+ If this reduction would have only occurred in the former case, men’s reduced
+ decision making could have been related to a lack of information.
  The fact that the reduction occurs in both cases suggests that men’s unilateral
  decision making does not only decrease due to a lack of direct access to
  information.
  Apparently, the fact that women can also access information leads men to
  refrain from unilateral decision making.
-\change_inserted -408277422 1631189094
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted -408277422 1631189412
-Or women may perceive they play a bigger role in decision making...
- if that would be the only thing happening, we can not claim that men changed
- and became more acceptant of women participating in decision making 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
- This may mean that men 
-\change_inserted -408277422 1631189445
-became more acceptant of women taking up a
-\change_deleted -408277422 1631189329
-change their opinion on
-\change_unchanged
- 
-\change_deleted -408277422 1631189370
-the
-\change_unchanged
- role 
-\change_deleted -408277422 1631189374
-of women 
-\change_unchanged
-in the decision-making process.
+ This may mean that men became more acceptant of women taking up a role
+ in the decision-making process.
 \end_layout
 
 \begin_layout Standard
@@ -2331,20 +2236,9 @@ name "sec:Policy-recommendations-and"
 
 \begin_layout Standard
 In smallholder agriculture in developing contexts, women often perform a
- lot of the work, yet have little say in which crops to plant, what technologies
- and inputs to use.
- Targeting women with relevant information in formats that are appealing
- and accessible to them have been found to increase empowerment in a variety
- of settings, and so providing extension information tailored to women may
- be an effective way to increase their voice in agricultural production.
- However, public agricultural advisory services, the main source of agricultural
- information in many developing countries, remains severely male biased,
- with predominantly male extension officers targeting the main decision
- maker within the household, which is assumed to be the male co-head.
-\end_layout
-
-\begin_layout Standard
-In this paper, we test how gender related attributes of information and
+ lot of the agricultural labour, yet have little say in which crops to plant
+ or what technologies and inputs to use.
+ In this paper, we test how gender related attributes of information and
  communication technology (ICT)-mediated agricultural extension information
  campaigns affect individual household member's informational capital, their
  agency, and their achievements in farming.
@@ -2360,24 +2254,6 @@ In this paper, we test how gender related attributes of information and
 \end_layout
 
 \begin_layout Standard
-The ICT-mediated agricultural extension information intervention is implemented
- using short videos shown twice to farmers.
- In these videos, farmer-actors explain and demonstrate various strategies
- and practices to intensify the production of maize.
- In a 
-\begin_inset Formula $3^{2}$
-\end_inset
-
- factorial design, as a first treatment, three constellations of recipients
- of information in the household were randomized: the male co-head alone,
- the female co-head alone, the male and female co-heads together as a couple.
- As the second, crossed treatment, three versions of essentially the same
- video were randomized across farming households: one version portrays a
- male farmer, another a female farmer, the third a couple formed by male
- and female actor-farmers.
-\end_layout
-
-\begin_layout Standard
 The results of this study clearly show that significant advances in women’s
  empowerment in agriculture in terms of knowledge, decision making, input
  use and achievements in terms of maize production can be made by giving
@@ -2388,25 +2264,34 @@ The results of this study clearly show that significant advances in women’s
  Furthermore, the results of this study suggest that women as role models,
  through peer effects, gender homophily effects, and/or through challenging
  role incongruity, influence women and men in different ways.
- In particular, men’s unilateral decision making seems to reduce when they
- are shown a video where both a man and a woman give information as a couple
- and are portrayed as equally important actors in successful maize farming
- instead of a video with a man as messenger and role model.
- Women are more likely to adopt recommended practices when they receive
- extension information explained and demonstrated by a woman.
 \end_layout
 
 \begin_layout Standard
 Our study reveals that, consistent with non-unitary household models, informatio
 n is not fully shared between household members.
- As a result, targeting particular individuals within the household has
- real effects.
+ Households that are targeted with information within the household seem
+ to be able to use this information to improve outcomes, especially if the
+ benefits accrue directly to the targeted individual.
  This is something that needs to be recognized by generic agricultural extension
  systems that, often for reasons of convenience, mainly inform the male
  co-head within the household.
- We further find some evidence that including women as role models affects
+ If the aim is to empower women in agriculture within the household, women
+ should be targeted alone to provide them with an informational advantage
+ vis-à-vis their spouse that they can exploit.
+\end_layout
+
+\begin_layout Standard
+We further find some evidence that including women as role models affects
  outcomes in agriculture, both directly by increasing aspirations of women
  and indirectly by challenging the idea that maize growing is a male activity.
+ This suggests that governments should hire more female extension staff.
+ But changing prevailing gender norms is likely beyond what government can
+ do.
+ Other stakeholders in the sector will need to play their part as well.
+ For instance, journalist reporting on agricultural related issues could
+ feature more stories where women take center stage.
+ Agro-input dealers that sell improved maize seed varieties should actively
+ reach out to female farmers.
 \end_layout
 
 \begin_layout Standard
@@ -2423,4 +2308,3 @@ options "chicago"
 
 \end_body
 \end_document
-
