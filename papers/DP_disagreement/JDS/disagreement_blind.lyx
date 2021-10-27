@@ -989,7 +989,7 @@ rejecting a joint test is probably harder than only separate comparisions
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y_{i,d}=\alpha_{d}+\varepsilon_{i,d}
+y_{i,d}=\alpha_{d}+\varepsilon_{i,d}\label{eq:f_test}
 \end{equation}
 
 \end_inset
@@ -1259,7 +1259,7 @@ d
 \end_layout
 
 \begin_layout Section
-Study context
+Study context and data collected
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Study-context,-Interventions"
@@ -1270,12 +1270,10 @@ name "sec:Study-context,-Interventions"
 \end_layout
 
 \begin_layout Standard
-The interventions described above were conducted among monogamous maize-farming
- households in five districts in eastern Uganda, an area known for its maize
- production.
- Our survey of households that participated in the study was deployed with
- a two-stage cluster sampling approach to obtain a representative sample
- of this population.
+The study was conducted among monogamous maize-farming households in five
+ districts in eastern Uganda, an area known for its maize production.
+ Households that participated in the study were recruited using a two-stage
+ cluster sampling approach to obtain a representative sample of this population.
  Specifically, we first selected 50 parishes randomly and in proportion
  to the number of villages within each parish.
  In the selected parishes, all villages were included in the study.
@@ -1298,8 +1296,9 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-We focus on the second maize-growing season of 2017, which runs from about
- August 2017, when fields are prepared, to January 2018, when maize is harvested.
+We focused on the second maize-growing season of 2017, which ran from about
+ August 2017, when fields were prepared, to January 2018, when maize was
+ harvested.
  Treatments were administered twice, once in August 2017 when farmers were
  preparing fields, and one month later during planting time.
  Concurrent with the first treatment administration in 2017, we also collected
@@ -1312,18 +1311,34 @@ Farmers in our study area cultivated on average about 1.5 plots of maize.
  Yields during the first season of 2017 were extremely low (about 270 kilograms
  per acre) as a result of a Fall Armyworm outbreak that significantly affected
  the maize crop.
- Baseline data indicate that the average household in our sample consisted
+ Baseline data indicated that the average household in our sample consisted
  of 8 individuals.
- Female co-head in these households are on average 35 years old and only
+ Female co-heads in these households were on average 35 years old and only
  30 percent have finished primary education.
  Male co-heads are on average 43 years old and 42 percent have finished
  primary education.
- Only 11 percent of households report that they had access to agricultural
+ Only 11 percent of households reported that they had access to agricultural
  extension in the year prior to the survey.
  Only 17 percent of households used fertilizer on at least one plot, and
  38 percent reported using improved seed bought from a shop or agro-input
  dealer during the last cropping season (April-July 2017).
  About three quarters of households reported owning a mobile phone.
+\end_layout
+
+\begin_layout Standard
+We collected plot level data on decsion making
+\end_layout
+
+\begin_layout Standard
+We further asked detailed questions on labour
+\end_layout
+
+\begin_layout Standard
+We also had a range of questions on marketing
+\end_layout
+
+\begin_layout Standard
+Two more variables were collected 
 \end_layout
 
 \begin_layout Section
@@ -1335,6 +1350,14 @@ name "sec:Results"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+We provide separate analyses for disagreement between spouses related to
+ involvement of the wife in different decisions, disagreement between spouses
+ about the amount of labour contributed by the wife on different activities,
+ and disagreement about the role of the wife in maize marketing after the
+ harvest.
 \end_layout
 
 \begin_layout Standard
@@ -1422,12 +1445,14 @@ load("/home/bjvca/data/projects/digital green/papers/DP_disagreement/desc.Rd")
 
 \end_layout
 
+\begin_layout Subsection
+Decision making
+\end_layout
+
 \begin_layout Standard
-To investigate disagreement between answers reported by husbands and wives,
- we construct measures based on answers of both spouses.
- Given the large number of potential response combinations, it is useful
- to collapse responses into a few meaningful categories to reduce noise
- and facilitate analysis.
+To investigate disagreement between answers reported by husbands and wives
+ about who within the household made various decisions, we construct measures
+ based on answers of both spouses.
  We follow 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1436,7 +1461,8 @@ literal "false"
 
 \end_inset
 
- who focus on whether the couple agrees on the wife's involvement.
+ who focus on whether the couple agrees on the wife's involvement in various
+ decisions.
  More in particular, we define three different categories: (1) spouses agree
  on the woman's role in decision making
 \begin_inset Foot
@@ -1454,116 +1480,9 @@ This includes cases where neither spouse says that the wife was involved
  the husband), but the husband says she was not; and (3) the husband says
  the wife was involved (either alone or as part of the couple), but the
  wife says she was not.
- The last two categories can be collapsed into an indicator for disagreement
+ The last two categories can be pooled to obtain an indicator for disagreement
  on the involvement of the wife in decision making.
  These indicators are defined at the plot level.
-\end_layout
-
-\begin_layout Standard
-For labour contributions, we define three corresponding categories.
- A first category consists of cases where there is agreement on the wife's
- labour contribution.
- For disagreement, we differentiate between cases where (1) the wife reported
- to have spend more time than the husband reported and (2) the wife reported
- spending less time than the husband reported.
- Labour contribution (and hence disagreement about it) is also measured
- at the plot level.
-\end_layout
-
-\begin_layout Standard
-One complication here is that labour time is measured as a continuous variable:
- days spent on the activity.
- As a result, the margin of error will differ between activities.
- For example, for an activity such as spraying of insecticides, fungicides
- or herbicides, women report that they spend on average only 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{desc[1]}
-\end_layout
-
-\end_inset
-
- days.
- Women report that they spend considerably more time on weeding (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{desc[2]}
-\end_layout
-
-\end_inset
-
- days).
- These differences in magnitudes will also have consequences for the likelihood
- that spouses agree.
- For instance, in the former case, there is agreement on time reported in
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{desc[3]}
-\end_layout
-
-\end_inset
-
- percent of households, while for weeding, this is only the case in 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{desc[4]}
-\end_layout
-
-\end_inset
-
- percent of households.
- While this will not affect the tests for random measurement error, it may
- affect conclusions related to differences in disagreement rates between
- decision.
- We try to mitigate this problem by defining agreement in relation to the
- underlying variable.
- In particular, if labour time difference is within one standard deviation
- of the average time reported by wife and husband, we consider there is
- agreement.
-\end_layout
-
-\begin_layout Standard
-For market participation, we construct an indicator for agreement related
- to selling or not.
- If both husband and wife report positive sales by the women (alone or as
- joint sale), we categorize this as agreement.
- If both report zero sales, this is also considered agreement.
- We differentiate again between two disagreement categories.
- In a first category women claim they sold maize (either alone or as part
- of the couple), while the husband claims she did not.
- In a second category it is the other way round, as the main claims the
- women sold maize, but the wife says she did not sell maize.
- We also construct indicators of agreement related to quantity sold and
- income derived from maize sold.
- As these are continuous variables, we again categorize disagreement if
- answers more than one standard deviation of the average of the underlying
- variables.
- Market participation is measured at the household level.
-\end_layout
-
-\begin_layout Subsection
-Decision making
 \end_layout
 
 \begin_layout Standard
@@ -1592,9 +1511,36 @@ literal "false"
  that the women says she was involved in decision making but the man disagrees
  (category 2) is always higher than the likelihood that the husband says
  his wife was involved but the wife disagrees (category 3).
- P-values indicate that in all but on case, we reject the null of symmetric
+ P-values indicate that in all but one case, we reject the null of symmetric
  measurement error.
- 
+ We further find that we can also not reject the null hypothesis that disagreeme
+nt is equal across different decision categories, judged by a Wald test
+ after estimating equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:f_test"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ (p-value = 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ftests[1]}
+\end_layout
+
+\end_inset
+
+).
+ We thus also reject the hypothesis that discord is due to asymmetric measuremen
+t error.
 \end_layout
 
 \begin_layout Standard
@@ -1688,7 +1634,7 @@ cline{1-5}
 
 \begin_layout Plain Layout
 
-Agree: 
+(1) Agree: 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1749,7 +1695,7 @@ Sexpr{as.numeric(mat_tab1[3,5])+as.numeric(mat_tab1[4,5])}
 
 \begin_layout Plain Layout
 
-(1) Wife says she decides & 
+(2) Wife says she decides & 
 \backslash
 Sexpr{mat_tab1[3,1]} & 
 \backslash
@@ -1777,7 +1723,7 @@ but husband says no & & &  &
 
 \begin_layout Plain Layout
 
-(2) Husband says wife decides & 
+(3) Husband says wife decides & 
 \backslash
 Sexpr{mat_tab1[4,1]} & 
 \backslash
@@ -1813,7 +1759,7 @@ but wife says no & & &  &
 
 \begin_layout Plain Layout
 
-p-value (1)=(2): & 
+p-value (2)==(3): & 
 \backslash
 Sexpr{mat_tab1[7,1]} & 
 \backslash
@@ -1936,28 +1882,15 @@ scriptsize
 \end_layout
 
 \begin_layout Standard
-We find that we can not reject the null hypothesis that disagreement is
- equal across different decision categories (p-value = 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{ftests[1]}
-\end_layout
-
-\end_inset
-
-).
+As decision making is hard to monitor, we only explore the hypothesis if
+ disagreement is due to spouses responding in line with gender norms and
+ customs here.
+ 
 \end_layout
 
 \begin_layout Standard
-We now proceed with a series of regressions to test if disagreement is due
- to spouses responding in line with gender norms and customs.
- First, we test if an intervention that projects a cooperative approach
- to maize farming (as opposed to casting maize farming as a typically male
+First, we test if an intervention that projects a cooperative approach to
+ maize farming (as opposed to casting maize farming as a typically male
  activity), has an influence on disagreement on the role of women in decision
  making.
  Second, following the reasoning in 
@@ -2320,6 +2253,90 @@ scriptsize
 
 \begin_layout Subsection
 Labour Provision
+\end_layout
+
+\begin_layout Standard
+For labour contributions, we define three corresponding categories.
+ A first category consists of cases where there is agreement on the wife's
+ labour contribution.
+ For disagreement, we differentiate between cases where (1) the wife reported
+ to have spend more time than the husband reported and (2) the wife reported
+ spending less time than the husband reported.
+ Labour contribution (and hence disagreement about it) is also measured
+ at the plot level.
+\end_layout
+
+\begin_layout Standard
+One complication here is that labour time is measured as a continuous variable:
+ days spent on the activity.
+ As a result, the margin of error will differ between activities.
+ For example, for an activity such as spraying of insecticides, fungicides
+ or herbicides, women report that they spend on average only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{desc[1]}
+\end_layout
+
+\end_inset
+
+ days.
+ Women report that they spend considerably more time on weeding (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{desc[2]}
+\end_layout
+
+\end_inset
+
+ days).
+ These differences in magnitudes will also have consequences for the likelihood
+ that spouses agree.
+ For instance, in the former case, there is agreement on time reported in
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{desc[3]}
+\end_layout
+
+\end_inset
+
+ percent of households, while for weeding, this is only the case in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{desc[4]}
+\end_layout
+
+\end_inset
+
+ percent of households.
+ While this will not affect the tests for random measurement error, it may
+ affect conclusions related to differences in disagreement rates between
+ decision.
+ We try to mitigate this problem by defining agreement in relation to the
+ underlying variable.
+ In particular, if labour time difference is within one standard deviation
+ of the average time reported by wife and husband, we consider there is
+ agreement.
 \end_layout
 
 \begin_layout Standard
@@ -3142,6 +3159,25 @@ scriptsize
 
 \begin_layout Subsection
 Marketing
+\end_layout
+
+\begin_layout Standard
+For market participation, we construct an indicator for agreement related
+ to selling or not.
+ If both husband and wife report positive sales by the women (alone or as
+ joint sale), we categorize this as agreement.
+ If both report zero sales, this is also considered agreement.
+ We differentiate again between two disagreement categories.
+ In a first category women claim they sold maize (either alone or as part
+ of the couple), while the husband claims she did not.
+ In a second category it is the other way round, as the main claims the
+ women sold maize, but the wife says she did not sell maize.
+ We also construct indicators of agreement related to quantity sold and
+ income derived from maize sold.
+ As these are continuous variables, we again categorize disagreement if
+ answers more than one standard deviation of the average of the underlying
+ variables.
+ Market participation is measured at the household level.
 \end_layout
 
 \begin_layout Standard
