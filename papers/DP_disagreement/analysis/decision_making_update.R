@@ -1,8 +1,220 @@
+rm(list=ls())
 library(clubSandwich)
 library(ggpubr)
-dta <- read.csv("/home/bjvca/data/projects/digital green/papers/DP_disagreement/endline_dta.csv")
+library(stringr)
+library(car)
+dta <- read.csv("/home/bjvca/data/projects/digital green/papers/DP_disagreement/endline_dta.csv",stringsAsFactors =FALSE)
 dta <- subset(dta, interview_status == "couple interviewed")
 
+#double loop -  this needs to be stacked for plots and for decisions
+
+#first create variables
+ dec <- c("mgt","dectime", "decspace","decstriga", "decweed")
+ tmp <- c()
+for (i in (1:length(dec))) {
+
+tmp <- c(tmp,paste(paste(dec[i],"cat_2_pl",sep="_"), 1:5, sep="_"))
+tmp <- c(tmp,paste(paste(dec[i],"cat_3_pl",sep="_"), 1:5, sep="_"))
+tmp <- c(tmp,paste(paste(dec[i],"cat_4_pl",sep="_"), 1:5, sep="_"))
+tmp <- c(tmp,paste(paste(dec[i],"cat_1_pl",sep="_"), 1:5, sep="_"))
+}
+
+new <- data.frame(matrix(NA,2548,100))
+names(new) <- tmp
+dta <- cbind(dta,new)
+
+for (i in (1:5)) {
+for (plot in (1:5)) {
+
+### category 2: man says woman decides or man says both decide and woman says both decide or woman says woman dcides 
+
+dta[paste(paste(dec[i],"cat_2_pl",sep="_") ,plot,sep="_")] <- as.numeric((dta[paste(paste(dec[i],"woman_man_pl",sep="_") ,plot,sep="")]==1 | dta[paste(paste(dec[i],"both_man_pl",sep="_") ,plot,sep="")]==1 ) &  (dta[paste(paste(dec[i],"both_woman_pl",sep="_") ,plot,sep="")]==1 | dta[paste(paste(dec[i],"woman_pl",sep="_") ,plot,sep="")]==1 ))
+
+#category 3: wife says she decides
+
+dta[paste(paste(dec[i],"cat_3_pl",sep="_") ,plot,sep="_")] <- as.numeric((dta[paste(paste(dec[i],"woman_man_pl",sep="_") ,plot,sep="")]==0 & dta[paste(paste(dec[i],"both_man_pl",sep="_") ,plot,sep="")]==0 ) &  (dta[paste(paste(dec[i],"both_woman_pl",sep="_") ,plot,sep="")]==1 | dta[paste(paste(dec[i],"woman_pl",sep="_") ,plot,sep="")]==1 ))
+
+dta[paste(paste(dec[i],"cat_4_pl",sep="_") ,plot,sep="_")] <- as.numeric((dta[paste(paste(dec[i],"woman_man_pl",sep="_") ,plot,sep="")]==1 | dta[paste(paste(dec[i],"both_man_pl",sep="_") ,plot,sep="")]==1 ) &  (dta[paste(paste(dec[i],"both_woman_pl",sep="_") ,plot,sep="")]==0 & dta[paste(paste(dec[i],"woman_pl",sep="_") ,plot,sep="")]==0 ))
+
+dta[paste(paste(dec[i],"cat_1_pl",sep="_") ,plot,sep="_")] <- as.numeric(!(dta[paste(paste(dec[i],"cat_2_pl",sep="_") ,plot,sep="_")]==1 ) & !(dta[paste(paste(dec[i],"cat_3_pl",sep="_") ,plot,sep="_")]==1 )  & !(dta[paste(paste(dec[i],"cat_4_pl",sep="_") ,plot,sep="_")]==1 ))
+}
+}
+
+
+dta_part <- dta[c("hhid",tmp)]
+### how can we reshape this
+### step one - make long at plot level
+
+dta_reshape <- reshape(dta_part, direction ="long", varying=tmp,v.names="new", times = tmp,  idvar="hhid")
+
+dta_reshape$plot <-  as.numeric(str_sub(dta_reshape$time, nchar(dta_reshape$time),nchar(dta_reshape$time) ))
+
+dta_reshape$agreement_cat <-  str_sub(dta_reshape$time, nchar(dta_reshape$time)-9,nchar(dta_reshape$time)-5 )
+dta_reshape$dec <- str_sub(dta_reshape$time, 0,nchar(dta_reshape$time)-11 )
+dta_reshape$time <- NULL
+rownames(dta_reshape) <- NULL 
+names(dta_reshape)[2] <- "var"
+
+### for sales
+
+dta$sold_cat_2 <- as.numeric((dta$nr_bags_sold_woman  > 0 | dta$nr_bags_sold_both_woman >0)  & (dta$nr_bags_sold_woman_man > 0  | dta$nr_bags_sold_both_man >0) )
+dta$sold_cat_1 <- as.numeric(dta$nr_bags_sold_woman  == 0 & dta$nr_bags_sold_both_woman ==0 & dta$nr_bags_sold_woman_man == 0  & dta$nr_bags_sold_both_man ==0)
+
+dta$sold_cat_3 <- as.numeric((dta$nr_bags_sold_woman  > 0| dta$nr_bags_sold_both_woman >0) & dta$nr_bags_sold_woman_man == 0 & dta$nr_bags_sold_both_man ==0)
+dta$sold_cat_4 <- as.numeric(dta$nr_bags_sold_woman  == 0  & dta$nr_bags_sold_both_woman ==0  & (dta$nr_bags_sold_woman_man > 0 | dta$nr_bags_sold_both_man >0) )
+dta_part <- dta[c("hhid","sold_cat_1","sold_cat_2","sold_cat_3","sold_cat_4")]
+
+dta_reshape_2 <- reshape(dta_part, direction ="long", varying=c("sold_cat_1","sold_cat_2","sold_cat_3","sold_cat_4"),v.names="new", times = c("sold_cat_1","sold_cat_2","sold_cat_3","sold_cat_4"),  idvar="hhid")
+
+dta_reshape_2$agreement_cat <-  str_sub(dta_reshape_2$time, nchar(dta_reshape_2$time)-4,nchar(dta_reshape_2$time) )
+dta_reshape_2$dec <- str_sub(dta_reshape_2$time, 0,nchar(dta_reshape_2$time)-6 )
+
+dta_reshape_2$time <- NULL
+rownames(dta_reshape_2) <- NULL 
+names(dta_reshape_2)[2] <- "var"
+
+dta_reshape_2$plot <- NA
+dta_reshape_2 <- dta_reshape_2[names(dta_reshape)]
+
+dta_reshape <- rbind(dta_reshape,dta_reshape_2)
+
+
+### labour time graph
+
+### aggregate weeding time
+
+dta$time_weed_man_man_pl1 <- dta$time_weed1_man_man_pl1 + dta$time_weed2_man_man_pl1 + dta$time_weed3_man_man_pl1 
+dta$time_weed_man_man_pl2 <- dta$time_weed1_man_man_pl2 + dta$time_weed2_man_man_pl2 + dta$time_weed3_man_man_pl2 
+dta$time_weed_man_man_pl3 <- dta$time_weed1_man_man_pl3 + dta$time_weed2_man_man_pl3 + dta$time_weed3_man_man_pl3 
+dta$time_weed_man_man_pl4 <- dta$time_weed1_man_man_pl4 + dta$time_weed2_man_man_pl4 + dta$time_weed3_man_man_pl4 
+dta$time_weed_man_man_pl5 <- dta$time_weed1_man_man_pl5 + dta$time_weed2_man_man_pl5 + dta$time_weed3_man_man_pl5
+
+dta$time_weed_woman_man_pl1 <- dta$time_weed1_woman_man_pl1 + dta$time_weed2_woman_man_pl1 + dta$time_weed3_woman_man_pl1 
+dta$time_weed_woman_man_pl2 <- dta$time_weed1_woman_man_pl2 + dta$time_weed2_woman_man_pl2 + dta$time_weed3_woman_man_pl2 
+dta$time_weed_woman_man_pl3 <- dta$time_weed1_woman_man_pl3 + dta$time_weed2_woman_man_pl3 + dta$time_weed3_woman_man_pl3 
+dta$time_weed_woman_man_pl4 <- dta$time_weed1_woman_man_pl4 + dta$time_weed2_woman_man_pl4 + dta$time_weed3_woman_man_pl4 
+dta$time_weed_woman_man_pl5 <- dta$time_weed1_woman_man_pl5 + dta$time_weed2_woman_man_pl5 + dta$time_weed3_woman_man_pl5 
+
+
+
+dta$time_weed_man_woman_pl1 <- dta$time_weed1_man_woman_pl1 + dta$time_weed2_man_woman_pl1 + dta$time_weed3_man_woman_pl1 
+dta$time_weed_man_woman_pl2 <- dta$time_weed1_man_woman_pl2 + dta$time_weed2_man_woman_pl2 + dta$time_weed3_man_woman_pl2 
+dta$time_weed_man_woman_pl3 <- dta$time_weed1_man_woman_pl3 + dta$time_weed2_man_woman_pl3 + dta$time_weed3_man_woman_pl3 
+dta$time_weed_man_woman_pl4 <- dta$time_weed1_man_woman_pl4 + dta$time_weed2_man_woman_pl4 + dta$time_weed3_man_woman_pl4 
+dta$time_weed_man_woman_pl5 <- dta$time_weed1_man_woman_pl5 + dta$time_weed2_man_woman_pl5 + dta$time_weed3_man_woman_pl5 
+
+dta$time_weed_woman_woman_pl1 <- dta$time_weed1_woman_woman_pl1 + dta$time_weed2_woman_woman_pl1 + dta$time_weed3_woman_woman_pl1 
+dta$time_weed_woman_woman_pl2 <- dta$time_weed1_woman_woman_pl2 + dta$time_weed2_woman_woman_pl2 + dta$time_weed3_woman_woman_pl2 
+dta$time_weed_woman_woman_pl3 <- dta$time_weed1_woman_woman_pl3 + dta$time_weed2_woman_woman_pl3 + dta$time_weed3_woman_woman_pl3 
+dta$time_weed_woman_woman_pl4 <- dta$time_weed1_woman_woman_pl4 + dta$time_weed2_woman_woman_pl4 + dta$time_weed3_woman_woman_pl4 
+dta$time_weed_woman_woman_pl5 <- dta$time_weed1_woman_woman_pl5 + dta$time_weed2_woman_woman_pl5 + dta$time_weed3_woman_woman_pl5 
+
+
+
+#double loop -  this needs to be stacked for plots and for decisions
+
+#first create variables
+ dec <- c("time_prep","time_plant", "time_weed","time_spray", "time_harv")
+ tmp <- c()
+for (i in (1:length(dec))) {
+
+tmp <- c(tmp,paste(paste(dec[i],"cat_2_pl",sep="_"), 1:5, sep="_"))
+tmp <- c(tmp,paste(paste(dec[i],"cat_3_pl",sep="_"), 1:5, sep="_"))
+tmp <- c(tmp,paste(paste(dec[i],"cat_4_pl",sep="_"), 1:5, sep="_"))
+tmp <- c(tmp,paste(paste(dec[i],"cat_1_pl",sep="_"), 1:5, sep="_"))
+}
+
+new <- data.frame(matrix(NA,2548,100))
+names(new) <- tmp
+dta <- cbind(dta,new)
+
+for (i in (1:5)) {
+for (plot in (1:5)) {
+
+### category 2: man says woman decides or man says both decide and woman says both decide or woman says woman dcides 
+lims <- sd(unlist( dta[paste(paste(dec[i],"woman_man_pl",sep="_") ,plot,sep="")] -  dta[paste(paste(dec[i],"woman_woman_pl",sep="_") ,plot,sep="")])/2,na.rm=T)*.5
+
+dta[paste(paste(dec[i],"cat_2_pl",sep="_") ,plot,sep="_")] <- as.numeric((dta[paste(paste(dec[i],"woman_man_pl",sep="_") ,plot,sep="")] - dta[paste(paste(dec[i],"woman_woman_pl",sep="_") ,plot,sep="")]) >= -lims & (dta[paste(paste(dec[i],"woman_man_pl",sep="_") ,plot,sep="")] - dta[paste(paste(dec[i],"woman_woman_pl",sep="_") ,plot,sep="")]) <= lims)
+
+#category 3: wife says she decides
+
+dta[paste(paste(dec[i],"cat_3_pl",sep="_") ,plot,sep="_")] <-  as.numeric(dta[paste(paste(dec[i],"woman_man_pl",sep="_") ,plot,sep="")] -  dta[paste(paste(dec[i],"woman_woman_pl",sep="_") ,plot,sep="")] < -lims)
+
+dta[paste(paste(dec[i],"cat_4_pl",sep="_") ,plot,sep="_")] <-  as.numeric(dta[paste(paste(dec[i],"woman_man_pl",sep="_") ,plot,sep="")] - dta[paste(paste(dec[i],"woman_woman_pl",sep="_") ,plot,sep="")] > lims)
+
+dta[paste(paste(dec[i],"cat_1_pl",sep="_") ,plot,sep="_")] <- NA
+}
+}
+
+
+dta_part <- dta[c("hhid",tmp)]
+
+### how can we reshape this
+### step one - make long at plot level
+
+dta_reshape_3 <- reshape(dta_part, direction ="long", varying=tmp,v.names="new", times = tmp,  idvar="hhid")
+
+dta_reshape_3$plot <-  as.numeric(str_sub(dta_reshape_3$time, nchar(dta_reshape_3$time),nchar(dta_reshape_3$time) ))
+
+dta_reshape_3$agreement_cat <-  str_sub(dta_reshape_3$time, nchar(dta_reshape_3$time)-9,nchar(dta_reshape_3$time)-5 )
+dta_reshape_3$dec <- str_sub(dta_reshape_3$time, 0,nchar(dta_reshape_3$time)-11 )
+dta_reshape_3$time <- NULL
+rownames(dta_reshape_3) <- NULL 
+names(dta_reshape_3)[2] <- "var"
+
+dta_reshape <- rbind(dta_reshape,dta_reshape_3)
+
+#hypothesis 1
+summary(lm(var~as.factor(agreement_cat), data=dta_reshape[dta_reshape$agreement_cat %in% c("cat_3","cat_4"), ]))
+#hypothesis 2
+
+dta_reshape$disagree <- dta_reshape$agreement_cat %in% c("cat_3","cat_4")
+
+
+mod1 <- lm(var~disagree, data=dta_reshape)
+mod2 <- lm(var~disagree*dec, data=dta_reshape)
+anova(mod1, mod2)
+
+mod1 <- lm(var~as.factor(agreement_cat %in% c("cat_3","cat_4")), data=dta_reshape[dta_reshape$dec %in% dec,])
+mod2 <- lm(var~as.factor(agreement_cat %in% c("cat_3","cat_4"))*dec, data=dta_reshape[dta_reshape$dec %in% dec,])
+anova(mod1, mod2)
+
+
+## create a matrix like tables 5 and 6 in Ambler et al
+# decspace decstriga   dectime   decweed       mgt 
+#    50960     50960     50960     50960     50960 
+i_n <- 1
+t_matrix <- matrix(NA,length(table(dta_reshape$dec)),length(table(dta_reshape$dec)))
+for (i in (names(table(dta_reshape$dec)))) {
+j_n <- 1
+for (j in (names(table(dta_reshape$dec)))) {
+t_matrix[i_n,j_n] <- t.test(dta_reshape$var[dta_reshape$dec==i & dta_reshape$agreement_cat %in% c("cat_3","cat_4")],dta_reshape$var[dta_reshape$dec==j & dta_reshape$agreement_cat %in% c("cat_3","cat_4")])$p.value
+j_n <- j_n+1
+}
+i_n <- i_n+1
+}
+
+### read merge in treatments
+
+dta_reshape <- merge(dta_reshape,dta[c("hhid","messenger","recipient")], by.x="hhid", by.y="hhid" ) 
+
+### Q: does reducing information assymmetry reduce disagreement?
+
+dta_copy <- subset(dta_reshape, recipient == "couple")
+
+dta_copy <- subset(dta_copy, messenger != "ctrl")
+dta_copy <- subset(dta_copy, messenger != "female")
+
+mod1 <- lm(var~as.factor(agreement_cat %in% c("cat_3","cat_4"))*as.factor(messenger), data=dta_copy)
+summary(mod1)
+
+### Q: does challenging role conguence reduce disagreement?
+dta_copy <- subset(dta_reshape, messenger == "couple")
+
+mod2 <- lm(var~(recipient=='couple'), data=dta_copy)
+mod2 <- lm(var~(recipient=='couple')*, data=dta_copy)
+
+summary(mod2)
 ### decision making graphs 
 
 df_b <- data.frame(NA)
@@ -165,35 +377,7 @@ barplot(as.matrix(t(df)), main="", ylab = "share of plots", cex.lab = 1.5, cex.m
 legend("topleft", c("overstate decision power","understate decision power"), cex=1.3, bty="n", fill=colours)
 dev.off()
 
-### labour time graph
 
-### aggregate weeding time
-
-dta$time_weed_man_man_pl1 <- dta$time_weed1_man_man_pl1 + dta$time_weed2_man_man_pl1 + dta$time_weed3_man_man_pl1 
-dta$time_weed_man_man_pl2 <- dta$time_weed1_man_man_pl2 + dta$time_weed2_man_man_pl2 + dta$time_weed3_man_man_pl2 
-dta$time_weed_man_man_pl3 <- dta$time_weed1_man_man_pl3 + dta$time_weed2_man_man_pl3 + dta$time_weed3_man_man_pl3 
-dta$time_weed_man_man_pl4 <- dta$time_weed1_man_man_pl4 + dta$time_weed2_man_man_pl4 + dta$time_weed3_man_man_pl4 
-dta$time_weed_man_man_pl5 <- dta$time_weed1_man_man_pl5 + dta$time_weed2_man_man_pl5 + dta$time_weed3_man_man_pl5
-
-dta$time_weed_woman_man_pl1 <- dta$time_weed1_woman_man_pl1 + dta$time_weed2_woman_man_pl1 + dta$time_weed3_woman_man_pl1 
-dta$time_weed_woman_man_pl2 <- dta$time_weed1_woman_man_pl2 + dta$time_weed2_woman_man_pl2 + dta$time_weed3_woman_man_pl2 
-dta$time_weed_woman_man_pl3 <- dta$time_weed1_woman_man_pl3 + dta$time_weed2_woman_man_pl3 + dta$time_weed3_woman_man_pl3 
-dta$time_weed_woman_man_pl4 <- dta$time_weed1_woman_man_pl4 + dta$time_weed2_woman_man_pl4 + dta$time_weed3_woman_man_pl4 
-dta$time_weed_woman_man_pl5 <- dta$time_weed1_woman_man_pl5 + dta$time_weed2_woman_man_pl5 + dta$time_weed3_woman_man_pl5 
-
-
-
-dta$time_weed_man_woman_pl1 <- dta$time_weed1_man_woman_pl1 + dta$time_weed2_man_woman_pl1 + dta$time_weed3_man_woman_pl1 
-dta$time_weed_man_woman_pl2 <- dta$time_weed1_man_woman_pl2 + dta$time_weed2_man_woman_pl2 + dta$time_weed3_man_woman_pl2 
-dta$time_weed_man_woman_pl3 <- dta$time_weed1_man_woman_pl3 + dta$time_weed2_man_woman_pl3 + dta$time_weed3_man_woman_pl3 
-dta$time_weed_man_woman_pl4 <- dta$time_weed1_man_woman_pl4 + dta$time_weed2_man_woman_pl4 + dta$time_weed3_man_woman_pl4 
-dta$time_weed_man_woman_pl5 <- dta$time_weed1_man_woman_pl5 + dta$time_weed2_man_woman_pl5 + dta$time_weed3_man_woman_pl5 
-
-dta$time_weed_woman_woman_pl1 <- dta$time_weed1_woman_woman_pl1 + dta$time_weed2_woman_woman_pl1 + dta$time_weed3_woman_woman_pl1 
-dta$time_weed_woman_woman_pl2 <- dta$time_weed1_woman_woman_pl2 + dta$time_weed2_woman_woman_pl2 + dta$time_weed3_woman_woman_pl2 
-dta$time_weed_woman_woman_pl3 <- dta$time_weed1_woman_woman_pl3 + dta$time_weed2_woman_woman_pl3 + dta$time_weed3_woman_woman_pl3 
-dta$time_weed_woman_woman_pl4 <- dta$time_weed1_woman_woman_pl4 + dta$time_weed2_woman_woman_pl4 + dta$time_weed3_woman_woman_pl4 
-dta$time_weed_woman_woman_pl5 <- dta$time_weed1_woman_woman_pl5 + dta$time_weed2_woman_woman_pl5 + dta$time_weed3_woman_woman_pl5 
 
 ### cleaning time data - judged by looking at man_man_pl1
 dec <- c("time_weed")
