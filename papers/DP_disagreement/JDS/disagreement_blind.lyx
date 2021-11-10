@@ -107,19 +107,25 @@ To gain a better understanding of intrahousehold bargaining processes, surveys
  However, answers provided by spouses on the same set of questions often
  differ substantially.
  Recent research suggests that, while some of this disagreement is due to
- measurement error, spouses also seem to hide information from each other.
- In this paper, we document spousal disagreement between male and female
+ random measurement error and cognitive bias, spouses also seem to hide
+ information from each other.
+ In this paper, we document differences in answers between male and female
  co-heads in smallholder maize farming households in eastern Uganda.
- Using a field experiment, we test if this disagreement is due to spouses
- strategically hiding decisions, actions or assets from each other.
+ We first confirm that not all disagreement can be explained by measurement
+ error or bias.
+ Using a field experiment, we then test if disagreement is due to spouses
+ strategically hiding decisions and actions from each other.
  We also test an alternative explanation where discord is attributed to
  spouses' tendency to respond in line with prevailing norms and customs
  in society.
+ While the interventions did seem to reduce discord in survey response about
+ about decision making, we do not find that decision hiding nor reporting
+ in line with gender norms and customs are the primary drivers.
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-We find 
+182 words - max 200
 \end_layout
 
 \end_inset
@@ -181,8 +187,8 @@ literal "false"
  accurate knowledge about the decisions made, actions taken, or assets owned
  by the other.
  Furthermore, they argue that the fact that disagreement is larger for assets
- and decisions that are easier to hide suggest this is due to spouses strategica
-lly hiding information.
+ and decisions that are easier to hide suggests this is due to spouses strategic
+ally hiding information.
  A number of lab-in-the-field experiments similarly confirm that, in many
  cases, household members conceal some of their resources from one another
  
@@ -209,41 +215,45 @@ literal "false"
 \end_inset
 
 , we explore the same three types of explanation for discord—random measurement
- error, asymmetric measurement error, and asymmetric information.
+ error, bias caused by men and women interpreting questions differently,
+ and asymmetric information where men and women have only partly overlapping
+ information sets.
  However, we go one step further and, using a field experiment, formally
  test if this asymmetric information between husband and wives should be
  attributed to spouses strategically hiding information from each other.
- This is done by randomly assigning households to a video based intervention
- designed to facilitate mutual monitoring.
+ This is done by randomly assigning a sample of households to a video based
+ intervention designed to facilitate mutual monitoring and comparing disagreemen
+t to a control group.
  Furthermore, we test for an alternative explanation, where the discord
  is not the result of asymmetric information, but rather of spouses answering
  in line with prevailing gender norms in society.
- Inspired by recent research on behavioral change communication and social
- marketing, we try to manipulate these norms and test a treatment that promotes
- a mental image of maize farming as a cooperative or joint venture in which
- both spouses play an equal role in decision-making, farming activities,
- and rewards.
+ Inspired by recent research on the use of role models to change attitudes
+ and behviour in traditionally male dominated sectors, we test the impact
+ of an intervention that promotes a mental image of maize farming as a cooperati
+ve or joint venture in which both spouses play an equal role in maize farming.
 \end_layout
 
 \begin_layout Standard
 We consider disagreement on the role of both female and male co-heads in
- decision making, labour provision and marketing.
- For decision making and marketing, the focus is on hiding.
- In particular, we test how the likelihood that the wife reports she was
- involved in decision making or in marketing but the husband says she was
- not is affected by the interventions.
- Similarly, we test if the interventions affect the likelihood that the
- male co-head reports more decision making or sales than the female co-head
- seems to be aware of.
- For labour provision, we focus on shirking, and test of the interventions
- reduces instances where the female co-head reports the have worked less
- than what the male co-head thinks.
- We also test the impact of the interventions on shirking by the male co-head.
+ decision making and labour provision.
+ For disagreement about the wife's role in decision making, the focus is
+ on hiding, defined as the likelihood that the wife reports she was involved
+ in decision making but the husband says she was not.
+ For disagreement about the husband's role, we consider the likelihood that
+ the husband reports he was involved in the decision but the wife says he
+ was not.
+ For labour provision, we focus on shirking, defined as instances where
+ the female co-head reports to have worked less than what the male co-head
+ thinks.
+ We also analyze shirking by the male co-head.
  
 \end_layout
 
 \begin_layout Standard
-We find that measurement error alone can not explain all disagreement.
+We find that measurement error alone can not explain disagreement in survey
+ response.
+ We also reject that differences in how male and female co-heads interpret
+ the questions is the main driver for observed disagreement.
  For decision making, we find that disagreement related to the role of the
  female co-head can be partly explained by spouses responding in line with
  what is expected by society.
@@ -251,8 +261,6 @@ We find that measurement error alone can not explain all disagreement.
  other.
  We do not find that disagreement related to labour provision is due to
  spouses reporting in line with what society expects, nor that spouses shirk.
- We also do not find that spouses hide income derived from the sales of
- maize from each other.
 \end_layout
 
 \begin_layout Standard
@@ -294,18 +302,8 @@ noprefix "false"
 
 \end_inset
 
-, with subsections for decision making, labour time allocations, and marketing.
- Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Discussion"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- concludes.
+, with subsections for decision making and labour time allocations.
+ A last section concludes.
 \end_layout
 
 \begin_layout Section
@@ -362,11 +360,11 @@ literal "false"
 
 \end_inset
 
- suggest that such divergence may also partly be due the fact that the response
- categories do not have the same cognitive or semantic meanings to women
- and men, leading to the somewhat pessimistic conclusion that survey questions
- are of limited use in understanding differences in gender stratification
- across multiple contexts.
+ suggest that such divergence may also partly be due to the fact that the
+ response categories do not have the same cognitive or semantic meanings
+ to women and men, leading to the somewhat pessimistic conclusion that survey
+ questions are of limited use in understanding differences in gender stratificat
+ion across multiple contexts.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -388,6 +386,9 @@ intrahousehold accords,
  it may be problematic for interventions informed by the analysis of survey
  data to reduce gender inequalities or empower women in agricultural households.
  
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset citation
 LatexCommand citet
 key "SEYMOUR201897"
@@ -403,6 +404,22 @@ literal "false"
  They conclude that disagreement may signal underlying power dynamics within
  the household that are likely to be relevant when assessing individual-level
  agency and empowerment.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ANNAN2021105292"
+literal "false"
+
+\end_inset
+
+ similarly look at underlying power dynamics by differentiating between
+ instances where women are taking power and instances where women are given
+ power.
+ They find that taking power is positively correlated with a range of outcomes
+ for women and children, but also argue that more research is needed to
+ establish causality and identify which interventions induce women to claim
+ power.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -482,21 +499,12 @@ name "sec:Experimental-design-and"
 \end_layout
 
 \begin_layout Standard
-The previous section shows that the emerging literature on spousal disagreement
- in survey response suggests at least two underlying mechanisms.
- First, spousal disagreement may reflect different cognitive understanding
- of the responses categories in a survey questionnaire and what the appropriate
- response should be 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "GHUMAN20061"
-literal "false"
-
-\end_inset
-
-.
- This problem is compounded by the cultural context in which these questions
- are asked and answered 
+In addition to random error and cognitive bias due to spouses in interpreting
+ questions differently, the previous section shows that the emerging literature
+ on spousal disagreement in survey response suggests two potential mechanisms.
+ First, spousal disagreement may be due to cultural context in which these
+ questions are asked and answered, with spouses responding in line with
+ what would be expected in society 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1080/00220388.2019.1650169"
@@ -509,7 +517,7 @@ literal "false"
  what decision-making of a spouse involves and who is expected to make decisions
  in a farm household by promoting a cooperative approach to maize farming,
  in which maize cultivation and management activities are seen as a joint
- responsibility of spouses.
+ responsibility of both spouses.
  Second, the literature also suggests that spousal disagreement reflects
  information asymmetries between spouses, predominantly cause by spouses
  hiding decisions, actions and assets from each other 
@@ -556,18 +564,18 @@ The techniques and inputs that are demonstrated in the videos are the ones
 \end_layout
 
 \begin_layout Standard
-The first intervention, referred to as T1 in the analysis below, involves
- varying the actors featured in the video and randomizing which version
- of the video is viewed by farmers.
- The second intervention randomly varies the member(s) of the household
- who view the video.
+The first intervention, referred to as T1 in the remainder of the paper,
+ involves varying the actors featured in the video and randomizing which
+ version of the video is viewed by farmers.
+ The second intervention, which we will refer to as T2, randomly varies
+ the member(s) of the household who view the video.
  These variations and the rationale behind them are explained below.
 \end_layout
 
 \begin_layout Standard
-We begin with a conceptual explanation that ties to our first intervention:
- projecting a cooperative way of farming as a household, thereby challenging
- consensus that maize farming is a male activity.
+We begin with a conceptual explanation that ties to our first intervention
+ (T1): projecting a cooperative way of farming as a household, thereby challengi
+ng consensus that maize farming is a male activity.
  Consider that within households, individual members often have differing
  spheres of influence reflecting prevailing gender roles 
 \begin_inset CommandInset citation
@@ -633,7 +641,7 @@ status collapsed
 
 \begin_layout Plain Layout
 A third version of the video features only a female actor, but is not used
- in this intervention.
+ in this study.
 \end_layout
 
 \end_inset
@@ -642,7 +650,7 @@ A third version of the video features only a female actor, but is not used
  models can have on aspirations, investment choices, and other future-oriented
  behaviors 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "bernard2015will"
 literal "false"
 
@@ -708,20 +716,14 @@ literal "false"
 
 \begin_layout Standard
 One way in which collective action problems can be attenuated is through
- increased mutual monitoring.
+ increased monitoring.
  For instance, if one co-head can assess the actual time that the other
  co-head spends on land preparation, then the latter is less likely to engage
  in labor shirking.
- Similarly, if a co-head can determine how much the other co-head is earns
- from the sale of farm produce, then the latter is less likely to engage
- in income hiding.
  However, for mutual monitoring to work, co-heads require information against
  which to compare information gained through monitoring, since merely observing
  an outcome may be insufficient to determine if a co-head is shirking, hiding,
  or otherwise mismanaging his or her collective obligations to the household.
- Thus, information on exactly what operations land preparation entails or
- on the prevailing market price for farm produce is necessary for effective
- monitoring.
  For instance, it may be difficult for the female co-head to check if her
  spouse overreports time spent preparing the field if she does not have
  a good understanding of what land preparation entails.
@@ -732,7 +734,7 @@ One way in which collective action problems can be attenuated is through
 \begin_layout Standard
 In a second treatment (T2), we therefore make sure both co-heads start off
  with symmetric information with respect to recommended agronomic practices
- for maize farming, as this facilitates mutual monitoring.
+ for maize farming, as this is assumed to facilitate mutual monitoring.
  To do so, we show the video that showcases recommended practices in maize
  farming to both spouses in a random sample of 261 households.
 \begin_inset Foot
@@ -767,15 +769,16 @@ We made sure that in about half of the cases the video was shown to the
 \end_layout
 
 \begin_layout Section
-Hypothesis and tests
+Hypotheses and tests
 \end_layout
 
 \begin_layout Standard
 In this section, we outline the different hypothesis and how they will be
  tested.
  While the focus will be on testing the impact of the interventions on spousal
- disagreement, we also use our data to test for random and asymmetric measuremen
-t error using the framework outline in 
+ disagreement, we also use our data to test for random error and cognitive
+ bias (due to spouses in interpreting questions differently) using the framework
+ outline in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "doi:10.1086/703082"
@@ -801,13 +804,13 @@ literal "false"
  show that if random measurement error is the only factor leading to disagreemen
 t, then disagreement should be symmetric.
  For instance, one would expect that the likelihood that the wife says she
- was involved in a decision while the husband says she was not is about
- the same as the likelihood that the husband says the wife was involved
- in that decision, while the wife says she was not.
+ was involved in a particular decision while the husband says she was not
+ is about the same as the likelihood that the husband says the wife was
+ involved in that decision, while the wife says she was not.
  Or, one would expect that the likelihood that the husband says he worked
- harder than what the wife believes is about the same as the likelihood
- that the husband indicates he spent less time on a task than what the wife
- thinks.
+ harder on a particular task than what the wife believes is about the same
+ as the likelihood that the husband indicates he spent less time on that
+ task than what the wife thinks.
  Testing if disagreement between husband and wife is simply due to random
  measurement error is thus equivalent to testing if two proportions are
  significantly different from each other, which we will do using a Pearson
@@ -837,7 +840,7 @@ literal "false"
 
 \end_inset
 
- test for asymmetric measurement error.
+ test for what they term asymmetric measurement error.
  They define asymmetric measurement error as 
 \begin_inset Quotes eld
 \end_inset
@@ -853,8 +856,6 @@ literal "false"
  or interpretation of the questions, or differences in perceptions of what
  it means to make a decision, what constitutes agricultural labour, or what
  it entails to own an asset.
- They also explicitly state that asymmetric measurement error could be caused
- by cultural factors that lead to men under-reporting women's roles.
  This type of disagreement is categorized as measurement error because it
  does not adequately reflect what happens in reality
 \begin_inset Note Note
@@ -876,7 +877,6 @@ Ambler et al argue that this is error because
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -955,7 +955,7 @@ status collapsed
 \begin_layout Plain Layout
 We will refer to decision making here to keep the exposition simple, but
  in the analysis we also consider disagreement between spouses on labour
- contributions and market participation.
+ contributions.
 \end_layout
 
 \end_inset
@@ -968,6 +968,59 @@ We will refer to decision making here to keep the exposition simple, but
  to be equal to each other.
  If we reject the null, this means that disagreement about decision making
  between spouses cannot be fully explained by symmetric measurement error.
+\end_layout
+
+\begin_layout Standard
+It is important to note the implicit assumption that this type of error
+ has its origin at the level of the individuals within the household (eg
+ the wife has lower education leading her to systematically underestimate
+ effort), and so should not lead to heterogeneity within the household.
+ Therefore, instead of referring to this as asymmetric measurement error,
+ we see this more as bias cause by factors that emanate from the individual
+ level.
+ Generally, this individual level variation will be due to differing cognitive
+ capacities of spouses and difference in how questions are interpreted by
+ husband and wife 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "GHUMAN20061"
+literal "false"
+
+\end_inset
+
+.
+ Obviously, this will also be affected by cultural factors,
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+ explicitly state that asymmetric measurement error could also be caused
+ by cultural factors that lead to men under-reporting women's roles.
+\end_layout
+
+\end_inset
+
+ but gender norms and customs also create variance at the level of the different
+ decisions and activities, which we exploit to provide an explicit test
+ below (equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:CATE"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1028,8 +1081,8 @@ d
  We further provide an explicit test for this hypothesis by comparing average
  disagreement between spouses in households that were exposed to a treatment
  designed to facilitate mutual monitoring to average disagreement between
- spouses in households that did not receive this intervention.
- This is done in using the following OLS regression
+ spouses (T2) in households that did not receive this intervention.
+ This is done using the following OLS regression:
 \end_layout
 
 \begin_layout Standard
@@ -1120,7 +1173,7 @@ literal "false"
  may be very different from disagreement related to the role of women in
  land preparation.
  In the former case, as weeing is seen as a typical female activity, men
- may have no problems admitting that women did all the work.
+ may have no problems admitting that the woman did all the work.
  For the latter case, as society expects men to do the often heavy work
  of preparing the fields, men may be more reluctant to disclose that their
  wife also spent considerable time on this task.
@@ -1146,9 +1199,8 @@ literal "false"
 
 \end_inset
 
- attribute to asymmetric information may actually be measurement error arising
- from spouses reporting line with expectations, and estimate models similar
- to 
+ attribute to asymmetric information may actually be the result of spouses
+ reporting in line with expectations, and estimate models similar to 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:ATE"
@@ -1178,8 +1230,8 @@ i
 \end_inset
 
 , is a dummy that takes the value of one if spouses were exposed to a couple
- role model video intervention, and zero if a video was shown where only
- a man featured in the video.
+ role model video intervention (T1), and zero if a video was shown where
+ only a man featured in the video.
  If cultural norms indeed drive disagreement, we expect the treatment to
  reduce disagreement 
 \begin_inset Formula $\left(\beta<0\right)$
@@ -1344,10 +1396,13 @@ n for light and nutrients, leading to stunted plant growth.
 
 \end_inset
 
- Finally, we consider decisions related to weed control.
+ We also consider decisions related to weed control.
  For weeding, we differentiate between decision-making related to strategies
  used to combat striga infestation (a parasitic weed that feeds off the
  roots of the maize plant) and weeding more generally.
+ Finally, we look at decision making related to maize marketing, and ask
+ who sold took the decision to sell (part of the) maize that was harvested.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1359,9 +1414,6 @@ We also collected detailed information on labor time.
  her spouse worked on the plot on that particular task.
  The activities we inquired about are land preparation, planting, weeding,
  spraying, and harvesting.
- Finally, we look at decisions regarding maize marketing.
- We asked each co-head separately how much maize was sold from the season
- under consideration, and how much money was derived from this.
  
 \end_layout
 
@@ -1382,18 +1434,18 @@ noprefix "false"
  we also construct an indicator of how easy it is to monitor particular
  decisions, activities or actions.
  To do so, we asked 30 experts to score each activity (eg.
- time spend to weeding or money received for the sale of maize) in terms
- of ease of monitoring on a scale between 0 and 100, with 0 being impossible
- to find out actions of the spouse and 100 being very easy to find out.
- We only scored labour contributions and variables related to marketing,
- as we thought decision making is very hard to monitor anyway.
+ time spend to weeding) in terms of ease of monitoring on a scale between
+ 0 and 100, with 0 being impossible to find out actions of the spouse and
+ 100 being very easy to find out.
+ We only scored labour contributions, as we thought decision making is very
+ hard to monitor anyway.
  
 \end_layout
 
 \begin_layout Standard
 Second, to test if gender norms and customs are driving spousal disagreement,
  we also created a indicator for the extent to which a particular action
- of decision is culturally believed to be more in the male domain.
+ or decision is culturally believed to be more in the male domain.
  This was done by asking the same 30 experts to indicate who, within the
  household, is typically (i.e.
  by prevailing norms and customs) expected to make the particular decision
