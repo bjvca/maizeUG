@@ -331,8 +331,8 @@ prop.table(table(dta_reshape[dta_reshape$dec=="sold_quantity",]$var))
 ### collecting F-test
 #ftests <- vector(mode="character", length=10)
 
-mod <- lm(disagree~0+as.factor(dec),data=dta_reshape[dta_reshape$dec %in% c("mgt","dectime", "decspace","decstriga", "decweed"),])
-vcov_cluster <- vcovCR(mod, cluster=dta_reshape[dta_reshape$dec %in% c("mgt","dectime", "decspace","decstriga", "decweed"),]$hhid, type = "CR2")
+mod <- lm(disagree~0+as.factor(dec),data=dta_reshape[dta_reshape$dec %in% c("mgt","dectime", "decspace","decstriga", "decweed","sold"),])
+vcov_cluster <- vcovCR(mod, cluster=dta_reshape[dta_reshape$dec %in% c("mgt","dectime", "decspace","decstriga", "decweed","sold"),]$hhid, type = "CR2")
 coef_test(mod, vcov = vcov_cluster)
 
 ##save this because this takes a lot of time to run
@@ -376,7 +376,7 @@ dta_copy <- subset(dta_reshape, recipient == "couple")
 dta_copy <- subset(dta_copy, messenger != "ctrl")
 dta_copy <- subset(dta_copy, messenger != "female")
 
-dta_copy <- subset(dta_copy, dec %in% c("mgt","dectime", "decspace","decstriga", "decweed"))
+dta_copy <- subset(dta_copy, dec %in% c("mgt","dectime", "decspace","decstriga", "decweed","sold"))
 
 mod <- lm((var=="cat3")~as.factor(messenger=="couple"),data=dta_copy)
 vcov_cluster <- vcovCR(mod, cluster=dta_copy$hhid, type = "CR2")
@@ -531,7 +531,7 @@ save(mat_tab6, file = "/home/bjvca/data/projects/digital green/papers/DP_disagre
 #keep only farmers that were exposed to the video featuring a couple
 dta_copy <- subset(dta_reshape, messenger == "couple")
 
-dta_copy <- subset(dta_copy, dec %in% c("mgt","dectime", "decspace","decstriga", "decweed"))
+dta_copy <- subset(dta_copy, dec %in% c("mgt","dectime", "decspace","decstriga", "decweed","sold"))
 mat_tab4 <- matrix(NA, 12,3)
 
 mod <- lm((var=="cat3")~as.factor(recipient=="couple"),data=dta_copy)

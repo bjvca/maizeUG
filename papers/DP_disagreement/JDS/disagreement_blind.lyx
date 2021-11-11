@@ -770,6 +770,13 @@ We made sure that in about half of the cases the video was shown to the
 
 \begin_layout Section
 Hypotheses and tests
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Hypotheses-and-tests"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1470,8 +1477,8 @@ name "sec:Results"
 
 \begin_layout Standard
 We provide separate analyses for disagreement between spouses related to
- decision making, disagreement between spouses related to labour contributions,
- and disagreement about maize marketing after the harvest.
+ decision making and disagreement between spouses related to labour contribution
+s.
  We consider disagreement related to the role of the wife and the role of
  the husband separately.
 \end_layout
@@ -1638,6 +1645,39 @@ This includes cases where neither spouse says that the wife was involved
  the husband), but the husband says she was not; and (3) the husband says
  the wife was involved (either alone or as part of the couple), but the
  wife says she was not.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ANNAN2021105292"
+literal "false"
+
+\end_inset
+
+ provide an alternative interpretation of categories 2 and 3.
+ In particular, they refer to this as instances where the women 
+\begin_inset Quotes eld
+\end_inset
+
+takes power
+\begin_inset Quotes erd
+\end_inset
+
+, whereas category 3 is considered to be situations where the woman is 
+\begin_inset Quotes eld
+\end_inset
+
+given power
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
  Similarly, to assess (dis)agreement about the role of the the husband,
  the three categories are: (1) spouses agree on the husband's role in decision
  making; (2) the husband says that he was involved (either alone or jointly
@@ -1646,7 +1686,6 @@ This includes cases where neither spouse says that the wife was involved
  says he was not.
  Categories (2) and (3) can be pooled to obtain an indicator for disagreement
  on the involvement in decision making of the spouse.
- These indicators are defined at the plot level.
 \end_layout
 
 \begin_layout Standard
@@ -1669,7 +1708,7 @@ noprefix "false"
  that the female co-head says she was involved in a particular decision
  but the husband disagrees (category 2) is always higher than the likelihood
  that the husband says his wife was involved but the wife disagrees (category
- 3).
+ 3) except for the decision to sell maize.
  P-values based on a Pearson 
 \begin_inset ERT
 status open
@@ -1685,9 +1724,9 @@ chi$
 
 -squared test for equality of proportions for category 2 and 3 indicate
  that in all but one case, we reject the null of symmetric measurement error.
- We also find that we cannot reject the null hypothesis that disagreement
- about the wife's role in decision making is equal across different decision
- categories, judged by a Wald test after estimating equation 
+ We also find that we reject the null hypothesis that disagreement about
+ the wife's role in decision making is equal across different decision categorie
+s, judged by a Wald test after estimating equation 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:f_test"
@@ -1711,17 +1750,17 @@ Sexpr{ftests[1]}
 \end_inset
 
 ).
- This means that discord can not be explained by (asymmetric) measurement
- error alone.
+ This means that discord cannot be explained by cognitive differences between
+ spouses alone.
 \end_layout
 
 \begin_layout Standard
 The bottom panel shows that spouses agree even more about the role of the
  husband in decision making.
- Looking into disagreement, the pattern is the same as for the role of the
- wife: the likelihood that the husband claims he was involved in the decision
- and the wife disagrees is always higher than the likelihood that the wife
- says the husband was involved but the husband says he was not.
+ Looking into disagreement, the likelihood that the husband claims he was
+ involved in the decision and the wife disagrees is now always higher than
+ the likelihood that the wife says the husband was involved but the husband
+ says he was not.
  Also here, the p-values based on a Pearson 
 \begin_inset ERT
 status open
@@ -1736,10 +1775,10 @@ chi$
 \end_inset
 
 -squared test for equality of proportions for category 2 and 3 indicate
- that we cannot reject the null of symmetric measurement error.
+ that we reject the null of symmetric measurement error.
  Comparing disagreement about the role of the husband across different decision
  making domains also leads us to reject the hypothesis that this disagreement
- is only due to asymmetric measurement error (p-value = 
+ is only due to cognitive bias (p-value = 
 \begin_inset ERT
 status open
 
@@ -1766,16 +1805,56 @@ noprefix "false"
 
 \end_inset
 
- also shows the male task score.
- Disagreement related to the role of the wife is lowest (35 percent) for
- decisions about timing and frequency of weeding, which is also a decision
- that is typically considered to be in the domain of the wife (with a male
- task score of 41).
- Disagreement is highest for the wife's role in deciding what to do against
- striga infestations, which seems to be more in the male domain.
- For the role of the husband, the pattern is less clear, with both high
- and low disagreement levels for decisions that are both in the male domain
- (decision to plant maize on the plot and decisions on how to fight striga).
+ also shows the male task score (
+\emph on
+
+\begin_inset Formula $H_{d}$
+\end_inset
+
+
+\emph default
+ in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:CATE"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Hypotheses-and-tests"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Disagreement related to the role of the husband is highest for the decision
+ to sell (34 percent), which is also the task with the highest score on
+ 
+\emph on
+
+\begin_inset Formula $H_{d}$
+\end_inset
+
+
+\emph default
+ (82/100)
+\emph on
+.
+ 
+\emph default
+This suggests that the male co-head insists he made decisions about marketing
+ because it is a typical male activity, even if the made the decision.
+ We do not see a clear pattern for disagreement related to the role of the
+ wife in decision making.
+
+\emph on
  
 \end_layout
 
@@ -1817,7 +1896,8 @@ noprefix "false"
 \end_inset
 
  used in the regression is disagreement whereby the spouse reports he or
- she was involved but the other spouse says he or she was not (category
+ she was involved but the other spouse says he or she was not, which suggests
+ the spouse who reports on his or herself made the decision secretly (category
  2).
 \begin_inset Foot
 status collapsed
@@ -1832,11 +1912,23 @@ l, spouses may want to hide information about it and under-report, in which
  If a decision, action, or consequence is considered undesirable for the
  individual, spouses may want things to make better than reality and over-report
 , in which case category 3 is the relevant outcome.
+ 
 \end_layout
 
 \end_inset
 
- 
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+An alternative interpretation in line with Annan et al is that the spouse
+ takes power.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1851,7 +1943,7 @@ noprefix "false"
 \end_inset
 
  and tests if the intervention designed to change the likelihood that spouses
- respond in line with gender norms (T1) had an impact on disagreement.
+ respond in line with gender norms (T1) had an impact on category 2 disagreement.
  The top panel in the table shows that on 
 \begin_inset ERT
 status open
@@ -1865,8 +1957,8 @@ Sexpr{format(round(as.numeric(mat_tab2[1,1])*100, digits=1),nsmall=1)}
 
 \end_inset
 
- percent of plots, the wife says she was involved but the husband claims
- she was not.
+ percent of the decisions that were made, the wife says she was involved
+ but the husband claims she was not.
  We also see that among households that were exposed to the treatment aimed
  at reducing the influence of gender norms and customs on survey responses,
  this type of disagreement reduced to 
@@ -1890,11 +1982,8 @@ Sexpr{format(round(as.numeric(mat_tab2[1,1]+as.numeric(mat_tab2[3,1]))*100,
 status collapsed
 
 \begin_layout Plain Layout
-The implicit assumption here is that the wife knows best whether she made
- the decision, and it is mainly what the husband reports that is sensitive
- to gender norms and customs (and hence the treatment).
- If a decision is seen to be in the male domain, men are less likely to
- admit the woman was involved, increasing disagreement.
+The underlying assumption here is that the spouse that is farthest from
+ the—unknown—truth adjusts most towards this truth, which seems reasonable.
 \end_layout
 
 \end_inset
@@ -1919,8 +2008,8 @@ Sexpr{format(round(as.numeric(mat_tab4[1,1])*100, digits=1),nsmall=1)}
 
 \end_inset
 
- percent of the plots.
- In the treatment group where both spouses start of with exactly the same
+ percent of decisions.
+ In the treatment group where both spouses start off with exactly the same
  information, disagreement was reduced by 
 \begin_inset ERT
 status open
@@ -1939,15 +2028,11 @@ Sexpr{format(round(as.numeric(-mat_tab4[3,1])*100, digits=1),nsmall=1)}
 \end_layout
 
 \begin_layout Standard
-The third column in the table shows that we also find significant correlation
- between spousal disagreement and the indicator that attempts to measure
- how sensitive an activity is in terms of gender norms.
- Apparently, the likelihood that the female co-head reports she was involved
- while the husband claims she was not is significantly higher for decisions
- that were judged to be more in the male domain (the decision to plant maize
- on the plot, strategies to fight stiga) than for decisions that were seen
- less a responsibility for the man (decision on when to weed).
- This also indicates that responding in line to expectations drives disagreement.
+The third column regresses the indicator that captures sensitivity of the
+ particular decision to gender norms on disagreement about the wife's role
+ in decision making.
+ We do not find that the indicator is correlated with disagreement.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1973,8 +2058,7 @@ noprefix "false"
 
  and includes both the treatment that challenges role incongruity, the indicator
  for susceptibility to gender norms, and an interaction between the two.
- We see that the treatment still leads to reduction in disagreement, and
- that the coefficient on the gender sensitivity indicator remains significant.
+ We see that the treatment still leads to reduction in disagreement.
  However, contrary to expectations, we do also not find that the intervention
  reduced disagreement differently for decisions that are assumed to be in
  the male domain than for decisions that are less gendered.
@@ -1989,7 +2073,7 @@ The bottom panel repeats the analysis, but the dependent variable is now
  As we saw earlier, disagreement about the husband's role is lower; the
  first column confirms that in the control group where households were not
  exposed to the intervention that attempts to challenge gender norms (T1),
- on 
+ in 
 \begin_inset ERT
 status open
 
@@ -2002,7 +2086,7 @@ Sexpr{format(round(as.numeric(mat_tab_m_2[1,1])*100, digits=1),nsmall=1)}
 
 \end_inset
 
- percent of plots men claim more decision making power than women admit.
+ percent of decisions men claim a larger role than women admit.
  This percentage is not significantly different in the treatment group,
  which suggests that the role of men in agricultural decision making is
  less socially contested.
@@ -2013,7 +2097,7 @@ In the second column, we do see that the intervention aimed at facilitating
  mutual monitoring (T2) reduced disagreement.
  In the control group where only one of the spouses was shown a video on
  what maize farming entails, male co-heads report they were involved but
- the wife disagreed on 
+ the wife disagreed in 
 \begin_inset ERT
 status open
 
@@ -2026,7 +2110,7 @@ Sexpr{format(round(as.numeric(mat_tab_m_4[1,1])*100, digits=1),nsmall=1)}
 
 \end_inset
 
- percent of the plots.
+ percent of the decisions.
  In the treatment group where both spouses were exposed to the same information,
  disagreement was reduced by 
 \begin_inset ERT
@@ -2042,18 +2126,24 @@ Sexpr{format(round(as.numeric(-mat_tab_m_4[3,1])*100, digits=1),nsmall=1)}
 \end_inset
 
  percentage points.
- This suggests that both spouses may hide decision making from each other.
+ This suggests that also male co-heads may hide decision making from the
+ wife.
  
 \end_layout
 
 \begin_layout Standard
-In the third column, we correlated disagreement related to the role of the
- husband to the indicator that captures gender norms in society.
- In the last column, we also add an interaction between the variable for
- gender norms and the treatment that tries to manipulated gender norms and
- find no significant effects.
- From this we conclude that disagreement related the role of the husband
- in decision making is unrelated to gender norms and customs.
+The third column in the table shows that we find significant correlation
+ between spousal disagreement related to the role of the male co-head and
+ the indicator that attempts to measure how sensitive an activity is in
+ terms of gender norms.
+ Apparently, the likelihood that the male co-head reports he was involved
+ while the wife claims he was not is significantly higher for decisions
+ that were judged to be more in the male domain (the decision to sell, decision
+ to plant maize, and decision to fight striga) than for decisions that were
+ seen less a responsibility for the man (decision on when to weed).
+ However, the fourth column again rejects the hypothesis that this disagreement
+ is driven by gender norms and customs.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -2117,10 +2207,10 @@ Sexpr{desc[2]}
 \end_inset
 
  days).
- These differences in magnitudes will also have consequences for the likelihood
+ These differences in magnitude will also have consequences for the likelihood
  that spouses agree.
  For instance, in the former case, there is agreement about the wife's labour
- time contribution in 
+ time contribution on 
 \begin_inset ERT
 status open
 
@@ -2133,7 +2223,7 @@ Sexpr{desc[3]}
 
 \end_inset
 
- percent of households, while for weeding, this is only the case in 
+ percent of plots, while for weeding, this is only the case on 
 \begin_inset ERT
 status open
 
@@ -2146,7 +2236,7 @@ Sexpr{desc[4]}
 
 \end_inset
 
- percent of households.
+ percent of plots.
  We try to mitigate this problem by defining agreement in relation to the
  underlying variable, indicating that there is agreement if estimates are
  
@@ -2158,32 +2248,6 @@ close enough
 \end_inset
 
  to each other.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-While this will not affect the 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$
-\backslash
-chi$
-\end_layout
-
-\end_inset
-
--squared tests for random measurement error, it may affect the Wald test
- for asymmetric measurement error and it will lead to correlation between
- certain activities and assets and disagreement.
- Note that since our interventions are randomized at the individual level,
- conclusions derived from the experiment are not affected.
-\end_layout
-
-\end_inset
-
  In particular, if labour time difference is within one standard deviation
  of the average time reported by wife and husband, we consider there is
  agreement.
@@ -2203,7 +2267,7 @@ noprefix "false"
  shows that spouses again generally agree about the labour contribution
  of the wife
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 But this is dependent on the definition of 
@@ -2256,7 +2320,34 @@ chi$
 -squared tests comparing rows 2 and 3 shows that we reject equality of the
  two disagreement categories for all labour types, suggesting that disagreement
  on women labour time is not caused by random measurement error alone.
- 
+ We also find that we reject the null hypothesis that disagreement about
+ the wife's labour contribution is equal across different labour categories,
+ judged by a Wald test after estimating equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:f_test"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ (p-value = 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ftests[2]}
+\end_layout
+
+\end_inset
+
+).
+ This again means that discord cannot be explained by cognitive differences
+ between spouses alone.
 \end_layout
 
 \begin_layout Standard
@@ -2267,7 +2358,22 @@ The bottom panel shows results of disagreement about the husband's labour
  male activity that is also difficult to monitor.
  Surprisingly, male shirking is equally high for weeding, which is considered
  a typical female task.
- 
+ We again reject symmetric measurement error as driving disagreement, as
+ well as the the hypothesis that disagreement is only due to cognitive bias
+ (p-value = 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{ftests_m[2]}
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -2285,9 +2391,9 @@ noprefix "false"
  to strategically hiding labour contributions within the household, or whether
  disagreement reflects who, according to society, should do what activity.
  The top panel reports on regressions where the outcome variable is the
- proportion of plots on which the wife reports to have worked less than
- what the husband thinks; the bottom panel reports on regressions where
- the dependent variable is the proportion of plots on which the husband
+ proportion of activities on which the wife reports to have worked less
+ than what the husband thinks; the bottom panel reports on regressions where
+ the dependent variable is the proportion of activities on which the husband
  report to have worked less than what the wife thinks.
  
 \end_layout
@@ -2298,102 +2404,16 @@ Neither treatment seems to have an effect on shirking behaviour.
  in the husband's domain.
  More surprisingly, we also find that shirking is lower for activities that
  are harder to monitor.
- We also do not find any significant interaction effects.
- We also do not find that our treatments affect shirking by the husband.
+ We do not find any significant interaction effects.
+ 
+\end_layout
+
+\begin_layout Standard
+In the bottom panel, we also do not find that our treatments affect shirking
+ by the husband.
  We do find that shirking is lower for activities that are in the male domain.
  We do not find that shirking is correlated to ease of monitoring and also
  do not find any interaction effects.
-\end_layout
-
-\begin_layout Subsection
-Marketing
-\end_layout
-
-\begin_layout Standard
-For market participation, we construct similar outcome variables for spousal
- (dis)agreement.
- If both husband and wife report positive sales by the wife (alone or as
- joint sale), we categorize this as agreement.
- If both spouses report zero sales by the wife, this is also considered
- agreement.
- This is pooled into a first category (1) to represent agreement.
- We differentiate again between two disagreement categories.
- In a first disagreement category (2) the wife claims that she sold maize
- (either alone or as part of the couple), while the husband claims this
- was not the case.
- This may be indicative of income hiding on the part of the wife, where
- she secretly sold part of the harvest for personal expenses.
- In a second category (3), the husband says the wife sold maize, either
- alone or as part of the couple, but the wife denies this.
- We define similar outcomes for disagreement related to the role of the
- husband in sales, and are particularly interested in category (2), which
- is indicative of husbands hiding resources from the wife.
-\end_layout
-
-\begin_layout Standard
-We also construct indicators of agreement related to quantity sold and income
- derived from maize sold.
- As these are continuous variables, we again define agreement as values
- that are close to each other (within one standard deviation of the average
- of the underlying variables).
- Market participation is measured at the household level.
-\end_layout
-
-\begin_layout Standard
-Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:agreement_marketing"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- shows that there is considerable agreement about the wife's role in maize
- marketing, but much less agreement when spouses are asked about volumes
- market by the husband and income derived from this.
- We find a particularly high proportion of households where the husband
- says he sold more than what the wife thinks (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{as.numeric(mat_tab_m_1[3,12])*100}
-\end_layout
-
-\end_inset
-
- percent of households).
- Note also that for disagreement related to the wife's marketing behaviour,
- there are more households where the husband thinks the wife sold more (and
- earned more from these sales) than the wife actually admits (category 3)
- than there are households where the wife says she sold (and earned) more
- than what the husband knows (category 2).
- For the husband, income hiding (category 2) seems to be more prevalent
- than category 3 disagreement.
-\end_layout
-
-\begin_layout Standard
-Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:marketing_regressions"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- reports regressions, but is now in a different format.
- In particular, we report separate regressions for hiding behaviour related
- to the sales, quantity sold an revenue.
- We also only consider the impact of the intervention that attempts to facilitat
-e monitoring.
- We do not find that this intervention reduced income hiding.
 \end_layout
 
 \begin_layout Section
@@ -2434,10 +2454,11 @@ literal "false"
 \end_inset
 
  and reject that all disagreement between male and female co-heads of Ugandan
- maize farming households is due to measurement error.
- We then test if discord is caused by spouses hiding information from each
- other, or if it is due to spouses responding in line with what society
- expects from them.
+ maize farming households is due to random measurement error or bias due
+ to spouses differently understanding or interpreting the questions.
+ We then test if discord is mainly driven by spouses hiding information
+ from each other, or if it is due to spouses responding in line with what
+ society expects from them.
  This is done through a field experiment, with a video based intervention
  designed to facilitate mutual monitoring of spouses and an intervention
  that encourages spouses to view maize farming as a household enterprise
@@ -2450,7 +2471,8 @@ literal "false"
 
 \begin_layout Standard
 We found that spouses generally agreed with each other.
- Disagreement could not be explained by (asymmetric) measurement error alone.
+ Disagreement could not be explained by measurement error alone, and cognitive
+ bias is also not the main cause.
  We found that disagreement about the role of the wife in decision making
  was reduced after spouses were exposed to an intervention designed to reduce
  the influence of gender norms and customs.
@@ -2466,9 +2488,6 @@ We found that spouses generally agreed with each other.
  designed to increase mutual monitoring had an impact.
  We also did not find that the treatment that projects a cooperative approach
  to maize farming made a difference.
- Finally, we also did not find that efforts to facilitate monitoring had
- an impact on spouse's propensity to hide sales and income derived thereoff
- from each other.
 \end_layout
 
 \begin_layout Standard
@@ -2543,7 +2562,7 @@ begin{center}
 
 
 \backslash
-begin{tabular}{rccccc} 
+begin{tabular}{rcccccc} 
 \backslash
 hline 
 \backslash
@@ -2562,7 +2581,8 @@ hline
 
 \begin_layout Plain Layout
 
-	& plant & timing & spacing & strategies to & timing and frequency of 
+	& plant & timing & spacing & strategies to & timing and frequency of &
+ sell 
 \backslash
 
 \backslash
@@ -2571,7 +2591,7 @@ hline
 
 \begin_layout Plain Layout
 
-	& maize & of planting &  and seed rate & fight striga & weeding 
+	& maize & of planting &  and seed rate & fight striga & weeding & maize
 \backslash
 
 \backslash
@@ -2582,7 +2602,7 @@ hline
 
 & 
 \backslash
-cline{1-5} 
+cline{1-6} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -2602,7 +2622,7 @@ textit{disagreement about wife's role in decsion making}}
 
 & 
 \backslash
-cline{1-5} 
+cline{1-6} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -2631,7 +2651,9 @@ Sexpr{mat_tab1[5,3]} &
 \backslash
 Sexpr{mat_tab1[5,4]} & 
 \backslash
-Sexpr{mat_tab1[5,5]} 
+Sexpr{mat_tab1[5,5]}  & 
+\backslash
+Sexpr{mat_tab1[5,6]}
 \backslash
 
 \backslash
@@ -2659,7 +2681,9 @@ Sexpr{as.numeric(mat_tab1[3,3])+as.numeric(mat_tab1[4,3])} &
 \backslash
 Sexpr{as.numeric(mat_tab1[3,4])+as.numeric(mat_tab1[4,4])} & 
 \backslash
-Sexpr{as.numeric(mat_tab1[3,5])+as.numeric(mat_tab1[4,5])} 
+Sexpr{as.numeric(mat_tab1[3,5])+as.numeric(mat_tab1[4,5])} & 
+\backslash
+Sexpr{as.numeric(mat_tab1[3,6])+as.numeric(mat_tab1[4,6])}
 \backslash
 
 \backslash
@@ -2687,7 +2711,9 @@ Sexpr{mat_tab1[3,3]} &
 \backslash
 Sexpr{mat_tab1[3,4]} & 
 \backslash
-Sexpr{mat_tab1[3,5]} 
+Sexpr{mat_tab1[3,5]}  & 
+\backslash
+Sexpr{mat_tab1[3,6]}
 \backslash
 
 \backslash
@@ -2696,7 +2722,7 @@ Sexpr{mat_tab1[3,5]}
 
 \begin_layout Plain Layout
 
-but husband says no & & &  & 
+but husband says no & & & & & 
 \backslash
 
 \backslash
@@ -2715,7 +2741,9 @@ Sexpr{mat_tab1[4,3]} &
 \backslash
 Sexpr{mat_tab1[4,4]} & 
 \backslash
-Sexpr{mat_tab1[4,5]} 
+Sexpr{mat_tab1[4,5]} & 
+\backslash
+Sexpr{mat_tab1[4,6]} 
 \backslash
 
 \backslash
@@ -2724,7 +2752,7 @@ Sexpr{mat_tab1[4,5]}
 
 \begin_layout Plain Layout
 
-but wife says no & & &  & 
+but wife says no & & & & & 
 \backslash
 
 \backslash
@@ -2747,7 +2775,9 @@ Sexpr{mat_tab1[7,3]} &
 \backslash
 Sexpr{mat_tab1[7,4]} & 
 \backslash
-Sexpr{mat_tab1[7,5]} 
+Sexpr{mat_tab1[7,5]} & 
+\backslash
+Sexpr{mat_tab1[7,6]} 
 \backslash
 
 \backslash
@@ -2779,7 +2809,9 @@ Sexpr{mat_tab1[6,3]} &
 \backslash
 Sexpr{mat_tab1[6,4]} & 
 \backslash
-Sexpr{mat_tab1[6,5]} 
+Sexpr{mat_tab1[6,5]}  & 
+\backslash
+Sexpr{mat_tab1[6,6]}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2799,14 +2831,14 @@ Sexpr{mat_tab1[6,5]}
 
 & 
 \backslash
-cline{1-5} 
+cline{1-6} 
 \end_layout
 
 \begin_layout Plain Layout
 
 & 
 \backslash
-multicolumn{5}{c}{
+multicolumn{6}{c}{
 \backslash
 textit{disagreement about husband's role in decsion making}} 
 \backslash
@@ -2819,7 +2851,7 @@ textit{disagreement about husband's role in decsion making}}
 
 & 
 \backslash
-cline{1-5} 
+cline{1-6} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -2848,7 +2880,9 @@ Sexpr{mat_tab_m_1[5,3]} &
 \backslash
 Sexpr{mat_tab_m_1[5,4]} & 
 \backslash
-Sexpr{mat_tab_m_1[5,5]} 
+Sexpr{mat_tab_m_1[5,5]}   & 
+\backslash
+Sexpr{mat_tab_m_1[5,6]} 
 \backslash
 
 \backslash
@@ -2876,7 +2910,9 @@ Sexpr{as.numeric(mat_tab_m_1[3,3])+as.numeric(mat_tab_m_1[4,3])} &
 \backslash
 Sexpr{as.numeric(mat_tab_m_1[3,4])+as.numeric(mat_tab_m_1[4,4])} & 
 \backslash
-Sexpr{as.numeric(mat_tab_m_1[3,5])+as.numeric(mat_tab_m_1[4,5])} 
+Sexpr{as.numeric(mat_tab_m_1[3,5])+as.numeric(mat_tab_m_1[4,5])} & 
+\backslash
+Sexpr{as.numeric(mat_tab_m_1[3,6])+as.numeric(mat_tab_m_1[4,6])} 
 \backslash
 
 \backslash
@@ -2904,7 +2940,9 @@ Sexpr{mat_tab_m_1[3,3]} &
 \backslash
 Sexpr{mat_tab_m_1[3,4]} & 
 \backslash
-Sexpr{mat_tab_m_1[3,5]} 
+Sexpr{mat_tab_m_1[3,5]}  & 
+\backslash
+Sexpr{mat_tab_m_1[3,6]} 
 \backslash
 
 \backslash
@@ -2913,7 +2951,7 @@ Sexpr{mat_tab_m_1[3,5]}
 
 \begin_layout Plain Layout
 
-but wife says no & & &  & 
+but wife says no & & &  & & 
 \backslash
 
 \backslash
@@ -2932,7 +2970,9 @@ Sexpr{mat_tab_m_1[4,3]} &
 \backslash
 Sexpr{mat_tab_m_1[4,4]} & 
 \backslash
-Sexpr{mat_tab_m_1[4,5]} 
+Sexpr{mat_tab_m_1[4,5]} & 
+\backslash
+Sexpr{mat_tab_m_1[4,6]} 
 \backslash
 
 \backslash
@@ -2941,7 +2981,7 @@ Sexpr{mat_tab_m_1[4,5]}
 
 \begin_layout Plain Layout
 
-but husband says no & & &  & 
+but husband says no & & &  & & 
 \backslash
 
 \backslash
@@ -2968,7 +3008,9 @@ Sexpr{mat_tab_m_1[7,3]} &
 \backslash
 Sexpr{mat_tab_m_1[7,4]} & 
 \backslash
-Sexpr{mat_tab_m_1[7,5]} 
+Sexpr{mat_tab_m_1[7,5]}  & 
+\backslash
+Sexpr{mat_tab_m_1[7,6]}
 \backslash
 
 \backslash
@@ -2996,7 +3038,9 @@ Sexpr{mat_tab_m_1[6,3]} &
 \backslash
 Sexpr{mat_tab_m_1[6,4]} & 
 \backslash
-Sexpr{mat_tab_m_1[6,5]} 
+Sexpr{mat_tab_m_1[6,5]}  & 
+\backslash
+Sexpr{mat_tab_m_1[6,6]} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3012,7 +3056,7 @@ Sexpr{mat_tab_m_1[6,5]}
 
 & 
 \backslash
-cline{1-5} 
+cline{1-6} 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3036,7 +3080,9 @@ Sexpr{desc[7]} &
 \backslash
 Sexpr{desc[8]} & 
 \backslash
-Sexpr{desc[9]} 
+Sexpr{desc[9]} & 
+\backslash
+Sexpr{desc[10]}
 \backslash
 
 \backslash
@@ -4928,924 +4974,6 @@ Sexpr{format(round(mat_tab_m_5[12,2], digits=0),nsmall=0)} &
 Sexpr{format(round(mat_tab_m_3[12,3], digits=0),nsmall=0)} & 
 \backslash
 Sexpr{format(round(mat_tab_m_5[12,3], digits=0),nsmall=0)}
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline  
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{tabular}
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-scriptsize
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Agreement and disagreement about wife's role in marketing
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:agreement_marketing"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tabular}{rccc} 
-\backslash
-hline 
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-	& sold & quantity sold & revenue 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-cline{1-3} 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{3}{c}{
-\backslash
-textit{disagreement about wife's marketing}} 
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-cline{1-3} 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-(1) Agree 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{mat_tab1[5,6]} & 
-\backslash
-Sexpr{mat_tab1[5,12]} & 
-\backslash
-Sexpr{mat_tab1[5,13]} 
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Disagree: & 
-\backslash
-Sexpr{as.numeric(mat_tab1[3,6])+as.numeric(mat_tab1[4,6])} & 
-\backslash
-Sexpr{as.numeric(mat_tab1[3,12])+as.numeric(mat_tab1[4,12])} & 
-\backslash
-Sexpr{as.numeric(mat_tab1[3,13])+as.numeric(mat_tab1[4,13])} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-(2) wife says she sold more & 
-\backslash
-Sexpr{mat_tab1[3,6]} & 
-\backslash
-Sexpr{mat_tab1[3,12]} & 
-\backslash
-Sexpr{mat_tab1[3,13]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-than husband knows & & 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-(3) husband thinks wife sold more & 
-\backslash
-Sexpr{mat_tab1[4,6]} & 
-\backslash
-Sexpr{mat_tab1[4,12]} & 
-\backslash
-Sexpr{mat_tab1[4,13]} 
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-than she claims & & 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-p-value (1)=(2): & 
-\backslash
-Sexpr{mat_tab1[7,6]} & 
-\backslash
-Sexpr{mat_tab1[7,12]} & 
-\backslash
-Sexpr{mat_tab1[7,13]}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Number of observations: &  
-\backslash
-Sexpr{mat_tab1[6,6]} & 
-\backslash
-Sexpr{mat_tab1[6,12]} & 
-\backslash
-Sexpr{mat_tab1[6,13]}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-cline{1-3} 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{3}{c}{
-\backslash
-textit{disagreement about husband's marketing}} 
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-cline{1-3} 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-(1) Agree 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-Sexpr{mat_tab_m_1[5,6]} & 
-\backslash
-Sexpr{mat_tab_m_1[5,12]} & 
-\backslash
-Sexpr{mat_tab_m_1[5,13]} 
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Disagree: & 
-\backslash
-Sexpr{as.numeric(mat_tab_m_1[3,6])+as.numeric(mat_tab_m_1[4,6])} & 
-\backslash
-Sexpr{as.numeric(mat_tab_m_1[3,12])+as.numeric(mat_tab_m_1[4,12])} & 
-\backslash
-Sexpr{as.numeric(mat_tab_m_1[3,13])+as.numeric(mat_tab_m_1[4,13])} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-(2) husband says he sold more & 
-\backslash
-Sexpr{mat_tab_m_1[3,6]} & 
-\backslash
-Sexpr{mat_tab_m_1[3,12]} & 
-\backslash
-Sexpr{mat_tab_m_1[3,13]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-than wife knows & & 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-(3) wife thinks husband sold more & 
-\backslash
-Sexpr{mat_tab_m_1[4,6]} & 
-\backslash
-Sexpr{mat_tab_m_1[4,12]} & 
-\backslash
-Sexpr{mat_tab_m_1[4,13]} 
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-than he claims & & 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-p-value (1)=(2): & 
-\backslash
-Sexpr{mat_tab_m_1[7,6]} & 
-\backslash
-Sexpr{mat_tab_m_1[7,12]} & 
-\backslash
-Sexpr{mat_tab_m_1[7,13]}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Number of observations: &  
-\backslash
-Sexpr{mat_tab_m_1[6,6]} & 
-\backslash
-Sexpr{mat_tab_m_1[6,12]} & 
-\backslash
-Sexpr{mat_tab_m_1[6,13]}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Male task score (/100): & 
-\backslash
-Sexpr{desc[10]} &  &   
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Ease of monitoring (/100): & 
-\backslash
-Sexpr{desc[21]} & 
-\backslash
-Sexpr{desc[22]} & 
-\backslash
-Sexpr{desc[23]}  
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-hline  
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{tabular}
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\backslash
-end{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-scriptsize
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Regression analysis
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:marketing_regressions"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{center}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tabular}{rcccc} 
-\backslash
-hline 
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& sold & quantity sold & revenue 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-cline{1-3} 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{3}{c}{
-\backslash
-textit{disagreement about wife's marketing}} 
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-cline{1-3} 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-constant & 
-\backslash
-Sexpr{format(round(mat_tab7[1,1], digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(mat_tab7[1,2], digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(mat_tab7[1,3], digits=3),nsmall=3)}
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- &  (
-\backslash
-Sexpr{format(round(mat_tab7[2,1], digits=3),nsmall=3)}) & (
-\backslash
-Sexpr{format(round(mat_tab7[2,2], digits=3),nsmall=3)}) & (
-\backslash
-Sexpr{format(round(mat_tab7[2,3], digits=3),nsmall=3)})
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-facilitate monitoring (T2)  & 
-\backslash
-Sexpr{format(round(mat_tab7[3,1], digits=3),nsmall=3)}^{
-\backslash
-Sexpr{ifelse(mat_tab7[5,1]<.01,"***",ifelse(mat_tab7[5,1]<.05,"**",ifelse(mat_tab7
-[5,1]<.1,"*","")))}}  & 
-\backslash
-Sexpr{format(round(mat_tab7[3,2], digits=3),nsmall=3)}^{
-\backslash
-Sexpr{ifelse(mat_tab7[5,2]<.01,"***",ifelse(mat_tab7[5,2]<.05,"**",ifelse(mat_tab7
-[5,2]<.1,"*","")))}}   & 
-\backslash
-Sexpr{format(round(mat_tab7[3,3], digits=3),nsmall=3)}^{
-\backslash
-Sexpr{ifelse(mat_tab7[5,3]<.01,"***",ifelse(mat_tab7[5,3]<.05,"**",ifelse(mat_tab7
-[5,3]<.1,"*","")))}} 
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-  & (
-\backslash
-Sexpr{format(round(mat_tab7[4,1], digits=3),nsmall=3)}) &  (
-\backslash
-Sexpr{format(round(mat_tab7[4,2], digits=3),nsmall=3)})  &  (
-\backslash
-Sexpr{format(round(mat_tab7[4,3], digits=3),nsmall=3)})  
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Number of observations  & 
-\backslash
-Sexpr{format(round(mat_tab7[12,1], digits=0),nsmall=0)} & 
-\backslash
-Sexpr{format(round(mat_tab7[12,2], digits=0),nsmall=0)} & 
-\backslash
-Sexpr{format(round(mat_tab7[12,3], digits=0),nsmall=0)}
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-cline{1-3} 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{3}{c}{
-\backslash
-textit{disagreement about husband's marketing}} 
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-cline{1-3} 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-constant  & 
-\backslash
-Sexpr{format(round(mat_tab_m_7[1,1], digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(mat_tab_m_7[1,2], digits=3),nsmall=3)} & 
-\backslash
-Sexpr{format(round(mat_tab_m_7[1,3], digits=3),nsmall=3)}
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- &  (
-\backslash
-Sexpr{format(round(mat_tab_m_7[2,1], digits=3),nsmall=3)}) & (
-\backslash
-Sexpr{format(round(mat_tab_m_7[2,2], digits=3),nsmall=3)}) & (
-\backslash
-Sexpr{format(round(mat_tab_m_7[2,3], digits=3),nsmall=3)})
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-facilitate monitoring (T2) &  
-\backslash
-Sexpr{format(round(mat_tab_m_7[3,1], digits=3),nsmall=3)}^{
-\backslash
-Sexpr{ifelse(mat_tab_m_7[5,1]<.01,"***",ifelse(mat_tab_m_7[5,1]<.05,"**",ifelse(ma
-t_tab_m_7[5,1]<.1,"*","")))}}  &  
-\backslash
-Sexpr{format(round(mat_tab_m_7[3,2], digits=3),nsmall=3)}^{
-\backslash
-Sexpr{ifelse(mat_tab_m_7[5,2]<.01,"***",ifelse(mat_tab_m_7[5,2]<.05,"**",ifelse(ma
-t_tab_m_7[5,2]<.1,"*","")))}}  & 
-\backslash
-Sexpr{format(round(mat_tab_m_7[3,3], digits=3),nsmall=3)}^{
-\backslash
-Sexpr{ifelse(mat_tab_m_7[5,3]<.01,"***",ifelse(mat_tab_m_7[5,3]<.05,"**",ifelse(ma
-t_tab_m_7[5,3]<.1,"*","")))}} 
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
- &  (
-\backslash
-Sexpr{format(round(mat_tab_m_7[4,1], digits=3),nsmall=3)}) & (
-\backslash
-Sexpr{format(round(mat_tab_m_7[4,2], digits=3),nsmall=3)}) &  (
-\backslash
-Sexpr{format(round(mat_tab_m_7[4,3], digits=3),nsmall=3)})  
-\backslash
-
-\backslash
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Number of observations & 
-\backslash
-Sexpr{format(round(mat_tab_m_7[12,1], digits=0),nsmall=0)} & 
-\backslash
-Sexpr{format(round(mat_tab_m_7[12,2], digits=0),nsmall=0)} & 
-\backslash
-Sexpr{format(round(mat_tab_m_7[12,3], digits=0),nsmall=0)}
 \backslash
 
 \backslash
