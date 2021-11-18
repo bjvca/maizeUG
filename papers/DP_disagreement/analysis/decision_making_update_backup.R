@@ -389,7 +389,7 @@ mat_tab2[4,1] <- coef_test(mod, vcov = vcov_cluster)[2,2] ##SE
 mat_tab2[5,1] <- coef_test(mod, vcov = vcov_cluster)[2,5] ##p-val
 mat_tab2[12,1] <- nobs(mod) ##nobs
 
-mod <- lm((var=="cat3")~(male_task >55 | male_task < 45),data=dta_copy)
+mod <- lm((var=="cat3")~(male_task >55),data=dta_copy)
 vcov_cluster <- vcovCR(mod, cluster=dta_copy$hhid, type = "CR2")
 coef_test(mod, vcov = vcov_cluster)
 mat_tab2[1,2] <- coef_test(mod, vcov = vcov_cluster)[1,1] ##const
@@ -399,7 +399,7 @@ mat_tab2[7,2] <- coef_test(mod, vcov = vcov_cluster)[2,2] ##SE
 mat_tab2[8,2] <- coef_test(mod, vcov = vcov_cluster)[2,5] ##p-val
 mat_tab2[12,2] <- nobs(mod) ##nobs
 
-mod <- lm((var=="cat3")~as.factor(messenger=="couple")*( male_task >55  | male_task < 45),data=dta_copy)
+mod <- lm((var=="cat3")~as.factor(messenger=="couple")*( male_task >55 ),data=dta_copy)
 vcov_cluster <- vcovCR(mod, cluster=dta_copy$hhid, type = "CR2")
 coef_test(mod, vcov = vcov_cluster)
 
@@ -445,7 +445,7 @@ mat_tab3[4,1] <- coef_test(mod, vcov = vcov_cluster)[2,2] ##SE
 mat_tab3[5,1] <- coef_test(mod, vcov = vcov_cluster)[2,5] ##p-val
 mat_tab3[12,1] <- nobs(mod) ##nobs
 
-mod <- lm((var=="cat4")~( male_task >55 | male_task < 45),data=dta_copy)
+mod <- lm((var=="cat4")~( male_task >55 ),data=dta_copy)
 vcov_cluster <- vcovCR(mod, cluster=dta_copy$hhid, type = "CR2")
 coef_test(mod, vcov = vcov_cluster)
 mat_tab3[1,2] <- coef_test(mod, vcov = vcov_cluster)[1,1] ##const
@@ -455,7 +455,7 @@ mat_tab3[7,2] <- coef_test(mod, vcov = vcov_cluster)[2,2] ##SE
 mat_tab3[8,2] <- coef_test(mod, vcov = vcov_cluster)[2,5] ##p-val
 mat_tab3[12,2] <- nobs(mod) ##nobs
 
-mod <- lm((var=="cat4")~as.factor(messenger=="couple")*(male_task >55 | male_task < 45),data=dta_copy)
+mod <- lm((var=="cat4")~as.factor(messenger=="couple")*(male_task >55),data=dta_copy)
 vcov_cluster <- vcovCR(mod, cluster=dta_copy$hhid, type = "CR2")
 coef_test(mod, vcov = vcov_cluster)
 
@@ -495,7 +495,7 @@ mat_tab6[4,1] <- coef_test(mod, vcov = vcov_cluster)[2,2] ##SE
 mat_tab6[5,1] <- coef_test(mod, vcov = vcov_cluster)[2,5] ##p-val
 mat_tab6[12,1] <- nobs(mod) ##nobs
 
-mod <- lm((var=="cat3")~( male_task >55 | male_task < 45),data=dta_copy)
+mod <- lm((var=="cat3")~( male_task >55),data=dta_copy)
 vcov_cluster <- vcovCR(mod, cluster=dta_copy$hhid, type = "CR2")
 coef_test(mod, vcov = vcov_cluster)
 mat_tab6[1,2] <- coef_test(mod, vcov = vcov_cluster)[1,1] ##const
@@ -505,7 +505,7 @@ mat_tab6[7,2] <- coef_test(mod, vcov = vcov_cluster)[2,2] ##SE
 mat_tab6[8,2] <- coef_test(mod, vcov = vcov_cluster)[2,5] ##p-val
 mat_tab6[12,2] <- nobs(mod) ##nobs
 
-mod <- lm((var=="cat3")~as.factor(messenger=="couple")*( male_task >55 | male_task < 45),data=dta_copy)
+mod <- lm((var=="cat3")~as.factor(messenger=="couple")*( male_task >55 ),data=dta_copy)
 vcov_cluster <- vcovCR(mod, cluster=dta_copy$hhid, type = "CR2")
 coef_test(mod, vcov = vcov_cluster)
 
@@ -546,11 +546,11 @@ mat_tab4[4,1] <- coef_test(mod, vcov = vcov_cluster)[2,2] ##SE
 mat_tab4[5,1] <- coef_test(mod, vcov = vcov_cluster)[2,5] ##p-val
 mat_tab4[12,1] <- nobs(mod) ##nobs
 
-mod <- lm((var=="cat3")~scale(male_task>55 | male_task < 45),data=dta_copy)
+mod <- lm((var=="cat3")~scale(male_task>55 ),data=dta_copy)
 vcov_cluster <- vcovCR(mod, cluster=dta_copy$hhid, type = "CR2")
 coef_test(mod, vcov = vcov_cluster)
 
-mod <- lm((var=="cat3")~as.factor(recipient=="couple")*scale(male_task>55 | male_task < 45),data=dta_copy)
+mod <- lm((var=="cat3")~as.factor(recipient=="couple")*scale(male_task>55 ),data=dta_copy)
 vcov_cluster <- vcovCR(mod, cluster=dta_copy$hhid, type = "CR2")
 coef_test(mod, vcov = vcov_cluster)
 
