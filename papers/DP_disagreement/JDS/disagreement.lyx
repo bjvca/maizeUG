@@ -1,0 +1,4417 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% Added by lyx2lyx
+\usepackage{float}
+% Added by lyx2lyx
+\usepackage{rotfloat}
+\end_preamble
+\use_default_options true
+\begin_modules
+knitr
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, urlcolor=blue, citecolor=blue, pdfstartview={FitH}, hyperfootnotes=false, unicode=true"
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+author{Bjorn Van Campenhout
+\backslash
+thanks{Development Strategy and Governance Division, International Food
+ Policy Research Institute and LICOS Center for Institutions and Economic
+ Performance, KULeuven, Belgium - corresponding author: b.vancampenhout@cgiar.org}
+  , Els Lecoutere
+\backslash
+thanks{CGIAR Gender Platform, International Livestock Research Institute,
+ Belgium}, and David J Spielman
+\backslash
+thanks{Development Strategy and Governance Division, International Food
+ Policy Research Institute, Kigali, Rwanda}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Bragging, Shirking, and Hiding: Spousal Disagreement among Ugandan Maize
+ Farmers
+\end_layout
+
+\begin_layout Abstract
+To gain a better understanding of intrahousehold bargaining processes, surveys
+ increasingly collect data from co-heads individually.
+ Answers provided by spouses on the same set of questions often differ substanti
+ally, alternately attributed to measurement error, poor framing within the
+ cultural context that leads to systematic biases, or other common challenges
+ associated with surveys.
+ However, recent studies suggest that differences in responses from co-heads
+ may also be caused by spouses strategically hiding information from each
+ other.
+ Using detailed data on a large sample of monogamous smallholder maize-farming
+ households in eastern Uganda, we document response patterns from household
+ co-heads related to decision-making, labor time, and sales of farm output.
+ We ask each spouse questions about themselves, but also about their spouse,
+ and compare responses.
+ We also implement two interventions to test if such spousal disagreement
+ in reporting can be reduced by increasing cooperation between spouses and
+ reducing information asymmetries.
+ We conclude that discord in response patterns between spouses is only partly
+ explained by spouses deliberately withholding information from each other;
+ spousal disagreement in survey response should also be attributed to role
+ congruity, where spouses provide answers that are in line with gendered
+ norms and customs in society.
+\end_layout
+
+\begin_layout Abstract
+
+\emph on
+Keywords:
+\emph default
+ gender, farm households, disagreement, information hiding, norms, Uganda
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+Increased attention to the internal dynamics of agricultural households
+ by both researchers and practitioners has led to various innovations in
+ data collection 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "https://doi.org/10.1111/agec.12540,alkire2013women"
+literal "false"
+
+\end_inset
+
+.
+ Examples of best practice in data collection on intrahousehold decision-making
+ processes include separate interviewing of male and female co-heads of
+ the household using distinct survey instruments that may nonetheless contain
+ common topics and questions.
+ Although the choice of respondents may miss out on other dimensions of
+ intrahousehold gender relations – between mothers and daughters-in-laws,
+ or between co-wives in polygynous households, for example – studies using
+ these instruments often find that spouses provide different answers on
+ even the most basic questions 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1086/703082,ANNAN2021105292,doi:10.1080/00220388.2019.1650169,twyman2015gendered"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+ demonstrate that while part of these divergent responses may be attributable
+ to measurement error, there is also a systematic component that reflects
+ asymmetric information within households where one co-head does not have
+ accurate knowledge about the decisions made, actions taken, or assets owned
+ by the other.
+ Furthermore, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+ find that spousal disagreement in reporting is larger for assets that can
+ be hidden more easily than other types of assets, suggesting that, to some
+ extent, spouses exploit these information asymmetries by deliberately hiding
+ information, assets, and decisions from each other.
+ A number of lab-in-the-field experiments similarly confirm that, in many
+ cases, household members conceal some of their resources from one another
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "for example,"
+key "ashraf2009spousal,10.1093/wber/lhw011,castilla2013ignorance,HOEL2015123"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We contribute to this line of research by documenting spousal disagreement
+ in reported behavior among a large sample of semi-subsistence monogamous
+ maize-farming households in Uganda.
+ First, on a range of decisions that are crucial to increasing maize yields
+ such as timely planting, seed spacing, and weeding, we ask both spouses
+ separately to indicate who made each of these decisions on each plot on
+ the household's farm.
+ Spouses are given the option to indicate whether they took the decision
+ alone, whether their spouse took the decision alone, or whether the decision
+ was taken jointly.
+ These answers are then combined to assess the extent and direction of disagreem
+ent with respect to decision-making.
+ Second, we ask each spouse separately how much time he or she spent on
+ five different important maize farming-related activities – land preparation,
+ planting, weeding, spraying, and harvesting – on each plot.
+ We also ask each co-head to provide an estimate of how much time his or
+ her spouse spent on these same activities.
+ We similarly combine these answers to assess the extent and direction of
+ disagreement with respect to labor time allocation.
+ Finally, we ask each co-head how much maize was sold jointly with his or
+ her spouse, how much maize he or she sold unilaterally (as opposed to selling
+ through joint sales), and how much maize was sold by his or her spouse
+ unilaterally, as well how much money was obtained through the sale.
+ These answers are again combined to assess the extent and direction of
+ disagreement with respect to maize marketing.
+\end_layout
+
+\begin_layout Standard
+We make a further contribution by testing the impact of two interventions
+ on spousal disagreement in these same households.
+ Inspired by recent research on behavioral change communication and social
+ marketing, the first intervention consists of a treatment that promotes
+ a mental image of maize farming as a cooperative or joint venture in which
+ both spouses play an equal role in decision-making, farming activities,
+ and rewards.
+ The second intervention aims to reduce intrahousehold information asymmetries
+ between spouses with regard to good maize-farming practices.
+ Both interventions aim to influence intrahousehold gender relations in
+ a slightly different way – one by a behavioral nudge and one with an informatio
+n treatment – to affect change not only in co-heads' approach to decision-making
+ on cultivation and management practices, timing, labor time allocations,
+ and yield expectations, but also in how co-heads monitor each other and
+ estimate each other's efforts and returns.
+\end_layout
+
+\begin_layout Standard
+We find substantial disagreement between spouses.
+ For instance, we find that co-heads exaggerate their own decision-making
+ power on almost one in four plots.
+ However, we also find that promoting a cooperative approach to maize farming
+ reduces the likelihood that co-heads overestimate their own influence on
+ decision-making.
+ We find similar effects from reducing information asymmetries between spouses.
+\end_layout
+
+\begin_layout Standard
+For labor, we find that co-heads seem to overstate their own labor contribution
+ to the farm relative to their spouse's contribution.
+ Conversely, we also find a substantial share of co-heads report that they
+ work less than what the other spouse thinks.
+ We further observe that, to some extent, a reduction in information asymmetries
+ between spouses tends to reduce the likelihood that a co-head overstates
+ his or her own labor contribution, indicating an increase in monitoring
+ capacity within the household.
+\end_layout
+
+\begin_layout Standard
+Finally, we find that spouses tend to overstate own sales in the marketing
+ of maize produced on the farm.
+ However, the cooperative image intervention reduces the likelihood and
+ degree of one spouse reporting lower sales than what the other spouse reported.
+\end_layout
+
+\begin_layout Standard
+The remainder of the paper is organized as follows.
+ The next section provides a brief overview of the literature on spousal
+ disagreement.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Experimental-design-and"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ presents the experimental design and the rationale underlying the intervention.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Study-context,-Interventions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ offers a brief description of the context and characteristics of the households
+ in our sample.
+ We then turn to the results in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Results"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, first by examining the extent and direction of spousal disagreement about
+ decision-making, followed by estimates of the impact of the two interventions
+ on spousal disagreement.
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Discussion"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ explores the mechanisms that may explain patterns of spousal disagreement
+ observed in our study, followed by concluding remarks.
+\end_layout
+
+\begin_layout Section
+Literature
+\end_layout
+
+\begin_layout Standard
+Our review of prior work on spousal disagreement focuses mainly on the empirical
+ literature on intrahousehold resource allocation and decision-making in
+ agricultural households in developing countries, and draws primarily on
+ analyses that use observational data from surveys in which both spouses
+ are interviewed separately and are asked the same set of questions.
+ Such studies often focus on research questions related to women's empowerment
+ and autonomy.
+ For example 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "https://doi.org/10.1111/j.1728-4465.2002.00299.x"
+literal "false"
+
+\end_inset
+
+ asks both spouses questions on the locus of decision-making on a variety
+ of issues, as well as specific questions concerning women's mobility and
+ access to resources.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "GHUMAN20061"
+literal "false"
+
+\end_inset
+
+ collect data from both spouses on a range of autonomy items, including
+ the need of the wife to obtain the husband's permission to go to different
+ types of places, the wife's capacity to decide on their children's affairs,
+ whether the wife is allowed to have a job, and her role in deciding on
+ the number of children and household expenditure-related decisions.
+\end_layout
+
+\begin_layout Standard
+A common finding in studies that ask the same set of questions to different
+ individuals within the household is that substantial disagreement often
+ arises between spouses, even on questions that would seem easily and objectivel
+y verifiable, such as the number of children, or type of material used for
+ house construction.
+ This divergence may simply be attributable to measurement error by the
+ respondents.
+ But 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "GHUMAN20061"
+literal "false"
+
+\end_inset
+
+ suggest that such divergence may also partly be due the fact that the response
+ categories do not have the same cognitive or semantic meanings to women
+ and men, leading to the somewhat pessimistic conclusion that survey questions
+ are of limited use in understanding differences in gender stratification
+ across multiple contexts.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ANDERSON2017169"
+literal "false"
+
+\end_inset
+
+, in an investigation of variation in husband and wife perspectives on the
+ division of authority over agriculture-related decisions in rural Tanzania,
+ goes one step further by concluding that in the absence of 
+\begin_inset Quotes eld
+\end_inset
+
+intrahousehold accords,
+\begin_inset Quotes erd
+\end_inset
+
+ it may be problematic for interventions informed by the analysis of survey
+ data to reduce gender inequalities or empower women in agricultural households.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "SEYMOUR201897"
+literal "false"
+
+\end_inset
+
+ note that spouses often give inconsistent answers when asked about who
+ made a particular decision.
+ They then test whether female unilateral decision-making is equally empowering
+ if the male co-head disagrees that the woman took the decision alone, as
+ compared to when the male co-head agrees.
+ They conclude that disagreement may signal underlying power dynamics within
+ the household that are likely to be relevant when assessing individual-level
+ agency and empowerment.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+ provide a particularly insightful conceptual framework that teases out
+ the various perspectives on spousal disagreement.
+ First, they note that if disagreement solely derives from measurement error,
+ disagreement should be symmetric, and the female co-head's responses should
+ not differ systematically from the male co-head's responses.
+ Second, they point out that if disagreement results from asymmetric measurement
+ error in which men and women interpret questions differently, then answers
+ should differ systematically between spouses, but disagreement should be
+ similar for different questions asked in a survey.
+ Finally, they argue that finding differing rates of disagreement across
+ survey questions, and higher rates of disagreement for assets and activities
+ that are easier to hide in particular, points to the presence of intrahousehold
+ information asymmetries.
+ Using observational data collected in Bangladesh, they find evidence that
+ such information asymmetries in the form of hidden assets and decisions
+ are present in their sampled households.
+\end_layout
+
+\begin_layout Standard
+This should not be interpreted to mean that information asymmetries always
+ reflect the act of one spouse intentionally deceiving another.
+ There may be other systematic biases that manifest more in one asset or
+ decision category than others, and that may be shaped by prevailing gender
+ roles and norms.
+ For example, in a case study in northern Uganda, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1080/00220388.2019.1650169"
+literal "false"
+
+\end_inset
+
+ find that men often report unilateral decision-making in areas where they
+ are assumed to bear final responsibility, even if women had some degree
+ of involvement.
+ Women tend to view these scenarios as joint decisions.
+ As such, it is important to understand the local cultural context to differenti
+ate spousal disagreement as a function of information asymmetries stemming
+ from intentional hiding versus other gender-related systematic biases.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ANNAN2021105292"
+literal "false"
+
+\end_inset
+
+ offer another illustration of the conceptual and analytical value of intrahouse
+hold contention over decision-making.
+ They argue that assessing agency and empowerment requires that disagreement
+ be considered not by its presence or absence, but also in terms of its
+ direction.
+ Specifically, they differentiate cases in which male co-heads disagree
+ with their spouse claiming to be involved in decision-making from cases
+ where male co-heads disagree with their spouse claiming not to be involved
+ in decision-making.
+ The former is interpreted as women 
+\begin_inset Quotes eld
+\end_inset
+
+taking power
+\begin_inset Quotes erd
+\end_inset
+
+, while the latter is interpreted as women 
+\begin_inset Quotes eld
+\end_inset
+
+being given power
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+While most studies focus on disagreement with respect to decision-making,
+ divergent responses on income streams and asset ownership are also commonly
+ observed in household data 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "for example, "
+key "twyman2015gendered"
+literal "false"
+
+\end_inset
+
+.
+ As such, instead of simply recording whether an asset is owned by a spouse
+ using a yes/no question, some studies go further and try to place values
+ on incomes and assets.
+ For example, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "castilla2012ties"
+literal "false"
+
+\end_inset
+
+ uses the male co-head's own reporting of his own farm income and compares
+ this to the female co-head’s reporting of her husband's farm income to
+ identify income hiding by men, and finds that female co-heads' estimate
+ of farm income is on average 14 percent lower than what male co-heads report.
+ Similarly, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "FISHER2010966"
+literal "false"
+
+\end_inset
+
+ find that in 66 percent of the Malawian households they studied, the male
+ co-head understated his wife’s income by an average of 47 percent of what
+ the female co-head reported.
+\end_layout
+
+\begin_layout Standard
+While most of the studies noted above explore patterns in spousal disagreement,
+ other studies extend the line of inquiry to examine correlations with welfare
+ outcomes of households, women, and children 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ANNAN2021105292,doi:10.1086/703082,SEYMOUR201897"
+literal "false"
+
+\end_inset
+
+ The emerging consensus is that spousal disagreement is closely correlated
+ with – and likely causally linked to – a wide range of welfare outcomes.
+ Following from 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ANNAN2021105292"
+literal "false"
+
+\end_inset
+
+, we attempt to fill a gap in the literature that attempts to better understand
+ these causal pathways and to explore interventions that might change intrahouse
+hold dynamics via a reduction in spousal disagreement.
+\end_layout
+
+\begin_layout Section
+Experimental design and interventions
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Experimental-design-and"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The emerging literature on spousal disagreement in survey response suggests
+ at least two underlying mechanisms.
+ First, spousal disagreement may reflect different cognitive understanding
+ of the responses categories in a survey questionnaire and what the appropriate
+ response should be 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "GHUMAN20061"
+literal "false"
+
+\end_inset
+
+.
+ This problem is compounded by the cultural context in which these questions
+ are asked and answered 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1080/00220388.2019.1650169"
+literal "false"
+
+\end_inset
+
+.
+ A first treatment therefore attempts to challenge preconceived ideas of
+ what decision-making of a spouse involves and who is expected to make decisions
+ in a farm household by promoting a cooperative approach to maize farming,
+ in which maize cultivation and management activities are seen as a joint
+ responsibility of spouses.
+ Second, the literature also suggests that spousal disagreement reflects
+ information asymmetries between spouses 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+.
+ A second intervention tests if these asymmetries can be influenced by providing
+ spouses equal access to information about best practices in maize farming
+ prior to the point in time when decisions are made on cultivation and managemen
+t.
+\end_layout
+
+\begin_layout Standard
+At the heart of both interventions is a short video that is shown twice
+ to individuals within households using tablet computers.
+ The aim of the video is to increase viewers' knowledge of recommended practices
+ in maize farming, such as timely planting, row planting, and the use of
+ improved inputs such hybrid seed and inorganic fertilizer.
+ It does this through an aspirational story in which a farmer (or farmers)
+ recounts how he/she/they used to be poor but managed to increase yields
+ over time by applying a set of techniques and inputs.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The techniques and inputs that are demonstrated in the videos are the ones
+ recommended by the National Agricultural Research Organization (NARO) and
+ are also used by the public agricultural advisory system.
+ More details can be found in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "https://doi.org/10.1002/ajae.12089"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ It also suggests that farmers view maize farming as a business that needs
+ continuous investment over time and includes some simple intertemporal
+ cost-benefit calculations to illustrate this, followed by encouragements
+ to follow the example of the model farmer(s) featured in the video.
+\end_layout
+
+\begin_layout Standard
+The first intervention involves varying the actors featured in the video
+ and randomizing which version of the video is viewed by farmers.
+ The second intervention randomly varies the member(s) of the household
+ who view the video.
+ These variations and the rationale behind them are explained below.
+\end_layout
+
+\begin_layout Standard
+We begin with a conceptual explanation that ties to our first intervention:
+ projecting a cooperative way of farming as a household.
+ Consider that within households, individual members often have differing
+ spheres of influence reflecting prevailing gender roles 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "lundberg1993separate"
+literal "false"
+
+\end_inset
+
+.
+ In many agricultural households, though certainly not all, women tend to
+ have a stronger voice in the cultivation of crops that are predominately
+ cultivated for home consumption, while men have a stronger voice in the
+ cultivation of crops that are marketed.
+ Gendered differences in crop choices may emerge from a variety of factors,
+ including gender-related differences in knowledge about the crop, access
+ to planting material, access to inputs and extension services, and customs
+ and traditions 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "NORDHAGEN2021105134,doi:10.1177/0030727019831704"
+literal "false"
+
+\end_inset
+
+.
+ While the existence of such gendered patterns are widely acknowledged,
+ they are not always easily captured in household survey data, as gender
+ is only one of the determinants of crop portfolio choice 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "CARR2008900,DOSS20021987"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In Uganda, maize, which is in a part a cash crop, is considered to be mostly
+ in the influence sphere of men.
+ Generally, men make all important decisions such as what plots to plant
+ maize on, how to prepare the land, when to start planting, and what seeds
+ to use.
+ Men also generally decide on how much labor is needed, while women assist
+ men, often with weeding.
+ While these are broad and stylized characterizations of Uganda's maize
+ production system, their widespread acceptance as conventional wisdom makes
+ maize farming a topic ripe for this study.
+\end_layout
+
+\begin_layout Standard
+Specifically, we expect that such a separation in spheres of influence between
+ male and female co-heads may contribute to spousal disagreement in survey
+ response.
+ Therefore, our first intervention randomly varies which version of our
+ video is screened to our study participants.
+ One version features a male-female couple who present themselves as role
+ models to promote a worldview where both spouses participate equally in
+ maize farming, while another version features only a male actor.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+A third version of the video features only a female actor, but is not used
+ in this intervention.
+\end_layout
+
+\end_inset
+
+ This approach capitalizes on recent evidence on the influence that role
+ models can have on aspirations, investment choices, and other future-oriented
+ behaviors 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bernard2015will"
+literal "false"
+
+\end_inset
+
+ and on increasing women's participation in otherwise male-dominated sectors
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "porter2019gender,beaman2012female"
+literal "false"
+
+\end_inset
+
+; and the influence of engaging media content to expose large numbers of
+ people to role models 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "la2012soap,riley2017increasing"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To test the hypothesis that spouses disagree less if they view farming as
+ a joint spousal activity, we randomly assign 261 households from our sample
+ to be shown the cooperative image version of the video, such that both
+ the male and female co-heads watch the video together.
+ This group functions as the treatment group.
+ We also randomly assign 240 households from our sample to be shown the
+ version of the video featuring only a male actor, again with both the male
+ and female co-heads watching together.
+ Because the only difference between the two videos is the composition of
+ the actors featured (a male-female couple versus a male actor), any difference
+ in outcomes between the two groups should be attributed to the role model
+ effect of the cooperative image intervention.
+\end_layout
+
+\begin_layout Standard
+Next, we turn to our second hypothesis that relates to asymmetric information
+ within the household.
+ Consider the farm household as a collection of individuals, each with their
+ own preferences, skills, assets, and access to resources.
+ In many contexts, the household's existence and the welfare of its members
+ depend on their collective capacity to invest in common goods by drawing
+ on each individual's skills, assets, and resources.
+ As such, households can be considered as informal institutions, and many
+ of the problems encountered in common pool resource management and collective
+ action, such as free-riding and overextraction of resources, apply to the
+ household 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doss2015collective"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+One way in which collective action problems can be attenuated is through
+ increased mutual monitoring.
+ For instance, if one co-head can assess the actual time that the other
+ co-head spends on land preparation, then the latter is less likely to engage
+ in labor shirking.
+ Similarly, if a co-head can determine how much the other co-head earns
+ from the sale of farm produce, then the latter is less likely to engage
+ in income hiding.
+ However, for mutual monitoring to work, co-heads require information against
+ which to compare information gained through monitoring, since merely observing
+ an outcome may be insufficient to determine if a co-head is shirking, hiding,
+ or otherwise mismanaging his or her collective obligations to the household.
+ Thus, information on exactly what operations land preparation entails or
+ on the prevailing market price for farm produce is necessary for effective
+ monitoring.
+ For instance, it may be difficult for the female co-head to check if her
+ spouse overreports time spent preparing the field if she does not have
+ a good understanding of what land preparation entails.
+ If both spouses have a good understanding of what agricultural management
+ entails, they are also in a better position to monitor each other.
+\end_layout
+
+\begin_layout Standard
+In a second treatment, we therefore make sure both co-heads start off with
+ symmetric information with respect to recommended agronomic practices for
+ maize farming, as this facilitates mutual monitoring.
+ To do so, we show the video that showcases recommended practices in maize
+ farming to both spouses in a random sample of 261 households.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We show the version of the video that features a couple (male and female
+ actor-farmers), that is, the video used in the treatment group of the previous
+ intervention.
+\end_layout
+
+\end_inset
+
+ This group acts as the treatment group.
+ In another random sample of 540 households, the control group, the same
+ video is shown, but only to one of the two co-heads.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We made sure that in about half of the cases the video was shown to the
+ male co-head alone and in the other half of cases to the female co-head
+ alone.
+\end_layout
+
+\end_inset
+
+ As the only difference between the two groups is related to whom the video
+ is shown to, any difference in outcomes between the two groups should be
+ attributed to reducing information asymmetry between spouses
+\end_layout
+
+\begin_layout Section
+Study context
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Study-context,-Interventions"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The interventions described above were conducted among monogamous maize-farming
+ households in five districts in eastern Uganda, an area known for its maize
+ production.
+ Our survey of households that participated in the study was deployed with
+ a two-stage cluster sampling approach to obtain a representative sample
+ of this population.
+ Specifically, we first selected 50 parishes randomly and in proportion
+ to the number of villages within each parish.
+ In the selected parishes, all villages were included in the study.
+ Within each village, we then listed all households, and in each village
+ we sampled 10 households to be included in the study.
+ This resulted in a total sample size of 3,280 households.
+ However, in about 23 percent of the households we were unable to interview
+ both spouses separately, resulting in an effective sample of 2,548 households.
+ The interventions described in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Experimental-design-and"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ were implemented in random subsets of this sample.
+\end_layout
+
+\begin_layout Standard
+We focus on the second maize-growing season of 2017, which runs from about
+ August 2017, when fields are prepared, to January 2018, when maize is harvested.
+ Treatments were administered twice, once in August 2017 when farmers were
+ preparing fields, and one month later during planting time.
+ Concurrent with the first treatment administration in 2017, we also collected
+ information on household characteristics and on the previous harvest, which
+ was the first harvesting season of 2017.
+\end_layout
+
+\begin_layout Standard
+Farmers in our study area cultivated on average about 1.5 plots of maize.
+ Yields during the first season of 2017 were extremely low (about 270 kilograms
+ per acre) as a result of a Fall Armyworm outbreak that significantly affected
+ the maize crop.
+ Baseline data indicate that the average household in our sample consisted
+ of 8 individuals.
+ Female co-head in these households are on average 35 years old and only
+ 30 percent have finished primary education.
+ Male co-heads are on average 43 years old and 42 percent have finished
+ primary education.
+ Only 11 percent of households report that they had access to agricultural
+ extension in the year prior to the survey.
+ Only 17 percent of households used fertilizer on at least one plot, and
+ 38 percent reported using improved seed bought from a shop or agro-input
+ dealer during the last cropping season (April-July 2017).
+ About three quarters of households reported owning a mobile phone.
+\end_layout
+
+\begin_layout Section
+Results
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Results"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We now turn to an in-depth analysis of the data collected at endline.
+ The focus is on spousal disagreement in survey response using own and cross-rep
+orting (that is, what one spouse thinks the other spouse would report).
+ We start by looking at patterns in decision making about a series of important
+ maize cultivation practices.
+ We then turn to time use, again disaggregated over a set of important tasks
+ in maize cultivation.
+ Finally, we look at decisions related to maize marketing.
+ Under each heading, we provide a detailed descriptive analysis of disagreement
+ based on the entire sample of 2,548 households, and then report on the
+ findings from the two treatments in the respective subsamples.
+\end_layout
+
+\begin_layout Subsection
+Decision making
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Decision-making"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<analysis,  results='hide', echo=FALSE, warning = FALSE, message=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+path <- getwd()
+\end_layout
+
+\begin_layout Plain Layout
+
+path <- strsplit(path, "/JDS")[[1]]
+\end_layout
+
+\begin_layout Plain Layout
+
+source(paste(path,"analysis/decision_making_update.R
+\begin_inset Quotes erd
+\end_inset
+
+, sep = "/"))
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We start by exploring patterns of intrahousehold decision-making related
+ to maize farming.
+ In our survey, we asked the head of household to list all maize plots that
+ the household was cultivating during the season preceding the survey (that
+ is, the second agricultural season of 2017).
+ We then cycled through the different plots and asked a series of questions
+ for each plot, and repeated the same questions separately with the other
+ co-head.
+ For a range of key decisions that need to be made and that are known to
+ significantly affect maize yields, we asked who made the decision on that
+ particular plot.
+ Respondents could answer that decisions were made by (1) the respondent
+ him- or herself alone, (2) the respondent's spouse alone, (3) the respondent
+ jointly with his or her spouse, (4) someone else inside or outside the
+ respondent's household, (5) the respondent together with someone else inside
+ or outside the household, or (6) the respondent's spouse together with
+ someone else inside or outside the household.
+ Respondents could also indicate that they did not know who made the decision.
+\end_layout
+
+\begin_layout Standard
+Responses given by the male co-heads are shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:decision_male_reporting"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The first decision we consider is simply who decided that maize should
+ be planted on the particular plot.
+ A second decision is related to timing of planting, recognizing that planting
+ date is a strong agronomic determinant of yields.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+NARO recommends that maize planting start immediately after the first rains
+ of the season.
+ This often results in significant time pressure on household members' labor
+ time, especially when large areas need to be planted.
+\end_layout
+
+\end_inset
+
+ The third decision relates to the spacing of seed and the seeding rate,
+ which reflects the fact that row planting at a rate of one seed per mound
+ is also a strong determinant of yield.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+There is a wide range of seed methods used by farmers in Uganda.
+ While some simply broadcast seeds, NARO recommends row planting because
+ it results in significantly higher yields since it reduces competition
+ between plants for sunlight and soil nutrients.
+ Farmers also often plant more than one seed per hill because they fear
+ some seeds may not germinate.
+ However, planting more than one seed per hill also tends to increase competitio
+n for light and nutrients, leading to stunted plant growth.
+ It is therefore recommended to use only one seed per hill and engage in
+ gap filling when seeds do not germinate after one week.
+\end_layout
+
+\end_inset
+
+ Finally, we consider decisions related to weed control.
+ For weeding, we differentiate between decision-making related to strategies
+ used to combat striga infestation (a parasitic weed that feeds off the
+ roots of the maize plant) and weeding more generally.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../results/decsion_activities_update_man.png
+	lyxscale 10
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Decision-making on different practices and inputs as reported by the male
+ co-head
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:decision_male_reporting"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:decision_male_reporting"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that, at least according to the male co-head, joint decision making
+ by spouses is the norm.
+ For example, on the 3,723 maize plots on which data were collected, men
+ indicate that on 1,947 plots the decision to start planting maize was taken
+ together with their wife.
+ This corresponds to about 52 percent of plots.
+ The pattern seems to be consistent across the different farming decisions:
+ for the decision on how to combat striga, the percentage of joint decision-maki
+ng stands at only 42 percent, but this is because on some plots in the sample,
+ striga was not a problem and thus no decision making was required.
+ The figure also shows that on about 33 percent of plots, the male co-head
+ reported that decisions are made by him alone, without consulting his wife,
+ on most of the decision points described above.
+ On just 11 percent of plots do women decide to plant maize and undertake
+ other decisions without consulting their husbands, at least according to
+ the responses from male co-heads.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../results/decsion_activities_update_woman.png
+	lyxscale 10
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Decision making on different practices and inputs as reported by the female
+ co-head
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:decision_woman_reporting"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:decision_woman_reporting"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is similar to Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:decision_male_reporting"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, but now shows responses provided to the same questions by the female co-head.
+ Also here, we see that women reported that decisions are generally made
+ jointly: on 51 percent of plots, the woman co-head indicated that the decision
+ to start planting maize was taken by the male and female co-head together.
+ Similar results are obtained for most other farming decisions.
+\end_layout
+
+\begin_layout Standard
+Women also reported that it is more common for men to take decisions alone
+ than for women to take decisions alone.
+ For instance, female co-heads reported that on 27 percent of plots, men
+ took the decision to start planting alone.
+ However, we observe less consistency in this pattern across other farming
+ decisions: according to female co-heads, men are relatively less likely
+ to unilaterally decide on weeding-related activities.
+ Finally, female co-heads reported that they make decisions unilaterally
+ on about 15 percent of the plots.
+\end_layout
+
+\begin_layout Standard
+A comparison between Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:decision_male_reporting"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:decision_woman_reporting"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ suggests some degree of spousal discord.
+ For instance, while male co-heads indicated that they alone took the decision
+ to plant maize on about 32 percent of plots, female co-heads say that men
+ unilaterally took the decision to plant maize on only 27 percent of plots.
+ At the same time, female co-heads indicated they alone decided to plant
+ maize on 16 percent of plots, while male co-heads indicated that women
+ unilaterally decided to plant maize on only 11 percent of plots.
+\end_layout
+
+\begin_layout Standard
+To investigate this disagreement further, we construct measures based on
+ answers of both spouses.
+ Given the large number of potential response combinations, it is useful
+ to collapse responses into a few meaningful categories to reduce noise
+ and facilitate analysis.
+ 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+For example, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+ define a variable for cases where the wife says that she is involved (alone
+ or jointly as part of the couple), but the husband says she is not, and
+ a variable for cases where the husband says the wife is involved but she
+ reports that she is not.
+\end_layout
+
+\end_inset
+
+ We follow 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ANNAN2021105292"
+literal "false"
+
+\end_inset
+
+ by differentiating disagreement by the relative locus of decision-making,
+ and defining disagreement on plots for which co-heads over- or understate
+ their own role in decision-making.
+ Cases where co-heads place greater weight on the self as the locus of decision-
+making, and so tend to overstate their own roles, are indicated in the dark-shad
+ed area to the right of the agreement diagonal in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Agreement-matrix"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ These are instances where one co-head claims that decisions are made by
+ him or her alone, but the spouse disagrees and claims that she or he took
+ the decision alone or was at least involved in the decision.
+ Following this definition, Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Agreement-matrix"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that for the decision to plant maize on the plot, co-heads overstated
+ their own role on 23.3 percent of plots.
+ This figure breaks down as follows.
+ On 5.3 percent of plots the male or female co-head said he or she made the
+ decision to plant maize alone but the other co-head disagreed and claimed
+ it is she or he who decided unilaterally.
+ On 5.9 percent of plots the male co-head said he was involved in the decision
+ jointly with his wife but the female co-head said she took the decision
+ alone.
+ And on 12.1 percent of plots the female co-head said she was involved in
+ the decision jointly with her husband but the male co-head said he took
+ the decision alone.
+ Overstating thus means that at least one spouse said he or she took the
+ decision alone.
+\end_layout
+
+\begin_layout Standard
+We further define instances where co-heads understate their own role in
+ decision-making and the locus of decision-making is placed with the other
+ spouse.
+ These are cases in the light-shaded area to the left of the diagonal in
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Agreement-matrix"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Here, one co-head said his or her spouse decided unilaterally, but the
+ spouse disagreed and said the co-head took the decision alone, or was at
+ least involved in the decision.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Agreement-matrix"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that for the decision to plant maize on the plot, following this
+ definition, co-heads understate their own decision power on 17.6 percent
+ of the plots in our sample.
+ Specifically, on 2.7 percent of plots, the male or female co-head said the
+ other co-head made the decision to plant maize alone but the other co-head
+ disagreed; on 4.0 percent of plots the male co-head said his wife took the
+ decision alone but the female co-head said he was involved in the decision;
+ and in 10.9 percent of the cases the female co-head said her husband took
+ the decision to plant maize alone, but the male co-head disagreed and claimed
+ his wife was involved in the decision.
+ Understating thus means that at least one spouse said that the other spouse
+ took the decision alone.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ANNAN2021105292"
+literal "false"
+
+\end_inset
+
+ refer to the first measure as instances where the female co-head 
+\begin_inset Quotes eld
+\end_inset
+
+takes power
+\begin_inset Quotes erd
+\end_inset
+
+ and the second measure is interpreted as the male co-head 
+\begin_inset Quotes eld
+\end_inset
+
+giving power
+\begin_inset Quotes erd
+\end_inset
+
+ to the female co-head.
+ These terms are somewhat one-sided, as such an interpretation rests on
+ additional assumptions.
+ For instance, in cases where both spouses indicate that they themselves
+ took a particular decision unilaterally, the interpretation that the female
+ co-head 
+\begin_inset Quotes eld
+\end_inset
+
+takes power
+\begin_inset Quotes erd
+\end_inset
+
+ is only valid if we assume all power rests with the male co-head to begin
+ with, and we believe that the female co-head is correct while the male
+ co-head is not (assuming that they can not both have taken the decision
+ unilaterally).
+ Also, if in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Agreement-matrix"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ in 5.9 percent of cases women 
+\begin_inset Quotes eld
+\end_inset
+
+take power
+\begin_inset Quotes erd
+\end_inset
+
+, it seems that in the absence of additional assumptions, by symmetry in
+ 12.1 percent of cases men are 
+\begin_inset Quotes eld
+\end_inset
+
+taking power
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../results/matrix_agreement.png
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Agreement matrix
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Agreement-matrix"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows the frequency of overstating and understating one's decision power
+ for our five farming decisions.
+ The first two bars refer to the decision to plant maize, and correspond
+ to the information also provided in the agreement matrix of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Agreement-matrix"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ On 23.3 percent of the plots spouses overstate and on 17.6 percent of the
+ plots spouses understate their contribution to the decision to plant maize.
+ The figure further shows that spouses are more likely to exaggerate their
+ role in decision-making than to understate their contribution.
+ Especially for weeding (and related, striga weeding) the locus of decision-maki
+ng inclines to the self.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../results/decsion_activities_joint_deception.png
+	lyxscale 10
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Disagreement in decision making
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Joint-decision"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next, we explore whether the two interventions described in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Study-context,-Interventions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ affect the likelihood that spouses overstate or understate their own decision-m
+aking power related to maize farming (Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:decisions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ The first column in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:decisions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that among households that viewed the video featuring the male actor
+ (the control group), co-heads overstated their own contribution to decision
+ making on planting maize on about 23.4 percent of the plots.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This is essentially the same information as depicted in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, but now in the smaller sample of (control group) households included in
+ our experiment.
+\end_layout
+
+\end_inset
+
+ The second column shows the average treatment effect, indicating that there
+ is no effect of the video projecting a cooperative household farming approach
+ by featuring both male and female actors on the likelihood that spouses
+ overstate their own role in the decision to plant maize on the plot.
+ The comparison between those who saw the video featuring the couple and
+ those who saw the video featuring the male actor is repeated for all five
+ decisions.
+ We find significant reductions in the likelihood that co-heads overstate
+ their own role in decision making as a result of the cooperative household
+ farming intervention for decisions on planting and weeding.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+For the timing on planting, we see that among households where the video
+ featuring only a male farmer was shown, co-heads overstate their involvement
+ in this decision on 22.5 percent of plots.
+ In households that were exposed to the couple role model video, the share
+ of plots where co-heads overstate their involvement in this decision is
+ only 16.9 percent.
+ For the decision related to weeding, we see that in the control group,
+ overstatement of own influence affects 25.6 percent of the plots, but this
+ happens on only 19.3 percent of the plots in the group that was exposed
+ to the couple role model video treatment.
+ Average treatment effect estimates for all other decision categories are
+ also negative, but not significantly different from zero.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on disagreement in decision making
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:decisions"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccccccc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{promoting cooperative household farming}} & & 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{reducing information asymmetry}}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5}   
+\backslash
+cline{7-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{overstate decision-}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{understate decision-}} & & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{overstate decision-}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{undestate decision-}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{making power}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{making power}} & & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{making power}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{making power}} 	 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5}   
+\backslash
+cline{7-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	ctrl mean	&	ATE	&	ctrl mean	&	ATE	& &	ctrl mean	&	ATE	&	ctrl mean	&	ATE	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+plant maize 	&	
+\backslash
+Sexpr{format(round(df_ols[1,2,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,2,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,2,1]<.01,"**",ifelse(df_ols[5,2,1]<.05,"*",ifelse(df_ols[5,2
+,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,3,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,3,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,3,1]<.01,"**",ifelse(df_ols[5,3,1]<.05,"*",ifelse(df_ols[5,3
+,1]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    & &  
+\backslash
+Sexpr{format(round(df_ols_2[1,2,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,2,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,2,1]<.01,"**",ifelse(df_ols_2[5,2,1]<.05,"*",ifelse(df_ols
+_2[5,2,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2[1,3,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,3,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,3,1]<.01,"**",ifelse(df_ols_2[5,3,1]<.05,"*",ifelse(df_ols
+_2[5,3,1]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols[2,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,3,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,3,1],digits=3),nsmall=3)}) 	& &	(
+\backslash
+Sexpr{format(round(df_ols_2[2,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,3,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,3,1],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ timing	&	
+\backslash
+Sexpr{format(round(df_ols[1,2,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,2,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,2,2]<.01,"**",ifelse(df_ols[5,2,2]<.05,"*",ifelse(df_ols[5,2
+,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,3,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,3,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,3,2]<.01,"**",ifelse(df_ols[5,3,2]<.05,"*",ifelse(df_ols[5,3
+,2]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    &  & 
+\backslash
+Sexpr{format(round(df_ols_2[1,2,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,2,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,2,2]<.01,"**",ifelse(df_ols_2[5,2,2]<.05,"*",ifelse(df_ols
+_2[5,2,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2[1,3,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,3,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,3,2]<.01,"**",ifelse(df_ols_2[5,3,2]<.05,"*",ifelse(df_ols
+_2[5,3,2]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols[2,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,3,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,3,2],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,3,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,3,2],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+spacing  &	
+\backslash
+Sexpr{format(round(df_ols[1,2,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,2,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,2,3]<.01,"**",ifelse(df_ols[5,2,3]<.05,"*",ifelse(df_ols[5,2
+,3]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,3,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,3,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,3,3]<.01,"**",ifelse(df_ols[5,3,3]<.05,"*",ifelse(df_ols[5,3
+,3]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+  &  &   
+\backslash
+Sexpr{format(round(df_ols_2[1,2,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,2,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,2,3]<.01,"**",ifelse(df_ols_2[5,2,3]<.05,"*",ifelse(df_ols
+_2[5,2,3]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2[1,3,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,3,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,3,3]<.01,"**",ifelse(df_ols_2[5,3,3]<.05,"*",ifelse(df_ols
+_2[5,3,3]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols[2,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,3,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,3,3],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,3,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,3,3],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+striga  &	
+\backslash
+Sexpr{format(round(df_ols[1,2,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,2,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,2,4]<.01,"**",ifelse(df_ols[5,2,4]<.05,"*",ifelse(df_ols[5,2
+,4]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,3,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,3,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,3,4]<.01,"**",ifelse(df_ols[5,3,4]<.05,"*",ifelse(df_ols[5,3
+,4]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+   & &   
+\backslash
+Sexpr{format(round(df_ols_2[1,2,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,2,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,2,4]<.01,"**",ifelse(df_ols_2[5,2,4]<.05,"*",ifelse(df_ols
+_2[5,2,4]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2[1,3,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,3,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,3,4]<.01,"**",ifelse(df_ols_2[5,3,4]<.05,"*",ifelse(df_ols
+_2[5,3,4]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols[2,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,3,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,3,4],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,3,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,3,4],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+weeding	&	
+\backslash
+Sexpr{format(round(df_ols[1,2,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,2,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,2,5]<.01,"**",ifelse(df_ols[5,2,5]<.05,"*",ifelse(df_ols[5,2
+,5]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols[1,3,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols[3,3,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols[5,3,5]<.01,"**",ifelse(df_ols[5,3,5]<.05,"*",ifelse(df_ols[5,3
+,5]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ &   &   
+\backslash
+Sexpr{format(round(df_ols_2[1,2,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,2,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,2,5]<.01,"**",ifelse(df_ols_2[5,2,5]<.05,"*",ifelse(df_ols
+_2[5,2,5]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2[1,3,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2[3,3,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2[5,3,5]<.01,"**",ifelse(df_ols_2[5,3,5]<.05,"*",ifelse(df_ols
+_2[5,3,5]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols[2,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[2,3,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols[4,3,5],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[2,3,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2[4,3,5],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports means for overstatement in the control group
+ for the couple role model treatment (and standard deviations below); Column
+ 2 reports differences in  overstatement between treatment and the control
+ group for the couple role model treatment (and standard errors below);
+ cloumn 3 reports means for understatement in the control group for the
+ couple role model treatment (and standard deviations below); column 4 reports
+ differences in understatement between treatment and the control group for
+ the couple role model treatment(and standard errors below); column 5 shows
+ means for ovestatement in the control group for the information asymmetry
+ treatment (and standard deviations below); Column 6 reports differences
+ in overstatement between treatment and the control group for the information
+ asymmetry treatment (and standard errors below); cloumn 7 reports means
+ for understatement in the control group for the information asymmetry treatment
+ (and standard deviations below); column 8 reports differences in understatement
+ between treatment and the control group for the information asymmetry 
+ treatment (and standard errors below); **, * and + denote that the difference
+ is signficant at the 1, 5 and 10 percent level, respectively.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The third column reports control group means for the share of plots on which
+ spouses understate their own decision-making power.
+ We see that in the control group, the decision to plant maize is affected
+ by this type of disagreement on 13.7 percent of the plots.
+ The fourth column shows the difference in this type of disagreement between
+ households that received the cooperative imaging treatment and those who
+ did not: we do not find that the treatment reduced the likelihood that
+ spouses understate their own role in decision-making.
+\end_layout
+
+\begin_layout Standard
+We next turn to the second treatment, which reduces information asymmetry
+ between spouses and compare disagreement on decision-making between co-heads
+ in households where only one co-head was shown the video and households
+ where the video was shown to both co-heads together.
+ We find that the information treatment leads to a significant reduction
+ in the likelihood that one spouse assigns him- or herself more decision-making
+ power than the other spouse claims/reports.
+ Column 5 of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:decisions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that in households where only one of the co-heads was exposed to
+ the video, spouses overstated their own influence on the decision to plant
+ maize on 23.5 percent of the plots.
+ Column 6 indicates that this percentage was 5.0 percentage points lower
+ among households where both spouses were shown the video, and this reduction
+ is statistically significant (p<0.05).
+ We also find that on decisions related to the timing of planting and weeding,
+ ensuring spouses start off with the same information leads to a reduction
+ in the likelihood that one spouse assigns him- or herself more decision-making
+ power than the other spouse claims.
+\end_layout
+
+\begin_layout Standard
+In the last two columns, we look at the impact of providing both spouses
+ with the same information on the likelihood that one spouse understates
+ his or her role in decision-making.
+ Control group means, shown in column 7, are again close to what we find
+ in the entire sample depicted in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Joint-decision"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The last column shows that the likelihood that spouses understate their
+ own contribution to decision-making reduces as a result of providing both
+ spouses with the same information, but the effect is never significant.
+\end_layout
+
+\begin_layout Standard
+Overall, we conclude that both the treatment projecting cooperative household
+ farming and the treatment reducing information asymmetry lead to a significant
+ reduction in the likelihood that one spouse assigns him- or herself more
+ decision-making power than the other spouse claims.
+ Both treatments are therefore effective in reducing the likelihood that
+ spouses overstate their own role in decision-making about maize farming.
+\end_layout
+
+\begin_layout Subsection
+Labor time
+\end_layout
+
+\begin_layout Standard
+We also collected detailed information on labor time.
+ On each maize plot, we asked each co-head how much time, expressed in labor
+ days over the entire agricultural season, he or she worked on a particular
+ activity.
+ We also asked each co-head to give an estimate of how much time his or
+ her spouse worked on the plot on that particular task.
+ The activities we inquired about are land preparation, planting, weeding,
+ spraying, and harvesting.
+\end_layout
+
+\begin_layout Standard
+Results indicate that while male co-heads report high levels of own labor-time
+ allocation to farming, they report that their spouses allocate slightly
+ less time, especially for several specific activities.
+ The average male co-head in our sample reports to work about 28 days on
+ the average plot over the entire agricultural season, and reports that
+ his wife works about 26 days.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Time-spent-man"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows labor days spent on different activities as reported by the male
+ co-head.
+ We see that the male co-head reports spending about 8 days preparing the
+ plot, 2 days planting, almost 15 days weeding, 1 day spraying, and another
+ 2 days harvesting.
+ The figure also shows that the male co-head reports that his wife spends
+ one day less in preparing the land and also one-half day less in weeding.
+ Male co-heads think their wife almost never engages in spraying of agrochemical
+s.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../results/labour_time_man.png
+	lyxscale 10
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Time spent on different activities as reported by the male co-head
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Time-spent-man"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Time-spent-woman"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows a graph similar to Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Time-spent-man"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, but as reported by the female co-head.
+ Interestingly, while male co-heads report spending more time on all activities,
+ female co-heads also report that 
+\shape italic
+they
+\shape default
+ work harder than their spouse on all activities (with the exception of
+ spraying agrochemicals).
+ According to female co-heads, they work almost 30 days on average, while
+ male co-heads are reported to work about 25 days over the entire season.
+ Female co-heads report that, on average, they work about 7 to 8 days on
+ field preparation, while they report that their male co-head only works
+ 6 days on field preparation.
+ Female co-heads also indicate that they spend 16.5 days on weeding, while
+ they report that their spouse spends only 13.5 days on that activity.
+ According to female co-heads, male and female co-heads spend about the
+ same time on planting and harvesting.
+ Only with respect to agrochemical spraying do co-heads agree that the male
+ co-heads undertake most of the work.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../results/labour_time_woman.png
+	lyxscale 10
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Time spent on different activities as reported by the female co-head
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Time-spent-woman"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Comparing Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Time-spent-man"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Time-spent-woman"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ again suggests substantial disagreement between spouses on time worked.
+ For instance, we see that male co-heads report that they work on average
+ about 8 days to prepare the land, yet women indicate that men only work
+ 6 days to prepare the land.
+ Women, on the other hand, report that they work on average 16 days on the
+ field to weed, while men think that women only work 14 days on the field
+ for weeding.
+ And while, on average, spouses seem to relatively overstate their own labor
+ and understate their spouses' labor, a substantial share of the sample
+ also report that a co-head works less than what the other thinks.
+\end_layout
+
+\begin_layout Standard
+To analyze spousal over- and understatement of labor time, we generate an
+ indicator similar to the one used for decision-making about farming in
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Decision-making"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, comparing own-reported time of the co-head to the time estimated by the
+ other co-head.
+ For each activity, we sum the time that the male co-head reported he spent
+ on that activity and the time that the female co-head reported she spent
+ on the activity, and compare this to the time the male co-head estimated
+ his wife spent on this activity plus the time the female co-head estimated
+ her husband spent on the activity.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+While we could also look at over- and understatement of labor time for the
+ male co-head and the female co-head separately, we decided to aggregate
+ these measures.
+ This is because we are mainly interested in (reducing) disagreement as
+ opposed to e.g.
+ (increasing) women's empowerment.
+\end_layout
+
+\end_inset
+
+ We then define two categories (and associated indicator variables for the
+ categories): (1) plots on which co-heads overestimated own labor contributions,
+ and (2) plots on which co-heads underestimated own labor contributions.
+\end_layout
+
+\begin_layout Standard
+Results show that on more than one-half of the plots, co-heads overstate
+ the labor that was allocated to land preparation (Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Shirking"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ At the same time, we find that on 30 percent of these plots, co-heads indicate
+ that they actually spent less time on land preparation than their spouse
+ reported.
+ This means that only on about 15 percent of plots, do co-heads agree on
+ the time spent on the activity.
+ Further, we find that while co-heads more frequently overstate – rather
+ than understate – labor contributions, substantial differences arise depending
+ on the activity.
+ For instance, with respect to agrochemical spraying, there seems to be
+ agreement on almost 60 percent of the plots.
+ Higher levels of agreement on planting, spraying, and harvesting are partly
+ explained by the fact that fewer hours are reported (see Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Time-spent-man"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Time-spent-woman"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) so less scope exists for differences in cross-reporting.
+ For spraying in particular, many households report not to spray and so
+ both co-heads report zero hours and know their spouse also spent zero hours.
+ However, this is only part of the explanation, as disagreement on land
+ preparation is similar to disagreement on weeding despite the fact that
+ about twice the amount of labor was allocated to weeding than to land preparati
+on.
+ The gap between over and understatement of labor is also larger for land
+ preparation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../results/shirking.png
+	lyxscale 10
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Disagreement about labor time
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Shirking"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next, we report on the impact of the treatment that promotes a household
+ cooperative approach to farming (Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:labout"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, left panel) and the treatment that aims to reduce information asymmetry
+ (right panel) on the likelihood that co-heads over- or understate their
+ own labor contributions, disaggregated by activity.
+ As in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:decisions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the first and third columns report control group means for over- and understat
+ement of labor contributions for the first treatment.
+ Average treatment effects of the first intervention on overstatement of
+ own effort (reported in the second column) and on understatement of own
+ effort (fourth column) are never significantly different from zero.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on disagreement related to labour contribution
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:labout"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccccccc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{promoting cooperative household farming}} & & 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{reducing information asymmetry}}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5}   
+\backslash
+cline{7-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{overstate labour}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{understate labour}} & & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{overstate labour}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{undestate labour}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{contribution}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{contribution}} & & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{contribution}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{contribution}} 	 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5}   
+\backslash
+cline{7-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	ctrl mean	&	ATE	&	ctrl mean	&	ATE	& &	ctrl mean	&	ATE	&	ctrl mean	&	ATE	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+prepare land 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,2,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,2,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,2,1]<.01,"**",ifelse(df_ols_time[5,2,1]<.05,"*",ifelse(
+df_ols_time[5,2,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,3,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,3,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,3,1]<.01,"**",ifelse(df_ols_time[5,3,1]<.05,"*",ifelse(
+df_ols_time[5,3,1]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    & &  
+\backslash
+Sexpr{format(round(df_ols_2_time[1,2,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,2,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,2,1]<.01,"**",ifelse(df_ols_2_time[5,2,1]<.05,"*",ife
+lse(df_ols_2_time[5,2,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[1,3,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,3,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,3,1]<.01,"**",ifelse(df_ols_2_time[5,3,1]<.05,"*",ife
+lse(df_ols_2_time[5,3,1]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,3,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,3,1],digits=3),nsmall=3)}) 	& &	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,3,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,3,1],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+plant maize	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,2,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,2,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,2,2]<.01,"**",ifelse(df_ols_time[5,2,2]<.05,"*",ifelse(
+df_ols_time[5,2,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,3,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,3,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,3,2]<.01,"**",ifelse(df_ols_time[5,3,2]<.05,"*",ifelse(
+df_ols_time[5,3,2]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    &  & 
+\backslash
+Sexpr{format(round(df_ols_2_time[1,2,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,2,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,2,2]<.01,"**",ifelse(df_ols_2_time[5,2,2]<.05,"*",ife
+lse(df_ols_2_time[5,2,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[1,3,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,3,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,3,2]<.01,"**",ifelse(df_ols_2_time[5,3,2]<.05,"*",ife
+lse(df_ols_2_time[5,3,2]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,3,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,3,2],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,3,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,3,2],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+weeding  &	
+\backslash
+Sexpr{format(round(df_ols_time[1,2,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,2,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,2,3]<.01,"**",ifelse(df_ols_time[5,2,3]<.05,"*",ifelse(
+df_ols_time[5,2,3]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,3,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,3,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,3,3]<.01,"**",ifelse(df_ols_time[5,3,3]<.05,"*",ifelse(
+df_ols_time[5,3,3]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+  &  &   
+\backslash
+Sexpr{format(round(df_ols_2_time[1,2,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,2,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,2,3]<.01,"**",ifelse(df_ols_2_time[5,2,3]<.05,"*",ife
+lse(df_ols_2_time[5,2,3]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[1,3,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,3,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,3,3]<.01,"**",ifelse(df_ols_2_time[5,3,3]<.05,"*",ife
+lse(df_ols_2_time[5,3,3]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,3,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,3,3],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,3,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,3,3],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+spraying  &	
+\backslash
+Sexpr{format(round(df_ols_time[1,2,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,2,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,2,4]<.01,"**",ifelse(df_ols_time[5,2,4]<.05,"*",ifelse(
+df_ols_time[5,2,4]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,3,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,3,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,3,4]<.01,"**",ifelse(df_ols_time[5,3,4]<.05,"*",ifelse(
+df_ols_time[5,3,4]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+   & &   
+\backslash
+Sexpr{format(round(df_ols_2_time[1,2,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,2,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,2,4]<.01,"**",ifelse(df_ols_2_time[5,2,4]<.05,"*",ife
+lse(df_ols_2_time[5,2,4]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[1,3,4],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,3,4],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,3,4]<.01,"**",ifelse(df_ols_2_time[5,3,4]<.05,"*",ife
+lse(df_ols_2_time[5,3,4]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,3,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,3,4],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,2,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,3,4],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,3,4],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+harvesting	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,2,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,2,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,2,5]<.01,"**",ifelse(df_ols_time[5,2,5]<.05,"*",ifelse(
+df_ols_time[5,2,5]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_time[1,3,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_time[3,3,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_time[5,3,5]<.01,"**",ifelse(df_ols_time[5,3,5]<.05,"*",ifelse(
+df_ols_time[5,3,5]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+ &   &   
+\backslash
+Sexpr{format(round(df_ols_2_time[1,2,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,2,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,2,5]<.01,"**",ifelse(df_ols_2_time[5,2,5]<.05,"*",ife
+lse(df_ols_2_time[5,2,5]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[1,3,5],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_time[3,3,5],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_time[5,3,5]<.01,"**",ifelse(df_ols_2_time[5,3,5]<.05,"*",ife
+lse(df_ols_2_time[5,3,5]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[2,3,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_time[4,3,5],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,2,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[2,3,5],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_time[4,3,5],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports means for overstatement in the control group
+ for the couple role model treatment (and standard deviations below); Column
+ 2 reports differences in  overstatement between treatment and the control
+ group for the couple role model treatment (and standard errors below);
+ cloumn 3 reports means for understatement in the control group for the
+ couple role model treatment (and standard deviations below); column 4 reports
+ differences in understatement between treatment and the control group for
+ the couple role model treatment(and standard errors below); column 5 shows
+ means for ovestatement in the control group for the information asymmetry
+ treatment (and standard deviations below); Column 6 reports differences
+ in overstatement between treatment and the control group for the information
+ asymmetry treatment (and standard errors below); cloumn 7 reports means
+ for understatement in the control group for the information asymmetry treatment
+ (and standard deviations below); column 8 reports differences in understatement
+ between treatment and the control group for the information asymmetry 
+ treatment (and standard errors below); **, * and + denote that the difference
+ is signficant at the 1, 5 and 10 percent level, respectively.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We find more significant results for the treatment aimed at reducing information
+ asymmetry.
+ In the fifth column of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:labout"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we show again control group average rates of overstatement of spousal
+ labor contributions.
+ In the control group for the information treatment, spouses overstate own
+ labor contributions on 59.2 percent of the plots.
+ However, as shown in column 6, this percentage is 8.6 percentage points
+ lower among couples where, as the treatment, both spouses got to see the
+ video, and this difference is significant at the 5 percent level.
+ We also find that reducing information asymmetry reduces the likelihood
+ that co-heads overstate own labor contributed to harvesting.
+ Columns, 7 and 8 respectively report control group means and average treatment
+ effects on the likelihood of understating own labor contributions as a
+ result of the information treatment.
+ Here, the effects are mixed, with significant increases in the likelihood
+ that co-heads overstate labor allocated to land preparation and weeding,
+ but a significant reduction in the likelihood that co-heads understate
+ own labor allocated to spraying.
+\end_layout
+
+\begin_layout Subsection
+Income hiding
+\end_layout
+
+\begin_layout Standard
+Finally, we look at decisions regarding maize marketing.
+ We asked each co-head separately how much maize was sold from the season
+ under consideration.
+ In particular, we asked each co-head separately to estimate how much was
+ sold by (1) him or her alone, (2) by his or her spouse alone, and (3) jointly
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We specify that sales by an individuals means all decisions regarding quantity,
+ price and to whom to sell were taken by that individual without involving
+ anyone else.
+\end_layout
+
+\end_inset
+
+.
+ We also asked both co-heads to indicate the revenue derived from these
+ sales.
+\end_layout
+
+\begin_layout Standard
+Overall, just as in the case of decision-making related to maize cultivation,
+ most maize marketing occurs jointly, according to our respondents.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Maize-sales"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ (left panel) shows that male co-heads report that on average 1.4 bags of
+ maize were sold jointly
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+A typical bag contains about 120 kilograms of maize.
+\end_layout
+
+\end_inset
+
+.
+ Female co-heads report that just under 1 bag was sold jointly.
+ Averaged over the entire sample, joint sales amounted to about US$23, at
+ least as reported by the male co-heads, while female co-heads estimated
+ this amount to be much lower at US$13 (Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Maize-sales"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, right panel).
+\end_layout
+
+\begin_layout Standard
+Further analysis suggests significant differences in co-heads' estimates
+ of the quantities sold unilaterally by their spouses'.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Maize-sales"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ (left panel) shows that male co-heads reported they sold 0.50 bags of maize
+ by themselves, while their spouses reported that that their husbands only
+ sold 0.25 bags of maize.
+ Female co-heads, on the other hand, reported that they sold about 12 kilograms
+ of maize by themselves, while their spouses reported that their wives unilatera
+lly sold about 6 kilograms.
+\end_layout
+
+\begin_layout Standard
+The left panel of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Maize-sales"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ also shows that male co-heads indicate that, on average, they received
+ about US$7.60 from their unilateral sales of maize.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We use an exchange rate of US $ 1 = UGX 3,600.
+\end_layout
+
+\end_inset
+
+ Female co-heads estimate this revenue to be only about US$2.00.
+ Finally, female co-heads report that they received US$1.50 from unilateral
+ maize sales.
+ Male co-heads estimate that their spouses received on average US$0.60 from
+ what they sold alone.
+ Note that the difference between co-heads' own and cross-reports increases
+ when moving from quantities to revenues, indicating not only disagreement
+ with respect to quantities sold but also to prices obtained.
+ For male co-heads' unilateral sales in particular, men seem to assume significa
+ntly higher sales prices than women do.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../results/sales.png
+	lyxscale 10
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Maize sales
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Maize-sales"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As in previous sections, we look at the impact of the two interventions
+ on disagreement related to maize sales.
+ While spouses tend to overstate own sales, there are instances where spouses
+ report having sold less than what the other co-head reports.
+ We thus construct indicators of spousal over- and understatement of sales.
+ As done above, we do not differentiate between female co-head and male
+ co-head over- or underreporting of sales, but rather create an aggregate
+ measure that evaluates the difference between male and female co-heads
+ own-reported sales and what the other co-head thinks he or she sold.
+ We hypothesize that encouraging a cooperative household farming approach
+ through the treatment featuring a couple of farmer-actors and reducing
+ information asymmetries between spouses through the information treatment
+ leads to a reduction in spousal discord related to sales reporting.
+\end_layout
+
+\begin_layout Standard
+We find an interesting set of mixed results from the treatment that attempts
+ to promote a cooperative approach to farming on over- and understatement
+ of maize sales.
+ The three rows in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:income_hiding"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ correspond to three different outcomes that reflect disagreement in market
+ participation.
+ The first is a simple binary indicator that takes the value of one if spouses
+ indicate they sell more (less) than what the other spouse thinks.
+ The second considers actual quantity overstated (understated) by spouses.
+ The third row considers disagreement in value reported derived from these
+ sales, as Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Maize-sales"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that there may be disagreement about prices received for maize sold
+ in addition to quantity sold.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Impact on disagreement related to maize marketing
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:income_hiding"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccccccc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline 
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{promoting cooperative household farming}} & & 
+\backslash
+multicolumn{4}{c}{
+\backslash
+textit{reducing information asymmetry}}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5}   
+\backslash
+cline{7-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{overstatement}} & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{understatement}} & & 
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{overstatement}} &  
+\backslash
+multicolumn{2}{c}{
+\backslash
+textit{understatement}} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5}   
+\backslash
+cline{7-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	ctrl mean	&	ATE	&	ctrl mean	&	ATE	& &	ctrl mean	&	ATE	&	ctrl mean	&	ATE	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-10} 
+\end_layout
+
+\begin_layout Plain Layout
+
+sold (yes/no)	&	
+\backslash
+Sexpr{format(round(df_ols_inc[1,2,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[3,2,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_inc[5,2,1]<.01,"**",ifelse(df_ols_inc[5,2,1]<.05,"*",ifelse(df
+_ols_inc[5,2,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[1,3,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[3,3,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_inc[5,3,1]<.01,"**",ifelse(df_ols_inc[5,3,1]<.05,"*",ifelse(df
+_ols_inc[5,3,1]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    & &  
+\backslash
+Sexpr{format(round(df_ols_2_inc[1,2,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[3,2,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_inc[5,2,1]<.01,"**",ifelse(df_ols_2_inc[5,2,1]<.05,"*",ifels
+e(df_ols_2_inc[5,2,1]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[1,3,1],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[3,3,1],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_inc[5,3,1]<.01,"**",ifelse(df_ols_2_inc[5,3,1]<.05,"*",ifels
+e(df_ols_2_inc[5,3,1]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[2,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[4,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[2,3,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[4,3,1],digits=3),nsmall=3)}) 	& &	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[2,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[4,2,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[2,3,1],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[4,3,1],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+quantity	&	
+\backslash
+Sexpr{format(round(df_ols_inc[1,2,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[3,2,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_inc[5,2,2]<.01,"**",ifelse(df_ols_inc[5,2,2]<.05,"*",ifelse(df
+_ols_inc[5,2,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[1,3,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[3,3,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_inc[5,3,2]<.01,"**",ifelse(df_ols_inc[5,3,2]<.05,"*",ifelse(df
+_ols_inc[5,3,2]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    &  & 
+\backslash
+Sexpr{format(round(df_ols_2_inc[1,2,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[3,2,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_inc[5,2,2]<.01,"**",ifelse(df_ols_2_inc[5,2,2]<.05,"*",ifels
+e(df_ols_2_inc[5,2,2]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[1,3,2],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[3,3,2],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_inc[5,3,2]<.01,"**",ifelse(df_ols_2_inc[5,3,2]<.05,"*",ifels
+e(df_ols_2_inc[5,3,2]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[2,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[4,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[2,3,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[4,3,2],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[2,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[4,2,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[2,3,2],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[4,3,2],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+amount	&	
+\backslash
+Sexpr{format(round(df_ols_inc[1,2,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[3,2,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_inc[5,2,3]<.01,"**",ifelse(df_ols_inc[5,2,3]<.05,"*",ifelse(df
+_ols_inc[5,2,3]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[1,3,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_inc[3,3,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_inc[5,3,3]<.01,"**",ifelse(df_ols_inc[5,3,3]<.05,"*",ifelse(df
+_ols_inc[5,3,3]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+    &  & 
+\backslash
+Sexpr{format(round(df_ols_2_inc[1,2,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[3,2,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_inc[5,2,3]<.01,"**",ifelse(df_ols_2_inc[5,2,3]<.05,"*",ifels
+e(df_ols_2_inc[5,2,3]<.1,"+","")))}}$ 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[1,3,3],digits=3),nsmall=3)} 	&	
+\backslash
+Sexpr{format(round(df_ols_2_inc[3,3,3],digits=3),nsmall=3)}$^{
+\backslash
+Sexpr{ifelse(df_ols_2_inc[5,3,3]<.01,"**",ifelse(df_ols_2_inc[5,3,3]<.05,"*",ifels
+e(df_ols_2_inc[5,3,3]<.1,"+","")))}}$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+
+\backslash
+ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[2,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[4,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[2,3,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_inc[4,3,3],digits=3),nsmall=3)}) &	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[2,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[4,2,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[2,3,3],digits=3),nsmall=3)})	&	(
+\backslash
+Sexpr{format(round(df_ols_2_inc[4,3,3],digits=3),nsmall=3)})	
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: First column reports means for overstatement in the control group
+ for the couple role model treatment (and standard deviations below); Column
+ 2 reports differences in  overstatement between treatment and the control
+ group for the couple role model treatment (and standard errors below);
+ cloumn 3 reports means for understatement in the control group for the
+ couple role model treatment (and standard deviations below); column 4 reports
+ differences in understatement between treatment and the control group for
+ the couple role model treatment(and standard errors below); column 5 shows
+ means for ovestatement in the control group for the information asymmetry
+ treatment (and standard deviations below); Column 6 reports differences
+ in overstatement between treatment and the control group for the information
+ asymmetry treatment (and standard errors below); cloumn 7 reports means
+ for understatement in the control group for the information asymmetry treatment
+ (and standard deviations below); column 8 reports differences in understatement
+ between treatment and the control group for the information asymmetry 
+ treatment (and standard errors below); **, * and + denote that the difference
+ is signficant at the 1, 5 and 10 percent level, respectively.
+  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the first column of the first row, we see that in the control group for
+ the cooperative approach treatment, in 15.0 percent of households co-heads
+ report that they sold more than what the other spouse thinks.
+ The likelihood that co-heads overstate is similar in the treatment group.
+ We also find that, as reported in the second row, the average quantity
+ overstated is about one-half of bag.
+ The second column finds no evidence of significant effect of the first
+ treatment as judged by the coefficient of the treatment indicator estimated
+ with a Tobit model.
+ We also find no impact of the treatment on overstating of revenue (third
+ row column 2).
+\end_layout
+
+\begin_layout Standard
+The third column of the first row of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:income_hiding"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that in 12.0 percent of households, co-heads understate own sales
+ relative to what the other spouse reports.
+ In the fourth column, we see that the treatment that promotes a cooperative
+ approach to farming decreases this type of disagreement by almost 6 percentage
+ points.
+ This treatment effect is also reflected in a reduction in the understatement
+ of actual quantities: in households in the treatment group where the video
+ was shown to both spouses, the quantity understated reduces by almost 1.5
+ bags.
+ While the third row also shows a reduction in the value associated with
+ the effect, the effect is not statistically different from zero.
+\end_layout
+
+\begin_layout Standard
+The right panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:income_hiding"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows results for the second treatment, which is aimed at reducing information
+ asymmetry between spouses.
+ We do not find that this treatment affected disagreement related to maize
+ marketing.
+\end_layout
+
+\begin_layout Section
+Discussion
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Discussion"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Results set forth above document substantial spousal disagreement in decision
+ making about maize farming, labor contribution, and maize marketing.
+ They indicate that the likelihood that co-heads in monogamous maize-farming
+ households overstate their own role in decision-making can be reduced by
+ reducing intrahousehold information asymmetries and, to a lesser extent,
+ by promoting intrahousehold cooperation in farming through a role model
+ intervention.
+ While results were less clear for the over- and understatement of labor
+ contributions, results are more encouraging for the information treatment
+ than the treatment projecting cooperative household farming.
+ For marketing, promoting cooperation in farming within the household reduced
+ the likelihood and degree of one co-head reporting lower sales than what
+ the other spouse reported.
+ In light of these findings, we explore possible mechanisms that might explain
+ our observed patterns of spousal disagreement.
+\end_layout
+
+\begin_layout Standard
+With respect to differences in reporting related to decision-making, in
+ societies or cultures with strong gender norms and customs, co-heads may
+ tend to overstate their own role in decision-making due to role congruity
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1080/00220388.2019.1650169"
+literal "false"
+
+\end_inset
+
+.
+ This may also indicate that co-heads claim a larger role within the household,
+ in effect claiming recognition for responsibilities taken 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ANNAN2021105292"
+literal "false"
+
+\end_inset
+
+.
+ The case of co-heads understating their own role in decision-making may
+ also be consistent with a range of other possible explanations.
+ On one hand, cultural factors may again mean that one co-head plays down
+ his or her role and discounts own contribution.
+ At the other extreme, one could even imagine situations where the locus
+ of decision making is shifted to the other, effectively 
+\begin_inset Quotes eld
+\end_inset
+
+blaming
+\begin_inset Quotes erd
+\end_inset
+
+ poor decision-making on the other spouse, for example when, in hindsight,
+ the decision turned out to be very bad.
+\end_layout
+
+\begin_layout Standard
+The results from our intervention suggest that cultural factors play an
+ important role in disagreement related to decision making.
+ The intervention that promotes a cooperative household farming approach
+ with couple role models was expected to challenge traditional views in
+ a study region and sociocultural context in which men are assumed to take
+ responsibility for maize farming.
+ Although these effects were not as robust as expected, we nonetheless generate
+ some evidence pointing in this direction.
+ At the same time, the fact that we also find significant effects from arming
+ both co-heads with equal information may mean that increased monitoring
+ reduced the likelihood that spouses would take decisions behind each other's
+ back.
+\end_layout
+
+\begin_layout Standard
+For labor contributions, cultural factors may also result in one spouse
+ claiming to do the bulk of the work, while in reality, the work burden
+ may be more equally shared.
+ However, it may also indicate imbalance within the relationship, in that
+ one spouse performs the bulk of the work without being recognized for it.
+ This may often be the case with tedious work such as weeding or domestic
+ work and household chores.
+ Disagreement characterized by one co-head underreporting own labor contribution
+s may point to some degree of shirking.
+ For example, it may be that the female co-head does not have a clear idea
+ of how long it takes to spray a particular plot and the male co-head exploits
+ this information asymmetry by making her believe that it took much longer
+ than the time it actually took; the time difference may then be used for
+ private activities by the male co-head that do not directly contribute
+ to the household as a whole.
+\end_layout
+
+\begin_layout Standard
+Results from our intervention show that only the treatment reducing information
+ asymmetry had an impact on disagreement related to spouses' labor contributions.
+ This suggests that cultural factors defining gender roles may be less important.
+ While the effect of facilitating mutual monitoring on shirking (understating
+ labor contributions) is not clear, we do see that arming co-heads with
+ information reduces the likelihood that co-heads provide more labor than
+ they get credit for.
+\end_layout
+
+\begin_layout Standard
+We have seen that some studies interpret cases of overreporting related
+ to marketing behavior and income derived from farming activities as signs
+ that spouses are hiding income from each other 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "castilla2012ties"
+literal "false"
+
+\end_inset
+
+.
+ In this case, we would have expected that especially the information treatment
+ would be more effective in reducing disagreement.
+ The fact that we only find an impact from the treatment that promotes a
+ cooperative approach suggests that disagreement related to sales is more
+ likely related to cultural factors relating to gender roles.
+ For instance, our findings may be more consistent with a situation where
+ a male co-head exaggerates sales to his spouse because he wants to be seen
+ as the provider, but after seeing a video where both spouses are equally
+ providing for the household, the male co-head reports sales that are more
+ in line with what the female co-head thinks the male co-head sold.
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Standard
+Household surveys that are serious about capturing gender-related heterogeneity
+ often try to interview both male and female co-heads separately for at
+ least part of the survey.
+ This is an important means of reducing biases introduced by the (typically
+ male) household head or 
+\begin_inset Quotes eld
+\end_inset
+
+most knowledgeable person
+\begin_inset Quotes erd
+\end_inset
+
+ in the household, and represents an important advancement in the study
+ of intrahousehold dynamics, especially in non-separable agricultural households
+ where production and consumption decisions are so closely intertwined.
+ A common finding in these surveys is that male and female co-heads often
+ give substantially different answers to the same questions.
+ While some discordance is inevitable due to measurement error, recent studies
+ have been searching for patterns in this disagreement, and suggest that
+ systematic disagreement between spouses may be key in understanding intrahouseh
+old power dynamics.
+\end_layout
+
+\begin_layout Standard
+Studies on spousal disagreement often use a simple binary variable indicating
+ that the answer of one co-head differs (to some degree) from the answer
+ of the other co-head.
+ In some cases, the direction of disagreement is also considered, differentiatin
+g, for instance, between cases where male co-heads report higher levels
+ of consumption than female co-heads, and cases where male co-heads report
+ lower levels of consumption than female co-heads.
+ Often, these questions relate to household-level data, such as consumption
+ expenditure or investment in household public goods.
+ However, studies interested in women's autonomy and women's empowerment
+ go further by asking more personal questions on behaviors and personal
+ belongings, and co-heads are typically asked to answer these questions
+ about both themselves and their spouses.
+ This own and cross-reporting allows for a range of interesting indicators
+ of disagreement to be constructed, based primarily on what one co-head
+ reports , and what his or her spouse reports about him or her.
+\end_layout
+
+\begin_layout Standard
+In this study, we focused mostly on directional disagreement indicators
+ that exploit questions about behavior of individual spouses obtained from
+ both co-heads.
+ In addition to documenting patterns in spousal disagreement, we tested
+ two interventions aimed at reducing disagreement related to decision-making,
+ labor contributions, and marketing in maize farming.
+ Both interventions pivoted on the screening of short engaging videos to
+ co-heads within the household that both (1) provided viewers with a mental
+ image of a cooperative household approach to maize farming through role
+ modeling, and (2) reduced information asymmetries between spouses with
+ specific technical insights on recommended maize cultivation practices.
+\end_layout
+
+\begin_layout Standard
+We found substantial disagreement between spouses.
+ For instance, we found that co-heads exaggerate their own decision-making
+ power on almost one in four plots.
+ We found statistically significant reductions in the likelihood that co-heads
+ overstate their own role in decision making as a result of the intervention
+ that promotes a household cooperative approach to farming for decisions
+ related to timing of planting and weeding.
+ Similarly, we found that reducing information asymmetries between spouses
+ led to a reduction in the likelihood that one co-head assigns him- or herself
+ more decision-making power than the other spouse claimed.
+ The likelihood of understating one's role in decision making was not significan
+tly affected by either treatment.
+\end_layout
+
+\begin_layout Standard
+For labor, we found that co-heads seem to relatively overstate their own
+ labor and underestimate their spouse's labor.
+ However, we also found a substantial part of the sample where a co-head
+ reported to work less than what the other spouse thinks (understating of
+ own contributions which may point to labor-shirking behavior).
+ We found that the likelihood that co-heads overstate own labor contributions
+ in a number of farming activities reduced as a result of providing spouses
+ with symmetric information that allowed them to better monitor each other.
+\end_layout
+
+\begin_layout Standard
+For marketing, co-heads tend to overstate own sales, suggesting some degree
+ of income hiding.
+ At the same time, we did not find an effect of facilitating mutual monitoring.
+ Promoting cooperation in farming within the household reduced the likelihood
+ and degree of one co-head understating own sales, that is, reporting lower
+ sales than what the other spouse assumed.
+\end_layout
+
+\begin_layout Standard
+The fact that we found similar effects from both the intervention that projects
+ a cooperative household farming approach and the intervention reducing
+ information asymmetry suggests that two distinct mechanisms are likely
+ at play.
+ On one hand, some of the disagreement may be because one co-head overestimates
+ his or her own role or position to make it appear in line with prevailing
+ expectations, customs, and gender roles.
+ Reducing this disagreement will involve longer-run efforts to challenge
+ perceptions and gender stereotypes.
+ Recent research has found that role models may be particularly effective
+ for this 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "beaman2009powerful,porter2019gender"
+literal "false"
+
+\end_inset
+
+.
+ On the other hand, some disagreement may reflect deliberate appropriation
+ of decisions, shirking, or income hiding.
+ Here, interventions aimed at reducing the information disadvantage of one
+ spouse, may also be effective.
+\end_layout
+
+\begin_layout Section*
+Acknowledgments
+\end_layout
+
+\begin_layout Standard
+This study was carried out with financial support from Digital Green and
+ the U.S.
+ Agency for International Development (USAID) under Feed the Future’s Developing
+ Local Extension Capacity (DLEC) project; the CGIAR Research Program on
+ Policies, Institutions, and Markets (PIM), led by the International Food
+ Policy Research Institute (IFPRI) the CGIAR Research Program on Maize (MAIZE),
+ led by the International Maize and Wheat Improvement Center (CIMMYT); and
+ the International Development Research Center, Ottawa, Canada (grant no.
+ 109177-001), through the CGIAR Collaborative Platform for Gender Research.
+ The CGIAR programs and platforms, in turn, are supported by [https://www.cgiar.or
+g/funders/||these funders].
+ The views expressed in this study do not necessarily represent those of
+ Digital Green, USAID, IDRC or its Board of Governors, or the CGIAR research
+ programs, platforms, and centers mentioned above.
+ The study is registered in the American Economic Association RCT Registry
+ (AEARCTR-0002153), and received approval from IFPRI’s Institutional Review
+ Board (IRB).
+ We thank Anusha De, Jamie Arkin, Kristin Davis, Rikin Gandhi, Vivian Hoffman,
+ Suprita Kudesia, and Karin Lion for their support for this research; and
+ Fiona Nattembo, Wilberforce Walukano, and Marc Charles Wanume for excellent
+ field support.
+ This paper benefited from comments provided by participants of the Third
+ Annual Workshop on Gender, Agricultural Growth, and Rural Transformation
+ Research in the CGIAR.
+ The analysis contained here is the sole responsibility of the authors,
+ and does not reflect the views of any funding agency or organization mentioned
+ here.
+ The research was approved by IFPRI's Institutional Review Board (IRB #00007490
+ FWA #00005121).
+ Any and all errors are the sole responsibility of the authors.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "../disagreement_bib"
+options "../IFPRI_Style"
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
