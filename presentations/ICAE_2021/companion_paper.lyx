@@ -9,7 +9,7 @@
 \maintain_unincluded_children false
 \language english
 \language_package default
-\inputencoding auto
+\inputencoding utf8
 \fontencoding global
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -121,21 +121,30 @@ In developing countries, incomplete and/or asymmetric information contributes
  Various products and services have emerged that rely on Information and
  Communication Technologies (ICTs) to facilitate information flows between
  agro-input providers, farmers, traders, and consumers.
- Examples include crowdsourced price information and market intelligence
- services, ICT mediated agricultural advisory services, and user-experience
- rating-based quality assurance.
  However, not all initiatives are equally effective and many struggle to
  reach scale.
- I focus on some of the design features that characterize successful ICT
- enabled agricultural information initiatives, such as the technology used
- or the content disseminated.
- I further explore why ICT applications that address information inefficiencies
- seem to have less impact than innovations that address other barriers to
- efficient and inclusive food supply chains, such as risk or credit constraints.
- I point out the dangers of bypassing vulnerable groups and shown how inclusiven
-ess can be increased.
- I also discuss how social networks can be leveraged to accelerate information
- dissemination.
+ In this paper, I review some of the earlier services that generally targeted
+ farmers with price information to reduce search costs and increase their
+ bargaining power vis-a-vis traders.
+ I reflect on the reasons why these initiatives often led to disappointing
+ results and provide examples of (complementary) interventions that look
+ more promising.
+ Furthermore, highlight some of the dangers of relying too much on ICT mediated
+ information, such as exclusionary networks, bias in crowdsourced data,
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+fake news
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Finally, I explore why ICT applications that address information inefficiencies
+ seem to to be less successful than innovations that address other barriers
+ to efficient and inclusive food supply chain development, such as risk
+ or credit constraints.
+ 
 \end_layout
 
 \begin_layout Section*
@@ -146,13 +155,13 @@ Introduction
 Economic agents acting independently on the basis of full and relevant informati
 on is one of the cornerstones of neoclassical economic theory.
  However, reality is characterized by information inefficiencies.
- Fake news is often harder to debunk than to spread.
  Information asymmetries are cultivated and protected to create an advantage
  for one party.
  Information gaps are complemented with heuristics prone to sterotyping
  and suffer from cognitive biases.
  Consequently, as is the case with other incomplete or missing markets,
- information inefficiencies often lead to sub-optimal outcomes.
+ information inefficiencies arising from incomplete of missing information
+ markets often lead to sub-optimal outcomes.
 \end_layout
 
 \begin_layout Standard
@@ -190,29 +199,49 @@ literal "false"
  The last few decades has seen the birth (and often failure) of a plethora
  of ICT mediated projects that promise to solve information inefficiencies.
  Today, some of the world's leading economists are trying to find out just
- how effective all these initiatives can be.
+ how effective all these initiatives are.
  For instance, Michael Kremer co-founded an NGO with the primary aim of
  testing ICT application in the field (Precision Agriculture for Development).
 \end_layout
 
 \begin_layout Standard
-In this paper, I highlight some of the ICT applications that provided insight,
- point to ongoing initiatives that look promising, and reflect on future
- projects that build on what we have learned.
- After a brief section that highlights the primary aims of ICTs, I discuss
- the usefulness of ICT to match demand and supply of commodities, thereby
- increasing market efficiency.
- Research on market efficiency, which is rooted in the theory of the role
- of price information in spatial arbitrage, naturally led to projects that
- aimed to empower smallholder farmers with price information to strengthen
- their bargaining power vis-a-vis middlemen.
- The potential of ICT to reach farmers in remote areas also led to a multitude
- of projects that focus on agricultural extension.
- I then turn to more advanced applications to reduce asymmetric information
- in input supply chains.
- After a brief interlude on the role of social networks, I then review some
- of the dangers of relying on ICTs for information transmission in agricultural
- value chains.
+In this paper, I highlight some of the ICT applications to provided insight
+ on what works and what not, and why.
+ I then point to some ongoing initiatives that look promising, and reflect
+ on future projects that build on what we have learned.
+ The focus of the paper will be mostly on the usefulness of ICTs to increase
+ market efficiency and inclusiveness, and facilitate information flows within
+ agricultural value chains.
+ Another area where ICTs are expected to be particularity useful is in the
+ delivery of agricultural advisory services.
+ The literature on the use ICTs for agricultural extension is somewhat more
+ developed, and so the interested reader is referred to existing review
+ papers 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg."
+key "doi:10.1146/annurev-resource-101520-080657,doi:10.1126/science.aay3038,https://doi.org/10.1111/j.1574-0862.2011.00545.x"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+After a brief section that highlights the primary characteristics of ICTs,
+ I describe how ICTs haven been used to increase market efficiency in the
+ past.
+ I note that many of the earlier initiatives were somewhat unidirectional,
+ targeting farmers with price information.
+ I reflect on reasons why these initiatives often provided disappointing
+ results, and argue that complementary interventions may be needed and/or
+ the flow of information may need to be reversed.
+ I also discuss more advanced applications designed to reduce asymmetric
+ information in input supply chains.
+ In a next section, I highlight some of the dangers of relying on ICTs for
+ information transmission in agricultural value chains, and argue that crowdsour
+cing and network effects may lead to exclusion and introduce bias.
  The last section concludes by comparing ICTs that reduce information inefficien
 cies with ICT mediated interventions that focus on other barriers in the
  sector.
@@ -254,41 +283,47 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-ICTs are also often able to aggregate and process large amounts of data.
- This makes it possible to generate customized information and provide tailored
- advice.
- Such decision support systems have been shown to be more effective than
- one-size-fits-all advice that is typically provided by agricultural extension
- agents 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "arouna2021one"
-literal "false"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-However, applications that combine increased efficiency in the collection
- and dissemination of large amounts of data with processing power are likely
- to generate the most impact.
+However, ICTs these days are capable of much more then just passing on informati
+on.
+ ICTs often have processors, allowing them to aggregate and process large
+ amounts of data.
+ As such, networked devices are becoming more and more common as decision
+ support tools throughout the value chain.
+ Below, I hypothesize that applications that combine increased efficiency
+ in the collection and dissemination of large amounts of data with processing
+ power are likely to generate the most impact.
  Such applications hold the potential to reduce asymmetric information and
  increase coordination between actors in the value chain.
 \end_layout
 
 \begin_layout Standard
 ICTs are also networked technologies, which become more useful as more people
- use them.
+ use them 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Klemperer2016"
+literal "false"
+
+\end_inset
+
+.
  These virtual networks partly overlap with the social networks of the users.
  As with social networks, the networked nature of ICTs may also be important
- for agriculture.
+ for agriculture value chain development 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.2307/1245099"
+literal "false"
+
+\end_inset
+
+.
+ However, as we will see below, they can also lead to exclusion, and add
+ noise to information.
 \end_layout
 
 \begin_layout Section*
-ICTs to increase market efficiency
+ICTs to increase market efficiency and value chain performance
 \end_layout
 
 \begin_layout Standard
@@ -320,7 +355,7 @@ The transaction cost is the total cost of moving the product from the low
  In rural settings with poor infrastructure, search costs related to finding
  where commodities are cheapest or where demand is highest can be substantial.
  This high cost could leading to fragmented markets with excessively high
- prices in one location and extremely low prices in other areas 
+ prices in one location and low prices in other areas 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "van2007modelling"
@@ -364,7 +399,7 @@ literal "false"
 \begin_layout Standard
 The power of ICT to improve outcomes for producers, as illustrated in the
  above landmark studies, resulted in a large number of initiatives, often
- delivered through SMS.
+ relying on simple technologies such as SMS.
  Many of these initiatives aimed to empower farmers with market price informatio
 n.
  In areas characterized by semi-subsistence farming, farmers often sell
@@ -373,10 +408,10 @@ l commodities and sell further downstream to large-scale traders or processors.
  The assumption underlying these initiatives is that traders exploit an
  informational advantage as they have a much better idea of the prevailing
  prices in different markets.
- Providing farmers with timely price information in nearby markets should
- enable farmers to better evaluate the trader's offer price, and the farmer
- can exploit this information in the form of a credible treat to take his
- produce to the market himself.
+ Providing farmers with price information in nearby markets should enable
+ farmers to better evaluate the trader's offer price, and the farmer can
+ exploit this information in the form of a credible treat to take his produce
+ to the market himself.
  However, the evidence that these initiatives can actually increase farmer
  bargaining power vis-a-vis middlemen seems mixed 
 \begin_inset CommandInset citation
@@ -397,7 +432,7 @@ n useful.
  Knowing the price in some remote market may not, in itself, affect the
  bargaining power of a farmer with a single trader, especially in remote
  areas where there is little competition between traders and the farmer
- has no means to transport the commodity him or herself.
+ has no means to transport the commodity themselves.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -489,8 +524,8 @@ literal "false"
  study period.
  To further encourage farmer participation, calls and text messages were
  entered into a weekly raffle, in which the winners received a coupon worth
- MWK25,000, which could be redeemed for farm inputs at selected farm input
- outlet.
+ MWK25,000 (or about USD30), which could be redeemed for farm inputs at
+ selected farm input outlet.
  The data obtained though this crowd-sourcing exercise can be used to investigat
 e price variation (and underlying differences in demand and supply) over
  time and space.
@@ -597,17 +632,13 @@ name "fig:Farmgate-prices-in"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-However, a more proactive approach would target farmers with detailed informatio
+However, a more proactive approach would target traders with detailed informatio
 n on time- and location-sensitive arbitrage opportunities.
  Crowd-sourced price data could be combined with data obtained from satellites,
  hyper-local weather stations, and market intelligence in a real-time decision
@@ -619,343 +650,22 @@ n on time- and location-sensitive arbitrage opportunities.
  prices.
 \end_layout
 
-\begin_layout Section*
-ICTs and agricultural advisory
-\end_layout
-
 \begin_layout Standard
-ICT also shows potential to be useful for agricultural extension.
- Agricultural advisory services provide information about the availability
- and use of quality inputs such as improved seed varieties or inorganic
- fertilizer.
- They are also used to promote good agronomic practices such as row planting
- and irrigation.
- As agricultural extension information is assumed to be a public non-rival
- good, extension services are generally organized by the government.
- However, there are many challenges, including failure to reach farmers
- in remote places, motivation of extension agents, and monitoring more generally.
- ICTs have been hailed as a technology that can solve most if not all of
- these problems 
+ICTs are also a powerful means to address the asymmetric information that
+ may exist within supply chains.
+ An important example of the existence and consequences of asymmetric informatio
+n is the case of agro-inputs in Uganda 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "doi:10.1146/annurev-resource-101520-080657"
+key "RePEc:oup:qjecon:v:132:y:2017:i:3:p:1055-1100."
 literal "false"
 
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-A range of applications and technologies are used to facilitate agricultural
- extension provision.
- I will discuss approaches that have been studied most, including SMS messaging,
- Iterative Voice Response systems and related call-centers, and video based
- interventions.
- I then review more holistic interventions that bundle a range of services
- and/or rely on various technologies.
-\end_layout
-
-\begin_layout Standard
-SMS is probably one of the cheapest ways to deliver personalized information.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-It is fairly straightforward to send customized messages to individual subscribe
-rs through a commercial SMS Application Programming Interface (API) platform.
- For example, as part of an information clearinghouse set up to test asymmetric
- information about seed quality between small agro-input dealers and farmers,
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "New2"
-literal "false"
-
-\end_inset
-
- sent out almost 30,000 messages to farmers informing them about how customers
- rate seed dealers in their vicinity.
-\end_layout
-
-\end_inset
-
- While SMS is rather top-down and probably too short to provide new information,
- research in various areas found it may be useful for providing reminders
- or making particular information more salient 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "lester2010effects,karlan2016getting"
-literal "false"
-
-\end_inset
-
-.
- As a result, various projects and initiatives use SMS to encourage farmers
- to adopt a particular technology or practice, or to remind farmers about
- important practices at particular points in time.
- Fabregas and colleagues 
-\begin_inset CommandInset citation
-LatexCommand citeyearpar
-key "fabregas2019sms"
-literal "false"
-
-\end_inset
-
- report on six field experiments in Kenya and Rwanda, where farmers were
- targeted with SMS messages to encourage them to use agricultural lime to
- mitigate acidic soil conditions.
- The found a 20 percent increase in the adoption of the recommendation,
- but the messages needed to be resent every season.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "van2021information"
-literal "false"
-
-\end_inset
-
- find no additional effect of sending SMS messages to maize farmers in Uganda
- at targeted points in time to remind them about important agronomic practices
- such as fertilizer application and weeding, over and above the effect found
- of showing a short video demonstrating a range of important practices.
-\end_layout
-
-\begin_layout Standard
-More complex setups than simple SMS messages include demand-driven interactive
- services that allow farmers to indicate what information they require.
- Such setups could be text based, for instance through Unstructured Supplementar
-y Service Data (USSD) code-based menus.
- Because farmers may be illiterate, however, Interactive Voice Response
- (IVR) systems or hotlines have been used as alternatives.
- For example, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "10.1093/ej/ueaa084"
-literal "false"
-
-\end_inset
-
- evaluated Avaaj Otalo, a mobile phone-based technology service geared towards
- cotton farmers that allowed users to call a hotline, ask questions, and
- receive pre-recorded responses from agricultural scientists and local extension
- workers.
- The intervention significantly increased the adoption of recommended agricultur
-al inputs for cotton cultivation.
- Effects on yield and profits are positive, but the data seemed too noisy
- to draw conclusions.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "van2021information"
-literal "false"
-
-\end_inset
-
- also added an IVR treatment to their short video that provides information
- on a range of important agronomic practices to maize farmers in Uganda,
- but found no incremental effect, perhaps because uptake is extremely low.
- 
-\end_layout
-
-\begin_layout Standard
-Alternative models of ICT mediated extension rely on audiovisual information.
- Video is used in many formats and settings.
- They can be shown privately to individuals, much like YouTube videos 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "doi:10.1080/1389224X.2021.1880454"
-literal "false"
-
-\end_inset
-
-, or they can be used in Farmer Field School-type mediated video-based trainings
-, projected using battery-powered pico projectors 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "vasilaky2015learning"
-literal "false"
-
-\end_inset
-
-.
- Video-based approaches can be formal recordings of authoritative figures
- (such as an extension officer) sharing technical information, or a model
- farmer recounting a success story that other farmers can relate to, as
- farmers appear to learn more from those with whom they identify 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "10.1093/restud/rdy039"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-The main intervention in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "van2021information"
-literal "false"
-
-\end_inset
-
- consisted of a short and engaging video in which farmers explain what they
- did to become successful farmers.
- The video includes technical information such as optimal timing for planting,
- instructions for row planting and optimal seed rate, and frequency of weeding.
- It also recommends the use of improved seed varieties and inorganic fertilizers.
- The video also explains some simple inter-temporal cost-benefit calculations,
- driving home the point that farmers have to invest now to get more in the
- future.
- The study uncovers a range of positive effects along the causal impact
- chain, including a significant increase in maize yields.
-\end_layout
-
-\begin_layout Standard
-A particularly powerful feature of audiovisual content is the potential
- to challenge norms and increase aspirations through the use of role models
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bernard2015will"
-literal "false"
-
-\end_inset
-
-.
- This could be particularly useful for making agricultural extension systems
- more gender inclusive.
- Female role models have been shown to encourage other women to enter male-domin
-ated sectors 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "10.1257/app.20180426"
-literal "false"
-
-\end_inset
-
-.
- Role models featured in movies, television series, and videos seem to affect
- aspirations and subsequent behviour 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "riley2017increasing,10.1257/app.4.4.1"
-literal "false"
-
-\end_inset
-
-.
- In 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "lecoutere2020women"
-literal "false"
-
-\end_inset
-
-, we assess the impact of agricultural extension videos featuring a female
- role model.
- We find some support that female role models in the extension videos challenge
- men’s beliefs and stereotypes about women’s roles in agriculture, and encourage
- the adoption of recommended practices by women.
-\end_layout
-
-\begin_layout Standard
-SMS, IVR, and video are probably the most common simple technologies used
- for agricultural extension.
- But over time, developers have started combining approaches to develop
- complete decision support systems that integrate and process data from
- various sources.
- An early example comes from Uganda, where the Grameen Foundation experimented
- with Community Knowledge Workers (CKW).
- Modeled after a project that successfully equipped community health workers
- with mobile phone–based tools in India 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "flaming2015commcare"
-literal "false"
-
-\end_inset
-
-, the CKW project equipped resident community members with an Android smartphone
- pre-loaded with an in-house developed mobile application.
- CKWs can then use this application to look up information requested by
- farmers about farming and crop marketing, including location-specific weather
- forecasts or price information in nearby markets.
- Despite initial excitement and evidence that the intervention increased
- market orientation of farmers, the project was discontinued 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "doi:10.1080/1369118X.2016.1200644"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Currently, various startups offer cloud-based platforms that involve complete
- digitization of farms and data-driven decision-making supported by artificial
- intelligence and machine learning.
- Examples include CropIn's SmartFarm platform that promises complete farm
- management solutions including satellite and weather-input based advisory.
- As these platforms combine various components, it is hard to learn about
- the underlying mechanisms and impact pathways using impact evaluations.
- Furthermore, as these are often private for-profit initiatives, independent
- and credible impact evaluations are often not available.
-\end_layout
-
-\begin_layout Standard
-ICTs have not only been used to get information to farmers more efficiently,
- but also to motivate extension agents and monitor performance.
- Equipping extension agents with fancy smart-phones or tablet computes may
- increase motivation in itself.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "doi:10.1080/02681102.2021.1875186"
-literal "false"
-
-\end_inset
-
- report on the development of electronic diaries with the primary aim of
- increasing monitoring.
- Other ICT mediated applications to increase extension agent monitoring
- include the use of geolocation to determine whether extension workers visited
- certain locations 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "https://doi.org/10.3982/ECTA17497"
-literal "false"
-
-\end_inset
-
- and the use of video to allow extension workers to document their efforts
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "10.1257/aer.102.4.1241"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Section*
-ICTs to reduce asymmetric information
-\end_layout
-
-\begin_layout Standard
-ICTs are also a powerful means to address the asymmetric information prevalent
- in agricultural service delivery and agro-input provision.
  Agricultural inputs are often "experience" goods, as it is difficult to
  assess quality by simply examining these goods in the agro-input shop.
- In Uganda, 
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "RePEc:oup:qjecon:v:132:y:2017:i:3:p:1055-1100."
@@ -964,10 +674,11 @@ literal "false"
 \end_inset
 
  found that agricultural yields are noisy and farmers' ability to learn
- about quality of inputs is limited, leading to the marketing of low quality
- inputs.
- ICTs can be used to help farmers learn about inputs and technologies, thus
- reducing poor quality inputs.
+ about quality of inputs is limited.
+ This leads to a situation where high quality inputs are driven out of the
+ market.
+ ICTs can be used to help farmers discover input quality and reduce information
+ asymmetry.
 \end_layout
 
 \begin_layout Standard
@@ -990,16 +701,10 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-ICTs can potentially solve coordination problems between farmers and traders
- by obtaining large quantities of data through crowd-sourcing, aggregating
- this data, and then providing it back to users.
- ICTs provide a powerful way to reduce information asymmetry at the input-
+ICTs provide a powerful way to reduce information asymmetry at the input-
  or service provider-farmer-link in the value chain by collecting, processing,
  and disseminating information in near real-time.
-\end_layout
-
-\begin_layout Standard
-In Pakistan, 
+ In Pakistan, 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "hasanain2017no"
@@ -1016,9 +721,6 @@ d and fed back to farmers.
 ion success rate.
  Interestingly, they find that this effect should be attributed to increased
  effort by the vets, as few farmers seem to switch to other vets.
- The study illustrates how clearing house mechanisms can be used to address
- problems of motivation of extension services and increase accountability
- also mentioned in the previous section.
 \end_layout
 
 \begin_layout Standard
@@ -1102,7 +804,85 @@ name "fig:SeedAdvisor"
 \end_layout
 
 \begin_layout Section*
-Networks and ICT
+Dangers and drawbacks of relying on ICT to increase information flows
+\end_layout
+
+\begin_layout Standard
+Even though ICTs—and mobile phones in particular—have been hailed for its
+ potential to integrate poor smallholders and informal value chains into
+ the wider economy, there is often inherent selection bias as a result of
+ differential access to the technology.
+ Furthermore, there are still vast areas that lack cellular coverage, or
+ if coverage is available, connectivity is spotty and data transfer is slow,
+ which has implications for the effectiveness of ICTs.
+ 
+\end_layout
+
+\begin_layout Standard
+More importantly, in addition to the issue of low excludability and non-rivalry,
+ information as a commodity is also difficult to evaluate.
+ Indeed, one generally acquires information because of a lack of knowledge.
+ As a result, it is often difficult to assess the quality of the information
+ itself.
+ The more (often conflicting) information becomes available, the more difficult
+ it becomes to filter out good information from 
+\begin_inset Quotes eld
+\end_inset
+
+fake news
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Especially when networks are leveraged or crowdsourced information is used,
+ misleading or even false information may start to dominate.
+ This problem is often compounded by the low cost of information transfer
+ through ICTs, resulting in a lot of unsolicited content and robocalls,
+ up to the point where it renders the ICT unusable.
+\end_layout
+
+\begin_layout Standard
+There are also reasons to be wary about information clearing mechanisms
+ based on crowdsourced data.
+ If crowdsourced data is thin, outliers may drive the information that is
+ fed back into the system.
+ Public review platforms are prone to manipulation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1257/aer.104.8.2421"
+literal "false"
+
+\end_inset
+
+.
+ But even if sufficient data is available from crowd-sourcing, implicit
+ bias may lead to unfair competition.
+ Research in other areas has shown, for example, that female instructors
+ are evaluated less favorably than their male counterparts in teaching evaluatio
+ns 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "mitchell2018gender"
+literal "false"
+
+\end_inset
+
+.
+ If these evaluations are then used to inform decisions on promotion or
+ hiring, this could lead to discrimination.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "New3"
+literal "false"
+
+\end_inset
+
+ tests for systematic differences in crowdsourced rating of agro-input dealers,
+ and find that female agro-input dealers receive significantly lower scores
+ than male agro-input dealers.
+ To avoid creating unfair competition, this bias should be corrected when
+ scores are fed back.
 \end_layout
 
 \begin_layout Standard
@@ -1121,212 +901,21 @@ literal "false"
  inclusive.
  The networked nature of ICTs provides a natural way to further exploit
  these network effects.
-\end_layout
-
-\begin_layout Standard
-In developed countries, the dissemination of information through virtual
- social networks such as Facebook or Instagram, where people can follow,
- like, and share, has become very important.
- Drawing on the model of these social networks, Digital Green encourages
- farmers to showcase farming techniques in short YouTube-like videos, in
- the hope that the most promising farmers develop into influencers 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "toyama2009digital"
-literal "false"
-
-\end_inset
-
-.
- While initiatives at this scale are rare, farmers do often use virtual
- networks, albeit at a modest scale, such as WhatsApp groups for farmer
- cooperative members.
- In this way, content can be discussed among peers to make it more salient.
- Being able to discuss content with peers may be particularly important
- to uncover returns to investment in a new technology 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "doi:10.1086/703868"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-The effectiveness of using social networks to increase agricultural technology
- adoption also depends on the network's structure.
- Targeting central nodes in the network has been found to lead to better
- results than just randomly disseminating information 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "10.1257/aer.20200295"
-literal "false"
-
-\end_inset
-
-.
- User data obtained from virtual social networks may be useful to learn
- about network structure and identify optimal nodes to insert information
- into the network.
-\end_layout
-
-\begin_layout Standard
-Social networks are also important for commodity movement within the value
- chain.
- In the previously discussed study by 
+ Social networks have also been found important for commodity movement within
+ the value chain.
+ For example, 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "aker2020important"
-literal "false"
-
-\end_inset
-
-, farmers were able to increased their network of potential buyers through
- telephone directories.
- However, in areas with weak institutions that cannot enforce contracts,
- social networks are also important to facilitate trade relationships 
-\begin_inset CommandInset citation
-LatexCommand citep
 key "10.2307/1245099"
 literal "false"
 
 \end_inset
 
-.
+ show that in areas with weak institutions where it is hard to enforce contracts
+, social networks are important to facilitate trade relationships.
  Networked technologies that allow for frequent contact and easy sharing
- of experiences with particular traders (such as through Facebook groups)
- are likely to strengthen social ties and increase networks.
- 
-\end_layout
-
-\begin_layout Section*
-Pitfalls and dangers
-\end_layout
-
-\begin_layout Standard
-Even though ICTs—and mobile phones in particular—have been hailed as the
- solution to reach the last mile in for example agricultural extension,
- there is often inherent selection bias as a result of differential access
- to the technology.
- Indeed, the poorest in society, who are likely to benefit most from a particula
-r ICT mediated intervention, may not have access to mobile phones.
- And even if they have a phone, it is likely to be a very simple phone which
- is only used for receiving phone calls.
- It is thus important to develop ICT tools that can be used with the technologie
-s accessible to the target group.
- Examples include IVR or interventions that send SMS or use USSD codes for
- basic user input, and hybrid extension models in which extension workers
- visit and share videos on their devices, among others.
- Access to mobile phones and technology more generally may be unequally
- distributed among particular groups.
- For instance, 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "https://doi.org/10.1111/agec.12301"
-literal "false"
-
-\end_inset
-
- note that ICT mediated information exchange platforms should be designed
- with the gendered digital divide in mind.
- 
-\end_layout
-
-\begin_layout Standard
-In addition to selection bias, there are still vast areas that lack cellular
- coverage, or if coverage is available, connectivity is spotty and data
- transfer is slow, which has implications for the effectiveness of ICTs.
- One of the key comparative advantages of ICTs is the ability to customize
- advice with, for instance, time sensitive feedback and hyper local information,
- but this feature is likely to suffer due to limited cellular access.
- Second best solutions include offline applications that are able to perform
- basic analysis on devices locally instead of through an Application Programming
- Interface (API) and distributed solutions where data is stored locally
- and automatically synchronized once connectivity is established.
- 
-\end_layout
-
-\begin_layout Standard
-In addition to the issue of low excludability and non-rivalry, information
- as a commodity is also difficult to evaluate.
- Indeed, one generally acquires information because of a lack of knowledge.
- As a result, it is often difficult to assess the quality of the information
- itself.
- Interestingly, it seems the more information becomes available, the more
- difficult it becomes to filter out good information from 
-\begin_inset Quotes eld
-\end_inset
-
-fake news.
-\begin_inset Quotes erd
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-There are also many reasons to be wary about information clearing mechanisms
- based on crowdsourced data.
- If crowdsourced data is thin, outliers may drive the information that is
- fed back into the system.
- Public review platforms are prone to manipulation 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "10.1257/aer.104.8.2421"
-literal "false"
-
-\end_inset
-
-.
- But even if sufficient data is available from crowd-sourcing, implicit
- bias may lead to unfair competition.
- Research in other areas has shown, for example, that female academics are
- evaluated less favorably than their male counterparts.
- If these evaluations are then used to inform decisions on promotion or
- hiring, this could lead to discrimination 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "mitchell2018gender"
-literal "false"
-
-\end_inset
-
-.
- In 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "New3"
-literal "false"
-
-\end_inset
-
-, we test for systematic difference in the crowd sourced rating of agro-input
- dealers and find that female agro-input dealers receive significantly lower
- scores than male agro-input dealers.
- To avoid creating unfair competition, this bias should be corrected when
- scores are fed back.
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citet
-key "walter2020using"
-literal "false"
-
-\end_inset
-
- identify problems with IVR through a thorough analysis of the call logs.
- One of the main problems that IVR systems need to overcome is user impatience.
- IVR systems typically rely on two-way information exchange, and the IVR
- system needs to collect a minimum level of information about farmers.
- This often means lengthy registration processes that users have to go through
- on their first call, leading many farmers to drop the call.
- Therefore, it is better to ask only the most important data upfront and
- ask for additional input as users navigate further through the menu.
- The low cost of dissemination means that there may also be a lot of unsolicited
- content and robocalls, up to the point where it renders the ICT unusable.
+ of experiences with particular traders (such as through Facebook or WhatsApp
+ groups) are likely to strengthen social ties and increase networks.
 \end_layout
 
 \begin_layout Standard
@@ -1352,10 +941,71 @@ literal "false"
 \end_inset
 
 .
- Furthermore, leveraging virtual social networks may also result in ineffective
- or even harmful information about agricultural inputs or technologies being
- amplified, and it is well known that social media is a particularly fertile
- breeding ground for fake news.
+\end_layout
+
+\begin_layout Section*
+Bottom-up versus top-down development of ICT applications
+\end_layout
+
+\begin_layout Standard
+The reason why many of the ICT mediated projects and initiatives fail may
+ also be partly related to the mindset of people and organizations involved
+ in ICT for development.
+ Many organizations often think too much like startups from California and
+ develop complex apps that require a constant broadband internet connection
+ and fast smartphones with geo-location capabilities.
+ In light of this, it may be instructive to compare ICTs in agriculture
+ to innovations in mobile phone-based money transfer, payments, and micro-financ
+ing services, where initiatives such as M-pesa seem to be much more successful
+ in generating broad impact 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Suri1288"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+I see two key differences between the use of ICTs to address information
+ inefficiencies and the use of ICTs to provide financial services.
+ First, mobile money evolved in a very bottom-up way, where network operators
+ attempted to formalize and expand how pre-paid customers used the scratch
+ card system to transfer money in the form of phone credit.
+ For example, a person can buy a scratch card in one place and use it to
+ put mobile phone credit on the phone of someone in a different location.
+ The other person would then often convert the phone credit back to money
+ by charging relatives or neighbors for phone use.
+ The bottom-up nature means that there was real demand for the product that
+ was created.
+ The demand-driven nature of mobile money also resulted in a solution that
+ acknowledged the limits of technology, preferring USSD- and SMS-based technolog
+ies that are also accessible with cheap cell phones instead of applications
+ that require smartphones.
+ 
+\end_layout
+
+\begin_layout Standard
+A second key difference is that financial mediation can be priced much easier
+ than information provision.
+ ICT applications that provide information often rely on subscription-based
+ business models.
+ However, the ability and/or willingness to pay for a non-rival good such
+ as information at the farm level may be low.
+ For ICT applications to become more successful in agriculture a different
+ business model may be needed, for instance by bundling information services
+ to other services.
+\end_layout
+
+\begin_layout Standard
+That said, more recently and partly in response the the COVID-19 pandemic,
+ small scale traders in cities and towns seem to have started adopting online
+ food ordering and delivery platform such as Uber Eats.
+ This suggests that informal traders are open to the adoption of fairly
+ complex ICT applications and willing to pay for it if they see the need.
 \end_layout
 
 \begin_layout Section*
@@ -1363,17 +1013,13 @@ Conclusion
 \end_layout
 
 \begin_layout Standard
-This paper provided an overview of the most informative studies to date
- on the effectiveness of ICTs to tackle information inefficiencies in agricultur
-al value chains.
- It also highlighted some ongoing studies that explore new directions in
- this area.
- The paper uses the existing research to highlight some of the typical pitfalls
- that need to be considered when developing ICT mediated solutions to informatio
-n inefficiencies in agricultural value chains.
- The initial excitement was perhaps somewhat overblown: While we have witnessed
- many mobile phone-based interventions in the agricultural sector over the
- past two decades, there is mixed evidence on the impact 
+This paper reflects on the role of ICT in smallholder marketing and value
+ chain development more in general.
+ It notes that early studies on the impact of mobile phones on price transmissio
+n between value chain actors prompted a range of initiatives that attempted
+ to empower smallholder farmers with price information.
+ The initial excitement about these initiatives was perhaps somewhat overblown
+ as there is only mixed evidence on the impact 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "aker2016can"
@@ -1384,15 +1030,38 @@ literal "false"
 .
  Many of the apps developed by startups to empower farmers with information
  seem to struggle to reach scale.
- 
+ Building on these early initiatives, I discuss some initiatives and ideas
+ that seem more promising.
+ These include initiatives aimed at making the price information more actionable
+ for farmer, and a pilot project that targets traders as opposed to farmers.
+ I also point out a few promising studies that use ICTs to reduce information
+ asymmetries within the value chain.
 \end_layout
 
 \begin_layout Standard
-However, despite the mixed evidence, I would still argue that ICTs are a
- powerful means to increase information transmission and to reduce asymmetries
- in information between actors in the agricultural value chain.
- But the way in which farmers, traders, processors, and input providers
- benefit seems much more informal and bottom-up.
+However, despite the excitement, there are also clear dangers related to
+ relying on ICTs for information transfer within value chains.
+ I discuss how cheaper communication can easily lead to too much information,
+ and that crowdsourced information and the networked nature of ICTs are
+ prone to 
+\begin_inset Quotes eld
+\end_inset
+
+fake news
+\begin_inset Quotes erd
+\end_inset
+
+.
+ I further warn that the networked nature of ICTs can be a strength in some
+ respects, but may also exacerbate inequalities.
+\end_layout
+
+\begin_layout Standard
+I also argue that, despite the mixed evidence, ICTs remain a powerful means
+ to increase information transmission and to reduce asymmetries in information
+ between actors in the agricultural value chain, but the way in which farmers,
+ traders, processors, and input providers benefit from ICTs seems much more
+ informal and bottom-up.
  For example, instead of subscribing to daily price updates delivered through
  a price dissemination app on a smartphone, farmers seem to use their mobile
  phone to call relatives in urban areas to get an idea of current prices.
@@ -1423,67 +1092,9 @@ l studies that focus on a particular application seem to be less successful
 \end_layout
 
 \begin_layout Standard
-The reason why many of the ICT mediated projects and initiatives fail may
- also partly related to the mindset of people and organizations involved
- in ICT for development.
- Many organizations often think too much like startups from California and
- develop complex apps that require a constant broadband internet connection
- and fast smartphones with geo-location capabilities.
- In light of this, it may be instructive to compare ICTs in agriculture
- to innovations in mobile phone-based money transfer, payments, and micro-financ
-ing services, where initiatives such as M-pesa seem to be much more successful
- in generating broad impact 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Suri1288"
-literal "false"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-I see two key differences between the use of ICTs to address information
- inefficiencies and the use of ICTs to provide financial services.
- First, mobile money evolved in a very bottom-up way, where network operators
- attempted to formalize and expand how pre-paid customers used the scratch
- card system to transfer money in the form of phone credit.
- For example, a person can buy a scratch card in one place and use it to
- put a mobile phone credit on the phone of someone in a different location.
- The other person would then often convert the phone credit back to money
- by charging relative or neighbors for phone use.
- The bottom-up nature means that there was real demand for the product that
- was created.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Again, information as a commodity is special as people will generally not
- realize or admit that they lack information.
-\end_layout
-
-\end_inset
-
- The demand-driven nature of mobile money also resulted in a solution that
- acknowledged the limits of technology, preferring USSD- and SMS-based technolog
-ies that are also accessible with cheap cell phones instead of applications
- that require smartphones.
- A second key difference is that financial mediation can be priced much
- easier than information provision.
- ICT applications that provide information often rely on subscription-based
- business models.
- However, the ability and/or willingness to pay for a non-rival good such
- as information at the farm level may be low.
- For ICT applications to become more successful in agriculture, particularly
- in the area of agricultural advisory services, a different business model
- may be needed.
-\end_layout
-
-\begin_layout Standard
-The most promising applications of ICT for development are those that solve
- complex coordination problems and reduce asymmetric information.
+From this, I conclude that the most promising applications of ICT for developmen
+t are those that solve complex coordination problems and reduce asymmetric
+ information.
  In rich countries, the use of such applications requires access to a smartphone
  or a computer.
  The challenge will be to develop applications that are able to solve these
@@ -1530,7 +1141,7 @@ Feminization of Agriculture: The Use of ICTs to Challenge Gender Stereotypes
 LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "icae_2021_ICT"
-options "IFPRI_Style"
+options "agecon"
 
 \end_inset
 

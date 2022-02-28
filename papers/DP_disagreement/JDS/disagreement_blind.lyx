@@ -10,6 +10,8 @@
 \usepackage{float}
 % Added by lyx2lyx
 \usepackage{rotfloat}
+\usepackage{endnotes}
+\let\footnote=\endnote
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -20,11 +22,11 @@ knitr
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "default" "default"
+\font_roman "times" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
-\font_default_family default
+\font_default_family rmdefault
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
@@ -38,7 +40,7 @@ knitr
 \bibtex_command default
 \index_command default
 \paperfontsize 12
-\spacing single
+\spacing double
 \use_hyperref true
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
@@ -92,7 +94,6 @@ knitr
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -461408743 "Bjorn Van Campenhout"
 \end_header
 
 \begin_body
@@ -249,8 +250,8 @@ We consider spousal disagreement with respect to the role of both female
 \end_layout
 
 \begin_layout Standard
-We find that measurement error alone cannot explain observed spousal disagreemen
-t in survey responses.
+We find that measurement error alone can not explain observed spousal disagreeme
+nt in survey responses.
  We also reject the idea that differences in how male and female co-heads
  interpret the questions is the main driver behind observed disagreement.
  For decision making, we find that both interventions significantly reduce
@@ -260,7 +261,7 @@ t in survey responses.
  However, further inquiry into the impact pathways do not allow us to determine
  the exact mechanisms for the impact.
  Finally, we conclude that the video-based intervention does not affect
- shirking.
+ estimates of shirking.
 \end_layout
 
 \begin_layout Standard
@@ -387,7 +388,7 @@ literal "false"
 
 \end_inset
 
- similarly examine underlying power dynamics, focusingon cases where the
+ similarly examine underlying power dynamics, focusing on cases where the
  female co-head reported she made decisions, while the male co-head said
  the female co-head was not involved.
  They refer to this type of disagreement as 
@@ -449,12 +450,12 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-However, we feel that differential disagreement on different decisions,
- asset categories, or activities need not always reflect the act of one
- co-head intentionally deceiving another.
+However, differential disagreement on different decisions, asset categories,
+ or activities need not always reflect the act of one co-head intentionally
+ deceiving another.
  There may be other reasons why spouses agree more in one area and less
  in another area.
- One reason may be that spouses respond in line with what society expect
+ One reason may be that spouses respond in line with what society expects
  from them, such that disagreement related to decisions, actions, and asset
  ownership is also partly shaped by prevailing gender stereotypes and norms,
  i.e., role congruity.
@@ -559,7 +560,7 @@ literal "false"
 
 .
  Second, the literature also suggests that spousal disagreement reflects
- information asymmetries between co-heads, predominantly cause by co-heads
+ information asymmetries between co-heads, predominantly caused by co-heads
  hiding decisions, actions and assets from each other 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -614,8 +615,8 @@ The techniques and inputs that are demonstrated in the videos are the ones
 The first intervention, referred to as T1 in the remainder of the paper,
  involves varying the gender composition of the actors featured in the video
  and randomizing which version of the video is viewed by farmers.
- The second intervention, which we refer to as T2, randomly varies the gender
- composition of the co-head(s) of the household who view the video.
+ The second intervention, which we refer to as T2, randomly varies whether
+ the video is viewed by the spouses jointly only by one of the spouses.
  These variations and the rationale behind them are explained below.
 \end_layout
 
@@ -680,12 +681,8 @@ literal "false"
  While these are broad and stylized characterizations of Uganda's maize
  production system, their widespread acceptance as conventional wisdom makes
  maize farming a topic ripe for this study.
- The fact that maize is not exclusively in the male domain 
-\change_deleted -461408743 1638456904
- 
-\change_unchanged
-provides scope to strengthen women's involvement in decision-making about
- maize.
+ The fact that maize is not exclusively in the male domain provides scope
+ to strengthen women's involvement in decision-making about maize.
 \end_layout
 
 \begin_layout Standard
@@ -1038,7 +1035,7 @@ We will refer to decision making here to keep the exposition simple, but
 
  to be equal to each other.
  If we reject the null, this means that disagreement about decision-making
- between spouses cannot be fully explained by asymmetric measurement error.
+ between spouses can not be fully explained by asymmetric measurement error.
 \end_layout
 
 \begin_layout Standard
@@ -1847,9 +1844,9 @@ chi$
 
 -squared test for equality of proportions for category 2 and 3 indicate
  that in all but one case, we reject the null of random measurement error.
- We also f reject the null hypothesis that disagreement about the female
- co-head's role in decision-making is equal across different decision categories
-, based on a Wald test after estimating equation 
+ We also reject the null hypothesis that disagreement about the female co-head's
+ role in decision-making is equal across different decision categories,
+ based on a Wald test after estimating equation 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:f_test"
@@ -1873,7 +1870,7 @@ Sexpr{ftests[1]}
 \end_inset
 
 ).
- This means that discord cannot be explained by cognitive differences between
+ This means that discord can not be explained by cognitive differences between
  spouses alone (i.e., asymmetric measurement error or cognitive bias).
 \end_layout
 
@@ -2459,7 +2456,7 @@ Sexpr{ftests[2]}
 \end_inset
 
 ).
- This again indicates that discord cannot be explained by cognitive differences
+ This again indicates that discord can not be explained by cognitive differences
  between spouses alone (i.e., cognitive bias or asymmetric measurement error).
 \end_layout
 
@@ -2522,8 +2519,9 @@ As evidenced in the results in the upper panel, neither the intervention
  We do not find any significant interaction effects between the intervention
  challenging customs and norms and the indicator for male domain sensitivity,
  nor between the intervention facilitating mutual monitoring and the indicator
- for ease of monitoring.In the bottom panel, we also find no evidence that
- our interventions affect shirking by the male co-head.
+ for ease of monitoring.
+ In the bottom panel, we also find no evidence that our interventions affect
+ shirking by the male co-head.
 \end_layout
 
 \begin_layout Section
@@ -2533,7 +2531,7 @@ Conclusion
 \begin_layout Standard
 Household surveys that are serious about capturing gender-related insights
  on intrahousehold decision-making related to the allocation of labour and
- other household resourcesoften collect data from separate interviews with
+ other household resources often collect data from separate interviews with
  male and female respondents.
  This is an important means of reducing biases introduced by responses from
  the (typically male) household head or 
@@ -2595,7 +2593,7 @@ as we expect that the interventions would be most effective for decisions,
 
 \begin_layout Standard
 We find that co-heads generally agree with each other.
- Disagreement cannot be fully explained by either random measurement error
+ Disagreement can not be fully explained by either random measurement error
  or cognitive bias.
  Rather, we find that disagreement about the role of the female co-head
  in decision-making was reduced after co-heads were exposed to our intervention
@@ -2616,13 +2614,40 @@ We find that co-heads generally agree with each other.
 \end_layout
 
 \begin_layout Standard
-In conclusion, our findings sheds new light on the measurement and interpretatio
-n on spousal responses to household survey questions.
- And while our findings are specific to a very specific population, geography,
+In conclusion, our findings shed new light on the measurement and interpretation
+ on spousal responses to household survey questions.
+ And while our findings are specific to a particular population, geography,
  and system, they can be readily adapted to other contexts and replicated.
  Continued adaptation and replication allow us to learn more about the impact
  of social, cultural, and economic changes on intrahousehold dynamics, and
  even the welfare outcomes of new dynamics.
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+theendnotes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2630,7 +2655,7 @@ n on spousal responses to household survey questions.
 LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "../disagreement_bib"
-options "../IFPRI_Style"
+options "apalike2"
 
 \end_inset
 
