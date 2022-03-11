@@ -110,20 +110,20 @@ king, asset ownership and labour contributions.
  However, answers provided by co-heads to the same set of questions often
  differ substantially.
  Recent research suggests that while some of this disagreement is due to
- random measurement error and cognitive bias, co-heads also seem to hide
- information from each other.
+ random measurement error and cognitive bias, part also reflects non-overlapping
+ information sets.
  We document differences in answers between male and female co-heads in
  monogamous smallholder maize-farming households in Uganda.
  We first confirm that not all disagreement can be explained by measurement
  error or bias.
- Using a field experiment, we then test if disagreement is due to co-heads
- strategically hiding decisions and actions from each other.
+ Using a field experiment, we then test if disagreement is due to information
+ asymmetry between male and female co-heads.
  We also test an alternative explanation where discord is attributed to
  co-heads' tendency to respond in line with prevailing gender norms and
  social customs.
  While the interventions did seem to reduce discord in survey response about
- decision-making, we do not find that information hiding nor reporting in
- line with gender norms and customs are the primary drivers.
+ decision-making, we do not find that information asymmetry nor reporting
+ in line with gender norms and customs are the primary drivers of disagreement.
 \end_layout
 
 \begin_layout Abstract
@@ -131,7 +131,7 @@ king, asset ownership and labour contributions.
 \emph on
 Keywords:
 \emph default
- gender, farm households, disagreement, information hiding, norms, Uganda
+ gender, farm households, disagreement, information asymmetry, norms, Uganda
 \end_layout
 
 \begin_layout Section
@@ -180,8 +180,8 @@ literal "false"
  accurate knowledge about the decisions made, actions taken, or assets owned
  by the other.
  Furthermore, they show that disagreement is larger for assets and decisions
- that are easier to hide, possibly indicating that spouses strategically
- hide information from each other.
+ that are easier to hide, possibly indicating that spouses hide information
+ from each other.
  A number of lab-in-the-field experiments similarly indicate that household
  members often conceal some of their resources from each other 
 \begin_inset CommandInset citation
@@ -210,12 +210,20 @@ literal "false"
  error, bias caused by men and women interpreting questions differently,
  and asymmetric information where men and women have only partly overlapping
  information sets.
- We go one step further and, using a field experiment, formally test if
- this asymmetric information between husbands and wives should be attributed
- to spouses strategically hiding information from each other.
+ However, while 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+ use variation in the probability of overall disagreement by asset and activity
+ to draw conclusions about asymmetric information, we designed a field experimen
+t to formally test for asymmetric information between husbands and wives.
  This is done by randomly assigning a sample of households to a video-based
- intervention designed to facilitate mutual monitoring, and then comparing
- spousal disagreement to a control group.
+ intervention designed to eliminate information advantages of a single spouse,
+ and then comparing spousal disagreement to a control group.
  Furthermore, we test for an alternative explanation: that discord is not
  the result of asymmetric information, but is instead caused by spouses
  answering survey questions in line with prevailing gender norms.
@@ -237,16 +245,88 @@ literal "false"
 \begin_layout Standard
 We consider spousal disagreement with respect to the role of both female
  and male co-heads in decision-making and labour provision.
- For disagreement about the female co-head's role in decision-making, the
- focus is on hiding, defined as the likelihood that the female co-head reports
- she was involved in decision making but the male co-head says she was not.
+ For disagreement about the female co-head's role in decision-making, we
+ consider the likelihood that the female co-head reports she was involved
+ in decision making but the male co-head says she was not.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In the literature, this type of disagreement is interpreted in different
+ ways.
+ For instance, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+ note this is consistent with women (intentionally or unintentionally) hiding
+ decisions from their husband, while 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ANNAN2021105292"
+literal "false"
+
+\end_inset
+
+ consider this proof of women taking power.
+ We follow 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+ in interpreting this as instances where the female co-head could be hiding
+ her decisions or the husband simply is not cognizant of the full range
+ of decisions that she makes.
+\end_layout
+
+\end_inset
+
  For disagreement about the male co-head's role in decision-making, we consider
  the likelihood that the male co-head reports he was involved in the decision
  but the female co-head says he was not.
- For labour provision, we focus on shirking, defined as instances where
- the one co-head reports to have worked less than how much the other co-head
- reports they worked.
+ For labour provision, we focus on instances where the one co-head reports
+ to have worked less than how much the other co-head reports they worked,
+ which could be indicative of shirking.
  We examine shirking by both female and male co-heads.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We realize that the term 
+\begin_inset Quotes eld
+\end_inset
+
+shirking
+\begin_inset Quotes erd
+\end_inset
+
+ may carry a pejorative undertone.
+ However, shirking, defined as putting in less effort than what is expected,
+ is a common concept in labour economics models such as the theory of efficiency
+ wages and moral hazard problems that stem from the fact that different
+ parties to a contract have some discretion due to monitoring problems 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.2307/1804018"
+literal "false"
+
+\end_inset
+
+.
+ Our study aligns with this literature in that our strategy to test for
+ the presence of shirking relies on heterogeneity in the ability to monitor
+ different activities.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -257,11 +337,11 @@ nt in survey responses.
  For decision making, we find that both interventions significantly reduce
  disagreement about the role of the female co-head.
  Disagreement about the role of the male co-head is only reduced by the
- video-based intervention that is intended to facilitate mutual monitoring.
+ video-based intervention that is intended to reduce information asymmetry.
  However, further inquiry into the impact pathways do not allow us to determine
  the exact mechanisms for the impact.
  Finally, we conclude that the video-based intervention does not affect
- estimates of shirking.
+ disagreement related to labour time allocations.
 \end_layout
 
 \begin_layout Standard
@@ -451,71 +531,13 @@ literal "false"
 
 \begin_layout Standard
 However, differential disagreement on different decisions, asset categories,
- or activities need not always reflect the act of one co-head intentionally
- deceiving another.
+ or activities need not always reflect intrahousehold information asymmetry.
  There may be other reasons why spouses agree more in one area and less
  in another area.
  One reason may be that spouses respond in line with what society expects
  from them, such that disagreement related to decisions, actions, and asset
  ownership is also partly shaped by prevailing gender stereotypes and norms,
  i.e., role congruity.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-I added this term here, but am not sure if it really should go here.
- But the term has to be introduced early.
- In fact, if you want to add 
-\begin_inset Quotes eld
-\end_inset
-
-role incongruity
-\begin_inset Quotes erd
-\end_inset
-
- alongside 
-\begin_inset Quotes eld
-\end_inset
-
-norms and customs
-\begin_inset Quotes erd
-\end_inset
-
- with 
-\begin_inset Quotes erd
-\end_inset
-
- in the rest of the paper (bz I took out 
-\begin_inset Quotes eld
-\end_inset
-
-role congruity
-\begin_inset Quotes erd
-\end_inset
-
- wherever I saw it), then go ahead and reject my edits.
- Or replace 
-\begin_inset Quotes eld
-\end_inset
-
-norms and customs
-\begin_inset Quotes erd
-\end_inset
-
- with 
-\begin_inset Quotes eld
-\end_inset
-
-role incongruity
-\begin_inset Quotes erd
-\end_inset
-
-.
- After all, that's the preferred term of Reviewer 1.
-\end_layout
-
-\end_inset
-
  For example, in a case study in northern Uganda, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -530,7 +552,7 @@ literal "false"
  Women rather report these scenarios as joint decisions.
  Hence, it is important to understand the local cultural context to differentiat
 e spousal disagreement as a function of information asymmetries stemming
- from intentional hiding versus other gender-related systematic biases.
+ from information asymmetry versus other gender-related systematic biases.
 \end_layout
 
 \begin_layout Section
@@ -560,8 +582,8 @@ literal "false"
 
 .
  Second, the literature also suggests that spousal disagreement reflects
- information asymmetries between co-heads, predominantly caused by co-heads
- hiding decisions, actions and assets from each other 
+ information asymmetries between co-heads, for example when co-heads hide
+ decisions, actions and assets from each other 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1086/703082"
@@ -670,7 +692,7 @@ literal "false"
 \end_inset
 
 .
- Generally, men make the more strategic decisions such as what plots to
+ Generally, men make the more strategic decisions such as which plots to
  plant maize on, when to start planting, and what seeds to use.
  Men also generally decide on how much labor is needed, while women assist
  men.
@@ -756,10 +778,14 @@ To test the hypothesis that male and female co-heads disagree less if they
 Next, we turn to our second hypothesis about asymmetric information within
  the household.
  Consider the farm-household as a collection of individuals, each with their
- own preferences, skills, assets, and access to resources.
- In many contexts, the household's existence and the welfare of its members
- depend on their collective capacity to invest in common goods by drawing
- on each individual's skills, assets, and resources.
+ own preferences, skills, assets, and access to resources, including knowledge.
+ Information within households does not always flow friction less between
+ household members, and so one member may not be cognizant of the full range
+ of decisions made, activities undertaken or assets held by other members
+ of the household.
+ Furthermore, in many contexts, the household's existence and the welfare
+ of its members depend on their collective capacity to invest in common
+ goods by drawing on each individual's skills, assets, and resources.
  As such, households can be considered as collective action institutions,
  and many of the problems encountered in common pool resource management,
  such as free-riding and overextraction of resources, apply to the household
@@ -772,11 +798,9 @@ literal "false"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-One way to attenuate collective action problems is by increasing mutual
- monitoring 
+ One way to attenuate collective action problems is by increasing mutual
+ monitoring by making sure both spouses have access to the same information
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "AGRAWAL20011649"
@@ -785,22 +809,14 @@ literal "false"
 \end_inset
 
 .
- For instance, if one co-head can assess the actual time that the other
- co-head spends on land preparation, then the latter is less likely to engage
- in labor shirking.
- However, for mutual monitoring to work, co-heads require information against
- which to compare information gained through monitoring, since merely observing
- an outcome may be insufficient to determine if a co-head is shirking, hiding,
- or otherwise mismanaging his or her collective obligations to the household.
- For instance, it may be difficult for the female co-head to check if her
- spouse overreports time spent on land preparing if she does not have a
- good understanding of what land preparation entails.
+ 
 \end_layout
 
 \begin_layout Standard
 In a second treatment (T2), we therefore ensure that both co-heads begin
  with symmetric information on recommended agronomic practices for maize
- farming, as this is assumed to facilitate mutual monitoring.
+ farming, as this is assumed to facilitate mutual monitoring and directly
+ reduce asymmetric information.
  To do so, we show the video that showcases recommended practices in maize
  farming to both male and female co-heads together in a random sample of
  261 households.
@@ -1148,7 +1164,7 @@ i
 
 \begin_layout Standard
 Finally, if disagreement is due to strategic hiding, we expect that facilitating
- mutual monitoring would be relatively more effective for decisions that
+ mutual monitoring would be relatively more effective for activities that
  are easier to hide.
  Following this line of reasoning, we define
 \emph on
@@ -1158,14 +1174,14 @@ Finally, if disagreement is due to strategic hiding, we expect that facilitating
 
 
 \emph default
-, a measure of how easy it is to hide decision-making related to 
+, a measure of how easy it is to hide a particular activity 
 \emph on
 d
 \emph default
 , and first explore correlations between disagreement and this measure.
  We then estimate conditional average treatment effects by interacting the
- treatment indicator with the measure of how easy it is to hide decision
- or activity 
+ treatment indicator with the measure of how easy it is to hide activity
+ 
 \emph on
 d:
 \end_layout
@@ -1208,8 +1224,8 @@ Finding that
 \uwave default
 \noun default
 \color inherit
-in support of the hypothesis that disagreement is driven by co-heads strategical
-ly hiding decisions for each other
+in support of the hypothesis that disagreement is driven by co-heads hiding
+ activities for each other
 \family roman
 \series medium
 \shape up
@@ -1223,6 +1239,61 @@ ly hiding decisions for each other
 \noun off
 \color none
 .
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+This part of the analysis is only done for disagreement related to labour
+ time allocations and not decision making, as it is hard to operationalize
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $H_{d}$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ as an indicator denoting how easy it is to monitor particular decisions.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2272,12 +2343,12 @@ Labour Provision
 \begin_layout Standard
 For labour contributions, we define the three categories of (dis)agreement
  as follows.
- A first category (1) consists of cases where there is agreement on the
- female co-head's labour contribution.
- For disagreement, we differentiate between cases where (2) the female co-head
- reported having spent more time on a particular task than the male co-head
- thinks she did, and (3) the female co-head reported having spent less time
- than the male co-head thinks she did.
+ A first category (1) consists of cases where there is agreement on a spouse's
+ labour contribution.
+ For disagreement, we differentiate between cases where (2) the co-head
+ reported having spent more time on a particular task than the other co-head
+ thinks they did, and (3) the co-head reported having spent less time than
+ the other co-head thinks they did.
  Labour contribution (and hence disagreement about it) is also measured
  at the plot level.
  As for decision-making, we consider disagreement related to labour provided
@@ -2296,15 +2367,16 @@ bad
 
 , with co-heads preferring to work less rather than more.
  The category of interest here is therefore category (3), where co-heads
- are shirking on their responsibilities, putting in less hours than what
- the other co-head believes.
+ are putting in less hours than what the other co-head believes.
+ The fact that one spouse is putting in less hours than the other spouse
+ believes may suggest some level of shirking.
 \end_layout
 
 \begin_layout Standard
 One complication here is that labour time is measured as a continuous variable:
  days spent on the activity.
  As a result, the margin of error will also depend on the activity.
- For example, for an activity such as spraying pesticides , female co-heads
+ For example, for an activity such as spraying pesticides, female co-heads
  report that they spend on average only 
 \begin_inset ERT
 status open
@@ -2409,10 +2481,11 @@ The table further shows that agreement is lowest for female co-head's labour
  task.
  Interestingly, we find a relatively high share of plots where the female
  co-head says she worked more than what the male co-head believes.
- But there are also signs of shirking behaviour.
+ But there are also instances where female co-heads claim they worked less
+ than what the male co-head thinks, which may suggest shirking behaviour.
  For example, on 15 percent of the plots, there are indications that the
- female co-head shirks on her weeding activities (i.e., the male co-head says
- the female co-head worked more than female co-head reports).
+ female co-head work less on her weeding activities than what the male co-head
+ believes.
  Pearson 
 \begin_inset ERT
 status open
@@ -2463,11 +2536,12 @@ Sexpr{ftests[2]}
 \begin_layout Standard
 The bottom panel shows results for disagreement over the male co-head's
  labour contribution, which are similar to the results discussed above.
- Shirking by the male co-head is relatively high for labour allocated to
- spraying, a typical male activity that is also difficult to monitor according
- to our experts.
- Surprisingly, male shirking is equally high for weeding, a typically female
- task.
+ Instances where the male co-head reports to be putting in less time than
+ what the female co-head thinks are relatively high for labour allocated
+ to spraying, a typical male activity that is also difficult to monitor
+ according to our experts.
+ Surprisingly, category 3 disagreement is equally high for weeding, a typically
+ female task.
  We again reject random measurement error or cognitive bias as driving disagreem
 ent (p-value = 
 \begin_inset ERT
@@ -2486,10 +2560,9 @@ Sexpr{ftests_m[2]}
 \end_layout
 
 \begin_layout Standard
-Next, we conduct a series of regressions to test if disagreement is due
- to strategically hiding labour contributions within the household, or whether
- disagreement reflects norms and expectations about who, according to society,
- should do what activity.
+Next, we conduct a series of regressions to test if disagreement reflects
+ shirking behaviour, or whether disagreement reflects norms and expectations
+ about who, according to society, should do what activity.
  The top panel in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2510,18 +2583,24 @@ noprefix "false"
 \begin_layout Standard
 As evidenced in the results in the upper panel, neither the intervention
  facilitating mutual monitoring (T2) nor the intervention challenging customs
- and norms (T1) seems to have an effect on shirking behaviour by the female
- co-head.
- We find shirking by the female co-head to be lower for activities that
- are considered in the male domain.
- More surprisingly, we also find that shirking by the female co-head is
- lower for activities that are harder to monitor.
+ and norms (T1) seems to have an effect on the proportion of activities
+ on which the female co-head reports to have worked less than what the male
+ co-head believes.
+ We find the proportion of activities on which the female co-head reports
+ to have worked less than what the male co-head believes to be lower for
+ activities that are considered in the male domain.
+ More surprisingly, we also find that the proportion of activities on which
+ the female co-head reports to have worked less than what the male co-head
+ believes is lower for activities that are harder to monitor, which goes
+ against the shirking hypothesis.
  We do not find any significant interaction effects between the intervention
  challenging customs and norms and the indicator for male domain sensitivity,
  nor between the intervention facilitating mutual monitoring and the indicator
  for ease of monitoring.
  In the bottom panel, we also find no evidence that our interventions affect
- shirking by the male co-head.
+ the likelihood that male co-heads report putting in less labour time than
+ female co-heads believe.
+ 
 \end_layout
 
 \begin_layout Section
@@ -2604,10 +2683,10 @@ We find that co-heads generally agree with each other.
  Contrary to expectations, we did not find that the intervention designed
  to reduce the influence of gender norms and customs was more effective
  for decisions that are considered to be more in the male domain.
- When looking at labour shirking behaviour on the part of female co-heads
+ When looking at disagreement related to labour contributions of the female
  and male co-heads respectively, we did not find that the intervention designed
  to increase mutual monitoring had an impact, nor that activities that are
- more easily hidden would be affected more.
+ more easily hidden are more likely to result in shirking behaviour.
  We also did not find that the intervention challenging role congruity,
  gender norms and customs made a difference, or more so for activities defined
  as typical male tasks according to gender norms and roles.
