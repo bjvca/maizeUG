@@ -6,10 +6,66 @@ library(multiwayvcov)
 
 library(clubSandwich)
 library(car)
+library(dplyr)
+
 dta <- read.csv("/home/bjvca/data/projects/digital green/papers/DP_disagreement/data/endline_dta.csv",stringsAsFactors =FALSE)
 experts <- read.csv("/home/bjvca/data/projects/digital green/papers/DP_disagreement/data/expert_rankings.csv",stringsAsFactors =FALSE)
 norms <- experts[,c(10:20,29)] 
 
+library(reshape2)
+experts_grph <- experts[,c(1,10:28)]
+names(experts_grph) <- c("expert_ID","mgt","dectime", "decspace","decstriga", "decweed", "sold","time_prep","time_plant", "time_weed","time_spray", "time_harv","sold", "sold_q","sold_p")
+
+experts_long <-  melt(experts_grph[,c(1:7)], id.vars = c("expert_ID"))
+
+experts_long_summary <- experts_long %>% group_by(variable) %>%   summarize(mean=mean(value),sd=sd(value))
+
+library(ggplot2)
+ggplot(experts_long_summary) + ggtitle("Male task score (/100):") +
+    geom_point(aes(x=variable, y=100-mean), stat='identity', fill='blue', size=3) +
+    geom_errorbar(aes(x=variable, ymin=100-mean-sd, ymax=100-mean+sd),
+                  width=0.1, size=1, color='blue')  +coord_flip() 
+                  
+experts_long <-  melt(experts_grph[,c(1,8:12)], id.vars = c("expert_ID"))
+
+experts_long_summary <- experts_long %>% group_by(variable) %>%   summarize(mean=mean(value),sd=sd(value))
+
+library(ggplot2)
+ggplot(experts_long_summary) + ggtitle("Male task score (/100):") +
+    geom_point(aes(x=variable, y=100-mean), stat='identity', fill='blue', size=3) +
+    geom_errorbar(aes(x=variable, ymin=100-mean-sd, ymax=100-mean+sd),
+                  width=0.1, size=1, color='blue')  +coord_flip() 
+                  
+experts_long <-  melt(experts_grph[,c(1,8:12)], id.vars = c("expert_ID"))
+
+experts_long_summary <- experts_long %>% group_by(variable) %>%   summarize(mean=mean(value),sd=sd(value))
+
+library(ggplot2)
+ggplot(experts_long_summary) + ggtitle("Ease of monitoring score (/100):") +
+    geom_point(aes(x=variable, y=100-mean), stat='identity', fill='blue', size=3) +
+    geom_errorbar(aes(x=variable, ymin=100-mean-sd, ymax=100-mean+sd),
+                  width=0.1, size=1, color='blue')  +coord_flip() 
+                  
+                  experts_hiding_grph <- experts[,c(1,21:25)]
+
+
+
+#we could actually do weighted averages 
+
+names(experts_hiding_grph) <-  c("expert_ID","time_prep","time_plant", "time_weed","time_spray", "time_harv")
+
+experts_long <-  melt(experts_hiding_grph[,c(1:6)], id.vars = c("expert_ID"))
+
+experts_long_summary <- experts_long %>% group_by(variable) %>%   summarize(mean=mean(value),sd=sd(value))
+
+library(ggplot2)
+ggplot(experts_long_summary) + ggtitle("Ease of monitoring (/100):") +
+    geom_point(aes(x=variable, y=mean), stat='identity', fill='blue', size=3) +
+    geom_errorbar(aes(x=variable, ymin=mean-sd, ymax=mean+sd),
+                  width=0.1, size=1, color='blue')  +coord_flip() 
+
+
+ 
 
 norms[1,12] <- 80 ### this is charles fogeting one answer
 norms[,12] <- as.numeric(as.character(norms[,12])) 
@@ -32,6 +88,7 @@ experts_hiding[,9] <- as.numeric(as.character(experts_hiding[,9]))
 #we could actually do weighted averages 
 
 experts_hiding <- lapply(experts_hiding[ , -ncol(experts_hiding)], weighted.mean,  w = experts_hiding[,9])
+
 
 names(experts_hiding) <-  c("time_prep","time_plant", "time_weed","time_spray", "time_harv","sold", "sold_q","sold_p")
 

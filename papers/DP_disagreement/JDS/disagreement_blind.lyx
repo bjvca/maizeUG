@@ -150,10 +150,10 @@ literal "false"
 \end_inset
 
 .
- Examples of best practice in data collection on intrahousehold decision-making
- processes include separate interviewing of male and female co-heads of
- (dual-headed) households using distinct survey instruments that may nonetheless
- cover common topics and questions.
+ Examples of best practice in data collection on intrahousehold dynamics
+ include separate interviewing of male and female co-heads of (dual-headed)
+ households using distinct survey instruments that may nonetheless cover
+ common topics and questions.
  Studies using these instruments often find that co-heads provide different
  answers to even the most basic questions 
 \begin_inset CommandInset citation
@@ -1043,7 +1043,12 @@ i
 \emph on
 d
 \emph default
-.
+, and 
+\begin_inset Formula $\varepsilon_{i,d}$
+\end_inset
+
+ is an error term that is assumed to be independently distributed across
+ both households and decisions.
 \begin_inset Foot
 status collapsed
 
@@ -2277,9 +2282,8 @@ For labour contributions, we define the three categories of (dis)agreement
  the other co-head thinks they did.
  Labour contribution (and hence disagreement about it) is also measured
  at the plot level.
- As for decision-making, we consider disagreement related to labour provided
- by the female co-head and disagreement related to labour provided by the
- male co-head separately.
+ We consider disagreement related to labour provided by the female co-head
+ and disagreement related to labour provided by the male co-head separately.
 \end_layout
 
 \begin_layout Standard
