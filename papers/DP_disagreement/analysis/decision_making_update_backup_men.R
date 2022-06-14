@@ -197,7 +197,7 @@ for (plot in (1:5)) {
 
 
 ### category 2: man says woman decides or man says both decide and woman says both decide or woman says woman dcides 
-lims <- sd(unlist( dta[paste(paste(dec[i],"man_woman_pl",sep="_") ,plot,sep="")] +  dta[paste(paste(dec[i],"man_man_pl",sep="_") ,plot,sep="")])/2,na.rm=T)
+lims <- sd(unlist( dta[paste(paste(dec[i],"man_woman_pl",sep="_") ,plot,sep="")] +  dta[paste(paste(dec[i],"man_man_pl",sep="_") ,plot,sep="")])/2,na.rm=T)*.5
 
 
 dta[paste(paste(dec[i],"cat_pl",sep="_") ,plot,sep="_")][abs(dta[paste(paste(dec[i],"man_woman_pl",sep="_") ,plot,sep="")] - dta[paste(paste(dec[i],"man_man_pl",sep="_") ,plot,sep="")]) < lims] <- "cat2"
