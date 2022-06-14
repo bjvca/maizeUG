@@ -3305,7 +3305,7 @@ scriptsize
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3889,7 +3889,7 @@ and * at the 10 percent level.
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -4250,7 +4250,7 @@ Sexpr{mat_tab_m_1[5,11]}
 
 \begin_layout Plain Layout
 
-Disagree: Disagree: & 
+Disagree: & 
 \backslash
 Sexpr{as.numeric(mat_tab_m_1[3,7])+as.numeric(mat_tab_m_1[4,7])}  & 
 \backslash
