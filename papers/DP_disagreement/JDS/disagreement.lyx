@@ -10,6 +10,8 @@
 \usepackage{float}
 % Added by lyx2lyx
 \usepackage{rotfloat}
+\usepackage{endnotes}
+\let\footnote=\endnote
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -20,11 +22,11 @@ knitr
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "default" "default"
+\font_roman "times" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
-\font_default_family default
+\font_default_family rmdefault
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
@@ -38,7 +40,7 @@ knitr
 \bibtex_command default
 \index_command default
 \paperfontsize 12
-\spacing single
+\spacing double
 \use_hyperref true
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
@@ -92,45 +94,12 @@ knitr
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
-\author -461408743 "Bjorn Van Campenhout"
 \end_header
 
 \begin_body
 
 \begin_layout Title
-\begin_inset Preview
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-author{Bjorn Van Campenhout
-\backslash
-thanks{Development Strategy and Governance Division, International Food
- Policy Research Institute and LICOS Center for Institutions and Economic
- Performance, KULeuven, Belgium - corresponding author: b.vancampenhout@cgiar.org}
-  , Els Lecoutere
-\backslash
-thanks{CGIAR Gender Platform, International Livestock Research Institute,
- Belgium}, and David J Spielman
-\backslash
-thanks{Development Strategy and Governance Division, International Food
- Policy Research Institute, Kigali, Rwanda}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-Hiding, Shirking, or Pleasing: Spousal Disagreement among Ugandan Maize
- Farmers
+Hiding or Pleasing: Spousal Disagreement among Ugandan Maize Farmers
 \end_layout
 
 \begin_layout Abstract
@@ -140,62 +109,28 @@ king, asset ownership and labour contributions.
  However, answers provided by co-heads to the same set of questions often
  differ substantially.
  Recent research suggests that while some of this disagreement is due to
- random measurement error and cognitive bias, co-heads also seem to hide
- information from each other.
+ random measurement error and cognitive bias, part also reflects non-overlapping
+ information sets.
  We document differences in answers between male and female co-heads in
  monogamous smallholder maize-farming households in Uganda.
  We first confirm that not all disagreement can be explained by measurement
  error or bias.
- Using a field experiment, we then test if disagreement is due to co-heads
- strategically hiding decisions and actions from each other.
+ Using a field experiment, we then test if disagreement is due to information
+ asymmetry between male and female co-heads.
  We also test an alternative explanation where discord is attributed to
  co-heads' tendency to respond in line with prevailing gender norms and
  social customs.
  While the interventions did seem to reduce discord in survey response about
- decision-making, we do not find that information hiding nor reporting in
- line with gender norms and customs are the primary drivers.
+ decision-making, we do not find that information asymmetry nor reporting
+ in line with gender norms and customs are the primary drivers of disagreement.
 \end_layout
 
-\begin_layout Standard
-Keywords: gender, farm households, disagreement, information hiding, norms,
- Uganda
-\end_layout
+\begin_layout Abstract
 
-\begin_layout Section*
-Acknowledgments
-\end_layout
-
-\begin_layout Standard
-This study was carried out with financial support from Digital Green and
- the U.S.
- Agency for International Development (USAID) under Feed the Future’s Developing
- Local Extension Capacity (DLEC) project; the CGIAR Research Program on
- Policies, Institutions, and Markets (PIM), led by the International Food
- Policy Research Institute (IFPRI) the CGIAR Research Program on Maize (MAIZE),
- led by the International Maize and Wheat Improvement Center (CIMMYT); and
- the International Development Research Center, Ottawa, Canada (grant no.
- 109177-001), through the CGIAR Collaborative Platform for Gender Research.
- The CGIAR programs and platforms, in turn, are supported by [https://www.cgiar.or
-g/funders/||these funders].
- The views expressed in this study do not necessarily represent those of
- Digital Green, USAID, IDRC or its Board of Governors, or the CGIAR research
- programs, platforms, and centers mentioned above.
- The study is registered in the American Economic Association RCT Registry
- (AEARCTR-0002153), and received approval from IFPRI’s Institutional Review
- Board (IRB).
- We thank Anusha De, Jamie Arkin, Kristin Davis, Rikin Gandhi, Vivian Hoffman,
- Suprita Kudesia, and Karin Lion for their support for this research; and
- Fiona Nattembo, Wilberforce Walukano, and Marc Charles Wanume for excellent
- field support.
- This paper benefited from comments provided by participants of the Third
- Annual Workshop on Gender, Agricultural Growth, and Rural Transformation
- Research in the CGIAR.
- The analysis contained here is the sole responsibility of the authors,
- and does not reflect the views of any funding agency or organization mentioned
- here.
- The research was approved by IFPRI's Institutional Review Board (IRB #00007490
- FWA #00005121).
- Any and all errors are the sole responsibility of the authors.
+\emph on
+Keywords:
+\emph default
+ gender, farm households, disagreement, information asymmetry, norms, Uganda
 \end_layout
 
 \begin_layout Section
@@ -214,10 +149,10 @@ literal "false"
 \end_inset
 
 .
- Examples of best practice in data collection on intrahousehold decision-making
- processes include separate interviewing of male and female co-heads of
- (dual-headed) households using distinct survey instruments that may nonetheless
- cover common topics and questions.
+ Examples of best practice in data collection on intrahousehold dynamics
+ include separate interviewing of male and female co-heads of (dual-headed)
+ households using distinct survey instruments that may nonetheless cover
+ common topics and questions.
  Studies using these instruments often find that co-heads provide different
  answers to even the most basic questions 
 \begin_inset CommandInset citation
@@ -244,8 +179,8 @@ literal "false"
  accurate knowledge about the decisions made, actions taken, or assets owned
  by the other.
  Furthermore, they show that disagreement is larger for assets and decisions
- that are easier to hide, possibly indicating that spouses strategically
- hide information from each other.
+ that are easier to hide, possibly indicating that spouses hide information
+ from each other.
  A number of lab-in-the-field experiments similarly indicate that household
  members often conceal some of their resources from each other 
 \begin_inset CommandInset citation
@@ -274,18 +209,26 @@ literal "false"
  error, bias caused by men and women interpreting questions differently,
  and asymmetric information where men and women have only partly overlapping
  information sets.
- We go one step further and, using a field experiment, formally test if
- this asymmetric information between husbands and wives should be attributed
- to spouses strategically hiding information from each other.
+ However, while 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+ use variation in the probability of overall disagreement by asset and activity
+ to draw conclusions about asymmetric information, we designed a field experimen
+t to formally test the asymmetric information hypothesis.
  This is done by randomly assigning a sample of households to a video-based
- intervention designed to facilitate mutual monitoring, and then comparing
- spousal disagreement to a control group.
+ intervention designed to reduce information advantages of a single spouse,
+ and then comparing spousal disagreement to a control group.
  Furthermore, we test for an alternative explanation: that discord is not
  the result of asymmetric information, but is instead caused by spouses
  answering survey questions in line with prevailing gender norms.
  Inspired by recent research on the use of role models to change attitudes
- and behaviour in traditionally male dominated sectors, we also test the
- impact of our video-based intervention that aims to promote a mental image
+ and behavior in traditionally male dominated sectors, we also test the
+ impact of a video-based intervention that aims to promote a mental image
  of maize farming as a cooperative or joint venture in which both spouses
  play an equal role 
 \begin_inset CommandInset citation
@@ -296,36 +239,84 @@ literal "false"
 \end_inset
 
 .
+ We expect that especially women will be prone to 
+\begin_inset Quotes eld
+\end_inset
+
+pleasing
+\begin_inset Quotes erd
+\end_inset
+
+ the husband and the wider community.
 \end_layout
 
 \begin_layout Standard
 We consider spousal disagreement with respect to the role of both female
- and male co-heads in decision-making and labour provision.
- For disagreement about the female co-head's role in decision-making, the
- focus is on hiding, defined as the likelihood that the female co-head reports
- she was involved in decision making but the male co-head says she was not.
+ and male co-heads in decision-making and labor provision.
+ For disagreement about the female co-head's role in decision-making, we
+ consider the likelihood that the female co-head reports she was involved
+ in decision making but the male co-head says she was not.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In the literature, this type of disagreement is interpreted in different
+ ways.
+ For instance, 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+ note this is consistent with women (intentionally or unintentionally) hiding
+ decisions from their husband, while 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ANNAN2021105292"
+literal "false"
+
+\end_inset
+
+ consider this proof of women taking power.
+ We follow 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1086/703082"
+literal "false"
+
+\end_inset
+
+ in interpreting this as instances where the female co-head could be hiding
+ her decisions or the husband simply is not cognizant of the full range
+ of decisions that she makes.
+\end_layout
+
+\end_inset
+
  For disagreement about the male co-head's role in decision-making, we consider
  the likelihood that the male co-head reports he was involved in the decision
  but the female co-head says he was not.
- For labour provision, we focus on shirking, defined as instances where
- the one co-head reports to have worked less than how much the other co-head
- reports they worked.
- We examine shirking by both female and male co-heads.
+ For labour provision, we focus on instances where the one co-head reports
+ to have worked less than how much the other co-head reports they worked,
+ as working is assumed to reduce utility.
+ We examine hiding of labour contributions by both female and male co-heads.
 \end_layout
 
 \begin_layout Standard
-We find that measurement error alone cannot explain observed spousal disagreemen
-t in survey responses.
+We find that measurement error alone can not explain observed spousal disagreeme
+nt in survey responses.
  We also reject the idea that differences in how male and female co-heads
  interpret the questions is the main driver behind observed disagreement.
  For decision making, we find that both interventions significantly reduce
  disagreement about the role of the female co-head.
  Disagreement about the role of the male co-head is only reduced by the
- video-based intervention that is intended to facilitate mutual monitoring.
- However, further inquiry into the impact pathways do not allow us to determine
- the exact mechanisms for the impact.
- Finally, we conclude that the video-based intervention does not affect
- shirking.
+ video-based intervention that is intended to reduce information asymmetry.
+ Further inquiry into the impact pathways do not allow us to determine the
+ exact mechanisms for the impact.
+ The video-based intervention does not affect disagreement related to labour
+ time allocations.
 \end_layout
 
 \begin_layout Standard
@@ -452,7 +443,7 @@ literal "false"
 
 \end_inset
 
- similarly examine underlying power dynamics, focusingon cases where the
+ similarly examine underlying power dynamics, focusing on cases where the
  female co-head reported she made decisions, while the male co-head said
  the female co-head was not involved.
  They refer to this type of disagreement as 
@@ -504,6 +495,35 @@ literal "false"
  should be similar for different questions asked in a survey (or at least
  for a sets of similar questions like questions related to asset ownership
  or different decisions).
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+It is important to note the implicit assumption that asymmetric measurement
+ error has its origin at the level of the individuals within the household
+ (for example the female co-head has lower education leading her to systematical
+ly underestimate effort), and so should not lead to heterogeneity within
+ the household.
+ Therefore, instead of referring to this as asymmetric measurement error,
+ we see this more as bias caused by factors that emanate from the individual
+ level.
+ Generally, this individual level variation will manifest itself in differing
+ cognitive capacities of co-heads and differences in how questions are interpret
+ed by male and female co-heads 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "GHUMAN20061"
+literal "false"
+
+\end_inset
+
+.
+ In this paper, we will refer to this type of disagreement as cognitive
+ bias, rather than categorizing this as a type of measurement error.
+\end_layout
+
+\end_inset
+
  Finally, they argue that finding differing rates of disagreement across
  survey questions, and higher rates of disagreement for assets and activities
  that are easier to hide in particular, points to the presence of intrahousehold
@@ -514,72 +534,14 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-However, we feel that differential disagreement on different decisions,
- asset categories, or activities need not always reflect the act of one
- co-head intentionally deceiving another.
+However, differential disagreement on different decisions, asset categories,
+ or activities need not always reflect intrahousehold information asymmetry.
  There may be other reasons why spouses agree more in one area and less
  in another area.
- One reason may be that spouses respond in line with what society expect
+ One reason may be that spouses respond in line with what society expects
  from them, such that disagreement related to decisions, actions, and asset
  ownership is also partly shaped by prevailing gender stereotypes and norms,
  i.e., role congruity.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-I added this term here, but am not sure if it really should go here.
- But the term has to be introduced early.
- In fact, if you want to add 
-\begin_inset Quotes eld
-\end_inset
-
-role incongruity
-\begin_inset Quotes erd
-\end_inset
-
- alongside 
-\begin_inset Quotes eld
-\end_inset
-
-norms and customs
-\begin_inset Quotes erd
-\end_inset
-
- with 
-\begin_inset Quotes erd
-\end_inset
-
- in the rest of the paper (bz I took out 
-\begin_inset Quotes eld
-\end_inset
-
-role congruity
-\begin_inset Quotes erd
-\end_inset
-
- wherever I saw it), then go ahead and reject my edits.
- Or replace 
-\begin_inset Quotes eld
-\end_inset
-
-norms and customs
-\begin_inset Quotes erd
-\end_inset
-
- with 
-\begin_inset Quotes eld
-\end_inset
-
-role incongruity
-\begin_inset Quotes erd
-\end_inset
-
-.
- After all, that's the preferred term of Reviewer 1.
-\end_layout
-
-\end_inset
-
  For example, in a case study in northern Uganda, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -594,7 +556,7 @@ literal "false"
  Women rather report these scenarios as joint decisions.
  Hence, it is important to understand the local cultural context to differentiat
 e spousal disagreement as a function of information asymmetries stemming
- from intentional hiding versus other gender-related systematic biases.
+ from information asymmetry versus other gender-related systematic biases.
 \end_layout
 
 \begin_layout Section
@@ -624,8 +586,8 @@ literal "false"
 
 .
  Second, the literature also suggests that spousal disagreement reflects
- information asymmetries between co-heads, predominantly cause by co-heads
- hiding decisions, actions and assets from each other 
+ information asymmetries between co-heads, for example when co-heads hide
+ decisions, actions and assets from each other 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1086/703082"
@@ -679,29 +641,15 @@ The techniques and inputs that are demonstrated in the videos are the ones
 The first intervention, referred to as T1 in the remainder of the paper,
  involves varying the gender composition of the actors featured in the video
  and randomizing which version of the video is viewed by farmers.
- The second intervention, which we refer to as T2, randomly varies the gender
- composition of the co-head(s) of the household who view the video.
+ The second intervention, which we refer to as T2, randomly varies whether
+ the video is viewed by the spouses jointly or by only one of the spouses.
  These variations and the rationale behind them are explained below.
 \end_layout
 
 \begin_layout Standard
 We begin with a conceptual explanation that ties to our first intervention
  (T1): projecting a cooperative image of farming as a household, thereby
- challenging the local consensus that maize farming is a male activity.
- Consider that within households, individual members often have differing
- spheres of influence reflecting prevailing gender roles 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "lundberg1993separate"
-literal "false"
-
-\end_inset
-
-.
- In many agricultural households, including in Uganda, women tend to have
- a stronger voice in the cultivation of crops that are predominately cultivated
- for home consumption, while men have a stronger voice in the cultivation
- of crops that are marketed 
+ challenging the local consensus that maize farming is a male activity 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1080/00220388.2010.536222"
@@ -710,31 +658,7 @@ literal "false"
 \end_inset
 
 .
- While the existence of such gendered patterns are widely acknowledged,
- they are not always easily captured in household survey data, as gender
- is only one of the determinants of crop portfolio choice 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "CARR2008900,DOSS20021987"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-In Uganda, maize, which is in part a cash crop, is considered to be mostly,
- though not exclusively, in the influence sphere of men 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "doi:10.1080/00220388.2010.536222"
-literal "false"
-
-\end_inset
-
-.
- Generally, men make the more strategic decisions such as what plots to
+ Generally, men make the more strategic decisions such as which plots to
  plant maize on, when to start planting, and what seeds to use.
  Men also generally decide on how much labor is needed, while women assist
  men.
@@ -745,12 +669,8 @@ literal "false"
  While these are broad and stylized characterizations of Uganda's maize
  production system, their widespread acceptance as conventional wisdom makes
  maize farming a topic ripe for this study.
- The fact that maize is not exclusively in the male domain 
-\change_deleted -461408743 1638456904
- 
-\change_unchanged
-provides scope to strengthen women's involvement in decision-making about
- maize.
+ The fact that maize is not exclusively in the male domain provides scope
+ to strengthen women's involvement in decision-making about maize.
 \end_layout
 
 \begin_layout Standard
@@ -824,10 +744,14 @@ To test the hypothesis that male and female co-heads disagree less if they
 Next, we turn to our second hypothesis about asymmetric information within
  the household.
  Consider the farm-household as a collection of individuals, each with their
- own preferences, skills, assets, and access to resources.
- In many contexts, the household's existence and the welfare of its members
- depend on their collective capacity to invest in common goods by drawing
- on each individual's skills, assets, and resources.
+ own preferences, skills, assets, and access to resources, including knowledge.
+ Information within households does not always flow friction-less between
+ household members, and so one member may not be cognizant of the full range
+ of decisions made, activities undertaken or assets held by other members
+ of the household.
+ Furthermore, in many contexts, the household's existence and the welfare
+ of its members depend on their collective capacity to invest in common
+ goods by drawing on each individual's skills, assets, and resources.
  As such, households can be considered as collective action institutions,
  and many of the problems encountered in common pool resource management,
  such as free-riding and overextraction of resources, apply to the household
@@ -840,11 +764,9 @@ literal "false"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-One way to attenuate collective action problems is by increasing mutual
- monitoring 
+ One way to attenuate collective action problems is by increasing mutual
+ monitoring by making sure both spouses have access to the same information
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "AGRAWAL20011649"
@@ -853,22 +775,14 @@ literal "false"
 \end_inset
 
 .
- For instance, if one co-head can assess the actual time that the other
- co-head spends on land preparation, then the latter is less likely to engage
- in labor shirking.
- However, for mutual monitoring to work, co-heads require information against
- which to compare information gained through monitoring, since merely observing
- an outcome may be insufficient to determine if a co-head is shirking, hiding,
- or otherwise mismanaging his or her collective obligations to the household.
- For instance, it may be difficult for the female co-head to check if her
- spouse overreports time spent on land preparing if she does not have a
- good understanding of what land preparation entails.
+ 
 \end_layout
 
 \begin_layout Standard
 In a second treatment (T2), we therefore ensure that both co-heads begin
  with symmetric information on recommended agronomic practices for maize
- farming, as this is assumed to facilitate mutual monitoring.
+ farming, as this is assumed to facilitate mutual monitoring and directly
+ reduce asymmetric information.
  To do so, we show the video that showcases recommended practices in maize
  farming to both male and female co-heads together in a random sample of
  261 households.
@@ -915,23 +829,6 @@ name "sec:Hypotheses-and-tests"
 \end_layout
 
 \begin_layout Standard
-In this section, we outline the different hypothesis and how they will be
- tested.
- While the focus will be on testing the impact of the interventions on spousal
- disagreement, we also use our data to test for random error and cognitive
- bias (due to spouses interpreting questions differently) using the framework
- outlined in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "doi:10.1086/703082"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
 A first hypothesis we will test is that disagreement between husband and
  wife is simply due to random noise.
  
@@ -943,12 +840,11 @@ literal "false"
 \end_inset
 
  show that if random measurement error is the only factor leading to disagreemen
-t, then disagreement should be symmetric.
- One would thus expect, for instance, that the likelihood that the female
- co-head says she was involved in a particular decision while the male co-head
- says she was not is about the same as the likelihood that the male co-head
- says the female co-head was involved in that decision, while the female
- co-head says she was not.
+t, then disagreement should be symmetric: One would thus expect, for instance,
+ that the likelihood that the female co-head says she was involved in a
+ particular decision while the male co-head says she was not is about the
+ same as the likelihood that the male co-head says the female co-head was
+ involved in that decision, while the female co-head says she was not.
  Testing if disagreement between male and female co-heads is simply due
  to random measurement error is thus equivalent to testing if two proportions
  are significantly different from each other, which we will do using a Pearson
@@ -994,8 +890,6 @@ literal "false"
  or interpretation of the questions, or differences in perceptions of what
  it means to make a decision, what constitutes agricultural labour, or what
  it entails to own an asset.
- This type of disagreement is categorized as measurement error because it
- does not adequately reflect what happens in reality.
 \end_layout
 
 \begin_layout Standard
@@ -1007,7 +901,7 @@ literal "false"
 \end_inset
 
  test for asymmetric measurement error by checking if the probability of
- disagreement about a spouse's role in decision making, labour provision,
+ disagreement about a spouse's role in decision making, labor provision,
  or marketing is equal across the various decisions and activities under
  consideration.
  This is done by performing a series of t-tests that test for the equality
@@ -1033,30 +927,7 @@ rejecting a joint test is probably harder than only separate comparisons
 
 \end_inset
 
- approach, where we use a Wald test for joint significance (using a cluster-robu
-st 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-is it a 
-\begin_inset Quotes eld
-\end_inset
-
-cluster-robust t-test
-\begin_inset Quotes erd
-\end_inset
-
-?)
-\end_layout
-
-\end_inset
-
-and an Approximate Hotelling 
-\begin_inset Formula $T^{2}$
-\end_inset
-
- test).
+ approach, where we use a Wald test for joint significance.
  We start from the following equation:
 \end_layout
 
@@ -1084,13 +955,18 @@ i
 \emph on
 d
 \emph default
-.
+, and 
+\begin_inset Formula $\varepsilon_{i,d}$
+\end_inset
+
+ is an error term that is assumed to be independently distributed across
+ both households and decisions.
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
 We will refer to decision making here to keep the exposition simple, but
- in the analysis we also consider disagreement between spouses on labour
+ in the analysis we also consider disagreement between spouses on labor
  contributions.
 \end_layout
 
@@ -1103,62 +979,7 @@ We will refer to decision making here to keep the exposition simple, but
 
  to be equal to each other.
  If we reject the null, this means that disagreement about decision-making
- between spouses cannot be fully explained by asymmetric measurement error.
-\end_layout
-
-\begin_layout Standard
-It is important to note the implicit assumption that asymmetric measurement
- error has its origin at the level of the individuals within the household
- (for example the female co-head has lower education leading her to systematical
-ly underestimate effort), and so should not lead to heterogeneity within
- the household.
- Therefore, instead of referring to this as asymmetric measurement error,
- we see this more as bias caused by factors that emanate from the individual
- level.
- Generally, this individual level variation will manifest itself in differing
- cognitive capacities of co-heads and differences in how questions are interpret
-ed by male and female co-heads 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "GHUMAN20061"
-literal "false"
-
-\end_inset
-
-.
- Obviously, this can also be affected by cultural factors,
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset CommandInset citation
-LatexCommand citet
-key "doi:10.1086/703082"
-literal "false"
-
-\end_inset
-
- explicitly state that asymmetric measurement error could also be caused
- by cultural factors that lead to men under-reporting women's roles.
-\end_layout
-
-\end_inset
-
- but gender norms and customs also create variance at the level of the different
- decisions and activities, which we exploit to provide an explicit test
- below (equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:CATE"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-).
- In this paper, we will refer to this type of disagreement as cognitive
- bias, rather than categorizing this as a type of measurement error.
+ between spouses can not be fully explained by asymmetric measurement error.
 \end_layout
 
 \begin_layout Standard
@@ -1169,9 +990,9 @@ literal "false"
 
 \end_inset
 
- argue that rejecting both types of measurement error indicates that disagreemen
-t reflects a real difference in what spouses know from each other, a situation
- they refer to as asymmetric information within the household.
+argue that rejecting both types of measurement error indicates that disagreement
+ also partly reflects a real difference in what spouses know from each other,
+ a situation they refer to as asymmetric information within the household.
  While they admit that some of this disagreement may be unintentional, they
  also note that the fact that disagreement seems to be highest among assets
  that are more easily hidden (small livestock, poultry, and small durables)
@@ -1179,8 +1000,8 @@ t reflects a real difference in what spouses know from each other, a situation
  We provide an explicit test for the hypothesis that some disagreement is
  related to asymmetric information within the household by comparing average
  disagreement between co-heads in households that were exposed to the interventi
-on designed to facilitate mutual monitoring (T2) to average disagreement
- between spouses in households that did not receive this intervention.
+on designed to provide spouses with equal information (T2) to average disagreeme
+nt between spouses in households that did not receive this intervention.
  This is done using the following OLS regression:
 \end_layout
 
@@ -1206,8 +1027,8 @@ i
 \emph default
 , which is a dummy that takes the value of one for households that received
  the intervention and zero for the control group.
- We expect that providing both co-heads with information that facilitates
- mutual monitoring will lead to a reduction in disagreement, and so 
+ We expect that providing both co-heads with the same information will lead
+ to a reduction in disagreement, and so 
 \begin_inset Formula $\beta<0$
 \end_inset
 
@@ -1215,9 +1036,9 @@ i
 \end_layout
 
 \begin_layout Standard
-Finally, if disagreement is due to strategic hiding, we expect that facilitating
- mutual monitoring would be relatively more effective for decisions that
- are easier to hide.
+If disagreement is due to spouses hiding information from each other, we
+ expect that a treatment designed to facilitating mutual monitoring such
+ as T2 would be more effective for activities that are easier to hide.
  Following this line of reasoning, we define
 \emph on
  
@@ -1226,14 +1047,13 @@ Finally, if disagreement is due to strategic hiding, we expect that facilitating
 
 
 \emph default
-, a measure of how easy it is to hide decision-making related to 
+, a measure of how easy it is to hide a particular activity 
 \emph on
 d
 \emph default
-, and first explore correlations between disagreement and this measure.
- We then estimate conditional average treatment effects by interacting the
- treatment indicator with the measure of how easy it is to hide decision
- or activity 
+, and estimate conditional average treatment effects by interacting the
+ treatment indicator with the measure of how easy it is to hide activity
+ 
 \emph on
 d:
 \end_layout
@@ -1276,8 +1096,8 @@ Finding that
 \uwave default
 \noun default
 \color inherit
-in support of the hypothesis that disagreement is driven by co-heads strategical
-ly hiding decisions for each other
+in support of the hypothesis that disagreement is driven by co-heads hiding
+ activities from each other
 \family roman
 \series medium
 \shape up
@@ -1291,6 +1111,61 @@ ly hiding decisions for each other
 \noun off
 \color none
 .
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+This part of the analysis is only done for disagreement related to labour
+ time allocations and not decision making, as it is hard to operationalize
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $H_{d}$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ as an indicator denoting how easy it is to monitor particular decisions.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1306,14 +1181,14 @@ literal "false"
 
  consider this form of disagreement part of symmetric measurement error,
  we argued earlier that disagreement that arises from spouses responding
- in line with expectations may differ between different decisions that are
- made within the household.
- For instance, disagreement between co-heads on the role of women in weeding
- may be very different from disagreement related to the role of women in
- land preparation.
+ in line with expectations may also lead to differing rates of disagreement
+ between decisions or activities.
+ For instance, disagreement stemming from spouses responding in line with
+ expectations on the role of women in weeding may be very different from
+ disagreement related to the role of women in land preparation.
  In the former case, as weeding is seen as a typical female activity, men
- may have no problems admitting that their female co-head did all the work.
- For the latter case, as society expects men to do the often heavy work
+ may have no problems admitting that the female co-head did all the work.
+ For the second case, as society expects men to do the often heavy work
  of land preparation, men may be more reluctant to disclose that their female
  co-head also spent considerable time on this task.
  This is in line with what 
@@ -1394,8 +1269,7 @@ d
 
 
 \emph default
-), and again explore correlations between disagreement and this measure.
- We also interact 
+), and interact 
 \emph on
 
 \begin_inset Formula $H_{d}$
@@ -1404,7 +1278,7 @@ d
 
 \emph default
  with the treatment, as we expect that challenging gender norms by projecting
- a cooperative way of farming will have the largest effect on activities
+ a cooperative approach to farming will have the largest effect on activities
  or decisions that are most sensitive to gender norms and customs.
  Finding that
 \family roman
@@ -1500,8 +1374,8 @@ We focused on the second maize-growing season of 2017, which ran from about
 \end_layout
 
 \begin_layout Standard
-According to our baseline data, households in our study area cultivated
- on average about 1.5 plots of maize.
+According to baseline data, households in our study area cultivated on average
+ about 1.5 plots of maize.
  Yields during the first season of 2017 were extremely low (about 270 kilograms
  per acre) as a result of a fall armyworm outbreak that significantly affected
  the maize crop.
@@ -1509,14 +1383,13 @@ According to our baseline data, households in our study area cultivated
  of eight individuals.
  Female co-heads in these households were on average 35 years old and 30
  percent had completed their primary education.
- Male co-heads were on average 43 years old and 42 percent have completed
+ Male co-heads were on average 43 years old and 42 percent had completed
  their primary education.
  Only 11 percent of households reported that they had access to agricultural
  extension services in the year prior to our survey.
  Only 17 percent of households used fertilizer on at least one plot, and
- 38 percent reported using improved seed bought from a shop or agro-input
- dealer during the last cropping season (April-July 2017).
- About three quarters of households reported owning a mobile phone.
+ 38 percent reported using improved seed bought from an agro-input dealer
+ during the last cropping season (April-July 2017).
 \end_layout
 
 \begin_layout Standard
@@ -1568,11 +1441,11 @@ There is a wide range of seed methods used by farmers in Uganda.
  While some simply broadcast seeds, NARO recommends row planting because
  it results in significantly higher yields since it reduces competition
  between plants for sunlight and soil nutrients.
- Farmers also often plant more than one seed per hill because they fear
+ Farmers also often plant more than one seed per mound because they fear
  some seeds may not germinate.
- However, planting more than one seed per hill also tends to increase competitio
-n for light and nutrients, leading to stunted plant growth.
- It is therefore recommended to use only one seed per hill and engage in
+ However, planting more than one seed per mound also tends to increase competiti
+on for light and nutrients, leading to stunted plant growth.
+ It is therefore recommended to use only one seed per mound and engage in
  gap filling when seeds do not germinate after one week.
 \end_layout
 
@@ -1598,6 +1471,70 @@ We also collected detailed information on labor time.
 \end_layout
 
 \begin_layout Standard
+The way in which we collected data about spouses’ labor time could have
+ been subject to some limitations, that could have implications for symmetric
+ measurement error as well as asymmetric measurement bias.
+ Yet, as there is no reason to believe these challenges manifest differently
+ in our respective treatment and control groups, there are no likely implication
+s for the results of our experiments.
+ The main issue relates to the stylized questions that each co-head was
+ asked about total labor days spent on specific maize farming-related activities
+ on specific maize plots during the previous maize-growing season.
+ Their responses may have been subject to recall bias, particularly for
+ less salient or irregular activities 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ARTHI2018160,doi:10.1080/13545701.2020.1749867"
+literal "false"
+
+\end_inset
+
+.
+ If such activities are gender-specific, then this could have contributed
+ to observed difference between male and female co-heads.
+ There are also cognitive issues related to properly identifying the activity
+ in question and remembering and aggregating all instances of labor spent
+ on the particular activity, which is possibly variable over the reference
+ period 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1080/13545701.2020.1749867"
+literal "false"
+
+\end_inset
+
+.
+ Gender differences in education levels and numeracy skills could have also
+ induced gender-specific challenges with regard to the latter, with lower
+ education levels associated with higher likelihood of overestimation in
+ recall 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ARTHI2018160"
+literal "false"
+
+\end_inset
+
+.
+ The reference period (the previous maize-growing season) is relatively
+ long, thereby increasing the risk of recall bias and estimation based on
+ established patterns of activity, yet, it is likely to be clear and salient
+ for these maize farmers.
+ Besides, the reference period is not likely to be subject to gender differences
+ in correctly identifying it 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1080/13545701.2020.1749867"
+literal "false"
+
+\end_inset
+
+.
+ Seasonality bias is not likely given the season-specific nature of our
+ experiment.
+\end_layout
+
+\begin_layout Standard
 In addition to the outcome variables and the treatment indicators, there
  are two additional variables in equation 
 \begin_inset CommandInset ref
@@ -1610,15 +1547,13 @@ noprefix "false"
 \end_inset
 
  that require attention.
- First, to test if strategic hiding is the main cause for disagreement,
- we construct an indicator (H2) of how easy it is for co-heads of households
- to monitor particular decisions, activities, or actions.
+ First, to test if hiding is the main cause for disagreement related to
+ labor contributions, we construct an indicator (H2) of how easy it is for
+ co-heads of households to monitor particular activities and actions.
  To do so, we asked 30 local experts to score each activity (eg.
  time spent on weeding) in terms of its ease of monitoring on a scale between
  zero and 100, with zero being impossible to find out the actions of one's
  co-head and 100 being very easy to find out.
- We only scored for labour contributions and not for decision-making, since
- the latter is extremely difficult to monitor.
  The indicator H2 takes a value of one for an activity of the average expert
  score was larger than 40, indicating that it is difficult to monitor; and
  zero otherwise.
@@ -1627,9 +1562,11 @@ status collapsed
 
 \begin_layout Plain Layout
 We convert the indicator to a dummy to keep the analysis simple.
- While the threshold may seem arbitrary, it was chosen to maximize variability.
- However, results were not sensitive to the choice of the threshold or even
- conversions into a binary indicator.
+ The threshold was chosen to maximize variability.
+ That is, we chose a cut-off such that we obtained approximately 50 percent
+ of 1s and 50 percent of 0s.
+ The results have proven not to be sensitive to conversion into a binary
+ indicator nor the choice of the threshold for defining the binary indicator.
  The same is true for H1 below.
 \end_layout
 
@@ -1665,8 +1602,7 @@ name "sec:Results"
 
 \begin_layout Standard
 We provide separate analyses for disagreement between co-heads related to
- decision-making and disagreement between spouses related to labour contribution
-s.
+ decision-making and disagreement between spouses related to labor contributions.
  We consider disagreement related to the role of the female co-head and
  the role of the male co-head separately.
 \end_layout
@@ -1833,39 +1769,6 @@ This includes cases where neither spouse says that the wife was involved
  with the male co-head), but the male co-head says she was not; and (3)
  the male co-head says the female co-head was involved (either alone or
  as part of the couple), but the female co-head says she was not.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset CommandInset citation
-LatexCommand citet
-key "ANNAN2021105292"
-literal "false"
-
-\end_inset
-
- provide an alternative interpretation of categories 2 and 3.
- In particular, they refer to this as instances where the woman 
-\begin_inset Quotes eld
-\end_inset
-
-takes power
-\begin_inset Quotes erd
-\end_inset
-
-, whereas category 3 is considered to be situations where the woman is 
-\begin_inset Quotes eld
-\end_inset
-
-given power
-\begin_inset Quotes erd
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
  Similarly, to assess (dis)agreement about the role of the the male co-head,
  the three categories are: (1) spouses agree on the man's role in decision-makin
 g; (2) the male co-head says that he was involved (either alone or jointly
@@ -1895,7 +1798,7 @@ aking (bottom panel).
  Focusing on disagreement, we see that on the average plot the likelihood
  that the female co-head says she was involved in a particular decision
  but the male co-head disagrees (category 2) is always higher than the likelihoo
-d that the male co-head says his female co-head was involved but the female
+d that the male co-head says the female co-head was involved but the female
  co-head disagrees (category 3) except for the decision to sell maize.
  P-values from a Pearson 
 \begin_inset ERT
@@ -1912,9 +1815,9 @@ chi$
 
 -squared test for equality of proportions for category 2 and 3 indicate
  that in all but one case, we reject the null of random measurement error.
- We also f reject the null hypothesis that disagreement about the female
- co-head's role in decision-making is equal across different decision categories
-, based on a Wald test after estimating equation 
+ We also reject the null hypothesis that disagreement about the female co-head's
+ role in decision-making is equal across different decision categories,
+ based on a Wald test after estimating equation 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:f_test"
@@ -1938,7 +1841,7 @@ Sexpr{ftests[1]}
 \end_inset
 
 ).
- This means that discord cannot be explained by cognitive differences between
+ This means that discord can not be explained by cognitive differences between
  spouses alone (i.e., asymmetric measurement error or cognitive bias).
 \end_layout
 
@@ -2036,9 +1939,9 @@ noprefix "false"
 .
  
 \emph default
-This implies that the male co-head insists he made decisions about marketing,
- which is typically a male activity, even though the female co-head made
- the decision.
+This could indicate that the male co-head insists he made decisions about
+ marketing, which is typically a male activity, even though the female co-head
+ made the decision.
  We do not see a clear pattern for disagreement related to the role of the
  female co-head in decision-making.
 \end_layout
@@ -2089,7 +1992,7 @@ status collapsed
 \begin_layout Plain Layout
 We confine attention to category 2 only (instead of total disagreement which
  pools category 2 and 3) because we consider decision making a good (as
- opposed to labour, which we will consider a bad below).
+ opposed to labor, which we will consider a bad below).
  If a decision, action, or consequence is considered desirable for the individua
 l, spouses may want to hide information about it and under-report, in which
  case category 2 is the relevant outcome.
@@ -2166,8 +2069,7 @@ The underlying assumption here is that the co-head that is farthest from
 
 \begin_layout Standard
 The second column in the table shows that disagreement also reduces in response
- to the intervention that tries to facilitate mutual monitoring between
- co-heads (T2).
+ to the intervention that tries to reduce asymmetric information (T2).
  In the control group where co-heads did not receive the same information,
  female co-heads reported they were involved but male co-heads disagreed
  on 
@@ -2199,7 +2101,9 @@ Sexpr{format(round(as.numeric(-mat_tab4[3,1])*100, digits=1),nsmall=1)}
 \end_inset
 
  percentage points.
- This suggests that co-heads may also hide decision-making from each other.
+ This may indicate that female co-heads may hide decision-making from the
+ male co-head, or it may be that male co-heads are not aware of the various
+ decisions female co-heads make.
 \end_layout
 
 \begin_layout Standard
@@ -2238,17 +2142,16 @@ noprefix "false"
 
 \end_inset
 
- and includes (a) the indicator for the treatment that challenges norms
- and customs by projecting a cooperative approach to farming, (b) the indicator
- for susceptibility of the decision to gender norms, and (c) an interaction
+ and includes the indicator for the treatment that challenges norms and
+ customs by projecting a cooperative approach to farming, the indicator
+ for susceptibility of the decision to gender norms, and an interaction
  between the two.
  We see that the treatment still leads to a reduction in disagreement.
  However, and contrary to expectations, we do not find that the intervention
- reduced disagreement differently for decisions that are assumed to be in
- the male domain than for decisions that are culturally less strongly assigned
- to the male domain.
+ reduced disagreement particularly for decisions that are assumed to be
+ in the male domain.
  This goes against our hypothesis that the change in disagreement in response
- to intervention T1 is mediated by gender norms and customs.
+ to intervention T1 is primarily mediated by gender norms and customs.
 \end_layout
 
 \begin_layout Standard
@@ -2257,8 +2160,8 @@ The bottom panel repeats the analysis, but the dependent variable is now
  female co-head says he was not involved in the decision.
  As we saw earlier, disagreement about the male co-head's role is lower.
  The first column confirms that in the control group where households were
- not exposed to the intervention challenging norms and customs (T1), male
- co-heads claim a larger role than female co-heads admit in 
+ not exposed to the intervention that aims to challenge norms and customs
+ (T1), male co-heads claim a larger role than female co-heads admit in 
 \begin_inset ERT
 status open
 
@@ -2278,8 +2181,8 @@ Sexpr{format(round(as.numeric(mat_tab_m_2[1,1])*100, digits=1),nsmall=1)}
 \end_layout
 
 \begin_layout Standard
-In the second column, we do see that the intervention aimed at facilitating
- mutual monitoring (T2) reduced disagreement.
+In the second column, we do see that the intervention aimed at reducing
+ information asymmetries (T2) reduced disagreement.
  In the control group where only one of the co-heads was shown a video on
  what maize farming entails, male co-heads report they were involved but
  the female co-head disagreed in 
@@ -2311,8 +2214,9 @@ Sexpr{format(round(as.numeric(-mat_tab_m_4[3,1])*100, digits=1),nsmall=1)}
 \end_inset
 
  percentage points.
- This suggests that male co-heads may also hide decision-making from the
- female co-head.
+ This suggests that male co-heads may hide decision-making from the female
+ co-head, or that the female co-head is not aware of all the decisions that
+ the male co-head makes.
 \end_layout
 
 \begin_layout Standard
@@ -2329,32 +2233,31 @@ The third column in the table shows no significant correlation between spousal
  However, the statistically insignificant coefficient of the interaction
  term of the intervention challenging norms and customs and the indicator
  that captures if the decision is typically in the male domain in the fourth
- column again rejects the hypothesis that this disagreement is driven by
- gender norms and customs.
+ column again runs against the hypothesis that disagreement is primarily
+ driven by gender norms and customs.
 \end_layout
 
 \begin_layout Subsection
-Labour Provision
+Labor Provision
 \end_layout
 
 \begin_layout Standard
-For labour contributions, we define the three categories of (dis)agreement
+For labor contributions, we define the three categories of (dis)agreement
  as follows.
- A first category (1) consists of cases where there is agreement on the
- female co-head's labour contribution.
- For disagreement, we differentiate between cases where (2) the female co-head
- reported having spent more time on a particular task than the male co-head
- thinks she did, and (3) the female co-head reported having spent less time
- than the male co-head thinks she did.
- Labour contribution (and hence disagreement about it) is also measured
- at the plot level.
- As for decision-making, we consider disagreement related to labour provided
- by the female co-head and disagreement related to labour provided by the
- male co-head separately.
+ A first category (1) consists of cases where there is agreement on a spouse's
+ labor contribution.
+ For disagreement, we differentiate between cases where (2) the co-head
+ reported having spent more time on a particular task than the other co-head
+ thinks they did, and (3) the co-head reported having spent less time than
+ the other co-head thinks they did.
+ Labor contribution (and hence disagreement about it) is also measured at
+ the plot level.
+ We consider disagreement related to labor provided by the female co-head
+ and disagreement related to labor provided by the male co-head separately.
 \end_layout
 
 \begin_layout Standard
-As mentioned above, we consider labour to be a 
+As mentioned above, we consider labor to be a 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2363,16 +2266,33 @@ bad
 \end_inset
 
 , with co-heads preferring to work less rather than more.
- The category of interest here is therefore category (3), where co-heads
- are shirking on their responsibilities, putting in less hours than what
- the other co-head believes.
+ The category of interest is therefore category (3), where co-heads are
+ putting in less hours than what the other co-head believes.
+ The fact that one spouse is putting in less hours than the other spouse
+ believes may be due to one spouse reneging on their responsibilities, but
+ it may also be because one spouse is simply not aware of the full range
+ of activities the other preforms.
 \end_layout
 
 \begin_layout Standard
-One complication here is that labour time is measured as a continuous variable:
- days spent on the activity.
- As a result, the margin of error will also depend on the activity.
- For example, for an activity such as spraying pesticides , female co-heads
+One complication here is that labor time is measured as a continuous variable
+ (days spent on the activity), so it becomes necessary to define agreement
+ or disagreement based on how close reported labour time estimates provided
+ by spouses are.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+It almost never happens that spouses completely agree on the number of days
+ that a co-head worked on for example weeding, but some are very close (for
+ instance 22 and 23 days).
+\end_layout
+
+\end_inset
+
+ Furthermore, there may be substantial differences in total number of days
+ spent on the different activities.
+ For example, for an activity such as spraying pesticides, female co-heads
  report that they spend on average only 
 \begin_inset ERT
 status open
@@ -2403,38 +2323,16 @@ Sexpr{desc[2]}
 
  days).
  These differences in magnitude will also have consequences for the likelihood
- that co-heads agree.
- For instance, in the former case, there is agreement about the female co-head's
- labour time contribution on 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{desc[3]}
-\end_layout
-
-\end_inset
-
- percent of plots, while for weeding, this is only the case on 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{desc[4]}
-\end_layout
-
-\end_inset
-
- percent of plots.
- We try to mitigate this problem by defining agreement in relation to the
- underlying variable, indicating that there is agreement if estimates are
- 
+ that co-heads agree, and it seems hard to argue that disagreement of one
+ hour for spraying pesticides is directly comparable to disagreement of
+ one hour in estimated time spent on weeding.
+ Our solution is to first standardizing hours worked for each activity,
+ such that differences in reporting between spouses of days worked on, for
+ example, weeding by a co-head become directly comparable to differences
+ in estimates between spouses of time spent of a co-head on, for instance,
+ spraying.
+ Second, based on these standardized variables, we construct an indicator
+ variable for agreement if estimates are 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2443,9 +2341,25 @@ close enough
 \end_inset
 
  to each other.
- Specifically, if the labour time difference is within one standard deviation
- of the average time reported by male and female co-head, we consider there
- to be agreement.
+ Specifically, if the (standardized) labor time difference is within one
+ standard deviation of the average time reported by male and female co-head,
+ we consider there is agreement.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+A threshold of one standard deviation was chosen to make sure there are
+ sufficient levels of disagreement, as it is well know that outcomes with
+ limited variation contribute little power in experiments.
+ However, we also reran the analysis with thresholds of 0.5 standard deviations
+ and 1.5 standard deviations to show that the choice of the threshold does
+ not affect the conclusions.
+ Results are available from authors upon request.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2459,7 +2373,7 @@ noprefix "false"
 
 \end_inset
 
- shows that co-heads again generally agree on the labour contribution of
+ shows that co-heads again generally agree on the labor contribution of
  the female co-head.
  Agreement seems to be highest for the female co-head's role in spraying.
  This is not surprising because spraying pesticides involves carrying a
@@ -2472,15 +2386,16 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-The table further shows that agreement is lowest for female co-head's labour
+The table further shows that agreement is lowest for female co-head's labor
  provision in weeding, which the experts claim is predominantly a female
  task.
  Interestingly, we find a relatively high share of plots where the female
  co-head says she worked more than what the male co-head believes.
- But there are also signs of shirking behaviour.
+ But there are also instances where female co-heads claim they worked less
+ than what the male co-head thinks.
  For example, on 15 percent of the plots, there are indications that the
- female co-head shirks on her weeding activities (i.e., the male co-head says
- the female co-head worked more than female co-head reports).
+ female co-head worked less on her weeding activities than what the male
+ co-head believes.
  Pearson 
 \begin_inset ERT
 status open
@@ -2495,12 +2410,12 @@ chi$
 \end_inset
 
 -squared tests comparing rows 2 and 3 show that we reject equality of the
- two disagreement categories for all labour types, suggesting that disagreement
- on female co-heads' labour time is not caused by random measurement error
+ two disagreement categories for all labor types, suggesting that disagreement
+ on female co-heads' labor time is not caused by random measurement error
  alone.
  We also reject the null hypothesis that disagreement about the female co-head's
- labour contribution is equal across different labour categories, based
- on a Wald test after estimating equation 
+ labor contribution is equal across different labor categories, based on
+ a Wald test after estimating equation 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:f_test"
@@ -2524,20 +2439,44 @@ Sexpr{ftests[2]}
 \end_inset
 
 ).
- This again indicates that discord cannot be explained by cognitive differences
- between spouses alone (i.e., cognitive bias or asymmetric measurement error).
+ This again establishes that discord can not be explained by cognitive differenc
+es between spouses alone (i.e., cognitive bias or asymmetric measurement error).
 \end_layout
 
 \begin_layout Standard
-The bottom panel shows results for disagreement over the male co-head's
- labour contribution, which are similar to the results discussed above.
- Shirking by the male co-head is relatively high for labour allocated to
- spraying, a typical male activity that is also difficult to monitor according
- to our experts.
- Surprisingly, male shirking is equally high for weeding, a typically female
- task.
- We again reject random measurement error or cognitive bias as driving disagreem
-ent (p-value = 
+The bottom panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:agreement_labour"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows results for disagreement about the male co-head's labor contribution,
+ which are similar to the results discussed above.
+ Instances where the male co-head reports to be putting in less time than
+ what the female co-head thinks are relatively high for labor allocated
+ to spraying, a typical male activity that is also difficult to monitor
+ according to our experts.
+ Surprisingly, category 3 disagreement is equally high for weeding, a typically
+ female task.
+ Pearson 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+chi$
+\end_layout
+
+\end_inset
+
+-squared tests again reject random measurement error and the Wald test rejects
+ cognitive bias as driving disagreement (p-value = 
 \begin_inset ERT
 status open
 
@@ -2554,10 +2493,10 @@ Sexpr{ftests_m[2]}
 \end_layout
 
 \begin_layout Standard
-Next, we conduct a series of regressions to test if disagreement is due
- to strategically hiding labour contributions within the household, or whether
- disagreement reflects norms and expectations about who, according to society,
- should do what activity.
+Next, we conduct a series of regressions to test if disagreement reflects
+ information asymmetries with respect to labor contributions, or whether
+ disagreement has its origin in norms and expectations about who, according
+ to society, should do most of the work on the different tasks.
  The top panel in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2571,24 +2510,30 @@ noprefix "false"
  reports results where the outcome variable is the proportion of activities
  on which the female co-head reports to have worked less than what the male
  co-head believes; the bottom panel reports on regressions where the dependent
- variable is the proportion of activities on which the male co-head report
+ variable is the proportion of activities on which the male co-head reports
  to have worked less than what the female co-head believes.
 \end_layout
 
 \begin_layout Standard
 As evidenced in the results in the upper panel, neither the intervention
- facilitating mutual monitoring (T2) nor the intervention challenging customs
- and norms (T1) seems to have an effect on shirking behaviour by the female
- co-head.
- We find shirking by the female co-head to be lower for activities that
- are considered in the male domain.
- More surprisingly, we also find that shirking by the female co-head is
- lower for activities that are harder to monitor.
+ reducing information asymmetries (T2) nor the intervention challenging
+ customs and norms (T1) seems to have an effect on the proportion of activities
+ on which the female co-head reports to have worked less than what the male
+ co-head believes.
+ We find the proportion of activities on which the female co-head reports
+ to have worked less than what the male co-head believes to be lower for
+ activities that are considered in the male domain.
+ More surprisingly, we also find that the proportion of activities on which
+ the female co-head reports to have worked less than what the male co-head
+ believes is lower for activities that are harder to monitor, which goes
+ against the hypothesis that women try to hide from their husbands that
+ they work less than agreed.
  We do not find any significant interaction effects between the intervention
- challenging customs and norms and the indicator for male domain sensitivity,
- nor between the intervention facilitating mutual monitoring and the indicator
- for ease of monitoring.In the bottom panel, we also find no evidence that
- our interventions affect shirking by the male co-head.
+ challenging customs and norms and the indicator for male domain sensitivity.
+ In the bottom panel, we also find no evidence that our interventions affect
+ the likelihood that male co-heads report putting in less labor time than
+ female co-heads believe.
+ 
 \end_layout
 
 \begin_layout Section
@@ -2597,9 +2542,8 @@ Conclusion
 
 \begin_layout Standard
 Household surveys that are serious about capturing gender-related insights
- on intrahousehold decision-making related to the allocation of labour and
- other household resourcesoften collect data from separate interviews with
- male and female respondents.
+ on intrahousehold decision-making, allocation of labor, and household assets
+ often collect data from separate interviews with male and female respondents.
  This is an important means of reducing biases introduced by responses from
  the (typically male) household head or 
 \begin_inset Quotes eld
@@ -2634,60 +2578,72 @@ literal "false"
  in monogamous Ugandan maize-farming households is due to random measurement
  error or cognitive bias due to spouses differently understanding or interpretin
 g the questions.
- We then test if discord is mainly driven by co-heads hiding information
- from each other, or if it is due to co-heads responding in line with what
- society expects from them given prevailing gender norms and roles.
+ We then test if discord is mainly driven by co-heads possessing only partly
+ overlapping information sets (hiding), or if it is due to co-heads responding
+ in line with what society expects from them given prevailing gender norms
+ and roles (pleasing).
  This is done through a field experiment, with one video-based intervention
- designed to facilitate mutual monitoring by co-heads and another video-based
- intervention designed to encourage spouses to view maize farming as a cooperati
-ve or join household enterprise rather than in the domain of the male co-head
- (as society tends to).
+ designed to provide co-heads with equal information to facilitate mutual
+ monitoring and another video-based intervention designed to encourage spouses
+ to view maize farming as a cooperative or joint household enterprise rather
+ than the domain of the male co-head (as society tends to).
  We explore possible impact pathways by looking at conditional average treatment
- effects, 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Need to edit this last phrase a bit further – i can't make it sound better
-\end_layout
-
-\end_inset
-
-as we expect that the interventions would be most effective for decisions,
- activities and assets that are easier to hide or more susceptible to gender
- norms and customs assigning these to the male domain.
+ effects, as we expect that the interventions would be most effective for
+ decisions, activities and assets that are easier to hide or more susceptible
+ to gender norms and customs.
 \end_layout
 
 \begin_layout Standard
 We find that co-heads generally agree with each other.
- Disagreement cannot be fully explained by either random measurement error
- or cognitive bias.
+ Disagreement can not be fully explained by either random measurement error
+ nor cognitive bias alone.
  Rather, we find that disagreement about the role of the female co-head
  in decision-making was reduced after co-heads were exposed to our intervention
  designed to reduce the influence of gender norms and customs.
  We also find that disagreement about the role of both male and female co-heads
  in decision-making reduced in response to our intervention designed to
- facilitate mutual monitoring.
- Contrary to expectations, we did not find that the intervention designed
- to reduce the influence of gender norms and customs was more effective
- for decisions that are considered to be more in the male domain.
- When looking at labour shirking behaviour on the part of female co-heads
+ reduce information asymmetry.
+ We did not find that the intervention designed to reduce the influence
+ of gender norms and customs was more effective for decisions that are considere
+d to be more in the male domain.
+ When looking at disagreement related to labor contributions of the female
  and male co-heads respectively, we did not find that the intervention designed
- to increase mutual monitoring had an impact, nor that activities that are
- more easily hidden would be affected more.
+ to reduce information disadvantages of one spouse had an impact, nor that
+ activities that are more easily hidden are more likely to result in disagreemen
+t.
  We also did not find that the intervention challenging role congruity,
  gender norms and customs made a difference, or more so for activities defined
  as typical male tasks according to gender norms and roles.
 \end_layout
 
 \begin_layout Standard
-In conclusion, our findings sheds new light on the measurement and interpretatio
-n on spousal responses to household survey questions.
- And while our findings are specific to a very specific population, geography,
- and system, they can be readily adapted to other contexts and replicated.
- Continued adaptation and replication allow us to learn more about the impact
- of social, cultural, and economic changes on intrahousehold dynamics, and
- even the welfare outcomes of new dynamics.
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+theendnotes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2695,7 +2651,7 @@ n on spousal responses to household survey questions.
 LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "../disagreement_bib"
-options "../IFPRI_Style"
+options "apalike2"
 
 \end_inset
 
@@ -2713,7 +2669,7 @@ options "../IFPRI_Style"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2804,9 +2760,9 @@ cline{1-6}
 
 & 
 \backslash
-multicolumn{5}{c}{
+multicolumn{6}{c}{
 \backslash
-textit{disagreement about female co-head's role in decision making}} 
+textit{female co-head decides but male co-head disagrees}} 
 \backslash
 
 \backslash
@@ -3035,7 +2991,7 @@ cline{1-6}
 \backslash
 multicolumn{6}{c}{
 \backslash
-textit{disagreement about male co-head's role in decision making}} 
+textit{male co-head decides but female co-head disagrees}} 
 \backslash
 
 \backslash
@@ -3337,7 +3293,7 @@ scriptsize
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3419,7 +3375,7 @@ cline{1-4}
 \backslash
 multicolumn{4}{c}{
 \backslash
-textit{disagreement about female co-head's role in decision making}} 
+textit{female co-head decides but male co-head disagrees}} 
 \backslash
 
 \backslash
@@ -3521,7 +3477,7 @@ Sexpr{format(round(mat_tab2[4,3], digits=3),nsmall=3)})
 
 \begin_layout Plain Layout
 
-facilitate monitoring  (T2) & & 
+reduce info asymmetry  (T2) & & 
 \backslash
 Sexpr{format(round(mat_tab4[3,1], digits=3),nsmall=3)}^{
 \backslash
@@ -3656,7 +3612,7 @@ cline{1-4}
 \backslash
 multicolumn{4}{c}{
 \backslash
-textit{disagreement about husband's role in decision making}} 
+textit{male co-head decides but female co-head disagrees}} 
 \backslash
 
 \backslash
@@ -3750,7 +3706,7 @@ Sexpr{format(round(mat_tab_m_2[4,3], digits=3),nsmall=3)})
 
 \begin_layout Plain Layout
 
-facilitate monitoring  (T2) & & 
+reduce info asymmetry  (T2) & & 
 \backslash
 Sexpr{format(round(mat_tab_m_4[3,1], digits=3),nsmall=3)}^{
 \backslash
@@ -3893,9 +3849,18 @@ end{center}
 
 \begin_layout Plain Layout
 
+Note: Standard errors are clustered at the household level.
+ *** denotes significance at the 1 percent level, ** at the 5 percent level,
+ 
+\end_layout
 
-\backslash
-scriptsize
+\begin_layout Plain Layout
+
+and * at the 10 percent level.
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -3918,7 +3883,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Agreement and disagreement about spouses' roles in labour contributions
+Agreement and disagreement about spouses' roles in labor contributions
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:agreement_labour"
@@ -4003,7 +3968,8 @@ cline{1-5}
 \backslash
 multicolumn{5}{c}{
 \backslash
-textit{disagreement about female co-heas's labour contribution}} 
+textit{female co-head reports to have worked less than what male co-head
+ believes}} 
 \backslash
 
 \backslash
@@ -4224,7 +4190,8 @@ cline{1-5}
 \backslash
 multicolumn{5}{c}{
 \backslash
-textit{disagreement about male co-head's labour contribution}} 
+textit{male co-head reports to have worked less than what female co-head
+ believes}} 
 \backslash
 
 \backslash
@@ -4514,13 +4481,13 @@ scriptsize
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Disagreement about labour provision
+Disagreement about labor provision
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:labour_regressions"
@@ -4592,7 +4559,8 @@ cline{1-6}
 \backslash
 multicolumn{6}{c}{
 \backslash
-textit{disagreement about female co-head's labour contribution}} 
+textit{female co-head reports to have worked less than what male co-head
+ believes}} 
 \backslash
 
 \backslash
@@ -4690,7 +4658,7 @@ Sexpr{format(round(mat_tab3[4,3], digits=3),nsmall=3)}) &
 
 \begin_layout Plain Layout
 
-facilitate monitoring (T2) & & 
+reduce info asymmetry (T2) & & 
 \backslash
 Sexpr{format(round(mat_tab5[3,1], digits=3),nsmall=3)}^{
 \backslash
@@ -4895,7 +4863,8 @@ cline{1-6}
 \backslash
 multicolumn{6}{c}{
 \backslash
-textit{disagreement about male co-head's labour contribution}} 
+textit{male co-head reports to have worked less than what female co-head
+ believes}} 
 \backslash
 
 \backslash
@@ -4993,7 +4962,7 @@ Sexpr{format(round(mat_tab_m_3[4,3], digits=3),nsmall=3)}) &
 
 \begin_layout Plain Layout
 
-facilitate monitoring (T2) & & 
+reduce info asymmetry (T2) & & 
 \backslash
 Sexpr{format(round(mat_tab_m_5[3,1], digits=3),nsmall=3)}^{
 \backslash
@@ -5200,6 +5169,10 @@ hline
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -5214,9 +5187,18 @@ end{center}
 
 \begin_layout Plain Layout
 
+Note: Standard errors are clustered at the household level.
+ *** denotes significance at the 1 percent level, ** at the 5 percent level,
+ 
+\end_layout
 
-\backslash
-scriptsize
+\begin_layout Plain Layout
+
+and * at the 10 percent level.
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
