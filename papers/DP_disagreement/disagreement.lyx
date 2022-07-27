@@ -2381,9 +2381,22 @@ bad
 \end_layout
 
 \begin_layout Standard
-One complication here is that labor time is measured as a continuous variable:
- days spent on the activity.
- As a result, the margin of error will also depend on the activity.
+One complication here is that labor time is measured as a continuous variable
+ (days spent on the activity), so it becomes necessary to define agreement
+ or disagreement based on how close reported labour time estimates are.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+It almost never happens that spouses completely agree on the number of days
+ that a co-head worked on for example weeding, but some are very close (for
+ instance 22 and 23 days).
+\end_layout
+
+\end_inset
+
+ Furthermore, there may be substantial differences in total number of days
+ spent on the different activities.
  For example, for an activity such as spraying pesticides, female co-heads
  report that they spend on average only 
 \begin_inset ERT
@@ -2415,38 +2428,16 @@ Sexpr{desc[2]}
 
  days).
  These differences in magnitude will also have consequences for the likelihood
- that co-heads agree.
- For instance, in the former case, there is agreement about the female co-head's
- labor time contribution on 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{desc[3]}
-\end_layout
-
-\end_inset
-
- percent of plots, while for weeding, this is only the case on 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-Sexpr{desc[4]}
-\end_layout
-
-\end_inset
-
- percent of plots.
- We try to mitigate this problem by defining agreement in relation to the
- underlying variable, indicating that there is agreement if estimates are
- 
+ that co-heads agree, and it seems hard to argue that disagreement of one
+ hour for spraying pesticides is directly comparable to disagreement of
+ one hour in estimated time spent on weeding.
+ We try to mitigate these problems by first standardizing hours worked for
+ each activity, such that differences between spouses in reporting of days
+ worked on, for example, weeding by a co-head become directly comparable
+ to difference in estimates between spouses of time spent of a co-head on,
+ for instance, spraying.
+ Second, based on these standardized variables, we construct an indicator
+ variable for agreement if estimates are 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2458,6 +2449,22 @@ close enough
  Specifically, if the labor time difference is within one standard deviation
  of the average time reported by male and female co-head, we consider there
  to be agreement.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A threshold of one standard deviation was chosen to make sure there are
+ sufficient levels of disagreement, as it is well know that outcomes with
+ limited variation contribute little power in experiments.
+ However, we also reran the analysis with thresholds of 0.5 standard deviations
+ and 1.5 standard deviations to show that the choice of the threshold does
+ not affect our conclusions.
+ Results are available from authors on request.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
