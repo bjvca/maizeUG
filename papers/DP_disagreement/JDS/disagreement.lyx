@@ -20,7 +20,7 @@ knitr
 \maintain_unincluded_children false
 \language english
 \language_package default
-\inputencoding auto
+\inputencoding utf8
 \fontencoding global
 \font_roman "times" "default"
 \font_sans "default" "default"
@@ -1489,9 +1489,34 @@ literal "false"
 
 \end_inset
 
+, or, in case of less salient but repeated activities without a clear schedule,
+ more likely to be extrapolated based on patterns of activity rather than
+ on actual counting 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "chakraborty2021gendered"
+literal "false"
+
+\end_inset
+
 .
- If such activities are gender-specific, then this could have contributed
- to observed difference between male and female co-heads.
+ Furthermore, proxy reporting may have negatively influenced specifically
+ female co-heads’ estimates of their male spouse’s labor time given that
+ male employment tends to be underreported in case of proxy reporting (even
+ if limited with the female spouse as the proxy) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1093/wber/lhr022"
+literal "false"
+
+\end_inset
+
+.
+ Salience and regularity of activities may influence the accuracy of proxy
+ reporting in similar ways as self-reporting.
+  If activities more or less subject to noisy self-or proxy-reporting are
+ gender-specific, then this could have contributed to observed differences
+ between male and female co-heads’ self- and proxy-reported labour time.
  There are also cognitive issues related to properly identifying the activity
  in question and remembering and aggregating all instances of labor spent
  on the particular activity, which is possibly variable over the reference
@@ -2268,7 +2293,7 @@ bad
 , with co-heads preferring to work less rather than more.
  The category of interest is therefore category (3), where co-heads are
  putting in less hours than what the other co-head believes.
- The fact that one spouse is putting in less hours than the other spouse
+ The fact that one spouse is putting in fewer hours than the other spouse
  believes may be due to one spouse reneging on their responsibilities, but
  it may also be because one spouse is simply not aware of the full range
  of activities the other preforms.
@@ -2324,36 +2349,54 @@ Sexpr{desc[2]}
  days).
  These differences in magnitude will also have consequences for the likelihood
  that co-heads agree, and it seems hard to argue that disagreement of one
- hour for spraying pesticides is directly comparable to disagreement of
- one hour in estimated time spent on weeding.
- Our solution is to first standardizing hours worked for each activity,
- such that differences in reporting between spouses of days worked on, for
- example, weeding by a co-head become directly comparable to differences
- in estimates between spouses of time spent of a co-head on, for instance,
+ hour for an activity with a typical short total duration such as spraying
+ pesticides is directly comparable to disagreement of one hour in estimated
+ time spent on an activity with a typical long total duration such as weeding.
+ Our solution is to make differences in reporting between spouses of days
+ worked by a co-head on, for example, weeding directly comparable to differences
+ in estimates between spouses of time spent by a co-head on, for instance,
  spraying.
- Second, based on these standardized variables, we construct an indicator
- variable for agreement if estimates are 
-\begin_inset Quotes eld
+ Reminiscent to the use of standardized mean difference to compare treatment
+ effects in experimental studies (Cohen’s D—see 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "cohen2013statistical"
+literal "false"
+
 \end_inset
 
-close enough
-\begin_inset Quotes erd
-\end_inset
-
- to each other.
- Specifically, if the (standardized) labor time difference is within one
- standard deviation of the average time reported by male and female co-head,
- we consider there is agreement.
+), we harmonize dispersion in a mean preserving way by dividing the difference
+ in reported time by the standard deviation of the average of time spent
+ by a co-head reported by the male spouse and the time reported by female
+ spouse.
+ We then define (dis)agreement in terms of standard deviation of the average
+ of time reported by male co-head and time reported by female co-head and
+ construct a binary indicator variable for disagreement if spouses’ reported
+ time spent by a co-head is substantially different from each other.
+ Specifically, we define the binary indicator variable such that it considers
+ there is agreement if the reported labor time difference is within one
+ standard deviation of the average time reported by male and female co-head;
+ else disagreement (equal or larger than one standard deviation).
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-A threshold of one standard deviation was chosen to make sure there are
- sufficient levels of disagreement, as it is well know that outcomes with
- limited variation contribute little power in experiments.
- However, we also reran the analysis with thresholds of 0.5 standard deviations
- and 1.5 standard deviations to show that the choice of the threshold does
- not affect the conclusions.
+This is in line with the literature where, as a rule of thumb, standard
+ deviation difference between 0.8 and 1 is considered large 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "cohen2013statistical"
+literal "false"
+
+\end_inset
+
+.
+ Using this threshold also preserves sufficient variation in our measure
+ of (dis)agreement which contributes to statistical power in experiments.
+ We further reran the analysis for an indicator using a threshold of 0.5
+ times the standard deviation of the average time reported by male and female
+ co-head and 1.5 times the standard deviation respectively to define disagreement
+ which shows that the choice of the threshold does not affect the conclusions.
  Results are available from authors upon request.
 \end_layout
 
@@ -2520,6 +2563,34 @@ As evidenced in the results in the upper panel, neither the intervention
  customs and norms (T1) seems to have an effect on the proportion of activities
  on which the female co-head reports to have worked less than what the male
  co-head believes.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Noisier data on own or one spouse’s labor time may be more likely to show
+ up as disagreement implying more scope for a treatment to make a difference
+ for the extent of disagreement.
+ If some typically male or female activities are more (or less) subject
+ to noisiness, the average treatment effect on disagreement on female or
+ male labor contributions in a set of activities could be driven by these
+ activities.
+ In that regard, spraying, a typical male irregular activity, is not highly
+ likely to be subject to noisy proxy by (female) spouse- and self-reporting.
+ Weeding, however, a typical female regular activity may be subject to both
+ noisy proxy by (male) spouse- and self-reporting.
+ We therefore ran the analysis of treatment effects of T1 and T2 on disagreement
+ about female and male co-head’s labor contributions excluding spraying
+ and weeding (i.e., including only land preparation, planting and harvesting)
+ to rule out that the (absence of) treatment effects were driven by these
+ activities.
+ Our main conclusions‒ i.e., that we do not find an effect of T1 nor T2 (neither
+ when controlling for ease of monitoring and male domain activities)‒ are
+ unaffected.
+ Results are available from authors upon request.
+\end_layout
+
+\end_inset
+
  We find the proportion of activities on which the female co-head reports
  to have worked less than what the male co-head believes to be lower for
  activities that are considered in the male domain.
