@@ -165,12 +165,12 @@ literal "false"
 
 \begin_layout Standard
 In this paper, we examine how the design of information and communication
- technology (ICT) applications used in agricultural extension information
- campaigns affects household member's access—the female co-head within the
- household, in particular—to informational resources, their agency, and
- their achievements in smallholder semi-subsistence farming.
- We conduct a field experiment among 3,330 maize-farming households in eastern
- Uganda and zoom in on two design features.
+ technology (ICT) applications used in video based agricultural extension
+ information campaigns affects household member's access—the female co-head
+ within the household, in particular—to informational resources, their agency,
+ and their achievements in smallholder semi-subsistence farming.
+ We conduct a Randomized Control Trial (RCT) among 3,330 maize-farming household
+s in eastern Uganda and zoom in on two design features.
  In a first treatment, we focus on targeting the information, and compare
  outcomes for households where the informational video was shown to the
  male co-head only (corresponding to the status quo in generic extension
@@ -203,49 +203,59 @@ We find that targeting the female co-head alone within the household (as
  opposed to targeting the male co-head alone) increased the female co-head's
  outcomes and reduced the male co-head's outcomes, mainly men's knowledge
  and men's unilateral decision making.
- In particular, the treatment increased the female co-head's knowledge of
- recommended agronomic practices.
- It also increased the female co-head's participation in agricultural decision-m
-aking and her adoption of inputs such as inorganic fertilizer.
- Female co-heads also reported higher yields on the maize plots under their
- management.
- The increase in knowledge of the female co-head came at the cost of a decrease
- in knowledge of the male co-head, indicating frictions in the flow of informati
-on between spouses.
- The likelihood that male co-heads made agriculture-related decisions unilateral
-ly also reduced.
- Male co-heads' adoption of practices and inputs, and production on fields
- managed by male co-heads alone, does not differ between households where
- only the male co-head was exposed to the information and households where
- only the female co-head saw the video.
-\end_layout
-
-\begin_layout Standard
-We further find that targeting both the female co-head and male co-head
+ We further find that targeting both the female co-head and male co-head
  within the household jointly with information (as opposed to targeting
  the male co-head alone) increased joint outcomes.
- As is the case when female co-heads alone are targeted with information,
- we also see a reduction in unilateral decision-making by the male co-head,
- which suggest that this reduction is only partly due to a knowledge effect,
- as in this case, male co-heads also received the information as part of
- the couple.
- The increase in joint outcomes seems to be driven by the fact that couples
- jointly decide and adopt a novel planting method that was promoted in the
- videos, and by their joint use of organic fertilizer.
- We do not see an increase in production-related outcomes on jointly managed
- plots.
-\end_layout
-
-\begin_layout Standard
-The effectiveness of the use of female role models is less straightforward.
+ The effectiveness of the use of female role models is less straightforward.
  We only find that in the subgroup where a video was shown in which a couple
  of male and female actors provided information (as opposed to the status
  quo where a male actor provides all the advice), men were less likely to
  take decisions without involving their wives.
- This suggests that the intervention challenged prevailing beliefs and stereotyp
-es held by men that women are less able to make decisions related to agriculture.
- We also find that women role models may be important for adoption of inputs
- and recommended practices by female co-heads.
+\end_layout
+
+\begin_layout Standard
+Our study contributes to the rich literature on the provision of agricultural
+ extension and advisory services to address intra-household information
+ asymmetries in the context of developing-country agriculture.
+ Several recent studies explicitly target women within the household, thereby
+ challenging the assumption that information provided to the (male) co-head
+ trickles down to other household members 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg."
+key "KONDYLIS2016436,10.1093/ajae/aay012,10.1093/erae/jbv039"
+literal "false"
+
+\end_inset
+
+.
+ We also contribute to the emerging literature that investigates the importance
+ of female role models in challenging gender stereotypes and empowering
+ women in domains where they are active but lack voice and agency.
+ Here, we complement studies that focus on aspirational channels, where
+ women update their beliefs in one’s own ability after being exposed to
+ role models 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg."
+key "Beaman582,RePEc:csa:wpaper:2017-13,doi:10.1111/ecoj.12145"
+literal "false"
+
+\end_inset
+
+.
+ We also contribute to a growing body of literature that shows how role
+ models can challenging prejudiced views and cognitive biases about the
+ capabilities of specific social groups in specific social roles 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg."
+key "benyishay2019social,10.1162/qjec.2009.124.4.1497"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -450,9 +460,10 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-Our study contributes to the rich literature on the provision of agricultural
- extension and advisory services to address intra-household information
- asymmetries in the context of developing-country agriculture.
+In this research, we assess the impact of including the female co-head as
+ a recipient of agricultural extension information within the household.
+ Various recent studies have found that targeting is important in making
+ information effective for particular groups or individuals.
  For example, 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -498,11 +509,10 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-We also contribute to the emerging literature that investigates the importance
- of female role models in challenging gender stereotypes and empowering
- women in domains where they are active but lack voice and agency.
- Role models are important in stimulating aspirations and the development
- of an internal locus of control.
+We also assess the impact of the gender of the person who provides the informati
+on.
+ Here, recent research suggests that role models are important in stimulating
+ aspirations and the development of an internal locus of control.
  They can update beliefs in one’s own ability (self-efficacy) or beliefs
  about the returns to investments, especially for disadvantaged social groups
  that have few examples of success 
@@ -819,8 +829,18 @@ The public agricultural extension system in Uganda has a turbulent history.
  a public-private partnership in 2000, was hailed by experts and donors
  as an example of how to increase market-oriented agricultural production
  by empowering farmers to demand and control extension services.
- NAADS did consider gender in its programming—for instance by distributing
- dairy cattle to women to improve food security—and initial descriptive
+ A large-scale impact evaluation found that the program was relatively more
+ effective among male-headed than female-headed households 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "https://doi.org/10.1111/j.1574-0862.2010.00512.x"
+literal "false"
+
+\end_inset
+
+.
+ However, NAADS did consider gender in its programming—for instance by distribut
+ing dairy cattle to women to improve food security—and initial descriptive
  evidence suggested some success in reaching and benefiting women and vulnerable
  groups 
 \begin_inset CommandInset citation
@@ -832,18 +852,9 @@ literal "false"
 \end_inset
 
 .
- However, a large-scale impact evaluation found that the program was relatively
- more effective among male-headed than female-headed households 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "https://doi.org/10.1111/j.1574-0862.2010.00512.x"
-literal "false"
-
-\end_inset
-
-.
- NAADS ultimately became a victim of political capture and governance problems,
- and was eventually replaced by Operation Wealth Creation in 2014 
+ However, NAADS ultimately became a victim of political capture and governance
+ problems, and was eventually replaced by Operation Wealth Creation in 2014
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "https://doi.org/10.1111/dpr.12324"
@@ -2272,9 +2283,10 @@ name "sec:Policy-recommendations-and"
 In smallholder agriculture in developing-country contexts, women often perform
  an extensive amount of the work, yet have little say in which crops to
  plant or what technologies, inputs, or practices to use.
- In this paper, we test how gender-related attributes of ICT-mediated agricultur
-al extension information campaigns affect individual household member's
- informational capital, their agency, and their achievements in farming.
+ In this paper, we test how gender-related attributes of ICT-mediated video
+ based agricultural extension information campaigns affect individual household
+ member's informational capital, their agency, and their achievements in
+ farming.
  We do this through a field experiment in the form of a factorial design
  that was run in eastern Uganda.
  Working with monogamous maize-farming households, in one treatment, we
@@ -2290,7 +2302,7 @@ al extension information campaigns affect individual household member's
 The results of this study clearly show that in our study context, significant
  advances in women’s empowerment in agriculture in terms of knowledge, decision-
 making, input use and achievements can be made by giving women direct and
- exclusive access to ICT-mediated extension information.
+ exclusive access to ICT-mediated agricultural extension information videos.
  Providing information to the couple leads to increases in the jointly decided
  use of improved inputs and recommended practices.
  Furthermore, results suggest that women as role models, through peer effects,
@@ -2320,7 +2332,7 @@ We further find some evidence that including women as role models affects
  But changing prevailing gender norms is likely beyond what government can
  do.
  Other stakeholders in the sector will need to play their part as well.
- For instance, journalist reporting on agricultural related issues could
+ For instance, journalists reporting on agricultural related issues could
  feature more stories where women take center stage.
  Agro-input dealers that sell improved maize seed varieties should actively
  reach out to female farmers.
