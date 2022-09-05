@@ -214,9 +214,9 @@ We find that targeting the female co-head alone within the household (as
 \end_layout
 
 \begin_layout Standard
-Our study contributes to the rich literature on the provision of agricultural
+Our study contributes to the literature on the provision of agricultural
  extension and advisory services to address intra-household information
- asymmetries in the context of developing-country agriculture.
+ asymmetries in the context of agriculture in low- and middle-income countries.
  Several recent studies explicitly target women within the household, thereby
  challenging the assumption that information provided to the (male) co-head
  trickles down to other household members 
@@ -238,15 +238,15 @@ literal "false"
 \begin_inset CommandInset citation
 LatexCommand citep
 before "eg."
-key "Beaman582,RePEc:csa:wpaper:2017-13,doi:10.1111/ecoj.12145"
+key "Beaman582,10.1162/rest_a_01153,doi:10.1111/ecoj.12145"
 literal "false"
 
 \end_inset
 
 .
  We also contribute to a growing body of literature that shows how role
- models can challenging prejudiced views and cognitive biases about the
- capabilities of specific social groups in specific social roles 
+ models can challenge prejudiced views and cognitive biases about the capabiliti
+es of specific social groups in specific social roles 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "eg."
@@ -302,7 +302,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Section
-Related literature and contribution
+Related Literature and Contribution
 \end_layout
 
 \begin_layout Standard
@@ -518,7 +518,7 @@ on.
  that have few examples of success 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Beaman582,RePEc:csa:wpaper:2017-13"
+key "Beaman582,10.1162/rest_a_01153"
 literal "true"
 
 \end_inset
@@ -529,7 +529,7 @@ literal "true"
  to work hard and attain the success projected by the role model 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "RePEc:csa:wpaper:2017-13"
+key "10.1162/rest_a_01153"
 literal "true"
 
 \end_inset
@@ -650,7 +650,7 @@ literal "true"
  when delivered by a messenger of the other sex, thereby contributing to
  changes in an individual's choices and chances of success.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Gender homophily is defined as the preference for interaction with individuals
@@ -709,19 +709,9 @@ name "sec:Study-context"
 \end_layout
 
 \begin_layout Standard
-We conducted a field experiment in 2017 among smallholder maize-farming
- households in eastern Uganda.
- Participants in the experiment were drawn from monogamous maize-cultivating
- households residing in five districts where maize is particularly important,
- both as a staple and as a marketable crop.
- The experiment was conducted during the second maize-growing season, which
- runs from approximately August to January, and is characterized by a shorter
- period of rainfall than the first maize-growing season.
- During this second season, the complete cycle from planting to harvest
- requires three to three and a half months, and farmers tend to cultivate
- early-maturing but lower-yielding maize varieties.
- Fields are prepared in August, planted in September, and harvested from
- December onward.
+The field experiment was conducted in five districts in eastern Uganda (Bugiri,
+ Mayuge, Iganga, Namayingo, and Namutumba) where maize is particularly important
+, both as a staple and as a marketable crop.
  Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -733,13 +723,44 @@ noprefix "false"
 \end_inset
 
  provides a map of the study area.
+ The experiment was conducted during the second maize growing season, which
+ runs from approximately August to January, and is characterized by a shorter
+ period of rainfall than the first maize-growing season.
+ During this second season, the complete cycle from planting to harvest
+ requires three to three and a half months, and farmers tend to cultivate
+ early-maturing but lower-yielding maize varieties.
+ Fields are prepared in August, planted in September, and harvested from
+ December onward.
+ Maize yields in the study area, and in Uganda more generally, are well
+ below their potential.
+ Research station trials in Uganda have demonstrated yields between 730
+ kg per acre and 1,820 kg per acre 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "fermont2011estimating"
+literal "true"
+
+\end_inset
+
+.
+ Yet, on-farm estimates are generally lower.
+ A recent study of on-farm yields reports figures between 270 kg per acre
+ and 995 kg per acre 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "GOURLAY2019102376"
+literal "true"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -781,31 +802,82 @@ name "fig:Map-of-themap"
 \end_layout
 
 \begin_layout Standard
-Maize yields in the study area, and in Uganda more generally, are well below
- their potential.
- Research station trials in Uganda have demonstrated yields between 730
- kg per acre and 1,820 kg per acre 
+The public agricultural extension system in Uganda has a turbulent history.
+ The National Agricultural Advisory Services (NAADS), which was set up as
+ a public-private partnership in 2000, was hailed by experts and donors
+ as an example of how to increase market-oriented agricultural production
+ by empowering farmers to demand and control extension services.
+ NAADS did consider gender in its programming—for instance by distributing
+ dairy cattle to women to improve food security.
+ A large-scale impact evaluation, however, found that the program was relatively
+ more effective among male-headed than female-headed households 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "fermont2011estimating"
-literal "true"
+key "https://doi.org/10.1111/j.1574-0862.2010.00512.x"
+literal "false"
 
 \end_inset
 
 .
- Yet, on-farm estimates are generally lower.
- A recent study of on-farm yields reports figures between 270 kg per acre
- and 995 kg per acre 
+ Another study provides initial descriptive evidence suggesting NAADS did
+ better in reaching women and vulnerable groups than privatized extension
+ services 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "GOURLAY2019102376"
-literal "true"
+before "eg."
+key "turyahikayo2016trust"
+literal "false"
 
 \end_inset
 
 .
- There is also evidence that maize plots under female management are less
- productive than maize plots under male management.
+\end_layout
+
+\begin_layout Standard
+NAADS ultimately became a victim of political capture and governance problems,
+ and was eventually replaced by Operation Wealth Creation (OWC) in 2014
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "https://doi.org/10.1111/dpr.12324"
+literal "false"
+
+\end_inset
+
+.
+ The latter is organized by the army and approaches problems in the sector
+ from a logistical angle, with a strong focus on (subsidized) input distribution.
+ While the OWC program guidelines emphasize gender equity and non-discrimination
+, it does not have any arrangements to ensure gender equity in receiving
+ inputs 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ACOSTA20199"
+literal "false"
+
+\end_inset
+
+.
+ Hence it is likely to further reduce the gender responsiveness of the public
+ extension system in Uganda.
+ Data obtained from the Uganda National Panel Survey (wave 2013/2014) suggest
+ that only 20 percent of households received extension in the past 12 months.
+ While there is no reliable data on who was targeted within these households,
+ a recent survey on public service delivery found that only 16 percent of
+ extension agents in Uganda are women 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "kabunga2016state"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+There is evidence that maize plots under female management are less productive
+ than maize plots under male management.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -821,60 +893,97 @@ ing for plot size but without distinguishing between type of crops) to an
  unequal distribution between men and women of responsibilities and resources,
  including modern inputs such as improved varieties, fertilizer, and agrochemica
 ls.
-\end_layout
-
-\begin_layout Standard
-The public agricultural extension system in Uganda has a turbulent history.
- The National Agricultural Advisory Services (NAADS), which was set up as
- a public-private partnership in 2000, was hailed by experts and donors
- as an example of how to increase market-oriented agricultural production
- by empowering farmers to demand and control extension services.
- A large-scale impact evaluation found that the program was relatively more
- effective among male-headed than female-headed households 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "https://doi.org/10.1111/j.1574-0862.2010.00512.x"
-literal "false"
-
-\end_inset
-
-.
- However, NAADS did consider gender in its programming—for instance by distribut
-ing dairy cattle to women to improve food security—and initial descriptive
- evidence suggested some success in reaching and benefiting women and vulnerable
- groups 
-\begin_inset CommandInset citation
-LatexCommand citep
-before "eg."
-key "turyahikayo2016trust"
-literal "false"
-
-\end_inset
-
-.
- However, NAADS ultimately became a victim of political capture and governance
- problems, and was eventually replaced by Operation Wealth Creation in 2014
+ While there is no evidence of differences in land tenure and quality between
+ maize plots managed by (married) men and women in male-headed households
+ in eastern Uganda, significantly more labor and more male labor was found
+ to be allocated to male managed maize plots.
+ Lower access to credit by married women farmers than men farmers was identified
+ as one of the reasons for more limited adoption of improved maize varieties
  
 \begin_inset CommandInset citation
 LatexCommand citep
-key "https://doi.org/10.1111/dpr.12324"
+key "FISHER201582"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+While there are some contextual nuances, generally, women farmers in Uganda
+ face inequalities in access and control over resources and decision-making
+ power within their households, as well as structural constraints to equality
+ and their empowerment in agriculture relating to gender norms and roles.
+ According to a 2011 study calculating the women's empowerment in agriculture
+ index, 56.7 percent of (married) women in rural dual households in Uganda
+ (including in districts in eastern Uganda) are disempowered, and over 60
+ percent of these women live in a household where the man is empowered.
+ Women's work and lack of control over resources were found to contribute
+ most to women's disempowerment 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ALKIRE201371"
 literal "false"
 
 \end_inset
 
 .
- The latter is organized by the army and approaches problems in the sector
- from a logistical angle, with a strong focus on (subsidized) input distribution.
- This shift is likely to further reduce the gender responsiveness of the
- public extension system in Uganda.
- Data obtained from the Uganda National Panel Survey (wave 2013/2014) suggest
- that only 20 percent of households received extension in the past 12 months.
- While there is no reliable data on who was targeted within these households,
- a recent survey on public service delivery found that only 16 percent of
- extension agents in Uganda are women 
+ Women's work burden derives from gender roles assigning most care and domestic
+ work to women in addition to farm work 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "kabunga2016state"
+key "doi:10.1080/17531055.2012.696889"
+literal "false"
+
+\end_inset
+
+.
+ In terms of access to resources, there are strong social norms dictating
+ against women owning land.
+ While there are provisions in formal law to protect women's access to land,
+ the absence of a legal provision for co-ownerhip, the preference for customary
+ marriage with weaker protection for women's property rights and the ambiguity
+ around inheritance by widows disfavour women 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ANDERSSONDJURFELDT2020104305"
+literal "false"
+
+\end_inset
+
+.
+ In most cases, women marry into the community where the husband often already
+ (informally) owns land or has use rights to land.
+ Therefore, most agricultural land is owned by men.
+ Land acquired during the course of (legal or customary) marriage tends
+ to be considered co-owned by spouses and some married women acquire plots
+ in their own name 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1080/00220388.2020.1849620"
+literal "false"
+
+\end_inset
+
+.
+ A study in eastern Uganda shows there are few married women who own maize
+ plots but that 13 percent of maize plots have a married woman as the main
+ decision-maker, who often manages multiple maize plots 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "FISHER201582"
+literal "false"
+
+\end_inset
+
+.
+ Generally, men have greater voice in intrahousehold agricultural decision-makin
+g, especially when a crop is (also) marketed, which partly relates to gender
+ norms assigning the roles of breadwinner and head of household to men 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1080/17531055.2012.696889,doi:10.1080/00220388.2017.1400014"
 literal "false"
 
 \end_inset
@@ -918,7 +1027,7 @@ messenger
 \emph default
  factor).
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 In the context of this study, we refer to these factors in terms of “gender”
@@ -942,7 +1051,7 @@ reference "fig:Layout-of-experimental"
  the number of households randomly allocated to one of these nine treatment
  combinations.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Power calculations were based on a set of comparisons using different outcomes
@@ -1088,8 +1197,11 @@ name "subsec:Data"
 \end_layout
 
 \begin_layout Standard
-Households were sampled from five districts in eastern Uganda: Bugiri, Mayuge,
- Iganga, Namayingo, and Namutumba.
+We conducted the field experiment and collected data during the second maize-gro
+wing season, more specifically between August to October 2017.
+ Participants in the experiment were drawn from monogamous smallholder maize-cul
+tivating households residing in five districts in eastern Uganda, listed
+ above.
  From among these districts, we first removed town councils and two sub-counties
  that consisted of islands in Lake Victoria.
  We then used a two-stage cluster sampling approach to obtain a representative
@@ -1100,7 +1212,7 @@ Households were sampled from five districts in eastern Uganda: Bugiri, Mayuge,
  Within each village, we then listed all households, from which we selected
  a random sub-set of monogamous households to be included in the study.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 We focus on addressing intra-household challenges to extension information
@@ -1122,17 +1234,17 @@ s vary in the way they are organized) different from those in monogamous
 \end_layout
 
 \begin_layout Standard
-Treatment was randomized at the farm household level.
+We randomized treatment at the household level.
  Assignment of the households to a particular treatment combination was
  randomized using a random number generator.
- Information on the sampled households, including names, contact details,
- and their treatment assignment, were pre-loaded onto the tablets so that
- the correct video was automatically queued for screening.
+ We pre-loaded information on the sampled households, including names, contact
+ details, and their treatment assignment, onto the tablets so that the correct
+ video was automatically queued for screening.
  The integration of treatment assignment into our Computer Assisted Personal
  Interview (CAPI) system allowed us to monitor implementation fidelity in
  real time.
- Endline data was collected after harvest between February and April 2018.
- Households were revisited and both male and female co-heads were interviewed
+ We collected endline data after harvest between February and April 2018.
+ We revisited the households and interviewed both male and female co-heads
  separately.
 \end_layout
 
@@ -1424,7 +1536,7 @@ Knowledge about the different practices recommended in the video is measured
  by the extent to which respondents correctly answered multiple choice questions
  about the practices.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 First, respondents are considered knowledgeable about recommended plant
@@ -1507,7 +1619,7 @@ Although decision-making is central to women's empowerment, we also wanted
  was promoted in the video, and for which the female and male co-head decided
  and adopted a recommended practice jointly.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 It is important to note that our intervention may have changed both the
@@ -2339,6 +2451,58 @@ We further find some evidence that including women as role models affects
 \end_layout
 
 \begin_layout Standard
+The assessment of the interaction effects of the treatments allows for an
+ understanding of simultaneously addressing constraints to women's empowerment
+ related to information asymmetry and normative gender roles.
+ We acknowledge that reducing these constraints may have had greater impact
+ on women’s empowerment in agriculture if, at the same time, women’s insecure
+ land ownership and use rights, access to complementary resources including
+ credit, group membership, skill training, and norms related to time use,
+ among others, would have been addressed.
+ Evaluating such complex interventions, however, would need an appropriate
+ research design, for instance, a factorial design with additional factors,
+ which was not within the scope of this study.
+ Besides, testing hypotheses about the effect of more secure land ownership
+ and user rights for women, for instance, is not easily done in an experimental
+ framework unless there are opportunities arising from newly implemented
+ policy or certification 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "eg."
+key "ALI2014262,ali2016small"
+literal "false"
+
+\end_inset
+
+.
+ In our study, the multiple other constraints are treated as a given and
+ because of our randomization strategy we can be confident there is no omitted
+ variable bias.
+ In principle, it would be possible to investigate treatment heterogeneity,
+ for instance to examine if the information or role model treatment work
+ better among spouses that have ownership of the maize plot.
+ However, the study would have needed to be designed for such analyses and
+ sample sizes sufficiently large for adequate statistical power, which was
+ out of the scope of this project.
+\end_layout
+
+\begin_layout Standard
+In terms of transferability, our study's findings could apply to other crops
+ grown in the study region which similarly are both food and cash crops
+ and not exclusively male- or female-managed, such as, for instance, millet
+ and cassava.
+ One could expect similar effects in other regions of Uganda and East Africa,
+ where smallholder semi-subsistence household farming, in majority by monogamous
+ dual households, is the dominant agricultural system, and women’s access
+ to information, role models, resources and their intrahousehold decision-making
+ power tend to be constrained.
+ Firm conclusions about transferability to other crops and other contexts,
+ be it with other agricultural systems or with other gender norms and roles
+ in agriculture, however, would require an assessment of the extent of differenc
+e in the effects of the same interventions.
+\end_layout
+
+\begin_layout Standard
 Three policy recommendations follow from the results of this study.
  Although they are specific to our study context and country, these recommendati
 ons may nonetheless lend support to efforts to reform extension policy and
@@ -2365,26 +2529,52 @@ literal "false"
 \end_inset
 
 .
- Second, if the aim of extension reforms is less ambitious—to somehow increase
- women's agency without 
-\begin_inset Quotes eld
+ Examples of tested gender-transformative approaches include household methodolo
+gies influencing intrahousehold gender relations and decision-making, often
+ using a couple coaching approach 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "doi:10.1080/00220388.2020.1849620"
+literal "false"
+
 \end_inset
 
-rocking the boat
-\begin_inset Quotes erd
+, involving both women and men in nutrition, agricultural, farmer field
+ school programs 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "choudhury2020empowering,doi:10.1080/09718524.2020.1729480,kerr2016integrated,QUISUMBING2021105622"
+literal "false"
+
 \end_inset
 
- viz traditional extension approaches and cultural norms—then there may
- be some degree of uncertainty, ambiguity, or context-specificity in potential
- outcomes of such a strategy.
- Third, it may be possible to further capitalize on role model effects with
- more extensive experimentation in design.
- Ultimately, there are no silver bullets for extension policy and practice,
- such that both gender-sensitive and gender-transformative extension systems
- will require both experimentation along the lines of what is demonstrated
- in this study, and a willingness to experiment by extension providers so
- that more light can be shed on the question of what works most effectively,
+and participatory action learning methods with communities and/or households
+ that question and try to shift discriminatory gender relations and norms,
+ such as, for instance, the Gender Action Learning System, Nurturing Connections
+, Journeys of Transformation or Community Conversations 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "fao"
+literal "false"
+
+\end_inset
+
+ .
+ Second, it may be possible to further capitalize on role model effects
+ with more extensive experimentation in design.
+ There are no silver bullets for extension policy and practice, however.
+ Both gender-sensitive and gender-transformative extension systems will
+ require both experimentation along the lines of what is demonstrated in
+ this study, and a willingness to experiment by extension providers so that
+ more light can be shed on the question of what works most effectively,
  for whom, and in what context.
+ Third, our study tests effects of addressing only two out of multiple compoundi
+ng constraints to women's empowerment in agriculture.
+ Apart from information and role models, other constraints relating to women's
+ more limited access to land, assets, financial services, and gender-responsive
+ agricultural technology, as well as gender norms and roles defining women's
+ time use, mobility, and decision-making power will need to be tackled simultane
+ously to unlock women's full potential and reduce gender gaps in agriculture.
 \end_layout
 
 \begin_layout Standard
